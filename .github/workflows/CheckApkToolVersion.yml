@@ -1,5 +1,5 @@
 name: Build app using apktool
-on: push
+on: workflow_dispatch
 jobs:
   prepare-env:
     runs-on: ubuntu-latest
@@ -36,5 +36,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./dist/*.apk
+          asset_path: ./dist/signed-moded-from-action.apk
           asset_name: iMe-Mod.apk
