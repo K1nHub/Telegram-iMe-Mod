@@ -9,8 +9,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: get version
         run: |
-            export IME_TEST=0.0.0
+            export IME_TEST=$(grep 'versionName' apktool.yml | cut -d' ' -f 4)
             printenv IME_TEST
-            grep 'versionName' apktool.yml | cut -d' ' -f 4
-            grep 'versionName' apktool.yml | cut -d' ' -f 4 >> IME_TEST
-            printenv IME_TEST
+            IME_TEST >> $GITHUB_ENV
