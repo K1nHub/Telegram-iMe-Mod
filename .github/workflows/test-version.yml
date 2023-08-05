@@ -11,4 +11,5 @@ jobs:
         run: |
             export IME_TEST=$(grep 'versionName' apktool.yml | cut -d' ' -f 4)
             printenv IME_TEST
-            IME_TEST >> $GITHUB_ENV
+            echo "IME_TEST=$(grep 'versionName' apktool.yml | cut -d' ' -f 4)" >> $GITHUB_ENV
+            echo env.IME_TEST
