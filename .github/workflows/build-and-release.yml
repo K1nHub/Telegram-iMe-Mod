@@ -33,7 +33,13 @@ jobs:
         with:
           tag_name: ${{ env.IME_TEST }}
           release_name: Release iMe mMOD ${{ env.IME_TEST }}
-          body: First automatic release
+          body: |
+            - Change default font to "Google Sans"
+            - Delete unnecessary arm libs (only arm64-v8a)
+            - Change app name to "Telegram" (fix problem on some smart watches)
+            - Change package name to "org.telegram.messenger" (fix problem on some smart watches)
+            
+            Offical iMe App change log at Google Play or https://www.imem.app/android
           draft: false
           prerelease: false
       - name: Upload Release Asset
