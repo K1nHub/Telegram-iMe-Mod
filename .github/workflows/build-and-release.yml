@@ -1,5 +1,7 @@
 name: Build app using apktool
 on: workflow_dispatch
+env:
+  IME_VERSION: not-set
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
