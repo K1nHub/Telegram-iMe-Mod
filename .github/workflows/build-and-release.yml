@@ -15,10 +15,8 @@ jobs:
         run: sudo apt install signapk
       - name: Install ApkTool
         run: |
-          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool
-          wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.8.1.jar
-          chmod +x apktool_2.8.1.jar
-          chmod +x apktool
+          wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool && chmod +x apktool.jar
+          wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.8.1.jar && chmod +x apktool_2.8.1
           sudo mv apktool_2.8.1.jar /usr/local/bin/apktool.jar
           sudo mv apktool /usr/local/bin/apktool
       - name: Build apk file
