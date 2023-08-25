@@ -2,42 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda312;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda312;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDate(ZILjava/lang/String;)V
+.method public final didSetColor()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda312;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda312;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$JccbR8c4pLPms_hdL9EiuODSzwc(Lcom/iMe/fork/utils/Callbacks$Callback1;ZILjava/lang/String;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$rqsUVYVd4HsUvf6Huo98Iqj6czA(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method
 
-.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
-    .locals 1
+.method public synthetic onAnimationProgress(F)V
+    .locals 0
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

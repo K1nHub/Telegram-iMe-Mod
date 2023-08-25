@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Z)V
     .locals 0
 
-    .line 1673
+    .line 1683
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1687
+    .line 1697
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1688
+    .line 1698
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     const/4 v0, 0x0
@@ -74,7 +74,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1676
+    .line 1686
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -95,14 +95,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 1677
+    .line 1687
     iget-boolean p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->val$show:Z
 
     const/4 v0, 0x4
 
     if-eqz p1, :cond_0
 
-    .line 1678
+    .line 1688
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$900(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/widget/TextView;
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 1680
+    .line 1690
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$15;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 

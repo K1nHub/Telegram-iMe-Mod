@@ -24,7 +24,7 @@
 .method constructor <init>(Landroid/content/Context;[Lorg/telegram/ui/Cells/CheckBoxCell;[Lorg/telegram/ui/Cells/CheckBoxCell;)V
     .locals 0
 
-    .line 2028
+    .line 2026
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$9;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$9;->val$revokeByDefaultCheckBox:[Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -39,10 +39,10 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 2031
+    .line 2029
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 2033
+    .line 2031
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$9;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 p2, 0x0
@@ -65,7 +65,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2034
+    .line 2032
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
@@ -96,7 +96,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 2035
+    .line 2033
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$9;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
     aget-object p1, p1, p2
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 2037
+    .line 2035
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$9;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -125,14 +125,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 2038
+    .line 2036
     aget-object p1, p1, p2
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2039
+    .line 2037
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1

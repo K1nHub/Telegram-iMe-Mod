@@ -15,3 +15,9 @@
 
     return-void
 .end method
+
+.method public static $default$sendBotInlineResult(Lorg/telegram/ui/Components/MentionsContainerView$Delegate;Lorg/telegram/tgnet/TLRPC$BotInlineResult;ZI)V
+    .locals 0
+
+    return-void
+.end method

@@ -60,7 +60,7 @@
 
     const/high16 v0, 0x420c0000    # 35.0f
 
-    .line 316
+    .line 370
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 316
+    .line 370
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$tokenLogoSize$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

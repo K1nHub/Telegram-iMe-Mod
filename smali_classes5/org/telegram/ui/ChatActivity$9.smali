@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 2584
+    .line 2600
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$9;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 5
 
-    .line 2587
+    .line 2603
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$9;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$1800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
@@ -57,7 +57,7 @@
 
     goto :goto_1
 
-    .line 2590
+    .line 2606
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$9;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -103,7 +103,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 2593
+    .line 2609
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->formatDuration(IZ)Ljava/lang/String;
 
     move-result-object v0
@@ -117,7 +117,7 @@
 
     div-float/2addr v0, v2
 
-    .line 2595
+    .line 2611
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
@@ -130,7 +130,7 @@
 
     move-result-object v0
 
-    .line 2597
+    .line 2613
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$9;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -154,7 +154,7 @@
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSubtext(Ljava/lang/String;)V
 
-    .line 2598
+    .line 2614
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$9;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$2000(Lorg/telegram/ui/ChatActivity;)Ljava/lang/Runnable;

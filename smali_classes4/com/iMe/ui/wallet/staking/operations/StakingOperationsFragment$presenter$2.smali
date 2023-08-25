@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,215:1\n56#2,6:216\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n*L\n45#1:216,6\n*E\n"
+    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,239:1\n56#2,6:240\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2\n*L\n46#1:240,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;
     .locals 4
 
-    .line 45
+    .line 46
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 45
+    .line 46
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 45
+    .line 46
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;
 
     move-result-object v0

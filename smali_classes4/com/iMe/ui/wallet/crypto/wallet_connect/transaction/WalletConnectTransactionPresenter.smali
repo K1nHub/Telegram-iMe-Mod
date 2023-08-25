@@ -189,11 +189,11 @@
     return-object v0
 .end method
 
-.method private final getChooseFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+.method private final getChooseFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
     .locals 7
 
     .line 147
-    new-instance v6, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;
+    new-instance v6, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;
 
     .line 148
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getFeeDialogModel()Lcom/iMe/model/dialog/DialogModel;
@@ -227,7 +227,7 @@
     move-object v0, v6
 
     .line 147
-    invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;-><init>(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;-><init>(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;Lkotlin/jvm/functions/Function1;)V
 
     return-object v6
 .end method
@@ -515,11 +515,11 @@
 
     check-cast p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;
 
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getChooseFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getChooseFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     return-void
 .end method
@@ -598,7 +598,7 @@
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -812,11 +812,11 @@
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;
 
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getChooseFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getChooseFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     :cond_0
     return-void

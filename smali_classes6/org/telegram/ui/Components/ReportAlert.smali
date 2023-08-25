@@ -441,7 +441,7 @@
     const/high16 v13, 0x41900000    # 18.0f
 
     .line 170
-    invoke-virtual {v10, v6, v13}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v10, v6, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 171
     iget-object v10, v0, Lorg/telegram/ui/Components/ReportAlert;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoWalletInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 6 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,306:1\n14#2:307\n38#2:308\n14#2:309\n14#2:310\n14#2:311\n26#2:312\n38#2:313\n14#2:325\n14#2:326\n26#2:327\n14#2:334\n3792#3:314\n4307#3,2:315\n1549#4:317\n1620#4,3:318\n1549#4:321\n1620#4,3:322\n1549#4:330\n1620#4,3:331\n11#5:328\n18#6:329\n*S KotlinDebug\n*F\n+ 1 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n62#1:307\n70#1:308\n71#1:309\n86#1:310\n95#1:311\n101#1:312\n140#1:313\n230#1:325\n240#1:326\n270#1:327\n296#1:334\n163#1:314\n163#1:315,2\n166#1:317\n166#1:318,3\n211#1:321\n211#1:322,3\n279#1:330\n279#1:331,3\n276#1:328\n276#1:329\n*E\n"
+    value = "SMAP\nCryptoWalletInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 6 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,312:1\n14#2:313\n38#2:314\n14#2:315\n14#2:316\n14#2:317\n38#2:318\n14#2:330\n14#2:331\n26#2:332\n14#2:339\n3792#3:319\n4307#3,2:320\n1549#4:322\n1620#4,3:323\n1549#4:326\n1620#4,3:327\n1549#4:335\n1620#4,3:336\n11#5:333\n18#6:334\n*S KotlinDebug\n*F\n+ 1 CryptoWalletInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor\n*L\n67#1:313\n75#1:314\n76#1:315\n91#1:316\n100#1:317\n150#1:318\n239#1:330\n249#1:331\n279#1:332\n305#1:339\n173#1:319\n173#1:320,2\n176#1:322\n176#1:323,3\n220#1:326\n220#1:327,3\n288#1:335\n288#1:336,3\n285#1:333\n285#1:334\n*E\n"
 .end annotation
 
 
@@ -24,14 +24,62 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0mw_10F2flvtHqAhcUzaQL1241U(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$3AQir1yg9WoXO_mVp4yLKszOGe0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->importBib39BasedWallets$lambda$21(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->unlinkWalletsIfNeeded$lambda$33(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$3HwW22bgbon9SYA1DcOAvaUiIj8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteAllWallets$lambda$14(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$84ainCSK7wpHCoCSuVQFKhTGfpw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->importBib39BasedWallets$lambda$20(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$8HtH0mu1EmpUn1oyw8GzoVr0ZvY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteAllWallets$lambda$16(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$Ar1zxs2eMjJeUEtDq6DQ-wYQh8U(Ljava/lang/String;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->getMnemonicWordsSuggestions$lambda$7(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$BUzYzYY1p13m7_u_B0ZWfIpytig(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->rewriteDataWithNewPin$lambda$18(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method public static synthetic $r8$lambda$HaJIgj8PhWDIfqkKxokD00BPhok(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
@@ -44,88 +92,40 @@
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$LHqzblshzG1QJqefB0MODnfQDa4(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
+.method public static synthetic $r8$lambda$JJgOHbe7yxPehBkFnofoyA_8s8k(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$lambda$9(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$RphsAz4QMagZ0-IEMwPJtjyGjkY(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$dTCUolcBGYAL-0HmR_83okJNQPs(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->rewriteDataWithNewPin$lambda$19(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$_NfyLe8pZ-lN36L3-ZCqwBDje0A(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->unlinkWalletsIfNeeded$lambda$34(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$aupkSqu6Jy7hdqjmvtxlc_qwAD8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$lO9ZMwzLw-msxgRiRIfp89G7In0(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lkotlin/Unit;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteAllWallets$lambda$18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {p0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteAllWallets$lambda$15(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lkotlin/Unit;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$gsfsSCtq4eppc04EAKUtNfq3_V8(Ljava/lang/String;)Ljava/util/List;
+.method public static synthetic $r8$lambda$vb9rAZhKbkDk7pghF-FCl-mOkTA(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->getMnemonicWordsSuggestions$lambda$8(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$iLSnFFL-lBvSSlPbCtLzAHWWOBQ(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$lambda$12(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$sO_WkMhAZlPhPgqQ_NYy7Ebv4HA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$yBpijuGf_83NGkrs09vOCqE3x20(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteAllWallets$lambda$15(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$zN24bIl33NLLuZ8xE41bgDAwmo0(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lkotlin/Unit;
-    .locals 0
-
-    invoke-static {p0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteAllWallets$lambda$16(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lkotlin/Unit;
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet$lambda$8(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
 
     move-result-object p0
 
@@ -265,7 +265,7 @@
         }
     .end annotation
 
-    .line 202
+    .line 210
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getUnactivatedBip39PhraseBasedBlockchainTypes()Ljava/util/List;
@@ -279,14 +279,14 @@
     return-object v0
 .end method
 
-.method private static final deleteAllWallets$lambda$15(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method private static final deleteAllWallets$lambda$14(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 173
+    .line 183
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -296,19 +296,36 @@
     return-object p0
 .end method
 
-.method private static final deleteAllWallets$lambda$16(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lkotlin/Unit;
+.method private static final deleteAllWallets$lambda$15(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)Lkotlin/Unit;
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 185
+    .line 195
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->deleteAllWallets()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p0
+.end method
+
+.method private static final deleteAllWallets$lambda$16(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 196
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
@@ -320,24 +337,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 186
-    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lio/reactivex/ObservableSource;
-
-    return-object p0
-.end method
-
-.method private static final deleteAllWallets$lambda$18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
-    .locals 1
-
-    const-string v0, "$tmp0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 187
+    .line 197
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -365,7 +365,7 @@
 
     move p3, v0
 
-    .line 132
+    .line 142
     :cond_1
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->deleteWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;ZZ)Lio/reactivex/Observable;
 
@@ -374,14 +374,14 @@
     return-object p0
 .end method
 
-.method private static final deleteWallet$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method private static final deleteWallet$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 139
+    .line 155
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -391,24 +391,7 @@
     return-object p0
 .end method
 
-.method private static final deleteWallet$lambda$12(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
-    .locals 1
-
-    const-string v0, "$tmp0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 145
-    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lio/reactivex/ObservableSource;
-
-    return-object p0
-.end method
-
-.method private static final deleteWallet$lambda$9(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
+.method private static final deleteWallet$lambda$8(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
     .locals 1
 
     const-string v0, "this$0"
@@ -419,12 +402,29 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 138
+    .line 148
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {p0, p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->deleteWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p0
+.end method
+
+.method private static final deleteWallet$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 149
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
@@ -443,10 +443,10 @@
         }
     .end annotation
 
-    .line 294
+    .line 303
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
 
-    .line 295
+    .line 304
     invoke-interface {v0}, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;->getLinkedCryptoWalletInfo()Lio/reactivex/Observable;
 
     move-result-object v0
@@ -468,7 +468,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 301
+    .line 310
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -486,21 +486,21 @@
     return-object v0
 .end method
 
-.method private static final getMnemonicWordsSuggestions$lambda$8(Ljava/lang/String;)Ljava/util/List;
+.method private static final getMnemonicWordsSuggestions$lambda$7(Ljava/lang/String;)Ljava/util/List;
     .locals 1
 
     const-string v0, "$query"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 115
     invoke-static {p0}, Lwallet/core/jni/Mnemonic;->suggest(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     const-string v0, "words"
 
-    .line 113
+    .line 116
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -525,7 +525,7 @@
 
     goto :goto_1
 
-    .line 114
+    .line 117
     :cond_1
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
@@ -552,21 +552,21 @@
         }
     .end annotation
 
-    .line 206
+    .line 215
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWalletPassword()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 207
+    .line 216
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getFirstBip39PhraseBasedBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
 
-    .line 208
+    .line 217
     iget-object v2, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v2, v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
@@ -620,22 +620,22 @@
     .line 1621
     check-cast v3, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 212
+    .line 221
     iget-object v4, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoLocalWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
 
-    .line 214
+    .line 223
     iget-object v5, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v5}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getLastLoggedInGuid()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 213
+    .line 222
     invoke-interface {v4, v5, v1, v0, v3}, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;->importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object v3
 
-    .line 219
+    .line 228
     iget-object v4, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v4}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -651,23 +651,23 @@
 
     goto :goto_1
 
-    .line 210
+    .line 219
     :cond_2
     sget-object p1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$importBib39BasedWallets$2;->INSTANCE:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$importBib39BasedWallets$2;
 
-    .line 221
-    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda1;
+    .line 230
+    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 210
+    .line 219
     invoke-static {v2, v1}, Lio/reactivex/Observable;->zip(Ljava/lang/Iterable;Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string v1, "zip(\n                   \u2026      }\n                }"
+    const-string v1, "zip(\n                blo\u2026          }\n            }"
 
-    .line 221
+    .line 230
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 14
@@ -687,7 +687,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 235
+    .line 244
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -698,22 +698,22 @@
 
     move-result-object p1
 
-    const-string v0, "zip(\n                   \u2026(schedulersProvider.io())"
+    const-string v0, "zip(\n                blo\u2026(schedulersProvider.io())"
 
-    .line 221
+    .line 230
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
 
-.method private static final importBib39BasedWallets$lambda$21(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method private static final importBib39BasedWallets$lambda$20(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 221
+    .line 230
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -740,7 +740,7 @@
         }
     .end annotation
 
-    .line 239
+    .line 248
     invoke-direct {p0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->getLinkedCryptoWalletAddresses()Lio/reactivex/Observable;
 
     move-result-object v0
@@ -779,7 +779,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 271
+    .line 280
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -797,7 +797,7 @@
     return-object p1
 .end method
 
-.method private static final rewriteDataWithNewPin$lambda$19(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/lang/String;)V
+.method private static final rewriteDataWithNewPin$lambda$18(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -808,17 +808,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 193
+    .line 203
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 194
+    .line 204
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {p0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWalletPassword()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 193
+    .line 203
     invoke-static {p0, p1}, Lcom/iMe/storage/data/utils/extentions/CryptoExtKt;->aesEncrypt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -844,7 +844,7 @@
         }
     .end annotation
 
-    .line 276
+    .line 285
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -902,7 +902,7 @@
     .line 1621
     check-cast v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 280
+    .line 289
     iget-object v2, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
 
     invoke-interface {v2, v1}, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;->unlinkWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
@@ -914,21 +914,21 @@
 
     goto :goto_0
 
-    .line 278
+    .line 287
     :cond_1
     sget-object p1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$unlinkWalletsIfNeeded$2;->INSTANCE:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$unlinkWalletsIfNeeded$2;
 
-    .line 282
-    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda3;
+    .line 291
+    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 278
+    .line 287
     invoke-static {v0, v1}, Lio/reactivex/Observable;->zip(Ljava/lang/Iterable;Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 291
+    .line 300
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -939,23 +939,23 @@
 
     move-result-object p1
 
-    const-string v0, "zip(\n                   \u2026(schedulersProvider.io())"
+    const-string v0, "zip(\n                blo\u2026(schedulersProvider.io())"
 
-    .line 282
+    .line 291
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_1
     return-object p1
 .end method
 
-.method private static final unlinkWalletsIfNeeded$lambda$34(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method private static final unlinkWalletsIfNeeded$lambda$33(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 282
+    .line 291
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -985,7 +985,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 85
+    .line 90
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -1070,7 +1070,7 @@
         }
     .end annotation
 
-    .line 162
+    .line 172
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->values()[Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v0
@@ -1090,7 +1090,7 @@
 
     aget-object v4, v0, v3
 
-    .line 164
+    .line 174
     iget-object v5, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v5}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletSeeds()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
@@ -1154,7 +1154,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 167
+    .line 177
     iget-object v3, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
 
     invoke-interface {v3, v2}, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;->unlinkWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
@@ -1166,7 +1166,7 @@
 
     goto :goto_1
 
-    .line 170
+    .line 180
     :cond_2
     invoke-static {v0}, Lcom/iMe/storage/data/utils/extentions/CollectionExtKt;->isSingletonList(Ljava/util/List;)Z
 
@@ -1174,7 +1174,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 171
+    .line 181
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object v0
@@ -1183,19 +1183,19 @@
 
     goto :goto_2
 
-    .line 173
+    .line 183
     :cond_3
     sget-object v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteAllWallets$finalObservable$1;->INSTANCE:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteAllWallets$finalObservable$1;
 
-    new-instance v2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda7;
+    new-instance v2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda2;
 
-    invoke-direct {v2, v1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-static {v0, v2}, Lio/reactivex/Observable;->zip(Ljava/lang/Iterable;Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 185
+    .line 195
     :goto_2
     new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda8;
 
@@ -1205,33 +1205,33 @@
 
     move-result-object v1
 
-    .line 186
+    .line 196
     new-instance v2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteAllWallets$2;
 
     invoke-direct {v2, p0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteAllWallets$2;-><init>(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;)V
 
-    new-instance v3, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda2;
+    new-instance v3, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda4;
 
-    invoke-direct {v3, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v3, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda4;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v1, v3}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 187
+    .line 197
     new-instance v2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteAllWallets$3;
 
     invoke-direct {v2, v0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteAllWallets$3;-><init>(Lio/reactivex/Observable;)V
 
-    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda4;
+    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda5;
 
-    invoke-direct {v0, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda4;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v0, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda5;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v1, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 188
+    .line 198
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1244,7 +1244,7 @@
 
     const-string v1, "fun deleteAllWallets(): \u2026ulersProvider.io())\n    }"
 
-    .line 187
+    .line 197
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
@@ -1268,7 +1268,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 138
+    .line 148
     new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda9;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda9;-><init>(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
@@ -1277,7 +1277,7 @@
 
     move-result-object v0
 
-    .line 139
+    .line 149
     new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$2;
 
     invoke-direct {v1, p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$2;-><init>(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
@@ -1311,20 +1311,20 @@
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 155
     new-instance v2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$4;
 
     invoke-direct {v2, p2, p0, p1, p3}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$deleteWallet$4;-><init>(ZLcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Z)V
 
-    new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda5;
+    new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda7;
 
-    invoke-direct {p1, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda5;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p1, v2}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 158
+    .line 168
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p3, 0x0
@@ -1339,7 +1339,7 @@
 
     move-result-object p1
 
-    .line 159
+    .line 169
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1350,71 +1350,67 @@
 
     move-result-object p1
 
-    .line 145
+    .line 155
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
 
-.method public final getLinkedCryptoWalletAddress(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
-    .locals 2
+.method public final getLinkedWalletsAddresses()Lio/reactivex/Observable;
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
-            ")",
+            "()",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/util/Map<",
+            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
             "Ljava/lang/String;",
-            ">;>;"
+            ">;>;>;"
         }
     .end annotation
 
-    const-string v0, "blockchainType"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 93
+    .line 98
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;
 
-    .line 94
+    .line 99
     invoke-interface {v0}, Lcom/iMe/storage/domain/repository/crypto/CryptoWalletRepository;->getLinkedCryptoWalletInfo()Lio/reactivex/Observable;
 
     move-result-object v0
 
     .line 14
-    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$getLinkedCryptoWalletAddress$$inlined$flatMapSuccess$1;
+    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$getLinkedWalletsAddresses$$inlined$flatMapSuccess$1;
 
-    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$getLinkedCryptoWalletAddress$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
+    invoke-direct {v1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$getLinkedWalletsAddresses$$inlined$flatMapSuccess$1;-><init>()V
 
-    new-instance p1, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+    new-instance v2, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-direct {p1, v1}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v1}, Lcom/iMe/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string v0, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 98
-    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+    const-string v1, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
 
-    move-result-object p1
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "cryptoWalletRepository\n \u2026(schedulersProvider.io())"
+    .line 103
+    iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
 
-    return-object p1
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    const-string v1, "cryptoWalletRepository\n \u2026(schedulersProvider.io())"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
 .end method
 
 .method public final getMnemonicWordsSuggestions(Ljava/lang/String;)Lio/reactivex/Observable;
@@ -1435,7 +1431,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 111
+    .line 114
     new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda10;
 
     invoke-direct {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda10;-><init>(Ljava/lang/String;)V
@@ -1444,7 +1440,7 @@
 
     move-result-object p1
 
-    const-string v0, "fromCallable {\n         \u2026se listOf()\n            }"
+    const-string v0, "fromCallable {\n         \u2026  else listOf()\n        }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1484,7 +1480,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 46
+    .line 51
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isAnyWalletCreated()Z
@@ -1493,7 +1489,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 47
+    .line 52
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getLastLoggedInGuid()Ljava/lang/String;
@@ -1502,13 +1498,13 @@
 
     goto :goto_0
 
-    .line 49
+    .line 54
     :cond_0
     invoke-static {}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->generateUuid()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 52
+    .line 57
     :goto_0
     invoke-static {p3}, Lkotlin/text/StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
 
@@ -1520,27 +1516,27 @@
 
     if-eqz v1, :cond_1
 
-    .line 53
+    .line 58
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 54
+    .line 59
     invoke-interface {v1, v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setLastLoggedInGuid(Ljava/lang/String;)V
 
-    .line 55
+    .line 60
     invoke-static {p2, p3}, Lcom/iMe/storage/data/utils/extentions/CryptoExtKt;->aesEncrypt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p3
 
     invoke-interface {v1, p3}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setWalletPassword(Ljava/lang/String;)V
 
-    .line 56
+    .line 61
     invoke-interface {v1, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setLocalEncryptionCompleted(Z)V
 
-    .line 60
+    .line 65
     :cond_1
     iget-object p3, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoLocalWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
 
-    .line 61
+    .line 66
     invoke-interface {p3, v0, p1, p2, p4}, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;->importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -1562,7 +1558,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 74
     iget-object p3, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p3}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1609,7 +1605,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 80
+    .line 85
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 p4, 0x0
@@ -1622,7 +1618,7 @@
 
     move-result-object p1
 
-    .line 81
+    .line 86
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1633,7 +1629,7 @@
 
     move-result-object p1
 
-    .line 69
+    .line 74
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
@@ -1662,7 +1658,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 124
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoLocalWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
 
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;->isValidAddress(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
@@ -1695,15 +1691,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 109
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoLocalWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
 
-    .line 107
+    .line 110
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;->isValidPasswordForWallet(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 108
+    .line 111
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1744,15 +1740,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 121
+    .line 127
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->cryptoLocalWalletRepository:Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;
 
-    .line 122
+    .line 128
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/CryptoLocalWalletRepository;->isValidSeed(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 123
+    .line 129
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -1767,7 +1763,7 @@
 
     move-result-object p1
 
-    .line 124
+    .line 130
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -1792,7 +1788,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 192
+    .line 202
     new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Ljava/lang/String;)V
@@ -1801,7 +1797,7 @@
 
     move-result-object p1
 
-    const-string v0, "fromAction {\n           \u2026          )\n            }"
+    const-string v0, "fromAction {\n           \u2026e\n            )\n        }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

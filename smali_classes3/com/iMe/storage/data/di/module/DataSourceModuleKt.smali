@@ -27,7 +27,7 @@
 
     const-string v0, "EVM_CRYPTO_TRANSFER_DATA_SOURCE"
 
-    .line 25
+    .line 27
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -36,7 +36,7 @@
 
     const-string v0, "TON_CRYPTO_TRANSFER_DATA_SOURCE"
 
-    .line 26
+    .line 28
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -45,7 +45,7 @@
 
     const-string v0, "TRON_CRYPTO_TRANSFER_DATA_SOURCE"
 
-    .line 27
+    .line 29
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -54,7 +54,7 @@
 
     const-string v0, "BTC_CRYPTO_TRANSFER_DATA_SOURCE"
 
-    .line 28
+    .line 30
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     const-string v0, "DEX_SWAP_DATA_SOURCE"
 
-    .line 31
+    .line 33
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -72,7 +72,7 @@
 
     const-string v0, "ETH_APPROVE_DATA_SOURCE"
 
-    .line 34
+    .line 36
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -81,14 +81,14 @@
 
     const-string v0, "ETH_CANCEL_DATA_SOURCE"
 
-    .line 37
+    .line 39
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
 
     sput-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->ETH_CANCEL_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
-    .line 39
+    .line 41
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1;
 
     const/4 v1, 0x0
@@ -109,7 +109,7 @@
 .method public static final getBTC_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 28
+    .line 30
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->BTC_CRYPTO_TRANSFER_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -118,7 +118,7 @@
 .method public static final getDEX_SWAP_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 31
+    .line 33
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->DEX_SWAP_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -127,7 +127,7 @@
 .method public static final getDataSourceModule()Lorg/koin/core/module/Module;
     .locals 1
 
-    .line 39
+    .line 41
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->dataSourceModule:Lorg/koin/core/module/Module;
 
     return-object v0
@@ -136,7 +136,7 @@
 .method public static final getETH_APPROVE_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 34
+    .line 36
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->ETH_APPROVE_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -145,7 +145,7 @@
 .method public static final getETH_CANCEL_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 37
+    .line 39
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->ETH_CANCEL_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -154,7 +154,7 @@
 .method public static final getEVM_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 25
+    .line 27
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->EVM_CRYPTO_TRANSFER_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -163,7 +163,7 @@
 .method public static final getTON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 26
+    .line 28
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->TON_CRYPTO_TRANSFER_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -172,7 +172,7 @@
 .method public static final getTRON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 27
+    .line 29
     sget-object v0, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->TRON_CRYPTO_TRANSFER_DATA_SOURCE:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0

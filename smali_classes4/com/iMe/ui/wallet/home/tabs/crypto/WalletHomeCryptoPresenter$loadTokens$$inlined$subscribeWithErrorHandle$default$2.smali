@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->loadTokens(ZZJ)V
+    value = Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->loadTokens(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -64,7 +64,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .locals 1
+    .locals 2
 
     .line 50
     invoke-static {p1}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
@@ -76,15 +76,20 @@
 
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v1
 
-    if-nez p1, :cond_0
+    if-nez v1, :cond_0
 
-    const-string p1, ""
+    const-string v1, ""
 
     :cond_0
-    invoke-interface {v0, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
+    invoke-interface {v0, v1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     :cond_1
+    const-string v0, "error"
+
+    .line 52
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class public Lcom/iMe/ui/custom/StakingDashboardView;
+.class public final Lcom/iMe/ui/custom/StakingDashboardView;
 .super Landroid/widget/FrameLayout;
 .source "StakingDashboardView.kt"
 
@@ -164,6 +164,21 @@
     iget-object p0, p0, Lcom/iMe/ui/custom/StakingDashboardView;->onHistoryClick:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-object p0
+.end method
+
+.method private final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .locals 1
+
+    .line 33
+    iget-object v0, p0, Lcom/iMe/ui/custom/StakingDashboardView;->resourceManager$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    return-object v0
 .end method
 
 .method private static final onCalculatorClick$lambda$0()V
@@ -480,7 +495,7 @@
     .line 176
     iget-object v2, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textHeader:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v3
 
@@ -506,7 +521,7 @@
     .line 178
     iget-object v2, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedTitle:Landroid/widget/TextView;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v3
 
@@ -521,7 +536,7 @@
     .line 179
     iget-object v2, v1, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitTitle:Landroid/widget/TextView;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v3
 
@@ -547,7 +562,7 @@
     sget v4, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_calculator:I
 
     .line 184
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v3
 
@@ -584,7 +599,7 @@
     sget v12, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_history:I
 
     .line 188
-    invoke-virtual/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v4
 
@@ -690,7 +705,7 @@
     .line 162
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedValue:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
 
@@ -705,7 +720,7 @@
     .line 163
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitValue:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p0}, Lcom/iMe/ui/custom/StakingDashboardView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
 
@@ -727,21 +742,6 @@
     invoke-static {p0}, Lorg/koin/core/component/KoinComponent$DefaultImpls;->getKoin(Lorg/koin/core/component/KoinComponent;)Lorg/koin/core/Koin;
 
     move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
-    .locals 1
-
-    .line 33
-    iget-object v0, p0, Lcom/iMe/ui/custom/StakingDashboardView;->resourceManager$delegate:Lkotlin/Lazy;
-
-    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object v0
 .end method

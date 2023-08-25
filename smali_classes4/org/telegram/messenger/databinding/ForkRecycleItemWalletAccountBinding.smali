@@ -11,25 +11,25 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
+.method private constructor <init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
     .locals 0
 
-    .line 64
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
+    .line 61
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;->rootView:Landroid/widget/FrameLayout;
 
     return-void
 .end method
 
 .method public static bind(Landroid/view/View;)Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;
-    .locals 14
+    .locals 13
 
-    .line 105
+    .line 100
     sget v0, Lorg/telegram/messenger/R$id;->card_crypto_account:I
 
-    .line 106
+    .line 101
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -40,15 +40,15 @@
 
     if-eqz v4, :cond_0
 
-    .line 111
+    .line 106
     move-object v5, p0
 
     check-cast v5, Landroid/widget/FrameLayout;
 
-    .line 113
+    .line 108
     sget v0, Lorg/telegram/messenger/R$id;->horizontal_action_buttons:I
 
-    .line 114
+    .line 109
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -59,10 +59,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 119
+    .line 114
     sget v0, Lorg/telegram/messenger/R$id;->image_account_avatar:I
 
-    .line 120
+    .line 115
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -73,10 +73,10 @@
 
     if-eqz v7, :cond_0
 
-    .line 125
-    sget v0, Lorg/telegram/messenger/R$id;->image_copy:I
+    .line 120
+    sget v0, Lorg/telegram/messenger/R$id;->image_verified:I
 
-    .line 126
+    .line 121
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -87,38 +87,38 @@
 
     if-eqz v8, :cond_0
 
-    .line 131
-    sget v0, Lorg/telegram/messenger/R$id;->image_verified:I
+    .line 126
+    sget v0, Lorg/telegram/messenger/R$id;->item_more_options:I
 
-    .line 132
+    .line 127
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
     move-object v9, v1
 
-    check-cast v9, Landroidx/appcompat/widget/AppCompatImageView;
+    check-cast v9, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v9, :cond_0
 
-    .line 137
-    sget v0, Lorg/telegram/messenger/R$id;->item_more_options:I
+    .line 132
+    sget v0, Lorg/telegram/messenger/R$id;->text_account_id:I
 
-    .line 138
+    .line 133
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
     move-object v10, v1
 
-    check-cast v10, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    check-cast v10, Landroidx/appcompat/widget/AppCompatTextView;
 
     if-eqz v10, :cond_0
 
-    .line 143
-    sget v0, Lorg/telegram/messenger/R$id;->text_account_id:I
+    .line 138
+    sget v0, Lorg/telegram/messenger/R$id;->text_account_name:I
 
-    .line 144
+    .line 139
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -129,46 +129,32 @@
 
     if-eqz v11, :cond_0
 
-    .line 149
-    sget v0, Lorg/telegram/messenger/R$id;->text_account_name:I
+    .line 144
+    sget v0, Lorg/telegram/messenger/R$id;->view_divider:I
 
-    .line 150
+    .line 145
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
     move-object v12, v1
 
-    check-cast v12, Landroidx/appcompat/widget/AppCompatTextView;
+    check-cast v12, Lcom/iMe/ui/custom/DividerView;
 
     if-eqz v12, :cond_0
 
-    .line 155
-    sget v0, Lorg/telegram/messenger/R$id;->view_divider:I
-
-    .line 156
-    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v1
-
-    move-object v13, v1
-
-    check-cast v13, Lcom/iMe/ui/custom/DividerView;
-
-    if-eqz v13, :cond_0
-
-    .line 161
+    .line 150
     new-instance p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;
 
     move-object v2, p0
 
     move-object v3, v5
 
-    invoke-direct/range {v2 .. v13}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;-><init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
+    invoke-direct/range {v2 .. v12}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;-><init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroid/widget/FrameLayout;Lcom/iMe/ui/custom/HorizontalActionButtonsView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/DividerView;)V
 
     return-object p0
 
-    .line 165
+    .line 154
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
@@ -178,7 +164,7 @@
 
     move-result-object p0
 
-    .line 166
+    .line 155
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "Missing required view with ID: "
@@ -199,7 +185,7 @@
 
     const/4 v1, 0x0
 
-    .line 86
+    .line 81
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;->inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;
 
     move-result-object p0
@@ -210,7 +196,7 @@
 .method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;
     .locals 2
 
-    .line 92
+    .line 87
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_account:I
 
     const/4 v1, 0x0
@@ -221,10 +207,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 94
+    .line 89
     invoke-virtual {p1, p0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 96
+    .line 91
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;->bind(Landroid/view/View;)Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;
 
@@ -249,7 +235,7 @@
 .method public getRoot()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 81
+    .line 76
     iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletAccountBinding;->rootView:Landroid/widget/FrameLayout;
 
     return-object v0

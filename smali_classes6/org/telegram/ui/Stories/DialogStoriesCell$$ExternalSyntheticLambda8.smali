@@ -2,32 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
+.field public final synthetic f$1:J
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
+    iput-wide p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda8;->f$1:J
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
-    .locals 1
+.method public final run()V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$PONXGNkg_EKXdzn4IVp4S7i45yo(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/view/View;I)V
+    iget-wide v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda8;->f$1:J
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$9sTh0P5UwRruwjVf0f7sp8X1zI8(Lorg/telegram/ui/Stories/DialogStoriesCell;J)V
 
     return-void
 .end method

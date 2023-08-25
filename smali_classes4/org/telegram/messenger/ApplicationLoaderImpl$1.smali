@@ -386,7 +386,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x7f111bce
+    const v5, 0x7f111c34
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 

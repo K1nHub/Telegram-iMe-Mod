@@ -68,8 +68,6 @@
 
 .field isInPinchToZoomTouchMode:Z
 
-.field private isMessageTransition:Z
-
 .field private isSecretChat:Z
 
 .field private iv:[B
@@ -341,11 +339,9 @@
     .line 250
     iput-boolean v4, v0, Lorg/telegram/ui/Components/InstantCameraView;->drawBlur:Z
 
+    const/4 v6, 0x0
+
     .line 261
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->deviceIsAboveAverage()Z
-
-    move-result v6
-
     iput-boolean v6, v0, Lorg/telegram/ui/Components/InstantCameraView;->WRITE_TO_FILE_IN_BACKGROUND:Z
 
     .line 262
@@ -354,11 +350,9 @@
     .line 263
     invoke-interface/range {p2 .. p2}, Lorg/telegram/ui/Components/InstantCameraView$Delegate;->getFragmentView()Landroid/view/View;
 
-    move-result-object v6
+    move-result-object v9
 
-    iput-object v6, v0, Lorg/telegram/ui/Components/InstantCameraView;->parentView:Landroid/view/View;
-
-    const/4 v6, 0x0
+    iput-object v9, v0, Lorg/telegram/ui/Components/InstantCameraView;->parentView:Landroid/view/View;
 
     .line 264
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
@@ -1216,7 +1210,7 @@
 .method private allowBigSizeCamera()Z
     .locals 6
 
-    .line 1095
+    .line 1081
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->bigCameraForRound:Z
 
     const/4 v1, 0x1
@@ -1225,7 +1219,7 @@
 
     return v1
 
-    .line 1098
+    .line 1084
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->deviceIsAboveAverage()Z
 
@@ -1235,7 +1229,7 @@
 
     return v1
 
-    .line 1101
+    .line 1087
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
@@ -1255,8 +1249,90 @@
 
     return v1
 
-    .line 1105
+    .line 1091
     :cond_2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v2, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    .line 1092
+    :goto_0
+    sget-object v4, Lorg/telegram/ui/Components/InstantCameraView;->ALLOW_BIG_CAMERA_WHITELIST:[I
+
+    array-length v5, v4
+
+    if-ge v3, v5, :cond_4
+
+    .line 1093
+    aget v4, v4, v3
+
+    if-ne v4, v0, :cond_3
+
+    return v1
+
+    :cond_3
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    return v2
+.end method
+
+.method public static allowBigSizeCameraDebug()Z
+    .locals 6
+
+    .line 1101
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
+
+    move-result v0
+
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getLegacyDevicePerformanceClass()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x2
+
+    if-ne v0, v2, :cond_0
+
+    return v1
+
+    .line 1105
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1295,91 +1371,9 @@
 
     array-length v5, v4
 
-    if-ge v3, v5, :cond_4
-
-    .line 1107
-    aget v4, v4, v3
-
-    if-ne v4, v0, :cond_3
-
-    return v1
-
-    :cond_3
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    return v2
-.end method
-
-.method public static allowBigSizeCameraDebug()Z
-    .locals 6
-
-    .line 1115
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
-
-    move-result v0
-
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getLegacyDevicePerformanceClass()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_0
-
-    return v1
-
-    .line 1119
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v2, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, " "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const/4 v2, 0x0
-
-    move v3, v2
-
-    .line 1120
-    :goto_0
-    sget-object v4, Lorg/telegram/ui/Components/InstantCameraView;->ALLOW_BIG_CAMERA_WHITELIST:[I
-
-    array-length v5, v4
-
     if-ge v3, v5, :cond_2
 
-    .line 1121
+    .line 1107
     aget v4, v4, v3
 
     if-ne v4, v0, :cond_1
@@ -1469,12 +1463,12 @@
         }
     .end annotation
 
-    .line 1055
+    .line 1041
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1056
+    .line 1042
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->allowBigSizeCamera()Z
 
     move-result v1
@@ -1490,7 +1484,7 @@
     :cond_0
     move v1, v2
 
-    .line 1058
+    .line 1044
     :goto_0
     sget-object v3, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
@@ -1512,7 +1506,7 @@
 
     move v3, v1
 
-    .line 1062
+    .line 1048
     :goto_2
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1520,7 +1514,7 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 1063
+    .line 1049
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1567,7 +1561,7 @@
 
     if-lt v4, v5, :cond_2
 
-    .line 1064
+    .line 1050
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1581,7 +1575,7 @@
 
     goto :goto_2
 
-    .line 1067
+    .line 1053
     :cond_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1597,13 +1591,13 @@
 
     goto :goto_3
 
-    .line 1080
+    .line 1066
     :cond_4
     sget-object p1, Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda6;
 
     invoke-static {v0, p1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 1091
+    .line 1077
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1612,7 +1606,7 @@
 
     return-object p1
 
-    .line 1069
+    .line 1055
     :cond_5
     :goto_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1623,7 +1617,7 @@
 
     move-object p1, v0
 
-    .line 1074
+    .line 1060
     :cond_6
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
@@ -1639,7 +1633,7 @@
 
     const/16 v0, 0x280
 
-    .line 1075
+    .line 1061
     iget-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->aspectRatio:Lorg/telegram/messenger/camera/Size;
 
     invoke-static {p1, v0, v2, v3, v1}, Lorg/telegram/messenger/camera/CameraController;->chooseOptimalSize(Ljava/util/List;IILorg/telegram/messenger/camera/Size;Z)Lorg/telegram/messenger/camera/Size;
@@ -1651,7 +1645,7 @@
     :cond_7
     const/16 v0, 0x10e
 
-    .line 1077
+    .line 1063
     iget-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->aspectRatio:Lorg/telegram/messenger/camera/Size;
 
     invoke-static {p1, v2, v0, v3, v1}, Lorg/telegram/messenger/camera/CameraController;->chooseOptimalSize(Ljava/util/List;IILorg/telegram/messenger/camera/Size;Z)Lorg/telegram/messenger/camera/Size;
@@ -1664,7 +1658,7 @@
 .method private createCamera(Landroid/graphics/SurfaceTexture;)V
     .locals 1
 
-    .line 1129
+    .line 1115
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/InstantCameraView;Landroid/graphics/SurfaceTexture;)V
@@ -1677,7 +1671,7 @@
 .method private createFragmentShader(Lorg/telegram/messenger/camera/Size;)Ljava/lang/String;
     .locals 1
 
-    .line 2920
+    .line 2938
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->deviceIsLow()Z
 
     move-result v0
@@ -1739,7 +1733,7 @@
 .method private initCamera()Z
     .locals 11
 
-    .line 984
+    .line 970
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v0
@@ -1759,7 +1753,7 @@
 
     move v3, v1
 
-    .line 989
+    .line 975
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1767,14 +1761,14 @@
 
     if-ge v3, v4, :cond_5
 
-    .line 990
+    .line 976
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/messenger/camera/CameraInfo;
 
-    .line 991
+    .line 977
     invoke-virtual {v4}, Lorg/telegram/messenger/camera/CameraInfo;->isFrontface()Z
 
     move-result v5
@@ -1783,7 +1777,7 @@
 
     move-object v2, v4
 
-    .line 994
+    .line 980
     :cond_1
     iget-boolean v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->isFrontface:Z
 
@@ -1806,7 +1800,7 @@
 
     if-nez v5, :cond_4
 
-    .line 995
+    .line 981
     :cond_3
     iput-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->selectedCamera:Lorg/telegram/messenger/camera/CameraInfo;
 
@@ -1819,17 +1813,17 @@
 
     goto :goto_0
 
-    .line 1001
+    .line 987
     :cond_5
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->selectedCamera:Lorg/telegram/messenger/camera/CameraInfo;
 
     if-nez v0, :cond_6
 
-    .line 1002
+    .line 988
     iput-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->selectedCamera:Lorg/telegram/messenger/camera/CameraInfo;
 
-    .line 1004
+    .line 990
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->selectedCamera:Lorg/telegram/messenger/camera/CameraInfo;
 
@@ -1837,34 +1831,34 @@
 
     return v1
 
-    .line 1008
+    .line 994
     :cond_7
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraInfo;->getPreviewSizes()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 1009
+    .line 995
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->selectedCamera:Lorg/telegram/messenger/camera/CameraInfo;
 
     invoke-virtual {v2}, Lorg/telegram/messenger/camera/CameraInfo;->getPictureSizes()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 1010
+    .line 996
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/InstantCameraView;->chooseOptimalSize(Ljava/util/ArrayList;)Lorg/telegram/messenger/camera/Size;
 
     move-result-object v3
 
     iput-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->previewSize:Lorg/telegram/messenger/camera/Size;
 
-    .line 1011
+    .line 997
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/InstantCameraView;->chooseOptimalSize(Ljava/util/ArrayList;)Lorg/telegram/messenger/camera/Size;
 
     move-result-object v3
 
     iput-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->pictureSize:Lorg/telegram/messenger/camera/Size;
 
-    .line 1012
+    .line 998
     iget-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->previewSize:Lorg/telegram/messenger/camera/Size;
 
     iget v4, v4, Lorg/telegram/messenger/camera/Size;->mWidth:I
@@ -1875,7 +1869,7 @@
 
     if-eq v4, v3, :cond_f
 
-    .line 1014
+    .line 1000
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -1885,14 +1879,14 @@
     :goto_2
     if-ltz v3, :cond_b
 
-    .line 1015
+    .line 1001
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/messenger/camera/Size;
 
-    .line 1016
+    .line 1002
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v6
@@ -1902,14 +1896,14 @@
     :goto_3
     if-ltz v6, :cond_9
 
-    .line 1017
+    .line 1003
     invoke-virtual {v2, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lorg/telegram/messenger/camera/Size;
 
-    .line 1018
+    .line 1004
     iget v8, v4, Lorg/telegram/messenger/camera/Size;->mWidth:I
 
     iget-object v9, p0, Lorg/telegram/ui/Components/InstantCameraView;->pictureSize:Lorg/telegram/messenger/camera/Size;
@@ -1932,10 +1926,10 @@
 
     if-ne v10, v8, :cond_8
 
-    .line 1019
+    .line 1005
     iput-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->previewSize:Lorg/telegram/messenger/camera/Size;
 
-    .line 1020
+    .line 1006
     iput-object v7, p0, Lorg/telegram/ui/Components/InstantCameraView;->pictureSize:Lorg/telegram/messenger/camera/Size;
 
     move v1, v5
@@ -1962,7 +1956,7 @@
     :goto_5
     if-nez v1, :cond_f
 
-    .line 1031
+    .line 1017
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -1972,14 +1966,14 @@
     :goto_6
     if-ltz v3, :cond_f
 
-    .line 1032
+    .line 1018
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/messenger/camera/Size;
 
-    .line 1033
+    .line 1019
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v6
@@ -1989,14 +1983,14 @@
     :goto_7
     if-ltz v6, :cond_d
 
-    .line 1034
+    .line 1020
     invoke-virtual {v2, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lorg/telegram/messenger/camera/Size;
 
-    .line 1035
+    .line 1021
     iget v8, v4, Lorg/telegram/messenger/camera/Size;->mWidth:I
 
     const/16 v9, 0x168
@@ -2015,10 +2009,10 @@
 
     if-ne v10, v8, :cond_c
 
-    .line 1036
+    .line 1022
     iput-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->previewSize:Lorg/telegram/messenger/camera/Size;
 
-    .line 1037
+    .line 1023
     iput-object v7, p0, Lorg/telegram/ui/Components/InstantCameraView;->pictureSize:Lorg/telegram/messenger/camera/Size;
 
     move v1, v5
@@ -2041,19 +2035,19 @@
 
     goto :goto_6
 
-    .line 1048
+    .line 1034
     :cond_f
     :goto_9
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_10
 
-    .line 1049
+    .line 1035
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "preview w = "
+    const-string v1, "InstantCamera preview w = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2086,7 +2080,7 @@
 .method private static synthetic lambda$chooseOptimalSize$2(Lorg/telegram/messenger/camera/Size;Lorg/telegram/messenger/camera/Size;)I
     .locals 3
 
-    .line 1081
+    .line 1067
     iget v0, p0, Lorg/telegram/messenger/camera/Size;->mHeight:I
 
     iget v1, p0, Lorg/telegram/messenger/camera/Size;->mWidth:I
@@ -2117,7 +2111,7 @@
 
     move-result v0
 
-    .line 1082
+    .line 1068
     iget v1, p1, Lorg/telegram/messenger/camera/Size;->mHeight:I
 
     iget v2, p1, Lorg/telegram/messenger/camera/Size;->mWidth:I
@@ -2174,20 +2168,20 @@
 
     const-string v0, " h = "
 
-    .line 1141
+    .line 1127
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
     if-eqz v1, :cond_5
 
     const/4 v2, 0x0
 
-    .line 1144
+    .line 1130
     :try_start_0
     invoke-virtual {v1}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentPreviewSize()Landroid/hardware/Camera$Size;
 
     move-result-object v1
 
-    .line 1145
+    .line 1131
     iget v3, v1, Landroid/hardware/Camera$Size;->width:I
 
     iget-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->previewSize:Lorg/telegram/messenger/camera/Size;
@@ -2208,7 +2202,7 @@
 
     if-eq v3, v4, :cond_1
 
-    .line 1146
+    .line 1132
     :cond_0
     new-instance v3, Lorg/telegram/messenger/camera/Size;
 
@@ -2220,12 +2214,12 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->previewSize:Lorg/telegram/messenger/camera/Size;
 
-    .line 1147
+    .line 1133
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "change preview size to w = "
+    const-string v3, "InstantCamera change preview size to w = "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2260,10 +2254,10 @@
     :catch_0
     move-exception v1
 
-    .line 1150
+    .line 1136
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1154
+    .line 1140
     :cond_1
     :goto_0
     :try_start_1
@@ -2273,7 +2267,7 @@
 
     move-result-object v1
 
-    .line 1155
+    .line 1141
     iget v3, v1, Landroid/hardware/Camera$Size;->width:I
 
     iget-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->pictureSize:Lorg/telegram/messenger/camera/Size;
@@ -2294,7 +2288,7 @@
 
     if-eq v3, v4, :cond_3
 
-    .line 1156
+    .line 1142
     :cond_2
     new-instance v3, Lorg/telegram/messenger/camera/Size;
 
@@ -2306,12 +2300,12 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->pictureSize:Lorg/telegram/messenger/camera/Size;
 
-    .line 1157
+    .line 1143
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "change picture size to w = "
+    const-string v3, "InstantCamera change picture size to w = "
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2350,22 +2344,22 @@
     :catch_1
     move-exception v0
 
-    .line 1161
+    .line 1147
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1163
+    .line 1149
     :cond_3
     :goto_1
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_4
 
-    const-string v0, "camera initied"
+    const-string v0, "InstantCamera camera initied"
 
-    .line 1164
+    .line 1150
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1166
+    .line 1152
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
@@ -2373,12 +2367,12 @@
 
     if-eqz v2, :cond_5
 
-    .line 1168
+    .line 1154
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     if-eqz v0, :cond_5
 
-    .line 1169
+    .line 1155
     invoke-virtual {v0}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->reinitForNewCamera()V
 
     :cond_5
@@ -2388,12 +2382,12 @@
 .method private synthetic lambda$createCamera$4()V
     .locals 2
 
-    .line 1174
+    .line 1160
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     if-eqz v0, :cond_0
 
-    .line 1175
+    .line 1161
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->setCurrentSession(Lorg/telegram/messenger/camera/CameraSession;)V
@@ -2405,25 +2399,25 @@
 .method private synthetic lambda$createCamera$5(Landroid/graphics/SurfaceTexture;)V
     .locals 8
 
-    .line 1130
+    .line 1116
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1133
+    .line 1119
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    const-string v0, "create camera session"
+    const-string v0, "InstantCamera create camera session"
 
-    .line 1134
+    .line 1120
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1137
+    .line 1123
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->previewSize:Lorg/telegram/messenger/camera/Size;
 
@@ -2439,7 +2433,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
-    .line 1138
+    .line 1124
     new-instance v0, Lorg/telegram/messenger/camera/CameraSession;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->selectedCamera:Lorg/telegram/messenger/camera/CameraInfo;
@@ -2458,12 +2452,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
-    .line 1139
+    .line 1125
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->setCurrentSession(Lorg/telegram/messenger/camera/CameraSession;)V
 
-    .line 1140
+    .line 1126
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v0
@@ -2486,12 +2480,12 @@
 .method private synthetic lambda$finishZoom$6(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 3105
+    .line 3123
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
     if-eqz v0, :cond_0
 
-    .line 3106
+    .line 3124
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2622,7 +2616,7 @@
 .method private synthetic lambda$startAnimation$1(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 745
+    .line 731
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -2647,7 +2641,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->animationTranslationY:F
 
-    .line 746
+    .line 732
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->updateTranslationY()V
 
     return-void
@@ -2656,15 +2650,15 @@
 .method private loadShader(ILjava/lang/String;)I
     .locals 2
 
-    .line 1182
+    .line 1168
     invoke-static {p1}, Landroid/opengl/GLES20;->glCreateShader(I)I
 
     move-result p1
 
-    .line 1183
+    .line 1169
     invoke-static {p1, p2}, Landroid/opengl/GLES20;->glShaderSource(ILjava/lang/String;)V
 
-    .line 1184
+    .line 1170
     invoke-static {p1}, Landroid/opengl/GLES20;->glCompileShader(I)V
 
     const/4 p2, 0x1
@@ -2675,27 +2669,27 @@
 
     const/4 v1, 0x0
 
-    .line 1186
+    .line 1172
     invoke-static {p1, v0, p2, v1}, Landroid/opengl/GLES20;->glGetShaderiv(II[II)V
 
-    .line 1187
+    .line 1173
     aget p2, p2, v1
 
     if-nez p2, :cond_1
 
-    .line 1188
+    .line 1174
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_0
 
-    .line 1189
+    .line 1175
     invoke-static {p1}, Landroid/opengl/GLES20;->glGetShaderInfoLog(I)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1191
+    .line 1177
     :cond_0
     invoke-static {p1}, Landroid/opengl/GLES20;->glDeleteShader(I)V
 
@@ -2708,7 +2702,7 @@
 .method private saveLastCameraBitmap()V
     .locals 9
 
-    .line 880
+    .line 866
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {v0}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
@@ -2719,14 +2713,14 @@
 
     const/4 v1, 0x0
 
-    .line 881
+    .line 867
     invoke-virtual {v0, v1, v1}, Landroid/graphics/Bitmap;->getPixel(II)I
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 882
+    .line 868
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {v0}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
@@ -2749,7 +2743,7 @@
 
     const/4 v5, 0x1
 
-    .line 884
+    .line 870
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
@@ -2768,7 +2762,7 @@
 
     invoke-static/range {v3 .. v8}, Lorg/telegram/messenger/Utilities;->blurBitmap(Ljava/lang/Object;IIIII)V
 
-    .line 886
+    .line 872
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -2790,12 +2784,12 @@
     :goto_0
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 887
+    .line 873
     new-instance v1, Ljava/io/FileOutputStream;
 
     invoke-direct {v1, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 888
+    .line 874
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->lastBitmap:Landroid/graphics/Bitmap;
 
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
@@ -2804,7 +2798,7 @@
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 889
+    .line 875
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2817,18 +2811,18 @@
 .method private startProgressTimer()V
     .locals 7
 
-    .line 1200
+    .line 1186
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->progressTimer:Ljava/util/Timer;
 
     if-eqz v0, :cond_0
 
-    .line 1202
+    .line 1188
     :try_start_0
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 1203
+    .line 1189
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->progressTimer:Ljava/util/Timer;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2838,10 +2832,10 @@
     :catch_0
     move-exception v0
 
-    .line 1205
+    .line 1191
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1208
+    .line 1194
     :cond_0
     :goto_0
     new-instance v1, Ljava/util/Timer;
@@ -2850,7 +2844,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->progressTimer:Ljava/util/Timer;
 
-    .line 1209
+    .line 1195
     new-instance v2, Lorg/telegram/ui/Components/InstantCameraView$11;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/InstantCameraView$11;-><init>(Lorg/telegram/ui/Components/InstantCameraView;)V
@@ -2867,18 +2861,18 @@
 .method private stopProgressTimer()V
     .locals 1
 
-    .line 1226
+    .line 1212
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->progressTimer:Ljava/util/Timer;
 
     if-eqz v0, :cond_0
 
-    .line 1228
+    .line 1214
     :try_start_0
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 1229
+    .line 1215
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->progressTimer:Ljava/util/Timer;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2888,7 +2882,7 @@
     :catch_0
     move-exception v0
 
-    .line 1231
+    .line 1217
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -2899,10 +2893,10 @@
 .method private switchCamera()V
     .locals 4
 
-    .line 959
+    .line 945
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->saveLastCameraBitmap()V
 
-    .line 962
+    .line 948
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -2924,7 +2918,7 @@
     :goto_0
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 963
+    .line 949
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -2937,7 +2931,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 967
+    .line 953
     :catchall_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->lastBitmap:Landroid/graphics/Bitmap;
 
@@ -2945,31 +2939,31 @@
 
     if-eqz v0, :cond_1
 
-    .line 968
+    .line 954
     iput-boolean v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->needDrawFlickerStub:Z
 
-    .line 969
+    .line 955
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/BackupImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 970
+    .line 956
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 972
+    .line 958
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
     if-eqz v0, :cond_2
 
-    .line 973
+    .line 959
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraSession;->destroy()V
 
-    .line 974
+    .line 960
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v0
@@ -2980,10 +2974,10 @@
 
     invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/messenger/camera/CameraController;->close(Lorg/telegram/messenger/camera/CameraSession;Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;)V
 
-    .line 975
+    .line 961
     iput-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
-    .line 977
+    .line 963
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->isFrontface:Z
 
@@ -2991,13 +2985,13 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->isFrontface:Z
 
-    .line 978
+    .line 964
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->initCamera()Z
 
-    .line 979
+    .line 965
     iput-boolean v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraReady:Z
 
-    .line 980
+    .line 966
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->reinitForNewCamera()V
@@ -3008,7 +3002,7 @@
 .method private updateTranslationY()V
     .locals 3
 
-    .line 781
+    .line 767
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->animationTranslationY:F
@@ -3019,7 +3013,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 782
+    .line 768
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     iget v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->animationTranslationY:F
@@ -3038,7 +3032,7 @@
 .method public blurFullyDrawing()Z
     .locals 1
 
-    .line 1237
+    .line 1223
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->blurBehindDrawable:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
     if-eqz v0, :cond_0
@@ -3067,10 +3061,10 @@
 .method public cancel(Z)V
     .locals 7
 
-    .line 898
+    .line 884
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->stopProgressTimer()V
 
-    .line 899
+    .line 885
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x0
@@ -3079,13 +3073,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 900
+    .line 886
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 901
+    .line 887
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 903
+    .line 889
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
@@ -3093,16 +3087,16 @@
 
     return-void
 
-    .line 906
+    .line 892
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->cancelled:Z
 
     const/4 v0, 0x0
 
-    .line 907
+    .line 893
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->recording:Z
 
-    .line 908
+    .line 894
     iget v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3141,53 +3135,53 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 909
+    .line 895
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     if-eqz p1, :cond_3
 
-    .line 910
+    .line 896
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->saveLastCameraBitmap()V
 
-    .line 911
+    .line 897
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->shutdown(I)V
 
-    .line 912
+    .line 898
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
-    .line 914
+    .line 900
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraFile:Ljava/io/File;
 
     if-eqz p1, :cond_5
 
-    .line 915
+    .line 901
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_4
 
     const-string p1, "delete camera file by cancel"
 
-    .line 916
+    .line 902
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 918
+    .line 904
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraFile:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 919
+    .line 905
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraFile:Ljava/io/File;
 
     invoke-static {p1}, Lorg/telegram/messenger/AutoDeleteMediaTask;->unlockFile(Ljava/io/File;)V
 
-    .line 920
+    .line 906
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraFile:Ljava/io/File;
 
-    .line 922
+    .line 908
     :cond_5
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -3195,15 +3189,15 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/MediaController;->requestAudioFocus(Z)V
 
-    .line 923
+    .line 909
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/InstantCameraView;->startAnimation(Z)V
 
-    .line 924
+    .line 910
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->blurBehindDrawable:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BlurBehindDrawable;->show(Z)V
 
-    .line 925
+    .line 911
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -3212,14 +3206,14 @@
 .method public cancelBlur()V
     .locals 2
 
-    .line 1247
+    .line 1233
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->blurBehindDrawable:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BlurBehindDrawable;->show(Z)V
 
-    .line 1248
+    .line 1234
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -3228,7 +3222,7 @@
 .method public changeVideoPreviewState(IF)V
     .locals 3
 
-    .line 791
+    .line 777
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-nez v0, :cond_0
@@ -3238,10 +3232,10 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 795
+    .line 781
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->startProgressTimer()V
 
-    .line 796
+    .line 782
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
@@ -3253,10 +3247,10 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 798
+    .line 784
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->stopProgressTimer()V
 
-    .line 799
+    .line 785
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
@@ -3268,7 +3262,7 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 801
+    .line 787
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
 
     move-result-wide v1
@@ -3415,14 +3409,14 @@
 .method public finishZoom()V
     .locals 4
 
-    .line 3096
+    .line 3114
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->finishZoomTransition:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 3100
+    .line 3118
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->pinchScale:F
 
@@ -3456,21 +3450,21 @@
 
     aput v2, v1, v0
 
-    .line 3103
+    .line 3121
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->finishZoomTransition:Landroid/animation/ValueAnimator;
 
-    .line 3104
+    .line 3122
     new-instance v1, Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/InstantCameraView;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3109
+    .line 3127
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->finishZoomTransition:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/InstantCameraView$13;
@@ -3479,21 +3473,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3118
+    .line 3136
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->finishZoomTransition:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x15e
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3119
+    .line 3137
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->finishZoomTransition:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3120
+    .line 3138
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->finishZoomTransition:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -3505,7 +3499,7 @@
 .method public getCameraContainer()Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
     .locals 1
 
-    .line 714
+    .line 700
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     return-object v0
@@ -3514,14 +3508,14 @@
 .method public getCameraRect()Lorg/telegram/ui/Components/Rect;
     .locals 5
 
-    .line 786
+    .line 772
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->position:[I
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->getLocationOnScreen([I)V
 
-    .line 787
+    .line 773
     new-instance v0, Lorg/telegram/ui/Components/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->position:[I
@@ -3562,7 +3556,7 @@
 .method public getMuteImageView()Landroid/view/View;
     .locals 1
 
-    .line 933
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteImageView:Landroid/widget/ImageView;
 
     return-object v0
@@ -3571,7 +3565,7 @@
 .method public getPaint()Landroid/graphics/Paint;
     .locals 1
 
-    .line 937
+    .line 923
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->paint:Landroid/graphics/Paint;
 
     return-object v0
@@ -3580,7 +3574,7 @@
 .method public getSwitchButtonView()Landroid/view/View;
     .locals 1
 
-    .line 929
+    .line 915
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->switchCameraButton:Landroid/widget/ImageView;
 
     return-object v0
@@ -3589,7 +3583,7 @@
 .method public getTextureView()Landroid/view/TextureView;
     .locals 1
 
-    .line 1258
+    .line 1244
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
     return-object v0
@@ -3600,28 +3594,28 @@
 
     const/4 v0, 0x0
 
-    .line 941
+    .line 927
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/InstantCameraView;->destroy(ZLjava/lang/Runnable;)V
 
-    .line 942
+    .line 928
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 943
+    .line 929
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 944
+    .line 930
     iput v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->animationTranslationY:F
 
-    .line 945
+    .line 931
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->updateTranslationY()V
 
-    .line 946
+    .line 932
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -3636,12 +3630,12 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
-    .line 948
+    .line 934
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
     if-eqz p1, :cond_0
 
-    .line 949
+    .line 935
     invoke-virtual {p1}, Landroid/view/TextureView;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -3650,16 +3644,16 @@
 
     if-eqz p1, :cond_0
 
-    .line 951
+    .line 937
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 954
+    .line 940
     :cond_0
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
-    .line 955
+    .line 941
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->setImageReceiver(Lorg/telegram/messenger/ImageReceiver;)V
@@ -3670,12 +3664,12 @@
 .method public invalidateBlur()V
     .locals 1
 
-    .line 1241
+    .line 1227
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->blurBehindDrawable:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 1242
+    .line 1228
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BlurBehindDrawable;->invalidate()V
 
     :cond_0
@@ -3723,7 +3717,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 12
+    .locals 10
 
     .line 513
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->drawBlur:Z
@@ -3779,25 +3773,25 @@
 
     int-to-float v6, v6
 
-    add-float/2addr v6, v0
+    add-float/2addr v0, v6
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v6
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
-    add-float/2addr v6, v7
+    add-float/2addr v0, v6
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
+    iget-object v6, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
-    invoke-virtual {v7}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    invoke-virtual {v6}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    move-result v7
+    move-result v6
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
-    add-float/2addr v7, v1
+    add-float/2addr v1, v6
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -3805,251 +3799,113 @@
 
     int-to-float v3, v3
 
-    add-float/2addr v7, v3
+    add-float/2addr v1, v3
 
-    invoke-virtual {v2, v4, v5, v6, v7}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v2, v4, v5, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 520
-    iget-boolean v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->recording:Z
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->recording:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     .line 521
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    iget-wide v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->recordStartTime:J
+    iget-wide v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->recordStartTime:J
 
-    sub-long/2addr v2, v4
+    sub-long/2addr v0, v2
 
-    iput-wide v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->recordedTime:J
+    iput-wide v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->recordedTime:J
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    long-to-float v2, v2
+    long-to-float v0, v0
 
-    const v3, 0x476a6000    # 60000.0f
+    const v1, 0x476a6000    # 60000.0f
 
-    div-float/2addr v2, v3
+    div-float/2addr v0, v1
 
     .line 522
-    invoke-static {v4, v2}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(FF)F
 
-    move-result v2
+    move-result v0
 
-    iput v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->progress:F
+    iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->progress:F
 
     .line 523
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     .line 526
     :cond_1
-    iget v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->progress:F
+    iget v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->progress:F
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    cmpl-float v2, v2, v3
+    cmpl-float v0, v0, v1
 
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_3
 
     .line 527
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 528
-    iget-boolean v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->flipAnimationInProgress:Z
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->flipAnimationInProgress:Z
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
     .line 529
-    iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
+    iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getScaleX()F
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getScaleX()F
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
+
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getScaleY()F
+
+    move-result v1
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->rect:Landroid/graphics/RectF;
+
+    invoke-virtual {v2}, Landroid/graphics/RectF;->centerX()F
 
     move-result v2
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
+    iget-object v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->rect:Landroid/graphics/RectF;
 
-    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getScaleY()F
+    invoke-virtual {v3}, Landroid/graphics/RectF;->centerY()F
 
     move-result v3
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->rect:Landroid/graphics/RectF;
-
-    invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
-
-    move-result v4
-
-    iget-object v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->rect:Landroid/graphics/RectF;
-
-    invoke-virtual {v5}, Landroid/graphics/RectF;->centerY()F
-
-    move-result v5
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 531
     :cond_2
-    iget-object v7, p0, Lorg/telegram/ui/Components/InstantCameraView;->rect:Landroid/graphics/RectF;
+    iget-object v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->rect:Landroid/graphics/RectF;
 
-    const/high16 v8, -0x3d4c0000    # -90.0f
+    const/high16 v6, -0x3d4c0000    # -90.0f
 
-    const/high16 v2, 0x43b40000    # 360.0f
+    const/high16 v0, 0x43b40000    # 360.0f
 
-    iget v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->progress:F
+    iget v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->progress:F
 
-    mul-float v9, v3, v2
+    mul-float v7, v1, v0
 
-    const/4 v10, 0x0
+    const/4 v8, 0x0
 
-    iget-object v11, p0, Lorg/telegram/ui/Components/InstantCameraView;->paint:Landroid/graphics/Paint;
+    iget-object v9, p0, Lorg/telegram/ui/Components/InstantCameraView;->paint:Landroid/graphics/Paint;
 
-    move-object v6, p1
+    move-object v4, p1
 
-    invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     .line 532
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 534
     :cond_3
-    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_roundVideoShadow:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_5
-
-    float-to-int v2, v0
-
-    const/4 v3, 0x3
-
-    .line 535
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    sub-int/2addr v2, v3
-
-    float-to-int v3, v1
-
-    const/4 v4, 0x2
-
-    .line 536
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    .line 537
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 538
-    iget-boolean v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->isMessageTransition:Z
-
-    if-eqz v4, :cond_4
-
-    .line 539
-    iget-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
-
-    invoke-virtual {v4}, Landroid/widget/FrameLayout;->getScaleX()F
-
-    move-result v4
-
-    iget-object v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
-
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getScaleY()F
-
-    move-result v5
-
-    invoke-virtual {p1, v4, v5, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
-
-    goto :goto_0
-
-    .line 541
-    :cond_4
-    iget-object v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
-
-    invoke-virtual {v4}, Landroid/widget/FrameLayout;->getScaleX()F
-
-    move-result v4
-
-    iget-object v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
-
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getScaleY()F
-
-    move-result v5
-
-    iget v6, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureViewSize:I
-
-    int-to-float v7, v6
-
-    const/high16 v8, 0x40000000    # 2.0f
-
-    div-float/2addr v7, v8
-
-    add-float/2addr v0, v7
-
-    int-to-float v6, v6
-
-    div-float/2addr v6, v8
-
-    add-float/2addr v1, v6
-
-    invoke-virtual {p1, v4, v5, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
-
-    .line 543
-    :goto_0
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_roundVideoShadow:Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getAlpha()F
-
-    move-result v1
-
-    const/high16 v4, 0x437f0000    # 255.0f
-
-    mul-float/2addr v1, v4
-
-    float-to-int v1, v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
-
-    .line 544
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_roundVideoShadow:Landroid/graphics/drawable/Drawable;
-
-    iget v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureViewSize:I
-
-    add-int/2addr v1, v2
-
-    const/4 v4, 0x6
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    add-int/2addr v1, v5
-
-    iget v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureViewSize:I
-
-    add-int/2addr v5, v3
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    add-int/2addr v5, v4
-
-    invoke-virtual {v0, v2, v3, v1, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 545
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_roundVideoShadow:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 546
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    :cond_5
     return-void
 .end method
 
@@ -4222,13 +4078,13 @@
 
     div-float v0, p1, v0
 
-    .line 1252
+    .line 1238
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->panTranslationY:F
 
-    .line 1253
+    .line 1239
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->updateTranslationY()V
 
-    .line 1254
+    .line 1240
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->blurBehindDrawable:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BlurBehindDrawable;->onPanTranslationUpdate(F)V
@@ -4275,7 +4131,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 14
 
-    .line 3022
+    .line 3040
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -4298,32 +4154,32 @@
 
     if-eqz v0, :cond_4
 
-    .line 3023
+    .line 3041
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_4
 
-    .line 3024
+    .line 3042
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->isMuted()Z
 
     move-result v0
 
     xor-int/2addr v0, v6
 
-    .line 3025
+    .line 3043
     iget-object v7, p0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v7, v0}, Lorg/telegram/ui/Components/VideoPlayer;->setMute(Z)V
 
-    .line 3026
+    .line 3044
     iget-object v7, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v7, :cond_0
 
-    .line 3027
+    .line 3045
     invoke-virtual {v7}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 3029
+    .line 3047
     :cond_0
     new-instance v7, Landroid/animation/AnimatorSet;
 
@@ -4333,7 +4189,7 @@
 
     new-array v8, v2, [Landroid/animation/Animator;
 
-    .line 3030
+    .line 3048
     iget-object v9, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteImageView:Landroid/widget/ImageView;
 
     sget-object v10, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -4352,7 +4208,7 @@
     :goto_0
     aput v12, v11, v5
 
-    .line 3031
+    .line 3049
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -4379,7 +4235,7 @@
     :goto_1
     aput v13, v11, v5
 
-    .line 3032
+    .line 3050
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -4399,17 +4255,17 @@
     :cond_3
     aput v12, v11, v5
 
-    .line 3033
+    .line 3051
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v8, v3
 
-    .line 3030
+    .line 3048
     invoke-virtual {v7, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 3034
+    .line 3052
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v7, Lorg/telegram/ui/Components/InstantCameraView$12;
@@ -4418,14 +4274,14 @@
 
     invoke-virtual {v0, v7}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3042
+    .line 3060
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v7, 0xb4
 
     invoke-virtual {v0, v7, v8}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 3043
+    .line 3061
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v7, Landroid/view/animation/DecelerateInterpolator;
@@ -4434,12 +4290,12 @@
 
     invoke-virtual {v0, v7}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3044
+    .line 3062
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 3050
+    .line 3068
     :cond_4
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -4457,7 +4313,7 @@
 
     goto/16 :goto_5
 
-    .line 3065
+    .line 3083
     :cond_5
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -4477,7 +4333,7 @@
 
     move v2, v5
 
-    .line 3068
+    .line 3086
     :goto_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -4485,7 +4341,7 @@
 
     if-ge v2, v8, :cond_8
 
-    .line 3069
+    .line 3087
     iget v8, p0, Lorg/telegram/ui/Components/InstantCameraView;->pointerId1:I
 
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
@@ -4496,7 +4352,7 @@
 
     move v3, v2
 
-    .line 3072
+    .line 3090
     :cond_6
     iget v8, p0, Lorg/telegram/ui/Components/InstantCameraView;->pointerId2:I
 
@@ -4520,7 +4376,7 @@
 
     goto :goto_3
 
-    .line 3082
+    .line 3100
     :cond_9
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getX(I)F
 
@@ -4560,7 +4416,7 @@
 
     sub-float/2addr p1, v4
 
-    .line 3083
+    .line 3101
     invoke-static {v1, p1}, Ljava/lang/Math;->max(FF)F
 
     move-result p1
@@ -4569,24 +4425,24 @@
 
     move-result p1
 
-    .line 3085
+    .line 3103
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraSession:Lorg/telegram/messenger/camera/CameraSession;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/camera/CameraSession;->setZoom(F)V
 
     goto :goto_4
 
-    .line 3077
+    .line 3095
     :cond_a
     :goto_3
     iput-boolean v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->isInPinchToZoomTouchMode:Z
 
-    .line 3079
+    .line 3097
     invoke-virtual {p0}, Lorg/telegram/ui/Components/InstantCameraView;->finishZoom()V
 
     return v5
 
-    .line 3086
+    .line 3104
     :cond_b
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -4620,17 +4476,17 @@
 
     if-eqz p1, :cond_e
 
-    .line 3087
+    .line 3105
     iput-boolean v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->isInPinchToZoomTouchMode:Z
 
-    .line 3088
+    .line 3106
     invoke-virtual {p0}, Lorg/telegram/ui/Components/InstantCameraView;->finishZoom()V
 
     :cond_e
     :goto_4
     return v6
 
-    .line 3051
+    .line 3069
     :cond_f
     :goto_5
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->maybePinchToZoomTouchMode:Z
@@ -4655,7 +4511,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 3052
+    .line 3070
     invoke-virtual {p1, v6}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
@@ -4688,27 +4544,27 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->pinchStartDistance:F
 
-    .line 3054
+    .line 3072
     iput v4, p0, Lorg/telegram/ui/Components/InstantCameraView;->pinchScale:F
 
-    .line 3056
+    .line 3074
     invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->pointerId1:I
 
-    .line 3057
+    .line 3075
     invoke-virtual {p1, v6}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->pointerId2:I
 
-    .line 3058
+    .line 3076
     iput-boolean v6, p0, Lorg/telegram/ui/Components/InstantCameraView;->isInPinchToZoomTouchMode:Z
 
-    .line 3060
+    .line 3078
     :cond_10
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -4716,7 +4572,7 @@
 
     if-nez v0, :cond_11
 
-    .line 3061
+    .line 3079
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
@@ -4765,7 +4621,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 3062
+    .line 3080
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -4789,7 +4645,7 @@
 
     const/4 v0, 0x0
 
-    .line 1266
+    .line 1252
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraFile:Ljava/io/File;
 
     return-void
@@ -4802,18 +4658,18 @@
 
     move/from16 v1, p1
 
-    .line 806
+    .line 792
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
     if-nez v2, :cond_0
 
     return-void
 
-    .line 809
+    .line 795
     :cond_0
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/InstantCameraView;->stopProgressTimer()V
 
-    .line 810
+    .line 796
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v3, 0x1
@@ -4822,10 +4678,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 811
+    .line 797
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 812
+    .line 798
     iput-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     :cond_1
@@ -4835,7 +4691,7 @@
 
     if-ne v1, v2, :cond_9
 
-    .line 815
+    .line 801
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v1, :cond_2
@@ -4848,7 +4704,7 @@
 
     if-nez v1, :cond_2
 
-    .line 816
+    .line 802
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "file not found :( round video"
@@ -4857,7 +4713,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 818
+    .line 804
     :cond_2
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
@@ -4869,26 +4725,26 @@
 
     if-eqz v1, :cond_7
 
-    .line 819
+    .line 805
     iput-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 820
+    .line 806
     iput-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView;->encryptedFile:Lorg/telegram/tgnet/TLRPC$InputEncryptedFile;
 
-    .line 821
+    .line 807
     iput-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView;->key:[B
 
-    .line 822
+    .line 808
     iput-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView;->iv:[B
 
-    .line 823
+    .line 809
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-wide v6, v1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
 
     long-to-double v8, v6
 
-    .line 824
+    .line 810
     iget-wide v10, v1, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
 
     const-wide/16 v12, 0x0
@@ -4902,7 +4758,7 @@
     :cond_3
     move-wide v10, v12
 
-    .line 825
+    .line 811
     :goto_0
     iget-wide v14, v1, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
@@ -4915,10 +4771,10 @@
     :cond_4
     sub-long/2addr v6, v10
 
-    .line 826
+    .line 812
     iput-wide v6, v1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
 
-    .line 827
+    .line 813
     iget-wide v10, v0, Lorg/telegram/ui/Components/InstantCameraView;->size:J
 
     long-to-double v10, v10
@@ -4937,14 +4793,14 @@
 
     iput-wide v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
-    .line 828
+    .line 814
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     const v2, 0xf4240
 
     iput v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
-    .line 829
+    .line 815
     iget-wide v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
 
     cmp-long v4, v2, v12
@@ -4955,10 +4811,10 @@
 
     mul-long/2addr v2, v6
 
-    .line 830
+    .line 816
     iput-wide v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
 
-    .line 832
+    .line 818
     :cond_5
     iget-wide v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
@@ -4968,10 +4824,10 @@
 
     mul-long/2addr v2, v6
 
-    .line 833
+    .line 819
     iput-wide v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
-    .line 835
+    .line 821
     :cond_6
     iget v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->currentAccount:I
 
@@ -4989,7 +4845,7 @@
 
     goto :goto_1
 
-    .line 837
+    .line 823
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
@@ -5001,7 +4857,7 @@
 
     iput-wide v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
-    .line 839
+    .line 825
     :goto_1
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
@@ -5009,22 +4865,22 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 840
+    .line 826
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView;->encryptedFile:Lorg/telegram/tgnet/TLRPC$InputEncryptedFile;
 
     iput-object v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->encryptedFile:Lorg/telegram/tgnet/TLRPC$InputEncryptedFile;
 
-    .line 841
+    .line 827
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView;->key:[B
 
     iput-object v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->key:[B
 
-    .line 842
+    .line 828
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView;->iv:[B
 
     iput-object v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->iv:[B
 
-    .line 843
+    .line 829
     iget-object v6, v0, Lorg/telegram/ui/Components/InstantCameraView;->delegate:Lorg/telegram/ui/Components/InstantCameraView$Delegate;
 
     new-instance v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -5069,10 +4925,10 @@
 
     if-eqz p3, :cond_8
 
-    .line 845
+    .line 831
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/InstantCameraView;->startAnimation(Z)V
 
-    .line 847
+    .line 833
     :cond_8
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -5082,7 +4938,7 @@
 
     goto/16 :goto_5
 
-    .line 849
+    .line 835
     :cond_9
     iget-wide v6, v0, Lorg/telegram/ui/Components/InstantCameraView;->recordedTime:J
 
@@ -5102,7 +4958,7 @@
     :goto_2
     iput-boolean v6, v0, Lorg/telegram/ui/Components/InstantCameraView;->cancelled:Z
 
-    .line 850
+    .line 836
     iput-boolean v5, v0, Lorg/telegram/ui/Components/InstantCameraView;->recording:Z
 
     const/4 v7, 0x3
@@ -5123,13 +4979,13 @@
     :cond_c
     const/4 v2, 0x5
 
-    .line 857
+    .line 843
     :goto_3
     iget-object v6, v0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     if-eqz v6, :cond_f
 
-    .line 858
+    .line 844
     iget v6, v0, Lorg/telegram/ui/Components/InstantCameraView;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5156,7 +5012,7 @@
 
     invoke-virtual {v6, v9, v10}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 860
+    .line 846
     iget-boolean v2, v0, Lorg/telegram/ui/Components/InstantCameraView;->cancelled:Z
 
     if-eqz v2, :cond_d
@@ -5175,25 +5031,25 @@
     :cond_e
     move v1, v3
 
-    .line 867
+    .line 853
     :goto_4
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/InstantCameraView;->saveLastCameraBitmap()V
 
-    .line 868
+    .line 854
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->shutdown(I)V
 
-    .line 869
+    .line 855
     iput-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView;->cameraThread:Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
-    .line 871
+    .line 857
     :cond_f
     iget-boolean v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->cancelled:Z
 
     if-eqz v1, :cond_10
 
-    .line 872
+    .line 858
     iget v1, v0, Lorg/telegram/ui/Components/InstantCameraView;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5228,10 +5084,10 @@
 
     invoke-virtual {v1, v2, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 873
+    .line 859
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/InstantCameraView;->startAnimation(Z)V
 
-    .line 874
+    .line 860
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v1
@@ -5246,29 +5102,26 @@
 .method public setIsMessageTransition(Z)V
     .locals 0
 
-    .line 1262
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->isMessageTransition:Z
-
     return-void
 .end method
 
 .method public setVisibility(I)V
     .locals 2
 
-    .line 552
+    .line 538
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     if-eqz p1, :cond_0
 
-    .line 553
+    .line 539
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->blurBehindDrawable:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 554
+    .line 540
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BlurBehindDrawable;->clear()V
 
-    .line 556
+    .line 542
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->switchCameraButton:Landroid/widget/ImageView;
 
@@ -5276,56 +5129,56 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 557
+    .line 543
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 558
+    .line 544
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 559
+    .line 545
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 560
+    .line 546
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteImageView:Landroid/widget/ImageView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 561
+    .line 547
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->muteImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 562
+    .line 548
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     const v1, 0x3dcccccd    # 0.1f
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 563
+    .line 549
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 564
+    .line 550
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 565
+    .line 551
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 566
+    .line 552
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -5334,7 +5187,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 567
+    .line 553
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -5347,7 +5200,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 568
+    .line 554
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -5360,7 +5213,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 569
+    .line 555
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
@@ -5373,7 +5226,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPivotX(F)V
 
-    .line 570
+    .line 556
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
@@ -5391,7 +5244,7 @@
 
     if-nez p1, :cond_2
 
-    .line 574
+    .line 560
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -5407,7 +5260,7 @@
 
     goto :goto_0
 
-    .line 576
+    .line 562
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -5428,7 +5281,7 @@
     :catch_0
     move-exception p1
 
-    .line 579
+    .line 565
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -5438,14 +5291,14 @@
 .method public showCamera(Z)V
     .locals 6
 
-    .line 584
+    .line 570
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 589
+    .line 575
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -5453,7 +5306,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 590
+    .line 576
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -5468,14 +5321,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->switchCameraDrawable:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    .line 591
+    .line 577
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->switchCameraButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 593
+    .line 579
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->switchCameraButton:Landroid/widget/ImageView;
 
@@ -5483,7 +5336,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 596
+    .line 582
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -5491,28 +5344,28 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 597
+    .line 583
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 599
+    .line 585
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->isFrontface:Z
 
     const/4 v1, 0x0
 
     if-ne p1, v0, :cond_2
 
-    .line 600
+    .line 586
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->lastBitmap:Landroid/graphics/Bitmap;
 
-    .line 603
+    .line 589
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->lastBitmap:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_4
 
-    .line 605
+    .line 591
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -5532,7 +5385,7 @@
     :goto_1
     invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 606
+    .line 592
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -5545,21 +5398,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 611
+    .line 597
     :catchall_0
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->lastBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_5
 
-    .line 612
+    .line 598
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/BackupImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     goto :goto_2
 
-    .line 614
+    .line 600
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -5570,55 +5423,55 @@
     :goto_2
     const/4 v0, 0x0
 
-    .line 616
+    .line 602
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraReady:Z
 
     const/4 v2, 0x1
 
     if-eqz p1, :cond_6
 
-    .line 619
+    .line 605
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->isFrontface:Z
 
     goto :goto_3
 
-    .line 621
+    .line 607
     :cond_6
     iput-boolean v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->isFrontface:Z
 
-    .line 622
+    .line 608
     :goto_3
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->selectedCamera:Lorg/telegram/messenger/camera/CameraInfo;
 
     const-wide/16 v3, 0x0
 
-    .line 623
+    .line 609
     iput-wide v3, p0, Lorg/telegram/ui/Components/InstantCameraView;->recordedTime:J
 
     const/4 p1, 0x0
 
-    .line 624
+    .line 610
     iput p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->progress:F
 
-    .line 625
+    .line 611
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->cancelled:Z
 
-    .line 626
+    .line 612
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 627
+    .line 613
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->encryptedFile:Lorg/telegram/tgnet/TLRPC$InputEncryptedFile;
 
-    .line 628
+    .line 614
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->key:[B
 
-    .line 629
+    .line 615
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->iv:[B
 
-    .line 630
+    .line 616
     iput-boolean v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->needDrawFlickerStub:Z
 
-    .line 632
+    .line 618
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->initCamera()Z
 
     move-result p1
@@ -5627,7 +5480,7 @@
 
     return-void
 
-    .line 635
+    .line 621
     :cond_7
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -5639,7 +5492,7 @@
 
     if-eqz p1, :cond_a
 
-    .line 636
+    .line 622
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -5670,7 +5523,7 @@
 
     goto :goto_4
 
-    .line 639
+    .line 625
     :cond_8
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -5688,7 +5541,7 @@
 
     goto :goto_5
 
-    .line 637
+    .line 623
     :cond_9
     :goto_4
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -5697,7 +5550,7 @@
 
     invoke-virtual {p1, v2, v2}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
-    .line 643
+    .line 629
     :cond_a
     :goto_5
     new-instance p1, Lorg/telegram/ui/Components/InstantCameraView$8;
@@ -5740,25 +5593,25 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraFile:Ljava/io/File;
 
-    .line 653
+    .line 639
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 654
+    .line 640
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraFile:Ljava/io/File;
 
     invoke-static {p1}, Lorg/telegram/messenger/AutoDeleteMediaTask;->lockFile(Ljava/io/File;)V
 
-    .line 656
+    .line 642
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_b
 
-    .line 657
+    .line 643
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "show round camera "
+    const-string v1, "InstantCamera show round camera "
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5776,7 +5629,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 660
+    .line 646
     :cond_b
     new-instance p1, Landroid/view/TextureView;
 
@@ -5788,14 +5641,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
 
-    .line 661
+    .line 647
     new-instance v1, Lorg/telegram/ui/Components/InstantCameraView$9;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/InstantCameraView$9;-><init>(Lorg/telegram/ui/Components/InstantCameraView;)V
 
     invoke-virtual {p1, v1}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
 
-    .line 704
+    .line 690
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureView:Landroid/view/TextureView;
@@ -5808,16 +5661,16 @@
 
     invoke-virtual {p1, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 706
+    .line 692
     iput-boolean v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->updateTextureViewSize:Z
 
-    .line 707
+    .line 693
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/InstantCameraView;->setVisibility(I)V
 
-    .line 709
+    .line 695
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/InstantCameraView;->startAnimation(Z)V
 
-    .line 710
+    .line 696
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -5830,20 +5683,20 @@
 .method public startAnimation(Z)V
     .locals 14
 
-    .line 718
+    .line 704
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->animatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 719
+    .line 705
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->removeAllListeners()V
 
-    .line 720
+    .line 706
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 722
+    .line 708
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/PipRoundVideoView;->getInstance()Lorg/telegram/ui/Components/PipRoundVideoView;
 
@@ -5853,7 +5706,7 @@
 
     xor-int/lit8 v1, p1, 0x1
 
-    .line 724
+    .line 710
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/PipRoundVideoView;->showTemporary(Z)V
 
     :cond_1
@@ -5863,22 +5716,22 @@
 
     if-eqz p1, :cond_2
 
-    .line 726
+    .line 712
     iget-boolean v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->opened:Z
 
     if-nez v2, :cond_2
 
-    .line 727
+    .line 713
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->cameraContainer:Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 728
+    .line 714
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->textureOverlayView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 730
+    .line 716
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -5889,28 +5742,28 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->animationTranslationY:F
 
-    .line 731
+    .line 717
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView;->updateTranslationY()V
 
-    .line 733
+    .line 719
     :cond_2
     iput-boolean p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->opened:Z
 
-    .line 734
+    .line 720
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->parentView:Landroid/view/View;
 
     if-eqz v2, :cond_3
 
-    .line 735
+    .line 721
     invoke-virtual {v2}, Landroid/view/View;->invalidate()V
 
-    .line 737
+    .line 723
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->blurBehindDrawable:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Components/BlurBehindDrawable;->show(Z)V
 
-    .line 738
+    .line 724
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -5919,7 +5772,7 @@
 
     if-nez p1, :cond_4
 
-    .line 741
+    .line 727
     iget-wide v2, p0, Lorg/telegram/ui/Components/InstantCameraView;->recordedTime:J
 
     const-wide/16 v4, 0x12c
@@ -5986,19 +5839,19 @@
 
     aput v5, v3, v7
 
-    .line 743
+    .line 729
     invoke-static {v3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v3
 
-    .line 744
+    .line 730
     new-instance v5, Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda1;
 
     invoke-direct {v5, p0}, Lorg/telegram/ui/Components/InstantCameraView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/InstantCameraView;)V
 
     invoke-virtual {v3, v5}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 748
+    .line 734
     iget-object v5, p0, Lorg/telegram/ui/Components/InstantCameraView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const/16 v8, 0xc
@@ -6023,7 +5876,7 @@
     :goto_3
     aput v12, v11, v6
 
-    .line 749
+    .line 735
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6038,7 +5891,7 @@
 
     aput v1, v11, v6
 
-    .line 750
+    .line 736
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6063,7 +5916,7 @@
     :goto_4
     aput v12, v11, v6
 
-    .line 751
+    .line 737
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6090,7 +5943,7 @@
     :goto_5
     aput v12, v11, v6
 
-    .line 752
+    .line 738
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6119,7 +5972,7 @@
     :goto_6
     aput v13, v11, v6
 
-    .line 753
+    .line 739
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6146,7 +5999,7 @@
     :goto_7
     aput v13, v11, v6
 
-    .line 754
+    .line 740
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6163,7 +6016,7 @@
 
     aput v2, v11, v6
 
-    .line 755
+    .line 741
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6190,7 +6043,7 @@
     :goto_8
     aput v13, v11, v6
 
-    .line 756
+    .line 742
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6217,7 +6070,7 @@
     :goto_9
     aput v13, v11, v6
 
-    .line 757
+    .line 743
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v9
@@ -6242,7 +6095,7 @@
     :goto_a
     aput v4, v11, v6
 
-    .line 758
+    .line 744
     invoke-static {v9, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
@@ -6259,7 +6112,7 @@
 
     aput v2, v7, v6
 
-    .line 759
+    .line 745
     invoke-static {v4, v9, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -6270,12 +6123,12 @@
 
     aput-object v3, v8, v0
 
-    .line 748
+    .line 734
     invoke-virtual {v5, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     if-nez p1, :cond_f
 
-    .line 763
+    .line 749
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->animatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$10;
@@ -6286,11 +6139,11 @@
 
     goto :goto_b
 
-    .line 773
+    .line 759
     :cond_f
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 775
+    .line 761
     :goto_b
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->animatorSet:Landroid/animation/AnimatorSet;
 
@@ -6298,7 +6151,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 776
+    .line 762
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->animatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
@@ -6307,7 +6160,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 777
+    .line 763
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V

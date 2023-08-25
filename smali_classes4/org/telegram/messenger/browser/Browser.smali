@@ -610,14 +610,14 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_16
 
     .line 490
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-le v0, v4, :cond_15
+    if-le v0, v4, :cond_16
 
     if-eqz p1, :cond_a
 
@@ -693,7 +693,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_12
 
     const-string/jumbo v1, "t.me"
 
@@ -706,16 +706,44 @@
     goto :goto_4
 
     :cond_f
-    if-eqz p1, :cond_15
+    const-string/jumbo p2, "telegram.org"
 
-    const-string/jumbo p0, "telegram.org"
+    .line 518
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 519
-    invoke-virtual {v0, p0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    move-result v1
+
+    if-eqz v1, :cond_10
+
+    invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_10
+
+    invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v1, "/blog/"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-nez p0, :cond_10
+    if-eqz p0, :cond_10
+
+    return v4
+
+    :cond_10
+    if-eqz p1, :cond_16
+
+    .line 521
+    invoke-virtual {v0, p2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_11
 
     const-string/jumbo p0, "telegra.ph"
 
@@ -723,7 +751,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_10
+    if-nez p0, :cond_11
 
     const-string/jumbo p0, "telesco.pe"
 
@@ -731,33 +759,33 @@
 
     move-result p0
 
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_16
 
-    :cond_10
+    :cond_11
     return v4
 
     .line 504
-    :cond_11
+    :cond_12
     :goto_4
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object p0
 
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_16
 
     .line 505
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-le v0, v4, :cond_15
+    if-le v0, v4, :cond_16
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_13
 
     return v4
 
     .line 509
-    :cond_12
+    :cond_13
     invoke-virtual {p0, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p0
@@ -771,27 +799,27 @@
 
     move-result p1
 
-    if-nez p1, :cond_14
+    if-nez p1, :cond_15
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_14
 
     goto :goto_5
 
-    :cond_13
+    :cond_14
     return v4
 
-    :cond_14
+    :cond_15
     :goto_5
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_16
 
     .line 512
     aput-boolean v4, p2, v3
 
-    :cond_15
+    :cond_16
     return v3
 .end method
 
@@ -1281,9 +1309,17 @@
     .line 257
     invoke-static {v0, v13}, Lorg/telegram/messenger/browser/Browser;->isTelegraphUrl(Ljava/lang/String;Z)Z
 
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const-string/jumbo v1, "telegram.org"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_3
 
     invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -1310,6 +1346,22 @@
     move-result-object v0
 
     const-string/jumbo v1, "telegram.org/privacy"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "telegram.org/blog"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -2337,42 +2389,42 @@
 .method public static replaceHostname(Landroid/net/Uri;Ljava/lang/String;)Ljava/lang/String;
     .locals 6
 
-    .line 528
+    .line 530
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 529
+    .line 531
     invoke-virtual {p0}, Landroid/net/Uri;->getUserInfo()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 530
+    .line 532
     invoke-virtual {p0}, Landroid/net/Uri;->getPort()I
 
     move-result v2
 
-    .line 531
+    .line 533
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 532
+    .line 534
     invoke-virtual {p0}, Landroid/net/Uri;->getQuery()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 533
+    .line 535
     invoke-virtual {p0}, Landroid/net/Uri;->getFragment()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 535
+    .line 537
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 536
+    .line 538
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "://"
@@ -2381,14 +2433,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 538
+    .line 540
     invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "@"
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 540
+    .line 542
     :cond_0
     invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2398,12 +2450,12 @@
 
     const-string p1, ":"
 
-    .line 542
+    .line 544
     invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 544
+    .line 546
     :cond_1
     invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2411,7 +2463,7 @@
 
     const-string p1, "?"
 
-    .line 546
+    .line 548
     invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2421,12 +2473,12 @@
 
     const-string p1, "#"
 
-    .line 549
+    .line 551
     invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 551
+    .line 553
     :cond_3
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

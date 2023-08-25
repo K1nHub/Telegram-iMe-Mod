@@ -22,9 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;",
+        "Lcom/iMe/storage/data/network/handlers/impl/GoogleServicesErrorHandler;",
         ">;"
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$39\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,197:1\n129#2,5:198\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$39\n*L\n132#1:198,5\n*E\n"
 .end annotation
 
 
@@ -57,34 +61,50 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
-    .locals 1
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/GoogleServicesErrorHandler;
+    .locals 2
 
     const-string v0, "$this$single"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "it"
+    const-string v0, "it"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
-    new-instance p1, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    .line 132
+    new-instance p2, Lcom/iMe/storage/data/network/handlers/impl/GoogleServicesErrorHandler;
 
-    invoke-direct {p1}, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;-><init>()V
+    .line 133
+    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    return-object p1
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    .line 132
+    invoke-direct {p2, p1}, Lcom/iMe/storage/data/network/handlers/impl/GoogleServicesErrorHandler;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+
+    return-object p2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 131
+    .line 132
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$39;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$39;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/GoogleServicesErrorHandler;
 
     move-result-object p1
 

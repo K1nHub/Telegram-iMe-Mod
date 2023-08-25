@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;)V
     .locals 0
 
-    .line 2590
+    .line 2835
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$2;->this$1:Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,26 +35,26 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 2593
+    .line 2838
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 2594
+    .line 2839
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$2;->this$1:Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;
 
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
-    .line 2595
+    .line 2840
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     iput-object v1, p1, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
-    .line 2596
+    .line 2841
     iput-object v0, p1, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
-    .line 2597
+    .line 2842
     invoke-virtual {v0}, Landroid/widget/ImageView;->bringToFront()V
 
-    .line 2598
+    .line 2843
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$2;->this$1:Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
@@ -63,7 +63,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2599
+    .line 2844
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$2;->this$1:Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;
 
     const/4 v0, 0x0

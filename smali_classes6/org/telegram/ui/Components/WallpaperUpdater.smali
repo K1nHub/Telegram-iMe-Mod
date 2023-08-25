@@ -79,7 +79,7 @@
         }
     .end annotation
 
-    .line 148
+    .line 156
     :try_start_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -89,19 +89,19 @@
 
     const/4 v0, 0x0
 
-    .line 149
+    .line 157
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
-    .line 150
+    .line 158
     iget-object v0, p1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 151
+    .line 159
     new-instance v0, Ljava/io/File;
 
     const/4 v1, 0x4
@@ -134,12 +134,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
 
-    .line 152
+    .line 160
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object v0
 
-    .line 153
+    .line 161
     iget-object p1, p1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -158,21 +158,21 @@
 
     move-result-object p1
 
-    .line 154
+    .line 162
     new-instance v0, Ljava/io/FileOutputStream;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
 
     invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 155
+    .line 163
     sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v2, 0x57
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 156
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->delegate:Lorg/telegram/ui/Components/WallpaperUpdater$WallpaperUpdaterDelegate;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
@@ -186,7 +186,7 @@
     :catchall_0
     move-exception p1
 
-    .line 160
+    .line 168
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -365,7 +365,7 @@
 .method public getCurrentPicturePath()Ljava/lang/String;
     .locals 1
 
-    .line 171
+    .line 179
     iget-object v0, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentPicturePath:Ljava/lang/String;
 
     return-object v0
@@ -394,12 +394,12 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 181
+    .line 189
     iget-object p1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentPicturePath:Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->addMediaToGallery(Ljava/lang/String;)V
 
-    .line 184
+    .line 192
     :try_start_0
     new-instance p1, Ljava/io/File;
 
@@ -429,12 +429,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
 
-    .line 185
+    .line 193
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object p1
 
-    .line 186
+    .line 194
     iget-object p2, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentPicturePath:Ljava/lang/String;
 
     iget p3, p1, Landroid/graphics/Point;->x:I
@@ -449,7 +449,7 @@
 
     move-result-object p1
 
-    .line 187
+    .line 195
     new-instance p2, Ljava/io/FileOutputStream;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
@@ -459,13 +459,13 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 188
+    .line 196
     :try_start_1
     sget-object p3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-virtual {p1, p3, v1, p2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 189
+    .line 197
     iget-object p3, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->delegate:Lorg/telegram/ui/Components/WallpaperUpdater$WallpaperUpdaterDelegate;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
@@ -475,7 +475,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 195
+    .line 203
     :try_start_2
     invoke-virtual {p2}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
@@ -498,7 +498,7 @@
 
     move-object p2, v5
 
-    .line 191
+    .line 199
     :goto_0
     :try_start_3
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -507,7 +507,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 195
+    .line 203
     :try_start_4
     invoke-virtual {p2}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -518,10 +518,10 @@
     :catch_2
     move-exception p1
 
-    .line 198
+    .line 206
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 201
+    .line 209
     :cond_0
     :goto_1
     iput-object v5, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentPicturePath:Ljava/lang/String;
@@ -536,7 +536,7 @@
     :goto_2
     if-eqz v5, :cond_1
 
-    .line 195
+    .line 203
     :try_start_5
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
@@ -547,10 +547,10 @@
     :catch_3
     move-exception p2
 
-    .line 198
+    .line 206
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 200
+    .line 208
     :cond_1
     :goto_3
     throw p1
@@ -562,7 +562,7 @@
 
     if-eqz p3, :cond_4
 
-    .line 203
+    .line 211
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p1
@@ -571,7 +571,7 @@
 
     goto :goto_4
 
-    .line 207
+    .line 215
     :cond_3
     :try_start_6
     new-instance p1, Ljava/io/File;
@@ -602,12 +602,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
 
-    .line 208
+    .line 216
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object p1
 
-    .line 209
+    .line 217
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p2
@@ -624,19 +624,19 @@
 
     move-result-object p1
 
-    .line 210
+    .line 218
     new-instance p2, Ljava/io/FileOutputStream;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
 
     invoke-direct {p2, p3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 211
+    .line 219
     sget-object p3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-virtual {p1, p3, v1, p2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 212
+    .line 220
     iget-object p2, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->delegate:Lorg/telegram/ui/Components/WallpaperUpdater$WallpaperUpdaterDelegate;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentWallpaperPath:Ljava/io/File;
@@ -650,7 +650,7 @@
     :catch_4
     move-exception p1
 
-    .line 214
+    .line 222
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     nop
@@ -666,55 +666,67 @@
     .line 112
     iget-object v0, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     .line 113
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 115
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x17
+    const/16 v2, 0x21
+
+    const/4 v3, 0x4
 
     if-lt v1, v2, :cond_0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+    const-string v1, "android.permission.READ_MEDIA_IMAGES"
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 114
-    iget-object v0, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    const-string v1, "android.permission.READ_EXTERNAL_STORAGE"
-
+    .line 116
     invoke-virtual {v0, v1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_1
 
-    .line 115
-    iget-object v0, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
+    .line 117
     filled-new-array {v1}, [Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x4
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+    invoke-virtual {v0, v1, v3}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
 
     return-void
 
-    .line 119
     :cond_0
+    const/16 v2, 0x17
+
+    if-lt v1, v2, :cond_1
+
+    const-string v1, "android.permission.READ_EXTERNAL_STORAGE"
+
+    .line 121
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 122
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v3}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+
+    return-void
+
+    .line 127
+    :cond_1
     new-instance v0, Lorg/telegram/ui/PhotoAlbumPickerActivity;
 
     sget v1, Lorg/telegram/ui/PhotoAlbumPickerActivity;->SELECT_TYPE_WALLPAPER:I
@@ -725,25 +737,25 @@
 
     invoke-direct {v0, v1, v3, v3, v2}, Lorg/telegram/ui/PhotoAlbumPickerActivity;-><init>(IZZLorg/telegram/ui/ChatActivity;)V
 
-    .line 120
+    .line 128
     invoke-virtual {v0, v3}, Lorg/telegram/ui/PhotoAlbumPickerActivity;->setAllowSearchImages(Z)V
 
-    .line 121
+    .line 129
     new-instance v1, Lorg/telegram/ui/Components/WallpaperUpdater$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/WallpaperUpdater$1;-><init>(Lorg/telegram/ui/Components/WallpaperUpdater;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/PhotoAlbumPickerActivity;->setDelegate(Lorg/telegram/ui/PhotoAlbumPickerActivity$PhotoAlbumPickerActivityDelegate;)V
 
-    .line 138
+    .line 146
     iget-object v1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_0
 
-    .line 140
-    :cond_1
+    .line 148
+    :cond_2
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.PICK"
@@ -752,10 +764,10 @@
 
     const-string v1, "image/*"
 
-    .line 141
+    .line 149
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 142
+    .line 150
     iget-object v1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->parentActivity:Landroid/app/Activity;
 
     const/16 v2, 0xb
@@ -769,7 +781,7 @@
 .method public setCurrentPicturePath(Ljava/lang/String;)V
     .locals 0
 
-    .line 175
+    .line 183
     iput-object p1, p0, Lorg/telegram/ui/Components/WallpaperUpdater;->currentPicturePath:Ljava/lang/String;
 
     return-void

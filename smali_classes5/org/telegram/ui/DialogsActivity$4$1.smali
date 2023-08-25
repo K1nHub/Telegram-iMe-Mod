@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$4;Landroid/os/Bundle;Lorg/telegram/ui/LaunchActivity;I)V
     .locals 0
 
-    .line 1054
+    .line 1082
     iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$4$1;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
 
     iput p4, p0, Lorg/telegram/ui/DialogsActivity$4$1;->val$accountNumberFinal:I
@@ -39,10 +39,10 @@
 .method public onPreviewOpenAnimationEnd()V
     .locals 4
 
-    .line 1057
+    .line 1085
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onPreviewOpenAnimationEnd()V
 
-    .line 1058
+    .line 1086
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$4$1;->val$launchActivity:Lorg/telegram/ui/LaunchActivity;
 
     iget v1, p0, Lorg/telegram/ui/DialogsActivity$4$1;->val$accountNumberFinal:I

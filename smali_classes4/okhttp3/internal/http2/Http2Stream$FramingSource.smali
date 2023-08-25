@@ -214,7 +214,7 @@
     :try_start_1
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "null cannot be cast to non-null type java.lang.Object"
+    const-string/jumbo v2, "null cannot be cast to non-null type java.lang.Object"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -811,7 +811,7 @@
     :cond_7
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string p2, "null cannot be cast to non-null type java.lang.Object"
+    const-string/jumbo p2, "null cannot be cast to non-null type java.lang.Object"
 
     invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

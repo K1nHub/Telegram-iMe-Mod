@@ -375,6 +375,10 @@
 
     if-eqz v5, :cond_a
 
+    iget-object v5, v1, Lorg/telegram/ui/ThemePreviewActivity;->serverWallpaper:Lorg/telegram/messenger/MessageObject;
+
+    if-nez v5, :cond_a
+
     .line 4514
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_message;
 
@@ -2809,7 +2813,7 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 3
+    .locals 4
 
     const/4 p1, -0x1
 
@@ -2822,11 +2826,13 @@
 
     const/4 v1, 0x0
 
-    new-instance v2, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;
+    const/4 v2, 0x0
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;-><init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;)V
+    new-instance v3, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;
 
-    invoke-direct {p2, v0, v1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v3, p0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$1;-><init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;)V
+
+    invoke-direct {p2, v0, v1, v2, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;ZLorg/telegram/messenger/ChatMessageSharedResources;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 4914
     new-instance v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$2;

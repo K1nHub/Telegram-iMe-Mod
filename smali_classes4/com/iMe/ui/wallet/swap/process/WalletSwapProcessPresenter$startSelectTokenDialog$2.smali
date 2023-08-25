@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 242
+    .line 245
     check-cast p1, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$startSelectTokenDialog$2;->invoke(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 250
+    .line 253
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$startSelectTokenDialog$2;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$startSelectTokenDialog$2;->$side:Lcom/iMe/model/wallet/swap/SwapSide;

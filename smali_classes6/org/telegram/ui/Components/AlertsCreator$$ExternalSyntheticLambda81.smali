@@ -10,13 +10,17 @@
 
 .field public final synthetic f$1:Lorg/telegram/ui/Components/NumberPicker;
 
-.field public final synthetic f$2:Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;
+.field public final synthetic f$2:Lorg/telegram/ui/Components/NumberPicker;
 
-.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+.field public final synthetic f$3:Ljava/util/Calendar;
+
+.field public final synthetic f$4:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+
+.field public final synthetic f$5:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Ljava/util/Calendar;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +29,13 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$1:Lorg/telegram/ui/Components/NumberPicker;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$2:Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$2:Lorg/telegram/ui/Components/NumberPicker;
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$3:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$3:Ljava/util/Calendar;
+
+    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$4:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+
+    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$5:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     return-void
 .end method
@@ -35,17 +43,23 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 4
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$0:Lorg/telegram/ui/Components/NumberPicker;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$1:Lorg/telegram/ui/Components/NumberPicker;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$2:Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$2:Lorg/telegram/ui/Components/NumberPicker;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$3:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$3:Ljava/util/Calendar;
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$bnxuVa4_PhzGeXqOSZ9GVqM40os(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+    iget-object v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$4:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+
+    iget-object v5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;->f$5:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+
+    move-object v6, p1
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$hO99m71dR7OtUcLcU0hGFMUHfNM(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Ljava/util/Calendar;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
 
     return-void
 .end method

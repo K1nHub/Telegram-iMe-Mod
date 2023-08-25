@@ -77,10 +77,20 @@
     return-void
 .end method
 
-.method private constructor <init>(ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
-    .locals 1
+.method public constructor <init>(ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;I)V
+    .locals 9
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Landroid/content/Context;",
+            "Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/tgnet/TLRPC$InputStickerSet;",
+            ">;I)V"
+        }
+    .end annotation
 
-    .line 71
+    .line 72
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 40
@@ -95,134 +105,111 @@
     .line 43
     iput-boolean p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawableBoundsSet:Z
 
-    const/4 p4, -0x1
+    const/4 v0, -0x1
 
-    .line 233
-    iput p4, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastWidth:I
+    .line 215
+    iput v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastWidth:I
 
-    const/4 p4, 0x1
+    const/4 v0, 0x1
 
-    .line 234
-    iput-boolean p4, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->checkWidth:Z
-
-    const/4 v0, 0x0
-
-    .line 289
-    iput v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
-
-    .line 72
-    iput p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->currentAccount:I
-
-    .line 75
-    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
-
-    invoke-static {p1, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result p1
-
-    const/4 v0, 0x6
-
-    invoke-static {p1, p2, v0}, Lorg/telegram/ui/ActionBar/Theme;->createRadSelectorDrawable(III)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 77
-    new-instance p1, Landroid/text/TextPaint;
-
-    invoke-direct {p1, p4}, Landroid/text/TextPaint;-><init>(I)V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
-
-    const/16 p2, 0xd
-
-    .line 78
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p2
-
-    int-to-float p2, p2
-
-    invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
-
-    .line 79
-    iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
-
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
-
-    invoke-static {p2, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setColor(I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;I)V
-    .locals 9
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Landroid/content/Context;",
-            "Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;",
-            "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$InputStickerSet;",
-            ">;I)V"
-        }
-    .end annotation
-
-    .line 101
-    invoke-direct {p0, p1, p2, p3, p5}, Lorg/telegram/ui/Components/MessageContainsEmojiButton;-><init>(ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
-
-    .line 103
-    invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
-
-    move-result p2
-
-    const/16 v0, 0x21
+    .line 216
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->checkWidth:Z
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    .line 271
+    iput v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
+
+    .line 74
+    iput p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->currentAccount:I
+
+    .line 77
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v1, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    invoke-static {v1, p2, v2}, Lorg/telegram/ui/ActionBar/Theme;->createRadSelectorDrawable(III)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 79
+    new-instance v1, Landroid/text/TextPaint;
+
+    invoke-direct {v1, v0}, Landroid/text/TextPaint;-><init>(I)V
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
+
+    const/16 v2, 0xd
+
+    .line 80
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setTextSize(F)V
+
+    .line 81
+    iget-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
+
+    invoke-static {v2, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setColor(I)V
+
+    .line 83
+    invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/16 v2, 0x21
 
     const/4 v3, 0x0
 
-    if-le p2, v2, :cond_1
+    if-le v1, v0, :cond_1
 
     if-nez p5, :cond_0
 
-    .line 106
+    .line 86
     invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
-    new-array p2, v3, [Ljava/lang/Object;
+    new-array p3, p2, [Ljava/lang/Object;
 
-    const-string p3, "MessageContainsEmojiPacks"
+    const-string p4, "MessageContainsEmojiPacks"
 
-    invoke-static {p3, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p4, p1, p3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 108
+    .line 88
     :cond_0
     invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
-    new-array p2, v3, [Ljava/lang/Object;
+    new-array p3, p2, [Ljava/lang/Object;
 
-    const-string p3, "MessageContainsReactionsPacks"
+    const-string p4, "MessageContainsReactionsPacks"
 
-    invoke-static {p3, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p4, p1, p3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 110
+    .line 90
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
@@ -230,160 +217,176 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
 
-    .line 111
-    move-object p2, p1
+    .line 91
+    move-object p3, p1
 
-    check-cast p2, Landroid/text/Spannable;
+    check-cast p3, Landroid/text/Spannable;
 
-    .line 112
+    .line 92
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
-    const-class p3, Lorg/telegram/ui/Components/TypefaceSpan;
+    const-class p4, Lorg/telegram/ui/Components/TypefaceSpan;
 
-    invoke-interface {p2, v3, p1, p3}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    invoke-interface {p3, p2, p1, p4}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, [Lorg/telegram/ui/Components/TypefaceSpan;
 
     :goto_1
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_a
 
-    .line 113
-    array-length p3, p1
+    .line 93
+    array-length p4, p1
 
-    if-ge v3, p3, :cond_9
+    if-ge p2, p4, :cond_a
 
-    .line 114
-    aget-object p3, p1, v3
+    .line 94
+    aget-object p4, p1, p2
 
-    invoke-interface {p2, p3}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
-
-    move-result p3
-
-    .line 115
-    aget-object p4, p1, v3
-
-    invoke-interface {p2, p4}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
+    invoke-interface {p3, p4}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result p4
 
-    .line 116
-    aget-object p5, p1, v3
+    .line 95
+    aget-object p5, p1, p2
 
-    invoke-interface {p2, p5}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+    invoke-interface {p3, p5}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
 
-    .line 117
-    new-instance p5, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;
+    move-result p5
 
-    invoke-direct {p5, p0, v1}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/ui/Components/MessageContainsEmojiButton$1;)V
+    .line 96
+    aget-object v0, p1, p2
 
-    invoke-interface {p2, p5, p3, p4, v0}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
+    invoke-interface {p3, v0}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    add-int/lit8 v3, v3, 0x1
+    .line 97
+    new-instance v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;
+
+    invoke-direct {v0, p0, v3}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/ui/Components/MessageContainsEmojiButton$1;)V
+
+    invoke-interface {p3, v0, p4, p5, v2}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
+
+    add-int/lit8 p2, p2, 0x1
 
     goto :goto_1
 
-    .line 119
+    .line 99
     :cond_1
     invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
 
-    move-result p2
+    move-result v1
 
-    if-ne p2, v2, :cond_9
+    if-ne v1, v0, :cond_a
 
     if-nez p5, :cond_2
 
-    .line 122
-    sget p2, Lorg/telegram/messenger/R$string;->MessageContainsEmojiPack:I
+    .line 102
+    sget p5, Lorg/telegram/messenger/R$string;->MessageContainsEmojiPack:I
 
-    const-string p5, "MessageContainsEmojiPack"
+    const-string v1, "MessageContainsEmojiPack"
 
-    invoke-static {p5, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_2
-
-    .line 124
-    :cond_2
-    sget p2, Lorg/telegram/messenger/R$string;->MessageContainsReactionsPack:I
-
-    const-string p5, "MessageContainsReactionsPack"
-
-    invoke-static {p5, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object p2
-
-    :goto_2
-    const-string p5, "%s"
-
-    .line 126
-    invoke-virtual {p2, p5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v1, p5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p5
 
-    .line 127
-    array-length v4, p5
+    goto :goto_2
 
-    if-gt v4, v2, :cond_3
+    :cond_2
+    const/4 v1, 0x3
 
-    .line 128
-    iput-object p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
+    if-ne p5, v1, :cond_3
+
+    .line 104
+    sget p5, Lorg/telegram/messenger/R$string;->MessageContainsReactionPack:I
+
+    const-string v1, "MessageContainsReactionPack"
+
+    invoke-static {v1, p5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p5
+
+    goto :goto_2
+
+    .line 106
+    :cond_3
+    sget p5, Lorg/telegram/messenger/R$string;->MessageContainsReactionsPack:I
+
+    const-string v1, "MessageContainsReactionsPack"
+
+    invoke-static {v1, p5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object p5
+
+    :goto_2
+    const-string v1, "%s"
+
+    .line 108
+    invoke-virtual {p5, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 109
+    array-length v4, v1
+
+    if-gt v4, v0, :cond_4
+
+    .line 110
+    iput-object p5, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
 
     goto/16 :goto_6
 
-    .line 132
-    :cond_3
-    invoke-virtual {p4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 114
+    :cond_4
+    invoke-virtual {p4, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object p4
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    check-cast p4, Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    iput-object p4, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
-    if-eqz p2, :cond_6
+    if-eqz p4, :cond_7
 
-    .line 134
+    .line 116
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    move-result-object p2
+    move-result-object p4
 
-    iget-object p4, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    iget-object p5, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
-    invoke-virtual {p2, p4, v3}, Lorg/telegram/messenger/MediaDataController;->getStickerSet(Lorg/telegram/tgnet/TLRPC$InputStickerSet;Z)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    invoke-virtual {p4, p5, p2}, Lorg/telegram/messenger/MediaDataController;->getStickerSet(Lorg/telegram/tgnet/TLRPC$InputStickerSet;Z)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    move-result-object p2
+    move-result-object p4
 
-    if-eqz p2, :cond_6
+    if-eqz p4, :cond_7
 
-    .line 135
-    iget-object p4, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
+    .line 117
+    iget-object p5, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    if-eqz p4, :cond_6
+    if-eqz p5, :cond_7
 
-    .line 136
-    iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
+    .line 118
+    iget-object p5, p5, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
 
-    move v4, v3
+    move v4, p2
 
-    .line 137
+    .line 119
     :goto_3
-    iget-object v5, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
+    iget-object v5, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_5
+    if-ge v4, v5, :cond_6
 
-    .line 138
-    iget-object v5, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
+    .line 120
+    iget-object v5, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -393,16 +396,16 @@
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    iget-object v7, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
+    iget-object v7, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v7, v7, Lorg/telegram/tgnet/TLRPC$StickerSet;->thumb_document_id:J
 
     cmp-long v5, v5, v7
 
-    if-nez v5, :cond_4
+    if-nez v5, :cond_5
 
-    .line 139
-    iget-object v5, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
+    .line 121
+    iget-object v5, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -412,62 +415,62 @@
 
     goto :goto_4
 
-    :cond_4
+    :cond_5
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    :cond_5
-    move-object v4, v1
+    :cond_6
+    move-object v4, v3
 
     :goto_4
-    if-nez v4, :cond_7
+    if-nez v4, :cond_8
 
-    .line 143
-    iget-object v5, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
+    .line 125
+    iget-object v5, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_8
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    if-lez v5, :cond_7
+    if-lez v5, :cond_8
 
-    .line 144
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
+    .line 126
+    iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
-    invoke-virtual {p2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p4, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object p4
 
-    move-object v4, p2
+    move-object v4, p4
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$Document;
 
     goto :goto_5
 
-    :cond_6
-    move-object p4, v1
-
-    move-object v4, p4
-
     :cond_7
+    move-object p5, v3
+
+    move-object v4, p5
+
+    :cond_8
     :goto_5
-    if-eqz p4, :cond_8
+    if-eqz p5, :cond_9
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_9
 
-    .line 149
-    new-instance p2, Landroid/text/SpannableString;
+    .line 131
+    new-instance p4, Landroid/text/SpannableString;
 
     invoke-static {v4}, Lorg/telegram/messenger/MessageObject;->findAnimatedEmojiEmoticon(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-direct {p2, v5}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {p4, v5}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 150
+    .line 132
     new-instance v5, Lorg/telegram/ui/Components/MessageContainsEmojiButton$1;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
@@ -478,81 +481,81 @@
 
     invoke-direct {v5, p0, v4, v6}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$1;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/tgnet/TLRPC$Document;Landroid/graphics/Paint$FontMetricsInt;)V
 
-    .line 155
-    invoke-virtual {p2}, Landroid/text/SpannableString;->length()I
+    .line 137
+    invoke-virtual {p4}, Landroid/text/SpannableString;->length()I
 
     move-result v6
 
-    .line 150
-    invoke-virtual {p2, v5, v3, v6, v0}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    .line 132
+    invoke-virtual {p4, v5, p2, v6, v2}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 156
-    invoke-static {p1, v3, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->make(IILorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+    .line 138
+    invoke-static {p1, p2, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->make(IILorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    .line 157
+    .line 139
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
 
     move-result-object p3
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 158
+    .line 140
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
-    .line 160
+    .line 142
     new-instance p1, Landroid/text/SpannableString;
 
-    invoke-direct {p1, p4}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {p1, p5}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 161
+    .line 143
     new-instance p3, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;
 
-    invoke-direct {p3, p0, v1}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/ui/Components/MessageContainsEmojiButton$1;)V
+    invoke-direct {p3, p0, v3}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/ui/Components/MessageContainsEmojiButton$1;)V
 
     invoke-virtual {p1}, Landroid/text/SpannableString;->length()I
 
-    move-result p4
+    move-result p5
 
-    invoke-virtual {p1, p3, v3, p4, v0}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {p1, p3, p2, p5, v2}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 163
+    .line 145
     new-instance p3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p3}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    aget-object p4, p5, v3
+    aget-object p2, v1, p2
 
-    .line 165
-    invoke-virtual {p3, p4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    move-result-object p3
-
-    .line 166
+    .line 147
     invoke-virtual {p3, p2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    move-result-object p2
+
+    .line 148
+    invoke-virtual {p2, p4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p2
 
     const/16 p3, 0x20
 
-    .line 167
+    .line 149
     invoke-virtual {p2, p3}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
     move-result-object p2
 
-    .line 168
+    .line 150
     invoke-virtual {p2, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
 
-    aget-object p2, p5, v2
+    aget-object p2, v1, v0
 
-    .line 169
+    .line 151
     invoke-virtual {p1, p2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
@@ -561,48 +564,48 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 170
+    .line 152
     iput p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
 
-    .line 171
-    iput-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    .line 153
+    iput-object v3, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     goto :goto_6
 
-    .line 173
-    :cond_8
-    aget-object p1, p5, v3
+    .line 155
+    :cond_9
+    aget-object p1, v1, p2
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
 
-    .line 174
-    aget-object p1, p5, v2
+    .line 156
+    aget-object p1, v1, v0
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->endText:Ljava/lang/CharSequence;
 
-    .line 175
+    .line 157
     new-instance p1, Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-direct {p1, p3}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
-    .line 176
+    .line 158
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
     iput p2, p1, Lorg/telegram/ui/Components/LoadingDrawable;->colorKey1:I
 
-    .line 177
+    .line 159
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     iput p2, p1, Lorg/telegram/ui/Components/LoadingDrawable;->colorKey2:I
 
     const/high16 p2, 0x40800000    # 4.0f
 
-    .line 178
+    .line 160
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
 
-    :cond_9
+    :cond_a
     :goto_6
     return-void
 .end method
@@ -646,7 +649,7 @@
 .method private synthetic lambda$didReceivedNotification$0(ZLandroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 368
+    .line 350
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -659,12 +662,12 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
 
-    .line 369
+    .line 351
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     if-eqz p1, :cond_0
 
-    .line 371
+    .line 353
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     :cond_0
@@ -684,7 +687,7 @@
 
     return v12
 
-    .line 195
+    .line 177
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
 
@@ -701,7 +704,7 @@
     :cond_1
     if-eqz v1, :cond_3
 
-    .line 197
+    .line 179
     new-instance v1, Landroid/text/StaticLayout;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
@@ -734,7 +737,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
-    .line 198
+    .line 180
     iget-object v2, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     if-eqz v2, :cond_4
@@ -743,7 +746,7 @@
 
     if-nez v2, :cond_4
 
-    .line 199
+    .line 181
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v1
@@ -752,7 +755,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 200
+    .line 182
     iget-object v4, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
@@ -777,7 +780,7 @@
 
     iput v4, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastLineMargin:I
 
-    .line 201
+    .line 183
     iget-object v4, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v4, v1}, Landroid/text/StaticLayout;->getLineTop(I)I
@@ -786,7 +789,7 @@
 
     iput v4, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastLineTop:I
 
-    .line 202
+    .line 184
     iget-object v4, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v4, v1}, Landroid/text/StaticLayout;->getLineBottom(I)I
@@ -797,7 +800,7 @@
 
     float-to-int v1, v1
 
-    .line 203
+    .line 185
     iget v4, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastLineTop:I
 
     sub-int v4, v1, v4
@@ -806,7 +809,7 @@
 
     const/16 v4, 0x64
 
-    .line 204
+    .line 186
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -827,19 +830,19 @@
 
     int-to-float v4, v4
 
-    .line 205
+    .line 187
     iget-object v5, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsFrom:Landroid/graphics/Rect;
 
     if-nez v5, :cond_2
 
-    .line 206
+    .line 188
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v5, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsFrom:Landroid/graphics/Rect;
 
-    .line 208
+    .line 190
     :cond_2
     iget-object v5, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsFrom:Landroid/graphics/Rect;
 
@@ -855,36 +858,36 @@
 
     invoke-virtual {v5, v6, v7, v4, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 209
+    .line 191
     iget-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsFrom:Landroid/graphics/Rect;
 
     invoke-virtual {v1, v4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 210
+    .line 192
     iput-boolean v2, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawableBoundsSet:Z
 
     goto :goto_0
 
-    .line 213
+    .line 195
     :cond_3
     iput-object v3, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
-    .line 214
+    .line 196
     iput-boolean v12, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawableBoundsSet:Z
 
-    .line 216
+    .line 198
     :cond_4
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainText:Ljava/lang/CharSequence;
 
     iput-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastMainTextText:Ljava/lang/CharSequence;
 
-    .line 217
+    .line 199
     iput v11, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastMainTextWidth:I
 
-    .line 220
+    .line 202
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartText:Ljava/lang/CharSequence;
 
@@ -899,7 +902,7 @@
     :cond_6
     if-eqz v1, :cond_7
 
-    .line 222
+    .line 204
     new-instance v13, Landroid/text/StaticLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartText:Ljava/lang/CharSequence;
@@ -930,20 +933,20 @@
 
     goto :goto_1
 
-    .line 224
+    .line 206
     :cond_7
     iput-object v3, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartTextLayout:Landroid/text/StaticLayout;
 
-    .line 226
+    .line 208
     :goto_1
     iget-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartText:Ljava/lang/CharSequence;
 
     iput-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastSecondPartText:Ljava/lang/CharSequence;
 
-    .line 227
+    .line 209
     iput v11, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastSecondPartTextWidth:I
 
-    .line 230
+    .line 212
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
@@ -1001,17 +1004,17 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 7
 
-    .line 295
+    .line 277
     sget p2, Lorg/telegram/messenger/NotificationCenter;->groupStickersDidLoad:I
 
     if-ne p1, p2, :cond_a
 
-    .line 296
+    .line 278
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     if-eqz p1, :cond_a
 
-    .line 297
+    .line 279
     iget p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -1030,7 +1033,7 @@
 
     return-void
 
-    .line 303
+    .line 285
     :cond_0
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
@@ -1038,12 +1041,12 @@
 
     if-eqz p2, :cond_3
 
-    .line 304
+    .line 286
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
 
     move v1, p3
 
-    .line 305
+    .line 287
     :goto_0
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -1055,7 +1058,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 306
+    .line 288
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1074,7 +1077,7 @@
 
     if-nez v2, :cond_1
 
-    .line 307
+    .line 289
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1096,7 +1099,7 @@
     :goto_1
     if-nez v1, :cond_4
 
-    .line 311
+    .line 293
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_4
@@ -1107,7 +1110,7 @@
 
     if-lez v2, :cond_4
 
-    .line 312
+    .line 294
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1133,7 +1136,7 @@
 
     goto/16 :goto_4
 
-    .line 319
+    .line 301
     :cond_5
     iget p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->currentAccount:I
 
@@ -1143,20 +1146,20 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    .line 320
+    .line 302
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
-    .line 321
+    .line 303
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 323
+    .line 305
     new-instance p1, Landroid/text/SpannableString;
 
     const-string v2, " "
 
     invoke-direct {p1, v2}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 324
+    .line 306
     new-instance v2, Lorg/telegram/ui/Components/MessageContainsEmojiButton$2;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$2;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;)V
@@ -1167,7 +1170,7 @@
 
     invoke-virtual {p1, v2, p3, v3, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 333
+    .line 315
     new-instance v2, Landroid/text/SpannableString;
 
     invoke-static {v1}, Lorg/telegram/messenger/MessageObject;->findAnimatedEmojiEmoticon(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
@@ -1176,7 +1179,7 @@
 
     invoke-direct {v2, v5}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 334
+    .line 316
     new-instance v5, Lorg/telegram/ui/Components/MessageContainsEmojiButton$3;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
@@ -1187,20 +1190,20 @@
 
     invoke-direct {v5, p0, v1, v6}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$3;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/tgnet/TLRPC$Document;Landroid/graphics/Paint$FontMetricsInt;)V
 
-    .line 339
+    .line 321
     invoke-virtual {v2}, Landroid/text/SpannableString;->length()I
 
     move-result v1
 
-    .line 334
+    .line 316
     invoke-virtual {v2, v5, p3, v1, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 341
+    .line 323
     new-instance v1, Landroid/text/SpannableString;
 
     invoke-direct {v1, p2}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 342
+    .line 324
     new-instance p2, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;
 
     invoke-direct {p2, p0, v0}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$BoldAndAccent;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Lorg/telegram/ui/Components/MessageContainsEmojiButton$1;)V
@@ -1211,43 +1214,43 @@
 
     invoke-virtual {v1, p2, p3, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 344
+    .line 326
     new-instance p2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p2}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 346
+    .line 328
     invoke-virtual {p2, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
 
-    .line 347
+    .line 329
     invoke-virtual {p1, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
 
     const/16 p2, 0x20
 
-    .line 348
+    .line 330
     invoke-virtual {p1, p2}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
 
-    .line 349
+    .line 331
     invoke-virtual {p1, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
 
     iget-object p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->endText:Ljava/lang/CharSequence;
 
-    .line 350
+    .line 332
     invoke-virtual {p1, p2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartText:Ljava/lang/CharSequence;
 
-    .line 351
+    .line 333
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p1
@@ -1264,7 +1267,7 @@
 
     sub-int/2addr p1, p2
 
-    .line 352
+    .line 334
     iget p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastWidth:I
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
@@ -1283,7 +1286,7 @@
 
     move-result p2
 
-    .line 353
+    .line 335
     iget-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsFrom:Landroid/graphics/Rect;
 
     if-eqz v1, :cond_7
@@ -1292,19 +1295,19 @@
 
     if-eqz v1, :cond_7
 
-    .line 354
+    .line 336
     iget-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsTo:Landroid/graphics/Rect;
 
     if-nez v1, :cond_6
 
-    .line 355
+    .line 337
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsTo:Landroid/graphics/Rect;
 
-    .line 357
+    .line 339
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartTextLayout:Landroid/text/StaticLayout;
 
@@ -1316,7 +1319,7 @@
 
     move-result v1
 
-    .line 358
+    .line 340
     iget-object v2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsTo:Landroid/graphics/Rect;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsFrom:Landroid/graphics/Rect;
@@ -1331,22 +1334,22 @@
 
     invoke-virtual {v2, v5, v6, v1, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 360
+    .line 342
     :cond_7
     iput-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->inputStickerSet:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
-    .line 362
+    .line 344
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_8
 
-    .line 363
+    .line 345
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_8
     sub-int/2addr p1, p2
 
-    .line 365
+    .line 347
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
 
     move-result p1
@@ -1371,7 +1374,7 @@
 
     new-array p2, p2, [F
 
-    .line 366
+    .line 348
     iget v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
 
     aput v0, p2, p3
@@ -1386,35 +1389,35 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
-    .line 367
+    .line 349
     new-instance p3, Lorg/telegram/ui/Components/MessageContainsEmojiButton$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p1}, Lorg/telegram/ui/Components/MessageContainsEmojiButton$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/MessageContainsEmojiButton;Z)V
 
     invoke-virtual {p2, p3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 374
+    .line 356
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 375
+    .line 357
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0x96
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 376
+    .line 358
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0x190
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 377
+    .line 359
     iget-object p1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1429,18 +1432,18 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 393
+    .line 375
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 394
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 395
+    .line 377
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
-    .line 397
+    .line 379
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->currentAccount:I
 
@@ -1458,18 +1461,18 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 384
+    .line 366
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 385
+    .line 367
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 386
+    .line 368
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Landroid/view/View;)V
 
-    .line 388
+    .line 370
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->currentAccount:I
 
@@ -1487,18 +1490,18 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 257
+    .line 239
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 258
+    .line 240
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_4
 
-    .line 259
+    .line 241
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 260
+    .line 242
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v0
@@ -1513,19 +1516,19 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 261
+    .line 243
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
 
     const/16 v1, 0xff
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 262
+    .line 244
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->mainTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 263
+    .line 245
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 v1, 0x437f0000    # 255.0f
@@ -1538,7 +1541,7 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 264
+    .line 246
     iget v3, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
 
     sub-float/2addr v2, v3
@@ -1549,7 +1552,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->setAlpha(I)V
 
-    .line 265
+    .line 247
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingBoundsFrom:Landroid/graphics/Rect;
 
     if-eqz v0, :cond_0
@@ -1558,46 +1561,46 @@
 
     if-eqz v2, :cond_0
 
-    .line 266
+    .line 248
     iget v3, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
 
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     invoke-static {v0, v2, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/Rect;Landroid/graphics/Rect;FLandroid/graphics/Rect;)V
 
-    .line 267
+    .line 249
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 269
+    .line 251
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/LoadingDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 270
+    .line 252
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 272
+    .line 254
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartTextLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_2
 
-    .line 273
+    .line 255
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v0, 0x0
 
-    .line 274
+    .line 256
     iget v2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastLineTop:I
 
     int-to-float v2, v2
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 275
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->textPaint:Landroid/text/TextPaint;
 
     iget v2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
@@ -1608,21 +1611,21 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 276
+    .line 258
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->secondPartTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 277
+    .line 259
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 279
+    .line 261
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_3
 
-    .line 280
+    .line 262
     iget v2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->loadT:F
 
     mul-float/2addr v2, v1
@@ -1631,19 +1634,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setAlpha(I)V
 
-    .line 281
+    .line 263
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawableBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 282
+    .line 264
     iget-object v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->emojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 284
+    .line 266
     :cond_3
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1656,7 +1659,7 @@
 
     const/16 p2, 0xd
 
-    .line 238
+    .line 220
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1677,31 +1680,31 @@
 
     invoke-virtual {p0, v0, v2, p2, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 239
+    .line 221
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 240
+    .line 222
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->checkWidth:Z
 
     if-eqz v0, :cond_0
 
-    .line 241
+    .line 223
     iget v0, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastWidth:I
 
     if-lez v0, :cond_0
 
-    .line 242
+    .line 224
     invoke-static {p2, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 245
+    .line 227
     :cond_0
     iput p2, p0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->lastWidth:I
 
-    .line 246
+    .line 228
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v0
@@ -1720,13 +1723,13 @@
 
     move p2, v0
 
-    .line 250
+    .line 232
     :cond_1
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->updateLayout(IZ)I
 
     move-result p2
 
-    .line 251
+    .line 233
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v0
@@ -1741,7 +1744,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 252
+    .line 234
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2

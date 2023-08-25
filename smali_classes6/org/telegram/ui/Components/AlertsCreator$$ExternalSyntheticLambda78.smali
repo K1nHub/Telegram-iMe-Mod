@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda78;->f$0:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda78;->f$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda78;->f$0:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda78;->f$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$_kHF-5f_S-NCgPszhNHi9GUte3g(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$x8AZPHlaWsy6JKsdBfomumRoRwU(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)V
 
     return-void
 .end method

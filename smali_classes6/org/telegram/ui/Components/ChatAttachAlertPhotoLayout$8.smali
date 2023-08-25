@@ -26,14 +26,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Landroid/content/Context;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 923
+    .line 928
     iput-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->val$recordPaint:Landroid/graphics/Paint;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 925
+    .line 930
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->alpha:F
 
     return-void
@@ -44,7 +44,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 931
+    .line 936
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->val$recordPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->alpha:F
@@ -61,14 +61,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 933
+    .line 938
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->isIncr:Z
 
     const v1, 0x3cda740e
 
     if-nez v0, :cond_0
 
-    .line 934
+    .line 939
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->alpha:F
 
     sub-float/2addr v0, v1
@@ -81,17 +81,17 @@
 
     if-gtz v0, :cond_1
 
-    .line 936
+    .line 941
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->alpha:F
 
     const/4 v0, 0x1
 
-    .line 937
+    .line 942
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->isIncr:Z
 
     goto :goto_0
 
-    .line 940
+    .line 945
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->alpha:F
 
@@ -105,22 +105,22 @@
 
     if-ltz v0, :cond_1
 
-    .line 942
+    .line 947
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->alpha:F
 
     const/4 v0, 0x0
 
-    .line 943
+    .line 948
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$8;->isIncr:Z
 
-    .line 946
+    .line 951
     :cond_1
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
     const/16 v0, 0xe
 
-    .line 947
+    .line 952
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -147,7 +147,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 948
+    .line 953
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
     return-void

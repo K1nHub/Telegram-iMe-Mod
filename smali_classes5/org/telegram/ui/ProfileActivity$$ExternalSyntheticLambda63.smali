@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)Z
+.method public final onItemClick(Landroid/view/View;I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$ZM0IxpBXmpi65wxlyL9fli3syPY(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;I)Z
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$HOgbLlIFOP6lBLQ7JxIZkDabuy8(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;I)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

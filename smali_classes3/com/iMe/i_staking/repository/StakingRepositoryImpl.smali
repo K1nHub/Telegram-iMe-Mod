@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingRepositoryImpl.kt\ncom/iMe/i_staking/repository/StakingRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,147:1\n70#2:148\n70#2:150\n70#2:152\n70#2:154\n70#2:156\n70#2:158\n70#2:160\n70#2:162\n70#2:164\n70#2:166\n26#3:149\n26#3:151\n26#3:153\n26#3:155\n26#3:157\n26#3:159\n26#3:161\n26#3:163\n26#3:165\n26#3:167\n*S KotlinDebug\n*F\n+ 1 StakingRepositoryImpl.kt\ncom/iMe/i_staking/repository/StakingRepositoryImpl\n*L\n29#1:148\n40#1:150\n52#1:152\n58#1:154\n72#1:156\n78#1:158\n89#1:160\n106#1:162\n118#1:164\n136#1:166\n30#1:149\n41#1:151\n53#1:153\n59#1:155\n73#1:157\n79#1:159\n90#1:161\n107#1:163\n119#1:165\n137#1:167\n*E\n"
+    value = "SMAP\nStakingRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingRepositoryImpl.kt\ncom/iMe/i_staking/repository/StakingRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,169:1\n70#2:170\n70#2:172\n70#2:174\n70#2:176\n70#2:178\n70#2:180\n70#2:182\n70#2:185\n70#2:188\n70#2:191\n26#3:171\n26#3:173\n26#3:175\n26#3:177\n26#3:179\n26#3:181\n26#3:183\n26#3:184\n26#3:186\n26#3:187\n26#3:189\n26#3:190\n26#3:192\n26#3:193\n*S KotlinDebug\n*F\n+ 1 StakingRepositoryImpl.kt\ncom/iMe/i_staking/repository/StakingRepositoryImpl\n*L\n45#1:170\n56#1:172\n68#1:174\n74#1:176\n88#1:178\n94#1:180\n105#1:182\n124#1:185\n138#1:188\n158#1:191\n46#1:171\n57#1:173\n69#1:175\n75#1:177\n89#1:179\n95#1:181\n106#1:183\n114#1:184\n125#1:186\n133#1:187\n139#1:189\n147#1:190\n159#1:192\n167#1:193\n*E\n"
 .end annotation
 
 
@@ -42,19 +42,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 36
     iput-object p1, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
-    .line 19
+    .line 37
     iput-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 20
+    .line 38
     iput-object p3, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 21
+    .line 39
     iput-object p4, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingDataSource:Lcom/iMe/i_staking/datasource/StakingDataSource;
 
     return-void
@@ -74,10 +74,10 @@
         }
     .end annotation
 
-    .line 76
+    .line 92
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 77
+    .line 93
     new-instance v1, Lcom/iMe/i_staking/request/StakingIdRequest;
 
     invoke-direct {v1, p1, p2}, Lcom/iMe/i_staking/request/StakingIdRequest;-><init>(J)V
@@ -86,7 +86,7 @@
 
     move-result-object p1
 
-    .line 78
+    .line 94
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -106,7 +106,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 79
+    .line 95
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -141,10 +141,10 @@
         }
     .end annotation
 
-    .line 56
+    .line 72
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 57
+    .line 73
     new-instance v1, Lcom/iMe/i_staking/request/StakingIdRequest;
 
     invoke-direct {v1, p1, p2}, Lcom/iMe/i_staking/request/StakingIdRequest;-><init>(J)V
@@ -153,7 +153,7 @@
 
     move-result-object p1
 
-    .line 58
+    .line 74
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -173,7 +173,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 75
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -213,10 +213,10 @@
         }
     .end annotation
 
-    .line 62
+    .line 78
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 64
+    .line 80
     new-instance v9, Lcom/iMe/i_staking/request/StakingOperationsRequest;
 
     const/4 v1, 0x0
@@ -227,7 +227,7 @@
 
     goto :goto_0
 
-    .line 69
+    .line 85
     :cond_0
     new-instance v2, Lcom/iMe/i_staking/request/StakingOperationsPaginationRequest;
 
@@ -252,15 +252,15 @@
 
     move-object v5, p3
 
-    .line 64
+    .line 80
     invoke-direct/range {v1 .. v8}, Lcom/iMe/i_staking/request/StakingOperationsRequest;-><init>(Ljava/lang/Long;Lcom/iMe/storage/domain/model/staking/StakingOperationType;Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;Ljava/lang/String;Lcom/iMe/i_staking/request/StakingOperationsPaginationRequest;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 63
+    .line 79
     invoke-interface {v0, v9}, Lcom/iMe/i_staking/StakingApi;->getStakingOperations(Lcom/iMe/i_staking/request/StakingOperationsRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 72
+    .line 88
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -280,7 +280,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 73
+    .line 89
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -327,20 +327,20 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 60
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 46
+    .line 62
     new-instance v9, Lcom/iMe/i_staking/request/StakingOwnProgrammesRequest;
 
-    .line 48
+    .line 64
     sget-object v1, Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;->Companion:Lcom/iMe/i_staking/request/StakingOrderStrategyRequest$Companion;
 
     invoke-virtual {v1, p1}, Lcom/iMe/i_staking/request/StakingOrderStrategyRequest$Companion;->createFromOrderType(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;)Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;
 
     move-result-object v5
 
-    .line 49
+    .line 65
     invoke-virtual {p3}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p1
@@ -367,15 +367,15 @@
 
     move-object v3, p2
 
-    .line 46
+    .line 62
     invoke-direct/range {v1 .. v8}, Lcom/iMe/i_staking/request/StakingOwnProgrammesRequest;-><init>(Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 45
+    .line 61
     invoke-interface {v0, v9}, Lcom/iMe/i_staking/StakingApi;->getStakingOwnProgrammesList(Lcom/iMe/i_staking/request/StakingOwnProgrammesRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 52
+    .line 68
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -395,7 +395,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 69
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -437,13 +437,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 33
+    .line 49
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 35
+    .line 51
     new-instance v9, Lcom/iMe/i_staking/request/StakingProgrammesRequest;
 
-    .line 37
+    .line 53
     sget-object v1, Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;->Companion:Lcom/iMe/i_staking/request/StakingOrderStrategyRequest$Companion;
 
     invoke-virtual {v1, p1}, Lcom/iMe/i_staking/request/StakingOrderStrategyRequest$Companion;->createFromOrderType(Lcom/iMe/storage/domain/model/wallet/staking/StakingOrderType;)Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;
@@ -464,15 +464,15 @@
 
     move-object v3, p2
 
-    .line 35
+    .line 51
     invoke-direct/range {v1 .. v8}, Lcom/iMe/i_staking/request/StakingProgrammesRequest;-><init>(Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Integer;Lcom/iMe/i_staking/request/StakingOrderStrategyRequest;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 34
+    .line 50
     invoke-interface {v0, v9}, Lcom/iMe/i_staking/StakingApi;->getStakingProgrammesList(Lcom/iMe/i_staking/request/StakingProgrammesRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 40
+    .line 56
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -492,7 +492,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 57
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -527,15 +527,15 @@
         }
     .end annotation
 
-    .line 27
+    .line 43
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 28
+    .line 44
     invoke-interface {v0}, Lcom/iMe/i_staking/StakingApi;->getStakingTotalStats()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 29
+    .line 45
     iget-object v1, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -555,7 +555,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 30
+    .line 46
     iget-object v1, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -601,12 +601,33 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 93
+    .line 109
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingDataSource:Lcom/iMe/i_staking/datasource/StakingDataSource;
 
+    .line 110
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/datasource/StakingDataSource;->sendApprovalExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
+
+    .line 114
+    iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+
+    .line 26
+    new-instance v0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendApprovalExecute$$inlined$handleError$1;
+
+    invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendApprovalExecute$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string p2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
@@ -631,26 +652,26 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 98
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 84
+    .line 100
     new-instance v1, Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest;
 
-    .line 86
+    .line 102
     invoke-virtual {p3}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p3
 
-    .line 84
+    .line 100
     invoke-direct {v1, p1, p2, p3}, Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest;-><init>(JLjava/lang/String;)V
 
-    .line 83
+    .line 99
     invoke-interface {v0, v1}, Lcom/iMe/i_staking/StakingApi;->sendApprovalPrepare(Lcom/iMe/i_staking/request/StakingApprovalPrepareRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 89
+    .line 105
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -670,7 +691,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 90
+    .line 106
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -716,12 +737,33 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 142
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingDataSource:Lcom/iMe/i_staking/datasource/StakingDataSource;
 
+    .line 143
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/datasource/StakingDataSource;->sendClaimExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
+
+    .line 147
+    iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+
+    .line 26
+    new-instance v0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendClaimExecute$$inlined$handleError$1;
+
+    invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendClaimExecute$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string p2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
@@ -740,10 +782,10 @@
         }
     .end annotation
 
-    .line 116
+    .line 136
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 117
+    .line 137
     new-instance v1, Lcom/iMe/i_staking/request/StakingIdRequest;
 
     invoke-direct {v1, p1, p2}, Lcom/iMe/i_staking/request/StakingIdRequest;-><init>(J)V
@@ -752,7 +794,7 @@
 
     move-result-object p1
 
-    .line 118
+    .line 138
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -772,7 +814,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 119
+    .line 139
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -818,12 +860,33 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 110
+    .line 128
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingDataSource:Lcom/iMe/i_staking/datasource/StakingDataSource;
 
+    .line 129
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/datasource/StakingDataSource;->sendDepositExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
+
+    .line 133
+    iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+
+    .line 26
+    new-instance v0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositExecute$$inlined$handleError$1;
+
+    invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendDepositExecute$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string p2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
@@ -848,20 +911,20 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 99
+    .line 117
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 101
+    .line 119
     new-instance v1, Lcom/iMe/i_staking/request/StakingDepositPrepareRequest;
 
     invoke-direct {v1, p1, p2, p3}, Lcom/iMe/i_staking/request/StakingDepositPrepareRequest;-><init>(JLjava/math/BigDecimal;)V
 
-    .line 100
+    .line 118
     invoke-interface {v0, v1}, Lcom/iMe/i_staking/StakingApi;->sendDepositPrepare(Lcom/iMe/i_staking/request/StakingDepositPrepareRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 106
+    .line 124
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -881,7 +944,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 107
+    .line 125
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -927,12 +990,33 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 140
+    .line 162
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingDataSource:Lcom/iMe/i_staking/datasource/StakingDataSource;
 
+    .line 163
     invoke-interface {v0, p1, p2}, Lcom/iMe/i_staking/datasource/StakingDataSource;->sendWithdrawExecute(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object p1
+
+    .line 167
+    iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+
+    .line 26
+    new-instance v0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendWithdrawExecute$$inlined$handleError$1;
+
+    invoke-direct {v0, p2}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$sendWithdrawExecute$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+
+    new-instance p2, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/iMe/i_staking/repository/StakingRepositoryImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string p2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
@@ -957,20 +1041,20 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 128
+    .line 150
     iget-object v0, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->stakingApi:Lcom/iMe/i_staking/StakingApi;
 
-    .line 130
+    .line 152
     new-instance v1, Lcom/iMe/i_staking/request/StakingWithdrawPrepareRequest;
 
     invoke-direct {v1, p1, p2, p3, p4}, Lcom/iMe/i_staking/request/StakingWithdrawPrepareRequest;-><init>(JLjava/math/BigDecimal;Z)V
 
-    .line 129
+    .line 151
     invoke-interface {v0, v1}, Lcom/iMe/i_staking/StakingApi;->sendWithdrawPrepare(Lcom/iMe/i_staking/request/StakingWithdrawPrepareRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 136
+    .line 158
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -990,7 +1074,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 137
+    .line 159
     iget-object p2, p0, Lcom/iMe/i_staking/repository/StakingRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26

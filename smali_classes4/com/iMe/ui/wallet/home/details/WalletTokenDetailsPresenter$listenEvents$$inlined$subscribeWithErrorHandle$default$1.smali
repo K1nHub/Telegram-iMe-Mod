@@ -20,14 +20,14 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;",
+        "Lcom/iMe/storage/domain/utils/rx/event/RxEvent;",
         "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletTokenDetailsPresenter.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter\n*L\n1#1,111:1\n344#2,7:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletTokenDetailsPresenter.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter\n*L\n1#1,111:1\n441#2,8:112\n*E\n"
 .end annotation
 
 
@@ -66,7 +66,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;",
+            "Lcom/iMe/storage/domain/utils/rx/event/RxEvent;",
             ")V"
         }
     .end annotation
@@ -76,12 +76,24 @@
     .line 48
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;
+    check-cast p1, Lcom/iMe/storage/domain/utils/rx/event/RxEvent;
 
     .line 113
-    instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingProgrammesRefresh;
+    instance-of v0, p1, Lcom/iMe/common/AppRxEvents$UpdateWalletScreen;
 
     if-eqz v0, :cond_0
+
+    iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
+
+    invoke-static {p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->access$reloadCryptoBoxInfo(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+
+    goto :goto_0
+
+    .line 114
+    :cond_0
+    instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingProgrammesRefresh;
+
+    if-eqz v0, :cond_1
 
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
@@ -89,11 +101,11 @@
 
     goto :goto_0
 
-    .line 114
-    :cond_0
+    .line 115
+    :cond_1
     instance-of p1, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
@@ -105,7 +117,7 @@
 
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->removeSelfFromStackImmediately()V
 
-    :cond_1
+    :cond_2
     :goto_0
     return-void
 .end method

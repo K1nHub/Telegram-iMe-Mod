@@ -5518,7 +5518,7 @@ Puedes modificarlo en cualquier momento desde la sección Carpeta (Orden de los 
     <string name="sorting_settings_tab_channels_item_title">Canales</string>
     <string name="sorting_settings_tab_deleted_users">Cuentas eliminadas</string>
     <string name="sorting_settings_tab_drafts">Borradores</string>
-    <string name="sorting_settings_tab_groups_item_title">Chats de grupos</string>
+    <string name="sorting_settings_tab_groups_item_title">Grupos</string>
     <string name="sorting_settings_tab_live_chats">Chats en vivo</string>
     <string name="sorting_settings_tab_mentioned_chats">Chats mencionados</string>
     <string name="sorting_settings_tab_owner_item_title">Propietario</string>

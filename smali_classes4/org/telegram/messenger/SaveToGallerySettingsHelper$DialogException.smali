@@ -104,7 +104,7 @@
 
     new-array v5, v4, [Ljava/lang/Object;
 
-    invoke-static {v0, v1, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v0, v1, v4, v3}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZZ)Ljava/lang/String;
 
     move-result-object v0
 

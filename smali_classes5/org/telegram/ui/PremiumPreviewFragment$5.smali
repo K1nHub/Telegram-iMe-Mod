@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment;)V
     .locals 0
 
-    .line 629
+    .line 672
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$5;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -35,12 +35,12 @@
 .method public onItemClick(I)V
     .locals 1
 
-    .line 633
+    .line 676
     sget v0, Lcom/iMe/common/IdFabric$Menu;->SETTINGS:I
 
     if-ne p1, v0, :cond_0
 
-    .line 634
+    .line 677
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$5;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     const/4 v0, 0x1
@@ -54,7 +54,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 638
+    .line 681
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$5;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$500(Lorg/telegram/ui/PremiumPreviewFragment;)Z
@@ -63,7 +63,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 639
+    .line 682
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$5;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     const/4 v0, 0x0
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 641
+    .line 684
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$5;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 

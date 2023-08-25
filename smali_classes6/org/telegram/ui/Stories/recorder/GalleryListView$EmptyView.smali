@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;)V
     .locals 0
 
-    .line 895
+    .line 1134
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    .line 896
+    .line 1135
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -38,24 +38,24 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 905
+    .line 1144
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 906
+    .line 1145
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->height:I
 
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_3
 
-    .line 908
+    .line 1147
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    invoke-static {}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$700()Lorg/telegram/messenger/MediaController$AlbumEntry;
+    invoke-static {}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1400()Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     move-result-object v0
 
@@ -63,10 +63,10 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 909
+    .line 1148
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object p2
 
@@ -76,7 +76,7 @@
 
     goto :goto_1
 
-    .line 910
+    .line 1149
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -84,14 +84,14 @@
 
     if-eqz p2, :cond_2
 
-    .line 911
+    .line 1150
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result p2
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$900(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1600(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v0
 
@@ -99,7 +99,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1000(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1700(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v0
 
@@ -107,7 +107,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -131,7 +131,7 @@
     :goto_1
     int-to-float p2, p2
 
-    .line 915
+    .line 1154
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -152,7 +152,7 @@
 
     double-to-int p2, v2
 
-    .line 916
+    .line 1155
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->y:I
@@ -167,7 +167,7 @@
 
     int-to-float v2, p1
 
-    .line 917
+    .line 1156
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -194,17 +194,17 @@
 
     sub-int/2addr v0, v2
 
-    .line 919
+    .line 1158
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
-    .line 920
+    .line 1159
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     goto :goto_2
 
-    .line 922
+    .line 1161
     :cond_3
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
@@ -215,7 +215,7 @@
 .method public setHeight(I)V
     .locals 0
 
-    .line 900
+    .line 1139
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;->height:I
 
     return-void

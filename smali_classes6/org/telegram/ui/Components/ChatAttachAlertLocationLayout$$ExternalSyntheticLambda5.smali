@@ -29,7 +29,7 @@
 
     check-cast p1, Landroid/location/Location;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$-orliXBMnyEY17KVU6XJzQTvex0(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Landroid/location/Location;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$sT8c9pWsBIyty-J_Trpa74nOadE(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Landroid/location/Location;)V
 
     return-void
 .end method

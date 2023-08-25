@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/ToIntFunction;
+.implements Ljava/util/Comparator;
 
 
 # static fields
@@ -32,12 +32,14 @@
 
 
 # virtual methods
-.method public final applyAsInt(Ljava/lang/Object;)I
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$zQeKEnVZTP7aiM2Qcqvcl9R3_RI(Ljava/lang/Integer;Ljava/lang/Integer;)I
 
     move-result p1
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->$r8$lambda$YgzxO3XnQ8dCUrsV4mabhoO26yQ(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->$r8$lambda$ay8R6mSRmI0Ub79H40jL8sy6vXk(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method

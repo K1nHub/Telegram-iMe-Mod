@@ -26,3 +26,6 @@
 
 .method public abstract replaceText(IILjava/lang/CharSequence;Z)V
 .end method
+
+.method public abstract sendBotInlineResult(Lorg/telegram/tgnet/TLRPC$BotInlineResult;ZI)V
+.end method

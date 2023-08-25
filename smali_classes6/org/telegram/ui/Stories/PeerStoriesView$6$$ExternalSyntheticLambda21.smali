@@ -2,52 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Stories/PeerStoriesView$6;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
-
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.field public final synthetic f$1:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$6;Lorg/telegram/tgnet/TLRPC$StoryItem;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView$6;
+    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$0:Ljava/lang/Runnable;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
-
-    iput-boolean p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$2:Z
-
-    iput-object p4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$3:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iput-wide p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$1:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 4
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView$6;
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$0:Ljava/lang/Runnable;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-wide v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$1:J
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$2:Z
-
-    iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda21;->f$3:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$6;->$r8$lambda$-BkrBcmFDvTWPaVYwrsmR7rDfBw(Lorg/telegram/ui/Stories/PeerStoriesView$6;Lorg/telegram/tgnet/TLRPC$StoryItem;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/Boolean;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/PeerStoriesView$6;->$r8$lambda$Txk5rTIycvqTQkjF4O9kdtJ_l8g(Ljava/lang/Runnable;J)V
 
     return-void
 .end method

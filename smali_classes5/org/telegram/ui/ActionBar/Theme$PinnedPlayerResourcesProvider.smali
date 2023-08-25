@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 246
+    .line 268
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,15 +48,40 @@
 .end method
 
 .method public getColor(I)I
-    .locals 3
+    .locals 2
 
-    .line 252
-    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerThemeOverridden:Z
+    .line 274
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isPinnedPlayerThemeOverridden()Z
+
+    move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 253
+    .line 275
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    .line 277
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/util/SparseIntArray;->valueAt(I)I
+
+    move-result p1
+
+    return p1
+
+    .line 279
+    :cond_0
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
     move-result-object v0
 
@@ -66,42 +91,39 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_1
+    if-eq v0, v1, :cond_1
 
-    .line 255
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1, v1}, Landroid/util/SparseIntArray;->get(II)I
-
-    move-result v2
-
-    if-eq v2, v1, :cond_0
-
-    .line 257
+    .line 281
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->get(II)I
+    invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->indexOfKey(I)I
 
     move-result v0
 
-    :cond_0
-    if-ne v0, v1, :cond_1
+    if-ltz v0, :cond_1
 
-    .line 260
+    .line 283
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/util/SparseIntArray;->valueAt(I)I
+
+    move-result p1
+
+    return p1
+
+    .line 286
+    :cond_1
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(I)I
 
     move-result p1
 
     return p1
 
-    :cond_1
-    return v0
-
-    .line 265
+    .line 288
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 

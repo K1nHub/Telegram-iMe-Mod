@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;",
+        "Lcom/iMe/ui/wallet/cryptobox/adapter/CryptoBoxesRecycleAdapter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$16\n*L\n98#1:121,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,183:1\n129#2,5:184\n129#2,5:189\n129#2,5:194\n129#2,5:199\n129#2,5:204\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$16\n*L\n147#1:184,5\n148#1:189,5\n149#1:194,5\n150#1:199,5\n151#1:204,5\n*E\n"
 .end annotation
 
 
@@ -61,8 +61,8 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
-    .locals 2
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/cryptobox/adapter/CryptoBoxesRecycleAdapter;
+    .locals 7
 
     const-string v0, "$this$factory"
 
@@ -72,11 +72,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
-    new-instance p2, Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
+    .line 146
+    new-instance p2, Lcom/iMe/ui/wallet/cryptobox/adapter/CryptoBoxesRecycleAdapter;
 
     .line 133
-    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    const-class v0, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -86,12 +86,76 @@
 
     invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;
+
+    .line 133
+    const-class v0, Lcom/iMe/ui/adapter/provider/CryptoBoxesListHeaderProvider;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Lcom/iMe/ui/adapter/provider/CryptoBoxesListHeaderProvider;
+
+    .line 133
+    const-class v0, Lcom/iMe/ui/adapter/provider/CryptoBoxesChatProvider;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lcom/iMe/ui/adapter/provider/CryptoBoxesChatProvider;
+
+    .line 133
+    const-class v0, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider;
+
+    .line 133
+    const-class v0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    move-object v6, p1
 
-    .line 98
-    invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    check-cast v6, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    move-object v1, p2
+
+    .line 146
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/ui/wallet/cryptobox/adapter/CryptoBoxesRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;Lcom/iMe/ui/adapter/provider/CryptoBoxesListHeaderProvider;Lcom/iMe/ui/adapter/provider/CryptoBoxesChatProvider;Lcom/iMe/ui/adapter/provider/CryptoBoxProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;)V
 
     return-object p2
 .end method
@@ -99,12 +163,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 98
+    .line 145
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$16;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$16;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/cryptobox/adapter/CryptoBoxesRecycleAdapter;
 
     move-result-object p1
 

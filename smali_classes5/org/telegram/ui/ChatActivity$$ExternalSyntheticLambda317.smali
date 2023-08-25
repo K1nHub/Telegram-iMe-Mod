@@ -8,26 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_document;
+.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
-.field public final synthetic f$2:Ljava/lang/String;
-
-.field public final synthetic f$3:Ljava/lang/Object;
+.field public final synthetic f$2:Lorg/telegram/messenger/MessageObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/lang/Object;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject$GroupedMessages;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$1:Lorg/telegram/tgnet/TLRPC$TL_document;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$1:Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$2:Ljava/lang/String;
-
-    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$3:Ljava/lang/Object;
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$2:Lorg/telegram/messenger/MessageObject;
 
     return-void
 .end method
@@ -35,23 +31,21 @@
 
 # virtual methods
 .method public final didSelectDate(ZILjava/lang/String;)V
-    .locals 7
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$1:Lorg/telegram/tgnet/TLRPC$TL_document;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$1:Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$2:Ljava/lang/String;
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$2:Lorg/telegram/messenger/MessageObject;
 
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda317;->f$3:Ljava/lang/Object;
+    move v3, p1
 
-    move v4, p1
+    move v4, p2
 
-    move v5, p2
+    move-object v5, p3
 
-    move-object v6, p3
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$8J3PK3o42Eui9i4qvkqSDZx6ais(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_document;Ljava/lang/String;Ljava/lang/Object;ZILjava/lang/String;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$q_8KuJNsW7ECrz6qRhXUgdXSWAo(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject$GroupedMessages;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;)V
 
     return-void
 .end method

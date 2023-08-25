@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/RecyclerListViewScroller;->smoothScrollBy(I)V
+    value = Lorg/telegram/ui/RecyclerListViewScroller;->smoothScrollBy(IJLandroid/view/animation/Interpolator;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/RecyclerListViewScroller;I)V
     .locals 0
 
-    .line 33
+    .line 38
     iput-object p1, p0, Lorg/telegram/ui/RecyclerListViewScroller$1;->this$0:Lorg/telegram/ui/RecyclerListViewScroller;
 
     iput p2, p0, Lorg/telegram/ui/RecyclerListViewScroller$1;->val$dy:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 36
+    .line 41
     iget-object p1, p0, Lorg/telegram/ui/RecyclerListViewScroller$1;->this$0:Lorg/telegram/ui/RecyclerListViewScroller;
 
     iget-object v0, p1, Lorg/telegram/ui/RecyclerListViewScroller;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
 
-    .line 37
+    .line 42
     iget-object p1, p0, Lorg/telegram/ui/RecyclerListViewScroller$1;->this$0:Lorg/telegram/ui/RecyclerListViewScroller;
 
     const/4 v0, 0x0

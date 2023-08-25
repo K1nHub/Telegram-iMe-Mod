@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,195:1\n129#2,5:196\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$3\n*L\n76#1:196,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,197:1\n129#2,5:198\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$3\n*L\n77#1:198,5\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 76
+    .line 77
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
@@ -106,7 +106,7 @@
 
     new-array v1, v1, [Lokhttp3/Interceptor;
 
-    .line 76
+    .line 77
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getLOGGING_INTERCEPTOR()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
@@ -128,7 +128,7 @@
 
     aput-object p1, v1, v0
 
-    .line 76
+    .line 77
     invoke-static {p2, v1}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->createOkHttpClient(Lokhttp3/Cache;[Lokhttp3/Interceptor;)Lokhttp3/OkHttpClient;
 
     move-result-object p1

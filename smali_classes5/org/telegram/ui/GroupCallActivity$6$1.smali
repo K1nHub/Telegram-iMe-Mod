@@ -394,7 +394,7 @@
     const/high16 v5, 0x41800000    # 16.0f
 
     .line 1948
-    invoke-virtual {v1, v4, v5}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 1949
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I

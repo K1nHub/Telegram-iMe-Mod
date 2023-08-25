@@ -38,13 +38,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;Landroid/content/Context;)V
     .locals 7
 
-    .line 917
+    .line 1358
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    .line 918
+    .line 1359
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 907
+    .line 1348
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -53,7 +53,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 908
+    .line 1349
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x3
@@ -62,14 +62,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->backgroundBlurPaint:Landroid/graphics/Paint;
 
-    .line 909
+    .line 1350
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->handlePaint:Landroid/graphics/Paint;
 
-    .line 914
+    .line 1355
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -86,7 +86,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->isActionBarT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 915
+    .line 1356
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -97,16 +97,16 @@
 .end method
 
 .method private setupBlurBitmap()V
-    .locals 4
+    .locals 5
 
-    .line 928
+    .line 1369
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmap:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_2
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/messenger/Utilities$Callback2;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/messenger/Utilities$Callback2;
 
     move-result-object v0
 
@@ -122,11 +122,11 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 932
+    .line 1373
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -144,10 +144,10 @@
 
     move-result-object v0
 
-    .line 933
+    .line 1374
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/messenger/Utilities$Callback2;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/messenger/Utilities$Callback2;
 
     move-result-object v1
 
@@ -155,61 +155,59 @@
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-interface {v1, v0, v2}, Lorg/telegram/messenger/Utilities$Callback2;->run(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v1, v0, v3}, Lorg/telegram/messenger/Utilities$Callback2;->run(Ljava/lang/Object;Ljava/lang/Object;)V
 
     const/16 v1, 0x8
 
-    .line 934
+    .line 1375
     invoke-static {v0, v1}, Lorg/telegram/messenger/Utilities;->stackBlurBitmap(Landroid/graphics/Bitmap;I)V
 
-    .line 935
+    .line 1376
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmap:Landroid/graphics/Bitmap;
 
-    .line 936
+    .line 1377
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->backgroundBlurPaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/BitmapShader;
 
-    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmap:Landroid/graphics/Bitmap;
+    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmap:Landroid/graphics/Bitmap;
 
-    sget-object v3, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+    sget-object v4, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    invoke-direct {v1, v2, v3, v3}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
+    invoke-direct {v1, v3, v4, v4}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapShader:Landroid/graphics/BitmapShader;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 937
+    .line 1378
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
     if-nez v0, :cond_1
 
-    .line 938
+    .line 1379
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
-    .line 940
+    .line 1381
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v1, 0x41000000    # 8.0f
+    invoke-virtual {v0, v2, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    invoke-virtual {v0, v1, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    .line 941
+    .line 1382
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapShader:Landroid/graphics/BitmapShader;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 942
+    .line 1383
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_2
@@ -222,14 +220,14 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 981
+    .line 1422
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->backgroundPaint:Landroid/graphics/Paint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5800(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v2
 
@@ -239,7 +237,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 982
+    .line 1423
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->backgroundPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmap:Landroid/graphics/Bitmap;
@@ -262,10 +260,10 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 983
+    .line 1424
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v0
 
@@ -273,184 +271,122 @@
 
     move-result-object v0
 
-    .line 984
+    .line 1425
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3602(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;F)F
+    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5902(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;F)F
 
     const/4 v1, 0x0
 
-    .line 985
-    aget-object v3, v0, v1
-
-    instance-of v3, v3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
+    .line 1426
+    :goto_1
+    array-length v3, v0
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    if-eqz v3, :cond_1
+    if-ge v1, v3, :cond_3
 
-    .line 986
-    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
-
-    aget-object v5, v0, v1
-
-    check-cast v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
-
-    invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->top()F
-
-    move-result v5
-
-    aget-object v6, v0, v1
-
-    invoke-virtual {v6}, Landroid/view/View;->getTranslationX()F
-
-    move-result v6
-
-    aget-object v7, v0, v1
-
-    invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    div-float/2addr v6, v7
-
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
-
-    move-result v6
-
-    sub-float v6, v4, v6
-
-    invoke-static {v6, v4, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
-
-    move-result v6
-
-    mul-float/2addr v5, v6
-
-    invoke-static {v3, v5}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3616(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;F)F
-
-    .line 987
+    .line 1427
     aget-object v3, v0, v1
 
-    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
+    .line 1428
+    instance-of v5, v3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;
 
-    move-result v3
+    if-nez v5, :cond_1
 
-    if-nez v3, :cond_1
+    goto :goto_2
 
-    .line 988
-    aget-object v1, v0, v1
-
-    check-cast v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
-
-    invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->updateTops()V
-
+    .line 1431
     :cond_1
-    const/4 v1, 0x1
+    check-cast v3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;
 
-    .line 991
-    aget-object v3, v0, v1
+    .line 1432
+    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    instance-of v3, v3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
-
-    if-eqz v3, :cond_2
-
-    .line 992
-    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
-
-    aget-object v5, v0, v1
-
-    check-cast v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
-
-    invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->top()F
-
-    move-result v5
-
-    aget-object v6, v0, v1
-
-    invoke-virtual {v6}, Landroid/view/View;->getTranslationX()F
+    invoke-virtual {v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->top()F
 
     move-result v6
 
-    aget-object v7, v0, v1
-
-    invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v7
 
-    int-to-float v7, v7
+    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    div-float/2addr v6, v7
+    move-result v8
 
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
+    int-to-float v8, v8
 
-    move-result v6
+    div-float/2addr v7, v8
 
-    sub-float v6, v4, v6
+    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
 
-    invoke-static {v6, v4, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    move-result v7
 
-    move-result v6
+    sub-float v7, v4, v7
 
-    mul-float/2addr v5, v6
+    invoke-static {v7, v4, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
-    invoke-static {v3, v5}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3616(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;F)F
+    move-result v4
 
-    .line 993
-    aget-object v3, v0, v1
+    mul-float/2addr v6, v4
 
-    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
+    invoke-static {v5, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5916(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;F)F
 
-    move-result v3
+    .line 1433
+    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getVisibility()I
 
-    if-nez v3, :cond_2
+    move-result v4
 
-    .line 994
-    aget-object v0, v0, v1
+    if-nez v4, :cond_2
 
-    check-cast v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
+    .line 1434
+    invoke-virtual {v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->updateTops()V
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->updateTops()V
-
-    .line 997
     :cond_2
+    :goto_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    .line 1437
+    :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->isActionBarT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
 
     move-result v1
 
     cmpg-float v1, v1, v2
 
-    if-gtz v1, :cond_3
+    if-gtz v1, :cond_4
 
     move v1, v4
 
-    goto :goto_1
+    goto :goto_3
 
-    :cond_3
+    :cond_4
     move v1, v2
 
-    :goto_1
+    :goto_3
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
     move-result v0
 
-    .line 998
+    .line 1438
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
 
     move-result v1
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
+    invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v3
 
@@ -470,7 +406,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
+    invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v6
 
@@ -486,12 +422,12 @@
 
     sub-float/2addr v1, v5
 
-    .line 999
+    .line 1439
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3700(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
+    invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$6000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
 
     move-result v6
 
@@ -503,7 +439,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v8}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3800(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
+    invoke-static {v8}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$6100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
 
     move-result v8
 
@@ -525,26 +461,26 @@
 
     invoke-virtual {v5, v6, v1, v7, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1000
+    .line 1440
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmap:Landroid/graphics/Bitmap;
 
     const/16 v6, 0xe
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
-    .line 1001
+    .line 1441
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v3}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1002
+    .line 1442
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v7, 0x41400000    # 12.0f
+    const/high16 v7, 0x41800000    # 16.0f
 
     invoke-virtual {v3, v7, v7}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 1003
+    .line 1443
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getY()F
@@ -555,14 +491,14 @@
 
     invoke-virtual {v3, v2, v7}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1004
+    .line 1444
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapShader:Landroid/graphics/BitmapShader;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmapMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v3}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 1005
+    .line 1445
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -579,10 +515,10 @@
 
     invoke-virtual {p1, v5, v2, v3, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    :cond_4
+    :cond_5
     sub-float/2addr v4, v0
 
-    .line 1007
+    .line 1447
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -603,10 +539,10 @@
 
     invoke-virtual {p1, v5, v0, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1008
+    .line 1448
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->handleRect:Landroid/graphics/RectF;
 
-    .line 1009
+    .line 1449
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v2
@@ -627,7 +563,7 @@
 
     const v7, 0x411a8f5c    # 9.66f
 
-    .line 1010
+    .line 1450
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v7
@@ -636,7 +572,7 @@
 
     add-float/2addr v7, v1
 
-    .line 1011
+    .line 1451
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v8
@@ -653,7 +589,7 @@
 
     const v6, 0x415a8f5c    # 13.66f
 
-    .line 1012
+    .line 1452
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v6
@@ -662,17 +598,17 @@
 
     add-float/2addr v1, v6
 
-    .line 1008
+    .line 1448
     invoke-virtual {v0, v2, v7, v3, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1014
+    .line 1454
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->handlePaint:Landroid/graphics/Paint;
 
     const v1, 0x51838383
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1015
+    .line 1455
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->handlePaint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x42a20000    # 81.0f
@@ -683,7 +619,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1016
+    .line 1456
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->handleRect:Landroid/graphics/RectF;
 
     const/4 v1, 0x4
@@ -704,36 +640,78 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1017
+    .line 1457
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1018
+    .line 1458
     invoke-virtual {p1, v5}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
-    .line 1019
+    .line 1459
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1020
+    .line 1460
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 .end method
 
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    .line 1465
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
+
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
+
+    move-result v1
+
+    cmpg-float v0, v0, v1
+
+    if-gez v0, :cond_0
+
+    .line 1466
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->dismiss()V
+
+    const/4 p1, 0x1
+
+    return p1
+
+    .line 1469
+    :cond_0
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 947
+    .line 1388
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 948
+    .line 1389
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->blurBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 949
+    .line 1390
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 951
+    .line 1392
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->backgroundBlurPaint:Landroid/graphics/Paint;
 
@@ -747,10 +725,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 923
+    .line 1364
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 924
+    .line 1365
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->setupBlurBitmap()V
 
     return-void
@@ -759,12 +737,12 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 962
+    .line 1403
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 963
+    .line 1404
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -777,7 +755,7 @@
 
     const/16 v2, 0x15e
 
-    .line 964
+    .line 1405
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -794,15 +772,15 @@
 
     move-result v0
 
-    .line 970
+    .line 1411
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$2302(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;F)F
+    invoke-static {v1, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$902(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;F)F
 
-    .line 971
+    .line 1412
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v0
 
@@ -812,10 +790,10 @@
 
     invoke-virtual {v0, v2, v1, v2, v2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 972
+    .line 1413
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v0
 
@@ -831,10 +809,10 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 973
+    .line 1414
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;
 
     move-result-object v0
 
@@ -844,10 +822,10 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/view/View;->measure(II)V
 
-    .line 974
+    .line 1415
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5700(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -871,10 +849,10 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 975
+    .line 1416
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5700(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -886,61 +864,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    .line 976
+    .line 1417
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
     return-void
 .end method
 
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
-
-    .line 1025
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v0
-
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
-
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
-
-    move-result v1
-
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_0
-
-    .line 1026
-    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->dismiss()V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    .line 1029
-    :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 956
+    .line 1397
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 957
+    .line 1398
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

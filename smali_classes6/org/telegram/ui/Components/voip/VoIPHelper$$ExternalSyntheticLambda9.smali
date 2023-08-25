@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/content/SharedPreferences;
-
-.field public final synthetic f$1:Lorg/telegram/ui/Cells/TextCheckCell;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/SharedPreferences;Lorg/telegram/ui/Cells/TextCheckCell;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda9;->f$0:Landroid/content/SharedPreferences;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/ui/Cells/TextCheckCell;
+    iput-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda9;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 2
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda9;->f$0:Landroid/content/SharedPreferences;
+    iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda9;->f$0:Ljava/lang/Runnable;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/ui/Cells/TextCheckCell;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$BWioXW133Cz2BtGRnQsGZZo2zoI(Landroid/content/SharedPreferences;Lorg/telegram/ui/Cells/TextCheckCell;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$jfARAtHA4c8lS335tYsVIPVee1g(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

@@ -26,10 +26,10 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State;)V
     .locals 1
 
-    .line 603
+    .line 598
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "onEmptyState"
+    const-string/jumbo v0, "onEmptyState"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V
     .locals 0
 
-    .line 608
+    .line 603
     invoke-interface {p1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onEmptyState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 601
+    .line 596
     check-cast p1, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnEmptyStateCommand;->apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V

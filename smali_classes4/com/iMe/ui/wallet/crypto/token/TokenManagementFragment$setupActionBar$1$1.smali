@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
-    .line 246
+    .line 274
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,14 +39,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 249
+    .line 277
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 250
+    .line 278
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$Menu;->NETWORK_SWITCH:I
 

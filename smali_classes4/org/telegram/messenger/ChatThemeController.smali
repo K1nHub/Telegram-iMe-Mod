@@ -191,7 +191,7 @@
 .method public static clearWallpaperThumbImages()V
     .locals 1
 
-    .line 351
+    .line 355
     sget-object v0, Lorg/telegram/messenger/ChatThemeController;->themeIdWallpaperThumbMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
@@ -446,7 +446,7 @@
 .method private static getPatternFile(J)Ljava/io/File;
     .locals 4
 
-    .line 379
+    .line 383
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -516,7 +516,7 @@
         }
     .end annotation
 
-    .line 355
+    .line 359
     sget-wide v0, Lorg/telegram/messenger/ChatThemeController;->themesHash:J
 
     const-wide/16 v2, 0x0
@@ -527,18 +527,18 @@
 
     const/4 p0, 0x0
 
-    .line 356
+    .line 360
     invoke-interface {p2, p0}, Lorg/telegram/tgnet/ResultCallback;->onComplete(Ljava/lang/Object;)V
 
     return-void
 
-    .line 359
+    .line 363
     :cond_0
     invoke-static {p0, p1}, Lorg/telegram/messenger/ChatThemeController;->getPatternFile(J)Ljava/io/File;
 
     move-result-object p0
 
-    .line 360
+    .line 364
     sget-object p1, Lorg/telegram/messenger/ChatThemeController;->chatThemeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda1;
@@ -553,7 +553,7 @@
 .method public static getWallpaperThumbBitmap(J)Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 396
+    .line 400
     sget-object v0, Lorg/telegram/messenger/ChatThemeController;->themeIdWallpaperThumbMap:Ljava/util/HashMap;
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -678,7 +678,7 @@
 .method private static synthetic lambda$getWallpaperBitmap$5(Lorg/telegram/tgnet/ResultCallback;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 372
+    .line 376
     invoke-interface {p0, p1}, Lorg/telegram/tgnet/ResultCallback;->onComplete(Ljava/lang/Object;)V
 
     return-void
@@ -689,7 +689,7 @@
 
     const/4 v0, 0x0
 
-    .line 363
+    .line 367
     :try_start_0
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
@@ -697,7 +697,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 364
+    .line 368
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p0
@@ -715,14 +715,14 @@
     :catch_0
     move-exception p0
 
-    .line 367
+    .line 371
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
     :goto_0
     if-eqz p1, :cond_1
 
-    .line 371
+    .line 375
     new-instance p0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda4;
 
     invoke-direct {p0, p1, v0}, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/tgnet/ResultCallback;Landroid/graphics/Bitmap;)V
@@ -738,7 +738,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 340
+    .line 344
     sget-object v0, Lorg/telegram/messenger/ChatThemeController;->themeIdWallpaperThumbMap:Ljava/util/HashMap;
 
     iget-object v1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -1042,20 +1042,20 @@
 .method private static synthetic lambda$saveWallpaperBitmap$7(Ljava/io/File;Landroid/graphics/Bitmap;)V
     .locals 2
 
-    .line 386
+    .line 390
     :try_start_0
     new-instance v0, Ljava/io/FileOutputStream;
 
     invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 387
+    .line 391
     sget-object p0, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v1, 0x57
 
     invoke-virtual {p1, p0, v1, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 388
+    .line 392
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1065,7 +1065,7 @@
     :catch_0
     move-exception p0
 
-    .line 390
+    .line 394
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -1075,7 +1075,7 @@
 .method private synthetic lambda$setWallpaperToUser$10(JZLjava/lang/String;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 502
+    .line 506
     new-instance p7, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda3;
 
     move-object v0, p7
@@ -1102,15 +1102,15 @@
 .method private synthetic lambda$setWallpaperToUser$9(Lorg/telegram/tgnet/TLObject;JZLjava/lang/String;Ljava/lang/Runnable;)V
     .locals 8
 
-    .line 503
+    .line 507
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
     if-eqz v0, :cond_4
 
-    .line 504
+    .line 508
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    .line 505
+    .line 509
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1127,7 +1127,7 @@
 
     move v2, v1
 
-    .line 507
+    .line 511
     :goto_0
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
@@ -1137,7 +1137,7 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 508
+    .line 512
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1148,7 +1148,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 509
+    .line 513
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1159,7 +1159,7 @@
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_updateNewMessage;->message:Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 510
+    .line 514
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetChatWallPaper;
@@ -1168,15 +1168,15 @@
 
     if-eqz p4, :cond_2
 
-    .line 512
+    .line 516
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetChatWallPaper;
 
-    .line 513
+    .line 517
     iget-object p4, v3, Lorg/telegram/tgnet/TLRPC$MessageAction;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     iput-object p5, p4, Lorg/telegram/tgnet/TLRPC$WallPaper;->uploadingImage:Ljava/lang/String;
 
-    .line 514
+    .line 518
     iget-object p4, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     if-eqz p4, :cond_0
@@ -1191,7 +1191,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 515
+    .line 519
     iget-object p4, v3, Lorg/telegram/tgnet/TLRPC$MessageAction;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     iget-object p5, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
@@ -1200,13 +1200,13 @@
 
     iput-object p5, p4, Lorg/telegram/tgnet/TLRPC$WallPaper;->stripedThumb:Landroid/graphics/Bitmap;
 
-    .line 517
+    .line 521
     :cond_0
     iget-object p4, v3, Lorg/telegram/tgnet/TLRPC$MessageAction;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     iput-object p4, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 518
+    .line 522
     iget p5, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v2, 0x1000000
@@ -1215,17 +1215,17 @@
 
     iput p5, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 520
+    .line 524
     invoke-virtual {p0, p2, p3, p4}, Lorg/telegram/messenger/ChatThemeController;->saveChatWallpaper(JLorg/telegram/tgnet/TLRPC$WallPaper;)V
 
-    .line 521
+    .line 525
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p4
 
     invoke-virtual {p4, v0, v1}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
 
-    .line 522
+    .line 526
     iget p4, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p4}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1257,7 +1257,7 @@
 
     goto :goto_0
 
-    .line 529
+    .line 533
     :cond_2
     :goto_1
     iget p2, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
@@ -1280,10 +1280,10 @@
 
     if-eqz p6, :cond_3
 
-    .line 531
+    .line 535
     invoke-interface {p6}, Ljava/lang/Runnable;->run()V
 
-    .line 533
+    .line 537
     :cond_3
     iget p1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -1304,9 +1304,12 @@
 .method public static preloadAllWallpaperImages(Z)V
     .locals 4
 
-    .line 315
+    .line 316
     sget-object v0, Lorg/telegram/messenger/ChatThemeController;->allChatThemes:Ljava/util/List;
 
+    if-eqz v0, :cond_2
+
+    .line 317
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1324,7 +1327,7 @@
 
     check-cast v1, Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 316
+    .line 318
     invoke-virtual {v1, p0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getTlTheme(I)Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     move-result-object v2
@@ -1333,11 +1336,11 @@
 
     goto :goto_0
 
-    .line 320
+    .line 322
     :cond_0
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_theme;->id:J
 
-    .line 321
+    .line 323
     invoke-static {v2, v3}, Lorg/telegram/messenger/ChatThemeController;->getPatternFile(J)Ljava/io/File;
 
     move-result-object v2
@@ -1353,7 +1356,7 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 324
+    .line 326
     invoke-virtual {v1, p0, v2}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadWallpaper(ILorg/telegram/tgnet/ResultCallback;)V
 
     goto :goto_0
@@ -1365,9 +1368,12 @@
 .method public static preloadAllWallpaperThumbs(Z)V
     .locals 5
 
-    .line 329
+    .line 332
     sget-object v0, Lorg/telegram/messenger/ChatThemeController;->allChatThemes:Ljava/util/List;
 
+    if-eqz v0, :cond_2
+
+    .line 333
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1385,7 +1391,7 @@
 
     check-cast v1, Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 330
+    .line 334
     invoke-virtual {v1, p0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->getTlTheme(I)Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     move-result-object v2
@@ -1394,11 +1400,11 @@
 
     goto :goto_0
 
-    .line 334
+    .line 338
     :cond_0
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_theme;->id:J
 
-    .line 335
+    .line 339
     sget-object v4, Lorg/telegram/messenger/ChatThemeController;->themeIdWallpaperThumbMap:Ljava/util/HashMap;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1413,7 +1419,7 @@
 
     goto :goto_0
 
-    .line 338
+    .line 342
     :cond_1
     sget-object v2, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda10;->INSTANCE:Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda10;
 
@@ -1639,12 +1645,12 @@
 .method public static saveWallpaperBitmap(Landroid/graphics/Bitmap;J)V
     .locals 1
 
-    .line 383
+    .line 387
     invoke-static {p1, p2}, Lorg/telegram/messenger/ChatThemeController;->getPatternFile(J)Ljava/io/File;
 
     move-result-object p1
 
-    .line 384
+    .line 388
     sget-object p2, Lorg/telegram/messenger/ChatThemeController;->chatThemeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/messenger/ChatThemeController$$ExternalSyntheticLambda0;
@@ -1663,13 +1669,13 @@
 
     const-wide/16 v0, 0x0
 
-    .line 400
+    .line 404
     sput-wide v0, Lorg/telegram/messenger/ChatThemeController;->themesHash:J
 
-    .line 401
+    .line 405
     sput-wide v0, Lorg/telegram/messenger/ChatThemeController;->lastReloadTimeMs:J
 
-    .line 402
+    .line 406
     invoke-static {}, Lorg/telegram/messenger/ChatThemeController;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1690,7 +1696,7 @@
 .method public clearWallpaper(JZ)V
     .locals 6
 
-    .line 406
+    .line 410
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;-><init>()V
@@ -1701,7 +1707,7 @@
 
     if-lez v1, :cond_1
 
-    .line 408
+    .line 412
     iget v1, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1716,14 +1722,14 @@
 
     move-result-object v1
 
-    .line 409
+    .line 413
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$User;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 410
+    .line 414
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -1738,10 +1744,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 412
+    .line 416
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 413
+    .line 417
     iget v4, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const v5, -0x1000001
@@ -1750,20 +1756,20 @@
 
     iput v4, v1, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 414
+    .line 418
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v4
 
     invoke-virtual {v4, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
 
-    .line 416
+    .line 420
     :cond_0
     invoke-virtual {p0, p1, p2, v3}, Lorg/telegram/messenger/ChatThemeController;->saveChatWallpaper(JLorg/telegram/tgnet/TLRPC$WallPaper;)V
 
     if-eqz p3, :cond_2
 
-    .line 418
+    .line 422
     iget p3, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1790,7 +1796,7 @@
 
     goto :goto_0
 
-    .line 421
+    .line 425
     :cond_1
     iget p3, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -1808,14 +1814,14 @@
 
     move-result-object p1
 
-    .line 422
+    .line 426
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object p1
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 425
+    .line 429
     :cond_2
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -2328,7 +2334,7 @@
 
     move-object/from16 v1, p5
 
-    .line 431
+    .line 435
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;-><init>()V
@@ -2339,7 +2345,7 @@
 
     if-lez v4, :cond_0
 
-    .line 433
+    .line 437
     iget v4, v7, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2354,7 +2360,7 @@
 
     move-result-object v4
 
-    .line 434
+    .line 438
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$User;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v4
@@ -2363,7 +2369,7 @@
 
     goto :goto_0
 
-    .line 437
+    .line 441
     :cond_0
     iget v4, v7, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -2381,7 +2387,7 @@
 
     move-result-object v4
 
-    .line 438
+    .line 442
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v4
@@ -2395,7 +2401,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 441
+    .line 445
     iget-object v9, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v9, v9, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
@@ -2404,7 +2410,7 @@
 
     if-eqz v9, :cond_2
 
-    .line 443
+    .line 447
     iget v9, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->flags:I
 
     const/4 v10, 0x2
@@ -2413,14 +2419,14 @@
 
     iput v9, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->flags:I
 
-    .line 444
+    .line 448
     invoke-virtual/range {p5 .. p5}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v9
 
     iput v9, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->id:I
 
-    .line 446
+    .line 450
     iget v9, v7, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v9}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2433,38 +2439,38 @@
 
     if-eqz v9, :cond_3
 
-    .line 448
+    .line 452
     iget-object v1, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messageActionSetChatWallPaper;
 
-    .line 449
+    .line 453
     new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
     invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;-><init>()V
 
-    .line 450
+    .line 454
     iget-object v12, v1, Lorg/telegram/tgnet/TLRPC$MessageAction;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     iget-wide v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
     iput-wide v13, v11, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
-    .line 451
+    .line 455
     iget-object v12, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iput-object v12, v11, Lorg/telegram/tgnet/TLRPC$WallPaper;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 452
+    .line 456
     new-instance v12, Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
 
     invoke-direct {v12}, Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;-><init>()V
 
     iput-object v12, v11, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
-    .line 453
+    .line 457
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->intensity:F
 
     const/high16 v14, 0x42c80000    # 100.0f
@@ -2475,45 +2481,45 @@
 
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->intensity:I
 
-    .line 454
+    .line 458
     iget-boolean v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isMotion:Z
 
     iput-boolean v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->motion:Z
 
-    .line 455
+    .line 459
     iget-boolean v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isBlurred:Z
 
     iput-boolean v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->blur:Z
 
-    .line 456
+    .line 460
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->color:I
 
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->background_color:I
 
-    .line 457
+    .line 461
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
 
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->second_background_color:I
 
-    .line 458
+    .line 462
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor2:I
 
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->third_background_color:I
 
-    .line 459
+    .line 463
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor3:I
 
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->fourth_background_color:I
 
-    .line 460
+    .line 464
     iget v13, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->rotation:I
 
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->rotation:I
 
-    .line 461
+    .line 465
     iput-object v5, v11, Lorg/telegram/tgnet/TLRPC$WallPaper;->uploadingImage:Ljava/lang/String;
 
-    .line 462
+    .line 466
     iget-object v12, v9, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     if-eqz v12, :cond_1
@@ -2528,14 +2534,14 @@
 
     if-eqz v12, :cond_1
 
-    .line 463
+    .line 467
     iget-object v12, v9, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     iget-object v12, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->stripedThumb:Landroid/graphics/Bitmap;
 
     iput-object v12, v11, Lorg/telegram/tgnet/TLRPC$WallPaper;->stripedThumb:Landroid/graphics/Bitmap;
 
-    .line 466
+    .line 470
     :cond_1
     iget-object v12, v11, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
@@ -2547,94 +2553,94 @@
 
     or-int/lit8 v13, v13, 0x8
 
-    .line 467
+    .line 471
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->flags:I
 
     or-int/lit8 v13, v13, 0x10
 
-    .line 468
+    .line 472
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->flags:I
 
     or-int/lit8 v13, v13, 0x20
 
-    .line 469
+    .line 473
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->flags:I
 
     or-int/lit8 v13, v13, 0x40
 
-    .line 470
+    .line 474
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaperSettings;->flags:I
 
-    .line 472
+    .line 476
     new-instance v12, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
     invoke-direct {v12}, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;-><init>()V
 
     iput-object v12, v9, Lorg/telegram/tgnet/TLRPC$UserFull;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 473
+    .line 477
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageAction;->wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     iget-boolean v13, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->pattern:Z
 
     iput-boolean v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->pattern:Z
 
-    .line 474
+    .line 478
     iget-wide v13, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
     iput-wide v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->id:J
 
-    .line 475
+    .line 479
     iget-object v13, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iput-object v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 476
+    .line 480
     iget v13, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->flags:I
 
     iput v13, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->flags:I
 
-    .line 477
+    .line 481
     iget-boolean v14, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->creator:Z
 
     iput-boolean v14, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->creator:Z
 
-    .line 478
+    .line 482
     iget-boolean v14, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->dark:Z
 
     iput-boolean v14, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->dark:Z
 
-    .line 479
+    .line 483
     iget-boolean v14, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->isDefault:Z
 
     iput-boolean v14, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->isDefault:Z
 
-    .line 480
+    .line 484
     iget-object v14, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->slug:Ljava/lang/String;
 
     iput-object v14, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->slug:Ljava/lang/String;
 
-    .line 481
+    .line 485
     iget-wide v14, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->access_hash:J
 
     iput-wide v14, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->access_hash:J
 
-    .line 482
+    .line 486
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$WallPaper;->stripedThumb:Landroid/graphics/Bitmap;
 
     iput-object v1, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->stripedThumb:Landroid/graphics/Bitmap;
 
-    .line 483
+    .line 487
     iget-object v1, v11, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
     iput-object v1, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
     or-int/lit8 v1, v13, 0x4
 
-    .line 484
+    .line 488
     iput v1, v12, Lorg/telegram/tgnet/TLRPC$WallPaper;->flags:I
 
-    .line 485
+    .line 489
     iget v1, v9, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
     const/high16 v11, 0x1000000
@@ -2643,14 +2649,14 @@
 
     iput v1, v9, Lorg/telegram/tgnet/TLRPC$UserFull;->flags:I
 
-    .line 487
+    .line 491
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
 
     invoke-virtual {v1, v9, v4}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
 
-    .line 488
+    .line 492
     iget v1, v7, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2673,12 +2679,12 @@
 
     if-eqz p6, :cond_3
 
-    .line 490
+    .line 494
     invoke-interface/range {p6 .. p6}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
 
-    .line 494
+    .line 498
     :cond_2
     iget v1, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->flags:I
 
@@ -2686,7 +2692,7 @@
 
     iput v1, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->flags:I
 
-    .line 495
+    .line 499
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/MessagesController;->getInputWallpaper(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;)Lorg/telegram/tgnet/TLRPC$InputWallPaper;
 
     move-result-object v1
@@ -2695,7 +2701,7 @@
 
     move v4, v6
 
-    .line 497
+    .line 501
     :cond_3
     :goto_1
     iget v1, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->flags:I
@@ -2704,14 +2710,14 @@
 
     iput v1, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->flags:I
 
-    .line 498
+    .line 502
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/MessagesController;->getWallpaperSetting(Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;)Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
 
     move-result-object v0
 
     iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_messages_setChatWallPaper;->settings:Lorg/telegram/tgnet/TLRPC$WallPaperSettings;
 
-    .line 502
+    .line 506
     iget v0, v7, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;

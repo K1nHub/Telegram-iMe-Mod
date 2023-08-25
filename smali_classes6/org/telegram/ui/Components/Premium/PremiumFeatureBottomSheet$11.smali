@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$11;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;
 .source "PremiumFeatureBottomSheet.java"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->onCustomOpenAnimation()Z
+    value = Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->getViewForPosition(Landroid/content/Context;I)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,41 +14,40 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$premiumAppIconsPreviewView:Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;I)V
     .locals 0
 
-    .line 688
-    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$11;->val$premiumAppIconsPreviewView:Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 715
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;-><init>(Landroid/content/Context;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public setOffset(F)V
     .locals 1
 
-    .line 691
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$11;->val$premiumAppIconsPreviewView:Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;
+    const/4 v0, 0x0
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    cmpl-float v0, p1, v0
 
-    move-result-object p1
+    if-nez v0, :cond_0
 
-    check-cast p1, Ljava/lang/Float;
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    goto :goto_0
 
-    move-result p1
+    :cond_0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;->setOffset(F)V
+    .line 718
+    :goto_0
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->setAutoPlayEnabled(Z)V
+
+    .line 719
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->setOffset(F)V
 
     return-void
 .end method

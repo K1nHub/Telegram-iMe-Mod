@@ -1812,7 +1812,7 @@
 
     if-eqz v0, :cond_3
 
-    const-string v0, "no codec info for video/avc"
+    const-string/jumbo v0, "no codec info for video/avc"
 
     .line 8556
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -1904,7 +1904,7 @@
 
     if-eqz v0, :cond_6
 
-    const-string v0, "no color format for video/avc"
+    const-string/jumbo v0, "no color format for video/avc"
 
     .line 8575
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -25587,7 +25587,7 @@
 
     const-string v9, "m4a"
 
-    const-string v11, "ogg"
+    const-string/jumbo v11, "ogg"
 
     if-nez v0, :cond_16
 
@@ -27183,6 +27183,8 @@
 
     return v1
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x19fda -> :sswitch_5
@@ -28288,7 +28290,7 @@
 
     if-eqz p1, :cond_9
 
-    const-string p1, "multi media not ready"
+    const-string/jumbo p1, "multi media not ready"
 
     .line 5470
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -35394,7 +35396,7 @@
 
     if-eqz v7, :cond_33
 
-    const-string v7, "nosound_video = true"
+    const-string/jumbo v7, "nosound_video = true"
 
     .line 2764
     invoke-static {v7}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -50267,7 +50269,7 @@
     if-eqz v5, :cond_c2
 
     :try_start_6f
-    const-string v5, "nosound_video = true"
+    const-string/jumbo v5, "nosound_video = true"
 
     .line 4328
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

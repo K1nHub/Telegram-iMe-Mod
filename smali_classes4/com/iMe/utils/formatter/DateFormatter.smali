@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDateFormatter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DateFormatter.kt\ncom/iMe/utils/formatter/DateFormatter\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,52:1\n361#2,7:53\n361#2,7:60\n1#3:67\n*S KotlinDebug\n*F\n+ 1 DateFormatter.kt\ncom/iMe/utils/formatter/DateFormatter\n*L\n36#1:53,7\n37#1:60,7\n*E\n"
+    value = "SMAP\nDateFormatter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DateFormatter.kt\ncom/iMe/utils/formatter/DateFormatter\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,47:1\n361#2,7:48\n361#2,7:55\n*S KotlinDebug\n*F\n+ 1 DateFormatter.kt\ncom/iMe/utils/formatter/DateFormatter\n*L\n32#1:48,7\n33#1:55,7\n*E\n"
 .end annotation
 
 
@@ -42,7 +42,7 @@
 
     sput-object v0, Lcom/iMe/utils/formatter/DateFormatter;->INSTANCE:Lcom/iMe/utils/formatter/DateFormatter;
 
-    .line 12
+    .line 13
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -55,7 +55,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 9
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,7 +64,7 @@
 .method private final createFormatFor(Lcom/iMe/utils/formatter/DateFormatter$DateType;Ljava/lang/String;)Ljava/text/SimpleDateFormat;
     .locals 3
 
-    .line 40
+    .line 36
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     invoke-virtual {p1}, Lcom/iMe/utils/formatter/DateFormatter$DateType;->getFormat()Ljava/lang/String;
@@ -77,7 +77,7 @@
 
     invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    .line 41
+    .line 37
     invoke-virtual {p1}, Lcom/iMe/utils/formatter/DateFormatter$DateType;->getTimeZone()Ljava/util/TimeZone;
 
     move-result-object p1
@@ -102,7 +102,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 21
     sget-object v0, Lcom/iMe/utils/formatter/DateFormatter;->INSTANCE:Lcom/iMe/utils/formatter/DateFormatter;
 
     invoke-direct {v0, p0, p2}, Lcom/iMe/utils/formatter/DateFormatter;->getCurrentLocaleFormatter(Lcom/iMe/utils/formatter/DateFormatter$DateType;Ljava/lang/String;)Ljava/text/SimpleDateFormat;
@@ -127,7 +127,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 21
+    .line 20
     sget-object p2, Lcom/iMe/utils/formatter/DateFormatter;->INSTANCE:Lcom/iMe/utils/formatter/DateFormatter;
 
     invoke-direct {p2}, Lcom/iMe/utils/formatter/DateFormatter;->getLanguageCode()Ljava/lang/String;
@@ -145,7 +145,7 @@
 .method private final getCurrentLocaleFormatter(Lcom/iMe/utils/formatter/DateFormatter$DateType;Ljava/lang/String;)Ljava/text/SimpleDateFormat;
     .locals 4
 
-    .line 35
+    .line 31
     sget-object v0, Lcom/iMe/utils/formatter/DateFormatter;->availableLocalesFormatter:Ljava/util/HashMap;
 
     .line 361
@@ -161,7 +161,7 @@
 
     const/4 v2, 0x0
 
-    .line 36
+    .line 32
     sget-object v3, Lcom/iMe/utils/formatter/DateFormatter;->INSTANCE:Lcom/iMe/utils/formatter/DateFormatter;
 
     invoke-direct {v3, p1, p2}, Lcom/iMe/utils/formatter/DateFormatter;->createFormatFor(Lcom/iMe/utils/formatter/DateFormatter$DateType;Ljava/lang/String;)Ljava/text/SimpleDateFormat;
@@ -192,7 +192,7 @@
 
     if-nez v0, :cond_1
 
-    .line 37
+    .line 33
     sget-object v0, Lcom/iMe/utils/formatter/DateFormatter;->INSTANCE:Lcom/iMe/utils/formatter/DateFormatter;
 
     invoke-direct {v0, p1, p2}, Lcom/iMe/utils/formatter/DateFormatter;->createFormatFor(Lcom/iMe/utils/formatter/DateFormatter$DateType;Ljava/lang/String;)Ljava/text/SimpleDateFormat;
@@ -212,7 +212,7 @@
 .method private final getLanguageCode()Ljava/lang/String;
     .locals 2
 
-    .line 32
+    .line 28
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -243,7 +243,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 25
     sget-object v0, Lcom/iMe/utils/formatter/DateFormatter;->INSTANCE:Lcom/iMe/utils/formatter/DateFormatter;
 
     invoke-direct {v0, p0, p2}, Lcom/iMe/utils/formatter/DateFormatter;->getCurrentLocaleFormatter(Lcom/iMe/utils/formatter/DateFormatter$DateType;Ljava/lang/String;)Ljava/text/SimpleDateFormat;
@@ -254,10 +254,13 @@
 
     move-result-object p0
 
-    const-string p1, "getCurrentLocaleFormatte\u2026e, language).parse(value)"
+    if-nez p0, :cond_0
 
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance p0, Ljava/util/Date;
 
+    invoke-direct {p0}, Ljava/util/Date;-><init>()V
+
+    :cond_0
     return-object p0
 .end method
 
@@ -268,7 +271,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 25
+    .line 24
     sget-object p2, Lcom/iMe/utils/formatter/DateFormatter;->INSTANCE:Lcom/iMe/utils/formatter/DateFormatter;
 
     invoke-direct {p2}, Lcom/iMe/utils/formatter/DateFormatter;->getLanguageCode()Ljava/lang/String;

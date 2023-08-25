@@ -28,12 +28,12 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletTransactionsPresenter.kt\ncom/iMe/ui/wallet/transaction/WalletTransactionsPresenter\n*L\n1#1,111:1\n211#2,7:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletTransactionsPresenter.kt\ncom/iMe/ui/wallet/transaction/WalletTransactionsPresenter\n*L\n1#1,111:1\n286#2,7:112\n*E\n"
 .end annotation
 
 
 # instance fields
-.field final synthetic $forceUpdate$inlined:Z
+.field final synthetic $isForceUpdate$inlined:Z
 
 .field final synthetic $isLoadMore$inlined:Z
 
@@ -52,7 +52,7 @@
 
     iput-object p3, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
-    iput-boolean p4, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1;->$forceUpdate$inlined:Z
+    iput-boolean p4, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1;->$isForceUpdate$inlined:Z
 
     const/4 p1, 0x1
 
@@ -120,7 +120,7 @@
 
     iget-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
-    iget-boolean v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1;->$forceUpdate$inlined:Z
+    iget-boolean v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadInternal$$inlined$subscribeWithErrorHandle$default$1;->$isForceUpdate$inlined:Z
 
     invoke-static {p1, v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$onLoading(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Z)V
 

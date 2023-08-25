@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 254
+    .line 249
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment$setupListeners$1$3;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -57,26 +57,24 @@
 .end method
 
 .method public final invoke()V
-    .locals 8
+    .locals 5
 
-    .line 255
+    .line 250
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment$setupListeners$1$3;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;->access$getPresenter(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;)Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const-wide/16 v4, 0x0
+    const/4 v3, 0x2
 
-    const/4 v6, 0x6
+    const/4 v4, 0x0
 
-    const/4 v7, 0x0
-
-    invoke-static/range {v1 .. v7}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->loadScreenInfo$default(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;ZZJILjava/lang/Object;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->loadScreenInfo$default(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;ZZILjava/lang/Object;)V
 
     return-void
 .end method

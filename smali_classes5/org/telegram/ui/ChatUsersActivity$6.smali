@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/ChatUsersActivity;)V
     .locals 0
 
-    .line 693
+    .line 694
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$6;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
-    .line 695
+    .line 696
     new-instance p1, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-direct {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
@@ -44,10 +44,10 @@
 .method protected onAllAnimationsDone()V
     .locals 1
 
-    .line 699
+    .line 700
     invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->onAllAnimationsDone()V
 
-    .line 700
+    .line 701
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$6;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
@@ -58,10 +58,10 @@
 .method protected onChangeAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
 
-    .line 723
+    .line 724
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->onChangeAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 724
+    .line 725
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$6;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$500(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -76,10 +76,10 @@
 .method protected onMoveAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
 
-    .line 717
+    .line 718
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->onMoveAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 718
+    .line 719
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$6;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$500(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -94,7 +94,7 @@
 .method public runPendingAnimations()V
     .locals 4
 
-    .line 705
+    .line 706
     iget-object v0, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingRemovals:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -103,7 +103,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 706
+    .line 707
     iget-object v1, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingMoves:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -112,7 +112,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    .line 707
+    .line 708
     iget-object v2, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingChanges:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -121,7 +121,7 @@
 
     xor-int/lit8 v2, v2, 0x1
 
-    .line 708
+    .line 709
     iget-object v3, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingAdditions:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -138,13 +138,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 710
+    .line 711
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$6;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
-    .line 712
+    .line 713
     :cond_1
     invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->runPendingAnimations()V
 

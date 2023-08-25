@@ -63,7 +63,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 40
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_contact;->mutual:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -78,7 +78,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 32
+    .line 40
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     invoke-virtual {p0, p1}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$notMutualContacts$2$1;->invoke(Lorg/telegram/tgnet/TLRPC$TL_contact;)Ljava/lang/Boolean;

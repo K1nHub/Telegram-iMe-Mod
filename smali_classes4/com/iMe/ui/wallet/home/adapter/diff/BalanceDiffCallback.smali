@@ -28,15 +28,15 @@
 .method public areContentsTheSame(Lcom/chad/library/adapter/base/entity/node/BaseNode;Lcom/chad/library/adapter/base/entity/node/BaseNode;)Z
     .locals 1
 
-    const-string v0, "oldItem"
+    const-string/jumbo v0, "oldItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newItem"
+    const-string/jumbo v0, "newItem"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 43
     instance-of v0, p1, Lcom/iMe/model/wallet/home/AccountItem;
 
     if-eqz v0, :cond_0
@@ -51,7 +51,7 @@
 
     goto/16 :goto_0
 
-    .line 45
+    .line 44
     :cond_0
     instance-of v0, p1, Lcom/iMe/model/wallet/home/HeaderItem;
 
@@ -67,7 +67,7 @@
 
     goto/16 :goto_0
 
-    .line 46
+    .line 45
     :cond_1
     instance-of v0, p1, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
@@ -83,7 +83,7 @@
 
     goto/16 :goto_0
 
-    .line 47
+    .line 46
     :cond_2
     instance-of v0, p1, Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
@@ -99,7 +99,7 @@
 
     goto/16 :goto_0
 
-    .line 48
+    .line 47
     :cond_3
     instance-of v0, p1, Lcom/iMe/model/wallet/home/TotalBalanceItem;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 49
+    .line 48
     :cond_4
     instance-of v0, p1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 50
+    .line 49
     :cond_5
     instance-of v0, p1, Lcom/iMe/model/wallet/home/CryptoAddTokensItem;
 
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 51
+    .line 50
     :cond_6
     instance-of v0, p1, Lcom/iMe/model/wallet/home/BannerItem;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 52
+    .line 51
     :cond_7
     instance-of v0, p1, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .line 53
+    .line 52
     :cond_8
     instance-of v0, p1, Lcom/iMe/model/common/GlobalStateItem;
 
@@ -195,7 +195,7 @@
 
     goto :goto_0
 
-    .line 54
+    .line 53
     :cond_9
     instance-of v0, p1, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
@@ -211,7 +211,7 @@
 
     goto :goto_0
 
-    .line 55
+    .line 54
     :cond_a
     instance-of v0, p1, Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
@@ -252,15 +252,15 @@
 .method public areItemsTheSame(Lcom/chad/library/adapter/base/entity/node/BaseNode;Lcom/chad/library/adapter/base/entity/node/BaseNode;)Z
     .locals 5
 
-    const-string v0, "oldItem"
+    const-string/jumbo v0, "oldItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newItem"
+    const-string/jumbo v0, "newItem"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 22
     instance-of v0, p1, Lcom/iMe/model/wallet/home/AccountItem;
 
     const/4 v1, 0x0
@@ -273,7 +273,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 24
+    .line 23
     check-cast p1, Lcom/iMe/model/wallet/home/AccountItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/AccountItem;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -308,7 +308,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 25
+    .line 24
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/AccountItem;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object p1
@@ -317,7 +317,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getNetworkId()Ljava/lang/String;
 
     move-result-object p1
 
@@ -329,7 +329,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getTicker()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getNetworkId()Ljava/lang/String;
 
     move-result-object p2
 
@@ -344,7 +344,7 @@
 
     goto/16 :goto_1
 
-    .line 28
+    .line 27
     :cond_0
     instance-of v0, p1, Lcom/iMe/model/wallet/home/HeaderItem;
 
@@ -372,7 +372,7 @@
 
     goto/16 :goto_1
 
-    .line 29
+    .line 28
     :cond_1
     instance-of v0, p1, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
@@ -400,7 +400,7 @@
 
     goto/16 :goto_1
 
-    .line 30
+    .line 29
     :cond_2
     instance-of v0, p1, Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
@@ -426,7 +426,7 @@
 
     goto :goto_0
 
-    .line 31
+    .line 30
     :cond_3
     instance-of v0, p1, Lcom/iMe/model/wallet/home/TotalBalanceItem;
 
@@ -452,7 +452,7 @@
 
     goto :goto_0
 
-    .line 32
+    .line 31
     :cond_4
     instance-of v0, p1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
@@ -478,7 +478,7 @@
 
     goto :goto_0
 
-    .line 33
+    .line 32
     :cond_5
     instance-of v0, p1, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
@@ -510,7 +510,7 @@
 
     goto/16 :goto_0
 
-    .line 34
+    .line 33
     :cond_6
     instance-of v0, p1, Lcom/iMe/model/wallet/home/CryptoAddTokensItem;
 
@@ -522,7 +522,7 @@
 
     goto/16 :goto_0
 
-    .line 35
+    .line 34
     :cond_7
     instance-of v0, p1, Lcom/iMe/model/wallet/home/BannerItem;
 
@@ -534,7 +534,7 @@
 
     goto/16 :goto_0
 
-    .line 36
+    .line 35
     :cond_8
     instance-of v0, p1, Lcom/iMe/model/common/GlobalStateItem;
 
@@ -546,7 +546,7 @@
 
     goto/16 :goto_0
 
-    .line 37
+    .line 36
     :cond_9
     instance-of v3, p1, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
@@ -582,7 +582,7 @@
 
     goto :goto_1
 
-    .line 38
+    .line 37
     :cond_a
     instance-of v3, p1, Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
@@ -621,7 +621,7 @@
     :cond_b
     if-eqz v0, :cond_c
 
-    .line 39
+    .line 38
     instance-of p1, p2, Lcom/iMe/model/common/GlobalStateItem;
 
     if-eqz p1, :cond_c
@@ -651,15 +651,15 @@
 .method public getChangePayload(Lcom/chad/library/adapter/base/entity/node/BaseNode;Lcom/chad/library/adapter/base/entity/node/BaseNode;)Ljava/lang/Object;
     .locals 2
 
-    const-string v0, "oldItem"
+    const-string/jumbo v0, "oldItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newItem"
+    const-string/jumbo v0, "newItem"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 59
     instance-of v0, p1, Lcom/iMe/model/wallet/home/AccountItem;
 
     const/4 v1, 0x0
@@ -670,7 +670,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 61
+    .line 60
     check-cast p1, Lcom/iMe/model/wallet/home/AccountItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/AccountItem;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -695,7 +695,7 @@
 
     goto/16 :goto_1
 
-    .line 65
+    .line 64
     :cond_0
     instance-of v0, p1, Lcom/iMe/model/wallet/home/HeaderItem;
 
@@ -705,7 +705,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 66
+    .line 65
     check-cast p1, Lcom/iMe/model/wallet/home/HeaderItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/HeaderItem;->getTitle()Ljava/lang/String;
@@ -730,7 +730,7 @@
 
     goto/16 :goto_1
 
-    .line 70
+    .line 69
     :cond_1
     instance-of v0, p1, Lcom/iMe/model/wallet/home/TotalBalanceItem;
 
@@ -740,7 +740,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 71
+    .line 70
     check-cast p1, Lcom/iMe/model/wallet/home/TotalBalanceItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/TotalBalanceItem;->getBalanceText()Ljava/lang/String;
@@ -765,7 +765,7 @@
 
     goto/16 :goto_1
 
-    .line 75
+    .line 74
     :cond_2
     instance-of v0, p1, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
@@ -775,16 +775,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 76
+    .line 75
     check-cast p1, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/Network;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;->getNetworkItem()Lcom/iMe/model/wallet/crypto/NetworkItem;
 
     move-result-object p1
 
     check-cast p2, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/Network;
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;->getNetworkItem()Lcom/iMe/model/wallet/crypto/NetworkItem;
 
     move-result-object v0
 
@@ -799,7 +799,7 @@
 
     goto :goto_1
 
-    .line 80
+    .line 79
     :cond_3
     instance-of v0, p1, Lcom/iMe/model/common/GlobalStateItem;
 
@@ -809,7 +809,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 81
+    .line 80
     check-cast p1, Lcom/iMe/model/common/GlobalStateItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/common/GlobalStateItem;->getState()Lcom/iMe/model/state/GlobalState;
@@ -830,7 +830,7 @@
 
     goto :goto_0
 
-    .line 85
+    .line 84
     :cond_4
     instance-of v0, p1, Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
@@ -840,7 +840,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 86
+    .line 85
     check-cast p1, Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/SelectableHeaderItem;->getTitleResId()I
@@ -857,7 +857,7 @@
 
     goto :goto_0
 
-    .line 90
+    .line 89
     :cond_5
     instance-of v0, p1, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
@@ -867,7 +867,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 91
+    .line 90
     check-cast p1, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->getAddress()Ljava/lang/String;

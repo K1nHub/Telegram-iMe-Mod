@@ -25,15 +25,15 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 15
+    .line 14
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 21
+    .line 18
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/HeaderProvider;->itemViewType:I
 
-    .line 22
+    .line 19
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_dashboard_header:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/HeaderProvider;->layoutId:I
@@ -54,7 +54,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 28
+    .line 23
     sget v0, Lorg/telegram/messenger/R$id;->text_wallet_header:I
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -71,12 +71,12 @@
 
     aput v0, v1, v2
 
-    .line 29
+    .line 24
     invoke-static {p1, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v3
 
-    .line 30
+    .line 25
     sget v4, Lorg/telegram/messenger/R$id;->frame_root:I
 
     iget v7, p0, Lcom/iMe/ui/adapter/provider/HeaderProvider;->extraPadding:F
@@ -95,7 +95,7 @@
 
     move-result-object p1
 
-    .line 31
+    .line 26
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/HeaderItem;->getTitle()Ljava/lang/String;
 
     move-result-object p2
@@ -108,7 +108,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 15
+    .line 14
     check-cast p2, Lcom/iMe/model/wallet/home/HeaderItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/HeaderProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/HeaderItem;)V
@@ -119,7 +119,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 21
+    .line 18
     iget v0, p0, Lcom/iMe/ui/adapter/provider/HeaderProvider;->itemViewType:I
 
     return v0
@@ -128,7 +128,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 22
+    .line 19
     iget v0, p0, Lcom/iMe/ui/adapter/provider/HeaderProvider;->layoutId:I
 
     return v0
@@ -137,7 +137,7 @@
 .method public final setExtraPadding(F)V
     .locals 0
 
-    .line 18
+    .line 16
     iput p1, p0, Lcom/iMe/ui/adapter/provider/HeaderProvider;->extraPadding:F
 
     return-void

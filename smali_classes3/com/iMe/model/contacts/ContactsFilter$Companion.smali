@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactsFilter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsFilter.kt\ncom/iMe/model/contacts/ContactsFilter$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,21:1\n1#2:22\n*E\n"
+    value = "SMAP\nContactsFilter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsFilter.kt\ncom/iMe/model/contacts/ContactsFilter$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,32:1\n1#2:33\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 18
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public final mapNameToEnum(Ljava/lang/String;)Lcom/iMe/model/contacts/ContactsFilter;
     .locals 5
 
-    .line 19
+    .line 30
     invoke-static {}, Lcom/iMe/model/contacts/ContactsFilter;->values()[Lcom/iMe/model/contacts/ContactsFilter;
 
     move-result-object v0

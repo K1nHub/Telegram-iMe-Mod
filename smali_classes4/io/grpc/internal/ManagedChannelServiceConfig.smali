@@ -213,7 +213,7 @@
     const/4 v7, 0x0
 
     :goto_1
-    const-string v8, "no names in method config %s"
+    const-string/jumbo v8, "no names in method config %s"
 
     .line 102
     invoke-static {v7, v8, v3}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V

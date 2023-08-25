@@ -25,7 +25,7 @@
 .method private constructor <init>(Lorg/telegram/messenger/LocationController;)V
     .locals 0
 
-    .line 141
+    .line 142
     iput-object p1, p0, Lorg/telegram/messenger/LocationController$FusedLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/LocationController;Lorg/telegram/messenger/LocationController$1;)V
     .locals 0
 
-    .line 141
+    .line 142
     invoke-direct {p0, p1}, Lorg/telegram/messenger/LocationController$FusedLocationListener;-><init>(Lorg/telegram/messenger/LocationController;)V
 
     return-void
@@ -51,7 +51,7 @@
 
     return-void
 
-    .line 148
+    .line 149
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/LocationController$FusedLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 

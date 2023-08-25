@@ -57,7 +57,7 @@
 
     iget-boolean v6, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda109;->f$5:Z
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$b7QK9eUpH-IvXD-lbE_cNVUnGAk(Lorg/telegram/ui/DialogsActivity;IJLorg/telegram/tgnet/TLRPC$Chat;ZZ)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$-4LlF9TegHLzVl3D2u1wvSC6Tdw(Lorg/telegram/ui/DialogsActivity;IJLorg/telegram/tgnet/TLRPC$Chat;ZZ)V
 
     return-void
 .end method

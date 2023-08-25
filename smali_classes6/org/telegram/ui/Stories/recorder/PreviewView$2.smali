@@ -37,7 +37,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PreviewView;Lorg/telegram/ui/Stories/recorder/StoryEntry;[Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 431
+    .line 437
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -52,7 +52,7 @@
 .method private synthetic lambda$onRenderedFirstFrame$0(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
     .locals 3
 
-    .line 492
+    .line 498
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$800(Lorg/telegram/ui/Stories/recorder/PreviewView;)Landroid/graphics/Bitmap;
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 493
+    .line 499
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$800(Lorg/telegram/ui/Stories/recorder/PreviewView;)Landroid/graphics/Bitmap;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 494
+    .line 500
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
@@ -83,16 +83,16 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 495
+    .line 501
     iput-object v2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
-    .line 497
+    .line 503
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$802(Lorg/telegram/ui/Stories/recorder/PreviewView;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 498
+    .line 504
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -106,7 +106,7 @@
 .method public onError(Lorg/telegram/ui/Components/VideoPlayer;Ljava/lang/Exception;)V
     .locals 0
 
-    .line 446
+    .line 452
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$400(Lorg/telegram/ui/Stories/recorder/PreviewView;)Ljava/lang/Runnable;
@@ -115,7 +115,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 447
+    .line 453
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$400(Lorg/telegram/ui/Stories/recorder/PreviewView;)Ljava/lang/Runnable;
@@ -131,7 +131,7 @@
 .method public onRenderedFirstFrame()V
     .locals 3
 
-    .line 479
+    .line 485
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$whenReadyFinal:[Ljava/lang/Runnable;
 
     const/4 v1, 0x0
@@ -140,21 +140,21 @@
 
     if-eqz v2, :cond_1
 
-    .line 480
+    .line 486
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->post(Ljava/lang/Runnable;)Z
 
-    .line 481
+    .line 487
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$whenReadyFinal:[Ljava/lang/Runnable;
 
     const/4 v2, 0x0
 
     aput-object v2, v0, v1
 
-    .line 482
+    .line 488
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$800(Lorg/telegram/ui/Stories/recorder/PreviewView;)Landroid/graphics/Bitmap;
@@ -163,7 +163,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 483
+    .line 489
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$800(Lorg/telegram/ui/Stories/recorder/PreviewView;)Landroid/graphics/Bitmap;
@@ -172,7 +172,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 484
+    .line 490
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
@@ -185,25 +185,25 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 485
+    .line 491
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
-    .line 487
+    .line 493
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$802(Lorg/telegram/ui/Stories/recorder/PreviewView;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 488
+    .line 494
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_0
 
-    .line 490
+    .line 496
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -213,7 +213,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 491
+    .line 497
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$500(Lorg/telegram/ui/Stories/recorder/PreviewView;)Lorg/telegram/ui/Components/VideoEditTextureView;
@@ -246,7 +246,7 @@
 
     move-result-object v0
 
-    .line 500
+    .line 506
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
     :cond_2
@@ -281,7 +281,7 @@
 .method public onStateChanged(ZI)V
     .locals 0
 
-    .line 434
+    .line 440
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$100(Lorg/telegram/ui/Stories/recorder/PreviewView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -292,7 +292,7 @@
 
     return-void
 
-    .line 437
+    .line 443
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -314,7 +314,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 438
+    .line 444
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$300(Lorg/telegram/ui/Stories/recorder/PreviewView;)Ljava/lang/Runnable;
@@ -325,7 +325,7 @@
 
     goto :goto_0
 
-    .line 440
+    .line 446
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -356,12 +356,12 @@
 .method public onVideoSizeChanged(IIIF)V
     .locals 2
 
-    .line 453
+    .line 459
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz p3, :cond_0
 
-    .line 454
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$100(Lorg/telegram/ui/Stories/recorder/PreviewView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -378,7 +378,7 @@
 
     iput-object v0, p3, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
-    .line 455
+    .line 461
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p3}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$500(Lorg/telegram/ui/Stories/recorder/PreviewView;)Lorg/telegram/ui/Components/VideoEditTextureView;
@@ -387,7 +387,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 456
+    .line 462
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p3}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$500(Lorg/telegram/ui/Stories/recorder/PreviewView;)Lorg/telegram/ui/Components/VideoEditTextureView;
@@ -400,7 +400,7 @@
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/VideoEditTextureView;->setHDRInfo(Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;)V
 
-    .line 460
+    .line 466
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -412,7 +412,7 @@
 
     invoke-static {p3, p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$602(Lorg/telegram/ui/Stories/recorder/PreviewView;I)I
 
-    .line 461
+    .line 467
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     int-to-float p2, p2
@@ -423,7 +423,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$702(Lorg/telegram/ui/Stories/recorder/PreviewView;I)I
 
-    .line 462
+    .line 468
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz p1, :cond_2
@@ -450,7 +450,7 @@
 
     if-eq p1, p2, :cond_2
 
-    .line 463
+    .line 469
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -462,7 +462,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
-    .line 464
+    .line 470
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
@@ -473,18 +473,18 @@
 
     iput p2, p1, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
-    .line 465
+    .line 471
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->val$entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->setupMatrix()V
 
-    .line 467
+    .line 473
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->applyMatrix()V
 
-    .line 468
+    .line 474
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$500(Lorg/telegram/ui/Stories/recorder/PreviewView;)Lorg/telegram/ui/Components/VideoEditTextureView;
@@ -493,7 +493,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 469
+    .line 475
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewView$2;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->access$500(Lorg/telegram/ui/Stories/recorder/PreviewView;)Lorg/telegram/ui/Components/VideoEditTextureView;

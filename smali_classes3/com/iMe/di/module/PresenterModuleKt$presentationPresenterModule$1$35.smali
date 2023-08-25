@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$35\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2,2:553\n129#3,5:555\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$35\n*L\n332#1:553,2\n334#1:555,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$35\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n44#2,2:864\n129#3,5:866\n129#3,5:871\n129#3,5:876\n129#3,5:881\n129#3,5:886\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$35\n*L\n468#1:864,2\n472#1:866,5\n473#1:871,5\n474#1:876,5\n475#1:881,5\n476#1:886,5\n*E\n"
 .end annotation
 
 
@@ -119,10 +119,26 @@
 
     move-result-object p2
 
-    .line 334
+    .line 472
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/domain/interactor/binancepay/BinanceInternalInteractor;
+
+    .line 133
+    const-class p2, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 473
+    move-object v4, p2
+
+    check-cast v4, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -135,26 +151,10 @@
 
     move-result-object p2
 
-    .line 334
+    .line 474
     move-object v8, p2
 
     check-cast v8, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 334
-    move-object v7, p2
-
-    check-cast v7, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
@@ -167,13 +167,13 @@
 
     move-result-object p2
 
-    .line 334
+    .line 475
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 133
-    const-class p2, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
+    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -183,12 +183,12 @@
 
     move-result-object p1
 
-    .line 334
-    move-object v4, p1
+    .line 476
+    move-object v7, p1
 
-    check-cast v4, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
+    check-cast v7, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 333
+    .line 469
     new-instance p1, Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryPresenter;
 
     move-object v1, p1
@@ -201,7 +201,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 332
+    .line 468
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

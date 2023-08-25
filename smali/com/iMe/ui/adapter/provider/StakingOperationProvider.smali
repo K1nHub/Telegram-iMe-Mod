@@ -14,8 +14,6 @@
 
 
 # instance fields
-.field private extraPadding:F
-
 .field private final itemViewType:I
 
 .field private final layoutId:I
@@ -33,23 +31,23 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 24
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 25
+    .line 23
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 32
+    .line 26
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_OPERATION:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->itemViewType:I
 
-    .line 33
+    .line 27
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_transaction:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->layoutId:I
 
-    .line 36
+    .line 29
     new-instance p1, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$networkIconCornerSize$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$networkIconCornerSize$2;-><init>(Lcom/iMe/ui/adapter/provider/StakingOperationProvider;)V
@@ -66,7 +64,7 @@
 .method public static final synthetic access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/StakingOperationProvider;)F
     .locals 0
 
-    .line 24
+    .line 22
     invoke-direct {p0}, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->getNetworkIconCornerSize()F
 
     move-result p0
@@ -77,7 +75,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/StakingOperationProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 24
+    .line 22
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -86,7 +84,7 @@
 .method private final getNetworkIconCornerSize()F
     .locals 1
 
-    .line 36
+    .line 29
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->networkIconCornerSize$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -105,7 +103,7 @@
 
 # virtual methods
 .method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/transaction/StakingOperationItem;)V
-    .locals 23
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -121,192 +119,171 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
-    sget v5, Lorg/telegram/messenger/R$id;->linear_root:I
+    .line 33
+    sget v3, Lorg/telegram/messenger/R$id;->linear_root:I
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v1, v5, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRippleForeground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v1, v3, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setRippleForeground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 43
-    sget v12, Lorg/telegram/messenger/R$id;->text_date:I
+    .line 34
+    sget v5, Lorg/telegram/messenger/R$id;->text_date:I
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_date:I
 
-    invoke-static {v4, v12, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v3, v5, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 44
-    sget v13, Lorg/telegram/messenger/R$id;->text_amount:I
+    .line 35
+    sget v6, Lorg/telegram/messenger/R$id;->text_amount:I
 
-    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_name:I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chats_name:I
 
-    invoke-static {v4, v13, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v3, v6, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 45
-    sget v14, Lorg/telegram/messenger/R$id;->text_status:I
+    .line 36
+    sget v7, Lorg/telegram/messenger/R$id;->text_status:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->getStatusColor()I
 
-    move-result v6
+    move-result v8
 
-    invoke-static {v4, v14, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v3, v7, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 46
-    sget v15, Lorg/telegram/messenger/R$id;->text_transaction_type_title:I
+    .line 37
+    sget v8, Lorg/telegram/messenger/R$id;->text_transaction_type_title:I
 
-    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
-    invoke-static {v4, v15, v6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v3, v8, v9}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 47
-    sget v6, Lorg/telegram/messenger/R$id;->view_divider:I
+    .line 38
+    sget v9, Lorg/telegram/messenger/R$id;->view_divider:I
 
     invoke-virtual/range {p0 .. p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;->getAdapter()Lcom/chad/library/adapter/base/BaseNodeAdapter;
 
-    move-result-object v7
+    move-result-object v10
 
-    invoke-static {v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-static {v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-static {v1, v7}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->isLastItem(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$Adapter;)Z
+    invoke-static {v1, v10}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->isLastItem(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$Adapter;)Z
 
     move-result v1
 
-    const/4 v7, 0x1
+    const/4 v10, 0x1
 
-    xor-int/2addr v1, v7
+    xor-int/2addr v1, v10
 
-    invoke-static {v4, v6, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v3, v9, v1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setVisibleElseGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 48
-    sget v11, Lorg/telegram/messenger/R$id;->image_staking_icon:I
+    .line 39
+    sget v3, Lorg/telegram/messenger/R$id;->image_staking_icon:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->isBadgeVisible()Z
 
-    move-result v4
+    move-result v9
 
-    invoke-virtual {v1, v11, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setVisible(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v3, v9}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setVisible(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 49
-    sget v4, Lorg/telegram/messenger/R$id;->image_transaction_type_icon:I
+    .line 40
+    sget v9, Lorg/telegram/messenger/R$id;->image_transaction_type_icon:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->getIcon()I
 
-    move-result v6
+    move-result v11
 
-    invoke-virtual {v1, v4, v6}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v9, v11}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
-    move-result-object v16
+    move-result-object v11
 
-    .line 50
+    .line 41
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->getToken()Lcom/iMe/model/wallet/crypto/TokenItem;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/TokenItem;->getAvatarUrl()Ljava/lang/String;
 
-    move-result-object v18
+    move-result-object v13
 
-    const/16 v19, 0x0
+    const/4 v14, 0x0
 
-    const/16 v20, 0x0
+    const/4 v15, 0x0
 
-    const/16 v21, 0xc
+    const/16 v16, 0xc
 
-    const/16 v22, 0x0
+    const/16 v17, 0x0
 
-    move/from16 v17, v11
+    move v12, v3
 
-    invoke-static/range {v16 .. v22}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v1
-
-    new-array v4, v7, [I
-
-    aput v13, v4, v3
-
-    .line 51
-    invoke-static {v1, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object v4
-
-    .line 52
-    iget v8, v0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->extraPadding:F
-
-    const/4 v7, 0x0
-
-    const/4 v9, 0x0
-
-    const/16 v10, 0x14
-
-    const/4 v1, 0x0
-
-    move v6, v8
-
-    move v3, v11
-
-    move-object v11, v1
-
-    invoke-static/range {v4 .. v11}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setPadding$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IFFFFILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static/range {v11 .. v17}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 53
+    new-array v9, v10, [I
+
+    aput v6, v9, v4
+
+    .line 42
+    invoke-static {v1, v9}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object v1
+
+    .line 43
     iget-object v4, v0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v2, v4}, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->getStatusText(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v14, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v7, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 54
+    .line 44
     iget-object v4, v0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v2, v4}, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->getAmount(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v13, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v6, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 55
+    .line 45
     iget-object v4, v0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v2, v4}, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->getTransactionTitle(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v15, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-virtual {v1, v8, v4}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 56
+    .line 46
     new-instance v4, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$convert$1;
 
     invoke-direct {v4, v2}, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$convert$1;-><init>(Lcom/iMe/model/wallet/transaction/StakingOperationItem;)V
 
-    invoke-static {v1, v12, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {v1, v5, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 57
+    .line 47
     new-instance v2, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$convert$2;
 
     invoke-direct {v2, v0}, Lcom/iMe/ui/adapter/provider/StakingOperationProvider$convert$2;-><init>(Lcom/iMe/ui/adapter/provider/StakingOperationProvider;)V
@@ -319,7 +296,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 24
+    .line 22
     check-cast p2, Lcom/iMe/model/wallet/transaction/StakingOperationItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/transaction/StakingOperationItem;)V
@@ -330,7 +307,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 32
+    .line 26
     iget v0, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->itemViewType:I
 
     return v0
@@ -339,7 +316,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 33
+    .line 27
     iget v0, p0, Lcom/iMe/ui/adapter/provider/StakingOperationProvider;->layoutId:I
 
     return v0

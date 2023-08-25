@@ -2441,7 +2441,7 @@
     .line 1168
     iget-object v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v2, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v2, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_SAVE_CLOUD:I
 
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_forward_cloud:I
 
@@ -7651,7 +7651,7 @@
     .line 2117
     iget-object v3, p0, Lorg/telegram/ui/Components/AudioPlayerAlert;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v6, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v6, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_SAVE_CLOUD:I
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
@@ -7717,7 +7717,7 @@
     .line 2128
     iget-object v3, p0, Lorg/telegram/ui/Components/AudioPlayerAlert;->optionsButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    sget v4, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v4, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_SAVE_CLOUD:I
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
@@ -10066,7 +10066,7 @@
 
     .line 1545
     :cond_0
-    sget v2, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_FORWARD_CLOUD:I
+    sget v2, Lcom/iMe/common/IdFabric$Menu;->MESSAGE_SAVE_CLOUD:I
 
     if-ne p1, v2, :cond_1
 

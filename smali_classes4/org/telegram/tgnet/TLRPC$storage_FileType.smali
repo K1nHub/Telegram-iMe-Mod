@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 46569
+    .line 46611
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 46593
+    .line 46635
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileMp3;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 46599
+    .line 46641
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileMov;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 46602
+    .line 46644
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_filePartial;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 46581
+    .line 46623
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileWebp;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 46584
+    .line 46626
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_filePng;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 46596
+    .line 46638
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileJpeg;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 46587
+    .line 46629
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileGif;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 46578
+    .line 46620
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileMp4;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 46590
+    .line 46632
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_filePdf;
 
@@ -94,7 +94,7 @@
 
     goto :goto_0
 
-    .line 46575
+    .line 46617
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_storage_fileUnknown;
 
@@ -107,7 +107,7 @@
 
     goto :goto_1
 
-    .line 46606
+    .line 46648
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -137,7 +137,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 46609
+    .line 46651
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

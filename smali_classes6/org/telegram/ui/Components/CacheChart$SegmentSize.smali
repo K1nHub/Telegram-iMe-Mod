@@ -26,7 +26,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 538
+    .line 540
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,15 +35,15 @@
 .method public static of(JZ)Lorg/telegram/ui/Components/CacheChart$SegmentSize;
     .locals 1
 
-    .line 548
+    .line 550
     new-instance v0, Lorg/telegram/ui/Components/CacheChart$SegmentSize;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/CacheChart$SegmentSize;-><init>()V
 
-    .line 549
+    .line 551
     iput-wide p0, v0, Lorg/telegram/ui/Components/CacheChart$SegmentSize;->size:J
 
-    .line 550
+    .line 552
     iput-boolean p2, v0, Lorg/telegram/ui/Components/CacheChart$SegmentSize;->selected:Z
 
     return-object v0

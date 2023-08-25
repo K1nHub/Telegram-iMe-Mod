@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;Landroid/content/Context;Lorg/telegram/ui/Components/EmojiTabsStrip;)V
     .locals 0
 
-    .line 996
+    .line 997
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$1;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -35,14 +35,14 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 1021
+    .line 1022
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1023
+    .line 1024
     invoke-virtual {p0}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v1
@@ -57,10 +57,10 @@
 
     const/16 v1, 0xff
 
-    .line 1024
+    .line 1025
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1025
+    .line 1026
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     :cond_0
@@ -70,7 +70,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 999
+    .line 1000
     invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
 
     move-result v0
@@ -79,11 +79,11 @@
 
     return-void
 
-    .line 1002
+    .line 1003
     :cond_0
     invoke-super {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 1003
+    .line 1004
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$1;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->updateLockImageReceiver()V
@@ -94,7 +94,7 @@
 .method public invalidate(IIII)V
     .locals 1
 
-    .line 1008
+    .line 1009
     invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
 
     move-result v0
@@ -103,7 +103,7 @@
 
     return-void
 
-    .line 1011
+    .line 1012
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ImageView;->invalidate(IIII)V
 
@@ -119,7 +119,7 @@
 .method public setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 1031
+    .line 1032
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void

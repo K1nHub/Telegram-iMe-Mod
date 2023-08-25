@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/BottomSheet;I)V
     .locals 0
 
-    .line 1596
+    .line 1601
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iput p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->val$item:I
@@ -45,7 +45,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 2
 
-    .line 1606
+    .line 1611
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2500(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnDismissListener;
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1607
+    .line 1612
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2500(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnDismissListener;
@@ -65,7 +65,7 @@
 
     invoke-interface {v0, v1}, Landroid/content/DialogInterface$OnDismissListener;->onDismiss(Landroid/content/DialogInterface;)V
 
-    .line 1610
+    .line 1615
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
@@ -79,7 +79,7 @@
     :catch_0
     move-exception v0
 
-    .line 1612
+    .line 1617
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -91,7 +91,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1621
+    .line 1626
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
@@ -104,7 +104,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1622
+    .line 1627
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     const/4 v0, 0x0
@@ -113,7 +113,7 @@
 
     const/4 v0, 0x0
 
-    .line 1623
+    .line 1628
     iput v0, p1, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
     :cond_0
@@ -123,7 +123,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 1599
+    .line 1604
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
@@ -138,24 +138,24 @@
 
     if-eqz p1, :cond_1
 
-    .line 1600
+    .line 1605
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
-    .line 1601
+    .line 1606
     iput v1, p1, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
-    .line 1602
+    .line 1607
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2400(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnClickListener;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 1603
+    .line 1608
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$7;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2400(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnClickListener;
@@ -168,7 +168,7 @@
 
     invoke-interface {p1, v0, v2}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 1605
+    .line 1610
     :cond_0
     new-instance p1, Lorg/telegram/ui/ActionBar/BottomSheet$7$$ExternalSyntheticLambda0;
 
@@ -176,7 +176,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1616
+    .line 1621
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 

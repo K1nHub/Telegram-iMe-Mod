@@ -2,38 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lj$/util/function/ToIntFunction;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController;
-
-.field public final synthetic f$1:J
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;J)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Stories/StoriesController;
-
-    iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;->f$1:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 3
+.method public final applyAsInt(Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Stories/StoriesController;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$StoryItem;
 
-    iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;->f$1:J
+    invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$LWpvBlTVqLrZ4tw0FeKym6FPDwU(Lorg/telegram/tgnet/TLRPC$StoryItem;)I
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$XZDwA_mOwKwGE8I4YnwSD1hYK4A(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

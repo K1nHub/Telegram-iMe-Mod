@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;)V
     .locals 0
 
-    .line 184
+    .line 208
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onItemClick(Landroid/view/View;I)Z
     .locals 2
 
-    .line 187
+    .line 211
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget v0, p2, Lorg/telegram/ui/Stories/DialogStoriesCell;->collapsedProgress:F
@@ -49,7 +49,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$200(Lorg/telegram/ui/Stories/DialogStoriesCell;)F
+    invoke-static {p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$300(Lorg/telegram/ui/Stories/DialogStoriesCell;)F
 
     move-result p2
 
@@ -57,7 +57,7 @@
 
     if-nez p2, :cond_0
 
-    .line 188
+    .line 212
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     move-object v0, p1

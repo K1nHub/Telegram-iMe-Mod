@@ -493,7 +493,7 @@
 
     move-result v4
 
-    invoke-static {v1, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v1, v4}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     .line 73
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->textCompany:Landroidx/appcompat/widget/AppCompatTextView;
@@ -524,7 +524,7 @@
 
     move-result v3
 
-    invoke-static {v1, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v1, v3}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     .line 78
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->recognizedText:Landroidx/appcompat/widget/AppCompatTextView;
@@ -560,7 +560,7 @@
 
     move-result v5
 
-    invoke-static {v1, v5}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v1, v5}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     .line 85
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageShare:Landroidx/appcompat/widget/AppCompatImageView;
@@ -573,7 +573,7 @@
 
     move-result v6
 
-    invoke-static {v1, v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v1, v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     .line 86
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageTranslate:Landroidx/appcompat/widget/AppCompatImageView;
@@ -586,7 +586,7 @@
 
     move-result v4
 
-    invoke-static {v1, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v1, v4}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     .line 89
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageCopy:Landroidx/appcompat/widget/AppCompatImageView;

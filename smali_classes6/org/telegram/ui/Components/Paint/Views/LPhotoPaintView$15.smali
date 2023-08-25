@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 0
 
-    .line 1311
+    .line 1312
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     iput p5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->val$wasSelectedIndex:I
@@ -39,10 +39,10 @@
 .method public onDismissAnimationStart()V
     .locals 2
 
-    .line 1314
+    .line 1315
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->onDismissAnimationStart()V
 
-    .line 1315
+    .line 1316
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->this$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;->val$wasSelectedIndex:I

@@ -418,7 +418,7 @@
     const/high16 v13, 0x41800000    # 16.0f
 
     .line 1119
-    invoke-virtual {v1, v4, v13}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v1, v4, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 1120
     iget-object v1, v8, Lorg/telegram/ui/Components/EmojiView$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -473,7 +473,7 @@
 
     move-result-object v1
 
-    const-string v2, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string v2, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

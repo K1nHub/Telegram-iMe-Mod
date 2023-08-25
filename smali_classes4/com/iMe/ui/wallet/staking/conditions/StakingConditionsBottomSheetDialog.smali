@@ -139,7 +139,7 @@
 
     move-result-object v0
 
-    const-string v2, "mvpDelegate"
+    const-string/jumbo v2, "mvpDelegate"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -451,13 +451,13 @@
 
     invoke-static {v8, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "networkIconUrl"
+    const-string/jumbo v6, "networkIconUrl"
 
     move-object/from16 v10, p2
 
     invoke-static {v10, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "name"
+    const-string/jumbo v6, "name"
 
     move-object/from16 v11, p3
 

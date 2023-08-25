@@ -96,61 +96,61 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 7489
+    .line 7490
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
     const/4 p1, -0x1
 
-    .line 7499
+    .line 7500
     iput p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingHeaderRow:I
 
-    .line 7500
+    .line 7501
     iput p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingRow:I
 
-    .line 7501
+    .line 7502
     iput p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->firstTrendingRow:I
 
-    .line 7502
+    .line 7503
     iput p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->recentlyUsedHeaderRow:I
 
-    .line 7505
+    .line 7506
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
-    .line 7506
+    .line 7507
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
-    .line 7507
+    .line 7508
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->sectionToPosition:Landroid/util/SparseIntArray;
 
-    .line 7508
+    .line 7509
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToUnlock:Landroid/util/SparseIntArray;
 
-    .line 7509
+    .line 7510
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToExpand:Landroid/util/SparseIntArray;
 
-    .line 7510
+    .line 7511
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -163,7 +163,7 @@
 .method static synthetic access$14500(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 7489
+    .line 7490
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->packStartPosition:Ljava/util/ArrayList;
 
     return-object p0
@@ -172,7 +172,7 @@
 .method static synthetic access$14800(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Landroid/util/SparseIntArray;
     .locals 0
 
-    .line 7489
+    .line 7490
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToExpand:Landroid/util/SparseIntArray;
 
     return-object p0
@@ -181,7 +181,7 @@
 .method static synthetic access$19500(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 7489
+    .line 7490
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     return-object p0
@@ -190,7 +190,7 @@
 .method static synthetic access$22700(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 7489
+    .line 7490
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->frozenEmojiPacks:Ljava/util/ArrayList;
 
     return-object p0
@@ -199,7 +199,7 @@
 .method static synthetic access$7600(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)I
     .locals 0
 
-    .line 7489
+    .line 7490
     iget p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingRow:I
 
     return p0
@@ -208,7 +208,7 @@
 .method static synthetic access$7700(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)I
     .locals 0
 
-    .line 7489
+    .line 7490
     iget p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingHeaderRow:I
 
     return p0
@@ -217,7 +217,7 @@
 .method static synthetic access$7800(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)I
     .locals 0
 
-    .line 7489
+    .line 7490
     iget p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->recentlyUsedHeaderRow:I
 
     return p0
@@ -226,7 +226,7 @@
 .method static synthetic access$7900(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Landroid/util/SparseIntArray;
     .locals 0
 
-    .line 7489
+    .line 7490
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
     return-object p0
@@ -235,7 +235,7 @@
 .method static synthetic access$8000(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Landroid/util/SparseIntArray;
     .locals 0
 
-    .line 7489
+    .line 7490
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToUnlock:Landroid/util/SparseIntArray;
 
     return-object p0
@@ -244,7 +244,7 @@
 .method static synthetic access$8700(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Landroid/util/SparseIntArray;
     .locals 0
 
-    .line 7489
+    .line 7490
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->sectionToPosition:Landroid/util/SparseIntArray;
 
     return-object p0
@@ -253,7 +253,7 @@
 .method private synthetic lambda$expand$2(FI)V
     .locals 3
 
-    .line 7964
+    .line 7965
     :try_start_0
     new-instance v0, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;
 
@@ -271,10 +271,10 @@
 
     invoke-direct {v0, v1, v2, p1}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;IF)V
 
-    .line 7965
+    .line 7966
     invoke-virtual {v0, p2}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 7966
+    .line 7967
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$7400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -290,7 +290,7 @@
     :catch_0
     move-exception p1
 
-    .line 7968
+    .line 7969
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -300,7 +300,7 @@
 .method private synthetic lambda$onCreateViewHolder$0(Landroid/view/View;)V
     .locals 3
 
-    .line 7540
+    .line 7541
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$8600(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -341,7 +341,7 @@
 
     goto :goto_0
 
-    .line 7543
+    .line 7544
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -359,7 +359,7 @@
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
-    .line 7544
+    .line 7545
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget p1, p1, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -380,7 +380,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 7545
+    .line 7546
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
@@ -389,7 +389,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 7546
+    .line 7547
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$1500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
@@ -402,7 +402,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 7548
+    .line 7549
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -412,7 +412,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 7549
+    .line 7550
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$3400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -427,7 +427,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->updateEmojiPacks(Ljava/util/ArrayList;)V
 
-    .line 7551
+    .line 7552
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->updateRows()V
 
@@ -439,7 +439,7 @@
 .method private synthetic lambda$onCreateViewHolder$1(Landroid/view/View;I)V
     .locals 8
 
-    .line 7568
+    .line 7569
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p2
@@ -448,19 +448,19 @@
 
     if-eqz p2, :cond_5
 
-    .line 7569
+    .line 7570
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
-    .line 7570
+    .line 7571
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 7571
+    .line 7572
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget v0, v0, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -477,7 +477,7 @@
 
     const/4 v2, 0x0
 
-    .line 7573
+    .line 7574
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -485,7 +485,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 7574
+    .line 7575
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -494,34 +494,34 @@
 
     if-eqz v3, :cond_0
 
-    .line 7575
+    .line 7576
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-eqz v4, :cond_0
 
-    .line 7576
+    .line 7577
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetID;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetID;-><init>()V
 
-    .line 7577
+    .line 7578
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v6, v5, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
     iput-wide v6, v4, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->id:J
 
-    .line 7578
+    .line 7579
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$StickerSet;->access_hash:J
 
     iput-wide v5, v4, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->access_hash:J
 
-    .line 7579
+    .line 7580
     invoke-virtual {p2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     if-eqz p1, :cond_0
 
-    .line 7581
+    .line 7582
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-eqz v4, :cond_0
@@ -543,7 +543,7 @@
 
     goto :goto_0
 
-    .line 7587
+    .line 7588
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -557,7 +557,7 @@
 
     invoke-virtual {p1, v0, v0}, Lorg/telegram/messenger/MediaDataController;->markFeaturedStickersAsRead(ZZ)V
 
-    .line 7588
+    .line 7589
     new-instance p1, Lorg/telegram/ui/Components/EmojiPacksAlert;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -604,10 +604,10 @@
 
     if-ltz v1, :cond_3
 
-    .line 7590
+    .line 7591
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->highlight(I)V
 
-    .line 7592
+    .line 7593
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -617,7 +617,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 7593
+    .line 7594
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$1000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -628,7 +628,7 @@
 
     goto :goto_2
 
-    .line 7595
+    .line 7596
     :cond_4
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->show()V
 
@@ -642,7 +642,7 @@
 .method public expand(ILandroid/view/View;)V
     .locals 8
 
-    .line 7919
+    .line 7920
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToExpand:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -651,7 +651,7 @@
 
     if-ltz p1, :cond_b
 
-    .line 7920
+    .line 7921
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -666,7 +666,7 @@
 
     goto/16 :goto_6
 
-    .line 7923
+    .line 7924
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -680,7 +680,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
-    .line 7924
+    .line 7925
     iget-boolean v1, v0, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
     if-eqz v1, :cond_1
@@ -690,7 +690,7 @@
     :cond_1
     add-int/lit8 v1, p1, 0x1
 
-    .line 7927
+    .line 7928
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -714,7 +714,7 @@
     :cond_2
     move v1, v3
 
-    .line 7929
+    .line 7930
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->packStartPosition:Ljava/util/ArrayList;
 
@@ -728,7 +728,7 @@
 
     move-result p1
 
-    .line 7930
+    .line 7931
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/EmojiView;->access$19400(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -745,7 +745,7 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 7932
+    .line 7933
     iget-object v2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget v2, v2, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -779,7 +779,7 @@
     :goto_1
     move v2, v4
 
-    .line 7933
+    .line 7934
     :goto_2
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -793,7 +793,7 @@
 
     mul-int/lit8 v5, v5, 0x3
 
-    .line 7934
+    .line 7935
     iget-boolean v6, v0, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
     if-eqz v6, :cond_5
@@ -833,7 +833,7 @@
 
     move-result v2
 
-    .line 7936
+    .line 7937
     :goto_3
     iget-object v6, v0, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
@@ -849,7 +849,7 @@
 
     add-int/2addr v6, v2
 
-    .line 7937
+    .line 7938
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -859,11 +859,11 @@
     :cond_8
     move-object v6, v7
 
-    .line 7939
+    .line 7940
     :goto_4
     iput-boolean v4, v0, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 7940
+    .line 7941
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -878,33 +878,33 @@
 
     add-int/2addr p1, v2
 
-    .line 7942
+    .line 7943
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    .line 7943
+    .line 7944
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 7946
+    .line 7947
     :cond_9
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->processEmoji(Z)V
 
-    .line 7947
+    .line 7948
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->updateRows()V
 
     if-eqz v6, :cond_b
 
     if-eqz v7, :cond_b
 
-    .line 7950
+    .line 7951
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$14002(Lorg/telegram/ui/Components/EmojiView;Landroid/view/View;)Landroid/view/View;
 
-    .line 7951
+    .line 7952
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
@@ -913,7 +913,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$14102(Lorg/telegram/ui/Components/EmojiView;I)I
 
-    .line 7952
+    .line 7953
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
@@ -928,7 +928,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$14202(Lorg/telegram/ui/Components/EmojiView;I)I
 
-    .line 7953
+    .line 7954
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -937,7 +937,7 @@
 
     invoke-static {p1, v2, v3}, Lorg/telegram/ui/Components/EmojiView;->access$13902(Lorg/telegram/ui/Components/EmojiView;J)J
 
-    .line 7956
+    .line 7957
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -948,7 +948,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
 
-    .line 7957
+    .line 7958
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -957,12 +957,12 @@
 
     if-eqz v1, :cond_b
 
-    .line 7960
+    .line 7961
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    .line 7961
+    .line 7962
     invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
@@ -978,7 +978,7 @@
     :cond_a
     const/high16 p2, 0x40800000    # 4.0f
 
-    .line 7962
+    .line 7963
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -996,7 +996,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 7516
+    .line 7517
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     return v0
@@ -1013,7 +1013,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 7784
+    .line 7785
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingRow:I
 
     if-ne p1, v0, :cond_0
@@ -1022,7 +1022,7 @@
 
     return p1
 
-    .line 7786
+    .line 7787
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingHeaderRow:I
 
@@ -1036,7 +1036,7 @@
 
     goto :goto_0
 
-    .line 7788
+    .line 7789
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
@@ -1046,7 +1046,7 @@
 
     if-ltz v0, :cond_3
 
-    .line 7789
+    .line 7790
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -1064,7 +1064,7 @@
     :cond_2
     return v1
 
-    .line 7790
+    .line 7791
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1080,7 +1080,7 @@
 
     return p1
 
-    .line 7792
+    .line 7793
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToUnlock:Landroid/util/SparseIntArray;
 
@@ -1094,7 +1094,7 @@
 
     return p1
 
-    .line 7794
+    .line 7795
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToExpand:Landroid/util/SparseIntArray;
 
@@ -1121,7 +1121,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 7526
+    .line 7527
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -1160,7 +1160,7 @@
 
     const/4 v0, 0x0
 
-    .line 8055
+    .line 8056
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->notifyDataSetChanged(Z)V
 
     return-void
@@ -1169,14 +1169,14 @@
 .method public notifyDataSetChanged(Z)V
     .locals 10
 
-    .line 8059
+    .line 8060
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 8061
+    .line 8062
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget v1, v1, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -1185,12 +1185,12 @@
 
     move-result-object v1
 
-    .line 8062
+    .line 8063
     invoke-virtual {v1}, Lorg/telegram/messenger/MediaDataController;->getFeaturedEmojiSets()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 8063
+    .line 8064
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/EmojiView;->access$8600(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -1199,7 +1199,7 @@
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 8064
+    .line 8065
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -1211,14 +1211,14 @@
     :goto_0
     if-ge v5, v3, :cond_2
 
-    .line 8065
+    .line 8066
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
-    .line 8066
+    .line 8067
     iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v7, v7, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -1247,7 +1247,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 8067
+    .line 8068
     :cond_0
     iget-object v7, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1262,21 +1262,12 @@
 
     goto :goto_0
 
-    .line 8071
+    .line 8072
     :cond_2
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->processEmoji(Z)V
 
-    .line 8072
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->updateRows()V
-
     .line 8073
-    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$19100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_3
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->updateRows()V
 
     .line 8074
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -1285,9 +1276,18 @@
 
     move-result-object p1
 
+    if-eqz p1, :cond_3
+
+    .line 8075
+    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$19100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$TrendingAdapter;
+
+    move-result-object p1
+
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 8078
+    .line 8079
     :cond_3
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;
 
@@ -1297,7 +1297,7 @@
 
     move-result-object p1
 
-    .line 8098
+    .line 8099
     invoke-virtual {p1, p0}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->dispatchUpdatesTo(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     return-void
@@ -1306,7 +1306,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 13
 
-    .line 7619
+    .line 7620
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -1333,20 +1333,20 @@
 
     goto/16 :goto_c
 
-    .line 7725
+    .line 7726
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;
 
-    .line 7726
+    .line 7727
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToExpand:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result p2
 
-    .line 7727
+    .line 7728
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$7400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -1361,7 +1361,7 @@
 
     if-ltz p2, :cond_1
 
-    .line 7728
+    .line 7729
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -1391,7 +1391,7 @@
     :cond_1
     if-eqz v4, :cond_1e
 
-    .line 7730
+    .line 7731
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;->textView:Landroid/widget/TextView;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1422,20 +1422,20 @@
 
     goto/16 :goto_c
 
-    .line 7771
+    .line 7772
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
-    .line 7772
+    .line 7773
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result p2
 
-    .line 7773
+    .line 7774
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$19300(Lorg/telegram/ui/Components/EmojiView;)[Ljava/lang/String;
@@ -1446,7 +1446,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 7774
+    .line 7775
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -1463,7 +1463,7 @@
 
     if-ltz p2, :cond_3
 
-    .line 7775
+    .line 7776
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -1481,7 +1481,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 7776
+    .line 7777
     iget-boolean p2, v0, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
     if-eqz p2, :cond_4
@@ -1515,35 +1515,35 @@
     :cond_4
     move v2, v3
 
-    .line 7777
+    .line 7778
     :cond_5
     :goto_0
     invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;->setStickerSet(Lorg/telegram/ui/Components/EmojiView$EmojiPack;Z)V
 
     goto/16 :goto_c
 
-    .line 7706
+    .line 7707
     :cond_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StickerSetNameCell;
 
-    .line 7707
+    .line 7708
     iput p2, p1, Lorg/telegram/ui/Cells/StickerSetNameCell;->position:I
 
-    .line 7708
+    .line 7709
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result v0
 
-    .line 7709
+    .line 7710
     iget v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingHeaderRow:I
 
     if-ne p2, v1, :cond_7
 
-    .line 7710
+    .line 7711
     sget p2, Lorg/telegram/messenger/R$string;->FeaturedEmojiPacks:I
 
     const-string v0, "FeaturedEmojiPacks"
@@ -1566,13 +1566,13 @@
 
     goto/16 :goto_c
 
-    .line 7711
+    .line 7712
     :cond_7
     iget v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->recentlyUsedHeaderRow:I
 
     if-ne p2, v1, :cond_8
 
-    .line 7712
+    .line 7713
     sget p2, Lorg/telegram/messenger/R$string;->RecentlyUsed:I
 
     const-string v0, "RecentlyUsed"
@@ -1585,7 +1585,7 @@
 
     goto/16 :goto_c
 
-    .line 7713
+    .line 7714
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1597,7 +1597,7 @@
 
     if-lt v0, p2, :cond_9
 
-    .line 7715
+    .line 7716
     :try_start_0
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1634,12 +1634,12 @@
     :catch_0
     const-string p2, ""
 
-    .line 7717
+    .line 7718
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/StickerSetNameCell;->setText(Ljava/lang/CharSequence;I)V
 
     goto/16 :goto_c
 
-    .line 7720
+    .line 7721
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1653,19 +1653,19 @@
 
     goto/16 :goto_c
 
-    .line 7621
+    .line 7622
     :cond_a
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;
 
-    .line 7622
+    .line 7623
     iput p2, p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->position:I
 
-    .line 7623
+    .line 7624
     invoke-static {p1, v4}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->access$19202(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;Lorg/telegram/ui/Components/EmojiView$EmojiPack;)Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
-    .line 7630
+    .line 7631
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$7500(Lorg/telegram/ui/Components/EmojiView;)Z
@@ -1676,7 +1676,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 7633
+    .line 7634
     :cond_b
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->recentlyUsedHeaderRow:I
 
@@ -1684,7 +1684,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 7636
+    .line 7637
     :cond_c
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingRow:I
 
@@ -1692,7 +1692,7 @@
 
     add-int/lit8 p2, p2, -0x2
 
-    .line 7640
+    .line 7641
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -1706,7 +1706,7 @@
 
     if-ge p2, v0, :cond_f
 
-    .line 7642
+    .line 7643
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView;->getRecentEmoji()Ljava/util/ArrayList;
@@ -1723,7 +1723,7 @@
 
     const-string v0, "animated_"
 
-    .line 7643
+    .line 7644
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -1732,7 +1732,7 @@
 
     const/16 v0, 0x9
 
-    .line 7645
+    .line 7646
     :try_start_1
     invoke-virtual {p2, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -1772,7 +1772,7 @@
     :cond_f
     move v5, v3
 
-    .line 7654
+    .line 7655
     :goto_2
     sget-object v6, Lorg/telegram/messenger/EmojiData;->dataColored:[[Ljava/lang/String;
 
@@ -1780,7 +1780,7 @@
 
     if-ge v5, v7, :cond_12
 
-    .line 7655
+    .line 7656
     aget-object v7, v6, v5
 
     array-length v7, v7
@@ -1797,12 +1797,12 @@
 
     if-ge p2, v9, :cond_11
 
-    .line 7657
+    .line 7658
     aget-object p2, v6, v5
 
     aget-object p2, p2, v8
 
-    .line 7658
+    .line 7659
     sget-object v0, Lorg/telegram/messenger/Emoji;->emojiColor:Ljava/util/HashMap;
 
     invoke-virtual {v0, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1813,7 +1813,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 7660
+    .line 7661
     invoke-static {p2, v0}, Lorg/telegram/ui/Components/EmojiView;->addColorToCode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1843,7 +1843,7 @@
     :goto_4
     if-nez v5, :cond_18
 
-    .line 7667
+    .line 7668
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget p2, p2, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -1856,7 +1856,7 @@
 
     move-result p2
 
-    .line 7668
+    .line 7669
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/EmojiView;->access$7400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -1871,7 +1871,7 @@
 
     move v7, v3
 
-    .line 7669
+    .line 7670
     :goto_5
     iget-object v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->packStartPosition:Ljava/util/ArrayList;
 
@@ -1881,7 +1881,7 @@
 
     if-ge v7, v8, :cond_18
 
-    .line 7670
+    .line 7671
     iget-object v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -1894,7 +1894,7 @@
 
     check-cast v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
-    .line 7671
+    .line 7672
     iget-object v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->packStartPosition:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1909,7 +1909,7 @@
 
     add-int/2addr v9, v2
 
-    .line 7672
+    .line 7673
     iget-boolean v10, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
     if-eqz v10, :cond_13
@@ -1949,7 +1949,7 @@
 
     move-result v10
 
-    .line 7673
+    .line 7674
     :goto_6
     iget v11, p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->position:I
 
@@ -1959,10 +1959,10 @@
 
     if-ge v11, v10, :cond_17
 
-    .line 7674
+    .line 7675
     invoke-static {p1, v8}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->access$19202(Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;Lorg/telegram/ui/Components/EmojiView$EmojiPack;)Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
-    .line 7675
+    .line 7676
     iget-object p2, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
     iget v2, p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->position:I
@@ -1981,7 +1981,7 @@
 
     goto :goto_7
 
-    .line 7676
+    .line 7677
     :cond_16
     iget-wide v6, p2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
@@ -2018,7 +2018,7 @@
     :goto_9
     if-eqz p2, :cond_19
 
-    .line 7684
+    .line 7685
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2039,17 +2039,17 @@
 
     goto :goto_a
 
-    .line 7686
+    .line 7687
     :cond_19
     invoke-virtual {p1, v3, v3, v3, v3}, Landroid/widget/ImageView;->setPadding(IIII)V
 
     :goto_a
     if-eqz p2, :cond_1c
 
-    .line 7689
+    .line 7690
     invoke-virtual {p1, v4, v2}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->setImageDrawable(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 7690
+    .line 7691
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->getSpan()Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     move-result-object v1
@@ -2075,7 +2075,7 @@
     :cond_1a
     if-eqz v5, :cond_1b
 
-    .line 7692
+    .line 7693
     new-instance p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     invoke-direct {p2, v5, v4}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;-><init>(Lorg/telegram/tgnet/TLRPC$Document;Landroid/graphics/Paint$FontMetricsInt;)V
@@ -2084,7 +2084,7 @@
 
     goto :goto_b
 
-    .line 7694
+    .line 7695
     :cond_1b
     new-instance v1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -2098,7 +2098,7 @@
 
     goto :goto_b
 
-    .line 7698
+    .line 7699
     :cond_1c
     invoke-static {v0}, Lorg/telegram/messenger/Emoji;->getEmojiBigDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -2106,15 +2106,15 @@
 
     invoke-virtual {p1, p2, v2}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->setImageDrawable(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 7699
+    .line 7700
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->setSpan(Lorg/telegram/ui/Components/AnimatedEmojiSpan;)V
 
-    .line 7701
+    .line 7702
     :cond_1d
     :goto_b
     invoke-virtual {p1, v6}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 7702
+    .line 7703
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     :cond_1e
@@ -2147,7 +2147,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 7609
+    .line 7610
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -2158,7 +2158,7 @@
 
     invoke-direct {p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 7610
+    .line 7611
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -2175,7 +2175,7 @@
 
     goto/16 :goto_1
 
-    .line 7605
+    .line 7606
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackExpand;
 
@@ -2195,7 +2195,7 @@
 
     goto/16 :goto_1
 
-    .line 7555
+    .line 7556
     :cond_1
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackHeader;
 
@@ -2209,7 +2209,7 @@
 
     goto :goto_1
 
-    .line 7558
+    .line 7559
     :cond_2
     new-instance p2, Lorg/telegram/ui/Components/EmojiView$TrendingListView;
 
@@ -2233,7 +2233,7 @@
 
     const/16 p1, 0x8
 
-    .line 7559
+    .line 7560
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2250,17 +2250,17 @@
 
     invoke-virtual {p2, v1, v0, p1, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 7560
+    .line 7561
     invoke-virtual {p2, v2}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 7561
+    .line 7562
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$1;-><init>(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)V
 
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 7567
+    .line 7568
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)V
@@ -2269,7 +2269,7 @@
 
     goto :goto_0
 
-    .line 7602
+    .line 7603
     :cond_3
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$EmojiPackButton;
 
@@ -2283,7 +2283,7 @@
 
     goto :goto_1
 
-    .line 7538
+    .line 7539
     :cond_4
     new-instance p2, Lorg/telegram/ui/Cells/StickerSetNameCell;
 
@@ -2301,7 +2301,7 @@
 
     invoke-direct {p2, v0, p1, v1}, Lorg/telegram/ui/Cells/StickerSetNameCell;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 7539
+    .line 7540
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)V
@@ -2313,7 +2313,7 @@
 
     goto :goto_1
 
-    .line 7535
+    .line 7536
     :cond_5
     new-instance p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;
 
@@ -2325,7 +2325,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;-><init>(Landroid/content/Context;)V
 
-    .line 7613
+    .line 7614
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -2337,7 +2337,7 @@
 .method public processEmoji(Z)V
     .locals 11
 
-    .line 7801
+    .line 7802
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2346,7 +2346,7 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 7802
+    .line 7803
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$3200(Lorg/telegram/ui/Components/EmojiView;)Z
@@ -2357,7 +2357,7 @@
 
     return-void
 
-    .line 7806
+    .line 7807
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -2369,12 +2369,12 @@
 
     if-nez p1, :cond_1
 
-    .line 7807
+    .line 7808
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->frozenEmojiPacks:Ljava/util/ArrayList;
 
     if-nez p1, :cond_2
 
-    .line 7808
+    .line 7809
     :cond_1
     new-instance p1, Ljava/util/ArrayList;
 
@@ -2388,11 +2388,11 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->frozenEmojiPacks:Ljava/util/ArrayList;
 
-    .line 7810
+    .line 7811
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->frozenEmojiPacks:Ljava/util/ArrayList;
 
-    .line 7811
+    .line 7812
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget v1, v1, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -2435,7 +2435,7 @@
 
     move v4, v2
 
-    .line 7814
+    .line 7815
     :goto_2
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2443,7 +2443,7 @@
 
     if-ge v4, v5, :cond_6
 
-    .line 7815
+    .line 7816
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -2452,24 +2452,24 @@
 
     if-eqz v5, :cond_5
 
-    .line 7816
+    .line 7817
     invoke-static {v5}, Lorg/telegram/messenger/MessageObject;->isPremiumEmojiPack(Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)Z
 
     move-result v6
 
     if-nez v6, :cond_5
 
-    .line 7817
+    .line 7818
     new-instance v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     invoke-direct {v6}, Lorg/telegram/ui/Components/EmojiView$EmojiPack;-><init>()V
 
-    .line 7819
+    .line 7820
     iget-object v7, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v7, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 7820
+    .line 7821
     new-instance v7, Ljava/util/ArrayList;
 
     iget-object v8, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
@@ -2478,10 +2478,10 @@
 
     iput-object v7, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
-    .line 7821
+    .line 7822
     iput-boolean v3, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->free:Z
 
-    .line 7822
+    .line 7823
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v7, v5, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -2492,13 +2492,13 @@
 
     iput-boolean v5, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
-    .line 7823
+    .line 7824
     iput-boolean v2, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
-    .line 7824
+    .line 7825
     iput-boolean v3, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 7825
+    .line 7826
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2509,7 +2509,7 @@
 
     add-int/lit8 v5, v4, -0x1
 
-    .line 7826
+    .line 7827
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move v4, v5
@@ -2522,7 +2522,7 @@
     :cond_6
     move v4, v2
 
-    .line 7830
+    .line 7831
     :goto_3
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2530,7 +2530,7 @@
 
     if-ge v4, v5, :cond_c
 
-    .line 7831
+    .line 7832
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -2539,25 +2539,25 @@
 
     if-eqz v1, :cond_7
 
-    .line 7833
+    .line 7834
     new-instance v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     invoke-direct {v6}, Lorg/telegram/ui/Components/EmojiView$EmojiPack;-><init>()V
 
-    .line 7835
+    .line 7836
     iget-object v7, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v7, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 7836
+    .line 7837
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     iput-object v5, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
-    .line 7837
+    .line 7838
     iput-boolean v2, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->free:Z
 
-    .line 7838
+    .line 7839
     iget-wide v7, v7, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
     invoke-virtual {v0, v7, v8}, Lorg/telegram/messenger/MediaDataController;->isStickerPackInstalled(J)Z
@@ -2566,13 +2566,13 @@
 
     iput-boolean v5, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
-    .line 7839
+    .line 7840
     iput-boolean v2, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
-    .line 7840
+    .line 7841
     iput-boolean v3, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 7841
+    .line 7842
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2583,27 +2583,27 @@
 
     goto/16 :goto_6
 
-    .line 7843
+    .line 7844
     :cond_7
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 7844
+    .line 7845
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
     if-eqz v5, :cond_9
 
-    .line 7845
+    .line 7846
     iget-object v8, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     if-eqz v8, :cond_9
 
     move v8, v2
 
-    .line 7846
+    .line 7847
     :goto_4
     iget-object v9, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -2613,7 +2613,7 @@
 
     if-ge v8, v9, :cond_9
 
-    .line 7847
+    .line 7848
     iget-object v9, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2628,7 +2628,7 @@
 
     if-eqz v9, :cond_8
 
-    .line 7848
+    .line 7849
     iget-object v9, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2641,7 +2641,7 @@
 
     goto :goto_5
 
-    .line 7850
+    .line 7851
     :cond_8
     iget-object v9, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -2658,7 +2658,7 @@
 
     goto :goto_4
 
-    .line 7854
+    .line 7855
     :cond_9
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -2666,27 +2666,27 @@
 
     if-lez v8, :cond_a
 
-    .line 7855
+    .line 7856
     new-instance v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     invoke-direct {v8}, Lorg/telegram/ui/Components/EmojiView$EmojiPack;-><init>()V
 
-    .line 7857
+    .line 7858
     iget-object v9, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v9, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 7858
+    .line 7859
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9, v6}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     iput-object v9, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
-    .line 7859
+    .line 7860
     iput-boolean v3, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->free:Z
 
-    .line 7860
+    .line 7861
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v9, v6, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -2697,13 +2697,13 @@
 
     iput-boolean v6, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
-    .line 7861
+    .line 7862
     iput-boolean v2, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
-    .line 7862
+    .line 7863
     iput-boolean v3, v8, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 7863
+    .line 7864
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2712,7 +2712,7 @@
 
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 7865
+    .line 7866
     :cond_a
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
@@ -2720,27 +2720,27 @@
 
     if-lez v6, :cond_b
 
-    .line 7866
+    .line 7867
     new-instance v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     invoke-direct {v6}, Lorg/telegram/ui/Components/EmojiView$EmojiPack;-><init>()V
 
-    .line 7868
+    .line 7869
     iget-object v8, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v8, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 7869
+    .line 7870
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8, v7}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     iput-object v8, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
-    .line 7870
+    .line 7871
     iput-boolean v2, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->free:Z
 
-    .line 7871
+    .line 7872
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v7, v5, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -2751,10 +2751,10 @@
 
     iput-boolean v5, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
-    .line 7872
+    .line 7873
     iput-boolean v2, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
-    .line 7873
+    .line 7874
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiView;->access$19400(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2775,7 +2775,7 @@
 
     iput-boolean v5, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 7874
+    .line 7875
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2790,7 +2790,7 @@
 
     goto/16 :goto_3
 
-    .line 7879
+    .line 7880
     :cond_c
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->isSuggestPremiumReactionsEmoji:Z
 
@@ -2798,7 +2798,7 @@
 
     move p1, v2
 
-    .line 7880
+    .line 7881
     :goto_7
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -2812,7 +2812,7 @@
 
     if-ge p1, v1, :cond_12
 
-    .line 7881
+    .line 7882
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$8600(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2825,12 +2825,12 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
-    .line 7885
+    .line 7886
     new-instance v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     invoke-direct {v4}, Lorg/telegram/ui/Components/EmojiView$EmojiPack;-><init>()V
 
-    .line 7887
+    .line 7888
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -2841,17 +2841,17 @@
 
     iput-boolean v5, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
-    .line 7888
+    .line 7889
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v5, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 7889
+    .line 7890
     instance-of v6, v1, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
 
     if-eqz v6, :cond_d
 
-    .line 7890
+    .line 7891
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;->documents:Ljava/util/ArrayList;
@@ -2860,13 +2860,13 @@
 
     goto :goto_8
 
-    .line 7891
+    .line 7892
     :cond_d
     instance-of v6, v1, Lorg/telegram/tgnet/TLRPC$TL_stickerSetNoCovered;
 
     if-eqz v6, :cond_e
 
-    .line 7892
+    .line 7893
     invoke-static {v5}, Lorg/telegram/messenger/MediaDataController;->getInputStickerSet(Lorg/telegram/tgnet/TLRPC$StickerSet;)Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     move-result-object v5
@@ -2885,14 +2885,14 @@
 
     if-eqz v1, :cond_f
 
-    .line 7894
+    .line 7895
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     iput-object v1, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
     goto :goto_8
 
-    .line 7897
+    .line 7898
     :cond_e
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->covers:Ljava/util/ArrayList;
 
@@ -2902,7 +2902,7 @@
     :goto_8
     move v1, v2
 
-    .line 7901
+    .line 7902
     :goto_9
     iget-object v5, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
@@ -2912,7 +2912,7 @@
 
     if-ge v1, v5, :cond_11
 
-    .line 7902
+    .line 7903
     iget-object v5, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2942,10 +2942,10 @@
     :goto_a
     xor-int/2addr v1, v3
 
-    .line 7907
+    .line 7908
     iput-boolean v1, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->free:Z
 
-    .line 7908
+    .line 7909
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$19400(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2966,10 +2966,10 @@
 
     iput-boolean v1, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 7909
+    .line 7910
     iput-boolean v3, v4, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
-    .line 7910
+    .line 7911
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -2982,7 +2982,7 @@
 
     goto/16 :goto_7
 
-    .line 7913
+    .line 7914
     :cond_12
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -2992,7 +2992,7 @@
 
     if-eqz p1, :cond_13
 
-    .line 7914
+    .line 7915
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$3400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -3014,42 +3014,42 @@
 .method public updateRows()V
     .locals 14
 
-    .line 7976
+    .line 7977
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 7977
+    .line 7978
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->sectionToPosition:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 7978
+    .line 7979
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToUnlock:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 7979
+    .line 7980
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToExpand:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 7980
+    .line 7981
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->packStartPosition:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 7981
+    .line 7982
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     const/4 v0, 0x0
 
-    .line 7982
+    .line 7983
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
-    .line 7983
+    .line 7984
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget v1, v1, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -3085,7 +3085,7 @@
     :goto_0
     move v1, v2
 
-    .line 7984
+    .line 7985
     :goto_1
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -3097,14 +3097,14 @@
 
     if-eqz v3, :cond_2
 
-    .line 7985
+    .line 7986
     iget v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     add-int/2addr v3, v2
 
     iput v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
-    .line 7986
+    .line 7987
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3116,7 +3116,7 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 7988
+    .line 7989
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/EmojiView;->access$3200(Lorg/telegram/ui/Components/EmojiView;)Z
@@ -3197,7 +3197,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 7989
+    .line 7990
     iget v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     add-int/lit8 v5, v3, 0x1
@@ -3208,31 +3208,31 @@
 
     add-int/lit8 v3, v5, 0x1
 
-    .line 7990
+    .line 7991
     iput v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     iput v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingRow:I
 
     add-int/lit8 v5, v3, 0x1
 
-    .line 7991
+    .line 7992
     iput v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     iput v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->recentlyUsedHeaderRow:I
 
     goto :goto_2
 
-    .line 7993
+    .line 7994
     :cond_3
     iput v4, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingHeaderRow:I
 
-    .line 7994
+    .line 7995
     iput v4, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->trendingRow:I
 
-    .line 7995
+    .line 7996
     iput v4, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->recentlyUsedHeaderRow:I
 
-    .line 7997
+    .line 7998
     :goto_2
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -3240,7 +3240,7 @@
 
     move-result-object v3
 
-    .line 7998
+    .line 7999
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiView;->access$3400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -3249,7 +3249,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 7999
+    .line 8000
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiView;->access$3400(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -3264,7 +3264,7 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/EmojiTabsStrip;->showRecent(Z)V
 
-    .line 8001
+    .line 8002
     :cond_4
     iget v5, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
@@ -3278,7 +3278,7 @@
 
     move v5, v0
 
-    .line 8002
+    .line 8003
     :goto_3
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -3288,7 +3288,7 @@
 
     if-ge v5, v6, :cond_5
 
-    .line 8003
+    .line 8004
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     new-array v7, v7, [Ljava/lang/Object;
@@ -3326,7 +3326,7 @@
 
     move v5, v3
 
-    .line 8006
+    .line 8007
     :goto_4
     sget-object v6, Lorg/telegram/messenger/EmojiData;->dataColored:[[Ljava/lang/String;
 
@@ -3334,21 +3334,21 @@
 
     if-ge v3, v8, :cond_7
 
-    .line 8007
+    .line 8008
     iget-object v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
     iget v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     invoke-virtual {v8, v9, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 8008
+    .line 8009
     iget-object v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->sectionToPosition:Landroid/util/SparseIntArray;
 
     iget v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     invoke-virtual {v8, v5, v9}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 8009
+    .line 8010
     iget v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     aget-object v6, v6, v3
@@ -3361,7 +3361,7 @@
 
     iput v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
-    .line 8010
+    .line 8011
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     new-array v8, v7, [Ljava/lang/Object;
@@ -3392,7 +3392,7 @@
 
     move v6, v0
 
-    .line 8011
+    .line 8012
     :goto_5
     sget-object v8, Lorg/telegram/messenger/EmojiData;->dataColored:[[Ljava/lang/String;
 
@@ -3402,7 +3402,7 @@
 
     if-ge v6, v9, :cond_6
 
-    .line 8012
+    .line 8013
     iget-object v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     aget-object v8, v8, v3
@@ -3430,7 +3430,7 @@
 
     goto :goto_4
 
-    .line 8016
+    .line 8017
     :cond_7
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -3444,15 +3444,15 @@
 
     mul-int/lit8 v3, v3, 0x3
 
-    .line 8017
+    .line 8018
     iget v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     iput v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->plainEmojisCount:I
 
-    .line 8018
+    .line 8019
     iput v4, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->firstTrendingRow:I
 
-    .line 8020
+    .line 8021
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -3463,7 +3463,7 @@
 
     move v4, v0
 
-    .line 8021
+    .line 8022
     :goto_6
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -3477,21 +3477,21 @@
 
     if-ge v4, v6, :cond_12
 
-    .line 8022
+    .line 8023
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToSection:Landroid/util/SparseIntArray;
 
     iget v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     invoke-virtual {v6, v8, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 8023
+    .line 8024
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->sectionToPosition:Landroid/util/SparseIntArray;
 
     iget v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     invoke-virtual {v6, v5, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 8024
+    .line 8025
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->packStartPosition:Ljava/util/ArrayList;
 
     iget v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
@@ -3502,7 +3502,7 @@
 
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 8026
+    .line 8027
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/EmojiView;->access$8800(Lorg/telegram/ui/Components/EmojiView;)Ljava/util/ArrayList;
@@ -3515,7 +3515,7 @@
 
     check-cast v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
-    .line 8027
+    .line 8028
     iget-boolean v8, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
     if-eqz v8, :cond_8
@@ -3524,12 +3524,12 @@
 
     if-gez v9, :cond_8
 
-    .line 8028
+    .line 8029
     iget v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     iput v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->firstTrendingRow:I
 
-    .line 8030
+    .line 8031
     :cond_8
     iget-boolean v9, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
@@ -3571,7 +3571,7 @@
     :goto_7
     add-int/2addr v8, v2
 
-    .line 8031
+    .line 8032
     iget-boolean v9, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
     if-nez v9, :cond_c
@@ -3586,7 +3586,7 @@
 
     add-int/lit8 v8, v8, -0x1
 
-    .line 8034
+    .line 8035
     :cond_c
     iget-object v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
@@ -3643,7 +3643,7 @@
     :goto_a
     if-ge v9, v8, :cond_10
 
-    .line 8036
+    .line 8037
     iget-object v10, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     new-array v11, v7, [Ljava/lang/Object;
@@ -3698,7 +3698,7 @@
 
     goto :goto_a
 
-    .line 8038
+    .line 8039
     :cond_10
     iget v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
@@ -3706,7 +3706,7 @@
 
     iput v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
-    .line 8039
+    .line 8040
     iget-boolean v8, v6, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
     if-nez v8, :cond_11
@@ -3719,14 +3719,14 @@
 
     if-le v8, v3, :cond_11
 
-    .line 8040
+    .line 8041
     iget-object v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->positionToExpand:Landroid/util/SparseIntArray;
 
     iget v9, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     invoke-virtual {v8, v9, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 8041
+    .line 8042
     iget-object v8, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->rowHashCodes:Ljava/util/ArrayList;
 
     new-array v9, v7, [Ljava/lang/Object;
@@ -3759,7 +3759,7 @@
 
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 8042
+    .line 8043
     iget v6, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->itemCount:I
 
     add-int/2addr v6, v2

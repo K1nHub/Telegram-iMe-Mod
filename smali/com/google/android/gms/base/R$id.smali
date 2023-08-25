@@ -20,17 +20,17 @@
 
 .field public static final auto:I = 0x7f090069
 
-.field public static final dark:I = 0x7f090112
+.field public static final dark:I = 0x7f090113
 
-.field public static final icon_only:I = 0x7f09019b
+.field public static final icon_only:I = 0x7f09019f
 
-.field public static final light:I = 0x7f090209
+.field public static final light:I = 0x7f090214
 
-.field public static final none:I = 0x7f090298
+.field public static final none:I = 0x7f0902a8
 
-.field public static final standard:I = 0x7f090361
+.field public static final standard:I = 0x7f090373
 
-.field public static final wide:I = 0x7f0904a7
+.field public static final wide:I = 0x7f0904ce
 
 
 # direct methods

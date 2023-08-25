@@ -47,13 +47,13 @@
 
     const/4 v0, 0x0
 
-    .line 33
+    .line 35
     invoke-direct {p0, v0}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 31
+    .line 33
     iput-object p1, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;->sourceClassName:Ljava/lang/String;
 
-    .line 32
+    .line 34
     iput-boolean p2, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;->isFromSearch:Z
 
     return-void
@@ -75,7 +75,7 @@
 
     const/4 p2, 0x0
 
-    .line 30
+    .line 32
     :cond_1
     invoke-direct {p0, p1, p2}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;-><init>(Ljava/lang/String;Z)V
 
@@ -87,7 +87,7 @@
 .method public final getSourceClassName()Ljava/lang/String;
     .locals 1
 
-    .line 31
+    .line 33
     iget-object v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;->sourceClassName:Ljava/lang/String;
 
     return-object v0
@@ -96,7 +96,7 @@
 .method public final isFromSearch()Z
     .locals 1
 
-    .line 32
+    .line 34
     iget-boolean v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;->isFromSearch:Z
 
     return v0

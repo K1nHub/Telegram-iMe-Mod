@@ -255,7 +255,7 @@
     :goto_0
     if-ge v5, v2, :cond_d
 
-    const-string v7, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v7, "null cannot be cast to non-null type java.lang.String"
 
     .line 1829
     invoke-static {v1, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -490,7 +490,7 @@
     :goto_0
     if-ge p3, p4, :cond_2
 
-    const-string v0, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v0, "null cannot be cast to non-null type java.lang.String"
 
     .line 1723
     invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

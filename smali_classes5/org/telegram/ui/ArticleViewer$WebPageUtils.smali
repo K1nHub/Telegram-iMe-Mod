@@ -22,14 +22,14 @@
 
     if-eqz p0, :cond_3
 
-    .line 4979
+    .line 4982
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
     if-nez v1, :cond_0
 
     goto :goto_1
 
-    .line 4982
+    .line 4985
     :cond_0
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -46,7 +46,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 4985
+    .line 4988
     :goto_0
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
@@ -58,7 +58,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 4986
+    .line 4989
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Page;->documents:Ljava/util/ArrayList;
@@ -69,7 +69,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 4987
+    .line 4990
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     cmp-long v3, v3, p1
@@ -91,12 +91,12 @@
 .method public static getMedia(Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLObject;
     .locals 2
 
-    .line 5005
+    .line 5008
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     if-eqz v0, :cond_0
 
-    .line 5006
+    .line 5009
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->photo_id:J
@@ -107,13 +107,13 @@
 
     return-object p0
 
-    .line 5007
+    .line 5010
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     if-eqz v0, :cond_1
 
-    .line 5008
+    .line 5011
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->video_id:J
@@ -133,14 +133,14 @@
 .method public static getMediaFile(Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/tgnet/TLRPC$PageBlock;)Ljava/io/File;
     .locals 4
 
-    .line 5015
+    .line 5018
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 5016
+    .line 5019
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;->photo_id:J
@@ -151,7 +151,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 5018
+    .line 5021
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getPhotoSize()I
@@ -164,7 +164,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 5020
+    .line 5023
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -177,13 +177,13 @@
 
     return-object p0
 
-    .line 5023
+    .line 5026
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     if-eqz v0, :cond_1
 
-    .line 5024
+    .line 5027
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->video_id:J
@@ -194,7 +194,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 5026
+    .line 5029
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -220,14 +220,14 @@
 
     if-eqz p0, :cond_3
 
-    .line 4963
+    .line 4966
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
     if-nez v1, :cond_0
 
     goto :goto_1
 
-    .line 4966
+    .line 4969
     :cond_0
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
@@ -244,7 +244,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 4969
+    .line 4972
     :goto_0
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
@@ -256,7 +256,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 4970
+    .line 4973
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->cached_page:Lorg/telegram/tgnet/TLRPC$Page;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Page;->photos:Ljava/util/ArrayList;
@@ -267,7 +267,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 4971
+    .line 4974
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
     cmp-long v3, v3, p1
@@ -289,12 +289,12 @@
 .method public static isVideo(Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/tgnet/TLRPC$PageBlock;)Z
     .locals 2
 
-    .line 4995
+    .line 4998
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     if-eqz v0, :cond_0
 
-    .line 4996
+    .line 4999
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;->video_id:J
@@ -305,7 +305,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 4998
+    .line 5001
     invoke-static {p0}, Lorg/telegram/messenger/MessageObject;->isVideoDocument(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result p0

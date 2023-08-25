@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State;ZZ)V
     .locals 1
 
-    .line 435
+    .line 434
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "setupActionButtonState"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 437
+    .line 436
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$SetupActionButtonStateCommand;->isCustomToken:Z
 
-    .line 438
+    .line 437
     iput-boolean p3, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$SetupActionButtonStateCommand;->isButtonEnabled:Z
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V
     .locals 2
 
-    .line 443
+    .line 442
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$SetupActionButtonStateCommand;->isCustomToken:Z
 
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$SetupActionButtonStateCommand;->isButtonEnabled:Z
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 429
+    .line 428
     check-cast p1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$SetupActionButtonStateCommand;->apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V

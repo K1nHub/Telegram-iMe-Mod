@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FolderBottomSheet$Button;)V
     .locals 0
 
-    .line 802
+    .line 807
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void

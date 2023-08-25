@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterCreateActivity;)V
     .locals 0
 
-    .line 517
+    .line 518
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$1;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 521
+    .line 522
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$1;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$100(Lorg/telegram/ui/FilterCreateActivity;)Z
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 522
+    .line 523
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$1;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -60,7 +60,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 525
+    .line 526
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$1;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$200(Lorg/telegram/ui/FilterCreateActivity;)V

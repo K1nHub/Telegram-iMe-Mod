@@ -59,7 +59,7 @@
 .method public constructor <init>(Ljava/util/regex/Pattern;)V
     .locals 1
 
-    const-string v0, "nativePattern"
+    const-string/jumbo v0, "nativePattern"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -117,7 +117,7 @@
 
     move-result-object p1
 
-    const-string p2, "nativePattern.matcher(in\u2026).replaceAll(replacement)"
+    const-string/jumbo p2, "nativePattern.matcher(in\u2026).replaceAll(replacement)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -263,7 +263,7 @@
 
     move-result-object v0
 
-    const-string v1, "nativePattern.toString()"
+    const-string/jumbo v1, "nativePattern.toString()"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

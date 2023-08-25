@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 107
+    .line 127
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$navigationRouter$2;->invoke()Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0
@@ -73,7 +73,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 107
+    .line 128
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     const/4 v2, 0x0

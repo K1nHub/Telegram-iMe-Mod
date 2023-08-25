@@ -101,6 +101,8 @@
 
 .field public rect2:Landroid/graphics/RectF;
 
+.field public resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
 .field public roundEffect:Z
 
 .field public size1:I
@@ -130,7 +132,7 @@
 .method public constructor <init>(I)V
     .locals 3
 
-    .line 155
+    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 107
@@ -276,12 +278,12 @@
     .line 143
     iput v2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
-    .line 144
+    .line 145
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor:I
 
     iput v2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    .line 156
+    .line 157
     iput p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->count:I
 
     const/16 v2, 0x32
@@ -290,7 +292,7 @@
 
     move v0, v1
 
-    .line 157
+    .line 158
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->distributionAlgorithm:Z
 
@@ -327,14 +329,14 @@
 
     if-ge v1, v2, :cond_1b
 
-    .line 185
+    .line 186
     iget v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k1:F
 
     const/4 v4, 0x1
 
     if-nez v1, :cond_0
 
-    .line 188
+    .line 189
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -349,10 +351,10 @@
     :cond_0
     if-ne v1, v4, :cond_1
 
-    .line 190
+    .line 191
     iget v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k2:F
 
-    .line 191
+    .line 192
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size2:I
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -361,11 +363,11 @@
 
     goto :goto_1
 
-    .line 193
+    .line 194
     :cond_1
     iget v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->k3:F
 
-    .line 194
+    .line 195
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size3:I
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -374,7 +376,7 @@
 
     goto :goto_1
 
-    .line 197
+    .line 198
     :goto_2
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
@@ -386,7 +388,7 @@
 
     if-nez v1, :cond_2
 
-    .line 200
+    .line 201
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_folder:I
 
     goto :goto_3
@@ -394,22 +396,24 @@
     :cond_2
     if-ne v1, v4, :cond_3
 
-    .line 202
+    .line 203
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_bubble:I
 
     goto :goto_3
 
-    .line 204
+    .line 205
     :cond_3
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_settings:I
 
-    .line 206
+    .line 207
     :goto_3
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -423,7 +427,7 @@
 
     aput-object v2, v3, v1
 
-    .line 207
+    .line 208
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->svg:Z
 
     goto/16 :goto_c
@@ -444,7 +448,7 @@
 
     if-nez v1, :cond_6
 
-    .line 224
+    .line 225
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_adsbubble:I
 
     goto :goto_4
@@ -452,22 +456,24 @@
     :cond_6
     if-ne v1, v4, :cond_7
 
-    .line 226
+    .line 227
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_like:I
 
     goto :goto_4
 
-    .line 228
+    .line 229
     :cond_7
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_noads:I
 
-    .line 230
+    .line 231
     :goto_4
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -481,7 +487,7 @@
 
     aput-object v2, v3, v1
 
-    .line 231
+    .line 232
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->svg:Z
 
     goto/16 :goto_c
@@ -493,7 +499,7 @@
 
     if-nez v1, :cond_9
 
-    .line 236
+    .line 237
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_video2:I
 
     goto :goto_5
@@ -501,22 +507,24 @@
     :cond_9
     if-ne v1, v4, :cond_a
 
-    .line 238
+    .line 239
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_video:I
 
     goto :goto_5
 
-    .line 240
+    .line 241
     :cond_a
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_user:I
 
-    .line 242
+    .line 243
     :goto_5
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -530,7 +538,7 @@
 
     aput-object v2, v3, v1
 
-    .line 243
+    .line 244
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->svg:Z
 
     goto/16 :goto_c
@@ -540,14 +548,16 @@
 
     if-ne v5, v2, :cond_c
 
-    .line 246
+    .line 247
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
     sget v3, Lorg/telegram/messenger/R$raw;->premium_object_fire:I
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -561,7 +571,7 @@
 
     aput-object v3, v2, v1
 
-    .line 247
+    .line 248
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->svg:Z
 
     goto/16 :goto_c
@@ -571,14 +581,16 @@
 
     if-ne v5, v2, :cond_d
 
-    .line 250
+    .line 251
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
     sget v3, Lorg/telegram/messenger/R$raw;->premium_object_star2:I
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -592,12 +604,12 @@
 
     aput-object v3, v2, v1
 
-    .line 251
+    .line 252
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->svg:Z
 
     goto/16 :goto_c
 
-    .line 255
+    .line 256
     :cond_d
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -605,17 +617,17 @@
 
     move-result-object v2
 
-    .line 256
+    .line 257
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
     aput-object v2, v5, v1
 
-    .line 258
+    .line 259
     new-instance v12, Landroid/graphics/Canvas;
 
     invoke-direct {v12, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 260
+    .line 261
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
     const/4 v6, 0x6
@@ -628,7 +640,7 @@
 
     if-ne v1, v13, :cond_f
 
-    .line 261
+    .line 262
     :cond_e
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -638,12 +650,14 @@
 
     move-result-object v2
 
-    .line 262
+    .line 263
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     iget v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v4
 
@@ -653,15 +667,15 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 263
+    .line 264
     invoke-virtual {v2, v0, v0, v9, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 264
+    .line 265
     invoke-virtual {v2, v12}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto/16 :goto_c
 
-    .line 267
+    .line 268
     :cond_f
     new-instance v4, Landroid/graphics/Path;
 
@@ -677,50 +691,50 @@
 
     const/4 v6, 0x0
 
-    .line 270
+    .line 271
     invoke-virtual {v4, v6, v5}, Landroid/graphics/Path;->moveTo(FF)V
 
     int-to-float v7, v3
 
-    .line 271
+    .line 272
     invoke-virtual {v4, v7, v7}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 272
+    .line 273
     invoke-virtual {v4, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
     sub-int v3, v9, v3
 
     int-to-float v3, v3
 
-    .line 273
+    .line 274
     invoke-virtual {v4, v3, v7}, Landroid/graphics/Path;->lineTo(FF)V
 
     int-to-float v8, v9
 
-    .line 274
+    .line 275
     invoke-virtual {v4, v8, v5}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 275
+    .line 276
     invoke-virtual {v4, v3, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 276
+    .line 277
     invoke-virtual {v4, v5, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 277
+    .line 278
     invoke-virtual {v4, v7, v3}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 278
+    .line 279
     invoke-virtual {v4, v6, v5}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 279
+    .line 280
     invoke-virtual {v4}, Landroid/graphics/Path;->close()V
 
-    .line 281
+    .line 282
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
-    .line 282
+    .line 283
     iget-boolean v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useGradient:Z
 
     const/high16 v14, 0x40a00000    # 5.0f
@@ -729,14 +743,14 @@
 
     const/16 v3, 0xa
 
-    .line 283
+    .line 284
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     if-lt v9, v3, :cond_10
 
-    .line 284
+    .line 285
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v5
@@ -757,7 +771,7 @@
 
     goto :goto_6
 
-    .line 286
+    .line 287
     :cond_10
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
@@ -777,7 +791,7 @@
 
     invoke-virtual/range {v5 .. v11}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->updateMainGradientMatrix(IIIIFF)V
 
-    .line 288
+    .line 289
     :goto_6
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
@@ -787,12 +801,12 @@
 
     move-result-object v3
 
-    .line 289
+    .line 290
     iget-boolean v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->roundEffect:Z
 
     if-eqz v5, :cond_11
 
-    .line 290
+    .line 291
     new-instance v5, Landroid/graphics/CornerPathEffect;
 
     iget v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
@@ -809,7 +823,7 @@
 
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 292
+    .line 293
     :cond_11
     iget-boolean v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->forceMaxAlpha:Z
 
@@ -817,12 +831,12 @@
 
     if-eqz v5, :cond_12
 
-    .line 293
+    .line 294
     invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setAlpha(I)V
 
     goto :goto_7
 
-    .line 294
+    .line 295
     :cond_12
     iget-boolean v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useBlur:Z
 
@@ -830,7 +844,7 @@
 
     const/16 v5, 0x3c
 
-    .line 295
+    .line 296
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
     goto :goto_7
@@ -838,24 +852,24 @@
     :cond_13
     const/16 v5, 0x78
 
-    .line 297
+    .line 298
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 299
+    .line 300
     :goto_7
     invoke-virtual {v12, v4, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     const/4 v4, 0x0
 
-    .line 300
+    .line 301
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 301
+    .line 302
     invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setAlpha(I)V
 
     goto :goto_9
 
-    .line 303
+    .line 304
     :cond_14
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
@@ -863,10 +877,12 @@
 
     if-ne v5, v6, :cond_15
 
-    .line 304
+    .line 305
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -880,23 +896,25 @@
 
     goto :goto_8
 
-    .line 306
+    .line 307
     :cond_15
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 308
+    .line 309
     :goto_8
     iget-boolean v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->roundEffect:Z
 
     if-eqz v5, :cond_16
 
-    .line 309
+    .line 310
     new-instance v5, Landroid/graphics/CornerPathEffect;
 
     iget v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
@@ -913,17 +931,17 @@
 
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 311
+    .line 312
     :cond_16
     invoke-virtual {v12, v4, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 313
+    .line 314
     :goto_9
     iget-boolean v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useBlur:Z
 
     if-eqz v3, :cond_1a
 
-    .line 314
+    .line 315
     invoke-static {v2, v13}, Lorg/telegram/messenger/Utilities;->stackBlurBitmap(Landroid/graphics/Bitmap;I)V
 
     goto :goto_c
@@ -932,7 +950,7 @@
     :goto_a
     if-nez v1, :cond_18
 
-    .line 212
+    .line 213
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_smile1:I
 
     goto :goto_b
@@ -940,22 +958,24 @@
     :cond_18
     if-ne v1, v4, :cond_19
 
-    .line 214
+    .line 215
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_smile2:I
 
     goto :goto_b
 
-    .line 216
+    .line 217
     :cond_19
     sget v2, Lorg/telegram/messenger/R$raw;->premium_object_like:I
 
-    .line 218
+    .line 219
     :goto_b
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->stars:[Landroid/graphics/Bitmap;
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -969,7 +989,7 @@
 
     aput-object v2, v3, v1
 
-    .line 219
+    .line 220
     iput-boolean v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->svg:Z
 
     :cond_1a
@@ -987,12 +1007,12 @@
 .method public init()V
     .locals 3
 
-    .line 161
+    .line 162
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useRotate:Z
 
     if-eqz v0, :cond_0
 
-    .line 162
+    .line 163
     iget v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->count:I
 
     mul-int/lit8 v1, v0, 0x2
@@ -1003,23 +1023,23 @@
 
     mul-int/lit8 v1, v0, 0x2
 
-    .line 163
+    .line 164
     new-array v1, v1, [F
 
     iput-object v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points2:[F
 
     mul-int/lit8 v0, v0, 0x2
 
-    .line 164
+    .line 165
     new-array v0, v0, [F
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points3:[F
 
-    .line 166
+    .line 167
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->generateBitmaps()V
 
-    .line 167
+    .line 168
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1030,13 +1050,13 @@
 
     const/4 v0, 0x0
 
-    .line 168
+    .line 169
     :goto_0
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->count:I
 
     if-ge v0, v1, :cond_1
 
-    .line 169
+    .line 170
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;
@@ -1058,7 +1078,7 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 328
+    .line 329
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->onDraw(Landroid/graphics/Canvas;F)V
 
     return-void
@@ -1073,12 +1093,12 @@
 
     move/from16 v2, p2
 
-    .line 333
+    .line 334
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 334
+    .line 335
     iget-wide v5, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->prevTime:J
 
     sub-long v7, v3, v5
@@ -1091,19 +1111,19 @@
 
     move-result-wide v5
 
-    .line 335
+    .line 336
     iget-boolean v7, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useRotate:Z
 
     const/4 v8, 0x0
 
     if-eqz v7, :cond_1
 
-    .line 336
+    .line 337
     iget-object v7, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v7}, Landroid/graphics/Matrix;->reset()V
 
-    .line 337
+    .line 338
     iget v7, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a:F
 
     long-to-float v5, v5
@@ -1120,7 +1140,7 @@
 
     iput v7, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a:F
 
-    .line 338
+    .line 339
     iget v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a1:F
 
     const v10, 0x47435000    # 50000.0f
@@ -1133,7 +1153,7 @@
 
     iput v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a1:F
 
-    .line 339
+    .line 340
     iget v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a2:F
 
     const v10, 0x476a6000    # 60000.0f
@@ -1146,7 +1166,7 @@
 
     iput v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a2:F
 
-    .line 340
+    .line 341
     iget-object v5, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->matrix:Landroid/graphics/Matrix;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -1163,7 +1183,7 @@
 
     invoke-virtual {v5, v7, v6, v9}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
-    .line 341
+    .line 342
     iget-object v5, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->matrix2:Landroid/graphics/Matrix;
 
     iget v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a1:F
@@ -1182,7 +1202,7 @@
 
     invoke-virtual {v5, v6, v7, v9}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
-    .line 342
+    .line 343
     iget-object v5, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->matrix3:Landroid/graphics/Matrix;
 
     iget v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->a2:F
@@ -1201,18 +1221,18 @@
 
     invoke-virtual {v5, v6, v7, v9}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
-    .line 344
+    .line 345
     iput v8, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount1:I
 
-    .line 345
+    .line 346
     iput v8, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount2:I
 
-    .line 346
+    .line 347
     iput v8, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount3:I
 
     move v5, v8
 
-    .line 347
+    .line 348
     :goto_0
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
@@ -1222,7 +1242,7 @@
 
     if-ge v5, v6, :cond_0
 
-    .line 348
+    .line 349
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1231,14 +1251,14 @@
 
     check-cast v6, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;
 
-    .line 349
+    .line 350
     invoke-virtual {v6}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->updatePoint()V
 
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 351
+    .line 352
     :cond_0
     iget-object v9, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->matrix:Landroid/graphics/Matrix;
 
@@ -1254,7 +1274,7 @@
 
     invoke-virtual/range {v9 .. v14}, Landroid/graphics/Matrix;->mapPoints([FI[FII)V
 
-    .line 352
+    .line 353
     iget-object v15, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->matrix2:Landroid/graphics/Matrix;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points2:[F
@@ -1273,7 +1293,7 @@
 
     invoke-virtual/range {v15 .. v20}, Landroid/graphics/Matrix;->mapPoints([FI[FII)V
 
-    .line 353
+    .line 354
     iget-object v9, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->matrix3:Landroid/graphics/Matrix;
 
     iget-object v12, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points3:[F
@@ -1284,16 +1304,16 @@
 
     invoke-virtual/range {v9 .. v14}, Landroid/graphics/Matrix;->mapPoints([FI[FII)V
 
-    .line 354
+    .line 355
     iput v8, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount1:I
 
-    .line 355
+    .line 356
     iput v8, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount2:I
 
-    .line 356
+    .line 357
     iput v8, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount3:I
 
-    .line 359
+    .line 360
     :cond_1
     :goto_1
     iget-object v5, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
@@ -1304,7 +1324,7 @@
 
     if-ge v8, v5, :cond_5
 
-    .line 360
+    .line 361
     iget-object v5, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1313,45 +1333,45 @@
 
     check-cast v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;
 
-    .line 361
+    .line 362
     iget-boolean v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->paused:Z
 
     if-eqz v6, :cond_2
 
-    .line 362
+    .line 363
     iget-wide v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pausedTime:J
 
     invoke-virtual {v5, v1, v6, v7, v2}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->draw(Landroid/graphics/Canvas;JF)V
 
     goto :goto_2
 
-    .line 364
+    .line 365
     :cond_2
     invoke-virtual {v5, v1, v3, v4, v2}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->draw(Landroid/graphics/Canvas;JF)V
 
-    .line 366
+    .line 367
     :goto_2
     iget-boolean v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->checkTime:Z
 
     if-eqz v6, :cond_3
 
-    .line 367
+    .line 368
     iget-wide v6, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->lifeTime:J
 
     cmp-long v6, v3, v6
 
     if-lez v6, :cond_3
 
-    .line 368
+    .line 369
     invoke-virtual {v5, v3, v4}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->genPosition(J)V
 
-    .line 371
+    .line 372
     :cond_3
     iget-boolean v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->checkBounds:Z
 
     if-eqz v6, :cond_4
 
-    .line 372
+    .line 373
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect2:Landroid/graphics/RectF;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->access$000(Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;)F
@@ -1368,7 +1388,7 @@
 
     if-nez v6, :cond_4
 
-    .line 373
+    .line 374
     invoke-virtual {v5, v3, v4}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->genPosition(J)V
 
     :cond_4
@@ -1376,7 +1396,7 @@
 
     goto :goto_1
 
-    .line 377
+    .line 378
     :cond_5
     iput-wide v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->prevTime:J
 
@@ -1386,14 +1406,14 @@
 .method public resetPositions()V
     .locals 4
 
-    .line 321
+    .line 322
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     const/4 v2, 0x0
 
-    .line 322
+    .line 323
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
@@ -1403,7 +1423,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 323
+    .line 324
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1425,22 +1445,24 @@
 .method public updateColors()V
     .locals 2
 
-    .line 175
+    .line 176
     iget v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
-    .line 176
+    .line 177
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->lastColor:I
 
     if-eq v1, v0, :cond_0
 
-    .line 177
+    .line 178
     iput v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->lastColor:I
 
-    .line 178
+    .line 179
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->generateBitmaps()V
 
     :cond_0

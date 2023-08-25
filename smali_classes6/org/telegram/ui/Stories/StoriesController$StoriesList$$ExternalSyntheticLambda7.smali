@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda7;->f$1:Lorg/telegram/messenger/MessagesStorage;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->$r8$lambda$zyAVoyvpMFimrbE5RUmbJ-caEmU(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/MessagesStorage;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->$r8$lambda$xGlyH1-xwT5QO34xLAevQnwVRFo(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/MessagesStorage;)V
 
     return-void
 .end method

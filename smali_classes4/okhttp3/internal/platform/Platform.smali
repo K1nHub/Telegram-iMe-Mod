@@ -391,7 +391,7 @@
 
     move-result-object p1
 
-    const-string v0, "newSSLContext().apply {\n\u2026ll)\n      }.socketFactory"
+    const-string/jumbo v0, "newSSLContext().apply {\n\u2026ll)\n      }.socketFactory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_0
@@ -479,7 +479,7 @@
     .line 85
     aget-object v0, v0, v3
 
-    const-string v1, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager"
+    const-string/jumbo v1, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager"
 
     invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

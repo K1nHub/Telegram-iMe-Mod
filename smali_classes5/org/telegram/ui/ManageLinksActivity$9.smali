@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 3062
+    .line 3070
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,14 +44,14 @@
 .method private synthetic lambda$onLinkCreated$0(Lorg/telegram/tgnet/TLObject;)V
     .locals 4
 
-    .line 3067
+    .line 3075
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$9400(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
 
     move-result-object v0
 
-    .line 3068
+    .line 3076
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$5800(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -64,7 +64,7 @@
 
     invoke-virtual {v1, v2, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 3069
+    .line 3077
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$3300(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -73,7 +73,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3070
+    .line 3078
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$3300(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -86,7 +86,7 @@
 
     iput v1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->invitesCount:I
 
-    .line 3071
+    .line 3079
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -109,7 +109,7 @@
 
     invoke-virtual {p1, v1, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->saveChatLinksCount(JI)V
 
-    .line 3073
+    .line 3081
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -123,12 +123,12 @@
 .method public onLinkCreated(Lorg/telegram/tgnet/TLObject;)V
     .locals 3
 
-    .line 3065
+    .line 3073
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     if-eqz v0, :cond_0
 
-    .line 3066
+    .line 3074
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$9$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ManageLinksActivity$9$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ManageLinksActivity$9;Lorg/telegram/tgnet/TLObject;)V
@@ -144,19 +144,19 @@
 .method public onLinkEdited(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;)V
     .locals 4
 
-    .line 3080
+    .line 3088
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInvite;
 
     if-eqz v0, :cond_2
 
-    .line 3081
+    .line 3089
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInvite;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$messages_ExportedChatInvite;->invite:Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3082
+    .line 3090
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ManageLinksActivity;->fixDate(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
@@ -165,7 +165,7 @@
 
     move v1, v0
 
-    .line 3083
+    .line 3091
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -179,7 +179,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 3084
+    .line 3092
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$5800(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -202,19 +202,19 @@
 
     if-eqz v2, :cond_1
 
-    .line 3085
+    .line 3093
     iget-boolean p1, p2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->revoked:Z
 
     if-eqz p1, :cond_0
 
-    .line 3086
+    .line 3094
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$9400(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
 
     move-result-object p1
 
-    .line 3087
+    .line 3095
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$5800(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -223,7 +223,7 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 3088
+    .line 3096
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$5900(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -232,14 +232,14 @@
 
     invoke-virtual {v1, v0, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 3089
+    .line 3097
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/ManageLinksActivity;->access$9500(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/ManageLinksActivity$DiffCallback;)V
 
     goto :goto_1
 
-    .line 3091
+    .line 3099
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -249,7 +249,7 @@
 
     invoke-virtual {p1, v1, p2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 3092
+    .line 3100
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     const/4 p2, 0x1
@@ -273,7 +273,7 @@
 
     const/4 v0, 0x0
 
-    .line 3102
+    .line 3110
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -287,7 +287,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 3103
+    .line 3111
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$5900(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -310,14 +310,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 3104
+    .line 3112
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$9400(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/ui/ManageLinksActivity$DiffCallback;
 
     move-result-object p1
 
-    .line 3105
+    .line 3113
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$5900(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -326,7 +326,7 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 3106
+    .line 3114
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ManageLinksActivity;->access$9500(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/ManageLinksActivity$DiffCallback;)V
@@ -345,7 +345,7 @@
 .method public revokeLink(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 1
 
-    .line 3114
+    .line 3122
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$9;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ManageLinksActivity;->revokeLink(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V

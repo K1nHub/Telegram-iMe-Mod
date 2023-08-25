@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function1<",
-        "Lcom/iMe/ui/custom/HorizontalActionButtonsView;",
+        "Lorg/telegram/ui/Components/BackupImageView;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -49,31 +49,31 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 66
-    check-cast p1, Lcom/iMe/ui/custom/HorizontalActionButtonsView;
+    .line 60
+    check-cast p1, Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$3;->invoke(Lcom/iMe/ui/custom/HorizontalActionButtonsView;)V
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$3;->invoke(Lorg/telegram/ui/Components/BackupImageView;)V
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 .end method
 
-.method public final invoke(Lcom/iMe/ui/custom/HorizontalActionButtonsView;)V
+.method public final invoke(Lorg/telegram/ui/Components/BackupImageView;)V
     .locals 1
 
     const-string v0, "$this$applyForView"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 66
+    .line 60
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$convert$3;->$item:Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->getActions()Ljava/util/List;
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/CryptoAccountItem;->getUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->initButtons(Ljava/util/List;)V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setUser(Lorg/telegram/tgnet/TLRPC$User;)V
 
     return-void
 .end method

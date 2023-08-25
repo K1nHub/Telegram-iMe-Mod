@@ -247,7 +247,7 @@
     :cond_3
     new-instance v0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v1, "no read access for the input zip file"
+    const-string/jumbo v1, "no read access for the input zip file"
 
     invoke-direct {v0, v1}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

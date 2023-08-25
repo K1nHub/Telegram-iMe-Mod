@@ -36,15 +36,15 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 225
+    .line 238
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 236
+    .line 249
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->type:I
 
-    .line 238
+    .line 251
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -59,7 +59,7 @@
 
     const/4 v0, 0x0
 
-    .line 231
+    .line 244
     invoke-static {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->fromFloatingButton(Landroid/widget/FrameLayout;Z)Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
     move-result-object p0
@@ -76,7 +76,7 @@
 
     return-object p0
 
-    .line 290
+    .line 303
     :cond_0
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$2;
 
@@ -88,15 +88,15 @@
 
     const/4 v2, 0x0
 
-    .line 303
+    .line 316
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 304
+    .line 317
     invoke-virtual {v3, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 305
+    .line 318
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->screenRect:Landroid/graphics/RectF;
 
     aget v5, v1, v2
@@ -131,14 +131,14 @@
 
     invoke-virtual {v4, v5, v7, v2, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 306
+    .line 319
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v6}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 307
+    .line 320
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -147,7 +147,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 308
+    .line 321
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p0
@@ -178,7 +178,7 @@
 
     const/16 p0, 0x38
 
-    .line 309
+    .line 322
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -187,7 +187,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 312
+    .line 325
     iget-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->iconDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -196,7 +196,7 @@
 
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->iconSize:I
 
-    .line 315
+    .line 328
     :cond_2
     iget-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->screenRect:Landroid/graphics/RectF;
 
@@ -228,7 +228,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 320
+    .line 333
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getRootView()Landroid/view/View;
 
     move-result-object v0
@@ -237,7 +237,7 @@
 
     goto :goto_0
 
-    .line 323
+    .line 336
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -249,7 +249,7 @@
 
     div-float v2, v0, v1
 
-    .line 325
+    .line 338
     new-instance v3, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;
 
     invoke-direct {v3, p0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;-><init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;F)V
@@ -260,14 +260,14 @@
 
     new-array v2, v2, [F
 
-    .line 347
+    .line 360
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getRootView()Landroid/view/View;
 
     move-result-object v5
 
     invoke-virtual {v5, v4}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 348
+    .line 361
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getRootView()Landroid/view/View;
 
     move-result-object v5
@@ -278,7 +278,7 @@
 
     const/4 v5, 0x0
 
-    .line 349
+    .line 362
     aget v6, v4, v5
 
     int-to-float v6, v6
@@ -297,7 +297,7 @@
 
     const/4 v5, 0x1
 
-    .line 350
+    .line 363
     aget v4, v4, v5
 
     int-to-float v4, v4
@@ -314,7 +314,7 @@
 
     add-float/2addr v4, v2
 
-    .line 352
+    .line 365
     iget-object v2, v3, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->screenRect:Landroid/graphics/RectF;
 
     add-float v5, v6, v0
@@ -323,12 +323,12 @@
 
     invoke-virtual {v2, v6, v4, v5, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 353
+    .line 366
     iget-object p0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     iput-object p0, v3, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->backgroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 354
+    .line 367
     iget-object p0, v3, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->screenRect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/graphics/RectF;->width()F
@@ -367,13 +367,13 @@
 
     return-object v0
 
-    .line 253
+    .line 266
     :cond_0
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;-><init>(Lorg/telegram/ui/Stories/StoryViewer;)V
 
-    .line 274
+    .line 287
     iget-object v2, v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->screenRect:Landroid/graphics/RectF;
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Stories/StoryViewer;->getStoryRect(Landroid/graphics/RectF;)Z
@@ -387,12 +387,12 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 277
+    .line 290
     iput v0, v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->type:I
 
     const/16 v0, 0x8
 
-    .line 278
+    .line 291
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -401,14 +401,14 @@
 
     iput v0, v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->rounding:F
 
-    .line 279
+    .line 292
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoryViewer;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
 
     move-result-object p0
 
     if-eqz p0, :cond_2
 
-    .line 281
+    .line 294
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
 
     iput-object p0, v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->view:Landroid/view/View;

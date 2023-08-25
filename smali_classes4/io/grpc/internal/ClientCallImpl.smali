@@ -1116,7 +1116,7 @@
 
     invoke-static {v0, v3}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
-    const-string v0, "observer"
+    const-string/jumbo v0, "observer"
 
     .line 219
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

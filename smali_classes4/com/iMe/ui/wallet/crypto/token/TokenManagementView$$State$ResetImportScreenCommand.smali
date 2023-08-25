@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State;)V
     .locals 1
 
-    .line 420
+    .line 419
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "resetImportScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V
     .locals 0
 
-    .line 425
+    .line 424
     invoke-interface {p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;->resetImportScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 418
+    .line 417
     check-cast p1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$ResetImportScreenCommand;->apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V

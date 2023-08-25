@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
     .locals 0
 
-    .line 746
+    .line 747
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
 
-    .line 759
+    .line 760
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$600(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/AvatarDrawable;
@@ -65,7 +65,7 @@
 
     invoke-virtual {p1, v1, v2, v0, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(JLjava/lang/String;Ljava/lang/String;)V
 
-    .line 760
+    .line 761
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$300(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/BackupImageView;
@@ -74,7 +74,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 761
+    .line 762
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$6;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$300(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/BackupImageView;

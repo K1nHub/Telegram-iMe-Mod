@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State;)V
     .locals 1
 
-    .line 1072
+    .line 1294
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "removeSelfFromStackImmediately"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;)V
     .locals 0
 
-    .line 1077
+    .line 1299
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->removeSelfFromStackImmediately()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 1070
+    .line 1292
     check-cast p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$RemoveSelfFromStackImmediatelyCommand;->apply(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;)V

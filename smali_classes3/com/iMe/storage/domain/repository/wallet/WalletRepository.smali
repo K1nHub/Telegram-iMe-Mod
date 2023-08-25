@@ -157,6 +157,22 @@
     .end annotation
 .end method
 
+.method public abstract getWalletMultiChainBalance(ZLjava/util/List;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(Z",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
+            ">;>;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getWalletTransactionHistory(ZLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {

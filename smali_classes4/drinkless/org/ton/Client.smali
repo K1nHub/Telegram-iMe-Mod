@@ -57,7 +57,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "native-lib"
+    const-string/jumbo v0, "native-lib"
 
     .line 17
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 876
+    .line 879
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$11;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/CodeFieldContainer;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected processNextPressed()V
     .locals 1
 
-    .line 879
+    .line 882
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$11;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3000(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V

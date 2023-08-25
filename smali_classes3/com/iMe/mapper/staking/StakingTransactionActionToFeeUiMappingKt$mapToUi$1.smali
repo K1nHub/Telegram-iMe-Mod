@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/mapper/staking/StakingTransactionActionToFeeUiMappingKt;->mapToUi(Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;Lcom/iMe/model/dialog/DialogModel;)Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    value = Lcom/iMe/mapper/staking/StakingTransactionActionToFeeUiMappingKt;->mapToUi(Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;Lcom/iMe/model/dialog/DialogModel;)Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

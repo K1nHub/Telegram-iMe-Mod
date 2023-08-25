@@ -17,17 +17,11 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 1473
-    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
-
+    .line 1500
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,19 +39,18 @@
     return v0
 .end method
 
-.method public synthetic clipWithGradient(I)Z
+.method public clipWithGradient(I)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$clipWithGradient(Lorg/telegram/ui/Components/Bulletin$Delegate;I)Z
-
-    move-result p1
+    const/4 p1, 0x1
 
     return p1
 .end method
 
-.method public synthetic getBottomOffset(I)I
+.method public getBottomOffset(I)I
     .locals 0
 
+    .line 1508
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$getBottomOffset(Lorg/telegram/ui/Components/Bulletin$Delegate;I)I
 
     move-result p1
@@ -66,40 +59,14 @@
 .end method
 
 .method public getTopOffset(I)I
-    .locals 2
+    .locals 0
 
     const/16 p1, 0x38
 
-    .line 1476
+    .line 1503
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
-
-    int-to-float p1, p1
-
-    const/16 v0, 0x2e
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
-
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/RLottieImageView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getAlpha()F
-
-    move-result v1
-
-    mul-float/2addr v0, v1
-
-    add-float/2addr p1, v0
-
-    float-to-int p1, p1
 
     return p1
 .end method

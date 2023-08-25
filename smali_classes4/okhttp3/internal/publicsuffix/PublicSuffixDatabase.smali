@@ -224,7 +224,7 @@
 
     invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v9, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v9, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v7, v9}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

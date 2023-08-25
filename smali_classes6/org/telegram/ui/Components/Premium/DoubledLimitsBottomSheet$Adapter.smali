@@ -26,21 +26,23 @@
 
 .field limitsStartRow:I
 
+.field private final resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
 .field rowCount:I
 
 .field private totalGradientHeight:I
 
 
 # direct methods
-.method public constructor <init>(IZ)V
+.method public constructor <init>(IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 24
 
     move-object/from16 v0, p0
 
-    .line 264
+    .line 266
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 256
+    .line 258
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -49,11 +51,16 @@
 
     move/from16 v2, p2
 
-    .line 265
+    .line 267
     iput-boolean v2, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->drawHeader:Z
 
-    .line 266
-    new-instance v2, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
+    move-object/from16 v8, p3
+
+    .line 268
+    iput-object v8, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    .line 270
+    new-instance v9, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
@@ -63,39 +70,43 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient4:I
 
-    invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIII)V
+    const/4 v7, -0x1
 
-    iput-object v2, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
+    move-object v2, v9
 
-    const/4 v3, 0x0
+    invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIIIILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 267
-    iput v3, v2, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
+    iput-object v9, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    .line 268
-    iput v3, v2, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->y1:F
+    const/4 v2, 0x0
 
-    .line 269
-    iput v3, v2, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x2:F
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    .line 270
-    iput v3, v2, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->y2:F
+    .line 271
+    iput v2, v9, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
 
     .line 272
+    iput v2, v9, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->y1:F
+
+    .line 273
+    iput v2, v9, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x2:F
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 274
+    iput v2, v9, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->y2:F
+
+    .line 276
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
 
-    .line 273
+    .line 277
     new-instance v9, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v3, Lorg/telegram/messenger/R$string;->GroupsAndChannelsLimitTitle:I
 
     const-string v4, "GroupsAndChannelsLimitTitle"
 
-    .line 274
+    .line 278
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -108,7 +119,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->channelsLimitPremium:I
 
-    .line 275
+    .line 279
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -133,17 +144,17 @@
 
     invoke-direct/range {v3 .. v8}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 273
+    .line 277
     invoke-virtual {v1, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 278
+    .line 282
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->PinChatsLimitTitle:I
 
     const-string v5, "PinChatsLimitTitle"
 
-    .line 279
+    .line 283
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v13
@@ -154,7 +165,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->dialogFiltersPinnedLimitPremium:I
 
-    .line 280
+    .line 284
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -179,17 +190,17 @@
 
     invoke-direct/range {v12 .. v17}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 278
+    .line 282
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 287
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->PublicLinksLimitTitle:I
 
     const-string v5, "PublicLinksLimitTitle"
 
-    .line 284
+    .line 288
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v19
@@ -200,7 +211,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->publicLinksLimitPremium:I
 
-    .line 285
+    .line 289
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -227,17 +238,17 @@
 
     invoke-direct/range {v18 .. v23}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 283
+    .line 287
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 288
+    .line 292
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->SavedGifsLimitTitle:I
 
     const-string v5, "SavedGifsLimitTitle"
 
-    .line 289
+    .line 293
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v13
@@ -248,7 +259,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->savedGifsLimitPremium:I
 
-    .line 290
+    .line 294
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -271,17 +282,17 @@
 
     invoke-direct/range {v12 .. v17}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 288
+    .line 292
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 293
+    .line 297
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->FavoriteStickersLimitTitle:I
 
     const-string v5, "FavoriteStickersLimitTitle"
 
-    .line 294
+    .line 298
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v19
@@ -292,7 +303,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->stickersFavedLimitPremium:I
 
-    .line 295
+    .line 299
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -317,17 +328,17 @@
 
     invoke-direct/range {v18 .. v23}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 293
+    .line 297
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 298
+    .line 302
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->BioLimitTitle:I
 
     const-string v5, "BioLimitTitle"
 
-    .line 299
+    .line 303
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v13
@@ -338,7 +349,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->stickersFavedLimitPremium:I
 
-    .line 300
+    .line 304
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -361,17 +372,17 @@
 
     invoke-direct/range {v12 .. v17}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 298
+    .line 302
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 303
+    .line 307
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->CaptionsLimitTitle:I
 
     const-string v5, "CaptionsLimitTitle"
 
-    .line 304
+    .line 308
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v19
@@ -382,7 +393,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->stickersFavedLimitPremium:I
 
-    .line 305
+    .line 309
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -407,17 +418,17 @@
 
     invoke-direct/range {v18 .. v23}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 303
+    .line 307
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 308
+    .line 312
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->FoldersLimitTitle:I
 
     const-string v5, "FoldersLimitTitle"
 
-    .line 309
+    .line 313
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v13
@@ -428,7 +439,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->dialogFiltersLimitPremium:I
 
-    .line 310
+    .line 314
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -451,17 +462,17 @@
 
     invoke-direct/range {v12 .. v17}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 308
+    .line 312
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 313
+    .line 317
     new-instance v3, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v4, Lorg/telegram/messenger/R$string;->ChatPerFolderLimitTitle:I
 
     const-string v5, "ChatPerFolderLimitTitle"
 
-    .line 314
+    .line 318
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v19
@@ -472,7 +483,7 @@
 
     iget v6, v2, Lorg/telegram/messenger/MessagesController;->dialogFiltersChatsLimitPremium:I
 
-    .line 315
+    .line 319
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -497,17 +508,17 @@
 
     invoke-direct/range {v18 .. v23}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 313
+    .line 317
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 318
+    .line 322
     new-instance v2, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;
 
     sget v3, Lorg/telegram/messenger/R$string;->ConnectedAccountsLimitTitle:I
 
     const-string v4, "ConnectedAccountsLimitTitle"
 
-    .line 319
+    .line 323
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v13
@@ -518,7 +529,7 @@
 
     const/4 v5, 0x4
 
-    .line 320
+    .line 324
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -539,23 +550,23 @@
 
     invoke-direct/range {v12 .. v17}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;-><init>(Ljava/lang/String;Ljava/lang/String;IILorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$1;)V
 
-    .line 318
+    .line 322
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 324
+    .line 328
     iput v11, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->rowCount:I
 
     add-int/2addr v10, v11
 
-    .line 325
+    .line 329
     iput v10, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->rowCount:I
 
     iput v11, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->headerRow:I
 
-    .line 326
+    .line 330
     iput v10, v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->limitsStartRow:I
 
-    .line 327
+    .line 331
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -572,7 +583,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 399
+    .line 403
     iget v0, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->rowCount:I
 
     return v0
@@ -581,7 +592,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 404
+    .line 408
     iget v0, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->headerRow:I
 
     if-ne p1, v0, :cond_0
@@ -590,7 +601,7 @@
 
     return p1
 
-    .line 406
+    .line 410
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->lastViewRow:I
 
@@ -617,16 +628,18 @@
 .method public measureGradient(Landroid/content/Context;II)V
     .locals 4
 
-    .line 414
+    .line 418
     new-instance v0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;
 
-    invoke-direct {v0, p1}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;-><init>(Landroid/content/Context;)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-direct {v0, p1, v1}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/4 p1, 0x0
 
     move v1, p1
 
-    .line 415
+    .line 419
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->limits:Ljava/util/ArrayList;
 
@@ -636,7 +649,7 @@
 
     if-ge p1, v2, :cond_0
 
-    .line 416
+    .line 420
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->limits:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -649,7 +662,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    .line 417
+    .line 421
     invoke-static {p2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
@@ -662,7 +675,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 418
+    .line 422
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->limits:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -673,7 +686,7 @@
 
     iput v1, v2, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;->yOffset:I
 
-    .line 419
+    .line 423
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -684,7 +697,7 @@
 
     goto :goto_0
 
-    .line 422
+    .line 426
     :cond_0
     iput v1, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->totalGradientHeight:I
 
@@ -694,19 +707,19 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 3
 
-    .line 389
+    .line 393
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 390
+    .line 394
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;
 
-    .line 391
+    .line 395
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->limits:Ljava/util/ArrayList;
 
     iget v1, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->limitsStartRow:I
@@ -721,7 +734,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;->setData(Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Limit;)V
 
-    .line 392
+    .line 396
     iget-object v0, p1, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;->previewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->limits:Ljava/util/ArrayList;
@@ -740,7 +753,7 @@
 
     iput p2, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->gradientYOffset:I
 
-    .line 393
+    .line 397
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;->previewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget p2, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->totalGradientHeight:I
@@ -754,7 +767,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 13
 
-    .line 339
+    .line 343
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -771,19 +784,21 @@
 
     if-eq p2, v1, :cond_0
 
-    .line 344
+    .line 348
     new-instance p2, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;
 
-    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;-><init>(Landroid/content/Context;)V
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 345
+    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 349
     iget-object p1, p2, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;->previewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->setParentViewForGradien(Landroid/view/ViewGroup;)V
 
-    .line 346
+    .line 350
     iget-object p1, p2, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$LimitCell;->previewView:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
@@ -792,7 +807,7 @@
 
     goto/16 :goto_0
 
-    .line 380
+    .line 384
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/FixedHeightEmptyCell;
 
@@ -800,33 +815,33 @@
 
     goto/16 :goto_0
 
-    .line 350
+    .line 354
     :cond_1
     iget-boolean p2, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->drawHeader:Z
 
     if-eqz p2, :cond_2
 
-    .line 351
+    .line 355
     new-instance p2, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter$1;-><init>(Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;Landroid/content/Context;)V
 
-    .line 357
+    .line 361
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v4, 0x0
 
-    .line 358
+    .line 362
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 360
+    .line 364
     new-instance v4, Landroid/widget/ImageView;
 
     invoke-direct {v4, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 361
+    .line 365
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v5
@@ -857,19 +872,19 @@
 
     const/4 v12, 0x0
 
-    .line 362
+    .line 366
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v3, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 364
+    .line 368
     new-instance v4, Landroid/widget/TextView;
 
     invoke-direct {v4, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 365
+    .line 369
     sget p1, Lorg/telegram/messenger/R$string;->DoubledLimits:I
 
     const-string v5, "DoubledLimits"
@@ -882,18 +897,20 @@
 
     const/16 p1, 0x11
 
-    .line 366
+    .line 370
     invoke-virtual {v4, p1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 v5, 0x41a00000    # 20.0f
 
-    .line 367
+    .line 371
     invoke-virtual {v4, v1, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 368
+    .line 372
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v5, p0, Lorg/telegram/ui/Components/Premium/DoubledLimitsBottomSheet$Adapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v1, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
@@ -901,21 +918,21 @@
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 369
+    .line 373
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
 
     invoke-virtual {v4, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 370
+    .line 374
     invoke-static {v2, v2, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v3, v4, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 373
+    .line 377
     invoke-static {v2, v2, p1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -924,7 +941,7 @@
 
     goto :goto_0
 
-    .line 376
+    .line 380
     :cond_2
     new-instance p2, Lorg/telegram/ui/Cells/FixedHeightEmptyCell;
 
@@ -932,7 +949,7 @@
 
     invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Cells/FixedHeightEmptyCell;-><init>(Landroid/content/Context;I)V
 
-    .line 383
+    .line 387
     :goto_0
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -942,7 +959,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 384
+    .line 388
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

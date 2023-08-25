@@ -72,7 +72,7 @@
 
     move-object v1, p1
 
-    .line 4414
+    .line 4422
     iput-object v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->this$0:Lorg/telegram/messenger/NotificationsController;
 
     move v1, p11
@@ -119,42 +119,42 @@
 
     move v1, p2
 
-    .line 4415
+    .line 4423
     iput v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->id:I
 
     move-object v1, p7
 
-    .line 4416
+    .line 4424
     iput-object v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->name:Ljava/lang/String;
 
     move-object v1, p8
 
-    .line 4417
+    .line 4425
     iput-object v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     move-object v1, p9
 
-    .line 4418
+    .line 4426
     iput-object v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-object v1, p10
 
-    .line 4419
+    .line 4427
     iput-object v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->notification:Landroidx/core/app/NotificationCompat$Builder;
 
     move-wide v1, p3
 
-    .line 4420
+    .line 4428
     iput-wide v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->dialogId:J
 
     move v1, p5
 
-    .line 4421
+    .line 4429
     iput-boolean v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->story:Z
 
     move v1, p6
 
-    .line 4422
+    .line 4430
     iput v1, v0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->topicId:I
 
     return-void
@@ -165,12 +165,12 @@
 .method call()V
     .locals 15
 
-    .line 4426
+    .line 4434
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 4427
+    .line 4435
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -213,7 +213,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->w(Ljava/lang/String;)V
 
-    .line 4430
+    .line 4438
     :cond_0
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/NotificationsController;->access$100()Landroidx/core/app/NotificationManagerCompat;
@@ -237,10 +237,10 @@
     :catch_0
     move-exception v0
 
-    .line 4432
+    .line 4440
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4433
+    .line 4441
     iget-object v1, p0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->this$0:Lorg/telegram/messenger/NotificationsController;
 
     iget-object v2, p0, Lorg/telegram/messenger/NotificationsController$1NotificationHolder;->notification:Landroidx/core/app/NotificationCompat$Builder;

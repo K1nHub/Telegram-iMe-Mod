@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 1041
+    .line 1044
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1044
+    .line 1047
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -44,7 +44,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1045
+    .line 1048
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -53,7 +53,7 @@
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    .line 1046
+    .line 1049
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$14;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V

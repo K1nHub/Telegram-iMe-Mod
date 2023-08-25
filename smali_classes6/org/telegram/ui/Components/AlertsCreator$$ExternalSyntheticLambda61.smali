@@ -6,20 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+.field public final synthetic f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final synthetic f$1:[Z
+.field public final synthetic f$1:Landroidx/core/util/Consumer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;[Z)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$0:Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$1:[Z
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$1:Landroidx/core/util/Consumer;
 
     return-void
 .end method
@@ -29,11 +29,11 @@
 .method public final onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$0:Ljava/lang/Runnable;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$1:[Z
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;->f$1:Landroidx/core/util/Consumer;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$W8olSJ-e3CT7JPcovENnHVAznuQ(Ljava/lang/Runnable;[ZLandroid/content/DialogInterface;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$6ipm7OB4Qfg-P1IuWb9wpIWIgvY(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

@@ -35,22 +35,22 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)V
     .locals 0
 
-    .line 10978
+    .line 10984
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    .line 10979
+    .line 10985
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/16 p1, 0x12
 
-    .line 10973
+    .line 10979
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textX:I
 
-    .line 10980
+    .line 10986
     iput-object p3, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
 
     return-void
@@ -69,12 +69,12 @@
         }
     .end annotation
 
-    .line 11035
+    .line 11041
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v0, :cond_0
 
-    .line 11036
+    .line 11042
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
@@ -84,23 +84,23 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 11021
+    .line 11027
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 11024
+    .line 11030
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v0, :cond_1
 
-    .line 11025
+    .line 11031
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 11026
+    .line 11032
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textX:I
 
     int-to-float v0, v0
@@ -111,17 +111,17 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 11027
+    .line 11033
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer;->access$14700(Lorg/telegram/ui/ArticleViewer;Landroid/graphics/Canvas;Lorg/telegram/ui/Cells/TextSelectionHelper$ArticleSelectableView;)V
 
-    .line 11028
+    .line 11034
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->draw(Landroid/graphics/Canvas;Landroid/view/View;)V
 
-    .line 11029
+    .line 11035
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1
@@ -131,17 +131,17 @@
 .method protected onMeasure(II)V
     .locals 12
 
-    .line 10996
+    .line 11002
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 10999
+    .line 11005
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
     if-eqz p2, :cond_2
 
-    .line 11000
+    .line 11006
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$PageBlock;->first:Z
 
     const/16 v0, 0x10
@@ -152,14 +152,14 @@
 
     if-eqz p2, :cond_0
 
-    .line 11001
+    .line 11007
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     iput p2, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textY:I
 
-    .line 11002
+    .line 11008
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 11004
+    .line 11010
     :cond_0
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -176,7 +176,7 @@
 
     iput p2, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textY:I
 
-    .line 11006
+    .line 11012
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -230,7 +230,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 11008
+    .line 11014
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -245,14 +245,14 @@
 
     add-int/2addr v2, p2
 
-    .line 11009
+    .line 11015
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textX:I
 
     iput v0, p2, Lorg/telegram/ui/ArticleViewer$DrawingText;->x:I
 
-    .line 11010
+    .line 11016
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->textY:I
 
     iput v0, p2, Lorg/telegram/ui/ArticleViewer$DrawingText;->y:I
@@ -262,7 +262,7 @@
     :cond_2
     const/4 v2, 0x1
 
-    .line 11016
+    .line 11022
     :cond_3
     :goto_2
     invoke-virtual {p0, p1, v2}, Landroid/view/View;->setMeasuredDimension(II)V
@@ -273,7 +273,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 10990
+    .line 10996
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
@@ -318,10 +318,10 @@
 .method public setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;)V
     .locals 0
 
-    .line 10984
+    .line 10990
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockKickerCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
-    .line 10985
+    .line 10991
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void

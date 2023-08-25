@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,195:1\n129#2,5:196\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$12\n*L\n92#1:196,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,197:1\n129#2,5:198\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$12\n*L\n93#1:198,5\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 92
+    .line 93
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
@@ -87,7 +87,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 92
+    .line 93
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getSERVER_CLIENT()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object p2
@@ -107,7 +107,7 @@
 
     check-cast p2, Lokhttp3/OkHttpClient;
 
-    .line 92
+    .line 93
     sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Api;->INSTANCE:Lcom/iMe/storage/common/AppConfiguration$Api;
 
     invoke-virtual {v0}, Lcom/iMe/storage/common/AppConfiguration$Api;->getServerUrl()Ljava/lang/String;
@@ -127,7 +127,7 @@
 
     check-cast p1, Lcom/google/gson/Gson;
 
-    .line 92
+    .line 93
     invoke-static {p2, v0, p1}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->createRetrofit(Lokhttp3/OkHttpClient;Ljava/lang/String;Lcom/google/gson/Gson;)Lretrofit2/Retrofit;
 
     move-result-object p1

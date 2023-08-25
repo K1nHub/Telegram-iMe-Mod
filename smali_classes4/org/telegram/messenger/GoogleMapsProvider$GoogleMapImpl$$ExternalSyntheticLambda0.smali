@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveListener;
+.implements Lcom/google/android/gms/maps/GoogleMap$OnCameraIdleListener;
 
 
 # instance fields
@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final onCameraMove()V
+.method public final onCameraIdle()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Runnable;

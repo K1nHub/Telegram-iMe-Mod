@@ -4,8 +4,15 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/iMe/ui/custom/HorizontalActionButtonsView$Button;,
+        Lcom/iMe/ui/custom/HorizontalActionButtonsView$Companion;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHorizontalActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/iMe/ui/custom/HorizontalActionButtonsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,87:1\n1855#2,2:88\n1855#2,2:90\n*S KotlinDebug\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/iMe/ui/custom/HorizontalActionButtonsView\n*L\n36#1:88,2\n67#1:90,2\n*E\n"
+    value = "SMAP\nHorizontalActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/iMe/ui/custom/HorizontalActionButtonsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 CollectionExt.kt\ncom/iMe/utils/extentions/common/CollectionExtKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,114:1\n1549#2:115\n1620#2,3:116\n2634#2:120\n4#3:119\n5#3,2:122\n1#4:121\n*S KotlinDebug\n*F\n+ 1 HorizontalActionButtonsView.kt\ncom/iMe/ui/custom/HorizontalActionButtonsView\n*L\n40#1:115\n40#1:116,3\n50#1:120\n50#1:119\n50#1:122,2\n50#1:121\n*E\n"
 .end annotation
 
 
@@ -14,7 +21,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Landroidx/appcompat/widget/AppCompatTextView;",
+            "Lcom/iMe/ui/custom/HorizontalActionButtonsView$Button;",
             ">;"
         }
     .end annotation
@@ -22,10 +29,14 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$8lrxYQ7h4cWHGwjIjgUQPlIFkRw(Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-static {p0, p1}, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->initButtons$lambda$2$lambda$1$lambda$0(Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
+    new-instance v0, Lcom/iMe/ui/custom/HorizontalActionButtonsView$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/iMe/ui/custom/HorizontalActionButtonsView$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
@@ -61,10 +72,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 28
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 25
+    .line 30
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -73,7 +84,7 @@
 
     const/4 p1, 0x0
 
-    .line 28
+    .line 33
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     return-void
@@ -95,26 +106,9 @@
 
     const/4 p3, 0x0
 
-    .line 18
+    .line 24
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/custom/HorizontalActionButtonsView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    return-void
-.end method
-
-.method private static final initButtons$lambda$2$lambda$1$lambda$0(Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;Landroid/view/View;)V
-    .locals 0
-
-    const-string p1, "$item"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 57
-    invoke-virtual {p0}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;->getOnClickAction()Lkotlin/jvm/functions/Function0;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
 .end method
@@ -122,7 +116,7 @@
 
 # virtual methods
 .method public final initButtons(Ljava/util/List;)V
-    .locals 5
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -136,15 +130,27 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 37
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->removeAllViewsInLayout()V
 
-    .line 35
+    .line 38
     iget-object v0, p0, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->buttons:Ljava/util/List;
 
+    .line 39
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 1855
+    .line 1549
+    new-instance v1, Ljava/util/ArrayList;
+
+    const/16 v2, 0xa
+
+    invoke-static {p1, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -152,160 +158,65 @@
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_0
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+    .line 1621
+    check-cast v2, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 37
-    new-instance v1, Landroidx/appcompat/widget/AppCompatTextView;
+    .line 41
+    new-instance v3, Lcom/iMe/ui/custom/HorizontalActionButtonsView$Button;
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-direct {v1, v2}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;)V
+    const-string v5, "context"
 
-    const/4 v2, 0x1
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
-
-    .line 39
-    invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    sget v3, Lorg/telegram/messenger/R$dimen;->margin_half_small:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingHorizontal(Landroid/view/View;I)V
-
-    .line 40
-    invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    sget v4, Lorg/telegram/messenger/R$dimen;->margin_normal_2:I
-
-    invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingVertical(Landroid/view/View;I)V
-
-    .line 41
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->singleLine(Landroid/widget/TextView;)V
+    invoke-direct {v3, v4, v2}, Lcom/iMe/ui/custom/HorizontalActionButtonsView$Button;-><init>(Landroid/content/Context;Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;)V
 
     .line 42
-    sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
-
-    .line 43
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;->getText()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 46
-    invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    sget v4, Lorg/telegram/messenger/R$dimen;->text_size_normal:I
-
-    invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v2
+    new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v4, 0x0
 
-    .line 44
-    invoke-virtual {v1, v4, v2}, Landroidx/appcompat/widget/AppCompatTextView;->setTextSize(IF)V
+    const/4 v5, -0x2
 
-    .line 50
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;->getIconResId()I
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    move-result v2
+    invoke-direct {v2, v4, v5, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    .line 48
-    invoke-virtual {v1, v4, v2, v4, v4}, Landroidx/appcompat/widget/AppCompatTextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {p0, v3, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 54
-    invoke-virtual {v1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
+    .line 1621
+    invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    goto :goto_0
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
-
-    .line 57
-    new-instance v2, Lcom/iMe/ui/custom/HorizontalActionButtonsView$$ExternalSyntheticLambda0;
-
-    invoke-direct {v2, v0}, Lcom/iMe/ui/custom/HorizontalActionButtonsView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;)V
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 58
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;->isEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->enable(Landroid/view/View;)V
-
-    goto :goto_1
-
+    .line 40
     :cond_0
-    invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->disable(Landroid/view/View;)V
+    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 60
-    :goto_1
-    iget-object v0, p0, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->buttons:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 61
+    .line 46
     invoke-virtual {p0}, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->setupColors()V
 
-    .line 62
-    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
-
-    const/4 v2, -0x2
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    invoke-direct {v0, v4, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
-
-    invoke-virtual {p0, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    goto/16 :goto_0
-
-    :cond_1
     return-void
 .end method
 
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 81
+    .line 54
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 82
+    .line 55
     iget-object v0, p0, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->buttons:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
@@ -314,12 +225,12 @@
 .end method
 
 .method public final setupColors()V
-    .locals 3
+    .locals 2
 
-    .line 67
+    .line 50
     iget-object v0, p0, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->buttons:Ljava/util/List;
 
-    .line 1855
+    .line 2634
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -335,30 +246,11 @@
 
     move-result-object v1
 
-    check-cast v1, Landroidx/appcompat/widget/AppCompatTextView;
+    .line 5
+    check-cast v1, Lcom/iMe/ui/custom/HorizontalActionButtonsView$Button;
 
-    .line 69
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
-
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCompoundDrawablesColor(Landroid/widget/TextView;I)V
-
-    const/4 v2, 0x0
-
-    .line 70
-    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground(Landroid/view/View;Z)V
-
-    .line 71
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
-
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    .line 50
+    invoke-virtual {v1}, Lcom/iMe/ui/custom/HorizontalActionButtonsView$Button;->setupColors()V
 
     goto :goto_0
 

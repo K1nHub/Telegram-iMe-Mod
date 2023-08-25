@@ -45,7 +45,7 @@
 
     :catch_0
     :try_start_1
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->STAKING:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->CRYPTOBOXES:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -59,7 +59,7 @@
 
     :catch_1
     :try_start_2
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->STAKING:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -73,7 +73,7 @@
 
     :catch_2
     :try_start_3
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -87,7 +87,7 @@
 
     :catch_3
     :try_start_4
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -100,6 +100,20 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     :catch_4
+    :try_start_5
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
     sput-object v0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
+.field public final synthetic f$1:Landroid/content/DialogInterface$OnClickListener;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface$OnClickListener;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda75;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda75;->f$1:Landroid/content/DialogInterface$OnClickListener;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda75;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$EUoNavXE8D28kXv0ZgDY9JRQ6LM(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda75;->f$1:Landroid/content/DialogInterface$OnClickListener;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$bfS9Qmfyrfx-nyryOmJdigju6GQ(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface$OnClickListener;Landroid/view/View;)V
 
     return-void
 .end method

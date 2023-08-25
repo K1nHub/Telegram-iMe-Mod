@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;",
+        "Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;",
         ">;"
     }
 .end annotation
@@ -62,12 +62,12 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;"
+            "Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;"
         }
     .end annotation
 
     .line 61
-    const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     iget-object v1, p0, Lcom/iMe/storage/data/utils/crypto/NetworksHelper$special$$inlined$inject$default$1;->$this_inject:Lorg/koin/core/component/KoinComponent;
 

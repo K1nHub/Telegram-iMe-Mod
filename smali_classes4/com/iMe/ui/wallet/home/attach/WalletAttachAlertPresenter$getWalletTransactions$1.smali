@@ -33,7 +33,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAttachAlertPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1\n+ 2 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,198:1\n9#2:199\n18#3:200\n*S KotlinDebug\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1\n*L\n137#1:199\n137#1:200\n*E\n"
+    value = "SMAP\nWalletAttachAlertPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1\n+ 2 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,194:1\n9#2:195\n18#3:196\n*S KotlinDebug\n*F\n+ 1 WalletAttachAlertPresenter.kt\ncom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1\n*L\n135#1:195\n135#1:196\n*E\n"
 .end annotation
 
 
@@ -80,7 +80,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 137
+    .line 135
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;->access$getCachedTransactions$p(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;)Ljava/util/HashMap;
@@ -123,7 +123,7 @@
 
     goto :goto_0
 
-    .line 138
+    .line 136
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
@@ -135,24 +135,24 @@
 
     const/4 v2, 0x0
 
-    .line 139
+    .line 137
     new-instance v3, Lcom/iMe/storage/domain/model/wallet/token/Token;
 
-    .line 140
+    .line 138
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1;->$selectedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getAddress()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 141
+    .line 139
     iget-object v4, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1;->$selectedToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getNetworkId()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 139
+    .line 137
     invoke-direct {v3, p1, v4}, Lcom/iMe/storage/domain/model/wallet/token/Token;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v4, 0x0
@@ -163,7 +163,7 @@
 
     const/4 v7, 0x0
 
-    .line 138
+    .line 136
     invoke-static/range {v0 .. v7}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getWalletTransactions$default(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;ZLjava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/String;ILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -175,7 +175,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 136
+    .line 134
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$1;->invoke(Ljava/lang/Boolean;)Lio/reactivex/ObservableSource;

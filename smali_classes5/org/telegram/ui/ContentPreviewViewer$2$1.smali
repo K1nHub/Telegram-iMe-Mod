@@ -37,7 +37,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContentPreviewViewer$2;Ljava/util/ArrayList;Z)V
     .locals 0
 
-    .line 507
+    .line 512
     iput-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iput-object p2, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
@@ -52,7 +52,7 @@
 .method private static synthetic lambda$onClick$0(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/lang/Object;ZILjava/lang/String;)V
     .locals 0
 
-    .line 541
+    .line 546
     invoke-interface/range {p0 .. p5}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendSticker(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/lang/Object;ZI)V
 
     return-void
@@ -63,7 +63,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 11
 
-    .line 510
+    .line 515
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -76,7 +76,7 @@
 
     return-void
 
-    .line 513
+    .line 518
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -88,7 +88,7 @@
 
     move-result p1
 
-    .line 515
+    .line 520
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -107,23 +107,23 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 516
+    .line 521
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isSendingStickerConfirmationEnabled:Z
 
     xor-int/2addr v0, v2
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setSendingStickerConfirmationEnabled(Z)V
 
-    .line 517
+    .line 522
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1600(Lorg/telegram/ui/ContentPreviewViewer;)V
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1700(Lorg/telegram/ui/ContentPreviewViewer;)V
 
     goto/16 :goto_2
 
-    .line 518
+    .line 523
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -143,20 +143,20 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 519
+    .line 524
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v2
 
-    invoke-static {v0, v2, v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$1700(Lorg/telegram/ui/ContentPreviewViewer;Lorg/telegram/tgnet/TLRPC$Document;Z)V
+    invoke-static {v0, v2, v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$1800(Lorg/telegram/ui/ContentPreviewViewer;Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
     goto/16 :goto_2
 
-    .line 520
+    .line 525
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -174,20 +174,20 @@
 
     if-ne v0, v3, :cond_3
 
-    .line 521
+    .line 526
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v3
 
-    invoke-static {v0, v3, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1700(Lorg/telegram/ui/ContentPreviewViewer;Lorg/telegram/tgnet/TLRPC$Document;Z)V
+    invoke-static {v0, v3, v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1800(Lorg/telegram/ui/ContentPreviewViewer;Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
     goto/16 :goto_2
 
-    .line 523
+    .line 528
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -221,7 +221,7 @@
 
     goto/16 :goto_0
 
-    .line 527
+    .line 532
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -237,23 +237,23 @@
 
     if-ne v0, v2, :cond_5
 
-    .line 528
+    .line 533
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_c
 
-    .line 529
+    .line 534
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v0
 
@@ -261,7 +261,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1400(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1500(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     move-result-object v2
 
@@ -269,7 +269,7 @@
 
     iget-object v3, v3, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$2000(Lorg/telegram/ui/ContentPreviewViewer;)Z
+    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$2100(Lorg/telegram/ui/ContentPreviewViewer;)Z
 
     move-result v3
 
@@ -277,7 +277,7 @@
 
     goto/16 :goto_2
 
-    .line 531
+    .line 536
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -297,12 +297,12 @@
 
     if-ne v0, v2, :cond_6
 
-    .line 532
+    .line 537
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
 
     move-result v0
 
@@ -316,7 +316,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$2000(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -324,7 +324,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v8
 
@@ -342,7 +342,7 @@
 
     goto/16 :goto_2
 
-    .line 533
+    .line 538
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -360,39 +360,39 @@
 
     if-ne v0, v2, :cond_8
 
-    .line 534
+    .line 539
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v0
 
-    .line 535
+    .line 540
     iget-object v2, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v2, v2, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
+    invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$2000(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 536
+    .line 541
     iget-object v3, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v3, v3, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1800(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 537
+    .line 542
     iget-object v4, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v4, v4, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v4}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v4
 
@@ -400,7 +400,7 @@
 
     return-void
 
-    .line 541
+    .line 546
     :cond_7
     iget-object v5, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
@@ -424,7 +424,7 @@
 
     goto/16 :goto_2
 
-    .line 542
+    .line 547
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -442,12 +442,12 @@
 
     if-ne v0, v2, :cond_9
 
-    .line 543
+    .line 548
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$900(Lorg/telegram/ui/ContentPreviewViewer;)I
 
     move-result v0
 
@@ -461,7 +461,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$2000(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -469,7 +469,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v8
 
@@ -487,7 +487,7 @@
 
     goto :goto_2
 
-    .line 544
+    .line 549
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
 
@@ -505,12 +505,12 @@
 
     if-ne v0, v2, :cond_c
 
-    .line 545
+    .line 550
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v0
 
@@ -518,7 +518,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$2100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;
+    invoke-static {v2}, Lorg/telegram/ui/ContentPreviewViewer;->access$2200(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;
 
     move-result-object v2
 
@@ -526,25 +526,25 @@
 
     goto :goto_2
 
-    .line 524
+    .line 529
     :cond_a
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_c
 
-    .line 525
+    .line 530
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;
 
     move-result-object v5
 
@@ -552,7 +552,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1000(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1100(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v6
 
@@ -560,7 +560,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1800(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -568,7 +568,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$1900(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$2000(Lorg/telegram/ui/ContentPreviewViewer;)Ljava/lang/Object;
 
     move-result-object v8
 
@@ -598,7 +598,7 @@
 
     invoke-interface/range {v5 .. v10}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;->sendSticker(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Ljava/lang/Object;ZI)V
 
-    .line 548
+    .line 553
     :cond_c
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->val$actions:Ljava/util/ArrayList;
@@ -615,7 +615,7 @@
 
     if-eq p1, v1, :cond_d
 
-    .line 549
+    .line 554
     iget-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$2$1;->this$1:Lorg/telegram/ui/ContentPreviewViewer$2;
 
     iget-object p1, p1, Lorg/telegram/ui/ContentPreviewViewer$2;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
@@ -624,7 +624,7 @@
 
     if-eqz p1, :cond_d
 
-    .line 550
+    .line 555
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_d

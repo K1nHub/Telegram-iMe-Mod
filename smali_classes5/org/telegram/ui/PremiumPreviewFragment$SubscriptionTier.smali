@@ -36,10 +36,10 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;)V
     .locals 0
 
-    .line 1828
+    .line 1907
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1829
+    .line 1908
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
 
     return-void
@@ -48,7 +48,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;)Lcom/android/billingclient/api/ProductDetails;
     .locals 0
 
-    .line 1816
+    .line 1895
     iget-object p0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
     return-object p0
@@ -57,20 +57,20 @@
 .method private checkOfferDetails()V
     .locals 7
 
-    .line 1945
+    .line 2024
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1949
+    .line 2028
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->offerDetails:Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
     if-nez v1, :cond_3
 
-    .line 1950
+    .line 2029
     invoke-virtual {v0}, Lcom/android/billingclient/api/ProductDetails;->getSubscriptionOfferDetails()Ljava/util/List;
 
     move-result-object v0
@@ -92,7 +92,7 @@
 
     check-cast v1, Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
-    .line 1951
+    .line 2030
     invoke-virtual {v1}, Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;->getPricingPhases()Lcom/android/billingclient/api/ProductDetails$PricingPhases;
 
     move-result-object v2
@@ -113,7 +113,7 @@
 
     move-result-object v2
 
-    .line 1952
+    .line 2031
     invoke-virtual {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getMonths()I
 
     move-result v4
@@ -161,7 +161,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1953
+    .line 2032
     :goto_0
     iput-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->offerDetails:Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
@@ -174,7 +174,7 @@
 .method public getCurrency()Ljava/lang/String;
     .locals 2
 
-    .line 1934
+    .line 2013
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -189,7 +189,7 @@
 
     goto :goto_1
 
-    .line 1937
+    .line 2016
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -199,11 +199,11 @@
 
     return-object v1
 
-    .line 1940
+    .line 2019
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->checkOfferDetails()V
 
-    .line 1941
+    .line 2020
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->offerDetails:Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
     if-nez v0, :cond_2
@@ -234,7 +234,7 @@
     :goto_0
     return-object v1
 
-    .line 1935
+    .line 2014
     :cond_3
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
@@ -247,12 +247,12 @@
 .method public getDiscount()I
     .locals 6
 
-    .line 1854
+    .line 1933
     iget v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->discount:I
 
     if-nez v0, :cond_1
 
-    .line 1855
+    .line 1934
     invoke-virtual {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getPricePerMonth()J
 
     move-result-wide v0
@@ -267,7 +267,7 @@
 
     return v0
 
-    .line 1859
+    .line 1938
     :cond_0
     iget-wide v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerYearRegular:J
 
@@ -277,7 +277,7 @@
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    .line 1860
+    .line 1939
     invoke-virtual {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getPricePerYear()J
 
     move-result-wide v2
@@ -304,10 +304,10 @@
 
     const/4 v0, -0x1
 
-    .line 1863
+    .line 1942
     iput v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->discount:I
 
-    .line 1867
+    .line 1946
     :cond_1
     iget v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->discount:I
 
@@ -317,7 +317,7 @@
 .method public getFormattedPricePerMonth()Ljava/lang/String;
     .locals 5
 
-    .line 1907
+    .line 1986
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -332,7 +332,7 @@
 
     goto :goto_1
 
-    .line 1911
+    .line 1990
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -364,7 +364,7 @@
     :goto_0
     return-object v0
 
-    .line 1908
+    .line 1987
     :cond_2
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
@@ -389,7 +389,7 @@
 .method public getFormattedPricePerYear()Ljava/lang/String;
     .locals 5
 
-    .line 1899
+    .line 1978
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -404,7 +404,7 @@
 
     goto :goto_1
 
-    .line 1903
+    .line 1982
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -436,7 +436,7 @@
     :goto_0
     return-object v0
 
-    .line 1900
+    .line 1979
     :cond_2
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
@@ -461,7 +461,7 @@
 .method public getFormattedPricePerYearRegular()Ljava/lang/String;
     .locals 5
 
-    .line 1891
+    .line 1970
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -476,7 +476,7 @@
 
     goto :goto_1
 
-    .line 1895
+    .line 1974
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -506,7 +506,7 @@
     :goto_0
     return-object v0
 
-    .line 1892
+    .line 1971
     :cond_2
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
@@ -529,7 +529,7 @@
 .method public getGooglePlayProductDetails()Lcom/android/billingclient/api/ProductDetails;
     .locals 1
 
-    .line 1833
+    .line 1912
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
     return-object v0
@@ -538,7 +538,7 @@
 .method public getMonths()I
     .locals 1
 
-    .line 1850
+    .line 1929
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->months:I
@@ -549,10 +549,10 @@
 .method public getOfferDetails()Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
     .locals 1
 
-    .line 1837
+    .line 1916
     invoke-direct {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->checkOfferDetails()V
 
-    .line 1838
+    .line 1917
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->offerDetails:Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
     return-object v0
@@ -561,7 +561,7 @@
 .method public getPrice()J
     .locals 3
 
-    .line 1923
+    .line 2002
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->useInvoiceBilling()Z
 
     move-result v0
@@ -576,7 +576,7 @@
 
     goto :goto_1
 
-    .line 1926
+    .line 2005
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
@@ -586,11 +586,11 @@
 
     return-wide v1
 
-    .line 1929
+    .line 2008
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->checkOfferDetails()V
 
-    .line 1930
+    .line 2009
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->offerDetails:Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
     if-nez v0, :cond_2
@@ -621,7 +621,7 @@
     :goto_0
     return-wide v1
 
-    .line 1924
+    .line 2003
     :cond_3
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
@@ -634,7 +634,7 @@
 .method public getPricePerMonth()J
     .locals 4
 
-    .line 1881
+    .line 1960
     iget-wide v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerMonth:J
 
     const-wide/16 v2, 0x0
@@ -643,7 +643,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1882
+    .line 1961
     invoke-virtual {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getPrice()J
 
     move-result-wide v0
@@ -652,7 +652,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1884
+    .line 1963
     iget-object v2, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->months:I
@@ -663,7 +663,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerMonth:J
 
-    .line 1887
+    .line 1966
     :cond_0
     iget-wide v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerMonth:J
 
@@ -673,7 +673,7 @@
 .method public getPricePerYear()J
     .locals 4
 
-    .line 1871
+    .line 1950
     iget-wide v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerYear:J
 
     const-wide/16 v2, 0x0
@@ -682,7 +682,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1872
+    .line 1951
     invoke-virtual {p0}, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->getPrice()J
 
     move-result-wide v0
@@ -693,7 +693,7 @@
 
     long-to-double v0, v0
 
-    .line 1874
+    .line 1953
     iget-object v2, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->subscriptionOption:Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$TL_premiumSubscriptionOption;->months:I
@@ -710,7 +710,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerYear:J
 
-    .line 1877
+    .line 1956
     :cond_0
     iget-wide v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerYear:J
 
@@ -720,7 +720,7 @@
 .method public setGooglePlayProductDetails(Lcom/android/billingclient/api/ProductDetails;)V
     .locals 0
 
-    .line 1842
+    .line 1921
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->googlePlayProductDetails:Lcom/android/billingclient/api/ProductDetails;
 
     return-void
@@ -729,7 +729,7 @@
 .method public setPricePerYearRegular(J)V
     .locals 0
 
-    .line 1846
+    .line 1925
     iput-wide p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;->pricePerYearRegular:J
 
     return-void

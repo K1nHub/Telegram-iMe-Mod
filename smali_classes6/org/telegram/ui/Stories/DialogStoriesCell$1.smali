@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 144
+    .line 154
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -32,10 +32,58 @@
 
 
 # virtual methods
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    .line 174
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$000(Lorg/telegram/ui/Stories/DialogStoriesCell;)F
+
+    move-result v0
+
+    const v1, 0x3e4ccccd    # 0.2f
+
+    cmpl-float v0, v0, v1
+
+    if-gtz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getAlpha()F
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+
+    .line 177
+    :cond_1
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 1
 
-    .line 147
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->viewsDrawInParent:Ljava/util/ArrayList;
@@ -50,7 +98,7 @@
 
     return p1
 
-    .line 150
+    .line 160
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -62,12 +110,12 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 155
+    .line 165
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
     const/4 p1, 0x0
 
-    .line 156
+    .line 166
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -79,7 +127,7 @@
 
     if-ge p1, p2, :cond_0
 
-    .line 157
+    .line 167
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/DialogStoriesCell;->afterNextLayout:Ljava/util/ArrayList;
@@ -96,7 +144,7 @@
 
     goto :goto_0
 
-    .line 159
+    .line 169
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 

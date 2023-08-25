@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->setSearchingTypeInternal(IZ)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->showPopup(IIZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,17 +17,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-.field final synthetic val$showSearchingNew:Z
+.field final synthetic val$onAnimationEndRunnuble:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 10261
+    .line 10227
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$showSearchingNew:Z
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$onAnimationEndRunnuble:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -39,41 +39,26 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 10264
+    .line 10230
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$showSearchingNew:Z
-
-    if-eqz v0, :cond_0
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$16602(Lorg/telegram/ui/Components/ChatActivityEnterView;F)F
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$102(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 10265
+    .line 10231
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$14700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     move-result-object p1
 
-    if-eqz p1, :cond_1
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    .line 10266
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 10232
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$onAnimationEndRunnuble:Ljava/lang/Runnable;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiView;->searchProgressChanged()V
-
-    :cond_1
     return-void
 .end method

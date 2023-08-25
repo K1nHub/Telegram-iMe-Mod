@@ -10,17 +10,11 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_userStories;
-
-.field public final synthetic f$4:J
-
-.field public final synthetic f$5:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$TL_userStories;JLorg/telegram/tgnet/TLObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;JI)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,13 +23,7 @@
 
     iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$1:J
 
-    iput-boolean p4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$2:Z
-
-    iput-object p5, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$3:Lorg/telegram/tgnet/TLRPC$TL_userStories;
-
-    iput-wide p6, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$4:J
-
-    iput-object p8, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$5:Lorg/telegram/tgnet/TLObject;
+    iput p4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$2:I
 
     return-void
 .end method
@@ -43,21 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
     iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$1:J
 
-    iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$2:Z
+    iget v3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$2:I
 
-    iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$3:Lorg/telegram/tgnet/TLRPC$TL_userStories;
-
-    iget-wide v5, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$4:J
-
-    iget-object v7, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;->f$5:Lorg/telegram/tgnet/TLObject;
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$4FNmOZh6FTO5RgX9CnpG2Bzg9sg(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$TL_userStories;JLorg/telegram/tgnet/TLObject;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$PxJ4yCYPk6M-oXQnMygV28K7ZKc(Lorg/telegram/ui/Stories/StoriesController;JI)V
 
     return-void
 .end method

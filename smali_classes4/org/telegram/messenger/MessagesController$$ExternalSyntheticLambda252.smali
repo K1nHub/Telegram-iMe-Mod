@@ -2,50 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Consumer;
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
-
-.field public final synthetic f$1:J
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;J)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;-><init>()V
+
+    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$0:Lorg/telegram/messenger/MessagesController;
-
-    iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$1:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 3
-
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$0:Lorg/telegram/messenger/MessagesController;
-
-    iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$1:J
-
-    check-cast p1, Ljava/util/ArrayList;
-
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$_VHelfBBAccQ8gASwxn3d-mobfg(Lorg/telegram/messenger/MessagesController;JLjava/util/ArrayList;)V
-
-    return-void
-.end method
-
-.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+.method public final run()V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

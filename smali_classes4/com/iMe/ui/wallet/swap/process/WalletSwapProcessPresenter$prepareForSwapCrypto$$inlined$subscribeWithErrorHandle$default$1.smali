@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSwapProcessPresenter.kt\ncom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter\n*L\n1#1,111:1\n533#2,11:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSwapProcessPresenter.kt\ncom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter\n*L\n1#1,111:1\n535#2,11:112\n*E\n"
 .end annotation
 
 
@@ -141,7 +141,7 @@
 
     new-instance v0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;
 
-    invoke-static {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$getSwapFeeType(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    invoke-static {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$getSwapFeeType(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v1
 
@@ -153,7 +153,7 @@
 
     invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;-><init>(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;)V
+    invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$Swap$Crypto;-><init>(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Lcom/iMe/storage/domain/model/crypto/swap/CryptoSwapMetadata;)V
 
     invoke-static {p1, v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$renderState(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/iMe/model/wallet/crypto/swap/SwapUiState;)V
 

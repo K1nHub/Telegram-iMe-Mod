@@ -28,17 +28,17 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 9
 
-    .line 1173
+    .line 1179
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1175
+    .line 1181
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
 
     move-result p2
 
-    .line 1177
+    .line 1183
     new-instance v0, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -65,7 +65,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1179
+    .line 1185
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -74,7 +74,7 @@
 
     const/4 v1, 0x1
 
-    .line 1180
+    .line 1186
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v2, -0x40000000    # -2.0f
@@ -89,44 +89,44 @@
 
     const/high16 v8, 0x41000000    # 8.0f
 
-    .line 1181
+    .line 1187
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrameRelatively(FFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {p0, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1183
+    .line 1189
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v2, p0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
-    .line 1184
+    .line 1190
     invoke-virtual {v2}, Landroid/widget/TextView;->setSingleLine()V
 
-    .line 1185
+    .line 1191
     invoke-virtual {v2, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v3, 0x41600000    # 14.0f
 
-    .line 1186
+    .line 1192
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v3, "fonts/rmedium.ttf"
 
-    .line 1187
+    .line 1193
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1188
+    .line 1194
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1190
+    .line 1196
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -135,13 +135,13 @@
 
     const/4 p1, 0x2
 
-    .line 1191
+    .line 1197
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1192
+    .line 1198
     invoke-virtual {v2, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1193
+    .line 1199
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_cancelColor:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Layout;->getThemedColor(I)I
@@ -150,24 +150,24 @@
 
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 1194
+    .line 1200
     new-instance p1, Landroid/text/method/LinkMovementMethod;
 
     invoke-direct {p1}, Landroid/text/method/LinkMovementMethod;-><init>()V
 
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 1195
+    .line 1201
     sget-object p1, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     const/high16 p1, 0x41500000    # 13.0f
 
-    .line 1196
+    .line 1202
     invoke-virtual {v2, v1, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1197
+    .line 1203
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     return-void
@@ -178,7 +178,7 @@
 .method public getAccessibilityText()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 1201
+    .line 1207
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -6224,7 +6224,7 @@
     invoke-virtual {v3, v0, v15, v14}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
 
     .line 1334
-    invoke-virtual {v3, v1, v10}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v3, v1, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 1335
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I

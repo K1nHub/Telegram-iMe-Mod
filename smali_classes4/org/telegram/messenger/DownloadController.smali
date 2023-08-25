@@ -547,7 +547,7 @@
 
     iput-object v3, v0, Lorg/telegram/messenger/DownloadController;->highPreset:Lorg/telegram/messenger/DownloadController$Preset;
 
-    const-string v3, "newConfig"
+    const-string/jumbo v3, "newConfig"
 
     .line 266
     invoke-interface {v2, v3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z

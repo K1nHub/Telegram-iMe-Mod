@@ -47,10 +47,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 19784
+    .line 19789
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 19799
+    .line 19804
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -69,7 +69,7 @@
 
     goto/16 :goto_0
 
-    .line 19835
+    .line 19840
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonCallback_layer117;
 
@@ -77,7 +77,7 @@
 
     goto/16 :goto_0
 
-    .line 19811
+    .line 19816
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonGame;
 
@@ -85,7 +85,7 @@
 
     goto/16 :goto_0
 
-    .line 19844
+    .line 19849
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonCallback;
 
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 19850
+    .line 19855
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonUserProfile;
 
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 19814
+    .line 19819
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonUrl;
 
@@ -109,7 +109,7 @@
 
     goto :goto_0
 
-    .line 19853
+    .line 19858
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonWebView;
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 19823
+    .line 19828
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonUrlAuth;
 
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 19856
+    .line 19861
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPeer;
 
@@ -133,7 +133,7 @@
 
     goto :goto_0
 
-    .line 19817
+    .line 19822
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonSwitchInline_layer157;
 
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 19820
+    .line 19825
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestGeoLocation;
 
@@ -149,7 +149,7 @@
 
     goto :goto_0
 
-    .line 19847
+    .line 19852
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputKeyboardButtonUserProfile;
 
@@ -157,7 +157,7 @@
 
     goto :goto_0
 
-    .line 19826
+    .line 19831
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputKeyboardButtonUrlAuth;
 
@@ -165,7 +165,7 @@
 
     goto :goto_0
 
-    .line 19829
+    .line 19834
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPoll;
 
@@ -173,7 +173,7 @@
 
     goto :goto_0
 
-    .line 19808
+    .line 19813
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPhone;
 
@@ -181,7 +181,7 @@
 
     goto :goto_0
 
-    .line 19832
+    .line 19837
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonBuy;
 
@@ -189,7 +189,7 @@
 
     goto :goto_0
 
-    .line 19841
+    .line 19846
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButton;
 
@@ -197,7 +197,7 @@
 
     goto :goto_0
 
-    .line 19805
+    .line 19810
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonSimpleWebView;
 
@@ -205,7 +205,7 @@
 
     goto :goto_0
 
-    .line 19838
+    .line 19843
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonSwitchInline;
 
@@ -218,7 +218,7 @@
 
     goto :goto_1
 
-    .line 19860
+    .line 19865
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -248,7 +248,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 19863
+    .line 19868
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

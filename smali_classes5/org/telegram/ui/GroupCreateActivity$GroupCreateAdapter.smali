@@ -2145,7 +2145,7 @@
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 1327
-    iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Landroid/widget/TextView;
+    iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/16 v1, 0x8
 

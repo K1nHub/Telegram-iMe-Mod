@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment$ContentView\n+ 2 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n216#2,2:656\n219#2:659\n302#3:658\n260#3:660\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment$ContentView\n*L\n376#1:656,2\n376#1:659\n377#1:658\n469#1:660\n*E\n"
+    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment$ContentView\n+ 2 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n229#2,2:656\n232#2:659\n302#3:658\n260#3:660\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/iMe/ui/pager/TelegramViewPagerFragment$ContentView\n*L\n376#1:656,2\n376#1:659\n377#1:658\n469#1:660\n*E\n"
 .end annotation
 
 
@@ -842,7 +842,7 @@
     .line 376
     iget-object v0, p0, Lcom/iMe/ui/pager/TelegramViewPagerFragment$ContentView;->this$0:Lcom/iMe/ui/pager/TelegramViewPagerFragment;
 
-    .line 216
+    .line 229
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
@@ -852,7 +852,7 @@
     :goto_1
     if-ge v3, v2, :cond_3
 
-    .line 217
+    .line 230
     invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6

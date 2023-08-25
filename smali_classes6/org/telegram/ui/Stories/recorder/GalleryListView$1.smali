@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 115
+    .line 140
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$1;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 126
+    .line 151
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$1;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->ignoreScroll:Z
@@ -46,7 +46,7 @@
 
     return p1
 
-    .line 129
+    .line 154
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -58,7 +58,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 118
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$1;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->ignoreScroll:Z
@@ -69,7 +69,7 @@
 
     return p1
 
-    .line 121
+    .line 146
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 

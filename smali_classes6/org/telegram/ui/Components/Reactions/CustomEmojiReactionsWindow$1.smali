@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;Landroid/content/Context;)V
     .locals 0
 
-    .line 102
+    .line 107
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 128
+    .line 133
     new-instance p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1$1;-><init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;)V
@@ -44,7 +44,7 @@
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 3
 
-    .line 105
+    .line 110
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
@@ -61,20 +61,20 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 106
+    .line 111
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget-boolean v0, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->enterTransitionFinished:Z
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 112
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismiss()V
 
     :cond_0
     return v1
 
-    .line 111
+    .line 116
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -92,7 +92,7 @@
 .method protected fitSystemWindows(Landroid/graphics/Rect;)Z
     .locals 3
 
-    .line 121
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->keyboardHeight:F
@@ -111,7 +111,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 122
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     iget v1, p1, Landroid/graphics/Rect;->bottom:I
@@ -120,10 +120,10 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->keyboardHeight:F
 
-    .line 123
+    .line 128
     invoke-static {v0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->access$100(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;)V
 
-    .line 125
+    .line 130
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->fitSystemWindows(Landroid/graphics/Rect;)Z
 
@@ -135,10 +135,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 137
+    .line 142
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 138
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->bulletinDelegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/Bulletin;->addDelegate(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
@@ -149,11 +149,20 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 143
+    .line 148
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 144
+    .line 149
     invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
+
+    return-void
+.end method
+
+.method public setAlpha(F)V
+    .locals 0
+
+    .line 154
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     return-void
 .end method

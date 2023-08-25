@@ -66,7 +66,7 @@
     .line 162
     sget-object v0, Lio/grpc/Status;->OK:Lio/grpc/Status;
 
-    const-string v1, "no subchannels ready"
+    const-string/jumbo v1, "no subchannels ready"
 
     invoke-virtual {v0, v1}, Lio/grpc/Status;->withDescription(Ljava/lang/String;)Lio/grpc/Status;
 

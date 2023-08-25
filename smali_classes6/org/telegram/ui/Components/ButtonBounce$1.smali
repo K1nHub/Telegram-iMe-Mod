@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ButtonBounce;Z)V
     .locals 0
 
-    .line 44
+    .line 56
     iput-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce$1;->this$0:Lorg/telegram/ui/Components/ButtonBounce;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ButtonBounce$1;->val$pressed:Z
@@ -39,14 +39,23 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 47
+    .line 59
+    iget-object v0, p0, Lorg/telegram/ui/Components/ButtonBounce$1;->this$0:Lorg/telegram/ui/Components/ButtonBounce;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ButtonBounce;->access$000(Lorg/telegram/ui/Components/ButtonBounce;)Landroid/animation/ValueAnimator;
+
+    move-result-object v0
+
+    if-ne p1, v0, :cond_1
+
+    .line 60
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce$1;->this$0:Lorg/telegram/ui/Components/ButtonBounce;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->access$002(Lorg/telegram/ui/Components/ButtonBounce;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 48
+    .line 61
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce$1;->this$0:Lorg/telegram/ui/Components/ButtonBounce;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ButtonBounce$1;->val$pressed:Z
@@ -63,10 +72,11 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->access$102(Lorg/telegram/ui/Components/ButtonBounce;F)F
 
-    .line 49
+    .line 62
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce$1;->this$0:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ButtonBounce;->access$200(Lorg/telegram/ui/Components/ButtonBounce;)V
 
+    :cond_1
     return-void
 .end method

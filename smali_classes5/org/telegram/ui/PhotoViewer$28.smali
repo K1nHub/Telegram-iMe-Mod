@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 7014
+    .line 7084
     invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
     .locals 0
 
-    .line 7017
+    .line 7087
     new-instance p2, Lorg/telegram/ui/PhotoViewer$28$1;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -38,10 +38,10 @@
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/PhotoViewer$28$1;-><init>(Lorg/telegram/ui/PhotoViewer$28;Landroid/content/Context;)V
 
-    .line 7023
+    .line 7093
     invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 7024
+    .line 7094
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     return-void

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;)V
     .locals 0
 
-    .line 265
+    .line 304
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$2;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 268
+    .line 307
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$2;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
     iput p1, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollX:F
 
-    .line 269
+    .line 308
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$2;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V

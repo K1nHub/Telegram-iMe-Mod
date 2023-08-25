@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 299
+    .line 310
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     move-object v0, p0
@@ -53,12 +53,12 @@
 .method public drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
     .locals 6
 
-    .line 302
+    .line 313
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v2, p2}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 303
+    .line 314
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;

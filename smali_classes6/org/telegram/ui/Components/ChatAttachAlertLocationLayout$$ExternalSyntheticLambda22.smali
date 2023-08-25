@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
 
 
 # instance fields
@@ -22,20 +22,14 @@
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;Lorg/telegram/messenger/IMapsProvider$ICallableMethod;)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda22;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$tS5_QZ7WBe8nidS3DXjzel3Q4lA(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$xPB8M4ZK1IzewJ8ua3LBUttgn2g(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Landroid/view/MotionEvent;Lorg/telegram/messenger/IMapsProvider$ICallableMethod;)Z
 
-    return-void
-.end method
+    move-result p1
 
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
-
-    return-void
+    return p1
 .end method

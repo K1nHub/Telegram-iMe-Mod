@@ -32,7 +32,7 @@
     check-cast v2, Landroidx/constraintlayout/widget/ConstraintLayout;
 
     .line 103
-    sget v0, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v0, Lorg/telegram/messenger/R$id;->image_info:I
 
     .line 104
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -46,7 +46,7 @@
     if-eqz v3, :cond_0
 
     .line 109
-    sget v0, Lorg/telegram/messenger/R$id;->image_info:I
+    sget v0, Lorg/telegram/messenger/R$id;->image_logo:I
 
     .line 110
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;

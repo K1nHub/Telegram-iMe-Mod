@@ -103,7 +103,7 @@
 
     move-result-object v4
 
-    const-string v2, "name"
+    const-string/jumbo v2, "name"
 
     .line 60
     invoke-static {v0, v2}, Lcom/stripe/android/util/StripeJsonUtils;->optString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;

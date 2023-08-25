@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletHomeBinancePayPresenter.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter\n*L\n1#1,111:1\n332#2,21:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletHomeBinancePayPresenter.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter\n*L\n1#1,111:1\n333#2,25:112\n*E\n"
 .end annotation
 
 
@@ -97,6 +97,7 @@
     .line 115
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
+    .line 116
     invoke-virtual {p1}, Lcom/iMe/common/AppRxEvents$BinanceAuthHandled;->getIntent()Landroid/content/Intent;
 
     move-result-object p1
@@ -118,12 +119,13 @@
 
     const-string v1, ""
 
+    .line 115
     :cond_1
     invoke-static {v0, v1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;->access$getAuthTokensByCode(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 119
+    .line 123
     :cond_2
     instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$BinanceExpiredSession;
 
@@ -131,7 +133,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 120
+    .line 124
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     const/4 v0, 0x3
@@ -140,13 +142,13 @@
 
     goto :goto_0
 
-    .line 123
+    .line 127
     :cond_3
     instance-of v0, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$InterfaceSettingsChanged;
 
     if-eqz v0, :cond_4
 
-    .line 124
+    .line 128
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;->getBalances()Ljava/util/List;
@@ -159,13 +161,13 @@
 
     goto :goto_0
 
-    .line 128
+    .line 132
     :cond_4
     instance-of p1, p1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$BinanceTokensSettingsChanged;
 
     if-eqz p1, :cond_5
 
-    .line 129
+    .line 133
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;->loadScreenInfo()V

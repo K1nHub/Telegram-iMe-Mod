@@ -19,13 +19,13 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
     .locals 0
 
-    .line 883
+    .line 913
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Adapters/LocationActivitySearchAdapter;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Adapters/LocationActivitySearchAdapter;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method public notifyDataSetChanged()V
     .locals 5
 
-    .line 886
+    .line 916
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->access$900(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 887
+    .line 917
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->access$900(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setShowSearchProgress(Z)V
 
-    .line 889
+    .line 919
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 890
+    .line 920
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->access$3000(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)Landroid/widget/TextView;
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 892
+    .line 922
     :cond_1
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 

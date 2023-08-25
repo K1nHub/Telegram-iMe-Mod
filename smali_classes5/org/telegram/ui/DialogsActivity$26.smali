@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 6160
+    .line 6210
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Lcom/iMe/ui/common/SimpleTextWatcher;-><init>()V
@@ -35,7 +35,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 6166
+    .line 6216
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$2900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -50,7 +50,7 @@
 
     move-result-object p1
 
-    .line 6167
+    .line 6217
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
     move-result p2
@@ -61,17 +61,17 @@
 
     if-eqz p2, :cond_0
 
-    .line 6168
+    .line 6218
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1, p4}, Lorg/telegram/ui/DialogsActivity;->access$23702(Lorg/telegram/ui/DialogsActivity;Z)Z
+    invoke-static {p1, p4}, Lorg/telegram/ui/DialogsActivity;->access$23802(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 6169
+    .line 6219
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, p4}, Lorg/telegram/ui/DialogsActivity;->access$13602(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 6170
+    .line 6220
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -82,7 +82,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 6171
+    .line 6221
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -107,25 +107,25 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 6172
+    .line 6222
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1, p4, p4, p3}, Lorg/telegram/ui/DialogsActivity;->access$24200(Lorg/telegram/ui/DialogsActivity;ZZZ)V
+    invoke-static {p1, p4, p4, p3}, Lorg/telegram/ui/DialogsActivity;->access$24300(Lorg/telegram/ui/DialogsActivity;ZZZ)V
 
     goto :goto_0
 
-    .line 6175
+    .line 6225
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p2, p3}, Lorg/telegram/ui/DialogsActivity;->access$23702(Lorg/telegram/ui/DialogsActivity;Z)Z
+    invoke-static {p2, p3}, Lorg/telegram/ui/DialogsActivity;->access$23802(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 6176
+    .line 6226
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2, p3}, Lorg/telegram/ui/DialogsActivity;->access$13602(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 6177
+    .line 6227
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -142,12 +142,12 @@
 
     if-nez p2, :cond_1
 
-    .line 6178
+    .line 6228
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p2, p3, p4, p3}, Lorg/telegram/ui/DialogsActivity;->access$24200(Lorg/telegram/ui/DialogsActivity;ZZZ)V
+    invoke-static {p2, p3, p4, p3}, Lorg/telegram/ui/DialogsActivity;->access$24300(Lorg/telegram/ui/DialogsActivity;ZZZ)V
 
-    .line 6180
+    .line 6230
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$26;->this$0:Lorg/telegram/ui/DialogsActivity;
 

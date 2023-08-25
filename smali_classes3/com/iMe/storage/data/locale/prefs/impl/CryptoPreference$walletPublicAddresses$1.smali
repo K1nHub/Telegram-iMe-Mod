@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 55
+    .line 69
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$walletPublicAddresses$1;->invoke()Ljava/lang/String;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Ljava/lang/String;
     .locals 4
 
-    .line 55
+    .line 69
     iget-object v0, p0, Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference$walletPublicAddresses$1;->this$0:Lcom/iMe/storage/data/locale/prefs/impl/CryptoPreference;
 
     const-string v1, "wallet_public_address"

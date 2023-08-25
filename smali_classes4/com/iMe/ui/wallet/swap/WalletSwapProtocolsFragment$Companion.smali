@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 157
+    .line 177
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 
     const/4 p2, 0x0
 
-    .line 159
+    .line 179
     :cond_0
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$Companion;->newInstance(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
 
@@ -59,7 +59,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 162
+    .line 182
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
 
     invoke-direct {v0, p1, p2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;-><init>(Lcom/iMe/model/common/ScreenType;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V

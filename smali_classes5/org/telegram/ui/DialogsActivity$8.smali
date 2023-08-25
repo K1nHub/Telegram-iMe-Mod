@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 1970
+    .line 2001
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$8;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
@@ -43,7 +43,7 @@
 .method public get(Landroid/view/View;)Ljava/lang/Float;
     .locals 0
 
-    .line 1979
+    .line 2010
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$8;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget p1, p1, Lorg/telegram/ui/DialogsActivity;->searchViewPagerTranslationY:F
@@ -58,7 +58,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1970
+    .line 2001
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/DialogsActivity$8;->get(Landroid/view/View;)Ljava/lang/Float;
@@ -71,12 +71,12 @@
 .method public setValue(Landroid/view/View;F)V
     .locals 1
 
-    .line 1973
+    .line 2004
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$8;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput p2, v0, Lorg/telegram/ui/DialogsActivity;->searchViewPagerTranslationY:F
 
-    .line 1974
+    .line 2005
     iget v0, v0, Lorg/telegram/ui/DialogsActivity;->panTranslationY:F
 
     add-float/2addr v0, p2
@@ -89,7 +89,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 1970
+    .line 2001
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/DialogsActivity$8;->setValue(Landroid/view/View;F)V

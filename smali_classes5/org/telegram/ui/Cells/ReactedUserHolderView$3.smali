@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ReactedUserHolderView;Landroid/content/Context;)V
     .locals 0
 
-    .line 103
+    .line 112
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setText(Ljava/lang/CharSequence;)Z
     .locals 3
 
-    .line 106
+    .line 115
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getPaint()Landroid/graphics/Paint;
 
     move-result-object v0
@@ -50,7 +50,7 @@
 
     move-result-object p1
 
-    .line 107
+    .line 116
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     move-result p1

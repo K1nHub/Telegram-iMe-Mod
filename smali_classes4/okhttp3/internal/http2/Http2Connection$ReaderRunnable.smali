@@ -218,7 +218,7 @@
     :cond_2
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v1, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -623,7 +623,7 @@
     :try_start_1
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string p3, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo p3, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-direct {p1, p3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -1061,7 +1061,7 @@
     :cond_1
     new-instance p2, Ljava/lang/NullPointerException;
 
-    const-string p3, "null cannot be cast to non-null type java.lang.Object"
+    const-string/jumbo p3, "null cannot be cast to non-null type java.lang.Object"
 
     invoke-direct {p2, p3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -1337,7 +1337,7 @@
     :try_start_1
     new-instance p2, Ljava/lang/NullPointerException;
 
-    const-string p3, "null cannot be cast to non-null type java.lang.Object"
+    const-string/jumbo p3, "null cannot be cast to non-null type java.lang.Object"
 
     invoke-direct {p2, p3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

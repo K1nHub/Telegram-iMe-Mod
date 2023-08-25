@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 4228
+    .line 4229
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;
     .locals 1
 
-    .line 4235
+    .line 4236
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 4237
+    .line 4238
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 4242
+    .line 4243
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;-><init>()V
 
-    .line 4243
+    .line 4244
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +86,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 4248
+    .line 4249
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->url:Ljava/lang/String;
 
-    .line 4249
+    .line 4250
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -106,17 +106,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 4253
+    .line 4254
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4254
+    .line 4255
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 4255
+    .line 4256
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

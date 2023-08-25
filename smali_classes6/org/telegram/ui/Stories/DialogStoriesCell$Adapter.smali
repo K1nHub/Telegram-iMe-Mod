@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Z)V
     .locals 0
 
-    .line 900
+    .line 982
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
 
-    .line 901
+    .line 983
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->mini:Z
 
     return-void
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 928
+    .line 1010
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->mini:Z
 
     if-eqz v0, :cond_0
@@ -75,20 +75,20 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 917
+    .line 999
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
-    .line 918
+    .line 1000
     iput p2, p1, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->position:I
 
-    .line 919
+    .line 1001
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->mini:Z
 
     if-eqz v0, :cond_0
 
-    .line 920
+    .line 1002
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->miniItems:Ljava/util/ArrayList;
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 922
+    .line 1004
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -128,7 +128,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 907
+    .line 989
     new-instance p2, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -139,12 +139,12 @@
 
     invoke-direct {p2, v0, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;-><init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/content/Context;)V
 
-    .line 908
+    .line 990
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->mini:Z
 
-    invoke-static {p2, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->access$502(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;Z)Z
+    invoke-static {p2, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->access$602(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;Z)Z
 
-    .line 909
+    .line 991
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Adapter;->mini:Z
 
     if-eqz p1, :cond_0
@@ -155,10 +155,10 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 910
+    .line 992
     invoke-virtual {p2, v1, v1, p1, v0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->setProgressToCollapsed(FFFZ)V
 
-    .line 912
+    .line 994
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

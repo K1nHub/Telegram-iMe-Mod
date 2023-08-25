@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;FZ)V
     .locals 0
 
-    .line 1342
+    .line 1343
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     iput p2, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->val$T:F
@@ -43,7 +43,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1362
+    .line 1363
     iget p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->val$T:F
 
     const/4 v0, 0x0
@@ -52,20 +52,20 @@
 
     if-gtz p1, :cond_0
 
-    .line 1363
+    .line 1364
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-virtual {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->dismissInternal()V
 
     goto :goto_0
 
-    .line 1364
+    .line 1365
     :cond_0
     iget-boolean p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->val$setAfter:Z
 
     if-eqz p1, :cond_1
 
-    .line 1365
+    .line 1366
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$2200(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Landroid/widget/TextView;
@@ -82,7 +82,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
 
-    .line 1366
+    .line 1367
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$2200(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Landroid/widget/TextView;
@@ -91,7 +91,7 @@
 
     invoke-virtual {p1}, Landroid/widget/TextView;->invalidate()V
 
-    .line 1367
+    .line 1368
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$2300(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Landroidx/core/widget/NestedScrollView;
@@ -100,7 +100,7 @@
 
     invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->stopNestedScroll()V
 
-    .line 1368
+    .line 1369
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     iget v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->val$T:F
@@ -111,7 +111,7 @@
 
     invoke-static {p1, v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$2400(Lcom/iMe/fork/ui/dialog/TranslateAlert;F)V
 
-    .line 1370
+    .line 1371
     :cond_1
     :goto_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
@@ -126,7 +126,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1349
+    .line 1350
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$1900(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Z
@@ -143,7 +143,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1350
+    .line 1351
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$2000(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -152,7 +152,7 @@
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 1351
+    .line 1352
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$2000(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -161,7 +161,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 1352
+    .line 1353
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$7;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     const/4 v0, 0x0

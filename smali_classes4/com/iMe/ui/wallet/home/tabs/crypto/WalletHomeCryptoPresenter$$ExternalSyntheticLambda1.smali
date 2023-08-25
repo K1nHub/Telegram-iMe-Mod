@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->$r8$lambda$RMkhY5xtMq3q2Mau_aoDZNCLFRU(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;)V
+    invoke-static {v0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->$r8$lambda$Op8purI62xj0SVlVO14Wdj2KRPg(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;)V
 
     return-void
 .end method

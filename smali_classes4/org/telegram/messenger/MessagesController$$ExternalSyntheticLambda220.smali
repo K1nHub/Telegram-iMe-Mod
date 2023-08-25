@@ -8,38 +8,34 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$photos_Photos;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
 
-.field public final synthetic f$3:J
+.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
 
-.field public final synthetic f$4:I
+.field public final synthetic f$4:Ljava/io/File;
 
-.field public final synthetic f$5:I
-
-.field public final synthetic f$6:Ljava/util/ArrayList;
+.field public final synthetic f$5:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$photos_Photos;ZJIILjava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$WallPaper;Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$photos_Photos;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$2:Z
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$2:Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
 
-    iput-wide p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$3:J
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$3:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
 
-    iput p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$4:I
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$4:Ljava/io/File;
 
-    iput p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$5:I
-
-    iput-object p8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$6:Ljava/util/ArrayList;
+    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$5:Ljava/lang/String;
 
     return-void
 .end method
@@ -47,23 +43,21 @@
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$photos_Photos;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$2:Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;
 
-    iget-wide v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$3:J
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$3:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
 
-    iget v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$4:I
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$4:Ljava/io/File;
 
-    iget v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$5:I
+    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$5:Ljava/lang/String;
 
-    iget-object v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$6:Ljava/util/ArrayList;
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$oNU2W6bFx2DPtXAb_qTQRTUw4Qg(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$photos_Photos;ZJIILjava/util/ArrayList;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Gn2VXgnLzwcYKQl64W3_1oQUulk(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$WallPaper;Lorg/telegram/tgnet/TLRPC$TL_wallPaperSettings;Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Ljava/io/File;Ljava/lang/String;)V
 
     return-void
 .end method

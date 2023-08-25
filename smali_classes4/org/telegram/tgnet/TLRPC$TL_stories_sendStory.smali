@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = 0x424cd47a
+.field public static constructor:I = -0x2baa0314
 
 
 # instance fields
@@ -23,6 +23,16 @@
 .field public flags:I
 
 .field public media:Lorg/telegram/tgnet/TLRPC$InputMedia;
+
+.field public media_areas:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/tgnet/TLRPC$MediaArea;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public noforwards:Z
 
@@ -54,6 +64,12 @@
     .locals 1
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->media_areas:Ljava/util/ArrayList;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -129,24 +145,60 @@
 
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
 
-    and-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->caption:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
-
-    :cond_2
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
-
-    and-int/lit8 v0, v0, 0x2
+    and-int/lit8 v0, v0, 0x20
 
     const/4 v1, 0x0
 
     const v2, 0x1cb5c415
 
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->media_areas:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
+    move v3, v1
+
+    :goto_2
+    if-ge v3, v0, :cond_2
+
+    iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->media_areas:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lorg/telegram/tgnet/TLRPC$MediaArea;
+
+    invoke-virtual {v4, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
+
+    and-int/lit8 v0, v0, 0x1
+
     if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->caption:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
+
+    :cond_3
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
+
+    and-int/lit8 v0, v0, 0x2
+
+    if-eqz v0, :cond_4
 
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
@@ -160,8 +212,8 @@
 
     move v3, v1
 
-    :goto_2
-    if-ge v3, v0, :cond_3
+    :goto_3
+    if-ge v3, v0, :cond_4
 
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->entities:Ljava/util/ArrayList;
 
@@ -175,9 +227,9 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_3
+    :cond_4
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->privacy_rules:Ljava/util/ArrayList;
@@ -188,8 +240,8 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    :goto_3
-    if-ge v1, v0, :cond_4
+    :goto_4
+    if-ge v1, v0, :cond_5
 
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->privacy_rules:Ljava/util/ArrayList;
 
@@ -203,9 +255,9 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_4
+    :cond_5
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->random_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
@@ -214,12 +266,12 @@
 
     and-int/lit8 v0, v0, 0x8
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    :cond_5
+    :cond_6
     return-void
 .end method

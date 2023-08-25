@@ -26,10 +26,10 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State;)V
     .locals 1
 
-    .line 570
+    .line 565
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "onNoInternetErrorState"
+    const-string/jumbo v0, "onNoInternetErrorState"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V
     .locals 0
 
-    .line 575
+    .line 570
     invoke-interface {p1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onNoInternetErrorState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 568
+    .line 563
     check-cast p1, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnNoInternetErrorStateCommand;->apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V

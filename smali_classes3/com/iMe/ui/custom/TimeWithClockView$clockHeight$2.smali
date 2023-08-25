@@ -58,7 +58,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .locals 1
 
-    .line 26
+    .line 28
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_clockDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 26
+    .line 28
     invoke-virtual {p0}, Lcom/iMe/ui/custom/TimeWithClockView$clockHeight$2;->invoke()Ljava/lang/Integer;
 
     move-result-object v0

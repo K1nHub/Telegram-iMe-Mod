@@ -23,10 +23,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 20
     invoke-direct {p0}, Lcom/iMe/model/common/NoChildNode;-><init>()V
 
-    .line 20
+    .line 19
     iput-object p1, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     return-void
@@ -60,7 +60,7 @@
 
     move p1, p3
 
-    .line 72
+    .line 76
     :cond_0
     invoke-virtual {p0, p1}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getAmountWithSymbol(Z)Ljava/lang/String;
 
@@ -137,10 +137,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 49
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 45
+    .line 50
     instance-of v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Unsupported;
 
     if-eqz v1, :cond_0
@@ -153,7 +153,7 @@
 
     goto/16 :goto_0
 
-    .line 46
+    .line 51
     :cond_0
     instance-of v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
 
@@ -183,7 +183,7 @@
 
     goto/16 :goto_0
 
-    .line 47
+    .line 52
     :cond_1
     instance-of v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
@@ -195,19 +195,19 @@
 
     if-eqz v1, :cond_2
 
-    .line 48
+    .line 53
     check-cast v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;->getSpentFiatCode()Lcom/iMe/storage/domain/model/wallet/token/FiatCode;
 
     move-result-object v0
 
-    .line 50
+    .line 55
     sget v1, Lorg/telegram/messenger/R$string;->wallet_transactions_type_simplex_amount_value:I
 
     new-array v6, v6, [Ljava/lang/Object;
 
-    .line 51
+    .line 56
     iget-object v7, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     check-cast v7, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
@@ -230,14 +230,14 @@
 
     aput-object v7, v6, v2
 
-    .line 52
+    .line 57
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/FiatCode;->getShortName()Ljava/lang/String;
 
     move-result-object v0
 
     aput-object v0, v6, v3
 
-    .line 53
+    .line 58
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getAmount()Ljava/math/BigDecimal;
@@ -264,7 +264,7 @@
 
     aput-object v0, v6, v5
 
-    .line 54
+    .line 59
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
@@ -277,25 +277,25 @@
 
     aput-object v0, v6, v4
 
-    .line 49
+    .line 54
     invoke-interface {p1, v1, v6}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto/16 :goto_0
 
-    .line 58
+    .line 63
     :cond_2
     instance-of v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
     if-eqz v1, :cond_3
 
-    .line 60
+    .line 65
     sget v1, Lorg/telegram/messenger/R$string;->wallet_transactions_type_simplex_amount_value:I
 
     new-array v6, v6, [Ljava/lang/Object;
 
-    .line 61
+    .line 66
     check-cast v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;->getInputAmount()Ljava/math/BigDecimal;
@@ -324,7 +324,7 @@
 
     aput-object v0, v6, v2
 
-    .line 62
+    .line 67
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     check-cast v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
@@ -339,7 +339,7 @@
 
     aput-object v0, v6, v3
 
-    .line 63
+    .line 68
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     check-cast v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
@@ -370,7 +370,7 @@
 
     aput-object v0, v6, v5
 
-    .line 64
+    .line 69
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     check-cast v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
@@ -385,14 +385,14 @@
 
     aput-object v0, v6, v4
 
-    .line 59
+    .line 64
     invoke-interface {p1, v1, v6}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 68
+    .line 73
     :cond_3
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -431,12 +431,12 @@
 .method public final getAmountWithSymbol(Z)Ljava/lang/String;
     .locals 2
 
-    .line 73
+    .line 77
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     if-eqz p1, :cond_0
 
-    .line 74
+    .line 78
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -463,7 +463,7 @@
 
     goto :goto_0
 
-    .line 75
+    .line 79
     :cond_0
     invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/TransactionExtKt;->getFormattedAmount(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;)Ljava/lang/String;
 
@@ -476,20 +476,20 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 2
 
-    .line 79
+    .line 83
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
-    .line 80
+    .line 84
     instance-of v1, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;
 
     if-eqz v1, :cond_3
 
-    .line 81
+    .line 85
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object v0
 
-    sget-object v1, Lcom/iMe/model/wallet/transaction/TransactionItem$WhenMappings;->$EnumSwitchMapping$0:[I
+    sget-object v1, Lcom/iMe/model/wallet/transaction/TransactionItem$WhenMappings;->$EnumSwitchMapping$1:[I
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
@@ -511,7 +511,7 @@
 
     goto :goto_0
 
-    .line 83
+    .line 87
     :cond_0
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -531,7 +531,7 @@
 
     goto :goto_1
 
-    .line 82
+    .line 86
     :cond_2
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
@@ -553,7 +553,7 @@
 .method public final getTransaction()Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
     .locals 1
 
-    .line 20
+    .line 19
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     return-object v0
@@ -562,7 +562,7 @@
 .method public final getTransactionDate()Ljava/lang/String;
     .locals 2
 
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getCreatedAt()Ljava/lang/String;
@@ -581,7 +581,7 @@
 .method public final getTransactionIcon()I
     .locals 1
 
-    .line 25
+    .line 24
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/TransactionExtKt;->getIcon(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;)I
@@ -598,7 +598,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
+    .line 36
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/iMe/storage/data/network/model/response/base/Status;
@@ -617,7 +617,7 @@
 .end method
 
 .method public final getTransactionStatusColorKey()I
-    .locals 1
+    .locals 2
 
     .line 39
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
@@ -626,17 +626,66 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/StatusExtKt;->getColorKey(Lcom/iMe/storage/data/network/model/response/base/Status;)I
+    sget-object v1, Lcom/iMe/model/wallet/transaction/TransactionItem$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 
+    aget v0, v1, v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_3
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_0
+
+    .line 43
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_red:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    .line 42
+    :cond_1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    goto :goto_0
+
+    .line 41
+    :cond_2
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_red:I
+
+    goto :goto_0
+
+    .line 40
+    :cond_3
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
+
+    :goto_0
     return v0
 .end method
 
 .method public final getTransactionTime()Ljava/lang/String;
     .locals 2
 
-    .line 31
+    .line 30
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getCreatedAt()Ljava/lang/String;
@@ -659,7 +708,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 28
+    .line 27
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/TransactionExtKt;->getCategoryTitle(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;)I
@@ -688,7 +737,7 @@
 .method public final isUnsupported()Z
     .locals 1
 
-    .line 41
+    .line 46
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/TransactionItem;->transaction:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
     instance-of v0, v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Unsupported;

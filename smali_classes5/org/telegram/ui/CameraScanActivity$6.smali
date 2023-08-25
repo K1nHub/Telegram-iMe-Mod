@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CameraScanActivity;)V
     .locals 0
 
-    .line 776
+    .line 782
     iput-object p1, p0, Lorg/telegram/ui/CameraScanActivity$6;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 779
+    .line 785
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity$6;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     const/4 v0, 0x0

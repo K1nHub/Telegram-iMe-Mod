@@ -67,13 +67,14 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 62
+    .line 64
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2$1;->$linkedWalletAddress:Ljava/lang/String;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
+    .line 65
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;->access$getWalletCreationType$p(Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;)Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
@@ -84,6 +85,7 @@
 
     aput-object v1, v0, v2
 
+    .line 63
     invoke-static {v0}, Lorg/koin/core/parameter/ParametersHolderKt;->parametersOf([Ljava/lang/Object;)Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0

@@ -47,24 +47,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 4923
+    .line 4924
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 4927
+    .line 4928
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->results:Ljava/util/ArrayList;
 
-    .line 4929
+    .line 4930
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PollResults;->recent_voters:Ljava/util/ArrayList;
 
-    .line 4931
+    .line 4932
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 4949
+    .line 4950
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults;
 
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 4937
+    .line 4938
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer108;
 
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 4946
+    .line 4947
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer158;
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 4940
+    .line 4941
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer111;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 4943
+    .line 4944
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pollResults_layer131;
 
@@ -128,7 +128,7 @@
 
     goto :goto_1
 
-    .line 4953
+    .line 4954
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -158,7 +158,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 4956
+    .line 4957
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

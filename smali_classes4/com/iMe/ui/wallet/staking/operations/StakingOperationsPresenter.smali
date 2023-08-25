@@ -19,7 +19,7 @@
 # instance fields
 .field private final rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-.field private selectedNetwork:Lcom/iMe/storage/domain/model/crypto/Network;
+.field private selectedNetworkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
 
 # direct methods
@@ -34,13 +34,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 15
+    .line 17
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 14
+    .line 16
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 18
+    .line 20
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object p2
@@ -53,14 +53,14 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 19
+    .line 21
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 21
+    .line 23
     :cond_0
     sget-object p1, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
 
@@ -74,36 +74,13 @@
 
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/Network;
 
-    .line 18
+    .line 24
     :goto_0
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetwork:Lcom/iMe/storage/domain/model/crypto/Network;
+    invoke-static {p1}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/crypto/Network;)Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public static final synthetic access$getRxEventBus$p(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;)Lcom/iMe/storage/domain/utils/rx/RxEventBus;
-    .locals 0
-
-    .line 11
-    iget-object p0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$getSelectedNetwork$p(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;)Lcom/iMe/storage/domain/model/crypto/Network;
-    .locals 0
-
-    .line 11
-    iget-object p0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetwork:Lcom/iMe/storage/domain/model/crypto/Network;
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$setSelectedNetwork$p(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;Lcom/iMe/storage/domain/model/crypto/Network;)V
-    .locals 0
-
-    .line 11
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetwork:Lcom/iMe/storage/domain/model/crypto/Network;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetworkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
     return-void
 .end method
@@ -113,16 +90,54 @@
 .method protected onFirstViewAttach()V
     .locals 2
 
-    .line 27
+    .line 48
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetwork:Lcom/iMe/storage/domain/model/crypto/Network;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetworkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
-    invoke-interface {v0, v1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-interface {v0, v1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
+
+    return-void
+.end method
+
+.method public final onNetworkSelected(Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)V
+    .locals 2
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    .line 42
+    :cond_0
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetworkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    .line 43
+    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+    new-instance v1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;
+
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;->getNetworkId()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v1, p1}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/utils/rx/RxEventBus;->publish(Lcom/iMe/storage/domain/utils/rx/event/RxEvent;)V
+
+    .line 44
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;
+
+    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetworkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
     return-void
 .end method
@@ -130,7 +145,7 @@
 .method public final selectTab(I)V
     .locals 1
 
-    .line 39
+    .line 31
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -145,7 +160,7 @@
 .method public final setupNavigationRouter()V
     .locals 1
 
-    .line 35
+    .line 27
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -158,31 +173,31 @@
 .end method
 
 .method public final startChooseNetworkDialog()V
-    .locals 4
+    .locals 3
 
-    .line 43
+    .line 35
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsView;
 
-    .line 44
-    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetwork:Lcom/iMe/storage/domain/model/crypto/Network;
+    .line 36
+    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->selectedNetworkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
-    .line 45
+    .line 37
     sget-object v2, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
 
     invoke-virtual {v2}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getEVMNetworks()Ljava/util/List;
 
     move-result-object v2
 
-    .line 43
-    new-instance v3, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter$startChooseNetworkDialog$1;
+    invoke-static {v2}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToUI(Ljava/util/List;)Ljava/util/List;
 
-    invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter$startChooseNetworkDialog$1;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;)V
+    move-result-object v2
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+    .line 35
+    invoke-interface {v0, v1, v2}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;)V
 
     return-void
 .end method

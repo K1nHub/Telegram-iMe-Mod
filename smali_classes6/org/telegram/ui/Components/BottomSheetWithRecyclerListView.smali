@@ -31,22 +31,34 @@
 
 # direct methods
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZ)V
-    .locals 6
+    .locals 7
 
-    const/4 v4, 0x0
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 42
+    :cond_0
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    move-result-object v0
+
+    :goto_0
+    move-object v6, v0
 
     const/4 v5, 0x0
 
-    move-object v0, p0
+    move-object v1, p0
 
-    move-object v1, p1
+    move-object v2, p1
 
-    move v2, p2
+    move v3, p2
 
-    move v3, p3
+    move v4, p3
 
-    .line 42
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method

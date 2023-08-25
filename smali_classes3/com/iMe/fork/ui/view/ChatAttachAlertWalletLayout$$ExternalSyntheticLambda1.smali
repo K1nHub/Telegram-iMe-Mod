@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
-
-.field public final synthetic f$1:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
+.field public final synthetic f$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)V
+.method public synthetic constructor <init>(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
-
-    iput-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$1:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
+    iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     return-void
 .end method
@@ -27,15 +23,13 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    iget-object v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$$ExternalSyntheticLambda1;->f$1:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
+    check-cast p1, Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/Network;
-
-    invoke-static {v0, v1, p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$Fl0Uq03K9VlF3h08orJk0OLfFDM(Lkotlin/jvm/functions/Function1;Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-static {v0, p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->$r8$lambda$yoY3R4wFeeBuWIJEO9BcgIXi-Gk(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)V
 
     return-void
 .end method

@@ -17,31 +17,14 @@
 .end annotation
 
 
-# instance fields
-.field private final chatId:J
-
-
 # direct methods
 .method public constructor <init>(J)V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    .line 28
-    invoke-direct {p0, v0}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    iput-wide p1, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;->chatId:J
+    .line 30
+    invoke-direct {p0, p1}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final getChatId()J
-    .locals 2
-
-    .line 28
-    iget-wide v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;->chatId:J
-
-    return-wide v0
 .end method

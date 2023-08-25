@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n129#2,5:553\n129#2,5:558\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n*L\n389#1:553,5\n390#1:558,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n129#2,5:864\n129#2,5:869\n129#2,5:874\n129#2,5:879\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n*L\n557#1:864,5\n558#1:869,5\n559#1:874,5\n560#1:879,5\n*E\n"
 .end annotation
 
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    const-class p2, Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,8 +85,8 @@
 
     move-result-object p2
 
-    .line 389
-    check-cast p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 557
+    check-cast p2, Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
 
     .line 133
     const-class v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 389
+    .line 558
     check-cast v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    const-class v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,11 +113,11 @@
 
     move-result-object v2
 
-    .line 389
-    check-cast v2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    .line 559
+    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
-    const-class v3, Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
+    const-class v3, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -127,13 +127,13 @@
 
     move-result-object p1
 
-    .line 390
-    check-cast p1, Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
+    .line 560
+    check-cast p1, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 388
+    .line 556
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;
 
-    invoke-direct {v0, p2, v1, p1, v2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
+    invoke-direct {v0, v2, v1, p2, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
 
     return-object v0
 .end method
@@ -141,7 +141,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 387
+    .line 555
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)V
     .locals 0
 
-    .line 3501
+    .line 4068
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 3504
+    .line 4071
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->access$6500(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->access$7000(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
 
     move-result-object p1
 
@@ -50,10 +50,10 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3505
+    .line 4072
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->access$6500(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->access$7000(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
 
     move-result-object p1
 
@@ -65,10 +65,10 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 3506
+    .line 4073
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->access$6500(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->access$7000(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
 
     move-result-object p1
 

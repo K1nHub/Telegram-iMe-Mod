@@ -21,9 +21,9 @@
 
 .field private final cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-.field private needToUpdateHomeScreen:Z
-
 .field private final rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+.field private shouldUpdateHomeScreen:Z
 
 
 # direct methods
@@ -60,12 +60,19 @@
 .method private final drawSettingsItems()V
     .locals 3
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/iMe/model/wallet/settings/InterfaceSettingItem;
 
-    .line 52
-    new-instance v1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Banners;
+    .line 50
+    sget-object v1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Networks;->INSTANCE:Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Networks;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    .line 51
+    new-instance v1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$SwitchableOption$Banners;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -73,13 +80,13 @@
 
     move-result v2
 
-    invoke-direct {v1, v2}, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Banners;-><init>(Z)V
+    invoke-direct {v1, v2}, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$SwitchableOption$Banners;-><init>(Z)V
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 53
+    .line 52
     iget-object v1, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
@@ -88,7 +95,8 @@
 
     if-eqz v1, :cond_0
 
-    new-instance v1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Quotations;
+    .line 53
+    new-instance v1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$SwitchableOption$Quotations;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -96,7 +104,7 @@
 
     move-result v2
 
-    invoke-direct {v1, v2}, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Quotations;-><init>(Z)V
+    invoke-direct {v1, v2}, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$SwitchableOption$Quotations;-><init>(Z)V
 
     goto :goto_0
 
@@ -104,11 +112,11 @@
     const/4 v1, 0x0
 
     :goto_0
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 51
+    .line 49
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -135,29 +143,29 @@
 .method public onDestroy()V
     .locals 2
 
-    .line 40
-    invoke-super {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->onDestroy()V
-
-    .line 41
-    iget-boolean v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->needToUpdateHomeScreen:Z
+    .line 42
+    iget-boolean v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->shouldUpdateHomeScreen:Z
 
     if-eqz v0, :cond_0
 
-    .line 42
+    .line 43
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     sget-object v1, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$InterfaceSettingsChanged;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$InterfaceSettingsChanged;
 
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/utils/rx/RxEventBus;->publish(Lcom/iMe/storage/domain/utils/rx/event/RxEvent;)V
 
+    .line 45
     :cond_0
+    invoke-super {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->onDestroy()V
+
     return-void
 .end method
 
 .method protected onFirstViewAttach()V
     .locals 0
 
-    .line 36
+    .line 38
     invoke-direct {p0}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->drawSettingsItems()V
 
     return-void
@@ -172,14 +180,32 @@
 
     const/4 v0, 0x1
 
-    .line 24
-    iput-boolean v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->needToUpdateHomeScreen:Z
+    .line 21
+    iput-boolean v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->shouldUpdateHomeScreen:Z
 
-    .line 26
-    instance-of v1, p1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Banners;
+    .line 23
+    instance-of v1, p1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Networks;
 
     if-eqz v1, :cond_0
 
+    .line 24
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView;
+
+    invoke-interface {p1}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView;->openNetworksSettingsScreen()V
+
+    goto :goto_0
+
+    .line 27
+    :cond_0
+    instance-of v1, p1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$SwitchableOption$Banners;
+
+    if-eqz v1, :cond_1
+
+    .line 28
     iget-object p1, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->isBannersVisible()Z
@@ -192,12 +218,13 @@
 
     goto :goto_0
 
-    .line 27
-    :cond_0
-    instance-of p1, p1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$Quotations;
+    .line 31
+    :cond_1
+    instance-of p1, p1, Lcom/iMe/model/wallet/settings/InterfaceSettingItem$SwitchableOption$Quotations;
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
+    .line 32
     iget-object p1, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->isQuotationsVisible()Z
@@ -208,7 +235,7 @@
 
     invoke-interface {p1, v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setQuotationsVisible(Z)V
 
-    :cond_1
+    :cond_2
     :goto_0
     return-void
 .end method

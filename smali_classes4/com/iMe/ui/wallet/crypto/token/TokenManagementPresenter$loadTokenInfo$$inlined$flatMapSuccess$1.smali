@@ -38,19 +38,23 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 TokenManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementPresenter\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,92:1\n198#2,4:93\n14#3:97\n*S KotlinDebug\n*F\n+ 1 TokenManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementPresenter\n*L\n201#1:97\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapSuccess$1\n+ 2 TokenManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementPresenter\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,92:1\n194#2,7:93\n14#3:100\n*S KotlinDebug\n*F\n+ 1 TokenManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementPresenter\n*L\n200#1:100\n*E\n"
 .end annotation
 
 
 # instance fields
+.field final synthetic $isLoadingDialogVisible$inlined:Z
+
 .field final synthetic this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;)V
+.method public constructor <init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
+
+    iput-boolean p2, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1;->$isLoadingDialogVisible$inlined:Z
 
     const/4 p1, 0x1
 
@@ -90,7 +94,7 @@
     .line 16
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     .line 93
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
@@ -110,7 +114,11 @@
 
     move-result-object p1
 
-    .line 95
+    .line 96
+    iget-boolean v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1;->$isLoadingDialogVisible$inlined:Z
+
+    if-eqz v0, :cond_0
+
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -130,11 +138,12 @@
     move-result-object p1
 
     .line 14
-    new-instance v0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$lambda$6$$inlined$flatMapSuccess$1;
+    :cond_0
+    new-instance v0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$lambda$7$$inlined$flatMapSuccess$1;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
 
-    invoke-direct {v0, v1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$lambda$6$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;)V
+    invoke-direct {v0, v1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$loadTokenInfo$lambda$7$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;)V
 
     new-instance v1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$inlined$sam$i$io_reactivex_functions_Function$0;
 
@@ -151,10 +160,10 @@
     goto :goto_0
 
     .line 17
-    :cond_0
+    :cond_1
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
@@ -172,7 +181,7 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess"
+    const-string/jumbo v0, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -183,7 +192,7 @@
     goto :goto_0
 
     .line 18
-    :cond_1
+    :cond_2
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
     move-result-object p1

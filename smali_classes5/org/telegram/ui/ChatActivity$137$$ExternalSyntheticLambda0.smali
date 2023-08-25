@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity$137;
 
+.field public final synthetic f$1:Lorg/telegram/ui/Cells/ChatMessageCell;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$137;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$137;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$137$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ChatActivity$137;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$137$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$137$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ChatActivity$137;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity$137;->$r8$lambda$F0L_cDGumE-6-m-hZJkIVCKj8_o(Lorg/telegram/ui/ChatActivity$137;)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$137$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity$137;->$r8$lambda$T52XA1_dhh17kvtJ3x2N9HxkJ5M(Lorg/telegram/ui/ChatActivity$137;Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
     return-void
 .end method

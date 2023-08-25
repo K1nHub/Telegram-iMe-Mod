@@ -1131,7 +1131,7 @@
 
     move-result-object v0
 
-    const-string v1, "needGetStatuses"
+    const-string/jumbo v1, "needGetStatuses"
 
     const/4 v2, 0x0
 
@@ -2739,7 +2739,7 @@
 .end method
 
 .method public static formatName(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-    .locals 5
+    .locals 6
 
     if-eqz p0, :cond_0
 
@@ -2749,275 +2749,358 @@
     move-result-object p0
 
     :cond_0
-    if-eqz p1, :cond_1
+    const-string v0, " "
+
+    const/4 v1, 0x0
+
+    if-eqz p0, :cond_1
+
+    if-nez p1, :cond_1
+
+    if-lez p2, :cond_1
+
+    .line 2997
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
 
     .line 2998
+    invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+    move-result p1
+
+    add-int/lit8 v2, p1, 0x1
+
+    .line 2999
+    invoke-virtual {p0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 3000
+    invoke-virtual {p0, v1, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p0
+
+    move-object p1, v2
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    .line 3003
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 3000
-    :cond_1
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 3005
+    :cond_2
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
-
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_3
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v2
-
-    goto :goto_0
-
-    :cond_2
-    move v2, v1
-
-    :goto_0
-    if-eqz p1, :cond_3
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
     move-result v3
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_3
     move v3, v1
 
+    :goto_0
+    if-eqz p1, :cond_4
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    goto :goto_1
+
+    :cond_4
+    move v4, v1
+
     :goto_1
-    add-int/2addr v2, v3
+    add-int/2addr v3, v4
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    add-int/2addr v2, v3
+    add-int/2addr v3, v4
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 3001
-    sget v2, Lorg/telegram/messenger/LocaleController;->nameDisplayOrder:I
+    .line 3006
+    sget v3, Lorg/telegram/messenger/LocaleController;->nameDisplayOrder:I
 
-    const-string v4, " "
+    const-string/jumbo v5, "\u2026"
 
-    if-ne v2, v3, :cond_8
+    if-ne v3, v4, :cond_9
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_7
 
-    .line 3002
+    .line 3007
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v3
 
-    if-lez v2, :cond_6
+    if-lez v3, :cond_7
 
-    if-lez p2, :cond_4
+    if-lez p2, :cond_5
 
-    .line 3003
+    .line 3008
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v3
 
-    add-int/lit8 v3, p2, 0x2
+    add-int/lit8 v4, p2, 0x2
 
-    if-le v2, v3, :cond_4
+    if-le v3, v4, :cond_5
 
-    .line 3004
+    .line 3009
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {p0, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 3006
-    :cond_4
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 3011
+    :cond_5
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_e
 
-    .line 3007
+    .line 3012
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p0
 
-    if-lez p0, :cond_d
+    if-lez p0, :cond_e
 
-    .line 3008
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 3013
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-lez p2, :cond_5
+    if-lez p2, :cond_6
 
-    .line 3009
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    .line 3014
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result p0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v0
 
-    add-int/2addr p0, v2
+    add-int/2addr p0, v0
 
-    if-le p0, p2, :cond_5
+    if-le p0, p2, :cond_6
 
-    .line 3010
+    .line 3015
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result p0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto/16 :goto_2
-
-    .line 3012
-    :cond_5
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_2
-
-    :cond_6
-    if-eqz p1, :cond_d
-
-    .line 3015
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-lez p0, :cond_d
-
-    if-lez p2, :cond_7
-
-    .line 3016
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    add-int/lit8 v2, p2, 0x2
-
-    if-le p0, v2, :cond_7
 
     .line 3017
-    invoke-virtual {p1, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    :cond_6
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    goto/16 :goto_2
 
-    return-object p0
-
-    .line 3019
     :cond_7
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz p1, :cond_e
 
-    goto :goto_2
+    .line 3020
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    :cond_8
-    if-eqz p1, :cond_b
+    move-result p0
+
+    if-lez p0, :cond_e
+
+    if-lez p2, :cond_8
+
+    .line 3021
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result p0
+
+    add-int/lit8 v0, p2, 0x2
+
+    if-le p0, v0, :cond_8
 
     .line 3022
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    move-result v2
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-lez v2, :cond_b
-
-    if-lez p2, :cond_9
-
-    .line 3023
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v3, p2, 0x2
-
-    if-le v2, v3, :cond_9
-
-    .line 3024
     invoke-virtual {p1, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 3026
-    :cond_9
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 3024
+    :cond_8
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p0, :cond_d
+    goto/16 :goto_2
+
+    :cond_9
+    if-eqz p1, :cond_c
 
     .line 3027
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result p1
+    move-result v3
 
-    if-lez p1, :cond_d
-
-    .line 3028
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-lez v3, :cond_c
 
     if-lez p2, :cond_a
 
+    .line 3028
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v4, p2, 0x2
+
+    if-le v3, v4, :cond_a
+
     .line 3029
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p1, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 3031
+    :cond_a
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p0, :cond_e
+
+    .line 3032
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    if-lez p1, :cond_e
+
+    .line 3033
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-lez p2, :cond_b
+
+    .line 3034
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result p1
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v0
 
-    add-int/2addr p1, v2
+    add-int/2addr p1, v0
 
-    if-le p1, p2, :cond_a
+    if-le p1, p2, :cond_b
 
-    .line 3030
+    .line 3035
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result p0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
-
-    .line 3032
-    :cond_a
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :cond_b
-    if-eqz p0, :cond_d
-
-    .line 3035
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    if-lez p1, :cond_d
-
-    if-lez p2, :cond_c
-
-    .line 3036
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    add-int/lit8 v2, p2, 0x2
-
-    if-le p1, v2, :cond_c
 
     .line 3037
+    :cond_b
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_2
+
+    :cond_c
+    if-eqz p0, :cond_e
+
+    .line 3040
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    if-lez p1, :cond_e
+
+    if-lez p2, :cond_d
+
+    .line 3041
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result p1
+
+    add-int/lit8 v0, p2, 0x2
+
+    if-le p1, v0, :cond_d
+
+    .line 3042
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {p0, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 3039
-    :cond_c
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 3042
+    .line 3044
     :cond_d
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 3047
+    :cond_e
     :goto_2
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -8547,7 +8630,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "new phone book contacts "
+    const-string/jumbo v4, "new phone book contacts "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10059,7 +10142,7 @@
 .method private synthetic lambda$reloadContactsStatuses$59(Landroid/content/SharedPreferences$Editor;Lorg/telegram/tgnet/TLObject;)V
     .locals 6
 
-    const-string v0, "needGetStatuses"
+    const-string/jumbo v0, "needGetStatuses"
 
     .line 2597
     invoke-interface {p1, v0}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -10954,7 +11037,7 @@
 
     move-result-object v0
 
-    const-string v1, "needGetStatuses"
+    const-string/jumbo v1, "needGetStatuses"
 
     const/4 v2, 0x1
 

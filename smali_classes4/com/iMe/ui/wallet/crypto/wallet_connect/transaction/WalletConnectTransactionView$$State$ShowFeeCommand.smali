@@ -23,11 +23,11 @@
 
 
 # instance fields
-.field public final feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+.field public final feeType:Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
     .locals 1
 
     .line 206
@@ -38,7 +38,7 @@
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     .line 208
-    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$ShowFeeCommand;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$ShowFeeCommand;->feeType:Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     return-void
 .end method
@@ -49,9 +49,9 @@
     .locals 1
 
     .line 213
-    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$ShowFeeCommand;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$ShowFeeCommand;->feeType:Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
-    invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     return-void
 .end method

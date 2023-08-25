@@ -1629,7 +1629,7 @@
 
     aget-wide v9, v14, v17
 
-    invoke-static {v9, v10, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v9, v10, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZZ)Ljava/lang/String;
 
     move-result-object v9
 
@@ -1684,7 +1684,7 @@
 
     aget-wide v9, v8, v9
 
-    invoke-static {v9, v10, v4}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v9, v10, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZZ)Ljava/lang/String;
 
     move-result-object v8
 

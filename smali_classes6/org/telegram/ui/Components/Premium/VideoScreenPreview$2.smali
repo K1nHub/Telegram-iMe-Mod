@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/VideoScreenPreview;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 240
+    .line 242
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$2;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
@@ -35,7 +35,7 @@
 .method public setBounds(IIII)V
     .locals 2
 
-    .line 243
+    .line 245
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$2;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->fromTop:Z
@@ -44,7 +44,7 @@
 
     int-to-float p2, p2
 
-    .line 244
+    .line 246
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->access$000(Lorg/telegram/ui/Components/Premium/VideoScreenPreview;)F
 
     move-result v0
@@ -60,7 +60,7 @@
     :cond_0
     int-to-float p4, p4
 
-    .line 246
+    .line 248
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->access$000(Lorg/telegram/ui/Components/Premium/VideoScreenPreview;)F
 
     move-result v0

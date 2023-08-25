@@ -2,64 +2,74 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Function;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/TranslateController;
+
+.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
+
+.field public final synthetic f$2:Ljava/lang/String;
+
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
+
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
+
+.field public final synthetic f$5:Lorg/telegram/messenger/TranslateController$MessageKey;
+
+.field public final synthetic f$6:Ljava/lang/Runnable;
+
+.field public final synthetic f$7:J
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->INSTANCE:Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/messenger/TranslateController$MessageKey;Ljava/lang/Runnable;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/TranslateController;
+
+    iput-object p2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/messenger/MessageObject;
+
+    iput-object p3, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$2:Ljava/lang/String;
+
+    iput-object p4, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$3:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
+
+    iput-object p5, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$4:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
+
+    iput-object p6, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$5:Lorg/telegram/messenger/TranslateController$MessageKey;
+
+    iput-object p7, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$6:Ljava/lang/Runnable;
+
+    iput-wide p8, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$7:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic andThen(Lj$/util/function/Function;)Lj$/util/function/Function;
-    .locals 0
+.method public final run()V
+    .locals 9
 
-    invoke-static {p0, p1}, Lj$/util/function/Function$-CC;->$default$andThen(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/Function;
+    iget-object v0, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/TranslateController;
 
-    move-result-object p1
+    iget-object v1, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    return-object p1
-.end method
+    iget-object v2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$2:Ljava/lang/String;
 
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    iget-object v3, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$3:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
-    check-cast p1, Lorg/telegram/messenger/TranslateController$Language;
+    iget-object v4, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$4:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
-    invoke-static {p1}, Lorg/telegram/messenger/TranslateController;->$r8$lambda$zrVmZybyhxQFkHnNutIlqbkQaTo(Lorg/telegram/messenger/TranslateController$Language;)Ljava/lang/String;
+    iget-object v5, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$5:Lorg/telegram/messenger/TranslateController$MessageKey;
 
-    move-result-object p1
+    iget-object v6, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$6:Ljava/lang/Runnable;
 
-    return-object p1
-.end method
+    iget-wide v7, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda13;->f$7:J
 
-.method public synthetic compose(Lj$/util/function/Function;)Lj$/util/function/Function;
-    .locals 0
+    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/TranslateController;->$r8$lambda$hvL_-pdVMtKnqXjg7FHzH2nE67g(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/messenger/TranslateController$MessageKey;Ljava/lang/Runnable;J)V
 
-    invoke-static {p0, p1}, Lj$/util/function/Function$-CC;->$default$compose(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/Function;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 355
+    .line 369
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public onDown(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 358
+    .line 372
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$002(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 359
+    .line 373
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -75,7 +75,7 @@
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 2
 
-    .line 447
+    .line 454
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
@@ -94,27 +94,27 @@
 
     if-gez p2, :cond_0
 
-    .line 448
+    .line 455
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyWaitingKeyboard:Z
 
     if-nez p2, :cond_0
 
-    .line 449
+    .line 456
     iput-boolean v1, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyWaitingKeyboard:Z
 
-    .line 450
+    .line 457
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     const/4 p2, 0x3
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 451
+    .line 458
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$500(Lorg/telegram/ui/Stories/StoryViewer;)V
+    invoke-static {p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$600(Lorg/telegram/ui/Stories/StoryViewer;)V
 
-    .line 454
+    .line 461
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -130,7 +130,7 @@
 
     if-gez p2, :cond_1
 
-    .line 456
+    .line 463
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/StoryViewer;->cancelSwipeToViews(Z)V
 
     goto :goto_1
@@ -142,12 +142,12 @@
 
     if-lez p2, :cond_2
 
-    .line 459
+    .line 466
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoryViewer;->cancelSwipeToViews(Z)V
 
     goto :goto_1
 
-    .line 461
+    .line 468
     :cond_2
     iget-object p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoryViewsView:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
@@ -169,7 +169,7 @@
     :goto_0
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/StoryViewer;->cancelSwipeToViews(Z)V
 
-    .line 465
+    .line 472
     :cond_4
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
@@ -188,7 +188,7 @@
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 3
 
-    .line 396
+    .line 401
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->inSwipeToDissmissMode:Z
@@ -197,7 +197,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 397
+    .line 402
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->allowSwipeToReply:Z
 
     const/4 v0, 0x1
@@ -206,7 +206,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 398
+    .line 403
     iget p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
 
     add-float/2addr p2, p4
@@ -215,12 +215,12 @@
 
     const/16 p1, 0xc8
 
-    .line 399
+    .line 404
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 400
+    .line 405
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget v2, p2, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
@@ -235,13 +235,13 @@
 
     if-nez v2, :cond_0
 
-    .line 401
+    .line 406
     iput-boolean v0, p2, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyWaitingKeyboard:Z
 
-    .line 402
-    invoke-static {p2}, Lorg/telegram/ui/Stories/StoryViewer;->access$500(Lorg/telegram/ui/Stories/StoryViewer;)V
+    .line 407
+    invoke-static {p2}, Lorg/telegram/ui/Stories/StoryViewer;->access$600(Lorg/telegram/ui/Stories/StoryViewer;)V
 
-    .line 403
+    .line 408
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -250,7 +250,7 @@
 
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 405
+    .line 410
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -266,7 +266,7 @@
 
     iput p1, p2, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyProgress:F
 
-    .line 406
+    .line 411
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -277,7 +277,7 @@
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 407
+    .line 412
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
@@ -286,10 +286,10 @@
 
     if-gez p2, :cond_1
 
-    .line 408
+    .line 413
     iput v1, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
 
-    .line 409
+    .line 414
     iput-boolean p3, p1, Lorg/telegram/ui/Stories/StoryViewer;->allowSwipeToReply:Z
 
     goto :goto_0
@@ -297,7 +297,7 @@
     :cond_1
     return v0
 
-    .line 414
+    .line 419
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
@@ -306,7 +306,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 415
+    .line 420
     iget p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
     iget-object v2, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoryViewsView:Lorg/telegram/ui/Stories/SelfStoryViewsView;
@@ -327,7 +327,7 @@
 
     add-float/2addr p2, v2
 
-    .line 416
+    .line 421
     iput p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
     goto :goto_1
@@ -335,11 +335,18 @@
     :cond_3
     add-float/2addr p2, p4
 
-    .line 418
+    .line 423
     iput p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
-    .line 420
+    .line 425
     :goto_1
+    iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/Bulletin;->hideVisible(Landroid/view/ViewGroup;)V
+
+    .line 426
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -348,14 +355,14 @@
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 421
+    .line 427
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->containerView:Lorg/telegram/ui/Stories/HwFrameLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/HwFrameLayout;->invalidate()V
 
-    .line 422
+    .line 428
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget p2, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
@@ -364,10 +371,10 @@
 
     if-gez p2, :cond_4
 
-    .line 423
+    .line 429
     iput v1, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
-    .line 424
+    .line 430
     iput-boolean p3, p1, Lorg/telegram/ui/Stories/StoryViewer;->allowSelfStoriesView:Z
 
     goto :goto_2
@@ -379,7 +386,7 @@
     :goto_2
     const p1, 0x3f19999a    # 0.6f
 
-    .line 430
+    .line 436
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget p3, p2, Lorg/telegram/ui/Stories/StoryViewer;->progressToDismiss:F
@@ -416,7 +423,7 @@
     :cond_7
     const p1, 0x3e99999a    # 0.3f
 
-    .line 433
+    .line 439
     :cond_8
     iget p3, p2, Lorg/telegram/ui/Stories/StoryViewer;->swipeToDismissOffset:F
 
@@ -426,8 +433,15 @@
 
     iput p3, p2, Lorg/telegram/ui/Stories/StoryViewer;->swipeToDismissOffset:F
 
-    .line 434
-    invoke-static {p2}, Lorg/telegram/ui/Stories/StoryViewer;->access$600(Lorg/telegram/ui/Stories/StoryViewer;)V
+    .line 440
+    iget-object p1, p2, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/Bulletin;->hideVisible(Landroid/view/ViewGroup;)V
+
+    .line 441
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$700(Lorg/telegram/ui/Stories/StoryViewer;)V
 
     return v0
 
@@ -444,69 +458,68 @@
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 372
+    .line 386
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
+    iget v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    cmpl-float v1, v1, v2
 
-    .line 373
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+    const/4 v2, 0x0
 
-    iget v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
+    if-eqz v1, :cond_0
 
-    const/4 v3, 0x0
+    return v2
 
-    cmpl-float v2, v2, v3
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_0
-
-    return v3
-
-    .line 376
+    .line 389
     :cond_0
-    iget-boolean v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->allowIntercept:Z
+    iget-boolean v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->allowIntercept:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v1, :cond_4
 
-    if-eqz v0, :cond_5
+    .line 390
+    iget-boolean v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->keyboardVisible:Z
 
-    .line 377
-    iget-boolean v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->keyboardVisible:Z
+    if-nez v1, :cond_3
 
-    if-nez v2, :cond_4
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$200(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$200(Lorg/telegram/ui/Stories/StoryViewer;)Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_3
 
-    if-nez v1, :cond_4
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$300(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$300(Lorg/telegram/ui/Stories/StoryViewer;)Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_3
 
-    if-nez v1, :cond_4
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$400(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$400(Lorg/telegram/ui/Stories/StoryViewer;)Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_3
 
-    if-eqz v1, :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$500(Lorg/telegram/ui/Stories/StoryViewer;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     goto :goto_1
 
-    .line 380
+    .line 393
     :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
@@ -521,73 +534,34 @@
 
     int-to-float v1, v1
 
-    const v2, 0x3ea8f5c3    # 0.33f
+    const v3, 0x3ea8f5c3    # 0.33f
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v1, v3
 
     cmpl-float p1, p1, v1
 
-    const/4 v1, 0x1
-
     if-lez p1, :cond_2
 
-    move p1, v1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_2
-    move p1, v3
+    move p1, v2
 
-    .line 381
     :goto_0
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->switchToNext(Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    .line 382
-    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
-
-    iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
-
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->switchToNext(Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    if-eqz p1, :cond_3
-
-    .line 384
-    iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
-
-    invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/StoryViewer;->close(Z)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->switchByTap(Z)V
 
     goto :goto_2
 
+    .line 391
     :cond_3
-    if-eqz v0, :cond_5
-
-    .line 386
-    iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
-
-    iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
-
-    const-wide/16 v0, 0x96
-
-    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Stories/StoriesViewPager;->lockTouchEvent(J)V
-
-    goto :goto_2
-
-    .line 378
-    :cond_4
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$1;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->closeKeyboardOrEmoji()Z
 
-    :cond_5
+    :cond_4
     :goto_2
-    return v3
+    return v2
 .end method

@@ -540,7 +540,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "network"
+    const-string/jumbo v0, "network"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -554,7 +554,7 @@
 
     move-result-object p1
 
-    const-string p2, "null cannot be cast to non-null type okhttp3.Cache.CacheResponseBody"
+    const-string/jumbo p2, "null cannot be cast to non-null type okhttp3.Cache.CacheResponseBody"
 
     invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

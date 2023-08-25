@@ -25,10 +25,10 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 387
+    .line 397
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 388
+    .line 398
     new-instance v0, Lcom/google/android/gms/maps/model/CircleOptions;
 
     invoke-direct {v0}, Lcom/google/android/gms/maps/model/CircleOptions;-><init>()V
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 384
+    .line 394
     invoke-direct {p0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
 .method static synthetic access$1200(Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;)Lcom/google/android/gms/maps/model/CircleOptions;
     .locals 0
 
-    .line 384
+    .line 394
     iget-object p0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;->circleOptions:Lcom/google/android/gms/maps/model/CircleOptions;
 
     return-object p0
@@ -61,7 +61,7 @@
 .method public center(Lorg/telegram/messenger/IMapsProvider$LatLng;)Lorg/telegram/messenger/IMapsProvider$ICircleOptions;
     .locals 6
 
-    .line 393
+    .line 403
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;->circleOptions:Lcom/google/android/gms/maps/model/CircleOptions;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
@@ -80,7 +80,7 @@
 .method public fillColor(I)Lorg/telegram/messenger/IMapsProvider$ICircleOptions;
     .locals 1
 
-    .line 411
+    .line 421
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;->circleOptions:Lcom/google/android/gms/maps/model/CircleOptions;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/CircleOptions;->fillColor(I)Lcom/google/android/gms/maps/model/CircleOptions;
@@ -91,7 +91,7 @@
 .method public radius(D)Lorg/telegram/messenger/IMapsProvider$ICircleOptions;
     .locals 1
 
-    .line 399
+    .line 409
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;->circleOptions:Lcom/google/android/gms/maps/model/CircleOptions;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/maps/model/CircleOptions;->radius(D)Lcom/google/android/gms/maps/model/CircleOptions;
@@ -102,7 +102,7 @@
 .method public strokeColor(I)Lorg/telegram/messenger/IMapsProvider$ICircleOptions;
     .locals 1
 
-    .line 405
+    .line 415
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;->circleOptions:Lcom/google/android/gms/maps/model/CircleOptions;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/CircleOptions;->strokeColor(I)Lcom/google/android/gms/maps/model/CircleOptions;
@@ -122,12 +122,12 @@
         }
     .end annotation
 
-    .line 417
+    .line 427
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 418
+    .line 428
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -146,12 +146,12 @@
 
     check-cast v1, Lorg/telegram/messenger/IMapsProvider$PatternItem;
 
-    .line 419
+    .line 429
     instance-of v2, v1, Lorg/telegram/messenger/IMapsProvider$PatternItem$Gap;
 
     if-eqz v2, :cond_1
 
-    .line 420
+    .line 430
     new-instance v2, Lcom/google/android/gms/maps/model/Gap;
 
     check-cast v1, Lorg/telegram/messenger/IMapsProvider$PatternItem$Gap;
@@ -166,13 +166,13 @@
 
     goto :goto_0
 
-    .line 421
+    .line 431
     :cond_1
     instance-of v2, v1, Lorg/telegram/messenger/IMapsProvider$PatternItem$Dash;
 
     if-eqz v2, :cond_0
 
-    .line 422
+    .line 432
     new-instance v2, Lcom/google/android/gms/maps/model/Dash;
 
     check-cast v1, Lorg/telegram/messenger/IMapsProvider$PatternItem$Dash;
@@ -187,7 +187,7 @@
 
     goto :goto_0
 
-    .line 425
+    .line 435
     :cond_2
     iget-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;->circleOptions:Lcom/google/android/gms/maps/model/CircleOptions;
 
@@ -199,7 +199,7 @@
 .method public strokeWidth(I)Lorg/telegram/messenger/IMapsProvider$ICircleOptions;
     .locals 1
 
-    .line 431
+    .line 441
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;->circleOptions:Lcom/google/android/gms/maps/model/CircleOptions;
 
     int-to-float p1, p1

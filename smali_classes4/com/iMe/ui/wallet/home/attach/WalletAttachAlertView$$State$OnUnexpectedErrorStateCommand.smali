@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State;)V
     .locals 1
 
-    .line 581
+    .line 576
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "onUnexpectedErrorState"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V
     .locals 0
 
-    .line 586
+    .line 581
     invoke-interface {p1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 579
+    .line 574
     check-cast p1, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnUnexpectedErrorStateCommand;->apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V

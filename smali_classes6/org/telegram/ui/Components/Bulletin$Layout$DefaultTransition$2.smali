@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 918
+    .line 924
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$2;->val$startAction:Ljava/lang/Runnable;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$2;->val$endAction:Ljava/lang/Runnable;
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 928
+    .line 934
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$2;->val$endAction:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 929
+    .line 935
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -54,12 +54,12 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 921
+    .line 927
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$2;->val$startAction:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 922
+    .line 928
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0

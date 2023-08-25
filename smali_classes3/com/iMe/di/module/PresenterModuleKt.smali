@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 114
+    .line 123
     sget-object v0, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1;->INSTANCE:Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1;
 
     const/4 v1, 0x0
@@ -32,7 +32,7 @@
 .method public static final getPresentationPresenterModule()Lorg/koin/core/module/Module;
     .locals 1
 
-    .line 114
+    .line 123
     sget-object v0, Lcom/iMe/di/module/PresenterModuleKt;->presentationPresenterModule:Lorg/koin/core/module/Module;
 
     return-object v0

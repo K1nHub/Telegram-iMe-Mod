@@ -116,6 +116,8 @@
 
 .field private final foldersFirst:Ljava/lang/Boolean;
 
+.field private final formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
+
 .field private final hiddenChatDialogs:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -147,6 +149,8 @@
 .field private final isCallsConfirmationEnabled:Ljava/lang/Boolean;
 
 .field private final isChannelWidePostsEnabled:Ljava/lang/Boolean;
+
+.field private final isChatProfileEnabled:Ljava/lang/Boolean;
 
 .field private final isChatSortingEnabledByDefault:Ljava/lang/Boolean;
 
@@ -189,8 +193,6 @@
 .field private final isPinnedPlayerMinimized:Ljava/lang/Boolean;
 
 .field private final isPinnedPlayerNightThemeEnabled:Ljava/lang/Boolean;
-
-.field private final isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
 
 .field private final isPlayerPinned:Ljava/lang/Boolean;
 
@@ -306,6 +308,16 @@
 .field private final rememberLastFilterTab:Ljava/lang/Boolean;
 
 .field private final selectedAutoBackupInterval:Ljava/lang/String;
+
+.field private final selectedChatProfileDialogTypes:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private final selectedChatProfileTelegramIdMode:Ljava/lang/String;
 
@@ -440,7 +452,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 118
+    .locals 120
 
     move-object/from16 v0, p0
 
@@ -668,22 +680,26 @@
 
     const/16 v112, 0x0
 
-    const/16 v113, -0x1
+    const/16 v113, 0x0
 
-    const/16 v114, -0x1
+    const/16 v114, 0x0
 
     const/16 v115, -0x1
 
-    const v116, 0xffff
+    const/16 v116, -0x1
 
-    const/16 v117, 0x0
+    const/16 v117, -0x1
 
-    invoke-direct/range {v0 .. v117}, Lcom/iMe/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const v118, 0x3ffff
+
+    const/16 v119, 0x0
+
+    invoke-direct/range {v0 .. v119}, Lcom/iMe/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+.method public constructor <init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -770,6 +786,7 @@
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
             "Lcom/iMe/fork/enums/DrawerHolidayIconType;",
+            "Lcom/iMe/fork/enums/FormattingPanelType;",
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
             "Ljava/util/Map<",
@@ -836,7 +853,6 @@
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
-            "Ljava/lang/Boolean;",
             "Ljava/lang/String;",
             "Ljava/util/Map<",
             "Ljava/lang/Long;",
@@ -864,6 +880,10 @@
             ">;",
             "Ljava/util/List<",
             "Lcom/iMe/storage/domain/model/HistoryDialogModel;",
+            ">;",
+            "Ljava/lang/Boolean;",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
             ">;)V"
         }
     .end annotation
@@ -876,580 +896,590 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 12
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     move-object v2, p1
 
-    .line 14
+    .line 18
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAutoBackupEnabled:Ljava/lang/Boolean;
 
     move-object v2, p2
 
-    .line 15
+    .line 19
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedAutoBackupInterval:Ljava/lang/String;
 
     move-object v2, p3
 
-    .line 16
+    .line 20
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isFilesSendingPreviewAndCaptionEnabled:Ljava/lang/Boolean;
 
     move-object v2, p4
 
-    .line 17
+    .line 21
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isVibrationEnabled:Ljava/lang/Boolean;
 
     move-object v2, p5
 
-    .line 18
+    .line 22
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedStickersSize:Ljava/lang/String;
 
     move-object v2, p6
 
-    .line 19
+    .line 23
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isQuickReactionEnabled:Ljava/lang/Boolean;
 
     move-object v2, p7
 
-    .line 20
+    .line 24
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPremiumAnimateStickers:Ljava/lang/Boolean;
 
     move-object v2, p8
 
-    .line 21
+    .line 25
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPremiumShowBadge:Ljava/lang/Boolean;
 
     move-object v2, p9
 
-    .line 22
+    .line 26
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPremiumShowStatus:Ljava/lang/Boolean;
 
     move-object v2, p10
 
-    .line 23
+    .line 27
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPremiumAnimateAvatars:Ljava/lang/Boolean;
 
     move-object v2, p11
 
-    .line 24
+    .line 28
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isProxyButtonVisible:Ljava/lang/Boolean;
 
     move-object v2, p12
 
-    .line 25
+    .line 29
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedContactsFilter:Ljava/lang/String;
 
     move-object/from16 v2, p13
 
-    .line 26
+    .line 30
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isReadAllChatsConfirmationShown:Ljava/lang/Boolean;
 
     move-object/from16 v2, p14
 
-    .line 27
+    .line 31
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isProfileInfoHidden:Ljava/lang/Boolean;
 
     move-object/from16 v2, p15
 
-    .line 28
+    .line 32
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMultiForwardingOptionsHintShown:Ljava/lang/Boolean;
 
     move-object/from16 v2, p16
 
-    .line 29
+    .line 33
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSuggestPremiumReactionsEmoji:Ljava/lang/Boolean;
 
     move-object/from16 v2, p17
 
-    .line 33
+    .line 37
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->drawerHeaderSettings:Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-object/from16 v2, p18
 
-    .line 34
+    .line 38
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->drawerItems:Ljava/util/Set;
 
     move-object/from16 v2, p19
 
-    .line 35
+    .line 39
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isActionBarAccountSwitchEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p20
 
-    .line 36
+    .line 40
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMainActionBarMenuEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p21
 
-    .line 37
+    .line 41
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isProxyButtonEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p22
 
-    .line 38
+    .line 42
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isDialogsCompactModeEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p23
 
-    .line 39
+    .line 43
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p24
 
-    .line 40
+    .line 44
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p25
 
-    .line 41
+    .line 45
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->swipeToGoToNextUnreadDialogTypes:Ljava/util/Set;
 
     move-object/from16 v2, p26
 
-    .line 42
+    .line 46
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isShowChannelBottomPanel:Ljava/lang/Boolean;
 
     move-object/from16 v2, p27
 
-    .line 43
+    .line 47
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isHideChatKeyboardOnScrollEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p28
 
-    .line 44
+    .line 48
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isChatThemesEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p29
 
-    .line 45
+    .line 49
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->chatAttachAlertButtons:Ljava/util/Map;
 
     move-object/from16 v2, p30
 
-    .line 46
+    .line 50
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isExtendedAvatarPreviewerEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p31
 
-    .line 47
+    .line 51
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isExtendedAvatarPreviewerByTapEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p32
 
-    .line 48
+    .line 52
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedExtendedAvatarPreviewerItems:Ljava/util/Set;
 
     move-object/from16 v2, p33
 
-    .line 49
+    .line 53
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->messagePopupItems:Ljava/util/List;
 
     move-object/from16 v2, p34
 
-    .line 50
+    .line 54
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMessagePopupAggregatorEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p35
 
-    .line 51
+    .line 55
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isChannelWidePostsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p36
 
-    .line 52
+    .line 56
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isCallsConfirmationEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p37
 
-    .line 53
+    .line 57
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isDeleteCloudConfirmationEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p38
 
-    .line 54
+    .line 58
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSendingGifConfirmationEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p39
 
-    .line 55
+    .line 59
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSendingStickerConfirmationEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p40
 
-    .line 56
+    .line 60
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSpeakWithoutHoldEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p41
 
-    .line 57
+    .line 61
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isVideoSpeakWithoutHoldEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p42
 
-    .line 58
+    .line 62
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedVideoVoiceCamera:Ljava/lang/String;
 
     move-object/from16 v2, p43
 
-    .line 59
+    .line 63
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isRecentChatsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p44
 
-    .line 60
+    .line 64
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedRecentChatsDialogTypes:Ljava/util/Set;
 
     move-object/from16 v2, p45
 
-    .line 61
+    .line 65
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSaveArchiveRecentChatsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p46
 
-    .line 62
+    .line 66
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedDrawStatusTypes:Ljava/util/Set;
 
     move-object/from16 v2, p47
 
-    .line 63
+    .line 67
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isOpenForwardingOptionsAutomaticallyEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p48
 
-    .line 64
+    .line 68
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMultiReplyEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p49
 
-    .line 65
+    .line 69
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileTelegramIdMode:Ljava/lang/String;
 
     move-object/from16 v2, p50
 
-    .line 66
+    .line 70
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMessageQuickTranslateEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p51
 
-    .line 67
+    .line 71
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isBotHelpTranslateEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p52
 
-    .line 68
+    .line 72
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isTranslateInSendPopupEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p53
 
-    .line 69
+    .line 73
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSilentSendingEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p54
 
-    .line 70
+    .line 74
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedSentMessageFont:Ljava/lang/String;
 
     move-object/from16 v2, p55
 
-    .line 71
+    .line 75
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isRememberLastDialogEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p56
 
-    .line 72
+    .line 76
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isCombineMessagesEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p57
 
-    .line 73
+    .line 77
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedPhotoViewerMenuItems:Ljava/util/Set;
 
     move-object/from16 v2, p58
 
-    .line 74
+    .line 78
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isReactionsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p59
 
-    .line 75
+    .line 79
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedDialogTypesForMessagePopupReactions:Ljava/util/Set;
 
     move-object/from16 v2, p60
 
-    .line 76
+    .line 80
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isReactionsInSendPopupEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p61
 
-    .line 77
+    .line 81
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isRevokeByDefault:Ljava/lang/Boolean;
 
     move-object/from16 v2, p62
 
-    .line 78
+    .line 82
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->drawerHolidayIconType:Lcom/iMe/fork/enums/DrawerHolidayIconType;
 
     move-object/from16 v2, p63
 
-    .line 82
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
+    .line 83
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
 
     move-object/from16 v2, p64
 
-    .line 83
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
+    .line 87
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p65
 
-    .line 84
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
+    .line 88
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p66
 
-    .line 87
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
+    .line 89
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
 
     move-object/from16 v2, p67
 
-    .line 88
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
+    .line 92
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
 
     move-object/from16 v2, p68
 
-    .line 89
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
+    .line 93
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
 
     move-object/from16 v2, p69
 
-    .line 90
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
+    .line 94
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
 
     move-object/from16 v2, p70
 
-    .line 91
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
+    .line 95
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
 
     move-object/from16 v2, p71
 
-    .line 92
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
+    .line 96
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
 
     move-object/from16 v2, p72
 
-    .line 93
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
+    .line 97
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
 
     move-object/from16 v2, p73
 
-    .line 97
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
+    .line 98
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
 
     move-object/from16 v2, p74
 
-    .line 98
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
+    .line 102
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
 
     move-object/from16 v2, p75
 
-    .line 99
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
+    .line 103
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p76
 
-    .line 100
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
+    .line 104
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
 
     move-object/from16 v2, p77
 
-    .line 101
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
+    .line 105
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
 
     move-object/from16 v2, p78
 
-    .line 102
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
+    .line 106
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p79
 
-    .line 103
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
+    .line 107
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
 
     move-object/from16 v2, p80
 
-    .line 104
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
+    .line 108
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p81
 
-    .line 105
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
+    .line 109
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
 
     move-object/from16 v2, p82
 
-    .line 106
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
+    .line 110
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
 
     move-object/from16 v2, p83
 
-    .line 110
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
+    .line 111
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
 
     move-object/from16 v2, p84
 
-    .line 111
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
+    .line 115
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p85
 
-    .line 112
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
+    .line 116
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
 
     move-object/from16 v2, p86
 
-    .line 113
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
+    .line 117
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p87
 
-    .line 114
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
+    .line 118
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p88
 
-    .line 118
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
+    .line 119
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
 
     move-object/from16 v2, p89
 
-    .line 122
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
+    .line 123
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
 
     move-object/from16 v2, p90
 
-    .line 123
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
+    .line 127
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p91
 
-    .line 124
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
+    .line 128
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p92
 
-    .line 125
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
+    .line 129
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p93
 
-    .line 129
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
+    .line 130
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p94
 
-    .line 130
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
+    .line 134
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
 
     move-object/from16 v2, p95
 
-    .line 131
-    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
+    .line 135
+    iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
 
     move-object/from16 v2, p96
 
-    .line 132
+    .line 136
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerNightThemeEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p97
 
-    .line 133
+    .line 137
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMusicIntroShown:Ljava/lang/Boolean;
 
     move-object/from16 v2, p98
 
-    .line 134
+    .line 138
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedMusicTab:Ljava/lang/String;
 
     move-object/from16 v2, p99
 
-    .line 135
+    .line 139
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->musicPlaylists:Ljava/util/Map;
 
     move-object/from16 v2, p100
 
-    .line 139
+    .line 143
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->templatesMode:Ljava/lang/String;
 
     move-object/from16 v2, p101
 
-    .line 140
+    .line 144
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->selectedTemplatesSortingType:Ljava/lang/String;
 
     move-object/from16 v2, p102
 
-    .line 141
+    .line 145
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->templatesChannelId:Ljava/lang/Long;
 
     move-object/from16 v2, p103
 
-    .line 142
+    .line 146
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->templates:Ljava/util/List;
 
     move-object/from16 v2, p104
 
-    .line 146
+    .line 150
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->topicsEnabled:Ljava/lang/Boolean;
 
     move-object/from16 v2, p105
 
-    .line 147
+    .line 151
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->topicsBarAtBottom:Ljava/lang/Boolean;
 
     move-object/from16 v2, p106
 
-    .line 148
+    .line 152
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->noTopicFirst:Ljava/lang/Boolean;
 
     move-object/from16 v2, p107
 
-    .line 149
+    .line 153
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->topics:Ljava/util/List;
 
     move-object/from16 v2, p108
 
-    .line 153
+    .line 157
     iput-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->version:Ljava/lang/Integer;
 
-    .line 154
+    .line 158
     iput-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFab:Ljava/lang/String;
 
     move-object/from16 v1, p110
 
-    .line 155
+    .line 159
     iput-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabMultiFabs:Ljava/util/List;
 
     move-object/from16 v1, p111
 
-    .line 159
+    .line 163
     iput-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->hiddenChatDialogs:Ljava/util/List;
 
     move-object/from16 v1, p112
 
-    .line 163
+    .line 167
     iput-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
+
+    move-object/from16 v1, p113
+
+    .line 171
+    iput-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->isChatProfileEnabled:Ljava/lang/Boolean;
+
+    move-object/from16 v1, p114
+
+    .line 172
+    iput-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileDialogTypes:Ljava/util/Set;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .locals 110
+.method public synthetic constructor <init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 112
 
-    move/from16 v0, p113
+    move/from16 v0, p115
 
-    move/from16 v1, p114
+    move/from16 v1, p116
 
-    move/from16 v2, p115
+    move/from16 v2, p117
 
-    move/from16 v3, p116
+    move/from16 v3, p118
 
     and-int/lit8 v4, v0, 0x1
 
@@ -1959,7 +1989,7 @@
     move-object/from16 v47, p39
 
     :goto_26
-    move-object/from16 p113, v0
+    move-object/from16 p115, v0
 
     and-int/lit16 v0, v1, 0x80
 
@@ -2381,7 +2411,7 @@
     move-object/from16 v77, p71
 
     :goto_46
-    move-object/from16 p114, v1
+    move-object/from16 p116, v1
 
     and-int/lit16 v1, v2, 0x80
 
@@ -2505,28 +2535,28 @@
     move-object/from16 v85, p80
 
     :goto_4f
-    and-int v21, v2, v21
+    and-int v86, v2, v21
 
-    if-eqz v21, :cond_50
+    if-eqz v86, :cond_50
 
-    const/16 v21, 0x0
+    const/16 v86, 0x0
 
     goto :goto_50
 
     :cond_50
-    move-object/from16 v21, p81
+    move-object/from16 v86, p81
 
     :goto_50
-    and-int v23, v2, v23
+    and-int v87, v2, v23
 
-    if-eqz v23, :cond_51
+    if-eqz v87, :cond_51
 
-    const/16 v23, 0x0
+    const/16 v87, 0x0
 
     goto :goto_51
 
     :cond_51
-    move-object/from16 v23, p82
+    move-object/from16 v87, p82
 
     :goto_51
     and-int v25, v2, v25
@@ -2565,149 +2595,149 @@
     move-object/from16 v29, p85
 
     :goto_54
-    const/high16 v86, 0x200000
+    const/high16 v88, 0x200000
 
-    and-int v86, v2, v86
+    and-int v88, v2, v88
 
-    if-eqz v86, :cond_55
+    if-eqz v88, :cond_55
 
-    const/16 v86, 0x0
+    const/16 v88, 0x0
 
     goto :goto_55
 
     :cond_55
-    move-object/from16 v86, p86
+    move-object/from16 v88, p86
 
     :goto_55
-    const/high16 v87, 0x400000
+    const/high16 v89, 0x400000
 
-    and-int v87, v2, v87
+    and-int v89, v2, v89
 
-    if-eqz v87, :cond_56
+    if-eqz v89, :cond_56
 
-    const/16 v87, 0x0
+    const/16 v89, 0x0
 
     goto :goto_56
 
     :cond_56
-    move-object/from16 v87, p87
+    move-object/from16 v89, p87
 
     :goto_56
-    const/high16 v88, 0x800000
+    const/high16 v90, 0x800000
 
-    and-int v88, v2, v88
+    and-int v90, v2, v90
 
-    if-eqz v88, :cond_57
+    if-eqz v90, :cond_57
 
-    const/16 v88, 0x0
+    const/16 v90, 0x0
 
     goto :goto_57
 
     :cond_57
-    move-object/from16 v88, p88
+    move-object/from16 v90, p88
 
     :goto_57
-    const/high16 v89, 0x1000000
+    const/high16 v91, 0x1000000
 
-    and-int v89, v2, v89
+    and-int v91, v2, v91
 
-    if-eqz v89, :cond_58
+    if-eqz v91, :cond_58
 
-    const/16 v89, 0x0
+    const/16 v91, 0x0
 
     goto :goto_58
 
     :cond_58
-    move-object/from16 v89, p89
+    move-object/from16 v91, p89
 
     :goto_58
-    const/high16 v90, 0x2000000
+    const/high16 v92, 0x2000000
 
-    and-int v90, v2, v90
+    and-int v92, v2, v92
 
-    if-eqz v90, :cond_59
+    if-eqz v92, :cond_59
 
-    const/16 v90, 0x0
+    const/16 v92, 0x0
 
     goto :goto_59
 
     :cond_59
-    move-object/from16 v90, p90
+    move-object/from16 v92, p90
 
     :goto_59
-    const/high16 v91, 0x4000000
+    const/high16 v93, 0x4000000
 
-    and-int v91, v2, v91
+    and-int v93, v2, v93
 
-    if-eqz v91, :cond_5a
+    if-eqz v93, :cond_5a
 
-    const/16 v91, 0x0
+    const/16 v93, 0x0
 
     goto :goto_5a
 
     :cond_5a
-    move-object/from16 v91, p91
+    move-object/from16 v93, p91
 
     :goto_5a
-    const/high16 v92, 0x8000000
+    const/high16 v94, 0x8000000
 
-    and-int v92, v2, v92
+    and-int v94, v2, v94
 
-    if-eqz v92, :cond_5b
+    if-eqz v94, :cond_5b
 
-    const/16 v92, 0x0
+    const/16 v94, 0x0
 
     goto :goto_5b
 
     :cond_5b
-    move-object/from16 v92, p92
+    move-object/from16 v94, p92
 
     :goto_5b
-    const/high16 v93, 0x10000000
+    const/high16 v95, 0x10000000
 
-    and-int v93, v2, v93
+    and-int v95, v2, v95
 
-    if-eqz v93, :cond_5c
+    if-eqz v95, :cond_5c
 
-    const/16 v93, 0x0
+    const/16 v95, 0x0
 
     goto :goto_5c
 
     :cond_5c
-    move-object/from16 v93, p93
+    move-object/from16 v95, p93
 
     :goto_5c
-    const/high16 v94, 0x20000000
+    const/high16 v96, 0x20000000
 
-    and-int v94, v2, v94
+    and-int v96, v2, v96
 
-    if-eqz v94, :cond_5d
+    if-eqz v96, :cond_5d
 
-    const/16 v94, 0x0
+    const/16 v96, 0x0
 
     goto :goto_5d
 
     :cond_5d
-    move-object/from16 v94, p94
+    move-object/from16 v96, p94
 
     :goto_5d
-    const/high16 v95, 0x40000000    # 2.0f
+    const/high16 v97, 0x40000000    # 2.0f
 
-    and-int v95, v2, v95
+    and-int v97, v2, v97
 
-    if-eqz v95, :cond_5e
+    if-eqz v97, :cond_5e
 
-    const/16 v95, 0x0
+    const/16 v97, 0x0
 
     goto :goto_5e
 
     :cond_5e
-    move-object/from16 v95, p95
+    move-object/from16 v97, p95
 
     :goto_5e
-    const/high16 v96, -0x80000000
+    const/high16 v98, -0x80000000
 
-    and-int v2, v2, v96
+    and-int v2, v2, v98
 
     if-eqz v2, :cond_5f
 
@@ -2719,91 +2749,91 @@
     move-object/from16 v2, p96
 
     :goto_5f
-    and-int/lit8 v96, v3, 0x1
+    and-int/lit8 v98, v3, 0x1
 
-    if-eqz v96, :cond_60
+    if-eqz v98, :cond_60
 
-    const/16 v96, 0x0
+    const/16 v98, 0x0
 
     goto :goto_60
 
     :cond_60
-    move-object/from16 v96, p97
+    move-object/from16 v98, p97
 
     :goto_60
-    and-int/lit8 v97, v3, 0x2
+    and-int/lit8 v99, v3, 0x2
 
-    if-eqz v97, :cond_61
+    if-eqz v99, :cond_61
 
-    const/16 v97, 0x0
+    const/16 v99, 0x0
 
     goto :goto_61
 
     :cond_61
-    move-object/from16 v97, p98
+    move-object/from16 v99, p98
 
     :goto_61
-    and-int/lit8 v98, v3, 0x4
+    and-int/lit8 v100, v3, 0x4
 
-    if-eqz v98, :cond_62
+    if-eqz v100, :cond_62
 
-    const/16 v98, 0x0
+    const/16 v100, 0x0
 
     goto :goto_62
 
     :cond_62
-    move-object/from16 v98, p99
+    move-object/from16 v100, p99
 
     :goto_62
-    and-int/lit8 v99, v3, 0x8
+    and-int/lit8 v101, v3, 0x8
 
-    if-eqz v99, :cond_63
+    if-eqz v101, :cond_63
 
-    const/16 v99, 0x0
+    const/16 v101, 0x0
 
     goto :goto_63
 
     :cond_63
-    move-object/from16 v99, p100
+    move-object/from16 v101, p100
 
     :goto_63
-    and-int/lit8 v100, v3, 0x10
+    and-int/lit8 v102, v3, 0x10
 
-    if-eqz v100, :cond_64
+    if-eqz v102, :cond_64
 
-    const/16 v100, 0x0
+    const/16 v102, 0x0
 
     goto :goto_64
 
     :cond_64
-    move-object/from16 v100, p101
+    move-object/from16 v102, p101
 
     :goto_64
-    and-int/lit8 v101, v3, 0x20
+    and-int/lit8 v103, v3, 0x20
 
-    if-eqz v101, :cond_65
+    if-eqz v103, :cond_65
 
-    const/16 v101, 0x0
+    const/16 v103, 0x0
 
     goto :goto_65
 
     :cond_65
-    move-object/from16 v101, p102
+    move-object/from16 v103, p102
 
     :goto_65
-    and-int/lit8 v102, v3, 0x40
+    and-int/lit8 v104, v3, 0x40
 
-    if-eqz v102, :cond_66
+    if-eqz v104, :cond_66
 
-    const/16 v102, 0x0
+    const/16 v104, 0x0
 
     goto :goto_66
 
     :cond_66
-    move-object/from16 v102, p103
+    move-object/from16 v104, p103
 
     :goto_66
-    move-object/from16 p115, v2
+    move-object/from16 p117, v2
 
     and-int/lit16 v2, v3, 0x80
 
@@ -2817,7 +2847,7 @@
     move-object/from16 v2, p104
 
     :goto_67
-    move-object/from16 v103, v2
+    move-object/from16 v105, v2
 
     and-int/lit16 v2, v3, 0x100
 
@@ -2831,7 +2861,7 @@
     move-object/from16 v2, p105
 
     :goto_68
-    move-object/from16 v104, v2
+    move-object/from16 v106, v2
 
     and-int/lit16 v2, v3, 0x200
 
@@ -2845,7 +2875,7 @@
     move-object/from16 v2, p106
 
     :goto_69
-    move-object/from16 v105, v2
+    move-object/from16 v107, v2
 
     and-int/lit16 v2, v3, 0x400
 
@@ -2859,7 +2889,7 @@
     move-object/from16 v2, p107
 
     :goto_6a
-    move-object/from16 v106, v2
+    move-object/from16 v108, v2
 
     and-int/lit16 v2, v3, 0x800
 
@@ -2873,13 +2903,13 @@
     move-object/from16 v2, p108
 
     :goto_6b
-    move-object/from16 v107, v2
+    move-object/from16 v109, v2
 
     and-int/lit16 v2, v3, 0x1000
 
     if-eqz v2, :cond_6c
 
-    .line 154
+    .line 158
     sget-object v2, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_CHAT:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/filters/FilterFab;->getOldPreferenceId()Ljava/lang/String;
@@ -2892,7 +2922,7 @@
     move-object/from16 v2, p109
 
     :goto_6c
-    move-object/from16 v108, v2
+    move-object/from16 v110, v2
 
     and-int/lit16 v2, v3, 0x2000
 
@@ -2906,7 +2936,7 @@
     move-object/from16 v2, p110
 
     :goto_6d
-    move-object/from16 v109, v2
+    move-object/from16 v111, v2
 
     and-int/lit16 v2, v3, 0x4000
 
@@ -2920,18 +2950,42 @@
     move-object/from16 v2, p111
 
     :goto_6e
-    and-int v3, v3, v19
+    and-int v19, v3, v19
 
-    if-eqz v3, :cond_6f
+    if-eqz v19, :cond_6f
 
-    const/4 v3, 0x0
+    const/16 v19, 0x0
 
     goto :goto_6f
 
     :cond_6f
-    move-object/from16 v3, p112
+    move-object/from16 v19, p112
 
     :goto_6f
+    and-int v21, v3, v21
+
+    if-eqz v21, :cond_70
+
+    const/16 v21, 0x0
+
+    goto :goto_70
+
+    :cond_70
+    move-object/from16 v21, p113
+
+    :goto_70
+    and-int v3, v3, v23
+
+    if-eqz v3, :cond_71
+
+    const/4 v3, 0x0
+
+    goto :goto_71
+
+    :cond_71
+    move-object/from16 v3, p114
+
+    :goto_71
     move-object/from16 p1, p0
 
     move-object/from16 p2, v4
@@ -2996,7 +3050,7 @@
 
     move-object/from16 p32, v40
 
-    move-object/from16 p33, p113
+    move-object/from16 p33, p115
 
     move-object/from16 p34, v41
 
@@ -3060,7 +3114,7 @@
 
     move-object/from16 p64, v70
 
-    move-object/from16 p65, p114
+    move-object/from16 p65, p116
 
     move-object/from16 p66, v71
 
@@ -3094,9 +3148,9 @@
 
     move-object/from16 p81, v85
 
-    move-object/from16 p82, v21
+    move-object/from16 p82, v86
 
-    move-object/from16 p83, v23
+    move-object/from16 p83, v87
 
     move-object/from16 p84, v25
 
@@ -3104,78 +3158,82 @@
 
     move-object/from16 p86, v29
 
-    move-object/from16 p87, v86
+    move-object/from16 p87, v88
 
-    move-object/from16 p88, v87
+    move-object/from16 p88, v89
 
-    move-object/from16 p89, v88
+    move-object/from16 p89, v90
 
-    move-object/from16 p90, v89
+    move-object/from16 p90, v91
 
-    move-object/from16 p91, v90
+    move-object/from16 p91, v92
 
-    move-object/from16 p92, v91
+    move-object/from16 p92, v93
 
-    move-object/from16 p93, v92
+    move-object/from16 p93, v94
 
-    move-object/from16 p94, v93
+    move-object/from16 p94, v95
 
-    move-object/from16 p95, v94
+    move-object/from16 p95, v96
 
-    move-object/from16 p96, v95
+    move-object/from16 p96, v97
 
-    move-object/from16 p97, p115
+    move-object/from16 p97, p117
 
-    move-object/from16 p98, v96
+    move-object/from16 p98, v98
 
-    move-object/from16 p99, v97
+    move-object/from16 p99, v99
 
-    move-object/from16 p100, v98
+    move-object/from16 p100, v100
 
-    move-object/from16 p101, v99
+    move-object/from16 p101, v101
 
-    move-object/from16 p102, v100
+    move-object/from16 p102, v102
 
-    move-object/from16 p103, v101
+    move-object/from16 p103, v103
 
-    move-object/from16 p104, v102
+    move-object/from16 p104, v104
 
-    move-object/from16 p105, v103
+    move-object/from16 p105, v105
 
-    move-object/from16 p106, v104
+    move-object/from16 p106, v106
 
-    move-object/from16 p107, v105
+    move-object/from16 p107, v107
 
-    move-object/from16 p108, v106
+    move-object/from16 p108, v108
 
-    move-object/from16 p109, v107
+    move-object/from16 p109, v109
 
-    move-object/from16 p110, v108
+    move-object/from16 p110, v110
 
-    move-object/from16 p111, v109
+    move-object/from16 p111, v111
 
     move-object/from16 p112, v2
 
-    move-object/from16 p113, v3
+    move-object/from16 p113, v19
 
-    .line 12
-    invoke-direct/range {p1 .. p113}, Lcom/iMe/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+    move-object/from16 p114, v21
+
+    move-object/from16 p115, v3
+
+    .line 16
+    invoke-direct/range {p1 .. p115}, Lcom/iMe/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;IIIILjava/lang/Object;)Lcom/iMe/fork/models/backup/Backup;
+.method public static synthetic copy$default(Lcom/iMe/fork/models/backup/Backup;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;IIIILjava/lang/Object;)Lcom/iMe/fork/models/backup/Backup;
     .locals 24
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p113
+    move/from16 v1, p115
 
-    move/from16 v2, p114
+    move/from16 v2, p116
 
-    move/from16 v3, p115
+    move/from16 v3, p117
 
-    move/from16 v4, p116
+    move/from16 v4, p118
 
     and-int/lit8 v5, v1, 0x1
 
@@ -4079,7 +4137,7 @@
 
     if-eqz v23, :cond_3e
 
-    iget-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
+    iget-object v1, v0, Lcom/iMe/fork/models/backup/Backup;->formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
 
     goto :goto_3e
 
@@ -4093,7 +4151,7 @@
 
     if-eqz v2, :cond_3f
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
 
     goto :goto_3f
 
@@ -4107,7 +4165,7 @@
 
     if-eqz v23, :cond_40
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
 
     goto :goto_40
 
@@ -4121,7 +4179,7 @@
 
     if-eqz v23, :cond_41
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
 
     goto :goto_41
 
@@ -4135,7 +4193,7 @@
 
     if-eqz v23, :cond_42
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
 
     goto :goto_42
 
@@ -4149,7 +4207,7 @@
 
     if-eqz v23, :cond_43
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
 
     goto :goto_43
 
@@ -4163,7 +4221,7 @@
 
     if-eqz v23, :cond_44
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
 
     goto :goto_44
 
@@ -4177,7 +4235,7 @@
 
     if-eqz v23, :cond_45
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
 
     goto :goto_45
 
@@ -4191,7 +4249,7 @@
 
     if-eqz v23, :cond_46
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
 
     goto :goto_46
 
@@ -4205,7 +4263,7 @@
 
     if-eqz v2, :cond_47
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
 
     goto :goto_47
 
@@ -4219,7 +4277,7 @@
 
     if-eqz v2, :cond_48
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
 
     goto :goto_48
 
@@ -4233,7 +4291,7 @@
 
     if-eqz v2, :cond_49
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
 
     goto :goto_49
 
@@ -4247,7 +4305,7 @@
 
     if-eqz v2, :cond_4a
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
 
     goto :goto_4a
 
@@ -4261,7 +4319,7 @@
 
     if-eqz v2, :cond_4b
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
 
     goto :goto_4b
 
@@ -4275,7 +4333,7 @@
 
     if-eqz v2, :cond_4c
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
 
     goto :goto_4c
 
@@ -4289,7 +4347,7 @@
 
     if-eqz v2, :cond_4d
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
 
     goto :goto_4d
 
@@ -4303,7 +4361,7 @@
 
     if-eqz v2, :cond_4e
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
 
     goto :goto_4e
 
@@ -4317,7 +4375,7 @@
 
     if-eqz v23, :cond_4f
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
 
     goto :goto_4f
 
@@ -4325,13 +4383,13 @@
     move-object/from16 v2, p80
 
     :goto_4f
-    and-int v17, v3, v17
+    and-int v23, v3, v17
 
     move-object/from16 p80, v2
 
-    if-eqz v17, :cond_50
+    if-eqz v23, :cond_50
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
 
     goto :goto_50
 
@@ -4339,13 +4397,13 @@
     move-object/from16 v2, p81
 
     :goto_50
-    and-int v17, v3, v18
+    and-int v23, v3, v18
 
     move-object/from16 p81, v2
 
-    if-eqz v17, :cond_51
+    if-eqz v23, :cond_51
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
 
     goto :goto_51
 
@@ -4353,13 +4411,13 @@
     move-object/from16 v2, p82
 
     :goto_51
-    and-int v17, v3, v19
+    and-int v19, v3, v19
 
     move-object/from16 p82, v2
 
-    if-eqz v17, :cond_52
+    if-eqz v19, :cond_52
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
 
     goto :goto_52
 
@@ -4367,13 +4425,13 @@
     move-object/from16 v2, p83
 
     :goto_52
-    and-int v17, v3, v20
+    and-int v19, v3, v20
 
     move-object/from16 p83, v2
 
-    if-eqz v17, :cond_53
+    if-eqz v19, :cond_53
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
 
     goto :goto_53
 
@@ -4381,13 +4439,13 @@
     move-object/from16 v2, p84
 
     :goto_53
-    and-int v17, v3, v21
+    and-int v19, v3, v21
 
     move-object/from16 p84, v2
 
-    if-eqz v17, :cond_54
+    if-eqz v19, :cond_54
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
 
     goto :goto_54
 
@@ -4395,13 +4453,13 @@
     move-object/from16 v2, p85
 
     :goto_54
-    and-int v17, v3, v22
+    and-int v19, v3, v22
 
     move-object/from16 p85, v2
 
-    if-eqz v17, :cond_55
+    if-eqz v19, :cond_55
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
 
     goto :goto_55
 
@@ -4409,15 +4467,15 @@
     move-object/from16 v2, p86
 
     :goto_55
-    const/high16 v17, 0x400000
+    const/high16 v19, 0x400000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p86, v2
 
-    if-eqz v17, :cond_56
+    if-eqz v19, :cond_56
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
 
     goto :goto_56
 
@@ -4425,15 +4483,15 @@
     move-object/from16 v2, p87
 
     :goto_56
-    const/high16 v17, 0x800000
+    const/high16 v19, 0x800000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p87, v2
 
-    if-eqz v17, :cond_57
+    if-eqz v19, :cond_57
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
 
     goto :goto_57
 
@@ -4441,15 +4499,15 @@
     move-object/from16 v2, p88
 
     :goto_57
-    const/high16 v17, 0x1000000
+    const/high16 v19, 0x1000000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p88, v2
 
-    if-eqz v17, :cond_58
+    if-eqz v19, :cond_58
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
 
     goto :goto_58
 
@@ -4457,15 +4515,15 @@
     move-object/from16 v2, p89
 
     :goto_58
-    const/high16 v17, 0x2000000
+    const/high16 v19, 0x2000000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p89, v2
 
-    if-eqz v17, :cond_59
+    if-eqz v19, :cond_59
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
 
     goto :goto_59
 
@@ -4473,15 +4531,15 @@
     move-object/from16 v2, p90
 
     :goto_59
-    const/high16 v17, 0x4000000
+    const/high16 v19, 0x4000000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p90, v2
 
-    if-eqz v17, :cond_5a
+    if-eqz v19, :cond_5a
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
 
     goto :goto_5a
 
@@ -4489,15 +4547,15 @@
     move-object/from16 v2, p91
 
     :goto_5a
-    const/high16 v17, 0x8000000
+    const/high16 v19, 0x8000000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p91, v2
 
-    if-eqz v17, :cond_5b
+    if-eqz v19, :cond_5b
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
 
     goto :goto_5b
 
@@ -4505,15 +4563,15 @@
     move-object/from16 v2, p92
 
     :goto_5b
-    const/high16 v17, 0x10000000
+    const/high16 v19, 0x10000000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p92, v2
 
-    if-eqz v17, :cond_5c
+    if-eqz v19, :cond_5c
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
 
     goto :goto_5c
 
@@ -4521,15 +4579,15 @@
     move-object/from16 v2, p93
 
     :goto_5c
-    const/high16 v17, 0x20000000
+    const/high16 v19, 0x20000000
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p93, v2
 
-    if-eqz v17, :cond_5d
+    if-eqz v19, :cond_5d
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
 
     goto :goto_5d
 
@@ -4537,15 +4595,15 @@
     move-object/from16 v2, p94
 
     :goto_5d
-    const/high16 v17, 0x40000000    # 2.0f
+    const/high16 v19, 0x40000000    # 2.0f
 
-    and-int v17, v3, v17
+    and-int v19, v3, v19
 
     move-object/from16 p94, v2
 
-    if-eqz v17, :cond_5e
+    if-eqz v19, :cond_5e
 
-    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
+    iget-object v2, v0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
 
     goto :goto_5e
 
@@ -4553,9 +4611,9 @@
     move-object/from16 v2, p95
 
     :goto_5e
-    const/high16 v17, -0x80000000
+    const/high16 v19, -0x80000000
 
-    and-int v3, v3, v17
+    and-int v3, v3, v19
 
     if-eqz v3, :cond_5f
 
@@ -4567,11 +4625,11 @@
     move-object/from16 v3, p96
 
     :goto_5f
-    and-int/lit8 v17, v4, 0x1
+    and-int/lit8 v19, v4, 0x1
 
     move-object/from16 p96, v3
 
-    if-eqz v17, :cond_60
+    if-eqz v19, :cond_60
 
     iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->isMusicIntroShown:Ljava/lang/Boolean;
 
@@ -4581,11 +4639,11 @@
     move-object/from16 v3, p97
 
     :goto_60
-    and-int/lit8 v17, v4, 0x2
+    and-int/lit8 v19, v4, 0x2
 
     move-object/from16 p97, v3
 
-    if-eqz v17, :cond_61
+    if-eqz v19, :cond_61
 
     iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->selectedMusicTab:Ljava/lang/String;
 
@@ -4595,11 +4653,11 @@
     move-object/from16 v3, p98
 
     :goto_61
-    and-int/lit8 v17, v4, 0x4
+    and-int/lit8 v19, v4, 0x4
 
     move-object/from16 p98, v3
 
-    if-eqz v17, :cond_62
+    if-eqz v19, :cond_62
 
     iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->musicPlaylists:Ljava/util/Map;
 
@@ -4609,11 +4667,11 @@
     move-object/from16 v3, p99
 
     :goto_62
-    and-int/lit8 v17, v4, 0x8
+    and-int/lit8 v19, v4, 0x8
 
     move-object/from16 p99, v3
 
-    if-eqz v17, :cond_63
+    if-eqz v19, :cond_63
 
     iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->templatesMode:Ljava/lang/String;
 
@@ -4623,11 +4681,11 @@
     move-object/from16 v3, p100
 
     :goto_63
-    and-int/lit8 v17, v4, 0x10
+    and-int/lit8 v19, v4, 0x10
 
     move-object/from16 p100, v3
 
-    if-eqz v17, :cond_64
+    if-eqz v19, :cond_64
 
     iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->selectedTemplatesSortingType:Ljava/lang/String;
 
@@ -4637,11 +4695,11 @@
     move-object/from16 v3, p101
 
     :goto_64
-    and-int/lit8 v17, v4, 0x20
+    and-int/lit8 v19, v4, 0x20
 
     move-object/from16 p101, v3
 
-    if-eqz v17, :cond_65
+    if-eqz v19, :cond_65
 
     iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->templatesChannelId:Ljava/lang/Long;
 
@@ -4651,11 +4709,11 @@
     move-object/from16 v3, p102
 
     :goto_65
-    and-int/lit8 v17, v4, 0x40
+    and-int/lit8 v19, v4, 0x40
 
     move-object/from16 p102, v3
 
-    if-eqz v17, :cond_66
+    if-eqz v19, :cond_66
 
     iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->templates:Ljava/util/List;
 
@@ -4777,18 +4835,46 @@
     move-object/from16 v3, p111
 
     :goto_6e
-    and-int v4, v4, v16
+    and-int v16, v4, v16
 
-    if-eqz v4, :cond_6f
+    move-object/from16 p111, v3
 
-    iget-object v4, v0, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
+    if-eqz v16, :cond_6f
+
+    iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
 
     goto :goto_6f
 
     :cond_6f
-    move-object/from16 v4, p112
+    move-object/from16 v3, p112
 
     :goto_6f
+    and-int v16, v4, v17
+
+    move-object/from16 p112, v3
+
+    if-eqz v16, :cond_70
+
+    iget-object v3, v0, Lcom/iMe/fork/models/backup/Backup;->isChatProfileEnabled:Ljava/lang/Boolean;
+
+    goto :goto_70
+
+    :cond_70
+    move-object/from16 v3, p113
+
+    :goto_70
+    and-int v4, v4, v18
+
+    if-eqz v4, :cond_71
+
+    iget-object v4, v0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileDialogTypes:Ljava/util/Set;
+
+    goto :goto_71
+
+    :cond_71
+    move-object/from16 v4, p114
+
+    :goto_71
     move-object/from16 p1, v5
 
     move-object/from16 p2, v6
@@ -4815,11 +4901,11 @@
 
     move-object/from16 p95, v2
 
-    move-object/from16 p111, v3
+    move-object/from16 p113, v3
 
-    move-object/from16 p112, v4
+    move-object/from16 p114, v4
 
-    invoke-virtual/range {p0 .. p112}, Lcom/iMe/fork/models/backup/Backup;->copy(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Lcom/iMe/fork/models/backup/Backup;
+    invoke-virtual/range {p0 .. p114}, Lcom/iMe/fork/models/backup/Backup;->copy(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;)Lcom/iMe/fork/models/backup/Backup;
 
     move-result-object v0
 
@@ -4828,8 +4914,8 @@
 
 
 # virtual methods
-.method public final copy(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)Lcom/iMe/fork/models/backup/Backup;
-    .locals 114
+.method public final copy(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;)Lcom/iMe/fork/models/backup/Backup;
+    .locals 116
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -4915,6 +5001,7 @@
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
             "Lcom/iMe/fork/enums/DrawerHolidayIconType;",
+            "Lcom/iMe/fork/enums/FormattingPanelType;",
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
             "Ljava/util/Map<",
@@ -4981,7 +5068,6 @@
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
             "Ljava/lang/Boolean;",
-            "Ljava/lang/Boolean;",
             "Ljava/lang/String;",
             "Ljava/util/Map<",
             "Ljava/lang/Long;",
@@ -5009,6 +5095,10 @@
             ">;",
             "Ljava/util/List<",
             "Lcom/iMe/storage/domain/model/HistoryDialogModel;",
+            ">;",
+            "Ljava/lang/Boolean;",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
             ">;)",
             "Lcom/iMe/fork/models/backup/Backup;"
         }
@@ -5238,21 +5328,25 @@
 
     move-object/from16 v112, p112
 
+    move-object/from16 v113, p113
+
+    move-object/from16 v114, p114
+
     const-string v0, "allChatsTabFab"
 
     move-object/from16 v1, p109
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v113, Lcom/iMe/fork/models/backup/Backup;
+    new-instance v115, Lcom/iMe/fork/models/backup/Backup;
 
-    move-object/from16 v0, v113
+    move-object/from16 v0, v115
 
     move-object/from16 v1, p1
 
-    invoke-direct/range {v0 .. v112}, Lcom/iMe/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+    invoke-direct/range {v0 .. v114}, Lcom/iMe/fork/models/backup/Backup;-><init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/models/DrawerHeaderSettings;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/lang/Boolean;Lcom/iMe/fork/enums/DrawerHolidayIconType;Lcom/iMe/fork/enums/FormattingPanelType;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/Set;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/util/List;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Boolean;Ljava/util/Set;)V
 
-    return-object v113
+    return-object v115
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -6078,22 +6172,18 @@
     return v2
 
     :cond_3f
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_40
+    if-eq v1, v3, :cond_40
 
     return v2
 
     :cond_40
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6104,9 +6194,9 @@
     return v2
 
     :cond_41
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6117,9 +6207,9 @@
     return v2
 
     :cond_42
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6130,9 +6220,9 @@
     return v2
 
     :cond_43
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6143,9 +6233,9 @@
     return v2
 
     :cond_44
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6156,9 +6246,9 @@
     return v2
 
     :cond_45
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6169,9 +6259,9 @@
     return v2
 
     :cond_46
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6182,9 +6272,9 @@
     return v2
 
     :cond_47
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6195,9 +6285,9 @@
     return v2
 
     :cond_48
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6208,9 +6298,9 @@
     return v2
 
     :cond_49
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6221,9 +6311,9 @@
     return v2
 
     :cond_4a
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6234,9 +6324,9 @@
     return v2
 
     :cond_4b
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6247,9 +6337,9 @@
     return v2
 
     :cond_4c
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6260,9 +6350,9 @@
     return v2
 
     :cond_4d
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6273,9 +6363,9 @@
     return v2
 
     :cond_4e
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6286,9 +6376,9 @@
     return v2
 
     :cond_4f
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6299,9 +6389,9 @@
     return v2
 
     :cond_50
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6312,9 +6402,9 @@
     return v2
 
     :cond_51
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6325,9 +6415,9 @@
     return v2
 
     :cond_52
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6338,9 +6428,9 @@
     return v2
 
     :cond_53
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6351,9 +6441,9 @@
     return v2
 
     :cond_54
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6364,9 +6454,9 @@
     return v2
 
     :cond_55
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6377,9 +6467,9 @@
     return v2
 
     :cond_56
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6390,9 +6480,9 @@
     return v2
 
     :cond_57
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6403,9 +6493,9 @@
     return v2
 
     :cond_58
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6416,9 +6506,9 @@
     return v2
 
     :cond_59
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6429,9 +6519,9 @@
     return v2
 
     :cond_5a
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6442,9 +6532,9 @@
     return v2
 
     :cond_5b
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6455,9 +6545,9 @@
     return v2
 
     :cond_5c
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6468,9 +6558,9 @@
     return v2
 
     :cond_5d
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6481,9 +6571,9 @@
     return v2
 
     :cond_5e
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6494,9 +6584,9 @@
     return v2
 
     :cond_5f
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -6717,17 +6807,43 @@
     :cond_70
     iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
 
-    iget-object p1, p1, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_71
+
+    return v2
+
+    :cond_71
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isChatProfileEnabled:Ljava/lang/Boolean;
+
+    iget-object v3, p1, Lcom/iMe/fork/models/backup/Backup;->isChatProfileEnabled:Ljava/lang/Boolean;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_72
+
+    return v2
+
+    :cond_72
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileDialogTypes:Ljava/util/Set;
+
+    iget-object p1, p1, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileDialogTypes:Ljava/util/Set;
 
     invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_71
+    if-nez p1, :cond_73
 
     return v2
 
-    :cond_71
+    :cond_73
     return v0
 .end method
 
@@ -6742,7 +6858,7 @@
         }
     .end annotation
 
-    .line 114
+    .line 119
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
 
     return-object v0
@@ -6751,7 +6867,7 @@
 .method public final getAllChatsTabFab()Ljava/lang/String;
     .locals 1
 
-    .line 154
+    .line 158
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFab:Ljava/lang/String;
 
     return-object v0
@@ -6768,7 +6884,7 @@
         }
     .end annotation
 
-    .line 100
+    .line 105
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
 
     return-object v0
@@ -6785,7 +6901,7 @@
         }
     .end annotation
 
-    .line 155
+    .line 159
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabMultiFabs:Ljava/util/List;
 
     return-object v0
@@ -6808,7 +6924,7 @@
         }
     .end annotation
 
-    .line 106
+    .line 111
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
 
     return-object v0
@@ -6825,7 +6941,7 @@
         }
     .end annotation
 
-    .line 104
+    .line 109
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
 
     return-object v0
@@ -6844,7 +6960,7 @@
         }
     .end annotation
 
-    .line 45
+    .line 49
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->chatAttachAlertButtons:Ljava/util/Map;
 
     return-object v0
@@ -6861,7 +6977,7 @@
         }
     .end annotation
 
-    .line 118
+    .line 123
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
 
     return-object v0
@@ -6870,7 +6986,7 @@
 .method public final getDrawerHeaderSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
     .locals 1
 
-    .line 33
+    .line 37
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->drawerHeaderSettings:Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     return-object v0
@@ -6879,7 +6995,7 @@
 .method public final getDrawerHolidayIconType()Lcom/iMe/fork/enums/DrawerHolidayIconType;
     .locals 1
 
-    .line 78
+    .line 82
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->drawerHolidayIconType:Lcom/iMe/fork/enums/DrawerHolidayIconType;
 
     return-object v0
@@ -6896,7 +7012,7 @@
         }
     .end annotation
 
-    .line 34
+    .line 38
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->drawerItems:Ljava/util/Set;
 
     return-object v0
@@ -6905,7 +7021,7 @@
 .method public final getFilterTabsAtBottom()Ljava/lang/Boolean;
     .locals 1
 
-    .line 87
+    .line 92
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
 
     return-object v0
@@ -6914,7 +7030,7 @@
 .method public final getFilterTabsNotificationMode()Ljava/lang/String;
     .locals 1
 
-    .line 88
+    .line 93
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
 
     return-object v0
@@ -6923,7 +7039,7 @@
 .method public final getFilterTabsWidthMode()Ljava/lang/String;
     .locals 1
 
-    .line 89
+    .line 94
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
 
     return-object v0
@@ -6940,7 +7056,7 @@
         }
     .end annotation
 
-    .line 93
+    .line 98
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
 
     return-object v0
@@ -6949,8 +7065,17 @@
 .method public final getFoldersFirst()Ljava/lang/Boolean;
     .locals 1
 
-    .line 92
+    .line 97
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
+.method public final getFormattingPanelType()Lcom/iMe/fork/enums/FormattingPanelType;
+    .locals 1
+
+    .line 83
+    iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
 
     return-object v0
 .end method
@@ -6966,7 +7091,7 @@
         }
     .end annotation
 
-    .line 159
+    .line 163
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->hiddenChatDialogs:Ljava/util/List;
 
     return-object v0
@@ -6975,7 +7100,7 @@
 .method public final getHideFolders()Ljava/lang/Boolean;
     .locals 1
 
-    .line 91
+    .line 96
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
 
     return-object v0
@@ -6984,7 +7109,7 @@
 .method public final getIconInsteadAllChatsTabTitle()Ljava/lang/Boolean;
     .locals 1
 
-    .line 99
+    .line 104
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
 
     return-object v0
@@ -7001,7 +7126,7 @@
         }
     .end annotation
 
-    .line 49
+    .line 53
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->messagePopupItems:Ljava/util/List;
 
     return-object v0
@@ -7020,7 +7145,7 @@
         }
     .end annotation
 
-    .line 84
+    .line 89
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
 
     return-object v0
@@ -7038,7 +7163,7 @@
         }
     .end annotation
 
-    .line 135
+    .line 139
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->musicPlaylists:Ljava/util/Map;
 
     return-object v0
@@ -7047,7 +7172,7 @@
 .method public final getNoTopicFirst()Ljava/lang/Boolean;
     .locals 1
 
-    .line 148
+    .line 152
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->noTopicFirst:Ljava/lang/Boolean;
 
     return-object v0
@@ -7064,7 +7189,7 @@
         }
     .end annotation
 
-    .line 163
+    .line 167
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
 
     return-object v0
@@ -7073,7 +7198,7 @@
 .method public final getRememberLastFilterTab()Ljava/lang/Boolean;
     .locals 1
 
-    .line 90
+    .line 95
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
 
     return-object v0
@@ -7082,8 +7207,25 @@
 .method public final getSelectedAutoBackupInterval()Ljava/lang/String;
     .locals 1
 
-    .line 15
+    .line 19
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedAutoBackupInterval:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getSelectedChatProfileDialogTypes()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    .line 172
+    iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileDialogTypes:Ljava/util/Set;
 
     return-object v0
 .end method
@@ -7091,7 +7233,7 @@
 .method public final getSelectedChatProfileTelegramIdMode()Ljava/lang/String;
     .locals 1
 
-    .line 65
+    .line 69
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileTelegramIdMode:Ljava/lang/String;
 
     return-object v0
@@ -7100,7 +7242,7 @@
 .method public final getSelectedContactsFilter()Ljava/lang/String;
     .locals 1
 
-    .line 25
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedContactsFilter:Ljava/lang/String;
 
     return-object v0
@@ -7117,7 +7259,7 @@
         }
     .end annotation
 
-    .line 75
+    .line 79
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedDialogTypesForMessagePopupReactions:Ljava/util/Set;
 
     return-object v0
@@ -7134,7 +7276,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 66
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedDrawStatusTypes:Ljava/util/Set;
 
     return-object v0
@@ -7151,7 +7293,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 52
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedExtendedAvatarPreviewerItems:Ljava/util/Set;
 
     return-object v0
@@ -7160,7 +7302,7 @@
 .method public final getSelectedMusicTab()Ljava/lang/String;
     .locals 1
 
-    .line 134
+    .line 138
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedMusicTab:Ljava/lang/String;
 
     return-object v0
@@ -7177,7 +7319,7 @@
         }
     .end annotation
 
-    .line 73
+    .line 77
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedPhotoViewerMenuItems:Ljava/util/Set;
 
     return-object v0
@@ -7194,7 +7336,7 @@
         }
     .end annotation
 
-    .line 60
+    .line 64
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedRecentChatsDialogTypes:Ljava/util/Set;
 
     return-object v0
@@ -7203,7 +7345,7 @@
 .method public final getSelectedSentMessageFont()Ljava/lang/String;
     .locals 1
 
-    .line 70
+    .line 74
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedSentMessageFont:Ljava/lang/String;
 
     return-object v0
@@ -7212,7 +7354,7 @@
 .method public final getSelectedStickersSize()Ljava/lang/String;
     .locals 1
 
-    .line 18
+    .line 22
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedStickersSize:Ljava/lang/String;
 
     return-object v0
@@ -7221,7 +7363,7 @@
 .method public final getSelectedTemplatesSortingType()Ljava/lang/String;
     .locals 1
 
-    .line 140
+    .line 144
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedTemplatesSortingType:Ljava/lang/String;
 
     return-object v0
@@ -7230,7 +7372,7 @@
 .method public final getSelectedVideoVoiceCamera()Ljava/lang/String;
     .locals 1
 
-    .line 58
+    .line 62
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->selectedVideoVoiceCamera:Ljava/lang/String;
 
     return-object v0
@@ -7253,7 +7395,7 @@
         }
     .end annotation
 
-    .line 105
+    .line 110
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
 
     return-object v0
@@ -7270,7 +7412,7 @@
         }
     .end annotation
 
-    .line 102
+    .line 107
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
 
     return-object v0
@@ -7287,7 +7429,7 @@
         }
     .end annotation
 
-    .line 41
+    .line 45
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->swipeToGoToNextUnreadDialogTypes:Ljava/util/Set;
 
     return-object v0
@@ -7304,7 +7446,7 @@
         }
     .end annotation
 
-    .line 142
+    .line 146
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->templates:Ljava/util/List;
 
     return-object v0
@@ -7313,7 +7455,7 @@
 .method public final getTemplatesChannelId()Ljava/lang/Long;
     .locals 1
 
-    .line 141
+    .line 145
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->templatesChannelId:Ljava/lang/Long;
 
     return-object v0
@@ -7322,7 +7464,7 @@
 .method public final getTemplatesMode()Ljava/lang/String;
     .locals 1
 
-    .line 139
+    .line 143
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->templatesMode:Ljava/lang/String;
 
     return-object v0
@@ -7339,7 +7481,7 @@
         }
     .end annotation
 
-    .line 149
+    .line 153
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->topics:Ljava/util/List;
 
     return-object v0
@@ -7348,7 +7490,7 @@
 .method public final getTopicsBarAtBottom()Ljava/lang/Boolean;
     .locals 1
 
-    .line 147
+    .line 151
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->topicsBarAtBottom:Ljava/lang/Boolean;
 
     return-object v0
@@ -7357,7 +7499,7 @@
 .method public final getTopicsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 146
+    .line 150
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->topicsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -7366,7 +7508,7 @@
 .method public final getVersion()Ljava/lang/Integer;
     .locals 1
 
-    .line 153
+    .line 157
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->version:Ljava/lang/Integer;
 
     return-object v0
@@ -8491,7 +8633,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
 
     if-nez v2, :cond_3e
 
@@ -8500,7 +8642,7 @@
     goto :goto_3e
 
     :cond_3e
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->hashCode()I
 
     move-result v2
 
@@ -8509,7 +8651,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_3f
 
@@ -8527,7 +8669,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_40
 
@@ -8545,7 +8687,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->multiPanelSettings:Ljava/util/Map;
 
     if-nez v2, :cond_41
 
@@ -8563,7 +8705,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsAtBottom:Ljava/lang/Boolean;
 
     if-nez v2, :cond_42
 
@@ -8572,7 +8714,7 @@
     goto :goto_42
 
     :cond_42
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
@@ -8581,7 +8723,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsNotificationMode:Ljava/lang/String;
 
     if-nez v2, :cond_43
 
@@ -8599,7 +8741,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filterTabsWidthMode:Ljava/lang/String;
 
     if-nez v2, :cond_44
 
@@ -8608,7 +8750,7 @@
     goto :goto_44
 
     :cond_44
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
@@ -8617,7 +8759,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->rememberLastFilterTab:Ljava/lang/Boolean;
 
     if-nez v2, :cond_45
 
@@ -8635,7 +8777,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->hideFolders:Ljava/lang/Boolean;
 
     if-nez v2, :cond_46
 
@@ -8653,7 +8795,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->foldersFirst:Ljava/lang/Boolean;
 
     if-nez v2, :cond_47
 
@@ -8671,7 +8813,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->filters:Ljava/util/List;
 
     if-nez v2, :cond_48
 
@@ -8689,7 +8831,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
 
     if-nez v2, :cond_49
 
@@ -8707,7 +8849,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_4a
 
@@ -8725,7 +8867,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->iconInsteadAllChatsTabTitle:Ljava/lang/Boolean;
 
     if-nez v2, :cond_4b
 
@@ -8743,7 +8885,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->allChatsTabFabs:Ljava/util/Set;
 
     if-nez v2, :cond_4c
 
@@ -8761,7 +8903,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_4d
 
@@ -8779,7 +8921,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->sortingSettings:Ljava/util/List;
 
     if-nez v2, :cond_4e
 
@@ -8797,7 +8939,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_4f
 
@@ -8815,7 +8957,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingSettings:Ljava/util/List;
 
     if-nez v2, :cond_50
 
@@ -8833,7 +8975,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->sortingPinnedChats:Ljava/util/Map;
 
     if-nez v2, :cond_51
 
@@ -8851,7 +8993,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->archiveSortingPinnedChats:Ljava/util/Map;
 
     if-nez v2, :cond_52
 
@@ -8869,7 +9011,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_53
 
@@ -8887,7 +9029,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
 
     if-nez v2, :cond_54
 
@@ -8905,7 +9047,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_55
 
@@ -8923,7 +9065,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_56
 
@@ -8941,7 +9083,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->albums:Ljava/util/List;
 
     if-nez v2, :cond_57
 
@@ -8959,7 +9101,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->dialogSettings:Ljava/util/List;
 
     if-nez v2, :cond_58
 
@@ -8977,7 +9119,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_59
 
@@ -8995,7 +9137,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_5a
 
@@ -9013,7 +9155,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_5b
 
@@ -9031,7 +9173,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
 
     if-nez v2, :cond_5c
 
@@ -9049,7 +9191,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
 
     if-nez v2, :cond_5d
 
@@ -9067,7 +9209,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
 
     if-nez v2, :cond_5e
 
@@ -9369,14 +9511,50 @@
 
     if-nez v2, :cond_6e
 
+    move v2, v1
+
     goto :goto_6e
 
     :cond_6e
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    move-result v1
+    move-result v2
 
     :goto_6e
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->isChatProfileEnabled:Ljava/lang/Boolean;
+
+    if-nez v2, :cond_6f
+
+    move v2, v1
+
+    goto :goto_6f
+
+    :cond_6f
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    :goto_6f
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileDialogTypes:Ljava/util/Set;
+
+    if-nez v2, :cond_70
+
+    goto :goto_70
+
+    :cond_70
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_70
     add-int/2addr v0, v1
 
     return v0
@@ -9385,7 +9563,7 @@
 .method public final isActionBarAccountSwitchEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 35
+    .line 39
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isActionBarAccountSwitchEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9394,7 +9572,7 @@
 .method public final isAlbumsIntroShown()Ljava/lang/Boolean;
     .locals 1
 
-    .line 111
+    .line 116
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isAlbumsIntroShown:Ljava/lang/Boolean;
 
     return-object v0
@@ -9403,7 +9581,7 @@
 .method public final isAllChatsTabEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 98
+    .line 103
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isAllChatsTabEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9412,7 +9590,7 @@
 .method public final isArchiveSortingChatsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 103
+    .line 108
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isArchiveSortingChatsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9421,7 +9599,7 @@
 .method public final isAutoBackupEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 14
+    .line 18
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isAutoBackupEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9430,7 +9608,7 @@
 .method public final isBotHelpTranslateEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 67
+    .line 71
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isBotHelpTranslateEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9439,7 +9617,7 @@
 .method public final isCLoudAlbumsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 110
+    .line 115
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isCLoudAlbumsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9448,7 +9626,7 @@
 .method public final isCallsConfirmationEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 52
+    .line 56
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isCallsConfirmationEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9457,8 +9635,17 @@
 .method public final isChannelWidePostsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 51
+    .line 55
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isChannelWidePostsEnabled:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
+.method public final isChatProfileEnabled()Ljava/lang/Boolean;
+    .locals 1
+
+    .line 171
+    iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isChatProfileEnabled:Ljava/lang/Boolean;
 
     return-object v0
 .end method
@@ -9466,7 +9653,7 @@
 .method public final isChatSortingEnabledByDefault()Ljava/lang/Boolean;
     .locals 1
 
-    .line 97
+    .line 102
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isChatSortingEnabledByDefault:Ljava/lang/Boolean;
 
     return-object v0
@@ -9475,7 +9662,7 @@
 .method public final isChatThemesEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 44
+    .line 48
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isChatThemesEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9484,7 +9671,7 @@
 .method public final isCombineMessagesEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 72
+    .line 76
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isCombineMessagesEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9493,7 +9680,7 @@
 .method public final isDeleteCloudConfirmationEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 53
+    .line 57
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isDeleteCloudConfirmationEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9502,7 +9689,7 @@
 .method public final isDialogsCompactModeEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 38
+    .line 42
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isDialogsCompactModeEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9511,7 +9698,7 @@
 .method public final isExtendedAvatarPreviewerByTapEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 47
+    .line 51
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isExtendedAvatarPreviewerByTapEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9520,7 +9707,7 @@
 .method public final isExtendedAvatarPreviewerEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 46
+    .line 50
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isExtendedAvatarPreviewerEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9529,7 +9716,7 @@
 .method public final isFilesSendingPreviewAndCaptionEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 16
+    .line 20
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isFilesSendingPreviewAndCaptionEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9538,7 +9725,7 @@
 .method public final isHideChatKeyboardOnScrollEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 43
+    .line 47
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isHideChatKeyboardOnScrollEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9547,7 +9734,7 @@
 .method public final isHideMultiPanelOnScrollEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 83
+    .line 88
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isHideMultiPanelOnScrollEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9556,7 +9743,7 @@
 .method public final isMainActionBarMenuEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 36
+    .line 40
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isMainActionBarMenuEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9565,7 +9752,7 @@
 .method public final isMessagePopupAggregatorEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 50
+    .line 54
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isMessagePopupAggregatorEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9574,7 +9761,7 @@
 .method public final isMessageQuickTranslateEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 66
+    .line 70
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isMessageQuickTranslateEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9583,7 +9770,7 @@
 .method public final isMultiForwardingOptionsHintShown()Ljava/lang/Boolean;
     .locals 1
 
-    .line 28
+    .line 32
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isMultiForwardingOptionsHintShown:Ljava/lang/Boolean;
 
     return-object v0
@@ -9592,7 +9779,7 @@
 .method public final isMultiPanelEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 82
+    .line 87
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isMultiPanelEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9601,7 +9788,7 @@
 .method public final isMultiReplyEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 64
+    .line 68
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isMultiReplyEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9610,7 +9797,7 @@
 .method public final isMusicIntroShown()Ljava/lang/Boolean;
     .locals 1
 
-    .line 133
+    .line 137
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isMusicIntroShown:Ljava/lang/Boolean;
 
     return-object v0
@@ -9619,7 +9806,7 @@
 .method public final isOpenAlbumsInsteadCloudEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 113
+    .line 118
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isOpenAlbumsInsteadCloudEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9628,7 +9815,7 @@
 .method public final isOpenForwardingOptionsAutomaticallyEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 63
+    .line 67
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isOpenForwardingOptionsAutomaticallyEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9637,7 +9824,7 @@
 .method public final isPinnedPlayerMinimized()Ljava/lang/Boolean;
     .locals 1
 
-    .line 130
+    .line 135
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerMinimized:Ljava/lang/Boolean;
 
     return-object v0
@@ -9646,17 +9833,8 @@
 .method public final isPinnedPlayerNightThemeEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 132
+    .line 136
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerNightThemeEnabled:Ljava/lang/Boolean;
-
-    return-object v0
-.end method
-
-.method public final isPinnedPlayerThemeOverridden()Ljava/lang/Boolean;
-    .locals 1
-
-    .line 131
-    iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
 
     return-object v0
 .end method
@@ -9664,7 +9842,7 @@
 .method public final isPlayerPinned()Ljava/lang/Boolean;
     .locals 1
 
-    .line 129
+    .line 134
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPlayerPinned:Ljava/lang/Boolean;
 
     return-object v0
@@ -9673,7 +9851,7 @@
 .method public final isPremiumAnimateAvatars()Ljava/lang/Boolean;
     .locals 1
 
-    .line 23
+    .line 27
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPremiumAnimateAvatars:Ljava/lang/Boolean;
 
     return-object v0
@@ -9682,7 +9860,7 @@
 .method public final isPremiumAnimateStickers()Ljava/lang/Boolean;
     .locals 1
 
-    .line 20
+    .line 24
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPremiumAnimateStickers:Ljava/lang/Boolean;
 
     return-object v0
@@ -9691,7 +9869,7 @@
 .method public final isPremiumShowBadge()Ljava/lang/Boolean;
     .locals 1
 
-    .line 21
+    .line 25
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPremiumShowBadge:Ljava/lang/Boolean;
 
     return-object v0
@@ -9700,7 +9878,7 @@
 .method public final isPremiumShowStatus()Ljava/lang/Boolean;
     .locals 1
 
-    .line 22
+    .line 26
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isPremiumShowStatus:Ljava/lang/Boolean;
 
     return-object v0
@@ -9709,7 +9887,7 @@
 .method public final isProfileInfoHidden()Ljava/lang/Boolean;
     .locals 1
 
-    .line 27
+    .line 31
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isProfileInfoHidden:Ljava/lang/Boolean;
 
     return-object v0
@@ -9718,7 +9896,7 @@
 .method public final isProxyButtonEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 37
+    .line 41
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isProxyButtonEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9727,7 +9905,7 @@
 .method public final isProxyButtonVisible()Ljava/lang/Boolean;
     .locals 1
 
-    .line 24
+    .line 28
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isProxyButtonVisible:Ljava/lang/Boolean;
 
     return-object v0
@@ -9736,7 +9914,7 @@
 .method public final isQuickReactionEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 19
+    .line 23
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isQuickReactionEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9745,7 +9923,7 @@
 .method public final isReactionsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 74
+    .line 78
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isReactionsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9754,7 +9932,7 @@
 .method public final isReactionsInSendPopupEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 76
+    .line 80
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isReactionsInSendPopupEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9763,7 +9941,7 @@
 .method public final isReadAllChatsConfirmationShown()Ljava/lang/Boolean;
     .locals 1
 
-    .line 26
+    .line 30
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isReadAllChatsConfirmationShown:Ljava/lang/Boolean;
 
     return-object v0
@@ -9772,7 +9950,7 @@
 .method public final isRecentChatsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 59
+    .line 63
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isRecentChatsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9781,7 +9959,7 @@
 .method public final isRememberLastDialogEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 71
+    .line 75
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isRememberLastDialogEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9790,7 +9968,7 @@
 .method public final isRevokeByDefault()Ljava/lang/Boolean;
     .locals 1
 
-    .line 77
+    .line 81
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isRevokeByDefault:Ljava/lang/Boolean;
 
     return-object v0
@@ -9799,7 +9977,7 @@
 .method public final isSaveArchiveRecentChatsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 61
+    .line 65
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSaveArchiveRecentChatsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9808,7 +9986,7 @@
 .method public final isSendingGifConfirmationEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 54
+    .line 58
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSendingGifConfirmationEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9817,7 +9995,7 @@
 .method public final isSendingStickerConfirmationEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 55
+    .line 59
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSendingStickerConfirmationEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9826,7 +10004,7 @@
 .method public final isShowChannelBottomPanel()Ljava/lang/Boolean;
     .locals 1
 
-    .line 42
+    .line 46
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isShowChannelBottomPanel:Ljava/lang/Boolean;
 
     return-object v0
@@ -9835,7 +10013,7 @@
 .method public final isSilentSendingEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 69
+    .line 73
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSilentSendingEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9844,7 +10022,7 @@
 .method public final isSortCloudAlbumsByNameEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 112
+    .line 117
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSortCloudAlbumsByNameEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9853,7 +10031,7 @@
 .method public final isSortingChatsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 101
+    .line 106
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSortingChatsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9862,7 +10040,7 @@
 .method public final isSpeakWithoutHoldEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 56
+    .line 60
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSpeakWithoutHoldEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9871,7 +10049,7 @@
 .method public final isStoriesAvatarsEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 124
+    .line 129
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9880,7 +10058,7 @@
 .method public final isStoriesBarEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 123
+    .line 128
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9889,7 +10067,7 @@
 .method public final isStoriesEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 122
+    .line 127
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9898,7 +10076,7 @@
 .method public final isStoriesProfileAvatarEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 125
+    .line 130
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9907,7 +10085,7 @@
 .method public final isSuggestPremiumReactionsEmoji()Ljava/lang/Boolean;
     .locals 1
 
-    .line 29
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSuggestPremiumReactionsEmoji:Ljava/lang/Boolean;
 
     return-object v0
@@ -9916,7 +10094,7 @@
 .method public final isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 40
+    .line 44
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9925,7 +10103,7 @@
 .method public final isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 39
+    .line 43
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9934,7 +10112,7 @@
 .method public final isTranslateInSendPopupEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 68
+    .line 72
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isTranslateInSendPopupEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9943,7 +10121,7 @@
 .method public final isVibrationEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 17
+    .line 21
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isVibrationEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -9952,7 +10130,7 @@
 .method public final isVideoSpeakWithoutHoldEnabled()Ljava/lang/Boolean;
     .locals 1
 
-    .line 57
+    .line 61
     iget-object v0, p0, Lcom/iMe/fork/models/backup/Backup;->isVideoSpeakWithoutHoldEnabled:Ljava/lang/Boolean;
 
     return-object v0
@@ -10461,6 +10639,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    const-string v1, ", formattingPanelType="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->formattingPanelType:Lcom/iMe/fork/enums/FormattingPanelType;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     const-string v1, ", isMultiPanelEnabled="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -10717,14 +10903,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", isPinnedPlayerThemeOverridden="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isPinnedPlayerThemeOverridden:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     const-string v1, ", isPinnedPlayerNightThemeEnabled="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -10858,6 +11036,22 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->pinnedRecentChats:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isChatProfileEnabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->isChatProfileEnabled:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", selectedChatProfileDialogTypes="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/iMe/fork/models/backup/Backup;->selectedChatProfileDialogTypes:Ljava/util/Set;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

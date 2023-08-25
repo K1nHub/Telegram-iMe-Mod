@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer$14;
-
-.field public final synthetic f$1:Z
+.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer$14;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/PhotoViewer$14;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;->f$1:Z
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/PhotoViewer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/PhotoViewer$14;
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda17;->f$1:Z
-
-    check-cast p1, Landroid/net/Uri;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$yk761Ccy2SFfE2PUU32C1OJs_Bc(Lorg/telegram/ui/PhotoViewer$14;ZLandroid/net/Uri;)V
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$gQ0AELOnt5E4FZImqy_Oz2iQtcY(Lorg/telegram/ui/PhotoViewer;)V
 
     return-void
 .end method

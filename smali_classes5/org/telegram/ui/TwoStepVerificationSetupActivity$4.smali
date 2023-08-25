@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 546
+    .line 549
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$4;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 549
+    .line 552
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 551
+    .line 554
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$4;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -51,7 +51,7 @@
 
     check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 552
+    .line 555
     sget p2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     const/16 v0, 0x10

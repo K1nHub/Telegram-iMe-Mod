@@ -60,7 +60,7 @@
     goto :goto_1
 
     :cond_0
-    const-string v3, "off"
+    const-string/jumbo v3, "off"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -71,7 +71,7 @@
     goto :goto_1
 
     :cond_1
-    const-string v3, "on"
+    const-string/jumbo v3, "on"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

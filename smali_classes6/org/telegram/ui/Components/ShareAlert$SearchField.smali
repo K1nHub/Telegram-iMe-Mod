@@ -279,7 +279,7 @@
     const/4 v1, 0x1
 
     .line 517
-    invoke-virtual {v0, v1, p2}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v0, v1, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 518
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;

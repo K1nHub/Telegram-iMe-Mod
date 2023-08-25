@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 38
+    .line 43
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$dynamicOrientationContainer$2;->this$0:Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->access$initDynamicOrientationContainer(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Landroid/widget/LinearLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 38
+    .line 43
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$dynamicOrientationContainer$2;->invoke()Landroid/widget/LinearLayout;
 
     move-result-object v0

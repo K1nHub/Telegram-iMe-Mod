@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;
     .locals 1
 
-    .line 52
+    .line 53
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$binding$2;->this$0:Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/BaseFragmentExtKt;->getLayoutInflater(Lorg/telegram/ui/ActionBar/BaseFragment;)Landroid/view/LayoutInflater;

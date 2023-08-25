@@ -18,28 +18,28 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)V
     .locals 2
 
-    .line 1328
+    .line 1419
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
-    .line 1329
+    .line 1420
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iput-object v0, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->translationInterpolator:Landroid/view/animation/Interpolator;
 
     const-wide/16 v0, 0x96
 
-    .line 1330
+    .line 1421
     invoke-virtual {p0, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setMoveDuration(J)V
 
-    .line 1331
+    .line 1422
     invoke-virtual {p0, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setAddDuration(J)V
 
-    .line 1332
+    .line 1423
     invoke-virtual {p0, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setRemoveDuration(J)V
 
     const/4 v0, 0x0
 
-    .line 1333
+    .line 1424
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setShowWithoutAnimation(Z)V
 
     return-void

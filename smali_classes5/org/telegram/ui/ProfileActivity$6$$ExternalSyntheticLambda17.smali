@@ -2,44 +2,58 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity$6;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/UserConfig;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$User;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+.field public final synthetic f$2:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$6;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$6;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/ProfileActivity$6;
 
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/messenger/UserConfig;
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/tgnet/TLRPC$User;
 
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$2:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 3
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/ProfileActivity$6;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/messenger/UserConfig;
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda17;->f$2:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ProfileActivity$6;->$r8$lambda$ZcjAx_FmWOLWQVTRkrbmgEMrOU4(Lorg/telegram/ui/ProfileActivity$6;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-object v3, p1
 
-    return-void
+    move-object v4, p2
+
+    move-object v5, p3
+
+    move v6, p4
+
+    move-object v7, p5
+
+    move-object v8, p6
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$6;->$r8$lambda$Eqfm97mMxiw4iwgmbfo1_yXdskU(Lorg/telegram/ui/ProfileActivity$6;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+
+    move-result p1
+
+    return p1
 .end method

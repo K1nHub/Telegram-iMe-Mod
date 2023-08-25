@@ -53,7 +53,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 48
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
     iget-object v2, p0, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsers$2$1;->this$0:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
@@ -92,7 +92,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 40
+    .line 48
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     invoke-virtual {p0, p1}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsers$2$1;->invoke(Lorg/telegram/tgnet/TLRPC$TL_contact;)Ljava/lang/Boolean;

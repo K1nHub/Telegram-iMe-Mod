@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/chat/ChatView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 339
+    .line 344
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 341
+    .line 346
     iput-object p2, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/chat/ChatView;)V
     .locals 1
 
-    .line 346
+    .line 351
     iget-object v0, p0, Lcom/iMe/ui/chat/ChatView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 335
+    .line 340
     check-cast p1, Lcom/iMe/ui/chat/ChatView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/chat/ChatView$$State$ShowToastCommand;->apply(Lcom/iMe/ui/chat/ChatView;)V

@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;)V
     .locals 0
 
-    .line 1319
+    .line 1323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

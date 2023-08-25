@@ -39,7 +39,7 @@
 
     new-array v1, v1, [F
 
-    const/high16 v2, 0x40800000    # 4.0f
+    const/high16 v2, 0x41000000    # 8.0f
 
     const/4 v3, 0x0
 

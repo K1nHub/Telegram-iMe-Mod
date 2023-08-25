@@ -31,18 +31,18 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 20
+    .line 24
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 19
+    .line 23
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 26
+    .line 28
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->BINANCE_ACCOUNT:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->itemViewType:I
 
-    .line 27
+    .line 29
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_account:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->layoutId:I
@@ -53,7 +53,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 18
+    .line 22
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -141,7 +141,7 @@
 
     move-result-object p1
 
-    .line 40
+    .line 42
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_binance_pay_id:I
@@ -162,11 +162,12 @@
 
     move-result-object v1
 
+    .line 40
     invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 41
+    .line 44
     sget v0, Lorg/telegram/messenger/R$id;->item_more_options:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$1;
@@ -177,7 +178,7 @@
 
     move-result-object p1
 
-    .line 57
+    .line 69
     sget v0, Lorg/telegram/messenger/R$id;->image_account_avatar:I
 
     sget-object v1, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$2;->INSTANCE:Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$2;
@@ -186,7 +187,7 @@
 
     move-result-object p1
 
-    .line 58
+    .line 70
     sget v0, Lorg/telegram/messenger/R$id;->horizontal_action_buttons:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$3;
@@ -224,9 +225,10 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 80
     sget p3, Lorg/telegram/messenger/R$id;->text_account_id:I
 
+    .line 81
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_binance_pay_id:I
@@ -247,11 +249,12 @@
 
     move-result-object v0
 
+    .line 79
     invoke-virtual {p1, p3, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 64
+    .line 83
     sget p3, Lorg/telegram/messenger/R$id;->text_account_name:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;->getInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
@@ -266,7 +269,7 @@
 
     move-result-object p1
 
-    .line 65
+    .line 84
     sget p3, Lorg/telegram/messenger/R$id;->image_account_avatar:I
 
     sget-object v0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$4;->INSTANCE:Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$4;
@@ -275,7 +278,7 @@
 
     move-result-object p1
 
-    .line 66
+    .line 85
     sget p3, Lorg/telegram/messenger/R$id;->horizontal_action_buttons:I
 
     new-instance v0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider$convert$5;
@@ -290,7 +293,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 18
+    .line 22
     check-cast p2, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;)V
@@ -301,7 +304,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 18
+    .line 22
     check-cast p2, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;Ljava/util/List;)V
@@ -312,7 +315,7 @@
 .method public final getActionBarMenuItemDelegate()Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
     .locals 1
 
-    .line 23
+    .line 26
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->actionBarMenuItemDelegate:Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
 
     return-object v0
@@ -321,7 +324,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 26
+    .line 28
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->itemViewType:I
 
     return v0
@@ -330,7 +333,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 27
+    .line 29
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->layoutId:I
 
     return v0
@@ -339,7 +342,7 @@
 .method public final setActionBarMenuItemDelegate(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;)V
     .locals 0
 
-    .line 23
+    .line 26
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->actionBarMenuItemDelegate:Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
 
     return-void

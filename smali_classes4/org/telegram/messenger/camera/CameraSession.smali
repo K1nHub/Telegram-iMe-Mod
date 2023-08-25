@@ -162,7 +162,7 @@
     const-string p2, "flashMode"
 
     :goto_0
-    const-string p3, "off"
+    const-string/jumbo p3, "off"
 
     invoke-interface {p1, p2, p3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1367,7 +1367,7 @@
     :catch_1
     :goto_5
     :try_start_5
-    const-string p1, "off"
+    const-string/jumbo p1, "off"
 
     .line 265
     invoke-virtual {v3, p1}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
@@ -1926,7 +1926,7 @@
     goto :goto_0
 
     :cond_0
-    const-string p1, "off"
+    const-string/jumbo p1, "off"
 
     .line 155
     :goto_0
@@ -1962,7 +1962,7 @@
 
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraSession;->currentFlashMode:Ljava/lang/String;
 
-    const-string v0, "on"
+    const-string/jumbo v0, "on"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

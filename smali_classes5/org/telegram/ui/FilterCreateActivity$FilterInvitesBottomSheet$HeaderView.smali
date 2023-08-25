@@ -38,30 +38,30 @@
 .method public constructor <init>(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;Landroid/content/Context;)V
     .locals 11
 
-    .line 2621
+    .line 2630
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
-    .line 2622
+    .line 2631
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2624
+    .line 2633
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;->imageView:Landroid/widget/ImageView;
 
-    .line 2625
+    .line 2634
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2626
+    .line 2635
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_limit_links:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2627
+    .line 2636
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -74,7 +74,7 @@
 
     const/16 v1, 0x16
 
-    .line 2628
+    .line 2637
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -105,21 +105,21 @@
 
     const/4 v8, 0x0
 
-    .line 2629
+    .line 2638
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2631
+    .line 2640
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;->titleView:Landroid/widget/TextView;
 
-    .line 2632
+    .line 2641
     invoke-virtual {p1}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -128,7 +128,7 @@
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 2633
+    .line 2642
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
@@ -139,10 +139,10 @@
 
     const/high16 v2, 0x41a00000    # 20.0f
 
-    .line 2634
+    .line 2643
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2635
+    .line 2644
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -151,7 +151,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2636
+    .line 2645
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/4 v4, -0x2
@@ -168,21 +168,21 @@
 
     const/4 v10, 0x0
 
-    .line 2637
+    .line 2646
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {p0, v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2639
+    .line 2648
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;->subtitleView:Landroid/widget/TextView;
 
-    .line 2640
+    .line 2649
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->access$3100(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Ljava/util/ArrayList;
 
     move-result-object p1
@@ -193,7 +193,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2641
+    .line 2650
     sget p1, Lorg/telegram/messenger/R$string;->FolderLinkShareSubtitleEmpty:I
 
     const-string v3, "FolderLinkShareSubtitleEmpty"
@@ -204,7 +204,7 @@
 
     goto :goto_0
 
-    .line 2642
+    .line 2651
     :cond_0
     sget p1, Lorg/telegram/messenger/R$string;->FolderLinkShareSubtitle:I
 
@@ -214,24 +214,24 @@
 
     move-result-object p1
 
-    .line 2640
+    .line 2649
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 p1, 0x2
 
-    .line 2644
+    .line 2653
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 2645
+    .line 2654
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 p1, 0x41600000    # 14.0f
 
-    .line 2646
+    .line 2655
     invoke-virtual {v0, v1, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2647
+    .line 2656
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
@@ -252,31 +252,31 @@
 
     const/4 v7, 0x0
 
-    .line 2648
+    .line 2657
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
 
     invoke-virtual {p0, v0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2650
+    .line 2659
     new-instance p1, Landroid/widget/ImageView;
 
     invoke-direct {p1, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;->closeImageView:Landroid/widget/ImageView;
 
-    .line 2651
+    .line 2660
     sget-object p2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2652
+    .line 2661
     sget p2, Lorg/telegram/messenger/R$drawable;->msg_close:I
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2653
+    .line 2662
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText5:I
@@ -291,7 +291,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2654
+    .line 2663
     new-instance p2, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;)V
@@ -312,7 +312,7 @@
 
     const/4 v6, 0x0
 
-    .line 2655
+    .line 2664
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
@@ -325,7 +325,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 2654
+    .line 2663
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
@@ -338,7 +338,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 2661
+    .line 2670
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -351,7 +351,7 @@
 
     const/16 v0, 0xab
 
-    .line 2662
+    .line 2671
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -360,7 +360,7 @@
 
     move-result p2
 
-    .line 2660
+    .line 2669
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

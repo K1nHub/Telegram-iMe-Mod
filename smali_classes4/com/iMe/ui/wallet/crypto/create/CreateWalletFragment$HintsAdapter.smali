@@ -121,7 +121,7 @@
     .line 1169
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    const-string v0, "null cannot be cast to non-null type android.widget.TextView"
+    const-string/jumbo v0, "null cannot be cast to non-null type android.widget.TextView"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

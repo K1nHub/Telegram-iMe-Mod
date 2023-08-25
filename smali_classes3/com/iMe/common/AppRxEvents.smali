@@ -13,7 +13,6 @@
         Lcom/iMe/common/AppRxEvents$BinanceOpenAuthScreen;,
         Lcom/iMe/common/AppRxEvents$BinanceWalletScreenNeedUpdate;,
         Lcom/iMe/common/AppRxEvents$SuccessEnterPinCode;,
-        Lcom/iMe/common/AppRxEvents$UpdateTransactionScreen;,
         Lcom/iMe/common/AppRxEvents$UpdateWalletScreen;
     }
 .end annotation

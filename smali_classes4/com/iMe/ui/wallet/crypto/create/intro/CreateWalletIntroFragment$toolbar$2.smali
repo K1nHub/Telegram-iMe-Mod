@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 69
+    .line 76
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$toolbar$2;->invoke()Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 1
 
-    .line 69
+    .line 76
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$toolbar$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;->access$initActionBar(Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;)Lorg/telegram/ui/ActionBar/ActionBar;

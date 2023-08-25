@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 292
+    .line 283
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -111,6 +111,16 @@
     .locals 1
 
     const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public synthetic isPhotoEditor()Z
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$isPhotoEditor(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
+
+    move-result v0
 
     return v0
 .end method

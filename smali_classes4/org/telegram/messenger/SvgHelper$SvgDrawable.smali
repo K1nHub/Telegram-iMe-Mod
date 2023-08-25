@@ -21,7 +21,7 @@
 
 .field private static lite:Z
 
-.field private static parentPosition:[I
+.field private static final parentPosition:[I
 
 .field private static shiftDrawable:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
@@ -43,9 +43,9 @@
 
 .field private aspectFill:Z
 
-.field private backgroundBitmap:[Landroid/graphics/Bitmap;
+.field private final backgroundBitmap:[Landroid/graphics/Bitmap;
 
-.field private backgroundCanvas:[Landroid/graphics/Canvas;
+.field private final backgroundCanvas:[Landroid/graphics/Canvas;
 
 .field private backgroundPaint:Landroid/graphics/Paint;
 
@@ -63,7 +63,7 @@
 
 .field private crossfadeAlpha:F
 
-.field private currentColor:[I
+.field private final currentColor:[I
 
 .field private currentColorKey:I
 
@@ -98,9 +98,9 @@
 
 .field private parentImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-.field private placeholderGradient:[Landroid/graphics/LinearGradient;
+.field private final placeholderGradient:[Landroid/graphics/LinearGradient;
 
-.field private placeholderMatrix:[Landroid/graphics/Matrix;
+.field private final placeholderMatrix:[Landroid/graphics/Matrix;
 
 .field protected width:I
 
@@ -121,12 +121,12 @@
 
     new-array v0, v0, [I
 
-    .line 112
+    .line 114
     sput-object v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->parentPosition:[I
 
     const/16 v0, 0x20
 
-    .line 132
+    .line 134
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -139,17 +139,17 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 104
+    .line 106
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 106
+    .line 108
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
-    .line 107
+    .line 109
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -160,37 +160,37 @@
 
     new-array v1, v0, [Landroid/graphics/Bitmap;
 
-    .line 114
+    .line 116
     iput-object v1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundBitmap:[Landroid/graphics/Bitmap;
 
     new-array v1, v0, [Landroid/graphics/Canvas;
 
-    .line 115
+    .line 117
     iput-object v1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundCanvas:[Landroid/graphics/Canvas;
 
     new-array v1, v0, [Landroid/graphics/LinearGradient;
 
-    .line 116
+    .line 118
     iput-object v1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderGradient:[Landroid/graphics/LinearGradient;
 
     new-array v0, v0, [Landroid/graphics/Matrix;
 
-    .line 117
+    .line 119
     iput-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderMatrix:[Landroid/graphics/Matrix;
 
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    .line 124
+    .line 126
     iput-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentColor:[I
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 129
+    .line 131
     iput v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->crossfadeAlpha:F
 
-    .line 130
+    .line 132
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -199,30 +199,30 @@
 
     const/4 v0, 0x1
 
-    .line 137
+    .line 139
     iput-boolean v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->aspectFill:Z
 
     const/4 v0, 0x0
 
-    .line 138
+    .line 140
     iput-boolean v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->aspectCenter:Z
 
     return-void
 .end method
 
-.method static synthetic access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+.method static synthetic access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 104
+    .line 106
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->addCommand(Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     return-void
 .end method
 
-.method static synthetic access$600(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;)V
+.method static synthetic access$700(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;)V
     .locals 0
 
-    .line 104
+    .line 106
     invoke-direct {p0, p1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->addCommand(Ljava/lang/Object;)V
 
     return-void
@@ -231,7 +231,7 @@
 .method private addCommand(Ljava/lang/Object;)V
     .locals 1
 
-    .line 314
+    .line 316
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -242,12 +242,12 @@
 .method private addCommand(Ljava/lang/Object;Landroid/graphics/Paint;)V
     .locals 2
 
-    .line 309
+    .line 311
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 310
+    .line 312
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->paints:Ljava/util/HashMap;
 
     new-instance v1, Landroid/graphics/Paint;
@@ -264,7 +264,7 @@
 
     const/4 v0, 0x0
 
-    .line 205
+    .line 207
     sput-object v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->shiftRunnable:Ljava/lang/Runnable;
 
     return-void
@@ -275,7 +275,7 @@
 
     const/16 v0, 0x20
 
-    .line 134
+    .line 136
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -295,7 +295,7 @@
         }
     .end annotation
 
-    .line 104
+    .line 106
     invoke-virtual {p0}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->clone()Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v0
@@ -306,14 +306,14 @@
 .method public clone()Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 5
 
-    .line 414
+    .line 416
     new-instance v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-direct {v0}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 415
+    .line 417
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
@@ -323,7 +323,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 416
+    .line 418
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
@@ -334,7 +334,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 417
+    .line 419
     iget-object v2, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->paints:Ljava/util/HashMap;
 
     iget-object v3, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
@@ -351,47 +351,47 @@
 
     if-eqz v2, :cond_0
 
-    .line 419
+    .line 421
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
-    .line 420
+    .line 422
     invoke-virtual {v2}, Landroid/graphics/Paint;->getColor()I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 421
+    .line 423
     invoke-virtual {v2}, Landroid/graphics/Paint;->getStrokeCap()Landroid/graphics/Paint$Cap;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 422
+    .line 424
     invoke-virtual {v2}, Landroid/graphics/Paint;->getStrokeJoin()Landroid/graphics/Paint$Join;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    .line 423
+    .line 425
     invoke-virtual {v2}, Landroid/graphics/Paint;->getStrokeWidth()F
 
     move-result v4
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 424
+    .line 426
     invoke-virtual {v2}, Landroid/graphics/Paint;->getStyle()Landroid/graphics/Paint$Style;
 
     move-result-object v2
 
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 425
+    .line 427
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->paints:Ljava/util/HashMap;
 
     iget-object v4, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
@@ -407,13 +407,13 @@
 
     goto :goto_0
 
-    .line 428
+    .line 430
     :cond_1
     iget v1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->width:I
 
     iput v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->width:I
 
-    .line 429
+    .line 431
     iget v1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->height:I
 
     iput v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->height:I
@@ -424,7 +424,7 @@
 .method public copyCommandFromPosition(I)V
     .locals 1
 
-    .line 410
+    .line 412
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -439,7 +439,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 165
+    .line 167
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -508,12 +508,12 @@
 
     move/from16 v5, p9
 
-    .line 169
+    .line 171
     iget v6, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentColorKey:I
 
     if-ltz v6, :cond_0
 
-    .line 170
+    .line 172
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentResourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     iget v8, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->colorAlpha:F
@@ -525,12 +525,12 @@
 
     float-to-int v7, v5
 
-    .line 173
+    .line 175
     invoke-virtual {v0, v6, v7}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->getScale(II)F
 
     move-result v6
 
-    .line 174
+    .line 176
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderGradient:[Landroid/graphics/LinearGradient;
 
     aget-object v7, v7, p3
@@ -561,7 +561,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 176
+    .line 178
     sget-wide v16, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->lastUpdateTime:J
 
     sub-long v16, p4, v16
@@ -580,10 +580,10 @@
 
     if-lez v12, :cond_8
 
-    .line 181
+    .line 183
     sput-wide p4, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->lastUpdateTime:J
 
-    .line 182
+    .line 184
     sget v12, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
     long-to-float v13, v14
@@ -596,7 +596,7 @@
 
     sput v12, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
-    .line 183
+    .line 185
     :goto_1
     sget v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
@@ -612,12 +612,12 @@
 
     sub-float/2addr v7, v11
 
-    .line 184
+    .line 186
     sput v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
     goto :goto_1
 
-    .line 188
+    .line 190
     :cond_2
     sget-object v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->shiftRunnable:Ljava/lang/Runnable;
 
@@ -631,7 +631,7 @@
 
     if-ne v7, v0, :cond_8
 
-    .line 189
+    .line 191
     :cond_3
     sget-wide v16, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->lastUpdateTime:J
 
@@ -656,11 +656,11 @@
     :cond_5
     move-wide v12, v14
 
-    .line 196
+    .line 198
     :goto_3
     sput-wide p4, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->lastUpdateTime:J
 
-    .line 197
+    .line 199
     sget v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
     long-to-float v12, v12
@@ -675,7 +675,7 @@
 
     sput v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
-    .line 198
+    .line 200
     :goto_4
     sget v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
@@ -689,12 +689,12 @@
 
     sub-float/2addr v7, v11
 
-    .line 199
+    .line 201
     sput v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->totalTranslation:F
 
     goto :goto_4
 
-    .line 201
+    .line 203
     :cond_6
     new-instance v7, Ljava/lang/ref/WeakReference;
 
@@ -702,15 +702,15 @@
 
     sput-object v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->shiftDrawable:Ljava/lang/ref/WeakReference;
 
-    .line 202
+    .line 204
     sget-object v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->shiftRunnable:Ljava/lang/Runnable;
 
     if-eqz v7, :cond_7
 
-    .line 203
+    .line 205
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 205
+    .line 207
     :cond_7
     sget-object v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/messenger/SvgHelper$SvgDrawable$$ExternalSyntheticLambda0;
 
@@ -730,7 +730,7 @@
 
     invoke-static {v7, v11, v12}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 209
+    .line 211
     :cond_8
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->parentImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -738,15 +738,13 @@
 
     if-nez v2, :cond_9
 
-    .line 210
+    .line 212
     sget-object v11, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->parentPosition:[I
 
     invoke-virtual {v7, v11}, Lorg/telegram/messenger/ImageReceiver;->getParentPosition([I)V
 
-    .line 211
-    sget-object v7, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->parentPosition:[I
-
-    aget v7, v7, v8
+    .line 213
+    aget v7, v11, v8
 
     goto :goto_5
 
@@ -763,7 +761,7 @@
     :cond_a
     move v11, v8
 
-    .line 217
+    .line 219
     :goto_6
     iget-object v12, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderMatrix:[Landroid/graphics/Matrix;
 
@@ -771,14 +769,14 @@
 
     if-eqz v13, :cond_c
 
-    .line 218
+    .line 220
     aget-object v12, v12, v11
 
     invoke-virtual {v12}, Landroid/graphics/Matrix;->reset()V
 
     if-eqz v2, :cond_b
 
-    .line 220
+    .line 222
     iget-object v12, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderMatrix:[Landroid/graphics/Matrix;
 
     aget-object v12, v12, v11
@@ -797,7 +795,7 @@
 
     goto :goto_7
 
-    .line 222
+    .line 224
     :cond_b
     iget-object v12, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderMatrix:[Landroid/graphics/Matrix;
 
@@ -815,7 +813,7 @@
 
     invoke-virtual {v12, v7, v10}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 225
+    .line 227
     :goto_7
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderMatrix:[Landroid/graphics/Matrix;
 
@@ -827,7 +825,7 @@
 
     invoke-virtual {v7, v10, v10}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 226
+    .line 228
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderGradient:[Landroid/graphics/LinearGradient;
 
     aget-object v7, v7, v11
@@ -838,26 +836,26 @@
 
     invoke-virtual {v7, v10}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 228
+    .line 230
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->parentImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v7, :cond_c
 
     if-nez v2, :cond_c
 
-    .line 229
+    .line 231
     invoke-virtual {v7}, Lorg/telegram/messenger/ImageReceiver;->invalidate()V
 
-    .line 234
+    .line 236
     :cond_c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move/from16 v7, p7
 
-    .line 235
+    .line 237
     invoke-virtual {v1, v3, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 236
+    .line 238
     iget-boolean v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->aspectFill:Z
 
     if-eqz v3, :cond_d
@@ -866,7 +864,7 @@
 
     if-eqz v3, :cond_e
 
-    .line 237
+    .line 239
     :cond_d
     iget v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->width:I
 
@@ -890,11 +888,11 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 239
+    .line 241
     :cond_e
     invoke-virtual {v1, v6, v6}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 240
+    .line 242
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -904,22 +902,22 @@
     :goto_8
     if-ge v8, v3, :cond_1b
 
-    .line 241
+    .line 243
     iget-object v4, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->commands:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 242
+    .line 244
     instance-of v5, v4, Landroid/graphics/Matrix;
 
     if-eqz v5, :cond_f
 
-    .line 243
+    .line 245
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 244
+    .line 246
     check-cast v4, Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v4}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
@@ -929,12 +927,12 @@
     :cond_f
     if-nez v4, :cond_10
 
-    .line 246
+    .line 248
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_b
 
-    .line 249
+    .line 251
     :cond_10
     iget-object v5, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->overridePaintByPosition:Landroid/util/SparseArray;
 
@@ -946,13 +944,13 @@
 
     if-nez v5, :cond_11
 
-    .line 251
+    .line 253
     iget-object v5, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->overridePaint:Landroid/graphics/Paint;
 
     :cond_11
     if-eqz v2, :cond_12
 
-    .line 254
+    .line 256
     iget-object v5, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     goto :goto_9
@@ -962,7 +960,7 @@
 
     goto :goto_9
 
-    .line 258
+    .line 260
     :cond_13
     iget-object v5, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->paints:Ljava/util/HashMap;
 
@@ -972,13 +970,13 @@
 
     check-cast v5, Landroid/graphics/Paint;
 
-    .line 260
+    .line 262
     :goto_9
     invoke-virtual {v5}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v6
 
-    .line 261
+    .line 263
     iget v7, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->crossfadeAlpha:F
 
     int-to-float v9, v6
@@ -989,54 +987,54 @@
 
     invoke-virtual {v5, v7}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 262
+    .line 264
     instance-of v7, v4, Landroid/graphics/Path;
 
     if-eqz v7, :cond_14
 
-    .line 263
+    .line 265
     check-cast v4, Landroid/graphics/Path;
 
     invoke-virtual {v1, v4, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     goto :goto_a
 
-    .line 264
+    .line 266
     :cond_14
     instance-of v7, v4, Landroid/graphics/Rect;
 
     if-eqz v7, :cond_15
 
-    .line 265
+    .line 267
     check-cast v4, Landroid/graphics/Rect;
 
     invoke-virtual {v1, v4, v5}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     goto :goto_a
 
-    .line 266
+    .line 268
     :cond_15
     instance-of v7, v4, Landroid/graphics/RectF;
 
     if-eqz v7, :cond_16
 
-    .line 267
+    .line 269
     check-cast v4, Landroid/graphics/RectF;
 
     invoke-virtual {v1, v4, v5}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     goto :goto_a
 
-    .line 268
+    .line 270
     :cond_16
     instance-of v7, v4, Lorg/telegram/messenger/SvgHelper$Line;
 
     if-eqz v7, :cond_17
 
-    .line 269
+    .line 271
     check-cast v4, Lorg/telegram/messenger/SvgHelper$Line;
 
-    .line 270
+    .line 272
     iget v7, v4, Lorg/telegram/messenger/SvgHelper$Line;->x1:F
 
     iget v9, v4, Lorg/telegram/messenger/SvgHelper$Line;->y1:F
@@ -1061,16 +1059,16 @@
 
     goto :goto_a
 
-    .line 271
+    .line 273
     :cond_17
     instance-of v7, v4, Lorg/telegram/messenger/SvgHelper$Circle;
 
     if-eqz v7, :cond_18
 
-    .line 272
+    .line 274
     check-cast v4, Lorg/telegram/messenger/SvgHelper$Circle;
 
-    .line 273
+    .line 275
     iget v7, v4, Lorg/telegram/messenger/SvgHelper$Circle;->x1:F
 
     iget v9, v4, Lorg/telegram/messenger/SvgHelper$Circle;->y1:F
@@ -1081,39 +1079,39 @@
 
     goto :goto_a
 
-    .line 274
+    .line 276
     :cond_18
     instance-of v7, v4, Lorg/telegram/messenger/SvgHelper$Oval;
 
     if-eqz v7, :cond_19
 
-    .line 275
+    .line 277
     check-cast v4, Lorg/telegram/messenger/SvgHelper$Oval;
 
-    .line 276
+    .line 278
     iget-object v4, v4, Lorg/telegram/messenger/SvgHelper$Oval;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v1, v4, v5}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     goto :goto_a
 
-    .line 277
+    .line 279
     :cond_19
     instance-of v7, v4, Lorg/telegram/messenger/SvgHelper$RoundRect;
 
     if-eqz v7, :cond_1a
 
-    .line 278
+    .line 280
     check-cast v4, Lorg/telegram/messenger/SvgHelper$RoundRect;
 
-    .line 279
+    .line 281
     iget-object v7, v4, Lorg/telegram/messenger/SvgHelper$RoundRect;->rect:Landroid/graphics/RectF;
 
     iget v4, v4, Lorg/telegram/messenger/SvgHelper$RoundRect;->rx:F
 
     invoke-virtual {v1, v7, v4, v4, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 281
+    .line 283
     :cond_1a
     :goto_a
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setAlpha(I)V
@@ -1123,7 +1121,7 @@
 
     goto/16 :goto_8
 
-    .line 284
+    .line 286
     :cond_1b
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1133,7 +1131,7 @@
 .method public getIntrinsicHeight()I
     .locals 1
 
-    .line 142
+    .line 144
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->width:I
 
     return v0
@@ -1142,7 +1140,7 @@
 .method public getIntrinsicWidth()I
     .locals 1
 
-    .line 147
+    .line 149
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->height:I
 
     return v0
@@ -1161,7 +1159,7 @@
 
     int-to-float p1, p1
 
-    .line 288
+    .line 290
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->width:I
 
     int-to-float v0, v0
@@ -1170,14 +1168,14 @@
 
     int-to-float p2, p2
 
-    .line 289
+    .line 291
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->height:I
 
     int-to-float v0, v0
 
     div-float/2addr p2, v0
 
-    .line 290
+    .line 292
     iget-boolean v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->aspectFill:Z
 
     if-eqz v0, :cond_0
@@ -1200,10 +1198,10 @@
 .method public overrideWidthAndHeight(II)V
     .locals 0
 
-    .line 159
+    .line 161
     iput p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->width:I
 
-    .line 160
+    .line 162
     iput p2, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->height:I
 
     return-void
@@ -1218,7 +1216,7 @@
 
     div-float/2addr p1, v0
 
-    .line 295
+    .line 297
     iput p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->crossfadeAlpha:F
 
     return-void
@@ -1227,7 +1225,7 @@
 .method public setAspectCenter(Z)V
     .locals 0
 
-    .line 155
+    .line 157
     iput-boolean p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->aspectCenter:Z
 
     return-void
@@ -1236,7 +1234,7 @@
 .method public setAspectFill(Z)V
     .locals 0
 
-    .line 151
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->aspectFill:Z
 
     return-void
@@ -1245,7 +1243,7 @@
 .method public setColor(I)V
     .locals 0
 
-    .line 398
+    .line 400
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1264,7 +1262,7 @@
 .method public setColorKey(I)V
     .locals 0
 
-    .line 389
+    .line 391
     iput p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentColorKey:I
 
     return-void
@@ -1273,10 +1271,10 @@
 .method public setColorKey(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 393
+    .line 395
     iput p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentColorKey:I
 
-    .line 394
+    .line 396
     iput-object p2, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentResourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -1285,7 +1283,7 @@
 .method public setPaint(Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 402
+    .line 404
     iput-object p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->overridePaint:Landroid/graphics/Paint;
 
     return-void
@@ -1294,7 +1292,7 @@
 .method public setPaint(Landroid/graphics/Paint;I)V
     .locals 1
 
-    .line 406
+    .line 408
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->overridePaintByPosition:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p2, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
@@ -1305,7 +1303,7 @@
 .method public setParent(Lorg/telegram/messenger/ImageReceiver;)V
     .locals 0
 
-    .line 318
+    .line 320
     iput-object p1, p0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->parentImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     return-void
@@ -1316,7 +1314,7 @@
 
     const/4 v0, 0x0
 
-    .line 322
+    .line 324
     invoke-virtual {p0, p1, v0, p2, p3}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;FZ)V
 
     return-void
@@ -1327,7 +1325,7 @@
 
     move-object/from16 v0, p0
 
-    .line 326
+    .line 328
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->overrideColor:Ljava/lang/Integer;
 
     if-nez v1, :cond_0
@@ -1346,10 +1344,10 @@
     :goto_0
     move-object/from16 v2, p2
 
-    .line 328
+    .line 330
     iput-object v2, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentResourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 329
+    .line 331
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentColor:[I
 
     aget v3, v2, p4
@@ -1358,18 +1356,18 @@
 
     move/from16 v3, p3
 
-    .line 330
+    .line 332
     iput v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->colorAlpha:F
 
     move/from16 v3, p1
 
-    .line 331
+    .line 333
     iput v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->currentColorKey:I
 
-    .line 332
+    .line 334
     aput v1, v2, p4
 
-    .line 333
+    .line 335
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->x:I
@@ -1382,14 +1380,14 @@
 
     sput v3, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->gradientWidth:F
 
-    .line 334
+    .line 336
     sget-boolean v3, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->lite:Z
 
     const/4 v5, 0x1
 
     if-nez v3, :cond_4
 
-    .line 335
+    .line 337
     aget v1, v2, p4
 
     const/16 v2, 0x46
@@ -1402,32 +1400,32 @@
 
     if-eqz p4, :cond_2
 
-    .line 337
+    .line 339
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     if-nez v3, :cond_1
 
-    .line 338
+    .line 340
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v5}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 340
+    .line 342
     :cond_1
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 341
+    .line 343
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     goto :goto_2
 
-    .line 343
+    .line 345
     :cond_2
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->paints:Ljava/util/HashMap;
 
@@ -1452,10 +1450,10 @@
 
     check-cast v4, Landroid/graphics/Paint;
 
-    .line 344
+    .line 346
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 345
+    .line 347
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     goto :goto_1
@@ -1467,7 +1465,7 @@
     :cond_4
     const/16 v2, 0xb4
 
-    .line 350
+    .line 352
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1478,7 +1476,7 @@
 
     div-float/2addr v2, v3
 
-    .line 351
+    .line 353
     invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v3
@@ -1517,7 +1515,7 @@
 
     div-float/2addr v6, v7
 
-    .line 353
+    .line 355
     iget-object v8, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderGradient:[Landroid/graphics/LinearGradient;
 
     new-instance v17, Landroid/graphics/LinearGradient;
@@ -1582,14 +1580,14 @@
 
     aput-object v17, v8, p4
 
-    .line 355
+    .line 357
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x1c
 
     if-lt v2, v3, :cond_5
 
-    .line 356
+    .line 358
     new-instance v3, Landroid/graphics/LinearGradient;
 
     const/4 v7, 0x0
@@ -1616,7 +1614,7 @@
 
     goto :goto_3
 
-    .line 358
+    .line 360
     :cond_5
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundBitmap:[Landroid/graphics/Bitmap;
 
@@ -1624,7 +1622,7 @@
 
     if-nez v4, :cond_6
 
-    .line 359
+    .line 361
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v5, v5, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -1633,7 +1631,7 @@
 
     aput-object v4, v3, p4
 
-    .line 360
+    .line 362
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundCanvas:[Landroid/graphics/Canvas;
 
     new-instance v4, Landroid/graphics/Canvas;
@@ -1646,7 +1644,7 @@
 
     aput-object v4, v3, p4
 
-    .line 362
+    .line 364
     :cond_6
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundCanvas:[Landroid/graphics/Canvas;
 
@@ -1654,7 +1652,7 @@
 
     invoke-virtual {v3, v1}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 363
+    .line 365
     new-instance v3, Landroid/graphics/BitmapShader;
 
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundBitmap:[Landroid/graphics/Bitmap;
@@ -1665,7 +1663,7 @@
 
     invoke-direct {v3, v1, v4, v4}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
-    .line 365
+    .line 367
     :goto_3
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderMatrix:[Landroid/graphics/Matrix;
 
@@ -1675,7 +1673,7 @@
 
     aput-object v4, v1, p4
 
-    .line 366
+    .line 368
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->placeholderGradient:[Landroid/graphics/LinearGradient;
 
     aget-object v1, v1, p4
@@ -1690,12 +1688,12 @@
 
     if-eqz p4, :cond_9
 
-    .line 368
+    .line 370
     iget-object v4, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     if-nez v4, :cond_7
 
-    .line 369
+    .line 371
     new-instance v4, Landroid/graphics/Paint;
 
     invoke-direct {v4, v5}, Landroid/graphics/Paint;-><init>(I)V
@@ -1705,14 +1703,14 @@
     :cond_7
     if-gt v2, v1, :cond_8
 
-    .line 372
+    .line 374
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     goto :goto_5
 
-    .line 374
+    .line 376
     :cond_8
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -1730,7 +1728,7 @@
 
     goto :goto_5
 
-    .line 377
+    .line 379
     :cond_9
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->paints:Ljava/util/HashMap;
 
@@ -1755,17 +1753,17 @@
 
     check-cast v4, Landroid/graphics/Paint;
 
-    .line 378
+    .line 380
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-gt v5, v1, :cond_a
 
-    .line 379
+    .line 381
     invoke-virtual {v4, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     goto :goto_4
 
-    .line 381
+    .line 383
     :cond_a
     new-instance v5, Landroid/graphics/ComposeShader;
 

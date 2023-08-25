@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 267
+    .line 279
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method public static synthetic newInstance$default(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/Object;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
+.method public static synthetic newInstance$default(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/Object;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
     .locals 0
 
     and-int/lit8 p3, p3, 0x2
@@ -41,9 +41,9 @@
 
     const/4 p2, 0x0
 
-    .line 269
+    .line 281
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance(Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
 
     move-result-object p0
 
@@ -52,17 +52,17 @@
 
 
 # virtual methods
-.method public final newInstance(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
+.method public final newInstance(Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
     .locals 1
 
     const-string/jumbo v0, "screenType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 272
+    .line 284
     new-instance v0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;-><init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)V
+    invoke-direct {v0, p1, p2}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;-><init>(Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)V
 
     return-object v0
 .end method

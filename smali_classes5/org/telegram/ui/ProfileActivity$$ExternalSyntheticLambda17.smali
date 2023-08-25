@@ -65,7 +65,7 @@
 
     move-object v7, p1
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$VcRb05z0g7fJRiGDfFTLcJC2QPU(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/atomic/AtomicReference;ILjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Landroid/view/View;)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$ScOUbkktwaJtLNYM427m8214TGM(Lorg/telegram/ui/ProfileActivity;Ljava/util/concurrent/atomic/AtomicReference;ILjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Landroid/view/View;)V
 
     return-void
 .end method

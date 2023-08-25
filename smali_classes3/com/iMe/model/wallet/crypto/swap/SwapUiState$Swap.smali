@@ -27,7 +27,7 @@
 
     const/4 v0, 0x0
 
-    .line 13
+    .line 18
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

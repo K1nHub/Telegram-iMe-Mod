@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/Premium/VideoScreenPreview;-><init>(Landroid/content/Context;Lorg/telegram/messenger/SvgHelper$SvgDrawable;II)V
+    value = Lorg/telegram/ui/Components/Premium/VideoScreenPreview;-><init>(Landroid/content/Context;Lorg/telegram/messenger/SvgHelper$SvgDrawable;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/VideoScreenPreview;Landroid/content/Context;)V
     .locals 0
 
-    .line 185
+    .line 187
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$1;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 187
+    .line 189
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -44,18 +44,18 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 204
+    .line 206
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 205
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$1;->clipPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 206
+    .line 208
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 207
+    .line 209
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -64,15 +64,15 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 191
+    .line 193
     invoke-super {p0, p1, p2}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->onMeasure(II)V
 
-    .line 192
+    .line 194
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$1;->clipPath:Landroid/graphics/Path;
 
     invoke-virtual {p1}, Landroid/graphics/Path;->reset()V
 
-    .line 193
+    .line 195
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$1;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     iget-boolean p2, p1, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->fromTop:Z
@@ -81,7 +81,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 194
+    .line 196
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->access$000(Lorg/telegram/ui/Components/Premium/VideoScreenPreview;)F
@@ -106,7 +106,7 @@
 
     goto :goto_0
 
-    .line 196
+    .line 198
     :cond_0
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {p1, v0, v0, p2, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 198
+    .line 200
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$1;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
@@ -154,7 +154,7 @@
 
     sub-float/2addr p1, p2
 
-    .line 199
+    .line 201
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$1;->clipPath:Landroid/graphics/Path;
 
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;

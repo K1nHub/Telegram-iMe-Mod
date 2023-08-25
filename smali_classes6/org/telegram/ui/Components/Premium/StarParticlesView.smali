@@ -380,7 +380,7 @@
 .method public setPaused(Z)V
     .locals 7
 
-    .line 545
+    .line 546
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->paused:Z
@@ -389,13 +389,13 @@
 
     return-void
 
-    .line 548
+    .line 549
     :cond_0
     iput-boolean p1, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->paused:Z
 
     if-eqz p1, :cond_1
 
-    .line 550
+    .line 551
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -407,7 +407,7 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 552
+    .line 553
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
@@ -419,7 +419,7 @@
 
     if-ge p1, v0, :cond_2
 
-    .line 553
+    .line 554
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
@@ -450,7 +450,7 @@
 
     goto :goto_0
 
-    .line 555
+    .line 556
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 

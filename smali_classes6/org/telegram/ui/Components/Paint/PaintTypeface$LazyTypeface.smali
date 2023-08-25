@@ -30,10 +30,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface$LazyTypefaceLoader;)V
     .locals 0
 
-    .line 69
+    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
+    .line 71
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface;->loader:Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface$LazyTypefaceLoader;
 
     return-void
@@ -44,12 +44,12 @@
 .method public get()Landroid/graphics/Typeface;
     .locals 1
 
-    .line 74
+    .line 75
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface;->typeface:Landroid/graphics/Typeface;
 
     if-nez v0, :cond_0
 
-    .line 75
+    .line 76
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface;->loader:Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface$LazyTypefaceLoader;
 
     invoke-interface {v0}, Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface$LazyTypefaceLoader;->load()Landroid/graphics/Typeface;
@@ -58,7 +58,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface;->typeface:Landroid/graphics/Typeface;
 
-    .line 77
+    .line 78
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$LazyTypeface;->typeface:Landroid/graphics/Typeface;
 

@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State;Ljava/lang/String;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
-    .line 497
+    .line 492
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showRequestPermissionDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 499
+    .line 494
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$ShowRequestPermissionDialogCommand;->recipient:Ljava/lang/String;
 
-    .line 500
+    .line 495
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$ShowRequestPermissionDialogCommand;->model:Lcom/iMe/model/dialog/DialogModel;
 
-    .line 501
+    .line 496
     iput-object p4, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$ShowRequestPermissionDialogCommand;->action:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V
     .locals 3
 
-    .line 506
+    .line 501
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$ShowRequestPermissionDialogCommand;->recipient:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$ShowRequestPermissionDialogCommand;->model:Lcom/iMe/model/dialog/DialogModel;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 488
+    .line 483
     check-cast p1, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$ShowRequestPermissionDialogCommand;->apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V

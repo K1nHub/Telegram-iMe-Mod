@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAuthBaseFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAuthBaseFragment.kt\ncom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,70:1\n56#2,6:71\n56#2,6:77\n56#2,6:83\n56#2,6:89\n56#2,6:95\n56#2,6:101\n16#3,3:107\n42#4,12:110\n*S KotlinDebug\n*F\n+ 1 WalletAuthBaseFragment.kt\ncom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment\n*L\n20#1:71,6\n21#1:77,6\n22#1:83,6\n23#1:89,6\n24#1:95,6\n25#1:101,6\n40#1:107,3\n41#1:110,12\n*E\n"
+    value = "SMAP\nWalletAuthBaseFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAuthBaseFragment.kt\ncom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,72:1\n56#2,6:73\n56#2,6:79\n56#2,6:85\n56#2,6:91\n56#2,6:97\n56#2,6:103\n16#3,3:109\n42#4,12:112\n*S KotlinDebug\n*F\n+ 1 WalletAuthBaseFragment.kt\ncom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment\n*L\n20#1:73,6\n21#1:79,6\n22#1:85,6\n23#1:91,6\n24#1:97,6\n25#1:103,6\n40#1:109,3\n41#1:112,12\n*E\n"
 .end annotation
 
 
@@ -178,6 +178,7 @@
 
     if-nez v0, :cond_0
 
+    .line 65
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getCryptoAccessManager()Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     move-result-object v0
@@ -188,16 +189,17 @@
 
     if-eqz v0, :cond_0
 
+    .line 66
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->shouldAskPinCode()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 65
+    .line 67
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->dismissCurrentDialog()V
 
-    .line 66
+    .line 68
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getPinCodeCoordinator()Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
 
     move-result-object v0
@@ -337,7 +339,7 @@
 
     move-result-object v0
 
-    const-string v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

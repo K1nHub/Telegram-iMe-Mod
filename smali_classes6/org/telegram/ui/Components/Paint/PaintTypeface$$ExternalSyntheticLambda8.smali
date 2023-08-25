@@ -35,7 +35,7 @@
 .method public final load()Landroid/graphics/Typeface;
     .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$ptGdfr5btM5LPH8WDPSVqp4KcUc()Landroid/graphics/Typeface;
+    invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$nAkRXB0jpBq6cuagGuh4Fonr6OQ()Landroid/graphics/Typeface;
 
     move-result-object v0
 

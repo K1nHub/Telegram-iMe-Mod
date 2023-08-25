@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)V
     .locals 0
 
-    .line 901
+    .line 932
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$10;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 904
+    .line 935
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$10;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->access$800(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)Z
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 905
+    .line 936
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$10;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;

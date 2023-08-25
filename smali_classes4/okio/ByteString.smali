@@ -978,7 +978,7 @@
 
     move-result-object v1
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.lang.String"
 
     .line 314
     invoke-static {v1, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

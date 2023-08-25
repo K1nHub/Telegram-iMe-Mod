@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/ArrayList;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessageLoaderLogger;
+
+.field public final synthetic f$1:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessageLoaderLogger;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda2;->f$0:Ljava/util/ArrayList;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/MessageLoaderLogger;
+
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda2;->f$1:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda2;->f$0:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/MessageLoaderLogger;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$qjUF5p3QNRylLP-yyJQFD7e4A68(Ljava/util/ArrayList;)V
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda2;->f$1:Ljava/lang/Runnable;
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$2Co2cASz5ATURiN3hDR4nrnZGt0(Lorg/telegram/messenger/MessageLoaderLogger;Ljava/lang/Runnable;)V
 
     return-void
 .end method

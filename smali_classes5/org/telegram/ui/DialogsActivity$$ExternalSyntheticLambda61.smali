@@ -2,32 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/bots/usecase/AiBotsManager$AppInstalledCallback;
+.implements Landroid/view/animation/Interpolator;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda61;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda61;
+
+    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda61;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda61;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda61;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda61;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSuccess()V
-    .locals 1
+.method public final getInterpolation(F)F
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda61;->f$0:Lorg/telegram/ui/DialogsActivity;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$OlomIJzQjEbcwoNRrF2_45PbR4Y(F)F
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$8JwtUgHraybQlMSSK55bIePsHc0(Lorg/telegram/ui/DialogsActivity;)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

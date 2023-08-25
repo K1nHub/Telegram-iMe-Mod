@@ -36,7 +36,7 @@
 .method public abstract onVoiceToTextCompleted(Lorg/telegram/messenger/MessageObject;Ljava/lang/String;)V
 .end method
 
-.method public abstract showDonationMenuItem(Z)V
+.method public abstract showCryptoBoxInfo(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;Lorg/telegram/tgnet/TLRPC$Chat;)V
 .end method
 
 .method public abstract showReactionActivationAlert()V

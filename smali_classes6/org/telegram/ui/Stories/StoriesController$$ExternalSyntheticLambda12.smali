@@ -2,38 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_updateStory;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$User;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
+    iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updateStory;
+
+    iput-object p3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;->f$2:Lorg/telegram/tgnet/TLRPC$User;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_userStories;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updateStory;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_userStories;
+    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;->f$2:Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$VkoN3YGNUkdlITREVJL03li3Jk4(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$TL_userStories;Lorg/telegram/tgnet/TLRPC$TL_userStories;)I
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$S2foWF1tZMmwMw8Z3bU7xrfxPtY(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

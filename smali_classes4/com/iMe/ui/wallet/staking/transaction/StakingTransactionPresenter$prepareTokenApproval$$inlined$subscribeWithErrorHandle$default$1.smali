@@ -133,7 +133,7 @@
 
     if-ne v3, v4, :cond_0
 
-    new-instance v3, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;
+    new-instance v3, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;
 
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$prepareTokenApproval$$inlined$subscribeWithErrorHandle$default$1;->$data$inlined:Lcom/iMe/model/staking/StakingDetailsItem;
 
@@ -145,13 +145,13 @@
 
     move-result-object v4
 
-    invoke-direct {v3, v4}, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;-><init>(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 117
     :cond_0
-    new-instance v3, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;
+    new-instance v3, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;
 
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$prepareTokenApproval$$inlined$subscribeWithErrorHandle$default$1;->$data$inlined:Lcom/iMe/model/staking/StakingDetailsItem;
 
@@ -163,7 +163,7 @@
 
     move-result-object v4
 
-    invoke-direct {v3, v4}, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;-><init>(Ljava/lang/String;)V
 
     .line 118
     :goto_0
@@ -173,7 +173,7 @@
 
     move-result-object v4
 
-    invoke-static {v1, v4}, Lcom/iMe/mapper/staking/StakingTransactionActionToFeeUiMappingKt;->mapToUi(Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;Lcom/iMe/model/dialog/DialogModel;)Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    invoke-static {v1, v4}, Lcom/iMe/mapper/staking/StakingTransactionActionToFeeUiMappingKt;->mapToUi(Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;Lcom/iMe/model/dialog/DialogModel;)Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v4
 
@@ -185,7 +185,7 @@
     check-cast p1, Ljava/lang/String;
 
     .line 115
-    invoke-static {v2, v3, v4, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$onActionSuccess(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
+    invoke-static {v2, v3, v4, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$onActionSuccess(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/TransactionStep;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Ljava/lang/String;)V
 
     goto :goto_1
 

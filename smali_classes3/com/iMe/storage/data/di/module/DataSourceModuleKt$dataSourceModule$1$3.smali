@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,111:1\n129#2,5:112\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$3\n*L\n57#1:112,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,150:1\n129#2,5:151\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$3\n*L\n60#1:151,5\n*E\n"
 .end annotation
 
 
@@ -72,10 +72,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 56
+    .line 59
     new-instance p2, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory;
 
-    .line 57
+    .line 60
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getETH_APPROVE_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -95,7 +95,7 @@
 
     check-cast p1, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
 
-    .line 56
+    .line 59
     invoke-direct {p2, p1}, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSourceFactory;-><init>(Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;)V
 
     return-object p2
@@ -104,7 +104,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 55
+    .line 58
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

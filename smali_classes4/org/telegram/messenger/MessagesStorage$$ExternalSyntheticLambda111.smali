@@ -12,17 +12,11 @@
 
 .field public final synthetic f$2:Ljava/util/ArrayList;
 
-.field public final synthetic f$3:Ljava/util/HashMap;
-
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:I
-
-.field public final synthetic f$6:Z
+.field public final synthetic f$3:Ljava/util/concurrent/CountDownLatch;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JLjava/util/ArrayList;Ljava/util/HashMap;IIZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JLjava/util/ArrayList;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,13 +27,7 @@
 
     iput-object p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$2:Ljava/util/ArrayList;
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$3:Ljava/util/HashMap;
-
-    iput p6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$4:I
-
-    iput p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$5:I
-
-    iput-boolean p8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$6:Z
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$3:Ljava/util/concurrent/CountDownLatch;
 
     return-void
 .end method
@@ -47,7 +35,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
@@ -55,15 +43,9 @@
 
     iget-object v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$2:Ljava/util/ArrayList;
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$3:Ljava/util/HashMap;
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$3:Ljava/util/concurrent/CountDownLatch;
 
-    iget v5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$4:I
-
-    iget v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$5:I
-
-    iget-boolean v7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda111;->f$6:Z
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$NhTvmV5YQ9Je6LzQ1WexvzTvP20(Lorg/telegram/messenger/MessagesStorage;JLjava/util/ArrayList;Ljava/util/HashMap;IIZ)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$7_U13pJtehWaq5fIwLM_vrUmHYQ(Lorg/telegram/messenger/MessagesStorage;JLjava/util/ArrayList;Ljava/util/concurrent/CountDownLatch;)V
 
     return-void
 .end method

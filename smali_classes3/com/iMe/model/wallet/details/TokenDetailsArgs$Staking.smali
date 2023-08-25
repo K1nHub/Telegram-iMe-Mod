@@ -28,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    .line 13
+    .line 14
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/details/TokenDetailsArgs;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
@@ -41,7 +41,7 @@
 .method public final getStakingDetails()Lcom/iMe/model/staking/StakingDetailsItem;
     .locals 1
 
-    .line 13
+    .line 14
     iget-object v0, p0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     return-object v0
@@ -54,7 +54,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 13
+    .line 14
     iput-object p1, p0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;->stakingDetails:Lcom/iMe/model/staking/StakingDetailsItem;
 
     return-void

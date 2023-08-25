@@ -413,7 +413,7 @@
 .method public addHeader(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Response$Builder;
     .locals 1
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -630,7 +630,7 @@
 .method public header(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Response$Builder;
     .locals 1
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -692,7 +692,7 @@
 .method public networkResponse(Lokhttp3/Response;)Lokhttp3/Response$Builder;
     .locals 1
 
-    const-string v0, "networkResponse"
+    const-string/jumbo v0, "networkResponse"
 
     .line 394
     invoke-direct {p0, v0, p1}, Lokhttp3/Response$Builder;->checkSupportResponse(Ljava/lang/String;Lokhttp3/Response;)V

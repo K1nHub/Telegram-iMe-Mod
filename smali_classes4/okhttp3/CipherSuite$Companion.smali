@@ -82,7 +82,7 @@
 
     const-string v5, "(this as java.lang.String).substring(startIndex)"
 
-    const-string v6, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v6, "null cannot be cast to non-null type java.lang.String"
 
     const/4 v7, 0x4
 

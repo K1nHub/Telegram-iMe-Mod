@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda2;->f$3:Lorg/telegram/messenger/Utilities$Callback;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$iybvIG_8-EevQ-4gxwt8HehwoZI(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$54gBLtUeD4MPlQVLOBUkoVeGDHA(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method

@@ -27,12 +27,12 @@
 .method private constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Marker;)V
     .locals 0
 
-    .line 261
+    .line 271
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 262
+    .line 272
     iput-object p2, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     return-void
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Marker;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 258
+    .line 268
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Marker;)V
 
     return-void
@@ -52,14 +52,14 @@
 .method public getPosition()Lorg/telegram/messenger/IMapsProvider$LatLng;
     .locals 6
 
-    .line 277
+    .line 287
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/model/Marker;->getPosition()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v0
 
-    .line 278
+    .line 288
     new-instance v1, Lorg/telegram/messenger/IMapsProvider$LatLng;
 
     iget-wide v2, v0, Lcom/google/android/gms/maps/model/LatLng;->latitude:D
@@ -74,7 +74,7 @@
 .method public getTag()Ljava/lang/Object;
     .locals 1
 
-    .line 267
+    .line 277
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/model/Marker;->getTag()Ljava/lang/Object;
@@ -87,12 +87,12 @@
 .method public remove()V
     .locals 2
 
-    .line 303
+    .line 313
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/model/Marker;->remove()V
 
-    .line 304
+    .line 314
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;
 
     invoke-static {v0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->access$1500(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;)Ljava/util/Map;
@@ -109,7 +109,7 @@
 .method public setIcon(I)V
     .locals 1
 
-    .line 298
+    .line 308
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     invoke-static {p1}, Lcom/google/android/gms/maps/model/BitmapDescriptorFactory;->fromResource(I)Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -124,7 +124,7 @@
 .method public setIcon(Landroid/graphics/Bitmap;)V
     .locals 1
 
-    .line 293
+    .line 303
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     invoke-static {p1}, Lcom/google/android/gms/maps/model/BitmapDescriptorFactory;->fromBitmap(Landroid/graphics/Bitmap;)Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -139,7 +139,7 @@
 .method public setPosition(Lorg/telegram/messenger/IMapsProvider$LatLng;)V
     .locals 6
 
-    .line 283
+    .line 293
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
@@ -158,7 +158,7 @@
 .method public setRotation(I)V
     .locals 1
 
-    .line 288
+    .line 298
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     int-to-float p1, p1
@@ -171,7 +171,7 @@
 .method public setTag(Ljava/lang/Object;)V
     .locals 1
 
-    .line 272
+    .line 282
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;->marker:Lcom/google/android/gms/maps/model/Marker;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/Marker;->setTag(Ljava/lang/Object;)V

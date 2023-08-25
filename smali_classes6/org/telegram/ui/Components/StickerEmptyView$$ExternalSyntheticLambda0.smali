@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/StickerEmptyView;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/StickerEmptyView;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/StickerEmptyView$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/StickerEmptyView;
+    iput-object p1, p0, Lorg/telegram/ui/Components/StickerEmptyView$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/StickerEmptyView$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/StickerEmptyView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/StickerEmptyView$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/StickerEmptyView;->$r8$lambda$GXKLOxBOISy0bPzNQRJWjS_ps_M(Lorg/telegram/ui/Components/StickerEmptyView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/StickerEmptyView;->$r8$lambda$aR6mMwnEoW2U-BNq2JNVpnXr6qo(Ljava/lang/Runnable;Landroid/view/View;)V
 
     return-void
 .end method

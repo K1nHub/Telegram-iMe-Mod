@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
@@ -22,12 +22,18 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$Jq_W2mWPUmdSBBQ5_eL1rSNEG2k(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
-    return-void
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_userStories;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$w_yB5dHugiu-sUvYDSEP2QtZvYs(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$TL_userStories;Lorg/telegram/tgnet/TLRPC$TL_userStories;)I
+
+    move-result p1
+
+    return p1
 .end method

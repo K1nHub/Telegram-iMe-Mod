@@ -199,7 +199,7 @@
 
     move-result v2
 
-    const-string v5, "null cannot be cast to non-null type kotlin.String"
+    const-string/jumbo v5, "null cannot be cast to non-null type kotlin.String"
 
     if-nez v2, :cond_5
 
@@ -233,7 +233,7 @@
     .line 103
     aget-object p2, p3, p1
 
-    const-string p3, "null cannot be cast to non-null type kotlin.collections.List<*>"
+    const-string/jumbo p3, "null cannot be cast to non-null type kotlin.collections.List<*>"
 
     invoke-static {p2, p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

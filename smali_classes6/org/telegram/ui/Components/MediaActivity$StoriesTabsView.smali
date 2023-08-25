@@ -54,20 +54,20 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/MediaActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 8
 
-    .line 1356
+    .line 1365
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    .line 1357
+    .line 1366
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x3
 
     new-array p1, p1, [Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
-    .line 1252
+    .line 1261
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
-    .line 1348
+    .line 1357
     new-instance p2, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -76,7 +76,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->selectPaint:Landroid/graphics/Paint;
 
-    .line 1354
+    .line 1363
     new-instance p2, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v7, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -93,10 +93,10 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->scrollingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1358
+    .line 1367
     iput-object p3, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 1360
+    .line 1369
     new-instance p2, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
     sget p3, Lorg/telegram/messenger/R$raw;->msg_stories_saved:I
@@ -115,7 +115,7 @@
 
     aput-object p2, p1, v2
 
-    .line 1361
+    .line 1370
     new-instance p2, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
     sget p3, Lorg/telegram/messenger/R$raw;->msg_stories_archive:I
@@ -132,7 +132,7 @@
 
     aput-object p2, p1, v0
 
-    .line 1362
+    .line 1371
     new-instance p2, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
     sget p3, Lorg/telegram/messenger/R$raw;->fork_stories_settings:I
@@ -153,7 +153,7 @@
 
     const/16 p1, 0xc
 
-    .line 1364
+    .line 1373
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -166,7 +166,7 @@
 
     const/4 p1, 0x0
 
-    .line 1366
+    .line 1375
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->setProgress(FZ)V
 
     return-void
@@ -175,7 +175,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 1249
+    .line 1258
     iget-object p0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
@@ -184,7 +184,7 @@
 .method private setProgress(FZ)V
     .locals 4
 
-    .line 1382
+    .line 1391
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
     array-length v0, v0
@@ -209,7 +209,7 @@
 
     move v0, p1
 
-    .line 1383
+    .line 1392
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -217,7 +217,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 1384
+    .line 1393
     aget-object v1, v1, v0
 
     iget v2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->value:I
@@ -266,7 +266,7 @@
 
     goto :goto_0
 
-    .line 1386
+    .line 1395
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -282,7 +282,7 @@
 
     move-object/from16 v7, p1
 
-    .line 1396
+    .line 1405
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     iget-object v2, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -293,7 +293,7 @@
 
     invoke-virtual {v7, v1}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 1398
+    .line 1407
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -316,7 +316,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1400
+    .line 1409
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -341,7 +341,7 @@
 
     const/16 v2, 0x40
 
-    .line 1401
+    .line 1410
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -350,7 +350,7 @@
 
     move-result v2
 
-    .line 1403
+    .line 1412
     iget-object v3, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->scrollingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v4, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->scrolling:Z
@@ -377,7 +377,7 @@
 
     const-wide/high16 v15, 0x3fe0000000000000L    # 0.5
 
-    .line 1406
+    .line 1415
     iget v5, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->progress:F
 
     float-to-double v4, v5
@@ -402,7 +402,7 @@
 
     add-double/2addr v4, v11
 
-    .line 1407
+    .line 1416
     iget-object v6, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->selectPaint:Landroid/graphics/Paint;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -429,7 +429,7 @@
 
     invoke-virtual {v6, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1408
+    .line 1417
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v4
@@ -482,7 +482,7 @@
 
     add-float/2addr v4, v5
 
-    .line 1409
+    .line 1418
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float v6, v2
@@ -491,7 +491,7 @@
 
     sub-float v7, v4, v6
 
-    .line 1411
+    .line 1420
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -502,17 +502,17 @@
 
     const/16 v6, 0x29
 
-    .line 1413
+    .line 1422
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
     int-to-float v6, v12
 
-    .line 1409
+    .line 1418
     invoke-virtual {v5, v7, v11, v4, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1415
+    .line 1424
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -539,7 +539,7 @@
     :goto_0
     const/4 v5, 0x0
 
-    .line 1418
+    .line 1427
     :goto_1
     iget-object v6, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -547,10 +547,10 @@
 
     if-ge v5, v7, :cond_3
 
-    .line 1419
+    .line 1428
     aget-object v6, v6, v5
 
-    .line 1420
+    .line 1429
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v7
@@ -559,7 +559,7 @@
 
     add-int/2addr v7, v12
 
-    .line 1421
+    .line 1430
     iget-object v12, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
 
     int-to-float v13, v7
@@ -578,7 +578,7 @@
 
     invoke-virtual {v12, v13, v15, v7, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1423
+    .line 1432
     iget v7, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->progress:F
 
     int-to-float v12, v5
@@ -597,7 +597,7 @@
 
     sub-float v7, v12, v7
 
-    .line 1424
+    .line 1433
     sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
 
     iget-object v14, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -620,12 +620,12 @@
 
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->setColor(I)V
 
-    .line 1426
+    .line 1435
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     iget-object v13, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
 
-    .line 1427
+    .line 1436
     invoke-virtual {v13}, Landroid/graphics/RectF;->centerX()F
 
     move-result v13
@@ -638,14 +638,14 @@
 
     float-to-int v13, v13
 
-    .line 1428
+    .line 1437
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
     iget-object v8, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
 
-    .line 1429
+    .line 1438
     invoke-virtual {v8}, Landroid/graphics/RectF;->centerX()F
 
     move-result v8
@@ -656,15 +656,15 @@
 
     const/16 v15, 0x29
 
-    .line 1430
+    .line 1439
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
-    .line 1426
+    .line 1435
     invoke-virtual {v4, v13, v10, v8, v9}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1432
+    .line 1441
     iget-object v8, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->nonscrollingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const v9, 0x3f19999a    # 0.6f
@@ -689,7 +689,7 @@
 
     if-gez v8, :cond_2
 
-    .line 1434
+    .line 1443
     iget-object v8, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->selectPaint:Landroid/graphics/Paint;
 
     iget-object v9, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -714,14 +714,14 @@
 
     invoke-virtual {v8, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1435
+    .line 1444
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v7, v4}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
     const/16 v8, 0x10
 
-    .line 1436
+    .line 1445
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -743,28 +743,28 @@
     :cond_2
     const/16 v8, 0x10
 
-    .line 1439
+    .line 1448
     :goto_3
     iget-object v7, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->ripple:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v7, v4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 1440
+    .line 1449
     iget-object v7, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->ripple:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v7, v11}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     const/16 v7, 0x1d
 
-    .line 1442
+    .line 1451
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
 
-    .line 1443
+    .line 1452
     iget-object v9, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
 
-    .line 1444
+    .line 1453
     invoke-virtual {v9}, Landroid/graphics/RectF;->centerX()F
 
     move-result v9
@@ -781,7 +781,7 @@
 
     const v10, 0x41c547ae    # 24.66f
 
-    .line 1445
+    .line 1454
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v12
@@ -792,7 +792,7 @@
 
     iget-object v13, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
 
-    .line 1446
+    .line 1455
     invoke-virtual {v13}, Landroid/graphics/RectF;->centerX()F
 
     move-result v13
@@ -801,7 +801,7 @@
 
     float-to-int v13, v13
 
-    .line 1447
+    .line 1456
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v10
@@ -810,23 +810,23 @@
 
     float-to-int v7, v10
 
-    .line 1443
+    .line 1452
     invoke-virtual {v4, v9, v12, v13, v7}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1450
+    .line 1459
     iget-object v7, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v7, v4}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 1451
+    .line 1460
     iget-object v4, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v4, v11}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1453
+    .line 1462
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1454
+    .line 1463
     iget-object v4, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
@@ -867,12 +867,12 @@
 
     invoke-virtual {v11, v4, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1455
+    .line 1464
     iget-object v4, v6, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v4, v11}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1456
+    .line 1465
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     add-int/lit8 v5, v5, 0x1
@@ -892,14 +892,14 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1511
+    .line 1520
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     const/16 p2, 0x40
 
-    .line 1512
+    .line 1521
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -910,7 +910,7 @@
 
     add-int/2addr p2, v0
 
-    .line 1510
+    .line 1519
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
@@ -919,7 +919,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 8
 
-    .line 1463
+    .line 1472
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -928,12 +928,12 @@
 
     if-nez v0, :cond_0
 
-    .line 1464
+    .line 1473
     iput-boolean v1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->touchDown:Z
 
     return v1
 
-    .line 1466
+    .line 1475
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -953,7 +953,7 @@
 
     goto :goto_1
 
-    .line 1496
+    .line 1505
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -963,7 +963,7 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 1497
+    .line 1506
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
@@ -972,7 +972,7 @@
 
     move p1, v3
 
-    .line 1498
+    .line 1507
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -980,7 +980,7 @@
 
     if-ge p1, v2, :cond_2
 
-    .line 1499
+    .line 1508
     aget-object v0, v0, p1
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->ripple:Landroid/graphics/drawable/Drawable;
@@ -993,7 +993,7 @@
 
     goto :goto_0
 
-    .line 1502
+    .line 1511
     :cond_2
     iput-boolean v3, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->touchDown:Z
 
@@ -1003,14 +1003,14 @@
     :goto_1
     const/4 v0, -0x1
 
-    .line 1468
+    .line 1477
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v4
 
     move v5, v3
 
-    .line 1469
+    .line 1478
     :goto_2
     iget-object v6, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -1018,7 +1018,7 @@
 
     if-ge v5, v7, :cond_8
 
-    .line 1470
+    .line 1479
     aget-object v7, v6, v5
 
     iget-object v7, v7, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
@@ -1041,7 +1041,7 @@
 
     if-eq v5, v2, :cond_4
 
-    .line 1472
+    .line 1481
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1054,7 +1054,7 @@
 
     if-nez v0, :cond_4
 
-    .line 1473
+    .line 1482
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;
@@ -1067,7 +1067,7 @@
 
     return v3
 
-    .line 1477
+    .line 1486
     :cond_4
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1075,12 +1075,12 @@
 
     if-eq v0, v1, :cond_6
 
-    .line 1478
+    .line 1487
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->touchDown:Z
 
     if-eqz v0, :cond_5
 
-    .line 1479
+    .line 1488
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
     aget-object v0, v0, v5
@@ -1091,7 +1091,7 @@
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 1481
+    .line 1490
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -1119,7 +1119,7 @@
     :goto_3
     move v2, v3
 
-    .line 1487
+    .line 1496
     :goto_4
     iget-object v4, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -1129,14 +1129,14 @@
 
     if-ne v2, v0, :cond_9
 
-    .line 1488
+    .line 1497
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
 
     if-ne v4, v1, :cond_a
 
-    .line 1489
+    .line 1498
     :cond_9
     iget-object v4, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -1156,7 +1156,7 @@
     :cond_b
     if-ltz v0, :cond_c
 
-    .line 1492
+    .line 1501
     iget v1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->value:I
 
     if-eq v1, v0, :cond_c
@@ -1165,18 +1165,18 @@
 
     if-eqz v1, :cond_c
 
-    .line 1493
+    .line 1502
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-interface {v1, v0}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 1495
+    .line 1504
     :cond_c
     iput-boolean v3, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->touchDown:Z
 
-    .line 1505
+    .line 1514
     :cond_d
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1204,7 +1204,7 @@
         }
     .end annotation
 
-    .line 1391
+    .line 1400
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->onTabClick:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -1215,7 +1215,7 @@
 
     const/4 v0, 0x1
 
-    .line 1378
+    .line 1387
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->setProgress(FZ)V
 
     return-void
@@ -1224,18 +1224,18 @@
 .method public setScrolling(Z)V
     .locals 1
 
-    .line 1370
+    .line 1379
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->scrolling:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 1373
+    .line 1382
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->scrolling:Z
 
-    .line 1374
+    .line 1383
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1246,7 +1246,7 @@
 
     const/4 v0, 0x0
 
-    .line 1518
+    .line 1527
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->tabs:[Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;
 
@@ -1254,7 +1254,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 1519
+    .line 1528
     aget-object v1, v1, v0
 
     iget-object v1, v1, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->ripple:Landroid/graphics/drawable/Drawable;
@@ -1270,7 +1270,7 @@
 
     goto :goto_0
 
-    .line 1523
+    .line 1532
     :cond_1
     invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 

@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$openQRScan$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
-    .line 405
+    .line 445
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 407
+    .line 447
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$openQRScan$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;->access$getPresenter(Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;)Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;

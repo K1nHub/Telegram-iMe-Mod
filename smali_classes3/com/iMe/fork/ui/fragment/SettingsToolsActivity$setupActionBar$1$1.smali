@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$setupActionBar$1$1;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;
 
-    .line 80
+    .line 89
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 83
+    .line 92
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$setupActionBar$1$1;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

@@ -59,7 +59,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 411
+    .line 415
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -76,7 +76,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 438
+    .line 442
     invoke-static {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getPresenter(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     move-result-object p0
@@ -101,7 +101,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 499
+    .line 503
     invoke-static {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getTransactionAdapter(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object p1
@@ -112,12 +112,12 @@
 
     check-cast p1, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 500
+    .line 504
     instance-of p2, p1, Lcom/iMe/model/wallet/transaction/TransactionItem;
 
     if-eqz p2, :cond_1
 
-    .line 501
+    .line 505
     check-cast p1, Lcom/iMe/model/wallet/transaction/TransactionItem;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/transaction/TransactionItem;->isUnsupported()Z
@@ -128,11 +128,11 @@
 
     return-void
 
-    .line 503
+    .line 507
     :cond_0
     sget-object p2, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->Companion:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;
 
-    .line 504
+    .line 508
     invoke-static {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getParentAlert$p$s-1876542046(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object p3
@@ -145,23 +145,23 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 505
-    new-instance v0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
+    .line 509
+    new-instance v0, Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType$TransactionDetails;
 
-    invoke-direct {v0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;-><init>(Lcom/iMe/model/wallet/transaction/TransactionItem;)V
+    invoke-direct {v0, p1}, Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType$TransactionDetails;-><init>(Lcom/iMe/model/wallet/transaction/TransactionItem;)V
 
-    .line 503
+    .line 507
     new-instance p1, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)V
 
-    invoke-virtual {p2, p3, v0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
+    invoke-virtual {p2, p3, v0, p1}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
     move-result-object p1
 
     invoke-static {p0, p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$setActiveDialog$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;Landroid/app/Dialog;)V
 
-    .line 511
+    .line 515
     invoke-static {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getActiveDialog$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -181,7 +181,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 508
+    .line 512
     instance-of p1, p1, Lcom/iMe/model/wallet/transaction/TransactionActionItem$Copy;
 
     if-nez p1, :cond_0
@@ -201,7 +201,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 413
+    .line 417
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getRowCount$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
@@ -214,7 +214,7 @@
 .method public getItemViewType(I)I
     .locals 4
 
-    .line 533
+    .line 537
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getSendHeaderRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
@@ -275,7 +275,7 @@
 
     goto :goto_6
 
-    .line 534
+    .line 538
     :cond_4
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
@@ -311,7 +311,7 @@
 
     goto :goto_6
 
-    .line 535
+    .line 539
     :cond_7
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
@@ -338,7 +338,7 @@
 
     goto :goto_6
 
-    .line 536
+    .line 540
     :cond_9
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
@@ -352,7 +352,7 @@
 
     goto :goto_6
 
-    .line 537
+    .line 541
     :cond_a
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
@@ -366,7 +366,7 @@
 
     goto :goto_6
 
-    .line 538
+    .line 542
     :cond_b
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TRANSACTION:I
 
@@ -381,7 +381,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 467
+    .line 471
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getBalancesStartRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
@@ -417,17 +417,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 417
+    .line 421
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    .line 418
+    .line 422
     sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne v0, v1, :cond_3
 
-    .line 419
+    .line 423
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type org.telegram.ui.Cells.HeaderCell"
@@ -438,14 +438,14 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    .line 420
+    .line 424
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getSendHeaderRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
 
     move-result v1
 
     if-ne p2, v1, :cond_0
 
-    .line 421
+    .line 425
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/HeaderCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p2
@@ -454,7 +454,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 422
+    .line 426
     sget p2, Lorg/telegram/messenger/R$string;->transfer_via_wallet_transfer_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -465,7 +465,7 @@
 
     goto/16 :goto_3
 
-    .line 424
+    .line 428
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/HeaderCell;->getTextView()Landroid/widget/TextView;
 
@@ -487,14 +487,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 425
+    .line 429
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getAccountsHeaderRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
 
     move-result v1
 
     if-ne p2, v1, :cond_2
 
-    .line 426
+    .line 430
     sget p2, Lorg/telegram/messenger/R$string;->transfer_via_wallet_my_accounts_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -505,7 +505,7 @@
 
     goto/16 :goto_3
 
-    .line 427
+    .line 431
     :cond_2
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getTransactionsHeaderRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
 
@@ -513,7 +513,7 @@
 
     if-ne p2, v0, :cond_8
 
-    .line 428
+    .line 432
     sget p2, Lorg/telegram/messenger/R$string;->transfer_via_wallet_transaction_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -524,13 +524,13 @@
 
     goto/16 :goto_3
 
-    .line 434
+    .line 438
     :cond_3
     sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_NETWORK_SWITCHER:I
 
     if-ne v0, v1, :cond_4
 
-    .line 435
+    .line 439
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type com.iMe.fork.ui.view.TextNetworkSwitcherCell"
@@ -541,32 +541,32 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    .line 436
+    .line 440
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getChooseAccountHintRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
 
     move-result v1
 
     if-ne p2, v1, :cond_8
 
-    .line 437
+    .line 441
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getPresenter(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;->getCurrentNetworkType()Lcom/iMe/storage/domain/model/crypto/Network;
+    invoke-virtual {p2}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;->getCurrentNetworkItem()Lcom/iMe/model/wallet/crypto/NetworkItem;
 
     move-result-object p2
 
-    invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->setNetworkType(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->setNetworkType(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
-    .line 438
+    .line 442
     new-instance p2, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)V
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->setNetworkTypeClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 439
+    .line 443
     sget p2, Lorg/telegram/messenger/R$string;->transfer_via_wallet_choose_account_hint:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -579,7 +579,7 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->setText(Ljava/lang/String;)V
 
-    .line 440
+    .line 444
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -590,13 +590,13 @@
 
     goto/16 :goto_3
 
-    .line 445
+    .line 449
     :cond_4
     sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->IMAGE_RADIO:I
 
     if-ne v0, v1, :cond_7
 
-    .line 446
+    .line 450
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type com.iMe.fork.ui.view.ImageRadioCell"
@@ -607,14 +607,14 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    .line 447
+    .line 451
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getBalancesStartRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)I
 
     move-result v1
 
     sub-int v1, p2, v1
 
-    .line 448
+    .line 452
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getBalances$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Ljava/util/List;
 
     move-result-object v2
@@ -627,7 +627,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 451
+    .line 455
     invoke-static {v2}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalanceShortText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
     move-result-object v3
@@ -672,7 +672,7 @@
     :goto_2
     invoke-virtual {p1, v3, v1, v5}, Lcom/iMe/fork/ui/view/ImageRadioCell;->setText(Ljava/lang/String;ZZ)V
 
-    .line 452
+    .line 456
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p2
@@ -685,13 +685,13 @@
 
     goto :goto_3
 
-    .line 457
+    .line 461
     :cond_7
     sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->TRANSACTION:I
 
     if-ne v0, p2, :cond_8
 
-    .line 458
+    .line 462
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     sget p2, Lorg/telegram/messenger/R$id;->global_state_layout:I
@@ -710,7 +710,7 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V
 
-    .line 459
+    .line 463
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getTransactionState$p(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/model/state/GlobalState;
@@ -725,7 +725,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 460
+    .line 464
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getTransactionAdapter(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
@@ -756,7 +756,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 472
+    .line 476
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, v0, :cond_0
@@ -779,20 +779,20 @@
 
     goto/16 :goto_0
 
-    .line 473
+    .line 477
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->SHADOW_SECTION:I
 
     if-ne p2, v0, :cond_1
 
-    .line 474
+    .line 478
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 475
+    .line 479
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -803,7 +803,7 @@
 
     move-result-object p2
 
-    .line 476
+    .line 480
     new-instance v0, Lorg/telegram/ui/Components/CombinedDrawable;
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
@@ -820,15 +820,15 @@
 
     const/4 p2, 0x1
 
-    .line 477
+    .line 481
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
-    .line 478
+    .line 482
     invoke-virtual {p1, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto/16 :goto_0
 
-    .line 482
+    .line 486
     :cond_1
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_NETWORK_SWITCHER:I
 
@@ -848,13 +848,13 @@
 
     goto/16 :goto_0
 
-    .line 483
+    .line 487
     :cond_2
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOP_PADDING:I
 
     if-ne p2, v0, :cond_3
 
-    .line 484
+    .line 488
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->mContext:Landroid/content/Context;
 
     new-instance p2, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$2;
@@ -867,13 +867,13 @@
 
     goto :goto_0
 
-    .line 491
+    .line 495
     :cond_3
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TRANSACTION:I
 
     if-ne p2, v0, :cond_4
 
-    .line 492
+    .line 496
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
     invoke-static {p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getParentAlert$p$s-1876542046(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -900,7 +900,7 @@
 
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    .line 493
+    .line 497
     sget v0, Lorg/telegram/messenger/R$id;->recycle_transactions:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -909,12 +909,12 @@
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 494
+    .line 498
     invoke-static {p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;->access$getTransactionAdapter(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)Lcom/iMe/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;
 
     move-result-object v2
 
-    .line 495
+    .line 499
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;->getHeaderProvider()Lcom/iMe/ui/adapter/provider/HeaderProvider;
 
     move-result-object v3
@@ -923,34 +923,34 @@
 
     invoke-virtual {v3, v4}, Lcom/iMe/ui/adapter/provider/HeaderProvider;->setExtraPadding(F)V
 
-    .line 496
+    .line 500
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;->getTokenTransactionProvider()Lcom/iMe/ui/adapter/provider/TokenTransactionProvider;
 
     move-result-object v3
 
     invoke-virtual {v3, v4}, Lcom/iMe/ui/adapter/provider/TokenTransactionProvider;->setExtraPadding(F)V
 
-    .line 497
+    .line 501
     new-instance v3, Lcom/iMe/ui/wallet/transaction/adapter/diff/TransactionDiffCallback;
 
     invoke-direct {v3}, Lcom/iMe/ui/wallet/transaction/adapter/diff/TransactionDiffCallback;-><init>()V
 
     invoke-virtual {v2, v3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 498
+    .line 502
     new-instance v3, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {v3, p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)V
 
     invoke-virtual {v2, v3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 494
+    .line 498
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 516
+    .line 520
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setNestedScrollingEnabled(Z)V
 
-    .line 517
+    .line 521
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     iget-object v2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->mContext:Landroid/content/Context;
@@ -959,7 +959,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 519
+    .line 523
     sget v0, Lorg/telegram/messenger/R$id;->global_state_layout:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -968,7 +968,7 @@
 
     check-cast v0, Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
-    .line 520
+    .line 524
     new-instance v1, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1;
 
     invoke-direct {v1, p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1;-><init>(Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;)V
@@ -977,7 +977,7 @@
 
     goto :goto_0
 
-    .line 525
+    .line 529
     :cond_4
     new-instance p1, Lcom/iMe/fork/ui/view/ImageRadioCell;
 
@@ -995,7 +995,7 @@
 
     invoke-direct/range {v2 .. v7}, Lcom/iMe/fork/ui/view/ImageRadioCell;-><init>(Landroid/content/Context;ZIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 527
+    .line 531
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -1007,7 +1007,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 471
+    .line 475
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

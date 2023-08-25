@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 474
+    .line 477
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$6;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,12 +35,12 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 1
 
-    .line 477
+    .line 480
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
     const/4 p1, 0x0
 
-    .line 479
+    .line 482
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$6;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
@@ -52,7 +52,7 @@
 
     if-ge p1, p2, :cond_0
 
-    .line 480
+    .line 483
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$6;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -63,7 +63,7 @@
 
     check-cast p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 481
+    .line 484
     iget-object p3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$6;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;

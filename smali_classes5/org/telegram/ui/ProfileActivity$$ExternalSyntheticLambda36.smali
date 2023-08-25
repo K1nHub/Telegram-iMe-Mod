@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda36;->f$3:Ljava/io/File;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$7XQKX6QSvt1bpM70HDUY6qKMnIM(Lorg/telegram/ui/ActionBar/AlertDialog;[ZLandroid/app/Activity;Ljava/io/File;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$1MF6UaeiX6BlvO0tzvKvv5fi6kU(Lorg/telegram/ui/ActionBar/AlertDialog;[ZLandroid/app/Activity;Ljava/io/File;)V
 
     return-void
 .end method

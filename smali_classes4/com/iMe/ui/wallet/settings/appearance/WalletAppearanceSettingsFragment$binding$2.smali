@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/messenger/databinding/ForkFragmentWalletInterfaceSettingsBinding;
     .locals 1
 
-    .line 29
+    .line 30
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$binding$2;->this$0:Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/BaseFragmentExtKt;->getLayoutInflater(Lorg/telegram/ui/ActionBar/BaseFragment;)Landroid/view/LayoutInflater;

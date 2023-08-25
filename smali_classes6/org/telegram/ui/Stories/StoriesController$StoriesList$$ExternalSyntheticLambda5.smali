@@ -8,18 +8,26 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/MessagesStorage;
+.field public final synthetic f$1:Ljava/util/ArrayList;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_stories;
+
+.field public final synthetic f$3:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/MessagesStorage;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_stories_stories;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/messenger/MessagesStorage;
+    iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$1:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_stories;
+
+    iput p4, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$3:I
 
     return-void
 .end method
@@ -27,13 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/messenger/MessagesStorage;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$1:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->$r8$lambda$3LOKETVzbsVZz8xtOF-uEiXrSCo(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/MessagesStorage;)V
+    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_stories;
+
+    iget v3, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda5;->f$3:I
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->$r8$lambda$MyVrg1rPKLhuiDKUsH3UOoBAZq0(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_stories_stories;I)V
 
     return-void
 .end method

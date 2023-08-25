@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 363
+    .line 515
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$3;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,18 +63,18 @@
 .method public final invoke()V
     .locals 2
 
-    .line 380
+    .line 520
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$3;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$3;->$args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
-    check-cast v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
+    check-cast v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
-    invoke-virtual {v1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;->getToken()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;->getStakingDetails()Lcom/iMe/model/staking/StakingDetailsItem;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->access$startBinanceReceiveScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
+    invoke-static {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->access$openStakingReplenishCheckingAccountLevel(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/staking/StakingDetailsItem;)V
 
     return-void
 .end method

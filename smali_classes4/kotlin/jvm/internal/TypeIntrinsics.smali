@@ -554,7 +554,7 @@
 
     if-nez p0, :cond_0
 
-    const-string p0, "null"
+    const-string/jumbo p0, "null"
 
     goto :goto_0
 

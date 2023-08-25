@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Stories/PeerStoriesView$25;
-.super Lorg/telegram/ui/WrappedResourceProvider;
+.super Landroid/view/View;
 .source "PeerStoriesView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/PeerStoriesView;->checkReactionsLayout()V
+    value = Lorg/telegram/ui/Stories/PeerStoriesView;->createSelfPeerView()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,35 +14,219 @@
 .end annotation
 
 
-# direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 0
+# instance fields
+.field animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 4318
-    invoke-direct {p0, p2}, Lorg/telegram/ui/WrappedResourceProvider;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.field loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
+
+.field final synthetic this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+
+# direct methods
+.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;)V
+    .locals 2
+
+    .line 2588
+    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    .line 2590
+    new-instance p1, Lorg/telegram/ui/Components/LoadingDrawable;
+
+    invoke-direct {p1}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
+
+    .line 2591
+    new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
+
+    sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    const-wide/16 v0, 0xfa
+
+    invoke-direct {p1, v0, v1, p2}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(JLandroid/animation/TimeInterpolator;)V
+
+    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public appendColors()V
-    .locals 4
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 11
 
-    .line 4321
-    iget-object v0, p0, Lorg/telegram/ui/WrappedResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
+    .line 2595
+    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
+    .line 2596
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    const/4 v2, -0x1
+    invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedFloat;->setParent(Landroid/view/View;)V
 
-    const/16 v3, 0x1e
+    .line 2597
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    invoke-static {v2, v3}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    iget-boolean v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->showViewsProgress:Z
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_0
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v3
+
+    :goto_0
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v1, v4}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
+
+    .line 2598
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
+
+    move-result v0
+
+    cmpl-float v0, v0, v3
+
+    if-eqz v0, :cond_2
+
+    .line 2600
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
+
+    move-result v0
+
+    cmpl-float v0, v0, v2
+
+    if-eqz v0, :cond_1
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    .line 2601
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    int-to-float v7, v0
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v0
+
+    int-to-float v8, v0
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
+
+    move-result v0
+
+    const/high16 v1, 0x437f0000    # 255.0f
+
+    mul-float/2addr v0, v1
+
+    float-to-int v9, v0
+
+    const/16 v10, 0x1f
+
+    move-object v4, p1
+
+    invoke-virtual/range {v4 .. v10}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
+
+    goto :goto_1
+
+    .line 2603
+    :cond_1
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 2605
+    :goto_1
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+    int-to-float v2, v2
 
+    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 2606
+    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
+
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/LoadingDrawable;->setBounds(Landroid/graphics/RectF;)V
+
+    .line 2607
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
+
+    const/high16 v1, 0x41c00000    # 24.0f
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
+
+    .line 2608
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
+
+    const/16 v1, 0x14
+
+    const/4 v2, -0x1
+
+    invoke-static {v2, v1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result v1
+
+    const/16 v3, 0x32
+
+    invoke-static {v2, v3}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result v4
+
+    invoke-static {v2, v3}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result v3
+
+    const/16 v5, 0x46
+
+    invoke-static {v2, v5}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v4, v3, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(IIII)V
+
+    .line 2609
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/LoadingDrawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 2610
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 2611
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    :cond_2
     return-void
 .end method

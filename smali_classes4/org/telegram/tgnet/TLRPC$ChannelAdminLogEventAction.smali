@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43290
+    .line 43332
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto/16 :goto_0
 
-    .line 43314
+    .line 43356
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionEditMessage;
 
@@ -30,7 +30,7 @@
 
     goto/16 :goto_0
 
-    .line 43407
+    .line 43449
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeHistoryTTL;
 
@@ -38,7 +38,7 @@
 
     goto/16 :goto_0
 
-    .line 43320
+    .line 43362
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsername;
 
@@ -46,7 +46,7 @@
 
     goto/16 :goto_0
 
-    .line 43422
+    .line 43464
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionToggleAntiSpam;
 
@@ -54,7 +54,7 @@
 
     goto/16 :goto_0
 
-    .line 43368
+    .line 43410
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionTogglePreHistoryHidden;
 
@@ -62,7 +62,7 @@
 
     goto/16 :goto_0
 
-    .line 43359
+    .line 43401
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionPinTopic;
 
@@ -70,7 +70,7 @@
 
     goto/16 :goto_0
 
-    .line 43344
+    .line 43386
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteDelete;
 
@@ -78,7 +78,7 @@
 
     goto/16 :goto_0
 
-    .line 43416
+    .line 43458
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionCreateTopic;
 
@@ -86,7 +86,7 @@
 
     goto/16 :goto_0
 
-    .line 43377
+    .line 43419
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionToggleGroupCallSetting;
 
@@ -94,7 +94,7 @@
 
     goto/16 :goto_0
 
-    .line 43383
+    .line 43425
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeAbout;
 
@@ -102,7 +102,7 @@
 
     goto/16 :goto_0
 
-    .line 43332
+    .line 43374
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionToggleSlowMode;
 
@@ -110,7 +110,7 @@
 
     goto/16 :goto_0
 
-    .line 43326
+    .line 43368
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangePhoto;
 
@@ -118,7 +118,7 @@
 
     goto/16 :goto_0
 
-    .line 43401
+    .line 43443
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionDeleteMessage;
 
@@ -126,7 +126,7 @@
 
     goto/16 :goto_0
 
-    .line 43338
+    .line 43380
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteRevoke;
 
@@ -134,7 +134,7 @@
 
     goto/16 :goto_0
 
-    .line 43350
+    .line 43392
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantVolume;
 
@@ -142,7 +142,7 @@
 
     goto/16 :goto_0
 
-    .line 43305
+    .line 43347
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionDefaultBannedRights;
 
@@ -150,7 +150,7 @@
 
     goto/16 :goto_0
 
-    .line 43347
+    .line 43389
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionToggleSignatures;
 
@@ -158,7 +158,7 @@
 
     goto/16 :goto_0
 
-    .line 43386
+    .line 43428
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionStartGroupCall;
 
@@ -166,7 +166,7 @@
 
     goto/16 :goto_0
 
-    .line 43395
+    .line 43437
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionToggleInvites;
 
@@ -174,7 +174,7 @@
 
     goto/16 :goto_0
 
-    .line 43365
+    .line 43407
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantJoin;
 
@@ -182,7 +182,7 @@
 
     goto/16 :goto_0
 
-    .line 43323
+    .line 43365
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeLocation;
 
@@ -190,7 +190,7 @@
 
     goto/16 :goto_0
 
-    .line 43392
+    .line 43434
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeLinkedChat;
 
@@ -198,7 +198,7 @@
 
     goto/16 :goto_0
 
-    .line 43353
+    .line 43395
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionToggleForum;
 
@@ -206,7 +206,7 @@
 
     goto/16 :goto_0
 
-    .line 43335
+    .line 43377
     :sswitch_17
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantJoinByInvite;
 
@@ -214,7 +214,7 @@
 
     goto/16 :goto_0
 
-    .line 43308
+    .line 43350
     :sswitch_18
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeTheme;
 
@@ -222,7 +222,7 @@
 
     goto/16 :goto_0
 
-    .line 43302
+    .line 43344
     :sswitch_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantMute;
 
@@ -230,7 +230,7 @@
 
     goto/16 :goto_0
 
-    .line 43311
+    .line 43353
     :sswitch_1a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantLeave;
 
@@ -238,7 +238,7 @@
 
     goto/16 :goto_0
 
-    .line 43356
+    .line 43398
     :sswitch_1b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionEditTopic;
 
@@ -246,7 +246,7 @@
 
     goto :goto_0
 
-    .line 43413
+    .line 43455
     :sswitch_1c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeUsernames;
 
@@ -254,7 +254,7 @@
 
     goto :goto_0
 
-    .line 43374
+    .line 43416
     :sswitch_1d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionUpdatePinned;
 
@@ -262,7 +262,7 @@
 
     goto :goto_0
 
-    .line 43317
+    .line 43359
     :sswitch_1e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionExportedInviteEdit;
 
@@ -270,7 +270,7 @@
 
     goto :goto_0
 
-    .line 43404
+    .line 43446
     :sswitch_1f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeTitle;
 
@@ -278,7 +278,7 @@
 
     goto :goto_0
 
-    .line 43362
+    .line 43404
     :sswitch_20
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantToggleBan;
 
@@ -286,7 +286,7 @@
 
     goto :goto_0
 
-    .line 43398
+    .line 43440
     :sswitch_21
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantUnmute;
 
@@ -294,7 +294,7 @@
 
     goto :goto_0
 
-    .line 43380
+    .line 43422
     :sswitch_22
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantInvite;
 
@@ -302,7 +302,7 @@
 
     goto :goto_0
 
-    .line 43296
+    .line 43338
     :sswitch_23
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionDiscardGroupCall;
 
@@ -310,7 +310,7 @@
 
     goto :goto_0
 
-    .line 43329
+    .line 43371
     :sswitch_24
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantToggleAdmin;
 
@@ -318,7 +318,7 @@
 
     goto :goto_0
 
-    .line 43410
+    .line 43452
     :sswitch_25
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionToggleNoForwards;
 
@@ -326,7 +326,7 @@
 
     goto :goto_0
 
-    .line 43389
+    .line 43431
     :sswitch_26
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeAvailableReactions;
 
@@ -334,7 +334,7 @@
 
     goto :goto_0
 
-    .line 43299
+    .line 43341
     :sswitch_27
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionChangeStickerSet;
 
@@ -342,7 +342,7 @@
 
     goto :goto_0
 
-    .line 43371
+    .line 43413
     :sswitch_28
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionParticipantJoinByRequest;
 
@@ -350,7 +350,7 @@
 
     goto :goto_0
 
-    .line 43419
+    .line 43461
     :sswitch_29
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionDeleteTopic;
 
@@ -358,7 +358,7 @@
 
     goto :goto_0
 
-    .line 43341
+    .line 43383
     :sswitch_2a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventActionStopPoll;
 
@@ -371,7 +371,7 @@
 
     goto :goto_1
 
-    .line 43426
+    .line 43468
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -401,7 +401,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 43429
+    .line 43471
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

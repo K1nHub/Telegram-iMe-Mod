@@ -42,7 +42,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 177
+    .line 188
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/ImageReceiver$1;)V
     .locals 0
 
-    .line 177
+    .line 188
     invoke-direct {p0}, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
 .method static synthetic access$100(Lorg/telegram/messenger/ImageReceiver$SetImageBackup;)Z
     .locals 0
 
-    .line 177
+    .line 188
     invoke-direct {p0}, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->isWebfileSet()Z
 
     move-result p0
@@ -71,7 +71,7 @@
 .method static synthetic access$200(Lorg/telegram/messenger/ImageReceiver$SetImageBackup;)V
     .locals 0
 
-    .line 177
+    .line 188
     invoke-direct {p0}, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->clear()V
 
     return-void
@@ -80,7 +80,7 @@
 .method static synthetic access$300(Lorg/telegram/messenger/ImageReceiver$SetImageBackup;)Z
     .locals 0
 
-    .line 177
+    .line 188
     invoke-direct {p0}, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->isSet()Z
 
     move-result p0
@@ -93,16 +93,16 @@
 
     const/4 v0, 0x0
 
-    .line 201
+    .line 212
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->imageLocation:Lorg/telegram/messenger/ImageLocation;
 
-    .line 202
+    .line 213
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->thumbLocation:Lorg/telegram/messenger/ImageLocation;
 
-    .line 203
+    .line 214
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->mediaLocation:Lorg/telegram/messenger/ImageLocation;
 
-    .line 204
+    .line 215
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->thumb:Landroid/graphics/drawable/Drawable;
 
     return-void
@@ -111,7 +111,7 @@
 .method private isSet()Z
     .locals 1
 
-    .line 191
+    .line 202
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->imageLocation:Lorg/telegram/messenger/ImageLocation;
 
     if-nez v0, :cond_1
@@ -146,7 +146,7 @@
 .method private isWebfileSet()Z
     .locals 2
 
-    .line 195
+    .line 206
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$SetImageBackup;->imageLocation:Lorg/telegram/messenger/ImageLocation;
 
     if-eqz v0, :cond_0

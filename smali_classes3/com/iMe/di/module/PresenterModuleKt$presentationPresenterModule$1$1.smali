@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n*L\n115#1:553\n117#1:554,5\n118#1:559,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n44#2:864\n129#3,5:865\n129#3,5:870\n129#3,5:875\n129#3,5:880\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n*L\n127#1:864\n130#1:865,5\n131#1:870,5\n132#1:875,5\n133#1:880,5\n*E\n"
 .end annotation
 
 
@@ -90,7 +90,7 @@
     check-cast v1, Lcom/iMe/model/translation/TranslationArgs;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
+    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -102,23 +102,7 @@
 
     move-result-object p2
 
-    .line 117
-    move-object v5, p2
-
-    check-cast v5, Lcom/iMe/storage/domain/gateway/TelegramGateway;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 117
+    .line 130
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -134,10 +118,26 @@
 
     move-result-object p2
 
-    .line 118
+    .line 131
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 132
+    move-object v5, p2
+
+    check-cast v5, Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/interactor/translate/TranslationInteractor;
@@ -150,12 +150,12 @@
 
     move-result-object p1
 
-    .line 118
+    .line 133
     move-object v2, p1
 
     check-cast v2, Lcom/iMe/storage/domain/interactor/translate/TranslationInteractor;
 
-    .line 116
+    .line 128
     new-instance p1, Lcom/iMe/ui/translate/TranslationPresenter;
 
     move-object v0, p1
@@ -168,7 +168,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 115
+    .line 127
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

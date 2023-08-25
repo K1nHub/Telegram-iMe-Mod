@@ -12,11 +12,13 @@
 
 .field public final synthetic f$2:I
 
-.field public final synthetic f$3:Lorg/telegram/ui/Components/EditTextBoldCursor;
+.field public final synthetic f$3:Lcom/iMe/fork/controller/FormattingTextController;
+
+.field public final synthetic f$4:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EditTextCaption;IILorg/telegram/ui/Components/EditTextBoldCursor;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/EditTextCaption;IILcom/iMe/fork/controller/FormattingTextController;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +29,9 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$2:I
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$3:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iput-object p4, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$3:Lcom/iMe/fork/controller/FormattingTextController;
+
+    iput-object p5, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$4:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-void
 .end method
@@ -35,7 +39,7 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/EditTextCaption;
 
@@ -43,13 +47,15 @@
 
     iget v2, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$2:I
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$3:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v3, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$3:Lcom/iMe/fork/controller/FormattingTextController;
 
-    move-object v4, p1
+    iget-object v4, p0, Lorg/telegram/ui/Components/EditTextCaption$$ExternalSyntheticLambda0;->f$4:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    move v5, p2
+    move-object v5, p1
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/EditTextCaption;->$r8$lambda$j6Xazj59eLQQFg5Xz9F1fut3cRY(Lorg/telegram/ui/Components/EditTextCaption;IILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
+    move v6, p2
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/EditTextCaption;->$r8$lambda$fzno8kLI4kC3AdACmCzhC2KpQtw(Lorg/telegram/ui/Components/EditTextCaption;IILcom/iMe/fork/controller/FormattingTextController;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

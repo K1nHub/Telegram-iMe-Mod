@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Stories/PeerStoriesView$17;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/ChatAttachAlert;
 .source "PeerStoriesView.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/PeerStoriesView;->shareStory(Z)V
+    value = Lorg/telegram/ui/Stories/PeerStoriesView;->createChatAttachView()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,36 +19,90 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
-    .locals 0
+.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 7
 
-    .line 1926
+    .line 2080
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move v3, p4
+
+    move v4, p5
+
+    move v5, p6
+
+    move-object v6, p7
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/ChatAttachAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public didCopy()Z
-    .locals 1
-
-    .line 1930
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5900(Lorg/telegram/ui/Stories/PeerStoriesView;)V
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public synthetic didShare()V
+.method public dismissInternal()V
     .locals 0
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate$-CC;->$default$didShare(Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;)V
+    .line 2086
+    invoke-super {p0}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismissInternal()V
 
+    return-void
+.end method
+
+.method public onDismissAnimationStart()V
+    .locals 2
+
+    .line 2091
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 2092
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setFocusable(Z)V
+
+    .line 2094
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 2095
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
+
+    :cond_1
     return-void
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 1410
+    .line 1488
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$7;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 1
 
-    .line 1415
+    .line 1493
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$7;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->containerView:Lorg/telegram/ui/Stories/HwFrameLayout;
@@ -49,61 +49,61 @@
 
     check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 1417
+    .line 1495
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v0
 
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 1418
+    .line 1496
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
     move-result v0
 
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 1419
+    .line 1497
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsetLeft()I
 
     move-result v0
 
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 1420
+    .line 1498
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
 
     move-result v0
 
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 1422
+    .line 1500
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$7;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 1423
+    .line 1501
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$7;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->containerView:Lorg/telegram/ui/Stories/HwFrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 1424
+    .line 1502
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1e
 
     if-lt p1, v0, :cond_0
 
-    .line 1425
+    .line 1503
     sget-object p1, Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;
 
     return-object p1
 
-    .line 1427
+    .line 1505
     :cond_0
     invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
 

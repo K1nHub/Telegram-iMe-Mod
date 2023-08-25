@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Adapters/BaseLocationAdapter$$ExternalSyntheticLambda1;->f$2:Landroid/location/Location;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Adapters/BaseLocationAdapter;->$r8$lambda$dbxi_Lizh1BkMdDHHUwd4wMkbog(Lorg/telegram/ui/Adapters/BaseLocationAdapter;Ljava/lang/String;Landroid/location/Location;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Adapters/BaseLocationAdapter;->$r8$lambda$M5pEnfvG1qE0SmAACEhWNyquPlU(Lorg/telegram/ui/Adapters/BaseLocationAdapter;Ljava/lang/String;Landroid/location/Location;)V
 
     return-void
 .end method

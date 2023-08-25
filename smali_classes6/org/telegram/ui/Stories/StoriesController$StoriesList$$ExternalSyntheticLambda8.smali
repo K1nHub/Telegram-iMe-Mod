@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/Utilities$Callback;
+.field public final synthetic f$1:Lorg/telegram/messenger/MessagesStorage;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/Utilities$Callback;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/MessagesStorage;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/messenger/Utilities$Callback;
+    iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/messenger/MessagesStorage;
 
     return-void
 .end method
@@ -31,9 +31,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/messenger/Utilities$Callback;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$StoriesList$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/messenger/MessagesStorage;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->$r8$lambda$SDyKs8uBiAPvye_wbXrvvNRd19I(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->$r8$lambda$zyAVoyvpMFimrbE5RUmbJ-caEmU(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/messenger/MessagesStorage;)V
 
     return-void
 .end method

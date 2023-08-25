@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;->$r8$lambda$mqiWDHFeNeXffD2ETc60U_P8oeA(Lorg/telegram/ui/LaunchActivity;)V
+    invoke-static {v0}, Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;->$r8$lambda$mTCOFA1bUmngYsxmgJygqSibr_Y(Lorg/telegram/ui/LaunchActivity;)V
 
     return-void
 .end method

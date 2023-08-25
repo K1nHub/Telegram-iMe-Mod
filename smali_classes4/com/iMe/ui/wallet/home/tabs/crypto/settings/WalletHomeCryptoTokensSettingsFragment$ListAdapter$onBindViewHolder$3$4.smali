@@ -57,7 +57,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 443
+    .line 506
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onBindViewHolder$3$4;->invoke(Landroid/view/View;)V
@@ -74,7 +74,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 444
+    .line 507
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onBindViewHolder$3$4;->$this_with:Lcom/iMe/fork/ui/view/MovingCheckCell;
 
     invoke-virtual {p1}, Lcom/iMe/fork/ui/view/MovingCheckCell;->isChecked()Z
@@ -85,13 +85,14 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setChecked(Z)V
 
-    .line 445
+    .line 508
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onBindViewHolder$3$4;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->access$getPresenter(Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;
 
     move-result-object p1
 
+    .line 509
     iget v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onBindViewHolder$3$4;->$position:I
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onBindViewHolder$3$4;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
@@ -102,12 +103,14 @@
 
     sub-int/2addr v0, v1
 
+    .line 510
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onBindViewHolder$3$4;->$this_with:Lcom/iMe/fork/ui/view/MovingCheckCell;
 
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/MovingCheckCell;->isChecked()Z
 
     move-result v1
 
+    .line 508
     invoke-virtual {p1, v0, v1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->switchTokenVisibility(IZ)V
 
     return-void

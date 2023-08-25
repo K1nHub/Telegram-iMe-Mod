@@ -14,6 +14,9 @@
 
 
 # virtual methods
+.method public abstract actionCopyToClipboard(Ljava/lang/String;)V
+.end method
+
 .method public abstract onSetupNavigationRouter()V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
@@ -22,6 +25,9 @@
 .method public abstract onTabSelected(I)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
+.end method
+
+.method public abstract openAddAdminScreen(JJLjava/lang/String;)V
 .end method
 
 .method public abstract openBinanceReceiveScreen(Lcom/iMe/model/wallet/crypto/TokenItem;)V
@@ -57,7 +63,7 @@
 .method public abstract openTokenInformationScreen(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 .end method
 
-.method public abstract setupHorizontalActionButtons(Ljava/util/List;)V
+.method public abstract renderHorizontalActionButtons(Ljava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -71,12 +77,17 @@
     .end annotation
 .end method
 
+.method public abstract setupCryptoBoxDetailsScreen(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;)V
+    .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
+    .end annotation
+.end method
+
 .method public abstract setupRankBadge(ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method
 
-.method public abstract setupStakingDetailsScreen(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcom/iMe/model/staking/StakingProgrammeStatus;)V
+.method public abstract setupStakingDetailsScreen(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcom/iMe/model/staking/StakingProgrammeStatus;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method
@@ -87,6 +98,21 @@
 .end method
 
 .method public abstract showAccountLevelDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+.end method
+
+.method public abstract showActionError(Ljava/lang/String;)V
+.end method
+
+.method public abstract showConfirmationDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+.end method
+
+.method public abstract showCryptoBoxConditionsDialog(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
+.end method
+
+.method public abstract showCryptoBoxRefreshSuccess()V
+.end method
+
+.method public abstract showCryptoBoxSuspensionDialog(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxTransactionAction;)V
 .end method
 
 .method public abstract showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V

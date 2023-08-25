@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;->getTokensBalances(JLjava/lang/String;Ljava/util/List;)Lio/reactivex/Single;
+    value = Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;->getBalancesByMultipleNetworks(JLjava/util/List;)Lio/reactivex/Single;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -47,7 +47,7 @@
         }
     .end annotation
 
-    .line 590
+    .line 582
     iput-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl$14;->this$0:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;
 
     iput-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl$14;->val$_statement:Landroidx/room/RoomSQLiteQuery;
@@ -67,7 +67,7 @@
         }
     .end annotation
 
-    .line 590
+    .line 582
     invoke-virtual {p0}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl$14;->call()Ljava/util/List;
 
     move-result-object v0
@@ -94,7 +94,7 @@
 
     move-object/from16 v1, p0
 
-    .line 593
+    .line 585
     iget-object v0, v1, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl$14;->this$0:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;
 
     invoke-static {v0}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;->access$000(Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;)Landroidx/room/RoomDatabase;
@@ -114,105 +114,105 @@
     :try_start_0
     const-string v0, "tgUserId"
 
-    .line 595
+    .line 587
     invoke-static {v2, v0}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v0
 
     const-string v5, "total"
 
-    .line 596
+    .line 588
     invoke-static {v2, v5}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
     const-string v6, "totalInFiatValue"
 
-    .line 597
+    .line 589
     invoke-static {v2, v6}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
     const-string v7, "totalInFiatSymbol"
 
-    .line 598
+    .line 590
     invoke-static {v2, v7}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
     const-string v8, "totalInFiatTicker"
 
-    .line 599
+    .line 591
     invoke-static {v2, v8}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
     const-string v9, "rateToFiatValue"
 
-    .line 600
+    .line 592
     invoke-static {v2, v9}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
     const-string v10, "rateToFiatSymbol"
 
-    .line 601
+    .line 593
     invoke-static {v2, v10}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
     const-string v11, "rateToFiatTicker"
 
-    .line 602
+    .line 594
     invoke-static {v2, v11}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
     const-string v12, "ratePercentageChange24h"
 
-    .line 603
+    .line 595
     invoke-static {v2, v12}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
     const-string v13, "address"
 
-    .line 604
+    .line 596
     invoke-static {v2, v13}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
     const-string v14, "networkId"
 
-    .line 605
+    .line 597
     invoke-static {v2, v14}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
     const-string v15, "avatarUrl"
 
-    .line 606
+    .line 598
     invoke-static {v2, v15}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
 
     const-string v3, "decimals"
 
-    .line 607
+    .line 599
     invoke-static {v2, v3}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v3
 
     const-string v4, "ticker"
 
-    .line 608
+    .line 600
     invoke-static {v2, v4}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
 
     const-string v1, "isCoin"
 
-    .line 609
+    .line 601
     invoke-static {v2, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
@@ -221,7 +221,7 @@
 
     const-string v1, "name"
 
-    .line 610
+    .line 602
     invoke-static {v2, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
@@ -230,14 +230,14 @@
 
     const-string v1, "website"
 
-    .line 611
+    .line 603
     invoke-static {v2, v1}, Landroidx/room/util/CursorUtil;->getColumnIndexOrThrow(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v1
 
     move/from16 v18, v1
 
-    .line 612
+    .line 604
     new-instance v1, Ljava/util/ArrayList;
 
     move/from16 v19, v4
@@ -248,7 +248,7 @@
 
     invoke-direct {v1, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 613
+    .line 605
     :goto_0
     invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -256,22 +256,22 @@
 
     if-eqz v4, :cond_b
 
-    .line 616
+    .line 608
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v21
 
-    .line 618
+    .line 610
     invoke-interface {v2, v5}, Landroid/database/Cursor;->getDouble(I)D
 
     move-result-wide v23
 
-    .line 620
+    .line 612
     invoke-interface {v2, v6}, Landroid/database/Cursor;->getDouble(I)D
 
     move-result-wide v25
 
-    .line 622
+    .line 614
     invoke-interface {v2, v7}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v4
@@ -282,7 +282,7 @@
 
     goto :goto_1
 
-    .line 625
+    .line 617
     :cond_0
     invoke-interface {v2, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -290,7 +290,7 @@
 
     move-object/from16 v27, v4
 
-    .line 628
+    .line 620
     :goto_1
     invoke-interface {v2, v8}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -302,7 +302,7 @@
 
     goto :goto_2
 
-    .line 631
+    .line 623
     :cond_1
     invoke-interface {v2, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -310,13 +310,13 @@
 
     move-object/from16 v28, v4
 
-    .line 634
+    .line 626
     :goto_2
     invoke-interface {v2, v9}, Landroid/database/Cursor;->getDouble(I)D
 
     move-result-wide v29
 
-    .line 636
+    .line 628
     invoke-interface {v2, v10}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v4
@@ -327,7 +327,7 @@
 
     goto :goto_3
 
-    .line 639
+    .line 631
     :cond_2
     invoke-interface {v2, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -335,7 +335,7 @@
 
     move-object/from16 v31, v4
 
-    .line 642
+    .line 634
     :goto_3
     invoke-interface {v2, v11}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -347,7 +347,7 @@
 
     goto :goto_4
 
-    .line 645
+    .line 637
     :cond_3
     invoke-interface {v2, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -355,13 +355,13 @@
 
     move-object/from16 v32, v4
 
-    .line 648
+    .line 640
     :goto_4
     invoke-interface {v2, v12}, Landroid/database/Cursor;->getDouble(I)D
 
     move-result-wide v33
 
-    .line 650
+    .line 642
     invoke-interface {v2, v13}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v4
@@ -372,7 +372,7 @@
 
     goto :goto_5
 
-    .line 653
+    .line 645
     :cond_4
     invoke-interface {v2, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     move-object/from16 v35, v4
 
-    .line 656
+    .line 648
     :goto_5
     invoke-interface {v2, v14}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -392,7 +392,7 @@
 
     goto :goto_6
 
-    .line 659
+    .line 651
     :cond_5
     invoke-interface {v2, v14}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -400,7 +400,7 @@
 
     move-object/from16 v36, v4
 
-    .line 662
+    .line 654
     :goto_6
     invoke-interface {v2, v15}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -412,7 +412,7 @@
 
     goto :goto_7
 
-    .line 665
+    .line 657
     :cond_6
     invoke-interface {v2, v15}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -420,7 +420,7 @@
 
     move-object/from16 v37, v4
 
-    .line 668
+    .line 660
     :goto_7
     invoke-interface {v2, v3}, Landroid/database/Cursor;->getInt(I)I
 
@@ -428,7 +428,7 @@
 
     move/from16 v4, v19
 
-    .line 670
+    .line 662
     invoke-interface {v2, v4}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v19
@@ -446,7 +446,7 @@
 
     goto :goto_9
 
-    .line 673
+    .line 665
     :cond_7
     invoke-interface {v2, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -456,7 +456,7 @@
 
     goto :goto_8
 
-    .line 677
+    .line 669
     :goto_9
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
 
@@ -480,7 +480,7 @@
 
     move/from16 v0, v43
 
-    .line 680
+    .line 672
     invoke-interface {v2, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v19
@@ -498,7 +498,7 @@
 
     goto :goto_c
 
-    .line 683
+    .line 675
     :cond_9
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -508,7 +508,7 @@
 
     goto :goto_b
 
-    .line 686
+    .line 678
     :goto_c
     invoke-interface {v2, v0}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -522,7 +522,7 @@
 
     goto :goto_d
 
-    .line 689
+    .line 681
     :cond_a
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -532,7 +532,7 @@
 
     move/from16 v19, v0
 
-    .line 691
+    .line 683
     :goto_d
     new-instance v0, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;
 
@@ -540,7 +540,7 @@
 
     invoke-direct/range {v20 .. v42}, Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;-><init>(JDDLjava/lang/String;Ljava/lang/String;DLjava/lang/String;Ljava/lang/String;DLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ZLjava/lang/String;Ljava/lang/String;)V
 
-    .line 692
+    .line 684
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -557,7 +557,7 @@
 
     goto/16 :goto_0
 
-    .line 699
+    .line 691
     :cond_b
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
@@ -568,14 +568,14 @@
 
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 700
+    .line 692
     throw v0
 .end method
 
 .method protected finalize()V
     .locals 1
 
-    .line 705
+    .line 697
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl$14;->val$_statement:Landroidx/room/RoomSQLiteQuery;
 
     invoke-virtual {v0}, Landroidx/room/RoomSQLiteQuery;->release()V

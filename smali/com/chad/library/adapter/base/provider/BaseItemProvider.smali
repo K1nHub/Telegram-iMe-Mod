@@ -21,6 +21,8 @@
 # instance fields
 .field private final clickViewIds$delegate:Lkotlin/Lazy;
 
+.field public context:Landroid/content/Context;
+
 .field private final longClickViewIds$delegate:Lkotlin/Lazy;
 
 .field private weakAdapter:Ljava/lang/ref/WeakReference;
@@ -215,6 +217,26 @@
     return-object v0
 .end method
 
+.method public final getContext()Landroid/content/Context;
+    .locals 1
+
+    .line 19
+    iget-object v0, p0, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->context:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const-string v0, "context"
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public abstract getItemViewType()I
 .end method
 
@@ -396,6 +418,9 @@
     const-string v0, "<set-?>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 19
+    iput-object p1, p0, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->context:Landroid/content/Context;
 
     return-void
 .end method

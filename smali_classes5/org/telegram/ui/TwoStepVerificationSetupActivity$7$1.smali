@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;)V
     .locals 0
 
-    .line 640
+    .line 643
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7$1;->this$1:Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 643
+    .line 646
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7$1;->this$1:Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;
 
     iget-object v0, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
@@ -50,7 +50,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 644
+    .line 647
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7$1;->this$1:Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;
 
     iget-object p1, p1, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment$Adapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1071
+    .line 1150
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 1075
+    .line 1154
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -46,7 +46,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1076
+    .line 1155
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -63,7 +63,7 @@
 
     goto :goto_0
 
-    .line 1078
+    .line 1157
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1079
+    .line 1158
     invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$300(Lorg/telegram/ui/PremiumPreviewFragment;)I
 
     move-result v0
@@ -107,7 +107,7 @@
     :cond_1
     const/16 p2, 0x12c
 
-    .line 1081
+    .line 1160
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -122,7 +122,7 @@
 
     add-int/2addr p2, v0
 
-    .line 1082
+    .line 1161
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -143,7 +143,7 @@
 
     if-le v0, p2, :cond_2
 
-    .line 1083
+    .line 1162
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment$Adapter;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -160,7 +160,7 @@
 
     add-int/2addr p2, v0
 
-    .line 1085
+    .line 1164
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 
@@ -168,7 +168,7 @@
 
     invoke-static {v0, p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1102(Lorg/telegram/ui/PremiumPreviewFragment;I)I
 
-    .line 1087
+    .line 1166
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$Adapter$1;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$Adapter;
 

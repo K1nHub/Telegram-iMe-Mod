@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LocationActivity;
 
+.field public final synthetic f$1:F
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LocationActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LocationActivity;F)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/ui/LocationActivity;
+
+    iput p2, p0, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda32;->f$1:F
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final onClick(Lorg/telegram/messenger/IMapsProvider$IMarker;)Z
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/LocationActivity;->$r8$lambda$avongBjIesFQ9J9T6jGdIs7_by0(Lorg/telegram/ui/LocationActivity;Lorg/telegram/messenger/IMapsProvider$IMarker;)Z
+    iget v1, p0, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda32;->f$1:F
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LocationActivity;->$r8$lambda$jTdCRfg1fBL8-R7nffTZCoR1YAk(Lorg/telegram/ui/LocationActivity;FLorg/telegram/messenger/IMapsProvider$IMarker;)Z
 
     move-result p1
 

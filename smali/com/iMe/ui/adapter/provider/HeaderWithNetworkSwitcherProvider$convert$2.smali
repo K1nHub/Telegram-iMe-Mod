@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 43
+    .line 44
     check-cast p1, Lcom/iMe/ui/custom/NetworkTypeView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$2;->invoke(Lcom/iMe/ui/custom/NetworkTypeView;)V
@@ -66,14 +66,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 43
+    .line 45
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$2;->$item:Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;->getNetworkType()Lcom/iMe/storage/domain/model/crypto/Network;
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;->getNetworkItem()Lcom/iMe/model/wallet/crypto/NetworkItem;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
     return-void
 .end method

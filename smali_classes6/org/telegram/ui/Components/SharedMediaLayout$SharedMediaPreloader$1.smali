@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;Ljava/util/ArrayList;Ljava/lang/String;I)V
     .locals 0
 
-    .line 1223
+    .line 1224
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$allMessages:Ljava/util/ArrayList;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$fileName:Ljava/lang/String;
@@ -48,7 +48,7 @@
 
     const/4 v0, 0x0
 
-    .line 1226
+    .line 1227
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$allMessages:Ljava/util/ArrayList;
 
@@ -58,7 +58,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1227
+    .line 1228
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$fileName:Ljava/lang/String;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$allMessages:Ljava/util/ArrayList;
@@ -79,7 +79,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1228
+    .line 1229
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$allMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 1232
+    .line 1233
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$allMessages:Ljava/util/ArrayList;
 
@@ -101,7 +101,7 @@
 
     if-lez v0, :cond_2
 
-    .line 1233
+    .line 1234
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader$1;->val$account:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;

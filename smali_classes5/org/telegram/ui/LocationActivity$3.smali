@@ -24,14 +24,14 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 639
+    .line 650
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$3;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x1
 
-    .line 640
+    .line 651
     iput-boolean p1, p0, Lorg/telegram/ui/LocationActivity$3;->first:Z
 
     return-void
@@ -42,12 +42,12 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 0
 
-    .line 656
+    .line 667
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p3
 
-    .line 657
+    .line 668
     iget-object p4, p0, Lorg/telegram/ui/LocationActivity$3;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/LocationActivity;->access$2400(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -64,7 +64,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 658
+    .line 669
     iget-object p2, p0, Lorg/telegram/ui/LocationActivity$3;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LocationActivity;->access$2700(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -90,12 +90,12 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 644
+    .line 655
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
     if-eqz p1, :cond_0
 
-    .line 647
+    .line 658
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$3;->this$0:Lorg/telegram/ui/LocationActivity;
 
     iget-boolean p2, p0, Lorg/telegram/ui/LocationActivity$3;->first:Z
@@ -104,12 +104,12 @@
 
     const/4 p1, 0x0
 
-    .line 648
+    .line 659
     iput-boolean p1, p0, Lorg/telegram/ui/LocationActivity$3;->first:Z
 
     goto :goto_0
 
-    .line 650
+    .line 661
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$3;->this$0:Lorg/telegram/ui/LocationActivity;
 

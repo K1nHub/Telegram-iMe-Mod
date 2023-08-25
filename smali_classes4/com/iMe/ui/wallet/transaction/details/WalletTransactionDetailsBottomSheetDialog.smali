@@ -9,13 +9,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;,
-        Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
+        Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTransactionDetailsBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,330:1\n13#2,4:331\n56#3,6:335\n56#3,6:341\n56#3,6:347\n262#4,2:353\n262#4,2:355\n262#4,2:357\n262#4,2:359\n1#5:361\n*S KotlinDebug\n*F\n+ 1 WalletTransactionDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog\n*L\n61#1:331,4\n62#1:335,6\n63#1:341,6\n64#1:347,6\n122#1:353,2\n123#1:355,2\n124#1:357,2\n129#1:359,2\n*E\n"
+    value = "SMAP\nWalletTransactionDetailsBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,319:1\n13#2,4:320\n56#3,6:324\n56#3,6:330\n56#3,6:336\n262#4,2:342\n262#4,2:344\n262#4,2:346\n262#4,2:348\n1#5:350\n*S KotlinDebug\n*F\n+ 1 WalletTransactionDetailsBottomSheetDialog.kt\ncom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog\n*L\n59#1:320,4\n62#1:324,6\n63#1:330,6\n64#1:336,6\n122#1:342,2\n123#1:344,2\n124#1:346,2\n129#1:348,2\n*E\n"
 .end annotation
 
 
@@ -57,7 +56,7 @@
 
 .field private final resourceManager$delegate:Lkotlin/Lazy;
 
-.field private final screenType:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
+.field private final screenType:Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;
 
 .field private final walletFlowCoordinator$delegate:Lkotlin/Lazy;
 
@@ -126,7 +125,7 @@
 
     new-array v0, v0, [Lkotlin/reflect/KProperty;
 
-    .line 61
+    .line 59
     new-instance v1, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-class v2, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
@@ -177,13 +176,13 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+.method public constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/telegram/ui/ActionBar/BaseFragment;",
-            "Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;",
+            "Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;",
             "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Lcom/iMe/model/wallet/ActionItem;",
             ">;)V"
@@ -198,7 +197,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 56
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -211,16 +210,16 @@
 
     invoke-direct {p0, v0, v1}, Lcom/iMe/ui/base/mvp/MvpBottomSheet;-><init>(Landroid/content/Context;Z)V
 
-    .line 55
+    .line 53
     iput-object p1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 56
-    iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->screenType:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
+    .line 54
+    iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->screenType:Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;
 
-    .line 57
+    .line 55
     iput-object p3, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->parentAdditionalAction:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    .line 61
+    .line 59
     new-instance p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$presenter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$presenter$2;-><init>(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)V
@@ -232,7 +231,7 @@
 
     move-result-object p3
 
-    const-string v0, "mvpDelegate"
+    const-string/jumbo v0, "mvpDelegate"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -262,7 +261,7 @@
 
     invoke-direct {p2, p3, v0, p1}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
-    .line 61
+    .line 59
     iput-object p2, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     .line 58
@@ -353,17 +352,17 @@
 .method public static final synthetic access$getFragment$p(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)Lorg/telegram/ui/ActionBar/BaseFragment;
     .locals 0
 
-    .line 54
+    .line 52
     iget-object p0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-object p0
 .end method
 
-.method public static final synthetic access$getScreenType$p(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
+.method public static final synthetic access$getScreenType$p(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;
     .locals 0
 
-    .line 54
-    iget-object p0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->screenType:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
+    .line 52
+    iget-object p0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->screenType:Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;
 
     return-object p0
 .end method
@@ -426,7 +425,7 @@
 .method private final getPresenter()Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
     .locals 3
 
-    .line 61
+    .line 59
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     sget-object v1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -459,13 +458,13 @@
     return-object v0
 .end method
 
-.method public static final newInstance(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
+.method public static final newInstance(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lorg/telegram/ui/ActionBar/BaseFragment;",
-            "Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;",
+            "Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;",
             "Lcom/iMe/fork/utils/Callbacks$Callback1<",
             "Lcom/iMe/model/wallet/ActionItem;",
             ">;)",
@@ -475,7 +474,7 @@
 
     sget-object v0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->Companion:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;
 
-    invoke-virtual {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
+    invoke-virtual {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->newInstance(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/wallet/transaction/WalletTransactionDetailsScreenType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;
 
     move-result-object p0
 
@@ -1526,7 +1525,7 @@
     move-result-object v9
 
     .line 96
-    iget-object v10, v9, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->imageCoinIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object v10, v9, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
     move v11, p1
 

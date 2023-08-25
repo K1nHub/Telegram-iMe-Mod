@@ -2,32 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
+.field public final synthetic f$1:Lorg/telegram/messenger/IMapsProvider$IMapView;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Lorg/telegram/messenger/IMapsProvider$IMapView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/messenger/IMapsProvider$IMapView;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraMoveStarted(I)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$Dtcc3Oca-q8Opi4dWMlrszaN8Uc(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;I)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/messenger/IMapsProvider$IMapView;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$04waZulHCdDCtuqB9TpP-yQFObU(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Lorg/telegram/messenger/IMapsProvider$IMapView;)V
 
     return-void
 .end method

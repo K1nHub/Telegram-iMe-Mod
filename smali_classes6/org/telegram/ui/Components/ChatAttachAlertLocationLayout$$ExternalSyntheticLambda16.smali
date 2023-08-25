@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;Lorg/telegram/messenger/IMapsProvider$ICallableMethod;)Z
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$ZhXWJ1z2EBXG6mC_MAX5aQeNInE(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Landroid/view/MotionEvent;Lorg/telegram/messenger/IMapsProvider$ICallableMethod;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$y_zpOo7AQ-AVphiDYFMH0pvBTHw(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 555
+    .line 558
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->val$frameLayout:Landroid/widget/FrameLayout;
@@ -39,7 +39,7 @@
 .method protected onLayout(ZIIII)V
     .locals 1
 
-    .line 559
+    .line 562
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -70,7 +70,7 @@
 
     if-lt p1, p5, :cond_1
 
-    .line 560
+    .line 563
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Z
@@ -79,7 +79,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 561
+    .line 564
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->val$frameLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -106,7 +106,7 @@
 
     goto :goto_0
 
-    .line 563
+    .line 566
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->val$frameLayout:Landroid/widget/FrameLayout;
 
@@ -122,7 +122,7 @@
 
     goto :goto_0
 
-    .line 565
+    .line 568
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -136,7 +136,7 @@
 
     if-eq p1, p2, :cond_2
 
-    .line 566
+    .line 569
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->val$frameLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -157,7 +157,7 @@
 
     goto :goto_0
 
-    .line 568
+    .line 571
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->val$frameLayout:Landroid/widget/FrameLayout;
 
@@ -171,7 +171,7 @@
 
     invoke-virtual {p1, p4, p4, p2, p5}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 571
+    .line 574
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -197,7 +197,7 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 576
+    .line 579
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -206,10 +206,10 @@
 
     move-result p2
 
-    .line 577
+    .line 580
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 580
+    .line 583
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -238,14 +238,14 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 581
+    .line 584
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 583
+    .line 586
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->val$frameLayout:Landroid/widget/FrameLayout;
 
@@ -261,7 +261,7 @@
 
     invoke-virtual {v0, v3, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 584
+    .line 587
     iget-object p2, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;

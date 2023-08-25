@@ -357,7 +357,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p4, p1, v1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setText(Ljava/lang/String;Z)V
+    invoke-virtual {p4, p1, v1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setText(Ljava/lang/CharSequence;Z)V
 
     .line 86
     new-instance p1, Lorg/telegram/ui/Components/ArchiveHelp$$ExternalSyntheticLambda0;

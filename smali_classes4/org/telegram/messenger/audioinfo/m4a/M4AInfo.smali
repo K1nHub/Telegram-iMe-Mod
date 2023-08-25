@@ -1635,7 +1635,7 @@
     goto :goto_1
 
     :sswitch_2
-    const-string v3, "mvhd"
+    const-string/jumbo v3, "mvhd"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1673,6 +1673,8 @@
 
     :cond_4
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -1824,7 +1826,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "mvhd: duration "
+    const-string/jumbo v5, "mvhd: duration "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)V
     .locals 0
 
-    .line 139
+    .line 541
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$1;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,7 +35,7 @@
 .method public getSpanSize(I)I
     .locals 1
 
-    .line 142
+    .line 544
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$1;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->adapter:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;
@@ -48,7 +48,7 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 143
+    .line 545
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$1;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->spanCount:I

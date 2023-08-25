@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;
-.super Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
+.super Lorg/telegram/ui/Components/ViewPagerFixed;
 .source "EmojiBottomSheet.java"
 
 
@@ -17,55 +17,67 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-.field final synthetic val$context:Landroid/content/Context;
-
 
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 817
+    .line 1226
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->val$context:Landroid/content/Context;
-
-    invoke-direct {p0}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ViewPagerFixed;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bindView(Landroid/view/View;II)V
-    .locals 0
-
-    .line 828
-    check-cast p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->bind(I)V
-
-    return-void
-.end method
-
-.method public createView(I)Landroid/view/View;
+.method protected onTabAnimationUpdate()V
     .locals 2
 
-    .line 824
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
-
+    .line 1229
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->val$context:Landroid/content/Context;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;
 
-    invoke-direct {p1, v0, v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;Landroid/content/Context;)V
+    move-result-object v0
 
-    return-object p1
-.end method
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-.method public getItemCount()I
-    .locals 1
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    const/4 v0, 0x2
+    move-result-object v1
 
-    return v0
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->getPositionAnimated()F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->setType(F)V
+
+    .line 1230
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/view/ViewGroup;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
+
+    .line 1231
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 1232
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentPosition()I
+
+    move-result v0
+
+    sput v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->savedPosition:I
+
+    return-void
 .end method

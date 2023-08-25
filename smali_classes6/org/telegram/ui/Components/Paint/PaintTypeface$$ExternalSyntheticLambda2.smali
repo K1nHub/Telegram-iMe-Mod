@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$$ExternalSyntheticLambda2;->f$0:Landroid/graphics/fonts/Font;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$nj6MilUaw3FtXRBkc64fYT-O_2E(Landroid/graphics/fonts/Font;)Landroid/graphics/Typeface;
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$nXmin7L3bUfJVaPoA5s6g2drhls(Landroid/graphics/fonts/Font;)Landroid/graphics/Typeface;
 
     move-result-object v0
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 713
+    .line 716
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$8;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 716
+    .line 719
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
-    .line 718
+    .line 721
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$8;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/widget/TextView;
@@ -51,7 +51,7 @@
 
     check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 719
+    .line 722
     iget-object p2, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$8;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;

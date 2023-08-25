@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Landroid/content/Context;I)V
     .locals 0
 
-    .line 1799
+    .line 2012
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$4;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$4;->val$context:Landroid/content/Context;
@@ -43,7 +43,7 @@
 .method public bindView(Landroid/view/View;II)V
     .locals 0
 
-    .line 1815
+    .line 2028
     check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->bind(I)V
@@ -54,7 +54,7 @@
 .method public createView(I)Landroid/view/View;
     .locals 2
 
-    .line 1806
+    .line 2019
     new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$4;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
@@ -77,7 +77,7 @@
 .method public getItemViewType(I)I
     .locals 0
 
-    .line 1811
+    .line 2024
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$4;->val$singlePageType:I
 
     return p1

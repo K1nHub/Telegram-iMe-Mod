@@ -26,6 +26,9 @@
 
 
 # virtual methods
+.method public abstract getConnectionsManager(I)Lorg/telegram/tgnet/ConnectionsManager;
+.end method
+
 .method public abstract getMessagesController(I)Lorg/telegram/messenger/MessagesController;
 .end method
 

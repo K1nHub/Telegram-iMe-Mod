@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda110;->f$3:[Z
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$HnyaZ5Nrx2fgcCQ8dG99VFNeeJw(Lorg/telegram/ui/DialogsActivity;ILjava/util/ArrayList;[Z)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$jB2fRumaibjI0SdlrA_JZb4FGOU(Lorg/telegram/ui/DialogsActivity;ILjava/util/ArrayList;[Z)V
 
     return-void
 .end method

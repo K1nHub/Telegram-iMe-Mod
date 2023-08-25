@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$33\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n129#3,5:564\n129#3,5:569\n129#3,5:574\n129#3,5:579\n129#3,5:584\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$33\n*L\n310#1:553\n313#1:554,5\n314#1:559,5\n315#1:564,5\n316#1:569,5\n317#1:574,5\n318#1:579,5\n319#1:584,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$33\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n44#2:864\n129#3,5:865\n129#3,5:870\n129#3,5:875\n129#3,5:880\n129#3,5:885\n129#3,5:890\n129#3,5:895\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$33\n*L\n446#1:864\n449#1:865,5\n450#1:870,5\n451#1:875,5\n452#1:880,5\n453#1:885,5\n454#1:890,5\n455#1:895,5\n*E\n"
 .end annotation
 
 
@@ -89,7 +89,7 @@
 
     check-cast v1, Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;
 
-    .line 311
+    .line 447
     new-instance p2, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;
 
     .line 133
@@ -213,7 +213,7 @@
 
     move-object v8, p1
 
-    .line 311
+    .line 447
     invoke-direct/range {v0 .. v8}, Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;-><init>(Lcom/iMe/model/wallet/crypto/pin/EnterPinCodeScreenType;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/interactor/crypto/pin/PinCodeInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/gateway/TelegramControllersGateway;)V
 
     return-object p2
@@ -222,7 +222,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 310
+    .line 446
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

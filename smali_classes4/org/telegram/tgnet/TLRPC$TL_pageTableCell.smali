@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 8506
+    .line 8507
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;
     .locals 1
 
-    .line 8520
+    .line 8521
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -57,7 +57,7 @@
 
     return-object p0
 
-    .line 8522
+    .line 8523
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -83,13 +83,13 @@
 
     throw p0
 
-    .line 8527
+    .line 8528
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;-><init>()V
 
-    .line 8528
+    .line 8529
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -100,7 +100,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 8533
+    .line 8534
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -122,7 +122,7 @@
     :cond_0
     move v1, v2
 
-    .line 8534
+    .line 8535
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->header:Z
 
@@ -137,7 +137,7 @@
     :cond_1
     move v1, v2
 
-    .line 8535
+    .line 8536
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->align_center:Z
 
@@ -152,7 +152,7 @@
     :cond_2
     move v1, v2
 
-    .line 8536
+    .line 8537
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->align_right:Z
 
@@ -167,7 +167,7 @@
     :cond_3
     move v1, v2
 
-    .line 8537
+    .line 8538
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->valign_middle:Z
 
@@ -177,7 +177,7 @@
 
     move v2, v3
 
-    .line 8538
+    .line 8539
     :cond_4
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->valign_bottom:Z
 
@@ -185,7 +185,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 8540
+    .line 8541
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -196,7 +196,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
-    .line 8542
+    .line 8543
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
@@ -204,14 +204,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 8543
+    .line 8544
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->colspan:I
 
-    .line 8545
+    .line 8546
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
@@ -219,7 +219,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 8546
+    .line 8547
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -233,12 +233,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 8551
+    .line 8552
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8552
+    .line 8553
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->header:Z
 
     if-eqz v0, :cond_0
@@ -257,7 +257,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
-    .line 8553
+    .line 8554
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->align_center:Z
 
     if-eqz v1, :cond_1
@@ -272,7 +272,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
-    .line 8554
+    .line 8555
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->align_right:Z
 
     if-eqz v1, :cond_2
@@ -287,7 +287,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
-    .line 8555
+    .line 8556
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->valign_middle:Z
 
     if-eqz v1, :cond_3
@@ -302,7 +302,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
-    .line 8556
+    .line 8557
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->valign_bottom:Z
 
     if-eqz v1, :cond_4
@@ -317,22 +317,22 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
-    .line 8557
+    .line 8558
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8558
+    .line 8559
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
     and-int/lit16 v0, v0, 0x80
 
     if-eqz v0, :cond_5
 
-    .line 8559
+    .line 8560
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->text:Lorg/telegram/tgnet/TLRPC$RichText;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 8561
+    .line 8562
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
@@ -340,12 +340,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 8562
+    .line 8563
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->colspan:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8564
+    .line 8565
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->flags:I
 
@@ -353,7 +353,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 8565
+    .line 8566
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pageTableCell;->rowspan:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

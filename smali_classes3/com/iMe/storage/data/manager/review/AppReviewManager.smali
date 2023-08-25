@@ -110,7 +110,7 @@
 .end method
 
 .method private final isNeedRequestReview()Z
-    .locals 5
+    .locals 7
 
     .line 52
     iget-object v0, p0, Lcom/iMe/storage/data/manager/review/AppReviewManager;->preferenceHelper:Lcom/iMe/storage/domain/storage/PreferenceHelper;
@@ -134,14 +134,14 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x5
+    const-wide/16 v3, 0x5
 
     .line 57
     invoke-virtual {v0}, Lcom/iMe/storage/data/locale/prefs/model/RequestAppReviewMetadata;->getLastRequestTime()J
 
-    move-result-wide v3
+    move-result-wide v5
 
-    invoke-static {v1, v3, v4}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->isDaysAgo(IJ)Z
+    invoke-static {v3, v4, v5, v6}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->isDaysAgo(JJ)Z
 
     move-result v1
 

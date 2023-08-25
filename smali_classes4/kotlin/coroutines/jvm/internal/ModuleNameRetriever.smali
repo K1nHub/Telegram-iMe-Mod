@@ -111,7 +111,7 @@
 
     move-result-object p1
 
-    const-string v3, "name"
+    const-string/jumbo v3, "name"
 
     new-array v2, v2, [Ljava/lang/Class;
 

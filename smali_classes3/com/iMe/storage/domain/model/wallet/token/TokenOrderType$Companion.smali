@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTokenOrderType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenOrderType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenOrderType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,19:1\n1#2:20\n11335#3:21\n11670#3,3:22\n*S KotlinDebug\n*F\n+ 1 TokenOrderType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenOrderType$Companion\n*L\n17#1:21\n17#1:22,3\n*E\n"
+    value = "SMAP\nTokenOrderType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenOrderType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenOrderType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,28:1\n1#2:29\n3792#3:30\n4307#3,2:31\n1549#4:33\n1620#4,3:34\n*S KotlinDebug\n*F\n+ 1 TokenOrderType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenOrderType$Companion\n*L\n19#1:30\n19#1:31,2\n26#1:33\n26#1:34,3\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 14
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,13 +38,13 @@
 
 
 # virtual methods
-.method public final getTitles(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/util/List;
-    .locals 5
+.method public final getTitles(Lcom/iMe/storage/domain/utils/system/ResourceManager;Z)Ljava/util/List;
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/iMe/storage/domain/utils/system/ResourceManager;",
-            ")",
+            "Z)",
             "Ljava/util/List<",
             "Ljava/lang/String;",
             ">;"
@@ -55,46 +55,119 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
-    invoke-static {}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->values()[Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
+    .line 26
+    invoke-virtual {p0, p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType$Companion;->getValues(Z)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object p2
 
-    .line 11335
-    new-instance v1, Ljava/util/ArrayList;
+    .line 1549
+    new-instance v0, Ljava/util/ArrayList;
 
-    array-length v2, v0
+    const/16 v1, 0xa
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-static {p2, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    .line 11670
-    array-length v2, v0
+    move-result v1
 
-    const/4 v3, 0x0
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 1620
+    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
 
     :goto_0
-    if-ge v3, v2, :cond_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
-    aget-object v4, v0, v3
+    move-result v1
 
-    .line 17
-    invoke-virtual {v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->getTitle()I
+    if-eqz v1, :cond_0
 
-    move-result v4
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {p1, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v4
+    .line 1621
+    check-cast v1, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
-    .line 11671
-    invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    .line 26
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->getTitle()I
 
-    add-int/lit8 v3, v3, 0x1
+    move-result v1
+
+    invoke-interface {p1, v1}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1621
+    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_0
-    return-object v1
+    return-object v0
+.end method
+
+.method public final getValues(Z)Ljava/util/List;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(Z)",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;",
+            ">;"
+        }
+    .end annotation
+
+    if-eqz p1, :cond_1
+
+    .line 19
+    invoke-static {}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->values()[Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
+
+    move-result-object p1
+
+    .line 3792
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v1, 0x0
+
+    .line 4307
+    array-length v2, p1
+
+    :goto_0
+    if-ge v1, v2, :cond_2
+
+    aget-object v3, p1, v1
+
+    .line 19
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->isAvailableForAllNetworks()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 4307
+    invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 20
+    :cond_1
+    invoke-static {}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->values()[Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lkotlin/collections/ArraysKt;->toList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    :cond_2
+    return-object v0
 .end method
 
 .method public final map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
@@ -104,7 +177,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 15
+    .line 16
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->values()[Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
     move-result-object v0

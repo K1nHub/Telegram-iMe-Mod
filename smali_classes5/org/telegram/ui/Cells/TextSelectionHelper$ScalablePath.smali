@@ -46,15 +46,15 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 2900
+    .line 3117
     invoke-direct {p0}, Landroid/graphics/Path;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 2901
+    .line 3118
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->lastBottom:F
 
-    .line 2903
+    .line 3120
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x1
@@ -65,7 +65,7 @@
 
     const/4 v0, 0x0
 
-    .line 2904
+    .line 3121
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rectsCount:I
 
     return-void
@@ -74,25 +74,25 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Cells/TextSelectionHelper$1;)V
     .locals 0
 
-    .line 2900
+    .line 3117
     invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic access$3100(Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;)I
+.method static synthetic access$3200(Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;)I
     .locals 0
 
-    .line 2900
+    .line 3117
     iget p0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rectsCount:I
 
     return p0
 .end method
 
-.method static synthetic access$3200(Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;)Ljava/util/ArrayList;
+.method static synthetic access$3300(Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 2900
+    .line 3117
     iget-object p0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rects:Ljava/util/ArrayList;
 
     return-object p0
@@ -103,7 +103,7 @@
 .method public addRect(FFFFLandroid/graphics/Path$Direction;)V
     .locals 2
 
-    .line 2921
+    .line 3138
     sget-object v0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->recycled:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
@@ -114,7 +114,7 @@
 
     if-lez v0, :cond_0
 
-    .line 2922
+    .line 3139
     sget-object v0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->recycled:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -127,39 +127,39 @@
 
     goto :goto_0
 
-    .line 2924
+    .line 3141
     :cond_0
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    .line 2926
+    .line 3143
     :goto_0
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2927
+    .line 3144
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rects:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2928
+    .line 3145
     iget v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rectsCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rectsCount:I
 
-    .line 2929
+    .line 3146
     invoke-super/range {p0 .. p5}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 2930
+    .line 3147
     iget p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->lastBottom:F
 
     cmpl-float p1, p4, p1
 
     if-lez p1, :cond_1
 
-    .line 2931
+    .line 3148
     iput p4, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->lastBottom:F
 
     :cond_1
@@ -169,15 +169,15 @@
 .method public reset()V
     .locals 2
 
-    .line 2908
+    .line 3125
     invoke-super {p0}, Landroid/graphics/Path;->reset()V
 
-    .line 2909
+    .line 3126
     sget-object v0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->recycled:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 2910
+    .line 3127
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rects:Ljava/util/ArrayList;
@@ -190,7 +190,7 @@
 
     sput-object v0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->recycled:Ljava/util/ArrayList;
 
-    .line 2912
+    .line 3129
     :cond_0
     sget-object v0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->recycled:Ljava/util/ArrayList;
 
@@ -198,19 +198,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2913
+    .line 3130
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rects:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     const/4 v0, 0x0
 
-    .line 2914
+    .line 3131
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->rectsCount:I
 
     const/4 v0, 0x0
 
-    .line 2915
+    .line 3132
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$ScalablePath;->lastBottom:F
 
     return-void

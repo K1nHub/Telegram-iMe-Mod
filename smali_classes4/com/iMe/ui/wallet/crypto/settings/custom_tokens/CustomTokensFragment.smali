@@ -140,7 +140,7 @@
 
     move-result-object v2
 
-    const-string v3, "mvpDelegate"
+    const-string/jumbo v3, "mvpDelegate"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

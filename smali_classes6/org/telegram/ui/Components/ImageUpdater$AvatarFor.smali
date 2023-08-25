@@ -30,16 +30,16 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLObject;I)V
     .locals 0
 
-    .line 1085
+    .line 1091
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1086
+    .line 1092
     iput-object p1, p0, Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;->object:Lorg/telegram/tgnet/TLObject;
 
-    .line 1087
+    .line 1093
     iput p2, p0, Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;->type:I
 
-    .line 1088
+    .line 1094
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz p2, :cond_0

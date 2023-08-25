@@ -392,7 +392,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -459,7 +459,7 @@
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -687,7 +687,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -770,7 +770,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -849,7 +849,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -991,7 +991,7 @@
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1285,7 +1285,7 @@
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

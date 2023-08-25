@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/EmojiTabsStrip;)V
     .locals 0
 
-    .line 1041
+    .line 1042
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 1044
+    .line 1045
     invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
 
     move-result v0
@@ -38,7 +38,7 @@
 
     return-void
 
-    .line 1047
+    .line 1048
     :cond_0
     invoke-super {p0}, Landroid/widget/ImageView;->invalidate()V
 
@@ -48,7 +48,7 @@
 .method public invalidate(IIII)V
     .locals 1
 
-    .line 1052
+    .line 1053
     invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
 
     move-result v0
@@ -57,7 +57,7 @@
 
     return-void
 
-    .line 1055
+    .line 1056
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ImageView;->invalidate(IIII)V
 

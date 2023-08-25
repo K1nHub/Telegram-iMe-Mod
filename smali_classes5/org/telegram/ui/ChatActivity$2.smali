@@ -27,7 +27,7 @@
 .method constructor <init>(JLcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 588
+    .line 594
     iput-wide p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
 
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
@@ -50,7 +50,7 @@
         }
     .end annotation
 
-    .line 591
+    .line 597
     new-instance v0, Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-wide v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
@@ -59,12 +59,12 @@
 
     const/4 p1, 0x1
 
-    .line 592
+    .line 598
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->needForceHideForwardAuthor:Z
 
-    .line 593
+    .line 599
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V

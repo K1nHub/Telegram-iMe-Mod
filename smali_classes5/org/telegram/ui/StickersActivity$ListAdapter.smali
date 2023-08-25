@@ -168,46 +168,46 @@
         }
     .end annotation
 
-    .line 952
+    .line 950
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 945
+    .line 943
     new-instance p1, Landroidx/collection/LongSparseArray;
 
     invoke-direct {p1}, Landroidx/collection/LongSparseArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
-    .line 946
+    .line 944
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
-    .line 947
+    .line 945
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->featuredStickerSets:Ljava/util/List;
 
-    .line 948
+    .line 946
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->loadingFeaturedStickerSets:Ljava/util/List;
 
-    .line 953
+    .line 951
     iput-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    .line 954
+    .line 952
     invoke-virtual {p0, p3}, Lorg/telegram/ui/StickersActivity$ListAdapter;->setStickerSets(Ljava/util/List;)V
 
-    .line 955
+    .line 953
     invoke-interface {p4}, Ljava/util/List;->size()I
 
     move-result p1
@@ -218,7 +218,7 @@
 
     const/4 p1, 0x0
 
-    .line 956
+    .line 954
     invoke-interface {p4, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object p1
@@ -227,7 +227,7 @@
 
     goto :goto_0
 
-    .line 958
+    .line 956
     :cond_0
     invoke-virtual {p0, p4}, Lorg/telegram/ui/StickersActivity$ListAdapter;->setFeaturedStickerSets(Ljava/util/List;)V
 
@@ -238,7 +238,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/StickersActivity$ListAdapter;)Ljava/util/List;
     .locals 0
 
-    .line 929
+    .line 927
     iget-object p0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     return-object p0
@@ -247,7 +247,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/StickersActivity$ListAdapter;)Ljava/util/List;
     .locals 0
 
-    .line 929
+    .line 927
     iget-object p0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->featuredStickerSets:Ljava/util/List;
 
     return-object p0
@@ -256,7 +256,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/StickersActivity$ListAdapter;I)V
     .locals 0
 
-    .line 929
+    .line 927
     invoke-direct {p0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionMenu(I)V
 
     return-void
@@ -265,7 +265,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/StickersActivity$ListAdapter;)Ljava/util/List;
     .locals 0
 
-    .line 929
+    .line 927
     iget-object p0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->loadingFeaturedStickerSets:Ljava/util/List;
 
     return-object p0
@@ -276,7 +276,7 @@
 
     const-string v0, "@stickers"
 
-    .line 1603
+    .line 1601
     invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
@@ -285,13 +285,13 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 1606
+    .line 1604
     :try_start_0
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2, p1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 1607
+    .line 1605
     new-instance v3, Lorg/telegram/ui/StickersActivity$ListAdapter$4;
 
     invoke-direct {v3, p0, v0}, Lorg/telegram/ui/StickersActivity$ListAdapter$4;-><init>(Lorg/telegram/ui/StickersActivity$ListAdapter;Ljava/lang/String;)V
@@ -300,7 +300,7 @@
 
     const/16 v4, 0x12
 
-    .line 1613
+    .line 1611
     invoke-virtual {v2, v3, v1, v0, v4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -310,7 +310,7 @@
     :catch_0
     move-exception v0
 
-    .line 1616
+    .line 1614
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -320,7 +320,7 @@
 .method private checkActionMode()V
     .locals 5
 
-    .line 1561
+    .line 1559
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -331,7 +331,7 @@
 
     move-result v0
 
-    .line 1562
+    .line 1560
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/StickersActivity;->access$5900(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -344,17 +344,17 @@
 
     const/4 v2, 0x2
 
-    .line 1577
+    .line 1575
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     if-lez v0, :cond_0
 
-    .line 1564
+    .line 1562
     invoke-direct {p0}, Lorg/telegram/ui/StickersActivity$ListAdapter;->checkActionModeIcons()V
 
-    .line 1565
+    .line 1563
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/StickersActivity;->access$6000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/Components/NumberTextView;
@@ -365,7 +365,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1567
+    .line 1565
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$6100(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -374,10 +374,10 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->showActionMode()V
 
-    .line 1568
+    .line 1566
     invoke-direct {p0, v2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->notifyStickersItemsChanged(Ljava/lang/Object;)V
 
-    .line 1569
+    .line 1567
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->stickersReorderingHintUsed:Z
 
     if-nez v0, :cond_1
@@ -394,10 +394,10 @@
 
     const/4 v0, 0x1
 
-    .line 1570
+    .line 1568
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setStickersReorderingHintUsed(Z)V
 
-    .line 1571
+    .line 1569
     sget v0, Lorg/telegram/messenger/R$string;->StickersReorderHint:I
 
     const-string v1, "StickersReorderHint"
@@ -406,7 +406,7 @@
 
     move-result-object v0
 
-    .line 1572
+    .line 1570
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/StickersActivity;->access$6200(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -438,7 +438,7 @@
     :cond_0
     if-eqz v1, :cond_1
 
-    .line 1576
+    .line 1574
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$6300(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -447,7 +447,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->hideActionMode()V
 
-    .line 1577
+    .line 1575
     invoke-direct {p0, v2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->notifyStickersItemsChanged(Ljava/lang/Object;)V
 
     :cond_1
@@ -458,14 +458,14 @@
 .method private checkActionModeIcons()V
     .locals 7
 
-    .line 1582
+    .line 1580
     invoke-virtual {p0}, Lorg/telegram/ui/StickersActivity$ListAdapter;->hasSelected()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 1584
+    .line 1582
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -479,7 +479,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 1585
+    .line 1583
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     iget-object v4, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
@@ -556,7 +556,7 @@
     :cond_2
     const/16 v1, 0x8
 
-    .line 1591
+    .line 1589
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -570,7 +570,7 @@
 
     if-eq v0, v1, :cond_3
 
-    .line 1592
+    .line 1590
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$6400(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -586,19 +586,19 @@
 .method private synthetic lambda$onBindViewHolder$1(Landroid/view/View;)V
     .locals 7
 
-    .line 1140
+    .line 1138
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;
 
-    .line 1141
+    .line 1139
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->getStickerSet()Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
     move-result-object v2
 
-    .line 1142
+    .line 1140
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->loadingFeaturedStickerSets:Ljava/util/List;
 
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -617,7 +617,7 @@
 
     return-void
 
-    .line 1146
+    .line 1144
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -625,7 +625,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/StickersActivity;->access$1302(Lorg/telegram/ui/StickersActivity;Z)Z
 
-    .line 1147
+    .line 1145
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->loadingFeaturedStickerSets:Ljava/util/List;
 
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -638,17 +638,17 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1149
+    .line 1147
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->setDrawProgress(ZZ)V
 
-    .line 1150
+    .line 1148
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->isInstalled()Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 1151
+    .line 1149
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StickersActivity;->access$6700(Lorg/telegram/ui/StickersActivity;)I
@@ -677,7 +677,7 @@
 
     goto :goto_0
 
-    .line 1153
+    .line 1151
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -712,14 +712,14 @@
 .method private synthetic lambda$onCreateViewHolder$2(Lorg/telegram/ui/Cells/StickerSetCell;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 1426
+    .line 1424
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    .line 1427
+    .line 1425
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$6600(Lorg/telegram/ui/StickersActivity;)Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -749,7 +749,7 @@
 
     const/4 v0, 0x0
 
-    .line 1435
+    .line 1433
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     return-void
@@ -760,7 +760,7 @@
 
     const/4 v0, 0x4
 
-    .line 1437
+    .line 1435
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     return-void
@@ -771,7 +771,7 @@
 
     const/4 v0, 0x3
 
-    .line 1439
+    .line 1437
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     return-void
@@ -782,7 +782,7 @@
 
     const/4 v0, 0x4
 
-    .line 1440
+    .line 1438
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     return-void
@@ -793,7 +793,7 @@
 
     const/4 v0, 0x2
 
-    .line 1441
+    .line 1439
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     return-void
@@ -804,7 +804,7 @@
 
     const/4 v0, 0x1
 
-    .line 1442
+    .line 1440
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     return-void
@@ -813,26 +813,26 @@
 .method private synthetic lambda$onCreateViewHolder$9(Landroid/view/View;)V
     .locals 5
 
-    .line 1432
+    .line 1430
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/ui/Cells/StickerSetCell;
 
-    .line 1433
+    .line 1431
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->getStickersSet()Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     move-result-object v0
 
-    .line 1434
+    .line 1432
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v1, p1}, Lorg/telegram/ui/Components/ItemOptions;->makeOptions(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object p1
 
-    .line 1435
+    .line 1433
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_archive:I
 
     sget v2, Lorg/telegram/messenger/R$string;->StickersHide:I
@@ -849,7 +849,7 @@
 
     invoke-virtual {p1, v1, v2, v3}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 1436
+    .line 1434
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$StickerSet;->official:Z
@@ -858,7 +858,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1437
+    .line 1435
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_reorder:I
 
     sget v3, Lorg/telegram/messenger/R$string;->StickersReorder:I
@@ -875,7 +875,7 @@
 
     goto :goto_0
 
-    .line 1439
+    .line 1437
     :cond_0
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_link:I
 
@@ -893,7 +893,7 @@
 
     invoke-virtual {p1, v1, v3, v4}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 1440
+    .line 1438
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_reorder:I
 
     sget v3, Lorg/telegram/messenger/R$string;->StickersReorder:I
@@ -908,7 +908,7 @@
 
     invoke-virtual {p1, v1, v2, v3}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 1441
+    .line 1439
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_share:I
 
     sget v2, Lorg/telegram/messenger/R$string;->StickersShare:I
@@ -925,7 +925,7 @@
 
     invoke-virtual {p1, v1, v2, v3}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 1442
+    .line 1440
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     sget v2, Lorg/telegram/messenger/R$string;->StickersRemove:I
@@ -947,10 +947,10 @@
     :goto_0
     const/16 v0, 0xbe
 
-    .line 1444
+    .line 1442
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ItemOptions;->setMinWidth(I)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 1445
+    .line 1443
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ItemOptions;->show()Lorg/telegram/ui/Components/ItemOptions;
 
     return-void
@@ -959,7 +959,7 @@
 .method private synthetic lambda$processSelectionMenu$0(Ljava/util/ArrayList;ILandroid/content/DialogInterface;I)V
     .locals 6
 
-    .line 1063
+    .line 1061
     iget-object p3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -968,7 +968,7 @@
 
     invoke-virtual {p3}, Lorg/telegram/ui/StickersActivity$ListAdapter;->clearSelected()V
 
-    .line 1064
+    .line 1062
     iget-object p3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/StickersActivity;->access$6900(Lorg/telegram/ui/StickersActivity;)I
@@ -1013,14 +1013,14 @@
 .method private synthetic lambda$swapElements$10(Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)I
     .locals 1
 
-    .line 1511
+    .line 1509
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
 
-    .line 1512
+    .line 1510
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
@@ -1044,7 +1044,7 @@
 .method private notifyStickersItemsChanged(Ljava/lang/Object;)V
     .locals 3
 
-    .line 1598
+    .line 1596
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1700(Lorg/telegram/ui/StickersActivity;)I
@@ -1079,12 +1079,12 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 999
+    .line 997
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1000
+    .line 998
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -1094,7 +1094,7 @@
     :goto_0
     if-ge v0, v1, :cond_2
 
-    .line 1001
+    .line 999
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1103,7 +1103,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 1002
+    .line 1000
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -1124,7 +1124,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 1003
+    .line 1001
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -1133,10 +1133,10 @@
 
     const-string v3, "\n"
 
-    .line 1004
+    .line 1002
     invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1006
+    .line 1004
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -1151,13 +1151,13 @@
 
     goto :goto_0
 
-    .line 1009
+    .line 1007
     :cond_2
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1010
+    .line 1008
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StickersActivity;->access$1900(Lorg/telegram/ui/StickersActivity;)Landroid/view/View;
@@ -1180,14 +1180,14 @@
 
     move-result-object p1
 
-    .line 1011
+    .line 1009
     new-instance v0, Lorg/telegram/ui/StickersActivity$ListAdapter$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/StickersActivity$ListAdapter$1;-><init>(Lorg/telegram/ui/StickersActivity$ListAdapter;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->setDelegate(Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;)V
 
-    .line 1023
+    .line 1021
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     goto/16 :goto_5
@@ -1199,7 +1199,7 @@
 
     if-ne p1, v1, :cond_b
 
-    .line 1025
+    .line 1023
     :cond_4
     new-instance v2, Ljava/util/ArrayList;
 
@@ -1211,7 +1211,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1027
+    .line 1025
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
@@ -1223,7 +1223,7 @@
     :goto_1
     if-ge v4, v3, :cond_6
 
-    .line 1028
+    .line 1026
     iget-object v5, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v5, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1234,7 +1234,7 @@
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 1029
+    .line 1027
     iget-object v6, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     iget-wide v7, v5, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -1253,7 +1253,7 @@
 
     if-eqz v6, :cond_5
 
-    .line 1030
+    .line 1028
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_5
@@ -1261,7 +1261,7 @@
 
     goto :goto_1
 
-    .line 1034
+    .line 1032
     :cond_6
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1271,7 +1271,7 @@
 
     if-eq v3, v1, :cond_8
 
-    .line 1050
+    .line 1048
     new-instance v4, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v5, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
@@ -1286,7 +1286,7 @@
 
     if-ne p1, v1, :cond_7
 
-    .line 1054
+    .line 1052
     sget v6, Lorg/telegram/messenger/R$string;->DeleteStickerSetsAlertTitle:I
 
     new-array v7, v1, [Ljava/lang/Object;
@@ -1307,7 +1307,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1055
+    .line 1053
     sget v5, Lorg/telegram/messenger/R$string;->DeleteStickersAlertMessage:I
 
     new-array v6, v1, [Ljava/lang/Object;
@@ -1326,7 +1326,7 @@
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1056
+    .line 1054
     sget v0, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v3, "Delete"
@@ -1337,7 +1337,7 @@
 
     goto :goto_2
 
-    .line 1058
+    .line 1056
     :cond_7
     sget v6, Lorg/telegram/messenger/R$string;->ArchiveStickerSetsAlertTitle:I
 
@@ -1359,7 +1359,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1059
+    .line 1057
     sget v5, Lorg/telegram/messenger/R$string;->ArchiveStickersAlertMessage:I
 
     new-array v6, v1, [Ljava/lang/Object;
@@ -1378,7 +1378,7 @@
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1060
+    .line 1058
     sget v0, Lorg/telegram/messenger/R$string;->Archive:I
 
     const-string v3, "Archive"
@@ -1387,7 +1387,7 @@
 
     move-result-object v0
 
-    .line 1062
+    .line 1060
     :goto_2
     new-instance v3, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda0;
 
@@ -1395,7 +1395,7 @@
 
     invoke-virtual {v4, v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1066
+    .line 1064
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -1408,12 +1408,12 @@
 
     invoke-virtual {v4, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1068
+    .line 1066
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 1069
+    .line 1067
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
@@ -1422,7 +1422,7 @@
 
     const/4 p1, -0x1
 
-    .line 1071
+    .line 1069
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -1431,7 +1431,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 1073
+    .line 1071
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1442,7 +1442,7 @@
 
     goto :goto_5
 
-    .line 1040
+    .line 1038
     :cond_8
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
@@ -1453,7 +1453,7 @@
     :goto_3
     if-ge v0, v1, :cond_a
 
-    .line 1041
+    .line 1039
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1462,7 +1462,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 1042
+    .line 1040
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -1483,7 +1483,7 @@
 
     if-eqz v3, :cond_9
 
-    .line 1043
+    .line 1041
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
 
     goto :goto_4
@@ -1493,7 +1493,7 @@
 
     goto :goto_3
 
-    .line 1047
+    .line 1045
     :cond_a
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
@@ -1512,7 +1512,7 @@
 .method private processSelectionOption(ILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)V
     .locals 9
 
-    .line 1083
+    .line 1081
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1530,7 +1530,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1088
+    .line 1086
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StickersActivity;->access$2000(Lorg/telegram/ui/StickersActivity;)I
@@ -1576,7 +1576,7 @@
     :cond_2
     if-ne p1, v1, :cond_3
 
-    .line 1090
+    .line 1088
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StickersActivity;->access$2100(Lorg/telegram/ui/StickersActivity;)I
@@ -1610,7 +1610,7 @@
     :cond_3
     if-ne p1, v0, :cond_4
 
-    .line 1093
+    .line 1091
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -1620,12 +1620,12 @@
 
     const-string v0, "text/plain"
 
-    .line 1094
+    .line 1092
     invoke-virtual {p1, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v0, "android.intent.extra.TEXT"
 
-    .line 1095
+    .line 1093
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v1, p2}, Lorg/telegram/ui/StickersActivity;->access$1800(Lorg/telegram/ui/StickersActivity;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)Ljava/lang/String;
@@ -1634,7 +1634,7 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1096
+    .line 1094
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1664,7 +1664,7 @@
     :catch_0
     move-exception p1
 
-    .line 1098
+    .line 1096
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_2
@@ -1674,7 +1674,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 1102
+    .line 1100
     :try_start_1
     sget-object p1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -1742,7 +1742,7 @@
 
     move-result-object p1
 
-    .line 1103
+    .line 1101
     sget-object p2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v0, "clipboard"
@@ -1755,15 +1755,15 @@
 
     const-string v0, "label"
 
-    .line 1104
+    .line 1102
     invoke-static {v0, p1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
 
     move-result-object p1
 
-    .line 1105
+    .line 1103
     invoke-virtual {p2, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
-    .line 1106
+    .line 1104
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory;->createCopyLinkBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/Bulletin;
@@ -1779,7 +1779,7 @@
     :catch_1
     move-exception p1
 
-    .line 1108
+    .line 1106
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_2
@@ -1789,7 +1789,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 1111
+    .line 1109
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {p1, p2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
@@ -1798,7 +1798,7 @@
 
     if-ltz p1, :cond_7
 
-    .line 1113
+    .line 1111
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
@@ -1831,14 +1831,14 @@
         }
     .end annotation
 
-    .line 1528
+    .line 1526
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 1529
+    .line 1527
     invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1847,7 +1847,7 @@
 
     invoke-interface {p1, p2, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1530
+    .line 1528
     invoke-interface {p1, p3, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1858,21 +1858,21 @@
 .method public clearSelected()V
     .locals 1
 
-    .line 1541
+    .line 1539
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->clear()V
 
     const/4 v0, 0x1
 
-    .line 1542
+    .line 1540
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/StickersActivity$ListAdapter;->notifyStickersItemsChanged(Ljava/lang/Object;)V
 
-    .line 1543
+    .line 1541
     invoke-direct {p0}, Lorg/telegram/ui/StickersActivity$ListAdapter;->checkActionMode()V
 
     return-void
@@ -1881,7 +1881,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 984
+    .line 982
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1400(Lorg/telegram/ui/StickersActivity;)I
@@ -1894,7 +1894,7 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 989
+    .line 987
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1500(Lorg/telegram/ui/StickersActivity;)I
@@ -1911,7 +1911,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 990
+    .line 988
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->featuredStickerSets:Ljava/util/List;
 
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
@@ -1934,7 +1934,7 @@
 
     return-wide v0
 
-    .line 991
+    .line 989
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -1952,7 +1952,7 @@
 
     if-ge p1, v0, :cond_1
 
-    .line 992
+    .line 990
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
@@ -1984,7 +1984,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 1479
+    .line 1477
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1500(Lorg/telegram/ui/StickersActivity;)I
@@ -2005,7 +2005,7 @@
 
     return p1
 
-    .line 1481
+    .line 1479
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2027,7 +2027,7 @@
 
     return v1
 
-    .line 1483
+    .line 1481
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2079,7 +2079,7 @@
 
     goto/16 :goto_4
 
-    .line 1485
+    .line 1483
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2139,7 +2139,7 @@
 
     goto :goto_3
 
-    .line 1487
+    .line 1485
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2159,7 +2159,7 @@
 
     goto :goto_2
 
-    .line 1489
+    .line 1487
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2203,7 +2203,7 @@
 
     goto :goto_1
 
-    .line 1491
+    .line 1489
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2217,7 +2217,7 @@
 
     return p1
 
-    .line 1493
+    .line 1491
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2282,7 +2282,7 @@
 .method public getSelectedCount()I
     .locals 4
 
-    .line 1552
+    .line 1550
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
@@ -2296,7 +2296,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1553
+    .line 1551
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v3, v1}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2325,7 +2325,7 @@
 .method public hasSelected()Z
     .locals 2
 
-    .line 1547
+    .line 1545
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -2352,7 +2352,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 1366
+    .line 1364
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -2393,10 +2393,10 @@
 .method public notifyDataSetChanged()V
     .locals 2
 
-    .line 965
+    .line 963
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 967
+    .line 965
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1300(Lorg/telegram/ui/StickersActivity;)Z
@@ -2405,7 +2405,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 968
+    .line 966
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     const/4 v1, 0x0
@@ -2419,7 +2419,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 11
 
-    .line 1120
+    .line 1118
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -2436,13 +2436,13 @@
 
     goto/16 :goto_a
 
-    .line 1132
+    .line 1130
     :pswitch_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;
 
-    .line 1133
+    .line 1131
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1500(Lorg/telegram/ui/StickersActivity;)I
@@ -2451,7 +2451,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 1134
+    .line 1132
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->featuredStickerSets:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2460,7 +2460,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
-    .line 1135
+    .line 1133
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1300(Lorg/telegram/ui/StickersActivity;)Z
@@ -2507,10 +2507,10 @@
 
     move v10, v3
 
-    .line 1136
+    .line 1134
     invoke-virtual/range {v5 .. v10}, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->setStickersSet(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;ZZZZ)V
 
-    .line 1137
+    .line 1135
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->loadingFeaturedStickerSets:Ljava/util/List;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -2527,7 +2527,7 @@
 
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->setDrawProgress(ZZ)V
 
-    .line 1139
+    .line 1137
     new-instance p2, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/StickersActivity$ListAdapter;)V
@@ -2536,13 +2536,13 @@
 
     goto/16 :goto_a
 
-    .line 1122
+    .line 1120
     :pswitch_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 1123
+    .line 1121
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$2300(Lorg/telegram/ui/StickersActivity;)I
@@ -2551,7 +2551,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 1124
+    .line 1122
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$1200(Lorg/telegram/ui/StickersActivity;)I
@@ -2576,7 +2576,7 @@
 
     goto/16 :goto_a
 
-    .line 1125
+    .line 1123
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2586,7 +2586,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 1126
+    .line 1124
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$1200(Lorg/telegram/ui/StickersActivity;)I
@@ -2611,7 +2611,7 @@
 
     goto/16 :goto_a
 
-    .line 1127
+    .line 1125
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2621,7 +2621,7 @@
 
     if-ne p2, v0, :cond_2c
 
-    .line 1128
+    .line 1126
     sget p2, Lorg/telegram/messenger/R$string;->StickersSettings:I
 
     const-string v0, "StickersSettings"
@@ -2634,13 +2634,13 @@
 
     goto/16 :goto_a
 
-    .line 1305
+    .line 1303
     :pswitch_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    .line 1306
+    .line 1304
     sget p2, Lorg/telegram/messenger/R$string;->DoubleTapSetting:I
 
     const-string v0, "DoubleTapSetting"
@@ -2651,12 +2651,12 @@
 
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1307
+    .line 1305
     sget p2, Lorg/telegram/messenger/R$drawable;->msg2_reactions2:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;->setIcon(I)V
 
-    .line 1308
+    .line 1306
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$5100(Lorg/telegram/ui/StickersActivity;)I
@@ -2675,7 +2675,7 @@
 
     const-string v0, "animated_"
 
-    .line 1310
+    .line 1308
     invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -2684,7 +2684,7 @@
 
     const/16 v0, 0x9
 
-    .line 1312
+    .line 1310
     :try_start_0
     invoke-virtual {p2, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -2694,7 +2694,7 @@
 
     move-result-wide v2
 
-    .line 1313
+    .line 1311
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$5200(Lorg/telegram/ui/StickersActivity;)I
@@ -2705,14 +2705,14 @@
 
     move-result-object p2
 
-    .line 1314
+    .line 1312
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSettingsCell;->getValueBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v0
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
-    .line 1315
+    .line 1313
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSettingsCell;->getValueBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -2723,7 +2723,7 @@
 
     goto/16 :goto_a
 
-    .line 1318
+    .line 1316
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2749,7 +2749,7 @@
 
     if-eqz v5, :cond_2c
 
-    .line 1320
+    .line 1318
     iget-object p2, v5, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -2762,7 +2762,7 @@
 
     move-result-object v3
 
-    .line 1321
+    .line 1319
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSettingsCell;->getValueBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -2787,13 +2787,13 @@
 
     goto/16 :goto_a
 
-    .line 1289
+    .line 1287
     :pswitch_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1291
+    .line 1289
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$4600(Lorg/telegram/ui/StickersActivity;)I
@@ -2802,7 +2802,7 @@
 
     if-ne p2, v0, :cond_7
 
-    .line 1292
+    .line 1290
     sget p2, Lorg/telegram/messenger/R$string;->settings_emoji_premium_suggest_sets:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2815,7 +2815,7 @@
 
     goto/16 :goto_a
 
-    .line 1294
+    .line 1292
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2825,7 +2825,7 @@
 
     if-ne p2, v0, :cond_8
 
-    .line 1295
+    .line 1293
     sget p2, Lorg/telegram/messenger/R$string;->LoopAnimatedStickers:I
 
     const-string v0, "LoopAnimatedStickers"
@@ -2842,7 +2842,7 @@
 
     goto/16 :goto_a
 
-    .line 1296
+    .line 1294
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2852,7 +2852,7 @@
 
     if-ne p2, v0, :cond_9
 
-    .line 1297
+    .line 1295
     sget p2, Lorg/telegram/messenger/R$string;->LargeEmoji:I
 
     const-string v0, "LargeEmoji"
@@ -2867,7 +2867,7 @@
 
     goto/16 :goto_a
 
-    .line 1298
+    .line 1296
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2877,7 +2877,7 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 1299
+    .line 1297
     sget p2, Lorg/telegram/messenger/R$string;->SuggestAnimatedEmoji:I
 
     const-string v0, "SuggestAnimatedEmoji"
@@ -2892,7 +2892,7 @@
 
     goto/16 :goto_a
 
-    .line 1300
+    .line 1298
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2904,7 +2904,7 @@
 
     const-string p2, "DynamicPackOrder"
 
-    .line 1301
+    .line 1299
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -2915,7 +2915,7 @@
 
     goto/16 :goto_a
 
-    .line 1284
+    .line 1282
     :pswitch_4
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2925,7 +2925,7 @@
 
     if-ne p2, v0, :cond_2c
 
-    .line 1285
+    .line 1283
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -2942,13 +2942,13 @@
 
     goto/16 :goto_a
 
-    .line 1220
+    .line 1218
     :pswitch_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCell;
 
-    .line 1222
+    .line 1220
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$3200(Lorg/telegram/ui/StickersActivity;)I
@@ -2957,7 +2957,7 @@
 
     if-ne p2, v0, :cond_b
 
-    .line 1223
+    .line 1221
     sget p2, Lorg/telegram/messenger/R$string;->stickers_size_title:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2978,7 +2978,7 @@
 
     goto/16 :goto_a
 
-    .line 1225
+    .line 1223
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -2988,12 +2988,12 @@
 
     if-ne p2, v0, :cond_d
 
-    .line 1226
+    .line 1224
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
     invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 1227
+    .line 1225
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$1200(Lorg/telegram/ui/StickersActivity;)I
@@ -3002,7 +3002,7 @@
 
     if-ne p2, v2, :cond_c
 
-    .line 1228
+    .line 1226
     sget p2, Lorg/telegram/messenger/R$string;->ShowMoreEmojiPacks:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -3015,7 +3015,7 @@
 
     goto/16 :goto_a
 
-    .line 1230
+    .line 1228
     :cond_c
     sget p2, Lorg/telegram/messenger/R$string;->ShowMoreStickers:I
 
@@ -3029,7 +3029,7 @@
 
     goto/16 :goto_a
 
-    .line 1233
+    .line 1231
     :cond_d
     iget-object v0, p1, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -3037,19 +3037,19 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 1234
+    .line 1232
     iget-object v0, p1, Lorg/telegram/ui/Cells/TextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1235
+    .line 1233
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-virtual {p1, v0, v5}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 1236
+    .line 1234
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$3400(Lorg/telegram/ui/StickersActivity;)I
@@ -3060,7 +3060,7 @@
 
     if-ne p2, v0, :cond_11
 
-    .line 1237
+    .line 1235
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$3500(Lorg/telegram/ui/StickersActivity;)I
@@ -3083,12 +3083,12 @@
 
     if-lez p2, :cond_e
 
-    .line 1238
+    .line 1236
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1239
+    .line 1237
     :cond_e
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3098,7 +3098,7 @@
 
     if-nez p2, :cond_f
 
-    .line 1240
+    .line 1238
     sget p2, Lorg/telegram/messenger/R$string;->ArchivedStickers:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -3111,7 +3111,7 @@
 
     goto/16 :goto_a
 
-    .line 1241
+    .line 1239
     :cond_f
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3121,7 +3121,7 @@
 
     if-ne p2, v2, :cond_10
 
-    .line 1242
+    .line 1240
     sget p2, Lorg/telegram/messenger/R$string;->ArchivedEmojiPacks:I
 
     const-string v0, "ArchivedEmojiPacks"
@@ -3134,7 +3134,7 @@
 
     goto/16 :goto_a
 
-    .line 1244
+    .line 1242
     :cond_10
     sget p2, Lorg/telegram/messenger/R$string;->ArchivedMasks:I
 
@@ -3148,7 +3148,7 @@
 
     goto/16 :goto_a
 
-    .line 1246
+    .line 1244
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3158,7 +3158,7 @@
 
     if-ne p2, v0, :cond_13
 
-    .line 1248
+    .line 1246
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$3700(Lorg/telegram/ui/StickersActivity;)I
@@ -3169,7 +3169,7 @@
 
     move-result-object p2
 
-    .line 1249
+    .line 1247
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$3800(Lorg/telegram/ui/StickersActivity;)I
@@ -3198,7 +3198,7 @@
 
     add-int/2addr v0, p2
 
-    .line 1250
+    .line 1248
     sget p2, Lorg/telegram/messenger/R$string;->Masks:I
 
     const-string v1, "Masks"
@@ -3220,7 +3220,7 @@
 
     goto/16 :goto_a
 
-    .line 1251
+    .line 1249
     :cond_13
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3230,14 +3230,14 @@
 
     if-ne p2, v0, :cond_15
 
-    .line 1252
+    .line 1250
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$4000(Lorg/telegram/ui/StickersActivity;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 1253
+    .line 1251
     sget v0, Lorg/telegram/messenger/R$string;->FeaturedStickers:I
 
     const-string v1, "FeaturedStickers"
@@ -3271,7 +3271,7 @@
 
     goto/16 :goto_a
 
-    .line 1254
+    .line 1252
     :cond_15
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3281,7 +3281,7 @@
 
     if-ne p2, v0, :cond_17
 
-    .line 1256
+    .line 1254
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$4200(Lorg/telegram/ui/StickersActivity;)I
@@ -3292,7 +3292,7 @@
 
     move-result-object p2
 
-    .line 1257
+    .line 1255
     invoke-virtual {p2, v2}, Lorg/telegram/messenger/MediaDataController;->getStickerSets(I)Ljava/util/ArrayList;
 
     move-result-object p2
@@ -3301,7 +3301,7 @@
 
     move-result p2
 
-    .line 1258
+    .line 1256
     iget-object v0, p1, Lorg/telegram/ui/Cells/TextCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3314,7 +3314,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 1259
+    .line 1257
     sget v0, Lorg/telegram/messenger/R$string;->Emoji:I
 
     const-string v1, "Emoji"
@@ -3336,7 +3336,7 @@
 
     goto/16 :goto_a
 
-    .line 1260
+    .line 1258
     :cond_17
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3346,14 +3346,14 @@
 
     if-ne p2, v0, :cond_2c
 
-    .line 1262
+    .line 1260
     sget p2, Lorg/telegram/messenger/SharedConfig;->suggestStickers:I
 
     if-eqz p2, :cond_19
 
     if-eq p2, v4, :cond_18
 
-    .line 1271
+    .line 1269
     sget p2, Lorg/telegram/messenger/R$string;->SuggestStickersNone:I
 
     const-string v0, "SuggestStickersNone"
@@ -3364,7 +3364,7 @@
 
     goto :goto_2
 
-    .line 1267
+    .line 1265
     :cond_18
     sget p2, Lorg/telegram/messenger/R$string;->SuggestStickersInstalled:I
 
@@ -3376,7 +3376,7 @@
 
     goto :goto_2
 
-    .line 1264
+    .line 1262
     :cond_19
     sget p2, Lorg/telegram/messenger/R$string;->SuggestStickersAll:I
 
@@ -3386,13 +3386,13 @@
 
     move-result-object p2
 
-    .line 1274
+    .line 1272
     :goto_2
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v0, :cond_1a
 
-    .line 1275
+    .line 1273
     iget-object v0, p1, Lorg/telegram/ui/Cells/TextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v1, -0x2
@@ -3405,7 +3405,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1277
+    .line 1275
     :cond_1a
     sget v0, Lorg/telegram/messenger/R$string;->SuggestStickers:I
 
@@ -3423,23 +3423,23 @@
 
     invoke-virtual {p1, v0, p2, v1, v4}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;ZZ)V
 
-    .line 1278
+    .line 1276
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p1, v3}, Lorg/telegram/ui/StickersActivity;->access$4402(Lorg/telegram/ui/StickersActivity;Z)Z
 
     goto/16 :goto_a
 
-    .line 1193
+    .line 1191
     :pswitch_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1194
+    .line 1192
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 1195
+    .line 1193
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$2600(Lorg/telegram/ui/StickersActivity;)I
@@ -3448,7 +3448,7 @@
 
     if-ne p2, v0, :cond_1c
 
-    .line 1197
+    .line 1195
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$1200(Lorg/telegram/ui/StickersActivity;)I
@@ -3457,7 +3457,7 @@
 
     if-ne p2, v2, :cond_1b
 
-    .line 1198
+    .line 1196
     sget p2, Lorg/telegram/messenger/R$string;->EmojiBotInfo:I
 
     const-string v0, "EmojiBotInfo"
@@ -3468,7 +3468,7 @@
 
     goto :goto_3
 
-    .line 1199
+    .line 1197
     :cond_1b
     sget p2, Lorg/telegram/messenger/R$string;->StickersBotInfo:I
 
@@ -3478,7 +3478,7 @@
 
     move-result-object p2
 
-    .line 1196
+    .line 1194
     :goto_3
     invoke-direct {p0, p2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->addStickersBotSpan(Ljava/lang/String;)Ljava/lang/CharSequence;
 
@@ -3488,7 +3488,7 @@
 
     goto/16 :goto_a
 
-    .line 1201
+    .line 1199
     :cond_1c
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3498,7 +3498,7 @@
 
     if-ne p2, v0, :cond_1e
 
-    .line 1202
+    .line 1200
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$1200(Lorg/telegram/ui/StickersActivity;)I
@@ -3507,7 +3507,7 @@
 
     if-nez p2, :cond_1d
 
-    .line 1203
+    .line 1201
     sget p2, Lorg/telegram/messenger/R$string;->ArchivedStickersInfo:I
 
     const-string v0, "ArchivedStickersInfo"
@@ -3520,7 +3520,7 @@
 
     goto/16 :goto_a
 
-    .line 1205
+    .line 1203
     :cond_1d
     sget p2, Lorg/telegram/messenger/R$string;->ArchivedMasksInfo:I
 
@@ -3534,7 +3534,7 @@
 
     goto/16 :goto_a
 
-    .line 1207
+    .line 1205
     :cond_1e
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3546,17 +3546,17 @@
 
     const/4 p2, 0x0
 
-    .line 1209
+    .line 1207
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p2, 0xc
 
-    .line 1210
+    .line 1208
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     goto/16 :goto_a
 
-    .line 1211
+    .line 1209
     :cond_1f
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3566,7 +3566,7 @@
 
     if-ne p2, v0, :cond_20
 
-    .line 1212
+    .line 1210
     sget p2, Lorg/telegram/messenger/R$string;->SuggestAnimatedEmojiInfo:I
 
     const-string v0, "SuggestAnimatedEmojiInfo"
@@ -3579,7 +3579,7 @@
 
     goto/16 :goto_a
 
-    .line 1213
+    .line 1211
     :cond_20
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3589,7 +3589,7 @@
 
     if-ne p2, v0, :cond_21
 
-    .line 1214
+    .line 1212
     sget p2, Lorg/telegram/messenger/R$string;->MasksInfo:I
 
     const-string v0, "MasksInfo"
@@ -3602,7 +3602,7 @@
 
     goto/16 :goto_a
 
-    .line 1215
+    .line 1213
     :cond_21
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -3614,7 +3614,7 @@
 
     const-string p2, "DynamicPackOrderInfo"
 
-    .line 1216
+    .line 1214
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -3623,13 +3623,13 @@
 
     goto/16 :goto_a
 
-    .line 1160
+    .line 1158
     :pswitch_7
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StickerSetCell;
 
-    .line 1161
+    .line 1159
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$1700(Lorg/telegram/ui/StickersActivity;)I
@@ -3638,7 +3638,7 @@
 
     sub-int v0, p2, v0
 
-    .line 1162
+    .line 1160
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3647,7 +3647,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 1163
+    .line 1161
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/StickerSetCell;->getStickersSet()Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     move-result-object v5
@@ -3689,7 +3689,7 @@
     :cond_24
     move v5, v3
 
-    .line 1164
+    .line 1162
     :goto_4
     iget-object v6, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
@@ -3711,7 +3711,7 @@
     :goto_5
     invoke-virtual {p1, v2, v0}, Lorg/telegram/ui/Cells/StickerSetCell;->setStickersSet(Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Z)V
 
-    .line 1165
+    .line 1163
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->getItemId(I)J
@@ -3732,7 +3732,7 @@
 
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/StickerSetCell;->setChecked(ZZ)V
 
-    .line 1166
+    .line 1164
     invoke-virtual {p0}, Lorg/telegram/ui/StickersActivity$ListAdapter;->hasSelected()Z
 
     move-result p2
@@ -3741,7 +3741,7 @@
 
     if-eqz v2, :cond_2c
 
-    .line 1167
+    .line 1165
     iget-object p2, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-eqz p2, :cond_2c
@@ -3750,7 +3750,7 @@
 
     if-eqz p2, :cond_2c
 
-    .line 1168
+    .line 1166
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
@@ -3765,7 +3765,7 @@
 
     move-result p2
 
-    .line 1169
+    .line 1167
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$2500(Lorg/telegram/ui/StickersActivity;)I
@@ -3786,7 +3786,7 @@
 
     move v6, v3
 
-    .line 1172
+    .line 1170
     :goto_6
     iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -3796,7 +3796,7 @@
 
     if-ge v6, v7, :cond_27
 
-    .line 1173
+    .line 1171
     iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3836,7 +3836,7 @@
 
     if-eqz p2, :cond_29
 
-    .line 1184
+    .line 1182
     iget-object p2, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$StickerSet;->official:Z
@@ -3860,7 +3860,7 @@
     :cond_2b
     const/4 v1, 0x3
 
-    .line 1182
+    .line 1180
     :goto_9
     invoke-virtual {p1, v1, v5}, Lorg/telegram/ui/Cells/StickerSetCell;->updateButtonState(IZ)V
 
@@ -3885,19 +3885,19 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;ILjava/util/List;)V
     .locals 6
 
-    .line 1332
+    .line 1330
     invoke-interface {p3}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1333
+    .line 1331
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
     goto/16 :goto_0
 
-    .line 1335
+    .line 1333
     :cond_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -3917,7 +3917,7 @@
 
     goto/16 :goto_0
 
-    .line 1356
+    .line 1354
     :cond_1
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3945,7 +3945,7 @@
 
     if-gt p2, p3, :cond_7
 
-    .line 1357
+    .line 1355
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     move-object v0, p1
@@ -3982,7 +3982,7 @@
 
     goto/16 :goto_0
 
-    .line 1351
+    .line 1349
     :cond_2
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4002,7 +4002,7 @@
 
     if-ne p2, p3, :cond_7
 
-    .line 1352
+    .line 1350
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
@@ -4015,7 +4015,7 @@
 
     goto :goto_0
 
-    .line 1337
+    .line 1335
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -4033,14 +4033,14 @@
 
     if-ge p2, v0, :cond_7
 
-    .line 1338
+    .line 1336
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StickerSetCell;
 
     const/4 v0, 0x1
 
-    .line 1339
+    .line 1337
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -4051,7 +4051,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1340
+    .line 1338
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/StickersActivity$ListAdapter;->getItemId(I)J
@@ -4075,7 +4075,7 @@
     :cond_4
     const/4 v2, 0x2
 
-    .line 1342
+    .line 1340
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -4086,7 +4086,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 1343
+    .line 1341
     invoke-virtual {p0}, Lorg/telegram/ui/StickersActivity$ListAdapter;->hasSelected()Z
 
     move-result v2
@@ -4096,7 +4096,7 @@
     :cond_5
     const/4 v2, 0x3
 
-    .line 1345
+    .line 1343
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -4107,7 +4107,7 @@
 
     if-eqz p3, :cond_7
 
-    .line 1346
+    .line 1344
     iget-object p3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/StickersActivity;->access$1700(Lorg/telegram/ui/StickersActivity;)I
@@ -4165,14 +4165,14 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 1469
+    .line 1467
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 1470
+    .line 1468
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -4183,7 +4183,7 @@
 
     goto/16 :goto_0
 
-    .line 1377
+    .line 1375
     :cond_0
     new-instance p1, Lorg/telegram/ui/StickersActivity$ListAdapter$2;
 
@@ -4197,7 +4197,7 @@
 
     invoke-direct {p1, p0, p2, v0}, Lorg/telegram/ui/StickersActivity$ListAdapter$2;-><init>(Lorg/telegram/ui/StickersActivity$ListAdapter;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1383
+    .line 1381
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -4208,7 +4208,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1384
+    .line 1382
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/FeaturedStickerSetCell2;->getTextView()Landroid/widget/TextView;
 
     move-result-object p2
@@ -4223,7 +4223,7 @@
 
     goto/16 :goto_0
 
-    .line 1464
+    .line 1462
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -4231,7 +4231,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 1465
+    .line 1463
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -4242,7 +4242,7 @@
 
     goto :goto_0
 
-    .line 1460
+    .line 1458
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -4250,7 +4250,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 1461
+    .line 1459
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -4261,7 +4261,7 @@
 
     goto :goto_0
 
-    .line 1457
+    .line 1455
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -4271,7 +4271,7 @@
 
     goto :goto_0
 
-    .line 1453
+    .line 1451
     :cond_4
     new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
@@ -4279,7 +4279,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 1454
+    .line 1452
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -4290,7 +4290,7 @@
 
     goto :goto_0
 
-    .line 1449
+    .line 1447
     :cond_5
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -4298,7 +4298,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 1450
+    .line 1448
     iget-object p2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -4313,7 +4313,7 @@
 
     goto :goto_0
 
-    .line 1387
+    .line 1385
     :cond_6
     new-instance p2, Lorg/telegram/ui/StickersActivity$ListAdapter$3;
 
@@ -4321,7 +4321,7 @@
 
     invoke-direct {p2, p0, v0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter$3;-><init>(Lorg/telegram/ui/StickersActivity$ListAdapter;Landroid/content/Context;I)V
 
-    .line 1423
+    .line 1421
     iget-object p1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -4332,14 +4332,14 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1425
+    .line 1423
     new-instance p1, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/StickersActivity$ListAdapter;Lorg/telegram/ui/Cells/StickerSetCell;)V
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/StickerSetCell;->setOnReorderButtonTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1431
+    .line 1429
     new-instance p1, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/StickersActivity$ListAdapter$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/StickersActivity$ListAdapter;)V
@@ -4348,7 +4348,7 @@
 
     move-object p1, p2
 
-    .line 1473
+    .line 1471
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -4360,7 +4360,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1474
+    .line 1472
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -4379,12 +4379,12 @@
         }
     .end annotation
 
-    .line 978
+    .line 976
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->featuredStickerSets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 979
+    .line 977
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->featuredStickerSets:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -4403,12 +4403,12 @@
         }
     .end annotation
 
-    .line 973
+    .line 971
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 974
+    .line 972
     iget-object v0, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -4423,12 +4423,12 @@
 
     if-eq p1, p2, :cond_0
 
-    .line 1501
+    .line 1499
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/StickersActivity;->access$302(Lorg/telegram/ui/StickersActivity;Z)Z
 
-    .line 1504
+    .line 1502
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
@@ -4440,7 +4440,7 @@
 
     move-result-object v1
 
-    .line 1506
+    .line 1504
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/StickersActivity;->access$1700(Lorg/telegram/ui/StickersActivity;)I
@@ -4449,7 +4449,7 @@
 
     sub-int v2, p1, v2
 
-    .line 1507
+    .line 1505
     iget-object v3, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/StickersActivity;->access$1700(Lorg/telegram/ui/StickersActivity;)I
@@ -4458,12 +4458,12 @@
 
     sub-int v3, p2, v3
 
-    .line 1509
+    .line 1507
     iget-object v4, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->stickerSets:Ljava/util/List;
 
     invoke-direct {p0, v4, v2, v3}, Lorg/telegram/ui/StickersActivity$ListAdapter;->swapListElements(Ljava/util/List;II)V
 
-    .line 1510
+    .line 1508
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/StickersActivity;->access$1200(Lorg/telegram/ui/StickersActivity;)I
@@ -4480,10 +4480,10 @@
 
     invoke-static {v1, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 1519
+    .line 1517
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
-    .line 1521
+    .line 1519
     iget-object v1, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->this$0:Lorg/telegram/ui/StickersActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/StickersActivity;->access$800(Lorg/telegram/ui/StickersActivity;)I
@@ -4507,10 +4507,10 @@
     :cond_1
     const/4 v0, 0x3
 
-    .line 1522
+    .line 1520
     invoke-virtual {p0, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
-    .line 1523
+    .line 1521
     invoke-virtual {p0, p2, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
     :cond_2
@@ -4520,12 +4520,12 @@
 .method public toggleSelected(I)V
     .locals 5
 
-    .line 1534
+    .line 1532
     invoke-virtual {p0, p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->getItemId(I)J
 
     move-result-wide v0
 
-    .line 1535
+    .line 1533
     iget-object v2, p0, Lorg/telegram/ui/StickersActivity$ListAdapter;->selectedItems:Landroidx/collection/LongSparseArray;
 
     sget-object v3, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
@@ -4550,14 +4550,14 @@
 
     invoke-virtual {v2, v0, v1, v3}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 1536
+    .line 1534
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(ILjava/lang/Object;)V
 
-    .line 1537
+    .line 1535
     invoke-direct {p0}, Lorg/telegram/ui/StickersActivity$ListAdapter;->checkActionMode()V
 
     return-void

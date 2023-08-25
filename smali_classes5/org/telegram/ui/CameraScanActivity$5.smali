@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/CameraScanActivity;)V
     .locals 0
 
-    .line 710
+    .line 716
     iput-object p1, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
         }
     .end annotation
 
-    .line 714
+    .line 720
     :try_start_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -58,24 +58,24 @@
 
     const/4 p2, 0x0
 
-    .line 715
+    .line 721
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
-    .line 716
+    .line 722
     iget-object p2, p1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
     if-eqz p2, :cond_2
 
-    .line 717
+    .line 723
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object p2
 
-    .line 718
+    .line 724
     iget-object p1, p1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
     const/4 p3, 0x0
@@ -94,7 +94,7 @@
 
     move-result-object v7
 
-    .line 719
+    .line 725
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     const/4 v2, 0x0
@@ -113,7 +113,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 721
+    .line 727
     iget-object p2, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/CameraScanActivity;->access$2600(Lorg/telegram/ui/CameraScanActivity;)Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
@@ -122,7 +122,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 722
+    .line 728
     iget-object p2, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/CameraScanActivity;->access$2600(Lorg/telegram/ui/CameraScanActivity;)Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
@@ -133,7 +133,7 @@
 
     invoke-interface {p2, p3}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;->didFindQr(Ljava/lang/String;)V
 
-    .line 724
+    .line 730
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
@@ -142,7 +142,7 @@
     :cond_1
     if-nez p1, :cond_2
 
-    .line 727
+    .line 733
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CameraScanActivity;->access$000(Lorg/telegram/ui/CameraScanActivity;)Z
@@ -151,7 +151,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 728
+    .line 734
     sget p1, Lorg/telegram/messenger/R$string;->custom_qr_error:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -160,7 +160,7 @@
 
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
-    .line 729
+    .line 735
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
@@ -172,7 +172,7 @@
     :catchall_0
     move-exception p1
 
-    .line 735
+    .line 741
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -183,7 +183,7 @@
 .method public startPhotoSelectActivity()V
     .locals 3
 
-    .line 742
+    .line 748
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
@@ -193,10 +193,10 @@
 
     const-string v1, "image/*"
 
-    .line 743
+    .line 749
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 744
+    .line 750
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity$5;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -214,7 +214,7 @@
     :catch_0
     move-exception v0
 
-    .line 746
+    .line 752
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0

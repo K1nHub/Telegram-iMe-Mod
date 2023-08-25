@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 8349
+    .line 8352
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,7 +35,7 @@
 .method public getSpanSize(I)I
     .locals 2
 
-    .line 8352
+    .line 8355
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$16800(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
@@ -66,7 +66,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLObject;
 
-    .line 8353
+    .line 8356
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17200(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;

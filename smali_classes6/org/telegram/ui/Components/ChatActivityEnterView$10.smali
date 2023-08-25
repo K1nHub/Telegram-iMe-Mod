@@ -1,6 +1,9 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$10;
-.super Landroid/util/Property;
+.super Ljava/lang/Object;
 .source "ChatActivityEnterView.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -13,91 +16,58 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/util/Property<",
-        "Landroid/view/View;",
-        "Ljava/lang/Float;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 1290
+    .line 1360
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public get(Landroid/view/View;)Ljava/lang/Float;
-    .locals 0
+.method public run()V
+    .locals 1
 
-    .line 1293
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 1363
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iget p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView;->emojiButtonScale:F
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v0
 
-    move-result-object p1
+    if-eqz v0, :cond_0
 
-    return-object p1
-.end method
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
 
-    .line 1290
-    check-cast p1, Landroid/view/View;
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->get(Landroid/view/View;)Ljava/lang/Float;
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
-    move-result-object p1
+    move-result v0
 
-    return-object p1
-.end method
+    if-nez v0, :cond_0
 
-.method public set(Landroid/view/View;Ljava/lang/Float;)V
-    .locals 0
+    .line 1364
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    .line 1298
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
 
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+    move-result-object v0
 
-    move-result p2
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    iput p2, p1, Lorg/telegram/ui/Components/ChatActivityEnterView;->emojiButtonScale:F
-
-    .line 1299
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4100(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1290
-    check-cast p1, Landroid/view/View;
-
-    check-cast p2, Ljava/lang/Float;
-
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->set(Landroid/view/View;Ljava/lang/Float;)V
-
+    :cond_0
     return-void
 .end method

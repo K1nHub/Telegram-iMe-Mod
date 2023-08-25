@@ -28,7 +28,7 @@
 
     move-object v0, p1
 
-    .line 6000
+    .line 6050
     iput-object v0, v9, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     move-object/from16 v0, p10
@@ -63,16 +63,16 @@
 .method public notifyDataSetChanged()V
     .locals 2
 
-    .line 6003
+    .line 6053
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->getItemCount()I
 
     move-result v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$28602(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$28702(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
 
-    .line 6005
+    .line 6055
     :try_start_0
     invoke-super {p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->notifyDataSetChanged()V
     :try_end_0
@@ -83,10 +83,10 @@
     :catch_0
     move-exception v0
 
-    .line 6007
+    .line 6057
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 6009
+    .line 6059
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -98,7 +98,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 6010
+    .line 6060
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$22000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -126,7 +126,7 @@
 .method protected onArchiveSettingsClick()V
     .locals 2
 
-    .line 6040
+    .line 6090
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     new-instance v1, Lorg/telegram/ui/ArchiveSettingsActivity;
@@ -141,14 +141,14 @@
 .method public onButtonClicked(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 8
 
-    .line 6016
+    .line 6066
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getMessage()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 6017
+    .line 6067
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -183,7 +183,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 6019
+    .line 6069
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$11100(Lorg/telegram/ui/DialogsActivity;)Z
@@ -192,7 +192,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 6020
+    .line 6070
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getDialogId()J
@@ -209,7 +209,7 @@
 
     goto :goto_0
 
-    .line 6022
+    .line 6072
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -231,7 +231,7 @@
 .method public onButtonLongPress(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 8
 
-    .line 6030
+    .line 6080
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$21;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -260,7 +260,7 @@
 
     move-object v2, p1
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/DialogsActivity;->access$27100(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFFILandroidx/recyclerview/widget/RecyclerView$Adapter;)Z
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/DialogsActivity;->access$27200(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFFILandroidx/recyclerview/widget/RecyclerView$Adapter;)Z
 
     return-void
 .end method
@@ -268,10 +268,10 @@
 .method public onCreateGroupForThisClick()V
     .locals 1
 
-    .line 6035
+    .line 6085
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$21;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$28700(Lorg/telegram/ui/DialogsActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$28800(Lorg/telegram/ui/DialogsActivity;)V
 
     return-void
 .end method

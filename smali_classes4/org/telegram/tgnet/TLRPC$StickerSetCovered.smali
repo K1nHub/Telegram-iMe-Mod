@@ -23,10 +23,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 31603
+    .line 31612
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 31605
+    .line 31614
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -45,7 +45,7 @@
 
     goto :goto_0
 
-    .line 31621
+    .line 31630
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSetNoCovered;
 
@@ -53,7 +53,7 @@
 
     goto :goto_0
 
-    .line 31624
+    .line 31633
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSetCovered;
 
@@ -61,7 +61,7 @@
 
     goto :goto_0
 
-    .line 31618
+    .line 31627
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
 
@@ -69,7 +69,7 @@
 
     goto :goto_0
 
-    .line 31612
+    .line 31621
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSetMultiCovered;
 
@@ -77,7 +77,7 @@
 
     goto :goto_0
 
-    .line 31615
+    .line 31624
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered_layer146;
 
@@ -90,7 +90,7 @@
 
     goto :goto_1
 
-    .line 31628
+    .line 31637
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -120,7 +120,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 31631
+    .line 31640
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

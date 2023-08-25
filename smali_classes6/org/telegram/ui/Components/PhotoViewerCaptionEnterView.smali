@@ -527,7 +527,7 @@
 
     const/high16 v10, 0x41900000    # 18.0f
 
-    invoke-virtual {v5, v4, v10}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v4, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 241
     iget-object v5, v0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;

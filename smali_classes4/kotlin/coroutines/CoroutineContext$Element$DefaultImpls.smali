@@ -71,7 +71,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "null cannot be cast to non-null type E of kotlin.coroutines.CoroutineContext.Element.get"
+    const-string/jumbo p1, "null cannot be cast to non-null type E of kotlin.coroutines.CoroutineContext.Element.get"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

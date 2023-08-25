@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->$r8$lambda$CtB1vhsnNRu6OpcwdKyYwSRsDr4(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+    invoke-static {v0, v1, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->$r8$lambda$n0cH15FlY59JZK3MqUvgb4NbYl0(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
 
     return-void
 .end method

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterCreateActivity$LinkCell;Z)V
     .locals 0
 
-    .line 2058
+    .line 2059
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$LinkCell$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$LinkCell;
 
     iput-boolean p2, p0, Lorg/telegram/ui/FilterCreateActivity$LinkCell$1;->val$value:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2061
+    .line 2062
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$LinkCell$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$LinkCell;
 
     iget-boolean v0, p0, Lorg/telegram/ui/FilterCreateActivity$LinkCell$1;->val$value:Z
@@ -56,7 +56,7 @@
     :goto_0
     iput v0, p1, Lorg/telegram/ui/FilterCreateActivity$LinkCell;->revokeT:F
 
-    .line 2062
+    .line 2063
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

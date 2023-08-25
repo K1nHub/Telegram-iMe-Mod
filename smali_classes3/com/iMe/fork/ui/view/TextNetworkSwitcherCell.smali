@@ -45,7 +45,7 @@
     .line 25
     iput-boolean p2, p0, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->dialog:Z
 
-    .line 29
+    .line 28
     new-instance p1, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell$textView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell$textView$2;-><init>(Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;)V
@@ -56,7 +56,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->textView$delegate:Lkotlin/Lazy;
 
-    .line 30
+    .line 29
     new-instance p1, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell$networkTypeView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell$networkTypeView$2;-><init>(Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;)V
@@ -72,6 +72,7 @@
 
     move-result-object p1
 
+    .line 36
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v0, 0x5
@@ -122,13 +123,15 @@
 
     const/high16 v4, -0x40800000    # -1.0f
 
+    .line 34
     invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
+    .line 32
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 34
+    .line 44
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object p1
@@ -137,6 +140,7 @@
 
     const/high16 v3, -0x40000000    # -2.0f
 
+    .line 47
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p2, :cond_3
@@ -154,10 +158,12 @@
 
     const/4 v8, 0x0
 
+    .line 45
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
+    .line 43
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
@@ -204,7 +210,7 @@
 .method private final getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
     .locals 1
 
-    .line 30
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->networkTypeView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -219,7 +225,7 @@
 .method private final getTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 29
+    .line 28
     iget-object v0, p0, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->textView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -234,7 +240,7 @@
 .method private final initNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
     .locals 7
 
-    .line 72
+    .line 82
     new-instance v6, Lcom/iMe/ui/custom/NetworkTypeView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -263,7 +269,7 @@
 .method private final initTextView()Landroid/widget/TextView;
     .locals 3
 
-    .line 74
+    .line 84
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -272,7 +278,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 75
+    .line 85
     iget-boolean v1, p0, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->dialog:Z
 
     if-eqz v1, :cond_0
@@ -295,19 +301,19 @@
 
     const/4 v2, 0x1
 
-    .line 76
+    .line 86
     invoke-virtual {v0, v2, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 77
+    .line 87
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 78
+    .line 88
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 79
+    .line 89
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 80
+    .line 90
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_1
@@ -324,7 +330,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 81
+    .line 91
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
@@ -346,10 +352,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 60
+    .line 71
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 61
+    .line 72
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object v0
@@ -362,7 +368,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 65
+    .line 77
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -375,6 +381,7 @@
 
     const/high16 v0, 0x42480000    # 50.0f
 
+    .line 78
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -383,24 +390,25 @@
 
     move-result p2
 
+    .line 76
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
 .end method
 
-.method public final setNetworkType(Lcom/iMe/storage/domain/model/crypto/Network;)V
+.method public final setNetworkType(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
     .locals 1
 
-    const-string v0, "network"
+    const-string v0, "networkItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 55
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
     return-void
 .end method
@@ -412,7 +420,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 59
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object v0
@@ -429,7 +437,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 63
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -442,7 +450,7 @@
 .method public final setTextColor(I)V
     .locals 1
 
-    .line 52
+    .line 67
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v0

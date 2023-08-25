@@ -34,7 +34,7 @@
 .method public constructor <init>(Ljava/lang/String;JLcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;)V
     .locals 1
 
-    const-string v0, "networkId"
+    const-string/jumbo v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

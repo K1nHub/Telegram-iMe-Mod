@@ -20,7 +20,7 @@
 
     const/4 v0, 0x0
 
-    .line 1639
+    .line 1645
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Bulletin;-><init>(Lorg/telegram/ui/Components/Bulletin$1;)V
 
     return-void

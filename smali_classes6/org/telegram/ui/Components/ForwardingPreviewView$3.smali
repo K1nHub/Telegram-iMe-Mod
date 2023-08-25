@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 211
+    .line 214
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$3;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,7 +35,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 7
 
-    .line 215
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$3;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentTopOffset:I

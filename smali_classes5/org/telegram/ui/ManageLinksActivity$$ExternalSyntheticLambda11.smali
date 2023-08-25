@@ -27,11 +27,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    check-cast p1, Lcom/iMe/model/twitter/TwitterUserItem;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
     check-cast p2, Ljava/lang/String;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$Hcp-ioniqBcV8l8Z_eZ_RkmxB7o(Lorg/telegram/ui/ManageLinksActivity;Lcom/iMe/model/twitter/TwitterUserItem;Ljava/lang/String;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$ikzPvNL3ckkhaDn5LTJ8m1jKrp4(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;)V
 
     return-void
 .end method

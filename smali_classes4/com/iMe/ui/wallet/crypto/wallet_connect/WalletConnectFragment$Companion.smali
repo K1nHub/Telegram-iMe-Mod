@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 285
+    .line 348
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public final newInstance()Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;
     .locals 1
 
-    .line 289
+    .line 352
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;
 
     invoke-direct {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;-><init>()V

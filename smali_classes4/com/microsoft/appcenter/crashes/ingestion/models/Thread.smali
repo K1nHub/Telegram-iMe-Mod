@@ -249,7 +249,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/microsoft/appcenter/crashes/ingestion/models/Thread;->setId(J)V
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     const/4 v1, 0x0
 
@@ -371,7 +371,7 @@
 
     move-result-object v0
 
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 

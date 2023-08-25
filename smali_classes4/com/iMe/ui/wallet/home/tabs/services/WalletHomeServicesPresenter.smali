@@ -57,11 +57,11 @@
         }
     .end annotation
 
-    const/4 v0, 0x7
+    const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 48
+    .line 45
     new-instance v1, Lcom/iMe/model/wallet/home/HeaderItem;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -78,7 +78,24 @@
 
     aput-object v1, v0, v2
 
-    .line 49
+    .line 46
+    new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
+
+    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->CRYPTOBOXES:Lcom/iMe/model/wallet/home/ServicesCategory;
+
+    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_cryptoboxes:I
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_cryptoboxes_title:I
+
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_cryptoboxes_subtitle:I
+
+    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    .line 47
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
     sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->STAKING:Lcom/iMe/model/wallet/home/ServicesCategory;
@@ -91,11 +108,11 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 50
+    .line 48
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
     sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->CHANNELS:Lcom/iMe/model/wallet/home/ServicesCategory;
@@ -108,11 +125,11 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
-    const/4 v2, 0x2
+    const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 51
+    .line 49
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
     sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
@@ -125,11 +142,11 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    .line 52
+    .line 50
     new-instance v1, Lcom/iMe/model/wallet/home/HeaderItem;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -142,11 +159,11 @@
 
     invoke-direct {v1, v2}, Lcom/iMe/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
-    const/4 v2, 0x4
+    const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 53
+    .line 51
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
     sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
@@ -159,11 +176,11 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
-    const/4 v2, 0x5
+    const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 54
+    .line 52
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
     sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
@@ -176,11 +193,11 @@
 
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
-    const/4 v2, 0x6
+    const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    .line 47
+    .line 44
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -191,7 +208,7 @@
 .method private final initDefaultDashboardState()V
     .locals 2
 
-    .line 44
+    .line 41
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -209,22 +226,10 @@
 
 
 # virtual methods
-.method protected onFirstViewAttach()V
-    .locals 0
-
-    .line 35
-    invoke-super {p0}, Lmoxy/MvpPresenter;->onFirstViewAttach()V
-
-    .line 36
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->initDefaultDashboardState()V
-
-    return-void
-.end method
-
-.method public final onStakingClick()V
+.method public final onCryptoBoxesClick()V
     .locals 2
 
-    .line 23
+    .line 29
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -235,7 +240,55 @@
 
     if-eqz v0, :cond_0
 
-    .line 24
+    .line 30
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;
+
+    invoke-interface {v0}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;->openCryptoBoxesScreen()V
+
+    goto :goto_0
+
+    .line 32
+    :cond_0
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;
+
+    invoke-interface {v0}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;->showRequiredWalletCreatedDialog()V
+
+    :goto_0
+    return-void
+.end method
+
+.method protected onFirstViewAttach()V
+    .locals 0
+
+    .line 37
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->initDefaultDashboardState()V
+
+    return-void
+.end method
+
+.method public final onStakingClick()V
+    .locals 2
+
+    .line 21
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    invoke-interface {v0, v1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isWalletCreated(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 22
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -246,7 +299,7 @@
 
     goto :goto_0
 
-    .line 26
+    .line 24
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 

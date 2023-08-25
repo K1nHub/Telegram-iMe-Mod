@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ActionBar/BaseFragment;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 128
+    .line 132
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     move-object v0, p0
@@ -49,10 +49,10 @@
 .method protected createEmojiView()V
     .locals 2
 
-    .line 141
+    .line 145
     invoke-super {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->createEmojiView()V
 
-    .line 142
+    .line 146
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->getEmojiView()Lorg/telegram/ui/Components/EmojiView;
 
     move-result-object v0
@@ -61,13 +61,13 @@
 
     const/4 v1, 0x0
 
-    .line 144
+    .line 148
     iput-boolean v1, v0, Lorg/telegram/ui/Components/EmojiView;->shouldLightenBackground:Z
 
-    .line 145
+    .line 149
     iput-boolean v1, v0, Lorg/telegram/ui/Components/EmojiView;->fixBottomTabContainerTranslation:Z
 
-    .line 146
+    .line 150
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setShouldDrawBackground(Z)V
 
     :cond_0
@@ -77,7 +77,7 @@
 .method protected drawEmojiBackground(Landroid/graphics/Canvas;Landroid/view/View;)V
     .locals 6
 
-    .line 152
+    .line 156
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p2}, Landroid/view/View;->getWidth()I
@@ -96,7 +96,7 @@
 
     invoke-virtual {v2, v3, v3, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 153
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     const v4, 0x3f733333    # 0.95f
@@ -113,7 +113,7 @@
 .method protected onEmojiKeyboardUpdate()V
     .locals 1
 
-    .line 131
+    .line 135
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -126,7 +126,7 @@
 .method protected onWaitingForKeyboard()V
     .locals 1
 
-    .line 136
+    .line 140
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;

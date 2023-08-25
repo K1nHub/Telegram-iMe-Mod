@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 624
+    .line 942
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupListeners$1$2;->invoke(Landroid/view/View;)V
@@ -66,14 +66,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 624
+    .line 942
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupListeners$1$2;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->access$getPresenter(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startStakingConditionsDialog()V
+    invoke-virtual {p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startAccountLevelDialog()V
 
     return-void
 .end method

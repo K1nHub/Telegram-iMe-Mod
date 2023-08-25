@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 262
+    .line 289
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public final newInstance()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;
     .locals 1
 
-    .line 263
+    .line 290
     new-instance v0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;
 
     invoke-direct {v0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;-><init>()V

@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 403
+    .line 515
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 2
 
-    .line 413
+    .line 532
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openStakingProfitScreen(Lcom/iMe/model/staking/StakingDetailsItem;)V
+    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openStakingWithdrawScreen(Lcom/iMe/model/staking/StakingDetailsItem;)V
 
     return-void
 .end method

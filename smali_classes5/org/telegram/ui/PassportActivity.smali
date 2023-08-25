@@ -7852,7 +7852,7 @@
 
     const/high16 v13, 0x41800000    # 16.0f
 
-    invoke-virtual {v5, v11, v13}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v11, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 3348
     iget-object v5, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -9051,7 +9051,7 @@
 
     const/high16 v7, 0x41800000    # 16.0f
 
-    invoke-virtual {v6, v4, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v6, v4, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 2750
     iget-object v6, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -9402,7 +9402,7 @@
 
     const/high16 v5, 0x41800000    # 16.0f
 
-    invoke-virtual {v3, v0, v5}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v3, v0, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 1450
     iget-object v3, p0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -10721,7 +10721,7 @@
 
     aget-object v8, v8, v3
 
-    invoke-virtual {v8, v4, v11}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v8, v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 4143
     iget-object v8, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -11532,7 +11532,7 @@
 
     aget-object v7, v7, v3
 
-    invoke-virtual {v7, v4, v11}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v7, v4, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 4483
     iget-object v7, v1, Lorg/telegram/ui/PassportActivity;->inputExtraFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -13532,7 +13532,7 @@
 
     aget-object v9, v9, v2
 
-    invoke-virtual {v9, v6, v8}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v9, v6, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 1580
     iget-object v9, v0, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -14331,7 +14331,7 @@
 
     const/high16 v13, 0x41800000    # 16.0f
 
-    invoke-virtual {v10, v5, v13}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v10, v5, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 2856
     iget-object v10, v1, Lorg/telegram/ui/PassportActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;

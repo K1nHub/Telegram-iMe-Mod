@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ReactedUserHolderView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 82
+    .line 91
     iput-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$2;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     iput p3, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$2;->val$style:I
@@ -39,14 +39,14 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 85
+    .line 94
     iget v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$2;->val$style:I
 
     sget v1, Lorg/telegram/ui/Cells/ReactedUserHolderView;->STYLE_STORY:I
 
     if-ne v0, v1, :cond_0
 
-    .line 86
+    .line 95
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$2;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
@@ -69,7 +69,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 87
+    .line 96
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$2;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     iget-wide v0, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->dialogId:J
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 89
+    .line 98
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -97,7 +97,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 95
+    .line 104
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$2;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;

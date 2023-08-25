@@ -3891,7 +3891,7 @@
     :cond_f
     new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string v2, "need fix parsing csd data"
+    const-string/jumbo v2, "need fix parsing csd data"
 
     invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

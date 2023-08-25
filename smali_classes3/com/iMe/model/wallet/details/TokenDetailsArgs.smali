@@ -8,6 +8,7 @@
     value = {
         Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;,
         Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;,
+        Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;,
         Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
     }
 .end annotation
@@ -17,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 7
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

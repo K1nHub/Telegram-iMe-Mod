@@ -135,7 +135,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "notify2_"
+    const-string/jumbo v11, "notify2_"
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -160,7 +160,7 @@
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v14, "notifyuntil_"
+    const-string/jumbo v14, "notifyuntil_"
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -974,7 +974,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "notify2_"
+    const-string/jumbo v0, "notify2_"
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1012,7 +1012,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "notifyuntil_"
+    const-string/jumbo v0, "notifyuntil_"
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1567,7 +1567,7 @@
 
     and-int/lit8 v5, v5, 0x4
 
-    const-string v6, "notify2_"
+    const-string/jumbo v6, "notify2_"
 
     if-eqz v5, :cond_3
 
@@ -1642,7 +1642,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "notifyuntil_"
+    const-string/jumbo v3, "notifyuntil_"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

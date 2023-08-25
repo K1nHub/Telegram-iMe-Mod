@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 253
+    .line 266
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;-><init>()V
@@ -35,7 +35,7 @@
 .method protected hide()V
     .locals 2
 
-    .line 268
+    .line 281
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -46,7 +46,7 @@
 
     const/4 v1, 0x1
 
-    .line 270
+    .line 283
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->animateOut(Z)V
 
     :cond_0
@@ -56,7 +56,7 @@
 .method protected show()V
     .locals 2
 
-    .line 256
+    .line 269
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -67,10 +67,10 @@
 
     const/4 v1, 0x0
 
-    .line 258
+    .line 271
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->animateOut(Z)V
 
-    .line 260
+    .line 273
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->view:Landroid/view/View;
 
@@ -78,10 +78,10 @@
 
     const/4 v1, 0x0
 
-    .line 261
+    .line 274
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 262
+    .line 275
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->view:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V

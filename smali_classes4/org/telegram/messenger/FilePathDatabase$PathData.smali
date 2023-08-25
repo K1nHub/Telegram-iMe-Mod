@@ -26,16 +26,16 @@
 .method public constructor <init>(JII)V
     .locals 0
 
-    .line 484
+    .line 493
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 485
+    .line 494
     iput-wide p1, p0, Lorg/telegram/messenger/FilePathDatabase$PathData;->id:J
 
-    .line 486
+    .line 495
     iput p3, p0, Lorg/telegram/messenger/FilePathDatabase$PathData;->dc:I
 
-    .line 487
+    .line 496
     iput p4, p0, Lorg/telegram/messenger/FilePathDatabase$PathData;->type:I
 
     return-void

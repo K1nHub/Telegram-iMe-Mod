@@ -3765,7 +3765,7 @@
     .line 1229
     iget-object v4, v6, Lorg/telegram/ui/ActionBar/ActionBar;->menu:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->getItemsMeasuredWidth()I
+    invoke-virtual {v4, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->getItemsMeasuredWidth(Z)I
 
     move-result v4
 
@@ -3790,7 +3790,7 @@
 
     iget-object v13, v6, Lorg/telegram/ui/ActionBar/ActionBar;->menu:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    invoke-virtual {v13}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->getItemsMeasuredWidth()I
+    invoke-virtual {v13, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->getItemsMeasuredWidth(Z)I
 
     move-result v13
 

@@ -116,7 +116,7 @@
     .line 1569
     check-cast v2, Ljava/security/cert/Certificate;
 
-    const-string v3, "null cannot be cast to non-null type java.security.cert.X509Certificate"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.security.cert.X509Certificate"
 
     .line 411
     invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

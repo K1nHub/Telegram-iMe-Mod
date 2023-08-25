@@ -114,7 +114,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newIndent"
+    const-string/jumbo v0, "newIndent"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -387,7 +387,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newIndent"
+    const-string/jumbo v0, "newIndent"
 
     move-object/from16 v2, p1
 
@@ -568,7 +568,7 @@
 
     add-int v6, v17, v1
 
-    const-string v1, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v1, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v14, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+.field public final synthetic f$0:Landroidx/core/util/Consumer;
+
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Landroidx/core/util/Consumer;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda10;->f$0:Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda10;->f$0:Landroidx/core/util/Consumer;
+
+    iput p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda10;->f$1:I
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda10;->f$0:Ljava/lang/Runnable;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda10;->f$0:Landroidx/core/util/Consumer;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Z0O8d7SFrbx3li01I4dhZ2TrIjE(Ljava/lang/Runnable;)V
+    iget v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda10;->f$1:I
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$bAxSSLfCjnASTpvqyHKnt_JFtqw(Landroidx/core/util/Consumer;I)V
 
     return-void
 .end method

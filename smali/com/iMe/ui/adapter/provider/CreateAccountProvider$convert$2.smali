@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 32
+    .line 30
     check-cast p1, Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CreateAccountProvider$convert$2;->invoke(Lcom/iMe/ui/custom/HorizontalActionButtonsView;)V
@@ -73,6 +73,7 @@
 
     move-result-object v0
 
+    .line 31
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->initButtons(Ljava/util/List;)V
 
     return-void

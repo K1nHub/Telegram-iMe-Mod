@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,195:1\n129#2,5:196\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n*L\n117#1:196,5\n*E\n"
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,197:1\n129#2,5:198\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$30\n*L\n118#1:198,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 117
+    .line 118
     new-instance p2, Lcom/iMe/storage/data/network/api/google/RemoteConfigApi;
 
     .line 133
@@ -90,7 +90,7 @@
 
     check-cast p1, Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;
 
-    .line 117
+    .line 118
     invoke-direct {p2, p1}, Lcom/iMe/storage/data/network/api/google/RemoteConfigApi;-><init>(Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;)V
 
     return-object p2
@@ -99,7 +99,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 117
+    .line 118
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

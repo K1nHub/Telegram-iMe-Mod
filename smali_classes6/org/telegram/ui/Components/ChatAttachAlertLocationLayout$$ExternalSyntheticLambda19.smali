@@ -2,34 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/IMapsProvider$OnMarkerClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
+.field public final synthetic f$1:Lorg/telegram/messenger/IMapsProvider$IMapView;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Lorg/telegram/messenger/IMapsProvider$IMapView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/messenger/IMapsProvider$IMapView;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Lorg/telegram/messenger/IMapsProvider$IMarker;)Z
-    .locals 1
+.method public final run()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$n7VYkB1neF9XruM-EjnlVJa2qfM(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Lorg/telegram/messenger/IMapsProvider$IMarker;)Z
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/messenger/IMapsProvider$IMapView;
 
-    move-result p1
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$Q_-Wf25kvPnz4ORQCunYz7AiO1g(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Lorg/telegram/messenger/IMapsProvider$IMapView;)V
 
-    return p1
+    return-void
 .end method

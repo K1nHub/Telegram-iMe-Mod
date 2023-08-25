@@ -237,7 +237,7 @@
     .line 691
     iget-object v1, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    const-string v2, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v2, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -326,7 +326,7 @@
     .line 456
     iget-object v2, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -383,7 +383,7 @@
     .line 485
     iget-object v2, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -467,7 +467,7 @@
     .line 507
     iget-object v4, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    const-string v5, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v5, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v4, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -537,7 +537,7 @@
     .line 530
     iget-object v2, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -604,7 +604,7 @@
     .line 438
     iget-object v2, p0, Lokhttp3/HttpUrl;->url:Ljava/lang/String;
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

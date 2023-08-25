@@ -11,37 +11,9 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     .line 25
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
-
-    .line 26
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->paint:Landroid/graphics/Paint;
-
-    .line 27
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->linePaint:Landroid/graphics/Paint;
-
-    const/4 v1, 0x1
-
-    .line 28
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 30
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -50,38 +22,74 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/MapPlaceholderDrawable;-><init>(Z)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .locals 2
+
+    .line 29
+    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
+
+    .line 30
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->paint:Landroid/graphics/Paint;
 
     .line 31
-    iget-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->paint:Landroid/graphics/Paint;
+    new-instance v0, Landroid/graphics/Paint;
 
-    const v1, -0xe2d3b3
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    iput-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->linePaint:Landroid/graphics/Paint;
+
+    const/4 v1, 0x1
 
     .line 32
-    iget-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->linePaint:Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const v1, -0xf1e9da
+    move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    if-eqz p1, :cond_0
+
+    .line 35
+    iget-object p1, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->paint:Landroid/graphics/Paint;
+
+    const v0, -0xe2d3b3
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 36
+    iget-object p1, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->linePaint:Landroid/graphics/Paint;
+
+    const v0, -0xf1e9da
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     goto :goto_0
 
-    .line 34
+    .line 38
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->paint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->paint:Landroid/graphics/Paint;
 
-    const v1, -0x21282a
+    const v0, -0x21282a
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 35
-    iget-object v0, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->linePaint:Landroid/graphics/Paint;
+    .line 39
+    iget-object p1, p0, Lorg/telegram/ui/Components/MapPlaceholderDrawable;->linePaint:Landroid/graphics/Paint;
 
-    const v1, -0x394042
+    const v0, -0x394042
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     :goto_0
     return-void
@@ -92,7 +100,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 14
 
-    .line 41
+    .line 45
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -103,12 +111,12 @@
 
     const/16 v0, 0x9
 
-    .line 42
+    .line 46
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 43
+    .line 47
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -119,7 +127,7 @@
 
     div-int/2addr v1, v0
 
-    .line 44
+    .line 48
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
@@ -130,14 +138,14 @@
 
     div-int/2addr v2, v0
 
-    .line 45
+    .line 49
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v3
 
     iget v3, v3, Landroid/graphics/Rect;->left:I
 
-    .line 46
+    .line 50
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v4
@@ -161,7 +169,7 @@
 
     int-to-float v10, v4
 
-    .line 48
+    .line 52
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v7
@@ -198,7 +206,7 @@
 
     int-to-float v10, v1
 
-    .line 51
+    .line 55
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1

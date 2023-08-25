@@ -426,7 +426,7 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    const-string v1, "oid"
+    const-string/jumbo v1, "oid"
 
     .line 640
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -681,7 +681,7 @@
 
     move-result-object p2
 
-    const-string v1, "oid"
+    const-string/jumbo v1, "oid"
 
     .line 710
     invoke-virtual {p2, v1}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
@@ -1458,7 +1458,7 @@
 
     if-ge v12, v3, :cond_9
 
-    const-string v13, "oid"
+    const-string/jumbo v13, "oid"
 
     .line 492
     invoke-virtual {v0, v13}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;

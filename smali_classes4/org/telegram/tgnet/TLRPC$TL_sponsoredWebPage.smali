@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 39838
+    .line 39880
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;
     .locals 1
 
-    .line 39847
+    .line 39889
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -47,7 +47,7 @@
 
     return-object p0
 
-    .line 39849
+    .line 39891
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -73,13 +73,13 @@
 
     throw p0
 
-    .line 39854
+    .line 39896
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;-><init>()V
 
-    .line 39855
+    .line 39897
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -90,35 +90,35 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 39860
+    .line 39902
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->flags:I
 
-    .line 39861
+    .line 39903
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->url:Ljava/lang/String;
 
-    .line 39862
+    .line 39904
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->site_name:Ljava/lang/String;
 
-    .line 39863
+    .line 39905
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 39864
+    .line 39906
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -136,34 +136,34 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 39869
+    .line 39911
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 39870
+    .line 39912
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 39871
+    .line 39913
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 39872
+    .line 39914
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->site_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 39873
+    .line 39915
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 39874
+    .line 39916
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_sponsoredWebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

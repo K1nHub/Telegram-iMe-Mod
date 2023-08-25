@@ -1377,7 +1377,7 @@
 
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v3, "null cannot be cast to non-null type kotlin.Throwable"
+    const-string/jumbo v3, "null cannot be cast to non-null type kotlin.Throwable"
 
     invoke-direct {v0, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

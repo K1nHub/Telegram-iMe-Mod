@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;)V
     .locals 0
 
-    .line 128
+    .line 133
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1$1;->this$1:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method public getBottomOffset(I)I
     .locals 0
 
-    .line 131
+    .line 136
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1$1;->this$1:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow$1;->this$0:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;

@@ -1562,7 +1562,7 @@
 
     aget-object v1, v1, p1
 
-    const-string v2, "off"
+    const-string/jumbo v2, "off"
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/camera/CameraSession;->setCurrentFlashMode(Ljava/lang/String;)V
 
@@ -4888,7 +4888,7 @@
     .line 320
     aget-object p1, p1, v1
 
-    const-string v0, "off"
+    const-string/jumbo v0, "off"
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/camera/CameraSession;->setCurrentFlashMode(Ljava/lang/String;)V
 

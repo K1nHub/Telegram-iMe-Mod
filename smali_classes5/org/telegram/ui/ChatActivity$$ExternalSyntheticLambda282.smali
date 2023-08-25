@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/LanguageDetector$ExceptionCallback;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Cells/BotHelpCell;
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/BotHelpCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;->f$0:Lorg/telegram/ui/Cells/BotHelpCell;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Exception;)V
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;->f$0:Lorg/telegram/ui/Cells/BotHelpCell;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda282;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$vJXm64WH5oH0fhr96z8lPKn8698(Lorg/telegram/ui/Cells/BotHelpCell;Ljava/lang/Exception;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$1mzIH0CaGqhspXqZDzl5vHnMpLg(Lorg/telegram/ui/ChatActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

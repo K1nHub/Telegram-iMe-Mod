@@ -61,7 +61,7 @@
 
     move v7, p2
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$kOVeRVsnoSe4m-jleTz0CYJPprs(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/Cells/CheckBoxCell;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lorg/telegram/tgnet/TLRPC$TL_urlAuthResultRequest;ZLandroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$8hnssPB4R5xiteaUoFeZO6XDgSg(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/Cells/CheckBoxCell;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lorg/telegram/tgnet/TLRPC$TL_urlAuthResultRequest;ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

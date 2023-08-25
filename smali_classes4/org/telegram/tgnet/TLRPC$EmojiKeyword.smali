@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 42681
+    .line 42723
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 
     goto :goto_0
 
-    .line 42687
+    .line 42729
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeywordDeleted;
 
@@ -36,7 +36,7 @@
 
     goto :goto_0
 
-    .line 42690
+    .line 42732
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeyword;
 
@@ -49,7 +49,7 @@
 
     goto :goto_1
 
-    .line 42694
+    .line 42736
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -79,7 +79,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 42697
+    .line 42739
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

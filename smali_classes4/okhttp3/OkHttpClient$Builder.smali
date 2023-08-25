@@ -245,7 +245,7 @@
 .method public constructor <init>(Lokhttp3/OkHttpClient;)V
     .locals 2
 
-    const-string v0, "okHttpClient"
+    const-string/jumbo v0, "okHttpClient"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

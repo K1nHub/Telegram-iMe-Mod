@@ -3,12 +3,12 @@
 .source "ChatActivityEnterView.java"
 
 # interfaces
-.implements Landroid/view/View$OnKeyListener;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createMessageEditText()V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createBotCommandsMenuContainer()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,372 +18,320 @@
 
 
 # instance fields
-.field ctrlPressed:Z
-
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
 
 # direct methods
+.method public static synthetic $r8$lambda$nCQGtimEM2NxM0XF4YGcSDrcoTY(Lorg/telegram/ui/Components/ChatActivityEnterView$37;Ljava/lang/String;ZILjava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->lambda$onItemClick$0(Ljava/lang/String;ZILjava/lang/String;)V
+
+    return-void
+.end method
+
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 4755
+    .line 4452
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    return-void
+.end method
 
-    .line 4757
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->ctrlPressed:Z
+.method private synthetic lambda$onItemClick$0(Ljava/lang/String;ZILjava/lang/String;)V
+    .locals 18
+
+    move-object/from16 v0, p0
+
+    .line 4468
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$600(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+
+    move-result v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$500(Lorg/telegram/ui/Components/ChatActivityEnterView;)J
+
+    move-result-wide v4
+
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$3100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v6
+
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$3200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v7
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    move-object/from16 v3, p1
+
+    move/from16 v13, p2
+
+    move/from16 v14, p3
+
+    move-object/from16 v17, p4
+
+    invoke-static/range {v3 .. v17}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
+
+    .line 4469
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
+
+    .line 4470
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    iget-object v1, v1, Lorg/telegram/ui/Components/ChatActivityEnterView;->botCommandsMenuContainer:Lorg/telegram/ui/Components/BotCommandsMenuContainer;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/BotCommandsMenuContainer;->dismiss()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .locals 3
+.method public onItemClick(Landroid/view/View;I)V
+    .locals 18
 
-    const/4 p1, 0x0
+    move-object/from16 v0, p0
 
-    const/4 v0, 0x1
+    move-object/from16 v1, p1
 
-    const/4 v1, 0x4
+    .line 4456
+    instance-of v2, v1, Lcom/iMe/fork/ui/view/TemplatesHeaderCell;
 
-    if-ne p2, v1, :cond_8
+    if-eqz v2, :cond_0
 
-    .line 4761
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 4457
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
-    move-result v1
+    move-result-object v1
 
-    if-nez v1, :cond_8
+    const/4 v2, 0x0
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-interface {v1, v2}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressOpenTemplates(Z)V
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isPopupShowing()Z
+    goto/16 :goto_0
 
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result v1
-
-    if-ne v1, v0, :cond_8
-
-    .line 4762
-    invoke-static {}, Lorg/telegram/ui/ContentPreviewViewer;->hasInstance()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    invoke-static {}, Lorg/telegram/ui/ContentPreviewViewer;->getInstance()Lorg/telegram/ui/ContentPreviewViewer;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Lorg/telegram/ui/ContentPreviewViewer;->isVisible()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    .line 4763
-    invoke-static {}, Lorg/telegram/ui/ContentPreviewViewer;->getInstance()Lorg/telegram/ui/ContentPreviewViewer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ContentPreviewViewer;->closeWithMenu()V
-
-    return v0
-
-    .line 4766
+    .line 4458
     :cond_0
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    instance-of v2, v1, Lcom/iMe/fork/ui/view/TemplateCell;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11600(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+    if-eqz v2, :cond_1
 
-    move-result p2
+    .line 4459
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    if-ne p2, v0, :cond_1
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    move-result-object v2
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
+    check-cast v1, Lcom/iMe/fork/ui/view/TemplateCell;
 
-    move-result-object p2
+    invoke-virtual {v1}, Lcom/iMe/fork/ui/view/TemplateCell;->getTemplate()Lcom/iMe/storage/domain/model/templates/TemplateModel;
 
-    if-eqz p2, :cond_1
+    move-result-object v1
 
-    return p1
+    const/4 v3, 0x1
 
-    .line 4769
+    invoke-interface {v2, v1, v3}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;->didPressSendMessage(Lcom/iMe/storage/domain/model/templates/TemplateModel;Z)V
+
+    goto/16 :goto_0
+
+    .line 4461
     :cond_1
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    instance-of v2, v1, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;
 
-    move-result p2
+    if-eqz v2, :cond_5
 
-    if-ne p2, v0, :cond_7
+    .line 4462
+    move-object v2, v1
 
-    .line 4770
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    check-cast v2, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11600(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->getCommand()Ljava/lang/String;
 
-    move-result p2
+    move-result-object v3
 
-    if-ne p2, v0, :cond_2
+    .line 4463
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    move-result v2
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
+    if-eqz v2, :cond_2
 
-    move-result-object p2
+    return-void
 
-    if-eqz p2, :cond_2
-
-    .line 4771
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$200(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
-
-    move-result p2
-
-    invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
-
-    move-result-object p2
-
-    .line 4772
-    invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p2
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "hidekeyboard_"
-
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$100(Lorg/telegram/ui/Components/ChatActivityEnterView;)J
-
-    move-result-wide v1
-
-    invoke-virtual {p3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p3
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result v1
-
-    invoke-interface {p2, p3, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p2
-
-    invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    .line 4774
+    .line 4466
     :cond_2
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1900(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isInScheduleMode()Z
 
-    move-result p2
+    move-result v2
 
-    if-eqz p2, :cond_4
+    if-eqz v2, :cond_3
 
-    .line 4775
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 4467
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2, p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2000(Lorg/telegram/ui/Components/ChatActivityEnterView;IZ)V
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/app/Activity;
 
-    .line 4776
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    move-result-object v4
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    move-result-object p1
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$500(Lorg/telegram/ui/Components/ChatActivityEnterView;)J
 
-    if-eqz p1, :cond_3
+    move-result-wide v5
 
-    .line 4777
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    new-instance v7, Lorg/telegram/ui/Components/ChatActivityEnterView$37$$ExternalSyntheticLambda0;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    invoke-direct {v7, v0, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView$37$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$37;Ljava/lang/String;)V
 
-    move-result-object p1
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->closeSearch(Z)V
+    .line 4471
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 4779
+    move-result-object v8
+
+    const/4 v9, 0x0
+
+    .line 4467
+    invoke-static/range {v4 .. v9}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+
+    goto :goto_0
+
+    .line 4473
     :cond_3
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
+    move-result-object v2
 
-    goto :goto_0
+    if-eqz v2, :cond_4
 
-    .line 4781
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Lorg/telegram/ui/ChatActivity;->checkSlowMode(Landroid/view/View;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    return-void
+
+    .line 4476
     :cond_4
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_5
-
-    .line 4782
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {p2, p1, v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setStickersExpanded(ZZZ)V
-
-    goto :goto_0
-
-    .line 4784
-    :cond_5
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/Animator;
-
-    move-result-object p2
-
-    if-nez p2, :cond_7
-
-    .line 4785
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_6
-
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11600(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
-
-    move-result p2
-
-    if-eq p2, v0, :cond_6
-
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    iget-object p2, p2, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
-
-    invoke-virtual {p2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object p2
-
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_6
-
-    .line 4786
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p1, v0, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10700(Lorg/telegram/ui/Components/ChatActivityEnterView;II)V
-
-    goto :goto_0
-
-    .line 4788
-    :cond_6
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {p2, p1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10700(Lorg/telegram/ui/Components/ChatActivityEnterView;II)V
-
-    :cond_7
-    :goto_0
-    return v0
-
-    :cond_8
-    const/16 v1, 0x42
-
-    if-ne p2, v1, :cond_a
-
-    .line 4795
-    iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->ctrlPressed:Z
-
-    if-nez v1, :cond_9
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$600(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
 
     move-result v1
 
-    if-eqz v1, :cond_a
-
-    :cond_9
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result v1
-
-    if-nez v1, :cond_a
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v1}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v1
 
-    if-nez v1, :cond_a
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    .line 4796
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$500(Lorg/telegram/ui/Components/ChatActivityEnterView;)J
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$11900(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    move-result-wide v4
 
-    return v0
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    :cond_a
-    const/16 v1, 0x71
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$3100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
 
-    if-eq p2, v1, :cond_c
+    move-result-object v6
 
-    const/16 v1, 0x72
+    iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    if-ne p2, v1, :cond_b
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$3200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
 
-    goto :goto_1
+    move-result-object v7
 
-    :cond_b
-    return p1
+    const/4 v8, 0x0
 
-    .line 4799
-    :cond_c
-    :goto_1
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    const/4 v9, 0x0
 
-    move-result p2
+    const/4 v10, 0x0
 
-    if-nez p2, :cond_d
+    const/4 v11, 0x0
 
-    move p1, v0
+    const/4 v12, 0x0
 
-    :cond_d
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->ctrlPressed:Z
+    const/4 v13, 0x1
 
-    return v0
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    invoke-static/range {v3 .. v17}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
+
+    .line 4477
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    const-string v2, ""
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
+
+    .line 4478
+    iget-object v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$37;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    iget-object v1, v1, Lorg/telegram/ui/Components/ChatActivityEnterView;->botCommandsMenuContainer:Lorg/telegram/ui/Components/BotCommandsMenuContainer;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/BotCommandsMenuContainer;->dismiss()V
+
+    :cond_5
+    :goto_0
+    return-void
 .end method

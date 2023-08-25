@@ -78,7 +78,7 @@
 
     move-result-object p1
 
-    const-string p2, "null cannot be cast to non-null type java.net.InetSocketAddress"
+    const-string/jumbo p2, "null cannot be cast to non-null type java.net.InetSocketAddress"
 
     invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -246,7 +246,7 @@
 
     move-result-object v10
 
-    const-string v11, "null cannot be cast to non-null type java.net.InetSocketAddress"
+    const-string/jumbo v11, "null cannot be cast to non-null type java.net.InetSocketAddress"
 
     invoke-static {v10, v11}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity;)V
     .locals 0
 
-    .line 535
+    .line 546
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$1;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -41,7 +41,7 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 539
+    .line 550
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$1;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -53,7 +53,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 542
+    .line 553
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$1;->this$0:Lorg/telegram/ui/LocationActivity;
 
@@ -69,7 +69,7 @@
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$GeoPoint;->lat:D
 
-    .line 543
+    .line 554
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$1;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$800(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/messenger/MessageObject;
@@ -84,7 +84,7 @@
 
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$GeoPoint;->_long:D
 
-    .line 544
+    .line 555
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$1;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -138,7 +138,7 @@
     :catch_0
     move-exception p1
 
-    .line 546
+    .line 557
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
@@ -148,7 +148,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 549
+    .line 560
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$1;->this$0:Lorg/telegram/ui/LocationActivity;
 
     const/4 v0, 0x0
@@ -162,7 +162,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 551
+    .line 562
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$1;->this$0:Lorg/telegram/ui/LocationActivity;
 
     const/4 v0, 0x0

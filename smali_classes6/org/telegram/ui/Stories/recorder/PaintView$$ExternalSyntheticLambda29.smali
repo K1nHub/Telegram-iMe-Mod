@@ -41,7 +41,7 @@
 
     move v5, p4
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$y69IFp08byMV10bMBz8KtM1mT2g(Lorg/telegram/ui/Stories/recorder/PaintView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$Ru0OjLJGg9kZUBdXSfdkCfxiH9Q(Lorg/telegram/ui/Stories/recorder/PaintView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
 
     return-void
 .end method

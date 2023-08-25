@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 58
+    .line 60
     sget-object v0, Lcom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1;->INSTANCE:Lcom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1;
 
     const/4 v1, 0x0
@@ -32,7 +32,7 @@
 .method public static final getRepositoryModule()Lorg/koin/core/module/Module;
     .locals 1
 
-    .line 58
+    .line 60
     sget-object v0, Lcom/iMe/storage/data/di/module/RepositoryModuleKt;->repositoryModule:Lorg/koin/core/module/Module;
 
     return-object v0

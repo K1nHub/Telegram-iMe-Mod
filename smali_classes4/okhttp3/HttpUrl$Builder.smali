@@ -629,7 +629,7 @@
 
     move-object v0, p0
 
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     move-object/from16 v3, p1
 

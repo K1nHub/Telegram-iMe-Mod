@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTokenDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,475:1\n42#2,12:476\n42#2,12:488\n42#2,12:500\n42#2,12:515\n16#3,3:512\n1#4:527\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter\n*L\n100#1:476,12\n184#1:488,12\n227#1:500,12\n343#1:515,12\n342#1:512,3\n*E\n"
+    value = "SMAP\nWalletTokenDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter\n+ 2 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,717:1\n42#2,12:718\n42#2,12:730\n42#2,12:742\n42#2,12:754\n42#2,12:769\n42#2,12:781\n47#2,7:793\n42#2,12:800\n16#3,3:766\n1#4:812\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsPresenter.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter\n*L\n118#1:718,12\n227#1:730,12\n255#1:742,12\n297#1:754,12\n440#1:769,12\n567#1:781,12\n612#1:793,7\n649#1:800,12\n439#1:766,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -29,6 +29,8 @@
 
 .field private final cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
+.field private final cryptoBoxInteractor:Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
+
 .field private final cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
 .field private final horizontalActionButtonItems$delegate:Lkotlin/Lazy;
@@ -43,32 +45,54 @@
 
 .field private stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
 
+.field private final telegramApi:Lcom/iMe/manager/TelegramApi;
+
 .field private final token$delegate:Lkotlin/Lazy;
+
+.field private final walletBotId$delegate:Lkotlin/Lazy;
+
+.field private final walletBotUsername$delegate:Lkotlin/Lazy;
 
 .field private final walletCreateManager:Lcom/iMe/manager/wallet/create/WalletCreateManager;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$CtB1vhsnNRu6OpcwdKyYwSRsDr4(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+.method public static synthetic $r8$lambda$AFbFG66X0OQai0GTbUn0swxMB_w(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->openStakingReplenishCheckingAccountLevel$lambda$11(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+    invoke-static {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startBinanceReplenishScreen$lambda$26(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$IMotQa_v_ssv8PpZXHNSbQocOb0(Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+.method public static synthetic $r8$lambda$EhasOURt3MpupBXh2yiNWWtn6zw(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadAccountLevelInfo$lambda$3(Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->showCryptoBoxRefreshConfirmation$lambda$3(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Q3IQ7JGXz9ay4UX9CcKURXDuwEk(Lkotlin/jvm/functions/Function1;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$Oi1LkVaudDo8Hc9XCdPIF0nCj1o(Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadAccountLevelInfo$lambda$4(Lkotlin/jvm/functions/Function1;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
+    invoke-static {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadAccountLevelInfo$lambda$6(Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$QIvUx7EePtXghhMk59WICo34Evc(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;JLjava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->onWalletBotAdminRightsRequired$lambda$22(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;JLjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$T7VbcV3zC_AZMTgR83ERaHbR5kA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->prepareCryptoBoxMessageRefresh$lambda$19(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
@@ -83,15 +107,25 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$rxd9PaTHI3qAa-Ykhwpf5OYLjjI(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+.method public static synthetic $r8$lambda$n0cH15FlY59JZK3MqUvgb4NbYl0(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startBinanceReplenishScreen$lambda$12(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->openStakingReplenishCheckingAccountLevel$lambda$25(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/iMe/model/wallet/details/TokenDetailsArgs;Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/i_staking/StakingInteractor;Lcom/iMe/manager/wallet/create/WalletCreateManager;)V
+.method public static synthetic $r8$lambda$qhyrN3C8rFJIsDZfe5_rRRNG_2U(Lkotlin/jvm/functions/Function1;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadAccountLevelInfo$lambda$7(Lkotlin/jvm/functions/Function1;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public constructor <init>(Lcom/iMe/model/wallet/details/TokenDetailsArgs;Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/i_staking/StakingInteractor;Lcom/iMe/manager/TelegramApi;Lcom/iMe/manager/wallet/create/WalletCreateManager;)V
     .locals 1
 
     const-string v0, "args"
@@ -106,61 +140,75 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "cryptoPreferenceHelper"
+    const-string v0, "cryptoBoxInteractor"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "resourceManager"
+    const-string v0, "cryptoPreferenceHelper"
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "rxEventBus"
+    const-string/jumbo v0, "resourceManager"
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "schedulersProvider"
+    const-string/jumbo v0, "rxEventBus"
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "stakingInteractor"
+    const-string/jumbo v0, "schedulersProvider"
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "walletCreateManager"
+    const-string/jumbo v0, "stakingInteractor"
 
     invoke-static {p9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    const-string/jumbo v0, "telegramApi"
+
+    invoke-static {p10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "walletCreateManager"
+
+    invoke-static {p11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 82
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 58
+    .line 71
     iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
-    .line 59
+    .line 72
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 60
+    .line 73
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 61
-    iput-object p4, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    .line 74
+    iput-object p4, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoBoxInteractor:Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
 
-    .line 62
-    iput-object p5, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 75
+    iput-object p5, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 63
-    iput-object p6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    .line 76
+    iput-object p6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 64
-    iput-object p7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    .line 77
+    iput-object p7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 65
-    iput-object p8, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
+    .line 78
+    iput-object p8, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 66
-    iput-object p9, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->walletCreateManager:Lcom/iMe/manager/wallet/create/WalletCreateManager;
+    .line 79
+    iput-object p9, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 70
+    .line 80
+    iput-object p10, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->telegramApi:Lcom/iMe/manager/TelegramApi;
+
+    .line 81
+    iput-object p11, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->walletCreateManager:Lcom/iMe/manager/wallet/create/WalletCreateManager;
+
+    .line 84
     new-instance p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$token$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$token$2;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
@@ -171,7 +219,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->token$delegate:Lkotlin/Lazy;
 
-    .line 71
+    .line 85
     new-instance p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$horizontalActionButtonItems$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$horizontalActionButtonItems$2;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
@@ -182,13 +230,31 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->horizontalActionButtonItems$delegate:Lkotlin/Lazy;
 
+    .line 88
+    sget-object p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$walletBotId$2;->INSTANCE:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$walletBotId$2;
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->walletBotId$delegate:Lkotlin/Lazy;
+
+    .line 89
+    sget-object p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$walletBotUsername$2;->INSTANCE:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$walletBotUsername$2;
+
+    invoke-static {p1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->walletBotUsername$delegate:Lkotlin/Lazy;
+
     return-void
 .end method
 
 .method public static final synthetic access$getArgs$p(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)Lcom/iMe/model/wallet/details/TokenDetailsArgs;
     .locals 0
 
-    .line 56
+    .line 69
     iget-object p0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     return-object p0
@@ -197,7 +263,7 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 56
+    .line 69
     iget-object p0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-object p0
@@ -206,7 +272,7 @@
 .method public static final synthetic access$getRxEventBus$p(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)Lcom/iMe/storage/domain/utils/rx/RxEventBus;
     .locals 0
 
-    .line 56
+    .line 69
     iget-object p0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     return-object p0
@@ -215,8 +281,39 @@
 .method public static final synthetic access$getStakingMetadata$p(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
     .locals 0
 
-    .line 56
+    .line 69
     iget-object p0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getTelegramApi$p(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)Lcom/iMe/manager/TelegramApi;
+    .locals 0
+
+    .line 69
+    iget-object p0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->telegramApi:Lcom/iMe/manager/TelegramApi;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getWalletBotId(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)J
+    .locals 2
+
+    .line 69
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getWalletBotId()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static final synthetic access$getWalletBotUsername(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)Ljava/lang/String;
+    .locals 0
+
+    .line 69
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getWalletBotUsername()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method
@@ -224,8 +321,17 @@
 .method public static final synthetic access$loadStakingDetailedMetadata(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadStakingDetailedMetadata()V
+
+    return-void
+.end method
+
+.method public static final synthetic access$onWalletBotAdminRightsRequired(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;JLjava/lang/String;)V
+    .locals 0
+
+    .line 69
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->onWalletBotAdminRightsRequired(JLjava/lang/String;)V
 
     return-void
 .end method
@@ -233,8 +339,35 @@
 .method public static final synthetic access$openStakingReplenishCheckingAccountLevel(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->openStakingReplenishCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;)V
+
+    return-void
+.end method
+
+.method public static final synthetic access$prepareCryptoBoxMessageRefresh(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;J)V
+    .locals 0
+
+    .line 69
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->prepareCryptoBoxMessageRefresh(Ljava/lang/String;J)V
+
+    return-void
+.end method
+
+.method public static final synthetic access$prepareCryptoBoxSuspension(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
+    .locals 0
+
+    .line 69
+    invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->prepareCryptoBoxSuspension(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static final synthetic access$reloadCryptoBoxInfo(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+    .locals 0
+
+    .line 69
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->reloadCryptoBoxInfo()V
 
     return-void
 .end method
@@ -242,7 +375,7 @@
 .method public static final synthetic access$resolveAvailableTokenActions(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Ljava/util/List;
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resolveAvailableTokenActions(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Ljava/util/List;
 
     move-result-object p0
@@ -253,7 +386,7 @@
 .method public static final synthetic access$resolveToken(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resolveToken(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p0
@@ -264,7 +397,7 @@
 .method public static final synthetic access$setAccountLevelInformation$p(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
     .locals 0
 
-    .line 56
+    .line 69
     iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->accountLevelInformation:Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;
 
     return-void
@@ -273,8 +406,17 @@
 .method public static final synthetic access$setStakingMetadata$p(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;)V
     .locals 0
 
-    .line 56
+    .line 69
     iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
+
+    return-void
+.end method
+
+.method public static final synthetic access$setupCryptoBoxDetailsScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
+    .locals 0
+
+    .line 69
+    invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->setupCryptoBoxDetailsScreen(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
 
     return-void
 .end method
@@ -282,7 +424,7 @@
 .method public static final synthetic access$setupHorizontalActionButtons(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->setupHorizontalActionButtons()V
 
     return-void
@@ -291,7 +433,7 @@
 .method public static final synthetic access$setupRankBadge(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->setupRankBadge()V
 
     return-void
@@ -300,7 +442,7 @@
 .method public static final synthetic access$setupStakingDetailsScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->setupStakingDetailsScreen(Lcom/iMe/model/staking/StakingDetailsItem;)V
 
     return-void
@@ -309,7 +451,7 @@
 .method public static final synthetic access$startBinanceReceiveScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startBinanceReceiveScreen(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
 
     return-void
@@ -318,7 +460,7 @@
 .method public static final synthetic access$startBinanceReplenishScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startBinanceReplenishScreen(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
 
     return-void
@@ -327,7 +469,7 @@
 .method public static final synthetic access$startBinanceSwapScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startBinanceSwapScreen(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
 
     return-void
@@ -336,17 +478,17 @@
 .method public static final synthetic access$startBuyScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startBuyScreen(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static final synthetic access$startReceiveScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
+.method public static final synthetic access$startReceiveScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 56
-    invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startReceiveScreen(Ljava/lang/String;)V
+    .line 69
+    invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startReceiveScreen(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -354,10 +496,117 @@
 .method public static final synthetic access$startSendScreen(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
     .locals 0
 
-    .line 56
+    .line 69
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->startSendScreen(Ljava/lang/String;)V
 
     return-void
+.end method
+
+.method private final getCryptoBoxActions(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)Ljava/util/List;
+    .locals 10
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;",
+            ")",
+            "Ljava/util/List<",
+            "Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;",
+            ">;"
+        }
+    .end annotation
+
+    .line 548
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getStatus()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;->ACTIVE:Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    const/4 v1, 0x0
+
+    .line 550
+    new-instance v9, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 551
+    sget v3, Lorg/telegram/messenger/R$drawable;->msg_block:I
+
+    .line 552
+    iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->cryptobox_details_stop:I
+
+    invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    .line 549
+    new-instance v6, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$getCryptoBoxActions$1$1;
+
+    invoke-direct {v6, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$getCryptoBoxActions$1$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
+
+    const/4 v7, 0x4
+
+    const/4 v8, 0x0
+
+    move-object v2, v9
+
+    .line 550
+    invoke-direct/range {v2 .. v8}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    aput-object v9, v0, v1
+
+    const/4 v1, 0x1
+
+    .line 554
+    new-instance v9, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 555
+    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_wallet_restore:I
+
+    .line 556
+    iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->cryptobox_details_restore:I
+
+    invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 549
+    new-instance v6, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$getCryptoBoxActions$1$2;
+
+    invoke-direct {v6, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$getCryptoBoxActions$1$2;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
+
+    move-object v2, v9
+
+    .line 554
+    invoke-direct/range {v2 .. v8}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    aput-object v9, v0, v1
+
+    .line 549
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 559
+    :cond_0
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object p1
+
+    :goto_0
+    return-object p1
 .end method
 
 .method private final getHorizontalActionButtonItems()Ljava/util/List;
@@ -371,7 +620,7 @@
         }
     .end annotation
 
-    .line 71
+    .line 85
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->horizontalActionButtonItems$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -386,7 +635,7 @@
 .method private final getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 70
+    .line 84
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->token$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -398,10 +647,44 @@
     return-object v0
 .end method
 
+.method private final getWalletBotId()J
+    .locals 2
+
+    .line 88
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->walletBotId$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method private final getWalletBotUsername()Ljava/lang/String;
+    .locals 1
+
+    .line 89
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->walletBotUsername$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method private final isBuyAvailable(Ljava/lang/String;)Z
     .locals 1
 
-    .line 246
+    .line 316
     sget-object v0, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->INSTANCE:Lcom/iMe/manager/common/FeatureAvailableManager$Token;
 
     invoke-virtual {v0, p1}, Lcom/iMe/manager/common/FeatureAvailableManager$Token;->isPurchaseAvailable(Ljava/lang/String;)Z
@@ -414,7 +697,7 @@
 .method private final listenEvents()V
     .locals 5
 
-    .line 341
+    .line 438
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -422,7 +705,7 @@
 
     move-result-object v1
 
-    const-class v2, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;
+    const-class v2, Lcom/iMe/storage/domain/utils/rx/event/RxEvent;
 
     .line 17
     invoke-virtual {v1, v2}, Lio/reactivex/Observable;->ofType(Ljava/lang/Class;)Lio/reactivex/Observable;
@@ -471,14 +754,14 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 351
+    .line 449
     invoke-static {p0, v0, v3, v1, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -495,7 +778,7 @@
         }
     .end annotation
 
-    .line 220
+    .line 290
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     const-wide/16 v1, 0x0
@@ -504,24 +787,24 @@
 
     const/4 v4, 0x0
 
-    .line 221
+    .line 291
     invoke-static {v0, v1, v2, v3, v4}, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;->getAccountLevelInformation$default(Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;JILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 222
+    .line 292
     invoke-static {v0}, Lcom/iMe/utils/extentions/rx/SchedulersExtKt;->scheduleIO(Lio/reactivex/Observable;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 223
+    .line 293
     new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$loadAccountLevelInfo$2;
 
     invoke-direct {v1, p1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$loadAccountLevelInfo$2;-><init>(ZLcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
 
-    new-instance v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;
+    new-instance v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda6;
 
-    invoke-direct {v2, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, v2}, Lio/reactivex/Observable;->compose(Lio/reactivex/ObservableTransformer;)Lio/reactivex/Observable;
 
@@ -531,7 +814,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 227
+    .line 297
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -561,12 +844,12 @@
 
     move-result-object p1
 
-    const-string/jumbo p2, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo p2, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 242
+    .line 312
     invoke-static {p0, p1, v4, v3, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -586,23 +869,23 @@
 
     if-eqz p3, :cond_1
 
-    .line 218
+    .line 288
     sget-object p2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda2;->INSTANCE:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda2;
 
-    .line 216
+    .line 286
     :cond_1
     invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadAccountLevelInfo(ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method
 
-.method private static final loadAccountLevelInfo$lambda$3(Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+.method private static final loadAccountLevelInfo$lambda$6(Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
     .locals 0
 
     return-void
 .end method
 
-.method private static final loadAccountLevelInfo$lambda$4(Lkotlin/jvm/functions/Function1;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
+.method private static final loadAccountLevelInfo$lambda$7(Lkotlin/jvm/functions/Function1;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
     .locals 1
 
     const-string v0, "$tmp0"
@@ -613,7 +896,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 223
+    .line 293
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -626,7 +909,7 @@
 .method private final loadStakingDetailedMetadata()V
     .locals 5
 
-    .line 180
+    .line 223
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
@@ -635,11 +918,11 @@
 
     return-void
 
-    .line 181
+    .line 224
     :cond_0
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingInteractor:Lcom/iMe/i_staking/StakingInteractor;
 
-    .line 182
+    .line 225
     check-cast v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;->getStakingDetails()Lcom/iMe/model/staking/StakingDetailsItem;
@@ -654,7 +937,7 @@
 
     move-result-object v0
 
-    .line 183
+    .line 226
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -667,7 +950,7 @@
 
     const-string/jumbo v1, "stakingInteractor\n      \u2026(schedulersProvider.ui())"
 
-    .line 182
+    .line 225
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 47
@@ -695,15 +978,110 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 204
+    .line 247
     invoke-static {p0, v0, v3, v1, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private final onWalletBotAdminRightsRequired(JLjava/lang/String;)V
+    .locals 7
+
+    .line 632
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+
+    .line 633
+    new-instance v1, Lcom/iMe/model/dialog/DialogModel;
+
+    .line 634
+    iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v3, Lorg/telegram/messenger/R$string;->cryptobox_create_wallet_bot_amin_rights_confirmation_title:I
+
+    invoke-interface {v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 635
+    iget-object v3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->cryptobox_create_wallet_bot_amin_rights_confirmation_description:I
+
+    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 636
+    iget-object v4, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v5, Lorg/telegram/messenger/R$string;->common_cancel:I
+
+    invoke-interface {v4, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 637
+    sget v5, Lorg/telegram/messenger/R$string;->Allow:I
+
+    const-string v6, "Allow"
+
+    invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 633
+    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 632
+    new-instance v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;
+
+    invoke-direct {v2, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;JLjava/lang/String;)V
+
+    invoke-interface {v0, v1, v2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->showConfirmationDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    return-void
+.end method
+
+.method private static final onWalletBotAdminRightsRequired$lambda$22(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;JLjava/lang/String;)V
+    .locals 7
+
+    const-string/jumbo v0, "this$0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "$boxId"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 640
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getWalletBotId()J
+
+    move-result-wide v2
+
+    move-wide v4, p1
+
+    move-object v6, p3
+
+    invoke-interface/range {v1 .. v6}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openAddAdminScreen(JJLjava/lang/String;)V
 
     return-void
 .end method
@@ -711,7 +1089,7 @@
 .method private final openStakingReplenishCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 1
 
-    .line 433
+    .line 666
     new-instance v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
@@ -721,7 +1099,7 @@
     return-void
 .end method
 
-.method private static final openStakingReplenishCheckingAccountLevel$lambda$11(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
+.method private static final openStakingReplenishCheckingAccountLevel$lambda$25(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
     .locals 1
 
     const-string v0, "$stakingDetailsItem"
@@ -732,7 +1110,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 435
+    .line 668
     invoke-virtual {p0}, Lcom/iMe/model/staking/StakingDetailsItem;->getMinimalRank()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     move-result-object v0
@@ -747,7 +1125,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 436
+    .line 669
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -758,7 +1136,7 @@
 
     goto :goto_0
 
-    .line 438
+    .line 671
     :cond_0
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -766,12 +1144,12 @@
 
     check-cast p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
-    .line 439
+    .line 672
     invoke-virtual {p0}, Lcom/iMe/model/staking/StakingDetailsItem;->getMinimalRank()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     move-result-object p2
 
-    .line 440
+    .line 673
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed$Companion;
 
     invoke-virtual {p0}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
@@ -786,15 +1164,426 @@
 
     move-result-object p0
 
-    .line 438
+    .line 671
     invoke-interface {p1, p2, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->showLevelRequiredDialog(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     :goto_0
     return-void
 .end method
 
+.method private final prepareCryptoBoxMessageRefresh(Ljava/lang/String;J)V
+    .locals 6
+
+    .line 580
+    invoke-static {p2, p3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "-100"
+
+    const-string v2, "-"
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x4
+
+    const/4 v5, 0x0
+
+    .line 581
+    invoke-static/range {v0 .. v5}, Lkotlin/text/StringsKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 582
+    invoke-static {p2}, Lkotlin/text/StringsKt;->toLongOrNull(Ljava/lang/String;)Ljava/lang/Long;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_0
+
+    .line 580
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide p2
+
+    .line 584
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->telegramApi:Lcom/iMe/manager/TelegramApi;
+
+    neg-long v1, p2
+
+    .line 585
+    invoke-interface {v0, v1, v2}, Lcom/iMe/manager/TelegramApi;->getChatInfoById(J)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 586
+    new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1;
+
+    invoke-direct {v1, p0, p2, p3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;J)V
+
+    new-instance v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda7;
+
+    invoke-direct {v2, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 610
+    iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "private fun prepareCrypt\u2026     .autoDispose()\n    }"
+
+    .line 586
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 611
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "viewState"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v1, Lcom/iMe/ui/base/mvp/base/BaseView;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x0
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingDialog$default(Lio/reactivex/Observable;Lcom/iMe/ui/base/mvp/base/BaseView;ZILjava/lang/Object;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 613
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+
+    .line 47
+    new-instance v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$$inlined$subscribeWithErrorHandle$1;
+
+    invoke-direct {v2, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$$inlined$subscribeWithErrorHandle$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;J)V
+
+    new-instance p1, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p1, v2}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance p2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$$inlined$subscribeWithErrorHandle$2;
+
+    invoke-direct {p2, v1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$$inlined$subscribeWithErrorHandle$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+
+    .line 49
+    new-instance p3, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p3, p2}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 47
+    invoke-virtual {v0, p1, p3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+
+    move-result-object p1
+
+    const-string/jumbo p2, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
+
+    .line 49
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 p2, 0x1
+
+    .line 628
+    invoke-static {p0, p1, v4, p2, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method private static final prepareCryptoBoxMessageRefresh$lambda$19(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 586
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
+
+    return-object p0
+.end method
+
+.method private final prepareCryptoBoxSuspension(Ljava/lang/String;)V
+    .locals 4
+
+    .line 563
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoBoxInteractor:Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
+
+    .line 564
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;->getSuspensionPrepareData(Ljava/lang/String;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 565
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "cryptoBoxInteractor\n    \u2026(schedulersProvider.ui())"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 566
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "viewState"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    invoke-static {p1, v0, v1, v2, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingDialog$default(Lio/reactivex/Observable;Lcom/iMe/ui/base/mvp/base/BaseView;ZILjava/lang/Object;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 567
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
+
+    .line 47
+    new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxSuspension$$inlined$subscribeWithErrorHandle$default$1;
+
+    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxSuspension$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+
+    new-instance v2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxSuspension$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$prepareCryptoBoxSuspension$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    .line 49
+    new-instance v0, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 47
+    invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+
+    move-result-object p1
+
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
+
+    .line 49
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method private final refreshCryptoBoxMessage(Ljava/lang/String;)V
+    .locals 4
+
+    .line 645
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoBoxInteractor:Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
+
+    .line 646
+    invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;->sendMessageRefresh(Ljava/lang/String;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 647
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "cryptoBoxInteractor\n    \u2026(schedulersProvider.ui())"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 648
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "viewState"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    invoke-static {p1, v0, v1, v2, v3}, Lcom/iMe/utils/extentions/rx/RxExtKt;->withLoadingDialog$default(Lio/reactivex/Observable;Lcom/iMe/ui/base/mvp/base/BaseView;ZILjava/lang/Object;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 649
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/base/mvp/base/BaseView;
+
+    .line 47
+    new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$refreshCryptoBoxMessage$$inlined$subscribeWithErrorHandle$default$1;
+
+    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$refreshCryptoBoxMessage$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+
+    new-instance v2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$refreshCryptoBoxMessage$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$refreshCryptoBoxMessage$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    .line 49
+    new-instance v0, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 47
+    invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+
+    move-result-object p1
+
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
+
+    .line 49
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method private final reloadCryptoBoxInfo()V
+    .locals 5
+
+    .line 251
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
+
+    instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    if-nez v1, :cond_0
+
+    return-void
+
+    .line 252
+    :cond_0
+    iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoBoxInteractor:Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
+
+    .line 253
+    check-cast v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;->getCryptoBoxInfo()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;->getCryptoBoxInfo(Ljava/lang/String;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 254
+    iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    const-string v1, "cryptoBoxInteractor\n    \u2026(schedulersProvider.ui())"
+
+    .line 253
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 47
+    new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$reloadCryptoBoxInfo$$inlined$subscribeWithErrorHandle$default$1;
+
+    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$reloadCryptoBoxInfo$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+
+    new-instance v2, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$reloadCryptoBoxInfo$$inlined$subscribeWithErrorHandle$default$2;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$reloadCryptoBoxInfo$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/iMe/ui/base/mvp/base/BaseView;)V
+
+    .line 49
+    new-instance v4, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v4, v1}, Lcom/iMe/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 47
+    invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
+
+    .line 49
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    .line 274
+    invoke-static {p0, v0, v3, v1, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
+
+    return-void
+.end method
+
 .method private final resolveAvailableTokenActions(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Ljava/util/List;
-    .locals 14
+    .locals 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -806,104 +1595,47 @@
         }
     .end annotation
 
-    .line 363
-    instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
+    move-object/from16 v0, p0
 
-    const/4 v1, 0x2
+    move-object/from16 v1, p1
 
-    const/4 v2, 0x3
+    .line 462
+    instance-of v2, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    if-eqz v2, :cond_2
 
-    const/4 v5, 0x0
-
-    if-eqz v0, :cond_3
-
-    new-array v0, v2, [Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
-
-    .line 364
-    move-object v2, p1
+    move-object v2, v1
 
     check-cast v2, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
     invoke-virtual {v2}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;->getToken()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v6}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getConvertible()Z
+    .line 463
+    new-instance v4, Ljava/util/ArrayList;
 
-    move-result v6
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz v6, :cond_0
-
-    .line 365
-    new-instance v6, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
-
-    .line 366
-    sget v8, Lorg/telegram/messenger/R$drawable;->fork_ic_exchange_27:I
-
-    .line 367
-    iget-object v7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v9, Lorg/telegram/messenger/R$string;->wallet_token_details_transactions_swap:I
-
-    invoke-interface {v7, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    const/4 v10, 0x0
-
-    .line 363
-    new-instance v11, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1;
-
-    invoke-direct {v11, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
-
-    const/4 v12, 0x4
-
-    const/4 v13, 0x0
-
-    move-object v7, v6
-
-    .line 365
-    invoke-direct/range {v7 .. v13}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    goto :goto_0
-
-    :cond_0
-    move-object v6, v3
-
-    :goto_0
-    aput-object v6, v0, v5
-
-    .line 370
-    invoke-virtual {v2}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;->getToken()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReplenishNetworksIds()Ljava/util/List;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Ljava/util/Collection;->isEmpty()Z
+    .line 464
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getConvertible()Z
 
     move-result v5
 
-    xor-int/2addr v5, v4
+    if-eqz v5, :cond_0
 
-    if-eqz v5, :cond_1
-
-    .line 371
+    .line 466
     new-instance v5, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 372
-    sget v7, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
+    .line 467
+    sget v7, Lorg/telegram/messenger/R$drawable;->fork_ic_exchange_27:I
 
-    .line 373
-    iget-object v6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 468
+    iget-object v6, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v8, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
+    sget v8, Lorg/telegram/messenger/R$string;->wallet_token_details_transactions_swap:I
 
     invoke-interface {v6, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
@@ -911,10 +1643,10 @@
 
     const/4 v9, 0x0
 
-    .line 363
-    new-instance v10, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2;
+    .line 465
+    new-instance v10, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$1;
 
-    invoke-direct {v10, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
+    invoke-direct {v10, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
 
     const/4 v11, 0x4
 
@@ -922,156 +1654,47 @@
 
     move-object v6, v5
 
-    .line 371
+    .line 466
     invoke-direct/range {v6 .. v12}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    goto :goto_1
+    .line 465
+    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_1
-    move-object v5, v3
+    .line 472
+    :cond_0
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReplenishNetworksIds()Ljava/util/List;
 
-    :goto_1
-    aput-object v5, v0, v4
+    move-result-object v5
 
-    .line 376
-    invoke-virtual {v2}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;->getToken()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+    invoke-interface {v5}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result-object v2
+    move-result v5
 
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReceivable()Z
+    xor-int/2addr v3, v5
 
-    move-result v2
+    if-eqz v3, :cond_1
 
-    if-eqz v2, :cond_2
-
-    .line 377
+    .line 474
     new-instance v3, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 378
-    sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
-
-    .line 379
-    iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
-
-    invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    const/4 v7, 0x0
-
-    .line 363
-    new-instance v8, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$3;
-
-    invoke-direct {v8, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$3;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
-
-    const/4 v9, 0x4
-
-    const/4 v10, 0x0
-
-    move-object v4, v3
-
-    .line 377
-    invoke-direct/range {v4 .. v10}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    :cond_2
-    aput-object v3, v0, v1
-
-    .line 363
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p1
-
-    goto/16 :goto_6
-
-    .line 384
-    :cond_3
-    instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
-
-    if-eqz v0, :cond_5
-
-    check-cast p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
-
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;->getToken()Lcom/iMe/model/wallet/home/AccountItem$Token;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
-
-    move-result-object p1
-
-    new-array v0, v2, [Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
-
-    .line 386
-    new-instance v2, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
-
-    .line 387
-    sget v7, Lorg/telegram/messenger/R$drawable;->msg_send:I
-
-    .line 388
-    iget-object v6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v8, Lorg/telegram/messenger/R$string;->wallet_token_details_details_action_send:I
-
-    invoke-interface {v6, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    const/4 v9, 0x0
-
-    .line 385
-    new-instance v10, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$1;
-
-    invoke-direct {v10, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
-
-    const/4 v11, 0x4
-
-    const/4 v12, 0x0
-
-    move-object v6, v2
-
-    .line 386
-    invoke-direct/range {v6 .. v12}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    aput-object v2, v0, v5
-
-    .line 390
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getNetworkId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {p0, v2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->isBuyAvailable(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 391
-    new-instance v3, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
-
-    .line 392
+    .line 475
     sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
 
-    .line 393
-    iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 476
+    iget-object v5, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
+    sget v7, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
 
-    invoke-interface {v2, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v5, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
     const/4 v8, 0x0
 
-    .line 385
-    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$2;
+    .line 473
+    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$2;
 
-    invoke-direct {v9, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$2;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+    invoke-direct {v9, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$2;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
 
     const/4 v10, 0x4
 
@@ -1079,33 +1702,41 @@
 
     move-object v5, v3
 
-    .line 391
+    .line 474
     invoke-direct/range {v5 .. v11}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    :cond_4
-    aput-object v3, v0, v4
+    .line 473
+    invoke-interface {v4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 396
+    .line 480
+    :cond_1
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReceivable()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_b
+
+    .line 482
     new-instance v2, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 397
+    .line 483
     sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
 
-    .line 398
-    iget-object v3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 484
+    iget-object v3, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
 
-    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
     const/4 v8, 0x0
 
-    .line 385
-    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$3;
+    .line 481
+    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$3;
 
-    invoke-direct {v9, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4$3;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+    invoke-direct {v9, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$3;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
 
     const/4 v10, 0x4
 
@@ -1113,133 +1744,276 @@
 
     move-object v5, v2
 
-    .line 396
+    .line 482
     invoke-direct/range {v5 .. v11}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    aput-object v2, v0, v1
+    .line 481
+    invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 385
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
+    goto/16 :goto_4
 
-    move-result-object p1
+    .line 491
+    :cond_2
+    instance-of v2, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
-    goto/16 :goto_6
+    if-eqz v2, :cond_4
 
-    .line 403
-    :cond_5
-    instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
+    check-cast v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
-    if-eqz v0, :cond_b
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;->getToken()Lcom/iMe/model/wallet/home/AccountItem$Token;
 
-    const/4 v0, 0x4
+    move-result-object v1
 
-    new-array v0, v0, [Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/home/AccountItem$Token;->getBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 404
-    new-instance v3, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+    move-result-object v1
 
-    .line 405
-    sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 406
-    iget-object v7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    move-result-object v1
 
-    sget v8, Lorg/telegram/messenger/R$string;->staking_details_replenish:I
+    .line 492
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-interface {v7, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    .line 494
+    new-instance v2, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 495
+    sget v6, Lorg/telegram/messenger/R$drawable;->msg_send:I
+
+    .line 496
+    iget-object v3, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_token_details_details_action_send:I
+
+    invoke-interface {v3, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 407
-    iget-object v8, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
+    const/4 v8, 0x0
 
-    if-eqz v8, :cond_6
+    .line 493
+    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$1;
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
+    invoke-direct {v9, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
-    move-result-object v8
+    const/4 v10, 0x4
 
-    if-eqz v8, :cond_6
+    const/4 v11, 0x0
 
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanDeposit()Z
+    move-object v5, v2
 
-    move-result v8
+    .line 494
+    invoke-direct/range {v5 .. v11}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    if-ne v8, v4, :cond_6
+    .line 493
+    invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move v8, v4
+    .line 499
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getNetworkId()Ljava/lang/String;
 
-    goto :goto_2
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->isBuyAvailable(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 501
+    new-instance v2, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 502
+    sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_exchange_27:I
+
+    .line 503
+    iget-object v3, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_token_details_transactions_swap:I
+
+    invoke-interface {v3, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    const/4 v8, 0x0
+
+    .line 500
+    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$2;
+
+    invoke-direct {v9, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$2;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+
+    const/4 v10, 0x4
+
+    const/4 v11, 0x0
+
+    move-object v5, v2
+
+    .line 501
+    invoke-direct/range {v5 .. v11}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 500
+    invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 507
+    :cond_3
+    new-instance v2, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 508
+    sget v13, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
+
+    .line 509
+    iget-object v3, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_token_details_action_receive:I
+
+    invoke-interface {v3, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v14
+
+    const/4 v15, 0x0
+
+    .line 506
+    new-instance v3, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$3;
+
+    invoke-direct {v3, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$3;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+
+    const/16 v17, 0x4
+
+    const/16 v18, 0x0
+
+    move-object v12, v2
+
+    move-object/from16 v16, v3
+
+    .line 507
+    invoke-direct/range {v12 .. v18}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 506
+    invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_4
+
+    .line 515
+    :cond_4
+    instance-of v2, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
+
+    if-eqz v2, :cond_a
+
+    const/4 v2, 0x4
+
+    new-array v2, v2, [Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 516
+    new-instance v4, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 517
+    sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
+
+    .line 518
+    iget-object v6, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v7, Lorg/telegram/messenger/R$string;->staking_details_replenish:I
+
+    invoke-interface {v6, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 519
+    iget-object v7, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
+
+    const/4 v8, 0x0
+
+    if-eqz v7, :cond_5
+
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
+
+    move-result-object v7
+
+    if-eqz v7, :cond_5
+
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanDeposit()Z
+
+    move-result v7
+
+    if-ne v7, v3, :cond_5
+
+    move v7, v3
+
+    goto :goto_0
+
+    :cond_5
+    move v7, v8
+
+    .line 515
+    :goto_0
+    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$3;
+
+    invoke-direct {v9, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$3;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
+
+    .line 516
+    invoke-direct {v4, v5, v6, v7, v9}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
+
+    aput-object v4, v2, v8
+
+    .line 521
+    new-instance v4, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+
+    .line 522
+    sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
+
+    .line 523
+    iget-object v6, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v7, Lorg/telegram/messenger/R$string;->staking_details_claim:I
+
+    invoke-interface {v6, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 524
+    iget-object v7, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
+
+    if-eqz v7, :cond_6
+
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;
+
+    move-result-object v7
+
+    if-eqz v7, :cond_6
+
+    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;->isParticipated()Z
+
+    move-result v7
+
+    if-ne v7, v3, :cond_6
+
+    move v7, v3
+
+    goto :goto_1
 
     :cond_6
-    move v8, v5
+    move v7, v8
 
-    .line 403
-    :goto_2
-    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$5;
+    .line 515
+    :goto_1
+    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4;
 
-    invoke-direct {v9, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$5;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
+    invoke-direct {v9, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$4;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
 
-    .line 404
-    invoke-direct {v3, v6, v7, v8, v9}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
+    .line 521
+    invoke-direct {v4, v5, v6, v7, v9}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
-    aput-object v3, v0, v5
+    aput-object v4, v2, v3
 
-    .line 409
-    new-instance v3, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+    const/4 v4, 0x2
 
-    .line 410
-    sget v6, Lorg/telegram/messenger/R$drawable;->fork_ic_ask_transfer:I
+    .line 527
+    sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_withdraw:I
 
-    .line 411
-    iget-object v7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    sget v8, Lorg/telegram/messenger/R$string;->staking_details_claim:I
-
-    invoke-interface {v7, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 412
-    iget-object v8, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
-
-    if-eqz v8, :cond_7
-
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getStats()Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_7
-
-    invoke-virtual {v8}, Lcom/iMe/storage/domain/model/staking/StakingDetailedStats;->isParticipated()Z
-
-    move-result v8
-
-    if-ne v8, v4, :cond_7
-
-    move v8, v4
-
-    goto :goto_3
-
-    :cond_7
-    move v8, v5
-
-    .line 403
-    :goto_3
-    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;
-
-    invoke-direct {v9, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
-
-    .line 409
-    invoke-direct {v3, v6, v7, v8, v9}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
-
-    aput-object v3, v0, v4
-
-    .line 415
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_withdraw:I
-
-    .line 416
-    iget-object v6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 528
+    iget-object v6, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v7, Lorg/telegram/messenger/R$string;->staking_details_withdraw:I
 
@@ -1247,124 +2021,146 @@
 
     move-result-object v6
 
-    .line 417
-    iget-object v7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
+    .line 529
+    iget-object v7, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
 
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_8
 
     invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
 
     move-result-object v7
 
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_8
 
-    .line 418
+    .line 530
     invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanWithdrawSafely()Z
 
-    move-result v8
+    move-result v9
 
-    if-nez v8, :cond_8
+    if-nez v9, :cond_7
 
     invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanWithdrawImmediately()Z
 
     move-result v7
 
-    if-eqz v7, :cond_9
+    if-eqz v7, :cond_8
+
+    :cond_7
+    move v7, v3
+
+    goto :goto_2
 
     :cond_8
-    move v7, v4
+    move v7, v8
 
-    goto :goto_4
+    .line 515
+    :goto_2
+    new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;
 
-    :cond_9
-    move v7, v5
+    invoke-direct {v9, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$6;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
 
-    .line 403
-    :goto_4
-    new-instance v8, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$8;
+    .line 526
+    new-instance v10, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
 
-    invoke-direct {v8, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$8;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
+    invoke-direct {v10, v5, v6, v7, v9}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
-    .line 414
-    new-instance v9, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+    aput-object v10, v2, v4
 
-    invoke-direct {v9, v3, v6, v7, v8}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
+    const/4 v4, 0x3
 
-    aput-object v9, v0, v1
+    .line 533
+    new-instance v5, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 421
-    new-instance v1, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;
+    .line 534
+    sget v6, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_calculator:I
 
-    .line 422
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_wallet_staking_dashboard_calculator:I
+    .line 535
+    iget-object v7, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 423
-    iget-object v6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    sget v9, Lorg/telegram/messenger/R$string;->staking_dashboard_calculator:I
 
-    sget v7, Lorg/telegram/messenger/R$string;->staking_dashboard_calculator:I
-
-    invoke-interface {v6, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 424
-    iget-object v7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
-
-    if-eqz v7, :cond_a
-
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
+    invoke-interface {v7, v9}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    if-eqz v7, :cond_a
+    .line 536
+    iget-object v9, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
 
-    invoke-virtual {v7}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanDeposit()Z
+    if-eqz v9, :cond_9
 
-    move-result v7
+    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;->getRules()Lcom/iMe/storage/domain/model/staking/StakingRules;
 
-    if-ne v7, v4, :cond_a
+    move-result-object v9
 
-    goto :goto_5
+    if-eqz v9, :cond_9
 
+    invoke-virtual {v9}, Lcom/iMe/storage/domain/model/staking/StakingRules;->getCanDeposit()Z
+
+    move-result v9
+
+    if-ne v9, v3, :cond_9
+
+    goto :goto_3
+
+    :cond_9
+    move v3, v8
+
+    .line 515
+    :goto_3
+    new-instance v8, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$7;
+
+    invoke-direct {v8, v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$7;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
+
+    .line 533
+    invoke-direct {v5, v6, v7, v3, v8}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
+
+    aput-object v5, v2, v4
+
+    .line 515
+    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    goto :goto_4
+
+    .line 543
     :cond_a
-    move v4, v5
+    instance-of v2, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
 
-    .line 403
-    :goto_5
-    new-instance v5, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$9;
+    if-eqz v2, :cond_c
 
-    invoke-direct {v5, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$9;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
+    check-cast v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
 
-    .line 421
-    invoke-direct {v1, v3, v6, v4, v5}, Lcom/iMe/model/wallet/home/HorizontalActionButtonItem;-><init>(ILjava/lang/String;ZLkotlin/jvm/functions/Function0;)V
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;->getCryptoBoxInfo()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;
 
-    aput-object v1, v0, v2
+    move-result-object v1
 
-    .line 403
-    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    invoke-direct {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getCryptoBoxActions(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)Ljava/util/List;
 
-    move-result-object p1
-
-    :goto_6
-    return-object p1
+    move-result-object v4
 
     :cond_b
-    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+    :goto_4
+    return-object v4
 
-    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    :cond_c
+    new-instance v1, Lkotlin/NoWhenBranchMatchedException;
 
-    throw p1
+    invoke-direct {v1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v1
 .end method
 
 .method private final resolveNetworkIdForReplenish(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
     .locals 4
 
-    .line 470
+    .line 713
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReplenishNetworksIds()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 714
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -1405,11 +2201,6 @@
 
     if-nez v1, :cond_2
 
-    .line 471
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getReplenishNetworksIds()Ljava/util/List;
-
-    move-result-object p1
-
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object p1
@@ -1425,7 +2216,7 @@
 .method private final resolveToken(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 356
+    .line 454
     instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
     if-eqz v0, :cond_0
@@ -1442,7 +2233,7 @@
 
     goto :goto_0
 
-    .line 357
+    .line 455
     :cond_0
     instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
@@ -1464,7 +2255,7 @@
 
     goto :goto_0
 
-    .line 358
+    .line 456
     :cond_1
     instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
@@ -1484,10 +2275,28 @@
 
     move-result-object p1
 
+    goto :goto_0
+
+    .line 457
+    :cond_2
+    instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    if-eqz v0, :cond_3
+
+    check-cast p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;->getCryptoBoxInfo()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getRewardToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object p1
+
     :goto_0
     return-object p1
 
-    :cond_2
+    :cond_3
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -1495,38 +2304,139 @@
     throw p1
 .end method
 
+.method private final setupCryptoBoxDetailsScreen(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
+    .locals 12
+
+    .line 352
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+
+    .line 353
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network;->getExplorer()Lcom/iMe/storage/domain/model/crypto/Network$Explorer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Network$Explorer;->getLogoUrl()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 354
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getChat()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxChat;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxChat;->getAvatarUrl()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 355
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getChat()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxChat;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxChat;->getId()J
+
+    move-result-wide v4
+
+    .line 356
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getChat()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxChat;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxChat;->getName()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 357
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getFullName()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 358
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getDescription()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 359
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getMembersText()Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 360
+    new-instance v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$setupCryptoBoxDetailsScreen$1$1;
+
+    sget-object v10, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
+
+    invoke-direct {v0, v10}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$setupCryptoBoxDetailsScreen$1$1;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {p1, v0}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getBalanceText(Lkotlin/jvm/functions/Function2;)Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 361
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getStatus()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;
+
+    move-result-object v11
+
+    .line 352
+    invoke-interface/range {v1 .. v11}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->setupCryptoBoxDetailsScreen(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;)V
+
+    return-void
+.end method
+
 .method private final setupHorizontalActionButtons()V
     .locals 3
 
-    .line 166
+    .line 203
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
-    .line 167
+    .line 204
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
+    .line 205
     instance-of v2, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
     if-eqz v2, :cond_0
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    .line 206
+    :cond_0
+    instance-of v2, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    :goto_0
+    if-eqz v2, :cond_1
 
     invoke-direct {p0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resolveAvailableTokenActions(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Ljava/util/List;
 
     move-result-object v1
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 168
-    :cond_0
+    .line 208
+    :cond_1
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getHorizontalActionButtonItems()Ljava/util/List;
 
     move-result-object v1
 
-    .line 166
-    :goto_0
-    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->setupHorizontalActionButtons(Ljava/util/List;)V
+    .line 203
+    :goto_1
+    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->renderHorizontalActionButtons(Ljava/util/List;)V
 
     return-void
 .end method
@@ -1534,20 +2444,21 @@
 .method private final setupRankBadge()V
     .locals 3
 
-    .line 173
+    .line 214
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
-    .line 174
+    .line 215
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     instance-of v1, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
     if-eqz v1, :cond_0
 
+    .line 216
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
@@ -1568,6 +2479,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 217
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->isBalanceHidden()Z
@@ -1583,7 +2495,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 175
+    .line 218
     :goto_0
     iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -1595,18 +2507,18 @@
 
     move-result-object v2
 
-    .line 173
+    .line 214
     invoke-interface {v0, v1, v2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->setupRankBadge(ZLcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
 
     return-void
 .end method
 
 .method private final setupStakingDetailsScreen(Lcom/iMe/model/staking/StakingDetailsItem;)V
-    .locals 30
+    .locals 31
 
     move-object/from16 v0, p0
 
-    .line 278
+    .line 368
     iget-object v1, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
 
     const/4 v2, 0x0
@@ -1628,7 +2540,7 @@
     :cond_0
     move-object v1, v2
 
-    .line 279
+    .line 369
     :goto_0
     iget-object v3, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->stakingMetadata:Lcom/iMe/storage/domain/model/staking/StakingDetailedMetadata;
 
@@ -1652,7 +2564,7 @@
     :goto_1
     if-eqz v3, :cond_2
 
-    .line 280
+    .line 370
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
 
     move-result-object v4
@@ -1664,7 +2576,7 @@
 
     move-result-object v4
 
-    .line 281
+    .line 371
     :cond_3
     sget-object v5, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
@@ -1676,7 +2588,7 @@
 
     move-result-object v6
 
-    .line 282
+    .line 372
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getFormattedAPR()Ljava/lang/String;
 
     move-result-object v7
@@ -1685,7 +2597,7 @@
 
     move-result-object v5
 
-    .line 286
+    .line 376
     invoke-static {v6}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->isZero(Ljava/lang/Number;)Z
 
     move-result v6
@@ -1710,7 +2622,7 @@
 
     goto :goto_3
 
-    .line 291
+    .line 381
     :cond_4
     invoke-static {v5}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->isZero(Ljava/lang/Number;)Z
 
@@ -1728,31 +2640,35 @@
 
     goto :goto_2
 
-    .line 297
+    .line 387
     :cond_5
     iget-object v5, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
+    .line 388
     sget v6, Lorg/telegram/messenger/R$string;->staking_details_apy_apr_values:I
 
     new-array v8, v7, [Ljava/lang/Object;
 
+    .line 389
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getFormattedAPR()Ljava/lang/String;
 
     move-result-object v11
 
     aput-object v11, v8, v9
 
+    .line 390
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getFormattedAPY()Ljava/lang/String;
 
     move-result-object v11
 
     aput-object v11, v8, v10
 
+    .line 387
     invoke-interface {v5, v6, v8}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 298
+    .line 392
     iget-object v6, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v8, Lorg/telegram/messenger/R$string;->staking_details_apy_apr:I
@@ -1763,7 +2679,7 @@
 
     goto :goto_4
 
-    .line 292
+    .line 382
     :cond_6
     :goto_2
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1782,7 +2698,7 @@
 
     move-result-object v5
 
-    .line 293
+    .line 383
     iget-object v6, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v8, Lorg/telegram/messenger/R$string;->staking_details_apr:I
@@ -1793,7 +2709,7 @@
 
     goto :goto_4
 
-    .line 287
+    .line 377
     :cond_7
     :goto_3
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1812,7 +2728,7 @@
 
     move-result-object v5
 
-    .line 288
+    .line 378
     iget-object v6, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v8, Lorg/telegram/messenger/R$string;->staking_details_apy:I
@@ -1822,13 +2738,13 @@
     move-result-object v6
 
     :goto_4
-    move-object/from16 v16, v5
+    move-object/from16 v17, v5
 
-    move-object v15, v6
+    move-object/from16 v16, v6
 
     if-eqz v1, :cond_8
 
-    .line 302
+    .line 396
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
 
     move-result-object v5
@@ -1841,21 +2757,22 @@
 
     if-nez v5, :cond_8
 
-    move/from16 v18, v10
+    move/from16 v19, v10
 
     goto :goto_5
 
     :cond_8
-    move/from16 v18, v9
+    move/from16 v19, v9
 
     :goto_5
     const-wide/16 v5, 0x0
 
-    if-eqz v18, :cond_c
+    if-eqz v19, :cond_c
 
-    .line 304
+    .line 398
     sget-object v8, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance$Companion;
 
+    .line 399
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
 
     move-result-object v11
@@ -1866,11 +2783,11 @@
 
     invoke-virtual {v8, v11}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance$Companion;->createEmptyBalanceFor(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    move-result-object v19
+    move-result-object v20
 
     if-eqz v1, :cond_9
 
-    .line 305
+    .line 401
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
 
     move-result-object v8
@@ -1893,11 +2810,11 @@
     :goto_6
     invoke-static {v8}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Double;)D
 
-    move-result-wide v20
+    move-result-wide v21
 
     if-eqz v1, :cond_a
 
-    .line 306
+    .line 402
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     move-result-object v1
@@ -1912,46 +2829,46 @@
     move-result-object v1
 
     :cond_b
-    move-object/from16 v22, v1
+    move-object/from16 v23, v1
 
-    const/16 v23, 0x0
+    const/16 v24, 0x0
 
-    const-wide/16 v24, 0x0
+    const-wide/16 v25, 0x0
 
-    const/16 v26, 0x0
+    const/16 v27, 0x0
 
-    const/16 v27, 0x1c
+    const/16 v28, 0x1c
 
-    const/16 v28, 0x0
+    const/16 v29, 0x0
 
-    .line 304
-    invoke-static/range {v19 .. v28}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->copy$default(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;DLcom/iMe/storage/domain/model/wallet/token/FiatValue;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;DLcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    .line 400
+    invoke-static/range {v20 .. v29}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->copy$default(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;DLcom/iMe/storage/domain/model/wallet/token/FiatValue;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;DLcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v1
 
-    .line 308
+    .line 404
     iget-object v8, v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 309
+    .line 405
     sget v11, Lorg/telegram/messenger/R$string;->staking_details_profit_value:I
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    .line 310
+    .line 406
     invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalanceShortText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
     move-result-object v12
 
     aput-object v12, v7, v9
 
-    .line 311
+    .line 407
     invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getDollarsBalanceText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
     move-result-object v1
 
     aput-object v1, v7, v10
 
-    .line 308
+    .line 404
     invoke-interface {v8, v11, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -1962,9 +2879,9 @@
     const-string v1, "-"
 
     :goto_7
-    move-object/from16 v17, v1
+    move-object/from16 v18, v1
 
-    .line 318
+    .line 414
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getHasEnoughFunds()Z
 
     move-result v1
@@ -1974,11 +2891,11 @@
     sget-object v1, Lcom/iMe/model/staking/StakingProgrammeStatus;->SHORT_OF_FUNDS:Lcom/iMe/model/staking/StakingProgrammeStatus;
 
     :goto_8
-    move-object/from16 v19, v1
+    move-object/from16 v20, v1
 
     goto :goto_9
 
-    .line 319
+    .line 415
     :cond_d
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getEndsAtISO()Ljava/lang/String;
 
@@ -2000,7 +2917,7 @@
 
     goto :goto_8
 
-    .line 320
+    .line 416
     :cond_e
     sget-object v1, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
@@ -2014,13 +2931,13 @@
 
     goto :goto_8
 
-    .line 321
+    .line 417
     :cond_f
     sget-object v1, Lcom/iMe/model/staking/StakingProgrammeStatus;->CLOSED:Lcom/iMe/model/staking/StakingProgrammeStatus;
 
     goto :goto_8
 
-    .line 324
+    .line 420
     :goto_9
     invoke-virtual/range {p0 .. p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2030,25 +2947,46 @@
 
     check-cast v11, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
-    .line 325
+    .line 421
+    invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/TokenItem;->getNetworkId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getNetworkById(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Network;->getExplorer()Lcom/iMe/storage/domain/model/crypto/Network$Explorer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Network$Explorer;->getLogoUrl()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 422
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/TokenItem;->getAvatarUrl()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v13
 
-    .line 326
+    .line 423
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/iMe/model/wallet/crypto/TokenItem;->getName()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    .line 327
+    .line 424
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance$Companion;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
@@ -2057,9 +2995,9 @@
 
     invoke-virtual {v1, v7}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance$Companion;->createEmptyBalanceFor(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    move-result-object v20
+    move-result-object v21
 
-    .line 328
+    .line 425
     invoke-virtual {v4}, Ljava/math/BigDecimal;->doubleValue()D
 
     move-result-wide v7
@@ -2070,11 +3008,11 @@
 
     invoke-static {v1}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Double;)D
 
-    move-result-wide v21
+    move-result-wide v22
 
     if-eqz v3, :cond_10
 
-    .line 329
+    .line 426
     invoke-virtual {v3}, Lcom/iMe/storage/domain/model/staking/StakingValues;->getAsFiat()Lcom/iMe/storage/domain/model/wallet/token/FiatValue;
 
     move-result-object v1
@@ -2089,30 +3027,30 @@
     move-result-object v1
 
     :cond_11
-    move-object/from16 v23, v1
+    move-object/from16 v24, v1
 
-    const/16 v24, 0x0
+    const/16 v25, 0x0
 
-    const-wide/16 v25, 0x0
+    const-wide/16 v26, 0x0
 
-    const/16 v27, 0x0
+    const/16 v28, 0x0
 
-    const/16 v28, 0x1c
+    const/16 v29, 0x1c
 
-    const/16 v29, 0x0
+    const/16 v30, 0x0
 
-    .line 327
-    invoke-static/range {v20 .. v29}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->copy$default(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;DLcom/iMe/storage/domain/model/wallet/token/FiatValue;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;DLcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
+    .line 424
+    invoke-static/range {v21 .. v30}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->copy$default(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;DLcom/iMe/storage/domain/model/wallet/token/FiatValue;Lcom/iMe/storage/domain/model/wallet/token/FiatValue;DLcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v1
 
-    .line 330
+    .line 427
     invoke-static {v1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalanceShortText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v15
 
-    .line 324
-    invoke-interface/range {v11 .. v19}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->setupStakingDetailsScreen(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcom/iMe/model/staking/StakingProgrammeStatus;)V
+    .line 420
+    invoke-interface/range {v11 .. v20}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->setupStakingDetailsScreen(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLcom/iMe/model/staking/StakingProgrammeStatus;)V
 
     return-void
 .end method
@@ -2120,12 +3058,11 @@
 .method private final setupWithTokenType(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
     .locals 1
 
-    .line 269
+    .line 344
     instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
     if-eqz v0, :cond_0
 
-    .line 270
     check-cast p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;->getStakingDetails()Lcom/iMe/model/staking/StakingDetailsItem;
@@ -2136,8 +3073,24 @@
 
     goto :goto_0
 
-    .line 272
+    .line 345
     :cond_0
+    instance-of v0, p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    if-eqz v0, :cond_1
+
+    check-cast p1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;->getCryptoBoxInfo()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->setupCryptoBoxDetailsScreen(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
+
+    goto :goto_0
+
+    .line 346
+    :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2150,6 +3103,23 @@
     return-void
 .end method
 
+.method private static final showCryptoBoxRefreshConfirmation$lambda$3(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
+    .locals 1
+
+    const-string/jumbo v0, "this$0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "$boxId"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 176
+    invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->refreshCryptoBoxMessage(Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method private static final startAccountLevelDialog$lambda$0(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;)V
     .locals 1
 
@@ -2157,7 +3127,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 87
+    .line 105
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p0
@@ -2184,12 +3154,12 @@
         }
     .end annotation
 
-    .line 208
+    .line 278
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->accountLevelInformation:Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;
 
     if-eqz v0, :cond_0
 
-    .line 210
+    .line 280
     invoke-interface {p1, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     goto :goto_0
@@ -2197,7 +3167,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 212
+    .line 282
     invoke-direct {p0, v0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadAccountLevelInfo(ZLcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     :goto_0
@@ -2207,7 +3177,7 @@
 .method private final startBinanceReceiveScreen(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 1
 
-    .line 466
+    .line 709
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2230,7 +3200,7 @@
 .method private final startBinanceReplenishScreen(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 2
 
-    .line 456
+    .line 689
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
@@ -2239,6 +3209,7 @@
 
     if-nez v0, :cond_0
 
+    .line 690
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -2253,7 +3224,7 @@
 
     goto :goto_0
 
-    .line 460
+    .line 695
     :cond_0
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -2280,6 +3251,7 @@
     :cond_1
     if-eqz v1, :cond_2
 
+    .line 696
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -2290,7 +3262,7 @@
 
     goto :goto_0
 
-    .line 461
+    .line 700
     :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2298,6 +3270,7 @@
 
     check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
+    .line 701
     invoke-static {p1}, Lcom/iMe/storage/domain/utils/extentions/TokenExtKt;->toTokenDetailed(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
@@ -2306,24 +3279,26 @@
 
     move-result-object v1
 
+    .line 702
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resolveNetworkIdForReplenish(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
 
     move-result-object p1
 
+    .line 700
     invoke-interface {v0, v1, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openBinanceReplenishScreen(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;)V
 
     :goto_0
     return-void
 .end method
 
-.method private static final startBinanceReplenishScreen$lambda$12(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
+.method private static final startBinanceReplenishScreen$lambda$26(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
     .locals 1
 
     const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 457
+    .line 691
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -2338,7 +3313,7 @@
 .method private final startBinanceSwapScreen(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
     .locals 2
 
-    .line 448
+    .line 681
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getBinanceUserInfo()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
@@ -2364,7 +3339,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 449
+    .line 682
     :goto_0
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -2384,7 +3359,7 @@
 
     goto :goto_1
 
-    .line 450
+    .line 683
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2403,92 +3378,89 @@
 .end method
 
 .method private final startBuyScreen(Ljava/lang/String;)V
-    .locals 8
+    .locals 4
 
-    .line 259
+    .line 329
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
-    .line 260
-    new-instance v7, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;
+    .line 330
+    new-instance v1, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;
 
+    .line 331
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v2
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->Companion:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol$Companion;
+    .line 332
+    sget-object v3, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;->Companion:Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol$Companion;
 
-    invoke-virtual {v1, p1}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol$Companion;->resolveByNetworkId(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
+    invoke-virtual {v3, p1}, Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol$Companion;->resolveByNetworkId(Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;
 
     move-result-object v3
 
-    const/4 v4, 0x0
+    .line 330
+    invoke-direct {v1, v2, v3, p1}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/lang/String;)V
 
-    const/4 v5, 0x4
-
-    const/4 v6, 0x0
-
-    move-object v1, v7
-
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 259
-    invoke-interface {v0, v7}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openBuyScreen(Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
+    .line 329
+    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openBuyScreen(Lcom/iMe/navigation/wallet/coordinator/args/TokenBuyCoordinatorArgs;)V
 
     return-void
 .end method
 
-.method private final startReceiveScreen(Ljava/lang/String;)V
-    .locals 3
+.method private final startReceiveScreen(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
 
-    .line 249
-    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    .line 319
+    invoke-static {p2}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getNetworkById(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/Network;
 
-    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    move-result-object p2
+
+    invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/Network;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    move-result-object p2
+
+    .line 320
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+
+    invoke-interface {v0, p2}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     move-result-object v0
 
-    .line 250
-    iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v1, v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/storage/domain/model/crypto/Wallet;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
 
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
-
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    const-string v1, ""
+    const-string v0, ""
 
-    .line 251
+    .line 321
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+    check-cast v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
-    .line 253
-    invoke-static {v1, v0}, Lcom/iMe/utils/helper/wallet/CryptoHelper;->formatAddressQR(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
+    .line 323
+    invoke-static {v0, p2}, Lcom/iMe/utils/helper/wallet/CryptoHelper;->formatAddressQR(Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p2
 
-    .line 251
-    invoke-interface {v2, v1, v0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openReceiveScreen(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .line 321
+    invoke-interface {v1, v0, p2, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->openReceiveScreen(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2496,7 +3468,7 @@
 .method private final startSendScreen(Ljava/lang/String;)V
     .locals 2
 
-    .line 265
+    .line 339
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2535,20 +3507,20 @@
 .method public final changeRankVisibility(Z)V
     .locals 3
 
-    .line 97
+    .line 115
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 98
+    .line 116
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;->changeLevelVisibility(Z)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 99
+    .line 117
     invoke-static {p1}, Lcom/iMe/utils/extentions/rx/SchedulersExtKt;->scheduleIO(Lio/reactivex/Observable;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 100
+    .line 118
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2578,7 +3550,7 @@
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -2587,19 +3559,104 @@
 
     const/4 v1, 0x1
 
-    .line 106
+    .line 124
     invoke-static {p0, p1, v0, v1, v0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
+    return-void
+.end method
+
+.method public final onCopyCryptoBoxNameClick()V
+    .locals 4
+
+    .line 160
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
+
+    instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    if-eqz v1, :cond_0
+
+    .line 161
+    check-cast v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;->getCryptoBoxInfo()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;
+
+    move-result-object v0
+
+    .line 162
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v3, 0x20
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;->getId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->actionCopyToClipboard(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onCryptoBoxInfoClick()V
+    .locals 2
+
+    .line 181
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
+
+    instance-of v0, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    if-eqz v0, :cond_0
+
+    .line 182
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+
+    iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
+
+    check-cast v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    invoke-virtual {v1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;->getCryptoBoxInfo()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->showCryptoBoxConditionsDialog(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
+
+    :cond_0
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 0
 
-    .line 157
+    .line 198
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->onDestroy()V
 
-    .line 158
+    .line 199
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->onDetachViewState()V
 
     return-void
@@ -2618,7 +3675,7 @@
 .method protected onFirstViewAttach()V
     .locals 3
 
-    .line 146
+    .line 187
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2631,18 +3688,18 @@
 
     invoke-virtual {p0, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->attachViewState(Lcom/iMe/manager/wallet/create/WalletCreateManagerView;)V
 
-    .line 147
+    .line 188
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->setupWithTokenType(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)V
 
-    .line 148
+    .line 189
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->setupHorizontalActionButtons()V
 
-    .line 149
+    .line 190
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->listenEvents()V
 
-    .line 151
+    .line 192
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     instance-of v0, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
@@ -2653,7 +3710,7 @@
 
     goto :goto_0
 
-    .line 152
+    .line 193
     :cond_0
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
@@ -2691,7 +3748,7 @@
 .method public final openTokenInformationScreen()V
     .locals 2
 
-    .line 138
+    .line 156
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2710,20 +3767,30 @@
 .method public final reload()V
     .locals 2
 
-    .line 130
+    .line 148
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
-    instance-of v0, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
+    .line 149
+    instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 131
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->loadStakingDetailedMetadata()V
 
     goto :goto_0
 
-    .line 133
+    .line 150
     :cond_0
+    instance-of v0, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
+
+    if-eqz v0, :cond_1
+
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->reloadCryptoBoxInfo()V
+
+    goto :goto_0
+
+    .line 151
+    :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2741,7 +3808,7 @@
 .method public final selectTab(I)V
     .locals 1
 
-    .line 82
+    .line 100
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2756,7 +3823,7 @@
 .method public final setupNavigationRouter()V
     .locals 1
 
-    .line 78
+    .line 96
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2768,10 +3835,76 @@
     return-void
 .end method
 
+.method public final showCryptoBoxRefreshConfirmation(Ljava/lang/String;)V
+    .locals 7
+
+    const-string v0, "boxId"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 168
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
+
+    .line 169
+    new-instance v1, Lcom/iMe/model/dialog/DialogModel;
+
+    .line 170
+    iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v3, Lorg/telegram/messenger/R$string;->cryptobox_refresh_message_confirmation_title:I
+
+    invoke-interface {v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 171
+    iget-object v3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->cryptobox_refresh_message_confirmation_description:I
+
+    invoke-interface {v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 172
+    iget-object v4, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v5, Lorg/telegram/messenger/R$string;->common_cancel:I
+
+    invoke-interface {v4, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 173
+    iget-object v5, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v6, Lorg/telegram/messenger/R$string;->cryptobox_details_restore:I
+
+    invoke-interface {v5, v6}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 169
+    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 168
+    new-instance v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda5;
+
+    invoke-direct {v2, p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda5;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;Ljava/lang/String;)V
+
+    invoke-interface {v0, v1, v2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->showConfirmationDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+
+    return-void
+.end method
+
 .method public final startAccountLevelDialog()V
     .locals 1
 
-    .line 86
+    .line 104
     new-instance v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;)V
@@ -2798,7 +3931,7 @@
 .method public final startStakingConditionsDialog()V
     .locals 2
 
-    .line 92
+    .line 110
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     instance-of v0, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
@@ -2807,7 +3940,7 @@
 
     return-void
 
-    .line 93
+    .line 111
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2835,17 +3968,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 110
+    .line 128
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
-    .line 111
+    .line 129
     new-instance v1, Lcom/iMe/model/statistic/StatisticDiagramModel;
 
-    .line 112
+    .line 130
     invoke-static {p1}, Lcom/iMe/utils/extentions/model/wallet/BinanceTokenBalanceExtKt;->getTotalBalanceText(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)Ljava/lang/String;
 
     move-result-object v2
@@ -2854,10 +3987,10 @@
 
     new-array v3, v3, [Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
 
-    .line 114
+    .line 132
     new-instance v4, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
 
-    .line 115
+    .line 133
     iget-object v5, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v6, Lorg/telegram/messenger/R$string;->binance_token_details_distribution_spot:I
@@ -2866,10 +3999,10 @@
 
     move-result-object v5
 
-    .line 116
+    .line 134
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_blue:I
 
-    .line 117
+    .line 135
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getSpot()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
 
     move-result-object v7
@@ -2878,17 +4011,17 @@
 
     move-result-wide v7
 
-    .line 114
+    .line 132
     invoke-direct {v4, v5, v6, v7, v8}, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;-><init>(Ljava/lang/String;ID)V
 
     const/4 v5, 0x0
 
     aput-object v4, v3, v5
 
-    .line 119
+    .line 137
     new-instance v4, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;
 
-    .line 120
+    .line 138
     iget-object v5, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v6, Lorg/telegram/messenger/R$string;->binance_token_details_distribution_margin:I
@@ -2897,10 +4030,10 @@
 
     move-result-object v5
 
-    .line 121
+    .line 139
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_golden:I
 
-    .line 122
+    .line 140
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getMargin()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;
 
     move-result-object p1
@@ -2909,22 +4042,22 @@
 
     move-result-wide v7
 
-    .line 119
+    .line 137
     invoke-direct {v4, v5, v6, v7, v8}, Lcom/iMe/model/statistic/StatisticDiagramModel$DiagramItem;-><init>(Ljava/lang/String;ID)V
 
     const/4 p1, 0x1
 
     aput-object v4, v3, p1
 
-    .line 113
+    .line 131
     invoke-static {v3}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 111
+    .line 129
     invoke-direct {v1, v2, p1}, Lcom/iMe/model/statistic/StatisticDiagramModel;-><init>(Ljava/lang/String;Ljava/util/List;)V
 
-    .line 110
+    .line 128
     invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->showStatisticDialog(Lcom/iMe/model/statistic/StatisticDiagramModel;)V
 
     return-void

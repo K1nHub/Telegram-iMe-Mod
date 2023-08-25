@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/feature/profile/ProfilePresenter;",
+        "Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$23\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n129#3,5:564\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$23\n*L\n240#1:553\n242#1:554,5\n243#1:559,5\n244#1:564,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$23\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n129#2,5:864\n129#2,5:869\n129#2,5:874\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$23\n*L\n353#1:864,5\n354#1:869,5\n355#1:874,5\n*E\n"
 .end annotation
 
 
@@ -61,33 +61,16 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/profile/ProfilePresenter;
-    .locals 8
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;
+    .locals 3
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<name for destructuring parameter 0>"
+    const-string v0, "it"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 44
-    const-class v0, Lcom/iMe/feature/profile/ProfileData;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    move-object v1, p2
-
-    check-cast v1, Lcom/iMe/feature/profile/ProfileData;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -102,110 +85,54 @@
 
     move-result-object p2
 
-    .line 242
-    move-object v2, p2
-
-    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 353
+    check-cast p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
+    const-class v1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v1
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object v1
 
-    .line 243
-    move-object v3, p2
-
-    check-cast v3, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
+    .line 354
+    check-cast v1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
+    const-class v2, Lcom/iMe/storage/domain/interactor/notification/PushNotificationInteractor;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object p2
+    move-result-object v2
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 243
-    move-object v4, p2
-
-    check-cast v4, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
-
-    .line 133
-    const-class p2, Lcom/iMe/feature/socialMedias/SocialUseCase;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 243
-    move-object v6, p2
-
-    check-cast v6, Lcom/iMe/feature/socialMedias/SocialUseCase;
-
-    .line 133
-    const-class p2, Lcom/iMe/feature/profile/ProfileUseCase;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 244
-    move-object v5, p2
-
-    check-cast v5, Lcom/iMe/feature/profile/ProfileUseCase;
-
-    .line 133
-    const-class p2, Lcom/iMe/feature/profile/GroupMembershipUseCase;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 244
-    move-object v7, p1
+    .line 355
+    check-cast p1, Lcom/iMe/storage/domain/interactor/notification/PushNotificationInteractor;
 
-    check-cast v7, Lcom/iMe/feature/profile/GroupMembershipUseCase;
+    .line 352
+    new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;
 
-    .line 241
-    new-instance p1, Lcom/iMe/feature/profile/ProfilePresenter;
+    invoke-direct {v0, p1, p2, v1}, Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;-><init>(Lcom/iMe/storage/domain/interactor/notification/PushNotificationInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
-    move-object v0, p1
-
-    invoke-direct/range {v0 .. v7}, Lcom/iMe/feature/profile/ProfilePresenter;-><init>(Lcom/iMe/feature/profile/ProfileData;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;Lcom/iMe/feature/profile/ProfileUseCase;Lcom/iMe/feature/socialMedias/SocialUseCase;Lcom/iMe/feature/profile/GroupMembershipUseCase;)V
-
-    return-object p1
+    return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 240
+    .line 351
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$23;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/profile/ProfilePresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$23;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;
 
     move-result-object p1
 

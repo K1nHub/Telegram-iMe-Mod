@@ -239,6 +239,17 @@
     return-void
 .end method
 
+.method public clearImage()V
+    .locals 1
+
+    .line 170
+    iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
+
+    return-void
+.end method
+
 .method protected createImageReciever()Lorg/telegram/messenger/ImageReceiver;
     .locals 1
 

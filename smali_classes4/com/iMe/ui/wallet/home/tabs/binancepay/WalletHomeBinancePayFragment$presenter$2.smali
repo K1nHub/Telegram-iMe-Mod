@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeBinancePayFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,265:1\n56#2,6:266\n*S KotlinDebug\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2\n*L\n49#1:266,6\n*E\n"
+    value = "SMAP\nWalletHomeBinancePayFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,292:1\n56#2,6:293\n*S KotlinDebug\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2\n*L\n56#1:293,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
     .locals 5
 
-    .line 49
+    .line 56
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;
 
     new-instance v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2$1;
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 49
+    .line 56
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 49
+    .line 55
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object v0

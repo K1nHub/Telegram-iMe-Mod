@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda3;->f$1:Ljava/io/File;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$4e77DrJDayjfWtONnGySG8k0bLg(Landroid/content/Context;Ljava/io/File;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$to0Ode3HrxntGqP8BC92cL3nb34(Landroid/content/Context;Ljava/io/File;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -8,30 +8,34 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:J
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;
+.field public final synthetic f$2:Z
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
-.field public final synthetic f$4:Z
+.field public final synthetic f$4:J
+
+.field public final synthetic f$5:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$TL_userStories;JLorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$1:Z
+    iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$1:J
 
-    iput-object p3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;
+    iput-boolean p4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$2:Z
 
-    iput-object p4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$3:Lorg/telegram/tgnet/TLObject;
+    iput-object p5, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$3:Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
-    iput-boolean p5, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$4:Z
+    iput-wide p6, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$4:J
+
+    iput-object p8, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$5:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -39,19 +43,21 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$1:Z
+    iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$1:J
 
-    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;
+    iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$2:Z
 
-    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$3:Lorg/telegram/tgnet/TLObject;
+    iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$3:Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
-    iget-boolean v4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$4:Z
+    iget-wide v5, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$4:J
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$xYvpF9J32JZlzs27WnbZ3Wkz-bI(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
+    iget-object v7, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;->f$5:Lorg/telegram/tgnet/TLObject;
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$4FNmOZh6FTO5RgX9CnpG2Bzg9sg(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$TL_userStories;JLorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

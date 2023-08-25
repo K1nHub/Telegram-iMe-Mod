@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda7;->f$0:Lkotlin/jvm/internal/Ref$BooleanRef;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->$r8$lambda$zx_xRNmHFcWb_Oe4J1OstXXU698(Lkotlin/jvm/internal/Ref$BooleanRef;)V
+    invoke-static {v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->$r8$lambda$hrDoUzu5kjdB4fu1ZEkqdUifCTk(Lkotlin/jvm/internal/Ref$BooleanRef;)V
 
     return-void
 .end method

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/PopupWindow$OnDismissListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final onDismiss()V
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda25;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$jA9H_TQt8tMAuz4giXqYpgy-d9s(Lorg/telegram/ui/Stories/recorder/PaintView;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$Roa7YIGLuTKMeWLuEkzCXsB3lNM(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

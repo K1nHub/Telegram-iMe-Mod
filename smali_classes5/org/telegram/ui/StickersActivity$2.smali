@@ -61,6 +61,8 @@
 
     move-result v1
 
+    add-int/lit8 v1, v1, -0x1
+
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I

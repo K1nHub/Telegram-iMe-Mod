@@ -7,14 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFeeView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FeeView.kt\ncom/iMe/ui/custom/FeeView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,173:1\n56#2,6:174\n*S KotlinDebug\n*F\n+ 1 FeeView.kt\ncom/iMe/ui/custom/FeeView\n*L\n31#1:174,6\n*E\n"
+    value = "SMAP\nFeeView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FeeView.kt\ncom/iMe/ui/custom/FeeView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,157:1\n56#2,6:158\n*S KotlinDebug\n*F\n+ 1 FeeView.kt\ncom/iMe/ui/custom/FeeView\n*L\n31#1:158,6\n*E\n"
 .end annotation
 
 
@@ -29,18 +23,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$TPkRiaw2B2Tsv0JRLCIAQ5oEn9Q(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$0tAbAHYrm3abXHHpzlDnMzxMqro(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/ui/custom/FeeView;->configureCustomFeeChooser$lambda$2$lambda$1(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/iMe/ui/custom/FeeView;->configureCustomFeeChooser$lambda$2$lambda$1(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$rA8BfL9skrNq8hjmQx7XvIlO04I(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$5qUr7ZcBURVGOgj2UwsABLXagJ4(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;Ljava/util/List;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/custom/FeeView;->configureDefaultFeeChooser$lambda$4$lambda$3(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/custom/FeeView;->configureDefaultFeeChooser$lambda$4$lambda$3(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;Ljava/util/List;Landroid/view/View;)V
 
     return-void
 .end method
@@ -177,14 +171,14 @@
     return-void
 .end method
 
-.method private final configureCustomFeeChooser(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;)V
+.method private final configureCustomFeeChooser(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;)V
     .locals 2
 
     .line 87
     iget-object v0, p0, Lcom/iMe/ui/custom/FeeView;->binding:Lorg/telegram/messenger/databinding/ForkContentFeeBinding;
 
     .line 88
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;->getSelectedFee()Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;->getSelectedFee()Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
     move-result-object v1
 
@@ -197,14 +191,14 @@
 
     new-instance v1, Lcom/iMe/ui/custom/FeeView$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p1}, Lcom/iMe/ui/custom/FeeView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;)V
+    invoke-direct {v1, p1}, Lcom/iMe/ui/custom/FeeView$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
 
-.method private static final configureCustomFeeChooser$lambda$2$lambda$1(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
+.method private static final configureCustomFeeChooser$lambda$2$lambda$1(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$type"
@@ -212,7 +206,7 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 89
-    invoke-virtual {p0}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;->getOnChooseFee()Lkotlin/jvm/functions/Function0;
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;->getOnChooseFee()Lkotlin/jvm/functions/Function0;
 
     move-result-object p0
 
@@ -221,15 +215,15 @@
     return-void
 .end method
 
-.method private final configureDefaultFeeChooser(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;)V
+.method private final configureDefaultFeeChooser(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;)V
     .locals 3
 
     .line 94
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getTransactionParams()Lcom/iMe/storage/domain/model/crypto/TransactionParams;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;->getTransactionParams()Lcom/iMe/storage/domain/model/crypto/TransactionParams;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v1
 
@@ -241,7 +235,7 @@
     iget-object v1, p0, Lcom/iMe/ui/custom/FeeView;->binding:Lorg/telegram/messenger/databinding/ForkContentFeeBinding;
 
     .line 97
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getSelectedFee()Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;->getSelectedFee()Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
     move-result-object v2
 
@@ -254,14 +248,14 @@
 
     new-instance v2, Lcom/iMe/ui/custom/FeeView$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0, p1, v0}, Lcom/iMe/ui/custom/FeeView$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;)V
+    invoke-direct {v2, p0, p1, v0}, Lcom/iMe/ui/custom/FeeView$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;Ljava/util/List;)V
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
 
-.method private static final configureDefaultFeeChooser$lambda$4$lambda$3(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
+.method private static final configureDefaultFeeChooser$lambda$4$lambda$3(Lcom/iMe/ui/custom/FeeView;Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;Ljava/util/List;Landroid/view/View;)V
     .locals 1
 
     const-string p3, "this$0"
@@ -277,12 +271,12 @@
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 100
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getModel()Lcom/iMe/model/dialog/DialogModel;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;->getModel()Lcom/iMe/model/dialog/DialogModel;
 
     move-result-object p3
 
     .line 102
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getSelectedFee()Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;->getSelectedFee()Lcom/iMe/model/wallet/crypto/send/fee/GasPriceItem;
 
     move-result-object v0
 
@@ -291,7 +285,7 @@
     move-result v0
 
     .line 103
-    invoke-virtual {p1}, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;->getOnFeeSelectedAction()Lkotlin/jvm/functions/Function1;
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;->getOnFeeSelectedAction()Lkotlin/jvm/functions/Function1;
 
     move-result-object p1
 
@@ -301,29 +295,29 @@
     return-void
 .end method
 
-.method private final configureViewForType(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+.method private final configureViewForType(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
     .locals 1
 
     .line 81
-    instance-of v0, p1, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;
+    instance-of v0, p1, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;
+    check-cast p1, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;
 
-    invoke-direct {p0, p1}, Lcom/iMe/ui/custom/FeeView;->configureCustomFeeChooser(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Custom;)V
+    invoke-direct {p0, p1}, Lcom/iMe/ui/custom/FeeView;->configureCustomFeeChooser(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Custom;)V
 
     goto :goto_0
 
     .line 82
     :cond_0
-    instance-of v0, p1, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;
+    instance-of v0, p1, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;
 
     if-eqz v0, :cond_1
 
-    check-cast p1, Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;
+    check-cast p1, Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;
 
-    invoke-direct {p0, p1}, Lcom/iMe/ui/custom/FeeView;->configureDefaultFeeChooser(Lcom/iMe/ui/custom/FeeView$ChooseFeeType$Default;)V
+    invoke-direct {p0, p1}, Lcom/iMe/ui/custom/FeeView;->configureDefaultFeeChooser(Lcom/iMe/model/wallet/crypto/send/fee/FeeType$Default;)V
 
     :cond_1
     :goto_0
@@ -655,7 +649,27 @@
     return-object v0
 .end method
 
-.method public final init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/base/mvp/MvpBottomSheet;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+.method public final init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
+    .locals 1
+
+    const-string v0, "baseFragment"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "type"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 45
+    iput-object p1, p0, Lcom/iMe/ui/custom/FeeView;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    .line 46
+    invoke-direct {p0, p2}, Lcom/iMe/ui/custom/FeeView;->configureViewForType(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
+
+    return-void
+.end method
+
+.method public final init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/base/mvp/MvpBottomSheet;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
     .locals 1
 
     const-string v0, "baseFragment"
@@ -677,27 +691,7 @@
     iput-object p2, p0, Lcom/iMe/ui/custom/FeeView;->mvpBottomSheet:Lcom/iMe/ui/base/mvp/MvpBottomSheet;
 
     .line 52
-    invoke-direct {p0, p3}, Lcom/iMe/ui/custom/FeeView;->configureViewForType(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
-
-    return-void
-.end method
-
-.method public final init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
-    .locals 1
-
-    const-string v0, "baseFragment"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "type"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 45
-    iput-object p1, p0, Lcom/iMe/ui/custom/FeeView;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    .line 46
-    invoke-direct {p0, p2}, Lcom/iMe/ui/custom/FeeView;->configureViewForType(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-direct {p0, p3}, Lcom/iMe/ui/custom/FeeView;->configureViewForType(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     return-void
 .end method

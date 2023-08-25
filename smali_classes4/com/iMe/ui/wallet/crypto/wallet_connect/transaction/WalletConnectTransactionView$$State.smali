@@ -278,13 +278,13 @@
     return-void
 .end method
 
-.method public showFee(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+.method public showFee(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
     .locals 3
 
     .line 52
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$ShowFeeCommand;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$ShowFeeCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State$ShowFeeCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView$$State;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     .line 53
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
@@ -326,7 +326,7 @@
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;
 
     .line 60
-    invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionView;->showFee(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     goto :goto_0
 

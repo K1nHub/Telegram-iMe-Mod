@@ -29,7 +29,7 @@
     .line 470
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
-    const-string v0, "onLoadMoreError"
+    const-string/jumbo v0, "onLoadMoreError"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

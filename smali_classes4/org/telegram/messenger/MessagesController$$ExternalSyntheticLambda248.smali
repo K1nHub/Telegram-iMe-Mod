@@ -2,46 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda248;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda248;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda248;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda248;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda248;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda248;->f$0:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Lorg/telegram/messenger/MessagesController$DialogFilter;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda248;->f$0:Lorg/telegram/tgnet/TLObject;
 
-    check-cast p2, Lorg/telegram/messenger/MessagesController$DialogFilter;
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$5ETQP9Ye5lpT2IIAaUZSbzXkqv0(Lorg/telegram/tgnet/TLObject;)V
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$hXf_Mp0FPgr6I1qwnIVwcNnqfTA(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/messenger/MessagesController$DialogFilter;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

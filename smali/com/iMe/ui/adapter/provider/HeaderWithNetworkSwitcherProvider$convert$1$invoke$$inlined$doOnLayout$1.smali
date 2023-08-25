@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 HeaderWithNetworkSwitcherProvider.kt\ncom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$1\n*L\n1#1,432:1\n72#2:433\n73#2:435\n34#3:434\n*E\n"
+    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 HeaderWithNetworkSwitcherProvider.kt\ncom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$1\n*L\n1#1,432:1\n72#2:433\n73#2:435\n31#3:434\n*E\n"
 .end annotation
 
 
@@ -49,7 +49,7 @@
     .line 52
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 34
+    .line 31
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider$convert$1$invoke$$inlined$doOnLayout$1;->this$0:Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
 
     invoke-virtual {p1}, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;->getOnNetworkViewLayoutAction()Lcom/iMe/fork/utils/Callbacks$Callback;

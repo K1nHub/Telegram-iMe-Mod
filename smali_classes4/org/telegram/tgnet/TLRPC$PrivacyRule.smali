@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 8298
+    .line 8299
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 8310
+    .line 8311
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowChatParticipants;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 8316
+    .line 8317
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 8313
+    .line 8314
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowChatParticipants;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 8325
+    .line 8326
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 8304
+    .line 8305
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowContacts;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 8328
+    .line 8329
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 8307
+    .line 8308
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 8322
+    .line 8323
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 8319
+    .line 8320
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowAll;
 
@@ -99,7 +99,7 @@
 
     goto :goto_1
 
-    .line 8332
+    .line 8333
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -129,7 +129,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 8335
+    .line 8336
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

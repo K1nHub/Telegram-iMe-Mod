@@ -2,32 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveStartedListener;
+.implements Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;
+    iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraMoveStarted(I)V
+.method public final onCameraMove()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;
+    iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->$r8$lambda$Howk00L7sKzTlLTJxM5wsi2QTLo(Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;I)V
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method

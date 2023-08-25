@@ -22,13 +22,9 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;",
+        "Lcom/iMe/ui/wallet/settings/appearance/networks/adapter/WalletNetworksSettingsRecycleAdapter;",
         ">;"
     }
-.end annotation
-
-.annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$21\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$21\n*L\n103#1:121,5\n*E\n"
 .end annotation
 
 
@@ -61,50 +57,34 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;
-    .locals 2
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/settings/appearance/networks/adapter/WalletNetworksSettingsRecycleAdapter;
+    .locals 1
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
+    const-string p1, "it"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
-    new-instance p2, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;
+    .line 163
+    new-instance p1, Lcom/iMe/ui/wallet/settings/appearance/networks/adapter/WalletNetworksSettingsRecycleAdapter;
 
-    .line 133
-    const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    invoke-direct {p1}, Lcom/iMe/ui/wallet/settings/appearance/networks/adapter/WalletNetworksSettingsRecycleAdapter;-><init>()V
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    .line 103
-    invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
-
-    return-object p2
+    return-object p1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 103
+    .line 163
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$21;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$21;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/settings/appearance/networks/adapter/WalletNetworksSettingsRecycleAdapter;
 
     move-result-object p1
 

@@ -89,7 +89,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "okhttp.OkHttpClient"
+    const-string/jumbo v2, "okhttp.OkHttpClient"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -104,7 +104,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "okhttp.Http2"
+    const-string/jumbo v2, "okhttp.Http2"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -119,13 +119,13 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "okhttp.TaskRunner"
+    const-string/jumbo v2, "okhttp.TaskRunner"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v1, "okhttp3.mockwebserver.MockWebServer"
+    const-string/jumbo v1, "okhttp3.mockwebserver.MockWebServer"
 
-    const-string v2, "okhttp.MockWebServer"
+    const-string/jumbo v2, "okhttp.MockWebServer"
 
     .line 66
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

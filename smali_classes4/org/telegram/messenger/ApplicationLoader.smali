@@ -1035,7 +1035,7 @@
 
     if-eq v0, v1, :cond_0
 
-    const-string v1, "network online mismatch"
+    const-string/jumbo v1, "network online mismatch"
 
     .line 661
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

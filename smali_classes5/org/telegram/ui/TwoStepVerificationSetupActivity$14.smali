@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
     .locals 0
 
-    .line 1163
+    .line 1169
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 7
 
-    .line 1176
+    .line 1182
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Z
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 1179
+    .line 1185
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -61,7 +61,7 @@
 
     if-nez v0, :cond_8
 
-    .line 1180
+    .line 1186
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -72,7 +72,7 @@
 
     move-result-object p1
 
-    .line 1181
+    .line 1187
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -95,7 +95,7 @@
 
     if-lez v0, :cond_3
 
-    .line 1182
+    .line 1188
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -108,7 +108,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1183
+    .line 1189
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -129,7 +129,7 @@
 
     if-eq p1, v0, :cond_a
 
-    .line 1184
+    .line 1190
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -146,7 +146,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    .line 1185
+    .line 1191
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -157,7 +157,7 @@
 
     invoke-virtual {p1, v2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setProgress(FZ)V
 
-    .line 1186
+    .line 1192
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -168,7 +168,7 @@
 
     goto/16 :goto_0
 
-    .line 1189
+    .line 1195
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -180,7 +180,7 @@
 
     if-eq p1, v0, :cond_a
 
-    .line 1190
+    .line 1196
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -191,7 +191,7 @@
 
     if-eq p1, v0, :cond_2
 
-    .line 1191
+    .line 1197
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -208,7 +208,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    .line 1192
+    .line 1198
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -219,7 +219,7 @@
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1193
+    .line 1199
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -230,7 +230,7 @@
 
     invoke-virtual {p1, v2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setProgress(FZ)V
 
-    .line 1194
+    .line 1200
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -241,7 +241,7 @@
 
     goto/16 :goto_0
 
-    .line 1196
+    .line 1202
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -257,7 +257,7 @@
 
     if-ge p1, v4, :cond_a
 
-    .line 1197
+    .line 1203
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -270,7 +270,7 @@
 
     goto/16 :goto_0
 
-    .line 1203
+    .line 1209
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -305,7 +305,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 1204
+    .line 1210
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -325,7 +325,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    .line 1205
+    .line 1211
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -336,7 +336,7 @@
 
     invoke-virtual {p1, v2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setProgress(FZ)V
 
-    .line 1206
+    .line 1212
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -347,7 +347,7 @@
 
     goto/16 :goto_0
 
-    .line 1208
+    .line 1214
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -361,7 +361,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1209
+    .line 1215
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -372,7 +372,7 @@
 
     if-eq p1, v0, :cond_7
 
-    .line 1210
+    .line 1216
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -389,7 +389,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
-    .line 1211
+    .line 1217
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -400,7 +400,7 @@
 
     invoke-virtual {p1, v4, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 1213
+    .line 1219
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -412,7 +412,7 @@
 
     goto :goto_0
 
-    .line 1216
+    .line 1222
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -426,7 +426,7 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 1218
+    .line 1224
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -460,7 +460,7 @@
 
     move-result p1
 
-    .line 1219
+    .line 1225
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)[Lorg/telegram/ui/Components/RLottieDrawable;
@@ -483,7 +483,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1220
+    .line 1226
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -499,12 +499,12 @@
     :catch_0
     move-exception p1
 
-    .line 1222
+    .line 1228
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 1224
+    .line 1230
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -516,14 +516,14 @@
 
     if-ne v0, v1, :cond_a
 
-    .line 1225
+    .line 1231
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result p1
 
     if-lez p1, :cond_a
 
-    .line 1226
+    .line 1232
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$14;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3600(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Z)V

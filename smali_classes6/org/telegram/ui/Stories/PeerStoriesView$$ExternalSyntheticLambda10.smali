@@ -5,27 +5,17 @@
 .implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda10;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda10;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda10;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda10;->INSTANCE:Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda10;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 0
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$UWr8OT4htKLx2EkaCHPBOfoYm-A(Landroid/view/View;)V
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$g5gnmmkLeAt5Zlcc9XAEwYIR2bQ(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/view/View;)V
 
     return-void
 .end method

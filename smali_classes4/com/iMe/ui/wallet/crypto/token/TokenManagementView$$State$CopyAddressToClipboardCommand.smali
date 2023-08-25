@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 317
+    .line 316
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "copyAddressToClipboard"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 319
+    .line 318
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$CopyAddressToClipboardCommand;->address:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V
     .locals 1
 
-    .line 324
+    .line 323
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$CopyAddressToClipboardCommand;->address:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;->copyAddressToClipboard(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 313
+    .line 312
     check-cast p1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$CopyAddressToClipboardCommand;->apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V

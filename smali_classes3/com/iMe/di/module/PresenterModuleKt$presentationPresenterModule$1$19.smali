@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;",
+        "Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$19\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$19\n*L\n218#1:553\n220#1:554,5\n221#1:559,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$19\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n129#2,5:864\n129#2,5:869\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$19\n*L\n312#1:864,5\n313#1:869,5\n*E\n"
 .end annotation
 
 
@@ -61,31 +61,19 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;
-    .locals 4
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;
+    .locals 3
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<name for destructuring parameter 0>"
+    const-string v0, "it"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
-    const-class v0, Lcom/iMe/model/wallet/notification/NotificationItem;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/iMe/model/wallet/notification/NotificationItem;
+    .line 311
+    new-instance p2, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;
 
     .line 133
     const-class v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -100,11 +88,10 @@
 
     move-result-object v0
 
-    .line 220
     check-cast v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
+    const-class v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -112,42 +99,25 @@
 
     invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object v2
-
-    .line 220
-    check-cast v2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
-
-    .line 133
-    const-class v3, Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
     move-result-object p1
 
-    .line 221
     check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 219
-    new-instance v1, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;
+    .line 311
+    invoke-direct {p2, v0, p1}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
-    invoke-direct {v1, p2, v2, v0, p1}, Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;-><init>(Lcom/iMe/model/wallet/notification/NotificationItem;Lcom/iMe/storage/domain/gateway/TelegramGateway;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
-
-    return-object v1
+    return-object p2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 218
+    .line 310
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$19;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$19;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;
 
     move-result-object p1
 

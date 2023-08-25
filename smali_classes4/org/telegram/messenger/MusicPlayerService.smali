@@ -1007,7 +1007,7 @@
     .line 320
     invoke-virtual {v1, v5}, Landroid/app/Service;->stopForeground(Z)V
 
-    const-string v5, "notification"
+    const-string/jumbo v5, "notification"
 
     .line 321
     invoke-virtual {v1, v5}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1742,8 +1742,6 @@
     :cond_23
     :goto_16
     return-void
-
-    nop
 
     :array_0
     .array-data 4

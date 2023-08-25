@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
     .locals 0
 
-    .line 942
+    .line 1195
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$FastScrollAdapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/ui/Stories/recorder/GalleryListView$1;)V
     .locals 0
 
-    .line 942
+    .line 1195
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1007
+    .line 1260
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->getTotalItemsCount()I
 
     move-result v0
@@ -61,7 +61,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 996
+    .line 1249
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->getItemCount()I
 
     move-result v0
@@ -96,10 +96,10 @@
 
     add-int/lit8 p1, p1, -0x2
 
-    .line 1013
+    .line 1266
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$900(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1600(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v0
 
@@ -120,11 +120,11 @@
 
     goto :goto_0
 
-    .line 1018
+    .line 1271
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1000(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1700(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v0
 
@@ -132,10 +132,10 @@
 
     if-ltz p1, :cond_2
 
-    .line 1019
+    .line 1272
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -145,10 +145,10 @@
 
     if-ge p1, v0, :cond_2
 
-    .line 1020
+    .line 1273
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -158,7 +158,7 @@
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 1021
+    .line 1274
     iget-wide v4, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftDate:J
 
     div-long/2addr v4, v2
@@ -169,11 +169,11 @@
 
     return-object p1
 
-    .line 1023
+    .line 1276
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -183,7 +183,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 1025
+    .line 1278
     :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
@@ -200,7 +200,7 @@
 
     if-ge p1, v0, :cond_5
 
-    .line 1026
+    .line 1279
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
@@ -213,20 +213,20 @@
 
     if-eqz p1, :cond_5
 
-    .line 1028
+    .line 1281
     iget-wide v4, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->dateTaken:J
 
-    .line 1029
+    .line 1282
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1c
 
     if-gt p1, v0, :cond_4
 
-    .line 1030
+    .line 1283
     div-long/2addr v4, v2
 
-    .line 1032
+    .line 1285
     :cond_4
     invoke-static {v4, v5, v1}, Lorg/telegram/messenger/LocaleController;->formatYearMont(JZ)Ljava/lang/String;
 
@@ -241,12 +241,12 @@
 .method public getPositionForScrollProgress(Lorg/telegram/ui/Components/RecyclerListView;F[I)V
     .locals 5
 
-    .line 1051
+    .line 1304
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->getTotalItemsCount()I
 
     move-result v0
 
-    .line 1052
+    .line 1305
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v1
@@ -289,7 +289,7 @@
 
     int-to-float v0, v0
 
-    .line 1054
+    .line 1307
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -312,7 +312,7 @@
 
     mul-int v2, v0, v1
 
-    .line 1056
+    .line 1309
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->y:I
@@ -333,7 +333,7 @@
 
     const/4 v4, 0x0
 
-    .line 1057
+    .line 1310
     invoke-static {v4, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -352,12 +352,12 @@
 
     mul-float/2addr p2, v0
 
-    .line 1060
+    .line 1313
     invoke-static {p2}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
-    .line 1063
+    .line 1316
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -376,7 +376,7 @@
 
     aput v2, p3, v4
 
-    .line 1064
+    .line 1317
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getPaddingTop()I
 
     move-result p1
@@ -403,12 +403,12 @@
 .method public getScrollProgress(Lorg/telegram/ui/Components/RecyclerListView;)F
     .locals 4
 
-    .line 1069
+    .line 1322
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->getTotalItemsCount()I
 
     move-result v0
 
-    .line 1070
+    .line 1323
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v1
@@ -451,7 +451,7 @@
 
     int-to-float v0, v0
 
-    .line 1072
+    .line 1325
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -474,7 +474,7 @@
 
     mul-int/2addr v0, v1
 
-    .line 1074
+    .line 1327
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v1, Landroid/graphics/Point;->y:I
@@ -485,7 +485,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 1075
+    .line 1328
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->computeVerticalScrollOffset()I
 
     move-result v2
@@ -524,7 +524,7 @@
 .method public getTotalItemsCount()I
     .locals 2
 
-    .line 1040
+    .line 1293
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
@@ -540,11 +540,11 @@
 
     move-result v0
 
-    .line 1041
+    .line 1294
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$900(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1600(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v1
 
@@ -554,20 +554,20 @@
 
     goto :goto_1
 
-    .line 1043
+    .line 1296
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1000(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1700(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 1044
+    .line 1297
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -585,7 +585,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 946
+    .line 1199
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -608,14 +608,14 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 5
 
-    .line 965
+    .line 1218
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 967
+    .line 1220
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;
@@ -643,7 +643,7 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 969
+    .line 1222
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;
@@ -671,16 +671,16 @@
     :cond_3
     move v0, v2
 
-    .line 970
+    .line 1223
     :goto_2
     invoke-virtual {p1, v3, v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->setRounding(ZZ)V
 
     sub-int/2addr p2, v1
 
-    .line 973
+    .line 1226
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$900(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1600(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v0
 
@@ -688,10 +688,10 @@
 
     if-nez p2, :cond_4
 
-    .line 975
+    .line 1228
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object p2
 
@@ -703,7 +703,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -720,11 +720,11 @@
 
     goto :goto_3
 
-    .line 979
+    .line 1232
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1000(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1700(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
 
     move-result v0
 
@@ -732,10 +732,10 @@
 
     if-ltz p2, :cond_6
 
-    .line 980
+    .line 1233
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -745,10 +745,10 @@
 
     if-ge p2, v0, :cond_6
 
-    .line 981
+    .line 1234
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -762,11 +762,11 @@
 
     return-void
 
-    .line 984
+    .line 1237
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -776,7 +776,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 987
+    .line 1240
     :cond_7
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
@@ -795,7 +795,7 @@
 
     goto :goto_4
 
-    .line 990
+    .line 1243
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -817,11 +817,11 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 2
+    .locals 3
 
     if-nez p2, :cond_0
 
-    .line 954
+    .line 1207
     new-instance p1, Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
@@ -839,7 +839,7 @@
 
     if-ne p2, p1, :cond_1
 
-    .line 956
+    .line 1209
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     new-instance p2, Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;
@@ -848,21 +848,21 @@
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
+    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    iget-boolean v1, v1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onlyPhotos:Z
+    iget-boolean v2, v2, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onlyPhotos:Z
 
-    invoke-direct {p2, v0, v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;-><init>(Landroid/content/Context;Z)V
+    invoke-direct {p2, v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;Z)V
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1102(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;)Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$1802(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;)Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 958
+    .line 1211
     :cond_1
     new-instance p1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;
 
@@ -874,7 +874,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;-><init>(Landroid/content/Context;)V
 
-    .line 960
+    .line 1213
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

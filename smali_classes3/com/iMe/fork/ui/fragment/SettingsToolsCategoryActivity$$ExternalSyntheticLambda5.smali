@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
+.field public final synthetic f$1:Lorg/telegram/ui/Components/RecyclerListView;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;)V
+.method public synthetic constructor <init>(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda5;->f$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
+
+    iput-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-void
 .end method
@@ -41,11 +45,21 @@
 .end method
 
 .method public final onItemClick(Landroid/view/View;IFF)V
-    .locals 1
+    .locals 6
 
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda5;->f$0:Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$xrqXWUSskb8R14Ns1hopR5w65JU(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;Landroid/view/View;IFF)V
+    iget-object v1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-static/range {v0 .. v5}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$vIieEueCetrTDHmOS00oOoLgvDc(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;IFF)V
 
     return-void
 .end method

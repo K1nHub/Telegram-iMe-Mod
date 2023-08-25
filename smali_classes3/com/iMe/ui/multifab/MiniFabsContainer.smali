@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,114:1\n1855#2,2:115\n216#3,4:117\n216#3,4:121\n216#3,4:125\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n*L\n41#1:115,2\n51#1:117,4\n55#1:121,4\n69#1:125,4\n*E\n"
+    value = "SMAP\nMiniFabsContainer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,114:1\n1855#2,2:115\n229#3,4:117\n229#3,4:121\n229#3,4:125\n*S KotlinDebug\n*F\n+ 1 MiniFabsContainer.kt\ncom/iMe/ui/multifab/MiniFabsContainer\n*L\n41#1:115,2\n51#1:117,4\n55#1:121,4\n69#1:125,4\n*E\n"
 .end annotation
 
 
@@ -376,7 +376,7 @@
 .method public final setScale(F)V
     .locals 4
 
-    .line 216
+    .line 229
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -386,7 +386,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 217
+    .line 230
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -409,7 +409,7 @@
 .method public final show(Z)V
     .locals 5
 
-    .line 216
+    .line 229
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -419,7 +419,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 217
+    .line 230
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -491,7 +491,7 @@
 .method public final updateColors()V
     .locals 8
 
-    .line 216
+    .line 229
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -501,7 +501,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 217
+    .line 230
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2

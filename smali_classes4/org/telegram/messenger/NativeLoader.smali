@@ -212,7 +212,7 @@
 
     const-class v2, Landroid/content/pm/ApplicationInfo;
 
-    const-string v3, "nativeLibraryDir"
+    const-string/jumbo v3, "nativeLibraryDir"
 
     invoke-virtual {v2, v3}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 

@@ -15,11 +15,11 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$stories_AllStories;
     .locals 1
 
-    const v0, -0x7c61fbd8
+    const v0, 0x1158fe3e
 
     if-eq p1, v0, :cond_1
 
-    const v0, 0x47e0a07e
+    const v0, 0x519d899e
 
     if-eq p1, v0, :cond_0
 
@@ -28,16 +28,16 @@
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;-><init>()V
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;-><init>()V
 
     :goto_0
     if-nez v0, :cond_3

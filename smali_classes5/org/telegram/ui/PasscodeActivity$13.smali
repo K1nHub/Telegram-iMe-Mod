@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Z)V
     .locals 0
 
-    .line 1125
+    .line 1131
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$13;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/PasscodeActivity$13;->val$visible:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1135
+    .line 1141
     iget-boolean v0, p0, Lorg/telegram/ui/PasscodeActivity$13;->val$visible:Z
 
     if-nez v0, :cond_0
 
-    .line 1136
+    .line 1142
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$13;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$1800(Lorg/telegram/ui/PasscodeActivity;)Landroid/widget/FrameLayout;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1138
+    .line 1144
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$13;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -65,7 +65,7 @@
 
     if-ne v0, p1, :cond_1
 
-    .line 1139
+    .line 1145
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$13;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     const/4 v0, 0x0
@@ -79,12 +79,12 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1128
+    .line 1134
     iget-boolean p1, p0, Lorg/telegram/ui/PasscodeActivity$13;->val$visible:Z
 
     if-eqz p1, :cond_0
 
-    .line 1129
+    .line 1135
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$13;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$1800(Lorg/telegram/ui/PasscodeActivity;)Landroid/widget/FrameLayout;

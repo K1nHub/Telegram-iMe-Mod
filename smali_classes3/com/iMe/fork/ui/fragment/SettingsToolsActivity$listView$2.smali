@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 26
+    .line 28
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$listView$2;->invoke()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 26
+    .line 28
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$listView$2;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->access$initListView(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)Lorg/telegram/ui/Components/RecyclerListView;

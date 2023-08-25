@@ -144,54 +144,54 @@
 .method private constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)V
     .locals 0
 
-    .line 340
+    .line 746
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 343
+    .line 749
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allEmojis:Ljava/util/HashMap;
 
-    .line 344
+    .line 750
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packsBySet:Ljava/util/HashMap;
 
-    .line 346
+    .line 752
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
-    .line 347
+    .line 753
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
-    .line 348
+    .line 754
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packs:Ljava/util/ArrayList;
 
-    .line 349
+    .line 755
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
-    .line 350
+    .line 756
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -200,24 +200,24 @@
 
     const/4 p1, 0x0
 
-    .line 352
+    .line 758
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 353
+    .line 759
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
-    .line 582
+    .line 991
     new-instance p1, Ljava/util/HashSet;
 
     invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchDocumentIds:Ljava/util/HashSet;
 
-    .line 584
+    .line 993
     new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)V
@@ -230,62 +230,62 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$1;)V
     .locals 0
 
-    .line 340
+    .line 746
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)V
 
     return-void
 .end method
 
-.method static synthetic access$1100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;Ljava/lang/String;)V
+.method static synthetic access$3100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
     .locals 0
 
-    .line 340
+    .line 746
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
+
+    return-object p0
+.end method
+
+.method static synthetic access$3800(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;Ljava/lang/String;)V
+    .locals 0
+
+    .line 746
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->updateItems(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic access$1502(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$4102(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 340
+    .line 746
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->query:Ljava/lang/String;
 
     return-object p1
 .end method
 
-.method static synthetic access$1600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Ljava/lang/Runnable;
+.method static synthetic access$4200(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 340
+    .line 746
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchRunnable:Ljava/lang/Runnable;
 
     return-object p0
 .end method
 
-.method static synthetic access$2600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Ljava/util/ArrayList;
+.method static synthetic access$5000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 340
+    .line 746
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
-.method static synthetic access$2700(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Ljava/util/ArrayList;
+.method static synthetic access$5100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 340
+    .line 746
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documentIds:Ljava/util/ArrayList;
-
-    return-object p0
-.end method
-
-.method static synthetic access$300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
-    .locals 0
-
-    .line 340
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
     return-object p0
 .end method
@@ -293,7 +293,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/String;Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;Ljava/lang/String;)V
     .locals 6
 
-    .line 592
+    .line 1001
     iget-object p4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->query:Ljava/lang/String;
 
     invoke-static {p1, p4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -304,7 +304,7 @@
 
     return-void
 
-    .line 596
+    .line 1005
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->query:Ljava/lang/String;
 
@@ -316,7 +316,7 @@
 
     move v0, p4
 
-    .line 597
+    .line 1006
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -324,13 +324,13 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 599
+    .line 1008
     :try_start_0
     new-instance v1, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
     invoke-direct {v1}, Lorg/telegram/messenger/MediaDataController$KeywordResult;-><init>()V
 
-    .line 600
+    .line 1009
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -345,7 +345,7 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
 
-    .line 601
+    .line 1010
     invoke-virtual {p3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -355,31 +355,31 @@
 
     goto :goto_0
 
-    .line 605
+    .line 1014
     :cond_1
     iput p4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 606
+    .line 1015
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 607
+    .line 1016
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documentIds:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 608
+    .line 1017
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
     invoke-virtual {p1}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 609
+    .line 1018
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 610
+    .line 1019
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     const/4 v0, 0x1
@@ -388,14 +388,14 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 611
+    .line 1020
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 612
+    .line 1021
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documentIds:Ljava/util/ArrayList;
 
     const-wide/16 v2, 0x0
@@ -406,21 +406,21 @@
 
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 613
+    .line 1022
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    iget p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->currentType:I
+    iget p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->currentType:I
 
     if-nez p1, :cond_5
 
-    .line 614
+    .line 1023
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchDocumentIds:Ljava/util/HashSet;
 
     invoke-virtual {p1}, Ljava/util/HashSet;->clear()V
 
     move p1, p4
 
-    .line 615
+    .line 1024
     :goto_1
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -428,14 +428,14 @@
 
     if-ge p1, p2, :cond_3
 
-    .line 616
+    .line 1025
     invoke-virtual {p3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
-    .line 617
+    .line 1026
     iget-object v2, p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
 
     if-eqz v2, :cond_2
@@ -448,7 +448,7 @@
 
     if-nez v2, :cond_2
 
-    .line 618
+    .line 1027
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allEmojis:Ljava/util/HashMap;
 
     iget-object p2, p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
@@ -461,7 +461,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 620
+    .line 1029
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchDocumentIds:Ljava/util/HashSet;
 
     invoke-virtual {v2, p2}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
@@ -471,7 +471,7 @@
 
     goto :goto_1
 
-    .line 624
+    .line 1033
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documentIds:Ljava/util/ArrayList;
 
@@ -481,7 +481,7 @@
 
     move p1, p4
 
-    .line 625
+    .line 1034
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchDocumentIds:Ljava/util/HashSet;
 
@@ -491,7 +491,7 @@
 
     if-ge p1, p2, :cond_4
 
-    .line 626
+    .line 1035
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -500,7 +500,7 @@
 
     goto :goto_2
 
-    .line 628
+    .line 1037
     :cond_4
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
@@ -516,7 +516,7 @@
 
     goto :goto_6
 
-    .line 630
+    .line 1039
     :cond_5
     invoke-virtual {p2}, Lorg/telegram/messenger/MediaDataController;->getAllStickers()Ljava/util/HashMap;
 
@@ -524,7 +524,7 @@
 
     move p2, p4
 
-    .line 631
+    .line 1040
     :goto_3
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -532,14 +532,14 @@
 
     if-ge p2, v2, :cond_9
 
-    .line 632
+    .line 1041
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
-    .line 633
+    .line 1042
     iget-object v2, v2, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -550,7 +550,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 634
+    .line 1043
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
@@ -562,7 +562,7 @@
     :cond_6
     move v3, p4
 
-    .line 637
+    .line 1046
     :goto_4
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -570,7 +570,7 @@
 
     if-ge v3, v4, :cond_8
 
-    .line 638
+    .line 1047
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -579,7 +579,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 639
+    .line 1048
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -588,12 +588,12 @@
 
     if-nez v5, :cond_7
 
-    .line 640
+    .line 1049
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 641
+    .line 1050
     iget v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     add-int/2addr v4, v0
@@ -611,7 +611,7 @@
 
     goto :goto_3
 
-    .line 646
+    .line 1055
     :cond_9
     :goto_6
     new-instance p1, Ljava/lang/StringBuilder;
@@ -640,7 +640,7 @@
 
     move p3, p4
 
-    .line 647
+    .line 1056
     :goto_7
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
@@ -650,7 +650,7 @@
 
     if-ge p3, v2, :cond_d
 
-    .line 648
+    .line 1057
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -661,14 +661,14 @@
 
     if-eqz v2, :cond_c
 
-    .line 649
+    .line 1058
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-nez v3, :cond_a
 
     goto :goto_8
 
-    .line 652
+    .line 1061
     :cond_a
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -694,7 +694,7 @@
 
     move-result-object v3
 
-    .line 653
+    .line 1062
     invoke-virtual {v3, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
@@ -721,7 +721,7 @@
 
     if-eqz v3, :cond_c
 
-    .line 654
+    .line 1063
     :cond_b
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
@@ -729,38 +729,38 @@
 
     move-result v3
 
-    .line 655
+    .line 1064
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 658
+    .line 1067
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
     iget v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     invoke-virtual {v4, v5, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 659
+    .line 1068
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 660
+    .line 1069
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     add-int/2addr v3, v0
 
     iput v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 663
+    .line 1072
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 664
+    .line 1073
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
@@ -779,7 +779,7 @@
 
     goto :goto_7
 
-    .line 668
+    .line 1077
     :cond_d
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documentIds:Ljava/util/ArrayList;
 
@@ -809,7 +809,7 @@
 
     if-eqz p1, :cond_f
 
-    .line 669
+    .line 1078
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     add-int/2addr p2, v0
@@ -819,37 +819,37 @@
     :cond_f
     if-nez p1, :cond_10
 
-    .line 672
+    .line 1081
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchId:I
 
     add-int/2addr p1, v0
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchId:I
 
-    .line 674
+    .line 1083
     :cond_10
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->query:Ljava/lang/String;
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->activeQuery:Ljava/lang/String;
 
-    .line 675
+    .line 1084
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 677
+    .line 1086
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->listView:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
 
-    invoke-static {p1, p4, p4}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->access$900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;II)V
+    invoke-static {p1, p4, p4}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->access$3600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;II)V
 
-    .line 678
+    .line 1087
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->searchField:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;
 
     invoke-virtual {p1, p4}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->showProgress(Z)V
 
-    .line 679
+    .line 1088
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->tabsStrip:Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -862,15 +862,15 @@
 .method private synthetic lambda$new$1()V
     .locals 13
 
-    .line 585
+    .line 994
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->query:Ljava/lang/String;
 
-    .line 586
+    .line 995
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$2400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$4800(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
 
     move-result v1
 
@@ -878,12 +878,12 @@
 
     move-result-object v2
 
-    .line 587
+    .line 996
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getCurrentKeyboardLanguage()[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 588
+    .line 997
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->lastLang:[Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -894,13 +894,13 @@
 
     if-nez v1, :cond_1
 
-    .line 589
+    .line 998
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$2500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$4900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
 
     move-result v1
 
@@ -910,7 +910,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/MediaDataController;->fetchNewEmojiKeywords([Ljava/lang/String;)V
 
-    .line 591
+    .line 1000
     :cond_1
     iput-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->lastLang:[Ljava/lang/String;
 
@@ -934,12 +934,12 @@
 
     const/16 v0, 0x32
 
-    .line 680
+    .line 1089
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
 
-    .line 591
+    .line 1000
     invoke-virtual/range {v2 .. v12}, Lorg/telegram/messenger/MediaDataController;->getEmojiSuggestions([Ljava/lang/String;Ljava/lang/String;ZLorg/telegram/messenger/MediaDataController$KeywordResultCallback;Ljava/util/concurrent/CountDownLatch;ZZZZLjava/lang/Integer;)V
 
     return-void
@@ -952,7 +952,7 @@
 
     move-object/from16 v1, p1
 
-    .line 365
+    .line 771
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->query:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -961,26 +961,26 @@
 
     if-eqz v1, :cond_0
 
-    .line 367
+    .line 773
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->searchField:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->showProgress(Z)V
 
-    .line 368
+    .line 774
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->tabsStrip:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EmojiTabsStrip;->showSelected(Z)V
 
-    .line 369
+    .line 775
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchRunnable:Ljava/lang/Runnable;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 370
+    .line 776
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v2, 0x64
@@ -989,7 +989,7 @@
 
     return-void
 
-    .line 374
+    .line 780
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
@@ -997,17 +997,17 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EmojiTabsStrip;->showSelected(Z)V
 
-    .line 375
+    .line 781
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->searchRunnable:Ljava/lang/Runnable;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 377
+    .line 783
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$1900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$4400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
 
     move-result v1
 
@@ -1015,102 +1015,118 @@
 
     move-result-object v1
 
-    .line 379
+    .line 785
     iput v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 380
+    .line 786
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 381
+    .line 787
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documentIds:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 382
+    .line 788
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
     invoke-virtual {v4}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 383
+    .line 789
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 384
+    .line 790
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 385
+    .line 791
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     add-int/2addr v4, v3
 
     iput v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 386
+    .line 792
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 387
+    .line 793
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packs:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 388
+    .line 795
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    iget v4, v4, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->currentType:I
+    iget v6, v4, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->currentType:I
 
-    if-ne v4, v3, :cond_4
+    if-ne v6, v3, :cond_4
+
+    .line 796
+    iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
+
+    iget-object v4, v4, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
+
+    iget-object v4, v4, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->locationSticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 797
+    iget v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
+
+    add-int/2addr v4, v3
+
+    iput v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     const/4 v4, 0x2
 
-    .line 389
+    .line 799
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/MediaDataController;->getRecentStickers(I)Ljava/util/ArrayList;
 
     move-result-object v4
 
     if-eqz v4, :cond_2
 
-    .line 390
+    .line 800
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v6
 
     if-nez v6, :cond_2
 
-    .line 391
+    .line 801
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->faveSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     if-nez v6, :cond_1
 
-    .line 392
+    .line 802
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;-><init>()V
 
     iput-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->faveSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 394
+    .line 804
     :cond_1
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->faveSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     iput-object v4, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
-    .line 395
+    .line 805
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_stickerSet;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_stickerSet;-><init>()V
 
     iput-object v4, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 396
+    .line 806
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->faveSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -1125,14 +1141,14 @@
 
     iput-object v6, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
 
-    .line 397
+    .line 807
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->faveSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 400
+    .line 810
     :cond_2
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/MediaDataController;->getRecentStickers(I)Ljava/util/ArrayList;
 
@@ -1140,39 +1156,39 @@
 
     if-eqz v4, :cond_4
 
-    .line 401
+    .line 811
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v6
 
     if-nez v6, :cond_4
 
-    .line 402
+    .line 812
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->recentSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     if-nez v6, :cond_3
 
-    .line 403
+    .line 813
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;-><init>()V
 
     iput-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->recentSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 405
+    .line 815
     :cond_3
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->recentSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     iput-object v4, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
-    .line 406
+    .line 816
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_stickerSet;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_stickerSet;-><init>()V
 
     iput-object v4, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 407
+    .line 817
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->recentSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -1187,21 +1203,21 @@
 
     iput-object v6, v4, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
 
-    .line 408
+    .line 818
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->recentSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 411
+    .line 821
     :cond_4
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
-    .line 412
+    .line 822
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    iget v6, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->currentType:I
+    iget v6, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->currentType:I
 
     if-nez v6, :cond_5
 
@@ -1212,7 +1228,7 @@
     :cond_5
     move v6, v2
 
-    .line 411
+    .line 821
     :goto_0
     invoke-virtual {v1, v6}, Lorg/telegram/messenger/MediaDataController;->getStickerSets(I)Ljava/util/ArrayList;
 
@@ -1222,7 +1238,7 @@
 
     move v4, v2
 
-    .line 417
+    .line 826
     :goto_1
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
@@ -1232,7 +1248,7 @@
 
     if-ge v4, v6, :cond_8
 
-    .line 418
+    .line 827
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1241,33 +1257,33 @@
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    .line 421
+    .line 830
     iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
     iget v8, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     invoke-virtual {v7, v8, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 422
+    .line 831
     iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 423
+    .line 832
     iget v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     add-int/2addr v7, v3
 
     iput v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 426
+    .line 835
     iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     iget-object v8, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 427
+    .line 836
     iget v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     iget-object v8, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
@@ -1280,64 +1296,64 @@
 
     iput v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 429
+    .line 838
     new-instance v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     invoke-direct {v7}, Lorg/telegram/ui/Components/EmojiView$EmojiPack;-><init>()V
 
-    .line 430
+    .line 839
     iget-object v8, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     iput-object v8, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
-    .line 431
+    .line 840
     iget-object v8, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v8, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 432
+    .line 841
     iput-boolean v3, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
-    .line 433
+    .line 842
     iput-boolean v2, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
-    .line 434
+    .line 843
     iput-boolean v3, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 435
+    .line 844
     iput-boolean v3, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->free:Z
 
-    .line 436
+    .line 845
     iget-object v8, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->faveSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     if-ne v6, v8, :cond_6
 
-    .line 437
+    .line 846
     sget v8, Lorg/telegram/messenger/R$drawable;->emoji_tabs_faves:I
 
     iput v8, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->resId:I
 
     goto :goto_2
 
-    .line 438
+    .line 847
     :cond_6
     iget-object v8, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->recentSet:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     if-ne v6, v8, :cond_7
 
-    .line 439
+    .line 848
     sget v8, Lorg/telegram/messenger/R$drawable;->msg_emoji_recent:I
 
     iput v8, v7, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->resId:I
 
-    .line 441
+    .line 850
     :cond_7
     :goto_2
     iget-object v8, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packs:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 443
+    .line 852
     iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1346,15 +1362,15 @@
 
     goto :goto_1
 
-    .line 445
+    .line 854
     :cond_8
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    iget v6, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->currentType:I
+    iget v6, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->currentType:I
 
     if-nez v6, :cond_19
 
-    .line 446
+    .line 855
     invoke-virtual {v1}, Lorg/telegram/messenger/MediaDataController;->getFeaturedEmojiSets()Ljava/util/ArrayList;
 
     move-result-object v6
@@ -1363,7 +1379,7 @@
 
     move v7, v2
 
-    .line 448
+    .line 857
     :goto_3
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -1371,24 +1387,24 @@
 
     if-ge v7, v8, :cond_16
 
-    .line 449
+    .line 858
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
 
-    .line 451
+    .line 860
     instance-of v9, v8, Lorg/telegram/tgnet/TLRPC$TL_stickerSetNoCovered;
 
     if-eqz v9, :cond_9
 
-    .line 452
+    .line 861
     iget-object v9, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v9, v9, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v9}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$2000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
+    invoke-static {v9}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$4500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
 
     move-result v9
 
@@ -1410,30 +1426,30 @@
 
     goto/16 :goto_a
 
-    .line 456
+    .line 865
     :cond_9
     instance-of v9, v8, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
 
     if-eqz v9, :cond_15
 
-    .line 457
+    .line 866
     new-instance v9, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     invoke-direct {v9}, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;-><init>()V
 
-    .line 458
+    .line 867
     iget-object v10, v8, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v10, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
-    .line 459
+    .line 868
     check-cast v8, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
 
     iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;->documents:Ljava/util/ArrayList;
 
     iput-object v8, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
-    .line 460
+    .line 869
     iget-object v8, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packsBySet:Ljava/util/HashMap;
 
     iget-wide v10, v10, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
@@ -1452,14 +1468,14 @@
 
     if-nez v8, :cond_f
 
-    .line 462
+    .line 871
     new-instance v8, Ljava/util/HashMap;
 
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
     move v10, v2
 
-    .line 463
+    .line 872
     :goto_4
     iget-object v11, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -1469,7 +1485,7 @@
 
     if-ge v10, v11, :cond_d
 
-    .line 464
+    .line 873
     iget-object v11, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1482,13 +1498,13 @@
 
     goto :goto_6
 
-    .line 468
+    .line 877
     :cond_a
     invoke-static {v11, v5}, Lorg/telegram/messenger/MessageObject;->findAnimatedEmojiEmoticon(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 469
+    .line 878
     invoke-static {v12}, Lorg/telegram/messenger/Emoji;->parseEmojis(Ljava/lang/CharSequence;)Ljava/util/ArrayList;
 
     move-result-object v12
@@ -1497,7 +1513,7 @@
 
     move v13, v2
 
-    .line 471
+    .line 880
     :goto_5
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
 
@@ -1505,7 +1521,7 @@
 
     if-ge v13, v14, :cond_c
 
-    .line 472
+    .line 881
     invoke-virtual {v12, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v14
@@ -1518,7 +1534,7 @@
 
     move-result-object v14
 
-    .line 473
+    .line 882
     invoke-virtual {v8, v14}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
@@ -1527,14 +1543,14 @@
 
     if-nez v15, :cond_b
 
-    .line 475
+    .line 884
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
     invoke-virtual {v8, v14, v15}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 477
+    .line 886
     :cond_b
     iget-wide v2, v11, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
@@ -1562,7 +1578,7 @@
 
     goto :goto_4
 
-    .line 481
+    .line 890
     :cond_d
     new-instance v2, Ljava/util/ArrayList;
 
@@ -1570,7 +1586,7 @@
 
     iput-object v2, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->packs:Ljava/util/ArrayList;
 
-    .line 482
+    .line 891
     invoke-virtual {v8}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -1592,12 +1608,12 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 483
+    .line 892
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;-><init>()V
 
-    .line 484
+    .line 893
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v10
@@ -1606,7 +1622,7 @@
 
     iput-object v10, v8, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->emoticon:Ljava/lang/String;
 
-    .line 485
+    .line 894
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -1615,14 +1631,14 @@
 
     iput-object v3, v8, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->documents:Ljava/util/ArrayList;
 
-    .line 486
+    .line 895
     iget-object v3, v9, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->packs:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_7
 
-    .line 488
+    .line 897
     :cond_e
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packsBySet:Ljava/util/HashMap;
 
@@ -1641,7 +1657,7 @@
     :cond_f
     move-object v8, v9
 
-    .line 495
+    .line 904
     :cond_10
     iget-object v2, v8, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
@@ -1652,7 +1668,7 @@
     :cond_11
     const/4 v2, 0x0
 
-    .line 498
+    .line 907
     :goto_8
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packs:Ljava/util/ArrayList;
 
@@ -1662,7 +1678,7 @@
 
     if-ge v2, v3, :cond_13
 
-    .line 499
+    .line 908
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packs:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1675,7 +1691,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 500
+    .line 909
     iget-wide v9, v3, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
 
     iget-object v3, v8, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -1703,18 +1719,18 @@
 
     goto :goto_a
 
-    .line 509
+    .line 918
     :cond_14
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 510
+    .line 919
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 513
+    .line 922
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
@@ -1723,12 +1739,12 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 515
+    .line 924
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 516
+    .line 925
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     const/4 v3, 0x1
@@ -1737,14 +1753,14 @@
 
     iput v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 519
+    .line 928
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     iget-object v3, v8, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 520
+    .line 929
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     iget-object v3, v8, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
@@ -1757,38 +1773,38 @@
 
     iput v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
-    .line 522
+    .line 931
     new-instance v2, Lorg/telegram/ui/Components/EmojiView$EmojiPack;
 
     invoke-direct {v2}, Lorg/telegram/ui/Components/EmojiView$EmojiPack;-><init>()V
 
-    .line 523
+    .line 932
     iget-object v3, v8, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     iput-object v3, v2, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->documents:Ljava/util/ArrayList;
 
-    .line 524
+    .line 933
     iget-object v3, v8, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     iput-object v3, v2, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     const/4 v3, 0x0
 
-    .line 525
+    .line 934
     iput-boolean v3, v2, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->installed:Z
 
     const/4 v3, 0x1
 
-    .line 526
+    .line 935
     iput-boolean v3, v2, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->featured:Z
 
-    .line 527
+    .line 936
     iput-boolean v3, v2, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->expanded:Z
 
-    .line 528
+    .line 937
     iput-boolean v3, v2, Lorg/telegram/ui/Components/EmojiView$EmojiPack;->free:Z
 
-    .line 529
+    .line 938
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->packs:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1808,7 +1824,7 @@
 
     const/4 v3, 0x0
 
-    .line 533
+    .line 942
     :goto_b
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
@@ -1818,7 +1834,7 @@
 
     if-ge v2, v4, :cond_18
 
-    .line 535
+    .line 944
     :try_start_0
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
@@ -1858,39 +1874,39 @@
     :goto_c
     if-nez v3, :cond_19
 
-    .line 542
+    .line 951
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetShortName;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetShortName;-><init>()V
 
     const-string v3, "StaticEmoji"
 
-    .line 543
+    .line 952
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->short_name:Ljava/lang/String;
 
     const/4 v3, 0x0
 
-    .line 544
+    .line 953
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/MediaDataController;->getStickerSet(Lorg/telegram/tgnet/TLRPC$InputStickerSet;Z)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     move-result-object v1
 
     if-eqz v1, :cond_19
 
-    .line 546
+    .line 955
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 550
+    .line 959
     :cond_19
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$2102(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;Z)Z
+    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$4602(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;Z)Z
 
-    .line 552
+    .line 961
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->lastAllSetsCount:I
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
@@ -1901,14 +1917,14 @@
 
     if-eq v1, v2, :cond_1e
 
-    .line 553
+    .line 962
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allEmojis:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
     const/4 v3, 0x0
 
-    .line 554
+    .line 963
     :goto_d
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
@@ -1918,7 +1934,7 @@
 
     if-ge v3, v1, :cond_1d
 
-    .line 555
+    .line 964
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1934,7 +1950,7 @@
     :cond_1a
     const/4 v2, 0x0
 
-    .line 559
+    .line 968
     :goto_e
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->packs:Ljava/util/ArrayList;
 
@@ -1944,7 +1960,7 @@
 
     if-ge v2, v4, :cond_1c
 
-    .line 560
+    .line 969
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->packs:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1955,7 +1971,7 @@
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->emoticon:Ljava/lang/String;
 
-    .line 561
+    .line 970
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allEmojis:Ljava/util/HashMap;
 
     invoke-virtual {v6, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1966,7 +1982,7 @@
 
     if-nez v6, :cond_1b
 
-    .line 563
+    .line 972
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allEmojis:Ljava/util/HashMap;
 
     new-instance v7, Ljava/util/ArrayList;
@@ -1977,7 +1993,7 @@
 
     move-object v6, v7
 
-    .line 565
+    .line 974
     :cond_1b
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->packs:Ljava/util/ArrayList;
 
@@ -2001,7 +2017,7 @@
 
     goto :goto_d
 
-    .line 568
+    .line 977
     :cond_1d
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->allStickerSets:Ljava/util/ArrayList;
 
@@ -2014,10 +2030,10 @@
     :cond_1e
     const/4 v1, 0x0
 
-    .line 571
+    .line 980
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->includeNotFound:Z
 
-    .line 572
+    .line 981
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->tabsStrip:Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -2026,10 +2042,10 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EmojiTabsStrip;->updateEmojiPacks(Ljava/util/ArrayList;)V
 
-    .line 573
+    .line 982
     iput-object v5, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->activeQuery:Ljava/lang/String;
 
-    .line 574
+    .line 983
     invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -2040,7 +2056,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 767
+    .line 1182
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->itemsCount:I
 
     return v0
@@ -2055,7 +2071,7 @@
 
     return p1
 
-    .line 756
+    .line 1168
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->includeNotFound:Z
 
@@ -2073,7 +2089,7 @@
 
     return p1
 
-    .line 758
+    .line 1170
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
@@ -2081,13 +2097,43 @@
 
     invoke-virtual {v0, p1, v2}, Landroid/util/SparseIntArray;->get(II)I
 
-    move-result p1
+    move-result v0
 
-    if-ltz p1, :cond_2
+    if-ltz v0, :cond_2
 
     return v1
 
     :cond_2
+    if-ltz p1, :cond_3
+
+    .line 1173
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-ge p1, v0, :cond_3
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->locationSticker:Lorg/telegram/tgnet/TLRPC$Document;
+
+    if-ne p1, v0, :cond_3
+
+    const/4 p1, 0x4
+
+    return p1
+
+    :cond_3
     const/4 p1, 0x2
 
     return p1
@@ -2096,14 +2142,14 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 7
 
-    .line 706
+    .line 1118
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 708
+    .line 1120
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/16 v0, 0x22
@@ -2114,7 +2160,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 709
+    .line 1121
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -2125,7 +2171,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$2300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)F
 
     move-result v1
 
@@ -2142,7 +2188,7 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 711
+    .line 1123
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->positionToSection:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseIntArray;->get(I)I
@@ -2151,7 +2197,7 @@
 
     if-ltz p2, :cond_6
 
-    .line 712
+    .line 1124
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2162,7 +2208,7 @@
 
     goto :goto_2
 
-    .line 715
+    .line 1127
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->stickerSets:Ljava/util/ArrayList;
 
@@ -2174,7 +2220,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 716
+    .line 1128
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-nez p2, :cond_2
@@ -2190,25 +2236,25 @@
     :goto_0
     const-string p2, ""
 
-    .line 717
+    .line 1129
     :goto_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StickerSetNameCell;
 
-    .line 718
+    .line 1130
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->activeQuery:Ljava/lang/String;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_4
 
-    .line 719
+    .line 1131
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Cells/StickerSetNameCell;->setText(Ljava/lang/CharSequence;I)V
 
     goto/16 :goto_5
 
-    .line 721
+    .line 1133
     :cond_4
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -2226,12 +2272,12 @@
 
     if-gez v0, :cond_5
 
-    .line 723
+    .line 1135
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Cells/StickerSetNameCell;->setText(Ljava/lang/CharSequence;I)V
 
     goto/16 :goto_5
 
-    .line 725
+    .line 1137
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->activeQuery:Ljava/lang/String;
 
@@ -2252,7 +2298,7 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 729
+    .line 1141
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2276,7 +2322,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 730
+    .line 1142
     :goto_3
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->documentIds:Ljava/util/ArrayList;
 
@@ -2314,43 +2360,43 @@
 
     return-void
 
-    .line 734
+    .line 1146
     :cond_a
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;
 
-    .line 735
+    .line 1147
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    iget p2, p2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->currentType:I
+    iget p2, p2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->currentType:I
 
     if-nez p2, :cond_c
 
     if-eqz v0, :cond_b
 
-    .line 737
+    .line 1149
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;->setSticker(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 738
+    .line 1150
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;->setEmoji(Lorg/telegram/tgnet/TLRPC$Document;)V
 
     goto :goto_5
 
-    .line 740
+    .line 1152
     :cond_b
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;->setSticker(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 741
+    .line 1153
     invoke-virtual {p1, v5, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;->setEmojiId(J)V
 
     goto :goto_5
 
-    .line 744
+    .line 1156
     :cond_c
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;->setEmoji(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 745
+    .line 1157
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;->setSticker(Lorg/telegram/tgnet/TLRPC$Document;)V
 
     goto :goto_5
@@ -2360,7 +2406,7 @@
 
     if-ne v0, p2, :cond_e
 
-    .line 748
+    .line 1160
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;
@@ -2379,7 +2425,7 @@
 
     if-nez p2, :cond_0
 
-    .line 693
+    .line 1103
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
@@ -2397,7 +2443,7 @@
 
     if-ne p2, p1, :cond_1
 
-    .line 695
+    .line 1105
     new-instance p2, Lorg/telegram/ui/Cells/StickerSetNameCell;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
@@ -2410,7 +2456,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$2200(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$4700(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v1
 
@@ -2426,7 +2472,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 697
+    .line 1107
     new-instance p2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
@@ -2437,7 +2483,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    iget v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->currentType:I
+    iget v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->currentType:I
 
     if-nez v1, :cond_2
 
@@ -2451,8 +2497,26 @@
 
     goto :goto_0
 
-    .line 699
     :cond_3
+    const/4 p1, 0x4
+
+    if-ne p2, p1, :cond_4
+
+    .line 1109
+    new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryLocationComponentCell;
+
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
+
+    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryLocationComponentCell;-><init>(Landroid/content/Context;)V
+
+    goto :goto_2
+
+    .line 1111
+    :cond_4
     new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
@@ -2467,7 +2531,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;)V
 
-    .line 701
+    .line 1113
     :goto_2
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -2479,14 +2543,14 @@
 .method public update()V
     .locals 1
 
-    .line 356
+    .line 762
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->query:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 357
+    .line 763
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->updateItems(Ljava/lang/String;)V
 
     :cond_0

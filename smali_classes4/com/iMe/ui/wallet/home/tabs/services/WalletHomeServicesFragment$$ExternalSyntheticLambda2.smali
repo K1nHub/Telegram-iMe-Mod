@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment;
+.field public final synthetic f$0:Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final didSetColor()V
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment;->$r8$lambda$RSIIGpKVAxfr4kjVnzZ2cSInN70(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesFragment;)V
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
 .end method

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/DialogCell;Z)V
     .locals 0
 
-    .line 228
+    .line 230
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$1;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;-><init>(Z)V
@@ -35,7 +35,7 @@
 .method public onLongPress()V
     .locals 2
 
-    .line 245
+    .line 247
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$1;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/DialogCell;->delegate:Lorg/telegram/ui/Cells/DialogCell$DialogCellDelegate;
@@ -44,7 +44,7 @@
 
     return-void
 
-    .line 248
+    .line 250
     :cond_0
     invoke-interface {v1, v0}, Lorg/telegram/ui/Cells/DialogCell$DialogCellDelegate;->showChatPreview(Lorg/telegram/ui/Cells/DialogCell;)V
 
@@ -54,7 +54,7 @@
 .method public openStory(JLjava/lang/Runnable;)V
     .locals 0
 
-    .line 231
+    .line 233
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$1;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     iget-object p2, p1, Lorg/telegram/ui/Cells/DialogCell;->delegate:Lorg/telegram/ui/Cells/DialogCell$DialogCellDelegate;
@@ -63,7 +63,7 @@
 
     return-void
 
-    .line 234
+    .line 236
     :cond_0
     invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$000(Lorg/telegram/ui/Cells/DialogCell;)I
 
@@ -71,7 +71,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 235
+    .line 237
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$1;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Cells/DialogCell;->delegate:Lorg/telegram/ui/Cells/DialogCell$DialogCellDelegate;
@@ -80,7 +80,7 @@
 
     goto :goto_0
 
-    .line 237
+    .line 239
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$1;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -88,7 +88,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 238
+    .line 240
     invoke-interface {p2, p1, p3}, Lorg/telegram/ui/Cells/DialogCell$DialogCellDelegate;->openStory(Lorg/telegram/ui/Cells/DialogCell;Ljava/lang/Runnable;)V
 
     :cond_2

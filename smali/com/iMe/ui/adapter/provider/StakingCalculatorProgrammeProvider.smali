@@ -188,7 +188,7 @@
     move-result-object v14
 
     .line 46
-    sget v15, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v15, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
@@ -398,7 +398,7 @@
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 69
-    sget v2, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v2, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 

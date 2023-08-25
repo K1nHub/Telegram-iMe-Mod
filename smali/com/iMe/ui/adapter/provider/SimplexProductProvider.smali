@@ -180,7 +180,7 @@
     move-result-object v6
 
     .line 40
-    sget v7, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v7, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 

@@ -12,14 +12,3 @@
     accessFlags = 0x609
     name = "OnRotationGestureListener"
 .end annotation
-
-
-# virtual methods
-.method public abstract onRotation(Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;)V
-.end method
-
-.method public abstract onRotationBegin(Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;)V
-.end method
-
-.method public abstract onRotationEnd(Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;)V
-.end method

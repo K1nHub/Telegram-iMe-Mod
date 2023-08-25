@@ -29,7 +29,22 @@
 
 
 # virtual methods
-.method public abstract getAllWalletBalances(JLjava/lang/String;)Lio/reactivex/Single;
+.method public abstract getBalancesByMultipleNetworks(JLjava/util/List;)Lio/reactivex/Single;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lio/reactivex/Single<",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/data/locale/db/model/wallet/WalletTokenBalanceDb;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getBalancesByNetwork(JLjava/lang/String;)Lio/reactivex/Single;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -62,10 +77,7 @@
 .method public abstract rxDeleteAllByUserId(J)Lio/reactivex/Completable;
 .end method
 
-.method public abstract rxDeleteAllWalletBalances(JLjava/lang/String;)Lio/reactivex/Completable;
-.end method
-
-.method public abstract rxDeleteByNetworks(JLjava/util/List;)Lio/reactivex/Completable;
+.method public abstract rxDeleteByMultipleNetworks(JLjava/util/List;)Lio/reactivex/Completable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -75,4 +87,7 @@
             "Lio/reactivex/Completable;"
         }
     .end annotation
+.end method
+
+.method public abstract rxDeleteByNetwork(JLjava/lang/String;)Lio/reactivex/Completable;
 .end method

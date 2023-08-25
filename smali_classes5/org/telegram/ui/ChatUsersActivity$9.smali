@@ -43,7 +43,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/ui/GroupCreateActivity;)V
     .locals 0
 
-    .line 908
+    .line 909
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$9;->val$fragment:Lorg/telegram/ui/GroupCreateActivity;
@@ -56,14 +56,14 @@
 .method private synthetic lambda$didSelectUsers$0(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 8
 
-    .line 915
+    .line 916
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatUsersActivity;->saveState()Lorg/telegram/ui/ChatUsersActivity$DiffCallback;
 
     move-result-object v0
 
-    .line 916
+    .line 917
     iget-object v1, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ChatUsersActivity;->access$10400(Lorg/telegram/ui/ChatUsersActivity;)Landroidx/collection/LongSparseArray;
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 917
+    .line 918
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
@@ -136,7 +136,7 @@
 
     move-result-object v2
 
-    .line 918
+    .line 919
     :goto_1
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -146,7 +146,7 @@
 
     if-nez v3, :cond_3
 
-    .line 919
+    .line 920
     iget-object v3, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ChatUsersActivity;->access$2200(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
@@ -161,12 +161,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 920
+    .line 921
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_channelParticipant;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_channelParticipant;-><init>()V
 
-    .line 921
+    .line 922
     iget-object v5, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -179,19 +179,19 @@
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->inviter_id:J
 
-    .line 922
+    .line 923
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v5, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 923
+    .line 924
     iget-wide v6, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v6, v5, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 924
+    .line 925
     iget-object v5, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -204,28 +204,28 @@
 
     iput v5, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->date:I
 
-    .line 925
+    .line 926
     invoke-virtual {v1, v4, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 926
+    .line 927
     iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {v2, v4, v5, v3}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
     goto :goto_2
 
-    .line 928
+    .line 929
     :cond_2
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_chatParticipant;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_chatParticipant;-><init>()V
 
-    .line 929
+    .line 930
     iget-wide v5, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
-    .line 930
+    .line 931
     iget-object v5, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -238,15 +238,15 @@
 
     iput-wide v5, v3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->inviter_id:J
 
-    .line 931
+    .line 932
     invoke-virtual {v1, v4, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 932
+    .line 933
     iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {v2, v4, v5, v3}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 935
+    .line 936
     :cond_3
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
@@ -257,7 +257,7 @@
 
     if-ne v1, p1, :cond_4
 
-    .line 936
+    .line 937
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$1600(Lorg/telegram/ui/ChatUsersActivity;)Ljava/util/ArrayList;
@@ -266,7 +266,7 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ChatUsersActivity;->access$10200(Lorg/telegram/ui/ChatUsersActivity;Ljava/util/ArrayList;)V
 
-    .line 938
+    .line 939
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
@@ -294,7 +294,7 @@
         }
     .end annotation
 
-    .line 911
+    .line 912
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$9;->val$fragment:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -305,7 +305,7 @@
 
     return-void
 
-    .line 914
+    .line 915
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
@@ -341,7 +341,7 @@
 .method public needAddBot(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 10
 
-    .line 946
+    .line 947
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$9;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J

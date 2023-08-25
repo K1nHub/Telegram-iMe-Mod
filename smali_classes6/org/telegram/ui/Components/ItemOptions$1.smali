@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ItemOptions;Landroid/content/Context;ILandroid/graphics/Bitmap;FLandroid/graphics/Paint;)V
     .locals 0
 
-    .line 426
+    .line 454
     iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     iput p3, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$dim:I
@@ -51,15 +51,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 429
+    .line 457
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 430
+    .line 458
     iget v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$dim:I
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 432
+    .line 460
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$cachedBitmap:Landroid/graphics/Bitmap;
 
     const/4 v1, 0x0
@@ -84,17 +84,17 @@
 
     if-eqz v0, :cond_2
 
-    .line 433
+    .line 461
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 434
+    .line 462
     iget v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$clipTop:F
 
     cmpg-float v0, v0, v3
 
     if-gez v0, :cond_0
 
-    .line 435
+    .line 463
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
@@ -169,7 +169,7 @@
 
     invoke-virtual {p1, v0, v4, v3, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 437
+    .line 465
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
@@ -189,7 +189,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 439
+    .line 467
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
@@ -198,7 +198,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 440
+    .line 468
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
@@ -267,7 +267,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 441
+    .line 469
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
@@ -276,7 +276,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 443
+    .line 471
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$cachedBitmap:Landroid/graphics/Bitmap;
 
@@ -308,12 +308,12 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 444
+    .line 472
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_0
 
-    .line 445
+    .line 473
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
@@ -337,17 +337,17 @@
 
     if-eqz v0, :cond_5
 
-    .line 446
+    .line 474
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 447
+    .line 475
     iget v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$clipTop:F
 
     cmpg-float v0, v0, v3
 
     if-gez v0, :cond_3
 
-    .line 448
+    .line 476
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1, v0, v4, v3, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 450
+    .line 478
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
@@ -442,7 +442,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 452
+    .line 480
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
@@ -451,7 +451,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 453
+    .line 481
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
@@ -520,7 +520,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 454
+    .line 482
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
@@ -529,7 +529,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 456
+    .line 484
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
@@ -539,7 +539,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 457
+    .line 485
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_5

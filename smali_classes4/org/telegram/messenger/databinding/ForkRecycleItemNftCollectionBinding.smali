@@ -11,25 +11,25 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/FrameLayout;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/FrameLayout;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 0
 
-    .line 51
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 56
     iput-object p1, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;->rootView:Landroid/widget/FrameLayout;
 
     return-void
 .end method
 
 .method public static bind(Landroid/view/View;)Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;
-    .locals 11
+    .locals 12
 
-    .line 89
+    .line 94
     sget v0, Lorg/telegram/messenger/R$id;->card_nft_collection:I
 
-    .line 90
+    .line 95
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -40,10 +40,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 95
+    .line 100
     sget v0, Lorg/telegram/messenger/R$id;->constraint_root:I
 
-    .line 96
+    .line 101
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -54,15 +54,15 @@
 
     if-eqz v5, :cond_0
 
-    .line 101
+    .line 106
     move-object v6, p0
 
     check-cast v6, Landroid/widget/FrameLayout;
 
-    .line 103
+    .line 108
     sget v0, Lorg/telegram/messenger/R$id;->image_arrow:I
 
-    .line 104
+    .line 109
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -73,10 +73,10 @@
 
     if-eqz v7, :cond_0
 
-    .line 109
+    .line 114
     sget v0, Lorg/telegram/messenger/R$id;->image_collection_image:I
 
-    .line 110
+    .line 115
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -87,24 +87,24 @@
 
     if-eqz v8, :cond_0
 
-    .line 115
-    sget v0, Lorg/telegram/messenger/R$id;->text_collection_name:I
+    .line 120
+    sget v0, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
-    .line 116
+    .line 121
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
 
     move-object v9, v1
 
-    check-cast v9, Landroidx/appcompat/widget/AppCompatTextView;
+    check-cast v9, Landroidx/appcompat/widget/AppCompatImageView;
 
     if-eqz v9, :cond_0
 
-    .line 121
-    sget v0, Lorg/telegram/messenger/R$id;->text_collection_size:I
+    .line 126
+    sget v0, Lorg/telegram/messenger/R$id;->text_collection_name:I
 
-    .line 122
+    .line 127
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v1
@@ -115,18 +115,32 @@
 
     if-eqz v10, :cond_0
 
-    .line 127
+    .line 132
+    sget v0, Lorg/telegram/messenger/R$id;->text_collection_size:I
+
+    .line 133
+    invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Landroidx/appcompat/widget/AppCompatTextView;
+
+    if-eqz v11, :cond_0
+
+    .line 138
     new-instance p0, Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;
 
     move-object v2, p0
 
     move-object v3, v6
 
-    invoke-direct/range {v2 .. v10}, Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;-><init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/FrameLayout;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v2 .. v11}, Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;-><init>(Landroid/widget/FrameLayout;Landroidx/cardview/widget/CardView;Landroidx/constraintlayout/widget/ConstraintLayout;Landroid/widget/FrameLayout;Landroidx/appcompat/widget/AppCompatImageView;Lorg/telegram/ui/Components/BackupImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object p0
 
-    .line 131
+    .line 142
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
@@ -136,7 +150,7 @@
 
     move-result-object p0
 
-    .line 132
+    .line 143
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string v1, "Missing required view with ID: "
@@ -157,7 +171,7 @@
 
     const/4 v1, 0x0
 
-    .line 70
+    .line 75
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;->inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;
 
     move-result-object p0
@@ -168,7 +182,7 @@
 .method public static inflate(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Z)Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;
     .locals 2
 
-    .line 76
+    .line 81
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_nft_collection:I
 
     const/4 v1, 0x0
@@ -179,10 +193,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 78
+    .line 83
     invoke-virtual {p1, p0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 80
+    .line 85
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;->bind(Landroid/view/View;)Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;
 
@@ -207,7 +221,7 @@
 .method public getRoot()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 65
+    .line 70
     iget-object v0, p0, Lorg/telegram/messenger/databinding/ForkRecycleItemNftCollectionBinding;->rootView:Landroid/widget/FrameLayout;
 
     return-object v0

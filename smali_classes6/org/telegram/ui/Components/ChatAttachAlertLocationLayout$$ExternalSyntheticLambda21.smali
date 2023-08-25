@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
+.implements Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final onItemClick(I)V
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;Lorg/telegram/messenger/IMapsProvider$ICallableMethod;)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$WTSqEKjXIWvyP7qyWz28xYAYklU(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$ZhXWJ1z2EBXG6mC_MAX5aQeNInE(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Landroid/view/MotionEvent;Lorg/telegram/messenger/IMapsProvider$ICallableMethod;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

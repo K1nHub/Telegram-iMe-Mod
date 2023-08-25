@@ -4374,8 +4374,8 @@
     return-void
 .end method
 
-.method public onLocationAddressAvailable(Ljava/lang/String;Ljava/lang/String;Landroid/location/Location;)V
-    .locals 1
+.method public onLocationAddressAvailable(Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;Landroid/location/Location;)V
+    .locals 0
 
     .line 721
     iput-object p1, p0, Lorg/telegram/ui/PeopleNearbyActivity;->currentGroupCreateAddress:Ljava/lang/String;
@@ -4384,15 +4384,15 @@
     iput-object p2, p0, Lorg/telegram/ui/PeopleNearbyActivity;->currentGroupCreateDisplayAddress:Ljava/lang/String;
 
     .line 723
-    iput-object p3, p0, Lorg/telegram/ui/PeopleNearbyActivity;->currentGroupCreateLocation:Landroid/location/Location;
+    iput-object p5, p0, Lorg/telegram/ui/PeopleNearbyActivity;->currentGroupCreateLocation:Landroid/location/Location;
 
     .line 724
-    iget-object v0, p0, Lorg/telegram/ui/PeopleNearbyActivity;->groupCreateActivity:Lorg/telegram/ui/ActionIntroActivity;
+    iget-object p3, p0, Lorg/telegram/ui/PeopleNearbyActivity;->groupCreateActivity:Lorg/telegram/ui/ActionIntroActivity;
 
-    if-eqz v0, :cond_0
+    if-eqz p3, :cond_0
 
     .line 725
-    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/ActionIntroActivity;->setGroupCreateAddress(Ljava/lang/String;Ljava/lang/String;Landroid/location/Location;)V
+    invoke-virtual {p3, p1, p2, p5}, Lorg/telegram/ui/ActionIntroActivity;->setGroupCreateAddress(Ljava/lang/String;Ljava/lang/String;Landroid/location/Location;)V
 
     .line 727
     :cond_0

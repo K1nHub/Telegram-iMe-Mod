@@ -165,7 +165,7 @@
 
     move-result-object v2
 
-    const-string v4, "null cannot be cast to non-null type java.security.cert.X509Certificate"
+    const-string/jumbo v4, "null cannot be cast to non-null type java.security.cert.X509Certificate"
 
     invoke-static {v2, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

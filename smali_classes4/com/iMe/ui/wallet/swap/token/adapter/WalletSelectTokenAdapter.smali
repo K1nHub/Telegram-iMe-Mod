@@ -287,7 +287,7 @@
     move-result-object p1
 
     .line 29
-    sget v1, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_token_ticker:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/select/SelectableTokenItem;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 

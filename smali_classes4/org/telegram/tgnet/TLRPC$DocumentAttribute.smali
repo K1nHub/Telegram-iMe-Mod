@@ -43,7 +43,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2098
+    .line 2099
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 2157
+    .line 2158
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeImageSize;
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 2130
+    .line 2131
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker;
 
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 2142
+    .line 2143
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo_layer65;
 
@@ -82,7 +82,7 @@
 
     goto :goto_0
 
-    .line 2121
+    .line 2122
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker_layer55;
 
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 2136
+    .line 2137
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeFilename;
 
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 2133
+    .line 2134
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAnimated;
 
@@ -106,7 +106,7 @@
 
     goto :goto_0
 
-    .line 2124
+    .line 2125
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo_layer159;
 
@@ -114,7 +114,7 @@
 
     goto :goto_0
 
-    .line 2127
+    .line 2128
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio_old;
 
@@ -122,7 +122,7 @@
 
     goto :goto_0
 
-    .line 2163
+    .line 2164
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;
 
@@ -130,7 +130,7 @@
 
     goto :goto_0
 
-    .line 2148
+    .line 2149
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker_old;
 
@@ -138,7 +138,7 @@
 
     goto :goto_0
 
-    .line 2145
+    .line 2146
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio_layer45;
 
@@ -146,7 +146,7 @@
 
     goto :goto_0
 
-    .line 2139
+    .line 2140
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
@@ -154,7 +154,7 @@
 
     goto :goto_0
 
-    .line 2154
+    .line 2155
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker_old2;
 
@@ -162,7 +162,7 @@
 
     goto :goto_0
 
-    .line 2160
+    .line 2161
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
@@ -170,7 +170,7 @@
 
     goto :goto_0
 
-    .line 2151
+    .line 2152
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeHasStickers;
 
@@ -183,7 +183,7 @@
 
     goto :goto_1
 
-    .line 2167
+    .line 2168
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -213,7 +213,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 2170
+    .line 2171
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

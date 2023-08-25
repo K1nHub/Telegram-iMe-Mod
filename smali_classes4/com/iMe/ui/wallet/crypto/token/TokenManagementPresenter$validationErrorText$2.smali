@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;-><init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)V
+    value = Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;-><init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 45
+    .line 46
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$validationErrorText$2;->invoke()Ljava/lang/String;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Ljava/lang/String;
     .locals 2
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter$validationErrorText$2;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;->access$getResourceManager$p(Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;

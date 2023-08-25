@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Paint/Views/PhotoView;Landroid/content/Context;)V
     .locals 1
 
-    .line 178
+    .line 214
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;-><init>(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/content/Context;)V
 
-    .line 175
+    .line 211
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -36,14 +36,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->clearPaint:Landroid/graphics/Paint;
 
-    .line 206
+    .line 242
     new-instance p2, Landroid/graphics/Path;
 
     invoke-direct {p2}, Landroid/graphics/Path;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
-    .line 179
+    .line 215
     new-instance p2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -64,12 +64,67 @@
 
     move-object/from16 v8, p1
 
-    .line 210
+    .line 246
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
+    .line 248
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getSaveCount()I
+
+    move-result v9
+
+    .line 250
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->getShowAlpha()F
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    cmpg-float v2, v1, v2
+
+    if-gtz v2, :cond_0
+
+    return-void
+
+    :cond_0
+    const/high16 v10, 0x3f800000    # 1.0f
+
+    cmpg-float v2, v1, v10
+
+    if-gez v2, :cond_1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    .line 254
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    const/high16 v6, 0x437f0000    # 255.0f
+
+    mul-float/2addr v1, v6
+
+    float-to-int v6, v1
+
+    const/16 v7, 0x1f
+
+    move-object/from16 v1, p1
+
+    invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
+
+    :cond_1
     const/high16 v1, 0x40000000    # 2.0f
 
-    .line 212
+    .line 257
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -78,36 +133,36 @@
 
     const v3, 0x40b51eb8    # 5.66f
 
-    .line 213
+    .line 258
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
-    move-result v9
+    move-result v11
 
-    add-float/2addr v2, v9
+    add-float/2addr v2, v11
 
     const/16 v3, 0xf
 
-    .line 215
+    .line 260
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    add-float v10, v2, v3
+    add-float v12, v2, v3
 
-    .line 217
+    .line 262
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
 
     int-to-float v2, v2
 
-    mul-float v3, v10, v1
+    mul-float v3, v12, v1
 
     sub-float/2addr v2, v3
 
-    .line 218
+    .line 263
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v4
@@ -116,18 +171,18 @@
 
     sub-float/2addr v4, v3
 
-    .line 220
+    .line 265
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    add-float v11, v10, v2
+    add-float v13, v12, v2
 
-    add-float v12, v10, v4
+    add-float v14, v12, v4
 
-    invoke-virtual {v3, v10, v10, v11, v12}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v3, v12, v12, v13, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
     const/16 v5, 0xc
 
-    .line 222
+    .line 267
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -136,7 +191,7 @@
 
     div-float/2addr v2, v1
 
-    .line 223
+    .line 268
     invoke-static {v5, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
@@ -145,131 +200,137 @@
 
     invoke-static {v5, v4}, Ljava/lang/Math;->min(FF)F
 
-    move-result v13
+    move-result v15
 
-    .line 225
+    .line 270
     iget-object v5, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->rewind()V
 
     mul-float/2addr v2, v1
 
-    add-float v5, v10, v2
+    add-float v5, v12, v2
 
-    mul-float/2addr v1, v13
+    mul-float/2addr v1, v15
 
-    add-float v6, v10, v1
+    add-float v6, v12, v1
 
-    .line 226
-    invoke-virtual {v3, v10, v10, v5, v6}, Landroid/graphics/RectF;->set(FFFF)V
+    .line 271
+    invoke-virtual {v3, v12, v12, v5, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 227
+    .line 272
     iget-object v7, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
-    const/high16 v14, 0x43340000    # 180.0f
+    const/high16 v10, 0x43340000    # 180.0f
 
-    const/high16 v15, 0x42b40000    # 90.0f
+    move/from16 v16, v9
 
-    invoke-virtual {v7, v3, v14, v15}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
+    const/high16 v9, 0x42b40000    # 90.0f
 
-    sub-float v2, v11, v2
+    invoke-virtual {v7, v3, v10, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 228
-    invoke-virtual {v3, v2, v10, v11, v6}, Landroid/graphics/RectF;->set(FFFF)V
+    sub-float v2, v13, v2
 
-    .line 229
+    .line 273
+    invoke-virtual {v3, v2, v12, v13, v6}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 274
     iget-object v6, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
     const/high16 v7, 0x43870000    # 270.0f
 
-    invoke-virtual {v6, v3, v7, v15}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
+    invoke-virtual {v6, v3, v7, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 230
+    .line 275
     iget-object v6, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
     iget-object v7, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v6, v7}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 232
+    .line 277
     iget-object v6, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v6}, Landroid/graphics/Path;->rewind()V
 
-    sub-float v1, v12, v1
+    sub-float v1, v14, v1
 
-    .line 233
-    invoke-virtual {v3, v10, v1, v5, v12}, Landroid/graphics/RectF;->set(FFFF)V
+    .line 278
+    invoke-virtual {v3, v12, v1, v5, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 234
+    .line 279
     iget-object v5, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
     const/high16 v6, -0x3d4c0000    # -90.0f
 
-    invoke-virtual {v5, v3, v14, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
+    invoke-virtual {v5, v3, v10, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 235
-    invoke-virtual {v3, v2, v1, v11, v12}, Landroid/graphics/RectF;->set(FFFF)V
+    .line 280
+    invoke-virtual {v3, v2, v1, v13, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 236
+    .line 281
     iget-object v1, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
-    invoke-virtual {v1, v3, v15, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
+    invoke-virtual {v1, v3, v9, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 237
+    .line 282
     iget-object v1, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->path:Landroid/graphics/Path;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    add-float v14, v10, v4
+    add-float v9, v12, v4
 
-    .line 239
+    .line 284
     iget-object v1, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->dotStrokePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v10, v14, v9, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v12, v9, v11, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    const/4 v15, 0x1
+    const/4 v10, 0x1
 
-    .line 240
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 285
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    sub-float v1, v9, v1
+    sub-float v1, v11, v1
 
-    const/high16 v16, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    add-float v1, v1, v16
+    add-float/2addr v1, v2
 
-    iget-object v2, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->dotPaint:Landroid/graphics/Paint;
+    iget-object v3, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->dotPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v10, v14, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v12, v9, v1, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 242
+    .line 287
     iget-object v1, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->dotStrokePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v11, v14, v9, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v13, v9, v11, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 243
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 288
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    sub-float v1, v9, v1
+    sub-float v1, v11, v1
 
-    add-float v1, v1, v16
+    add-float/2addr v1, v2
 
     iget-object v2, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->dotPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v11, v14, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v13, v9, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 245
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    .line 290
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -282,10 +343,6 @@
 
     int-to-float v5, v1
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
     const/16 v6, 0xff
 
     const/16 v7, 0x1f
@@ -294,64 +351,68 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    add-float v7, v10, v13
+    add-float v7, v12, v15
 
-    sub-float/2addr v12, v13
+    sub-float/2addr v14, v15
 
-    .line 247
+    .line 292
     iget-object v6, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->paint:Landroid/graphics/Paint;
 
-    move v2, v10
+    move v2, v12
 
     move v3, v7
 
-    move v4, v10
+    move v4, v12
 
-    move v5, v12
+    move v5, v14
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 248
+    .line 293
     iget-object v6, v0, Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;->paint:Landroid/graphics/Paint;
 
-    move v2, v11
+    move v2, v13
 
-    move v4, v11
+    move v4, v13
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 249
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 294
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    add-float/2addr v1, v9
+    add-float/2addr v1, v11
 
-    sub-float v1, v1, v16
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    iget-object v2, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->clearPaint:Landroid/graphics/Paint;
+    sub-float/2addr v1, v2
 
-    invoke-virtual {v8, v11, v14, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    iget-object v3, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->clearPaint:Landroid/graphics/Paint;
 
-    .line 250
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v8, v13, v9, v1, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    .line 295
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    add-float/2addr v9, v1
+    add-float/2addr v11, v1
 
-    sub-float v9, v9, v16
+    sub-float/2addr v11, v2
 
     iget-object v1, v0, Lorg/telegram/ui/Components/Paint/Views/PhotoView$PhotoViewSelectionView;->clearPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v8, v10, v14, v9, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v8, v12, v9, v11, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 252
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+    move/from16 v1, v16
+
+    .line 297
+    invoke-virtual {v8, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     return-void
 .end method
@@ -361,7 +422,7 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 184
+    .line 220
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -370,7 +431,7 @@
 
     const/high16 v1, 0x419c0000    # 19.5f
 
-    .line 185
+    .line 221
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
@@ -379,7 +440,7 @@
 
     add-float/2addr v0, v1
 
-    .line 188
+    .line 224
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -392,7 +453,7 @@
 
     sub-float/2addr v2, v4
 
-    .line 189
+    .line 225
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v5

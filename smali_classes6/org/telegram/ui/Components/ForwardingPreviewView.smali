@@ -97,6 +97,8 @@
 
 .field sendMessagesView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
+.field sharedResources:Lorg/telegram/messenger/ChatMessageSharedResources;
+
 .field showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
 .field private showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -292,17 +294,17 @@
 
     move-object/from16 v12, p6
 
-    .line 185
+    .line 187
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 158
+    .line 159
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
-    .line 160
+    .line 161
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
@@ -311,17 +313,17 @@
 
     const/4 v13, 0x1
 
-    .line 162
+    .line 164
     iput-boolean v13, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->firstLayout:Z
 
-    .line 171
+    .line 173
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$1;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Components/ForwardingPreviewView$1;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeBoundsRunnable:Ljava/lang/Runnable;
 
-    .line 180
+    .line 182
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v14, 0xa
@@ -330,19 +332,26 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->drawingGroups:Ljava/util/ArrayList;
 
-    .line 187
-    iput-object v10, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
-
     .line 188
-    iput-object v11, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
+    new-instance v0, Lorg/telegram/messenger/ChatMessageSharedResources;
 
-    .line 189
-    iput-object v9, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
+    invoke-direct {v0, v8}, Lorg/telegram/messenger/ChatMessageSharedResources;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->sharedResources:Lorg/telegram/messenger/ChatMessageSharedResources;
 
     .line 190
-    iput-object v12, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->resourcesProvider:Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
+    iput-object v10, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
+
+    .line 191
+    iput-object v11, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     .line 192
+    iput-object v9, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
+
+    .line 193
+    iput-object v12, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->resourcesProvider:Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
+
+    .line 195
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$2;
 
     invoke-direct {v0, v7, v8, v12}, Lorg/telegram/ui/Components/ForwardingPreviewView$2;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;)V
@@ -351,7 +360,7 @@
 
     if-nez v12, :cond_0
 
-    .line 207
+    .line 210
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaperNonBlocking()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -380,14 +389,14 @@
     :goto_1
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setBackgroundImage(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 208
+    .line 211
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     const/4 v15, 0x0
 
     invoke-virtual {v0, v15}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setOccupyStatusBar(Z)V
 
-    .line 210
+    .line 213
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -396,7 +405,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 211
+    .line 214
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$3;
@@ -405,12 +414,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 218
+    .line 221
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
-    .line 219
+    .line 222
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -421,7 +430,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setElevation(F)V
 
-    .line 222
+    .line 225
     :cond_2
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -429,7 +438,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 223
+    .line 226
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
     invoke-direct {v7, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
@@ -438,19 +447,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackgroundColor(I)V
 
-    .line 224
+    .line 227
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, v15}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    .line 226
+    .line 229
     new-instance v5, Lorg/telegram/ui/Components/ForwardingPreviewView$4;
 
     invoke-direct {v5, v7, v8, v12}, Lorg/telegram/ui/Components/ForwardingPreviewView$4;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v5, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 419
+    .line 422
     new-instance v4, Lorg/telegram/ui/Components/ForwardingPreviewView$5;
 
     const/4 v2, 0x0
@@ -475,7 +484,7 @@
 
     invoke-virtual {v13, v14}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 474
+    .line 477
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$6;
@@ -484,7 +493,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 485
+    .line 488
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$7;
@@ -493,7 +502,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 508
+    .line 511
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;
@@ -504,7 +513,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 509
+    .line 512
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -517,7 +526,7 @@
 
     invoke-virtual {v0, v15, v1, v15, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 510
+    .line 513
     new-instance v13, Lorg/telegram/ui/Components/ForwardingPreviewView$8;
 
     const/16 v3, 0x3e8
@@ -538,26 +547,26 @@
 
     iput-object v13, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatLayoutManager:Landroidx/recyclerview/widget/GridLayoutManagerFixed;
 
-    .line 554
+    .line 557
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$9;
 
     invoke-direct {v0, v7, v9}, Lorg/telegram/ui/Components/ForwardingPreviewView$9;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/ForwardingMessagesParams;)V
 
     invoke-virtual {v13, v0}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
 
-    .line 568
+    .line 571
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v15}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 569
+    .line 572
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatLayoutManager:Landroidx/recyclerview/widget/GridLayoutManagerFixed;
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 570
+    .line 573
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$10;
@@ -566,14 +575,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 604
+    .line 607
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 605
+    .line 608
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     const/16 v16, -0x1
@@ -596,7 +605,7 @@
 
     invoke-virtual {v7, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 606
+    .line 609
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -611,21 +620,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 608
+    .line 611
     new-instance v0, Landroid/widget/ScrollView;
 
     invoke-direct {v0, v8}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
-    .line 609
+    .line 612
     invoke-static {v14, v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v7, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 611
+    .line 614
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, v8}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -634,27 +643,27 @@
 
     const/4 v1, 0x1
 
-    .line 612
+    .line 615
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 613
+    .line 616
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 615
+    .line 618
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, v8}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
-    .line 616
+    .line 619
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 617
+    .line 620
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -673,7 +682,7 @@
 
     move-result-object v0
 
-    .line 618
+    .line 621
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
@@ -688,12 +697,12 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 619
+    .line 622
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 620
+    .line 623
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuContainer:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
@@ -704,7 +713,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 622
+    .line 625
     new-instance v4, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v2, 0x1
@@ -735,7 +744,7 @@
 
     iput-object v14, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 624
+    .line 627
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ForwardingMessagesParams;->isTemplatePreview()Z
@@ -746,7 +755,7 @@
 
     if-nez v0, :cond_3
 
-    .line 625
+    .line 628
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -757,7 +766,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 626
+    .line 629
     :cond_3
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -785,14 +794,14 @@
 
     invoke-virtual {v0, v1, v15}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 627
+    .line 630
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 629
+    .line 632
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -801,7 +810,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 630
+    .line 633
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -816,7 +825,7 @@
 
     invoke-virtual {v0, v6, v5, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
-    .line 631
+    .line 634
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -827,7 +836,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 632
+    .line 635
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->custom_forward_option_author:I
@@ -838,24 +847,24 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setText(Ljava/lang/CharSequence;)V
 
-    .line 633
+    .line 636
     iget-boolean v0, v9, Lorg/telegram/messenger/ForwardingMessagesParams;->needForceHideForwardAuthor:Z
 
     if-eqz v0, :cond_5
 
-    .line 634
+    .line 637
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0, v15}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 635
+    .line 638
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/high16 v1, 0x3f000000    # 0.5f
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 639
+    .line 642
     :cond_5
     new-instance v3, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -889,7 +898,7 @@
 
     iput-object v14, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 641
+    .line 644
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->multiplyUsers:Z
@@ -914,24 +923,24 @@
 
     invoke-virtual {v14, v0, v15}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 642
+    .line 645
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0, v15}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 644
+    .line 647
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hasCaption:Z
 
     if-eqz v0, :cond_7
 
-    .line 645
+    .line 648
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$11;
 
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/Components/ForwardingPreviewView$11;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;)V
 
-    .line 651
+    .line 654
     sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
     invoke-direct {v7, v14}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
@@ -940,7 +949,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 652
+    .line 655
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/4 v2, -0x2
@@ -951,7 +960,7 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 655
+    .line 658
     new-instance v5, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v2, 0x1
@@ -978,7 +987,7 @@
 
     iput-object v15, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 656
+    .line 659
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/16 v1, 0x30
@@ -989,7 +998,7 @@
 
     invoke-virtual {v0, v15, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 657
+    .line 660
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->ShowCaption:I
@@ -1004,14 +1013,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 658
+    .line 661
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 660
+    .line 663
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1020,7 +1029,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 661
+    .line 664
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1035,7 +1044,7 @@
 
     invoke-virtual {v0, v15, v6, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
-    .line 662
+    .line 665
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1046,7 +1055,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 663
+    .line 666
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->custom_forward_option_text:I
@@ -1057,7 +1066,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setText(Ljava/lang/CharSequence;)V
 
-    .line 666
+    .line 669
     new-instance v4, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v2, 0x1
@@ -1080,7 +1089,7 @@
 
     iput-object v13, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 668
+    .line 671
     sget v0, Lorg/telegram/messenger/R$string;->HideCaption:I
 
     const-string v1, "HideCaption"
@@ -1093,24 +1102,24 @@
 
     invoke-virtual {v13, v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 669
+    .line 672
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 671
+    .line 674
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$12;
 
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/Components/ForwardingPreviewView$12;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;)V
 
-    .line 677
+    .line 680
     invoke-direct {v7, v14}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 678
+    .line 681
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/4 v2, -0x2
@@ -1123,7 +1132,7 @@
 
     invoke-virtual {v1, v0, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 680
+    .line 683
     new-instance v13, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v2, 0x1
@@ -1146,7 +1155,7 @@
 
     iput-object v13, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 681
+    .line 684
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/16 v1, 0x30
@@ -1159,7 +1168,7 @@
 
     invoke-virtual {v0, v13, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 682
+    .line 685
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->custom_forward_option_media:I
@@ -1172,14 +1181,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 683
+    .line 686
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 684
+    .line 687
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1188,7 +1197,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 685
+    .line 688
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1199,7 +1208,7 @@
 
     invoke-virtual {v0, v15, v9, v13}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
-    .line 686
+    .line 689
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1219,7 +1228,7 @@
 
     move/from16 v9, v26
 
-    .line 690
+    .line 693
     :goto_4
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -1227,12 +1236,12 @@
 
     if-eqz v0, :cond_8
 
-    .line 691
+    .line 694
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$13;
 
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/Components/ForwardingPreviewView$13;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;)V
 
-    .line 697
+    .line 700
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
     invoke-direct {v7, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getThemedColor(I)I
@@ -1241,7 +1250,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 698
+    .line 701
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/4 v2, -0x2
@@ -1254,7 +1263,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 700
+    .line 703
     new-instance v14, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v2, 0x1
@@ -1275,7 +1284,7 @@
 
     iput-object v14, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 701
+    .line 704
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/16 v1, 0x30
@@ -1288,7 +1297,7 @@
 
     invoke-virtual {v0, v14, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 702
+    .line 705
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->custom_forward_option_link_preview:I
@@ -1301,14 +1310,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 703
+    .line 706
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 704
+    .line 707
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1317,7 +1326,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 705
+    .line 708
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1326,7 +1335,7 @@
 
     invoke-virtual {v0, v15, v9, v13}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
-    .line 706
+    .line 709
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -1337,7 +1346,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 708
+    .line 711
     :cond_8
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -1347,7 +1356,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 709
+    .line 712
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
@@ -1356,7 +1365,7 @@
 
     invoke-direct {v0, v8, v1, v2, v12}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 710
+    .line 713
     sget v1, Lorg/telegram/messenger/R$string;->Edit:I
 
     const-string v2, "Edit"
@@ -1369,14 +1378,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 711
+    .line 714
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 718
+    .line 721
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/16 v3, 0x30
@@ -1389,19 +1398,19 @@
 
     invoke-virtual {v1, v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 719
+    .line 722
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 721
+    .line 724
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v8, v1, v1, v12}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 722
+    .line 725
     sget v1, Lorg/telegram/messenger/R$string;->EditName:I
 
     const-string v3, "EditName"
@@ -1412,14 +1421,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 723
+    .line 726
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 730
+    .line 733
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/16 v2, 0x30
@@ -1432,12 +1441,12 @@
 
     invoke-virtual {v1, v0, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 731
+    .line 734
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 733
+    .line 736
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
@@ -1446,7 +1455,7 @@
 
     invoke-direct {v0, v8, v2, v1, v12}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 734
+    .line 737
     sget v1, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v2, "Delete"
@@ -1459,14 +1468,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 735
+    .line 738
     new-instance v1, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda7;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 742
+    .line 745
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/16 v2, 0x30
@@ -1479,12 +1488,12 @@
 
     invoke-virtual {v1, v0, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 743
+    .line 746
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 747
+    .line 750
     :cond_9
     new-instance v0, Landroid/widget/LinearLayout;
 
@@ -1494,10 +1503,10 @@
 
     const/4 v1, 0x1
 
-    .line 748
+    .line 751
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 749
+    .line 752
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1516,7 +1525,7 @@
 
     move-result-object v0
 
-    .line 750
+    .line 753
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     move/from16 v2, v23
@@ -1531,12 +1540,12 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 751
+    .line 754
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 752
+    .line 755
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuContainer:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
@@ -1585,7 +1594,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 754
+    .line 757
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
@@ -1596,7 +1605,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeRecipientView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 756
+    .line 759
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ForwardingMessagesParams;->isTemplatePreview()Z
@@ -1617,7 +1626,7 @@
     :cond_d
     const/4 v0, 0x0
 
-    .line 757
+    .line 760
     :goto_7
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeRecipientView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -1625,14 +1634,14 @@
 
     invoke-virtual {v1, v2, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->updateSelectorBackground(ZZ)V
 
-    .line 758
+    .line 761
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-direct {v1, v8, v2, v2, v12}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 759
+    .line 762
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
 
     const/16 v3, 0x30
@@ -1645,12 +1654,12 @@
 
     invoke-virtual {v2, v1, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 760
+    .line 763
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateOpenEditorItem()V
 
     if-eqz v0, :cond_e
 
-    .line 764
+    .line 767
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeRecipientView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -1661,7 +1670,7 @@
 
     invoke-virtual {v1, v2, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 765
+    .line 768
     :cond_e
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeRecipientView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -1677,7 +1686,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 767
+    .line 770
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v2, 0x1
@@ -1688,7 +1697,7 @@
 
     iput-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->sendMessagesView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 768
+    .line 771
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
 
     const/16 v3, 0x30
@@ -1701,7 +1710,7 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 769
+    .line 772
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->sendMessagesView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -1732,14 +1741,14 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 771
+    .line 774
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v1, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasSenders:Z
 
     if-eqz v1, :cond_11
 
-    .line 772
+    .line 775
     iget-object v1, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -1748,32 +1757,32 @@
 
     move-object/from16 v1, p2
 
-    .line 775
+    .line 778
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasCaption:Z
 
     if-eqz v2, :cond_10
 
-    .line 776
+    .line 779
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     iget-object v3, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 778
+    .line 781
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     iget-object v3, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 781
+    .line 784
     :cond_10
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasPreview:Z
 
     if-eqz v2, :cond_12
 
-    .line 782
+    .line 785
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     iget-object v3, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -1785,7 +1794,7 @@
     :cond_11
     move-object/from16 v1, p2
 
-    .line 787
+    .line 790
     :cond_12
     :goto_9
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
@@ -1796,14 +1805,14 @@
 
     if-eqz v0, :cond_13
 
-    .line 790
+    .line 793
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     iget-object v2, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeRecipientView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 791
+    .line 794
     :cond_13
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
@@ -1811,7 +1820,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 793
+    .line 796
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda12;
@@ -1820,7 +1829,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 825
+    .line 828
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda10;
@@ -1829,12 +1838,12 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 837
+    .line 840
     iget-boolean v0, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasCaption:Z
 
     if-eqz v0, :cond_14
 
-    .line 838
+    .line 841
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda14;
@@ -1843,7 +1852,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 860
+    .line 863
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda11;
@@ -1852,7 +1861,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 882
+    .line 885
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda9;
@@ -1861,13 +1870,13 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 908
+    .line 911
     :cond_14
     iget-boolean v0, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasPreview:Z
 
     if-eqz v0, :cond_15
 
-    .line 909
+    .line 912
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda13;
@@ -1876,7 +1885,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 931
+    .line 934
     :cond_15
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -1888,19 +1897,19 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 932
+    .line 935
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 934
+    .line 937
     iget-boolean v0, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasCaption:Z
 
     if-eqz v0, :cond_16
 
-    .line 935
+    .line 938
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
@@ -1909,14 +1918,14 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 936
+    .line 939
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 937
+    .line 940
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
@@ -1925,13 +1934,13 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 940
+    .line 943
     :cond_16
     iget-boolean v0, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasPreview:Z
 
     if-eqz v0, :cond_17
 
-    .line 941
+    .line 944
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHidePreview:Z
@@ -1940,7 +1949,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 945
+    .line 948
     :cond_17
     iget-boolean v0, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hasSenders:Z
 
@@ -1952,14 +1961,14 @@
 
     if-nez v0, :cond_18
 
-    .line 946
+    .line 949
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 949
+    .line 952
     :cond_18
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->sendMessagesView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -1969,7 +1978,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 950
+    .line 953
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeRecipientView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda5;
@@ -1978,7 +1987,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 951
+    .line 954
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     new-instance v2, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda6;
@@ -1987,20 +1996,20 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 953
+    .line 956
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
-    .line 954
+    .line 957
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateSubtitle()V
 
-    .line 956
+    .line 959
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/messenger/ForwardingMessagesParams;->isTemplatePreview()Z
 
     move-result v0
 
     if-eqz v0, :cond_19
 
-    .line 957
+    .line 960
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v1, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->template:Lcom/iMe/storage/domain/model/templates/TemplateModel;
@@ -2013,7 +2022,7 @@
 
     goto :goto_a
 
-    .line 959
+    .line 962
     :cond_19
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -2035,7 +2044,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 961
+    .line 964
     :goto_a
     iget-object v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
@@ -2045,7 +2054,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 967
+    .line 970
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda15;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
@@ -2054,23 +2063,23 @@
 
     const/4 v0, 0x1
 
-    .line 973
+    .line 976
     iput-boolean v0, v7, Lorg/telegram/ui/Components/ForwardingPreviewView;->showing:Z
 
     const/4 v0, 0x0
 
-    .line 974
+    .line 977
     invoke-virtual {v7, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     const v0, 0x3f733333    # 0.95f
 
-    .line 975
+    .line 978
     invoke-virtual {v7, v0}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 976
+    .line 979
     invoke-virtual {v7, v0}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 977
+    .line 980
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -2099,7 +2108,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 978
+    .line 981
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -2110,7 +2119,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 980
+    .line 983
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateColors()V
 
     return-void
@@ -2119,7 +2128,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 51
+    .line 52
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updatePositions()V
 
     return-void
@@ -2128,7 +2137,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/ForwardingPreviewView;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 51
+    .line 52
     iget-object p0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->drawingGroups:Ljava/util/ArrayList;
 
     return-object p0
@@ -2137,7 +2146,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 51
+    .line 52
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
     return-void
@@ -2146,7 +2155,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 51
+    .line 52
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateOpenEditorItem()V
 
     return-void
@@ -2155,7 +2164,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject$GroupedMessages;
     .locals 0
 
-    .line 51
+    .line 52
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getValidGroupedMessage(Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object p0
@@ -2166,7 +2175,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/ForwardingPreviewView;FI)V
     .locals 0
 
-    .line 51
+    .line 52
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->setOffset(FI)V
 
     return-void
@@ -2175,7 +2184,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Components/ForwardingPreviewView;)Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
     .locals 0
 
-    .line 51
+    .line 52
     iget-object p0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->resourcesProvider:Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
 
     return-object p0
@@ -2184,7 +2193,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 1360
+    .line 1364
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->resourcesProvider:Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -2199,7 +2208,7 @@
 
     const/4 v0, 0x0
 
-    .line 90
+    .line 91
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getValidGroupedMessage(Lorg/telegram/messenger/MessageObject;Z)Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object p1
@@ -2210,7 +2219,7 @@
 .method private getValidGroupedMessage(Lorg/telegram/messenger/MessageObject;Z)Lorg/telegram/messenger/MessageObject$GroupedMessages;
     .locals 4
 
-    .line 1350
+    .line 1354
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/MessageObject;->getGroupId(Z)J
 
     move-result-wide v0
@@ -2223,7 +2232,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1351
+    .line 1355
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->groupedMessagesMap:Landroid/util/LongSparseArray;
@@ -2240,7 +2249,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1352
+    .line 1356
     iget-object v0, p2, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2272,7 +2281,7 @@
 .method private synthetic lambda$dismiss$18(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 1050
+    .line 1053
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result p1
@@ -2287,7 +2296,7 @@
 .method private synthetic lambda$new$0()V
     .locals 0
 
-    .line 716
+    .line 719
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->didEditPressed()V
 
     return-void
@@ -2296,7 +2305,7 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)V
     .locals 2
 
-    .line 712
+    .line 715
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showing:Z
 
     if-nez p1, :cond_0
@@ -2306,10 +2315,10 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 715
+    .line 718
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
-    .line 716
+    .line 719
     new-instance p1, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda17;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
@@ -2324,7 +2333,7 @@
 .method private synthetic lambda$new$10(Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
     .locals 3
 
-    .line 883
+    .line 886
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
     const/4 v0, 0x0
@@ -2333,7 +2342,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 884
+    .line 887
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNames:Z
 
     if-eqz p2, :cond_0
@@ -2346,16 +2355,16 @@
 
     if-eqz p2, :cond_0
 
-    .line 885
+    .line 888
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iput-boolean v0, p2, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 887
+    .line 890
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByMedia:Z
 
-    .line 888
+    .line 891
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -2368,7 +2377,7 @@
 
     goto :goto_0
 
-    .line 890
+    .line 893
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -2376,19 +2385,19 @@
 
     if-nez v2, :cond_2
 
-    .line 891
+    .line 894
     iput-boolean v1, p2, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 892
+    .line 895
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByMedia:Z
 
-    .line 894
+    .line 897
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 896
+    .line 899
     :goto_0
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
@@ -2396,7 +2405,7 @@
 
     iput-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
-    .line 897
+    .line 900
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -2411,7 +2420,7 @@
 
     invoke-virtual {p2, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 898
+    .line 901
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
     if-eqz p2, :cond_3
@@ -2420,19 +2429,19 @@
 
     if-eqz p2, :cond_3
 
-    .line 899
+    .line 902
     iput-boolean v0, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
-    .line 900
+    .line 903
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 902
+    .line 905
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
-    .line 903
+    .line 906
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateSubtitle()V
 
     return-void
@@ -2441,7 +2450,7 @@
 .method private synthetic lambda$new$11(Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
     .locals 3
 
-    .line 910
+    .line 913
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHidePreview:Z
 
     const/4 v0, 0x0
@@ -2450,7 +2459,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 911
+    .line 914
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNames:Z
 
     if-eqz p2, :cond_0
@@ -2463,16 +2472,16 @@
 
     if-eqz p2, :cond_0
 
-    .line 912
+    .line 915
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iput-boolean v0, p2, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 914
+    .line 917
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByPreview:Z
 
-    .line 915
+    .line 918
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -2485,7 +2494,7 @@
 
     goto :goto_0
 
-    .line 917
+    .line 920
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -2493,19 +2502,19 @@
 
     if-nez v2, :cond_2
 
-    .line 918
+    .line 921
     iput-boolean v1, p2, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 919
+    .line 922
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByPreview:Z
 
-    .line 921
+    .line 924
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 923
+    .line 926
     :goto_0
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHidePreview:Z
 
@@ -2513,7 +2522,7 @@
 
     iput-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHidePreview:Z
 
-    .line 924
+    .line 927
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getCheckView()Lorg/telegram/ui/Components/CheckBox2;
@@ -2528,10 +2537,10 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 925
+    .line 928
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
-    .line 926
+    .line 929
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateSubtitle()V
 
     return-void
@@ -2540,7 +2549,7 @@
 .method private synthetic lambda$new$12(Landroid/view/View;)V
     .locals 0
 
-    .line 949
+    .line 952
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->didSendPressed()V
 
     return-void
@@ -2549,7 +2558,7 @@
 .method private synthetic lambda$new$13(Landroid/view/View;)V
     .locals 0
 
-    .line 950
+    .line 953
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->selectAnotherChat()V
 
     return-void
@@ -2558,7 +2567,7 @@
 .method private synthetic lambda$new$14(Landroid/view/View;)V
     .locals 0
 
-    .line 951
+    .line 954
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->didOpenEditorPressed()V
 
     return-void
@@ -2567,7 +2576,7 @@
 .method private synthetic lambda$new$15(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 962
+    .line 965
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -2576,7 +2585,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 963
+    .line 966
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
     :cond_0
@@ -2586,7 +2595,7 @@
 .method private synthetic lambda$new$16(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 968
+    .line 971
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -2595,7 +2604,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 969
+    .line 972
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
     :cond_0
@@ -2605,7 +2614,7 @@
 .method private synthetic lambda$new$17(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 978
+    .line 981
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result p1
@@ -2620,7 +2629,7 @@
 .method private synthetic lambda$new$2()V
     .locals 0
 
-    .line 728
+    .line 731
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->didRenamePressed()V
 
     return-void
@@ -2629,7 +2638,7 @@
 .method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 2
 
-    .line 724
+    .line 727
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showing:Z
 
     if-nez p1, :cond_0
@@ -2639,10 +2648,10 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 727
+    .line 730
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
-    .line 728
+    .line 731
     new-instance p1, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda18;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
@@ -2657,7 +2666,7 @@
 .method private synthetic lambda$new$4()V
     .locals 0
 
-    .line 740
+    .line 743
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->didDeletePressed()V
 
     return-void
@@ -2666,7 +2675,7 @@
 .method private synthetic lambda$new$5(Landroid/view/View;)V
     .locals 2
 
-    .line 736
+    .line 739
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showing:Z
 
     if-nez p1, :cond_0
@@ -2676,10 +2685,10 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 739
+    .line 742
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
 
-    .line 740
+    .line 743
     new-instance p1, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda19;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
@@ -2694,12 +2703,12 @@
 .method private synthetic lambda$new$6(Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
     .locals 2
 
-    .line 795
+    .line 798
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     if-nez p2, :cond_0
 
-    .line 796
+    .line 799
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->callOnClick()Z
@@ -2711,73 +2720,73 @@
 
     const/4 p2, 0x0
 
-    .line 801
+    .line 804
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNames:Z
 
-    .line 802
+    .line 805
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByPreview:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByMedia:Z
 
-    .line 803
+    .line 806
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 804
+    .line 807
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 805
+    .line 808
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     if-eqz v0, :cond_1
 
-    .line 806
+    .line 809
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 807
+    .line 810
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 810
+    .line 813
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     if-eqz v0, :cond_2
 
-    .line 811
+    .line 814
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 813
+    .line 816
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showPreviewView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     if-eqz v0, :cond_3
 
-    .line 814
+    .line 817
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 816
+    .line 819
     :cond_3
     iput-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHidePreview:Z
 
     iput-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
-    .line 818
+    .line 821
     iput-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 819
+    .line 822
     iput-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
-    .line 820
+    .line 823
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
-    .line 821
+    .line 824
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateSubtitle()V
 
     :cond_4
@@ -2787,40 +2796,40 @@
 .method private synthetic lambda$new$7(Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
     .locals 1
 
-    .line 826
+    .line 829
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     if-nez p2, :cond_0
 
     const/4 p2, 0x0
 
-    .line 827
+    .line 830
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNames:Z
 
-    .line 828
+    .line 831
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByPreview:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNamesByMedia:Z
 
-    .line 829
+    .line 832
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 830
+    .line 833
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v0, 0x1
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 831
+    .line 834
     iput-boolean v0, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 832
+    .line 835
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
-    .line 833
+    .line 836
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateSubtitle()V
 
     :cond_0
@@ -2830,12 +2839,12 @@
 .method private synthetic lambda$new$8(Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
     .locals 3
 
-    .line 840
+    .line 843
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
     if-nez p2, :cond_0
 
-    .line 841
+    .line 844
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->callOnClick()Z
@@ -2845,7 +2854,7 @@
     :cond_0
     if-eqz p2, :cond_2
 
-    .line 846
+    .line 849
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNames:Z
 
     const/4 v0, 0x0
@@ -2860,26 +2869,26 @@
 
     if-eqz p2, :cond_1
 
-    .line 847
+    .line 850
     iput-boolean v0, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 849
+    .line 852
     :cond_1
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNames:Z
 
-    .line 850
+    .line 853
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 v1, 0x1
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 851
+    .line 854
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 852
+    .line 855
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-boolean v2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
@@ -2888,20 +2897,20 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 853
+    .line 856
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-boolean v1, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 854
+    .line 857
     iput-boolean v0, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
-    .line 855
+    .line 858
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
-    .line 856
+    .line 859
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateSubtitle()V
 
     :cond_2
@@ -2911,12 +2920,12 @@
 .method private synthetic lambda$new$9(Lorg/telegram/messenger/ForwardingMessagesParams;Landroid/view/View;)V
     .locals 2
 
-    .line 861
+    .line 864
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
     if-nez p2, :cond_2
 
-    .line 863
+    .line 866
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
     const/4 v0, 0x0
@@ -2925,54 +2934,54 @@
 
     if-eqz p2, :cond_0
 
-    .line 864
+    .line 867
     iput-boolean v0, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
-    .line 865
+    .line 868
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showMediaView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 868
+    .line 871
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 869
+    .line 872
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideCaptionView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 870
+    .line 873
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 871
+    .line 874
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->hideSendersNameView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 872
+    .line 875
     iget-boolean p2, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     if-nez p2, :cond_1
 
-    .line 873
+    .line 876
     iput-boolean v1, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
-    .line 874
+    .line 877
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->returnSendersNames:Z
 
-    .line 876
+    .line 879
     :cond_1
     iput-boolean v1, p1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
-    .line 877
+    .line 880
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
-    .line 878
+    .line 881
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateSubtitle()V
 
     :cond_2
@@ -2982,7 +2991,7 @@
 .method private synthetic lambda$updatePositions$19(IFLandroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 1257
+    .line 1260
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p3
@@ -3001,7 +3010,7 @@
 
     mul-float/2addr p1, v0
 
-    .line 1258
+    .line 1261
     iget v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
     int-to-float v1, v1
@@ -3016,7 +3025,7 @@
 
     mul-float/2addr p2, v0
 
-    .line 1259
+    .line 1262
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
     mul-float/2addr v0, p3
@@ -3025,7 +3034,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentYOffset:F
 
-    .line 1260
+    .line 1263
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->setOffset(FI)V
 
     return-void
@@ -3034,44 +3043,44 @@
 .method private setOffset(FI)V
     .locals 2
 
-    .line 1283
+    .line 1286
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->isLandscapeMode:Z
 
     const/16 v1, 0x15
 
     if-eqz v0, :cond_1
 
-    .line 1284
+    .line 1287
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTranslationY(F)V
 
-    .line 1285
+    .line 1288
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt p1, v1, :cond_0
 
-    .line 1286
+    .line 1289
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
-    .line 1288
+    .line 1291
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1289
+    .line 1292
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {p1, p2}, Landroid/widget/ScrollView;->setTranslationY(F)V
 
     goto :goto_0
 
-    .line 1291
+    .line 1294
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -3079,23 +3088,23 @@
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTranslationY(F)V
 
-    .line 1292
+    .line 1295
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt p2, v1, :cond_2
 
-    .line 1293
+    .line 1296
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
-    .line 1295
+    .line 1298
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1296
+    .line 1299
     iget-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -3133,7 +3142,7 @@
 .method private updateMessages()V
     .locals 9
 
-    .line 1062
+    .line 1065
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->itemAnimator:Landroidx/recyclerview/widget/ChatListItemAnimator;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->isRunning()Z
@@ -3144,7 +3153,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1063
+    .line 1066
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateAfterAnimations:Z
 
     return-void
@@ -3156,7 +3165,7 @@
 
     move v3, v2
 
-    .line 1067
+    .line 1070
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -3168,7 +3177,7 @@
 
     if-ge v2, v4, :cond_d
 
-    .line 1068
+    .line 1071
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v4, v4, Lorg/telegram/messenger/ForwardingMessagesParams;->previewMessages:Ljava/util/ArrayList;
@@ -3179,22 +3188,22 @@
 
     check-cast v4, Lorg/telegram/messenger/MessageObject;
 
-    .line 1069
+    .line 1072
     iput-boolean v1, v4, Lorg/telegram/messenger/MessageObject;->forceUpdate:Z
 
-    .line 1070
+    .line 1073
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->sendAsPeer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iput-object v5, v4, Lorg/telegram/messenger/MessageObject;->sendAsPeer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 1071
+    .line 1074
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v6, v5, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
     if-nez v6, :cond_1
 
-    .line 1072
+    .line 1075
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget v7, v6, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
@@ -3203,12 +3212,12 @@
 
     iput v7, v6, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 1073
+    .line 1076
     iput-boolean v0, v4, Lorg/telegram/messenger/MessageObject;->hideSendersName:Z
 
     goto :goto_1
 
-    .line 1075
+    .line 1078
     :cond_1
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -3218,34 +3227,34 @@
 
     iput v7, v6, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 1076
+    .line 1079
     iput-boolean v1, v4, Lorg/telegram/messenger/MessageObject;->hideSendersName:Z
 
-    .line 1078
+    .line 1081
     :goto_1
     iget-boolean v5, v5, Lorg/telegram/messenger/ForwardingMessagesParams;->hideCaption:Z
 
     if-eqz v5, :cond_2
 
-    .line 1079
+    .line 1082
     iget-object v5, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     const/4 v6, 0x0
 
     iput-object v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 1080
+    .line 1083
     iput-object v6, v4, Lorg/telegram/messenger/MessageObject;->caption:Ljava/lang/CharSequence;
 
     goto :goto_2
 
-    .line 1083
+    .line 1086
     :cond_2
     iget-object v5, v4, Lorg/telegram/messenger/MessageObject;->captionMessageCached:Ljava/lang/String;
 
     if-eqz v5, :cond_3
 
-    .line 1084
+    .line 1087
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     new-instance v7, Ljava/lang/String;
@@ -3254,11 +3263,11 @@
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 1087
+    .line 1090
     :cond_3
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->generateCaption()V
 
-    .line 1090
+    .line 1093
     :goto_2
     iget-boolean v5, v4, Lorg/telegram/messenger/MessageObject;->isWebpage:Z
 
@@ -3272,12 +3281,12 @@
 
     if-eq v6, v5, :cond_4
 
-    .line 1091
+    .line 1094
     invoke-virtual {v4, v5}, Lorg/telegram/messenger/MessageObject;->hidePreview(Z)V
 
     goto/16 :goto_6
 
-    .line 1092
+    .line 1095
     :cond_4
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -3298,7 +3307,7 @@
     :cond_5
     move v5, v0
 
-    .line 1093
+    .line 1096
     :goto_3
     invoke-direct {p0, v4, v5}, Lorg/telegram/ui/Components/ForwardingPreviewView;->getValidGroupedMessage(Lorg/telegram/messenger/MessageObject;Z)Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
@@ -3306,7 +3315,7 @@
 
     if-eqz v5, :cond_9
 
-    .line 1094
+    .line 1097
     iget-boolean v6, v5, Lorg/telegram/messenger/MessageObject$GroupedMessages;->hasCaption:Z
 
     if-eqz v6, :cond_9
@@ -3335,7 +3344,7 @@
 
     if-ne v6, v7, :cond_9
 
-    .line 1095
+    .line 1098
     iget-object v5, v5, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -3356,19 +3365,19 @@
 
     check-cast v6, Lorg/telegram/messenger/MessageObject;
 
-    .line 1096
+    .line 1099
     iget-object v7, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v7, v7, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
     invoke-virtual {v6, v7}, Lorg/telegram/messenger/MessageObject;->transformToSingle(Z)V
 
-    .line 1097
+    .line 1100
     iget-boolean v7, v6, Lorg/telegram/messenger/MessageObject;->hasCaption:Z
 
     if-nez v7, :cond_6
 
-    .line 1099
+    .line 1102
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v7, v3, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
@@ -3377,7 +3386,7 @@
 
     if-eqz v7, :cond_7
 
-    .line 1101
+    .line 1104
     iget-object v3, v3, Lorg/telegram/messenger/ForwardingMessagesParams;->selectedIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -3388,7 +3397,7 @@
 
     goto :goto_5
 
-    .line 1103
+    .line 1106
     :cond_7
     iget-object v3, v3, Lorg/telegram/messenger/ForwardingMessagesParams;->selectedIds:Landroid/util/SparseBooleanArray;
 
@@ -3403,7 +3412,7 @@
 
     goto :goto_4
 
-    .line 1107
+    .line 1110
     :cond_8
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -3425,20 +3434,20 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 1109
+    .line 1112
     :cond_9
     iget-boolean v5, v4, Lorg/telegram/messenger/MessageObject;->hasCaption:Z
 
     if-eqz v5, :cond_a
 
-    .line 1110
+    .line 1113
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-boolean v5, v5, Lorg/telegram/messenger/ForwardingMessagesParams;->needHideMedia:Z
 
     invoke-virtual {v4, v5}, Lorg/telegram/messenger/MessageObject;->hideCaptionedMedia(Z)V
 
-    .line 1115
+    .line 1118
     :cond_a
     :goto_6
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->isPoll()Z
@@ -3447,14 +3456,14 @@
 
     if-eqz v5, :cond_c
 
-    .line 1116
+    .line 1119
     iget-object v4, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     check-cast v4, Lorg/telegram/messenger/ForwardingMessagesParams$PreviewMediaPoll;
 
-    .line 1117
+    .line 1120
     iget-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;->results:Lorg/telegram/tgnet/TLRPC$PollResults;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -3481,7 +3490,7 @@
     :cond_d
     move v2, v0
 
-    .line 1120
+    .line 1123
     :goto_8
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -3493,7 +3502,7 @@
 
     if-ge v2, v4, :cond_e
 
-    .line 1121
+    .line 1124
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v4, v4, Lorg/telegram/messenger/ForwardingMessagesParams;->pollChoosenAnswers:Ljava/util/ArrayList;
@@ -3519,7 +3528,7 @@
     :cond_e
     move v1, v0
 
-    .line 1123
+    .line 1126
     :goto_9
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -3531,7 +3540,7 @@
 
     if-ge v1, v2, :cond_f
 
-    .line 1124
+    .line 1127
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->itemAnimator:Landroidx/recyclerview/widget/ChatListItemAnimator;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -3550,7 +3559,7 @@
 
     goto :goto_9
 
-    .line 1127
+    .line 1130
     :cond_f
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -3558,21 +3567,21 @@
 
     iput-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->isLastHideMedia:Z
 
-    .line 1128
+    .line 1131
     iget-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->needHidePreview:Z
 
     iput-boolean v2, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->isLastHidePreview:Z
 
     if-eqz v3, :cond_10
 
-    .line 1130
+    .line 1133
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->adapter:Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
 
-    .line 1134
+    .line 1137
     :cond_10
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->adapter:Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;
 
@@ -3590,26 +3599,26 @@
 .method private updateOpenEditorItem()V
     .locals 6
 
-    .line 94
+    .line 95
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 95
+    .line 96
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/ForwardingMessagesParams;->getSelectedMessages(Ljava/util/ArrayList;Z)V
 
-    .line 96
+    .line 97
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result v1
 
-    .line 97
+    .line 98
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     invoke-virtual {v3}, Lorg/telegram/messenger/ForwardingMessagesParams;->isTemplatePreview()Z
@@ -3649,20 +3658,20 @@
 
     goto :goto_0
 
-    .line 100
+    .line 101
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 101
+    .line 102
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-ne v0, v2, :cond_2
 
-    .line 102
+    .line 103
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v2, Lorg/telegram/messenger/R$string;->EditMessage:I
@@ -3679,7 +3688,7 @@
 
     goto :goto_1
 
-    .line 104
+    .line 105
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -3697,7 +3706,7 @@
 
     goto :goto_1
 
-    .line 98
+    .line 99
     :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -3706,7 +3715,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 107
+    .line 108
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->openEditorView:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -3716,10 +3725,10 @@
 
     if-eq v1, v0, :cond_4
 
-    .line 108
+    .line 109
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 109
+    .line 110
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updatePositions()V
 
     :cond_4
@@ -3729,13 +3738,13 @@
 .method private updatePositions()V
     .locals 7
 
-    .line 1216
+    .line 1219
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
-    .line 1217
+    .line 1220
     iget v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
-    .line 1219
+    .line 1222
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->isLandscapeMode:Z
 
     const/4 v3, 0x0
@@ -3744,7 +3753,7 @@
 
     if-nez v2, :cond_6
 
-    .line 1220
+    .line 1223
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
@@ -3771,7 +3780,7 @@
 
     goto :goto_1
 
-    .line 1223
+    .line 1226
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -3785,7 +3794,7 @@
 
     const/4 v5, 0x1
 
-    .line 1224
+    .line 1227
     :goto_0
     iget-object v6, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -3795,7 +3804,7 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 1225
+    .line 1228
     iget-object v6, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v6, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3808,7 +3817,7 @@
 
     if-ge v6, v2, :cond_1
 
-    .line 1226
+    .line 1229
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3827,7 +3836,7 @@
     :cond_2
     const/4 v5, 0x4
 
-    .line 1229
+    .line 1232
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -3836,23 +3845,23 @@
 
     if-gez v2, :cond_3
 
-    .line 1231
+    .line 1234
     iput v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
     goto :goto_2
 
-    .line 1233
+    .line 1236
     :cond_3
     iput v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
     goto :goto_2
 
-    .line 1221
+    .line 1224
     :cond_4
     :goto_1
     iput v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
-    .line 1237
+    .line 1240
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
@@ -3888,7 +3897,7 @@
 
     int-to-float v2, v2
 
-    .line 1238
+    .line 1241
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v3
@@ -3903,7 +3912,7 @@
 
     int-to-float v3, v3
 
-    .line 1239
+    .line 1242
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -3926,7 +3935,7 @@
 
     iput v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
-    .line 1240
+    .line 1243
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -3937,7 +3946,7 @@
 
     if-lez v2, :cond_5
 
-    .line 1241
+    .line 1244
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -3946,7 +3955,7 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
-    .line 1243
+    .line 1246
     :cond_5
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -3962,7 +3971,7 @@
 
     int-to-float v2, v2
 
-    .line 1244
+    .line 1247
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v3, v2}, Landroid/widget/ScrollView;->setTranslationX(F)V
@@ -3972,13 +3981,13 @@
     :cond_6
     const/4 v2, 0x0
 
-    .line 1246
+    .line 1249
     iput v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
-    .line 1247
+    .line 1250
     iput v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I
 
-    .line 1248
+    .line 1251
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3997,7 +4006,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ScrollView;->setTranslationX(F)V
 
-    .line 1251
+    .line 1254
     :goto_3
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->firstLayout:Z
 
@@ -4013,13 +4022,13 @@
 
     if-eqz v3, :cond_9
 
-    .line 1252
+    .line 1255
     :cond_7
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_8
 
-    .line 1253
+    .line 1256
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_8
@@ -4027,7 +4036,7 @@
 
     new-array v2, v2, [F
 
-    .line 1255
+    .line 1258
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -4036,28 +4045,28 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1256
+    .line 1259
     new-instance v3, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;
 
     invoke-direct {v3, p0, v0, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView;IF)V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1262
+    .line 1265
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v3, 0xfa
 
     invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1263
+    .line 1266
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v3, Landroidx/recyclerview/widget/ChatListItemAnimator;->DEFAULT_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1264
+    .line 1267
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lorg/telegram/ui/Components/ForwardingPreviewView$15;
@@ -4066,20 +4075,20 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1272
+    .line 1275
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeBoundsRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v3, 0x32
 
     invoke-static {v2, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1274
+    .line 1277
     iput v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentTopOffset:I
 
-    .line 1275
+    .line 1278
     iput v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentYOffset:F
 
-    .line 1276
+    .line 1279
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->setOffset(FI)V
 
     goto :goto_4
@@ -4087,7 +4096,7 @@
     :cond_9
     if-eqz v2, :cond_a
 
-    .line 1278
+    .line 1281
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
     iput v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentYOffset:F
@@ -4114,7 +4123,7 @@
 .method private updateSubtitle()V
     .locals 10
 
-    .line 985
+    .line 988
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ForwardingMessagesParams;->isTemplatePreview()Z
@@ -4133,7 +4142,7 @@
 
     goto/16 :goto_0
 
-    .line 989
+    .line 992
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -4155,14 +4164,14 @@
 
     if-nez v2, :cond_6
 
-    .line 990
+    .line 993
     iget-boolean v1, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->willSeeSenders:Z
 
     if-eqz v1, :cond_3
 
     if-eqz v0, :cond_1
 
-    .line 992
+    .line 995
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameVisible:I
@@ -4187,7 +4196,7 @@
 
     goto/16 :goto_0
 
-    .line 994
+    .line 997
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -4203,7 +4212,7 @@
 
     if-nez v0, :cond_2
 
-    .line 995
+    .line 998
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameVisibleChannel:I
@@ -4216,7 +4225,7 @@
 
     goto/16 :goto_0
 
-    .line 997
+    .line 1000
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -4233,7 +4242,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 1002
+    .line 1005
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameVisible:I
@@ -4258,7 +4267,7 @@
 
     goto/16 :goto_0
 
-    .line 1004
+    .line 1007
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -4274,7 +4283,7 @@
 
     if-nez v0, :cond_5
 
-    .line 1005
+    .line 1008
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameHiddenChannel:I
@@ -4287,7 +4296,7 @@
 
     goto/16 :goto_0
 
-    .line 1007
+    .line 1010
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -4301,7 +4310,7 @@
 
     goto/16 :goto_0
 
-    .line 1011
+    .line 1014
     :cond_6
     iget-boolean v1, v1, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
 
@@ -4309,7 +4318,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 1013
+    .line 1016
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameVisible:I
@@ -4334,7 +4343,7 @@
 
     goto :goto_0
 
-    .line 1015
+    .line 1018
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -4350,7 +4359,7 @@
 
     if-nez v0, :cond_8
 
-    .line 1016
+    .line 1019
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameVisibleChannel:I
@@ -4363,7 +4372,7 @@
 
     goto :goto_0
 
-    .line 1018
+    .line 1021
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -4380,7 +4389,7 @@
     :cond_9
     if-eqz v0, :cond_a
 
-    .line 1023
+    .line 1026
     iget-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v2, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameHidden:I
@@ -4407,7 +4416,7 @@
 
     goto :goto_0
 
-    .line 1025
+    .line 1028
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -4423,7 +4432,7 @@
 
     if-nez v0, :cond_b
 
-    .line 1026
+    .line 1029
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->ForwardPreviewSendersNameHiddenChannel:I
@@ -4436,7 +4445,7 @@
 
     goto :goto_0
 
-    .line 1028
+    .line 1031
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -4488,17 +4497,17 @@
 .method public dismiss(Z)V
     .locals 3
 
-    .line 1039
+    .line 1042
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showing:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1040
+    .line 1043
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showing:Z
 
-    .line 1041
+    .line 1044
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -4537,7 +4546,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 1050
+    .line 1053
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -4548,7 +4557,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 1051
+    .line 1054
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->onDismiss(Z)V
 
     :cond_0
@@ -4558,7 +4567,7 @@
 .method public isShowing()Z
     .locals 1
 
-    .line 1301
+    .line 1304
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->showing:Z
 
     return v0
@@ -4573,15 +4582,15 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 1209
+    .line 1212
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 1210
+    .line 1213
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updatePositions()V
 
     const/4 p1, 0x0
 
-    .line 1211
+    .line 1214
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->firstLayout:Z
 
     return-void
@@ -4590,7 +4599,7 @@
 .method protected onMeasure(II)V
     .locals 8
 
-    .line 1141
+    .line 1144
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -4615,17 +4624,17 @@
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->isLandscapeMode:Z
 
-    .line 1143
+    .line 1146
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 1144
+    .line 1147
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->isLandscapeMode:Z
 
     if-eqz v1, :cond_1
 
-    .line 1145
+    .line 1148
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -4643,7 +4652,7 @@
 
     move v4, v1
 
-    .line 1147
+    .line 1150
     :goto_1
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
@@ -4653,7 +4662,7 @@
 
     if-ge v1, v5, :cond_4
 
-    .line 1149
+    .line 1152
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4670,7 +4679,7 @@
 
     goto :goto_2
 
-    .line 1153
+    .line 1156
     :cond_2
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
@@ -4694,7 +4703,7 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1154
+    .line 1157
     iget-object v5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4709,7 +4718,7 @@
 
     if-le v5, v4, :cond_3
 
-    .line 1155
+    .line 1158
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionItems:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4728,7 +4737,7 @@
 
     goto :goto_1
 
-    .line 1158
+    .line 1161
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
@@ -4740,7 +4749,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 1159
+    .line 1162
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->rect:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
@@ -4751,40 +4760,27 @@
 
     add-int/2addr v4, v0
 
-    .line 1160
-    iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 1161
-    iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
     .line 1163
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
 
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result v1
+    move-result-object v0
 
-    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v1
-
-    invoke-virtual {v0, p1, v1}, Landroid/widget/LinearLayout;->measure(II)V
+    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 1164
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
 
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    .line 1166
+    iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout:Landroid/widget/LinearLayout;
+
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
@@ -4795,7 +4791,20 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 1166
+    .line 1167
+    iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->buttonsLayout2:Landroid/widget/LinearLayout;
+
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v1
+
+    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v1
+
+    invoke-virtual {v0, p1, v1}, Landroid/widget/LinearLayout;->measure(II)V
+
+    .line 1169
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4810,14 +4819,14 @@
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 1167
+    .line 1170
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->isLandscapeMode:Z
 
     const/4 v1, -0x1
 
     if-eqz v0, :cond_5
 
-    .line 1168
+    .line 1171
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4826,7 +4835,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1169
+    .line 1172
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4843,7 +4852,7 @@
 
     iput v5, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 1170
+    .line 1173
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4858,7 +4867,7 @@
 
     iput v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 1171
+    .line 1174
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4901,7 +4910,7 @@
 
     iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1172
+    .line 1175
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v0}, Landroid/widget/ScrollView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4912,7 +4921,7 @@
 
     goto :goto_3
 
-    .line 1174
+    .line 1177
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -4924,7 +4933,7 @@
 
     iput v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 1175
+    .line 1178
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4935,7 +4944,7 @@
 
     iput v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 1176
+    .line 1179
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4972,7 +4981,7 @@
 
     iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1177
+    .line 1180
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4997,7 +5006,7 @@
 
     if-gez v0, :cond_6
 
-    .line 1178
+    .line 1181
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5016,7 +5025,7 @@
 
     iput v4, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1180
+    .line 1183
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -5026,7 +5035,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1181
+    .line 1184
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->menuScrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v0}, Landroid/widget/ScrollView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5049,7 +5058,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1184
+    .line 1187
     :goto_3
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -5065,12 +5074,12 @@
 
     shl-int/2addr v0, v1
 
-    .line 1185
+    .line 1188
     iget v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->lastSize:I
 
     if-eq v4, v0, :cond_a
 
-    .line 1186
+    .line 1189
     :goto_4
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -5082,12 +5091,12 @@
 
     if-ge v3, v4, :cond_9
 
-    .line 1187
+    .line 1190
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->isLandscapeMode:Z
 
     if-eqz v4, :cond_7
 
-    .line 1188
+    .line 1191
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v4, v4, Lorg/telegram/messenger/ForwardingMessagesParams;->previewMessages:Ljava/util/ArrayList;
@@ -5110,7 +5119,7 @@
 
     goto :goto_5
 
-    .line 1190
+    .line 1193
     :cond_7
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -5134,7 +5143,7 @@
 
     iput v5, v4, Lorg/telegram/messenger/MessageObject;->parentWidth:I
 
-    .line 1192
+    .line 1195
     :goto_5
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -5148,7 +5157,7 @@
 
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->resetLayout()V
 
-    .line 1193
+    .line 1196
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v4, v4, Lorg/telegram/messenger/ForwardingMessagesParams;->previewMessages:Ljava/util/ArrayList;
@@ -5161,12 +5170,12 @@
 
     iput-boolean v2, v4, Lorg/telegram/messenger/MessageObject;->forceUpdate:Z
 
-    .line 1194
+    .line 1197
     iget-object v4, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->adapter:Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;
 
     if-eqz v4, :cond_8
 
-    .line 1195
+    .line 1198
     invoke-virtual {v4}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     :cond_8
@@ -5174,15 +5183,15 @@
 
     goto :goto_4
 
-    .line 1198
+    .line 1201
     :cond_9
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->firstLayout:Z
 
-    .line 1200
+    .line 1203
     :cond_a
     iput v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->lastSize:I
 
-    .line 1202
+    .line 1205
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -5203,10 +5212,10 @@
 .method public setSendAsPeer(Lorg/telegram/tgnet/TLRPC$Peer;)V
     .locals 0
 
-    .line 119
+    .line 120
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView;->sendAsPeer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 120
+    .line 121
     invoke-direct {p0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateMessages()V
 
     return-void

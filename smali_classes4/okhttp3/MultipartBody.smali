@@ -62,7 +62,7 @@
     .line 284
     sget-object v0, Lokhttp3/MediaType;->Companion:Lokhttp3/MediaType$Companion;
 
-    const-string v1, "multipart/mixed"
+    const-string/jumbo v1, "multipart/mixed"
 
     invoke-virtual {v0, v1}, Lokhttp3/MediaType$Companion;->get(Ljava/lang/String;)Lokhttp3/MediaType;
 
@@ -70,22 +70,22 @@
 
     sput-object v1, Lokhttp3/MultipartBody;->MIXED:Lokhttp3/MediaType;
 
-    const-string v1, "multipart/alternative"
+    const-string/jumbo v1, "multipart/alternative"
 
     .line 292
     invoke-virtual {v0, v1}, Lokhttp3/MediaType$Companion;->get(Ljava/lang/String;)Lokhttp3/MediaType;
 
-    const-string v1, "multipart/digest"
+    const-string/jumbo v1, "multipart/digest"
 
     .line 300
     invoke-virtual {v0, v1}, Lokhttp3/MediaType$Companion;->get(Ljava/lang/String;)Lokhttp3/MediaType;
 
-    const-string v1, "multipart/parallel"
+    const-string/jumbo v1, "multipart/parallel"
 
     .line 307
     invoke-virtual {v0, v1}, Lokhttp3/MediaType$Companion;->get(Ljava/lang/String;)Lokhttp3/MediaType;
 
-    const-string v1, "multipart/form-data"
+    const-string/jumbo v1, "multipart/form-data"
 
     .line 315
     invoke-virtual {v0, v1}, Lokhttp3/MediaType$Companion;->get(Ljava/lang/String;)Lokhttp3/MediaType;

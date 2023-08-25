@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda0;->f$0:Landroid/app/Activity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$jknn2at2CnLgU3btKDxRS0FQUiw(Landroid/app/Activity;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$pedBVqK11_IxKZnUJ3p-00754Zk(Landroid/app/Activity;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

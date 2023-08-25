@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/SearchField;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/SearchField;-><init>(Landroid/content/Context;ZFLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchField;Landroid/content/Context;)V
     .locals 0
 
-    .line 83
+    .line 86
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchField$2;->this$0:Lorg/telegram/ui/Components/SearchField;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 86
+    .line 89
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchField$2;->this$0:Lorg/telegram/ui/Components/SearchField;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/SearchField;->processTouchEvent(Landroid/view/MotionEvent;)V
 
-    .line 87
+    .line 90
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -51,7 +51,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 92
+    .line 95
     invoke-virtual {p0}, Landroid/widget/EditText;->isEnabled()Z
 
     move-result v0
@@ -62,7 +62,7 @@
 
     return p1
 
-    .line 95
+    .line 98
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -72,12 +72,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 96
+    .line 99
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchField$2;->this$0:Lorg/telegram/ui/Components/SearchField;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/SearchField;->onFieldTouchUp(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
-    .line 98
+    .line 101
     :cond_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

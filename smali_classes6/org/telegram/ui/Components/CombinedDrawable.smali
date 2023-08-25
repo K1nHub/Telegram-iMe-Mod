@@ -89,38 +89,42 @@
     .line 128
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->background:Landroid/graphics/drawable/Drawable;
 
+    if-eqz v0, :cond_0
+
+    .line 129
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 129
+    .line 130
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 130
+    .line 132
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
-    .line 131
+    .line 133
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->fullSize:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 132
+    .line 134
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 133
+    .line 135
     iget v1, p0, Lorg/telegram/ui/Components/CombinedDrawable;->left:I
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    .line 134
+    .line 136
     iget-object v2, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     iget v3, v0, Landroid/graphics/Rect;->left:I
@@ -145,21 +149,21 @@
 
     goto :goto_0
 
-    .line 136
-    :cond_0
+    .line 138
+    :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
-    .line 141
-    :cond_1
+    .line 143
+    :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->iconWidth:I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    .line 142
+    .line 144
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -182,7 +186,7 @@
 
     add-int/2addr v0, v1
 
-    .line 143
+    .line 145
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -205,7 +209,7 @@
 
     add-int/2addr v1, v3
 
-    .line 144
+    .line 146
     iget-object v3, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     iget v4, p0, Lorg/telegram/ui/Components/CombinedDrawable;->iconWidth:I
@@ -218,8 +222,8 @@
 
     goto :goto_0
 
-    .line 146
-    :cond_2
+    .line 148
+    :cond_3
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -242,7 +246,7 @@
 
     add-int/2addr v0, v1
 
-    .line 147
+    .line 149
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -265,7 +269,7 @@
 
     add-int/2addr v1, v2
 
-    .line 148
+    .line 150
     iget-object v2, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -284,13 +288,13 @@
 
     invoke-virtual {v2, v0, v1, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 151
+    .line 153
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    :cond_3
+    :cond_4
     return-void
 .end method
 
@@ -306,7 +310,7 @@
 .method public getBackgroundDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 202
+    .line 204
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->background:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -337,7 +341,7 @@
 .method public getIntrinsicHeight()I
     .locals 1
 
-    .line 168
+    .line 170
     iget v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->backHeight:I
 
     if-eqz v0, :cond_0
@@ -358,7 +362,7 @@
 .method public getIntrinsicWidth()I
     .locals 1
 
-    .line 163
+    .line 165
     iget v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->backWidth:I
 
     if-eqz v0, :cond_0
@@ -379,7 +383,7 @@
 .method public getMinimumHeight()I
     .locals 1
 
-    .line 178
+    .line 180
     iget v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->backHeight:I
 
     if-eqz v0, :cond_0
@@ -400,7 +404,7 @@
 .method public getMinimumWidth()I
     .locals 1
 
-    .line 173
+    .line 175
     iget v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->backWidth:I
 
     if-eqz v0, :cond_0
@@ -421,7 +425,7 @@
 .method public getOpacity()I
     .locals 1
 
-    .line 183
+    .line 185
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
@@ -447,7 +451,7 @@
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 188
+    .line 190
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
@@ -488,7 +492,7 @@
 .method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
     .locals 0
 
-    .line 193
+    .line 195
     invoke-virtual {p0, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
     return-void
@@ -497,12 +501,12 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 157
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 158
+    .line 160
     iget-object v0, p0, Lorg/telegram/ui/Components/CombinedDrawable;->background:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
@@ -581,7 +585,7 @@
 .method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 198
+    .line 200
     invoke-virtual {p0, p2}, Landroid/graphics/drawable/Drawable;->unscheduleSelf(Ljava/lang/Runnable;)V
 
     return-void

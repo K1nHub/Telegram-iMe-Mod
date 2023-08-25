@@ -26,7 +26,7 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 697
+    .line 699
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,7 +37,7 @@
 .method public get(Lorg/telegram/ui/ArticleViewer$WindowView;)Ljava/lang/Float;
     .locals 0
 
-    .line 705
+    .line 707
     invoke-virtual {p1}, Lorg/telegram/ui/ArticleViewer$WindowView;->getInnerTranslationX()F
 
     move-result p1
@@ -52,7 +52,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 697
+    .line 699
     check-cast p1, Lorg/telegram/ui/ArticleViewer$WindowView;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ArticleViewer$1;->get(Lorg/telegram/ui/ArticleViewer$WindowView;)Ljava/lang/Float;
@@ -65,7 +65,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 697
+    .line 699
     check-cast p1, Lorg/telegram/ui/ArticleViewer$WindowView;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ArticleViewer$1;->setValue(Lorg/telegram/ui/ArticleViewer$WindowView;F)V
@@ -76,7 +76,7 @@
 .method public setValue(Lorg/telegram/ui/ArticleViewer$WindowView;F)V
     .locals 0
 
-    .line 700
+    .line 702
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ArticleViewer$WindowView;->setInnerTranslationX(F)V
 
     return-void

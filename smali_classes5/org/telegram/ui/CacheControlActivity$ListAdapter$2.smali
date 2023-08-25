@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity$ListAdapter;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 2614
+    .line 2615
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/CachedMediaLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 2617
+    .line 2618
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2623
+    .line 2624
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -73,7 +73,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/CacheControlActivity;->access$1500(Lorg/telegram/ui/CacheControlActivity;Z)V
 
-    .line 2624
+    .line 2625
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 2626
+    .line 2627
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 

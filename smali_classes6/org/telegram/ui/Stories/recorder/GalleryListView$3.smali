@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
     .locals 0
 
-    .line 148
+    .line 173
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$3;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -41,7 +41,7 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 151
+    .line 176
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$3;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->adapter:Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;

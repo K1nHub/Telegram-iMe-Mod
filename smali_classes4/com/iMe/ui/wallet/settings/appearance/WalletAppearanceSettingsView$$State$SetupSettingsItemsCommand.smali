@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 135
+    .line 151
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "setupSettingsItems"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 137
+    .line 153
     iput-object p2, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView$$State$SetupSettingsItemsCommand;->items:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView;)V
     .locals 1
 
-    .line 142
+    .line 158
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView$$State$SetupSettingsItemsCommand;->items:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView;->setupSettingsItems(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 131
+    .line 147
     check-cast p1, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView$$State$SetupSettingsItemsCommand;->apply(Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsView;)V

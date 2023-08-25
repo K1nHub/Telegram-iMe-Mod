@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;)V
     .locals 0
 
-    .line 671
+    .line 674
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -33,7 +33,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 674
+    .line 677
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2

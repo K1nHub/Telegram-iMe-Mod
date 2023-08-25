@@ -26,19 +26,19 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;Landroid/content/Context;)V
     .locals 0
 
-    .line 54
+    .line 56
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 55
+    .line 57
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->rectF:Landroid/graphics/RectF;
 
-    .line 56
+    .line 58
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -55,17 +55,17 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 60
+    .line 62
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 62
+    .line 64
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->barPaint:Landroid/graphics/Paint;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 63
+    .line 65
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -112,14 +112,14 @@
 
     div-float/2addr v0, v2
 
-    .line 64
+    .line 66
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
 
     const/4 v2, 0x0
 
-    .line 65
+    .line 67
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
 
@@ -129,7 +129,7 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 66
+    .line 68
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->rectF:Landroid/graphics/RectF;
 
     const/high16 v5, 0x41000000    # 8.0f
@@ -148,7 +148,7 @@
 
     invoke-virtual {v4, v1, v5, v6, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 67
+    .line 69
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->barPaint:Landroid/graphics/Paint;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
@@ -171,7 +171,7 @@
     :goto_1
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 68
+    .line 70
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView$1;->rectF:Landroid/graphics/RectF;
 
     const/high16 v5, 0x3f800000    # 1.0f
@@ -188,7 +188,7 @@
 
     invoke-virtual {p1, v4, v6, v5, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 69
+    .line 71
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v4

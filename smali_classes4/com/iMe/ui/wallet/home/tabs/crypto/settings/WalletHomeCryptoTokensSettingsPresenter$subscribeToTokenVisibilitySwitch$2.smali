@@ -69,7 +69,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 421
+    .line 428
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -103,31 +103,31 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 416
+    .line 423
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$2;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->access$getWalletInteractor$p(Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;)Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     move-result-object v0
 
-    .line 418
+    .line 425
     invoke-static {p1}, Lcom/iMe/mapper/wallet/FoundTokenUiMappingKt;->mapToIndexedToken(Lcom/iMe/model/wallet/home/FoundTokenItem;)Lcom/iMe/storage/domain/model/wallet/token/Token;
 
     move-result-object v1
 
-    .line 419
+    .line 426
     invoke-virtual {p1}, Lcom/iMe/model/wallet/home/FoundTokenItem;->isEnabled()Z
 
     move-result v2
 
     xor-int/lit8 v2, v2, 0x1
 
-    .line 417
+    .line 424
     invoke-virtual {v0, v1, v2}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->setTokenVisibility(Lcom/iMe/storage/domain/model/wallet/token/Token;Z)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 421
+    .line 428
     new-instance v1, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$2$1;
 
     invoke-direct {v1, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$2$1;-><init>(Lcom/iMe/model/wallet/home/FoundTokenItem;)V
@@ -146,7 +146,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 415
+    .line 422
     check-cast p1, Lcom/iMe/model/wallet/home/FoundTokenItem;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$2;->invoke(Lcom/iMe/model/wallet/home/FoundTokenItem;)Lio/reactivex/ObservableSource;

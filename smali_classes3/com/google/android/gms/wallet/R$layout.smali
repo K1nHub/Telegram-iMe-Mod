@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static final wallet_test_layout:I = 0x7f0c0125
+.field public static final wallet_test_layout:I = 0x7f0c0132
 
 
 # direct methods

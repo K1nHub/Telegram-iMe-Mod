@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;IIZLorg/telegram/messenger/ForwardingMessagesParams;)V
     .locals 0
 
-    .line 510
+    .line 513
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$8;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iput-object p6, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$8;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -45,7 +45,7 @@
 .method private synthetic lambda$onLayoutChildren$0()V
     .locals 1
 
-    .line 549
+    .line 552
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$8;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->adapter:Lorg/telegram/ui/Components/ForwardingPreviewView$Adapter;
@@ -60,7 +60,7 @@
 .method protected hasSiblingChild(I)Z
     .locals 7
 
-    .line 519
+    .line 522
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$8;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->previewMessages:Ljava/util/ArrayList;
@@ -71,7 +71,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 520
+    .line 523
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$8;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$500(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject$GroupedMessages;
@@ -82,7 +82,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 522
+    .line 525
     iget-object v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -91,7 +91,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 523
+    .line 526
     iget-byte v2, p1, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minX:B
 
     iget-byte v3, p1, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->maxX:B
@@ -108,7 +108,7 @@
 
     goto :goto_2
 
-    .line 526
+    .line 529
     :cond_0
     iget-object v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
@@ -121,7 +121,7 @@
     :goto_0
     if-ge v3, v2, :cond_3
 
-    .line 528
+    .line 531
     iget-object v4, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -134,7 +134,7 @@
 
     goto :goto_1
 
-    .line 532
+    .line 535
     :cond_1
     iget-byte v5, v4, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minY:B
 
@@ -164,17 +164,17 @@
 .method public onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 1
 
-    .line 542
+    .line 545
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v0, :cond_0
 
-    .line 543
+    .line 546
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/GridLayoutManager;->onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
 
     goto :goto_0
 
-    .line 546
+    .line 549
     :cond_0
     :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/GridLayoutManager;->onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
@@ -186,10 +186,10 @@
     :catch_0
     move-exception p1
 
-    .line 548
+    .line 551
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 549
+    .line 552
     new-instance p1, Lorg/telegram/ui/Components/ForwardingPreviewView$8$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ForwardingPreviewView$8$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView$8;)V

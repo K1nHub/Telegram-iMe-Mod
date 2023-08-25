@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n129#2,5:126\n129#2,5:131\n129#2,5:136\n129#2,5:141\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n*L\n38#1:121,5\n39#1:126,5\n40#1:131,5\n41#1:136,5\n42#1:141,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,183:1\n129#2,5:184\n129#2,5:189\n129#2,5:194\n129#2,5:199\n129#2,5:204\n129#2,5:209\n129#2,5:214\n129#2,5:219\n129#2,5:224\n129#2,5:229\n129#2,5:234\n129#2,5:239\n129#2,5:244\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n*L\n41#1:184,5\n42#1:189,5\n43#1:194,5\n44#1:199,5\n45#1:204,5\n46#1:209,5\n47#1:214,5\n48#1:219,5\n49#1:224,5\n50#1:229,5\n51#1:234,5\n52#1:239,5\n53#1:244,5\n*E\n"
 .end annotation
 
 
@@ -89,7 +89,7 @@
 
     move-result-object v1
 
-    .line 38
+    .line 41
     move-object v13, v1
 
     check-cast v13, Lcom/iMe/ui/adapter/provider/BannerProvider;
@@ -105,7 +105,7 @@
 
     move-result-object v1
 
-    .line 38
+    .line 42
     move-object v4, v1
 
     check-cast v4, Lcom/iMe/ui/adapter/provider/CreateAccountProvider;
@@ -121,10 +121,42 @@
 
     move-result-object v1
 
-    .line 38
+    .line 43
     move-object v14, v1
 
     check-cast v14, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;
+
+    .line 133
+    const-class v1, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 44
+    move-object v12, v1
+
+    check-cast v12, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    .line 133
+    const-class v1, Lcom/iMe/ui/adapter/provider/HeaderProvider;
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 45
+    move-object v7, v1
+
+    check-cast v7, Lcom/iMe/ui/adapter/provider/HeaderProvider;
 
     .line 133
     const-class v1, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
@@ -137,13 +169,13 @@
 
     move-result-object v1
 
-    .line 39
+    .line 46
     move-object v15, v1
 
     check-cast v15, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
 
     .line 133
-    const-class v1, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
+    const-class v1, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -153,10 +185,26 @@
 
     move-result-object v1
 
-    .line 39
-    move-object v5, v1
+    .line 47
+    move-object v11, v1
 
-    check-cast v5, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
+    check-cast v11, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;
+
+    .line 133
+    const-class v1, Lcom/iMe/ui/adapter/provider/NftTokenProvider;
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 48
+    move-object/from16 v16, v1
+
+    check-cast v16, Lcom/iMe/ui/adapter/provider/NftTokenProvider;
 
     .line 133
     const-class v1, Lcom/iMe/ui/adapter/provider/AddTokensProvider;
@@ -169,10 +217,26 @@
 
     move-result-object v1
 
-    .line 40
+    .line 49
     move-object v6, v1
 
     check-cast v6, Lcom/iMe/ui/adapter/provider/AddTokensProvider;
+
+    .line 133
+    const-class v1, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 50
+    move-object v5, v1
+
+    check-cast v5, Lcom/iMe/ui/adapter/provider/SelectableHeaderProvider;
 
     .line 133
     const-class v1, Lcom/iMe/ui/adapter/provider/ServiceProvider;
@@ -185,7 +249,7 @@
 
     move-result-object v1
 
-    .line 40
+    .line 51
     move-object v8, v1
 
     check-cast v8, Lcom/iMe/ui/adapter/provider/ServiceProvider;
@@ -201,7 +265,7 @@
 
     move-result-object v1
 
-    .line 40
+    .line 52
     move-object v9, v1
 
     check-cast v9, Lcom/iMe/ui/adapter/provider/TokenBalanceProvider;
@@ -215,78 +279,14 @@
 
     invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 41
-    move-object v10, v1
+    .line 53
+    move-object v10, v0
 
     check-cast v10, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;
 
-    .line 133
-    const-class v1, Lcom/iMe/ui/adapter/provider/HeaderProvider;
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 41
-    move-object v7, v1
-
-    check-cast v7, Lcom/iMe/ui/adapter/provider/HeaderProvider;
-
-    .line 133
-    const-class v1, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 41
-    move-object v12, v1
-
-    check-cast v12, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
-
-    .line 133
-    const-class v1, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 42
-    move-object v11, v1
-
-    check-cast v11, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;
-
-    .line 133
-    const-class v1, Lcom/iMe/ui/adapter/provider/NftTokenProvider;
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 42
-    move-object/from16 v16, v0
-
-    check-cast v16, Lcom/iMe/ui/adapter/provider/NftTokenProvider;
-
-    .line 37
+    .line 40
     new-instance v0, Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;
 
     move-object v3, v0
@@ -299,7 +299,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 36
+    .line 39
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -1,4 +1,4 @@
-.class final Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
+.class public final Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 .super Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
 .source "RecentChatsBar.kt"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x12
+    accessFlags = 0x11
     name = "ListAdapter"
 .end annotation
 
@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 109
+    .line 110
     iput-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
     invoke-static {v0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->access$getData$p(Lcom/iMe/ui/recent_chats/RecentChatsBar;)Ljava/util/List;
@@ -69,7 +69,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 119
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type com.iMe.fork.ui.view.AvatarDrawableCell"
@@ -80,10 +80,10 @@
 
     iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
-    .line 119
+    .line 120
     invoke-virtual {p1}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->updateColors()V
 
-    .line 120
+    .line 121
     invoke-static {v0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->access$getData$p(Lcom/iMe/ui/recent_chats/RecentChatsBar;)Ljava/util/List;
 
     move-result-object v1
@@ -120,7 +120,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 109
+    .line 110
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -135,7 +135,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 113
+    .line 114
     new-instance p1, Lcom/iMe/fork/ui/view/AvatarDrawableCell;
 
     iget-object p2, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
@@ -156,7 +156,7 @@
 
     invoke-direct {p1, p2, v0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;-><init>(Landroid/content/Context;I)V
 
-    .line 114
+    .line 115
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/16 v0, 0x32
@@ -171,7 +171,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 113
+    .line 114
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

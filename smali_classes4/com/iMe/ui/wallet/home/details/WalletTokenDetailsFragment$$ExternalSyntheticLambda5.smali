@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda5;->f$1:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    invoke-static {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->$r8$lambda$m3bcTIIMCVg3se6vQG_dU0Qsgu8(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+    invoke-static {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->$r8$lambda$zRw1M0f6cfSgebMpqoJzB80_2TE(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-void
 .end method

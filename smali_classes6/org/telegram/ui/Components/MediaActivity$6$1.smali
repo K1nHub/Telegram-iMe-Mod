@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MediaActivity$6;ZZ)V
     .locals 0
 
-    .line 734
+    .line 738
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->val$show:Z
@@ -43,7 +43,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 737
+    .line 741
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     const/4 v0, 0x0
@@ -56,7 +56,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 742
+    .line 746
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity$6;->access$1600(Lorg/telegram/ui/Components/MediaActivity$6;)Landroid/animation/AnimatorSet;
@@ -67,7 +67,7 @@
 
     return-void
 
-    .line 745
+    .line 749
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
@@ -75,7 +75,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/MediaActivity$6;->access$1602(Lorg/telegram/ui/Components/MediaActivity$6;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 746
+    .line 750
     iget-boolean p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->val$show:Z
 
     const/16 v0, 0x8
@@ -84,7 +84,7 @@
 
     if-nez p1, :cond_4
 
-    .line 747
+    .line 751
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -95,7 +95,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 748
+    .line 752
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -106,7 +106,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 749
+    .line 753
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -117,7 +117,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 751
+    .line 755
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
@@ -129,7 +129,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 752
+    .line 756
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -140,7 +140,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 754
+    .line 758
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->val$empty:Z
 
@@ -156,7 +156,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 755
+    .line 759
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -167,7 +167,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 757
+    .line 761
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .line 759
+    .line 763
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
@@ -191,7 +191,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 760
+    .line 764
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -202,7 +202,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 761
+    .line 765
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;

@@ -2,38 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/ContactsLoadingObserver$Callback;
+.implements Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
-
-.field public final synthetic f$1:Landroid/content/Intent;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;->f$0:Lorg/telegram/ui/LaunchActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;->f$1:Landroid/content/Intent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onResult(Z)V
-    .locals 2
+.method public final run()Z
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;->f$0:Lorg/telegram/ui/LaunchActivity;
+    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Qv6A9QqiVesj4_K-QAScAE1xc9M()Z
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda95;->f$1:Landroid/content/Intent;
+    move-result v0
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$SK7vs1SOn1EvIdLWa06yg8FDuh4(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;Z)V
-
-    return-void
+    return v0
 .end method

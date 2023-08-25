@@ -71,10 +71,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 42129
+    .line 42171
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 42143
+    .line 42185
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -93,7 +93,7 @@
 
     goto/16 :goto_0
 
-    .line 42177
+    .line 42219
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaDocument_layer101;
 
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 42174
+    .line 42216
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaDocument;
 
@@ -109,7 +109,7 @@
 
     goto :goto_0
 
-    .line 42204
+    .line 42246
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaAudio_layer8;
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 42168
+    .line 42210
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaContact;
 
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 42162
+    .line 42204
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaAudio;
 
@@ -133,7 +133,7 @@
 
     goto :goto_0
 
-    .line 42201
+    .line 42243
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaVideo_layer17;
 
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 42192
+    .line 42234
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaVideo_layer8;
 
@@ -149,7 +149,7 @@
 
     goto :goto_0
 
-    .line 42165
+    .line 42207
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaGeoPoint;
 
@@ -157,7 +157,7 @@
 
     goto :goto_0
 
-    .line 42207
+    .line 42249
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaPhoto_layer8;
 
@@ -165,7 +165,7 @@
 
     goto :goto_0
 
-    .line 42171
+    .line 42213
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaEmpty;
 
@@ -173,7 +173,7 @@
 
     goto :goto_0
 
-    .line 42198
+    .line 42240
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaExternalDocument;
 
@@ -181,7 +181,7 @@
 
     goto :goto_0
 
-    .line 42183
+    .line 42225
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaPhoto;
 
@@ -189,7 +189,7 @@
 
     goto :goto_0
 
-    .line 42180
+    .line 42222
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaWebPage;
 
@@ -197,7 +197,7 @@
 
     goto :goto_0
 
-    .line 42189
+    .line 42231
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaDocument_layer8;
 
@@ -205,7 +205,7 @@
 
     goto :goto_0
 
-    .line 42186
+    .line 42228
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaVideo;
 
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 42195
+    .line 42237
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaVenue;
 
@@ -226,7 +226,7 @@
 
     goto :goto_1
 
-    .line 42211
+    .line 42253
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -256,7 +256,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 42214
+    .line 42256
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

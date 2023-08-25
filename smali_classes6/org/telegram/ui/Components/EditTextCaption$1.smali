@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextCaption;)V
     .locals 0
 
-    .line 83
+    .line 107
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption$1;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
 
-    .line 96
+    .line 120
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption$1;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EditTextCaption;->access$000(Lorg/telegram/ui/Components/EditTextCaption;)I
@@ -53,7 +53,7 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 97
+    .line 121
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption$1;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EditTextCaption;->access$100(Lorg/telegram/ui/Components/EditTextCaption;)Z
@@ -70,7 +70,7 @@
 
     if-lez p1, :cond_0
 
-    .line 98
+    .line 122
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption$1;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EditTextCaption;->access$000(Lorg/telegram/ui/Components/EditTextCaption;)I
@@ -85,7 +85,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/EditTextCaption;->onLineCountChanged(II)V
 
-    .line 100
+    .line 124
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption$1;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 

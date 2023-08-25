@@ -159,7 +159,7 @@
     return v0
 
     :cond_0
-    const-string v1, "null cannot be cast to non-null type org.koin.core.definition.BeanDefinition<*>"
+    const-string/jumbo v1, "null cannot be cast to non-null type org.koin.core.definition.BeanDefinition<*>"
 
     .line 63
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V

@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-.field public final synthetic f$1:F
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/Paint/Views/EntityView;F)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
-
-    iput p2, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$$ExternalSyntheticLambda5;->f$1:F
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$$ExternalSyntheticLambda5;->f$1:F
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->$r8$lambda$BjVtIjLWv8gVLJCyzD81d3KWGKw(Lorg/telegram/ui/Components/Paint/Views/EntityView;FLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->$r8$lambda$w9hp0gbQfcz5m51-qMWJ9mzBWb8(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

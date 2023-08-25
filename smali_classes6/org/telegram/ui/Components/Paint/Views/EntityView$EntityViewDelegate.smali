@@ -24,10 +24,16 @@
 .method public abstract getCropRotation()F
 .end method
 
-.method public abstract getTransformedTouch(Landroid/view/MotionEvent;FF)[F
+.method public abstract getTransformedTouch(FF[F)V
 .end method
 
 .method public abstract onEntityDragEnd(Z)V
+.end method
+
+.method public abstract onEntityDragMultitouchEnd()V
+.end method
+
+.method public abstract onEntityDragMultitouchStart()V
 .end method
 
 .method public abstract onEntityDragStart()V

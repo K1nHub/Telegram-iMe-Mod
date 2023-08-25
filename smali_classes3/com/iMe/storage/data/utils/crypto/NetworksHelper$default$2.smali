@@ -58,7 +58,7 @@
 .method public final invoke()Lcom/iMe/storage/domain/model/crypto/Network;
     .locals 1
 
-    .line 23
+    .line 20
     sget-object v0, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
 
     invoke-static {v0}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->access$createDefaultNetwork(Lcom/iMe/storage/data/utils/crypto/NetworksHelper;)Lcom/iMe/storage/domain/model/crypto/Network;
@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 23
+    .line 20
     invoke-virtual {p0}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper$default$2;->invoke()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v0

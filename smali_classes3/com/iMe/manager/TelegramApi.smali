@@ -30,6 +30,17 @@
     .end annotation
 .end method
 
+.method public abstract getChatInfoById(J)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J)",
+            "Lio/reactivex/Observable<",
+            "Lorg/telegram/tgnet/TLRPC$Chat;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getChatInfoByUsername(Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -38,6 +49,33 @@
             ")",
             "Lio/reactivex/Observable<",
             "Lorg/telegram/tgnet/TLRPC$Chat;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getChatParticipant(Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/telegram/tgnet/TLRPC$Chat;",
+            "Lorg/telegram/tgnet/TLRPC$User;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lorg/telegram/tgnet/TLRPC$ChannelParticipant;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getFullChatInfoById(JLorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lorg/telegram/tgnet/TLRPC$Chat;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lorg/telegram/tgnet/TLRPC$ChatFull;",
             ">;"
         }
     .end annotation

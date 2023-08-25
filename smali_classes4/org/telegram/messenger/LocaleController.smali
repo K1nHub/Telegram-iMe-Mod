@@ -971,13 +971,13 @@
 
     const-string v17, "it"
 
-    const-string v18, "nb"
+    const-string/jumbo v18, "nb"
 
-    const-string v19, "nl"
+    const-string/jumbo v19, "nl"
 
-    const-string v20, "nn"
+    const-string/jumbo v20, "nn"
 
-    const-string v21, "no"
+    const-string/jumbo v21, "no"
 
     const-string/jumbo v22, "sv"
 
@@ -1009,11 +1009,11 @@
 
     const-string v36, "mr"
 
-    const-string v37, "nah"
+    const-string/jumbo v37, "nah"
 
-    const-string v38, "ne"
+    const-string/jumbo v38, "ne"
 
-    const-string v39, "om"
+    const-string/jumbo v39, "om"
 
     const-string/jumbo v40, "or"
 
@@ -1277,7 +1277,7 @@
 
     invoke-direct {v1, v3, v4}, Lorg/telegram/messenger/LocaleController;->addRules([Ljava/lang/String;Lorg/telegram/messenger/LocaleController$PluralRules;)V
 
-    const-string v3, "mt"
+    const-string/jumbo v3, "mt"
 
     .line 332
     filled-new-array {v3}, [Ljava/lang/String;
@@ -1333,7 +1333,7 @@
 
     const-string v13, "mg"
 
-    const-string v14, "nso"
+    const-string/jumbo v14, "nso"
 
     const-string/jumbo v15, "ti"
 
@@ -1368,7 +1368,7 @@
 
     const-string v13, "ko"
 
-    const-string v14, "my"
+    const-string/jumbo v14, "my"
 
     const-string/jumbo v15, "ses"
 
@@ -1593,7 +1593,7 @@
     .line 375
     iput-object v7, v3, Lorg/telegram/messenger/LocaleController$LocaleInfo;->nameEnglish:Ljava/lang/String;
 
-    const-string v7, "nl"
+    const-string/jumbo v7, "nl"
 
     .line 376
     iput-object v7, v3, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
@@ -8926,9 +8926,9 @@
 
     const-string/jumbo v5, "tl"
 
-    const-string v6, "no"
+    const-string/jumbo v6, "no"
 
-    const-string v7, "nb"
+    const-string/jumbo v7, "nb"
 
     const-string v8, "jw"
 
@@ -15702,7 +15702,7 @@
 
     const-string v11, "d"
 
-    const-string v12, "n"
+    const-string/jumbo v12, "n"
 
     const-string/jumbo v13, "t"
 
@@ -15730,7 +15730,7 @@
 
     move-object/from16 v20, v8
 
-    const-string v8, "o"
+    const-string/jumbo v8, "o"
 
     if-nez v2, :cond_1
 
@@ -16910,7 +16910,7 @@
 
     move-object/from16 v23, v5
 
-    const-string v5, "oi"
+    const-string/jumbo v5, "oi"
 
     invoke-virtual {v1, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -18040,7 +18040,7 @@
 
     const-string/jumbo v2, "\u1d14"
 
-    const-string v7, "oe"
+    const-string/jumbo v7, "oe"
 
     invoke-virtual {v1, v2, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -18409,7 +18409,7 @@
 
     const-string/jumbo v2, "\u01cc"
 
-    const-string v15, "nj"
+    const-string/jumbo v15, "nj"
 
     invoke-virtual {v1, v2, v15}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -18757,7 +18757,7 @@
 
     const-string/jumbo v2, "\u0276"
 
-    const-string v9, "oe"
+    const-string/jumbo v9, "oe"
 
     invoke-virtual {v1, v2, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -19095,7 +19095,7 @@
 
     const-string/jumbo v2, "\u0153"
 
-    const-string v15, "oe"
+    const-string/jumbo v15, "oe"
 
     invoke-virtual {v1, v2, v15}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

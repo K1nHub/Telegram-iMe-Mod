@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;)V
     .locals 0
 
-    .line 45
+    .line 61
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,38 +38,38 @@
 .method public onDown(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 48
+    .line 64
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scroller:Landroid/widget/Scroller;
 
     invoke-virtual {p1}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 49
+    .line 65
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_0
 
-    .line 50
+    .line 66
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 51
+    .line 67
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 52
+    .line 68
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollAnimator:Landroid/animation/ValueAnimator;
 
-    .line 54
+    .line 70
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
@@ -77,7 +77,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->checkScroll:Z
 
-    .line 55
+    .line 71
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->onDragging()V
 
     const/4 p1, 0x1
@@ -88,7 +88,7 @@
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 9
 
-    .line 99
+    .line 115
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object v0, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scroller:Landroid/widget/Scroller;
@@ -119,7 +119,7 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/widget/Scroller;->fling(IIIIIIII)V
 
-    .line 100
+    .line 116
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -138,7 +138,7 @@
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 0
 
-    .line 81
+    .line 97
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget p2, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollX:F
@@ -147,17 +147,17 @@
 
     iput p2, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollX:F
 
-    .line 82
+    .line 98
     iget p3, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->minScroll:F
 
     cmpg-float p2, p2, p3
 
     if-gez p2, :cond_0
 
-    .line 83
+    .line 99
     iput p3, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollX:F
 
-    .line 85
+    .line 101
     :cond_0
     iget p2, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollX:F
 
@@ -167,10 +167,10 @@
 
     if-lez p2, :cond_1
 
-    .line 86
+    .line 102
     iput p3, p1, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->scrollX:F
 
-    .line 88
+    .line 104
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
@@ -192,7 +192,7 @@
 
     move v1, v0
 
-    .line 66
+    .line 82
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
@@ -204,7 +204,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 67
+    .line 83
     iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->lastDrawnImageReceivers:Ljava/util/ArrayList;
@@ -215,7 +215,7 @@
 
     check-cast v2, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;
 
-    .line 68
+    .line 84
     iget-object v3, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->lastDrawnImageReceivers:Ljava/util/ArrayList;
@@ -246,7 +246,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 69
+    .line 85
     iget-object v3, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->access$000(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;)I
@@ -257,7 +257,7 @@
 
     if-eq v3, v2, :cond_0
 
-    .line 70
+    .line 86
     iget-object v3, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     const/4 v4, 0x1
@@ -266,7 +266,7 @@
 
     goto :goto_1
 
-    .line 72
+    .line 88
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$1;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 

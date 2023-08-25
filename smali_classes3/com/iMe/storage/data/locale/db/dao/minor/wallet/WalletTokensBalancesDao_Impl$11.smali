@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;->rxDeleteAllWalletBalances(JLjava/lang/String;)Lio/reactivex/Completable;
+    value = Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao_Impl;->rxDeleteByNetwork(JLjava/lang/String;)Lio/reactivex/Completable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

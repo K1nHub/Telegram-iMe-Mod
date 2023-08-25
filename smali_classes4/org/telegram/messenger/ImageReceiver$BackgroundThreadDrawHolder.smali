@@ -63,6 +63,8 @@
 
 .field private staticThumbDrawable:Landroid/graphics/drawable/Drawable;
 
+.field public staticThumbShader:Landroid/graphics/BitmapShader;
+
 .field public threadIndex:I
 
 .field private thumbDrawable:Landroid/graphics/drawable/Drawable;
@@ -76,17 +78,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 3160
+    .line 3148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x4
 
     new-array v0, v0, [I
 
-    .line 3167
+    .line 3156
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->roundRadius:[I
 
-    .line 3182
+    .line 3171
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -99,7 +101,7 @@
 .method static synthetic access$1000(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -108,7 +110,7 @@
 .method static synthetic access$1002(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -117,7 +119,7 @@
 .method static synthetic access$1100(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageShader:Landroid/graphics/BitmapShader;
 
     return-object p0
@@ -126,7 +128,7 @@
 .method static synthetic access$1102(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/BitmapShader;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageShader:Landroid/graphics/BitmapShader;
 
     return-object p1
@@ -135,7 +137,7 @@
 .method static synthetic access$1200(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->thumbShader:Landroid/graphics/BitmapShader;
 
     return-object p0
@@ -144,7 +146,7 @@
 .method static synthetic access$1202(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/BitmapShader;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->thumbShader:Landroid/graphics/BitmapShader;
 
     return-object p1
@@ -153,7 +155,7 @@
 .method static synthetic access$1300(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadeImage:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -162,7 +164,7 @@
 .method static synthetic access$1302(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadeImage:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -171,7 +173,7 @@
 .method static synthetic access$1400(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Z
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-boolean p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadeWithOldImage:Z
 
     return p0
@@ -180,7 +182,7 @@
 .method static synthetic access$1402(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Z)Z
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-boolean p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadeWithOldImage:Z
 
     return p1
@@ -189,7 +191,7 @@
 .method static synthetic access$1500(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Z
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-boolean p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadingWithThumb:Z
 
     return p0
@@ -198,7 +200,7 @@
 .method static synthetic access$1502(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Z)Z
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-boolean p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadingWithThumb:Z
 
     return p1
@@ -207,7 +209,7 @@
 .method static synthetic access$1600(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->thumbDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -216,7 +218,7 @@
 .method static synthetic access$1602(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->thumbDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -225,7 +227,7 @@
 .method static synthetic access$1700(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->staticThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -234,7 +236,7 @@
 .method static synthetic access$1702(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->staticThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -243,7 +245,7 @@
 .method static synthetic access$1800(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)F
     .locals 0
 
-    .line 3160
+    .line 3148
     iget p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->currentAlpha:F
 
     return p0
@@ -252,7 +254,7 @@
 .method static synthetic access$1802(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;F)F
     .locals 0
 
-    .line 3160
+    .line 3148
     iput p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->currentAlpha:F
 
     return p1
@@ -261,7 +263,7 @@
 .method static synthetic access$1900(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)F
     .locals 0
 
-    .line 3160
+    .line 3148
     iget p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->previousAlpha:F
 
     return p0
@@ -270,7 +272,7 @@
 .method static synthetic access$1902(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;F)F
     .locals 0
 
-    .line 3160
+    .line 3148
     iput p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->previousAlpha:F
 
     return p1
@@ -279,7 +281,7 @@
 .method static synthetic access$2000(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadeShader:Landroid/graphics/BitmapShader;
 
     return-object p0
@@ -288,7 +290,7 @@
 .method static synthetic access$2002(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/BitmapShader;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadeShader:Landroid/graphics/BitmapShader;
 
     return-object p1
@@ -297,7 +299,7 @@
 .method static synthetic access$400(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)[I
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->roundRadius:[I
 
     return-object p0
@@ -306,7 +308,7 @@
 .method static synthetic access$500(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/Path;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->roundPath:Landroid/graphics/Path;
 
     return-object p0
@@ -315,7 +317,7 @@
 .method static synthetic access$502(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/Path;)Landroid/graphics/Path;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->roundPath:Landroid/graphics/Path;
 
     return-object p1
@@ -324,7 +326,7 @@
 .method static synthetic access$600(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Lorg/telegram/ui/Components/AnimatedFileDrawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->animation:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     return-object p0
@@ -333,7 +335,7 @@
 .method static synthetic access$602(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Lorg/telegram/ui/Components/AnimatedFileDrawable;)Lorg/telegram/ui/Components/AnimatedFileDrawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->animation:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     return-object p1
@@ -342,7 +344,7 @@
 .method static synthetic access$700(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Lorg/telegram/ui/Components/RLottieDrawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->lottieDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     return-object p0
@@ -351,7 +353,7 @@
 .method static synthetic access$702(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Lorg/telegram/ui/Components/RLottieDrawable;)Lorg/telegram/ui/Components/RLottieDrawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->lottieDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     return-object p1
@@ -360,7 +362,7 @@
 .method static synthetic access$800(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->mediaDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -369,7 +371,7 @@
 .method static synthetic access$802(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->mediaDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -378,7 +380,7 @@
 .method static synthetic access$900(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iget-object p0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->mediaShader:Landroid/graphics/BitmapShader;
 
     return-object p0
@@ -387,7 +389,7 @@
 .method static synthetic access$902(Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;Landroid/graphics/BitmapShader;)Landroid/graphics/BitmapShader;
     .locals 0
 
-    .line 3160
+    .line 3148
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->mediaShader:Landroid/graphics/BitmapShader;
 
     return-object p1
@@ -400,14 +402,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 3224
+    .line 3214
     iget v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageX:F
 
     float-to-int v0, v0
 
     iput v0, p1, Landroid/graphics/Rect;->left:I
 
-    .line 3225
+    .line 3215
     iget v1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageY:F
 
     float-to-int v1, v1
@@ -416,7 +418,7 @@
 
     int-to-float v0, v0
 
-    .line 3226
+    .line 3216
     iget v2, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageW:F
 
     add-float/2addr v0, v2
@@ -427,7 +429,7 @@
 
     int-to-float v0, v1
 
-    .line 3227
+    .line 3217
     iget v1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageH:F
 
     add-float/2addr v0, v1
@@ -445,24 +447,24 @@
 
     if-eqz p1, :cond_0
 
-    .line 3215
+    .line 3205
     iget v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageX:F
 
     iput v0, p1, Landroid/graphics/RectF;->left:F
 
-    .line 3216
+    .line 3206
     iget v1, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageY:F
 
     iput v1, p1, Landroid/graphics/RectF;->top:F
 
-    .line 3217
+    .line 3207
     iget v2, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageW:F
 
     add-float/2addr v0, v2
 
     iput v0, p1, Landroid/graphics/RectF;->right:F
 
-    .line 3218
+    .line 3208
     iget v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageH:F
 
     add-float/2addr v1, v0
@@ -478,10 +480,10 @@
 
     const/4 v0, 0x0
 
-    .line 3188
+    .line 3177
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->animation:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    .line 3189
+    .line 3178
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->lottieDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v1, 0x0
@@ -491,7 +493,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 3191
+    .line 3180
     iget-object v2, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->roundRadius:[I
 
     aget v3, v2, v1
@@ -502,32 +504,35 @@
 
     goto :goto_0
 
-    .line 3193
+    .line 3182
     :cond_0
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->mediaDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 3194
+    .line 3183
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->mediaShader:Landroid/graphics/BitmapShader;
 
-    .line 3195
+    .line 3184
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 3196
+    .line 3185
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageShader:Landroid/graphics/BitmapShader;
 
-    .line 3197
+    .line 3186
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->thumbDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 3198
+    .line 3187
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->thumbShader:Landroid/graphics/BitmapShader;
 
-    .line 3199
+    .line 3188
+    iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->staticThumbShader:Landroid/graphics/BitmapShader;
+
+    .line 3189
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->staticThumbDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 3200
+    .line 3190
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->crossfadeImage:Landroid/graphics/drawable/Drawable;
 
-    .line 3201
+    .line 3191
     iput-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->colorFilter:Landroid/graphics/ColorFilter;
 
     return-void
@@ -538,21 +543,21 @@
 
     if-eqz p1, :cond_0
 
-    .line 3206
+    .line 3196
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
     int-to-float v0, v0
 
     iput v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageX:F
 
-    .line 3207
+    .line 3197
     iget v0, p1, Landroid/graphics/Rect;->top:I
 
     int-to-float v0, v0
 
     iput v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageY:F
 
-    .line 3208
+    .line 3198
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v0
@@ -561,7 +566,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/ImageReceiver$BackgroundThreadDrawHolder;->imageW:F
 
-    .line 3209
+    .line 3199
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
     move-result p1

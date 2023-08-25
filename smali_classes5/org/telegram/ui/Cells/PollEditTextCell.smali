@@ -113,7 +113,7 @@
 
     const/high16 v6, 0x41800000    # 16.0f
 
-    invoke-virtual {v5, v4, v6}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v4, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 147
     iget-object v5, v0, Lorg/telegram/ui/Cells/PollEditTextCell;->textView:Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -151,31 +151,31 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 13196
+    .line 13201
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 13202
+    .line 13207
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$ChatFull;->bot_info:Ljava/util/ArrayList;
 
-    .line 13237
+    .line 13242
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$ChatFull;->pending_suggestions:Ljava/util/ArrayList;
 
-    .line 13239
+    .line 13244
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$ChatFull;->recent_requesters:Ljava/util/ArrayList;
 
-    .line 13243
+    .line 13248
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -194,7 +194,7 @@
 
     goto/16 :goto_0
 
-    .line 13324
+    .line 13329
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer123;
 
@@ -202,7 +202,7 @@
 
     goto/16 :goto_0
 
-    .line 13306
+    .line 13311
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer72;
 
@@ -210,7 +210,7 @@
 
     goto/16 :goto_0
 
-    .line 13276
+    .line 13281
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer134;
 
@@ -218,7 +218,7 @@
 
     goto/16 :goto_0
 
-    .line 13273
+    .line 13278
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer135;
 
@@ -226,7 +226,7 @@
 
     goto/16 :goto_0
 
-    .line 13336
+    .line 13341
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer131;
 
@@ -234,7 +234,7 @@
 
     goto/16 :goto_0
 
-    .line 13345
+    .line 13350
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer133;
 
@@ -242,7 +242,7 @@
 
     goto/16 :goto_0
 
-    .line 13339
+    .line 13344
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer132;
 
@@ -250,7 +250,7 @@
 
     goto/16 :goto_0
 
-    .line 13360
+    .line 13365
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer135;
 
@@ -258,7 +258,7 @@
 
     goto/16 :goto_0
 
-    .line 13342
+    .line 13347
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer132;
 
@@ -266,7 +266,7 @@
 
     goto/16 :goto_0
 
-    .line 13285
+    .line 13290
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer87;
 
@@ -274,7 +274,7 @@
 
     goto/16 :goto_0
 
-    .line 13294
+    .line 13299
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer110;
 
@@ -282,7 +282,7 @@
 
     goto/16 :goto_0
 
-    .line 13330
+    .line 13335
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer124;
 
@@ -290,7 +290,7 @@
 
     goto/16 :goto_0
 
-    .line 13354
+    .line 13359
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer98;
 
@@ -298,7 +298,7 @@
 
     goto/16 :goto_0
 
-    .line 13279
+    .line 13284
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer98;
 
@@ -306,7 +306,7 @@
 
     goto/16 :goto_0
 
-    .line 13351
+    .line 13356
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer121;
 
@@ -314,7 +314,7 @@
 
     goto/16 :goto_0
 
-    .line 13303
+    .line 13308
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer71;
 
@@ -322,7 +322,7 @@
 
     goto/16 :goto_0
 
-    .line 13297
+    .line 13302
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer103;
 
@@ -330,7 +330,7 @@
 
     goto/16 :goto_0
 
-    .line 13318
+    .line 13323
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer122;
 
@@ -338,7 +338,7 @@
 
     goto/16 :goto_0
 
-    .line 13282
+    .line 13287
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer99;
 
@@ -346,7 +346,7 @@
 
     goto/16 :goto_0
 
-    .line 13363
+    .line 13368
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_old;
 
@@ -354,7 +354,7 @@
 
     goto/16 :goto_0
 
-    .line 13321
+    .line 13326
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer123;
 
@@ -362,7 +362,7 @@
 
     goto/16 :goto_0
 
-    .line 13261
+    .line 13266
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull;
 
@@ -370,7 +370,7 @@
 
     goto/16 :goto_0
 
-    .line 13291
+    .line 13296
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer121;
 
@@ -378,7 +378,7 @@
 
     goto :goto_0
 
-    .line 13327
+    .line 13332
     :sswitch_17
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer124;
 
@@ -386,7 +386,7 @@
 
     goto :goto_0
 
-    .line 13288
+    .line 13293
     :sswitch_18
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer122;
 
@@ -394,7 +394,7 @@
 
     goto :goto_0
 
-    .line 13357
+    .line 13362
     :sswitch_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer92;
 
@@ -402,7 +402,7 @@
 
     goto :goto_0
 
-    .line 13267
+    .line 13272
     :sswitch_1a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer144;
 
@@ -410,7 +410,7 @@
 
     goto :goto_0
 
-    .line 13348
+    .line 13353
     :sswitch_1b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer133;
 
@@ -418,7 +418,7 @@
 
     goto :goto_0
 
-    .line 13270
+    .line 13275
     :sswitch_1c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer139;
 
@@ -426,7 +426,7 @@
 
     goto :goto_0
 
-    .line 13264
+    .line 13269
     :sswitch_1d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer144;
 
@@ -434,7 +434,7 @@
 
     goto :goto_0
 
-    .line 13369
+    .line 13374
     :sswitch_1e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer89;
 
@@ -442,7 +442,7 @@
 
     goto :goto_0
 
-    .line 13258
+    .line 13263
     :sswitch_1f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull;
 
@@ -450,7 +450,7 @@
 
     goto :goto_0
 
-    .line 13312
+    .line 13317
     :sswitch_20
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer67;
 
@@ -458,7 +458,7 @@
 
     goto :goto_0
 
-    .line 13315
+    .line 13320
     :sswitch_21
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer48;
 
@@ -466,7 +466,7 @@
 
     goto :goto_0
 
-    .line 13300
+    .line 13305
     :sswitch_22
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer101;
 
@@ -474,7 +474,7 @@
 
     goto :goto_0
 
-    .line 13309
+    .line 13314
     :sswitch_23
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer52;
 
@@ -482,7 +482,7 @@
 
     goto :goto_0
 
-    .line 13366
+    .line 13371
     :sswitch_24
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channelFull_layer70;
 
@@ -490,7 +490,7 @@
 
     goto :goto_0
 
-    .line 13333
+    .line 13338
     :sswitch_25
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull_layer131;
 
@@ -505,7 +505,7 @@
 
     goto :goto_1
 
-    .line 13373
+    .line 13378
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -533,15 +533,15 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 13376
+    .line 13381
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 13377
+    .line 13382
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->available_reactions:Lorg/telegram/tgnet/TLRPC$ChatReactions;
 
     if-nez p0, :cond_4
 
-    .line 13378
+    .line 13383
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->available_reactions_legacy:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -550,12 +550,12 @@
 
     if-nez p0, :cond_3
 
-    .line 13379
+    .line 13384
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsSome;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsSome;-><init>()V
 
-    .line 13380
+    .line 13385
     :goto_2
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->available_reactions_legacy:Ljava/util/ArrayList;
 
@@ -565,12 +565,12 @@
 
     if-ge v1, p1, :cond_2
 
-    .line 13381
+    .line 13386
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;-><init>()V
 
-    .line 13382
+    .line 13387
     iget-object p2, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->available_reactions_legacy:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -581,7 +581,7 @@
 
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;->emoticon:Ljava/lang/String;
 
-    .line 13383
+    .line 13388
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsSome;->reactions:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -590,13 +590,13 @@
 
     goto :goto_2
 
-    .line 13385
+    .line 13390
     :cond_2
     iput-object p0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->available_reactions:Lorg/telegram/tgnet/TLRPC$ChatReactions;
 
     goto :goto_3
 
-    .line 13387
+    .line 13392
     :cond_3
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsNone;
 

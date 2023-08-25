@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
     .locals 0
 
-    .line 154
+    .line 179
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/4 p2, 0x5
 
-    .line 157
+    .line 182
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

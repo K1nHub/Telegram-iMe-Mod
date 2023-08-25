@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeBinancePayPresenter.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter\n*L\n1#1,328:1\n234#2:329\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeBinancePayPresenter.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter\n*L\n1#1,328:1\n235#2:329\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
     .line 102
     check-cast p1, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    .line 234
+    .line 235
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
 
     move-result-object p1
@@ -71,7 +71,7 @@
     .line 102
     check-cast p2, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    .line 234
+    .line 235
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
 
     move-result-object p2

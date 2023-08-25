@@ -19,7 +19,7 @@
 
 .field public final icon:I
 
-.field public final title:Ljava/lang/String;
+.field public final title:Ljava/lang/CharSequence;
 
 .field public final type:I
 
@@ -27,22 +27,22 @@
 
 
 # direct methods
-.method public constructor <init>(IILjava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(IILjava/lang/CharSequence;Ljava/lang/String;)V
     .locals 0
 
-    .line 1251
+    .line 1330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1252
+    .line 1331
     iput p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->type:I
 
-    .line 1253
+    .line 1332
     iput p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->icon:I
 
-    .line 1254
-    iput-object p3, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->title:Ljava/lang/String;
+    .line 1333
+    iput-object p3, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->title:Ljava/lang/CharSequence;
 
-    .line 1255
+    .line 1334
     iput-object p4, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->description:Ljava/lang/String;
 
     return-void

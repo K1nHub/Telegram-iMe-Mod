@@ -371,7 +371,7 @@
 
     if-gez v5, :cond_9
 
-    const-string v5, "n"
+    const-string/jumbo v5, "n"
 
     .line 1008
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

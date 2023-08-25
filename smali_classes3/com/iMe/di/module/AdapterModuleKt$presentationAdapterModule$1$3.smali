@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n129#2,5:126\n129#2,5:131\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n*L\n52#1:121,5\n53#1:126,5\n54#1:131,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,183:1\n129#2,5:184\n129#2,5:189\n129#2,5:194\n129#2,5:199\n129#2,5:204\n129#2,5:209\n129#2,5:214\n129#2,5:219\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$3\n*L\n65#1:184,5\n66#1:189,5\n67#1:194,5\n68#1:199,5\n69#1:204,5\n70#1:209,5\n71#1:214,5\n72#1:219,5\n*E\n"
 .end annotation
 
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
-    const-class p2, Lcom/iMe/ui/adapter/provider/HeaderProvider;
+    const-class p2, Lcom/iMe/ui/adapter/provider/BannerProvider;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,39 +85,7 @@
 
     move-result-object p2
 
-    .line 52
-    move-object v6, p2
-
-    check-cast v6, Lcom/iMe/ui/adapter/provider/HeaderProvider;
-
-    .line 133
-    const-class p2, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 52
-    move-object v5, p2
-
-    check-cast v5, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
-
-    .line 133
-    const-class p2, Lcom/iMe/ui/adapter/provider/BannerProvider;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 52
+    .line 65
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/ui/adapter/provider/BannerProvider;
@@ -133,7 +101,7 @@
 
     move-result-object p2
 
-    .line 53
+    .line 66
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;
@@ -149,7 +117,7 @@
 
     move-result-object p2
 
-    .line 53
+    .line 67
     move-object v7, p2
 
     check-cast v7, Lcom/iMe/ui/adapter/provider/BinanceTokenBalanceProvider;
@@ -165,7 +133,7 @@
 
     move-result-object p2
 
-    .line 53
+    .line 68
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/ui/adapter/provider/CardButtonProvider;
@@ -181,10 +149,42 @@
 
     move-result-object p2
 
-    .line 54
+    .line 69
     move-object v9, p2
 
     check-cast v9, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    .line 133
+    const-class p2, Lcom/iMe/ui/adapter/provider/HeaderProvider;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 70
+    move-object v6, p2
+
+    check-cast v6, Lcom/iMe/ui/adapter/provider/HeaderProvider;
+
+    .line 133
+    const-class p2, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 71
+    move-object v5, p2
+
+    check-cast v5, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
 
     .line 133
     const-class p2, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;
@@ -197,12 +197,12 @@
 
     move-result-object p1
 
-    .line 54
+    .line 72
     move-object v8, p1
 
     check-cast v8, Lcom/iMe/ui/adapter/provider/TotalBalanceProvider;
 
-    .line 51
+    .line 64
     new-instance p1, Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-object v1, p1
@@ -215,7 +215,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 50
+    .line 63
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

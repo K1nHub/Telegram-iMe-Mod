@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = -0x7c61fbd8
+.field public static constructor:I = 0x519d899e
 
 
 # instance fields
@@ -15,6 +15,8 @@
 .field public has_more:Z
 
 .field public state:Ljava/lang/String;
+
+.field public stealth_mode:Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
 
 .field public user_stories:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -229,6 +231,16 @@
     goto :goto_2
 
     :cond_8
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
+
+    move-result v0
+
+    invoke-static {p1, v0, p2}, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->stealth_mode:Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+
     return-void
 .end method
 
@@ -329,5 +341,9 @@
     goto :goto_2
 
     :cond_2
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->stealth_mode:Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+
     return-void
 .end method

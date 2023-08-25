@@ -90,27 +90,6 @@
     return-void
 .end method
 
-.method public equals(J)Z
-    .locals 2
-
-    .line 489
-    iget-wide v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$DelayedAnimatedEmojiDrawable;->documentId:J
-
-    cmp-long p1, v0, p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
 .method public getOpacity()I
     .locals 1
 

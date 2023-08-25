@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
@@ -22,14 +22,18 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda256;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$AhakC0b_6zdCTpmMhbvoioLpyrY(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;)V
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    return-void
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$akJ2SBFuv4jUJtLalxmFFXcoMqo(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Updates;Lorg/telegram/tgnet/TLRPC$Updates;)I
+
+    move-result p1
+
+    return p1
 .end method

@@ -866,7 +866,7 @@
 
     int-to-float v7, v7
 
-    invoke-virtual {v6, v3, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v6, v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 209
     iget-object v7, v5, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textTypeface:Lorg/telegram/ui/Components/Paint/PaintTypeface;

@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectFragment.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,291:1\n56#2,6:292\n*S KotlinDebug\n*F\n+ 1 WalletConnectFragment.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$presenter$2\n*L\n50#1:292,6\n*E\n"
+    value = "SMAP\nWalletConnectFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectFragment.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,354:1\n56#2,6:355\n*S KotlinDebug\n*F\n+ 1 WalletConnectFragment.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$presenter$2\n*L\n48#1:355,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;
     .locals 4
 
-    .line 50
+    .line 48
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;
 
     .line 58
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 50
+    .line 48
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 50
+    .line 48
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;
 
     move-result-object v0

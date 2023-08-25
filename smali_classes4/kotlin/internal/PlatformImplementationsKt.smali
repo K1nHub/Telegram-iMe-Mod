@@ -18,7 +18,7 @@
     .line 52
     const-class v2, Lkotlin/internal/PlatformImplementations;
 
-    const-string v3, "null cannot be cast to non-null type kotlin.internal.PlatformImplementations"
+    const-string/jumbo v3, "null cannot be cast to non-null type kotlin.internal.PlatformImplementations"
 
     const-string v4, "forName(\"kotlin.internal\u2026entations\").newInstance()"
 

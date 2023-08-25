@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/chat/ChatView$$State;)V
     .locals 1
 
-    .line 311
+    .line 283
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showReactionActivationAlert"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/chat/ChatView;)V
     .locals 0
 
-    .line 316
+    .line 288
     invoke-interface {p1}, Lcom/iMe/ui/chat/ChatView;->showReactionActivationAlert()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 309
+    .line 281
     check-cast p1, Lcom/iMe/ui/chat/ChatView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/chat/ChatView$$State$ShowReactionActivationAlertCommand;->apply(Lcom/iMe/ui/chat/ChatView;)V

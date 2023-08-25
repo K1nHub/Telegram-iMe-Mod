@@ -3043,20 +3043,20 @@
     return p0
 .end method
 
-.method static synthetic access$4300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
-    .locals 0
-
-    .line 136
-    iget p0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->type:I
-
-    return p0
-.end method
-
-.method static synthetic access$4400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
+.method static synthetic access$4300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
     .locals 0
 
     .line 136
     iget-boolean p0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->isAttached:Z
+
+    return p0
+.end method
+
+.method static synthetic access$4400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
+    .locals 0
+
+    .line 136
+    iget p0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->type:I
 
     return p0
 .end method

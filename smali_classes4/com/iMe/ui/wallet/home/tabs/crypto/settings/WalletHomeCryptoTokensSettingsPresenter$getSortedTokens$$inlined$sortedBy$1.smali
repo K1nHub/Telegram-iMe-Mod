@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n1#1,328:1\n339#2:329\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n1#1,328:1\n346#2:329\n*E\n"
 .end annotation
 
 
@@ -59,7 +59,7 @@
     .line 102
     check-cast p1, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 339
+    .line 346
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$getSortedTokens$$inlined$sortedBy$1;->$sortingPositions$inlined:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getAddress()Ljava/lang/String;
@@ -93,7 +93,7 @@
     .line 102
     check-cast p2, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 339
+    .line 346
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$getSortedTokens$$inlined$sortedBy$1;->$sortingPositions$inlined:Ljava/util/Map;
 
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getAddress()Ljava/lang/String;

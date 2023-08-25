@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)V
     .locals 0
 
-    .line 7561
+    .line 7562
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/4 p2, 0x2
 
-    .line 7564
+    .line 7565
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

@@ -310,7 +310,7 @@
 
     if-nez v7, :cond_7
 
-    const-string v7, "okhttp/4.9.3"
+    const-string/jumbo v7, "okhttp/4.9.3"
 
     .line 80
     invoke-virtual {v1, v2, v7}, Lokhttp3/Request$Builder;->header(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;

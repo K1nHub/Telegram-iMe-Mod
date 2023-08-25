@@ -77,7 +77,7 @@
         }
     .end annotation
 
-    const-string v0, "next is null"
+    const-string/jumbo v0, "next is null"
 
     .line 75
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -129,7 +129,7 @@
         }
     .end annotation
 
-    const-string v0, "next is null"
+    const-string/jumbo v0, "next is null"
 
     .line 53
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

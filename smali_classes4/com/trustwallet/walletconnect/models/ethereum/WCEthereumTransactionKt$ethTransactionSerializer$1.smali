@@ -159,7 +159,7 @@
 
     move-result-object v4
 
-    const-string v5, "object : TypeToken<T>() {} .type"
+    const-string/jumbo v5, "object : TypeToken<T>() {} .type"
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

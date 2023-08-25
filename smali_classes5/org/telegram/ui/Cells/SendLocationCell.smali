@@ -204,6 +204,10 @@
 
     move-result-object v2
 
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
     .line 75
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 

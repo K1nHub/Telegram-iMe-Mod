@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;
-.super Landroid/widget/FrameLayout;
+.super Ljava/lang/Object;
 .source "Bulletin.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/Bulletin$Delegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/Bulletin$BulletinWindow;-><init>(Landroid/content/Context;)V
+    value = Lorg/telegram/ui/Components/Bulletin$BulletinWindow;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,60 +18,120 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
+.field final synthetic val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
     .locals 0
 
-    .line 1756
-    iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
+    .line 1788
+    iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public addView(Landroid/view/View;)V
+.method public synthetic allowLayoutChanges()Z
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$allowLayoutChanges(Lorg/telegram/ui/Components/Bulletin$Delegate;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public clipWithGradient(I)Z
+    .locals 1
+
+    .line 1801
+    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate;->clipWithGradient(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public getBottomOffset(I)I
+    .locals 1
+
+    .line 1791
+    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
+
+    if-nez v0, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate;->getBottomOffset(I)I
+
+    move-result p1
+
+    :goto_0
+    return p1
+.end method
+
+.method public getTopOffset(I)I
+    .locals 1
+
+    .line 1796
+    iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
+
+    if-nez v0, :cond_0
+
+    sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate;->getTopOffset(I)I
+
+    move-result p1
+
+    :goto_0
+    return p1
+.end method
+
+.method public synthetic onBottomOffsetChange(F)V
     .locals 0
 
-    .line 1759
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 1760
-    iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
-
-    invoke-virtual {p1}, Landroid/app/Dialog;->show()V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onBottomOffsetChange(Lorg/telegram/ui/Components/Bulletin$Delegate;F)V
 
     return-void
 .end method
 
-.method public removeView(Landroid/view/View;)V
+.method public synthetic onHide(Lorg/telegram/ui/Components/Bulletin;)V
     .locals 0
 
-    .line 1765
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onHide(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
 
-    .line 1767
-    :try_start_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+.method public synthetic onShow(Lorg/telegram/ui/Components/Bulletin;)V
+    .locals 0
 
-    .line 1771
-    :catch_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->access$2100(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onShow(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
 
     return-void
 .end method

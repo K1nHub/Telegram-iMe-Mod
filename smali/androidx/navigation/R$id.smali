@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static final nav_controller_view_tag:I = 0x7f090284
+.field public static final nav_controller_view_tag:I = 0x7f090294

@@ -125,12 +125,12 @@
 .method public updateBalancingState(Lio/grpc/ConnectivityState;Lio/grpc/LoadBalancer$SubchannelPicker;)V
     .locals 2
 
-    const-string v0, "newState"
+    const-string/jumbo v0, "newState"
 
     .line 1143
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "newPicker"
+    const-string/jumbo v0, "newPicker"
 
     .line 1144
     invoke-static {p2, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

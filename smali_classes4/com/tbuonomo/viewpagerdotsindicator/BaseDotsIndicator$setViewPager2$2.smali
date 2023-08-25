@@ -55,7 +55,7 @@
 .method public addOnPageChangeListener(Lcom/tbuonomo/viewpagerdotsindicator/OnPageChangeListenerHelper;)V
     .locals 1
 
-    const-string v0, "onPageChangeListenerHelper"
+    const-string/jumbo v0, "onPageChangeListenerHelper"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

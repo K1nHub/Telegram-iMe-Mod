@@ -2,32 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Landroidx/core/util/Consumer;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda257;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/core/util/Consumer;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda257;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda257;-><init>()V
+
+    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda257;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda257;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda257;->f$0:Landroidx/core/util/Consumer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 1
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda257;->f$0:Landroidx/core/util/Consumer;
+    check-cast p1, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$7jjkQRy79v2hiad0qqFJXf_USy8(Landroidx/core/util/Consumer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    check-cast p2, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    return-void
+    invoke-static {p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$hXf_Mp0FPgr6I1qwnIVwcNnqfTA(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/messenger/MessagesController$DialogFilter;)I
+
+    move-result p1
+
+    return p1
 .end method

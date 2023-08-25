@@ -8,22 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$1:[I
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;[ILorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/tgnet/TLObject;
+    iput-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$1:[I
 
-    iput-object p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;
+    iput-object p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$2:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/tgnet/TLObject;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$1:[I
 
-    iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;
+    iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->$r8$lambda$S5976LLD_uXTd9KoRqmZ_X0ifdo(Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->$r8$lambda$AbZ-IpYL94TCZhlbYEhTtaOO7MY(Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;[ILorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

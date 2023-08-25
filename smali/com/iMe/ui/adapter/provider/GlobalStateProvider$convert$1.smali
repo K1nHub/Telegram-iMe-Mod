@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 23
+    .line 26
     check-cast p1, Lcom/iMe/ui/custom/state/GlobalStateLayout;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->invoke(Lcom/iMe/ui/custom/state/GlobalStateLayout;)V
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 27
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isMatchParentHeight()Z
@@ -79,21 +79,49 @@
 
     if-eqz v0, :cond_0
 
-    .line 25
+    .line 28
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     const/4 v1, -0x1
 
-    .line 26
+    .line 29
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 25
+    .line 28
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 29
+    .line 32
     :cond_0
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isWhiteBackground()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 33
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    .line 35
+    :cond_1
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+
+    invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->getCustomElevation()F
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setElevation(F)V
+
+    .line 36
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->$item:Lcom/iMe/model/common/GlobalStateItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/common/GlobalStateItem;->getState()Lcom/iMe/model/state/GlobalState;
@@ -102,7 +130,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setInternalState(Lcom/iMe/model/state/GlobalState;)V
 
-    .line 30
+    .line 37
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->getOnRetryButtonClickAction()Lkotlin/jvm/functions/Function0;
@@ -111,7 +139,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/state/GlobalStateLayout;->setRetryButtonClickListener(Lkotlin/jvm/functions/Function0;)V
 
-    .line 31
+    .line 38
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->getOnEmptyButtonClickAction()Lkotlin/jvm/functions/Function0;

@@ -252,7 +252,7 @@
 
     move-result-object v0
 
-    const-string v3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
+    const-string/jumbo v3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

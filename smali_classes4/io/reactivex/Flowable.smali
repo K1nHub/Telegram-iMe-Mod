@@ -534,17 +534,17 @@
         }
     .end annotation
 
-    const-string v0, "onNext is null"
+    const-string/jumbo v0, "onNext is null"
 
     .line 14756
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "onError is null"
+    const-string/jumbo v0, "onError is null"
 
     .line 14757
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "onComplete is null"
+    const-string/jumbo v0, "onComplete is null"
 
     .line 14758
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

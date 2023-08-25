@@ -20,5 +20,5 @@
 .method public abstract setupScreenWithData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
-.method public abstract showFee(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+.method public abstract showFee(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 .end method

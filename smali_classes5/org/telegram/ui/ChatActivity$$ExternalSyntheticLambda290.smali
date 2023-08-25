@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
 
 # instance fields
@@ -10,13 +10,9 @@
 
 .field public final synthetic f$1:Z
 
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Z
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;ZZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,29 +21,19 @@
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda290;->f$1:Z
 
-    iput-boolean p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda290;->f$2:Z
-
-    iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda290;->f$3:Z
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 4
+.method public final run(I)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda290;->f$0:Lorg/telegram/ui/ChatActivity;
 
     iget-boolean v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda290;->f$1:Z
 
-    iget-boolean v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda290;->f$2:Z
-
-    iget-boolean v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda290;->f$3:Z
-
-    check-cast p1, Landroid/net/Uri;
-
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$QlcXy8n3-5ffHgp9OivkEqihw18(Lorg/telegram/ui/ChatActivity;ZZZLandroid/net/Uri;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$nA_2pcwTXdXQ_bfNaeoccjuWtAo(Lorg/telegram/ui/ChatActivity;ZI)V
 
     return-void
 .end method

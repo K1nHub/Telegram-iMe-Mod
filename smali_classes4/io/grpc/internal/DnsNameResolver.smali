@@ -269,7 +269,7 @@
 
     invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p4, "name"
+    const-string/jumbo p4, "name"
 
     invoke-static {p2, p4}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -315,7 +315,7 @@
 
     move-result-object p2
 
-    const-string p4, "nameUri (%s) doesn\'t have an authority"
+    const-string/jumbo p4, "nameUri (%s) doesn\'t have an authority"
 
     invoke-static {p2, p4, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -726,7 +726,7 @@
     return-wide v0
 
     :cond_0
-    const-string p0, "networkaddress.cache.ttl"
+    const-string/jumbo p0, "networkaddress.cache.ttl"
 
     .line 502
     invoke-static {p0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -1878,7 +1878,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    const-string v1, "not started"
+    const-string/jumbo v1, "not started"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

@@ -1033,6 +1033,65 @@
     throw p1
 .end method
 
+.method public findStickerSet(J)Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    .locals 2
+
+    .line 385
+    monitor-enter p0
+
+    .line 386
+    :try_start_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->emojiDocumentsCache:Ljava/util/HashMap;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    .line 387
+    monitor-exit p0
+
+    return-object v1
+
+    .line 389
+    :cond_0
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Document;
+
+    if-nez p1, :cond_1
+
+    .line 391
+    monitor-exit p0
+
+    return-object v1
+
+    .line 393
+    :cond_1
+    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->getInputStickerSet(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+
+    move-result-object p1
+
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    .line 394
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
 .method public processDocuments(Ljava/util/ArrayList;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;

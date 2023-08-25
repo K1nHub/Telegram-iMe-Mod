@@ -22,6 +22,8 @@
 
 .field public caption:Ljava/lang/CharSequence;
 
+.field public captionEntitiesAllowed:Z
+
 .field private checkStickersReqId:I
 
 .field public final currentAccount:I
@@ -33,6 +35,12 @@
 .field public draftThumbFile:Ljava/io/File;
 
 .field public duration:J
+
+.field public editDocumentId:J
+
+.field public editExpireDate:J
+
+.field public editPhotoId:J
 
 .field public editStickers:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -46,9 +54,21 @@
 
 .field public editStoryId:I
 
+.field public editStoryPeerId:J
+
 .field public editedCaption:Z
 
 .field public editedMedia:Z
+
+.field public editedMediaAreas:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/tgnet/TLRPC$MediaArea;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public editedPrivacy:Z
 
@@ -76,6 +96,8 @@
 
 .field public isEdit:Z
 
+.field public isEditSaved:Z
+
 .field public isVideo:Z
 
 .field public left:F
@@ -93,6 +115,8 @@
 .field public muted:Z
 
 .field public orientation:I
+
+.field public paintEntitiesFile:Ljava/io/File;
 
 .field public paintFile:Ljava/io/File;
 
@@ -162,6 +186,14 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$54gBLtUeD4MPlQVLOBUkoVeGDHA(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$getVideoEditedInfo$6(Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$5QaCGqR06BFsrEd7oLIIccSWnR4(Ljava/io/File;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 0
 
@@ -172,34 +204,26 @@
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$Fp5FjvkBK5SexuSM-xknYxLoSxo(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/messenger/Utilities$Callback;)V
+.method public static synthetic $r8$lambda$PypC96gNkVD_lNtnK0P98OyUErU(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$detectHDR$7(Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$checkStickers$11(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$RZGpK61duMQl7cnrXDa97Tvpabw(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$Vn3Pg-CkobTR39GU_SCTCPMM-oU(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$updateFilter$3(Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$getVideoEditedInfo$7(Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$T3yVCtXAHvJj_6G0Jqj7B2vAhXA(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$WIji9w6Z2EmNYu9Dbsg02QVnI1g(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$checkStickers$11(Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$VcDfuRwZ8EjC5BZV9qJUW2RxOi0(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$setupGradient$4(Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$checkStickers$10(Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method
@@ -212,28 +236,14 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$iybvIG_8-EevQ-4gxwt8HehwoZI(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
+.method public static synthetic $r8$lambda$lBgdC3sIuUohizclurUVJLo2iZI(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$getVideoEditedInfo$5(Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$buildPhoto$3(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public static synthetic $r8$lambda$kUPhlGGoRqGnUSApuKiUq4pHomk(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLObject;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$checkStickers$9(Lorg/telegram/tgnet/TLObject;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$mxDfE8wYrg9TkmHyeCrRlTNX-Ho(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$getVideoEditedInfo$6(Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
-
-    return-void
+    return-object p0
 .end method
 
 .method public static synthetic $r8$lambda$nvOamzEAGwVSWt0UL5YOe1xVfTM(Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -246,6 +256,14 @@
     return-object p0
 .end method
 
+.method public static synthetic $r8$lambda$rajmes3koNTTqHNd92Z6SxwQ0Oo(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/messenger/Utilities$Callback;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$detectHDR$9(Lorg/telegram/messenger/Utilities$Callback;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$shQv9eCGoreGNyVdby2Whezfe9s(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 0
 
@@ -256,10 +274,26 @@
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$yPaJ5-zsdVcRIVsq-I_kD0xZnsU(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$v2tIHHfyq0Q7h7EhOFnkOfk3d_g(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;ZLjava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$checkStickers$10(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$updateFilter$4(Landroid/graphics/Bitmap;ZLjava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$yehA9mF8dKfVIud9VOY0haCy6fo(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$checkStickers$12(Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$zsb2AUwsICisnMCI9MGDz_NHAVM(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->lambda$setupGradient$5(Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
 
     return-void
 .end method
@@ -277,56 +311,62 @@
 
     const-wide/high16 v0, -0x4010000000000000L    # -1.0
 
-    .line 62
+    .line 64
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDuration:D
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 71
+    .line 78
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->right:F
 
     const/16 v0, 0x2d0
 
-    .line 79
+    .line 86
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
     const/16 v0, 0x500
 
-    .line 80
+    .line 87
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
 
     const/4 v0, 0x1
 
-    .line 82
+    .line 89
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->partsMaxId:I
 
-    .line 83
-    new-instance v0, Ljava/util/ArrayList;
+    .line 90
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
+    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
 
-    .line 124
-    new-instance v0, Ljava/util/ArrayList;
+    .line 131
+    iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->captionEntitiesAllowed:Z
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    .line 133
+    new-instance v1, Ljava/util/ArrayList;
 
-    iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
+
+    .line 135
+    iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->pinned:Z
 
     const v0, 0x15180
 
-    .line 129
+    .line 138
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
 
     const-wide/16 v0, 0x1388
 
-    .line 142
+    .line 152
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->averageDuration:J
 
     const/4 v0, 0x0
 
-    .line 916
+    .line 963
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->checkStickersReqId:I
 
     return-void
@@ -335,10 +375,10 @@
 .method public static calculateInSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
     .locals 6
 
-    .line 635
+    .line 682
     iget v0, p0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    .line 636
+    .line 683
     iget p0, p0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     const/4 v1, 0x1
@@ -364,7 +404,7 @@
 
     float-to-double v2, v0
 
-    .line 639
+    .line 686
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
@@ -379,14 +419,14 @@
 
     float-to-double p0, p0
 
-    .line 640
+    .line 687
     invoke-static {p0, p1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide p0
 
     double-to-int p0, p0
 
-    .line 641
+    .line 688
     invoke-static {p2, p0}, Ljava/lang/Math;->min(II)I
 
     move-result p0
@@ -394,7 +434,7 @@
     :goto_1
     int-to-double p0, p0
 
-    .line 643
+    .line 690
     invoke-static {p0, p1}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v2
@@ -424,15 +464,52 @@
     return p0
 .end method
 
+.method private ext(Ljava/io/File;)Ljava/lang/String;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    return-object v0
+
+    .line 346
+    :cond_0
+    invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object p1
+
+    const/16 v1, 0x2e
+
+    .line 348
+    invoke-virtual {p1, v1}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v1
+
+    if-lez v1, :cond_1
+
+    add-int/lit8 v1, v1, 0x1
+
+    .line 349
+    invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_1
+    return-object v0
+.end method
+
 .method public static fromPhotoEntry(Lorg/telegram/messenger/MediaController$PhotoEntry;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
     .locals 5
 
-    .line 490
+    .line 537
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;-><init>()V
 
-    .line 491
+    .line 538
     new-instance v1, Ljava/io/File;
 
     iget-object v2, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
@@ -441,27 +518,27 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
-    .line 492
+    .line 539
     iget v1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->orientation:I
 
-    .line 493
+    .line 540
     iget v1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->invert:I
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->invert:I
 
-    .line 494
+    .line 541
     iget-boolean v1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
-    .line 495
+    .line 542
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
-    .line 496
+    .line 543
     iget v1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->duration:I
 
     int-to-long v1, v1
@@ -474,7 +551,7 @@
 
     const/4 v3, 0x0
 
-    .line 497
+    .line 544
     iput v3, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->left:F
 
     long-to-float v1, v1
@@ -485,14 +562,14 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 498
+    .line 545
     invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->right:F
 
-    .line 499
+    .line 546
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz v1, :cond_0
@@ -501,7 +578,7 @@
 
     if-nez v1, :cond_0
 
-    .line 500
+    .line 547
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -520,18 +597,18 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
-    .line 502
+    .line 549
     :cond_0
     iget v1, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->gradientTopColor:I
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->gradientTopColor:I
 
-    .line 503
+    .line 550
     iget p0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->gradientBottomColor:I
 
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->gradientBottomColor:I
 
-    .line 504
+    .line 551
     iget-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -540,7 +617,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->decodeBounds(Ljava/lang/String;)V
 
-    .line 505
+    .line 552
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->setupMatrix()V
 
     return-object v0
@@ -549,40 +626,40 @@
 .method public static fromPhotoShoot(Ljava/io/File;I)Lorg/telegram/ui/Stories/recorder/StoryEntry;
     .locals 2
 
-    .line 510
+    .line 557
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;-><init>()V
 
-    .line 511
+    .line 558
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     const/4 v1, 0x1
 
-    .line 512
+    .line 559
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDeletable:Z
 
-    .line 513
+    .line 560
     iput p1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->orientation:I
 
     const/4 p1, 0x0
 
-    .line 514
+    .line 561
     iput p1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->invert:I
 
-    .line 515
+    .line 562
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz p0, :cond_0
 
-    .line 517
+    .line 564
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p0
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->decodeBounds(Ljava/lang/String;)V
 
-    .line 519
+    .line 566
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->setupMatrix()V
 
@@ -592,38 +669,38 @@
 .method public static fromStoryItem(Ljava/io/File;Lorg/telegram/tgnet/TLRPC$StoryItem;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
     .locals 9
 
-    .line 431
+    .line 477
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 432
+    .line 478
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
-    .line 433
+    .line 479
     iget v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
 
     iput v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStoryId:I
 
-    .line 434
+    .line 480
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
-    .line 435
+    .line 481
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDeletable:Z
 
     const/16 v2, 0x2d0
 
-    .line 436
+    .line 482
     iput v2, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     const/16 v2, 0x500
 
-    .line 437
+    .line 483
     iput v2, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
-    .line 438
+    .line 484
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto;
@@ -632,12 +709,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 439
+    .line 485
     iput-boolean v4, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz p0, :cond_6
 
-    .line 441
+    .line 487
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p0
@@ -646,16 +723,16 @@
 
     goto/16 :goto_4
 
-    .line 443
+    .line 489
     :cond_0
     instance-of p0, v2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     if-eqz p0, :cond_6
 
-    .line 444
+    .line 490
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
-    .line 445
+    .line 491
     iget-object p0, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz p0, :cond_2
@@ -666,7 +743,7 @@
 
     move p0, v4
 
-    .line 446
+    .line 492
     :goto_0
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -680,7 +757,7 @@
 
     if-ge p0, v2, :cond_2
 
-    .line 447
+    .line 493
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -693,22 +770,22 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 448
+    .line 494
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
     if-eqz v3, :cond_1
 
-    .line 449
+    .line 495
     iget p0, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
-    .line 450
+    .line 496
     iget p0, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
 
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
-    .line 451
+    .line 497
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
     iput-wide v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDuration:D
@@ -720,7 +797,7 @@
 
     goto :goto_0
 
-    .line 456
+    .line 502
     :cond_2
     :goto_1
     iget-object p0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
@@ -729,23 +806,23 @@
 
     if-eqz p0, :cond_6
 
-    .line 457
+    .line 503
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
 
     if-eqz v2, :cond_3
 
-    .line 458
+    .line 504
     iput-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     goto :goto_4
 
-    .line 459
+    .line 505
     :cond_3
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     if-eqz p0, :cond_6
 
-    .line 460
+    .line 506
     :goto_2
     iget-object p0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -759,7 +836,7 @@
 
     if-ge v4, p0, :cond_6
 
-    .line 461
+    .line 507
     iget-object p0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -772,14 +849,14 @@
 
     check-cast p0, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 462
+    .line 508
     instance-of v2, p0, Lorg/telegram/tgnet/TLRPC$TL_photoStrippedSize;
 
     if-eqz v2, :cond_4
 
     goto :goto_3
 
-    .line 465
+    .line 511
     :cond_4
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->currentAccount:I
 
@@ -793,14 +870,14 @@
 
     if-eqz p0, :cond_5
 
-    .line 466
+    .line 512
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    .line 467
+    .line 513
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p0
@@ -815,14 +892,14 @@
 
     goto :goto_2
 
-    .line 474
+    .line 520
     :cond_6
     :goto_4
     iget-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->clear()V
 
-    .line 475
+    .line 521
     iget-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
 
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->currentAccount:I
@@ -835,7 +912,7 @@
 
     invoke-virtual {p0, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 476
+    .line 522
     iget p0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->expire_date:I
 
     iget v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
@@ -844,7 +921,7 @@
 
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
 
-    .line 478
+    .line 524
     :try_start_0
     new-instance p0, Landroid/text/SpannableString;
 
@@ -852,7 +929,7 @@
 
     invoke-direct {p0, v2}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 479
+    .line 525
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v2}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
@@ -863,7 +940,7 @@
 
     move-result-object p0
 
-    .line 480
+    .line 526
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->entities:Ljava/util/ArrayList;
 
     const/4 v5, 0x1
@@ -878,7 +955,7 @@
 
     invoke-static/range {v3 .. v8}, Lorg/telegram/messenger/MessageObject;->addEntitiesToText(Ljava/lang/CharSequence;Ljava/util/ArrayList;ZZZZ)Z
 
-    .line 481
+    .line 527
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->entities:Ljava/util/ArrayList;
 
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
@@ -891,17 +968,22 @@
 
     move-result-object p0
 
-    .line 482
+    .line 528
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 484
+    .line 530
     :catch_0
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->setupMatrix()V
 
-    .line 485
+    .line 531
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->checkStickers(Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+
+    .line 532
+    iget-object p0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media_areas:Ljava/util/ArrayList;
+
+    iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMediaAreas:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -909,42 +991,42 @@
 .method public static fromVideoShoot(Ljava/io/File;Ljava/lang/String;J)Lorg/telegram/ui/Stories/recorder/StoryEntry;
     .locals 2
 
-    .line 620
+    .line 667
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 621
+    .line 668
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fromCamera:Z
 
-    .line 622
+    .line 669
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
-    .line 623
+    .line 670
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDeletable:Z
 
     const/4 p0, 0x0
 
-    .line 624
+    .line 671
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->orientation:I
 
-    .line 625
+    .line 672
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->invert:I
 
-    .line 626
+    .line 673
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
-    .line 627
+    .line 674
     iput-wide p2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->duration:J
 
-    .line 628
+    .line 675
     iput-object p1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     const/4 p0, 0x0
 
-    .line 629
+    .line 676
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->left:F
 
     long-to-float p0, p2
@@ -955,7 +1037,7 @@
 
     const/high16 p0, 0x3f800000    # 1.0f
 
-    .line 630
+    .line 677
     invoke-static {p0, p1}, Ljava/lang/Math;->min(FF)F
 
     move-result p0
@@ -966,268 +1048,252 @@
 .end method
 
 .method public static getScaledBitmap(Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;IIZ)Landroid/graphics/Bitmap;
-    .locals 16
+    .locals 12
 
-    move-object/from16 v0, p0
+    .line 282
+    new-instance p3, Landroid/graphics/BitmapFactory$Options;
 
-    move/from16 v1, p1
+    invoke-direct {p3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    move/from16 v2, p2
+    const/4 v0, 0x1
 
-    .line 258
-    new-instance v3, Landroid/graphics/BitmapFactory$Options;
+    .line 283
+    iput-boolean v0, p3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+    .line 284
+    invoke-interface {p0, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    const/4 v4, 0x1
+    const/4 v1, 0x0
 
-    .line 259
-    iput-boolean v4, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+    .line 286
+    iput-boolean v1, p3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 260
-    invoke-interface {v0, v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    .line 287
+    iput-boolean v1, p3, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
 
-    const/4 v5, 0x0
-
-    .line 262
-    iput-boolean v5, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    .line 263
-    iput-boolean v5, v3, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
-
-    .line 265
+    .line 289
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    move-result-object v6
+    move-result-object v2
 
-    .line 266
-    invoke-virtual {v6}, Ljava/lang/Runtime;->maxMemory()J
+    .line 290
+    invoke-virtual {v2}, Ljava/lang/Runtime;->maxMemory()J
+
+    move-result-wide v3
+
+    invoke-virtual {v2}, Ljava/lang/Runtime;->totalMemory()J
+
+    move-result-wide v5
+
+    invoke-virtual {v2}, Ljava/lang/Runtime;->freeMemory()J
 
     move-result-wide v7
 
-    invoke-virtual {v6}, Ljava/lang/Runtime;->totalMemory()J
+    sub-long/2addr v5, v7
 
-    move-result-wide v9
+    sub-long/2addr v3, v5
 
-    invoke-virtual {v6}, Ljava/lang/Runtime;->freeMemory()J
+    .line 291
+    iget v2, p3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    move-result-wide v11
+    iget v5, p3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    sub-long/2addr v9, v11
+    mul-int v6, v2, v5
 
-    sub-long/2addr v7, v9
+    int-to-long v6, v6
 
-    .line 267
-    iget v6, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+    const-wide/16 v8, 0x4
 
-    iget v9, v3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+    mul-long/2addr v6, v8
 
-    mul-int v10, v6, v9
+    mul-int v10, p1, p2
 
     int-to-long v10, v10
 
-    const-wide/16 v12, 0x4
+    mul-long/2addr v10, v8
 
-    mul-long/2addr v10, v12
+    add-long/2addr v6, v10
 
-    mul-int v14, v1, v2
+    long-to-double v6, v6
 
-    int-to-long v14, v14
+    const-wide v8, 0x3ff199999999999aL    # 1.1
 
-    mul-long/2addr v14, v12
+    mul-double/2addr v6, v8
 
-    add-long/2addr v10, v14
+    long-to-double v3, v3
 
-    long-to-double v10, v10
+    cmpg-double v3, v6, v3
 
-    const-wide v12, 0x3ff199999999999aL    # 1.1
+    if-gtz v3, :cond_0
 
-    mul-double/2addr v10, v12
-
-    long-to-double v7, v7
-
-    cmpg-double v7, v10, v7
-
-    if-gtz v7, :cond_0
-
-    move v7, v4
+    move v3, v0
 
     goto :goto_0
 
     :cond_0
-    move v7, v5
+    move v3, v1
 
     :goto_0
-    if-gt v6, v1, :cond_1
+    if-gt v2, p1, :cond_1
 
-    if-gt v9, v2, :cond_1
+    if-gt v5, p2, :cond_1
 
-    .line 270
-    invoke-interface {v0, v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    .line 294
+    invoke-interface {p0, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 
     :cond_1
-    if-eqz v7, :cond_3
+    if-eqz v3, :cond_2
 
-    .line 273
+    .line 297
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
-
-    move-result v6
-
-    if-lt v6, v4, :cond_3
-
-    .line 274
-    invoke-interface {v0, v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    int-to-float v1, v1
-
-    .line 276
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float/2addr v1, v3
-
-    int-to-float v2, v2
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    .line 277
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    .line 281
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    int-to-float v2, v2
+    if-lt v2, v0, :cond_2
 
-    mul-float/2addr v2, v1
+    .line 298
+    invoke-interface {p0, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    float-to-int v2, v2
+    move-result-object p0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+    int-to-float p1, p1
 
-    move-result v3
+    .line 300
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    int-to-float v3, v3
+    move-result p3
 
-    mul-float/2addr v3, v1
+    int-to-float p3, p3
 
-    float-to-int v3, v3
+    div-float/2addr p1, p3
 
-    .line 283
-    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    int-to-float p2, p2
 
-    invoke-static {v2, v3, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
-    move-result-object v4
+    move-result p3
 
-    .line 284
-    new-instance v6, Landroid/graphics/Canvas;
+    int-to-float p3, p3
 
-    invoke-direct {v6, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    div-float/2addr p2, p3
 
-    .line 286
-    new-instance v7, Landroid/graphics/Matrix;
+    .line 301
+    invoke-static {p1, p2}, Ljava/lang/Math;->max(FF)F
 
-    invoke-direct {v7}, Landroid/graphics/Matrix;-><init>()V
-
-    .line 287
-    new-instance v8, Landroid/graphics/BitmapShader;
-
-    sget-object v9, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    invoke-direct {v8, v0, v9, v9}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
-
-    .line 288
-    new-instance v11, Landroid/graphics/Paint;
-
-    const/4 v0, 0x3
-
-    invoke-direct {v11, v0}, Landroid/graphics/Paint;-><init>(I)V
-
-    .line 289
-    invoke-virtual {v11, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    div-float/2addr v0, v1
-
-    .line 291
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    const/16 v9, 0x8
-
-    invoke-static {v0, v9, v5}, Lorg/telegram/messenger/Utilities;->clamp(III)I
-
-    move-result v0
-
-    .line 293
-    invoke-virtual {v7}, Landroid/graphics/Matrix;->reset()V
-
-    .line 294
-    invoke-virtual {v7, v1, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    .line 295
-    invoke-virtual {v8, v7}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    int-to-float v9, v2
-
-    int-to-float v10, v3
-
-    .line 296
-    invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
-
-    if-eqz p3, :cond_2
-
-    if-lez v0, :cond_2
-
-    .line 299
-    invoke-static {v4, v0}, Lorg/telegram/messenger/Utilities;->stackBlurBitmap(Landroid/graphics/Bitmap;I)V
-
-    :cond_2
-    return-object v4
-
-    .line 304
-    :cond_3
-    iput-boolean v4, v3, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
+    move-result p1
 
     .line 305
-    iget v2, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    iput v2, v3, Landroid/graphics/BitmapFactory$Options;->inDensity:I
+    move-result p2
 
-    .line 306
-    iput v1, v3, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
+    int-to-float p2, p2
+
+    mul-float/2addr p2, p1
+
+    float-to-int p2, p2
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result p3
+
+    int-to-float p3, p3
+
+    mul-float/2addr p3, p1
+
+    float-to-int p3, p3
 
     .line 307
-    invoke-interface {v0, v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {p2, p3, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
+    .line 308
+    new-instance v2, Landroid/graphics/Canvas;
+
+    invoke-direct {v2, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 310
+    new-instance v3, Landroid/graphics/Matrix;
+
+    invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
+
+    .line 311
+    new-instance v4, Landroid/graphics/BitmapShader;
+
+    sget-object v5, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    invoke-direct {v4, p0, v5, v5}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
+
+    .line 312
+    new-instance v7, Landroid/graphics/Paint;
+
+    const/4 p0, 0x3
+
+    invoke-direct {v7, p0}, Landroid/graphics/Paint;-><init>(I)V
+
+    .line 313
+    invoke-virtual {v7, v4}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    const/high16 p0, 0x3f800000    # 1.0f
+
+    div-float/2addr p0, p1
+
+    .line 315
+    invoke-static {p0}, Ljava/lang/Math;->round(F)I
+
+    move-result p0
+
+    const/16 v5, 0x8
+
+    invoke-static {p0, v5, v1}, Lorg/telegram/messenger/Utilities;->clamp(III)I
+
+    .line 317
+    invoke-virtual {v3}, Landroid/graphics/Matrix;->reset()V
+
+    .line 318
+    invoke-virtual {v3, p1, p1}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    .line 319
+    invoke-virtual {v4, v3}, Landroid/graphics/BitmapShader;->setLocalMatrix(Landroid/graphics/Matrix;)V
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    int-to-float v5, p2
+
+    int-to-float v6, p3
+
+    .line 320
+    invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
     return-object v0
+
+    .line 328
+    :cond_2
+    iput-boolean v0, p3, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
+
+    .line 329
+    iget p2, p3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+
+    iput p2, p3, Landroid/graphics/BitmapFactory$Options;->inDensity:I
+
+    .line 330
+    iput p1, p3, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
+
+    .line 331
+    invoke-interface {p0, p3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;->decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method private isAnimated(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;)Z
@@ -1237,14 +1303,29 @@
 
     if-eqz p1, :cond_0
 
-    .line 180
-    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;)Z
+    .line 189
+    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
+
+    const-string v2, "video/webm"
+
+    .line 190
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 181
+    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
+
+    const-string v2, "video/mp4"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 191
     invoke-static {p1, v0}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;Z)Z
 
     move-result p1
@@ -1276,7 +1357,7 @@
 .method private static synthetic lambda$buildPhoto$0(Ljava/io/File;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 0
 
-    .line 202
+    .line 212
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object p0
@@ -1291,7 +1372,7 @@
 .method private static synthetic lambda$buildPhoto$1(Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 0
 
-    .line 215
+    .line 225
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->file:Ljava/io/File;
 
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -1308,7 +1389,7 @@
 .method private synthetic lambda$buildPhoto$2(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 228
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -1322,10 +1403,162 @@
     return-object p1
 .end method
 
-.method private synthetic lambda$checkStickers$10(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$buildPhoto$3(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    .locals 1
+
+    .line 252
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintEntitiesFile:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method private synthetic lambda$checkStickers$10(Lorg/telegram/tgnet/TLObject;)V
+    .locals 6
+
+    const/4 v0, 0x0
+
+    .line 928
+    iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->checkStickersReqId:I
+
+    .line 929
+    instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$Vector;
+
+    if-eqz v1, :cond_3
+
+    .line 930
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStickers:Ljava/util/List;
+
+    .line 931
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Vector;
+
+    move v1, v0
+
+    .line 932
+    :goto_0
+    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_3
+
+    .line 933
+    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
+
+    .line 934
+    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->cover:Lorg/telegram/tgnet/TLRPC$Document;
+
+    if-nez v3, :cond_0
+
+    .line 935
+    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->covers:Ljava/util/ArrayList;
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    .line 936
+    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->covers:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/telegram/tgnet/TLRPC$Document;
+
+    :cond_0
+    if-nez v3, :cond_1
+
+    .line 938
+    instance-of v4, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
+
+    if-eqz v4, :cond_1
+
+    .line 939
+    check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
+
+    .line 940
+    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;->documents:Ljava/util/ArrayList;
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    .line 941
+    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;->documents:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v3, v2
+
+    check-cast v3, Lorg/telegram/tgnet/TLRPC$Document;
+
+    :cond_1
+    if-eqz v3, :cond_2
+
+    .line 945
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;
+
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;-><init>()V
+
+    .line 946
+    iget-wide v4, v3, Lorg/telegram/tgnet/TLRPC$Document;->id:J
+
+    iput-wide v4, v2, Lorg/telegram/tgnet/TLRPC$InputDocument;->id:J
+
+    .line 947
+    iget-wide v4, v3, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
+
+    iput-wide v4, v2, Lorg/telegram/tgnet/TLRPC$InputDocument;->access_hash:J
+
+    .line 948
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
+
+    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
+
+    .line 949
+    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStickers:Ljava/util/List;
+
+    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    return-void
+.end method
+
+.method private synthetic lambda$checkStickers$11(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 880
+    .line 927
     new-instance p2, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda5;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLObject;)V
@@ -1335,12 +1568,12 @@
     return-void
 .end method
 
-.method private synthetic lambda$checkStickers$11(Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$checkStickers$12(Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
     if-eqz p5, :cond_0
 
-    .line 908
+    .line 955
     iget-object v0, p5, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {v0}, Lorg/telegram/messenger/FileRefController;->isFileRefError(Ljava/lang/String;)Z
@@ -1351,7 +1584,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 909
+    .line 956
     iget p4, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->currentAccount:I
 
     invoke-static {p4}, Lorg/telegram/messenger/FileRefController;->getInstance(I)Lorg/telegram/messenger/FileRefController;
@@ -1374,152 +1607,17 @@
 
     return-void
 
-    .line 912
+    .line 959
     :cond_0
     invoke-interface {p3, p4, p5}, Lorg/telegram/tgnet/RequestDelegate;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$checkStickers$9(Lorg/telegram/tgnet/TLObject;)V
-    .locals 6
-
-    const/4 v0, 0x0
-
-    .line 881
-    iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->checkStickersReqId:I
-
-    .line 882
-    instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$Vector;
-
-    if-eqz v1, :cond_3
-
-    .line 883
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStickers:Ljava/util/List;
-
-    .line 884
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Vector;
-
-    move v1, v0
-
-    .line 885
-    :goto_0
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    if-ge v1, v2, :cond_3
-
-    .line 886
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
-
-    .line 887
-    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->cover:Lorg/telegram/tgnet/TLRPC$Document;
-
-    if-nez v3, :cond_0
-
-    .line 888
-    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->covers:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    .line 889
-    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->covers:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$Document;
-
-    :cond_0
-    if-nez v3, :cond_1
-
-    .line 891
-    instance-of v4, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
-
-    if-eqz v4, :cond_1
-
-    .line 892
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;
-
-    .line 893
-    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;->documents:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    .line 894
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_stickerSetFullCovered;->documents:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v3, v2
-
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$Document;
-
-    :cond_1
-    if-eqz v3, :cond_2
-
-    .line 898
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;
-
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;-><init>()V
-
-    .line 899
-    iget-wide v4, v3, Lorg/telegram/tgnet/TLRPC$Document;->id:J
-
-    iput-wide v4, v2, Lorg/telegram/tgnet/TLRPC$InputDocument;->id:J
-
-    .line 900
-    iget-wide v4, v3, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
-
-    iput-wide v4, v2, Lorg/telegram/tgnet/TLRPC$InputDocument;->access_hash:J
-
-    .line 901
-    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
-
-    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
-
-    .line 902
-    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStickers:Ljava/util/List;
-
-    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    return-void
-.end method
-
-.method private synthetic lambda$detectHDR$7(Lorg/telegram/messenger/Utilities$Callback;)V
+.method private synthetic lambda$detectHDR$8(Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 1
 
-    .line 839
+    .line 886
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     invoke-interface {p1, v0}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
@@ -1527,7 +1625,7 @@
     return-void
 .end method
 
-.method private synthetic lambda$detectHDR$8(Lorg/telegram/messenger/Utilities$Callback;)V
+.method private synthetic lambda$detectHDR$9(Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 6
 
     const-string v0, "color-range"
@@ -1536,13 +1634,13 @@
 
     const-string v2, "color-transfer"
 
-    .line 814
+    .line 861
     :try_start_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     if-nez v3, :cond_0
 
-    .line 815
+    .line 862
     new-instance v3, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     invoke-direct {v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;-><init>()V
@@ -1551,21 +1649,21 @@
 
     const/high16 v4, 0x447a0000    # 1000.0f
 
-    .line 816
+    .line 863
     iput v4, v3, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->maxlum:F
 
     const v4, 0x3a83126f    # 0.001f
 
-    .line 817
+    .line 864
     iput v4, v3, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->minlum:F
 
-    .line 821
+    .line 868
     :cond_0
     new-instance v4, Landroid/media/MediaExtractor;
 
     invoke-direct {v4}, Landroid/media/MediaExtractor;-><init>()V
 
-    .line 822
+    .line 869
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     invoke-virtual {v5}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -1576,34 +1674,34 @@
 
     const/4 v5, 0x0
 
-    .line 823
+    .line 870
     invoke-static {v4, v5}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
 
     move-result v5
 
-    .line 824
+    .line 871
     invoke-virtual {v4, v5}, Landroid/media/MediaExtractor;->selectTrack(I)V
 
-    .line 825
+    .line 872
     invoke-virtual {v4, v5}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
 
     move-result-object v4
 
-    .line 826
+    .line 873
     invoke-virtual {v4, v2}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 827
+    .line 874
     invoke-virtual {v4, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v2
 
     iput v2, v3, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->colorTransfer:I
 
-    .line 829
+    .line 876
     :cond_1
     invoke-virtual {v4, v1}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
@@ -1611,14 +1709,14 @@
 
     if-eqz v2, :cond_2
 
-    .line 830
+    .line 877
     invoke-virtual {v4, v1}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v1
 
     iput v1, v3, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->colorStandard:I
 
-    .line 832
+    .line 879
     :cond_2
     invoke-virtual {v4, v0}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
@@ -1626,7 +1724,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 833
+    .line 880
     invoke-virtual {v4, v0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
     move-result v0
@@ -1636,13 +1734,13 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 838
+    .line 885
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
-    .line 839
+    .line 886
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/messenger/Utilities$Callback;)V
@@ -1657,18 +1755,18 @@
     :catch_0
     move-exception v0
 
-    .line 836
+    .line 883
     :try_start_1
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 838
+    .line 885
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
-    .line 839
+    .line 886
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/messenger/Utilities$Callback;)V
@@ -1678,66 +1776,66 @@
 
     return-void
 
-    .line 838
+    .line 885
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
-    .line 839
+    .line 886
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/messenger/Utilities$Callback;)V
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 840
+    .line 887
     throw v0
 .end method
 
-.method private synthetic lambda$getVideoEditedInfo$5(Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
+.method private synthetic lambda$getVideoEditedInfo$6(Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
     .locals 16
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    .line 676
+    .line 723
     new-instance v2, Lorg/telegram/messenger/VideoEditedInfo;
 
     invoke-direct {v2}, Lorg/telegram/messenger/VideoEditedInfo;-><init>()V
 
     const/4 v3, 0x1
 
-    .line 678
+    .line 725
     iput-boolean v3, v2, Lorg/telegram/messenger/VideoEditedInfo;->isStory:Z
 
-    .line 679
+    .line 726
     iget-boolean v4, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fromCamera:Z
 
     iput-boolean v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->fromCamera:Z
 
-    .line 680
+    .line 727
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     iput v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalWidth:I
 
-    .line 681
+    .line 728
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
     iput v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalHeight:I
 
-    .line 682
+    .line 729
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
     iput v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
 
-    .line 683
+    .line 730
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
 
     iput v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
 
-    .line 684
+    .line 731
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
     const/4 v5, 0x0
@@ -1756,7 +1854,7 @@
     :goto_0
     iput-object v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->paintPath:Ljava/lang/String;
 
-    .line 686
+    .line 733
     iget v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
 
     iget v6, v2, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
@@ -1767,7 +1865,7 @@
 
     move-result v4
 
-    .line 687
+    .line 734
     iget-boolean v6, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     const/high16 v7, 0x41000000    # 8.0f
@@ -1780,19 +1878,19 @@
 
     if-eqz v6, :cond_4
 
-    .line 688
+    .line 735
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalPath:Ljava/lang/String;
 
     const/4 v5, 0x0
 
-    .line 689
+    .line 736
     iput-boolean v5, v2, Lorg/telegram/messenger/VideoEditedInfo;->isPhoto:Z
 
     const/16 v5, 0x3b
 
     const/4 v6, 0x7
 
-    .line 690
+    .line 737
     aget v6, p2, v6
 
     invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
@@ -1801,7 +1899,7 @@
 
     iput v5, v2, Lorg/telegram/messenger/VideoEditedInfo;->framerate:I
 
-    .line 691
+    .line 738
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MediaController;->getVideoBitrate(Ljava/lang/String;)I
 
     move-result v1
@@ -1810,7 +1908,7 @@
 
     const/4 v1, 0x3
 
-    .line 692
+    .line 739
     aget v1, p2, v1
 
     :cond_1
@@ -1820,7 +1918,7 @@
 
     if-ge v1, v5, :cond_2
 
-    .line 693
+    .line 740
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_2
@@ -1833,15 +1931,15 @@
 
     const v1, 0x1e8480
 
-    .line 694
+    .line 741
     iput v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
-    .line 695
+    .line 742
     iput v11, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalBitrate:I
 
     goto :goto_1
 
-    .line 696
+    .line 743
     :cond_2
     iget v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalBitrate:I
 
@@ -1851,10 +1949,10 @@
 
     const v1, 0x2625a0
 
-    .line 697
+    .line 744
     iput v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
-    .line 698
+    .line 745
     iput v11, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalBitrate:I
 
     goto :goto_1
@@ -1862,14 +1960,14 @@
     :cond_3
     const v6, 0x2dc6c0
 
-    .line 700
+    .line 747
     invoke-static {v1, v6, v5}, Lorg/telegram/messenger/Utilities;->clamp(III)I
 
     move-result v1
 
     iput v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
-    .line 702
+    .line 749
     :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1899,7 +1997,7 @@
 
     const/4 v1, 0x4
 
-    .line 703
+    .line 750
     aget v5, p2, v1
 
     int-to-long v5, v5
@@ -1912,7 +2010,7 @@
 
     iput-wide v13, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalDuration:J
 
-    .line 704
+    .line 751
     iget v13, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->left:F
 
     long-to-float v14, v5
@@ -1925,7 +2023,7 @@
 
     iput-wide v13, v2, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
 
-    .line 705
+    .line 752
     iget v15, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->right:F
 
     long-to-float v5, v5
@@ -1940,17 +2038,17 @@
 
     sub-long/2addr v5, v13
 
-    .line 706
+    .line 753
     iput-wide v5, v2, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
 
-    .line 707
+    .line 754
     iget-boolean v5, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->muted:Z
 
     iput-boolean v5, v2, Lorg/telegram/messenger/VideoEditedInfo;->muted:Z
 
     const/4 v5, 0x5
 
-    .line 708
+    .line 755
     aget v5, p2, v5
 
     int-to-float v5, v5
@@ -1973,7 +2071,7 @@
 
     iput-wide v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
-    .line 709
+    .line 756
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->length()J
@@ -1988,20 +2086,20 @@
 
     iput-wide v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
-    .line 710
+    .line 757
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     goto :goto_3
 
-    .line 712
+    .line 759
     :cond_4
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
     if-eqz v6, :cond_5
 
-    .line 713
+    .line 760
     invoke-virtual {v6}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v1
@@ -2010,42 +2108,42 @@
 
     goto :goto_2
 
-    .line 715
+    .line 762
     :cond_5
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalPath:Ljava/lang/String;
 
-    .line 717
+    .line 764
     :goto_2
     iput-boolean v3, v2, Lorg/telegram/messenger/VideoEditedInfo;->isPhoto:Z
 
-    .line 718
+    .line 765
     iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->averageDuration:J
 
     iput-wide v12, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->duration:J
 
     iput-wide v12, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalDuration:J
 
-    .line 719
+    .line 766
     iput-wide v12, v2, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
 
-    .line 720
+    .line 767
     iput-wide v9, v2, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
 
-    .line 721
+    .line 768
     iput-wide v9, v2, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
-    .line 722
+    .line 769
     iput-boolean v3, v2, Lorg/telegram/messenger/VideoEditedInfo;->muted:Z
 
-    .line 723
+    .line 770
     iput v11, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalBitrate:I
 
-    .line 724
+    .line 771
     iput v11, v2, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
     const/16 v1, 0x1e
 
-    .line 725
+    .line 772
     iput v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->framerate:I
 
     long-to-float v1, v12
@@ -2060,31 +2158,31 @@
 
     float-to-long v6, v1
 
-    .line 726
+    .line 773
     iput-wide v6, v2, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
-    .line 727
+    .line 774
     iput-object v5, v2, Lorg/telegram/messenger/VideoEditedInfo;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
-    .line 729
+    .line 776
     :goto_3
     iput-wide v9, v2, Lorg/telegram/messenger/VideoEditedInfo;->avatarStartTime:J
 
-    .line 731
+    .line 778
     new-instance v1, Lorg/telegram/messenger/MediaController$CropState;
 
     invoke-direct {v1}, Lorg/telegram/messenger/MediaController$CropState;-><init>()V
 
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
-    .line 732
+    .line 779
     new-instance v4, Landroid/graphics/Matrix;
 
     invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v4, v1, Lorg/telegram/messenger/MediaController$CropState;->useMatrix:Landroid/graphics/Matrix;
 
-    .line 733
+    .line 780
     iget-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$CropState;->useMatrix:Landroid/graphics/Matrix;
@@ -2093,12 +2191,12 @@
 
     invoke-virtual {v1, v4}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    .line 735
+    .line 782
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 737
+    .line 784
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->gradientTopColor:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2107,7 +2205,7 @@
 
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->gradientTopColor:Ljava/lang/Integer;
 
-    .line 738
+    .line 785
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->gradientBottomColor:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2116,38 +2214,38 @@
 
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->gradientBottomColor:Ljava/lang/Integer;
 
-    .line 739
+    .line 786
     iput-boolean v3, v2, Lorg/telegram/messenger/VideoEditedInfo;->forceFragmenting:Z
 
-    .line 741
+    .line 788
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
-    .line 742
+    .line 789
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
 
     iput-object v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->parts:Ljava/util/ArrayList;
 
     move-object/from16 v1, p3
 
-    .line 744
+    .line 791
     invoke-interface {v1, v2}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$getVideoEditedInfo$6(Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
+.method private synthetic lambda$getVideoEditedInfo$7(Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 2
 
     const/16 v0, 0xb
 
     new-array v0, v0, [I
 
-    .line 674
+    .line 721
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->getVideoInfo(Ljava/lang/String;[I)V
 
-    .line 675
+    .line 722
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0, p1, v0, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/String;[ILorg/telegram/messenger/Utilities$Callback;)V
@@ -2157,41 +2255,41 @@
     return-void
 .end method
 
-.method private synthetic lambda$setupGradient$4(Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
+.method private synthetic lambda$setupGradient$5(Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
     .locals 1
 
     const/4 v0, 0x0
 
-    .line 606
+    .line 653
     aget v0, p3, v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->gradientTopColor:I
 
     const/4 v0, 0x1
 
-    .line 607
+    .line 654
     aget p3, p3, v0
 
     iput p3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->gradientBottomColor:I
 
-    .line 608
+    .line 655
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
     if-eqz p2, :cond_0
 
-    .line 611
+    .line 658
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$updateFilter$3(Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
-    .locals 4
+.method private synthetic lambda$updateFilter$4(Landroid/graphics/Bitmap;ZLjava/lang/Runnable;)V
+    .locals 3
 
     const/16 v0, 0x5a
 
-    .line 360
+    .line 400
     :try_start_0
     new-instance v1, Ljava/io/FileOutputStream;
 
@@ -2199,52 +2297,63 @@
 
     invoke-direct {v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 361
+    if-eqz p2, :cond_0
+
+    .line 401
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->WEBP:Landroid/graphics/Bitmap$CompressFormat;
 
+    goto :goto_0
+
+    :cond_0
+    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    :goto_0
     invoke-virtual {p1, v2, v0, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v1
 
     const/4 v2, 0x0
 
-    .line 363
+    .line 403
     invoke-static {v1, v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 365
+    if-eqz p2, :cond_1
+
+    .line 406
     :try_start_1
-    new-instance v1, Ljava/io/FileOutputStream;
+    new-instance p2, Ljava/io/FileOutputStream;
 
-    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
-    invoke-direct {v1, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {p2, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 366
-    sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
+    .line 407
+    sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
-    invoke-virtual {p1, v3, v0, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    invoke-virtual {p1, v1, v0, p2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_1
-    move-exception v0
+    move-exception p2
 
-    .line 368
-    invoke-static {v0, v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
+    .line 409
+    invoke-static {p2, v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 371
-    :goto_0
+    .line 413
+    :cond_1
+    :goto_1
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 372
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    .line 414
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -2252,22 +2361,22 @@
 .method public static makeCacheFile(ILjava/lang/String;)Ljava/io/File;
     .locals 3
 
-    .line 754
+    .line 801
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;-><init>()V
 
     const-wide/32 v1, -0x80000000
 
-    .line 755
+    .line 802
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
     const/high16 v1, -0x80000000
 
-    .line 756
+    .line 803
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$FileLocation;->dc_id:I
 
-    .line 757
+    .line 804
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getLastLocalId()I
 
     move-result v1
@@ -2278,38 +2387,38 @@
 
     new-array v1, v1, [B
 
-    .line 758
+    .line 805
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$FileLocation;->file_reference:[B
 
     const-string v1, "mp4"
 
-    .line 761
+    .line 808
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 762
+    .line 809
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_videoSize_layer127;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_videoSize_layer127;-><init>()V
 
-    .line 763
+    .line 810
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$VideoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     goto :goto_0
 
-    .line 766
+    .line 813
     :cond_0
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;-><init>()V
 
-    .line 767
+    .line 814
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 771
+    .line 818
     :goto_0
     invoke-static {p0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
@@ -2336,7 +2445,7 @@
     :cond_0
     const-string p1, "jpg"
 
-    .line 750
+    .line 797
     :goto_0
     invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->makeCacheFile(ILjava/lang/String;)Ljava/io/File;
 
@@ -2348,17 +2457,17 @@
 .method public static setupScale(Landroid/graphics/BitmapFactory$Options;II)V
     .locals 7
 
-    .line 647
+    .line 694
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object p2
 
-    .line 648
+    .line 695
     invoke-virtual {p2}, Ljava/lang/Runtime;->maxMemory()J
 
     move-result-wide v0
 
-    .line 649
+    .line 696
     invoke-virtual {p2}, Ljava/lang/Runtime;->totalMemory()J
 
     move-result-wide v2
@@ -2371,7 +2480,7 @@
 
     sub-long/2addr v0, v2
 
-    .line 651
+    .line 698
     iget p2, p0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     iget v2, p0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
@@ -2404,7 +2513,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 652
+    .line 699
     invoke-static {p2, v2}, Ljava/lang/Math;->max(II)I
 
     move-result p2
@@ -2419,16 +2528,16 @@
 
     if-gtz p2, :cond_2
 
-    .line 654
+    .line 701
     :cond_1
     iput-boolean v1, p0, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
 
-    .line 655
+    .line 702
     iget p2, p0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     iput p2, p0, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
-    .line 656
+    .line 703
     iput p1, p0, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
 
     :cond_2
@@ -2442,19 +2551,19 @@
 
     move-object/from16 v1, p0
 
-    .line 188
+    .line 198
     new-instance v2, Landroid/graphics/Matrix;
 
     invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 190
+    .line 200
     new-instance v3, Landroid/graphics/Paint;
 
     const/4 v0, 0x7
 
     invoke-direct {v3, v0}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 191
+    .line 201
     iget v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
     iget v4, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
@@ -2465,19 +2574,19 @@
 
     move-result-object v4
 
-    .line 192
+    .line 202
     new-instance v11, Landroid/graphics/Canvas;
 
     invoke-direct {v11, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 194
+    .line 204
     new-instance v10, Landroid/graphics/Paint;
 
     const/4 v12, 0x1
 
     invoke-direct {v10, v12}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 195
+    .line 205
     new-instance v0, Landroid/graphics/LinearGradient;
 
     invoke-virtual {v11}, Landroid/graphics/Canvas;->getHeight()I
@@ -2524,7 +2633,7 @@
 
     invoke-virtual {v10, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 196
+    .line 206
     invoke-virtual {v11}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v0
@@ -2549,12 +2658,12 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 198
+    .line 208
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    .line 199
+    .line 209
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
     if-eqz v0, :cond_0
@@ -2567,7 +2676,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 202
+    .line 212
     :try_start_0
     new-instance v5, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;
 
@@ -2581,7 +2690,7 @@
 
     move-result-object v0
 
-    .line 203
+    .line 213
     iget v5, v1, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     int-to-float v5, v5
@@ -2594,13 +2703,13 @@
 
     div-float/2addr v5, v6
 
-    .line 204
+    .line 214
     invoke-virtual {v2, v5, v5}, Landroid/graphics/Matrix;->preScale(FF)Z
 
-    .line 205
+    .line 215
     invoke-virtual {v11, v0, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 206
+    .line 216
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2610,14 +2719,14 @@
     :catch_0
     move-exception v0
 
-    .line 208
+    .line 218
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_1
     move v9, v13
 
-    .line 212
+    .line 222
     :goto_2
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
 
@@ -2627,7 +2736,7 @@
 
     if-ge v9, v0, :cond_2
 
-    .line 214
+    .line 224
     :try_start_1
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
 
@@ -2637,7 +2746,7 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;
 
-    .line 215
+    .line 225
     new-instance v5, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda10;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;)V
@@ -2650,7 +2759,7 @@
 
     move-result-object v5
 
-    .line 216
+    .line 226
     iget v6, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     int-to-float v6, v6
@@ -2663,18 +2772,18 @@
 
     div-float/2addr v6, v7
 
-    .line 217
+    .line 227
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    .line 218
+    .line 228
     invoke-virtual {v2, v6, v6}, Landroid/graphics/Matrix;->preScale(FF)Z
 
-    .line 219
+    .line 229
     invoke-virtual {v11, v5, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 220
+    .line 230
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -2684,7 +2793,7 @@
     :catch_1
     move-exception v0
 
-    .line 222
+    .line 232
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_3
@@ -2692,54 +2801,54 @@
 
     goto :goto_2
 
-    .line 226
+    .line 236
     :cond_2
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
+    const/4 v2, 0x0
+
     if-eqz v0, :cond_3
 
-    .line 228
+    .line 238
     :try_start_2
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda11;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda12;
 
-    invoke-direct {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
+    invoke-direct {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    iget v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
+    iget v5, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
-    iget v5, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
+    iget v6, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
 
-    invoke-static {v0, v2, v5, v13}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->getScaledBitmap(Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;IIZ)Landroid/graphics/Bitmap;
+    invoke-static {v0, v5, v6, v13}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->getScaledBitmap(Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 229
+    .line 239
     invoke-virtual {v11}, Landroid/graphics/Canvas;->save()I
 
-    .line 230
-    iget v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
-
-    int-to-float v2, v2
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v5
+    .line 240
+    iget v5, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
     int-to-float v5, v5
 
-    div-float/2addr v2, v5
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    .line 231
-    invoke-virtual {v11, v2, v2}, Landroid/graphics/Canvas;->scale(FF)V
+    move-result v6
 
-    const/4 v2, 0x0
+    int-to-float v6, v6
 
-    .line 232
+    div-float/2addr v5, v6
+
+    .line 241
+    invoke-virtual {v11, v5, v5}, Landroid/graphics/Canvas;->scale(FF)V
+
+    .line 242
     invoke-virtual {v11, v0, v2, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 233
+    .line 243
     invoke-virtual {v11}, Landroid/graphics/Canvas;->restore()V
 
-    .line 234
+    .line 244
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
@@ -2749,39 +2858,57 @@
     :catch_2
     move-exception v0
 
-    .line 236
+    .line 246
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
+    .line 250
     :cond_3
     :goto_4
-    const/16 v0, 0x28
+    iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintEntitiesFile:Ljava/io/File;
 
-    const/16 v2, 0x16
+    if-eqz v0, :cond_4
 
-    .line 240
-    invoke-static {v4, v0, v2, v12}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+    .line 252
+    :try_start_3
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda11;
+
+    invoke-direct {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
+
+    iget v5, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
+
+    iget v6, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
+
+    invoke-static {v0, v5, v6, v13}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->getScaledBitmap(Lorg/telegram/ui/Stories/recorder/StoryEntry$DecodeBitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    iput-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbBitmap:Landroid/graphics/Bitmap;
+    .line 253
+    invoke-virtual {v11}, Landroid/graphics/Canvas;->save()I
 
-    .line 243
-    :try_start_3
-    new-instance v0, Ljava/io/FileOutputStream;
+    .line 254
+    iget v5, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
-    move-object/from16 v2, p1
+    int-to-float v5, v5
 
-    invoke-direct {v0, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    .line 244
-    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    move-result v6
 
-    const/16 v3, 0x5f
+    int-to-float v6, v6
 
-    invoke-virtual {v4, v2, v3, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    div-float/2addr v5, v6
 
-    .line 245
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+    .line 255
+    invoke-virtual {v11, v5, v5}, Landroid/graphics/Canvas;->scale(FF)V
+
+    .line 256
+    invoke-virtual {v11, v0, v2, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+
+    .line 257
+    invoke-virtual {v11}, Landroid/graphics/Canvas;->restore()V
+
+    .line 258
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
@@ -2790,11 +2917,52 @@
     :catch_3
     move-exception v0
 
-    .line 247
+    .line 260
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 250
+    :cond_4
     :goto_5
+    const/16 v0, 0x28
+
+    const/16 v2, 0x16
+
+    .line 264
+    invoke-static {v4, v0, v2, v12}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iput-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbBitmap:Landroid/graphics/Bitmap;
+
+    .line 267
+    :try_start_4
+    new-instance v0, Ljava/io/FileOutputStream;
+
+    move-object/from16 v2, p1
+
+    invoke-direct {v0, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    .line 268
+    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v3, 0x5f
+
+    invoke-virtual {v4, v2, v3, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    .line 269
+    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
+
+    goto :goto_6
+
+    :catch_4
+    move-exception v0
+
+    .line 271
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    .line 274
+    :goto_6
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
     return-void
@@ -2811,12 +2979,12 @@
 .method public cancelCheckStickers()V
     .locals 3
 
-    .line 918
+    .line 965
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->checkStickersReqId:I
 
     if-eqz v0, :cond_0
 
-    .line 919
+    .line 966
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2838,20 +3006,20 @@
 
     if-eqz p1, :cond_6
 
-    .line 845
+    .line 892
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-nez v0, :cond_0
 
     goto :goto_1
 
-    .line 848
+    .line 895
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;-><init>()V
 
-    .line 849
+    .line 896
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -2860,37 +3028,37 @@
 
     if-eqz v2, :cond_3
 
-    .line 851
+    .line 898
     iget-boolean v1, v2, Lorg/telegram/tgnet/TLRPC$Photo;->has_stickers:Z
 
     if-nez v1, :cond_1
 
     return-void
 
-    .line 854
+    .line 901
     :cond_1
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaPhoto;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaPhoto;-><init>()V
 
-    .line 855
+    .line 902
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPhoto;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_inputPhoto;-><init>()V
 
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaPhoto;->id:Lorg/telegram/tgnet/TLRPC$InputPhoto;
 
-    .line 856
+    .line 903
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
     iput-wide v5, v4, Lorg/telegram/tgnet/TLRPC$InputPhoto;->id:J
 
-    .line 857
+    .line 904
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$Photo;->access_hash:J
 
     iput-wide v5, v4, Lorg/telegram/tgnet/TLRPC$InputPhoto;->access_hash:J
 
-    .line 858
+    .line 905
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Photo;->file_reference:[B
 
     iput-object v2, v4, Lorg/telegram/tgnet/TLRPC$InputPhoto;->file_reference:[B
@@ -2899,22 +3067,22 @@
 
     new-array v2, v3, [B
 
-    .line 860
+    .line 907
     iput-object v2, v4, Lorg/telegram/tgnet/TLRPC$InputPhoto;->file_reference:[B
 
-    .line 862
+    .line 909
     :cond_2
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;->media:Lorg/telegram/tgnet/TLRPC$InputStickeredMedia;
 
     goto :goto_0
 
-    .line 863
+    .line 910
     :cond_3
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v1, :cond_6
 
-    .line 865
+    .line 912
     invoke-static {v1}, Lorg/telegram/messenger/MessageObject;->isDocumentHasAttachedStickers(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result v2
@@ -2923,30 +3091,30 @@
 
     return-void
 
-    .line 868
+    .line 915
     :cond_4
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaDocument;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaDocument;-><init>()V
 
-    .line 869
+    .line 916
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;-><init>()V
 
     iput-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_inputStickeredMediaDocument;->id:Lorg/telegram/tgnet/TLRPC$InputDocument;
 
-    .line 870
+    .line 917
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide v5, v4, Lorg/telegram/tgnet/TLRPC$InputDocument;->id:J
 
-    .line 871
+    .line 918
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
     iput-wide v5, v4, Lorg/telegram/tgnet/TLRPC$InputDocument;->access_hash:J
 
-    .line 872
+    .line 919
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     iput-object v1, v4, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
@@ -2955,20 +3123,20 @@
 
     new-array v1, v3, [B
 
-    .line 874
+    .line 921
     iput-object v1, v4, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
 
-    .line 876
+    .line 923
     :cond_5
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;->media:Lorg/telegram/tgnet/TLRPC$InputStickeredMedia;
 
-    .line 880
+    .line 927
     :goto_0
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda7;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 907
+    .line 954
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2993,17 +3161,17 @@
 .method public clearFilter()V
     .locals 1
 
-    .line 383
+    .line 425
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 426
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     const/4 v0, 0x0
 
-    .line 385
+    .line 427
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
     :cond_0
@@ -3011,22 +3179,34 @@
 .end method
 
 .method public clearPaint()V
-    .locals 1
+    .locals 2
 
-    .line 390
+    .line 432
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
+
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 391
+    .line 433
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    const/4 v0, 0x0
+    .line 434
+    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
-    .line 392
-    iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
-
+    .line 436
     :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintEntitiesFile:Ljava/io/File;
+
+    if-eqz v0, :cond_1
+
+    .line 437
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    .line 438
+    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintEntitiesFile:Ljava/io/File;
+
+    :cond_1
     return-void
 .end method
 
@@ -3035,7 +3215,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 526
+    .line 573
     :try_start_0
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
@@ -3043,32 +3223,32 @@
 
     const/4 v1, 0x1
 
-    .line 527
+    .line 574
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 528
+    .line 575
     invoke-static {p1, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 529
+    .line 576
     iget p1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
-    .line 530
+    .line 577
     iget p1, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 533
+    .line 580
     :catch_0
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-nez p1, :cond_2
 
-    .line 534
+    .line 581
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     int-to-float p1, p1
@@ -3097,12 +3277,12 @@
 
     const/16 p1, 0x2d0
 
-    .line 540
+    .line 587
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
     const/16 p1, 0x500
 
-    .line 541
+    .line 588
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
 
     goto :goto_0
@@ -3110,12 +3290,12 @@
     :cond_1
     const/16 p1, 0x438
 
-    .line 543
+    .line 590
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
     const/16 p1, 0x780
 
-    .line 544
+    .line 591
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
 
     :cond_2
@@ -3126,7 +3306,7 @@
 .method public destroy(Z)V
     .locals 3
 
-    .line 397
+    .line 443
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
     const/4 v1, 0x0
@@ -3139,41 +3319,41 @@
 
     if-nez v0, :cond_0
 
-    .line 398
+    .line 444
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 399
+    .line 445
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
-    .line 401
+    .line 447
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->uploadThumbFile:Ljava/io/File;
 
     if-eqz v0, :cond_1
 
-    .line 402
+    .line 448
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 403
+    .line 449
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->uploadThumbFile:Ljava/io/File;
 
     :cond_1
     if-nez p1, :cond_8
 
-    .line 406
+    .line 452
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->clearPaint()V
 
-    .line 407
+    .line 453
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->clearFilter()V
 
-    .line 408
+    .line 454
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     if-eqz p1, :cond_4
 
-    .line 409
+    .line 455
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDeletable:Z
 
     if-eqz v0, :cond_3
@@ -3186,26 +3366,26 @@
 
     if-eqz v0, :cond_3
 
-    .line 410
+    .line 456
     :cond_2
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 412
+    .line 458
     :cond_3
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
-    .line 414
+    .line 460
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     if-eqz p1, :cond_6
 
-    .line 415
+    .line 461
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDeletable:Z
 
     if-eqz p1, :cond_5
 
-    .line 416
+    .line 462
     new-instance p1, Ljava/io/File;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
@@ -3214,11 +3394,11 @@
 
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 418
+    .line 464
     :cond_5
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
-    .line 420
+    .line 466
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
 
@@ -3239,23 +3419,23 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;
 
-    .line 421
+    .line 467
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->fileDeletable:Z
 
     if-eqz v2, :cond_7
 
-    .line 422
+    .line 468
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->file:Ljava/io/File;
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 424
+    .line 470
     :cond_7
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->file:Ljava/io/File;
 
     goto :goto_0
 
-    .line 427
+    .line 473
     :cond_8
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->cancelCheckStickers()V
 
@@ -3277,18 +3457,18 @@
 
     return-void
 
-    .line 803
+    .line 850
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->hdrInfo:Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
 
     if-eqz v0, :cond_1
 
-    .line 804
+    .line 851
     invoke-interface {p1, v0}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
 
-    .line 807
+    .line 854
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
@@ -3302,7 +3482,7 @@
 
     goto :goto_0
 
-    .line 811
+    .line 858
     :cond_2
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -3314,7 +3494,7 @@
 
     return-void
 
-    .line 808
+    .line 855
     :cond_3
     :goto_0
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;
@@ -3331,14 +3511,14 @@
 .method public getOriginalFile()Ljava/io/File;
     .locals 1
 
-    .line 312
+    .line 336
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 315
+    .line 339
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
@@ -3356,7 +3536,7 @@
         }
     .end annotation
 
-    .line 661
+    .line 708
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
 
     move-result v0
@@ -3365,12 +3545,12 @@
 
     const/4 v0, 0x0
 
-    .line 662
+    .line 709
     invoke-interface {p1, v0}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
 
-    .line 665
+    .line 712
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
@@ -3395,20 +3575,20 @@
 
     div-float/2addr v3, v0
 
-    .line 667
+    .line 714
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
     const/4 v4, 0x0
 
     invoke-virtual {v0, v3, v3, v4, v4}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 668
+    .line 715
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
-    .line 669
+    .line 716
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
 
-    .line 671
+    .line 718
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
@@ -3416,7 +3596,7 @@
 
     move-result-object v0
 
-    .line 672
+    .line 719
     sget-object v1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda1;
@@ -3431,7 +3611,7 @@
 .method public setupGradient(Ljava/lang/Runnable;)V
     .locals 8
 
-    .line 577
+    .line 624
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz v0, :cond_1
@@ -3444,7 +3624,7 @@
 
     if-nez v0, :cond_1
 
-    .line 578
+    .line 625
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     if-eqz v0, :cond_1
@@ -3453,13 +3633,13 @@
 
     const/4 v1, 0x1
 
-    .line 581
+    .line 628
     :try_start_0
     new-instance v2, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 582
+    .line 629
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     const-string v4, "vthumb://"
@@ -3474,7 +3654,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 583
+    .line 630
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     const/16 v6, 0x9
@@ -3489,10 +3669,10 @@
 
     int-to-long v6, v3
 
-    .line 584
+    .line 631
     iput-boolean v1, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 585
+    .line 632
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3501,25 +3681,25 @@
 
     invoke-static {v3, v6, v7, v1, v2}, Landroid/provider/MediaStore$Video$Thumbnails;->getThumbnail(Landroid/content/ContentResolver;JILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 587
+    .line 634
     invoke-static {v2, v5, v5}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->calculateInSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v3
 
     iput v3, v2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 588
+    .line 635
     iput-boolean v4, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 589
+    .line 636
     sget-object v3, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     iput-object v3, v2, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 590
+    .line 637
     iput-boolean v1, v2, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 591
+    .line 638
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3532,34 +3712,34 @@
 
     goto :goto_0
 
-    .line 593
+    .line 640
     :cond_0
     iput-boolean v1, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 594
+    .line 641
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
-    .line 596
+    .line 643
     invoke-static {v2, v5, v5}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->calculateInSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v3
 
     iput v3, v2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 597
+    .line 644
     iput-boolean v4, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 598
+    .line 645
     sget-object v3, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     iput-object v3, v2, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 599
+    .line 646
     iput-boolean v1, v2, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 600
+    .line 647
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbPath:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -3572,7 +3752,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 605
+    .line 652
     new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda6;
 
     invoke-direct {v2, p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
@@ -3586,7 +3766,7 @@
 .method public setupMatrix()V
     .locals 2
 
-    .line 550
+    .line 597
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
     const/4 v1, 0x0
@@ -3599,20 +3779,20 @@
 .method public setupMatrix(Landroid/graphics/Matrix;I)V
     .locals 8
 
-    .line 554
+    .line 601
     invoke-virtual {p1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 555
+    .line 602
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
-    .line 556
+    .line 603
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->orientation:I
 
     add-int/2addr v2, p2
 
-    .line 557
+    .line 604
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->invert:I
 
     const/high16 v3, -0x40800000    # -1.0f
@@ -3667,12 +3847,12 @@
 
     div-float/2addr v3, v4
 
-    .line 559
+    .line 606
     invoke-virtual {p1, p2, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
     int-to-float p2, v2
 
-    .line 560
+    .line 607
     invoke-virtual {p1, p2}, Landroid/graphics/Matrix;->postRotate(F)Z
 
     const/16 p2, 0x5a
@@ -3699,10 +3879,10 @@
 
     div-float/2addr v2, v4
 
-    .line 566
+    .line 613
     invoke-virtual {p1, p2, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 568
+    .line 615
     :cond_4
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
@@ -3722,7 +3902,7 @@
 
     if-lez v2, :cond_5
 
-    .line 570
+    .line 617
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultHeight:I
 
     int-to-float v2, v2
@@ -3733,11 +3913,11 @@
 
     move-result p2
 
-    .line 572
+    .line 619
     :cond_5
     invoke-virtual {p1, p2, p2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 573
+    .line 620
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->resultWidth:I
 
     int-to-float v2, v2
@@ -3764,24 +3944,24 @@
 .end method
 
 .method public updateFilter(Lorg/telegram/ui/Components/PhotoFilterView;Ljava/lang/Runnable;)V
-    .locals 8
+    .locals 9
 
-    .line 319
+    .line 354
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->clearFilter()V
 
-    .line 321
+    .line 356
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PhotoFilterView;->getSavedFilterState()Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
-    .line 322
+    .line 357
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_c
 
-    .line 323
+    .line 358
     invoke-virtual {v0}, Lorg/telegram/messenger/MediaController$SavedFilterState;->isEmpty()Z
 
     move-result v0
@@ -3790,74 +3970,80 @@
 
     if-eqz p2, :cond_0
 
-    .line 325
+    .line 360
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     :cond_0
     return-void
 
-    .line 330
+    .line 365
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PhotoFilterView;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_3
 
+    if-eqz p2, :cond_2
+
+    .line 368
+    invoke-interface {p2}, Ljava/lang/Runnable;->run()V
+
+    :cond_2
     return-void
 
-    .line 335
-    :cond_2
+    .line 373
+    :cond_3
     new-instance v6, Landroid/graphics/Matrix;
 
     invoke-direct {v6}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 336
+    .line 374
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->invert:I
 
-    const/4 v1, 0x1
+    const/high16 v1, -0x40800000    # -1.0f
 
-    const/high16 v2, -0x40800000    # -1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/4 v8, 0x1
 
-    if-ne v0, v1, :cond_3
+    if-ne v0, v8, :cond_4
 
-    move v1, v2
+    move v3, v1
 
     goto :goto_0
 
-    :cond_3
-    move v1, v3
+    :cond_4
+    move v3, v2
 
     :goto_0
     const/4 v4, 0x2
 
-    if-ne v0, v4, :cond_4
+    if-ne v0, v4, :cond_5
 
     goto :goto_1
 
-    :cond_4
-    move v2, v3
+    :cond_5
+    move v1, v2
 
     :goto_1
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     int-to-float v0, v0
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 v2, 0x40000000    # 2.0f
 
-    div-float/2addr v0, v3
+    div-float/2addr v0, v2
 
     iget v4, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
     int-to-float v4, v4
 
-    div-float/2addr v4, v3
+    div-float/2addr v4, v2
 
-    invoke-virtual {v6, v1, v2, v0, v4}, Landroid/graphics/Matrix;->postScale(FFFF)Z
+    invoke-virtual {v6, v3, v1, v0, v4}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 337
+    .line 375
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->orientation:I
 
     neg-int v0, v0
@@ -3870,7 +4056,7 @@
 
     const/4 v3, 0x0
 
-    .line 338
+    .line 376
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
@@ -3887,7 +4073,7 @@
 
     move-result-object v0
 
-    .line 339
+    .line 377
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
@@ -3916,54 +4102,91 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Matrix;->preScale(FF)Z
 
-    .line 340
+    .line 378
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
-    .line 341
+    .line 379
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
-    .line 343
+    .line 381
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 345
+    .line 383
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
     invoke-virtual {p1}, Ljava/io/File;->exists()Z
 
     move-result p1
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
-    .line 346
+    .line 384
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 348
-    :cond_5
+    .line 386
+    :cond_6
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->ext(Ljava/io/File;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v1, "png"
+
+    .line 387
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    const-string v2, "webp"
+
+    if-nez v1, :cond_8
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_7
+
+    goto :goto_2
+
+    :cond_7
+    const/4 v8, 0x0
+
+    .line 388
+    :cond_8
+    :goto_2
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->currentAccount:I
 
-    const-string v1, "webp"
+    if-eqz v8, :cond_9
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->makeCacheFile(ILjava/lang/String;)Ljava/io/File;
+    goto :goto_3
+
+    :cond_9
+    const-string v2, "jpg"
+
+    :goto_3
+    invoke-static {p1, v2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->makeCacheFile(ILjava/lang/String;)Ljava/io/File;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_b
 
-    .line 351
+    .line 391
     :try_start_0
     new-instance p1, Ljava/io/FileOutputStream;
 
@@ -3971,56 +4194,64 @@
 
     invoke-direct {p1, p2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 352
+    if-eqz v8, :cond_a
+
+    .line 392
     sget-object p2, Landroid/graphics/Bitmap$CompressFormat;->WEBP:Landroid/graphics/Bitmap$CompressFormat;
 
+    goto :goto_4
+
+    :cond_a
+    sget-object p2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    :goto_4
     const/16 v1, 0x5a
 
     invoke-virtual {v0, p2, v1, p1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
+    goto :goto_5
 
     :catch_0
     move-exception p1
 
-    .line 354
+    .line 394
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 356
-    :goto_2
+    .line 396
+    :goto_5
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    goto :goto_3
+    goto :goto_6
 
-    .line 358
-    :cond_6
+    .line 398
+    :cond_b
     sget-object p1, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0, v0, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+    invoke-direct {v1, p0, v0, v8, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;ZLjava/lang/Runnable;)V
 
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    goto :goto_3
+    goto :goto_6
 
-    :cond_7
-    if-eqz p2, :cond_8
+    :cond_c
+    if-eqz p2, :cond_d
 
-    .line 377
+    .line 419
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    :cond_8
-    :goto_3
+    :cond_d
+    :goto_6
     return-void
 .end method
 
 .method public wouldBeVideo()Z
     .locals 7
 
-    .line 155
+    .line 165
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     const/4 v1, 0x1
@@ -4029,7 +4260,7 @@
 
     return v1
 
-    .line 158
+    .line 168
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
@@ -4045,7 +4276,7 @@
 
     move v0, v2
 
-    .line 159
+    .line 169
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
@@ -4055,7 +4286,7 @@
 
     if-ge v0, v3, :cond_4
 
-    .line 160
+    .line 170
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4064,12 +4295,12 @@
 
     check-cast v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
 
-    .line 161
+    .line 171
     iget-byte v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->type:B
 
     if-nez v4, :cond_1
 
-    .line 162
+    .line 172
     iget-object v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v3, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->text:Ljava/lang/String;
@@ -4085,7 +4316,7 @@
     :cond_1
     if-ne v4, v1, :cond_3
 
-    .line 165
+    .line 175
     iget-object v4, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->entities:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_3
@@ -4098,7 +4329,7 @@
 
     move v4, v2
 
-    .line 166
+    .line 176
     :goto_1
     iget-object v5, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->entities:Ljava/util/ArrayList;
 
@@ -4108,7 +4339,7 @@
 
     if-ge v4, v5, :cond_3
 
-    .line 167
+    .line 177
     iget-object v5, v3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4117,7 +4348,7 @@
 
     check-cast v5, Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;
 
-    .line 168
+    .line 178
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v5, v5, Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;->documentAbsolutePath:Ljava/lang/String;

@@ -24,7 +24,7 @@
 .method private constructor <init>(Lorg/telegram/ui/CameraScanActivity;)V
     .locals 0
 
-    .line 1179
+    .line 1185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CameraScanActivity;Lorg/telegram/ui/CameraScanActivity$1;)V
     .locals 0
 
-    .line 1179
+    .line 1185
     invoke-direct {p0, p1}, Lorg/telegram/ui/CameraScanActivity$QrResult;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     return-void

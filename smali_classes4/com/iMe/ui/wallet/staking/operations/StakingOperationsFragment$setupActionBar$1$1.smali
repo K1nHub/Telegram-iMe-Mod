@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
-    .line 192
+    .line 209
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,14 +39,14 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 195
+    .line 212
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 196
+    .line 213
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$Menu;->NETWORK_SWITCH:I
 

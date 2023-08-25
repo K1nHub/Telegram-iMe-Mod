@@ -16,8 +16,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Landroid/util/Property<",
-        "Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;",
-        "Ljava/lang/Float;",
+        "Landroid/view/View;",
+        "Ljava/lang/Integer;",
         ">;"
     }
 .end annotation
@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 1027
+    .line 1094
     invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
@@ -35,15 +35,19 @@
 
 
 # virtual methods
-.method public get(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)Ljava/lang/Float;
+.method public get(Landroid/view/View;)Ljava/lang/Integer;
     .locals 0
 
-    .line 1030
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->getScale()F
+    .line 1097
+    invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result p1
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {p1}, Ljava/lang/Math;->round(F)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
@@ -53,38 +57,40 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1027
-    check-cast p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
+    .line 1094
+    check-cast p1, Landroid/view/View;
 
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$6;->get(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)Ljava/lang/Float;
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$6;->get(Landroid/view/View;)Ljava/lang/Integer;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public set(Landroid/view/View;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 1027
-    check-cast p1, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;
+    .line 1102
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    check-cast p2, Ljava/lang/Float;
+    move-result p2
 
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$6;->set(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Ljava/lang/Float;)V
+    int-to-float p2, p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
 .end method
 
-.method public set(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Ljava/lang/Float;)V
+.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 1035
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+    .line 1094
+    check-cast p1, Landroid/view/View;
 
-    move-result p2
+    check-cast p2, Ljava/lang/Integer;
 
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->setScale(F)V
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$6;->set(Landroid/view/View;Ljava/lang/Integer;)V
 
     return-void
 .end method

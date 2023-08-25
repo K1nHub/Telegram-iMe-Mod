@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # static fields
@@ -32,16 +32,10 @@
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public final run()V
     .locals 0
 
-    check-cast p1, Ljava/lang/Integer;
+    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->decrementShowStoryFabEnableHintCountLeft()V
 
-    check-cast p2, Ljava/lang/Integer;
-
-    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$iA7kNpNN9IEdn7EXxBoVprfr9cY(Ljava/lang/Integer;Ljava/lang/Integer;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

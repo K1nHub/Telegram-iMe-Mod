@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda139;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/lang/Long;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$rQ7oreuwyaKsvgDXa-dtLISZNT8(Lorg/telegram/ui/ChatActivity;Ljava/lang/Long;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$JlAdCmuAOY4ZaU161jqpd2bK2wE(Lorg/telegram/ui/ChatActivity;Ljava/lang/Boolean;)V
 
     return-void
 .end method

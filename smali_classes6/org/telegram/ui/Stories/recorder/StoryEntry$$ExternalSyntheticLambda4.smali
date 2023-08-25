@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/messenger/Utilities$Callback;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$_m6rilvpllyl6o-pBG_aBm5GbsA(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$rajmes3koNTTqHNd92Z6SxwQ0Oo(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method

@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$$ExternalSyntheticLambda1;->f$2:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;->$r8$lambda$zQWa51Ui_dD-noJSn2MlOTR-kkc(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;->$r8$lambda$1ueXXw48oZXIVH2v41TzUtB8UeI(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Ljava/lang/String;)V
 
     return-void
 .end method

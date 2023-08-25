@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->$r8$lambda$YShJrl5JEgLUGTEa8-Rju6fBw7Q(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->$r8$lambda$8s1kZP16OZnX9syuU303I_i6B0A(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method

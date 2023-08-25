@@ -4596,7 +4596,7 @@
     iput-object v0, v8, Lorg/telegram/ui/ChannelCreateActivity;->descriptionTextView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     .line 726
-    invoke-virtual {v0, v10, v12}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v0, v10, v12}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 727
     iget-object v0, v8, Lorg/telegram/ui/ChannelCreateActivity;->descriptionTextView:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -5470,7 +5470,7 @@
     .line 867
     iget-object v0, v8, Lorg/telegram/ui/ChannelCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v0, v10, v12}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v0, v10, v12}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 868
     iget-object v0, v8, Lorg/telegram/ui/ChannelCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -5559,7 +5559,7 @@
     iput-object v0, v8, Lorg/telegram/ui/ChannelCreateActivity;->descriptionTextView:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     .line 881
-    invoke-virtual {v0, v10, v12}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v0, v10, v12}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 882
     iget-object v0, v8, Lorg/telegram/ui/ChannelCreateActivity;->descriptionTextView:Lorg/telegram/ui/Components/EditTextBoldCursor;

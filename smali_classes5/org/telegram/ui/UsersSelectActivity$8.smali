@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/UsersSelectActivity;)V
     .locals 0
 
-    .line 769
+    .line 855
     iput-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$8;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 773
+    .line 859
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$8;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$000(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;

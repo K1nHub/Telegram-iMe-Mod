@@ -71,6 +71,12 @@
 .method public abstract setIsInPinchToZoom(Z)V
 .end method
 
+.method public abstract setIsInSelectionMode(Z)V
+.end method
+
+.method public abstract setIsLikesReaction(Z)V
+.end method
+
 .method public abstract setIsRecording(Z)V
 .end method
 
@@ -84,6 +90,9 @@
 .end method
 
 .method public abstract setPopupIsVisible(Z)V
+.end method
+
+.method public abstract setTranslating(Z)V
 .end method
 
 .method public abstract shouldSwitchToNext()V

@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 27976
+    .line 28113
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$128;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$128;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
@@ -72,7 +72,7 @@
 .method public onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
     .locals 10
 
-    .line 27979
+    .line 28116
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$128;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$128;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;

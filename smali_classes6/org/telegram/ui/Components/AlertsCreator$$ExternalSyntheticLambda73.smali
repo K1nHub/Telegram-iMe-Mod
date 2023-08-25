@@ -6,24 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$User;
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+.field public final synthetic f$1:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$0:Lorg/telegram/tgnet/TLRPC$User;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$1:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
 
     return-void
 .end method
@@ -31,15 +27,13 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$0:Lorg/telegram/tgnet/TLRPC$User;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$1:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$VfTaqjptiIMUsQEggc_Ci4icNTA(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$0SFo1GWLU1AYWyCoXuoop1sTiSg(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;Landroid/view/View;)V
 
     return-void
 .end method

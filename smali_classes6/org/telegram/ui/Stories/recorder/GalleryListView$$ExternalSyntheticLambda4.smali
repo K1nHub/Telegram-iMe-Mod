@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->$r8$lambda$NbXVdCOLmEoHT4J1mmeg9i1s_QI(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/view/View;I)V
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->$r8$lambda$EmtaR9Utu-M0S-mjHOSqT2J-3G4(Lorg/telegram/ui/Stories/recorder/GalleryListView;Ljava/lang/Integer;)V
 
     return-void
 .end method

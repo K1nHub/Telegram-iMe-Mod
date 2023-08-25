@@ -58,7 +58,7 @@
 
     const-class v1, Ljava/lang/Object;
 
-    const-string v2, "onCloseHandler"
+    const-string/jumbo v2, "onCloseHandler"
 
     invoke-static {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
@@ -754,7 +754,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "offerInternal returned "
+    const-string/jumbo v0, "offerInternal returned "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

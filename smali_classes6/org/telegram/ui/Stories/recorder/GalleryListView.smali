@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;,
         Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;,
         Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;,
         Lorg/telegram/ui/Stories/recorder/GalleryListView$EmptyView;,
@@ -70,6 +71,8 @@
 
 .field public ignoreScroll:Z
 
+.field private final keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
+
 .field public final layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
 .field public final listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -89,7 +92,17 @@
 
 .field public final onlyPhotos:Z
 
-.field private resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.field private final resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+.field private final searchAdapterImages:Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;
+
+.field private final searchContainer:Landroid/widget/FrameLayout;
+
+.field private final searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
+
+.field private final searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+.field private final searchListView:Lorg/telegram/ui/Components/RecyclerListView;
 
 .field public selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
@@ -105,16 +118,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1Xt7-Sfkfx1i9H2Blnhxhvioz6I(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->lambda$updateAlbumsDropDown$3(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static synthetic $r8$lambda$5-Og0aSo5QcpCZb6Ytcm5o8DYLc(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/view/View;)V
     .locals 0
 
@@ -123,10 +126,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5kXNB-4n-P1vMcFhLJLUw-7Ydtw(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$EmtaR9Utu-M0S-mjHOSqT2J-3G4(Lorg/telegram/ui/Stories/recorder/GalleryListView;Ljava/lang/Integer;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->lambda$updateAlbumsDropDown$4(Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->lambda$new$3(Ljava/lang/Integer;)V
 
     return-void
 .end method
@@ -149,10 +152,36 @@
     return-object p0
 .end method
 
+.method public static synthetic $r8$lambda$OMnTIwt7JY6e4TYDDPv6jub5GbY(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->lambda$updateAlbumsDropDown$5(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$xcxuA_tl2rOvi4VpIlY9OkixqbM(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->lambda$new$4(Landroid/view/View;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$xxVKnG9qVOdIuc81Yp-5awQkVDU(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->lambda$updateAlbumsDropDown$6(Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 354
+    .line 593
     new-instance v0, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     const/4 v1, -0x1
@@ -167,7 +196,7 @@
 .end method
 
 .method public constructor <init>(ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/messenger/MediaController$AlbumEntry;Z)V
-    .locals 29
+    .locals 27
 
     move-object/from16 v7, p0
 
@@ -179,10 +208,10 @@
 
     move/from16 v11, p5
 
-    .line 107
+    .line 132
     invoke-direct {v7, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 90
+    .line 107
     new-instance v12, Landroid/graphics/Paint;
 
     const/4 v13, 0x1
@@ -191,7 +220,7 @@
 
     iput-object v12, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 288
+    .line 522
     new-instance v14, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -208,10 +237,10 @@
 
     iput-object v14, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBarT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 339
+    .line 578
     iput-boolean v13, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->firstLayout:Z
 
-    .line 355
+    .line 594
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
@@ -220,23 +249,23 @@
 
     move/from16 v15, p1
 
-    .line 108
+    .line 133
     iput v15, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->currentAccount:I
 
-    .line 109
+    .line 134
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 110
+    .line 135
     iput-boolean v11, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onlyPhotos:Z
 
     const v0, -0xe0e0e1
 
-    .line 112
+    .line 137
     invoke-virtual {v12, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     const v1, 0x40151eb8    # 2.33f
 
-    .line 113
+    .line 138
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
@@ -251,178 +280,186 @@
 
     int-to-float v2, v2
 
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
-    const/high16 v4, 0x8000000
+    const/high16 v3, 0x8000000
 
-    invoke-virtual {v12, v1, v3, v2, v4}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
+    invoke-virtual {v12, v1, v6, v2, v3}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 115
+    .line 140
     new-instance v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$1;
 
     invoke-direct {v1, v7, v8, v9}, Lorg/telegram/ui/Stories/recorder/GalleryListView$1;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 132
+    .line 157
     sget-object v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda3;->INSTANCE:Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda3;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setItemSelectorColorProvider(Lorg/telegram/messenger/GenericProvider;)V
 
-    .line 133
+    .line 158
     new-instance v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;
 
-    const/4 v4, 0x0
+    const/4 v12, 0x0
 
-    invoke-direct {v2, v7, v4}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/ui/Stories/recorder/GalleryListView$1;)V
+    invoke-direct {v2, v7, v12}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/ui/Stories/recorder/GalleryListView$1;)V
 
     iput-object v2, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->adapter:Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 134
+    .line 159
     new-instance v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$2;
 
-    const/4 v12, 0x3
+    const/4 v5, 0x3
 
-    invoke-direct {v2, v7, v8, v12}, Lorg/telegram/ui/Stories/recorder/GalleryListView$2;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;I)V
+    invoke-direct {v2, v7, v8, v5}, Lorg/telegram/ui/Stories/recorder/GalleryListView$2;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;I)V
 
     iput-object v2, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 144
+    .line 169
     invoke-virtual {v1, v13}, Lorg/telegram/ui/Components/RecyclerListView;->setFastScrollEnabled(I)V
 
-    .line 145
+    .line 170
     invoke-virtual {v1, v13}, Lorg/telegram/ui/Components/RecyclerListView;->setFastScrollVisible(Z)V
 
-    .line 146
+    .line 171
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RecyclerListView;->getFastScroll()Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->setAlpha(F)V
+    invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->setAlpha(F)V
 
-    .line 148
-    new-instance v4, Lorg/telegram/ui/Stories/recorder/GalleryListView$3;
+    .line 173
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/GalleryListView$3;
 
-    invoke-direct {v4, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$3;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+    invoke-direct {v3, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$3;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
 
-    invoke-virtual {v2, v4}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
+    invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
 
-    .line 154
+    .line 179
     new-instance v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$4;
 
     invoke-direct {v2, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$4;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
-    .line 160
-    invoke-virtual {v1, v6}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
+    .line 185
+    invoke-virtual {v1, v4}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    const/4 v5, -0x1
+    const/4 v3, -0x1
 
     const/16 v2, 0x77
 
-    .line 161
-    invoke-static {v5, v5, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    .line 186
+    invoke-static {v3, v3, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v7, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v1, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 162
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda4;
+    .line 187
+    new-instance v5, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda5;
 
-    invoke-direct {v2, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+    invoke-direct {v5, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 188
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$5;
+    .line 213
+    new-instance v5, Lorg/telegram/ui/Stories/recorder/GalleryListView$5;
 
-    invoke-direct {v2, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$5;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+    invoke-direct {v5, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$5;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 196
-    new-instance v4, Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 221
+    new-instance v5, Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-direct {v4, v8, v9}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v5, v8, v9}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object v4, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iput-object v5, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 197
-    invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackgroundColor(I)V
+    .line 222
+    invoke-virtual {v5, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackgroundColor(I)V
 
-    .line 198
-    invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
+    .line 223
+    invoke-virtual {v5, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 199
-    invoke-virtual {v4, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
+    .line 224
+    invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    const/16 v0, 0x8
+    const/16 v1, 0x8
 
-    .line 200
-    invoke-virtual {v4, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    .line 225
+    invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 201
+    .line 226
     sget v0, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
-    invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
+    invoke-virtual {v5, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const v0, 0x19ffffff
 
-    .line 202
-    invoke-virtual {v4, v0, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
+    .line 227
+    invoke-virtual {v5, v0, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 203
-    invoke-virtual {v4, v5, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
+    .line 228
+    invoke-virtual {v5, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
     const/4 v0, -0x2
 
     const/16 v1, 0x37
 
-    .line 204
-    invoke-static {v5, v0, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    .line 229
+    invoke-static {v3, v0, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
-    invoke-virtual {v7, v4, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v5, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 205
+    .line 230
     new-instance v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$6;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$6;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
 
-    invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
+    invoke-virtual {v5, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 218
-    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
+    .line 243
+    invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
-    move-result-object v3
+    move-result-object v1
 
-    .line 219
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$7;
+    .line 244
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$7;
 
     const/16 v16, 0x0
 
     const/16 v17, 0x0
 
-    move-object v0, v2
+    move-object/from16 v18, v0
+
+    move-object/from16 v19, v1
+
+    const/16 v12, 0x8
 
     move-object/from16 v1, p0
 
-    move-object v12, v2
-
     move-object/from16 v2, p2
 
-    move-object/from16 v19, v4
+    move v12, v3
+
+    move-object/from16 v3, v19
+
+    move v12, v4
 
     move/from16 v4, v16
+
+    move-object v12, v5
 
     move/from16 v5, v17
 
@@ -430,270 +467,515 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/GalleryListView$7;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBarMenu;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object v12, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 226
-    invoke-virtual {v12, v13}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSubMenuOpenSide(I)V
+    .line 251
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSubMenuOpenSide(I)V
 
-    .line 227
+    .line 252
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    const/16 v0, 0x40
+    const/16 v1, 0x40
 
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x38
+    const/16 v1, 0x38
 
     :goto_0
-    move/from16 v25, v0
+    move/from16 v23, v1
+
+    const/16 v24, 0x0
+
+    const/16 v25, 0x28
 
     const/16 v26, 0x0
 
-    const/16 v27, 0x28
+    const/16 v20, -0x2
 
-    const/16 v28, 0x0
+    const/16 v21, -0x1
 
-    const/16 v22, -0x2
+    const/16 v22, 0x33
 
-    const/16 v23, -0x1
+    invoke-static/range {v20 .. v26}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v24, 0x33
+    move-result-object v1
 
-    invoke-static/range {v22 .. v28}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    invoke-virtual {v12, v0, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+    .line 253
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda0;
+
+    invoke-direct {v1, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 255
+    new-instance v1, Landroid/widget/TextView;
+
+    invoke-direct {v1, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
+
+    const/4 v2, 0x2
+
+    .line 256
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
+
+    const/4 v3, 0x3
+
+    .line 257
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 258
+    invoke-virtual {v1, v13}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+    .line 259
+    invoke-virtual {v1, v13}, Landroid/widget/TextView;->setLines(I)V
+
+    .line 260
+    invoke-virtual {v1, v13}, Landroid/widget/TextView;->setMaxLines(I)V
+
+    .line 261
+    sget-object v4, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+
+    const/4 v4, -0x1
+
+    .line 262
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v5, "fonts/rmedium.ttf"
+
+    .line 263
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 264
+    invoke-virtual/range {p2 .. p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    sget v6, Lorg/telegram/messenger/R$drawable;->ic_arrow_drop_down:I
+
+    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v5
+
+    iput-object v5, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 265
+    new-instance v6, Landroid/graphics/PorterDuffColorFilter;
+
+    sget-object v12, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v6, v4, v12}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v5, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    const/4 v4, 0x4
+
+    .line 266
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
+
+    .line 267
+    sget v4, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    const/16 v5, 0xa
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v5
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v1, v6, v4, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    const/16 v21, -0x2
+
+    const/16 v22, 0x10
+
+    const/16 v23, 0x10
+
+    const/16 v25, 0x0
+
+    .line 268
+    invoke-static/range {v20 .. v26}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 270
+    new-instance v0, Landroid/widget/FrameLayout;
+
+    invoke-direct {v0, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchContainer:Landroid/widget/FrameLayout;
+
+    const/16 v1, 0x8
+
+    .line 271
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    const/4 v1, 0x0
+
+    .line 272
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
+
+    const/16 v4, 0x77
+
+    const/4 v5, -0x1
+
+    .line 273
+    invoke-static {v5, v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v0, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 275
+    new-instance v5, Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-direct {v5, v8, v9}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    iput-object v5, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchListView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    .line 276
+    new-instance v6, Landroidx/recyclerview/widget/GridLayoutManager;
+
+    invoke-direct {v6, v8, v3}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(Landroid/content/Context;I)V
+
+    invoke-virtual {v5, v6}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+
+    .line 277
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/GalleryListView$8;
+
+    invoke-direct {v3, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$8;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+
+    iput-object v3, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchAdapterImages:Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;
+
+    invoke-virtual {v5, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+
+    .line 298
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/GalleryListView$9;
+
+    invoke-direct {v3, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$9;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+
+    invoke-virtual {v5, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
+
+    .line 306
+    invoke-virtual {v5, v13}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
+
+    .line 307
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/GalleryListView$10;
+
+    invoke-direct {v3, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$10;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+
+    invoke-virtual {v5, v3}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
+
+    const/4 v3, -0x1
+
+    .line 318
+    invoke-static {v3, v3, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 320
+    new-instance v6, Lorg/telegram/ui/Stories/recorder/GalleryListView$11;
+
+    invoke-direct {v6, v7, v8, v9}, Lorg/telegram/ui/Stories/recorder/GalleryListView$11;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 326
+    invoke-virtual {v6, v2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
+
+    .line 327
+    invoke-virtual {v6, v1}, Landroid/view/View;->setAlpha(F)V
+
+    const/16 v1, 0x8
+
+    .line 328
+    invoke-virtual {v6, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 329
+    invoke-static {v3, v3, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v6, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 331
+    new-instance v1, Lorg/telegram/ui/Components/StickerEmptyView;
+
+    const/16 v2, 0xb
+
+    invoke-direct {v1, v8, v6, v2, v9}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
+
+    .line 332
+    iget-object v2, v1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
+
+    const/high16 v3, 0x41800000    # 16.0f
+
+    invoke-virtual {v2, v13, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 333
+    iget-object v2, v1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
+
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v3, v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 334
+    iget-object v2, v1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 335
+    iget-object v2, v1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
+
+    sget v3, Lorg/telegram/messenger/R$string;->SearchImagesType:I
+
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 336
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
+
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda4;
+
+    invoke-direct {v3, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+
+    invoke-direct {v2, v7, v3}, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;-><init>(Landroid/view/View;Lorg/telegram/messenger/Utilities$Callback;)V
+
+    iput-object v2, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
+
+    const/4 v2, -0x1
+
+    .line 337
+    invoke-static {v2, v2, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 338
+    invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setEmptyView(Landroid/view/View;)V
+
+    .line 340
+    sget v0, Lorg/telegram/messenger/R$drawable;->ic_ab_search:I
 
     move-object/from16 v1, v19
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v12, v2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(II)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 228
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda0;
+    move-result-object v0
 
-    invoke-direct {v0, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIsSearchField(Z)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-virtual {v12, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v0
 
-    .line 230
-    new-instance v0, Landroid/widget/TextView;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$12;
 
-    invoke-direct {v0, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$12;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
 
-    iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setActionBarMenuItemSearchListener(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const/4 v1, 0x2
+    move-result-object v0
 
-    .line 231
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
+    iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const/4 v1, 0x3
+    const/16 v1, 0x8
 
-    .line 232
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+    .line 438
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 233
-    invoke-virtual {v0, v13}, Landroid/widget/TextView;->setSingleLine(Z)V
+    .line 439
+    sget v1, Lorg/telegram/messenger/R$string;->SearchImagesTitle:I
 
-    .line 234
-    invoke-virtual {v0, v13}, Landroid/widget/TextView;->setLines(I)V
+    const-string v2, "SearchImagesTitle"
 
-    .line 235
-    invoke-virtual {v0, v13}, Landroid/widget/TextView;->setMaxLines(I)V
-
-    .line 236
-    sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
-
-    const/4 v1, -0x1
-
-    .line 237
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    const-string v3, "fonts/rmedium.ttf"
-
-    .line 238
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 239
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    sget v4, Lorg/telegram/messenger/R$drawable;->ic_arrow_drop_down:I
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    iput-object v3, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 240
-    new-instance v4, Landroid/graphics/PorterDuffColorFilter;
-
-    sget-object v5, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v4, v1, v5}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v3, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    const/4 v1, 0x4
-
-    .line 241
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
-
-    .line 242
-    sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
-
-    const/16 v3, 0xa
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    invoke-virtual {v0, v2, v1, v3, v2}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    const/16 v16, -0x2
-
-    const/16 v17, -0x2
-
-    const/16 v18, 0x10
-
-    const/16 v19, 0x10
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
-
-    const/16 v22, 0x0
-
-    .line 243
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v12, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSearchFieldHint(Ljava/lang/CharSequence;)V
 
-    .line 245
+    .line 441
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda6;
+
+    invoke-direct {v0, v7}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
+
+    invoke-virtual {v5, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
+
+    .line 453
     invoke-virtual {v14}, Ljava/util/ArrayList;->clear()V
 
-    if-nez v11, :cond_1
+    if-nez v11, :cond_2
 
-    .line 247
+    .line 455
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Stories/StoriesController;->getDraftsController()Lorg/telegram/ui/Stories/recorder/DraftsController;
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->getDraftsController()Lorg/telegram/ui/Stories/recorder/DraftsController;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
+    iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
-    invoke-virtual {v14, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    .line 456
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    .line 250
+    move-result-object v0
+
     :cond_1
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateAlbumsDropDown()V
-
-    if-eqz v10, :cond_3
-
-    .line 251
-    sget-object v1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
-
-    if-ne v10, v1, :cond_2
-
-    invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-lez v1, :cond_3
+    if-eqz v1, :cond_2
 
-    .line 252
-    :cond_2
-    iput-object v10, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    goto :goto_2
+    move-result-object v1
 
-    .line 254
-    :cond_3
-    iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
+    check-cast v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    if-eqz v1, :cond_5
+    .line 457
+    iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    if-nez v2, :cond_1
 
-    move-result v1
+    .line 458
+    iget-object v2, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
 
-    if-eqz v1, :cond_4
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 257
+    .line 463
+    :cond_2
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateAlbumsDropDown()V
+
+    if-eqz v10, :cond_4
+
+    .line 464
+    sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+
+    if-ne v10, v0, :cond_3
+
+    iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_4
+
+    .line 465
+    :cond_3
+    iput-object v10, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+
+    goto :goto_3
+
+    .line 467
     :cond_4
-    iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
+    iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    if-eqz v0, :cond_6
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    check-cast v1, Lorg/telegram/messenger/MediaController$AlbumEntry;
+    move-result v0
 
-    iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    if-eqz v0, :cond_5
 
     goto :goto_2
 
-    .line 255
+    .line 470
     :cond_5
-    :goto_1
-    sget-object v1, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
-    iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    const/4 v1, 0x0
 
-    .line 260
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/messenger/MediaController$AlbumEntry;
+
+    iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+
+    goto :goto_3
+
+    .line 468
+    :cond_6
     :goto_2
-    iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    sget-object v0, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    invoke-direct {v7, v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->getPhotoEntries(Lorg/telegram/messenger/MediaController$AlbumEntry;)Ljava/util/ArrayList;
+    iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    move-result-object v1
+    .line 473
+    :goto_3
+    iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
+    invoke-direct {v7, v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->getPhotoEntries(Lorg/telegram/messenger/MediaController$AlbumEntry;)Ljava/util/ArrayList;
 
-    .line 261
+    move-result-object v0
+
+    iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
+
+    .line 474
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateContainsDrafts()V
 
-    .line 262
-    iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    .line 475
+    iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    sget-object v2, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    sget-object v1, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    if-ne v1, v2, :cond_6
+    if-ne v0, v1, :cond_7
 
-    .line 263
+    .line 476
+    iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
+
     sget v1, Lorg/telegram/messenger/R$string;->ChatGallery:I
 
     const-string v2, "ChatGallery"
@@ -704,66 +986,124 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 264
-    :cond_6
-    sget-object v2, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+    .line 477
+    :cond_7
+    sget-object v1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    if-ne v1, v2, :cond_7
+    if-ne v0, v1, :cond_8
+
+    .line 478
+    iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
     const-string v1, "StoryDraftsAlbum"
 
-    .line 265
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 267
-    :cond_7
-    iget-object v1, v1, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketName:Ljava/lang/String;
+    .line 480
+    :cond_8
+    iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object v0, v0, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketName:Ljava/lang/String;
 
-    :goto_3
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_4
     return-void
 .end method
 
 .method static synthetic access$100(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 86
+    .line 103
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onBackClickListener:Ljava/lang/Runnable;
 
     return-object p0
 .end method
 
-.method static synthetic access$1000(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+.method static synthetic access$1000(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 86
+    .line 103
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchContainer:Landroid/widget/FrameLayout;
+
+    return-object p0
+.end method
+
+.method static synthetic access$1100(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;
+    .locals 0
+
+    .line 103
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchAdapterImages:Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;
+
+    return-object p0
+.end method
+
+.method static synthetic access$1400()Lorg/telegram/messenger/MediaController$AlbumEntry;
+    .locals 1
+
+    .line 103
+    sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1500(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+    .locals 0
+
+    .line 103
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
+
+    return-object p0
+.end method
+
+.method static synthetic access$1600(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    .locals 0
+
+    .line 103
+    iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->containsDraftFolder:Z
+
+    return p0
+.end method
+
+.method static synthetic access$1700(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+    .locals 0
+
+    .line 103
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->containsDrafts:Z
 
     return p0
 .end method
 
-.method static synthetic access$1102(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;)Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;
+.method static synthetic access$1802(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;)Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;
     .locals 0
 
-    .line 86
+    .line 103
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->headerView:Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;
 
     return-object p1
 .end method
 
+.method static synthetic access$1900(Lorg/telegram/ui/Stories/recorder/GalleryListView;)I
+    .locals 0
+
+    .line 103
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->currentAccount:I
+
+    return p0
+.end method
+
 .method static synthetic access$200(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 86
+    .line 103
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
     return-object p0
@@ -772,7 +1112,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/messenger/MediaController$AlbumEntry;Z)V
     .locals 0
 
-    .line 86
+    .line 103
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectAlbum(Lorg/telegram/messenger/MediaController$AlbumEntry;Z)V
 
     return-void
@@ -781,37 +1121,46 @@
 .method static synthetic access$400(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Landroid/widget/TextView;
     .locals 0
 
-    .line 86
+    .line 103
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
     return-object p0
 .end method
 
-.method static synthetic access$700()Lorg/telegram/messenger/MediaController$AlbumEntry;
-    .locals 1
-
-    .line 86
-    sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
-
-    return-object v0
-.end method
-
-.method static synthetic access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;
+.method static synthetic access$600(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
     .locals 0
 
-    .line 86
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
+    .line 103
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     return-object p0
 .end method
 
-.method static synthetic access$900(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Z
+.method static synthetic access$700(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Lorg/telegram/ui/Components/StickerEmptyView;
     .locals 0
 
-    .line 86
-    iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->containsDraftFolder:Z
+    .line 103
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
-    return p0
+    return-object p0
+.end method
+
+.method static synthetic access$800(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Lorg/telegram/ui/Components/RecyclerListView;
+    .locals 0
+
+    .line 103
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchListView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    return-object p0
+.end method
+
+.method static synthetic access$900(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    .locals 0
+
+    .line 103
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    return-object p0
 .end method
 
 .method private getPhotoEntries(Lorg/telegram/messenger/MediaController$AlbumEntry;)Ljava/util/ArrayList;
@@ -829,25 +1178,25 @@
 
     if-nez p1, :cond_0
 
-    .line 273
+    .line 490
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     return-object p1
 
-    .line 275
+    .line 492
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onlyPhotos:Z
 
     if-nez v0, :cond_1
 
-    .line 276
+    .line 493
     iget-object p1, p1, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 278
+    .line 495
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -855,7 +1204,7 @@
 
     const/4 v1, 0x0
 
-    .line 279
+    .line 496
     :goto_0
     iget-object v2, p1, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
@@ -865,7 +1214,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 280
+    .line 497
     iget-object v2, p1, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -874,12 +1223,12 @@
 
     check-cast v2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 281
+    .line 498
     iget-boolean v3, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-nez v3, :cond_2
 
-    .line 282
+    .line 499
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -896,7 +1245,7 @@
 
     const/4 p0, 0x0
 
-    .line 132
+    .line 157
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -911,7 +1260,7 @@
 
     if-lt p2, v0, :cond_7
 
-    .line 163
+    .line 188
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onSelectListener:Lorg/telegram/messenger/Utilities$Callback2;
 
     if-eqz v1, :cond_7
@@ -922,13 +1271,13 @@
 
     goto :goto_1
 
-    .line 166
+    .line 191
     :cond_0
     check-cast p1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;
 
     sub-int/2addr p2, v0
 
-    .line 168
+    .line 193
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->containsDraftFolder:Z
 
     const/4 v1, 0x0
@@ -937,7 +1286,7 @@
 
     if-nez p2, :cond_1
 
-    .line 170
+    .line 195
     sget-object p1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     const/4 p2, 0x1
@@ -951,7 +1300,7 @@
 
     goto :goto_0
 
-    .line 174
+    .line 199
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->containsDrafts:Z
 
@@ -959,7 +1308,7 @@
 
     if-ltz p2, :cond_4
 
-    .line 175
+    .line 200
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -968,7 +1317,7 @@
 
     if-ge p2, v0, :cond_4
 
-    .line 176
+    .line 201
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -977,7 +1326,7 @@
 
     check-cast p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 177
+    .line 202
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onSelectListener:Lorg/telegram/messenger/Utilities$Callback2;
 
     iget-boolean v2, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
@@ -993,7 +1342,7 @@
 
     return-void
 
-    .line 180
+    .line 205
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
 
@@ -1007,7 +1356,7 @@
     :goto_0
     if-ltz p2, :cond_7
 
-    .line 183
+    .line 208
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1016,7 +1365,7 @@
 
     if-ge p2, v0, :cond_7
 
-    .line 184
+    .line 209
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1025,7 +1374,7 @@
 
     check-cast p2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 185
+    .line 210
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onSelectListener:Lorg/telegram/messenger/Utilities$Callback2;
 
     iget-boolean v2, p2, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
@@ -1047,7 +1396,7 @@
 .method private synthetic lambda$new$2(Landroid/view/View;)V
     .locals 0
 
-    .line 228
+    .line 253
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSubMenu()V
@@ -1055,10 +1404,118 @@
     return-void
 .end method
 
-.method private static synthetic lambda$updateAlbumsDropDown$3(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
+.method private synthetic lambda$new$3(Ljava/lang/Integer;)V
+    .locals 2
+
+    .line 336
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    neg-int p1, p1
+
+    int-to-float p1, p1
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    div-float/2addr p1, v1
+
+    const/16 v1, 0x50
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    add-float/2addr p1, v1
+
+    invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0xfa
+
+    invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    sget-object v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    return-void
+.end method
+
+.method private synthetic lambda$new$4(Landroid/view/View;I)V
+    .locals 1
+
+    .line 442
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    if-eqz p1, :cond_0
+
+    .line 443
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchContainer()Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
+
+    :cond_0
+    if-ltz p2, :cond_2
+
+    .line 445
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchAdapterImages:Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;->results:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    if-lt p2, p1, :cond_1
+
+    goto :goto_0
+
+    .line 448
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onSelectListener:Lorg/telegram/messenger/Utilities$Callback2;
+
+    if-eqz p1, :cond_2
+
+    .line 449
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchAdapterImages:Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$SearchAdapter;->results:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, p2, v0}, Lorg/telegram/messenger/Utilities$Callback2;->run(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    :cond_2
+    :goto_0
+    return-void
+.end method
+
+.method private static synthetic lambda$updateAlbumsDropDown$5(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
     .locals 3
 
-    .line 367
+    .line 606
     iget v0, p1, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
     const/4 v1, -0x1
@@ -1076,20 +1533,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 369
+    .line 608
     iget v0, p2, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
     if-nez v0, :cond_1
 
     return v2
 
-    .line 372
+    .line 611
     :cond_1
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
 
-    .line 373
+    .line 612
     invoke-virtual {p0, p2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p0
@@ -1109,15 +1566,15 @@
     return p0
 .end method
 
-.method private synthetic lambda$updateAlbumsDropDown$4(Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
+.method private synthetic lambda$updateAlbumsDropDown$6(Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
     .locals 0
 
     const/4 p2, 0x0
 
-    .line 403
+    .line 642
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectAlbum(Lorg/telegram/messenger/MediaController$AlbumEntry;Z)V
 
-    .line 404
+    .line 643
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->closeSubMenu()V
@@ -1128,14 +1585,14 @@
 .method private prepareBlurredThumb(Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;)Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 332
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->access$500(Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;)Landroid/graphics/Bitmap;
+    .line 571
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->access$1200(Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 333
+    .line 572
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v0
@@ -1144,7 +1601,7 @@
 
     const/high16 v0, 0x40c00000    # 6.0f
 
-    .line 334
+    .line 573
     invoke-static {p1, v0}, Lorg/telegram/messenger/Utilities;->stackBlurBitmapWithScaleFactor(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
 
     move-result-object p1
@@ -1160,27 +1617,27 @@
 .method private selectAlbum(Lorg/telegram/messenger/MediaController$AlbumEntry;Z)V
     .locals 3
 
-    .line 411
+    .line 650
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 412
+    .line 651
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->getPhotoEntries(Lorg/telegram/messenger/MediaController$AlbumEntry;)Ljava/util/ArrayList;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
 
-    .line 413
+    .line 652
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateContainsDrafts()V
 
-    .line 414
+    .line 653
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     sget-object v0, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     if-ne p1, v0, :cond_0
 
-    .line 415
+    .line 654
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->ChatGallery:I
@@ -1195,13 +1652,13 @@
 
     goto :goto_0
 
-    .line 416
+    .line 655
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     if-ne p1, v0, :cond_1
 
-    .line 417
+    .line 656
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
     const-string v0, "StoryDraftsAlbum"
@@ -1214,7 +1671,7 @@
 
     goto :goto_0
 
-    .line 419
+    .line 658
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
@@ -1222,7 +1679,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 421
+    .line 660
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->adapter:Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;
 
@@ -1234,7 +1691,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 423
+    .line 662
     new-instance p2, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1245,10 +1702,10 @@
 
     invoke-direct {p2, v1, v2}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
 
-    .line 424
+    .line 663
     invoke-virtual {p2, v0}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 425
+    .line 664
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
@@ -1263,14 +1720,14 @@
 
     invoke-virtual {p2, v0}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;->setOffset(I)V
 
-    .line 426
+    .line 665
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     goto :goto_1
 
-    .line 428
+    .line 667
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
@@ -1295,29 +1752,29 @@
 .method private updateAlbumsDropDown()V
     .locals 11
 
-    .line 363
+    .line 602
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->removeAllSubItems()V
 
-    .line 364
+    .line 603
     sget-object v0, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
-    .line 365
+    .line 604
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
-    .line 366
+    .line 605
     new-instance v2, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda2;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda2;-><init>(Ljava/util/ArrayList;)V
 
     invoke-static {v1, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 382
+    .line 621
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1326,7 +1783,7 @@
 
     if-nez v0, :cond_0
 
-    .line 383
+    .line 622
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1339,7 +1796,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 385
+    .line 624
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
@@ -1351,14 +1808,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 386
+    .line 625
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_3
 
-    .line 388
+    .line 627
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
@@ -1368,7 +1825,7 @@
 
     const/4 v0, 0x0
 
-    .line 389
+    .line 628
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1378,7 +1835,7 @@
     :goto_0
     if-ge v0, v1, :cond_4
 
-    .line 390
+    .line 629
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1387,12 +1844,12 @@
 
     check-cast v2, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 392
+    .line 631
     sget-object v3, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     if-ne v2, v3, :cond_2
 
-    .line 393
+    .line 632
     new-instance v3, Lorg/telegram/ui/Stories/recorder/AlbumButton;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1421,13 +1878,13 @@
 
     goto :goto_1
 
-    .line 395
+    .line 634
     :cond_2
     invoke-direct {p0, v2}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->getPhotoEntries(Lorg/telegram/messenger/MediaController$AlbumEntry;)Ljava/util/ArrayList;
 
     move-result-object v3
 
-    .line 396
+    .line 635
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v4
@@ -1436,7 +1893,7 @@
 
     goto :goto_2
 
-    .line 399
+    .line 638
     :cond_3
     new-instance v4, Lorg/telegram/ui/Stories/recorder/AlbumButton;
 
@@ -1460,7 +1917,7 @@
 
     move-object v3, v4
 
-    .line 401
+    .line 640
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
@@ -1470,7 +1927,7 @@
 
     invoke-virtual {v4, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 402
+    .line 641
     new-instance v4, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda1;
 
     invoke-direct {v4, p0, v2}, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/messenger/MediaController$AlbumEntry;)V
@@ -1490,7 +1947,7 @@
 .method private updateContainsDrafts()V
     .locals 4
 
-    .line 1158
+    .line 1422
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
     const/4 v1, 0x1
@@ -1537,7 +1994,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1159
+    .line 1423
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     sget-object v3, Lorg/telegram/ui/Stories/recorder/GalleryListView;->draftsAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
@@ -1578,25 +2035,46 @@
 
 
 # virtual methods
+.method public allowSearch(Z)V
+    .locals 1
+
+    .line 485
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p1, 0x8
+
+    :goto_0
+    invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    return-void
+.end method
+
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 2
 
-    .line 1118
+    .line 1377
     sget p2, Lorg/telegram/messenger/NotificationCenter;->albumsDidLoad:I
 
     if-ne p1, p2, :cond_5
 
-    .line 1119
+    .line 1378
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateAlbumsDropDown()V
 
-    .line 1120
+    .line 1379
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     const/4 p2, 0x0
 
     if-nez p1, :cond_2
 
-    .line 1121
+    .line 1380
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
     if-eqz p1, :cond_1
@@ -1609,7 +2087,7 @@
 
     goto :goto_0
 
-    .line 1124
+    .line 1383
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDownAlbums:Ljava/util/ArrayList;
 
@@ -1623,7 +2101,7 @@
 
     goto :goto_2
 
-    .line 1122
+    .line 1381
     :cond_1
     :goto_0
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
@@ -1632,7 +2110,7 @@
 
     goto :goto_2
 
-    .line 1127
+    .line 1386
     :cond_2
     :goto_1
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
@@ -1643,7 +2121,7 @@
 
     if-ge p2, p1, :cond_4
 
-    .line 1128
+    .line 1387
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1652,7 +2130,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 1129
+    .line 1388
     iget p3, p1, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
@@ -1667,7 +2145,7 @@
 
     if-ne p3, v0, :cond_3
 
-    .line 1130
+    .line 1389
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     goto :goto_2
@@ -1677,7 +2155,7 @@
 
     goto :goto_1
 
-    .line 1135
+    .line 1394
     :cond_4
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
@@ -1688,26 +2166,26 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedPhotos:Ljava/util/ArrayList;
 
-    .line 1136
+    .line 1395
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateContainsDrafts()V
 
-    .line 1137
+    .line 1396
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->adapter:Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;
 
     if-eqz p1, :cond_6
 
-    .line 1138
+    .line 1397
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     goto :goto_3
 
-    .line 1140
+    .line 1399
     :cond_5
     sget p2, Lorg/telegram/messenger/NotificationCenter;->storiesDraftsUpdated:I
 
     if-ne p1, p2, :cond_6
 
-    .line 1141
+    .line 1400
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateDrafts()V
 
     :cond_6
@@ -1718,14 +2196,14 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 292
+    .line 526
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->top()I
 
     move-result v0
 
     int-to-float v0, v0
 
-    .line 293
+    .line 527
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
@@ -1761,7 +2239,7 @@
     :cond_0
     move v1, v2
 
-    .line 294
+    .line 528
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBarT:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -1771,24 +2249,24 @@
 
     const/4 v4, 0x0
 
-    .line 295
+    .line 529
     invoke-static {v0, v4, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v0
 
-    .line 296
+    .line 530
     iget-boolean v5, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBarShown:Z
 
     const/high16 v6, 0x3f800000    # 1.0f
 
     if-eq v1, v5, :cond_2
 
-    .line 297
+    .line 531
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBarShown:Z
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onFullScreen(Z)V
 
-    .line 298
+    .line 532
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RecyclerListView;->getFastScroll()Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
@@ -1817,13 +2295,13 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 300
+    .line 534
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz v1, :cond_4
 
-    .line 301
+    .line 535
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     cmpg-float v1, v3, v4
@@ -1832,7 +2310,7 @@
 
     const/16 v2, 0x8
 
-    .line 303
+    .line 537
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -1842,12 +2320,12 @@
 
     if-eq v1, v2, :cond_4
 
-    .line 304
+    .line 538
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 307
+    .line 541
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->headerView:Lorg/telegram/ui/Stories/recorder/GalleryListView$HeaderView;
 
@@ -1855,10 +2333,10 @@
 
     sub-float/2addr v6, v3
 
-    .line 308
-    invoke-virtual {v1, v6}, Landroid/widget/TextView;->setAlpha(F)V
+    .line 542
+    invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 310
+    .line 544
     :cond_5
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -1884,7 +2362,7 @@
 
     invoke-virtual {v1, v4, v0, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 311
+    .line 545
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1901,10 +2379,10 @@
 
     invoke-virtual {p1, v1, v2, v3, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 312
+    .line 546
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 313
+    .line 547
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -1919,10 +2397,10 @@
 
     invoke-virtual {p1, v4, v0, v1, v2}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 314
+    .line 548
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 315
+    .line 549
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1937,7 +2415,7 @@
 .method public getPadding()I
     .locals 2
 
-    .line 1080
+    .line 1333
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->y:I
@@ -1956,7 +2434,7 @@
 .method public getSelectedAlbum()Lorg/telegram/messenger/MediaController$AlbumEntry;
     .locals 1
 
-    .line 319
+    .line 553
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->selectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     return-object v0
@@ -1965,7 +2443,7 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 1102
+    .line 1361
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1974,7 +2452,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1103
+    .line 1362
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1985,19 +2463,76 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1104
+    .line 1363
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     return-void
 .end method
 
+.method public onBackPressed()Z
+    .locals 3
+
+    .line 510
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->isSearchFieldVisible()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 511
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    move-result-object v0
+
+    .line 512
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;->keyboardVisible()Z
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_0
+
+    .line 513
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
+
+    return v2
+
+    .line 516
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSearch(Z)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->onSearchFieldVisibilityChanged(Z)V
+
+    return v2
+
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 1109
+    .line 1368
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1110
+    .line 1369
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2006,7 +2541,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1111
+    .line 1370
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2017,7 +2552,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1113
+    .line 1372
     invoke-static {}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->cleanupQueues()V
 
     return-void
@@ -2032,7 +2567,7 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 324
+    .line 558
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -2045,7 +2580,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setPinnedSectionOffsetY(I)V
 
-    .line 325
+    .line 559
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x6
@@ -2072,22 +2607,53 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 326
+    .line 560
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchContainer:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v1, 0x0
+
+    .line 561
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    .line 562
+    sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    .line 563
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    .line 564
+    sget v2, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
+
+    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    .line 565
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
-    sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+    sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    const/16 v2, 0xa
+    const/16 v3, 0xa
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v3
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v1, v2, v3, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    invoke-virtual {v0, v3, v1, v2, v3}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    .line 327
+    .line 566
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->dropDown:Landroid/widget/TextView;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
@@ -2114,7 +2680,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 328
+    .line 567
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -2126,10 +2692,29 @@
     return-void
 .end method
 
+.method public openSearch()V
+    .locals 3
+
+    .line 506
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSearch(Z)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->onSearchFieldVisibilityChanged(Z)V
+
+    return-void
+.end method
+
 .method public setOnBackClickListener(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 346
+    .line 585
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onBackClickListener:Ljava/lang/Runnable;
 
     return-void
@@ -2147,7 +2732,7 @@
         }
     .end annotation
 
-    .line 351
+    .line 590
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onSelectListener:Lorg/telegram/messenger/Utilities$Callback2;
 
     return-void
@@ -2156,8 +2741,10 @@
 .method public top()I
     .locals 5
 
-    .line 1084
+    .line 1338
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_3
 
@@ -2172,16 +2759,14 @@
     :cond_0
     const v0, 0x7fffffff
 
-    .line 1088
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+    .line 1342
+    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const/4 v2, 0x0
+    if-eqz v2, :cond_2
 
-    if-eqz v1, :cond_2
+    move v2, v1
 
-    move v1, v2
-
-    .line 1089
+    .line 1343
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2189,16 +2774,16 @@
 
     move-result v3
 
-    if-ge v1, v3, :cond_2
+    if-ge v2, v3, :cond_2
 
-    .line 1090
+    .line 1344
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1091
+    .line 1345
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v4, v3}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
@@ -2207,7 +2792,7 @@
 
     if-lez v4, :cond_1
 
-    .line 1093
+    .line 1347
     invoke-virtual {v3}, Landroid/view/View;->getY()F
 
     move-result v3
@@ -2219,30 +2804,48 @@
     move-result v0
 
     :cond_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1097
+    .line 1351
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    return v0
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
-    .line 1085
+    move-result v0
+
+    goto :goto_2
+
+    .line 1339
     :cond_3
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->getPadding()I
+
+    move-result v0
+
+    .line 1353
+    :goto_2
+    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    if-nez v2, :cond_4
+
+    return v0
+
+    .line 1356
+    :cond_4
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getAlpha()F
+
+    move-result v2
+
+    invoke-static {v1, v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result v0
 
@@ -2250,54 +2853,81 @@
 .end method
 
 .method public updateDrafts()V
-    .locals 2
+    .locals 3
 
-    .line 1146
+    .line 1405
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1147
+    .line 1406
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onlyPhotos:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    .line 1148
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
+    .line 1407
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->currentAccount:I
 
-    iget v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->currentAccount:I
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->getDraftsController()Lorg/telegram/ui/Stories/recorder/DraftsController;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Stories/StoriesController;->getDraftsController()Lorg/telegram/ui/Stories/recorder/DraftsController;
+    move-result-object v0
 
-    move-result-object v1
+    iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
-    iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
+    .line 1408
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    move-result-object v0
 
-    .line 1150
     :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    .line 1409
+    iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
+
+    if-nez v2, :cond_0
+
+    .line 1410
+    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 1414
+    :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateAlbumsDropDown()V
 
-    .line 1151
+    .line 1415
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->updateContainsDrafts()V
 
-    .line 1152
+    .line 1416
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->adapter:Lorg/telegram/ui/Stories/recorder/GalleryListView$Adapter;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 1153
+    .line 1417
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    :cond_1
+    :cond_2
     return-void
 .end method

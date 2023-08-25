@@ -28,13 +28,14 @@
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
         "Ljava/util/List<",
+        "+",
         "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
         ">;>;>;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n+ 2 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n244#2,4:87\n248#2,2:95\n1549#3:91\n1620#3,3:92\n18#4:97\n18#4:99\n7#5:98\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n*L\n247#1:91\n247#1:92,3\n249#1:97\n84#2:99\n84#2:98\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n+ 2 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n303#2,4:87\n307#2,2:95\n1549#3:91\n1620#3,3:92\n18#4:97\n18#4:99\n7#5:98\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n*L\n306#1:91\n306#1:92,3\n308#1:97\n84#2:99\n84#2:98\n*E\n"
 .end annotation
 
 
@@ -73,6 +74,7 @@
             "+",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/util/List<",
+            "+",
             "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
             ">;>;>;"
         }

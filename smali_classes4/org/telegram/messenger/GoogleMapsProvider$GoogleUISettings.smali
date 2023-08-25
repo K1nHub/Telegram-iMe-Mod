@@ -25,10 +25,10 @@
 .method private constructor <init>(Lcom/google/android/gms/maps/UiSettings;)V
     .locals 0
 
-    .line 364
+    .line 374
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 365
+    .line 375
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleUISettings;->uiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     return-void
@@ -37,7 +37,7 @@
 .method synthetic constructor <init>(Lcom/google/android/gms/maps/UiSettings;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 361
+    .line 371
     invoke-direct {p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleUISettings;-><init>(Lcom/google/android/gms/maps/UiSettings;)V
 
     return-void
@@ -48,7 +48,7 @@
 .method public setCompassEnabled(Z)V
     .locals 1
 
-    .line 380
+    .line 390
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleUISettings;->uiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setCompassEnabled(Z)V
@@ -59,7 +59,7 @@
 .method public setMyLocationButtonEnabled(Z)V
     .locals 1
 
-    .line 370
+    .line 380
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleUISettings;->uiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setMyLocationButtonEnabled(Z)V
@@ -70,7 +70,7 @@
 .method public setZoomControlsEnabled(Z)V
     .locals 1
 
-    .line 375
+    .line 385
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleUISettings;->uiSettings:Lcom/google/android/gms/maps/UiSettings;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/UiSettings;->setZoomControlsEnabled(Z)V

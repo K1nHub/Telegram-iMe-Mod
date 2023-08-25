@@ -37,6 +37,9 @@
 .method public abstract getAirdropMetadata()Lcom/iMe/storage/data/locale/prefs/model/WalletAirdropMetadata;
 .end method
 
+.method public abstract getAllNetworksTokensOrderType()Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
+.end method
+
 .method public abstract getAuthSession()Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;
 .end method
 
@@ -63,7 +66,21 @@
 .method public abstract getBinanceUserInfo()Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
 .end method
 
+.method public abstract getCryptoBoxesOrderType()Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxOrderType;
+.end method
+
 .method public abstract getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+.end method
+
+.method public abstract getEnabledNetworksIds()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 .end method
 
 .method public abstract getLastLoggedInGuid()Ljava/lang/String;
@@ -171,6 +188,9 @@
     .end annotation
 .end method
 
+.method public abstract isAllNetworksSelected()Z
+.end method
+
 .method public abstract isBalanceHidden()Z
 .end method
 
@@ -217,6 +237,12 @@
 .method public abstract setAirdropMetadata(Lcom/iMe/storage/data/locale/prefs/model/WalletAirdropMetadata;)V
 .end method
 
+.method public abstract setAllNetworksSelected(Z)V
+.end method
+
+.method public abstract setAllNetworksTokensOrderType(Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;)V
+.end method
+
 .method public abstract setAuthSession(Lcom/iMe/storage/data/locale/prefs/model/auth/AuthTokensMetadata;)V
 .end method
 
@@ -247,6 +273,20 @@
 .end method
 
 .method public abstract setBinanceUserInfo(Lcom/iMe/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;)V
+.end method
+
+.method public abstract setCryptoBoxesOrderType(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxOrderType;)V
+.end method
+
+.method public abstract setEnabledNetworksIds(Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 .end method
 
 .method public abstract setLastLoggedInGuid(Ljava/lang/String;)V

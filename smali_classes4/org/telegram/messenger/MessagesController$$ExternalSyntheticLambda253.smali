@@ -2,64 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field public final synthetic f$0:[I
-
-.field public final synthetic f$1:Ljava/util/ArrayList;
-
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$User;
-
-.field public final synthetic f$3:I
-
-.field public final synthetic f$4:Ljava/lang/Runnable;
-
-.field public final synthetic f$5:Landroidx/core/util/Consumer;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
 
 # direct methods
-.method public synthetic constructor <init>([ILjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$User;ILjava/lang/Runnable;Landroidx/core/util/Consumer;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$0:[I
-
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$1:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$2:Lorg/telegram/tgnet/TLRPC$User;
-
-    iput p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$3:I
-
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$4:Ljava/lang/Runnable;
-
-    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$5:Landroidx/core/util/Consumer;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$0:Lorg/telegram/messenger/MessagesController;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
-    .locals 7
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$0:[I
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$1:Ljava/util/ArrayList;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$2:Lorg/telegram/tgnet/TLRPC$User;
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    iget v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$3:I
-
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$4:Ljava/lang/Runnable;
-
-    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda253;->f$5:Landroidx/core/util/Consumer;
-
-    move-object v6, p1
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$24piALVtzvf3stLfwiXBgvmJRBk([ILjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$User;ILjava/lang/Runnable;Landroidx/core/util/Consumer;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$BwwUydMwwppoNI7eaOnxTVVv6pg(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$Dialog;)I
 
     move-result p1
 

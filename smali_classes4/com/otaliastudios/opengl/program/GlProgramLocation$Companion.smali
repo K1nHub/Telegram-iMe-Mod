@@ -37,7 +37,7 @@
 .method public final getAttrib(ILjava/lang/String;)Lcom/otaliastudios/opengl/program/GlProgramLocation;
     .locals 3
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -56,7 +56,7 @@
 .method public final getUniform(ILjava/lang/String;)Lcom/otaliastudios/opengl/program/GlProgramLocation;
     .locals 3
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

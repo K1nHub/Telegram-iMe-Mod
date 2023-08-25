@@ -3,12 +3,12 @@
 .source "ChatActivityEnterView.java"
 
 # interfaces
-.implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;
+.implements Landroid/view/ViewTreeObserver$OnDrawListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$26(Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$29(Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,66 +18,68 @@
 
 
 # instance fields
-.field performedHapticFeedback:Z
-
 .field final synthetic val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
-.field final synthetic val$endY:F
+.field final synthetic val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;FLorg/telegram/ui/Components/SimpleAvatarView;)V
+.method public static synthetic $r8$lambda$GlBilv19M6Rl2eWgypjAdUD972U(Lorg/telegram/ui/Components/ChatActivityEnterView$29;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
     .locals 0
 
-    .line 3734
-    iput p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$endY:F
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
+    return-void
+.end method
+
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    .locals 0
+
+    .line 3816
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    return-void
+.end method
 
-    .line 3735
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->performedHapticFeedback:Z
+.method private synthetic lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    .locals 0
+
+    .line 3820
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnDrawListener(Landroid/view/ViewTreeObserver$OnDrawListener;)V
+
+    .line 3821
+    iget-object p1, p2, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
+
+    const/4 p2, 0x1
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/SimpleAvatarView;->setHideAvatar(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
-    .locals 0
+.method public onDraw()V
+    .locals 3
 
-    .line 3739
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->performedHapticFeedback:Z
+    .line 3819
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
-    if-nez p1, :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
 
-    iget p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$endY:F
+    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$29$$ExternalSyntheticLambda0;
 
-    cmpl-float p1, p2, p1
+    invoke-direct {v2, p0, v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView$29$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$29;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 
-    if-ltz p1, :cond_0
+    invoke-virtual {v0, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    const/4 p1, 0x1
-
-    .line 3740
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->performedHapticFeedback:Z
-
-    .line 3742
-    :try_start_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$29;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-    const/4 p2, 0x3
-
-    const/4 p3, 0x2
-
-    invoke-virtual {p1, p2, p3}, Landroid/view/View;->performHapticFeedback(II)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :cond_0
     return-void
 .end method

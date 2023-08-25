@@ -1,4 +1,4 @@
-.class Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
+.class public Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 .super Ljava/lang/Object;
 .source "TextSelectionHelper.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "LayoutBlock"
 .end annotation
 
@@ -17,28 +17,19 @@
 # instance fields
 .field public charOffset:I
 
-.field layout:Landroid/text/StaticLayout;
+.field public layout:Landroid/text/Layout;
 
-.field xOffset:F
+.field public xOffset:F
 
-.field yOffset:F
+.field public yOffset:F
 
 
 # direct methods
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    .line 1668
+    .line 1770
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lorg/telegram/ui/Cells/TextSelectionHelper$1;)V
-    .locals 0
-
-    .line 1668
-    invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;-><init>()V
 
     return-void
 .end method

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback2;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -26,16 +26,14 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final run()V
     .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda45;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda45;->f$1:Z
 
-    check-cast p2, Landroid/graphics/Bitmap;
-
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$dpNvr_BGeE8DiauKq44iOG0rvN0(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZLjava/lang/Object;Landroid/graphics/Bitmap;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$Wgk8T0Jm2Rci4U9NvOJ_Gp1LpBQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     return-void
 .end method

@@ -5,27 +5,21 @@
 .implements Landroid/content/DialogInterface$OnClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$1:Ljava/util/List;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/util/List;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->f$1:Ljava/util/List;
 
     return-void
 .end method
@@ -33,9 +27,13 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+    .locals 2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$AjwKU5OQf5sq4dWnNwmWxwJraPU(Landroid/content/DialogInterface;I)V
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->f$1:Ljava/util/List;
+
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$xrTXG8YjdEvmjcGWndCsuYxbpAU(Lorg/telegram/ui/DialogsActivity;Ljava/util/List;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

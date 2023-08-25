@@ -32,6 +32,8 @@
 
 .field private final onlineContacts$delegate:Lkotlin/Lazy;
 
+.field private final premiumContacts$delegate:Lkotlin/Lazy;
+
 .field private final selfId:J
 
 
@@ -51,13 +53,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 12
+    .line 14
     invoke-direct {p0, p1}, Lorg/telegram/messenger/BaseController;-><init>(I)V
 
-    .line 11
+    .line 13
     iput-object p2, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->contacts:Ljava/util/ArrayList;
 
-    .line 14
+    .line 16
     new-instance p2, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$allContacts$2;
 
     invoke-direct {p2, p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$allContacts$2;-><init>(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)V
@@ -68,7 +70,7 @@
 
     iput-object p2, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->allContacts$delegate:Lkotlin/Lazy;
 
-    .line 18
+    .line 20
     new-instance p2, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$onlineContacts$2;
 
     invoke-direct {p2, p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$onlineContacts$2;-><init>(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)V
@@ -79,7 +81,18 @@
 
     iput-object p2, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->onlineContacts$delegate:Lkotlin/Lazy;
 
-    .line 21
+    .line 24
+    new-instance p2, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$premiumContacts$2;
+
+    invoke-direct {p2, p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$premiumContacts$2;-><init>(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)V
+
+    invoke-static {p2}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->premiumContacts$delegate:Lkotlin/Lazy;
+
+    .line 28
     new-instance p2, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$mutualContacts$2;
 
     invoke-direct {p2, p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$mutualContacts$2;-><init>(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)V
@@ -90,7 +103,7 @@
 
     iput-object p2, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->mutualContacts$delegate:Lkotlin/Lazy;
 
-    .line 25
+    .line 32
     new-instance p2, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$notMutualContacts$2;
 
     invoke-direct {p2, p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$notMutualContacts$2;-><init>(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)V
@@ -101,7 +114,7 @@
 
     iput-object p2, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->notMutualContacts$delegate:Lkotlin/Lazy;
 
-    .line 29
+    .line 36
     new-instance p2, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2;
 
     invoke-direct {p2, p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2;-><init>(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)V
@@ -112,7 +125,7 @@
 
     iput-object p2, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->blockedContacts$delegate:Lkotlin/Lazy;
 
-    .line 33
+    .line 40
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object p1
@@ -127,7 +140,7 @@
 .method public static final synthetic access$getContacts$p(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 9
+    .line 11
     iget-object p0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->contacts:Ljava/util/ArrayList;
 
     return-object p0
@@ -136,7 +149,7 @@
 .method public static final synthetic access$getMessagesController(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)Lorg/telegram/messenger/MessagesController;
     .locals 0
 
-    .line 9
+    .line 11
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -147,7 +160,7 @@
 .method public static final synthetic access$getSelfId$p(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)J
     .locals 2
 
-    .line 9
+    .line 11
     iget-wide v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->selfId:J
 
     return-wide v0
@@ -156,7 +169,7 @@
 .method public static final synthetic access$userIsBlocked(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;Lorg/telegram/tgnet/TLRPC$TL_contact;)Z
     .locals 0
 
-    .line 9
+    .line 11
     invoke-direct {p0, p1}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->userIsBlocked(Lorg/telegram/tgnet/TLRPC$TL_contact;)Z
 
     move-result p0
@@ -167,7 +180,7 @@
 .method public static final synthetic access$userIsOnline(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;Lorg/telegram/tgnet/TLRPC$User;)Z
     .locals 0
 
-    .line 9
+    .line 11
     invoke-direct {p0, p1}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->userIsOnline(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p0
@@ -207,7 +220,7 @@
 .method private final userIsOnline(Lorg/telegram/tgnet/TLRPC$User;)Z
     .locals 3
 
-    .line 60
+    .line 58
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     if-eqz v0, :cond_0
@@ -268,7 +281,7 @@
         }
     .end annotation
 
-    .line 14
+    .line 16
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->allContacts$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -291,7 +304,7 @@
         }
     .end annotation
 
-    .line 29
+    .line 36
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->blockedContacts$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -320,7 +333,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 42
     sget-object v0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -329,72 +342,72 @@
 
     aget p1, v0, p1
 
-    const/4 v0, 0x1
+    packed-switch p1, :pswitch_data_0
 
-    if-eq p1, v0, :cond_4
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_3
-
-    const/4 v0, 0x3
-
-    if-eq p1, v0, :cond_2
-
-    const/4 v0, 0x4
-
-    if-eq p1, v0, :cond_1
-
-    const/4 v0, 0x5
-
-    if-ne p1, v0, :cond_0
-
-    .line 50
-    invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getAllContacts()Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
+    .line 53
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p1
 
-    .line 47
-    :cond_1
+    :pswitch_0
+    invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getAllContacts()Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 51
+    :pswitch_1
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getBlockedContacts()Ljava/util/ArrayList;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 44
-    :cond_2
+    .line 49
+    :pswitch_2
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getNotMutualContacts()Ljava/util/ArrayList;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 41
-    :cond_3
+    .line 47
+    :pswitch_3
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getMutualContacts()Ljava/util/ArrayList;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 38
-    :cond_4
+    .line 45
+    :pswitch_4
+    invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getPremiumContacts()Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 43
+    :pswitch_5
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->getOnlineContacts()Ljava/util/ArrayList;
 
     move-result-object p1
 
     :goto_0
     return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public final getMutualContacts()Ljava/util/ArrayList;
@@ -408,7 +421,7 @@
         }
     .end annotation
 
-    .line 21
+    .line 28
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->mutualContacts$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -431,7 +444,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 32
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->notMutualContacts$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -454,8 +467,31 @@
         }
     .end annotation
 
-    .line 18
+    .line 20
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->onlineContacts$delegate:Lkotlin/Lazy;
+
+    invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method public final getPremiumContacts()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/tgnet/TLRPC$TL_contact;",
+            ">;"
+        }
+    .end annotation
+
+    .line 24
+    iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->premiumContacts$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 

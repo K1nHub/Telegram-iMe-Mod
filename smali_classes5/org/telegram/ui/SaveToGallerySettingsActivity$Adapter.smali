@@ -612,9 +612,9 @@
 
     const/4 v0, 0x0
 
-    const/4 v8, 0x0
-
     const/4 v1, 0x1
+
+    const/4 v8, 0x0
 
     const/4 v9, -0x2
 
@@ -825,7 +825,7 @@
     const-wide/32 v12, 0x80000
 
     .line 408
-    invoke-static {v12, v13, v1}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v12, v13, v1, v8}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZZ)Ljava/lang/String;
 
     move-result-object v4
 
@@ -892,7 +892,7 @@
     const-wide v14, 0xfa000000L
 
     .line 418
-    invoke-static {v14, v15, v1}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZ)Ljava/lang/String;
+    invoke-static {v14, v15, v1, v8}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(JZZ)Ljava/lang/String;
 
     move-result-object v2
 

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeBinancePayFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,265:1\n13#2,4:266\n56#3,6:270\n*S KotlinDebug\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment\n*L\n49#1:266,4\n50#1:270,6\n*E\n"
+    value = "SMAP\nWalletHomeBinancePayFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,292:1\n13#2,4:293\n56#3,6:297\n*S KotlinDebug\n*F\n+ 1 WalletHomeBinancePayFragment.kt\ncom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment\n*L\n55#1:293,4\n58#1:297,6\n*E\n"
 .end annotation
 
 
@@ -46,14 +46,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0HDuOLioJmFQ19Yf0gUf_8lpKys(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$13(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$3ma1siyNFxiezV1LpTIhfB4Wy4k(Lkotlin/jvm/functions/Function0;)V
     .locals 0
 
@@ -86,6 +78,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$N5_vzSXf_1Xjok3YibhGpfYqBU4(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$10(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$UkUb3NbFEdwuSprlGpD9sOHSoCo(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
     .locals 0
 
@@ -110,18 +110,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jsqRPyP47_iduSHWaSABL1hNPi4(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$pfTQH6mRT_Fr6BJPMaIWJbgHA5A(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$11(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$l7vmki5n4z-TSbe5qZHcTD65Ypo(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$10(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$13(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -130,6 +122,14 @@
     .locals 0
 
     invoke-static {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$13$lambda$12(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$wOCIOFzTogxpXK2FFRBR1sJrgak(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$11(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -143,7 +143,7 @@
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 49
+    .line 55
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string/jumbo v3, "presenter"
@@ -160,7 +160,7 @@
 
     aput-object v2, v1, v5
 
-    .line 53
+    .line 60
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "binding"
@@ -193,10 +193,10 @@
 .method public constructor <init>()V
     .locals 5
 
-    .line 46
+    .line 53
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;-><init>()V
 
-    .line 49
+    .line 55
     new-instance v0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
@@ -208,7 +208,7 @@
 
     move-result-object v2
 
-    const-string v3, "mvpDelegate"
+    const-string/jumbo v3, "mvpDelegate"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -238,7 +238,7 @@
 
     invoke-direct {v1, v2, v3, v0}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
-    .line 49
+    .line 55
     iput-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     .line 58
@@ -259,10 +259,10 @@
 
     move-result-object v0
 
-    .line 50
+    .line 58
     iput-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->binancePayRecycleAdapter$delegate:Lkotlin/Lazy;
 
-    .line 53
+    .line 60
     new-instance v0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binding$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binding$2;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
@@ -275,7 +275,7 @@
 
     iput-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 54
+    .line 63
     new-instance v0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binanceApi$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binanceApi$2;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
@@ -286,7 +286,7 @@
 
     iput-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->binanceApi$delegate:Lkotlin/Lazy;
 
-    .line 55
+    .line 64
     new-instance v0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binancePayApi$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binancePayApi$2;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
@@ -303,7 +303,7 @@
 .method public static final synthetic access$getBinanceApi(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)Lcom/binance/android/opensdk/api/BinanceAPI;
     .locals 0
 
-    .line 46
+    .line 53
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinanceApi()Lcom/binance/android/opensdk/api/BinanceAPI;
 
     move-result-object p0
@@ -314,7 +314,7 @@
 .method public static final synthetic access$getBinancePayApi(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)Lcom/binance/android/binancepay/api/BinancePay;
     .locals 0
 
-    .line 46
+    .line 53
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayApi()Lcom/binance/android/binancepay/api/BinancePay;
 
     move-result-object p0
@@ -325,7 +325,7 @@
 .method private final getBinanceApi()Lcom/binance/android/opensdk/api/BinanceAPI;
     .locals 1
 
-    .line 54
+    .line 63
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->binanceApi$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -340,7 +340,7 @@
 .method private final getBinancePayApi()Lcom/binance/android/binancepay/api/BinancePay;
     .locals 1
 
-    .line 55
+    .line 64
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->binancePayApi$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -355,7 +355,7 @@
 .method private final getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
     .locals 1
 
-    .line 50
+    .line 58
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->binancePayRecycleAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -370,7 +370,7 @@
 .method private final getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
     .locals 3
 
-    .line 53
+    .line 60
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -391,7 +391,7 @@
 .method private final getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
     .locals 3
 
-    .line 49
+    .line 55
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     sget-object v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -416,14 +416,14 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 70
+    .line 77
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 71
+    .line 78
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
 
     move-result-object p0
@@ -454,7 +454,7 @@
 .method private final onSubItemClick(I)V
     .locals 1
 
-    .line 241
+    .line 270
     sget v0, Lcom/iMe/common/IdFabric$Menu;->LOGOUT:I
 
     if-ne p1, v0, :cond_0
@@ -467,7 +467,7 @@
 
     goto :goto_0
 
-    .line 242
+    .line 271
     :cond_0
     sget v0, Lcom/iMe/common/IdFabric$Menu;->RECEIVE:I
 
@@ -487,11 +487,12 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 111
+    .line 120
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object v0
 
+    .line 121
     new-instance v1, Lcom/iMe/storage/data/utils/system/AndroidActivityHolder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -506,8 +507,10 @@
 
     const-string/jumbo p0, "qrText"
 
+    .line 122
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 120
     invoke-virtual {v0, v1, p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;->startBinancePayFlow(Lcom/iMe/storage/data/utils/system/AndroidActivityHolder;Ljava/lang/String;)V
 
     return-void
@@ -516,12 +519,12 @@
 .method private final setupColors()V
     .locals 5
 
-    .line 189
+    .line 203
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
 
     move-result-object v0
 
-    .line 190
+    .line 204
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;->getRoot()Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
 
     move-result-object v1
@@ -542,7 +545,7 @@
 
     invoke-virtual {v1, v2}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->setColorSchemeColors([I)V
 
-    .line 191
+    .line 205
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;->getRoot()Lcom/iMe/ui/custom/SlopSwipeRefreshLayout;
 
     move-result-object v0
@@ -561,12 +564,12 @@
 .method private final setupListeners()V
     .locals 3
 
-    .line 196
+    .line 210
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-result-object v0
 
-    .line 197
+    .line 211
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;->getBinanceAccountProvider()Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;
 
     move-result-object v1
@@ -577,72 +580,73 @@
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/adapter/provider/BinanceAccountProvider;->setActionBarMenuItemDelegate(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;)V
 
-    .line 198
+    .line 213
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;->getBannerProvider()Lcom/iMe/ui/adapter/provider/BannerProvider;
 
     move-result-object v1
 
-    new-instance v2, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda3;
+    new-instance v2, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v2, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
+    invoke-direct {v2, v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/adapter/provider/BannerProvider;->setBannerOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 202
-    new-instance v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda2;
+    .line 222
+    new-instance v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
+    invoke-direct {v1, v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 214
+    .line 239
     new-instance v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
+    invoke-direct {v1, v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemChildClickListener(Lcom/chad/library/adapter/base/listener/OnItemChildClickListener;)V
 
     return-void
 .end method
 
-.method private static final setupListeners$lambda$14$lambda$10(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$14$lambda$10(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 7
 
-    const-string/jumbo v0, "this$0"
+    const-string v0, "$this_with"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 0>"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "<anonymous parameter 1>"
+    const-string v0, "<anonymous parameter 0>"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 199
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
+    const-string p2, "<anonymous parameter 1>"
 
-    move-result-object p1
+    invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;->getBannerProvider()Lcom/iMe/ui/adapter/provider/BannerProvider;
+    .line 214
+    invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;->getBannerProvider()Lcom/iMe/ui/adapter/provider/BannerProvider;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-virtual {p1}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
+    invoke-virtual {p0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-virtual {p1, p3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
+    invoke-virtual {p0, p4}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
 
-    check-cast p1, Lcom/iMe/model/wallet/home/SlideItem;
+    check-cast p0, Lcom/iMe/model/wallet/home/SlideItem;
 
-    .line 200
+    .line 216
     new-instance p2, Lorg/telegram/ui/ActionIntroActivity;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/SlideItem;->getSlide()Lcom/iMe/model/wallet/home/BannerSlide;
+    .line 218
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/home/SlideItem;->getSlide()Lcom/iMe/model/wallet/home/BannerSlide;
 
     move-result-object v5
 
@@ -658,57 +662,59 @@
 
     move-object v0, p2
 
+    .line 216
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ActionIntroActivity;-><init>(ILcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocol;Ljava/lang/String;Lcom/iMe/model/wallet/home/BannerSlide;Lcom/iMe/fork/enums/LockedSection;)V
 
-    invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    .line 215
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
 .end method
 
-.method private static final setupListeners$lambda$14$lambda$11(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$14$lambda$11(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
-    const-string/jumbo v0, "this$0"
+    const-string v0, "$this_with"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 0>"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "<anonymous parameter 1>"
+    const-string v0, "<anonymous parameter 0>"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 203
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
+    const-string p2, "<anonymous parameter 1>"
 
-    move-result-object p1
+    invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
+    .line 223
+    invoke-virtual {p0, p4}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
 
-    check-cast p1, Lcom/chad/library/adapter/base/entity/node/BaseNode;
+    check-cast p0, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 204
-    instance-of p2, p1, Lcom/iMe/model/wallet/home/CardButtonItem;
+    .line 224
+    instance-of p2, p0, Lcom/iMe/model/wallet/home/CardButtonItem;
 
     if-eqz p2, :cond_0
 
-    .line 205
-    check-cast p1, Lcom/iMe/model/wallet/home/CardButtonItem;
+    .line 225
+    check-cast p0, Lcom/iMe/model/wallet/home/CardButtonItem;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/CardButtonItem;->getId()I
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/home/CardButtonItem;->getId()I
 
-    move-result p1
+    move-result p0
 
-    .line 206
+    .line 226
     sget p2, Lorg/telegram/messenger/R$id;->binance_pay_link:I
 
-    if-ne p1, p2, :cond_1
+    if-ne p0, p2, :cond_1
 
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
+    invoke-direct {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object p0
 
@@ -716,81 +722,84 @@
 
     goto :goto_0
 
-    .line 209
+    .line 230
     :cond_0
-    instance-of p2, p1, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;
+    instance-of p2, p0, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;
 
     if-eqz p2, :cond_1
 
-    .line 210
+    .line 232
     sget-object p2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->Companion:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$Companion;
 
+    .line 233
     new-instance p3, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
-    check-cast p1, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;
+    check-cast p0, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-direct {p3, p1}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;-><init>(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
+    invoke-direct {p3, p0}, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;-><init>(Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
 
+    .line 232
     invoke-virtual {p2, p3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$Companion;->newInstance(Lcom/iMe/model/wallet/details/TokenDetailsArgs;)Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    .line 231
+    invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     :cond_1
     :goto_0
     return-void
 .end method
 
-.method private static final setupListeners$lambda$14$lambda$13(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$14$lambda$13(Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
-    const-string/jumbo v0, "this$0"
+    const-string v0, "$this_with"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "<anonymous parameter 0>"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo p1, "view"
+    const-string v0, "<anonymous parameter 0>"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 215
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
+    const-string/jumbo p2, "view"
 
-    move-result-object p1
+    invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p1, p3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
+    .line 240
+    invoke-virtual {p0, p4}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getItem(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
 
-    check-cast p1, Lcom/chad/library/adapter/base/entity/node/BaseNode;
+    check-cast p0, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 216
-    invoke-virtual {p2}, Landroid/view/View;->getId()I
+    .line 241
+    invoke-virtual {p3}, Landroid/view/View;->getId()I
 
     move-result p2
 
-    .line 217
+    .line 242
     sget p3, Lorg/telegram/messenger/R$id;->image_copy:I
 
     if-ne p2, p3, :cond_0
 
-    .line 218
-    instance-of p0, p1, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;
+    .line 243
+    instance-of p1, p0, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;
 
-    if-eqz p0, :cond_3
+    if-eqz p1, :cond_3
 
-    .line 219
-    check-cast p1, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;
+    .line 244
+    check-cast p0, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;->getInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
+    invoke-virtual {p0}, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;->getInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
 
     move-result-object p0
 
@@ -806,19 +815,19 @@
 
     goto :goto_0
 
-    .line 222
+    .line 248
     :cond_0
-    sget p1, Lorg/telegram/messenger/R$id;->image_wallet_crypto_tokens_settings:I
+    sget p0, Lorg/telegram/messenger/R$id;->image_wallet_crypto_tokens_settings:I
 
-    if-ne p2, p1, :cond_1
+    if-ne p2, p0, :cond_1
 
-    .line 223
-    sget-object p1, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->Companion:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;
+    .line 249
+    sget-object p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->Companion:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;
 
-    .line 224
+    .line 250
     new-instance p2, Lcom/iMe/model/wallet/crypto/TokensScreenType$Binance;
 
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
+    invoke-direct {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object p3
 
@@ -832,29 +841,29 @@
 
     invoke-direct {p2, p3}, Lcom/iMe/model/wallet/crypto/TokensScreenType$Binance;-><init>(Ljava/util/List;)V
 
-    .line 223
-    invoke-virtual {p1, p2}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/TokensScreenType;)Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
+    .line 249
+    invoke-virtual {p0, p2}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/TokensScreenType;)Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
 
-    move-result-object p1
+    move-result-object p0
 
-    .line 222
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    .line 248
+    invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_0
 
-    .line 227
+    .line 254
     :cond_1
-    sget p1, Lorg/telegram/messenger/R$id;->image_wallet_order_tokens:I
+    sget p0, Lorg/telegram/messenger/R$id;->image_wallet_order_tokens:I
 
-    if-ne p2, p1, :cond_2
+    if-ne p2, p0, :cond_2
 
-    .line 229
-    invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 256
+    invoke-virtual {p1}, Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object p1
+    move-result-object p0
 
-    .line 230
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
+    .line 257
+    invoke-direct {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object p2
 
@@ -862,27 +871,29 @@
 
     move-result-object p2
 
-    .line 228
-    new-instance p3, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda4;
+    const/4 p3, 0x0
 
-    invoke-direct {p3, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
+    .line 255
+    new-instance p4, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda4;
 
-    invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createSelectTokensOrderTypeDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-direct {p4, p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
-    move-result-object p1
+    invoke-static {p1, p0, p2, p3, p4}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createSelectTokensOrderTypeDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;ZLcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 227
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+    move-result-object p0
+
+    .line 254
+    invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto :goto_0
 
-    .line 233
+    .line 262
     :cond_2
-    sget p1, Lorg/telegram/messenger/R$id;->image_wallet_crypto_eye:I
+    sget p0, Lorg/telegram/messenger/R$id;->image_wallet_crypto_eye:I
 
-    if-ne p2, p1, :cond_3
+    if-ne p2, p0, :cond_3
 
-    invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
+    invoke-direct {p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object p0
 
@@ -900,7 +911,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 231
+    .line 259
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object p0
@@ -921,7 +932,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
+    .line 212
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->onSubItemClick(I)V
 
     return-void
@@ -930,7 +941,7 @@
 .method private final setupSwipeRefresh()V
     .locals 2
 
-    .line 257
+    .line 286
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
 
     move-result-object v0
@@ -955,7 +966,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 257
+    .line 286
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object p0
@@ -968,14 +979,14 @@
 .method private final setupWalletRecycleView()V
     .locals 3
 
-    .line 247
+    .line 276
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;->recycleWalletHomeBinancePayDashboard:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 248
+    .line 277
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -986,24 +997,24 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 249
+    .line 278
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-result-object v1
 
-    .line 250
+    .line 279
     new-instance v2, Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/diff/BinancePayDiffCallback;
 
     invoke-direct {v2}, Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/diff/BinancePayDiffCallback;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 249
+    .line 278
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     const-string/jumbo v1, "setupWalletRecycleView$lambda$16"
 
-    .line 252
+    .line 281
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->disableDefaultAnimation(Landroidx/recyclerview/widget/RecyclerView;)V
@@ -1018,7 +1029,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 101
+    .line 109
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
@@ -1031,7 +1042,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 92
+    .line 99
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
@@ -1046,7 +1057,7 @@
 
     const/4 v0, 0x0
 
-    .line 140
+    .line 154
     invoke-virtual {p0, v0}, Lcom/iMe/ui/wallet/home/tabs/WalletHomeTabFragment;->selectTab(I)V
 
     return-void
@@ -1069,7 +1080,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 69
+    .line 76
     new-instance v9, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
@@ -1082,12 +1093,12 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 68
+    .line 75
     new-instance v7, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda9;
 
     invoke-direct {v7, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda9;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
-    .line 72
+    .line 79
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     const/4 v4, 0x0
@@ -1098,14 +1109,14 @@
 
     move-object v1, v9
 
-    .line 69
+    .line 76
     invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v1, 0x0
 
     aput-object v9, v0, v1
 
-    .line 68
+    .line 75
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -1116,14 +1127,14 @@
 .method public handleBottomPadding(I)V
     .locals 4
 
-    .line 169
+    .line 187
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;->recycleWalletHomeBinancePayDashboard:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 170
+    .line 188
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingLeft()I
 
     move-result v1
@@ -1144,7 +1155,7 @@
 .method public loadBalances()V
     .locals 1
 
-    .line 80
+    .line 87
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object v0
@@ -1157,7 +1168,7 @@
 .method public loadTabInfo()V
     .locals 1
 
-    .line 76
+    .line 83
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getPresenter()Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayPresenter;
 
     move-result-object v0
@@ -1174,19 +1185,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 67
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupColors()V
 
-    .line 61
+    .line 68
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners()V
 
-    .line 62
+    .line 69
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupWalletRecycleView()V
 
-    .line 63
+    .line 70
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->setupSwipeRefresh()V
 
-    .line 65
+    .line 72
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
 
     move-result-object p1
@@ -1205,10 +1216,10 @@
 .method public onPause()V
     .locals 1
 
-    .line 180
+    .line 198
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
-    .line 181
+    .line 199
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-result-object v0
@@ -1229,10 +1240,10 @@
 .method public onResume()V
     .locals 1
 
-    .line 175
+    .line 193
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
-    .line 176
+    .line 194
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-result-object v0
@@ -1253,18 +1264,18 @@
 .method public openConvertScreen()V
     .locals 4
 
-    .line 121
+    .line 133
     sget-object v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->Companion:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$Companion;
 
-    new-instance v1, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Binance;
+    new-instance v1, Lcom/iMe/model/wallet/swap/WalletSwapScreenType$Binance;
 
     const/4 v2, 0x0
 
     const/4 v3, 0x3
 
-    invoke-direct {v1, v2, v2, v3, v2}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType$Binance;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v1, v2, v2, v3, v2}, Lcom/iMe/model/wallet/swap/WalletSwapScreenType$Binance;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;)Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$Companion;->newInstance(Lcom/iMe/model/wallet/swap/WalletSwapScreenType;)Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;
 
     move-result-object v0
 
@@ -1276,7 +1287,7 @@
 .method public openHistoryScreen()V
     .locals 4
 
-    .line 125
+    .line 137
     sget-object v0, Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment;->Companion:Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$Companion;
 
     sget-object v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$ScreenType$Fullscreen;->INSTANCE:Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$ScreenType$Fullscreen;
@@ -1297,21 +1308,21 @@
 .method public openPayScreen()V
     .locals 2
 
-    .line 109
+    .line 118
     new-instance v0, Lorg/telegram/ui/ActionIntroActivity;
 
     const/16 v1, 0x6d
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionIntroActivity;-><init>(I)V
 
-    .line 110
+    .line 119
     new-instance v1, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda10;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda10;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionIntroActivity;->setQrLoginDelegate(Lorg/telegram/ui/ActionIntroActivity$ActionIntroQRLoginDelegate;)V
 
-    .line 109
+    .line 118
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -1320,7 +1331,7 @@
 .method public openReceiveScreen()V
     .locals 3
 
-    .line 117
+    .line 129
     new-instance v0, Lcom/iMe/model/wallet/home/pay/BinancePayScreenArgs;
 
     const/4 v1, 0x0
@@ -1341,11 +1352,11 @@
 .method public openReplenishScreen(Ljava/lang/String;)V
     .locals 9
 
-    const-string v0, "networkId"
+    const-string/jumbo v0, "networkId"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 129
+    .line 143
     new-instance v0, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;
 
     const/4 v2, 0x0
@@ -1366,10 +1377,12 @@
 
     invoke-direct/range {v1 .. v8}, Lcom/iMe/model/wallet/transfer/TransferScreenArgs;-><init>(Lcom/iMe/model/wallet/crypto/TokenItem;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
+    .line 142
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->newInstanceForBinanceReplenish(Lcom/iMe/model/wallet/transfer/TransferScreenArgs;)Lorg/telegram/ui/ManageLinksActivity;
 
     move-result-object p1
 
+    .line 141
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -1386,11 +1399,11 @@
         }
     .end annotation
 
-    const-string v0, "nodes"
+    const-string/jumbo v0, "nodes"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 84
+    .line 91
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-result-object v0
@@ -1424,7 +1437,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 99
+    .line 107
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1433,7 +1446,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 101
+    .line 109
     new-instance v3, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda6;
 
     invoke-direct {v3, p2}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -1446,15 +1459,15 @@
 
     move-object v2, p1
 
-    .line 98
+    .line 106
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog$default(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 103
+    .line 112
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 104
+    .line 113
     invoke-static {p1}, Lcom/iMe/utils/dialogs/DialogExtKt;->makeRedPositiveButton(Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
@@ -1471,7 +1484,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 153
+    .line 167
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1519,7 +1532,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 90
+    .line 97
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -1528,7 +1541,7 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 92
+    .line 99
     new-instance v3, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda7;
 
     invoke-direct {v3, p2}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -1541,12 +1554,12 @@
 
     move-object v2, p1
 
-    .line 89
+    .line 96
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog$default(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 88
+    .line 95
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -1555,7 +1568,7 @@
 .method public showRefreshing(Z)V
     .locals 1
 
-    .line 149
+    .line 163
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;
 
     move-result-object v0
@@ -1572,7 +1585,7 @@
 .method public showRequiredVerifyDialog()V
     .locals 1
 
-    .line 135
+    .line 149
     invoke-static {p0}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createBinanceVerificationRequiredDialog(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -1585,7 +1598,7 @@
 .method public showRequiredWalletCreatedDialog()V
     .locals 1
 
-    .line 139
+    .line 153
     new-instance v0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda5;-><init>(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)V
@@ -1628,7 +1641,7 @@
 
     move-object v4, p3
 
-    .line 157
+    .line 175
     invoke-static/range {v1 .. v7}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->showSuccessAlert$default(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Landroid/app/Dialog;
 
     return-void
@@ -1641,7 +1654,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 159
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->getBinancePayRecycleAdapter()Lcom/iMe/ui/wallet/home/tabs/binancepay/adapter/BinancePayRecycleAdapter;
 
     move-result-object v0

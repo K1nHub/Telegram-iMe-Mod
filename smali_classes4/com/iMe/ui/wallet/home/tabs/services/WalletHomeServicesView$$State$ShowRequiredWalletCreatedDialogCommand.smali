@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView$$State;)V
     .locals 1
 
-    .line 176
+    .line 203
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showRequiredWalletCreatedDialog"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;)V
     .locals 0
 
-    .line 181
+    .line 208
     invoke-interface {p1}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;->showRequiredWalletCreatedDialog()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 174
+    .line 201
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView$$State$ShowRequiredWalletCreatedDialogCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;)V

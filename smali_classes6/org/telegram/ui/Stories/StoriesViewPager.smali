@@ -57,6 +57,8 @@
 
 .field selectedPosition:I
 
+.field private selectedPositionInPage:I
+
 .field storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
 .field toPosition:I
@@ -66,6 +68,8 @@
 .field private touchLocked:Z
 
 .field updateDelegate:Z
+
+.field private updateVisibleItemPosition:I
 
 
 # direct methods
@@ -88,15 +92,15 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Stories/StoryViewer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 1
 
-    .line 56
+    .line 60
     invoke-direct {p0, p1}, Landroidx/viewpager/widget/ViewPager;-><init>(Landroid/content/Context;)V
 
-    .line 28
+    .line 30
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->currentAccount:I
 
-    .line 30
+    .line 32
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -105,27 +109,32 @@
 
     const/4 v0, 0x1
 
-    .line 34
+    .line 36
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->touchEnabled:Z
 
-    .line 46
+    .line 48
     new-instance v0, Lorg/telegram/ui/Stories/StoriesViewPager$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/StoriesViewPager$1;-><init>(Lorg/telegram/ui/Stories/StoriesViewPager;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->lockTouchRunnable:Ljava/lang/Runnable;
 
+    const/4 v0, -0x1
+
     .line 57
+    iput v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateVisibleItemPosition:I
+
+    .line 61
     new-instance v0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->resources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
-    .line 58
+    .line 62
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
-    .line 59
+    .line 63
     new-instance v0, Lorg/telegram/ui/Stories/StoriesViewPager$2;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesViewPager$2;-><init>(Lorg/telegram/ui/Stories/StoriesViewPager;Landroid/content/Context;Lorg/telegram/ui/Stories/StoryViewer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -134,28 +143,28 @@
 
     invoke-virtual {p0, v0}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 121
+    .line 125
     new-instance p1, Lorg/telegram/ui/Stories/StoriesViewPager$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesViewPager$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/StoriesViewPager;)V
 
-    const/4 p2, 0x0
+    const/4 p3, 0x0
 
-    invoke-virtual {p0, p2, p1}, Landroidx/viewpager/widget/ViewPager;->setPageTransformer(ZLandroidx/viewpager/widget/ViewPager$PageTransformer;)V
+    invoke-virtual {p0, p3, p1}, Landroidx/viewpager/widget/ViewPager;->setPageTransformer(ZLandroidx/viewpager/widget/ViewPager$PageTransformer;)V
 
-    .line 147
-    invoke-virtual {p0, p2}, Landroidx/viewpager/widget/ViewPager;->setOffscreenPageLimit(I)V
+    .line 151
+    invoke-virtual {p0, p3}, Landroidx/viewpager/widget/ViewPager;->setOffscreenPageLimit(I)V
 
-    .line 149
+    .line 153
     new-instance p1, Lorg/telegram/ui/Stories/StoriesViewPager$3;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesViewPager$3;-><init>(Lorg/telegram/ui/Stories/StoriesViewPager;)V
+    invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Stories/StoriesViewPager$3;-><init>(Lorg/telegram/ui/Stories/StoriesViewPager;Lorg/telegram/ui/Stories/StoryViewer;)V
 
     invoke-virtual {p0, p1}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)V
 
     const/4 p1, 0x2
 
-    .line 190
+    .line 200
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
     return-void
@@ -164,7 +173,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Stories/StoriesViewPager;Z)Z
     .locals 0
 
-    .line 23
+    .line 25
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->touchLocked:Z
 
     return p1
@@ -173,7 +182,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Stories/StoriesViewPager;)V
     .locals 0
 
-    .line 23
+    .line 25
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->updateActiveStory()V
 
     return-void
@@ -182,17 +191,17 @@
 .method private static synthetic lambda$new$0(Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;)V
     .locals 3
 
-    .line 126
+    .line 130
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->day:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 127
+    .line 131
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-object v0, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->day:Ljava/util/ArrayList;
 
-    .line 129
+    .line 133
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -204,14 +213,14 @@
 .end method
 
 .method private synthetic lambda$new$1(Landroid/view/View;F)V
-    .locals 5
+    .locals 6
 
-    .line 122
+    .line 126
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;
 
-    .line 123
+    .line 127
     invoke-static {p2}, Ljava/lang/Math;->abs(F)F
 
     move-result v1
@@ -224,10 +233,10 @@
 
     const/4 p1, 0x0
 
-    .line 124
+    .line 128
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->setVisible(Z)V
 
-    .line 125
+    .line 129
     new-instance p1, Lorg/telegram/ui/Stories/StoriesViewPager$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/Stories/StoriesViewPager$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;)V
@@ -238,7 +247,7 @@
 
     return-void
 
-    .line 133
+    .line 137
     :cond_0
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->isVisible:Z
 
@@ -246,41 +255,43 @@
 
     const/4 v1, 0x1
 
-    .line 134
+    .line 138
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->setVisible(Z)V
 
-    .line 135
+    .line 139
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    const/4 v2, -0x1
 
     if-eqz v1, :cond_1
 
-    .line 136
+    .line 140
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    iget-wide v2, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
 
-    iget-object v4, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->day:Ljava/util/ArrayList;
+    iget-object v5, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->day:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDay(JLjava/util/ArrayList;)V
+    invoke-virtual {v1, v3, v4, v5, v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDay(JLjava/util/ArrayList;I)V
 
     goto :goto_0
 
-    .line 138
+    .line 142
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    iget-wide v2, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
 
-    invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDialogId(J)V
+    invoke-virtual {v1, v3, v4, v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDialogId(JI)V
 
-    .line 141
+    .line 145
     :cond_2
     :goto_0
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->setOffset(F)V
 
-    .line 142
+    .line 146
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -297,7 +308,7 @@
 
     if-gez v1, :cond_3
 
-    .line 143
+    .line 147
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -307,7 +318,7 @@
     :cond_3
     invoke-virtual {p1, v0}, Landroid/view/View;->setPivotX(F)V
 
-    .line 144
+    .line 148
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
@@ -324,7 +335,7 @@
 
     mul-float/2addr p2, v0
 
-    .line 145
+    .line 149
     invoke-virtual {p1, p2}, Landroid/view/View;->setRotationY(F)V
 
     return-void
@@ -337,7 +348,7 @@
 
     move v1, v0
 
-    .line 194
+    .line 204
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -345,7 +356,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 195
+    .line 205
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -401,7 +412,7 @@
 .method public canScroll(F)Z
     .locals 5
 
-    .line 216
+    .line 226
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->selectedPosition:I
 
     const/4 v1, 0x0
@@ -422,7 +433,7 @@
 
     return v1
 
-    .line 219
+    .line 229
     :cond_0
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getAdapter()Landroidx/viewpager/widget/PagerAdapter;
 
@@ -461,7 +472,7 @@
 
     move v1, v0
 
-    .line 201
+    .line 211
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -469,14 +480,14 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 202
+    .line 212
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;
 
-    .line 203
+    .line 213
     iget-boolean v3, v2, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->isVisible:Z
 
     if-eqz v3, :cond_0
@@ -501,7 +512,7 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 208
+    .line 218
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -510,10 +521,117 @@
     return-void
 .end method
 
+.method public checkPageVisibility()V
+    .locals 6
+
+    .line 288
+    iget v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateVisibleItemPosition:I
+
+    if-ltz v0, :cond_2
+
+    const/4 v0, 0x0
+
+    .line 289
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_2
+
+    .line 290
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
+
+    move-result v2
+
+    if-ne v1, v2, :cond_1
+
+    invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
+
+    move-result v1
+
+    iget v2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateVisibleItemPosition:I
+
+    if-ne v1, v2, :cond_1
+
+    .line 291
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;
+
+    .line 292
+    iget-boolean v2, v1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->isVisible:Z
+
+    if-nez v2, :cond_1
+
+    const/4 v2, -0x1
+
+    .line 293
+    iput v2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateVisibleItemPosition:I
+
+    const/4 v2, 0x1
+
+    .line 294
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->setVisible(Z)V
+
+    .line 295
+    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    if-eqz v2, :cond_0
+
+    .line 296
+    iget-object v2, v1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    iget-wide v3, v1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
+
+    iget-object v1, v1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->day:Ljava/util/ArrayList;
+
+    iget v5, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->selectedPositionInPage:I
+
+    invoke-virtual {v2, v3, v4, v1, v5}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDay(JLjava/util/ArrayList;I)V
+
+    goto :goto_1
+
+    .line 298
+    :cond_0
+    iget-object v2, v1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    iget-wide v3, v1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
+
+    iget v1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->selectedPositionInPage:I
+
+    invoke-virtual {v2, v3, v4, v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDialogId(JI)V
+
+    :cond_1
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return-void
+.end method
+
 .method public enableTouch(Z)V
     .locals 0
 
-    .line 320
+    .line 351
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->touchEnabled:Z
 
     return-void
@@ -522,17 +640,17 @@
 .method public getCurrentDialogId()J
     .locals 2
 
-    .line 330
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 331
+    .line 362
     iget-wide v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->daysDialogId:J
 
     return-wide v0
 
-    .line 333
+    .line 364
     :cond_0
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
 
@@ -546,7 +664,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 334
+    .line 365
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->dialogs:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
@@ -578,7 +696,7 @@
 
     move v1, v0
 
-    .line 226
+    .line 237
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -586,7 +704,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 227
+    .line 238
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -607,7 +725,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 228
+    .line 239
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -633,12 +751,29 @@
     return-object v0
 .end method
 
+.method public getDialogIds()Ljava/util/ArrayList;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+
+    .line 413
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->dialogs:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
 .method public lockTouchEvent(J)V
     .locals 9
 
     const/4 v0, 0x1
 
-    .line 375
+    .line 406
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->touchLocked:Z
 
     const-wide/16 v1, 0x0
@@ -653,19 +788,19 @@
 
     const/4 v8, 0x0
 
-    .line 376
+    .line 407
     invoke-static/range {v1 .. v8}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/StoriesViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 377
+    .line 408
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->lockTouchRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 378
+    .line 409
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->lockTouchRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
@@ -676,7 +811,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 297
+    .line 328
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->touchEnabled:Z
 
     const/4 v1, 0x0
@@ -689,7 +824,7 @@
 
     goto :goto_0
 
-    .line 301
+    .line 332
     :cond_0
     :try_start_0
     invoke-super {p0, p1}, Landroidx/viewpager/widget/ViewPager;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -703,7 +838,7 @@
     :catch_0
     move-exception p1
 
-    .line 303
+    .line 334
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -714,27 +849,27 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 264
+    .line 275
     invoke-super/range {p0 .. p5}, Landroidx/viewpager/widget/ViewPager;->onLayout(ZIIII)V
 
-    .line 265
+    .line 276
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateDelegate:Z
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 266
+    .line 277
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateDelegate:Z
 
-    .line 267
+    .line 278
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 269
+    .line 280
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->getCurrentPeer()J
@@ -747,8 +882,11 @@
 
     invoke-interface {p2, p3, p4, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->onPeerSelected(JI)V
 
-    .line 272
+    .line 283
     :cond_0
+    invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->checkPageVisibility()V
+
+    .line 284
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->updateActiveStory()V
 
     return-void
@@ -757,7 +895,7 @@
 .method public onNextIdle(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 340
+    .line 371
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->doOnNextIdle:Ljava/lang/Runnable;
 
     return-void
@@ -772,7 +910,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 310
+    .line 341
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->touchEnabled:Z
 
     if-eqz v0, :cond_1
@@ -783,7 +921,7 @@
 
     goto :goto_0
 
-    .line 316
+    .line 347
     :cond_0
     invoke-super {p0, p1}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -791,7 +929,7 @@
 
     return p1
 
-    .line 311
+    .line 342
     :cond_1
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->touchLocked:Z
@@ -826,9 +964,220 @@
 .method public requestDisallowInterceptTouchEvent(Z)V
     .locals 0
 
-    .line 371
+    .line 402
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
 
+    return-void
+.end method
+
+.method public setCurrentDate(JI)V
+    .locals 4
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    .line 449
+    :goto_0
+    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_7
+
+    .line 450
+    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
+
+    iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+
+    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->findMessageObject(I)Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->day(Lorg/telegram/messenger/MessageObject;)J
+
+    move-result-wide v2
+
+    cmp-long v2, p1, v2
+
+    if-nez v2, :cond_6
+
+    .line 454
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
+
+    iget-boolean p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->reversed:Z
+
+    const/4 p2, 0x1
+
+    if-eqz p1, :cond_0
+
+    .line 455
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    sub-int/2addr p1, p2
+
+    sub-int/2addr p1, v1
+
+    goto :goto_1
+
+    :cond_0
+    move p1, v1
+
+    :goto_1
+    move v2, v0
+
+    .line 457
+    :goto_2
+    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/ArrayList;
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_2
+
+    .line 458
+    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    if-ne v3, p3, :cond_1
+
+    goto :goto_3
+
+    :cond_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    move v2, v0
+
+    .line 463
+    :goto_3
+    invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    move-result-object p3
+
+    if-eqz p3, :cond_4
+
+    invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
+
+    move-result p3
+
+    if-eq p3, p1, :cond_3
+
+    goto :goto_4
+
+    .line 478
+    :cond_3
+    invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->selectPosition(I)V
+
+    goto :goto_5
+
+    .line 464
+    :cond_4
+    :goto_4
+    invoke-virtual {p0, p1, v0}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(IZ)V
+
+    .line 465
+    invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_7
+
+    .line 467
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;
+
+    .line 468
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->setVisible(Z)V
+
+    .line 469
+    iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
+
+    if-eqz p2, :cond_5
+
+    .line 470
+    iget-object p2, p1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    iget-wide v0, p1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->day:Ljava/util/ArrayList;
+
+    invoke-virtual {p2, v0, v1, p1, v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDay(JLjava/util/ArrayList;I)V
+
+    goto :goto_5
+
+    .line 472
+    :cond_5
+    iget-object p2, p1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->peerStoryView:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    iget-wide v0, p1, Lorg/telegram/ui/Stories/StoriesViewPager$PageLayout;->dialogId:J
+
+    invoke-virtual {p2, v0, v1, v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->setDialogId(JI)V
+
+    goto :goto_5
+
+    :cond_6
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_0
+
+    :cond_7
+    :goto_5
     return-void
 .end method
 
@@ -844,28 +1193,28 @@
         }
     .end annotation
 
-    .line 244
+    .line 255
     iput-wide p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->daysDialogId:J
 
-    .line 245
+    .line 256
     iput-object p3, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->days:Ljava/util/ArrayList;
 
-    .line 246
+    .line 257
     iput p4, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->currentAccount:I
 
     const/4 p1, 0x0
 
-    .line 247
+    .line 258
     invoke-virtual {p0, p1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 248
+    .line 259
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->pagerAdapter:Landroidx/viewpager/widget/PagerAdapter;
 
     invoke-virtual {p0, p1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
     const/4 p1, 0x0
 
-    .line 250
+    .line 261
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -873,7 +1222,7 @@
 
     if-ge p1, p2, :cond_1
 
-    .line 251
+    .line 262
     invoke-virtual {p3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
@@ -901,7 +1250,7 @@
 
     goto :goto_0
 
-    .line 255
+    .line 266
     :cond_1
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
@@ -912,7 +1261,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 256
+    .line 267
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
     move-result p2
@@ -921,11 +1270,11 @@
 
     sub-int p1, p2, p1
 
-    .line 258
+    .line 269
     :cond_2
     invoke-virtual {p0, p1}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(I)V
 
-    .line 259
+    .line 270
     iput-boolean p4, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateDelegate:Z
 
     return-void
@@ -934,7 +1283,7 @@
 .method public setDelegate(Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;)V
     .locals 0
 
-    .line 276
+    .line 307
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
     return-void
@@ -943,7 +1292,7 @@
 .method public setHorizontalProgressToDismiss(F)V
     .locals 2
 
-    .line 356
+    .line 387
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -962,11 +1311,11 @@
 
     goto :goto_0
 
-    .line 359
+    .line 390
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->lastProgressToDismiss:F
 
-    .line 360
+    .line 391
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v0
@@ -983,7 +1332,7 @@
 
     if-gez v1, :cond_1
 
-    .line 361
+    .line 392
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v0
@@ -993,7 +1342,7 @@
     :cond_1
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setPivotX(F)V
 
-    .line 362
+    .line 393
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getHeight()I
 
     move-result v0
@@ -1010,7 +1359,7 @@
 
     mul-float/2addr p1, v0
 
-    .line 363
+    .line 394
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->setRotationY(F)V
 
     :cond_2
@@ -1021,22 +1370,22 @@
 .method public setKeyboardHeight(I)V
     .locals 1
 
-    .line 344
+    .line 375
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->keyboardHeight:I
 
     if-eq v0, p1, :cond_0
 
-    .line 345
+    .line 376
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->keyboardHeight:I
 
-    .line 346
+    .line 377
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 348
+    .line 379
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
     :cond_0
@@ -1050,7 +1399,7 @@
 
     move v1, v0
 
-    .line 324
+    .line 355
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1058,7 +1407,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 325
+    .line 356
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -1092,28 +1441,28 @@
         }
     .end annotation
 
-    .line 235
+    .line 246
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->dialogs:Ljava/util/ArrayList;
 
-    .line 236
+    .line 247
     iput p2, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->currentAccount:I
 
     const/4 p1, 0x0
 
-    .line 237
+    .line 248
     invoke-virtual {p0, p1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 238
+    .line 249
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->pagerAdapter:Landroidx/viewpager/widget/PagerAdapter;
 
     invoke-virtual {p0, p1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 239
+    .line 250
     invoke-virtual {p0, p3}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(I)V
 
     const/4 p1, 0x1
 
-    .line 240
+    .line 251
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->updateDelegate:Z
 
     return-void
@@ -1126,7 +1475,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 284
+    .line 315
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
 
     move-result v1
@@ -1149,7 +1498,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 285
+    .line 316
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
 
     move-result p1
@@ -1169,14 +1518,14 @@
     :cond_1
     if-nez p1, :cond_2
 
-    .line 288
+    .line 319
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
 
     move-result p1
 
     if-lez p1, :cond_2
 
-    .line 289
+    .line 320
     invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
 
     move-result p1
@@ -1202,7 +1551,7 @@
 .method public useSurfaceInViewPagerWorkAround()Z
     .locals 2
 
-    .line 280
+    .line 311
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->USE_SURFACE_VIEW:Z

@@ -151,10 +151,10 @@
 
     const/4 p1, 0x1
 
-    .line 239
+    .line 242
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->wasImageDownloading:Z
 
-    .line 240
+    .line 243
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->wasVideoDownloading:Z
 
     .line 70
@@ -294,7 +294,7 @@
 .method private synthetic lambda$onClickInternal$2(Landroid/net/Uri;)V
     .locals 4
 
-    .line 185
+    .line 188
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
     if-eqz v0, :cond_1
@@ -305,7 +305,7 @@
 
     goto :goto_0
 
-    .line 188
+    .line 191
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
@@ -323,13 +323,13 @@
 
     const/4 v0, 0x0
 
-    .line 189
+    .line 192
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
-    .line 190
+    .line 193
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->updateImage()V
 
-    .line 192
+    .line 195
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->savedToGalleryUri:Landroid/net/Uri;
 
     :cond_1
@@ -340,7 +340,7 @@
 .method private synthetic lambda$onClickInternal$3(Ljava/io/File;)V
     .locals 8
 
-    .line 181
+    .line 184
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
     if-eqz v0, :cond_1
@@ -351,7 +351,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 187
     :cond_0
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -383,12 +383,12 @@
 .method private synthetic lambda$onClickInternal$4(Ljava/lang/Float;)V
     .locals 1
 
-    .line 195
+    .line 198
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
     if-eqz v0, :cond_0
 
-    .line 196
+    .line 199
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
     move-result p1
@@ -402,7 +402,7 @@
 .method private synthetic lambda$onClickInternal$5()V
     .locals 4
 
-    .line 199
+    .line 202
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
     if-eqz v0, :cond_1
@@ -413,7 +413,7 @@
 
     goto :goto_0
 
-    .line 202
+    .line 205
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
@@ -431,10 +431,10 @@
 
     const/4 v0, 0x0
 
-    .line 203
+    .line 206
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
-    .line 204
+    .line 207
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->updateImage()V
 
     :cond_1
@@ -447,26 +447,26 @@
 
     const/4 v0, 0x0
 
-    .line 221
+    .line 224
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
-    .line 222
+    .line 225
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->updateImage()V
 
-    .line 223
+    .line 226
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
     if-eqz v0, :cond_0
 
-    .line 224
+    .line 227
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;->hide()V
 
     const/4 v0, 0x0
 
-    .line 225
+    .line 228
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
-    .line 227
+    .line 230
     :cond_0
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
@@ -478,7 +478,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
-    .line 228
+    .line 231
     sget v1, Lorg/telegram/messenger/R$raw;->ic_save_to_gallery:I
 
     const-string v2, "PhotoSavedHint"
@@ -491,14 +491,14 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;->setDone(ILjava/lang/CharSequence;I)V
 
-    .line 229
+    .line 232
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->container:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 231
+    .line 234
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->savedToGalleryUri:Landroid/net/Uri;
 
     return-void
@@ -507,7 +507,7 @@
 .method private synthetic lambda$onClickInternal$7(Ljava/io/File;)V
     .locals 7
 
-    .line 220
+    .line 223
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -536,12 +536,12 @@
 .method private synthetic lambda$onClickInternal$8(Ljava/io/File;)V
     .locals 1
 
-    .line 215
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->currentEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->buildPhoto(Ljava/io/File;)V
 
-    .line 216
+    .line 219
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
     if-eqz v0, :cond_1
@@ -552,7 +552,7 @@
 
     goto :goto_0
 
-    .line 219
+    .line 222
     :cond_0
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda4;
 
@@ -566,7 +566,7 @@
 .end method
 
 .method private onClick()V
-    .locals 4
+    .locals 3
 
     .line 111
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -623,7 +623,7 @@
     :cond_2
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_b
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->currentEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -714,22 +714,34 @@
 
     .line 140
     :cond_6
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->prepare:Lorg/telegram/messenger/Utilities$Callback;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->buildingVideo:Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;
 
     if-eqz v1, :cond_7
 
     .line 141
-    iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->preparing:Z
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->stop(Z)V
 
     .line 142
-    new-instance v3, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda2;
-
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/DownloadButton;)V
-
-    invoke-interface {v1, v3}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
+    iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->buildingVideo:Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;
 
     .line 144
     :cond_7
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->prepare:Lorg/telegram/messenger/Utilities$Callback;
+
+    if-eqz v1, :cond_8
+
+    .line 145
+    iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->preparing:Z
+
+    .line 146
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda2;
+
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/DownloadButton;)V
+
+    invoke-interface {v1, v2}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
+
+    .line 148
+    :cond_8
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->currentEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
@@ -738,67 +750,68 @@
 
     if-eqz v1, :cond_9
 
-    .line 145
+    .line 149
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloadingVideo:Z
 
-    .line 146
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->buildingVideo:Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;
-
-    if-eqz v1, :cond_8
-
-    .line 147
-    invoke-virtual {v1, v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->stop(Z)V
-
-    .line 148
-    iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->buildingVideo:Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;
-
     .line 150
-    :cond_8
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
+    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
     .line 151
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda1;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/recorder/DownloadButton;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/recorder/DownloadButton;)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;->setOnCancelListener(Ljava/lang/Runnable;)V
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;->setOnCancelListener(Ljava/lang/Runnable;)V
 
     .line 163
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->container:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->container:Landroid/widget/FrameLayout;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
+    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     goto :goto_2
 
     :cond_9
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 165
-    iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloadingVideo:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloadingVideo:Z
 
     .line 167
     :goto_2
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->updateImage()V
 
     .line 168
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->prepare:Lorg/telegram/messenger/Utilities$Callback;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->prepare:Lorg/telegram/messenger/Utilities$Callback;
 
-    if-nez v0, :cond_a
+    if-eqz v1, :cond_a
 
     .line 169
+    iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->preparing:Z
+
+    .line 170
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/DownloadButton;)V
+
+    invoke-interface {v1, v0}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    .line 172
+    :cond_a
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->onClickInternal()V
 
-    :cond_a
+    :cond_b
     :goto_3
     return-void
 .end method
@@ -806,7 +819,7 @@
 .method private onClickInternal()V
     .locals 9
 
-    .line 174
+    .line 177
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->preparing:Z
 
     if-nez v0, :cond_0
@@ -816,10 +829,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 177
+    .line 180
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->preparing:Z
 
-    .line 178
+    .line 181
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->currentEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
@@ -828,12 +841,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 179
+    .line 182
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->generateVideoPath()Ljava/io/File;
 
     move-result-object v5
 
-    .line 180
+    .line 183
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->currentAccount:I
@@ -863,14 +876,14 @@
     :cond_1
     const-string v1, "png"
 
-    .line 207
+    .line 210
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->generatePicturePath(ZLjava/lang/String;)Ljava/io/File;
 
     move-result-object v1
 
     if-nez v1, :cond_2
 
-    .line 209
+    .line 212
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
     sget v2, Lorg/telegram/messenger/R$raw;->error:I
@@ -885,15 +898,15 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;->setDone(ILjava/lang/CharSequence;I)V
 
-    .line 210
+    .line 213
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
 
-    .line 211
+    .line 214
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->updateImage()V
 
     return-void
 
-    .line 214
+    .line 217
     :cond_2
     sget-object v0, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -903,7 +916,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 236
+    .line 239
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->updateImage()V
 
@@ -913,7 +926,7 @@
 .method private updateImage()V
     .locals 5
 
-    .line 243
+    .line 246
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->wasImageDownloading:Z
 
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloading:Z
@@ -940,7 +953,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 244
+    .line 247
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->downloadingVideo:Z
 
     if-nez v0, :cond_1
@@ -957,20 +970,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 245
+    .line 248
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->progressDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     invoke-static {p0, v0}, Lorg/telegram/messenger/AndroidUtilities;->updateImageViewImageAnimated(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_2
 
-    .line 247
+    .line 250
     :cond_2
     sget v0, Lorg/telegram/messenger/R$drawable;->media_download:I
 
     invoke-static {p0, v0}, Lorg/telegram/messenger/AndroidUtilities;->updateImageViewImageAnimated(Landroid/widget/ImageView;I)V
 
-    .line 250
+    .line 253
     :cond_3
     :goto_2
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->wasVideoDownloading:Z
@@ -993,10 +1006,10 @@
     :goto_3
     if-eq v0, v1, :cond_7
 
-    .line 251
+    .line 254
     invoke-virtual {p0}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 252
+    .line 255
     invoke-virtual {p0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -1093,7 +1106,7 @@
 .method public showFailedVideo()V
     .locals 2
 
-    .line 267
+    .line 270
     sget v0, Lorg/telegram/messenger/R$raw;->error:I
 
     const-string v1, "VideoConvertFail"
@@ -1110,20 +1123,20 @@
 .method public showToast(ILjava/lang/CharSequence;)V
     .locals 2
 
-    .line 257
+    .line 260
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
     if-eqz v0, :cond_0
 
-    .line 258
+    .line 261
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;->hide()V
 
     const/4 v0, 0x0
 
-    .line 259
+    .line 262
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
-    .line 261
+    .line 264
     :cond_0
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;
 
@@ -1137,10 +1150,10 @@
 
     const/16 v1, 0xdac
 
-    .line 262
+    .line 265
     invoke-virtual {v0, p1, p2, v1}, Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;->setDone(ILjava/lang/CharSequence;I)V
 
-    .line 263
+    .line 266
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->container:Landroid/widget/FrameLayout;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton;->toast:Lorg/telegram/ui/Stories/recorder/DownloadButton$PreparingVideoToast;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)V
     .locals 0
 
-    .line 100
+    .line 147
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +38,24 @@
 .method public onClick(Landroid/view/View;)V
     .locals 3
 
-    .line 103
+    .line 150
     check-cast p1, Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 104
+    .line 151
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->isDeleting()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 105
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$002(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Lorg/telegram/ui/Components/GroupCreateSpan;)Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 106
+    .line 153
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroidx/collection/LongSparseArray;
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 107
+    .line 154
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$200(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;
@@ -77,14 +77,14 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
-    .line 108
+    .line 155
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$300(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Z)V
 
-    .line 109
+    .line 156
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 111
+    .line 158
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -103,7 +103,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 112
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$000(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Lorg/telegram/ui/Components/GroupCreateSpan;
@@ -112,13 +112,13 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/GroupCreateSpan;->cancelDeleteAnimation()V
 
-    .line 114
+    .line 161
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$002(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Lorg/telegram/ui/Components/GroupCreateSpan;)Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 115
+    .line 162
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->startDeleteAnimation()V
 
     :goto_0

@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 87
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
         }
     .end annotation
 
-    .line 89
+    .line 93
     invoke-static {}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->access$getAvailableEnvironments$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0

@@ -134,21 +134,21 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 513
+    .line 752
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
-    .line 516
+    .line 755
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsUseCounts:Ljava/util/HashMap;
 
-    .line 517
+    .line 756
     new-instance v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell$1;
 
     const/16 v1, 0x2d
@@ -163,10 +163,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 5
 
-    .line 461
+    .line 700
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 441
+    .line 680
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x3
@@ -175,7 +175,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapPaint:Landroid/graphics/Paint;
 
-    .line 442
+    .line 681
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -184,56 +184,56 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bgPaint:Landroid/graphics/Paint;
 
-    .line 443
+    .line 682
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientPaint:Landroid/graphics/Paint;
 
-    .line 445
+    .line 684
     new-instance v2, Landroid/graphics/Matrix;
 
     invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapMatrix:Landroid/graphics/Matrix;
 
-    .line 446
+    .line 685
     new-instance v2, Landroid/graphics/Matrix;
 
     invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientMatrix:Landroid/graphics/Matrix;
 
-    .line 448
+    .line 687
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationBackgroundPaint:Landroid/graphics/Paint;
 
-    .line 449
+    .line 688
     new-instance v3, Landroid/text/TextPaint;
 
     invoke-direct {v3, v1}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationTextPaint:Landroid/text/TextPaint;
 
-    .line 450
+    .line 689
     new-instance v4, Landroid/text/TextPaint;
 
     invoke-direct {v4, v1}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object v4, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->draftTextPaint:Landroid/text/TextPaint;
 
-    .line 489
+    .line 728
     new-instance v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->unload:Ljava/lang/Runnable;
 
-    .line 798
+    .line 1037
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
@@ -244,22 +244,22 @@
 
     new-array v1, v1, [F
 
-    .line 799
+    .line 1038
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->radii:[F
 
     const v1, 0x10ffffff
 
-    .line 463
+    .line 702
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     const/high16 v0, 0x4c000000    # 3.3554432E7f
 
-    .line 465
+    .line 704
     invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 466
+    .line 705
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -268,7 +268,7 @@
 
     const v0, 0x414a8f5c    # 12.66f
 
-    .line 467
+    .line 706
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
@@ -277,12 +277,12 @@
 
     const/4 v0, -0x1
 
-    .line 468
+    .line 707
     invoke-virtual {v3, v0}, Landroid/text/TextPaint;->setColor(I)V
 
     const v1, 0x413547ae    # 11.33f
 
-    .line 469
+    .line 708
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
@@ -291,10 +291,10 @@
 
     invoke-virtual {v4, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 470
+    .line 709
     invoke-virtual {v4, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 471
+    .line 710
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -314,19 +314,19 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;)Landroid/graphics/Bitmap;
+.method static synthetic access$1200(Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;)Landroid/graphics/Bitmap;
     .locals 0
 
-    .line 438
+    .line 677
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmap:Landroid/graphics/Bitmap;
 
     return-object p0
 .end method
 
-.method static synthetic access$600()Ljava/util/HashMap;
+.method static synthetic access$1300()Ljava/util/HashMap;
     .locals 1
 
-    .line 438
+    .line 677
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsUseCounts:Ljava/util/HashMap;
 
     return-object v0
@@ -339,11 +339,11 @@
 
     return-void
 
-    .line 707
+    .line 946
     :cond_0
     invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)V
 
-    .line 708
+    .line 947
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentKey:Ljava/lang/String;
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -352,30 +352,30 @@
 
     if-nez v0, :cond_1
 
-    .line 709
+    .line 948
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->releaseBitmap(Ljava/lang/String;)V
 
     return-void
 
-    .line 712
+    .line 951
     :cond_1
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmap:Landroid/graphics/Bitmap;
 
     if-nez p3, :cond_2
 
-    .line 714
+    .line 953
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientPaint:Landroid/graphics/Paint;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 715
+    .line 954
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradient:Landroid/graphics/LinearGradient;
 
     goto :goto_0
 
-    .line 717
+    .line 956
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientPaint:Landroid/graphics/Paint;
 
@@ -407,11 +407,11 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 719
+    .line 958
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->updateMatrix()V
 
-    .line 720
+    .line 959
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -428,12 +428,12 @@
 .method public static cleanupQueues()V
     .locals 2
 
-    .line 573
+    .line 812
     invoke-static {}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->releaseAllBitmaps()V
 
     const/4 v0, 0x0
 
-    .line 574
+    .line 813
     :goto_0
     sget-object v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
@@ -443,7 +443,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 575
+    .line 814
     sget-object v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -454,7 +454,7 @@
 
     invoke-virtual {v1}, Lorg/telegram/messenger/DispatchQueue;->cleanupQueue()V
 
-    .line 576
+    .line 815
     sget-object v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -469,7 +469,7 @@
 
     goto :goto_0
 
-    .line 578
+    .line 817
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
@@ -487,7 +487,7 @@
 
     return-object p0
 
-    .line 531
+    .line 770
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsCache:Landroid/util/LruCache;
 
@@ -499,7 +499,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 533
+    .line 772
     sget-object v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsUseCounts:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -514,7 +514,7 @@
 
     goto :goto_0
 
-    .line 534
+    .line 773
     :cond_1
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -536,14 +536,14 @@
 .method private getQueue()Lorg/telegram/messenger/DispatchQueue;
     .locals 4
 
-    .line 582
+    .line 821
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->myQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 585
+    .line 824
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
@@ -555,7 +555,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 586
+    .line 825
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/messenger/DispatchQueue;
@@ -588,7 +588,7 @@
 
     goto :goto_0
 
-    .line 588
+    .line 827
     :cond_1
     sget v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueuesIndex:I
 
@@ -596,7 +596,7 @@
 
     sput v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueuesIndex:I
 
-    .line 589
+    .line 828
     sget-object v1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -607,10 +607,10 @@
 
     const/4 v0, 0x0
 
-    .line 590
+    .line 829
     sput v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueuesIndex:I
 
-    .line 592
+    .line 831
     :cond_2
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->allQueues:Ljava/util/ArrayList;
 
@@ -624,7 +624,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->myQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 594
+    .line 833
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->myQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -650,7 +650,7 @@
 
     return-object v0
 
-    .line 605
+    .line 844
     :cond_0
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -684,7 +684,7 @@
 
     float-to-int v2, v2
 
-    .line 610
+    .line 849
     instance-of v4, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     const/4 v5, 0x0
@@ -693,42 +693,42 @@
 
     if-eqz v4, :cond_4
 
-    .line 611
+    .line 850
     check-cast p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 613
+    .line 852
     new-instance v4, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v4}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 614
+    .line 853
     iput-boolean v6, v4, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 615
+    .line 854
     invoke-direct {p0, p1, v4}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->readBitmap(Lorg/telegram/messenger/MediaController$PhotoEntry;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 617
+    .line 856
     invoke-static {v4, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->setupScale(Landroid/graphics/BitmapFactory$Options;II)V
 
-    .line 618
+    .line 857
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object v1, v4, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 619
+    .line 858
     iput-boolean v6, v4, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 620
+    .line 859
     iput-boolean v5, v4, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 621
+    .line 860
     invoke-direct {p0, p1, v4}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->readBitmap(Lorg/telegram/messenger/MediaController$PhotoEntry;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 623
+    .line 862
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
@@ -757,7 +757,7 @@
     :goto_0
     if-eqz v2, :cond_3
 
-    .line 625
+    .line 864
     iget v2, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->gradientTopColor:I
 
     if-nez v2, :cond_2
@@ -774,24 +774,24 @@
 
     if-nez v2, :cond_2
 
-    .line 626
+    .line 865
     invoke-static {v6, v1, v6}, Lorg/telegram/ui/Stories/recorder/DominantColors;->getColorsSync(ZLandroid/graphics/Bitmap;Z)[I
 
     move-result-object v0
 
-    .line 627
+    .line 866
     aget v2, v0, v5
 
     iput v2, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->gradientTopColor:I
 
-    .line 628
+    .line 867
     aget v2, v0, v6
 
     iput v2, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->gradientBottomColor:I
 
     goto :goto_1
 
-    .line 629
+    .line 868
     :cond_2
     iget v2, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->gradientTopColor:I
 
@@ -817,49 +817,49 @@
 
     goto :goto_2
 
-    .line 633
+    .line 872
     :cond_4
     instance-of v3, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v3, :cond_5
 
-    .line 634
+    .line 873
     check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftThumbFile:Ljava/io/File;
 
     if-eqz p1, :cond_5
 
-    .line 637
+    .line 876
     new-instance v3, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 638
+    .line 877
     iput-boolean v6, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 639
+    .line 878
     invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-static {v4, v3}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 641
+    .line 880
     invoke-static {v3, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->setupScale(Landroid/graphics/BitmapFactory$Options;II)V
 
-    .line 642
+    .line 881
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object v1, v3, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 643
+    .line 882
     iput-boolean v6, v3, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 644
+    .line 883
     iput-boolean v5, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 645
+    .line 884
     invoke-virtual {p1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object p1
@@ -879,7 +879,7 @@
     :cond_5
     move-object p1, v0
 
-    .line 649
+    .line 888
     :goto_2
     new-instance v1, Landroid/util/Pair;
 
@@ -897,7 +897,7 @@
 
     return-object v0
 
-    .line 783
+    .line 1022
     :cond_0
     iget-object v1, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
@@ -905,13 +905,13 @@
 
     return-object v1
 
-    .line 785
+    .line 1024
     :cond_1
     iget-boolean v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v1, :cond_2
 
-    .line 786
+    .line 1025
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -928,7 +928,7 @@
 
     return-object p1
 
-    .line 788
+    .line 1027
     :cond_2
     iget-object p1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
@@ -938,7 +938,7 @@
 .method private synthetic lambda$loadBitmap$1(Ljava/lang/String;Landroid/util/Pair;)V
     .locals 1
 
-    .line 699
+    .line 938
     iget-object v0, p2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Landroid/graphics/Bitmap;
@@ -955,12 +955,12 @@
 .method private synthetic lambda$loadBitmap$2(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 1
 
-    .line 698
+    .line 937
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->getThumbnail(Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object p1
 
-    .line 699
+    .line 938
     new-instance v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;Ljava/lang/String;Landroid/util/Pair;)V
@@ -975,7 +975,7 @@
 
     const/4 v0, 0x0
 
-    .line 489
+    .line 728
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->loadBitmap(Ljava/lang/Object;)V
 
     return-void
@@ -988,29 +988,29 @@
 
     if-nez p1, :cond_0
 
-    .line 656
+    .line 895
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentKey:Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->releaseBitmap(Ljava/lang/String;)V
 
-    .line 657
+    .line 896
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentKey:Ljava/lang/String;
 
-    .line 658
+    .line 897
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 659
+    .line 898
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 
-    .line 664
+    .line 903
     :cond_0
     instance-of v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v1, :cond_1
 
-    .line 665
+    .line 904
     move-object v2, p1
 
     check-cast v2, Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -1021,13 +1021,13 @@
 
     goto :goto_0
 
-    .line 666
+    .line 905
     :cond_1
     instance-of v2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v2, :cond_2
 
-    .line 667
+    .line 906
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1053,7 +1053,7 @@
     :cond_2
     move-object v2, v0
 
-    .line 671
+    .line 910
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentKey:Ljava/lang/String;
 
@@ -1065,41 +1065,41 @@
 
     return-void
 
-    .line 674
+    .line 913
     :cond_3
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentKey:Ljava/lang/String;
 
     if-eqz v3, :cond_4
 
-    .line 675
+    .line 914
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 676
+    .line 915
     invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->releaseBitmap(Ljava/lang/String;)V
 
-    .line 677
+    .line 916
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 679
+    .line 918
     :cond_4
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentKey:Ljava/lang/String;
 
-    .line 680
+    .line 919
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 681
+    .line 920
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradient:Landroid/graphics/LinearGradient;
 
     if-eqz v1, :cond_5
 
-    .line 683
+    .line 922
     move-object v1, p1
 
     check-cast v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 684
+    .line 923
     iget v3, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->gradientTopColor:I
 
     if-eqz v3, :cond_5
@@ -1108,7 +1108,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 685
+    .line 924
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientPaint:Landroid/graphics/Paint;
 
     new-instance v12, Landroid/graphics/LinearGradient;
@@ -1151,10 +1151,10 @@
 
     invoke-virtual {v3, v12}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 686
+    .line 925
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->updateMatrix()V
 
-    .line 689
+    .line 928
     :cond_5
     invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->getBitmap(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
@@ -1164,18 +1164,18 @@
 
     if-eqz v1, :cond_6
 
-    .line 690
+    .line 929
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 
-    .line 693
+    .line 932
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->loadingBitmap:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_7
 
-    .line 694
+    .line 933
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->getQueue()Lorg/telegram/messenger/DispatchQueue;
 
     move-result-object v1
@@ -1184,10 +1184,10 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 695
+    .line 934
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->loadingBitmap:Ljava/lang/Runnable;
 
-    .line 697
+    .line 936
     :cond_7
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->getQueue()Lorg/telegram/messenger/DispatchQueue;
 
@@ -1219,13 +1219,13 @@
 
     goto :goto_0
 
-    .line 558
+    .line 797
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsCache:Landroid/util/LruCache;
 
     invoke-virtual {v0, p0, p1}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 559
+    .line 798
     sget-object p1, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsUseCounts:Ljava/util/HashMap;
 
     invoke-virtual {p1, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1238,7 +1238,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 561
+    .line 800
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -1253,7 +1253,7 @@
 
     goto :goto_0
 
-    .line 563
+    .line 802
     :cond_1
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1275,20 +1275,20 @@
 
     return-object p1
 
-    .line 749
+    .line 988
     :cond_0
     iget-object v0, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 750
+    .line 989
     invoke-static {v0, p2}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
     return-object p1
 
-    .line 751
+    .line 990
     :cond_1
     iget-boolean v0, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
@@ -1296,7 +1296,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 752
+    .line 991
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1315,7 +1315,7 @@
 
     return-object p1
 
-    .line 775
+    .line 1014
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -1339,12 +1339,12 @@
 .method private static releaseAllBitmaps()V
     .locals 1
 
-    .line 568
+    .line 807
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsUseCounts:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 569
+    .line 808
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsCache:Landroid/util/LruCache;
 
     invoke-virtual {v0}, Landroid/util/LruCache;->evictAll()V
@@ -1359,7 +1359,7 @@
 
     return-void
 
-    .line 543
+    .line 782
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapsUseCounts:Ljava/util/HashMap;
 
@@ -1371,7 +1371,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 545
+    .line 784
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -1382,19 +1382,19 @@
 
     move-result-object v1
 
-    .line 546
+    .line 785
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     if-gtz v2, :cond_1
 
-    .line 547
+    .line 786
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 549
+    .line 788
     :cond_1
     invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1408,7 +1408,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 875
+    .line 1114
     new-instance p1, Landroid/text/StaticLayout;
 
     const-string v0, "StoryDraft"
@@ -1453,7 +1453,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->draftLayout:Landroid/text/StaticLayout;
 
-    .line 876
+    .line 1115
     invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p1
@@ -1478,7 +1478,7 @@
     :goto_1
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->draftLayoutWidth:F
 
-    .line 877
+    .line 1116
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->draftLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
@@ -1501,7 +1501,7 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 879
+    .line 1118
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->draftLayout:Landroid/text/StaticLayout;
 
     :goto_2
@@ -1511,14 +1511,14 @@
 .method private setDuration(Ljava/lang/String;)V
     .locals 9
 
-    .line 863
+    .line 1102
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    .line 864
+    .line 1103
     new-instance v0, Landroid/text/StaticLayout;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationTextPaint:Landroid/text/TextPaint;
@@ -1559,7 +1559,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationLayout:Landroid/text/StaticLayout;
 
-    .line 865
+    .line 1104
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p1
@@ -1584,7 +1584,7 @@
     :goto_1
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationLayoutWidth:F
 
-    .line 866
+    .line 1105
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
@@ -1607,13 +1607,13 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 868
+    .line 1107
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationLayout:Landroid/text/StaticLayout;
 
     :goto_2
     const/4 p1, 0x1
 
-    .line 870
+    .line 1109
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->drawDurationPlay:Z
 
     return-void
@@ -1622,7 +1622,7 @@
 .method private updateMatrix()V
     .locals 6
 
-    .line 724
+    .line 963
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -1639,7 +1639,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 726
+    .line 965
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
@@ -1662,7 +1662,7 @@
 
     if-lez v0, :cond_0
 
-    .line 727
+    .line 966
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -1701,7 +1701,7 @@
 
     goto :goto_0
 
-    .line 729
+    .line 968
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1719,18 +1719,18 @@
 
     div-float/2addr v0, v1
 
-    .line 731
+    .line 970
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 732
+    .line 971
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v0, v0}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 733
+    .line 972
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -1777,7 +1777,7 @@
 
     invoke-virtual {v1, v2, v4}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 735
+    .line 974
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -1785,12 +1785,12 @@
 
     if-lez v0, :cond_2
 
-    .line 736
+    .line 975
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 737
+    .line 976
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientMatrix:Landroid/graphics/Matrix;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1803,12 +1803,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 738
+    .line 977
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradient:Landroid/graphics/LinearGradient;
 
     if-eqz v0, :cond_2
 
-    .line 739
+    .line 978
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
@@ -1822,7 +1822,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 805
+    .line 1044
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->topLeft:Z
 
     const/4 v1, 0x0
@@ -1839,16 +1839,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 806
+    .line 1045
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 807
+    .line 1046
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->clipPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 808
+    .line 1047
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -1867,7 +1867,7 @@
 
     invoke-virtual {v0, v7, v7, v5, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 809
+    .line 1048
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->radii:[F
 
     iget-boolean v6, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->topLeft:Z
@@ -1890,7 +1890,7 @@
 
     aput v6, v5, v1
 
-    .line 810
+    .line 1049
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->radii:[F
 
     const/4 v5, 0x3
@@ -1910,7 +1910,7 @@
 
     aput v7, v1, v3
 
-    .line 811
+    .line 1050
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->clipPath:Landroid/graphics/Path;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->radii:[F
@@ -1919,14 +1919,14 @@
 
     invoke-virtual {v1, v0, v5, v6}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 812
+    .line 1051
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->clipPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     move v1, v2
 
-    .line 816
+    .line 1055
     :cond_3
     invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
@@ -1934,7 +1934,7 @@
 
     const/4 v7, 0x0
 
-    .line 818
+    .line 1057
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -1953,7 +1953,7 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 819
+    .line 1058
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->gradient:Landroid/graphics/LinearGradient;
 
     if-eqz v0, :cond_4
@@ -1962,7 +1962,7 @@
 
     const/4 v7, 0x0
 
-    .line 820
+    .line 1059
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -1981,7 +1981,7 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 823
+    .line 1062
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmap:Landroid/graphics/Bitmap;
 
@@ -1993,7 +1993,7 @@
 
     if-nez v0, :cond_5
 
-    .line 824
+    .line 1063
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmap:Landroid/graphics/Bitmap;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->bitmapMatrix:Landroid/graphics/Matrix;
@@ -2002,7 +2002,7 @@
 
     invoke-virtual {p1, v0, v5, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 827
+    .line 1066
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->draftLayout:Landroid/text/StaticLayout;
 
@@ -2014,7 +2014,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 828
+    .line 1067
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2069,7 +2069,7 @@
 
     invoke-virtual {v0, v8, v9, v10, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 829
+    .line 1068
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -2086,10 +2086,10 @@
 
     invoke-virtual {p1, v0, v8, v9, v10}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 831
+    .line 1070
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 832
+    .line 1071
     iget v8, v0, Landroid/graphics/RectF;->left:F
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2118,21 +2118,21 @@
 
     invoke-virtual {p1, v8, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 833
+    .line 1072
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->draftLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 834
+    .line 1073
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 837
+    .line 1076
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_a
 
-    .line 838
+    .line 1077
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2219,7 +2219,7 @@
 
     invoke-virtual {v0, v8, v9, v10, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 839
+    .line 1078
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -2236,17 +2236,17 @@
 
     invoke-virtual {p1, v0, v7, v6, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 841
+    .line 1080
     iget-boolean v6, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->drawDurationPlay:Z
 
     if-eqz v6, :cond_8
 
-    .line 842
+    .line 1081
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationPlayDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v7, v0, Landroid/graphics/RectF;->left:F
 
-    .line 843
+    .line 1082
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -2257,7 +2257,7 @@
 
     float-to-int v4, v7
 
-    .line 844
+    .line 1083
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
 
     move-result v7
@@ -2280,7 +2280,7 @@
 
     const/16 v10, 0xd
 
-    .line 845
+    .line 1084
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -2291,7 +2291,7 @@
 
     float-to-int v9, v9
 
-    .line 846
+    .line 1085
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
 
     move-result v10
@@ -2308,19 +2308,19 @@
 
     float-to-int v3, v10
 
-    .line 842
+    .line 1081
     invoke-virtual {v6, v4, v7, v9, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 848
+    .line 1087
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationPlayDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 851
+    .line 1090
     :cond_8
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 852
+    .line 1091
     iget v3, v0, Landroid/graphics/RectF;->left:F
 
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->drawDurationPlay:Z
@@ -2359,18 +2359,18 @@
 
     invoke-virtual {p1, v3, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 853
+    .line 1092
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->durationLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 854
+    .line 1093
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_a
     if-eqz v1, :cond_b
 
-    .line 858
+    .line 1097
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_b
@@ -2380,20 +2380,20 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 476
+    .line 715
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 477
+    .line 716
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->unload:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 478
+    .line 717
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    .line 479
+    .line 718
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->loadBitmap(Ljava/lang/Object;)V
 
     :cond_0
@@ -2403,10 +2403,10 @@
 .method protected onDetachedFromWindow()V
     .locals 3
 
-    .line 485
+    .line 724
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 486
+    .line 725
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->unload:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0xfa
@@ -2419,7 +2419,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 885
+    .line 1124
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -2432,10 +2432,10 @@
 
     float-to-int p2, p2
 
-    .line 886
+    .line 1125
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 887
+    .line 1126
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->updateMatrix()V
 
     return-void
@@ -2444,12 +2444,12 @@
 .method public set(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     .locals 1
 
-    .line 505
+    .line 744
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentObject:Ljava/lang/Object;
 
     if-eqz p1, :cond_0
 
-    .line 506
+    .line 745
     iget-boolean v0, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v0, :cond_0
@@ -2470,13 +2470,13 @@
 
     const/4 v0, 0x0
 
-    .line 507
+    .line 746
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->setDraft(Z)V
 
-    .line 508
+    .line 747
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->loadBitmap(Ljava/lang/Object;)V
 
-    .line 509
+    .line 748
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -2485,28 +2485,28 @@
 .method public set(Lorg/telegram/ui/Stories/recorder/StoryEntry;I)V
     .locals 3
 
-    .line 492
+    .line 731
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->currentObject:Ljava/lang/Object;
 
     const/4 v0, 0x0
 
     if-lez p2, :cond_0
 
-    .line 494
+    .line 733
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->setDraft(Z)V
 
     new-array v1, v0, [Ljava/lang/Object;
 
     const-string v2, "StoryDrafts"
 
-    .line 495
+    .line 734
     invoke-static {v2, p2, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->setDuration(Ljava/lang/String;)V
 
-    .line 496
+    .line 735
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->drawDurationPlay:Z
 
     goto :goto_1
@@ -2514,7 +2514,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 498
+    .line 737
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isDraft:Z
 
     if-eqz p2, :cond_1
@@ -2526,7 +2526,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 499
+    .line 738
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz p2, :cond_2
@@ -2567,7 +2567,7 @@
     :goto_0
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->setDuration(Ljava/lang/String;)V
 
-    .line 501
+    .line 740
     :goto_1
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->loadBitmap(Ljava/lang/Object;)V
 
@@ -2577,10 +2577,10 @@
 .method public setRounding(ZZ)V
     .locals 0
 
-    .line 793
+    .line 1032
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->topLeft:Z
 
-    .line 794
+    .line 1033
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$Cell;->topRight:Z
 
     return-void

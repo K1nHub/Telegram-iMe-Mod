@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)V
     .locals 0
 
-    .line 168
+    .line 570
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -37,10 +37,10 @@
 
     if-nez p2, :cond_0
 
-    .line 207
+    .line 609
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$200(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)F
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)F
 
     move-result p1
 
@@ -58,12 +58,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 208
+    .line 610
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     const/high16 p2, -0x40800000    # -1.0f
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$202(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;F)F
+    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$3002(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;F)F
 
     :cond_0
     return-void
@@ -72,21 +72,21 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 3
 
-    .line 171
+    .line 573
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/view/ViewGroup;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$2900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/view/ViewGroup;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 173
+    .line 575
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$200(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)F
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)F
 
     move-result p1
 
@@ -98,7 +98,7 @@
 
     if-gez p1, :cond_0
 
-    .line 174
+    .line 576
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -112,7 +112,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 177
+    .line 579
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
@@ -124,7 +124,7 @@
 
     if-ge p1, p3, :cond_2
 
-    .line 178
+    .line 580
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p3, p3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->listView:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
@@ -133,7 +133,7 @@
 
     move-result-object p3
 
-    .line 179
+    .line 581
     invoke-virtual {p3}, Landroid/view/View;->getY()F
 
     move-result v0
@@ -148,7 +148,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$200(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)F
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->access$3000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;)F
 
     move-result v1
 
@@ -168,7 +168,7 @@
 
     if-lez v0, :cond_1
 
-    .line 180
+    .line 582
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->listView:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
@@ -192,14 +192,14 @@
 
     return-void
 
-    .line 189
+    .line 591
     :cond_3
     :goto_2
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p3, p3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->adapter:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;
 
-    invoke-static {p3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->access$300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
+    invoke-static {p3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->access$3100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
 
     move-result-object p3
 
@@ -214,12 +214,12 @@
     :goto_3
     if-ltz p3, :cond_5
 
-    .line 190
+    .line 592
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->adapter:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->access$300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->access$3100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
 
     move-result-object v1
 
@@ -227,12 +227,12 @@
 
     move-result v1
 
-    .line 191
+    .line 593
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->adapter:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->access$300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;->access$3100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$Adapter;)Landroid/util/SparseIntArray;
 
     move-result-object v2
 
@@ -255,20 +255,20 @@
     :goto_4
     if-ltz p2, :cond_6
 
-    .line 198
+    .line 600
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->tabsStrip:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->select(IZ)V
 
-    .line 200
+    .line 602
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$3200(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Z
 
     move-result p1
 
@@ -286,13 +286,13 @@
 
     if-eqz p1, :cond_7
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->access$500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->access$400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p1
 
     if-eqz p1, :cond_7
 
-    .line 201
+    .line 603
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page$2;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;

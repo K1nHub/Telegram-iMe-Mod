@@ -1272,9 +1272,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentPosition()I
-
-    move-result v1
+    iget v1, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-eq v1, p1, :cond_0
 

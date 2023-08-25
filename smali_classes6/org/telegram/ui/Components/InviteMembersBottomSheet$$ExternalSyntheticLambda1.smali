@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->$r8$lambda$l_xPTVYiLQ7HbuNmRCVkAcPhH88(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->$r8$lambda$iU0EPqtjIxTquufJnUdjdxT7o_g(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

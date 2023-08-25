@@ -2,44 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/ToIntFunction;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;
+
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$4:Z
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;
+
+    iput-object p4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$3:Lorg/telegram/tgnet/TLObject;
+
+    iput-boolean p5, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$4:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final applyAsInt(Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 5
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$LWpvBlTVqLrZ4tw0FeKym6FPDwU(Lorg/telegram/tgnet/TLRPC$StoryItem;)I
+    iget-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$1:Z
 
-    move-result p1
+    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;
 
-    return p1
+    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$3:Lorg/telegram/tgnet/TLObject;
+
+    iget-boolean v4, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;->f$4:Z
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$xYvpF9J32JZlzs27WnbZ3Wkz-bI(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
+
+    return-void
 .end method

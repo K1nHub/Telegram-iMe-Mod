@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$10;
-.super Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 .source "PremiumFeatureBottomSheet.java"
 
 
@@ -14,40 +14,43 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;I)V
+.method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)V
     .locals 0
 
-    .line 664
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;-><init>(Landroid/content/Context;I)V
+    .line 704
+    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$10;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
+
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setOffset(F)V
-    .locals 1
+.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .locals 0
 
-    const/4 v0, 0x0
+    .line 707
+    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    cmpl-float v0, p1, v0
+    .line 708
+    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$10;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
-    if-nez v0, :cond_0
+    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$1800(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)Landroid/view/ViewGroup;
 
-    const/4 v0, 0x1
+    move-result-object p1
 
-    goto :goto_0
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    :cond_0
-    const/4 v0, 0x0
+    .line 709
+    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$10;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
-    .line 667
-    :goto_0
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->setAutoPlayEnabled(Z)V
-
-    .line 668
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/Premium/PremiumStickersPreviewRecycler;->setOffset(F)V
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->checkTopOffset()V
 
     return-void
 .end method

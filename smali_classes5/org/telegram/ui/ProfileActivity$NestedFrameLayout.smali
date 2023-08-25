@@ -35,13 +35,13 @@
 .method public constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1658
+    .line 1674
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 1659
+    .line 1675
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1660
+    .line 1676
     new-instance p1, Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-direct {p1, p0}, Landroidx/core/view/NestedScrollingParentHelper;-><init>(Landroid/view/ViewGroup;)V
@@ -54,7 +54,7 @@
 .method private synthetic lambda$onNestedScroll$0()V
     .locals 2
 
-    .line 1678
+    .line 1694
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -68,14 +68,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1679
+    .line 1695
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 1680
+    .line 1696
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -94,13 +94,13 @@
 .method protected drawList(Landroid/graphics/Canvas;Z)V
     .locals 1
 
-    .line 1765
+    .line 1781
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->drawList(Landroid/graphics/Canvas;Z)V
 
-    .line 1766
+    .line 1782
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1767
+    .line 1783
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -115,7 +115,7 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1768
+    .line 1784
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -124,7 +124,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->drawListForBlur(Landroid/graphics/Canvas;)V
 
-    .line 1769
+    .line 1785
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -133,7 +133,7 @@
 .method public onNestedPreFling(Landroid/view/View;FF)Z
     .locals 0
 
-    .line 1696
+    .line 1712
     invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->onNestedPreFling(Landroid/view/View;FF)Z
 
     move-result p1
@@ -144,7 +144,7 @@
 .method public onNestedPreScroll(Landroid/view/View;II[II)V
     .locals 5
 
-    .line 1701
+    .line 1717
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -171,7 +171,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 1702
+    .line 1718
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -182,7 +182,7 @@
 
     move-result p1
 
-    .line 1703
+    .line 1719
     iget-object p5, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p5}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -201,7 +201,7 @@
 
     if-gtz p5, :cond_3
 
-    .line 1707
+    .line 1723
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -212,35 +212,35 @@
 
     move-result-object v2
 
-    .line 1708
+    .line 1724
     invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object v3
 
     check-cast v3, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    .line 1709
+    .line 1725
     invoke-virtual {v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
     move-result v3
 
     if-eq v3, p2, :cond_3
 
-    .line 1711
+    .line 1727
     invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object v4
 
     if-eqz v4, :cond_0
 
-    .line 1712
+    .line 1728
     iget-object p2, v4, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
 
     move-result p2
 
-    .line 1713
+    .line 1729
     :cond_0
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getPaddingTop()I
 
@@ -260,7 +260,7 @@
     :cond_2
     sub-int/2addr p2, v4
 
-    .line 1715
+    .line 1731
     invoke-static {p3, p2}, Ljava/lang/Math;->max(II)I
 
     move-result p2
@@ -268,7 +268,7 @@
     :goto_0
     aput p2, p4, v1
 
-    .line 1716
+    .line 1732
     invoke-virtual {v2, v0, p3}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
 
     move v0, v1
@@ -280,7 +280,7 @@
 
     if-gez p5, :cond_4
 
-    .line 1723
+    .line 1739
     invoke-static {p5, p3}, Ljava/lang/Math;->max(II)I
 
     move-result p1
@@ -291,7 +291,7 @@
 
     goto :goto_1
 
-    .line 1725
+    .line 1741
     :cond_4
     aput p3, p4, v1
 
@@ -300,7 +300,7 @@
     :cond_5
     if-eqz p1, :cond_7
 
-    .line 1730
+    .line 1746
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -311,25 +311,25 @@
 
     move-result-object p1
 
-    .line 1731
+    .line 1747
     aput p3, p4, v1
 
     if-lez p5, :cond_6
 
-    .line 1733
+    .line 1749
     aget p2, p4, v1
 
     sub-int/2addr p2, p3
 
     aput p2, p4, v1
 
-    .line 1735
+    .line 1751
     :cond_6
     aget p2, p4, v1
 
     if-lez p2, :cond_7
 
-    .line 1736
+    .line 1752
     aget p2, p4, v1
 
     invoke-virtual {p1, v0, p2}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
@@ -348,7 +348,7 @@
 .method public onNestedScroll(Landroid/view/View;IIIII[I)V
     .locals 0
 
-    .line 1666
+    .line 1682
     :try_start_0
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -366,7 +366,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1667
+    .line 1683
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -377,7 +377,7 @@
 
     move-result-object p1
 
-    .line 1668
+    .line 1684
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -392,12 +392,12 @@
 
     const/4 p2, 0x1
 
-    .line 1670
+    .line 1686
     aput p5, p7, p2
 
     const/4 p2, 0x0
 
-    .line 1671
+    .line 1687
     invoke-virtual {p1, p2, p5}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -407,10 +407,10 @@
     :catchall_0
     move-exception p1
 
-    .line 1675
+    .line 1691
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1676
+    .line 1692
     new-instance p1, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;)V
@@ -425,7 +425,7 @@
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;II)V
     .locals 0
 
-    .line 1750
+    .line 1766
     iget-object p4, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-virtual {p4, p1, p2, p3}, Landroidx/core/view/NestedScrollingParentHelper;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
@@ -436,7 +436,7 @@
 .method public onStartNestedScroll(Landroid/view/View;Landroid/view/View;II)Z
     .locals 0
 
-    .line 1745
+    .line 1761
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2500(Lorg/telegram/ui/ProfileActivity;)I
@@ -471,7 +471,7 @@
 .method public onStopNestedScroll(Landroid/view/View;I)V
     .locals 0
 
-    .line 1755
+    .line 1771
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-virtual {p2, p1}, Landroidx/core/view/NestedScrollingParentHelper;->onStopNestedScroll(Landroid/view/View;)V

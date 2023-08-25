@@ -8,22 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-.field public final synthetic f$1:Landroid/graphics/Bitmap;
-
-.field public final synthetic f$2:Ljava/lang/Runnable;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
-
-    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda36;->f$1:Landroid/graphics/Bitmap;
-
-    iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda36;->f$2:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -31,15 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda36;->f$1:Landroid/graphics/Bitmap;
-
-    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda36;->f$2:Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$8xz1BC5TgMjOp_Jv4Baa3yo63Dg(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$iip6ixlxTIK75vkTij7Pz6HeY7Y(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     return-void
 .end method

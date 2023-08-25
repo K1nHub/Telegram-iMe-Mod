@@ -654,7 +654,7 @@
     .line 248
     iget-object v0, p0, Lokhttp3/OkHttpClient;->interceptors:Ljava/util/List;
 
-    const-string v1, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>"
+    const-string/jumbo v1, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>"
 
     invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

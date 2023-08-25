@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n*L\n282#1:553\n284#1:554,5\n285#1:559,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n44#2:864\n129#3,5:865\n129#3,5:870\n129#3,5:875\n129#3,5:880\n129#3,5:885\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n*L\n409#1:864\n412#1:865,5\n413#1:870,5\n414#1:875,5\n415#1:880,5\n416#1:885,5\n*E\n"
 .end annotation
 
 
@@ -90,7 +90,7 @@
     check-cast v1, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -102,13 +102,13 @@
 
     move-result-object p2
 
-    .line 284
-    move-object v3, p2
+    .line 412
+    move-object v4, p2
 
-    check-cast v3, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    check-cast v4, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -118,10 +118,10 @@
 
     move-result-object p2
 
-    .line 284
-    move-object v5, p2
+    .line 413
+    move-object v3, p2
 
-    check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    check-cast v3, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
@@ -134,10 +134,26 @@
 
     move-result-object p2
 
-    .line 285
+    .line 414
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+    .line 133
+    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 415
+    move-object v5, p2
+
+    check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
@@ -148,30 +164,14 @@
 
     invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    move-result-object p2
+    move-result-object p1
 
-    .line 285
-    move-object v2, p2
+    .line 416
+    move-object v2, p1
 
     check-cast v2, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
 
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    .line 285
-    move-object v4, p1
-
-    check-cast v4, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    .line 283
+    .line 410
     new-instance p1, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
 
     move-object v0, p1
@@ -184,7 +184,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 282
+    .line 409
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

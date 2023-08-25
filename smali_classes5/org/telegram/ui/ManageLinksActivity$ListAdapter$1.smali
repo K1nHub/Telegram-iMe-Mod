@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 0
 
-    .line 1894
+    .line 1898
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->val$linkActionView:Lorg/telegram/ui/Components/LinkActionView;
@@ -58,7 +58,7 @@
 .method public revokeLink()V
     .locals 1
 
-    .line 1897
+    .line 1901
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
@@ -71,7 +71,7 @@
 .method public showUsersForPermanentLink()V
     .locals 12
 
-    .line 1902
+    .line 1906
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
@@ -132,7 +132,7 @@
 
     invoke-static {v0, v11}, Lorg/telegram/ui/ManageLinksActivity;->access$3102(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/InviteLinkBottomSheet;)Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
-    .line 1903
+    .line 1907
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;

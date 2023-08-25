@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ItemOptions;Landroid/view/ViewGroup;)V
     .locals 0
 
-    .line 479
+    .line 507
     iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$3;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ItemOptions$3;->val$container:Landroid/view/ViewGroup;
@@ -42,14 +42,14 @@
 .method public onDismiss()V
     .locals 2
 
-    .line 482
+    .line 510
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$3;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ItemOptions;->access$502(Lorg/telegram/ui/Components/ItemOptions;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 483
+    .line 511
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$3;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ItemOptions$3;->val$container:Landroid/view/ViewGroup;

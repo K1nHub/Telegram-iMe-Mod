@@ -137,7 +137,7 @@
 
     check-cast v5, Ljava/lang/String;
 
-    const-string v6, "null cannot be cast to non-null type kotlin.CharSequence"
+    const-string/jumbo v6, "null cannot be cast to non-null type kotlin.CharSequence"
 
     .line 747
     invoke-static {v5, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -448,7 +448,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newRequest"
+    const-string/jumbo v0, "newRequest"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

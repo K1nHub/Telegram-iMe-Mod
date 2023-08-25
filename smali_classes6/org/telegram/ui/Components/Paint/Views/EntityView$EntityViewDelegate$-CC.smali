@@ -10,6 +10,18 @@
     return-void
 .end method
 
+.method public static $default$onEntityDragMultitouchEnd(Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onEntityDragMultitouchStart(Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static $default$onEntityDragStart(Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;)V
     .locals 0
 

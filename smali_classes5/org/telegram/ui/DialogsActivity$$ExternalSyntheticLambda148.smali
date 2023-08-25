@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
-
-.field public final synthetic f$1:Ljava/lang/Long;
+.field public final synthetic f$0:Landroid/app/Activity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
+.method public synthetic constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda148;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda148;->f$1:Ljava/lang/Long;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda148;->f$0:Landroid/app/Activity;
 
     return-void
 .end method
@@ -27,15 +23,13 @@
 
 # virtual methods
 .method public final run(Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda148;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda148;->f$0:Landroid/app/Activity;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda148;->f$1:Ljava/lang/Long;
+    check-cast p1, Ljava/lang/Boolean;
 
-    check-cast p1, Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$eG3GQeBeYIK7PItrMibT9pfYips(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;Ljava/lang/Runnable;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$-EwARMR-frHp6Fu2BNtUsWkXr2Q(Landroid/app/Activity;Ljava/lang/Boolean;)V
 
     return-void
 .end method

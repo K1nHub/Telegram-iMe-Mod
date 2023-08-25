@@ -22,10 +22,10 @@
 .method public constructor <init>(Landroid/graphics/RectF;)V
     .locals 0
 
-    .line 90
+    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 91
+    .line 93
     iput-object p1, p0, Lorg/telegram/messenger/SvgHelper$Oval;->rect:Landroid/graphics/RectF;
 
     return-void

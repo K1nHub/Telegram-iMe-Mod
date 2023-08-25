@@ -88,18 +88,6 @@
     .end annotation
 .end method
 
-.method public abstract isDonationsEnabled(J)Lio/reactivex/Observable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(J)",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/Boolean;",
-            ">;>;"
-        }
-    .end annotation
-.end method
-
 .method public abstract sendDonation(JLcom/iMe/storage/domain/model/crypto/send/TransferArgs;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {

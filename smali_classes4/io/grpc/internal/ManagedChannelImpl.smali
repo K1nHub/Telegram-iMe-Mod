@@ -629,7 +629,7 @@
 
     iget-object v15, v1, Lio/grpc/internal/AbstractManagedChannelImplBuilder;->offloadExecutorPool:Lio/grpc/internal/ObjectPool;
 
-    const-string v3, "offloadExecutorPool"
+    const-string/jumbo v3, "offloadExecutorPool"
 
     .line 583
     invoke-static {v15, v3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -2168,7 +2168,7 @@
     .line 334
     iget-boolean v1, p0, Lio/grpc/internal/ManagedChannelImpl;->nameResolverStarted:Z
 
-    const-string v2, "nameResolver is not started"
+    const-string/jumbo v2, "nameResolver is not started"
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

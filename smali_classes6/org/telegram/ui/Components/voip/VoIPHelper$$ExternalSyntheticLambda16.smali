@@ -2,23 +2,23 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$User;
 
-.field public final synthetic f$1:Landroid/app/Activity;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Chat;
+.field public final synthetic f$2:Ljava/lang/String;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$User;
+.field public final synthetic f$3:Z
 
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$InputPeer;
+.field public final synthetic f$4:Z
 
 .field public final synthetic f$5:Z
 
-.field public final synthetic f$6:Z
+.field public final synthetic f$6:Landroid/app/Activity;
 
 .field public final synthetic f$7:Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -26,24 +26,24 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Landroid/app/Activity;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$InputPeer;ZZLorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/AccountInstance;)V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/String;ZZZLandroid/app/Activity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/AccountInstance;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$0:Ljava/lang/String;
+    iput-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/tgnet/TLRPC$User;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$1:Landroid/app/Activity;
+    iput-object p2, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$2:Lorg/telegram/tgnet/TLRPC$Chat;
+    iput-object p3, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$2:Ljava/lang/String;
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$3:Lorg/telegram/tgnet/TLRPC$User;
+    iput-boolean p4, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$3:Z
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$4:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-boolean p5, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$4:Z
 
     iput-boolean p6, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$5:Z
 
-    iput-boolean p7, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$6:Z
+    iput-object p7, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$6:Landroid/app/Activity;
 
     iput-object p8, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$7:Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -54,30 +54,28 @@
 
 
 # virtual methods
-.method public final run(Z)V
-    .locals 10
+.method public final run()V
+    .locals 9
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$0:Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$1:Landroid/app/Activity;
+    iget-object v1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$1:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$2:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v2, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$2:Ljava/lang/String;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$3:Lorg/telegram/tgnet/TLRPC$User;
+    iget-boolean v3, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$3:Z
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$4:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iget-boolean v4, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$4:Z
 
     iget-boolean v5, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$5:Z
 
-    iget-boolean v6, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$6:Z
+    iget-object v6, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$6:Landroid/app/Activity;
 
     iget-object v7, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$7:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     iget-object v8, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda16;->f$8:Lorg/telegram/messenger/AccountInstance;
 
-    move v9, p1
-
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$MVBlBTvX7xHlhT5hoQ6lIEBqFzs(Ljava/lang/String;Landroid/app/Activity;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$InputPeer;ZZLorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/AccountInstance;Z)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$NRfaiFIRiNsDxo_xX-XUficQWog(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/String;ZZZLandroid/app/Activity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/AccountInstance;)V
 
     return-void
 .end method

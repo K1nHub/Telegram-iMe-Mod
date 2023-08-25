@@ -54,7 +54,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 104
+    .line 102
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletBalance$1;->invoke(Lcom/iMe/storage/domain/model/Result;)V
@@ -77,12 +77,12 @@
         }
     .end annotation
 
-    .line 106
+    .line 104
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 105
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletBalance$1;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     check-cast p1, Lcom/iMe/storage/domain/model/Result$Success;
@@ -97,7 +97,7 @@
 
     move-result-object p1
 
-    .line 108
+    .line 106
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletBalance$1;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -108,7 +108,7 @@
 
     invoke-interface {v0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;->showBalances(Ljava/util/List;)V
 
-    .line 109
+    .line 107
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -117,7 +117,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 110
+    .line 108
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletBalance$1;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
@@ -130,7 +130,7 @@
 
     goto :goto_0
 
-    .line 114
+    .line 112
     :cond_0
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 

@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 487
+    .line 589
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -61,14 +61,38 @@
 .end method
 
 .method public final invoke()V
-    .locals 2
+    .locals 3
 
-    .line 487
+    .line 590
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
+
+    invoke-static {v0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->access$isAllNetworksSelected(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 591
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
+
+    new-instance v1, Lcom/iMe/model/wallet/home/NetworkChoosePurpose$NewWallet;
+
+    iget-object v2, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->$this_with:Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
+
+    invoke-direct {v1, v2}, Lcom/iMe/model/wallet/home/NetworkChoosePurpose$NewWallet;-><init>(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+
+    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->startChooseNetworkDialog(Lcom/iMe/model/wallet/home/NetworkChoosePurpose;)V
+
+    goto :goto_0
+
+    .line 593
+    :cond_0
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->$this_with:Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
 
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
 
+    :goto_0
     return-void
 .end method

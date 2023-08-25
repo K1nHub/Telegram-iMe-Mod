@@ -120,7 +120,7 @@
     const/high16 v3, 0x41880000    # 17.0f
 
     .line 1258
-    invoke-virtual {v0, v1, v3}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 1259
     invoke-static {p2, v2}, Lorg/telegram/ui/ActionBar/Theme;->createEditTextDrawable(Landroid/content/Context;Z)Landroid/graphics/drawable/Drawable;
@@ -456,7 +456,7 @@
 
     move-result-object p1
 
-    const-string p2, "null cannot be cast to non-null type kotlin.Int"
+    const-string/jumbo p2, "null cannot be cast to non-null type kotlin.Int"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -887,7 +887,7 @@
 
     move-result-object p1
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Int"
+    const-string/jumbo v1, "null cannot be cast to non-null type kotlin.Int"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

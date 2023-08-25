@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,111:1\n129#2,5:112\n129#2,5:117\n129#2,5:122\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n*L\n67#1:112,5\n68#1:117,5\n69#1:122,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,150:1\n129#2,5:151\n129#2,5:156\n129#2,5:161\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5\n*L\n70#1:151,5\n71#1:156,5\n72#1:161,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 70
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getETH_APPROVE_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object p2
@@ -90,10 +90,10 @@
 
     move-result-object p2
 
-    .line 67
+    .line 70
     check-cast p2, Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
 
-    .line 68
+    .line 71
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getEVM_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -109,10 +109,10 @@
 
     move-result-object v0
 
-    .line 68
+    .line 71
     check-cast v0, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 69
+    .line 72
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getDEX_SWAP_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
@@ -128,10 +128,10 @@
 
     move-result-object p1
 
-    .line 69
+    .line 72
     check-cast p1, Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSource;
 
-    .line 66
+    .line 69
     new-instance v1, Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;
 
     invoke-direct {v1, v0, p2, p1}, Lcom/iMe/storage/data/datasource/boost/WalletBoostDataSourceFactory;-><init>(Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSource;)V
@@ -142,7 +142,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 65
+    .line 68
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

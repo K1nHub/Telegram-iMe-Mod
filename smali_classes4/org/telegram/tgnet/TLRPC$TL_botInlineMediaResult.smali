@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9607
+    .line 9612
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$BotInlineResult;-><init>()V
 
     return-void
@@ -28,35 +28,35 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 9611
+    .line 9616
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
-    .line 9612
+    .line 9617
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->id:Ljava/lang/String;
 
-    .line 9613
+    .line 9618
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->type:Ljava/lang/String;
 
-    .line 9614
+    .line 9619
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 9615
+    .line 9620
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 9617
+    .line 9622
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
@@ -75,7 +75,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 9618
+    .line 9623
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -86,7 +86,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 9620
+    .line 9625
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
@@ -94,14 +94,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 9621
+    .line 9626
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->title:Ljava/lang/String;
 
-    .line 9623
+    .line 9628
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
@@ -109,14 +109,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 9624
+    .line 9629
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->description:Ljava/lang/String;
 
-    .line 9626
+    .line 9631
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -134,39 +134,39 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 9630
+    .line 9635
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMediaResult;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9631
+    .line 9636
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9632
+    .line 9637
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->id:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 9633
+    .line 9638
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->type:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 9634
+    .line 9639
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 9635
+    .line 9640
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 9637
+    .line 9642
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
@@ -174,12 +174,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 9638
+    .line 9643
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 9640
+    .line 9645
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
@@ -187,12 +187,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 9641
+    .line 9646
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 9643
+    .line 9648
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->flags:I
 
@@ -200,12 +200,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 9644
+    .line 9649
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->description:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 9646
+    .line 9651
     :cond_3
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->send_message:Lorg/telegram/tgnet/TLRPC$BotInlineMessage;
 

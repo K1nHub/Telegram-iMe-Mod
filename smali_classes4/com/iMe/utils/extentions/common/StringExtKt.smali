@@ -78,7 +78,7 @@
 
     move-result-object v3
 
-    const-string v4, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v4, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

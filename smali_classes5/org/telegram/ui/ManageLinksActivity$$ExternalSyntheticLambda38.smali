@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;
+.implements Lorg/telegram/ui/ContactsActivity$ContactsActivityDelegate;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)Z
+.method public final didSelectContact(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/ContactsActivity;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$MpDut1seYHJZQbQ3xmHlloN9Zng(Lorg/telegram/ui/ManageLinksActivity;Landroid/view/View;I)Z
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$wcd_g30l4uy49d2BjnhLPvv1DW4(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/ContactsActivity;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

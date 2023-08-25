@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)V
     .locals 0
 
-    .line 2458
+    .line 2467
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
@@ -33,7 +33,7 @@
 .method private realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
     .locals 1
 
-    .line 2461
+    .line 2470
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->access$2600(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -52,7 +52,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 2609
+    .line 2618
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->access$3400(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Ljava/util/ArrayList;
@@ -69,7 +69,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 2576
+    .line 2585
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->access$3400(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Ljava/util/ArrayList;
@@ -90,7 +90,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 2516
+    .line 2525
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -121,7 +121,7 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 2511
+    .line 2520
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -134,7 +134,7 @@
 .method public notifyItemChanged(I)V
     .locals 1
 
-    .line 2466
+    .line 2475
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -149,7 +149,7 @@
 .method public notifyItemMoved(II)V
     .locals 1
 
-    .line 2481
+    .line 2490
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -164,7 +164,7 @@
 .method public notifyItemRangeChanged(II)V
     .locals 1
 
-    .line 2486
+    .line 2495
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -179,7 +179,7 @@
 .method public notifyItemRangeChanged(IILjava/lang/Object;)V
     .locals 1
 
-    .line 2491
+    .line 2500
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -194,7 +194,7 @@
 .method public notifyItemRangeInserted(II)V
     .locals 1
 
-    .line 2496
+    .line 2505
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -209,7 +209,7 @@
 .method public notifyItemRangeRemoved(II)V
     .locals 1
 
-    .line 2501
+    .line 2510
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -224,12 +224,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 5
 
-    .line 2581
+    .line 2590
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    .line 2582
+    .line 2591
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->access$3400(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Ljava/util/ArrayList;
@@ -246,7 +246,7 @@
 
     add-int/2addr p2, v2
 
-    .line 2583
+    .line 2592
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-static {v3}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->access$3400(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Ljava/util/ArrayList;
@@ -289,12 +289,12 @@
 
     if-ne v0, p2, :cond_1
 
-    .line 2585
+    .line 2594
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/FilterCreateActivity$LinkCell;
 
-    .line 2586
+    .line 2595
     invoke-static {v1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2300(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
 
     move-result-object p2
@@ -324,12 +324,12 @@
 
     if-ne v0, p2, :cond_7
 
-    .line 2601
+    .line 2610
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;
 
-    .line 2602
+    .line 2611
     sget p2, Lorg/telegram/messenger/R$string;->CreateNewInviteLink:I
 
     const-string v0, "CreateNewInviteLink"
@@ -340,12 +340,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->setText(Ljava/lang/String;)V
 
-    .line 2603
+    .line 2612
     invoke-virtual {p1, v2}, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->setDivider(Z)V
 
     goto :goto_4
 
-    .line 2588
+    .line 2597
     :cond_4
     :goto_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -354,10 +354,10 @@
 
     if-ne v0, p2, :cond_5
 
-    .line 2590
+    .line 2599
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 2591
+    .line 2600
     invoke-static {v1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$1900(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/CharSequence;
 
     move-result-object p2
@@ -369,15 +369,15 @@
     :cond_5
     const/16 p2, 0xc
 
-    .line 2593
+    .line 2602
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     const-string p2, ""
 
-    .line 2594
+    .line 2603
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2596
+    .line 2605
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
@@ -415,7 +415,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 2525
+    .line 2534
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;
 
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
@@ -426,7 +426,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;-><init>(Landroid/content/Context;)V
 
-    .line 2526
+    .line 2535
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -442,7 +442,7 @@
 
     if-ne p2, p1, :cond_1
 
-    .line 2528
+    .line 2537
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;
 
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
@@ -473,7 +473,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;-><init>(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;II)V
 
-    .line 2558
+    .line 2567
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -495,7 +495,7 @@
 
     goto :goto_0
 
-    .line 2563
+    .line 2572
     :cond_2
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$HeaderView;
 
@@ -509,7 +509,7 @@
 
     goto :goto_1
 
-    .line 2560
+    .line 2569
     :cond_3
     :goto_0
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -522,7 +522,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 2561
+    .line 2570
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -531,7 +531,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2571
+    .line 2580
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

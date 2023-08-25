@@ -163,7 +163,7 @@
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "object implicit - explicit expected."
+    const-string/jumbo p1, "object implicit - explicit expected."
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

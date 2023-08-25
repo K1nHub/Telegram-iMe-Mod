@@ -20,9 +20,8 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lcom/iMe/navigation/common/router/base/NavigationRouter<",
-        "Lcom/iMe/ui/base/mvp/MvpFragment;",
-        ">;>;"
+        "Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;",
+        ">;"
     }
 .end annotation
 
@@ -63,14 +62,12 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/iMe/navigation/common/router/base/NavigationRouter<",
-            "Lcom/iMe/ui/base/mvp/MvpFragment;",
-            ">;"
+            "Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;"
         }
     .end annotation
 
     .line 61
-    const-class v0, Lcom/iMe/navigation/common/router/base/NavigationRouter;
+    const-class v0, Lcom/iMe/navigation/wallet/coordinator/TokenBuyCoordinator;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$special$$inlined$inject$default$2;->$this_inject:Lorg/koin/core/component/KoinComponent;
 

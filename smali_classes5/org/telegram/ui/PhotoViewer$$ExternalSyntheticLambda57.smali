@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda57;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Ljava/util/ArrayList;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$Ktb8rtYSjR4t3y0dmplL552Mmzs(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$CHDJli6hZ6Qo3Ho4WYMl0wC3RbM(Lorg/telegram/ui/PhotoViewer;Ljava/util/ArrayList;)V
 
     return-void
 .end method

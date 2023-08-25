@@ -24,13 +24,13 @@
 .method public constructor <init>(DD)V
     .locals 0
 
-    .line 190
+    .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 191
+    .line 193
     iput-wide p1, p0, Lorg/telegram/messenger/IMapsProvider$LatLng;->latitude:D
 
-    .line 192
+    .line 194
     iput-wide p3, p0, Lorg/telegram/messenger/IMapsProvider$LatLng;->longitude:D
 
     return-void

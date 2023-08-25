@@ -433,6 +433,14 @@
     return p2
 .end method
 
+.method public synthetic loadNext(Z)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider$-CC;->$default$loadNext(Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;Z)V
+
+    return-void
+.end method
+
 .method public preLayout(JILjava/lang/Runnable;)V
     .locals 0
 

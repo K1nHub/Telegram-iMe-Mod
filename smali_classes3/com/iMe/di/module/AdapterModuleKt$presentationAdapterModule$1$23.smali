@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountAdapter;",
+        "Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$23\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$23\n*L\n105#1:121,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$23\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,183:1\n129#2,5:184\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$23\n*L\n165#1:184,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountAdapter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;
     .locals 2
 
     const-string v0, "$this$factory"
@@ -72,8 +72,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 105
-    new-instance p2, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountAdapter;
+    .line 165
+    new-instance p2, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;
 
     .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -90,8 +90,8 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 105
-    invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountAdapter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
+    .line 165
+    invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     return-object p2
 .end method
@@ -99,12 +99,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 105
+    .line 165
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$23;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/crypto/create/secret_words_count/SecretWordsCountAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$23;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;
 
     move-result-object p1
 

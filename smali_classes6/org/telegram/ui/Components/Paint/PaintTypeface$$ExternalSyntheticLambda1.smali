@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$Ni2d9tFSBJlFE4QyoLS1ikMFp9g()V
+    invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$BnL-HQPU_mrwwHYmctVbCf-hBEU()V
 
     return-void
 .end method

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n129#2,5:163\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$16\n*L\n125#1:158,5\n126#1:163,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,168:1\n129#2,5:169\n129#2,5:174\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$16\n*L\n127#1:169,5\n128#1:174,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 125
+    .line 127
     check-cast p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 125
+    .line 127
     check-cast v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
@@ -113,7 +113,7 @@
 
     move-result-object v2
 
-    .line 125
+    .line 127
     check-cast v2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 133
@@ -127,10 +127,10 @@
 
     move-result-object p1
 
-    .line 126
+    .line 128
     check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;
 
-    .line 124
+    .line 126
     new-instance v0, Lcom/iMe/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;
 
     invoke-direct {v0, v1, p2, p1, v2}, Lcom/iMe/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;-><init>(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;)V
@@ -141,7 +141,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 123
+    .line 125
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 165
+    .line 198
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 2
 
-    .line 166
+    .line 199
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;->this$0:Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;->$this_with:Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26177
+    .line 26186
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicEdit;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 26181
+    .line 26190
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -39,14 +39,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 26183
+    .line 26192
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->title:Ljava/lang/String;
 
-    .line 26185
+    .line 26194
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
@@ -54,14 +54,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 26186
+    .line 26195
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicEdit;->icon_emoji_id:J
 
-    .line 26188
+    .line 26197
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 26189
+    .line 26198
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result p1
@@ -83,29 +83,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 26194
+    .line 26203
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicEdit_layer149;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26195
+    .line 26204
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26196
+    .line 26205
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 26197
+    .line 26206
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 26199
+    .line 26208
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
@@ -113,12 +113,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 26200
+    .line 26209
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicEdit;->icon_emoji_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 26202
+    .line 26211
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->flags:I
 
@@ -126,7 +126,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 26203
+    .line 26212
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageActionTopicEdit;->closed:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V

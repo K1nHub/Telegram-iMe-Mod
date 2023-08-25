@@ -28,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    .line 9
+    .line 10
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/details/TokenDetailsArgs;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;->token:Lcom/iMe/model/wallet/home/AccountItem$Token;
@@ -41,7 +41,7 @@
 .method public final getToken()Lcom/iMe/model/wallet/home/AccountItem$Token;
     .locals 1
 
-    .line 9
+    .line 10
     iget-object v0, p0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;->token:Lcom/iMe/model/wallet/home/AccountItem$Token;
 
     return-object v0

@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 10396
+    .line 10401
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
     .locals 1
 
-    .line 10405
+    .line 10410
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -47,7 +47,7 @@
 
     return-object p0
 
-    .line 10407
+    .line 10412
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -73,13 +73,13 @@
 
     throw p0
 
-    .line 10412
+    .line 10417
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;-><init>()V
 
-    .line 10413
+    .line 10418
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -90,7 +90,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 10418
+    .line 10423
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -112,7 +112,7 @@
     :cond_0
     move p2, v0
 
-    .line 10419
+    .line 10424
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->archive_and_mute_new_noncontact_peers:Z
 
@@ -127,7 +127,7 @@
     :cond_1
     move p2, v0
 
-    .line 10420
+    .line 10425
     :goto_1
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->keep_archived_unmuted:Z
 
@@ -137,7 +137,7 @@
 
     move v0, v1
 
-    .line 10421
+    .line 10426
     :cond_2
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->keep_archived_folders:Z
 
@@ -147,12 +147,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 10425
+    .line 10430
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 10426
+    .line 10431
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->archive_and_mute_new_noncontact_peers:Z
 
     if-eqz v0, :cond_0
@@ -171,7 +171,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->flags:I
 
-    .line 10427
+    .line 10432
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->keep_archived_unmuted:Z
 
     if-eqz v1, :cond_1
@@ -186,7 +186,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->flags:I
 
-    .line 10428
+    .line 10433
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->keep_archived_folders:Z
 
     if-eqz v1, :cond_2
@@ -201,7 +201,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;->flags:I
 
-    .line 10429
+    .line 10434
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

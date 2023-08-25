@@ -500,7 +500,7 @@
     .line 1680
     iget-boolean v0, p0, Lio/grpc/internal/ManagedChannelImpl$SubchannelImpl;->started:Z
 
-    const-string v1, "not started"
+    const-string/jumbo v1, "not started"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
@@ -556,7 +556,7 @@
     .line 1673
     iget-boolean v0, p0, Lio/grpc/internal/ManagedChannelImpl$SubchannelImpl;->started:Z
 
-    const-string v1, "not started"
+    const-string/jumbo v1, "not started"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

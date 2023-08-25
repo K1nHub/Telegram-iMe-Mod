@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/utils/hints/HintUtils;
 
-    invoke-static {v0, p1, p2}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$xnvHCW5j4LQLgRV7joSLCq1HtFs(Lcom/iMe/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {v0, p1, p2}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$vqf-P0tfirZs8GJ6H8SwKT4lAQg(Lcom/iMe/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

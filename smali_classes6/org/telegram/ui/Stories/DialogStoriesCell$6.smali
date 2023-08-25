@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;)V
     .locals 0
 
-    .line 262
+    .line 302
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
     return-void

@@ -41,7 +41,7 @@
     if-eqz v4, :cond_0
 
     .line 88
-    sget v0, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v0, Lorg/telegram/messenger/R$id;->image_logo:I
 
     .line 89
     invoke-static {p0, v0}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;

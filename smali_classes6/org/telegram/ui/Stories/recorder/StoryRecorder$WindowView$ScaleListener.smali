@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;)V
     .locals 0
 
-    .line 808
+    .line 830
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     invoke-direct {p0}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Lorg/telegram/ui/Stories/recorder/StoryRecorder$1;)V
     .locals 0
 
-    .line 808
+    .line 830
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;)V
 
     return-void
@@ -44,10 +44,10 @@
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
     .locals 4
 
-    .line 811
+    .line 833
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->access$2700(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->access$2800(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;)Z
 
     move-result v0
 
@@ -59,7 +59,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     move-result-object v0
 
@@ -69,7 +69,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
 
     move-result v0
 
@@ -79,7 +79,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     move-result-object v0
 
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 814
+    .line 836
     :cond_0
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
@@ -105,19 +105,19 @@
 
     mul-float/2addr p1, v2
 
-    .line 815
+    .line 837
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v2, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3016(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
+    invoke-static {v2, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3116(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
 
-    .line 816
+    .line 838
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
 
     move-result v2
 
@@ -127,14 +127,14 @@
 
     move-result v0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
+    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
 
-    .line 817
+    .line 839
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     move-result-object p1
 
@@ -142,29 +142,29 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/camera/CameraView;->setZoom(F)V
 
-    .line 818
+    .line 840
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/ZoomControlView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/ZoomControlView;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 819
+    .line 841
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/ZoomControlView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/ZoomControlView;
 
     move-result-object p1
 
@@ -172,13 +172,13 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
 
     move-result v0
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/ZoomControlView;->setZoom(FZ)V
 
-    .line 821
+    .line 843
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
@@ -186,7 +186,7 @@
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
+    invoke-static {p1, v0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
 
     return v0
 
@@ -198,12 +198,12 @@
 .method public onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
     .locals 2
 
-    .line 827
+    .line 849
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     move-result-object v0
 
@@ -213,7 +213,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
 
     move-result v0
 
@@ -223,7 +223,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
 
     move-result v0
 
@@ -231,15 +231,15 @@
 
     goto :goto_0
 
-    .line 830
+    .line 852
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->access$2702(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->access$2802(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Z)Z
 
-    .line 831
+    .line 853
     invoke-super {p0, p1}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;->onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
 
     move-result p1
@@ -256,28 +256,28 @@
 .method public onScaleEnd(Landroid/view/ScaleGestureDetector;)V
     .locals 2
 
-    .line 836
+    .line 858
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->access$2702(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->access$2802(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Z)Z
 
-    .line 837
+    .line 859
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
-    .line 838
+    .line 860
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView$ScaleListener;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    .line 839
+    .line 861
     invoke-super {p0, p1}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;->onScaleEnd(Landroid/view/ScaleGestureDetector;)V
 
     return-void

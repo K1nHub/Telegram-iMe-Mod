@@ -1407,7 +1407,7 @@
     const/high16 v6, 0x41900000    # 18.0f
 
     .line 1314
-    invoke-virtual {v5, v1, v6}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v1, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     const-string v6, "50"
 
@@ -4787,11 +4787,7 @@
     .line 385
     aget-object v7, v1, v5
 
-    invoke-virtual {v7}, Lcom/iMe/model/contacts/ContactsFilter;->getTitle()I
-
-    move-result v7
-
-    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-virtual {v7}, Lcom/iMe/model/contacts/ContactsFilter;->getTitle()Ljava/lang/String;
 
     move-result-object v7
 
@@ -5986,7 +5982,7 @@
     .line 825
     iget-object v1, v11, Lorg/telegram/ui/ContactsActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Landroid/widget/TextView;
+    iget-object v1, v1, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->SearchEmptyViewFilteredSubtitle2:I
 

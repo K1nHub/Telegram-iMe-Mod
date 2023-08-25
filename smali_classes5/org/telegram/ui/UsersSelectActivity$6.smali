@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/UsersSelectActivity;)V
     .locals 0
 
-    .line 592
+    .line 678
     iput-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 599
+    .line 685
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result p2
@@ -55,7 +55,7 @@
 
     if-nez p2, :cond_1
 
-    .line 600
+    .line 686
     iget-object p2, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/UsersSelectActivity;->access$000(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -78,7 +78,7 @@
 
     goto/16 :goto_2
 
-    .line 601
+    .line 687
     :cond_1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -102,7 +102,7 @@
 
     if-nez p2, :cond_a
 
-    .line 602
+    .line 688
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$400(Lorg/telegram/ui/UsersSelectActivity;)Ljava/util/ArrayList;
@@ -127,16 +127,16 @@
 
     check-cast p1, Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 603
+    .line 689
     iget-object p2, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1800(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
+    invoke-static {p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2100(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     move-result-object p2
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
-    .line 604
+    .line 690
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
     move-result-wide p2
@@ -147,18 +147,18 @@
 
     if-nez p2, :cond_2
 
-    .line 605
+    .line 691
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CONTACTS:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
     goto/16 :goto_1
 
-    .line 606
+    .line 692
     :cond_2
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
@@ -170,18 +170,18 @@
 
     if-nez p2, :cond_3
 
-    .line 607
+    .line 693
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_NON_CONTACTS:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
     goto/16 :goto_1
 
-    .line 608
+    .line 694
     :cond_3
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
@@ -193,18 +193,18 @@
 
     if-nez p2, :cond_4
 
-    .line 609
+    .line 695
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_GROUPS:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
     goto :goto_1
 
-    .line 610
+    .line 696
     :cond_4
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
@@ -216,18 +216,18 @@
 
     if-nez p2, :cond_5
 
-    .line 611
+    .line 697
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CHANNELS:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
     goto :goto_1
 
-    .line 612
+    .line 698
     :cond_5
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
@@ -239,18 +239,18 @@
 
     if-nez p2, :cond_6
 
-    .line 613
+    .line 699
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_BOTS:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
     goto :goto_1
 
-    .line 614
+    .line 700
     :cond_6
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
@@ -262,18 +262,18 @@
 
     if-nez p2, :cond_7
 
-    .line 615
+    .line 701
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_MUTED:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
     goto :goto_1
 
-    .line 616
+    .line 702
     :cond_7
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
@@ -285,18 +285,18 @@
 
     if-nez p2, :cond_8
 
-    .line 617
+    .line 703
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_READ:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
     goto :goto_1
 
-    .line 618
+    .line 704
     :cond_8
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->getUid()J
 
@@ -308,26 +308,26 @@
 
     if-nez p1, :cond_9
 
-    .line 619
+    .line 705
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     sget p2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED:I
 
     not-int p2, p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1972(Lorg/telegram/ui/UsersSelectActivity;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/UsersSelectActivity;->access$2272(Lorg/telegram/ui/UsersSelectActivity;I)I
 
-    .line 621
+    .line 707
     :cond_9
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$2000(Lorg/telegram/ui/UsersSelectActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$2300(Lorg/telegram/ui/UsersSelectActivity;)V
 
-    .line 622
+    .line 708
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$6;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$2100(Lorg/telegram/ui/UsersSelectActivity;)V
+    invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$2400(Lorg/telegram/ui/UsersSelectActivity;)V
 
     return v0
 

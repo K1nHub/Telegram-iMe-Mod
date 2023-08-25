@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
     .locals 0
 
-    .line 885
+    .line 888
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 0
 
-    .line 894
+    .line 897
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3100(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Z
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 895
+    .line 898
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3200(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Ljava/lang/Runnable;
@@ -56,7 +56,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 896
+    .line 899
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$3200(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Ljava/lang/Runnable;

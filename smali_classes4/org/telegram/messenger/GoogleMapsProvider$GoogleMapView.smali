@@ -39,10 +39,10 @@
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    .line 526
+    .line 536
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 527
+    .line 537
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;Landroid/content/Context;)V
@@ -55,7 +55,7 @@
 .method synthetic constructor <init>(Landroid/content/Context;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 519
+    .line 529
     invoke-direct {p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -64,7 +64,7 @@
 .method static synthetic access$1800(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
     .locals 0
 
-    .line 519
+    .line 529
     iget-object p0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->dispatchInterceptor:Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
 
     return-object p0
@@ -73,7 +73,7 @@
 .method static synthetic access$1900(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
     .locals 0
 
-    .line 519
+    .line 529
     iget-object p0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->interceptInterceptor:Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
 
     return-object p0
@@ -82,7 +82,7 @@
 .method static synthetic access$2000(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 519
+    .line 529
     iget-object p0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->onLayoutListener:Ljava/lang/Runnable;
 
     return-object p0
@@ -91,7 +91,7 @@
 .method private static synthetic lambda$getMapAsync$0(Landroidx/core/util/Consumer;Lcom/google/android/gms/maps/GoogleMap;)V
     .locals 2
 
-    .line 576
+    .line 586
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;
 
     const/4 v1, 0x0
@@ -126,7 +126,7 @@
         }
     .end annotation
 
-    .line 576
+    .line 586
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->mapView:Lcom/google/android/gms/maps/MapView;
 
     new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$$ExternalSyntheticLambda0;
@@ -141,7 +141,7 @@
 .method public getView()Landroid/view/View;
     .locals 1
 
-    .line 571
+    .line 581
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->mapView:Lcom/google/android/gms/maps/MapView;
 
     return-object v0
@@ -150,7 +150,7 @@
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
 
-    .line 591
+    .line 601
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->mapView:Lcom/google/android/gms/maps/MapView;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/MapView;->onCreate(Landroid/os/Bundle;)V
@@ -161,7 +161,7 @@
 .method public onDestroy()V
     .locals 1
 
-    .line 596
+    .line 606
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->mapView:Lcom/google/android/gms/maps/MapView;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/MapView;->onDestroy()V
@@ -172,7 +172,7 @@
 .method public onLowMemory()V
     .locals 1
 
-    .line 601
+    .line 611
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->mapView:Lcom/google/android/gms/maps/MapView;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/MapView;->onLowMemory()V
@@ -183,7 +183,7 @@
 .method public onPause()V
     .locals 1
 
-    .line 581
+    .line 591
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->mapView:Lcom/google/android/gms/maps/MapView;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/MapView;->onPause()V
@@ -194,7 +194,7 @@
 .method public onResume()V
     .locals 1
 
-    .line 586
+    .line 596
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->mapView:Lcom/google/android/gms/maps/MapView;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/MapView;->onResume()V
@@ -205,7 +205,7 @@
 .method public setOnDispatchTouchEventInterceptor(Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;)V
     .locals 0
 
-    .line 556
+    .line 566
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->dispatchInterceptor:Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
 
     return-void
@@ -214,7 +214,7 @@
 .method public setOnInterceptTouchEventInterceptor(Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;)V
     .locals 0
 
-    .line 561
+    .line 571
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->interceptInterceptor:Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
 
     return-void
@@ -223,7 +223,7 @@
 .method public setOnLayoutListener(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 566
+    .line 576
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->onLayoutListener:Ljava/lang/Runnable;
 
     return-void

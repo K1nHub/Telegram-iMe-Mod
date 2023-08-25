@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNavigationModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,41:1\n129#2,5:42\n129#2,5:47\n*S KotlinDebug\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n*L\n30#1:42,5\n31#1:47,5\n*E\n"
+    value = "SMAP\nNavigationModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,44:1\n129#2,5:45\n129#2,5:50\n129#2,5:55\n129#2,5:60\n129#2,5:65\n*S KotlinDebug\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$4\n*L\n30#1:45,5\n31#1:50,5\n32#1:55,5\n33#1:60,5\n34#1:65,5\n*E\n"
 .end annotation
 
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;
-    .locals 8
+    .locals 7
 
     const-string v0, "$this$single"
 
@@ -92,7 +92,8 @@
 
     check-cast v2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    .line 133
+    const-class v0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -104,21 +105,7 @@
 
     move-object v3, v0
 
-    check-cast v3, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    const-class v0, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
+    check-cast v3, Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;
 
     .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -131,10 +118,11 @@
 
     move-result-object v0
 
-    move-object v5, v0
+    move-object v4, v0
 
-    check-cast v5, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -145,10 +133,11 @@
 
     move-result-object v0
 
-    move-object v6, v0
+    move-object v5, v0
 
-    check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
+    .line 133
     const-class v0, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -159,14 +148,14 @@
 
     move-result-object p1
 
-    move-object v7, p1
+    move-object v6, p1
 
-    check-cast v7, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
+    check-cast v6, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     move-object v1, p2
 
     .line 29
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)V
+    invoke-direct/range {v1 .. v6}, Lcom/iMe/navigation/wallet/coordinator/WalletFlowCoordinator;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/navigation/wallet/coordinator/PinCodeCoordinator;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;)V
 
     return-object p2
 .end method

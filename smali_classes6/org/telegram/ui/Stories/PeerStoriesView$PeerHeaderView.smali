@@ -48,20 +48,20 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;)V
     .locals 10
 
-    .line 3435
+    .line 4002
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x2
 
     new-array v1, v0, [Landroid/widget/TextView;
 
-    .line 3425
+    .line 3992
     iput-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
-    .line 3436
+    .line 4003
     iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->storyItemHolder:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
 
-    .line 3437
+    .line 4004
     new-instance p2, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$1;-><init>(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;Landroid/content/Context;)V
@@ -70,14 +70,14 @@
 
     const/16 v1, 0x10
 
-    .line 3447
+    .line 4014
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 3448
+    .line 4015
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v1, 0x20
@@ -102,10 +102,10 @@
 
     const/4 p2, 0x0
 
-    .line 3449
+    .line 4016
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 3451
+    .line 4018
     new-instance v1, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {v1, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
@@ -114,10 +114,10 @@
 
     const/16 v2, 0xe
 
-    .line 3452
+    .line 4019
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 3453
+    .line 4020
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -128,14 +128,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 3454
+    .line 4021
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setMaxLines(I)V
 
-    .line 3455
+    .line 4022
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v3, 0x4
@@ -146,12 +146,12 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(I)V
 
-    .line 3458
+    .line 4025
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 3459
+    .line 4026
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v3, -0x2
@@ -177,7 +177,7 @@
 
     if-ge p2, v0, :cond_0
 
-    .line 3462
+    .line 4029
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     new-instance v4, Landroid/widget/TextView;
@@ -186,7 +186,7 @@
 
     aput-object v4, v3, p2
 
-    .line 3463
+    .line 4030
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v3, v3, p2
@@ -195,21 +195,21 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 3464
+    .line 4031
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v3, v3, p2
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 3465
+    .line 4032
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v3, v3, p2
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 3466
+    .line 4033
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v3, v3, p2
@@ -218,14 +218,14 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 3467
+    .line 4034
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v3, v3, p2
 
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 3468
+    .line 4035
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v1, v1, p2
@@ -254,7 +254,7 @@
 
     goto :goto_0
 
-    .line 3471
+    .line 4038
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -263,19 +263,19 @@
     return-void
 .end method
 
-.method static synthetic access$6402(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;F)F
+.method static synthetic access$6902(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;F)F
     .locals 0
 
-    .line 3421
+    .line 3988
     iput p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->progressToUploading:F
 
     return p1
 .end method
 
-.method static synthetic access$6500(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
+.method static synthetic access$7000(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)[Landroid/widget/TextView;
     .locals 0
 
-    .line 3421
+    .line 3988
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     return-object p0
@@ -284,7 +284,7 @@
 .method private synthetic lambda$setSubtitle$0(Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 3495
+    .line 4062
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -295,7 +295,7 @@
 
     move-result p1
 
-    .line 3496
+    .line 4063
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     const/4 v1, 0x0
@@ -304,7 +304,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 3497
+    .line 4064
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v0, v0, v1
@@ -327,7 +327,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 3498
+    .line 4065
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     const/4 v3, 0x1
@@ -336,7 +336,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 3499
+    .line 4066
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
@@ -359,7 +359,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 3523
+    .line 4090
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->isEnabled()Z
 
     move-result v0
@@ -370,7 +370,7 @@
 
     return p1
 
-    .line 3526
+    .line 4093
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -388,7 +388,7 @@
 
     move-object/from16 v2, p2
 
-    .line 3530
+    .line 4097
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->storyItemHolder:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
 
     const/4 v4, 0x0
@@ -419,23 +419,23 @@
 
     if-eqz v3, :cond_3
 
-    .line 3533
+    .line 4100
     iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     if-eqz v3, :cond_3
 
-    .line 3534
+    .line 4101
     iput v9, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->progressToUploading:F
 
-    .line 3535
+    .line 4102
     iget v3, v3, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->progress:F
 
-    .line 3537
+    .line 4104
     iget-boolean v10, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->uploading:Z
 
     if-nez v10, :cond_2
 
-    .line 3538
+    .line 4105
     iput-boolean v8, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->uploading:Z
 
     :cond_2
@@ -443,16 +443,16 @@
 
     goto :goto_1
 
-    .line 3542
+    .line 4109
     :cond_3
     iget-boolean v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->uploading:Z
 
     if-eqz v3, :cond_5
 
-    .line 3543
+    .line 4110
     iput-boolean v7, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->uploading:Z
 
-    .line 3544
+    .line 4111
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/RadialProgress;->getAnimatedProgress()F
@@ -475,13 +475,13 @@
     :goto_0
     iput-boolean v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->uploadedTooFast:Z
 
-    .line 3546
+    .line 4113
     :cond_5
     iget-boolean v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->uploadedTooFast:Z
 
     if-nez v3, :cond_6
 
-    .line 3547
+    .line 4114
     iget v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->progressToUploading:F
 
     sget v10, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
@@ -503,13 +503,13 @@
 
     move v3, v9
 
-    .line 3550
+    .line 4117
     :goto_1
     iget-object v11, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     if-nez v11, :cond_7
 
-    .line 3551
+    .line 4118
     new-instance v11, Lorg/telegram/ui/Components/RadialProgress;
 
     iget-object v12, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -520,16 +520,16 @@
 
     const/4 v12, 0x0
 
-    .line 3552
+    .line 4119
     invoke-virtual {v11, v12, v8, v7}, Lorg/telegram/ui/Components/RadialProgress;->setBackground(Landroid/graphics/drawable/Drawable;ZZ)V
 
-    .line 3554
+    .line 4121
     :cond_7
     iget-object v11, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     invoke-virtual {v11, v7}, Lorg/telegram/ui/Components/RadialProgress;->setDiff(I)V
 
-    .line 3555
+    .line 4122
     iget-object v11, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v11}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -538,7 +538,7 @@
 
     const/4 v12, 0x3
 
-    .line 3556
+    .line 4123
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
@@ -561,7 +561,7 @@
 
     sub-float/2addr v12, v13
 
-    .line 3557
+    .line 4124
     iget-object v13, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     iget v14, v2, Landroid/graphics/RectF;->left:F
@@ -590,7 +590,7 @@
 
     invoke-virtual {v13, v14, v15, v7, v2}, Lorg/telegram/ui/Components/RadialProgress;->setProgressRect(IIII)V
 
-    .line 3561
+    .line 4128
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     if-eqz v10, :cond_8
@@ -607,7 +607,7 @@
     :goto_2
     invoke-virtual {v2, v3, v8}, Lorg/telegram/ui/Components/RadialProgress;->setProgress(FZ)V
 
-    .line 3562
+    .line 4129
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->uploadedTooFast:Z
 
     if-eqz v2, :cond_9
@@ -626,7 +626,7 @@
 
     if-ltz v2, :cond_9
 
-    .line 3563
+    .line 4130
     iget v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->progressToUploading:F
 
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
@@ -654,12 +654,12 @@
 
     const/4 v2, 0x0
 
-    .line 3567
+    .line 4134
     invoke-static {v11, v2}, Lorg/telegram/ui/Stories/StoriesUtilities;->getActiveCirclePaint(Lorg/telegram/messenger/ImageReceiver;Z)Landroid/graphics/Paint;
 
     move-result-object v2
 
-    .line 3568
+    .line 4135
     iget v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->progressToUploading:F
 
     mul-float/2addr v4, v3
@@ -668,23 +668,23 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 3569
+    .line 4136
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/RadialProgress;->setPaint(Landroid/graphics/Paint;)V
 
-    .line 3570
+    .line 4137
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/RadialProgress;->draw(Landroid/graphics/Canvas;)V
 
-    .line 3572
+    .line 4139
     :cond_a
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgressPaint:Landroid/graphics/Paint;
 
     if-nez v2, :cond_b
 
-    .line 3573
+    .line 4140
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v8}, Landroid/graphics/Paint;-><init>(I)V
@@ -693,10 +693,10 @@
 
     const/4 v4, -0x1
 
-    .line 3574
+    .line 4141
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 3575
+    .line 4142
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgressPaint:Landroid/graphics/Paint;
 
     const/4 v4, 0x2
@@ -709,21 +709,21 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 3576
+    .line 4143
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgressPaint:Landroid/graphics/Paint;
 
     sget-object v4, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 3577
+    .line 4144
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgressPaint:Landroid/graphics/Paint;
 
     sget-object v4, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 3579
+    .line 4146
     :cond_b
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgressPaint:Landroid/graphics/Paint;
 
@@ -737,14 +737,14 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 3580
+    .line 4147
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgressPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RadialProgress;->setPaint(Landroid/graphics/Paint;)V
 
-    .line 3581
+    .line 4148
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/RadialProgress;->draw(Landroid/graphics/Canvas;)V
@@ -758,7 +758,7 @@
 
     const/4 v0, 0x0
 
-    .line 3475
+    .line 4042
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->setSubtitle(Ljava/lang/CharSequence;Z)V
 
     return-void
@@ -767,17 +767,17 @@
 .method public setSubtitle(Ljava/lang/CharSequence;Z)V
     .locals 5
 
-    .line 3480
+    .line 4047
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 3481
+    .line 4048
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 3482
+    .line 4049
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -791,7 +791,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 3485
+    .line 4052
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object v4, p2, v2
@@ -804,49 +804,49 @@
 
     invoke-virtual {v4, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3486
+    .line 4053
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v2
 
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3487
+    .line 4054
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v2
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 3488
+    .line 4055
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v2
 
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 3489
+    .line 4056
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v3
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3490
+    .line 4057
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p1, p1, v3
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3491
+    .line 4058
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p1, p1, v3
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 3492
+    .line 4059
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p1, p1, v3
@@ -867,7 +867,7 @@
 
     new-array p1, p1, [F
 
-    .line 3493
+    .line 4060
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -876,14 +876,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3494
+    .line 4061
     new-instance p2, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3501
+    .line 4068
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$2;
@@ -892,28 +892,28 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3509
+    .line 4076
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3510
+    .line 4077
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x154
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3511
+    .line 4078
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 3513
+    .line 4080
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
@@ -921,21 +921,21 @@
 
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3514
+    .line 4081
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v3
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 3515
+    .line 4082
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p2, p2, v3
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3516
+    .line 4083
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p1, p1, v2
@@ -944,7 +944,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3517
+    .line 4084
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->subtitleView:[Landroid/widget/TextView;
 
     aget-object p1, p1, v2

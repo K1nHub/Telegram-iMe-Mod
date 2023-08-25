@@ -2,34 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController;
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/DraftsController;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/DraftsController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Stories/StoriesController;
+    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Stories/recorder/DraftsController;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Stories/StoriesController;
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Stories/recorder/DraftsController;
 
-    check-cast p1, Lorg/telegram/ui/Stories/StoriesController$StoriesList;
-
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoriesController;->destroyStoryList(Lorg/telegram/ui/Stories/StoriesController$StoriesList;)V
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->cleanup()V
 
     return-void
 .end method

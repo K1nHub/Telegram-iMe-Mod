@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/LanguageDetector$ExceptionCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -10,13 +10,13 @@
 
 .field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
 
-.field public final synthetic f$2:J
+.field public final synthetic f$2:Lorg/telegram/messenger/TranslateController$MessageKey;
 
-.field public final synthetic f$3:I
+.field public final synthetic f$3:Lorg/telegram/messenger/Utilities$Callback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;JI)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/TranslateController$MessageKey;Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,29 +25,27 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    iput-wide p3, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$2:J
+    iput-object p3, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$2:Lorg/telegram/messenger/TranslateController$MessageKey;
 
-    iput p5, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$3:I
+    iput-object p4, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$3:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Exception;)V
-    .locals 6
+.method public final run()V
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/messenger/TranslateController;
 
     iget-object v1, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    iget-wide v2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$2:J
+    iget-object v2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$2:Lorg/telegram/messenger/TranslateController$MessageKey;
 
-    iget v4, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$3:I
+    iget-object v3, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda14;->f$3:Lorg/telegram/messenger/Utilities$Callback;
 
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/TranslateController;->$r8$lambda$GSkgK2FVj44R3RGUbXBrkJqd_kE(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;JILjava/lang/Exception;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/TranslateController;->$r8$lambda$mNcuPhwOi9VrYihTfvNUaAuVRk8(Lorg/telegram/messenger/TranslateController;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/TranslateController$MessageKey;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method

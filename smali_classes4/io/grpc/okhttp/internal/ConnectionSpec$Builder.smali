@@ -163,7 +163,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "no cipher suites for cleartext connections"
+    const-string/jumbo v0, "no cipher suites for cleartext connections"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -204,7 +204,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "no cipher suites for cleartext connections"
+    const-string/jumbo v0, "no cipher suites for cleartext connections"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -228,7 +228,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "no TLS extensions for cleartext connections"
+    const-string/jumbo v0, "no TLS extensions for cleartext connections"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -292,7 +292,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "no TLS versions for cleartext connections"
+    const-string/jumbo v0, "no TLS versions for cleartext connections"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -333,7 +333,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "no TLS versions for cleartext connections"
+    const-string/jumbo v0, "no TLS versions for cleartext connections"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

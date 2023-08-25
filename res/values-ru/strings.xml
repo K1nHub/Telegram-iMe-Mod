@@ -333,6 +333,7 @@
     <string name="chat_message_popup_option_copy_part">Копировать фрагмент</string>
     <string name="chat_message_popup_option_copy_text">Копировать текст</string>
     <string name="chat_message_popup_option_forward_cloud">Сохранить в Облако</string>
+    <string name="chat_message_popup_option_forward_only_cloud">Переслать в Облако</string>
     <string name="chat_message_popup_option_forward_viber">Переслать в Viber</string>
     <string name="chat_message_popup_option_forward_whatsapp">Переслать в WhatsApp</string>
     <string name="chat_message_popup_option_forward_whatsapp_business">Переслать в WA Business</string>
@@ -476,6 +477,7 @@
     <string name="common_empty_balance_state_description">В вашем кошельке нет токенов с положительным балансом в этой сети</string>
     <string name="common_empty_state_description">К сожалению, данные еще не представлены</string>
     <string name="common_empty_state_title">Здесь пусто...</string>
+    <string name="common_error">Ошибка</string>
     <string name="common_error_no_internet">Нет подключения к интернету. Повторите попытку</string>
     <string name="common_error_unauthorized">Вы не авторизованы. Повторите попытку</string>
     <string name="common_error_unexpected">Непредвиденная ошибка. Повторите попытку</string>
@@ -535,6 +537,109 @@
     <string name="create_chat_template">Создать шаблон</string>
     <string name="create_folder_change_fab_section_description">Выберите тип плавающей кнопки FAB, которую нужно показывать в этой папке.</string>
     <string name="create_folder_change_fab_title">Изменить плавающую кнопку FAB</string>
+    <string name="cryptobox_action_type_create">Создать</string>
+    <string name="cryptobox_action_type_stop">Завершить</string>
+    <string name="cryptobox_activate">Активировать Кошелек</string>
+    <string name="cryptobox_approve_info_description">"Approval is a one-time transaction for tokens required before the swap. With this operation, you give permission to swap your token via the DEX protocol using smart contracts. As this operation takes place on the blockchain, the Gas
+fee will be withheld. You will not need to reapprove the current token.
+
+Approve will be given for this smart contract:
+
+*%s"</string>
+    <string name="cryptobox_approve_info_title">Что такое Одобрение?</string>
+    <string name="cryptobox_conditions_reward_per_user">Количество на участника</string>
+    <string name="cryptobox_copy_name">Скопировать название</string>
+    <string name="cryptobox_create">Привязать кошелек</string>
+    <string name="cryptobox_create_amount_title">Количество на участника</string>
+    <string name="cryptobox_create_approve_info_description">"Approval is a one-time transaction for tokens required before the swap. With this operation, you give permission to swap your token via the DEX protocol using smart contracts. As this operation takes place on the blockchain, the Gas fee will be withheld. You will not need to reapprove the current token.
+
+Approval will be given for this smart contract:
+
+**%s**"</string>
+    <string name="cryptobox_create_approve_info_title">Что такое Одобрение?</string>
+    <string name="cryptobox_create_capacity_hint">Введите сумму</string>
+    <string name="cryptobox_create_capacity_title">Участники</string>
+    <string name="cryptobox_create_chat_hint">Выберите канал или группу</string>
+    <string name="cryptobox_create_chat_title">Канал или группа</string>
+    <string name="cryptobox_create_confirmation_description" formatted="false">Вы уверены, что хотите создать новый Криптобокс для %1s %2s?</string>
+    <string name="cryptobox_create_cryptobox_information_amount">Токены для участников</string>
+    <string name="cryptobox_create_cryptobox_information_creation_fee">Комиссия создания</string>
+    <string name="cryptobox_create_cryptobox_information_description">"**Токены для участников**: Общее количество токенов, заложенных в криптобокс для раздачи наград участникам.
+
+**Комиссия создания**: Комиссия за создание криптобокса.
+
+**Комиссия за пользователей**: Общая комиссия для оплаты газа при отправке награды каждому пользователю, которая калькулируется из расчета **%s** на пользователя.
+
+**Итого комиссий**: Общая сумма всех комиссий при создании криптобокса."</string>
+    <string name="cryptobox_create_cryptobox_information_title">Информация о Криптобоксе</string>
+    <string name="cryptobox_create_cryptobox_information_total_fee">Итого комиссий</string>
+    <string name="cryptobox_create_cryptobox_information_total_users_fee">Комиссия за пользователей</string>
+    <string name="cryptobox_create_description">"Проводите AirDrop'ы в своих сообществах в удобном формате."</string>
+    <string name="cryptobox_create_description_hint">Введите описание (необязательно)</string>
+    <string name="cryptobox_create_description_title">Описание</string>
+    <string name="cryptobox_create_enter_amount_error">Пожалуйста, выберите сумму для продолжения</string>
+    <string name="cryptobox_create_enter_capacity_error">Пожалуйста, выберите количество участников</string>
+    <string name="cryptobox_create_enter_capacity_threshold_error">Минимальная сумма Криптобокса %d</string>
+    <string name="cryptobox_create_header">Создавайте Криптобоксы в ваших каналах и группах.</string>
+    <string name="cryptobox_create_select_chat_error">Пожалуйста, выберите чат для продолжения</string>
+    <string name="cryptobox_create_select_token_error">Пожалуйста, выберите токен для продолжения</string>
+    <string name="cryptobox_create_success_description">Заявка на отправку Криптобокса была успешно создана</string>
+    <string name="cryptobox_create_success_title">Успех</string>
+    <string name="cryptobox_create_title">Создать новый Криптобокс</string>
+    <string name="cryptobox_create_user_not_owner">Пожалуйста, добавьте бота в список админов для корректной работы Криптобоксов</string>
+    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_description">Пожалуйста, выдайте права админа для @iMeWalletBot для корректной работы Криптобоксов</string>
+    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_title">Требуются права админа</string>
+    <string name="cryptobox_details_balance">Баланс</string>
+    <string name="cryptobox_details_chat">Название чата</string>
+    <string name="cryptobox_details_info">Информация о Криптобоксе</string>
+    <string name="cryptobox_details_members">Участники</string>
+    <string name="cryptobox_details_restore">Обновить</string>
+    <string name="cryptobox_details_stop">Остановить</string>
+    <string name="cryptobox_finished">Криптобокс завершен</string>
+    <string name="cryptobox_get">Получить Криптобокс</string>
+    <string name="cryptobox_in_progress">В процессе...</string>
+    <string name="cryptobox_participation_chat_unavailable">Чат недоступен</string>
+    <string name="cryptobox_participation_info_activate">Чтобы получить Криптобокс, вам нужно иметь активированный кошелек</string>
+    <string name="cryptobox_participation_info_create">Для получения Криптобокса вам нужно создать или импортировать кошелек</string>
+    <string name="cryptobox_participation_info_subscribe">Чтобы получить Криптобокс, вам нужно быть подписаным на %s</string>
+    <string name="cryptobox_participation_success_description">Заявка на участие создана</string>
+    <string name="cryptobox_participation_success_title">Успех</string>
+    <string name="cryptobox_refresh_message_confirmation_description">"Вы уверены, что хотите обновить Криптобокс в вашем сообществе? 
+
+**Предупреждение:** В чат будет отправлено новое сообщение"</string>
+    <string name="cryptobox_refresh_message_confirmation_title">Обновить криптобокс</string>
+    <string name="cryptobox_refresh_success">Сообщение о Криптобоксе было отправлено в чат</string>
+    <string name="cryptobox_status_active_description">**Активный**</string>
+    <string name="cryptobox_status_active_title">Активный</string>
+    <string name="cryptobox_status_created_description">**Создан**</string>
+    <string name="cryptobox_status_created_title">Создан</string>
+    <string name="cryptobox_status_failed_description">**Ошибка**</string>
+    <string name="cryptobox_status_failed_title">Ошибка</string>
+    <string name="cryptobox_status_finished_description">**Завершен** (баланс)</string>
+    <string name="cryptobox_status_finished_title">Завершен</string>
+    <string name="cryptobox_status_info_title">Статус</string>
+    <string name="cryptobox_status_pending_description">**В ожидании**</string>
+    <string name="cryptobox_status_pending_title">В ожидании</string>
+    <string name="cryptobox_status_stopped_description">**Досрочно остановлен**</string>
+    <string name="cryptobox_status_stopped_title">Досрочно остановлен</string>
+    <string name="cryptobox_stop_confirmation_description">"Вы уверены, что хотите остановить криптобокс досрочно?
+
+**ИНФОРМАЦИЯ**: Все свободные токены вернутся на ваш кошелек."</string>
+    <string name="cryptobox_stop_confirmation_title">Подтверждение остановки</string>
+    <string name="cryptobox_stop_success">Транзакция для остановки Криптобокса была отправлена в блокчейн. Пожалуйста дождитесь ее подтверждения.</string>
+    <string name="cryptobox_stopped">Криптобокс остановлен</string>
+    <string name="cryptobox_subscribe">Вступить</string>
+    <string name="cryptobox_taken">Вы уже приняли участие</string>
+    <string name="cryptobox_taken_description">Вы уже получили Криптобокс</string>
+    <string name="cryptoboxes_all_list_title">Все Криптобоксы</string>
+    <string name="cryptoboxes_chat_filter_description">Здесь отображаются криптобоксы, отправленные в данное сообщество</string>
+    <string name="cryptoboxes_create_new">Создать новый Криптобокс</string>
+    <string name="cryptoboxes_description">Создавайте Криптобоксы в ваших каналах и группах</string>
+    <string name="cryptoboxes_last_list_title">Последние Криптобоксы</string>
+    <string name="cryptoboxes_order_biggest">По сумме</string>
+    <string name="cryptoboxes_order_default">По умолчанию</string>
+    <string name="cryptoboxes_order_newest">По новизне</string>
+    <string name="cryptoboxes_title">Криптобоксы</string>
     <string name="currency_punkpanda">PUNKPANDA</string>
     <string name="currency_punkpanda_site">https://www.punkpandafarm.com/</string>
     <string name="currency_short_punkpanda">PPM</string>
@@ -663,6 +768,9 @@
     <string name="folder_tabs_width_mode_value_default">Стандартная</string>
     <string name="folder_tabs_width_mode_value_medium">Средняя</string>
     <string name="folder_tabs_width_mode_value_minimum">Минимальная</string>
+    <string name="formatting_hint_format">ФОРМАТ</string>
+    <string name="formatting_link_hint_edit_text">URL</string>
+    <string name="formatting_link_title">ССЫЛКА</string>
     <string name="forward_not_clicked_forum_toast">Пересылайте сообщения в темы по отдельности, не выбирая дополнительные чаты.</string>
     <string name="forwarding_editor_group">Сгруппировать сообщения</string>
     <string name="forwarding_editor_move_down">Переместить вниз</string>
@@ -674,6 +782,7 @@
     <string name="google_assistant_verification_notification_title">Google Ассистент отправляет сообщение…</string>
     <string name="hidden_chats_empty">Нет скрытых чатов</string>
     <string name="hidden_chats_empty_title">У вас нет скрытых чатов</string>
+    <string name="hidden_chats_hide_alert">Вы уверены, что хотите отправить чат (ы) в Субархив?</string>
     <string name="hidden_chats_hide_chats">Скрыть в Субархив</string>
     <string name="hidden_chats_info_search_chats">Скрытые чаты отправляются в Субархив с выключенными уведомлениями. Потяните список чатов в Архиве вниз, чтобы получить доступ к скрытому разделу.</string>
     <string name="hidden_chats_info_unhide">Вы можете вернуть чат обратно на список чатов.</string>
@@ -826,6 +935,9 @@
     <string name="music_tab_playlist">Плейлист</string>
     <string name="nav_app_bar_navigate_up_description">Перейти вверх</string>
     <string name="nav_app_bar_open_drawer_description">Открыть панель навигации</string>
+    <string name="networks_all">Все сети</string>
+    <string name="networks_settings_subtitle">Выберите сети</string>
+    <string name="networks_settings_title">Сети</string>
     <string name="neurobots_enable_dialog_description">Для включения и конфигурации нейроботов перейдите в настройки</string>
     <string name="neurobots_enable_dialog_positive_btn_text">ПЕРЕЙТИ</string>
     <string name="neurobots_enable_dialog_title">Нейроботы отключены</string>
@@ -1077,6 +1189,9 @@
     <string name="settings_interface_video_voice_front_camera">Передняя по умолчанию</string>
     <string name="settings_interface_video_voice_front_camera_short">Передняя</string>
     <string name="settings_interface_wide_posts_in_channel">Широкие посты в каналах</string>
+    <string name="settings_messages_formatting_alternative_keybord">Альтернативная клавиатура</string>
+    <string name="settings_messages_formatting_alternative_web">Альтернативная веб</string>
+    <string name="settings_messages_formatting_title">Панель форматирования</string>
     <string name="settings_multi_panel_item_title">Мультипанель в чатах</string>
     <string name="settings_neurobots_item_title">Настройки нейроботов</string>
     <string name="settings_proxy_button_in_toolbar">Кнопка прокси в тулбаре</string>
@@ -1084,6 +1199,13 @@
     <string name="settings_revoke_by_default">Удалить у собеседника</string>
     <string name="settings_section_passcode_archive">Пароль в архиве</string>
     <string name="settings_section_passcode_cloud">Пароль в облаке</string>
+    <string name="settings_speed_mega_fast">Мега быстро</string>
+    <string name="settings_speed_super_fast">Супер быстро</string>
+    <string name="settings_stories_avatars">Аватары Историй</string>
+    <string name="settings_stories_bar">Панель Историй</string>
+    <string name="settings_stories_enable">Включить Истории</string>
+    <string name="settings_stories_enable_hint">Включите это для отображения Историй</string>
+    <string name="settings_stories_profile_avatar">Аватары Историй в профиле</string>
     <string name="settings_tools">Инструменты</string>
     <string name="settings_tools_base_toolbar">Основной тулбар</string>
     <string name="settings_tools_bot_help_translate">Перевод приветствия в ботах</string>
@@ -1092,6 +1214,8 @@
     <string name="settings_tools_chat_profile_id_telegram_bot_api">Bot API</string>
     <string name="settings_tools_chat_profile_id_telegram_description">"Выберите Telegram API для стандартного отображения ID.
 Если вы выберите опцию Bot API, то \"-\" будет добавлен в начало ID групп и \"-100\" в начало супергрупп и каналов."</string>
+    <string name="settings_tools_chat_profile_id_telegram_enable_panel">Вкючить панель</string>
+    <string name="settings_tools_chat_profile_id_telegram_hint">Включите это, если вы хотите, чтобы ID аккаунта отображался в профиле чатов</string>
     <string name="settings_tools_chat_profile_id_telegram_telegram_api">Telegram API</string>
     <string name="settings_tools_cloud">Облако</string>
     <string name="settings_tools_cloud_albums">Альбомы</string>
@@ -1112,8 +1236,11 @@
     <string name="settings_tools_neuro_bots">Нейроботы</string>
     <string name="settings_tools_photo_viewer">Фото и изображения</string>
     <string name="settings_tools_photo_viewer_menu_items">Контекстное меню в 3-х точках</string>
+    <string name="settings_tools_profile_ime">Настройки iMe</string>
+    <string name="settings_tools_profile_telegram">Настройки Telegram</string>
     <string name="settings_tools_reactions">Реакции и кнопки</string>
     <string name="settings_tools_remember_chat">Запоминать чат</string>
+    <string name="settings_tools_search_settings">Поиск настроек инструментов</string>
     <string name="settings_tools_send_popup_reactions">Для отправляемого сообщения</string>
     <string name="settings_tools_send_popup_reactions_hint">Нажмите и удерживайте кнопку отправки после создания сообщения.</string>
     <string name="settings_tools_send_popup_translate">Перевод отправляемых сообщений</string>
@@ -1317,6 +1444,7 @@
     <string name="stickers_size_medium">Стандартный</string>
     <string name="stickers_size_small">Маленький</string>
     <string name="stickers_size_title">Размер стикеров</string>
+    <string name="story_fab_enable_hint">Удерживайте, чтобы включить %s для публикации историй.</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Учитывать архив</string>
     <string name="swipe_to_next_unread_dialog_hint">Включите это, если вы хотите читать ваши чаты, не возвращаясь в список чатов. Дойдя до последнего сообщения в чате, потяните экран вверх, чтобы перейти к следующему непрочитанному чату.</string>
     <string name="swipe_to_next_unread_dialog_types">Типы чатов</string>
@@ -1445,6 +1573,7 @@
     <string name="undo_all_chats_tab_disabled">"Вкладка **Все Чаты** отключена.
 Кнопка доступа в архиву находится в боковом меню"</string>
     <string name="undo_recent_chats_disabled">Недавние чаты отключены</string>
+    <string name="undo_stories_bar_disabled">Панель историй отключена</string>
     <string name="unlock_premium_transcription_hint">Для транскрибации голоса более 1 мин требуется Telegram Premium.</string>
     <string name="user_restrictions_send_games">Игр</string>
     <string name="user_restrictions_send_gifs">GIF</string>
@@ -1860,7 +1989,7 @@ iMe Wallet."</string>
     <string name="wallet_details_created">Подключен</string>
     <string name="wallet_details_info_bitcoin_description">Это ваш активный аккаунт блокчейна Bitcoin.</string>
     <string name="wallet_details_info_bitcoin_title">Bitcoin</string>
-    <string name="wallet_details_info_evm_description">Это ваш активный аккаунт EVM-совместимых блокчейнов, таких как Ethereum, BNB Chain, Polygon и Fantom.</string>
+    <string name="wallet_details_info_evm_description">Это ваш активный аккаунт EVM-совместимых блокчейнов, таких как Ethereum, BNB Chain, Polygon, Fantom и Mantle.</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">Это ваш активный аккаунт блокчейна The Open Network (TON).</string>
     <string name="wallet_details_info_ton_title">TON</string>
@@ -1943,6 +2072,8 @@ iMe Wallet."</string>
     <string name="wallet_internal_point_basic_services">Сервисы Lime</string>
     <string name="wallet_internal_point_channels_catalog_subtitle">Каталог каналов Telegram по различным категориям. Добавьте свой канал в каталог, чтобы пользователи могли найти его по нужным параметрам.</string>
     <string name="wallet_internal_point_channels_catalog_title">Каталог каналов</string>
+    <string name="wallet_internal_point_cryptoboxes_subtitle">Создавайте Криптобоксы</string>
+    <string name="wallet_internal_point_cryptoboxes_title">Криптобоксы</string>
     <string name="wallet_internal_point_neurobots_store_subtitle">Нейроботы - это личные помощники в чатах. Вы сможете создавать своих нейроботов и размещать их в магазине.</string>
     <string name="wallet_internal_point_neurobots_store_title">Магазин нейроботов</string>
     <string name="wallet_internal_point_premium_account_subtitle">Перейдите на премиум аккаунт и получите расширенные возможности по функциональности приложения.</string>

@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;
     .locals 4
 
-    .line 77
+    .line 78
     new-instance v0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$listAdapter$2;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout;
@@ -69,7 +69,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 77
+    .line 78
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$listAdapter$2;->invoke()Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;
 
     move-result-object v0

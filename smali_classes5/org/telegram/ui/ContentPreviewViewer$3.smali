@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContentPreviewViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 1549
+    .line 1561
     iput-object p1, p0, Lorg/telegram/ui/ContentPreviewViewer$3;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ContentPreviewViewer$FrameLayoutDrawer;-><init>(Lorg/telegram/ui/ContentPreviewViewer;Landroid/content/Context;)V
@@ -35,22 +35,22 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 1552
+    .line 1564
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 1553
+    .line 1565
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$3;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 1554
+    .line 1566
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$3;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3900(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 
@@ -62,22 +62,22 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 1559
+    .line 1571
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1560
+    .line 1572
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$3;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3700(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 1561
+    .line 1573
     iget-object v0, p0, Lorg/telegram/ui/ContentPreviewViewer$3;->this$0:Lorg/telegram/ui/ContentPreviewViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3800(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v0}, Lorg/telegram/ui/ContentPreviewViewer;->access$3900(Lorg/telegram/ui/ContentPreviewViewer;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 

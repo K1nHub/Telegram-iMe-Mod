@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/SharingLiveLocationCell;)V
     .locals 0
 
-    .line 59
+    .line 73
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharingLiveLocationCell$1;->this$0:Lorg/telegram/ui/Cells/SharingLiveLocationCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 5
 
-    .line 62
+    .line 76
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharingLiveLocationCell$1;->this$0:Lorg/telegram/ui/Cells/SharingLiveLocationCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->access$000(Lorg/telegram/ui/Cells/SharingLiveLocationCell;)Landroid/graphics/RectF;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/FrameLayout;->invalidate(IIII)V
 
-    .line 63
+    .line 77
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharingLiveLocationCell$1;->this$0:Lorg/telegram/ui/Cells/SharingLiveLocationCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/SharingLiveLocationCell;->access$100(Lorg/telegram/ui/Cells/SharingLiveLocationCell;)Ljava/lang/Runnable;

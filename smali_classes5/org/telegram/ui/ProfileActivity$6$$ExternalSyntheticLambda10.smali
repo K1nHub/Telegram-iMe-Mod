@@ -57,7 +57,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/ProfileActivity$6$$ExternalSyntheticLambda10;->f$5:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$6;->$r8$lambda$QNzOuSNKhRi9fOfRFVkxOYHkTCc(Lorg/telegram/ui/ProfileActivity$6;JLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Ljava/lang/String;ZLorg/telegram/ui/DialogsActivity;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ProfileActivity$6;->$r8$lambda$5j8Z-XHMwTaYDggQRkRsrIfKRNQ(Lorg/telegram/ui/ProfileActivity$6;JLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Ljava/lang/String;ZLorg/telegram/ui/DialogsActivity;)V
 
     return-void
 .end method

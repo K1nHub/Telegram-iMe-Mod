@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatAttachAlertWalletLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$progressDialog$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,542:1\n1#2:543\n*E\n"
+    value = "SMAP\nChatAttachAlertWalletLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatAttachAlertWalletLayout.kt\ncom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$progressDialog$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,546:1\n1#2:547\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 75
+    .line 76
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$progressDialog$2;->invoke()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 .method public final invoke()Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 3
 
-    .line 75
+    .line 76
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$progressDialog$2;->$alert:Lorg/telegram/ui/Components/ChatAttachAlert;

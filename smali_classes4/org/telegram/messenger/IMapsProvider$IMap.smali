@@ -36,6 +36,9 @@
 .method public abstract getMaxZoomLevel()F
 .end method
 
+.method public abstract getMinZoomLevel()F
+.end method
+
 .method public abstract getProjection()Lorg/telegram/messenger/IMapsProvider$IProjection;
 .end method
 
@@ -52,6 +55,9 @@
 .end method
 
 .method public abstract setMyLocationEnabled(Z)V
+.end method
+
+.method public abstract setOnCameraIdleListener(Ljava/lang/Runnable;)V
 .end method
 
 .method public abstract setOnCameraMoveListener(Ljava/lang/Runnable;)V

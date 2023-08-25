@@ -22,7 +22,7 @@
 .method constructor <init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 1625
+    .line 1623
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$4;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;-><init>(Ljava/lang/String;)V
@@ -35,12 +35,12 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 1628
+    .line 1626
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$4;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->dismissCurrentDialog()V
 
-    .line 1629
+    .line 1627
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;->onClick(Landroid/view/View;)V
 
     return-void

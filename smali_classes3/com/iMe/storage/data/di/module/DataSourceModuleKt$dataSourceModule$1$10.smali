@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,111:1\n129#2,5:112\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n*L\n97#1:112,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,150:1\n129#2,5:151\n129#2,5:156\n129#2,5:161\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$10\n*L\n112#1:151,5\n113#1:156,5\n114#1:161,5\n*E\n"
 .end annotation
 
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
-    const-class p2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    const-class p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 97
-    check-cast p2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+    .line 112
+    check-cast p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     .line 133
-    const-class v1, Lcom/iMe/storage/data/network/api/own/SwapApi;
+    const-class v1, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 97
-    check-cast v1, Lcom/iMe/storage/data/network/api/own/SwapApi;
+    .line 113
+    check-cast v1, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class v2, Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,12 +113,13 @@
 
     move-result-object p1
 
-    .line 97
-    check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    .line 114
+    check-cast p1, Lcom/iMe/storage/data/network/api/own/SwapApi;
 
+    .line 111
     new-instance v0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;
 
-    invoke-direct {v0, v1, p1, p2}, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;-><init>(Lcom/iMe/storage/data/network/api/own/SwapApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
+    invoke-direct {v0, p1, p2, v1}, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;-><init>(Lcom/iMe/storage/data/network/api/own/SwapApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
     return-object v0
 .end method
@@ -126,7 +127,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 96
+    .line 110
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

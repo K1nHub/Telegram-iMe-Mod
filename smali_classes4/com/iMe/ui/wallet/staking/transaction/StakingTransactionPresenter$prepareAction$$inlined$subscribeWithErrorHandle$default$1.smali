@@ -119,13 +119,13 @@
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$prepareAction$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     .line 116
-    new-instance v3, Lcom/iMe/model/staking/StakingTransactionStep$Execute;
+    new-instance v3, Lcom/iMe/model/staking/TransactionStep$StakingExecute;
 
     invoke-static {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$getScreenType$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;)I
 
     move-result v4
 
-    invoke-direct {v3, v4}, Lcom/iMe/model/staking/StakingTransactionStep$Execute;-><init>(I)V
+    invoke-direct {v3, v4}, Lcom/iMe/model/staking/TransactionStep$StakingExecute;-><init>(I)V
 
     .line 117
     iget-object v4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter$prepareAction$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
@@ -134,7 +134,7 @@
 
     move-result-object v4
 
-    invoke-static {v1, v4}, Lcom/iMe/mapper/staking/StakingTransactionActionToFeeUiMappingKt;->mapToUi(Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;Lcom/iMe/model/dialog/DialogModel;)Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    invoke-static {v1, v4}, Lcom/iMe/mapper/staking/StakingTransactionActionToFeeUiMappingKt;->mapToUi(Lcom/iMe/storage/domain/model/staking/StakingTransactionAction;Lcom/iMe/model/dialog/DialogModel;)Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v4
 
@@ -146,7 +146,7 @@
     check-cast p1, Ljava/lang/String;
 
     .line 115
-    invoke-static {v2, v3, v4, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$onActionSuccess(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
+    invoke-static {v2, v3, v4, p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$onActionSuccess(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/TransactionStep;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Ljava/lang/String;)V
 
     goto :goto_0
 

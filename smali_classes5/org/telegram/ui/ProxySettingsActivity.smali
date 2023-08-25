@@ -2471,7 +2471,7 @@
 
     const/high16 v13, 0x41800000    # 16.0f
 
-    invoke-virtual {v12, v6, v13}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v12, v6, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 307
     iget-object v12, v0, Lorg/telegram/ui/ProxySettingsActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;

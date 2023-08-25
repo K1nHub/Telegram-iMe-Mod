@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;Z)V
     .locals 0
 
-    .line 1717
+    .line 1714
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1732
+    .line 1729
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     const/4 v0, 0x0
@@ -52,7 +52,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1720
+    .line 1717
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1600(Lorg/telegram/ui/ChatEditActivity;)Landroid/animation/AnimatorSet;
@@ -71,13 +71,13 @@
 
     goto :goto_0
 
-    .line 1723
+    .line 1720
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$show:Z
 
     if-nez p1, :cond_1
 
-    .line 1724
+    .line 1721
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1700(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -88,7 +88,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1725
+    .line 1722
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1500(Lorg/telegram/ui/ChatEditActivity;)Landroid/view/View;
@@ -97,7 +97,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1727
+    .line 1724
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 

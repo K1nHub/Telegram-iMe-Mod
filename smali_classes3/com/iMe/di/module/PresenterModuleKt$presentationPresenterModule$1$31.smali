@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$31\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n129#3,5:564\n129#3,5:569\n129#3,5:574\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$31\n*L\n294#1:553\n297#1:554,5\n298#1:559,5\n299#1:564,5\n300#1:569,5\n301#1:574,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$31\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n44#2:864\n129#3,5:865\n129#3,5:870\n129#3,5:875\n129#3,5:880\n129#3,5:885\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$31\n*L\n427#1:864\n430#1:865,5\n431#1:870,5\n432#1:875,5\n433#1:880,5\n434#1:885,5\n*E\n"
 .end annotation
 
 
@@ -89,7 +89,7 @@
 
     check-cast v1, Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;
 
-    .line 295
+    .line 428
     new-instance p2, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;
 
     .line 133
@@ -179,7 +179,7 @@
 
     move-object v6, p1
 
-    .line 295
+    .line 428
     invoke-direct/range {v0 .. v6}, Lcom/iMe/ui/wallet/crypto/create/pin/CreateWalletPinPresenter;-><init>(Lcom/iMe/model/wallet/pin/WalletPinScreenArgs;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/gateway/TelegramControllersGateway;)V
 
     return-object p2
@@ -188,7 +188,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 294
+    .line 427
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

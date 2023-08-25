@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity;)V
     .locals 0
 
-    .line 992
+    .line 1003
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 0
 
-    .line 995
+    .line 1006
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     if-eqz p2, :cond_0
@@ -50,7 +50,7 @@
     :goto_0
     invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$3002(Lorg/telegram/ui/LocationActivity;Z)Z
 
-    .line 996
+    .line 1007
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3000(Lorg/telegram/ui/LocationActivity;)Z
@@ -67,7 +67,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 997
+    .line 1008
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     const/4 p2, 0x0
@@ -81,14 +81,14 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 1003
+    .line 1014
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$2300(Lorg/telegram/ui/LocationActivity;Z)V
 
-    .line 1004
+    .line 1015
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3100(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;
@@ -97,7 +97,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1005
+    .line 1016
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     int-to-float p2, p3

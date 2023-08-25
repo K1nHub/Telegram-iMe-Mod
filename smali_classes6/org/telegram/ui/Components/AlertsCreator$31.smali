@@ -18,7 +18,7 @@
 .method constructor <init>(Landroid/content/Context;ZZZ)V
     .locals 0
 
-    .line 4056
+    .line 4054
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;ZZZ)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getAccessibilityClassName()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 4059
+    .line 4057
     const-class v0, Landroid/widget/Button;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;

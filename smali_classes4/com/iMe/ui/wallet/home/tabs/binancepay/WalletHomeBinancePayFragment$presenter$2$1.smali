@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 49
+    .line 56
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2$1;->invoke()Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 49
+    .line 56
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$presenter$2$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;->access$getBinanceApi(Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;)Lcom/binance/android/opensdk/api/BinanceAPI;

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 0
 
-    .line 1494
+    .line 1580
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput p4, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->val$wasSelectedIndex:I
@@ -39,15 +39,15 @@
 .method public onDismissAnimationStart()V
     .locals 2
 
-    .line 1497
+    .line 1583
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->onDismissAnimationStart()V
 
-    .line 1498
+    .line 1584
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->val$wasSelectedIndex:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3500(Lorg/telegram/ui/Stories/recorder/PaintView;I)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3600(Lorg/telegram/ui/Stories/recorder/PaintView;I)V
 
     return-void
 .end method

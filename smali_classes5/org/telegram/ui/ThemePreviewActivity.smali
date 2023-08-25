@@ -13709,16 +13709,16 @@
 .end method
 
 .method private updatePlayAnimationView(Z)V
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p0
 
     .line 3867
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/4 v2, 0x0
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v3, 0x0
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
@@ -13733,7 +13733,7 @@
 
     const/16 v9, 0x1d
 
-    if-lt v1, v9, :cond_7
+    if-lt v1, v9, :cond_8
 
     .line 3870
     iget v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->screenType:I
@@ -13750,7 +13750,7 @@
 
     long-to-int v1, v9
 
-    goto :goto_1
+    goto :goto_2
 
     .line 3874
     :cond_0
@@ -13760,10 +13760,10 @@
 
     move-result v1
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_1
-    if-ne v1, v6, :cond_3
+    if-ne v1, v6, :cond_4
 
     .line 3877
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
@@ -13775,32 +13775,45 @@
     .line 3878
     iget-object v9, v0, Lorg/telegram/ui/ThemePreviewActivity;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    iget-wide v9, v9, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
+    if-nez v9, :cond_2
 
-    long-to-int v11, v9
-
-    if-nez v11, :cond_2
-
-    cmp-long v9, v9, v3
-
-    if-eqz v9, :cond_2
+    move v10, v8
 
     goto :goto_0
 
     :cond_2
-    if-eqz v11, :cond_5
+    iget-wide v10, v9, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
 
-    move v1, v11
+    long-to-int v10, v10
+
+    :goto_0
+    if-nez v10, :cond_3
+
+    if-eqz v9, :cond_3
+
+    .line 3879
+    iget-wide v11, v9, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor2:J
+
+    cmp-long v9, v11, v2
+
+    if-eqz v9, :cond_3
 
     goto :goto_1
 
-    .line 3884
     :cond_3
+    if-eqz v10, :cond_6
+
+    move v1, v10
+
+    goto :goto_2
+
+    .line 3884
+    :cond_4
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->currentWallpaper:Ljava/lang/Object;
 
     instance-of v9, v1, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
 
-    if-eqz v9, :cond_4
+    if-eqz v9, :cond_5
 
     .line 3885
     check-cast v1, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;
@@ -13808,22 +13821,22 @@
     .line 3886
     iget v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundGradientColor2:I
 
-    goto :goto_1
-
-    :cond_4
-    :goto_0
-    move v1, v8
+    goto :goto_2
 
     :cond_5
     :goto_1
-    if-eqz v1, :cond_6
+    move v1, v8
+
+    :cond_6
+    :goto_2
+    if-eqz v1, :cond_7
 
     .line 3888
     iget v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->currentIntensity:F
 
     cmpl-float v1, v1, v5
 
-    if-ltz v1, :cond_6
+    if-ltz v1, :cond_7
 
     .line 3889
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundImage:Lorg/telegram/ui/ThemePreviewActivity$BackgroundView;
@@ -13836,21 +13849,21 @@
 
     invoke-virtual {v1, v9}, Lorg/telegram/messenger/ImageReceiver;->setBlendMode(Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_3
 
     .line 3891
-    :cond_6
+    :cond_7
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundImage:Lorg/telegram/ui/ThemePreviewActivity$BackgroundView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
-    invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setBlendMode(Ljava/lang/Object;)V
+    invoke-virtual {v1, v4}, Lorg/telegram/messenger/ImageReceiver;->setBlendMode(Ljava/lang/Object;)V
 
     .line 3895
-    :cond_7
-    :goto_2
+    :cond_8
+    :goto_3
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
     const/4 v11, 0x4
@@ -13863,30 +13876,30 @@
 
     const/16 v15, 0x22
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1e
 
     .line 3897
     iget v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->screenType:I
 
-    if-ne v1, v14, :cond_8
+    if-ne v1, v14, :cond_9
 
     .line 3898
     iget v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundGradientColor1:I
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
-    :goto_3
+    :goto_4
     move v1, v6
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_8
-    if-ne v1, v6, :cond_b
+    :cond_9
+    if-ne v1, v6, :cond_c
 
     .line 3899
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
     .line 3900
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
@@ -13898,209 +13911,178 @@
     .line 3901
     iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    iget-wide v9, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
+    iget-wide v4, v5, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->backgroundGradientOverrideColor1:J
 
-    long-to-int v5, v9
+    long-to-int v9, v4
 
-    if-nez v5, :cond_9
+    if-nez v9, :cond_a
 
-    cmp-long v3, v9, v3
+    cmp-long v2, v4, v2
 
-    if-eqz v3, :cond_9
+    if-eqz v2, :cond_a
 
     move v1, v8
+
+    goto :goto_5
+
+    :cond_a
+    if-eqz v9, :cond_b
+
+    move v1, v9
+
+    :cond_b
+    :goto_5
+    if-eqz v1, :cond_c
 
     goto :goto_4
 
-    :cond_9
-    if-eqz v5, :cond_a
-
-    move v1, v5
-
-    :cond_a
-    :goto_4
-    if-eqz v1, :cond_b
-
-    goto :goto_3
-
-    :cond_b
+    :cond_c
     move v1, v8
 
     .line 3912
-    :goto_5
-    iget-object v3, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_c
-
-    move v3, v6
-
-    goto :goto_6
-
-    :cond_c
-    move v3, v8
-
-    .line 3913
     :goto_6
-    iget-object v4, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
+    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
-    if-eqz v1, :cond_d
+    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
-    move-object v5, v7
+    move-result-object v2
+
+    if-eqz v2, :cond_d
+
+    move v2, v6
 
     goto :goto_7
 
     :cond_d
-    const/4 v5, 0x0
+    move v2, v8
 
+    .line 3913
     :goto_7
-    invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
-
-    if-eq v3, v1, :cond_1d
+    iget-object v3, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
     if-eqz v1, :cond_e
 
-    .line 3916
-    iget-object v3, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v3, v8}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 3918
-    :cond_e
-    iget-object v3, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayViewAnimator:Landroid/animation/AnimatorSet;
-
-    if-eqz v3, :cond_f
-
-    .line 3919
-    invoke-virtual {v3}, Landroid/animation/AnimatorSet;->cancel()V
-
-    :cond_f
-    if-eqz p1, :cond_16
-
-    .line 3922
-    new-instance v3, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v3}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object v3, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayViewAnimator:Landroid/animation/AnimatorSet;
-
-    const/4 v4, 0x6
-
-    new-array v4, v4, [Landroid/animation/Animator;
-
-    .line 3923
-    iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
-
-    sget-object v9, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    new-array v10, v6, [F
-
-    if-eqz v1, :cond_10
-
-    const/high16 v16, 0x3f800000    # 1.0f
+    move-object v4, v7
 
     goto :goto_8
 
-    :cond_10
-    const/16 v16, 0x0
+    :cond_e
+    const/4 v4, 0x0
 
     :goto_8
-    aput v16, v10, v8
+    invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 3924
-    invoke-static {v5, v9, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    if-eq v2, v1, :cond_1e
 
-    move-result-object v5
+    if-eqz v1, :cond_f
 
-    aput-object v5, v4, v8
+    .line 3916
+    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
-    iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
+    invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    sget-object v9, Landroid/view/View;->SCALE_X:Landroid/util/Property;
+    .line 3918
+    :cond_f
+    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayViewAnimator:Landroid/animation/AnimatorSet;
 
-    new-array v10, v6, [F
+    if-eqz v2, :cond_10
+
+    .line 3919
+    invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
+
+    :cond_10
+    if-eqz p1, :cond_17
+
+    .line 3922
+    new-instance v2, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
+
+    iput-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayViewAnimator:Landroid/animation/AnimatorSet;
+
+    const/4 v3, 0x6
+
+    new-array v3, v3, [Landroid/animation/Animator;
+
+    .line 3923
+    iget-object v4, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
+
+    sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    new-array v9, v6, [F
 
     if-eqz v1, :cond_11
 
-    const/high16 v16, 0x3f800000    # 1.0f
+    const/high16 v10, 0x3f800000    # 1.0f
 
     goto :goto_9
 
     :cond_11
-    const/16 v16, 0x0
+    const/4 v10, 0x0
 
     :goto_9
-    aput v16, v10, v8
+    aput v10, v9, v8
 
-    .line 3925
-    invoke-static {v5, v9, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    .line 3924
+    invoke-static {v4, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v6
+    aput-object v4, v3, v8
 
-    iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
+    iget-object v4, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
-    sget-object v9, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
+    sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
-    new-array v10, v6, [F
+    new-array v9, v6, [F
 
     if-eqz v1, :cond_12
 
-    const/high16 v16, 0x3f800000    # 1.0f
+    const/high16 v10, 0x3f800000    # 1.0f
 
     goto :goto_a
 
     :cond_12
-    const/16 v16, 0x0
+    const/4 v10, 0x0
 
     :goto_a
-    aput v16, v10, v8
+    aput v10, v9, v8
 
-    .line 3926
-    invoke-static {v5, v9, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    .line 3925
+    invoke-static {v4, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v14
+    aput-object v4, v3, v6
 
-    iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
+    iget-object v4, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
-    aget-object v5, v5, v8
+    sget-object v5, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
-    sget-object v9, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
-
-    new-array v10, v6, [F
+    new-array v9, v6, [F
 
     if-eqz v1, :cond_13
 
-    .line 3927
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    int-to-float v2, v2
+    const/high16 v10, 0x3f800000    # 1.0f
 
     goto :goto_b
 
     :cond_13
-    const/4 v2, 0x0
+    const/4 v10, 0x0
 
     :goto_b
-    aput v2, v10, v8
+    aput v10, v9, v8
 
-    invoke-static {v5, v9, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    .line 3926
+    invoke-static {v4, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v4, v12
+    aput-object v4, v3, v14
 
-    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
+    iget-object v4, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
-    aget-object v2, v2, v6
+    aget-object v4, v4, v8
 
     sget-object v5, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
@@ -14108,12 +14090,10 @@
 
     if-eqz v1, :cond_14
 
-    .line 3928
+    .line 3927
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
-
-    neg-int v10, v10
 
     int-to-float v10, v10
 
@@ -14125,21 +14105,54 @@
     :goto_c
     aput v10, v9, v8
 
-    invoke-static {v2, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v4, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v2
+    move-result-object v4
 
-    aput-object v2, v4, v11
+    aput-object v4, v3, v12
 
-    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
+    iget-object v4, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
-    aget-object v2, v2, v14
+    aget-object v4, v4, v6
 
     sget-object v5, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     new-array v9, v6, [F
 
     if-eqz v1, :cond_15
+
+    .line 3928
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v10
+
+    neg-int v10, v10
+
+    int-to-float v10, v10
+
+    goto :goto_d
+
+    :cond_15
+    const/4 v10, 0x0
+
+    :goto_d
+    aput v10, v9, v8
+
+    invoke-static {v4, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v4
+
+    aput-object v4, v3, v11
+
+    iget-object v4, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
+
+    aget-object v4, v4, v14
+
+    sget-object v5, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
+
+    new-array v9, v6, [F
+
+    if-eqz v1, :cond_16
 
     .line 3929
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -14148,24 +14161,24 @@
 
     int-to-float v1, v1
 
-    move/from16 v17, v1
+    move/from16 v16, v1
 
-    goto :goto_d
+    goto :goto_e
 
-    :cond_15
-    const/16 v17, 0x0
+    :cond_16
+    const/16 v16, 0x0
 
-    :goto_d
-    aput v17, v9, v8
+    :goto_e
+    aput v16, v9, v8
 
-    invoke-static {v2, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v4, v5, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
 
-    aput-object v1, v4, v13
+    aput-object v1, v3, v13
 
     .line 3923
-    invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     .line 3930
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayViewAnimator:Landroid/animation/AnimatorSet;
@@ -14195,25 +14208,10 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    goto :goto_14
+    goto :goto_15
 
     .line 3943
-    :cond_16
-    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
-
-    if-eqz v1, :cond_17
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    goto :goto_e
-
     :cond_17
-    const/4 v3, 0x0
-
-    :goto_e
-    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
-
-    .line 3944
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
     if-eqz v1, :cond_18
@@ -14226,9 +14224,9 @@
     const/4 v3, 0x0
 
     :goto_f
-    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setScaleX(F)V
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 3945
+    .line 3944
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
     if-eqz v1, :cond_19
@@ -14241,20 +14239,14 @@
     const/4 v3, 0x0
 
     :goto_10
-    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setScaleY(F)V
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 3946
-    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
-
-    aget-object v2, v2, v8
+    .line 3945
+    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundPlayAnimationView:Landroid/widget/FrameLayout;
 
     if-eqz v1, :cond_1a
 
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
+    const/high16 v3, 0x3f800000    # 1.0f
 
     goto :goto_11
 
@@ -14262,20 +14254,18 @@
     const/4 v3, 0x0
 
     :goto_11
-    invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 3947
+    .line 3946
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
-    aget-object v2, v2, v6
+    aget-object v2, v2, v8
 
     if-eqz v1, :cond_1b
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
-
-    neg-int v3, v3
 
     int-to-float v3, v3
 
@@ -14287,12 +14277,35 @@
     :goto_12
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
 
+    .line 3947
+    iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
+
+    aget-object v2, v2, v6
+
+    if-eqz v1, :cond_1c
+
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    neg-int v3, v3
+
+    int-to-float v3, v3
+
+    goto :goto_13
+
+    :cond_1c
+    const/4 v3, 0x0
+
+    :goto_13
+    invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
+
     .line 3948
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->backgroundCheckBoxView:[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
     aget-object v2, v2, v14
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1d
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -14300,42 +14313,42 @@
 
     int-to-float v5, v1
 
-    goto :goto_13
+    goto :goto_14
 
-    :cond_1c
+    :cond_1d
     const/4 v5, 0x0
 
-    :goto_13
+    :goto_14
     invoke-virtual {v2, v5}, Landroid/view/View;->setTranslationX(F)V
 
     .line 3952
-    :cond_1d
-    :goto_14
+    :cond_1e
+    :goto_15
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->messagesPlayAnimationView:Landroid/widget/FrameLayout;
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_22
 
     .line 3954
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1f
 
     move v1, v6
 
-    goto :goto_15
+    goto :goto_16
 
-    :cond_1e
+    :cond_1f
     move v1, v8
 
     .line 3955
-    :goto_15
+    :goto_16
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->messagesPlayAnimationView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v7}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    if-eq v1, v6, :cond_21
+    if-eq v1, v6, :cond_22
 
     .line 3958
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->messagesPlayAnimationView:Landroid/widget/FrameLayout;
@@ -14345,13 +14358,13 @@
     .line 3960
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->messagesPlayViewAnimator:Landroid/animation/AnimatorSet;
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_20
 
     .line 3961
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    :cond_1f
-    if-eqz p1, :cond_20
+    :cond_20
+    if-eqz p1, :cond_21
 
     .line 3964
     new-instance v1, Landroid/animation/AnimatorSet;
@@ -14489,10 +14502,10 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    goto :goto_16
+    goto :goto_17
 
     .line 3984
-    :cond_20
+    :cond_21
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity;->messagesPlayAnimationView:Landroid/widget/FrameLayout;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -14537,8 +14550,8 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationX(F)V
 
-    :cond_21
-    :goto_16
+    :cond_22
+    :goto_17
     return-void
 .end method
 

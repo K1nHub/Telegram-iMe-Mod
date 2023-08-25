@@ -140,7 +140,7 @@
     :cond_0
     move v0, v1
 
-    .line 150
+    .line 155
     :cond_1
     :goto_0
     invoke-interface {p0, v0}, Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;->onCameraMoveStarted(I)V
@@ -151,7 +151,7 @@
 .method private synthetic lambda$setOnMarkerClickListener$1(Lorg/telegram/messenger/IMapsProvider$OnMarkerClickListener;Lcom/google/android/gms/maps/model/Marker;)Z
     .locals 2
 
-    .line 204
+    .line 214
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->implToAbsMarkerMap:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -162,19 +162,19 @@
 
     if-nez v0, :cond_0
 
-    .line 206
+    .line 216
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, p2, v1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Marker;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
 
-    .line 207
+    .line 217
     iget-object v1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->implToAbsMarkerMap:Ljava/util/Map;
 
     invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 209
+    .line 219
     :cond_0
     invoke-interface {p1, v0}, Lorg/telegram/messenger/IMapsProvider$OnMarkerClickListener;->onClick(Lorg/telegram/messenger/IMapsProvider$IMarker;)Z
 
@@ -188,7 +188,7 @@
 .method public addCircle(Lorg/telegram/messenger/IMapsProvider$ICircleOptions;)Lorg/telegram/messenger/IMapsProvider$ICircle;
     .locals 2
 
-    .line 190
+    .line 200
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     check-cast p1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCircleOptions;
@@ -201,14 +201,14 @@
 
     move-result-object p1
 
-    .line 191
+    .line 201
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, p1, v1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Circle;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
 
-    .line 192
+    .line 202
     iget-object v1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->implToAbsCircleMap:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -219,7 +219,7 @@
 .method public addMarker(Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;)Lorg/telegram/messenger/IMapsProvider$IMarker;
     .locals 2
 
-    .line 182
+    .line 192
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     check-cast p1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;
@@ -232,14 +232,14 @@
 
     move-result-object p1
 
-    .line 183
+    .line 193
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, p1, v1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleMarker;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Marker;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
 
-    .line 184
+    .line 194
     iget-object v1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->implToAbsMarkerMap:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -250,7 +250,7 @@
 .method public animateCamera(Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;)V
     .locals 1
 
-    .line 220
+    .line 230
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     check-cast p1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;
@@ -267,7 +267,7 @@
 .method public animateCamera(Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;ILorg/telegram/messenger/IMapsProvider$ICancelableCallback;)V
     .locals 2
 
-    .line 240
+    .line 250
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     check-cast p1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;
@@ -298,7 +298,7 @@
 .method public animateCamera(Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;Lorg/telegram/messenger/IMapsProvider$ICancelableCallback;)V
     .locals 2
 
-    .line 225
+    .line 235
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     check-cast p1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;
@@ -329,14 +329,14 @@
 .method public getCameraPosition()Lorg/telegram/messenger/IMapsProvider$CameraPosition;
     .locals 8
 
-    .line 156
+    .line 166
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/GoogleMap;->getCameraPosition()Lcom/google/android/gms/maps/model/CameraPosition;
 
     move-result-object v0
 
-    .line 157
+    .line 167
     new-instance v1, Lorg/telegram/messenger/IMapsProvider$CameraPosition;
 
     new-instance v2, Lorg/telegram/messenger/IMapsProvider$LatLng;
@@ -369,10 +369,23 @@
     return v0
 .end method
 
+.method public getMinZoomLevel()F
+    .locals 1
+
+    .line 125
+    iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/maps/GoogleMap;->getMinZoomLevel()F
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getProjection()Lorg/telegram/messenger/IMapsProvider$IProjection;
     .locals 3
 
-    .line 167
+    .line 177
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleProjection;
 
     iget-object v1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
@@ -391,7 +404,7 @@
 .method public getUiSettings()Lorg/telegram/messenger/IMapsProvider$IUISettings;
     .locals 3
 
-    .line 131
+    .line 136
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleUISettings;
 
     iget-object v1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
@@ -410,7 +423,7 @@
 .method public moveCamera(Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;)V
     .locals 1
 
-    .line 255
+    .line 265
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     check-cast p1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;
@@ -427,7 +440,7 @@
 .method public setMapStyle(Lorg/telegram/messenger/IMapsProvider$IMapStyleOptions;)V
     .locals 1
 
-    .line 177
+    .line 187
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     if-nez p1, :cond_0
@@ -495,7 +508,7 @@
 .method public setMyLocationEnabled(Z)V
     .locals 1
 
-    .line 126
+    .line 131
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/GoogleMap;->setMyLocationEnabled(Z)V
@@ -503,10 +516,10 @@
     return-void
 .end method
 
-.method public setOnCameraMoveListener(Ljava/lang/Runnable;)V
+.method public setOnCameraIdleListener(Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 215
+    .line 161
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -514,6 +527,23 @@
     new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda0;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->setOnCameraIdleListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraIdleListener;)V
+
+    return-void
+.end method
+
+.method public setOnCameraMoveListener(Ljava/lang/Runnable;)V
+    .locals 2
+
+    .line 225
+    iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
+
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->setOnCameraMoveListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveListener;)V
 
@@ -523,12 +553,12 @@
 .method public setOnCameraMoveStartedListener(Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;)V
     .locals 2
 
-    .line 136
+    .line 141
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
-    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;
+    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;)V
+    invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->setOnCameraMoveStartedListener(Lcom/google/android/gms/maps/GoogleMap$OnCameraMoveStartedListener;)V
 
@@ -538,14 +568,14 @@
 .method public setOnMapLoadedCallback(Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 162
+    .line 172
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda2;
+    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda2;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda3;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->setOnMapLoadedCallback(Lcom/google/android/gms/maps/GoogleMap$OnMapLoadedCallback;)V
 
@@ -555,12 +585,12 @@
 .method public setOnMarkerClickListener(Lorg/telegram/messenger/IMapsProvider$OnMarkerClickListener;)V
     .locals 2
 
-    .line 203
+    .line 213
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
-    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda3;
+    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lorg/telegram/messenger/IMapsProvider$OnMarkerClickListener;)V
+    invoke-direct {v1, p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lorg/telegram/messenger/IMapsProvider$OnMarkerClickListener;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->setOnMarkerClickListener(Lcom/google/android/gms/maps/GoogleMap$OnMarkerClickListener;)V
 
@@ -578,14 +608,14 @@
         }
     .end annotation
 
-    .line 198
+    .line 208
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda4;
+    new-instance v1, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda5;
 
-    invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda4;-><init>(Landroidx/core/util/Consumer;)V
+    invoke-direct {v1, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$$ExternalSyntheticLambda5;-><init>(Landroidx/core/util/Consumer;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/gms/maps/GoogleMap;->setOnMyLocationChangeListener(Lcom/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener;)V
 
@@ -595,7 +625,7 @@
 .method public setPadding(IIII)V
     .locals 1
 
-    .line 172
+    .line 182
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->googleMap:Lcom/google/android/gms/maps/GoogleMap;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/android/gms/maps/GoogleMap;->setPadding(IIII)V

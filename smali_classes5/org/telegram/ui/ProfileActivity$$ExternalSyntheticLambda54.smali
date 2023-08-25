@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
@@ -22,14 +22,14 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda54;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$m5ThFS9NZm07vr1Z6kw3cJzFeKo(Lorg/telegram/ui/ProfileActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$Foe2RYYSeEbOlFwraCaUEdWnVvo(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$InputStickerSet;)V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

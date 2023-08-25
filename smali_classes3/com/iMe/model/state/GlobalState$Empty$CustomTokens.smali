@@ -34,13 +34,13 @@
 .method private constructor <init>()V
     .locals 6
 
-    .line 113
+    .line 120
     sget v2, Lorg/telegram/messenger/R$raw;->fork_catalog_empty:I
 
-    .line 114
+    .line 121
     sget v3, Lorg/telegram/messenger/R$string;->wallet_custom_tokens_empty_title:I
 
-    .line 115
+    .line 122
     sget v4, Lorg/telegram/messenger/R$string;->wallet_custom_tokens_empty_description:I
 
     const-string v1, "empty_custom_tokens_state"
@@ -49,7 +49,7 @@
 
     move-object v0, p0
 
-    .line 111
+    .line 118
     invoke-direct/range {v0 .. v5}, Lcom/iMe/model/state/GlobalState$Empty;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

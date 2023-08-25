@@ -443,6 +443,16 @@
     return-object p0
 .end method
 
+.method public static bridge synthetic toBigDecimalOrNull(Ljava/lang/String;)Ljava/math/BigDecimal;
+    .locals 0
+
+    invoke-static {p0}, Lkotlin/text/StringsKt__StringNumberConversionsJVMKt;->toBigDecimalOrNull(Ljava/lang/String;)Ljava/math/BigDecimal;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge synthetic toBigIntegerOrNull(Ljava/lang/String;)Ljava/math/BigInteger;
     .locals 0
 

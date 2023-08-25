@@ -6,16 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage$BooleanCallback;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$0:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     return-void
 .end method
@@ -23,11 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$0:Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$NZ9_MN6vWwbsdnp7Rlc1eL8_3nA(Lorg/telegram/messenger/MessagesStorage$BooleanCallback;)V
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$1:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda237;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$GkzMlrFFoaUCTG8_TLjVTQHJxQs(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
 
     return-void
 .end method

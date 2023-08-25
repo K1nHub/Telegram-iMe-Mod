@@ -29,7 +29,7 @@
 
 .field private backProgress:F
 
-.field currentPosition:I
+.field public currentPosition:I
 
 .field private manualScrolling:Landroid/animation/ValueAnimator;
 

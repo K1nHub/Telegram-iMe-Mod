@@ -66,7 +66,7 @@
         }
     .end annotation
 
-    const-string p1, "no service config"
+    const-string/jumbo p1, "no service config"
 
     .line 56
     invoke-static {p1}, Lio/grpc/NameResolver$ConfigOrError;->fromConfig(Ljava/lang/Object;)Lio/grpc/NameResolver$ConfigOrError;

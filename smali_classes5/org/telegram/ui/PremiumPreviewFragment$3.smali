@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment;)V
     .locals 0
 
-    .line 531
+    .line 574
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,12 +35,12 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 2
 
-    .line 535
+    .line 578
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
     if-nez p2, :cond_2
 
-    .line 537
+    .line 580
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1800(Lorg/telegram/ui/PremiumPreviewFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -59,7 +59,7 @@
 
     add-int/2addr p1, p2
 
-    .line 538
+    .line 581
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget v0, p2, Lorg/telegram/ui/PremiumPreviewFragment;->totalProgress:F
@@ -72,7 +72,7 @@
 
     if-lez v0, :cond_0
 
-    .line 539
+    .line 582
     iget-object v0, p2, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$900(Lorg/telegram/ui/PremiumPreviewFragment;)I
@@ -88,7 +88,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 542
+    .line 585
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -97,7 +97,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 543
+    .line 586
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -113,14 +113,14 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 545
+    .line 588
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result p2
 
     if-gez p2, :cond_2
 
-    .line 546
+    .line 589
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -131,7 +131,7 @@
 
     invoke-virtual {p2, v1, p1}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
 
-    .line 550
+    .line 593
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -144,10 +144,10 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 555
+    .line 598
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 556
+    .line 599
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$2000(Lorg/telegram/ui/PremiumPreviewFragment;)Landroid/widget/FrameLayout;
@@ -156,7 +156,7 @@
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 557
+    .line 600
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$3;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1900(Lorg/telegram/ui/PremiumPreviewFragment;)V

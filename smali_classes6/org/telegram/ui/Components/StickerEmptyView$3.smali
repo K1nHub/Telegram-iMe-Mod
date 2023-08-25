@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/StickerEmptyView$3;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/widget/FrameLayout;
 .source "StickerEmptyView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/StickerEmptyView;->setVisibility(I)V
+    value = Lorg/telegram/ui/Components/StickerEmptyView;->createButtonLayout(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,35 +14,29 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/StickerEmptyView;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/StickerEmptyView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/StickerEmptyView;Landroid/content/Context;)V
     .locals 0
 
-    .line 172
-    iput-object p1, p0, Lorg/telegram/ui/Components/StickerEmptyView$3;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 145
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 175
-    iget-object p1, p0, Lorg/telegram/ui/Components/StickerEmptyView$3;->this$0:Lorg/telegram/ui/Components/StickerEmptyView;
+    .line 148
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
-    iget-object p1, p1, Lorg/telegram/ui/Components/StickerEmptyView;->progressView:Landroid/view/View;
+    move-result-object p1
 
-    const/16 v0, 0x8
+    const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-interface {p1, v0}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    return-void
+    return v0
 .end method

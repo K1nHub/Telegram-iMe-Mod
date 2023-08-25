@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n129#2,5:553\n129#2,5:558\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n*L\n383#1:553,5\n384#1:558,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n129#2,5:864\n129#2,5:869\n129#2,5:874\n129#2,5:879\n129#2,5:884\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n*L\n548#1:864,5\n549#1:869,5\n550#1:874,5\n551#1:879,5\n552#1:884,5\n*E\n"
 .end annotation
 
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,10 +85,10 @@
 
     move-result-object p2
 
-    .line 383
-    move-object v2, p2
+    .line 548
+    move-object v3, p2
 
-    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    check-cast v3, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
@@ -101,13 +101,13 @@
 
     move-result-object p2
 
-    .line 383
+    .line 549
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -117,10 +117,10 @@
 
     move-result-object p2
 
-    .line 383
-    move-object v5, p2
+    .line 550
+    move-object v2, p2
 
-    check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
@@ -133,13 +133,13 @@
 
     move-result-object p2
 
-    .line 384
+    .line 551
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -149,12 +149,12 @@
 
     move-result-object p1
 
-    .line 384
-    move-object v3, p1
+    .line 552
+    move-object v5, p1
 
-    check-cast v3, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 382
+    .line 547
     new-instance p1, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;
 
     move-object v1, p1
@@ -167,7 +167,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 381
+    .line 546
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

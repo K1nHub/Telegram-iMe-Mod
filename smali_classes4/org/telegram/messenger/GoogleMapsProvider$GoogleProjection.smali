@@ -25,10 +25,10 @@
 .method private constructor <init>(Lcom/google/android/gms/maps/Projection;)V
     .locals 0
 
-    .line 351
+    .line 361
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 352
+    .line 362
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleProjection;->projection:Lcom/google/android/gms/maps/Projection;
 
     return-void
@@ -37,7 +37,7 @@
 .method synthetic constructor <init>(Lcom/google/android/gms/maps/Projection;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 348
+    .line 358
     invoke-direct {p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleProjection;-><init>(Lcom/google/android/gms/maps/Projection;)V
 
     return-void
@@ -48,7 +48,7 @@
 .method public toScreenLocation(Lorg/telegram/messenger/IMapsProvider$LatLng;)Landroid/graphics/Point;
     .locals 6
 
-    .line 357
+    .line 367
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleProjection;->projection:Lcom/google/android/gms/maps/Projection;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;

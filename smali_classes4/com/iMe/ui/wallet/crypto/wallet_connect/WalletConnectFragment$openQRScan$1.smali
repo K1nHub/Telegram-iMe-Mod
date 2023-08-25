@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$openQRScan$1;->this$0:Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;
 
-    .line 263
+    .line 328
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 265
+    .line 330
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$openQRScan$1;->this$0:Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;->access$getPresenter(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;)Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
     .locals 0
 
-    .line 589
+    .line 592
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->val$keyboardFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -39,7 +39,7 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 605
+    .line 608
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2200(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -70,7 +70,7 @@
 
     invoke-virtual {p1, p4, p4, p2, p3}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 606
+    .line 609
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1900(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/view/View;
@@ -99,7 +99,7 @@
 
     invoke-virtual {p1, p4, p4, p2, p3}, Landroid/view/View;->layout(IIII)V
 
-    .line 607
+    .line 610
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->val$keyboardFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -120,17 +120,17 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 593
+    .line 596
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 594
+    .line 597
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 596
+    .line 599
     iget-object v1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -145,7 +145,7 @@
 
     invoke-virtual {v1, v3, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 597
+    .line 600
     iget-object v1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1900(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/view/View;
@@ -180,7 +180,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/view/View;->measure(II)V
 
-    .line 598
+    .line 601
     iget-object v1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;->val$keyboardFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {p1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -189,7 +189,7 @@
 
     invoke-virtual {v1, v2, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 600
+    .line 603
     invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 
     return-void

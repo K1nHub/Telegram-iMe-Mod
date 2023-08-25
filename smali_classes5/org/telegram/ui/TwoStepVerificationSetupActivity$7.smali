@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 611
+    .line 614
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
@@ -39,10 +39,10 @@
 
     new-array p1, p1, [I
 
-    .line 613
+    .line 616
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->location:[I
 
-    .line 614
+    .line 617
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -51,7 +51,7 @@
 
     const/4 p1, 0x1
 
-    .line 615
+    .line 618
     iput-boolean p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->isLayoutDirty:Z
 
     return-void
@@ -64,10 +64,10 @@
 
     const/4 v0, 0x0
 
-    .line 703
+    .line 706
     iput-boolean v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->isLayoutDirty:Z
 
-    .line 704
+    .line 707
     invoke-super/range {p0 .. p5}, Landroid/widget/ScrollView;->onLayout(ZIIII)V
 
     return-void
@@ -76,10 +76,10 @@
 .method protected onScrollChanged(IIII)V
     .locals 7
 
-    .line 620
+    .line 623
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ScrollView;->onScrollChanged(IIII)V
 
-    .line 622
+    .line 625
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/widget/TextView;
@@ -90,7 +90,7 @@
 
     return-void
 
-    .line 625
+    .line 628
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -102,7 +102,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->getLocationOnScreen([I)V
 
-    .line 626
+    .line 629
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->location:[I
 
     const/4 p2, 0x1
@@ -142,7 +142,7 @@
     :cond_1
     move p1, p4
 
-    .line 627
+    .line 630
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -166,7 +166,7 @@
     :goto_1
     if-eq p1, p3, :cond_7
 
-    .line 629
+    .line 632
     iget-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$700(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/widget/TextView;
@@ -189,7 +189,7 @@
     :goto_2
     invoke-virtual {p3, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 630
+    .line 633
     iget-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -198,7 +198,7 @@
 
     if-eqz p3, :cond_4
 
-    .line 631
+    .line 634
     iget-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -207,12 +207,12 @@
 
     invoke-virtual {p3}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 632
+    .line 635
     iget-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p3, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2402(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 634
+    .line 637
     :cond_4
     iget-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -222,7 +222,7 @@
 
     invoke-static {p3, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2402(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 635
+    .line 638
     iget-object p3, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -235,7 +235,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
-    .line 636
+    .line 639
     invoke-static {v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$1900(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/view/View;
 
     move-result-object v1
@@ -268,7 +268,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
-    .line 637
+    .line 640
     invoke-static {v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2500(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v1
@@ -297,10 +297,10 @@
 
     aput-object p1, v0, p2
 
-    .line 635
+    .line 638
     invoke-virtual {p3, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 639
+    .line 642
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -311,7 +311,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 640
+    .line 643
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -324,7 +324,7 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 648
+    .line 651
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2400(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/animation/AnimatorSet;
@@ -340,7 +340,7 @@
 .method public requestChildFocus(Landroid/view/View;Landroid/view/View;)V
     .locals 2
 
-    .line 672
+    .line 675
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
@@ -349,15 +349,15 @@
 
     if-eqz p2, :cond_0
 
-    .line 673
+    .line 676
     iget-boolean v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->isLayoutDirty:Z
 
     if-nez v0, :cond_0
 
-    .line 674
+    .line 677
     invoke-virtual {p0, p2}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->scrollToDescendant(Landroid/view/View;)V
 
-    .line 677
+    .line 680
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/widget/ScrollView;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
@@ -367,14 +367,14 @@
 .method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
     .locals 3
 
-    .line 682
+    .line 685
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-ge v0, v1, :cond_0
 
-    .line 684
+    .line 687
     iget v0, p2, Landroid/graphics/Rect;->bottom:I
 
     const/16 v1, 0x78
@@ -387,12 +387,12 @@
 
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
-    .line 686
+    .line 689
     iget v1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->scrollingUp:I
 
     if-eqz v1, :cond_0
 
-    .line 687
+    .line 690
     iget v2, p2, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v2, v1
@@ -401,15 +401,15 @@
 
     sub-int/2addr v0, v1
 
-    .line 688
+    .line 691
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
     const/4 v0, 0x0
 
-    .line 689
+    .line 692
     iput v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->scrollingUp:I
 
-    .line 692
+    .line 695
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
 
@@ -423,10 +423,10 @@
 
     const/4 v0, 0x1
 
-    .line 697
+    .line 700
     iput-boolean v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->isLayoutDirty:Z
 
-    .line 698
+    .line 701
     invoke-super {p0}, Landroid/widget/ScrollView;->requestLayout()V
 
     return-void
@@ -435,17 +435,17 @@
 .method public scrollToDescendant(Landroid/view/View;)V
     .locals 3
 
-    .line 654
+    .line 657
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->tempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 655
+    .line 658
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->tempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/ScrollView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 657
+    .line 660
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->tempRect:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
@@ -460,7 +460,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 659
+    .line 662
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->tempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v0}, Landroid/widget/ScrollView;->computeScrollDeltaToGetChildRectOnScreen(Landroid/graphics/Rect;)I
@@ -471,7 +471,7 @@
 
     if-gez v0, :cond_0
 
-    .line 661
+    .line 664
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getMeasuredHeight()I
 
     move-result v2
@@ -490,14 +490,14 @@
 
     goto :goto_0
 
-    .line 663
+    .line 666
     :cond_0
     iput v1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;->scrollingUp:I
 
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 666
+    .line 669
     invoke-virtual {p0, v1, v0}, Landroid/widget/ScrollView;->smoothScrollBy(II)V
 
     :cond_1

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTokenType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenType$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,18:1\n1549#2:19\n1620#2,3:20\n*S KotlinDebug\n*F\n+ 1 TokenType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenType$Companion\n*L\n16#1:19\n16#1:20,3\n*E\n"
+    value = "SMAP\nTokenType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenType$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,17:1\n1549#2:18\n1620#2,3:19\n*S KotlinDebug\n*F\n+ 1 TokenType.kt\ncom/iMe/storage/domain/model/wallet/token/TokenType$Companion\n*L\n15#1:18\n15#1:19,3\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 14
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,7 +53,7 @@
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
-    .line 15
+    .line 14
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->CRYPTO:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
     const/4 v2, 0x0
@@ -88,7 +88,7 @@
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
-    .line 16
+    .line 15
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->CRYPTO:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
     const/4 v2, 0x0
@@ -135,7 +135,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
-    .line 16
+    .line 15
     invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->getCategory()I
 
     move-result v2

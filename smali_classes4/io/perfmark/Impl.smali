@@ -51,7 +51,7 @@
     :cond_0
     new-instance p1, Ljava/lang/AssertionError;
 
-    const-string v0, "nope"
+    const-string/jumbo v0, "nope"
 
     invoke-direct {p1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 

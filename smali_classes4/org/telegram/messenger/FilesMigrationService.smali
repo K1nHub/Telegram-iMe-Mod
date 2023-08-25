@@ -495,7 +495,7 @@
 
     move-result-object p1
 
-    const-string v0, "notification"
+    const-string/jumbo v0, "notification"
 
     .line 184
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;

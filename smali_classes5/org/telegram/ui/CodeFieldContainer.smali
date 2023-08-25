@@ -728,7 +728,7 @@
 
     const/4 v4, 0x1
 
-    invoke-virtual {v2, v4, v3}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v2, v4, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 173
     iget-object v2, p0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;

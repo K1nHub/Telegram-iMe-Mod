@@ -362,7 +362,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/ingestion/models/one/AppExtension;->setVer(Ljava/lang/String;)V
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     .line 165
     invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -517,7 +517,7 @@
 
     move-result-object v0
 
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-static {p1, v1, v0}, Lcom/microsoft/appcenter/ingestion/models/json/JSONUtils;->write(Lorg/json/JSONStringer;Ljava/lang/String;Ljava/lang/Object;)V
 

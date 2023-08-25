@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$$ExternalSyntheticLambda2;->f$2:Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
-    invoke-static {v0, v1, v2}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->$r8$lambda$5y9qhK1uf5CEM4bJgccGg4faFdk(Lcom/iMe/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+    invoke-static {v0, v1, v2}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->$r8$lambda$MIDVjoY9AyBy6owMQFOEkI3kWno(Lcom/iMe/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
 
     return-void
 .end method

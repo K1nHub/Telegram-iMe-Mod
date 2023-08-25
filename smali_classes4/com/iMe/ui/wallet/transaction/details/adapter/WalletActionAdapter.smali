@@ -54,7 +54,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 22
     sget v0, Lorg/telegram/messenger/R$id;->linear_root:I
 
     const/4 v1, 0x0
@@ -63,14 +63,14 @@
 
     move-result-object p1
 
-    .line 25
+    .line 23
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 26
+    .line 24
     sget v0, Lorg/telegram/messenger/R$id;->text_action:I
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -79,7 +79,7 @@
 
     move-result-object p1
 
-    .line 27
+    .line 25
     iget-object v2, p0, Lcom/iMe/ui/wallet/transaction/details/adapter/WalletActionAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-interface {p2, v2}, Lcom/iMe/model/wallet/ActionItem;->getTitle(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
@@ -90,14 +90,21 @@
 
     move-result-object p1
 
-    .line 29
-    instance-of v0, p2, Lcom/iMe/model/wallet/transaction/TransactionActionItem$OpenScan;
-
-    if-eqz v0, :cond_0
-
-    .line 30
+    .line 26
     sget v0, Lorg/telegram/messenger/R$id;->image_action:I
 
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
+
+    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 28
+    instance-of v2, p2, Lcom/iMe/model/wallet/transaction/TransactionActionItem$OpenScan;
+
+    if-eqz v2, :cond_0
+
+    .line 29
     check-cast p2, Lcom/iMe/model/wallet/transaction/TransactionActionItem$OpenScan;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/transaction/TransactionActionItem$OpenScan;->getIconUrl()Ljava/lang/String;
@@ -110,22 +117,13 @@
 
     goto :goto_0
 
-    .line 32
+    .line 31
     :cond_0
-    sget v0, Lorg/telegram/messenger/R$id;->image_action:I
-
     invoke-interface {p2}, Lcom/iMe/model/wallet/ActionItem;->getIcon()I
 
     move-result p2
 
     invoke-virtual {p1, v0, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setImageResource(II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
-
-    move-result-object p1
-
-    .line 33
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
-
-    invoke-static {p1, v0, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     :goto_0
     return-void

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
     .locals 0
 
-    .line 188
+    .line 213
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$5;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,12 +35,12 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 191
+    .line 216
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$5;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onScroll()V
 
-    .line 192
+    .line 217
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$5;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

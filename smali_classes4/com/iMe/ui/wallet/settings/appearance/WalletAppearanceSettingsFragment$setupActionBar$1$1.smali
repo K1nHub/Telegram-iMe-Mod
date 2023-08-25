@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
 
-    .line 69
+    .line 98
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 72
+    .line 101
     iget-object p1, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$setupActionBar$1$1;->this$0:Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

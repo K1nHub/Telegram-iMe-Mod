@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Throwable;
 
-    invoke-static {v0, p1}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$K9Y0VxUENVIwtf2vL2oNPheuXm4(Lio/reactivex/CompletableEmitter;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$zbLaGmF52oTVR9cjovdv_XKBL1Y(Lio/reactivex/CompletableEmitter;Ljava/lang/Throwable;)V
 
     return-void
 .end method

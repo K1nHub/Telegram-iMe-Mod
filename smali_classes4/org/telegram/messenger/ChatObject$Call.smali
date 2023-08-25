@@ -1045,7 +1045,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "new participants reload count "
+    const-string/jumbo v1, "new participants reload count "
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2261,7 +2261,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p4, "new participants count "
+    const-string/jumbo p4, "new participants count "
 
     invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4733,7 +4733,7 @@
 
     if-eqz v6, :cond_18
 
-    const-string v6, "new participant, update old"
+    const-string/jumbo v6, "new participant, update old"
 
     .line 1089
     invoke-static {v6}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -4768,7 +4768,7 @@
 
     cmp-long v6, v3, v16
 
-    const-string v13, "muted remove from speaking "
+    const-string/jumbo v13, "muted remove from speaking "
 
     if-lez v6, :cond_1a
 
@@ -5151,7 +5151,7 @@
 
     if-eqz v2, :cond_27
 
-    const-string v2, "new participant, just joined, reload call"
+    const-string/jumbo v2, "new participant, just joined, reload call"
 
     .line 1147
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -5167,7 +5167,7 @@
 
     if-eqz v2, :cond_29
 
-    const-string v2, "new participant, just joined"
+    const-string/jumbo v2, "new participant, just joined"
 
     .line 1151
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -5366,7 +5366,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "new participants count after update "
+    const-string/jumbo v2, "new participants count after update "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

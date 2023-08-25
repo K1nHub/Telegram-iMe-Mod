@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/fork/enums/ChatProfileTelegramIdMode$Companion;
+        Lcom/iMe/fork/enums/ChatProfileTelegramIdMode$Companion;,
+        Lcom/iMe/fork/enums/ChatProfileTelegramIdMode$WhenMappings;
     }
 .end annotation
 
@@ -26,18 +27,16 @@
 
 .field public static final Companion:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode$Companion;
 
+.field public static final enum DISABLED:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
+
 .field public static final enum TELEGRAM_API:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
-
-
-# instance fields
-.field private final textResId:I
 
 
 # direct methods
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
     .locals 3
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
 
@@ -53,37 +52,50 @@
 
     aput-object v1, v0, v2
 
+    sget-object v1, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->DISABLED:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
     return-object v0
 .end method
 
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     .line 7
     new-instance v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
 
-    sget v1, Lorg/telegram/messenger/R$string;->settings_tools_chat_profile_id_telegram_telegram_api:I
+    const-string v1, "TELEGRAM_API"
 
-    const-string v2, "TELEGRAM_API"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->TELEGRAM_API:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
 
     .line 8
     new-instance v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
 
-    sget v1, Lorg/telegram/messenger/R$string;->settings_tools_chat_profile_id_telegram_bot_api:I
+    const-string v1, "BOT_API"
 
-    const-string v2, "BOT_API"
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->BOT_API:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
+
+    .line 9
+    new-instance v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
+
+    const-string v1, "DISABLED"
+
+    const/4 v2, 0x2
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->DISABLED:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
 
     invoke-static {}, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->$values()[Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
 
@@ -102,18 +114,16 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)V"
+            "()V"
         }
     .end annotation
 
     .line 6
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->textResId:I
 
     return-void
 .end method
@@ -172,11 +182,66 @@
 
 
 # virtual methods
-.method public final getTextResId()I
-    .locals 1
+.method public final getTitle()Ljava/lang/String;
+    .locals 2
 
-    .line 6
-    iget v0, p0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->textResId:I
+    .line 11
+    sget-object v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode$WhenMappings;->$EnumSwitchMapping$0:[I
 
-    return v0
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    .line 14
+    sget v0, Lorg/telegram/messenger/R$string;->Disable:I
+
+    const-string v1, "Disable"
+
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    .line 13
+    :cond_1
+    sget v0, Lorg/telegram/messenger/R$string;->settings_tools_chat_profile_id_telegram_bot_api:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 12
+    :cond_2
+    sget v0, Lorg/telegram/messenger/R$string;->settings_tools_chat_profile_id_telegram_telegram_api:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
 .end method

@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 31
+    .line 30
     invoke-virtual {p0}, Lcom/iMe/ui/custom/state/GlobalStateLayout$emptyButtonClickListener$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

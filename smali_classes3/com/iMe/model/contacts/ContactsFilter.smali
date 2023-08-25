@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/iMe/model/contacts/ContactsFilter$Companion;
+        Lcom/iMe/model/contacts/ContactsFilter$Companion;,
+        Lcom/iMe/model/contacts/ContactsFilter$WhenMappings;
     }
 .end annotation
 
@@ -34,20 +35,20 @@
 
 .field public static final enum ONLINE:Lcom/iMe/model/contacts/ContactsFilter;
 
+.field public static final enum PREMIUM:Lcom/iMe/model/contacts/ContactsFilter;
+
 
 # instance fields
 .field private final icon:I
 
 .field private final needShowDelete:Z
 
-.field private final title:I
-
 
 # direct methods
 .method private static final synthetic $values()[Lcom/iMe/model/contacts/ContactsFilter;
     .locals 3
 
-    const/4 v0, 0x5
+    const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/iMe/model/contacts/ContactsFilter;
 
@@ -63,21 +64,27 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->PREMIUM:Lcom/iMe/model/contacts/ContactsFilter;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->NOT_MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->NOT_MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
 
     const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
+
+    const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
@@ -85,100 +92,83 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 13
-
-    .line 12
-    new-instance v6, Lcom/iMe/model/contacts/ContactsFilter;
-
-    sget v3, Lorg/telegram/messenger/R$string;->contacts_filter_all:I
-
-    sget v4, Lorg/telegram/messenger/R$drawable;->msg_contacts:I
-
-    const-string v1, "ALL"
-
-    const/4 v2, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcom/iMe/model/contacts/ContactsFilter;->ALL:Lcom/iMe/model/contacts/ContactsFilter;
+    .locals 6
 
     .line 13
     new-instance v0, Lcom/iMe/model/contacts/ContactsFilter;
 
-    sget v10, Lorg/telegram/messenger/R$string;->contacts_filter_online:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->msg_contacts:I
 
-    sget v11, Lorg/telegram/messenger/R$drawable;->fork_ic_online_26:I
+    const-string v2, "ALL"
 
-    const-string v8, "ONLINE"
+    const/4 v3, 0x0
 
-    const/4 v9, 0x1
+    invoke-direct {v0, v2, v3, v1, v3}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIZ)V
 
-    const/4 v12, 0x0
-
-    move-object v7, v0
-
-    invoke-direct/range {v7 .. v12}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->ONLINE:Lcom/iMe/model/contacts/ContactsFilter;
+    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->ALL:Lcom/iMe/model/contacts/ContactsFilter;
 
     .line 14
     new-instance v0, Lcom/iMe/model/contacts/ContactsFilter;
 
-    sget v4, Lorg/telegram/messenger/R$string;->contacts_filter_mutual:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_online_26:I
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->msg_groups:I
+    const-string v2, "ONLINE"
 
-    const-string v2, "MUTUAL"
+    const/4 v4, 0x1
 
-    const/4 v3, 0x2
+    invoke-direct {v0, v2, v4, v1, v3}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIZ)V
 
-    const/4 v6, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
+    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->ONLINE:Lcom/iMe/model/contacts/ContactsFilter;
 
     .line 15
     new-instance v0, Lcom/iMe/model/contacts/ContactsFilter;
 
-    sget v10, Lorg/telegram/messenger/R$string;->contacts_filter_not_mutual:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->photo_star:I
 
-    sget v11, Lorg/telegram/messenger/R$drawable;->fork_ic_unmutal_users_28:I
+    const-string v2, "PREMIUM"
 
-    const-string v8, "NOT_MUTUAL"
+    const/4 v5, 0x2
 
-    const/4 v9, 0x3
+    invoke-direct {v0, v2, v5, v1, v3}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIZ)V
 
-    const/4 v12, 0x1
-
-    move-object v7, v0
-
-    invoke-direct/range {v7 .. v12}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->NOT_MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
+    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->PREMIUM:Lcom/iMe/model/contacts/ContactsFilter;
 
     .line 16
     new-instance v0, Lcom/iMe/model/contacts/ContactsFilter;
 
-    sget v4, Lorg/telegram/messenger/R$string;->contacts_filter_blocked:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->msg_groups:I
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->msg_block:I
+    const-string v2, "MUTUAL"
 
-    const-string v2, "BLOCKED"
+    const/4 v5, 0x3
+
+    invoke-direct {v0, v2, v5, v1, v3}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIZ)V
+
+    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
+
+    .line 17
+    new-instance v0, Lcom/iMe/model/contacts/ContactsFilter;
+
+    sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_unmutal_users_28:I
+
+    const-string v2, "NOT_MUTUAL"
 
     const/4 v3, 0x4
 
-    const/4 v6, 0x1
+    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIZ)V
 
-    move-object v1, v0
+    sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->NOT_MUTUAL:Lcom/iMe/model/contacts/ContactsFilter;
 
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIIZ)V
+    .line 18
+    new-instance v0, Lcom/iMe/model/contacts/ContactsFilter;
+
+    sget v1, Lorg/telegram/messenger/R$drawable;->msg_block:I
+
+    const-string v2, "BLOCKED"
+
+    const/4 v3, 0x5
+
+    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/contacts/ContactsFilter;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
 
@@ -199,25 +189,22 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IIIZ)V
+.method private constructor <init>(Ljava/lang/String;IIZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(IIZ)V"
+            "(IZ)V"
         }
     .end annotation
 
-    .line 7
+    .line 9
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 8
-    iput p3, p0, Lcom/iMe/model/contacts/ContactsFilter;->title:I
-
-    .line 9
-    iput p4, p0, Lcom/iMe/model/contacts/ContactsFilter;->icon:I
-
     .line 10
-    iput-boolean p5, p0, Lcom/iMe/model/contacts/ContactsFilter;->needShowDelete:Z
+    iput p3, p0, Lcom/iMe/model/contacts/ContactsFilter;->icon:I
+
+    .line 11
+    iput-boolean p4, p0, Lcom/iMe/model/contacts/ContactsFilter;->needShowDelete:Z
 
     return-void
 .end method
@@ -255,7 +242,7 @@
 .method public final getIcon()I
     .locals 1
 
-    .line 9
+    .line 10
     iget v0, p0, Lcom/iMe/model/contacts/ContactsFilter;->icon:I
 
     return v0
@@ -264,17 +251,128 @@
 .method public final getNeedShowDelete()Z
     .locals 1
 
-    .line 10
+    .line 11
     iget-boolean v0, p0, Lcom/iMe/model/contacts/ContactsFilter;->needShowDelete:Z
 
     return v0
 .end method
 
-.method public final getTitle()I
-    .locals 1
+.method public final getTitle()Ljava/lang/String;
+    .locals 2
 
-    .line 8
-    iget v0, p0, Lcom/iMe/model/contacts/ContactsFilter;->title:I
+    .line 20
+    sget-object v0, Lcom/iMe/model/contacts/ContactsFilter$WhenMappings;->$EnumSwitchMapping$0:[I
 
-    return v0
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 26
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :pswitch_0
+    sget v0, Lorg/telegram/messenger/R$string;->contacts_filter_blocked:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getInternalString(R.stri\u2026.contacts_filter_blocked)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 25
+    :pswitch_1
+    sget v0, Lorg/telegram/messenger/R$string;->contacts_filter_not_mutual:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getInternalString(R.stri\u2026ntacts_filter_not_mutual)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 24
+    :pswitch_2
+    sget v0, Lorg/telegram/messenger/R$string;->contacts_filter_mutual:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getInternalString(R.string.contacts_filter_mutual)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 23
+    :pswitch_3
+    sget v0, Lorg/telegram/messenger/R$string;->LimitPremium:I
+
+    const-string v1, "LimitPremium"
+
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getString(\"LimitPremium\",R.string.LimitPremium)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 22
+    :pswitch_4
+    sget v0, Lorg/telegram/messenger/R$string;->contacts_filter_online:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getInternalString(R.string.contacts_filter_online)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 21
+    :pswitch_5
+    sget v0, Lorg/telegram/messenger/R$string;->contacts_filter_all:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getInternalString(R.string.contacts_filter_all)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_0
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

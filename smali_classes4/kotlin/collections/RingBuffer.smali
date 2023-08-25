@@ -486,7 +486,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "n shouldn\'t be greater than the buffer size: n = "
+    const-string/jumbo v1, "n shouldn\'t be greater than the buffer size: n = "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -522,7 +522,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "n shouldn\'t be negative but it is "
+    const-string/jumbo v1, "n shouldn\'t be negative but it is "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

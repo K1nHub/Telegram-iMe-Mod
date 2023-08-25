@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda9;->f$1:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    invoke-static {v0, v1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->$r8$lambda$LHqzblshzG1QJqefB0MODnfQDa4(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
+    invoke-static {v0, v1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->$r8$lambda$vb9rAZhKbkDk7pghF-FCl-mOkTA(Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lkotlin/Unit;
 
     move-result-object v0
 

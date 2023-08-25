@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;)V
     .locals 0
 
-    .line 1436
+    .line 1463
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,28 +35,28 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 1448
+    .line 1475
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1450
+    .line 1477
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 1451
+    .line 1478
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     move-result-object p1
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
+    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     move-result-object p2
 
@@ -68,7 +68,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     move-result-object v0
 
@@ -82,26 +82,26 @@
 
     invoke-virtual {p1, v1, v1, p2, v0}, Lorg/telegram/ui/Components/PhotoFilterCurvesControl;->setActualArea(FFFF)V
 
-    .line 1453
+    .line 1480
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 1454
+    .line 1481
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     move-result-object p1
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
+    invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     move-result-object p2
 
@@ -113,7 +113,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     move-result-object v0
 
@@ -132,19 +132,19 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 1439
+    .line 1466
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1440
+    .line 1467
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
     move-result-object v0
 
@@ -154,7 +154,7 @@
 
     return p1
 
-    .line 1443
+    .line 1470
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

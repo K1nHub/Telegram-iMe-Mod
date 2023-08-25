@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;)V
     .locals 0
 
-    .line 786
+    .line 791
     iput-object p1, p0, Lorg/telegram/messenger/NotificationCenter$1;->val$delegate:Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 2
 
-    .line 789
+    .line 794
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -55,7 +55,7 @@
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 2
 
-    .line 794
+    .line 799
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1

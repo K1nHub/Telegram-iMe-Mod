@@ -3433,7 +3433,7 @@
 
     const/high16 v9, 0x41a00000    # 20.0f
 
-    invoke-virtual {v8, v2, v9}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v8, v2, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 7507
     iget-object v8, v0, Lorg/telegram/ui/PassportActivity$PhoneConfirmationView;->codeField:[Lorg/telegram/ui/Components/EditTextBoldCursor;

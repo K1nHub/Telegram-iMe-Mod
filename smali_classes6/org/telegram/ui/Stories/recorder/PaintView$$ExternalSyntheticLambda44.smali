@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lorg/telegram/messenger/Utilities$Callback2;
 
 
 # instance fields
@@ -22,14 +22,16 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda44;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Document;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$CcGOJQPuR6vchGobJ3nUx5krEmo(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/tgnet/TLRPC$Document;)V
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$MediaArea;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$HN9fuBa3VDdUiO3h7N0KGR77WnQ(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$MediaArea;)V
 
     return-void
 .end method

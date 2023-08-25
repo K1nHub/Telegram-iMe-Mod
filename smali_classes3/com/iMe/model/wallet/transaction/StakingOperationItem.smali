@@ -277,7 +277,7 @@
 .method private final getSymbol()Ljava/lang/String;
     .locals 2
 
-    .line 69
+    .line 74
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     sget-object v1, Lcom/iMe/model/wallet/transaction/StakingOperationItem$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -306,7 +306,7 @@
 
     goto :goto_0
 
-    .line 72
+    .line 77
     :cond_0
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -640,7 +640,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 68
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     sget-object v1, Lcom/iMe/model/wallet/transaction/StakingOperationItem$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -655,7 +655,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 61
+    .line 69
     sget v0, Lorg/telegram/messenger/R$string;->wallet_transactions_type_approve_title:I
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -676,7 +676,7 @@
 
     goto :goto_0
 
-    .line 62
+    .line 70
     :cond_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -756,7 +756,7 @@
 .method public final getIcon()I
     .locals 2
 
-    .line 51
+    .line 57
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     sget-object v1, Lcom/iMe/model/wallet/transaction/StakingOperationItem$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -783,7 +783,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 55
+    .line 61
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_transaction_receive:I
 
     goto :goto_0
@@ -795,19 +795,19 @@
 
     throw v0
 
-    .line 54
+    .line 60
     :cond_1
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_transaction_staking_withdraw:I
 
     goto :goto_0
 
-    .line 53
+    .line 59
     :cond_2
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_transaction_sent:I
 
     goto :goto_0
 
-    .line 52
+    .line 58
     :cond_3
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_transaction_approve:I
 
@@ -843,15 +843,54 @@
 .end method
 
 .method public final getStatusColor()I
-    .locals 1
+    .locals 2
 
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->status:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/StakingOperationStatusExtKt;->getColorKey(Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;)I
+    sget-object v1, Lcom/iMe/model/wallet/transaction/StakingOperationItem$WhenMappings;->$EnumSwitchMapping$1:[I
+
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 
+    aget v0, v1, v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    .line 52
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    .line 51
+    :cond_1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_red:I
+
+    goto :goto_0
+
+    .line 50
+    :cond_2
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
+
+    :goto_0
     return v0
 .end method
 
@@ -897,7 +936,7 @@
 .method public final getTransactionTimeText()Ljava/lang/String;
     .locals 2
 
-    .line 58
+    .line 65
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->createdAt:Ljava/lang/String;
 
     sget-object v1, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ONLY_TIME:Lcom/iMe/utils/formatter/DateFormatter$DateType;
@@ -916,7 +955,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 35
+    .line 34
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->type:Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     sget-object v1, Lcom/iMe/model/wallet/transaction/StakingOperationItem$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -943,7 +982,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 42
+    .line 41
     sget v0, Lorg/telegram/messenger/R$string;->staking_operation_type_claim:I
 
     goto :goto_0
@@ -955,7 +994,7 @@
 
     throw p1
 
-    .line 39
+    .line 38
     :cond_1
     iget-boolean v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->safe:Z
 
@@ -965,23 +1004,23 @@
 
     goto :goto_0
 
-    .line 40
+    .line 39
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->staking_operation_type_immediate_withdrawal:I
 
     goto :goto_0
 
-    .line 37
+    .line 36
     :cond_3
     sget v0, Lorg/telegram/messenger/R$string;->staking_operation_type_deposit:I
 
     goto :goto_0
 
-    .line 36
+    .line 35
     :cond_4
     sget v0, Lorg/telegram/messenger/R$string;->staking_operation_type_approval:I
 
-    .line 34
+    .line 33
     :goto_0
     invoke-interface {p1, v0}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 

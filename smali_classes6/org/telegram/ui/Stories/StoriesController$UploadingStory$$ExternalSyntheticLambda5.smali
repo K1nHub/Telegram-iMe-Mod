@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->$r8$lambda$BLX9apc4-pd4TYu2mypm_VXF8Ik(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    check-cast p1, Lorg/telegram/messenger/VideoEditedInfo;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->$r8$lambda$W1yfJ_grUzbLJFnHB2Rm1FhuK70(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Lorg/telegram/messenger/VideoEditedInfo;)V
 
     return-void
 .end method

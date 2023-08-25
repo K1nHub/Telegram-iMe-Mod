@@ -42,7 +42,7 @@
 .method static nullIfNullOrEmpty(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "null"
+    const-string/jumbo v0, "null"
 
     .line 54
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

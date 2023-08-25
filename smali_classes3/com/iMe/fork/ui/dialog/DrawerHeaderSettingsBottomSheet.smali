@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDrawerHeaderSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\ncom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,251:1\n177#2,2:252\n1#3:254\n*S KotlinDebug\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\ncom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n*L\n148#1:252,2\n*E\n"
+    value = "SMAP\nDrawerHeaderSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\ncom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,254:1\n177#2,2:255\n1#3:257\n*S KotlinDebug\n*F\n+ 1 DrawerHeaderSettingsBottomSheet.kt\ncom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet\n*L\n154#1:255,2\n*E\n"
 .end annotation
 
 
@@ -83,10 +83,10 @@
 
     const/4 v0, 0x0
 
-    .line 31
+    .line 36
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
-    .line 34
+    .line 39
     sget-object v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$currentUser$2;->INSTANCE:Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$currentUser$2;
 
     invoke-static {v1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -95,7 +95,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->currentUser$delegate:Lkotlin/Lazy;
 
-    .line 35
+    .line 40
     sget-object v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$currentSettings$2;->INSTANCE:Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$currentSettings$2;
 
     invoke-static {v1}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -104,7 +104,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->currentSettings$delegate:Lkotlin/Lazy;
 
-    .line 36
+    .line 41
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$newSettings$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$newSettings$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -115,7 +115,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->newSettings$delegate:Lkotlin/Lazy;
 
-    .line 37
+    .line 42
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$rootView$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$rootView$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -126,7 +126,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->rootView$delegate:Lkotlin/Lazy;
 
-    .line 38
+    .line 43
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$dynamicOrientationContainer$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$dynamicOrientationContainer$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -137,7 +137,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->dynamicOrientationContainer$delegate:Lkotlin/Lazy;
 
-    .line 39
+    .line 44
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$previewView$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$previewView$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -148,7 +148,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->previewView$delegate:Lkotlin/Lazy;
 
-    .line 40
+    .line 45
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$listView$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$listView$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -159,7 +159,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->listView$delegate:Lkotlin/Lazy;
 
-    .line 41
+    .line 46
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$listAdapter$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$listAdapter$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -170,7 +170,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->listAdapter$delegate:Lkotlin/Lazy;
 
-    .line 42
+    .line 47
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$bottomButtonsContainer$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$bottomButtonsContainer$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -181,7 +181,7 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->bottomButtonsContainer$delegate:Lkotlin/Lazy;
 
-    .line 43
+    .line 48
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$saveButton$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$saveButton$2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -192,20 +192,20 @@
 
     iput-object v1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->saveButton$delegate:Lkotlin/Lazy;
 
-    .line 52
+    .line 57
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
 
-    .line 53
+    .line 58
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
-    .line 54
+    .line 59
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getRootView()Landroid/widget/LinearLayout;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
-    .line 55
+    .line 60
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -231,7 +231,7 @@
 .method public static final synthetic access$getArchiveRow$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->archiveRow:I
 
     return p0
@@ -240,7 +240,7 @@
 .method public static final synthetic access$getAvatarRow$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->avatarRow:I
 
     return p0
@@ -249,7 +249,7 @@
 .method public static final synthetic access$getCurrentSettings(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Lcom/iMe/fork/models/DrawerHeaderSettings;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getCurrentSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p0
@@ -260,7 +260,7 @@
 .method public static final synthetic access$getNewSettings(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Lcom/iMe/fork/models/DrawerHeaderSettings;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p0
@@ -271,7 +271,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->rowCount:I
 
     return p0
@@ -280,7 +280,7 @@
 .method public static final synthetic access$getTitleRow$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)I
     .locals 0
 
-    .line 31
+    .line 36
     iget p0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->titleRow:I
 
     return p0
@@ -289,7 +289,7 @@
 .method public static final synthetic access$initBottomButtonsContainer(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initBottomButtonsContainer()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -300,7 +300,7 @@
 .method public static final synthetic access$initDynamicOrientationContainer(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Landroid/widget/LinearLayout;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initDynamicOrientationContainer()Landroid/widget/LinearLayout;
 
     move-result-object p0
@@ -311,7 +311,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -322,7 +322,7 @@
 .method public static final synthetic access$initPreviewView(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Lorg/telegram/ui/Cells/DrawerProfileCell;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initPreviewView()Lorg/telegram/ui/Cells/DrawerProfileCell;
 
     move-result-object p0
@@ -333,7 +333,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Landroid/widget/LinearLayout;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initRootView()Landroid/widget/LinearLayout;
 
     move-result-object p0
@@ -344,7 +344,7 @@
 .method public static final synthetic access$initSaveButton(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Landroid/widget/TextView;
     .locals 0
 
-    .line 31
+    .line 36
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->initSaveButton()Landroid/widget/TextView;
 
     move-result-object p0
@@ -355,7 +355,7 @@
 .method public static final synthetic access$setArchiveRow$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->archiveRow:I
 
     return-void
@@ -364,7 +364,7 @@
 .method public static final synthetic access$setAvatarRow$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->avatarRow:I
 
     return-void
@@ -373,7 +373,7 @@
 .method public static final synthetic access$setRowCount$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->rowCount:I
 
     return-void
@@ -382,7 +382,7 @@
 .method public static final synthetic access$setSubtitleRow$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->subtitleRow:I
 
     return-void
@@ -391,7 +391,7 @@
 .method public static final synthetic access$setTitleRow$p(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;I)V
     .locals 0
 
-    .line 31
+    .line 36
     iput p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->titleRow:I
 
     return-void
@@ -400,7 +400,7 @@
 .method private final createBottomButton(Z)Landroid/widget/TextView;
     .locals 3
 
-    .line 157
+    .line 163
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -411,7 +411,7 @@
 
     const/16 v1, 0xa
 
-    .line 158
+    .line 164
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -420,12 +420,12 @@
 
     const/16 v1, 0x11
 
-    .line 159
+    .line 165
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 160
+    .line 166
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
@@ -434,7 +434,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 162
+    .line 168
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -445,7 +445,7 @@
 
     goto :goto_0
 
-    .line 164
+    .line 170
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->Save:I
 
@@ -458,10 +458,10 @@
     :goto_0
     const-string v2, "if (cancel) {\n          \u2026 R.string.Save)\n        }"
 
-    .line 161
+    .line 167
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 165
+    .line 171
     sget-object v2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -472,17 +472,17 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 161
+    .line 167
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 v1, 0x1
 
     const/high16 v2, 0x41600000    # 14.0f
 
-    .line 166
+    .line 172
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 167
+    .line 173
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -491,7 +491,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 168
+    .line 174
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p1, p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda0;-><init>(ZLcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)V
@@ -510,14 +510,14 @@
 
     if-nez p0, :cond_0
 
-    .line 170
+    .line 176
     invoke-direct {p1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p0
 
     invoke-static {p0}, Lorg/telegram/messenger/SharedConfig;->setDrawerHeaderSettings(Lcom/iMe/fork/models/DrawerHeaderSettings;)V
 
-    .line 171
+    .line 177
     iget p0, p1, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -532,7 +532,7 @@
 
     invoke-virtual {p0, p2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 173
+    .line 179
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
@@ -542,7 +542,7 @@
 .method private final getBottomButtonsContainer()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 42
+    .line 47
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->bottomButtonsContainer$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -557,7 +557,7 @@
 .method private final getCurrentSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
     .locals 1
 
-    .line 35
+    .line 40
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->currentSettings$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -572,7 +572,7 @@
 .method private final getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
     .locals 1
 
-    .line 34
+    .line 39
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->currentUser$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -587,7 +587,7 @@
 .method private final getDynamicOrientationContainer()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 38
+    .line 43
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->dynamicOrientationContainer$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -602,7 +602,7 @@
 .method private final getListAdapter()Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$ListAdapter;
     .locals 1
 
-    .line 41
+    .line 46
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->listAdapter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -617,7 +617,7 @@
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 40
+    .line 45
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->listView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -632,7 +632,7 @@
 .method private final getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
     .locals 1
 
-    .line 36
+    .line 41
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->newSettings$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -647,7 +647,7 @@
 .method private final getPreviewView()Lorg/telegram/ui/Cells/DrawerProfileCell;
     .locals 1
 
-    .line 39
+    .line 44
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->previewView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -662,7 +662,7 @@
 .method private final getRootView()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 37
+    .line 42
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->rootView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -677,7 +677,7 @@
 .method private final getSaveButton()Landroid/widget/TextView;
     .locals 1
 
-    .line 43
+    .line 48
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->saveButton$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -692,7 +692,7 @@
 .method private final initBottomButtonsContainer()Landroid/widget/FrameLayout;
     .locals 5
 
-    .line 147
+    .line 153
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -703,7 +703,7 @@
 
     const/16 v1, 0x8
 
-    .line 148
+    .line 154
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -713,7 +713,7 @@
 
     const/4 v1, 0x1
 
-    .line 149
+    .line 155
     invoke-direct {p0, v1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->createBottomButton(Z)Landroid/widget/TextView;
 
     move-result-object v1
@@ -730,7 +730,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 150
+    .line 156
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getSaveButton()Landroid/widget/TextView;
 
     move-result-object v1
@@ -749,7 +749,7 @@
 .method private final initDynamicOrientationContainer()Landroid/widget/LinearLayout;
     .locals 6
 
-    .line 90
+    .line 95
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -758,7 +758,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 91
+    .line 96
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getPreviewView()Lorg/telegram/ui/Cells/DrawerProfileCell;
 
     move-result-object v1
@@ -777,7 +777,7 @@
 
     invoke-virtual {v0, v1, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 92
+    .line 97
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v1
@@ -794,7 +794,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 99
+    .line 104
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -803,7 +803,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 100
+    .line 105
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -814,7 +814,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 101
+    .line 106
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getListAdapter()Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$ListAdapter;
 
     move-result-object v1
@@ -823,15 +823,15 @@
 
     const/4 v1, 0x2
 
-    .line 102
+    .line 107
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
     const/4 v1, 0x0
 
-    .line 103
+    .line 108
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 104
+    .line 109
     new-instance v1, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0, v0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Lorg/telegram/ui/Components/RecyclerListView;)V
@@ -852,14 +852,14 @@
 
     invoke-static {p1, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 111
     instance-of p5, p2, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
     const/4 v0, 0x1
 
     if-eqz p5, :cond_4
 
-    .line 107
+    .line 112
     iget p5, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->titleRow:I
 
     if-ne p3, p5, :cond_0
@@ -871,7 +871,7 @@
     :cond_0
     const/4 p5, 0x0
 
-    .line 108
+    .line 113
     :goto_0
     check-cast p2, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
@@ -881,7 +881,7 @@
 
     if-eqz p4, :cond_2
 
-    .line 109
+    .line 114
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->isChecked()Z
 
     move-result p1
@@ -892,7 +892,7 @@
 
     if-eqz p5, :cond_1
 
-    .line 111
+    .line 116
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p1
@@ -911,7 +911,7 @@
 
     goto :goto_1
 
-    .line 113
+    .line 118
     :cond_1
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
@@ -929,19 +929,19 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/models/DrawerHeaderSettings;->setShowSubtitle(Z)V
 
-    .line 115
+    .line 120
     :goto_1
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->updateUI()V
 
     return-void
 
-    .line 119
+    .line 124
     :cond_2
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    .line 121
+    .line 126
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p2
@@ -959,7 +959,7 @@
 
     move-result-object p2
 
-    .line 118
+    .line 123
     :goto_2
     new-instance p4, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda1;
 
@@ -969,31 +969,31 @@
 
     move-result-object p1
 
-    .line 132
+    .line 137
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 118
+    .line 123
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->accountDataSelector:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     goto :goto_4
 
-    .line 134
+    .line 140
     :cond_4
     instance-of p1, p2, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz p1, :cond_6
 
-    .line 135
+    .line 141
     check-cast p2, Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckBox()V
 
-    .line 136
+    .line 142
     iget p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->avatarRow:I
 
     if-ne p3, p1, :cond_5
 
-    .line 137
+    .line 143
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p1
@@ -1012,7 +1012,7 @@
 
     goto :goto_3
 
-    .line 139
+    .line 145
     :cond_5
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
@@ -1030,7 +1030,7 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/models/DrawerHeaderSettings;->setShowArchive(Z)V
 
-    .line 141
+    .line 147
     :goto_3
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->updateUI()V
 
@@ -1052,14 +1052,14 @@
 
     if-eqz p0, :cond_0
 
-    .line 124
+    .line 129
     invoke-direct {p1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p0
 
     invoke-virtual {p0, v1}, Lcom/iMe/fork/models/DrawerHeaderSettings;->setShowTitle(Z)V
 
-    .line 125
+    .line 130
     invoke-direct {p1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p0
@@ -1070,7 +1070,7 @@
 
     goto :goto_0
 
-    .line 127
+    .line 132
     :cond_0
     invoke-direct {p1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
@@ -1078,7 +1078,7 @@
 
     invoke-virtual {p0, v1}, Lcom/iMe/fork/models/DrawerHeaderSettings;->setShowSubtitle(Z)V
 
-    .line 128
+    .line 133
     invoke-direct {p1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object p0
@@ -1087,7 +1087,7 @@
 
     invoke-virtual {p0, p3}, Lcom/iMe/fork/models/DrawerHeaderSettings;->setSubtitle(Lcom/iMe/ui/drawer/DrawerAccountData;)V
 
-    .line 130
+    .line 135
     :goto_0
     invoke-direct {p1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getListAdapter()Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$ListAdapter;
 
@@ -1095,7 +1095,7 @@
 
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 131
+    .line 136
     invoke-direct {p1}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->updateUI()V
 
     return-void
@@ -1104,7 +1104,7 @@
 .method private final initPreviewView()Lorg/telegram/ui/Cells/DrawerProfileCell;
     .locals 4
 
-    .line 95
+    .line 100
     new-instance v0, Lorg/telegram/ui/Cells/DrawerProfileCell;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1117,7 +1117,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lorg/telegram/ui/Cells/DrawerProfileCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;Z)V
 
-    .line 96
+    .line 101
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v1
@@ -1136,7 +1136,7 @@
 .method private final initRootView()Landroid/widget/LinearLayout;
     .locals 4
 
-    .line 83
+    .line 88
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1147,10 +1147,10 @@
 
     const/4 v1, 0x1
 
-    .line 84
+    .line 89
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 85
+    .line 90
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1159,14 +1159,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 86
+    .line 91
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getDynamicOrientationContainer()Landroid/widget/LinearLayout;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 87
+    .line 92
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getBottomButtonsContainer()Landroid/widget/FrameLayout;
 
     move-result-object v1
@@ -1189,12 +1189,12 @@
 
     const/4 v0, 0x0
 
-    .line 153
+    .line 159
     invoke-direct {p0, v0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->createBottomButton(Z)Landroid/widget/TextView;
 
     move-result-object v0
 
-    .line 154
+    .line 160
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->disable(Landroid/view/View;)V
 
     return-object v0
@@ -1203,7 +1203,7 @@
 .method private final setLandscapeMode(Z)V
     .locals 1
 
-    .line 76
+    .line 81
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getDynamicOrientationContainer()Landroid/widget/LinearLayout;
 
     move-result-object v0
@@ -1218,7 +1218,7 @@
 .method private final updateUI()V
     .locals 4
 
-    .line 178
+    .line 184
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getPreviewView()Lorg/telegram/ui/Cells/DrawerProfileCell;
 
     move-result-object v0
@@ -1235,39 +1235,27 @@
 
     invoke-virtual {v0, v1, v3, v2}, Lorg/telegram/ui/Cells/DrawerProfileCell;->setUser(Lorg/telegram/tgnet/TLRPC$User;ZLcom/iMe/fork/models/DrawerHeaderSettings;)V
 
-    .line 179
-    invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
+    .line 185
+    invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getSaveButton()Landroid/widget/TextView;
 
     move-result-object v0
 
-    invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getCurrentSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
+    invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getNewSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getCurrentSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
-    move-result v0
+    move-result-object v2
 
-    if-eqz v0, :cond_0
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 180
-    invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getSaveButton()Landroid/widget/TextView;
+    move-result v1
 
-    move-result-object v0
+    xor-int/lit8 v1, v1, 0x1
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->disable(Landroid/view/View;)V
+    invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setEnabledWithAlpha(Landroid/view/View;Z)V
 
-    goto :goto_0
-
-    .line 182
-    :cond_0
-    invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->getSaveButton()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->enable(Landroid/view/View;)V
-
-    :goto_0
     return-void
 .end method
 
@@ -1280,10 +1268,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 72
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 68
+    .line 73
     iget p1, p1, Landroid/content/res/Configuration;->orientation:I
 
     const/4 v0, 0x2
@@ -1306,10 +1294,10 @@
 .method public onDetachedFromWindow()V
     .locals 1
 
-    .line 61
+    .line 66
     invoke-super {p0}, Landroid/app/Dialog;->onDetachedFromWindow()V
 
-    .line 62
+    .line 67
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->accountDataSelector:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     if-eqz v0, :cond_0
@@ -1319,7 +1307,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 63
+    .line 68
     iput-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->accountDataSelector:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void

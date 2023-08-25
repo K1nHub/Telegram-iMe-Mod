@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
     .locals 0
 
-    .line 821
+    .line 824
     iput-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
 
-    .line 830
+    .line 833
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2800(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Z
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 831
+    .line 834
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2900(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/widget/ImageView;
@@ -70,7 +70,7 @@
 
     if-nez v0, :cond_0
 
-    .line 832
+    .line 835
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2900(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/widget/ImageView;
@@ -81,7 +81,7 @@
 
     goto :goto_0
 
-    .line 833
+    .line 836
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
@@ -103,7 +103,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 834
+    .line 837
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;->this$0:Lorg/telegram/ui/TwoStepVerificationSetupActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->access$2900(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)Landroid/widget/ImageView;

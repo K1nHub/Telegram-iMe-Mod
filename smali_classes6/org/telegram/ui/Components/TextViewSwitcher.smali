@@ -18,17 +18,17 @@
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
     .locals 1
 
-    .line 33
+    .line 39
     instance-of v0, p1, Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 36
+    .line 42
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ViewSwitcher;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
-    .line 34
+    .line 40
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -51,7 +51,7 @@
 .method public getCurrentView()Landroid/widget/TextView;
     .locals 1
 
-    .line 41
+    .line 47
     invoke-super {p0}, Landroid/widget/ViewSwitcher;->getCurrentView()Landroid/view/View;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 .method public getNextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 46
+    .line 52
     invoke-super {p0}, Landroid/widget/ViewSwitcher;->getNextView()Landroid/view/View;
 
     move-result-object v0
@@ -88,14 +88,14 @@
 .method public invalidateViews()V
     .locals 1
 
-    .line 50
+    .line 56
     invoke-virtual {p0}, Lorg/telegram/ui/Components/TextViewSwitcher;->getCurrentView()Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/widget/TextView;->invalidate()V
 
-    .line 51
+    .line 57
     invoke-virtual {p0}, Lorg/telegram/ui/Components/TextViewSwitcher;->getNextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -119,44 +119,61 @@
 .method public setText(Ljava/lang/CharSequence;Z)V
     .locals 1
 
+    const/4 v0, 0x0
+
     .line 21
+    invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Components/TextViewSwitcher;->setText(Ljava/lang/CharSequence;ZZ)Z
+
+    return-void
+.end method
+
+.method public setText(Ljava/lang/CharSequence;ZZ)Z
+    .locals 0
+
+    if-nez p3, :cond_0
+
+    .line 25
     invoke-virtual {p0}, Lorg/telegram/ui/Components/TextViewSwitcher;->getCurrentView()Landroid/widget/TextView;
 
-    move-result-object v0
+    move-result-object p3
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {p3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v0
+    move-result-object p3
 
-    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {p1, p3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v0
+    move-result p3
 
-    if-nez v0, :cond_1
+    if-nez p3, :cond_2
 
-    if-eqz p2, :cond_0
+    :cond_0
+    if-eqz p2, :cond_1
 
-    .line 23
+    .line 27
     invoke-virtual {p0}, Lorg/telegram/ui/Components/TextViewSwitcher;->getNextView()Landroid/widget/TextView;
 
     move-result-object p2
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 24
+    .line 28
     invoke-virtual {p0}, Landroid/widget/ViewSwitcher;->showNext()V
 
-    goto :goto_0
+    const/4 p1, 0x1
 
-    .line 26
-    :cond_0
+    return p1
+
+    .line 31
+    :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/TextViewSwitcher;->getCurrentView()Landroid/widget/TextView;
 
     move-result-object p2
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_1
-    :goto_0
-    return-void
+    :cond_2
+    const/4 p1, 0x0
+
+    return p1
 .end method

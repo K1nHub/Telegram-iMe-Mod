@@ -36,7 +36,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "oid"
+    const-string/jumbo v0, "oid"
 
     .line 44
     filled-new-array {v0}, [Ljava/lang/String;
@@ -167,7 +167,7 @@
 
     move-result-object v3
 
-    const-string v4, "oid"
+    const-string/jumbo v4, "oid"
 
     .line 127
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -544,7 +544,7 @@
 
     move-result-object p1
 
-    const-string p2, "oid"
+    const-string/jumbo p2, "oid"
 
     invoke-direct {p0, v0, p2, p1}, Lcom/microsoft/appcenter/utils/storage/DatabaseManager;->delete(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)I
 
@@ -600,7 +600,7 @@
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteQueryBuilder;->appendWhere(Ljava/lang/CharSequence;)V
 
-    const-string v1, "oid"
+    const-string/jumbo v1, "oid"
 
     .line 227
     invoke-interface {p1, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z

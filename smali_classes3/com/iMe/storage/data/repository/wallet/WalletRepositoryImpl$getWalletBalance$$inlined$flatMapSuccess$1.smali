@@ -28,13 +28,14 @@
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
         "Ljava/util/List<",
+        "+",
         "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
         ">;>;>;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n+ 2 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n201#2,12:87\n213#2:102\n217#2,2:104\n1549#3:99\n1620#3,2:100\n1622#3:103\n18#4:106\n18#4:108\n7#5:107\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n*L\n212#1:99\n212#1:100,2\n212#1:103\n218#1:106\n84#2:108\n84#2:107\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n+ 2 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 5 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n192#2,12:87\n204#2:102\n208#2,2:104\n1549#3:99\n1620#3,2:100\n1622#3:103\n18#4:106\n18#4:108\n7#5:107\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n*L\n203#1:99\n203#1:100,2\n203#1:103\n209#1:106\n84#2:108\n84#2:107\n*E\n"
 .end annotation
 
 
@@ -77,6 +78,7 @@
             "+",
             "Lcom/iMe/storage/domain/model/Result<",
             "Ljava/util/List<",
+            "+",
             "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
             ">;>;>;"
         }
@@ -147,7 +149,7 @@
     iget-object v4, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$$inlined$flatMapSuccess$1;->$networkId$inlined:Ljava/lang/String;
 
     .line 92
-    invoke-virtual {v0, v2, v3, v4}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;->rxDeleteAllWalletBalances(JLjava/lang/String;)Lio/reactivex/Completable;
+    invoke-virtual {v0, v2, v3, v4}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;->rxDeleteByNetwork(JLjava/lang/String;)Lio/reactivex/Completable;
 
     move-result-object v0
 
@@ -246,7 +248,7 @@
 
     move-result-object p1
 
-    const-string v0, "walletBalanceDao\n       \u2026etBalance.toObservable())"
+    const-string v0, "walletBalanceDao\n       \u2026(balances.toObservable())"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

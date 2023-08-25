@@ -564,7 +564,7 @@
     const/high16 v8, 0x41900000    # 18.0f
 
     .line 98
-    invoke-virtual {v7, v3, v8}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v7, v3, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 99
     iget-object v7, v0, Lorg/telegram/ui/ChangeBioActivity;->firstNameField:Lorg/telegram/ui/Components/EditTextBoldCursor;

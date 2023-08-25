@@ -38,7 +38,7 @@
 .method public constructor <init>(Lorg/telegram/messenger/MessagesController;)V
     .locals 0
 
-    .line 964
+    .line 990
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$SponsoredMessagesInfo;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

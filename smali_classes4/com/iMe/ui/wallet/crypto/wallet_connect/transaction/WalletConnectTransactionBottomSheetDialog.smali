@@ -156,7 +156,7 @@
 
     move-result-object v0
 
-    const-string v2, "mvpDelegate"
+    const-string/jumbo v2, "mvpDelegate"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -739,7 +739,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "network"
+    const-string/jumbo v0, "network"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -830,7 +830,7 @@
     return-void
 .end method
 
-.method public showFee(Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+.method public showFee(Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
     .locals 4
 
     const-string v0, "feeType"
@@ -860,7 +860,7 @@
     .line 74
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionBottomSheetDialog;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-virtual {v0, v1, p0, p1}, Lcom/iMe/ui/custom/FeeView;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/base/mvp/MvpBottomSheet;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-virtual {v0, v1, p0, p1}, Lcom/iMe/ui/custom/FeeView;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/base/mvp/MvpBottomSheet;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     return-void
 .end method

@@ -35,7 +35,7 @@
 .method public final invoke()V
     .locals 0
 
-    invoke-static {}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->$r8$lambda$i0eMlZ70dqMWwfJHdbJsG1aQkJU()V
+    invoke-static {}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->$r8$lambda$Bf2eByo1B49ERGoMX2wEsxTGJBk()V
 
     return-void
 .end method

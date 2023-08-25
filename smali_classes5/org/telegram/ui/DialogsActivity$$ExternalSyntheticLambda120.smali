@@ -45,7 +45,7 @@
 
     iget-wide v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda120;->f$3:J
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$r1lVN6CRmUEI5LPG3Pojg3jz84w(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/TLRPC$Dialog;J)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$t2Xl9_kaHe21_gpjYStuT2JeNPY(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/TLRPC$Dialog;J)V
 
     return-void
 .end method

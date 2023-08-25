@@ -128,7 +128,7 @@
 
     const/4 v2, 0x1
 
-    const-string v3, "msg_media_raw/#/*"
+    const-string/jumbo v3, "msg_media_raw/#/*"
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 

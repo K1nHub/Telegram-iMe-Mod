@@ -543,10 +543,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Network;->explorer:Lcom/iMe/storage/domain/model/crypto/Network$Explorer;
 
-    .line 35
+    .line 34
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -728,10 +728,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 43
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Network;->explorer:Lcom/iMe/storage/domain/model/crypto/Network$Explorer;
 
-    .line 43
+    .line 44
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -876,7 +876,7 @@
 .method public final isEVM()Z
     .locals 2
 
-    .line 32
+    .line 30
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Network;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;

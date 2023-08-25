@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State;J)V
     .locals 1
 
-    .line 557
+    .line 552
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "openChatScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 559
+    .line 554
     iput-wide p2, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OpenChatScreenCommand;->userId:J
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V
     .locals 2
 
-    .line 564
+    .line 559
     iget-wide v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OpenChatScreenCommand;->userId:J
 
     invoke-interface {p1, v0, v1}, Lcom/iMe/manager/crypto/recipient/CryptoRecipientView;->openChatScreen(J)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 553
+    .line 548
     check-cast p1, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OpenChatScreenCommand;->apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V

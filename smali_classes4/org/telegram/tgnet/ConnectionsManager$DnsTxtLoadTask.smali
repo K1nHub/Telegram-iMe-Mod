@@ -52,10 +52,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 1035
+    .line 1039
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 1036
+    .line 1040
     iput p1, p0, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->currentAccount:I
 
     return-void
@@ -64,12 +64,12 @@
 .method private static synthetic lambda$doInBackground$0(Ljava/lang/String;Ljava/lang/String;)I
     .locals 0
 
-    .line 1100
+    .line 1104
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p0
 
-    .line 1101
+    .line 1105
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -98,12 +98,12 @@
 
     const/4 v0, 0x0
 
-    .line 1142
+    .line 1146
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->access$202(Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
 
     if-eqz p1, :cond_0
 
-    .line 1144
+    .line 1148
     iget v0, p0, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->currentAccount:I
 
     iget-wide v1, p1, Lorg/telegram/tgnet/NativeByteBuffer;->address:J
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 1146
+    .line 1150
     :cond_0
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -134,15 +134,15 @@
 
     const-string p1, "failed to get dns txt result"
 
-    .line 1147
+    .line 1151
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     const-string/jumbo p1, "start google task"
 
-    .line 1148
+    .line 1152
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1150
+    .line 1154
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/ConnectionsManager$GoogleDnsLoadTask;
 
@@ -150,7 +150,7 @@
 
     invoke-direct {p1, v1}, Lorg/telegram/tgnet/ConnectionsManager$GoogleDnsLoadTask;-><init>(I)V
 
-    .line 1151
+    .line 1155
     sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     const/4 v2, 0x3
@@ -171,7 +171,7 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 1152
+    .line 1156
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->access$202(Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
 
     :goto_0
@@ -183,7 +183,7 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1029
+    .line 1033
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->doInBackground([Ljava/lang/Void;)Lorg/telegram/tgnet/NativeByteBuffer;
@@ -235,7 +235,7 @@
     :cond_1
     const-string v4, "google.com"
 
-    .line 1052
+    .line 1056
     :goto_1
     iget v5, p0, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->currentAccount:I
 
@@ -262,7 +262,7 @@
 
     iget-object v5, v5, Lorg/telegram/messenger/MessagesController;->dcDomainName:Ljava/lang/String;
 
-    .line 1053
+    .line 1057
     :goto_2
     sget-object v6, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
@@ -274,7 +274,7 @@
 
     add-int/lit8 v6, v6, 0xd
 
-    .line 1056
+    .line 1060
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
@@ -286,7 +286,7 @@
 
     const-string v9, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
-    .line 1058
+    .line 1062
     sget-object v10, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     const/16 v11, 0x3e
@@ -305,7 +305,7 @@
 
     goto :goto_3
 
-    .line 1060
+    .line 1064
     :cond_3
     new-instance v6, Ljava/net/URL;
 
@@ -337,7 +337,7 @@
 
     invoke-direct {v6, v4}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    .line 1061
+    .line 1065
     invoke-virtual {v6}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v4
@@ -346,33 +346,33 @@
 
     const-string v6, "Mozilla/5.0 (iPhone; CPU iPhone OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A5297c Safari/602.1"
 
-    .line 1062
+    .line 1066
     invoke-virtual {v4, v5, v6}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v5, "Host"
 
     const-string v6, "dns.google.com"
 
-    .line 1063
+    .line 1067
     invoke-virtual {v4, v5, v6}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v5, 0x1388
 
-    .line 1064
+    .line 1068
     invoke-virtual {v4, v5}, Ljava/net/URLConnection;->setConnectTimeout(I)V
 
-    .line 1065
+    .line 1069
     invoke-virtual {v4, v5}, Ljava/net/URLConnection;->setReadTimeout(I)V
 
-    .line 1066
+    .line 1070
     invoke-virtual {v4}, Ljava/net/URLConnection;->connect()V
 
-    .line 1067
+    .line 1071
     invoke-virtual {v4}, Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v3
 
-    .line 1068
+    .line 1072
     invoke-virtual {v4}, Ljava/net/URLConnection;->getDate()J
 
     move-result-wide v4
@@ -385,7 +385,7 @@
 
     iput v4, p0, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->responseDate:I
 
-    .line 1070
+    .line 1074
     new-instance v4, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v4}, Ljava/io/ByteArrayOutputStream;-><init>()V
@@ -397,7 +397,7 @@
     :try_start_1
     new-array v2, v2, [B
 
-    .line 1074
+    .line 1078
     :goto_4
     invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
@@ -407,7 +407,7 @@
 
     goto :goto_5
 
-    .line 1077
+    .line 1081
     :cond_4
     invoke-virtual {v3, v2}, Ljava/io/InputStream;->read([B)I
 
@@ -415,12 +415,12 @@
 
     if-lez v5, :cond_5
 
-    .line 1079
+    .line 1083
     invoke-virtual {v4, v2, v0, v5}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_4
 
-    .line 1087
+    .line 1091
     :cond_5
     :goto_5
     new-instance v2, Lorg/json/JSONObject;
@@ -437,17 +437,17 @@
 
     const-string v5, "Answer"
 
-    .line 1088
+    .line 1092
     invoke-virtual {v2, v5}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v2
 
-    .line 1089
+    .line 1093
     invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
 
     move-result v5
 
-    .line 1090
+    .line 1094
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6, v5}, Ljava/util/ArrayList;-><init>(I)V
@@ -457,14 +457,14 @@
     :goto_6
     if-ge v7, v5, :cond_7
 
-    .line 1092
+    .line 1096
     invoke-virtual {v2, v7}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v8
 
     const-string/jumbo v9, "type"
 
-    .line 1093
+    .line 1097
     invoke-virtual {v8, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result v9
@@ -478,7 +478,7 @@
     :cond_6
     const-string v9, "data"
 
-    .line 1097
+    .line 1101
     invoke-virtual {v8, v9}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
@@ -490,20 +490,20 @@
 
     goto :goto_6
 
-    .line 1099
+    .line 1103
     :cond_7
     sget-object v2, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask$$ExternalSyntheticLambda1;
 
     invoke-static {v6, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 1109
+    .line 1113
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     move v5, v0
 
-    .line 1110
+    .line 1114
     :goto_8
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -511,7 +511,7 @@
 
     if-ge v5, v7, :cond_8
 
-    .line 1111
+    .line 1115
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -532,7 +532,7 @@
 
     goto :goto_8
 
-    .line 1113
+    .line 1117
     :cond_8
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -542,21 +542,21 @@
 
     move-result-object v2
 
-    .line 1114
+    .line 1118
     new-instance v5, Lorg/telegram/tgnet/NativeByteBuffer;
 
     array-length v6, v2
 
     invoke-direct {v5, v6}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 1115
+    .line 1119
     invoke-virtual {v5, v2}, Lorg/telegram/tgnet/NativeByteBuffer;->writeBytes([B)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     if-eqz v3, :cond_9
 
-    .line 1122
+    .line 1126
     :try_start_2
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_2
@@ -567,10 +567,10 @@
     :catchall_1
     move-exception p1
 
-    .line 1125
+    .line 1129
     invoke-static {p1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1129
+    .line 1133
     :cond_9
     :goto_9
     :try_start_3
@@ -590,7 +590,7 @@
 
     move-object v2, v12
 
-    .line 1118
+    .line 1122
     :goto_a
     :try_start_4
     invoke-static {v4, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
@@ -599,7 +599,7 @@
 
     if-eqz v3, :cond_a
 
-    .line 1122
+    .line 1126
     :try_start_5
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_5
@@ -610,14 +610,14 @@
     :catchall_3
     move-exception v4
 
-    .line 1125
+    .line 1129
     invoke-static {v4, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :cond_a
     :goto_b
     if-eqz v2, :cond_b
 
-    .line 1129
+    .line 1133
     :try_start_6
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_6
@@ -634,7 +634,7 @@
 
     if-eqz v3, :cond_c
 
-    .line 1122
+    .line 1126
     :try_start_7
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_7
@@ -645,20 +645,20 @@
     :catchall_5
     move-exception v1
 
-    .line 1125
+    .line 1129
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :cond_c
     :goto_c
     if-eqz v2, :cond_d
 
-    .line 1129
+    .line 1133
     :try_start_8
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
 
-    .line 1134
+    .line 1138
     :catch_2
     :cond_d
     throw p1
@@ -670,7 +670,7 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 1029
+    .line 1033
     check-cast p1, Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {p0, p1}, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask;->onPostExecute(Lorg/telegram/tgnet/NativeByteBuffer;)V
@@ -681,7 +681,7 @@
 .method protected onPostExecute(Lorg/telegram/tgnet/NativeByteBuffer;)V
     .locals 2
 
-    .line 1141
+    .line 1145
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/tgnet/ConnectionsManager$DnsTxtLoadTask$$ExternalSyntheticLambda0;

@@ -73,7 +73,7 @@
 .method gotoState(Lio/grpc/ConnectivityState;)V
     .locals 2
 
-    const-string v0, "newState"
+    const-string/jumbo v0, "newState"
 
     .line 63
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

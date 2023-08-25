@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lcom/iMe/manager/TelegramApiManager;
 
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$1:J
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Chat;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/manager/TelegramApiManager;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lcom/iMe/manager/TelegramApiManager;JLorg/telegram/tgnet/TLRPC$Chat;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$0:Lcom/iMe/manager/TelegramApiManager;
 
-    iput-object p2, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$1:Ljava/lang/String;
+    iput-wide p2, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$1:J
+
+    iput-object p4, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$2:Lorg/telegram/tgnet/TLRPC$Chat;
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final subscribe(Lio/reactivex/ObservableEmitter;)V
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$0:Lcom/iMe/manager/TelegramApiManager;
 
-    iget-object v1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$1:Ljava/lang/String;
+    iget-wide v1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$1:J
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$ntTW10NTvUgQs6aYNACh3TFh_RU(Lcom/iMe/manager/TelegramApiManager;Ljava/lang/String;Lio/reactivex/ObservableEmitter;)V
+    iget-object v3, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$2:Lorg/telegram/tgnet/TLRPC$Chat;
+
+    invoke-static {v0, v1, v2, v3, p1}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$sst9D_xeT0lHo9yvZW7_o5G5UNk(Lcom/iMe/manager/TelegramApiManager;JLorg/telegram/tgnet/TLRPC$Chat;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

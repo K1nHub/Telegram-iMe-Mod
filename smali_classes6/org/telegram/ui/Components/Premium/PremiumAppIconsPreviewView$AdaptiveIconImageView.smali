@@ -24,71 +24,80 @@
 
 # direct methods
 .method public constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;Landroid/content/Context;I)V
-    .locals 1
+    .locals 2
 
-    .line 131
+    .line 135
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;-><init>(Landroid/content/Context;)V
 
-    .line 126
-    new-instance p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+    .line 130
+    new-instance p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
-    const/16 p2, 0x14
+    const/16 v0, 0x14
 
-    invoke-direct {p1, p2}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;-><init>(I)V
+    invoke-direct {p2, v0}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;-><init>(I)V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
-    .line 127
-    new-instance p1, Landroid/graphics/Paint;
+    .line 131
+    new-instance p2, Landroid/graphics/Paint;
 
-    const/4 p2, 0x1
+    const/4 v0, 0x1
 
-    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p2, v0}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->paint:Landroid/graphics/Paint;
-
-    .line 132
-    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
-
-    const/16 v0, 0xc
-
-    iput v0, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
-
-    const/16 v0, 0x8
-
-    .line 133
-    iput v0, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size2:I
-
-    const/4 v0, 0x6
-
-    .line 134
-    iput v0, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size3:I
-
-    if-ne p3, p2, :cond_0
-
-    const/16 p2, 0x3e9
+    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->paint:Landroid/graphics/Paint;
 
     .line 136
-    iput p2, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+
+    const/16 v1, 0xc
+
+    iput v1, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size1:I
+
+    const/16 v1, 0x8
+
+    .line 137
+    iput v1, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size2:I
+
+    const/4 v1, 0x6
+
+    .line 138
+    iput v1, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->size3:I
+
+    if-ne p3, v0, :cond_0
+
+    const/16 v0, 0x3e9
+
+    .line 140
+    iput v0, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
     :cond_0
     if-nez p3, :cond_1
 
-    const/16 p2, 0x3ea
+    const/16 p3, 0x3ea
 
-    .line 138
-    iput p2, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
+    .line 142
+    iput p3, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->type:I
 
-    .line 140
+    .line 144
     :cond_1
+    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;->access$000(Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    move-result-object p1
+
+    iput-object p1, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    .line 145
+    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
+
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor2:I
 
     iput p2, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->colorKey:I
 
-    .line 141
+    .line 146
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->init()V
 
-    .line 142
+    .line 147
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->paint:Landroid/graphics/Paint;
 
     const/4 p2, -0x1
@@ -105,12 +114,12 @@
 
     const/16 v0, 0xa
 
-    .line 147
+    .line 152
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 148
+    .line 153
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->excludeRect:Landroid/graphics/RectF;
@@ -155,7 +164,7 @@
 
     invoke-virtual {v1, v3, v4, v5, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 149
+    .line 154
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -182,10 +191,10 @@
 
     invoke-virtual {v1, v2, v2, v3, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 150
+    .line 155
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 151
+    .line 156
     iget v0, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->particlesScale:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -214,18 +223,18 @@
 
     invoke-virtual {p1, v2, v1, v0, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 152
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumAppIconsPreviewView$AdaptiveIconImageView;->drawable:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 153
+    .line 158
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 154
+    .line 159
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 155
+    .line 160
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getWidth()I
@@ -246,7 +255,7 @@
 
     const/high16 v1, 0x41900000    # 18.0f
 
-    .line 156
+    .line 161
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -263,7 +272,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 158
+    .line 163
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;->draw(Landroid/graphics/Canvas;)V
 
     return-void

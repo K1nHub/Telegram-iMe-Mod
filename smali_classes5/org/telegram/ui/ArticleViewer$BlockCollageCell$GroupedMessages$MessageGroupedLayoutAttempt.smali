@@ -24,7 +24,7 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;IIFF)V
     .locals 2
 
-    .line 7950
+    .line 7953
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x2
@@ -39,7 +39,7 @@
 
     aput p3, v0, p2
 
-    .line 7951
+    .line 7954
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     new-array p1, p1, [F
@@ -48,7 +48,7 @@
 
     aput p5, p1, p2
 
-    .line 7952
+    .line 7955
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     return-void
@@ -57,7 +57,7 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;IIIFFF)V
     .locals 2
 
-    .line 7955
+    .line 7958
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x3
@@ -76,7 +76,7 @@
 
     aput p4, v0, p3
 
-    .line 7956
+    .line 7959
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     new-array p1, p1, [F
@@ -87,7 +87,7 @@
 
     aput p7, p1, p3
 
-    .line 7957
+    .line 7960
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     return-void
@@ -96,7 +96,7 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;IIIIFFFF)V
     .locals 2
 
-    .line 7960
+    .line 7963
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x4
@@ -119,7 +119,7 @@
 
     aput p5, v0, p4
 
-    .line 7961
+    .line 7964
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     new-array p1, p1, [F
@@ -132,7 +132,7 @@
 
     aput p9, p1, p4
 
-    .line 7962
+    .line 7965
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     return-void

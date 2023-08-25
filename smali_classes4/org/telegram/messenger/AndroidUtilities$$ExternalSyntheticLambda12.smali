@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/List;
+.field public final synthetic f$0:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;)V
+.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda12;->f$0:Ljava/util/List;
+    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda12;->f$0:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda12;->f$0:Ljava/util/List;
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda12;->f$0:Ljava/util/ArrayList;
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$QzRXRiLKb9fegd-VVXsWlk1kZqI(Ljava/util/List;)V
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$7CWnTaeBZX_OwEkrPLCBQt_aZts(Ljava/util/ArrayList;)V
 
     return-void
 .end method

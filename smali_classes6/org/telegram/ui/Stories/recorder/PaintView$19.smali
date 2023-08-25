@@ -3,12 +3,12 @@
 .source "PaintView.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/Stories/recorder/PaintView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Stories/recorder/PaintView;->showLocationAlert(Lorg/telegram/ui/Components/Paint/Views/LocationView;Lorg/telegram/messenger/Utilities$Callback2;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,17 +17,11 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 3303
-    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
-
+    .line 1681
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,103 +29,66 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
-
-    .line 3306
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$500(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
-
-    if-nez v0, :cond_0
+.method public didPressedButton(IZZIZLjava/lang/String;Z)V
+    .locals 0
 
     return-void
+.end method
 
-    .line 3309
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+.method public synthetic didSelectBot(Lorg/telegram/tgnet/TLRPC$User;)V
+    .locals 0
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$500(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$didSelectBot(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;Lorg/telegram/tgnet/TLRPC$User;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+.method public synthetic doOnIdle(Ljava/lang/Runnable;)V
+    .locals 0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$doOnIdle(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;Ljava/lang/Runnable;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    .line 3310
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+.method public synthetic needEnterComment()Z
+    .locals 1
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4200(Lorg/telegram/ui/Stories/recorder/PaintView;)Z
+    invoke-static {p0}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$needEnterComment(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    return v0
+.end method
 
-    if-eqz v0, :cond_1
+.method public synthetic onCameraOpened()V
+    .locals 0
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+    invoke-static {p0}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$onCameraOpened(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;)V
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4300(Lorg/telegram/ui/Stories/recorder/PaintView;)Z
+    return-void
+.end method
 
-    move-result v1
+.method public synthetic onWallpaperSelected(Ljava/lang/Object;)V
+    .locals 0
 
-    if-eqz v1, :cond_1
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$onWallpaperSelected(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+    return-void
+.end method
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4400(Lorg/telegram/ui/Stories/recorder/PaintView;)Z
+.method public synthetic openAvatarsSearch()V
+    .locals 0
 
-    move-result v1
+    invoke-static {p0}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$openAvatarsSearch(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;)V
 
-    if-nez v1, :cond_1
+    return-void
+.end method
 
-    sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
+.method public synthetic sendAudio(Ljava/util/ArrayList;Ljava/lang/CharSequence;ZI)V
+    .locals 0
 
-    if-nez v1, :cond_1
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$sendAudio(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZI)V
 
-    sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
-
-    if-nez v1, :cond_1
-
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 3311
-    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
-
-    .line 3312
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
-
-    .line 3313
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4500(Lorg/telegram/ui/Stories/recorder/PaintView;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
-
-    .line 3314
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4500(Lorg/telegram/ui/Stories/recorder/PaintView;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    const-wide/16 v1, 0x64
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
-
-    :cond_1
     return-void
 .end method

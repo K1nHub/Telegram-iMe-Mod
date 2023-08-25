@@ -2,60 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/PeerStoriesView$4;
 
-.field public final synthetic f$1:Landroid/text/style/URLSpan;
-
-.field public final synthetic f$2:Landroid/view/View;
-
-.field public final synthetic f$3:Ljava/lang/String;
-
-.field public final synthetic f$4:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$4;Landroid/text/style/URLSpan;Landroid/view/View;Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$4;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView$4;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$1:Landroid/text/style/URLSpan;
-
-    iput-object p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$2:Landroid/view/View;
-
-    iput-object p4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$3:Ljava/lang/String;
-
-    iput-object p5, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$4:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 7
+.method public final run()V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView$4;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$1:Landroid/text/style/URLSpan;
-
-    iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$2:Landroid/view/View;
-
-    iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$3:Ljava/lang/String;
-
-    iget-object v4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;->f$4:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    move-object v5, p1
-
-    move v6, p2
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Stories/PeerStoriesView$4;->$r8$lambda$g0Rg2QdV-J_kv8QA6tG5OGuiuiQ(Lorg/telegram/ui/Stories/PeerStoriesView$4;Landroid/text/style/URLSpan;Landroid/view/View;Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/content/DialogInterface;I)V
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView$4;->$r8$lambda$yZLQ3AAnzM3NHIy0Bp6W6_g4vwQ(Lorg/telegram/ui/Stories/PeerStoriesView$4;)V
 
     return-void
 .end method

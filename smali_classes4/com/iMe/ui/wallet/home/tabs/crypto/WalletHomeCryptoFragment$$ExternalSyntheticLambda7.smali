@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$typxccPy3Jz0XX5LfofFoCNlqPQ(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;Ljava/lang/Integer;)V
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$C1LryzeRyDcw6QqM6CTiiMD6fSY(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;Ljava/lang/Integer;)V
 
     return-void
 .end method

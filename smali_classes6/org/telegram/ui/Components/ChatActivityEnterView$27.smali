@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$27;
-.super Ljava/lang/Object;
+.super Landroid/view/View;
 .source "ChatActivityEnterView.java"
-
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnDrawListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$26(Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createRecordAudioPanel()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,68 +15,69 @@
 
 
 # instance fields
-.field final synthetic val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-.field final synthetic val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+.field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0ixgA_gyA534a5zGNzvbWrNRPoU(Lorg/telegram/ui/Components/ChatActivityEnterView$27;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    .line 3614
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
-    .locals 0
-
-    .line 3673
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private synthetic lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
-    .locals 0
-
-    .line 3677
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnDrawListener(Landroid/view/ViewTreeObserver$OnDrawListener;)V
-
-    .line 3678
-    iget-object p1, p2, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
-
-    const/4 p2, 0x1
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/SimpleAvatarView;->setHideAvatar(Z)V
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDraw()V
-    .locals 3
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 5
 
-    .line 3676
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
+    .line 3617
+    invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+    move-result-object v0
 
-    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$27$$ExternalSyntheticLambda0;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-direct {v2, p0, v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView$27$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$27;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$27;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
+
+    move-result v3
+
+    sub-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v1, v4, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 3618
+    invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     return-void
 .end method

@@ -116,7 +116,7 @@
     :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string p2, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo p2, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

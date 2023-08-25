@@ -20,13 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
+.field final synthetic val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/StoriesViewPager;)V
+.method constructor <init>(Lorg/telegram/ui/Stories/StoriesViewPager;Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
+
+    iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +42,7 @@
 .method public onPageScrollStateChanged(I)V
     .locals 2
 
-    .line 181
+    .line 191
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
@@ -55,7 +59,7 @@
     :goto_0
     invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setAllowTouchesByViewPager(Z)V
 
-    .line 182
+    .line 192
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->doOnNextIdle:Ljava/lang/Runnable;
@@ -64,23 +68,23 @@
 
     if-nez p1, :cond_1
 
-    .line 183
+    .line 193
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 184
+    .line 194
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->doOnNextIdle:Ljava/lang/Runnable;
 
-    .line 186
+    .line 196
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     iput p1, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->currentState:I
 
-    .line 187
+    .line 197
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesViewPager;->onStateChanged()V
 
     return-void
@@ -89,7 +93,7 @@
 .method public onPageScrolled(IFI)V
     .locals 2
 
-    .line 154
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     iput p1, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->selectedPosition:I
@@ -103,14 +107,14 @@
     :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    .line 155
+    .line 158
     :goto_0
     iput p1, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->toPosition:I
 
-    .line 156
+    .line 159
     iput p2, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->progress:F
 
-    .line 158
+    .line 161
     iget p1, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -119,7 +123,7 @@
 
     iget-wide p1, p1, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    .line 160
+    .line 163
     iget-object p3, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     iget v0, p3, Lorg/telegram/ui/Stories/StoriesViewPager;->selectedPosition:I
@@ -167,7 +171,7 @@
 
     if-nez p3, :cond_2
 
-    .line 161
+    .line 164
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
@@ -183,7 +187,7 @@
 
     goto :goto_3
 
-    .line 162
+    .line 165
     :cond_2
     iget-object p3, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
@@ -232,7 +236,7 @@
 
     if-nez p1, :cond_4
 
-    .line 163
+    .line 166
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
@@ -244,7 +248,7 @@
 
     goto :goto_3
 
-    .line 165
+    .line 168
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
@@ -259,39 +263,82 @@
 .end method
 
 .method public onPageSelected(I)V
-    .locals 3
+    .locals 4
 
-    .line 171
-    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
+    .line 174
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    move-result-object p1
+    move-result-object v0
 
-    if-nez p1, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
-    .line 175
+    .line 178
     :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
+
+    iget-object v1, v1, Lorg/telegram/ui/Stories/StoriesViewPager;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->getCurrentPeer()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->getSelectedPosition()I
+
+    move-result v0
+
+    invoke-interface {v1, v2, v3, v0}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->onPeerSelected(JI)V
+
+    .line 179
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
-    iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesViewPager;->access$100(Lorg/telegram/ui/Stories/StoriesViewPager;)V
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->getCurrentPeer()J
+    .line 180
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
-    move-result-wide v1
+    iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->placeProvider:Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->getSelectedPosition()I
+    if-eqz v0, :cond_2
 
-    move-result p1
+    const/4 v1, 0x3
 
-    invoke-interface {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->onPeerSelected(JI)V
+    if-ge p1, v1, :cond_1
 
-    .line 176
-    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
+    const/4 p1, 0x0
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->access$100(Lorg/telegram/ui/Stories/StoriesViewPager;)V
+    .line 182
+    invoke-interface {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;->loadNext(Z)V
 
+    goto :goto_0
+
+    .line 183
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesViewPager;->pagerAdapter:Landroidx/viewpager/widget/PagerAdapter;
+
+    invoke-virtual {v0}, Landroidx/viewpager/widget/PagerAdapter;->getCount()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x4
+
+    if-le p1, v0, :cond_2
+
+    .line 184
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$3;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->placeProvider:Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;
+
+    const/4 v0, 0x1
+
+    invoke-interface {p1, v0}, Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;->loadNext(Z)V
+
+    :cond_2
+    :goto_0
     return-void
 .end method

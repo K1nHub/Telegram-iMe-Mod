@@ -49,7 +49,7 @@
 
     move v6, p2
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$_5IX1UIowdeDrsJageGdYP6kMC0(Landroid/widget/EditText;JILandroid/widget/EditText;Landroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$yZUFc-BhbFKi9GfmBXx_A_E6OiU(Landroid/widget/EditText;JILandroid/widget/EditText;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

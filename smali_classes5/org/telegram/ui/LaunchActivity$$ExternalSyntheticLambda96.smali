@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
 # static fields
@@ -32,12 +32,14 @@
 
 
 # virtual methods
-.method public final run()Z
-    .locals 1
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Qv6A9QqiVesj4_K-QAScAE1xc9M()Z
+    check-cast p1, Ljava/lang/Void;
 
-    move-result v0
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$8T7vWAVdsuQWFkn1hrE7Nzt51tw(Ljava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
 
-    return v0
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;Z)V
     .locals 0
 
-    .line 1343
+    .line 1344
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$4;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$4;->val$selected:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1346
+    .line 1347
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$4;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -54,7 +54,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1347
+    .line 1348
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$4;->val$selected:Z
 
     if-nez p1, :cond_1
@@ -69,7 +69,7 @@
 
     goto :goto_0
 
-    .line 1352
+    .line 1353
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$4;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
@@ -79,7 +79,7 @@
 
     goto :goto_1
 
-    .line 1348
+    .line 1349
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$4;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
@@ -90,7 +90,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1349
+    .line 1350
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton$4;->this$1:Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;

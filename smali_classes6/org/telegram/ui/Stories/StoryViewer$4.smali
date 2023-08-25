@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;Landroid/content/Context;Lorg/telegram/ui/Stories/StoryViewer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1052
+    .line 1109
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$4;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Stories/HwStoriesViewPager;-><init>(Landroid/content/Context;Lorg/telegram/ui/Stories/StoryViewer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method public onStateChanged()V
     .locals 3
 
-    .line 1055
+    .line 1112
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$4;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -46,7 +46,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1056
+    .line 1113
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->longPressRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V

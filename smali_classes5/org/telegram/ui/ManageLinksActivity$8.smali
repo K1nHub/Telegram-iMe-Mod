@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Landroidx/recyclerview/widget/LinearLayoutManager;)V
     .locals 0
 
-    .line 1602
+    .line 1606
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$8;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$8;->val$layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -39,10 +39,10 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 1605
+    .line 1609
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 1606
+    .line 1610
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$8;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-boolean p2, p1, Lorg/telegram/ui/ManageLinksActivity;->hasMore:Z
@@ -53,14 +53,14 @@
 
     if-nez p1, :cond_0
 
-    .line 1607
+    .line 1611
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$8;->val$layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findLastVisibleItemPosition()I
 
     move-result p1
 
-    .line 1608
+    .line 1612
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$8;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ManageLinksActivity;->access$1400(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -73,7 +73,7 @@
 
     if-ge p2, p1, :cond_0
 
-    .line 1609
+    .line 1613
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$8;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     const/4 p2, 0x1

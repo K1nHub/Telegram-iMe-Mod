@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 124
+    .line 175
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->invoke(Ljava/util/List;)V
@@ -86,33 +86,33 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 134
+    .line 185
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     invoke-static {v0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$filterTransactionsByTypeIfNeeded(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 135
+    .line 186
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 136
+    .line 187
     iget-boolean p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->$isLoadMore:Z
 
     if-nez p1, :cond_0
 
-    .line 137
+    .line 188
     iget-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
     sget-object v0, Lcom/iMe/model/state/GlobalState$Empty$Common;->INSTANCE:Lcom/iMe/model/state/GlobalState$Empty$Common;
 
     invoke-static {p1, v0}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;->access$renderGlobalState(Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;Lcom/iMe/model/state/GlobalState;)V
 
-    .line 139
+    .line 190
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 141
+    .line 192
     :cond_1
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 
@@ -134,7 +134,7 @@
 
     move-result-object p1
 
-    .line 143
+    .line 194
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->$isLoadMore:Z
 
     if-eqz v0, :cond_2
@@ -151,7 +151,7 @@
 
     goto :goto_0
 
-    .line 144
+    .line 195
     :cond_2
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->$forceUpdate:Z
 
@@ -169,7 +169,7 @@
 
     goto :goto_0
 
-    .line 145
+    .line 196
     :cond_3
     iget-object v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter$loadTransactions$1;->this$0:Lcom/iMe/ui/wallet/transaction/WalletTransactionsPresenter;
 

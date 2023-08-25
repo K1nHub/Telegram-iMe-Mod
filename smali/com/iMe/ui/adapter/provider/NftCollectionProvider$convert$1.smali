@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 37
+    .line 54
     check-cast p1, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$1;->invoke(Lorg/telegram/ui/Components/BackupImageView;)V
@@ -72,13 +72,13 @@
 
     const/4 v0, 0x1
 
-    .line 38
+    .line 55
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setAspectFit(Z)V
 
-    .line 39
+    .line 56
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setLayerNum(I)V
 
-    .line 40
+    .line 58
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/NftCollectionProvider;
 
     invoke-static {v0}, Lcom/iMe/ui/adapter/provider/NftCollectionProvider;->access$getResourceManager$p(Lcom/iMe/ui/adapter/provider/NftCollectionProvider;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -93,9 +93,10 @@
 
     float-to-int v0, v0
 
+    .line 57
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 42
+    .line 61
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/NftCollectionProvider$convert$1;->$item:Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->getTokens()Ljava/util/List;
@@ -133,7 +134,7 @@
     :cond_1
     const-string v1, "50_50"
 
-    .line 43
+    .line 62
     invoke-virtual {p1, v0, v1, v0, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void

@@ -581,7 +581,7 @@
     goto :goto_1
 
     :cond_1
-    const-string v0, "null cannot be cast to non-null type kotlinx.coroutines.ParentJob"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlinx.coroutines.ParentJob"
 
     .line 720
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -787,7 +787,7 @@
     :goto_7
     if-eqz v1, :cond_e
 
-    const-string v0, "null cannot be cast to non-null type kotlinx.coroutines.CompletedExceptionally"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlinx.coroutines.CompletedExceptionally"
 
     .line 230
     invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -3180,7 +3180,7 @@
 
     if-nez v2, :cond_3
 
-    const-string v2, "null cannot be cast to non-null type kotlinx.coroutines.JobNode"
+    const-string/jumbo v2, "null cannot be cast to non-null type kotlinx.coroutines.JobNode"
 
     .line 471
     invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

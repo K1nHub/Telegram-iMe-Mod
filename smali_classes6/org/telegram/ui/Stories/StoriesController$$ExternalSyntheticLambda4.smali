@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-.field public final synthetic f$1:I
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Stories/StoriesController;
-
-    iput p2, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;->f$1:I
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    iget v1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;->f$1:I
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$QWp8D80bwckmZtAlF9BxhoL8-10(Lorg/telegram/ui/Stories/StoriesController;I)V
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->invalidateStoryLimit()V
 
     return-void
 .end method

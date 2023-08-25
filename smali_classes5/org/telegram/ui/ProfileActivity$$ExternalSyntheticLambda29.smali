@@ -35,7 +35,7 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$7PCkLezlz6EtRDQA0IYxfbJ9Mp4(Lorg/telegram/ui/ProfileActivity;Lcom/iMe/fork/enums/ParticipantsActionType;Ljava/lang/Boolean;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$G1_gndCEO5D_qdrI5gGTS8OWBMs(Lorg/telegram/ui/ProfileActivity;Lcom/iMe/fork/enums/ParticipantsActionType;Ljava/lang/Boolean;)V
 
     return-void
 .end method

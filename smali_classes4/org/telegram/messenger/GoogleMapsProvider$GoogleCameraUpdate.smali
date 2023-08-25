@@ -25,10 +25,10 @@
 .method private constructor <init>(Lcom/google/android/gms/maps/CameraUpdate;)V
     .locals 0
 
-    .line 608
+    .line 618
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 609
+    .line 619
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;->cameraUpdate:Lcom/google/android/gms/maps/CameraUpdate;
 
     return-void
@@ -37,7 +37,7 @@
 .method synthetic constructor <init>(Lcom/google/android/gms/maps/CameraUpdate;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 605
+    .line 615
     invoke-direct {p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;-><init>(Lcom/google/android/gms/maps/CameraUpdate;)V
 
     return-void
@@ -46,7 +46,7 @@
 .method static synthetic access$1400(Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;)Lcom/google/android/gms/maps/CameraUpdate;
     .locals 0
 
-    .line 605
+    .line 615
     iget-object p0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleCameraUpdate;->cameraUpdate:Lcom/google/android/gms/maps/CameraUpdate;
 
     return-object p0

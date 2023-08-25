@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,215:1\n13#2,4:216\n56#3,6:220\n1855#4,2:226\n1855#4,2:228\n1855#4,2:230\n1855#4,2:232\n1549#4:234\n1620#4,3:235\n1855#4,2:238\n11335#5:240\n11670#5,3:241\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment\n*L\n45#1:216,4\n46#1:220,6\n69#1:226,2\n80#1:228,2\n86#1:230,2\n90#1:232,2\n125#1:234\n125#1:235,3\n160#1:238,2\n170#1:240\n170#1:241,3\n*E\n"
+    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,239:1\n13#2,4:240\n56#3,6:244\n1855#4,2:250\n1855#4,2:252\n1855#4,2:254\n1855#4,2:256\n1549#4:258\n1620#4,3:259\n1855#4,2:262\n11335#5:264\n11670#5,3:265\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/iMe/ui/wallet/staking/operations/StakingOperationsFragment\n*L\n46#1:240,4\n47#1:244,6\n69#1:250,2\n80#1:252,2\n86#1:254,2\n90#1:256,2\n126#1:258\n126#1:259,3\n181#1:262,2\n187#1:264\n187#1:265,3\n*E\n"
 .end annotation
 
 
@@ -60,10 +60,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$7YeNcSEIpc0PQ-YP91CqyIawoBc(Lkotlin/jvm/functions/Function1;Lcom/iMe/storage/domain/model/crypto/Network;)V
+.method public static synthetic $r8$lambda$lZjqMUYU5uKv2Zcx-78wUTd0Zbw(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->showChooseNetworkDialog$lambda$8(Lkotlin/jvm/functions/Function1;Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-static {p0, p1}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->showChooseNetworkDialog$lambda$8(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)V
 
     return-void
 .end method
@@ -77,7 +77,7 @@
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 45
+    .line 46
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string/jumbo v3, "presenter"
@@ -127,10 +127,10 @@
 .method public constructor <init>()V
     .locals 5
 
-    .line 42
+    .line 43
     invoke-direct {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;-><init>()V
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$presenter$2;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)V
@@ -142,7 +142,7 @@
 
     move-result-object v2
 
-    const-string v3, "mvpDelegate"
+    const-string/jumbo v3, "mvpDelegate"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -172,10 +172,10 @@
 
     invoke-direct {v1, v2, v3, v0}, Lmoxy/ktx/MoxyKtxDelegate;-><init>(Lmoxy/MvpDelegate;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
-    .line 45
+    .line 46
     iput-object v1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
-    .line 46
+    .line 47
     invoke-static {}, Lcom/iMe/di/module/NavigationModuleKt;->getCOMMON_TABS_NAVIGATOR()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -198,7 +198,7 @@
 
     move-result-object v0
 
-    .line 46
+    .line 47
     iput-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->navigationRouter$delegate:Lkotlin/Lazy;
 
     .line 52
@@ -216,7 +216,7 @@
 
     iput-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->binding$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 53
+    .line 55
     new-instance v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$pageTabs$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$pageTabs$2;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)V
@@ -233,7 +233,7 @@
 .method public static final synthetic access$getNavigationRouter(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)Lcom/iMe/navigation/common/router/base/NavigationRouter;
     .locals 0
 
-    .line 42
+    .line 43
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getNavigationRouter()Lcom/iMe/navigation/common/router/base/NavigationRouter;
 
     move-result-object p0
@@ -244,7 +244,7 @@
 .method public static final synthetic access$getPresenter(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;
     .locals 0
 
-    .line 42
+    .line 43
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getPresenter()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;
 
     move-result-object p0
@@ -255,7 +255,7 @@
 .method public static final synthetic access$initPageTabs(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)Ljava/util/List;
     .locals 0
 
-    .line 42
+    .line 43
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->initPageTabs()Ljava/util/List;
 
     move-result-object p0
@@ -295,7 +295,7 @@
         }
     .end annotation
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->navigationRouter$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -318,7 +318,7 @@
         }
     .end annotation
 
-    .line 53
+    .line 55
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->pageTabs$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -333,7 +333,7 @@
 .method private final getPresenter()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;
     .locals 3
 
-    .line 45
+    .line 46
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->presenter$delegate:Lmoxy/ktx/MoxyKtxDelegate;
 
     sget-object v1, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -362,7 +362,7 @@
         }
     .end annotation
 
-    .line 170
+    .line 187
     invoke-static {}, Lcom/iMe/model/wallet/details/StakingOperationsGroup;->values()[Lcom/iMe/model/wallet/details/StakingOperationsGroup;
 
     move-result-object v0
@@ -384,18 +384,18 @@
 
     aget-object v4, v0, v3
 
-    .line 171
+    .line 188
     new-instance v5, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;
 
-    .line 172
+    .line 189
     invoke-virtual {v4}, Lcom/iMe/model/wallet/details/StakingOperationsGroup;->getId()I
 
     move-result v6
 
-    .line 173
+    .line 190
     new-instance v14, Lcom/iMe/fork/utils/TabbedFragmentPage;
 
-    .line 174
+    .line 191
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v7
@@ -410,30 +410,30 @@
 
     const/4 v9, 0x0
 
-    .line 175
+    .line 192
     sget-object v7, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->Companion:Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;
 
-    .line 176
-    new-instance v10, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;
+    .line 193
+    new-instance v10, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$StakingOperationsTab;
 
-    .line 177
+    .line 194
     invoke-virtual {v4}, Lcom/iMe/model/wallet/details/StakingOperationsGroup;->getStakingOperationType()Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     move-result-object v11
 
-    .line 176
-    invoke-direct {v10, v11}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType$StakingOperationsTab;-><init>(Lcom/iMe/storage/domain/model/staking/StakingOperationType;)V
+    .line 193
+    invoke-direct {v10, v11}, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$StakingOperationsTab;-><init>(Lcom/iMe/storage/domain/model/staking/StakingOperationType;)V
 
     const/4 v11, 0x2
 
     const/4 v12, 0x0
 
-    .line 175
-    invoke-static {v7, v10, v12, v11, v12}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance$default(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/Object;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
+    .line 192
+    invoke-static {v7, v10, v12, v11, v12}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance$default(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/Object;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
 
     move-result-object v10
 
-    .line 180
+    .line 197
     new-instance v11, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$initPageTabs$1$1;
 
     invoke-direct {v11, p0, v4}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$initPageTabs$1$1;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;Lcom/iMe/model/wallet/details/StakingOperationsGroup;)V
@@ -444,10 +444,10 @@
 
     move-object v7, v14
 
-    .line 173
+    .line 190
     invoke-direct/range {v7 .. v13}, Lcom/iMe/fork/utils/TabbedFragmentPage;-><init>(Ljava/lang/String;ILorg/telegram/ui/ActionBar/BaseFragment;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 171
+    .line 188
     invoke-direct {v5, v6, v14}, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;-><init>(ILcom/iMe/fork/utils/TabbedFragmentPage;)V
 
     .line 11671
@@ -464,20 +464,20 @@
 .method private final setupActionBar()V
     .locals 9
 
-    .line 187
+    .line 204
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v1, 0x0
 
-    .line 188
+    .line 205
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
 
-    .line 189
+    .line 206
     sget v2, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 190
+    .line 207
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
@@ -492,17 +492,17 @@
 
     const/4 v2, 0x1
 
-    .line 191
+    .line 208
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 192
+    .line 209
     new-instance v2, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$setupActionBar$1$1;
 
     invoke-direct {v2, p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$setupActionBar$1$1;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)V
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 200
+    .line 217
     new-instance v2, Lcom/iMe/ui/custom/NetworkTypeView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -527,25 +527,27 @@
 
     iput-object v2, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->networkTypeView:Lcom/iMe/ui/custom/NetworkTypeView;
 
-    .line 201
+    .line 218
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v0
 
+    .line 219
     sget v2, Lcom/iMe/common/IdFabric$Menu;->NETWORK_SWITCH:I
 
     const/4 v3, -0x2
 
+    .line 218
     invoke-virtual {v0, v2, v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItemWithWidth(III)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v0
 
-    .line 202
+    .line 223
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->disableRipple()V
 
     const-string/jumbo v1, "setupActionBar$lambda$13$lambda$12"
 
-    .line 203
+    .line 224
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 v1, 0xe
@@ -556,7 +558,7 @@
 
     invoke-static {v0, v1}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingHorizontal(Landroid/view/View;I)V
 
-    .line 204
+    .line 226
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->networkTypeView:Lcom/iMe/ui/custom/NetworkTypeView;
 
     const v2, 0x800015
@@ -565,24 +567,25 @@
 
     move-result-object v2
 
+    .line 225
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
 
-.method private static final showChooseNetworkDialog$lambda$8(Lkotlin/jvm/functions/Function1;Lcom/iMe/storage/domain/model/crypto/Network;)V
+.method private static final showChooseNetworkDialog$lambda$8(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)V
     .locals 1
 
-    const-string v0, "$action"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "selectedNetworkType"
+    .line 149
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getPresenter()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;
 
-    .line 140
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object p0
 
-    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;->onNetworkSelected(Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)V
 
     return-void
 .end method
@@ -600,7 +603,7 @@
 .method public getFragmentContainer()Landroid/view/ViewGroup;
     .locals 2
 
-    .line 149
+    .line 158
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;
 
     move-result-object v0
@@ -628,7 +631,7 @@
         }
     .end annotation
 
-    .line 125
+    .line 126
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getPageTabs()Ljava/util/List;
 
     move-result-object v0
@@ -663,7 +666,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;
 
-    .line 125
+    .line 126
     invoke-virtual {v2}, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;->getPage()Lcom/iMe/fork/utils/TabbedFragmentPage;
 
     move-result-object v2
@@ -704,7 +707,7 @@
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 19
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -714,162 +717,144 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    const/4 v0, 0x4
 
-    const/4 v1, 0x4
+    new-array v0, v0, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
+    .line 163
+    new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 154
-    new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v2, v10
-
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+    invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;II)V
 
     const/4 v2, 0x0
 
-    aput-object v10, v1, v2
+    aput-object v1, v0, v2
 
-    .line 155
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+    .line 164
+    new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 165
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
+    .line 166
+    sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
-    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
+    .line 167
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
-    const/4 v14, 0x0
+    .line 164
+    invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;II)V
 
-    const/4 v15, 0x0
+    const/4 v2, 0x1
 
-    const/16 v16, 0x0
+    aput-object v1, v0, v2
 
-    const/16 v17, 0x0
+    .line 169
+    new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    move-object v11, v2
+    .line 170
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+    .line 171
+    sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    const/4 v3, 0x1
+    .line 172
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    aput-object v2, v1, v3
+    .line 169
+    invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;II)V
 
-    .line 156
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+    const/4 v2, 0x2
 
-    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    aput-object v1, v0, v2
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
+    .line 174
+    new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+    .line 175
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const/4 v9, 0x0
+    .line 176
+    sget v3, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const/4 v10, 0x0
+    .line 177
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
-    move-object v4, v2
+    .line 174
+    invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;II)V
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+    const/4 v2, 0x3
 
-    const/4 v3, 0x2
+    aput-object v1, v0, v2
 
-    aput-object v2, v1, v3
+    .line 162
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
-    .line 157
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+    move-result-object v0
 
-    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
-
-    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
-
-    move-object v4, v2
-
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
-
-    const/4 v3, 0x3
-
-    aput-object v2, v1, v3
-
-    .line 153
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
+    .line 180
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;
 
     move-result-object v1
 
-    .line 159
-    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;
+    iget-object v1, v1, Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;->operationsPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
-    move-result-object v2
+    invoke-virtual {v1}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getThemeDescription()Ljava/util/List;
 
-    iget-object v2, v2, Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;->operationsPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getThemeDescription()Ljava/util/List;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    move-result-object v2
+    .line 181
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getNavigationRouter()Lcom/iMe/navigation/common/router/base/NavigationRouter;
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    move-result-object v1
 
-    .line 160
-    invoke-direct/range {p0 .. p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getNavigationRouter()Lcom/iMe/navigation/common/router/base/NavigationRouter;
+    invoke-interface {v1}, Lcom/iMe/navigation/common/router/base/NavigationRouter;->getScreenStack()Ljava/util/List;
 
-    move-result-object v2
-
-    invoke-interface {v2}, Lcom/iMe/navigation/common/router/base/NavigationRouter;->getScreenStack()Ljava/util/List;
-
-    move-result-object v2
+    move-result-object v1
 
     .line 1855
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v2, Lcom/iMe/ui/base/mvp/MvpFragment;
 
-    move-result v3
+    .line 182
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemeDescriptions()Ljava/util/ArrayList;
 
-    if-eqz v3, :cond_0
+    move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/iMe/ui/base/mvp/MvpFragment;
-
-    .line 161
-    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemeDescriptions()Ljava/util/ArrayList;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_0
 
     :cond_0
-    return-object v1
+    return-object v0
 .end method
 
 .method public isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 123
+    .line 124
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingOperationsBinding;
 
     move-result-object p1
@@ -1012,7 +997,7 @@
 .method public bridge synthetic onPageChanged(Lcom/iMe/fork/utils/AbstractTabbedViewPage;Lcom/iMe/fork/utils/AbstractTabbedViewPage;II)V
     .locals 0
 
-    .line 42
+    .line 43
     check-cast p1, Lcom/iMe/fork/utils/TabbedFragmentPage;
 
     check-cast p2, Lcom/iMe/fork/utils/TabbedFragmentPage;
@@ -1036,15 +1021,15 @@
         }
     .end annotation
 
-    const-string p4, "newPage"
+    const-string/jumbo p4, "newPage"
 
     invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p4, "oldPage"
+    const-string/jumbo p4, "oldPage"
 
     invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 128
+    .line 134
     invoke-virtual {p2}, Lcom/iMe/fork/utils/TabbedFragmentPage;->getFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p2
@@ -1053,7 +1038,7 @@
 
     invoke-virtual {p2}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
-    .line 129
+    .line 135
     invoke-virtual {p1}, Lcom/iMe/fork/utils/TabbedFragmentPage;->getFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
@@ -1062,7 +1047,7 @@
 
     invoke-virtual {p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
-    .line 130
+    .line 136
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->getPresenter()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsPresenter;
 
     move-result-object p1
@@ -1242,9 +1227,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentPosition()I
-
-    move-result v1
+    iget v1, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-eq v1, p1, :cond_0
 
@@ -1295,14 +1278,14 @@
     return-void
 .end method
 
-.method public setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+.method public setupNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
     .locals 1
 
-    const-string v0, "network"
+    const-string/jumbo v0, "networkItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 146
+    .line 155
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->networkTypeView:Lcom/iMe/ui/custom/NetworkTypeView;
 
     if-nez v0, :cond_0
@@ -1310,30 +1293,26 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0, p1}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
     :goto_0
     return-void
 .end method
 
-.method public showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
-    .locals 3
+.method public showChooseNetworkDialog(Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;)V
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem;",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
-            ">;",
-            "Lkotlin/jvm/functions/Function1<",
-            "-",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
-            "Lkotlin/Unit;",
+            "+",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem;",
             ">;)V"
         }
     .end annotation
 
-    const-string v0, "network"
+    const-string/jumbo v0, "network"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1341,34 +1320,30 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "action"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 135
+    .line 144
     sget-object v0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->Companion:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$Companion;
 
-    .line 136
+    .line 145
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 139
+    .line 148
     new-instance v2, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, p3}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)V
 
-    const-string/jumbo p3, "parentActivity"
+    const-string/jumbo v3, "parentActivity"
 
-    .line 136
-    invoke-static {v1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 145
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 135
-    invoke-virtual {v0, v1, p1, p2, v2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$Companion;->newInstance(Landroid/content/Context;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
+    .line 144
+    invoke-virtual {v0, v1, p1, p2, v2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$Companion;->newInstance(Landroid/content/Context;Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     move-result-object p1
 
-    .line 134
+    .line 143
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void

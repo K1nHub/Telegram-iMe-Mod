@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
+.field public final synthetic f$0:Lcom/iMe/ui/wallet/swap/adapter/WalletSwapProtocolsRecycleAdapter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/swap/adapter/WalletSwapProtocolsRecycleAdapter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/swap/adapter/WalletSwapProtocolsRecycleAdapter;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final didSetColor()V
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$$ExternalSyntheticLambda2;->f$0:Lcom/iMe/ui/wallet/swap/adapter/WalletSwapProtocolsRecycleAdapter;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;->$r8$lambda$hi40SxBZSCb6G2fSd9XQbBMiqXI(Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;)V
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
 .end method

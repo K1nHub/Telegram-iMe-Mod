@@ -6,28 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:J
-
-.field public final synthetic f$1:Ljava/util/Calendar;
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:I
+.field public final synthetic f$0:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(JLjava/util/Calendar;II)V
+.method public synthetic constructor <init>([I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$0:J
-
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$1:Ljava/util/Calendar;
-
-    iput p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$2:I
-
-    iput p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$3:I
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$0:[I
 
     return-void
 .end method
@@ -35,19 +23,11 @@
 
 # virtual methods
 .method public final format(I)Ljava/lang/String;
-    .locals 6
+    .locals 1
 
-    iget-wide v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$0:J
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$0:[I
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$1:Ljava/util/Calendar;
-
-    iget v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$2:I
-
-    iget v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;->f$3:I
-
-    move v5, p1
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$wSNEMoboyGPx9miNhkb-lN-UzPc(JLjava/util/Calendar;III)Ljava/lang/String;
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$BxWMd68A3aLz7_vSBJf_qLC66eg([II)Ljava/lang/String;
 
     move-result-object p1
 

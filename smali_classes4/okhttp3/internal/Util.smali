@@ -178,7 +178,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "okhttp3."
+    const-string/jumbo v1, "okhttp3."
 
     invoke-static {v0, v1}, Lkotlin/text/StringsKt;->removePrefix(Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/String;
 
@@ -346,7 +346,7 @@
 .method public static final checkDuration(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;)I
     .locals 7
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1409,7 +1409,7 @@
 
     move-result-object p0
 
-    const-string p1, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo p1, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {p0, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1551,7 +1551,7 @@
 .method public static final isSensitiveHeader(Ljava/lang/String;)Z
     .locals 2
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2030,7 +2030,7 @@
 .method public static final threadFactory(Ljava/lang/String;Z)Ljava/util/concurrent/ThreadFactory;
     .locals 1
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

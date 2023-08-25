@@ -351,26 +351,26 @@
     .line 171
     iput-object v2, p0, Lorg/telegram/ui/CameraScanActivity;->visionQrReader:Lcom/google/android/gms/vision/barcode/BarcodeDetector;
 
-    .line 803
+    .line 809
     iput v3, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedT:F
 
-    .line 804
+    .line 810
     iput v3, p0, Lorg/telegram/ui/CameraScanActivity;->newRecognizedT:F
 
-    .line 806
+    .line 812
     iput v3, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBounds:F
 
-    .line 983
+    .line 989
     new-instance v0, Lorg/telegram/ui/CameraScanActivity$7;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/CameraScanActivity$7;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->requestShot:Ljava/lang/Runnable;
 
-    .line 1016
+    .line 1022
     iput v3, p0, Lorg/telegram/ui/CameraScanActivity;->averageProcessTime:F
 
-    .line 1017
+    .line 1023
     iput-wide v4, p0, Lorg/telegram/ui/CameraScanActivity;->processTimesCount:J
 
     .line 275
@@ -688,7 +688,7 @@
 .method public static createThresholdMatrix(I)Landroid/graphics/ColorMatrix;
     .locals 5
 
-    .line 1170
+    .line 1176
     new-instance v0, Landroid/graphics/ColorMatrix;
 
     const/16 v1, 0x14
@@ -795,12 +795,12 @@
 .method private getBounds()Landroid/graphics/RectF;
     .locals 3
 
-    .line 942
+    .line 948
     invoke-direct {p0}, Lorg/telegram/ui/CameraScanActivity;->getRecognizedBounds()Landroid/graphics/RectF;
 
     move-result-object v0
 
-    .line 943
+    .line 949
     iget v1, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBounds:F
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -809,15 +809,15 @@
 
     if-gez v1, :cond_1
 
-    .line 944
+    .line 950
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->normalBounds:Landroid/graphics/RectF;
 
     if-nez v1, :cond_0
 
-    .line 945
+    .line 951
     invoke-direct {p0}, Lorg/telegram/ui/CameraScanActivity;->updateNormalBounds()V
 
-    .line 947
+    .line 953
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->normalBounds:Landroid/graphics/RectF;
 
@@ -917,17 +917,17 @@
 .method private getRecognizedBounds()Landroid/graphics/RectF;
     .locals 4
 
-    .line 913
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
     if-nez v0, :cond_0
 
-    .line 914
+    .line 920
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->bounds:Landroid/graphics/RectF;
 
     return-object v0
 
-    .line 916
+    .line 922
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -945,7 +945,7 @@
 
     const/4 v1, 0x0
 
-    .line 917
+    .line 923
     invoke-static {v1, v0}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
@@ -960,12 +960,12 @@
 
     if-gez v1, :cond_1
 
-    .line 919
+    .line 925
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
-    .line 921
+    .line 927
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
@@ -981,14 +981,14 @@
 .method private initCameraView()V
     .locals 4
 
-    .line 849
+    .line 855
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 852
+    .line 858
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
@@ -998,7 +998,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraController;->initCamera(Ljava/lang/Runnable;)V
 
-    .line 853
+    .line 859
     new-instance v0, Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -1015,15 +1015,15 @@
 
     const/4 v1, 0x1
 
-    .line 854
+    .line 860
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraView;->setUseMaxPreview(Z)V
 
-    .line 855
+    .line 861
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraView;->setOptimizeForBarcode(Z)V
 
-    .line 856
+    .line 862
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda20;
@@ -1032,7 +1032,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraView;->setDelegate(Lorg/telegram/messenger/camera/CameraView$CameraViewDelegate;)V
 
-    .line 881
+    .line 887
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     check-cast v0, Landroid/view/ViewGroup;
@@ -1047,7 +1047,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 882
+    .line 888
     iget v0, p0, Lorg/telegram/ui/CameraScanActivity;->currentType:I
 
     if-nez v0, :cond_1
@@ -1056,7 +1056,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 883
+    .line 889
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
@@ -1068,44 +1068,44 @@
 .method private invert(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 7
 
-    .line 1134
+    .line 1140
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
 
-    .line 1135
+    .line 1141
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
 
-    .line 1137
+    .line 1143
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v1, v0, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 1138
+    .line 1144
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1139
+    .line 1145
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 1141
+    .line 1147
     new-instance v3, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v3}, Landroid/graphics/ColorMatrix;-><init>()V
 
     const/4 v4, 0x0
 
-    .line 1142
+    .line 1148
     invoke-virtual {v3, v4}, Landroid/graphics/ColorMatrix;->setSaturation(F)V
 
-    .line 1143
+    .line 1149
     new-instance v5, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v5}, Landroid/graphics/ColorMatrix;-><init>()V
@@ -1114,22 +1114,22 @@
 
     new-array v6, v6, [F
 
-    .line 1144
+    .line 1150
     fill-array-data v6, :array_0
 
     invoke-virtual {v5, v6}, Landroid/graphics/ColorMatrix;->set([F)V
 
-    .line 1150
+    .line 1156
     invoke-virtual {v5, v3}, Landroid/graphics/ColorMatrix;->preConcat(Landroid/graphics/ColorMatrix;)V
 
-    .line 1151
+    .line 1157
     new-instance v3, Landroid/graphics/ColorMatrixColorFilter;
 
     invoke-direct {v3, v5}, Landroid/graphics/ColorMatrixColorFilter;-><init>(Landroid/graphics/ColorMatrix;)V
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 1152
+    .line 1158
     invoke-virtual {v1, p1, v4, v4, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     return-object v0
@@ -1164,7 +1164,7 @@
 .method private isQr()Z
     .locals 3
 
-    .line 1356
+    .line 1362
     iget v0, p0, Lorg/telegram/ui/CameraScanActivity;->currentType:I
 
     const/4 v1, 0x1
@@ -1215,42 +1215,64 @@
 
     .line 701
     :cond_0
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x17
-
-    if-lt p1, v0, :cond_1
-
-    .line 702
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
+
+    .line 702
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x21
+
+    const/4 v2, 0x4
+
+    if-lt v0, v1, :cond_1
+
+    const-string v0, "android.permission.READ_MEDIA_IMAGES"
+
+    .line 703
+    invoke-virtual {p1, v0}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const-string v1, "android.permission.READ_MEDIA_VIDEO"
+
+    .line 704
+    filled-new-array {v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+
+    return-void
+
+    :cond_1
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_2
 
     const-string v0, "android.permission.READ_EXTERNAL_STORAGE"
 
+    .line 708
     invoke-virtual {p1, v0}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
-    move-result p1
+    move-result v1
 
-    if-eqz p1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 703
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object p1
-
+    .line 709
     filled-new-array {v0}, [Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x4
-
-    invoke-virtual {p1, v0, v1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+    invoke-virtual {p1, v0, v2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
 
     return-void
 
-    .line 707
-    :cond_1
+    .line 713
+    :cond_2
     new-instance p1, Lorg/telegram/ui/PhotoAlbumPickerActivity;
 
     sget v0, Lorg/telegram/ui/PhotoAlbumPickerActivity;->SELECT_TYPE_QR:I
@@ -1263,20 +1285,20 @@
 
     const/4 v0, 0x1
 
-    .line 708
+    .line 714
     invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/PhotoAlbumPickerActivity;->setMaxSelectedPhotos(IZ)V
 
-    .line 709
+    .line 715
     invoke-virtual {p1, v2}, Lorg/telegram/ui/PhotoAlbumPickerActivity;->setAllowSearchImages(Z)V
 
-    .line 710
+    .line 716
     new-instance v0, Lorg/telegram/ui/CameraScanActivity$5;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/CameraScanActivity$5;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/PhotoAlbumPickerActivity;->setDelegate(Lorg/telegram/ui/PhotoAlbumPickerActivity$PhotoAlbumPickerActivityDelegate;)V
 
-    .line 750
+    .line 756
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -1285,7 +1307,7 @@
 .method private synthetic lambda$createView$3(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 772
+    .line 778
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->invalidate()V
@@ -1296,14 +1318,14 @@
 .method private synthetic lambda$createView$4(Landroid/view/View;)V
     .locals 7
 
-    .line 760
+    .line 766
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-nez p1, :cond_0
 
     return-void
 
-    .line 763
+    .line 769
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
 
@@ -1311,7 +1333,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 765
+    .line 771
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1320,20 +1342,20 @@
 
     check-cast v0, Landroid/graphics/drawable/ShapeDrawable;
 
-    .line 766
+    .line 772
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_1
 
-    .line 767
+    .line 773
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 768
+    .line 774
     iput-object v2, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
-    .line 770
+    .line 776
     :cond_1
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -1341,7 +1363,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
-    .line 771
+    .line 777
     sget-object v1, Lorg/telegram/ui/Components/AnimationProperties;->SHAPE_DRAWABLE_ALPHA:Landroid/util/Property;
 
     const/4 v3, 0x1
@@ -1372,14 +1394,14 @@
 
     move-result-object v0
 
-    .line 772
+    .line 778
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 773
+    .line 779
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
     new-array v4, v3, [Landroid/animation/Animator;
@@ -1388,21 +1410,21 @@
 
     invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 774
+    .line 780
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v4, 0xc8
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 775
+    .line 781
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 776
+    .line 782
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$6;
@@ -1411,12 +1433,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 782
+    .line 788
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 783
+    .line 789
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
@@ -1425,7 +1447,7 @@
 
     if-nez v0, :cond_3
 
-    .line 784
+    .line 790
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1434,18 +1456,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 785
+    .line 791
     invoke-virtual {p1, v3}, Lorg/telegram/messenger/camera/CameraSession;->setTorchEnabled(Z)V
 
     goto :goto_1
 
-    .line 787
+    .line 793
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 788
+    .line 794
     invoke-virtual {p1, v6}, Lorg/telegram/messenger/camera/CameraSession;->setTorchEnabled(Z)V
 
     :cond_4
@@ -1460,10 +1482,10 @@
 
     div-float/2addr p2, p1
 
-    .line 866
+    .line 872
     iput p2, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearingValue:F
 
-    .line 867
+    .line 873
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -1474,17 +1496,17 @@
 .method private synthetic lambda$initCameraView$8(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 870
+    .line 876
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz p1, :cond_0
 
-    .line 871
+    .line 877
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
     const/4 p1, 0x0
 
-    .line 872
+    .line 878
     iput-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     :cond_0
@@ -1494,30 +1516,30 @@
 .method private synthetic lambda$initCameraView$9()V
     .locals 3
 
-    .line 857
+    .line 863
     invoke-direct {p0}, Lorg/telegram/ui/CameraScanActivity;->startRecognizing()V
 
-    .line 858
+    .line 864
     invoke-direct {p0}, Lorg/telegram/ui/CameraScanActivity;->isQr()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 859
+    .line 865
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_0
 
-    .line 860
+    .line 866
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 861
+    .line 867
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 864
+    .line 870
     :cond_0
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -1531,14 +1553,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 865
+    .line 871
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda6;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 869
+    .line 875
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda5;
@@ -1547,7 +1569,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 875
+    .line 881
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v1, Landroidx/dynamicanimation/animation/SpringForce;
@@ -1558,7 +1580,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 876
+    .line 882
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -1569,7 +1591,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 877
+    .line 883
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -1580,7 +1602,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 878
+    .line 884
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->qrAppearing:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -1624,7 +1646,7 @@
 .method private synthetic lambda$onNoQrFound$10()V
     .locals 3
 
-    .line 1009
+    .line 1015
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedMrzView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
@@ -1633,14 +1655,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1010
+    .line 1016
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedMrzView:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 1011
+    .line 1017
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedMrzView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1674,14 +1696,14 @@
 .method private synthetic lambda$processShot$11(Lorg/telegram/messenger/MrzRecognizer$Result;)V
     .locals 3
 
-    .line 1031
+    .line 1037
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedMrzView:Landroid/widget/TextView;
 
     iget-object v1, p1, Lorg/telegram/messenger/MrzRecognizer$Result;->rawMRZ:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1032
+    .line 1038
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedMrzView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1708,15 +1730,15 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1033
+    .line 1039
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->delegate:Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 1034
+    .line 1040
     invoke-interface {v0, p1}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;->didFindMrzInfo(Lorg/telegram/messenger/MrzRecognizer$Result;)V
 
-    .line 1036
+    .line 1042
     :cond_0
     new-instance p1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda8;
 
@@ -1732,17 +1754,17 @@
 .method private synthetic lambda$processShot$12()V
     .locals 2
 
-    .line 1059
+    .line 1065
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->delegate:Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 1060
+    .line 1066
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedText:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;->didFindQr(Ljava/lang/String;)V
 
-    .line 1062
+    .line 1068
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -1752,7 +1774,7 @@
 .method private synthetic lambda$processShot$13()V
     .locals 2
 
-    .line 1055
+    .line 1061
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_0
@@ -1763,7 +1785,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1056
+    .line 1062
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v0
@@ -1776,7 +1798,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraController;->stopPreview(Lorg/telegram/messenger/camera/CameraSession;)V
 
-    .line 1058
+    .line 1064
     :cond_0
     new-instance v0, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda12;
 
@@ -1790,7 +1812,7 @@
 .method private synthetic lambda$processShot$14(Lorg/telegram/ui/CameraScanActivity$QrResult;)V
     .locals 0
 
-    .line 1068
+    .line 1074
     iget-object p1, p1, Lorg/telegram/ui/CameraScanActivity$QrResult;->bounds:Landroid/graphics/RectF;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/CameraScanActivity;->updateRecognizedBounds(Landroid/graphics/RectF;)V
@@ -1801,15 +1823,15 @@
 .method private synthetic lambda$processShot$15(Ljava/lang/String;)V
     .locals 1
 
-    .line 1090
+    .line 1096
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->delegate:Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 1091
+    .line 1097
     invoke-interface {v0, p1}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;->didFindQr(Ljava/lang/String;)V
 
-    .line 1093
+    .line 1099
     :cond_0
     iget p1, p0, Lorg/telegram/ui/CameraScanActivity;->currentType:I
 
@@ -1817,7 +1839,7 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 1094
+    .line 1100
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     :cond_1
@@ -1827,7 +1849,7 @@
 .method private synthetic lambda$processShot$16()V
     .locals 3
 
-    .line 1099
+    .line 1105
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->isFinishing()Z
 
     move-result v0
@@ -1839,25 +1861,25 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1103
+    .line 1109
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedText:Ljava/lang/String;
 
     const/4 v0, 0x0
 
-    .line 1104
+    .line 1110
     iput-boolean v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
-    .line 1105
+    .line 1111
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->requestShot:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 1106
+    .line 1112
     iget-boolean v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
     if-nez v0, :cond_1
 
-    .line 1107
+    .line 1113
     new-instance v0, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda15;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
@@ -1873,12 +1895,12 @@
 .method private synthetic lambda$processShot$17()V
     .locals 1
 
-    .line 1114
+    .line 1120
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_0
 
-    .line 1115
+    .line 1121
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getTextureView()Landroid/view/TextureView;
 
     move-result-object v0
@@ -1896,7 +1918,7 @@
 .method private synthetic lambda$updateRecognized$5(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 820
+    .line 826
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1909,7 +1931,7 @@
 
     iput p1, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedT:F
 
-    .line 821
+    .line 827
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->titleTextView:Landroid/widget/TextView;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1918,14 +1940,14 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 822
+    .line 828
     iget p1, p0, Lorg/telegram/ui/CameraScanActivity;->currentType:I
 
     const/4 v0, 0x3
 
     if-ne p1, v0, :cond_0
 
-    .line 823
+    .line 829
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->descriptionText:Landroid/widget/TextView;
 
     iget v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedT:F
@@ -1934,7 +1956,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 825
+    .line 831
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
@@ -1946,7 +1968,7 @@
 
     const/high16 p1, 0x3f000000    # 0.5f
 
-    .line 826
+    .line 832
     iget v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedT:F
 
     const/high16 v1, 0x3e800000    # 0.25f
@@ -1957,7 +1979,7 @@
 
     iput v0, p0, Lorg/telegram/ui/CameraScanActivity;->backShadowAlpha:F
 
-    .line 827
+    .line 833
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -1968,7 +1990,7 @@
 .method private synthetic lambda$updateRecognized$6(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    .line 839
+    .line 845
     iget-boolean p1, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
     const/high16 p3, 0x43fa0000    # 500.0f
@@ -1989,7 +2011,7 @@
     :goto_0
     iput p2, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBounds:F
 
-    .line 840
+    .line 846
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -2000,34 +2022,34 @@
 .method private monochrome(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
     .locals 4
 
-    .line 1157
+    .line 1163
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
 
-    .line 1158
+    .line 1164
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
 
-    .line 1160
+    .line 1166
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v1, v0, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 1161
+    .line 1167
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1162
+    .line 1168
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 1164
+    .line 1170
     new-instance v3, Landroid/graphics/ColorMatrixColorFilter;
 
     invoke-static {p2}, Lorg/telegram/ui/CameraScanActivity;->createThresholdMatrix(I)Landroid/graphics/ColorMatrix;
@@ -2040,7 +2062,7 @@
 
     const/4 p2, 0x0
 
-    .line 1165
+    .line 1171
     invoke-virtual {v1, p1, p2, p2, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     return-object v0
@@ -2049,7 +2071,7 @@
 .method private onNoQrFound()V
     .locals 1
 
-    .line 1008
+    .line 1014
     new-instance v0, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda10;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
@@ -2156,12 +2178,12 @@
 .method private startRecognizing()V
     .locals 3
 
-    .line 1002
+    .line 1008
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->backgroundHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 1003
+    .line 1009
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lorg/telegram/ui/CameraScanActivity;->backgroundHandlerThread:Landroid/os/HandlerThread;
@@ -2174,7 +2196,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->handler:Landroid/os/Handler;
 
-    .line 1004
+    .line 1010
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->requestShot:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x0
@@ -2193,13 +2215,13 @@
 
     const/4 v10, 0x0
 
-    .line 1187
+    .line 1193
     :try_start_0
     new-instance v11, Landroid/graphics/RectF;
 
     invoke-direct {v11}, Landroid/graphics/RectF;-><init>()V
 
-    .line 1189
+    .line 1195
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->visionQrReader:Lcom/google/android/gms/vision/barcode/BarcodeDetector;
 
     const/4 v2, 0x1
@@ -2220,7 +2242,7 @@
 
     if-eqz v9, :cond_0
 
-    .line 1192
+    .line 1198
     new-instance v1, Lcom/google/android/gms/vision/Frame$Builder;
 
     invoke-direct {v1}, Lcom/google/android/gms/vision/Frame$Builder;-><init>()V
@@ -2233,19 +2255,19 @@
 
     move-result-object v1
 
-    .line 1193
+    .line 1199
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    .line 1194
+    .line 1200
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v3
 
     goto :goto_0
 
-    .line 1196
+    .line 1202
     :cond_0
     new-instance v1, Lcom/google/android/gms/vision/Frame$Builder;
 
@@ -2273,17 +2295,17 @@
 
     move-result-object v1
 
-    .line 1197
+    .line 1203
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
     move-result v2
 
-    .line 1198
+    .line 1204
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
     move-result v3
 
-    .line 1200
+    .line 1206
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/CameraScanActivity;->visionQrReader:Lcom/google/android/gms/vision/barcode/BarcodeDetector;
 
@@ -2291,7 +2313,7 @@
 
     move-result-object v1
 
-    .line 1202
+    .line 1208
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v4
@@ -2300,7 +2322,7 @@
 
     if-eqz v9, :cond_1
 
-    .line 1203
+    .line 1209
     invoke-direct {v0, v9}, Lorg/telegram/ui/CameraScanActivity;->getCodesFromFixedBitmap(Landroid/graphics/Bitmap;)Landroid/util/SparseArray;
 
     move-result-object v1
@@ -2308,24 +2330,24 @@
     :cond_1
     if-eqz v1, :cond_5
 
-    .line 1206
+    .line 1212
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v4
 
     if-lez v4, :cond_5
 
-    .line 1207
+    .line 1213
     invoke-virtual {v1, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/gms/vision/barcode/Barcode;
 
-    .line 1208
+    .line 1214
     iget-object v4, v1, Lcom/google/android/gms/vision/barcode/Barcode;->rawValue:Ljava/lang/String;
 
-    .line 1209
+    .line 1215
     iget-object v1, v1, Lcom/google/android/gms/vision/barcode/Barcode;->cornerPoints:[Landroid/graphics/Point;
 
     if-eqz v1, :cond_4
@@ -2336,7 +2358,7 @@
 
     goto :goto_2
 
-    .line 1217
+    .line 1223
     :cond_2
     array-length v5, v1
 
@@ -2349,7 +2371,7 @@
 
     aget-object v8, v1, v12
 
-    .line 1218
+    .line 1224
     iget v9, v8, Landroid/graphics/Point;->x:I
 
     int-to-float v9, v9
@@ -2358,7 +2380,7 @@
 
     move-result v14
 
-    .line 1219
+    .line 1225
     iget v9, v8, Landroid/graphics/Point;->x:I
 
     int-to-float v9, v9
@@ -2367,7 +2389,7 @@
 
     move-result v13
 
-    .line 1220
+    .line 1226
     iget v9, v8, Landroid/graphics/Point;->y:I
 
     int-to-float v9, v9
@@ -2376,7 +2398,7 @@
 
     move-result v7
 
-    .line 1221
+    .line 1227
     iget v8, v8, Landroid/graphics/Point;->y:I
 
     int-to-float v8, v8
@@ -2389,7 +2411,7 @@
 
     goto :goto_1
 
-    .line 1223
+    .line 1229
     :cond_3
     invoke-virtual {v11, v14, v7, v13, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
@@ -2404,15 +2426,15 @@
     :cond_5
     if-eqz v9, :cond_13
 
-    .line 1226
+    .line 1232
     invoke-direct {v0, v9}, Lorg/telegram/ui/CameraScanActivity;->invert(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 1227
+    .line 1233
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1228
+    .line 1234
     new-instance v2, Lcom/google/android/gms/vision/Frame$Builder;
 
     invoke-direct {v2}, Lcom/google/android/gms/vision/Frame$Builder;-><init>()V
@@ -2425,17 +2447,17 @@
 
     move-result-object v2
 
-    .line 1229
+    .line 1235
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 1230
+    .line 1236
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
 
-    .line 1231
+    .line 1237
     iget-object v5, v0, Lorg/telegram/ui/CameraScanActivity;->visionQrReader:Lcom/google/android/gms/vision/barcode/BarcodeDetector;
 
     invoke-virtual {v5, v2}, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->detect(Lcom/google/android/gms/vision/Frame;)Landroid/util/SparseArray;
@@ -2444,24 +2466,24 @@
 
     if-eqz v2, :cond_9
 
-    .line 1232
+    .line 1238
     invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
 
     move-result v5
 
     if-lez v5, :cond_9
 
-    .line 1233
+    .line 1239
     invoke-virtual {v2, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/gms/vision/barcode/Barcode;
 
-    .line 1234
+    .line 1240
     iget-object v2, v1, Lcom/google/android/gms/vision/barcode/Barcode;->rawValue:Ljava/lang/String;
 
-    .line 1235
+    .line 1241
     iget-object v1, v1, Lcom/google/android/gms/vision/barcode/Barcode;->cornerPoints:[Landroid/graphics/Point;
 
     if-eqz v1, :cond_8
@@ -2472,7 +2494,7 @@
 
     goto :goto_4
 
-    .line 1242
+    .line 1248
     :cond_6
     array-length v5, v1
 
@@ -2485,7 +2507,7 @@
 
     aget-object v8, v1, v12
 
-    .line 1243
+    .line 1249
     iget v9, v8, Landroid/graphics/Point;->x:I
 
     int-to-float v9, v9
@@ -2494,7 +2516,7 @@
 
     move-result v14
 
-    .line 1244
+    .line 1250
     iget v9, v8, Landroid/graphics/Point;->x:I
 
     int-to-float v9, v9
@@ -2503,7 +2525,7 @@
 
     move-result v13
 
-    .line 1245
+    .line 1251
     iget v9, v8, Landroid/graphics/Point;->y:I
 
     int-to-float v9, v9
@@ -2512,7 +2534,7 @@
 
     move-result v7
 
-    .line 1246
+    .line 1252
     iget v8, v8, Landroid/graphics/Point;->y:I
 
     int-to-float v8, v8
@@ -2525,7 +2547,7 @@
 
     goto :goto_3
 
-    .line 1248
+    .line 1254
     :cond_7
     invoke-virtual {v11, v14, v7, v13, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
@@ -2545,15 +2567,15 @@
     :cond_9
     const/16 v2, 0x5a
 
-    .line 1251
+    .line 1257
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/CameraScanActivity;->monochrome(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 1252
+    .line 1258
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1253
+    .line 1259
     new-instance v3, Lcom/google/android/gms/vision/Frame$Builder;
 
     invoke-direct {v3}, Lcom/google/android/gms/vision/Frame$Builder;-><init>()V
@@ -2566,17 +2588,17 @@
 
     move-result-object v2
 
-    .line 1254
+    .line 1260
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 1255
+    .line 1261
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
 
-    .line 1256
+    .line 1262
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->visionQrReader:Lcom/google/android/gms/vision/barcode/BarcodeDetector;
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/vision/barcode/BarcodeDetector;->detect(Lcom/google/android/gms/vision/Frame;)Landroid/util/SparseArray;
@@ -2585,24 +2607,24 @@
 
     if-eqz v1, :cond_c
 
-    .line 1257
+    .line 1263
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
     move-result v2
 
     if-lez v2, :cond_c
 
-    .line 1258
+    .line 1264
     invoke-virtual {v1, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/gms/vision/barcode/Barcode;
 
-    .line 1259
+    .line 1265
     iget-object v2, v1, Lcom/google/android/gms/vision/barcode/Barcode;->rawValue:Ljava/lang/String;
 
-    .line 1260
+    .line 1266
     iget-object v1, v1, Lcom/google/android/gms/vision/barcode/Barcode;->cornerPoints:[Landroid/graphics/Point;
 
     if-eqz v1, :cond_8
@@ -2613,7 +2635,7 @@
 
     goto :goto_4
 
-    .line 1267
+    .line 1273
     :cond_a
     array-length v5, v1
 
@@ -2626,7 +2648,7 @@
 
     aget-object v8, v1, v12
 
-    .line 1268
+    .line 1274
     iget v9, v8, Landroid/graphics/Point;->x:I
 
     int-to-float v9, v9
@@ -2635,7 +2657,7 @@
 
     move-result v14
 
-    .line 1269
+    .line 1275
     iget v9, v8, Landroid/graphics/Point;->x:I
 
     int-to-float v9, v9
@@ -2644,7 +2666,7 @@
 
     move-result v13
 
-    .line 1270
+    .line 1276
     iget v9, v8, Landroid/graphics/Point;->y:I
 
     int-to-float v9, v9
@@ -2653,7 +2675,7 @@
 
     move-result v7
 
-    .line 1271
+    .line 1277
     iget v8, v8, Landroid/graphics/Point;->y:I
 
     int-to-float v8, v8
@@ -2666,7 +2688,7 @@
 
     goto :goto_6
 
-    .line 1273
+    .line 1279
     :cond_b
     invoke-virtual {v11, v14, v7, v13, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
@@ -2684,7 +2706,7 @@
 
     goto/16 :goto_a
 
-    .line 1282
+    .line 1288
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->qrReader:Lcom/google/zxing/qrcode/QRCodeReader;
 
@@ -2692,7 +2714,7 @@
 
     if-eqz v9, :cond_e
 
-    .line 1285
+    .line 1291
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
@@ -2707,7 +2729,7 @@
 
     const/4 v3, 0x0
 
-    .line 1286
+    .line 1292
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
@@ -2730,7 +2752,7 @@
 
     invoke-virtual/range {v1 .. v8}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    .line 1287
+    .line 1293
     new-instance v1, Lcom/google/zxing/RGBLuminanceSource;
 
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getWidth()I
@@ -2743,19 +2765,19 @@
 
     invoke-direct {v1, v2, v3, v15}, Lcom/google/zxing/RGBLuminanceSource;-><init>(II[I)V
 
-    .line 1288
+    .line 1294
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    .line 1289
+    .line 1295
     invoke-virtual/range {p6 .. p6}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
     goto :goto_8
 
-    .line 1291
+    .line 1297
     :cond_e
     new-instance v1, Lcom/google/zxing/PlanarYUVLuminanceSource;
 
@@ -2783,17 +2805,17 @@
 
     invoke-direct/range {v15 .. v23}, Lcom/google/zxing/PlanarYUVLuminanceSource;-><init>([BIIIIIIZ)V
 
-    .line 1292
+    .line 1298
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
     move-result v2
 
-    .line 1293
+    .line 1299
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/messenger/camera/Size;->getHeight()I
 
     move-result v3
 
-    .line 1296
+    .line 1302
     :goto_8
     iget-object v4, v0, Lorg/telegram/ui/CameraScanActivity;->qrReader:Lcom/google/zxing/qrcode/QRCodeReader;
 
@@ -2811,18 +2833,18 @@
 
     if-nez v1, :cond_f
 
-    .line 1298
+    .line 1304
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/CameraScanActivity;->onNoQrFound()V
 
     return-object v10
 
-    .line 1301
+    .line 1307
     :cond_f
     invoke-virtual {v1}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1302
+    .line 1308
     invoke-virtual {v1}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
     move-result-object v5
@@ -2839,7 +2861,7 @@
 
     goto/16 :goto_2
 
-    .line 1309
+    .line 1315
     :cond_10
     invoke-virtual {v1}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
@@ -2856,7 +2878,7 @@
 
     aget-object v8, v1, v12
 
-    .line 1310
+    .line 1316
     invoke-virtual {v8}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v9
@@ -2865,7 +2887,7 @@
 
     move-result v14
 
-    .line 1311
+    .line 1317
     invoke-virtual {v8}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v9
@@ -2874,7 +2896,7 @@
 
     move-result v13
 
-    .line 1312
+    .line 1318
     invoke-virtual {v8}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v9
@@ -2883,7 +2905,7 @@
 
     move-result v7
 
-    .line 1313
+    .line 1319
     invoke-virtual {v8}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v8
@@ -2896,7 +2918,7 @@
 
     goto :goto_9
 
-    .line 1315
+    .line 1321
     :cond_11
     invoke-virtual {v11, v14, v7, v13, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
@@ -2908,7 +2930,7 @@
     :cond_13
     move-object v4, v10
 
-    .line 1320
+    .line 1326
     :goto_a
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2916,28 +2938,28 @@
 
     if-eqz v1, :cond_14
 
-    .line 1321
+    .line 1327
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/CameraScanActivity;->onNoQrFound()V
 
     return-object v10
 
-    .line 1325
+    .line 1331
     :cond_14
     iget-boolean v1, v0, Lorg/telegram/ui/CameraScanActivity;->isAllowCustomScan:Z
 
     if-nez v1, :cond_16
 
-    .line 1326
+    .line 1332
     iget-boolean v1, v0, Lorg/telegram/ui/CameraScanActivity;->needGalleryButton:Z
 
     if-eqz v1, :cond_15
 
-    .line 1327
+    .line 1333
     invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 1328
+    .line 1334
     invoke-virtual {v1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v1
@@ -2953,7 +2975,7 @@
     :cond_15
     const-string v1, "tg://login?token="
 
-    .line 1330
+    .line 1336
     invoke-virtual {v4, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -2966,12 +2988,12 @@
 
     if-eq v1, v5, :cond_16
 
-    .line 1331
+    .line 1337
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/CameraScanActivity;->onNoQrFound()V
 
     return-object v10
 
-    .line 1335
+    .line 1341
     :cond_16
     :goto_b
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$QrResult;
@@ -2982,19 +3004,19 @@
 
     const/16 v5, 0x19
 
-    .line 1337
+    .line 1343
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     const/16 v6, 0xf
 
-    .line 1338
+    .line 1344
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
-    .line 1339
+    .line 1345
     iget v7, v11, Landroid/graphics/RectF;->left:F
 
     int-to-float v5, v5
@@ -3017,7 +3039,7 @@
 
     invoke-virtual {v11, v7, v8, v9, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1340
+    .line 1346
     iget v5, v11, Landroid/graphics/RectF;->left:F
 
     int-to-float v2, v2
@@ -3040,18 +3062,18 @@
 
     invoke-virtual {v11, v5, v6, v7, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1345
+    .line 1351
     :cond_17
     iput-object v11, v1, Lorg/telegram/ui/CameraScanActivity$QrResult;->bounds:Landroid/graphics/RectF;
 
-    .line 1346
+    .line 1352
     iput-object v4, v1, Lorg/telegram/ui/CameraScanActivity$QrResult;->text:Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v1
 
-    .line 1349
+    .line 1355
     :catchall_0
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/CameraScanActivity;->onNoQrFound()V
 
@@ -3061,19 +3083,19 @@
 .method private updateNormalBounds()V
     .locals 9
 
-    .line 928
+    .line 934
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->normalBounds:Landroid/graphics/RectF;
 
     if-nez v0, :cond_0
 
-    .line 929
+    .line 935
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->normalBounds:Landroid/graphics/RectF;
 
-    .line 931
+    .line 937
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -3089,7 +3111,7 @@
 
     move-result v0
 
-    .line 932
+    .line 938
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v1, Landroid/graphics/Point;->y:I
@@ -3104,7 +3126,7 @@
 
     move-result v1
 
-    .line 933
+    .line 939
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v2
@@ -3117,7 +3139,7 @@
 
     float-to-int v2, v2
 
-    .line 934
+    .line 940
     iget-object v3, p0, Lorg/telegram/ui/CameraScanActivity;->normalBounds:Landroid/graphics/RectF;
 
     sub-int v4, v0, v2
@@ -3166,10 +3188,10 @@
 .method private updateRecognized()V
     .locals 5
 
-    .line 808
+    .line 814
     iget v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedT:F
 
-    .line 809
+    .line 815
     iget-boolean v1, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -3190,12 +3212,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 811
+    .line 817
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 812
+    .line 818
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_1
@@ -3205,7 +3227,7 @@
 
     const/4 v1, 0x0
 
-    .line 818
+    .line 824
     iget v3, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedT:F
 
     aput v3, v0, v1
@@ -3222,14 +3244,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedAnimator:Landroid/animation/ValueAnimator;
 
-    .line 819
+    .line 825
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 829
+    .line 835
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedAnimator:Landroid/animation/ValueAnimator;
 
     const/high16 v1, 0x43960000    # 300.0f
@@ -3250,27 +3272,27 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 830
+    .line 836
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 831
+    .line 837
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 833
+    .line 839
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBoundsAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_2
 
-    .line 834
+    .line 840
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 837
+    .line 843
     :cond_2
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -3300,14 +3322,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBoundsAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 838
+    .line 844
     new-instance v1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda7;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 842
+    .line 848
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBoundsAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v1, Landroidx/dynamicanimation/animation/SpringForce;
@@ -3316,7 +3338,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 843
+    .line 849
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBoundsAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -3325,7 +3347,7 @@
 
     invoke-virtual {v0, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 844
+    .line 850
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBoundsAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -3334,7 +3356,7 @@
 
     invoke-virtual {v0, v4}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 845
+    .line 851
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->useRecognizedBoundsAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -3346,12 +3368,12 @@
 .method private updateRecognizedBounds(Landroid/graphics/RectF;)V
     .locals 9
 
-    .line 888
+    .line 894
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 889
+    .line 895
     iget-wide v2, p0, Lorg/telegram/ui/CameraScanActivity;->lastBoundsUpdate:J
 
     const-wide/16 v4, 0x0
@@ -3364,22 +3386,22 @@
 
     sub-long/2addr v0, v5
 
-    .line 891
+    .line 897
     iput-wide v0, p0, Lorg/telegram/ui/CameraScanActivity;->lastBoundsUpdate:J
 
-    .line 892
+    .line 898
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->bounds:Landroid/graphics/RectF;
 
     invoke-virtual {v0, p1}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 893
+    .line 899
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
     invoke-virtual {v0, p1}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
     goto :goto_1
 
-    .line 896
+    .line 902
     :cond_0
     iget-object v4, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
@@ -3403,7 +3425,7 @@
 
     const/4 v4, 0x0
 
-    .line 898
+    .line 904
     invoke-static {v4, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
@@ -3412,7 +3434,7 @@
 
     move-result v2
 
-    .line 899
+    .line 905
     iget-object v3, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
     iget-object v4, p0, Lorg/telegram/ui/CameraScanActivity;->bounds:Landroid/graphics/RectF;
@@ -3424,14 +3446,14 @@
     :cond_1
     if-nez v4, :cond_2
 
-    .line 902
+    .line 908
     new-instance v2, Landroid/graphics/RectF;
 
     invoke-direct {v2}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
-    .line 904
+    .line 910
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/CameraScanActivity;->fromBounds:Landroid/graphics/RectF;
 
@@ -3439,16 +3461,16 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 906
+    .line 912
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/CameraScanActivity;->bounds:Landroid/graphics/RectF;
 
     invoke-virtual {v2, p1}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 907
+    .line 913
     iput-wide v0, p0, Lorg/telegram/ui/CameraScanActivity;->lastBoundsUpdate:J
 
-    .line 909
+    .line 915
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -4233,7 +4255,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 754
+    .line 760
     :cond_e
     new-instance v3, Landroid/widget/ImageView;
 
@@ -4241,19 +4263,19 @@
 
     iput-object v3, v0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
-    .line 755
+    .line 761
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 756
+    .line 762
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->qr_flashlight:I
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 757
+    .line 763
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4268,12 +4290,12 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 758
+    .line 764
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 759
+    .line 765
     iget-object v1, v0, Lorg/telegram/ui/CameraScanActivity;->flashButton:Landroid/widget/ImageView;
 
     new-instance v2, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda3;
@@ -4282,7 +4304,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 794
+    .line 800
     :goto_7
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -4290,20 +4312,20 @@
 
     if-eqz v1, :cond_f
 
-    .line 795
+    .line 801
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
     invoke-virtual {v1, v10}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 797
+    .line 803
     :cond_f
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v1, v10}, Landroid/view/View;->setKeepScreenOn(Z)V
 
-    .line 799
+    .line 805
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object v1
@@ -4312,20 +4334,20 @@
 .method public destroy(ZLjava/lang/Runnable;)V
     .locals 1
 
-    .line 976
+    .line 982
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_0
 
-    .line 977
+    .line 983
     invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/camera/CameraView;->destroy(ZLjava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 978
+    .line 984
     iput-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
-    .line 980
+    .line 986
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->backgroundHandlerThread:Landroid/os/HandlerThread;
 
@@ -4347,12 +4369,12 @@
 
     move-object/from16 v0, p0
 
-    .line 1361
+    .line 1367
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1362
+    .line 1368
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/CameraScanActivity;->isQr()Z
 
     move-result v2
@@ -4361,7 +4383,7 @@
 
     return-object v1
 
-    .line 1366
+    .line 1372
     :cond_0
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -4387,7 +4409,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1368
+    .line 1374
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v11, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4408,7 +4430,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1369
+    .line 1375
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4423,7 +4445,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1370
+    .line 1376
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4440,7 +4462,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1372
+    .line 1378
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/CameraScanActivity;->titleTextView:Landroid/widget/TextView;
@@ -4455,7 +4477,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1373
+    .line 1379
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/CameraScanActivity;->descriptionText:Landroid/widget/TextView;
@@ -4486,14 +4508,14 @@
 
     if-eqz p3, :cond_1
 
-    .line 954
+    .line 960
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 956
+    .line 962
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
@@ -4501,7 +4523,7 @@
 
     const/4 p2, 0x0
 
-    .line 957
+    .line 963
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p3
@@ -4532,24 +4554,24 @@
 
     move-object v2, p0
 
-    .line 958
+    .line 964
     invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/CameraScanActivity;->tryReadQr([BLorg/telegram/messenger/camera/Size;IIILandroid/graphics/Bitmap;)Lorg/telegram/ui/CameraScanActivity$QrResult;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 960
+    .line 966
     iget-object p2, p0, Lorg/telegram/ui/CameraScanActivity;->delegate:Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
     if-eqz p2, :cond_0
 
-    .line 961
+    .line 967
     iget-object p1, p1, Lorg/telegram/ui/CameraScanActivity$QrResult;->text:Ljava/lang/String;
 
     invoke-interface {p2, p1}, Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;->didFindQr(Ljava/lang/String;)V
 
-    .line 963
+    .line 969
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
     :try_end_0
@@ -4560,7 +4582,7 @@
     :catchall_0
     move-exception p1
 
-    .line 966
+    .line 972
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -4613,14 +4635,14 @@
 .method public processShot(Landroid/graphics/Bitmap;)V
     .locals 14
 
-    .line 1019
+    .line 1025
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1022
+    .line 1028
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -4628,7 +4650,7 @@
 
     const-wide/16 v2, 0x1f4
 
-    .line 1024
+    .line 1030
     :try_start_0
     iget-object v4, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -4636,7 +4658,7 @@
 
     move-result-object v7
 
-    .line 1025
+    .line 1031
     iget v4, p0, Lorg/telegram/ui/CameraScanActivity;->currentType:I
 
     const/4 v12, 0x1
@@ -4645,14 +4667,14 @@
 
     if-nez v4, :cond_2
 
-    .line 1026
+    .line 1032
     invoke-static {p1, v13}, Lorg/telegram/messenger/MrzRecognizer;->recognize(Landroid/graphics/Bitmap;Z)Lorg/telegram/messenger/MrzRecognizer$Result;
 
     move-result-object p1
 
     if-eqz p1, :cond_b
 
-    .line 1027
+    .line 1033
     iget-object v4, p1, Lorg/telegram/messenger/MrzRecognizer$Result;->firstName:Ljava/lang/String;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -4694,10 +4716,10 @@
 
     if-eqz v4, :cond_b
 
-    .line 1028
+    .line 1034
     iput-boolean v12, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
-    .line 1029
+    .line 1035
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v4
@@ -4710,7 +4732,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/messenger/camera/CameraController;->stopPreview(Lorg/telegram/messenger/camera/CameraSession;)V
 
-    .line 1030
+    .line 1036
     new-instance v4, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda18;
 
     invoke-direct {v4, p0, p1}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/CameraScanActivity;Lorg/telegram/messenger/MrzRecognizer$Result;)V
@@ -4719,7 +4741,7 @@
 
     return-void
 
-    .line 1041
+    .line 1047
     :cond_2
     invoke-virtual {v7}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
@@ -4741,7 +4763,7 @@
 
     float-to-int v10, v4
 
-    .line 1042
+    .line 1048
     invoke-virtual {v7}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
     move-result v4
@@ -4750,7 +4772,7 @@
 
     div-int/lit8 v8, v4, 0x2
 
-    .line 1043
+    .line 1049
     invoke-virtual {v7}, Lorg/telegram/messenger/camera/Size;->getHeight()I
 
     move-result v4
@@ -4765,17 +4787,17 @@
 
     move-object v11, p1
 
-    .line 1045
+    .line 1051
     invoke-direct/range {v5 .. v11}, Lorg/telegram/ui/CameraScanActivity;->tryReadQr([BLorg/telegram/messenger/camera/Size;IIILandroid/graphics/Bitmap;)Lorg/telegram/ui/CameraScanActivity$QrResult;
 
     move-result-object p1
 
-    .line 1046
+    .line 1052
     iget-boolean v4, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
     if-eqz v4, :cond_3
 
-    .line 1047
+    .line 1053
     iget v5, p0, Lorg/telegram/ui/CameraScanActivity;->recognizeIndex:I
 
     add-int/2addr v5, v12
@@ -4785,20 +4807,20 @@
     :cond_3
     if-eqz p1, :cond_5
 
-    .line 1050
+    .line 1056
     iput v13, p0, Lorg/telegram/ui/CameraScanActivity;->recognizeFailed:I
 
-    .line 1051
+    .line 1057
     iget-object v5, p1, Lorg/telegram/ui/CameraScanActivity$QrResult;->text:Ljava/lang/String;
 
     iput-object v5, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedText:Ljava/lang/String;
 
     if-nez v4, :cond_4
 
-    .line 1053
+    .line 1059
     iput-boolean v12, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
-    .line 1054
+    .line 1060
     iget-object v4, p0, Lorg/telegram/ui/CameraScanActivity;->delegate:Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
     new-instance v6, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda13;
@@ -4811,21 +4833,21 @@
 
     iput-boolean v4, p0, Lorg/telegram/ui/CameraScanActivity;->qrLoading:Z
 
-    .line 1065
+    .line 1071
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedStart:J
 
-    .line 1066
+    .line 1072
     new-instance v4, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda15;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1068
+    .line 1074
     :cond_4
     new-instance v4, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda19;
 
@@ -4838,7 +4860,7 @@
     :cond_5
     if-eqz v4, :cond_6
 
-    .line 1070
+    .line 1076
     iget v4, p0, Lorg/telegram/ui/CameraScanActivity;->recognizeFailed:I
 
     add-int/2addr v4, v12
@@ -4849,37 +4871,37 @@
 
     if-le v4, v5, :cond_6
 
-    .line 1071
+    .line 1077
     iget-boolean v4, p0, Lorg/telegram/ui/CameraScanActivity;->qrLoading:Z
 
     if-nez v4, :cond_6
 
-    .line 1072
+    .line 1078
     iput-boolean v13, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
-    .line 1073
+    .line 1079
     iput v13, p0, Lorg/telegram/ui/CameraScanActivity;->recognizeIndex:I
 
     const/4 p1, 0x0
 
-    .line 1074
+    .line 1080
     iput-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedText:Ljava/lang/String;
 
-    .line 1075
+    .line 1081
     new-instance p1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda15;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1076
+    .line 1082
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->requestShot:Ljava/lang/Runnable;
 
     invoke-static {p1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
 
-    .line 1081
+    .line 1087
     :cond_6
     :goto_0
     iget v4, p0, Lorg/telegram/ui/CameraScanActivity;->recognizeIndex:I
@@ -4896,7 +4918,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 1083
+    .line 1089
     :cond_7
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -4921,7 +4943,7 @@
 
     if-eqz p1, :cond_a
 
-    .line 1085
+    .line 1091
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     const/4 v4, 0x3
@@ -4938,7 +4960,7 @@
 
     if-eq p1, v4, :cond_9
 
-    .line 1086
+    .line 1092
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object p1
@@ -4951,23 +4973,23 @@
 
     invoke-virtual {p1, v5}, Lorg/telegram/messenger/camera/CameraController;->stopPreview(Lorg/telegram/messenger/camera/CameraSession;)V
 
-    .line 1088
+    .line 1094
     :cond_9
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->recognizedText:Ljava/lang/String;
 
-    .line 1089
+    .line 1095
     new-instance v5, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda17;
 
     invoke-direct {v5, p0, p1}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/CameraScanActivity;Ljava/lang/String;)V
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1097
+    .line 1103
     iget p1, p0, Lorg/telegram/ui/CameraScanActivity;->currentType:I
 
     if-ne p1, v4, :cond_b
 
-    .line 1098
+    .line 1104
     new-instance p1, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda14;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/CameraScanActivity;)V
@@ -4976,7 +4998,7 @@
 
     goto :goto_1
 
-    .line 1111
+    .line 1117
     :cond_a
     iget-boolean p1, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
@@ -4986,7 +5008,7 @@
 
     const/16 p1, 0x3e8
 
-    .line 1112
+    .line 1118
     iget v6, p0, Lorg/telegram/ui/CameraScanActivity;->sps:I
 
     div-int/2addr p1, v6
@@ -5003,7 +5025,7 @@
 
     move-result-wide v4
 
-    .line 1113
+    .line 1119
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->handler:Landroid/os/Handler;
 
     new-instance v6, Lorg/telegram/ui/CameraScanActivity$$ExternalSyntheticLambda11;
@@ -5016,11 +5038,11 @@
 
     goto :goto_1
 
-    .line 1121
+    .line 1127
     :catchall_0
     invoke-direct {p0}, Lorg/telegram/ui/CameraScanActivity;->onNoQrFound()V
 
-    .line 1123
+    .line 1129
     :cond_b
     :goto_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -5029,7 +5051,7 @@
 
     sub-long/2addr v4, v0
 
-    .line 1125
+    .line 1131
     iget p1, p0, Lorg/telegram/ui/CameraScanActivity;->averageProcessTime:F
 
     iget-wide v0, p0, Lorg/telegram/ui/CameraScanActivity;->processTimesCount:J
@@ -5056,19 +5078,19 @@
 
     const-wide/16 v4, 0x1e
 
-    .line 1126
+    .line 1132
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/CameraScanActivity;->processTimesCount:J
 
-    .line 1128
+    .line 1134
     iget-boolean p1, p0, Lorg/telegram/ui/CameraScanActivity;->recognized:Z
 
     if-nez p1, :cond_c
 
-    .line 1129
+    .line 1135
     iget-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->requestShot:Ljava/lang/Runnable;
 
     invoke-static {p1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
@@ -5080,7 +5102,7 @@
 .method public setDelegate(Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;)V
     .locals 0
 
-    .line 972
+    .line 978
     iput-object p1, p0, Lorg/telegram/ui/CameraScanActivity;->delegate:Lorg/telegram/ui/CameraScanActivity$CameraScanActivityDelegate;
 
     return-void

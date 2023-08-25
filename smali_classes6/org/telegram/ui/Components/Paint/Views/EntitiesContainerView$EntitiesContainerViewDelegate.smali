@@ -20,6 +20,3 @@
 
 .method public abstract onSelectedEntityRequest()Lorg/telegram/ui/Components/Paint/Views/EntityView;
 .end method
-
-.method public abstract shouldReceiveTouches()Z
-.end method

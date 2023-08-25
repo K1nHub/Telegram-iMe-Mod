@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
     .locals 0
 
-    .line 3251
+    .line 3252
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -39,7 +39,7 @@
 .method public getSpanSize(I)I
     .locals 4
 
-    .line 3254
+    .line 3255
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -62,7 +62,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 3255
+    .line 3256
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3800(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
@@ -75,7 +75,7 @@
 
     if-ne p1, v2, :cond_0
 
-    .line 3256
+    .line 3257
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$5800(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -91,7 +91,7 @@
     :cond_0
     return v3
 
-    .line 3259
+    .line 3260
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -111,7 +111,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 3260
+    .line 3261
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -124,7 +124,7 @@
 
     if-ne p1, v2, :cond_2
 
-    .line 3261
+    .line 3262
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$5800(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Landroidx/recyclerview/widget/GridLayoutManager;
@@ -140,7 +140,7 @@
     :cond_2
     return v3
 
-    .line 3264
+    .line 3265
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -160,7 +160,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 3265
+    .line 3266
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4300(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -173,7 +173,7 @@
 
     if-ne p1, v2, :cond_4
 
-    .line 3266
+    .line 3267
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$22;->val$finalMediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$5800(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Landroidx/recyclerview/widget/GridLayoutManager;

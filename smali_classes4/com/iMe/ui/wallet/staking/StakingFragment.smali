@@ -174,7 +174,7 @@
 
     move-result-object v2
 
-    const-string v3, "mvpDelegate"
+    const-string/jumbo v3, "mvpDelegate"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1341,11 +1341,11 @@
         }
     .end annotation
 
-    const-string p4, "newPage"
+    const-string/jumbo p4, "newPage"
 
     invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p4, "oldPage"
+    const-string/jumbo p4, "oldPage"
 
     invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1547,9 +1547,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentPosition()I
-
-    move-result v1
+    iget v1, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-eq v1, p1, :cond_0
 

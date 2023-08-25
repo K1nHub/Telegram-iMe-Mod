@@ -24,7 +24,7 @@
 .method constructor <init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 2896
+    .line 2952
     iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$url:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -39,7 +39,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 2899
+    .line 2955
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$url:Ljava/lang/String;
@@ -52,7 +52,7 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 2
 
-    .line 2903
+    .line 2959
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
 
     iget-object v1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -65,7 +65,7 @@
 
     const/4 v0, 0x0
 
-    .line 2904
+    .line 2960
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

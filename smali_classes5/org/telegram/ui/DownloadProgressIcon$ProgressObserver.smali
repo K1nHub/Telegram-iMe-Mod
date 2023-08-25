@@ -31,12 +31,12 @@
 .method private constructor <init>(Lorg/telegram/ui/DownloadProgressIcon;Ljava/lang/String;)V
     .locals 0
 
-    .line 218
+    .line 228
     iput-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;->this$0:Lorg/telegram/ui/DownloadProgressIcon;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 219
+    .line 229
     iput-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;->fileName:Ljava/lang/String;
 
     return-void
@@ -45,7 +45,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/DownloadProgressIcon;Ljava/lang/String;Lorg/telegram/ui/DownloadProgressIcon$1;)V
     .locals 0
 
-    .line 212
+    .line 222
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;-><init>(Lorg/telegram/ui/DownloadProgressIcon;Ljava/lang/String;)V
 
     return-void
@@ -54,7 +54,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;)Ljava/lang/String;
     .locals 0
 
-    .line 212
+    .line 222
     iget-object p0, p0, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;->fileName:Ljava/lang/String;
 
     return-object p0
@@ -79,13 +79,13 @@
 .method public onProgressDownload(Ljava/lang/String;JJ)V
     .locals 0
 
-    .line 234
+    .line 244
     iput-wide p2, p0, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;->downloaded:J
 
-    .line 235
+    .line 245
     iput-wide p4, p0, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;->total:J
 
-    .line 236
+    .line 246
     iget-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;->this$0:Lorg/telegram/ui/DownloadProgressIcon;
 
     invoke-virtual {p1}, Lorg/telegram/ui/DownloadProgressIcon;->updateProgress()V

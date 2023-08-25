@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramControllersGatewayImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramControllersGatewayImpl.kt\ncom/iMe/gateway/impl/TelegramControllersGatewayImpl\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,49:1\n361#2,7:50\n*S KotlinDebug\n*F\n+ 1 TelegramControllersGatewayImpl.kt\ncom/iMe/gateway/impl/TelegramControllersGatewayImpl\n*L\n39#1:50,7\n*E\n"
+    value = "SMAP\nTelegramControllersGatewayImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramControllersGatewayImpl.kt\ncom/iMe/gateway/impl/TelegramControllersGatewayImpl\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,44:1\n361#2,7:45\n*S KotlinDebug\n*F\n+ 1 TelegramControllersGatewayImpl.kt\ncom/iMe/gateway/impl/TelegramControllersGatewayImpl\n*L\n36#1:45,7\n*E\n"
 .end annotation
 
 
@@ -35,10 +35,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 11
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
+    .line 13
     iput-object p1, p0, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     .line 16
@@ -54,7 +54,7 @@
 .method private final generateInstanceKey(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 41
+    .line 38
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -90,7 +90,7 @@
         }
     .end annotation
 
-    .line 39
+    .line 36
     iget-object v0, p0, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->instancesCache:Ljava/util/HashMap;
 
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
@@ -137,7 +137,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 44
+    .line 41
     iget-object p1, p0, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
@@ -150,10 +150,35 @@
 
 
 # virtual methods
+.method public getConnectionsManager(I)Lorg/telegram/tgnet/ConnectionsManager;
+    .locals 1
+
+    .line 34
+    invoke-direct {p0, p1}, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->getSelectedAccount(I)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->getInstance(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v0, "getInstance(ConnectionsM\u2026ccount(selectedAccount)))"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p1, Lorg/telegram/tgnet/ConnectionsManager;
+
+    return-object p1
+.end method
+
 .method public getMessagesController(I)Lorg/telegram/messenger/MessagesController;
     .locals 1
 
-    .line 21
+    .line 19
     invoke-direct {p0, p1}, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->getSelectedAccount(I)I
 
     move-result p1
@@ -178,7 +203,7 @@
 .method public getNotificationCenterInstance(I)Lorg/telegram/messenger/NotificationCenter;
     .locals 1
 
-    .line 30
+    .line 28
     invoke-direct {p0, p1}, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->getSelectedAccount(I)I
 
     move-result p1
@@ -203,7 +228,7 @@
 .method public getNotificationsController(I)Lorg/telegram/messenger/NotificationsController;
     .locals 1
 
-    .line 33
+    .line 31
     invoke-direct {p0, p1}, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->getSelectedAccount(I)I
 
     move-result p1
@@ -228,7 +253,7 @@
 .method public getSendMessagesHelper(I)Lorg/telegram/messenger/SendMessagesHelper;
     .locals 1
 
-    .line 24
+    .line 22
     invoke-direct {p0, p1}, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->getSelectedAccount(I)I
 
     move-result p1
@@ -253,7 +278,7 @@
 .method public getWalletFingerprintController(I)Lcom/iMe/fork/controller/WalletFingerprintController;
     .locals 1
 
-    .line 27
+    .line 25
     sget-object v0, Lcom/iMe/fork/controller/WalletFingerprintController;->Companion:Lcom/iMe/fork/controller/WalletFingerprintController$Companion;
 
     invoke-direct {p0, p1}, Lcom/iMe/gateway/impl/TelegramControllersGatewayImpl;->getSelectedAccount(I)I

@@ -351,7 +351,7 @@
 
     iput-object v1, v0, Lio/grpc/okhttp/OkHttpClientTransport;->stopwatchFactory:Lcom/google/common/base/Supplier;
 
-    const-string v1, "okhttp"
+    const-string/jumbo v1, "okhttp"
 
     move-object v2, p3
 

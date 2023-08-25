@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,90:1\n129#2,5:91\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n*L\n76#1:91,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,104:1\n129#2,5:105\n129#2,5:110\n129#2,5:115\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n*L\n85#1:105,5\n86#1:110,5\n87#1:115,5\n*E\n"
 .end annotation
 
 
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 76
+    .line 85
     check-cast p2, Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
 
     .line 133
-    const-class v1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    const-class v1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 76
-    check-cast v1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+    .line 86
+    check-cast v1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class v2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,12 +113,13 @@
 
     move-result-object p1
 
-    .line 76
-    check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    .line 87
+    check-cast p1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
+    .line 84
     new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
 
-    invoke-direct {v0, p1, p2, v1}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
+    invoke-direct {v0, v1, p2, p1}, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object v0
 .end method
@@ -126,7 +127,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 76
+    .line 83
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

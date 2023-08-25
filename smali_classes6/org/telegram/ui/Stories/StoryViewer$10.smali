@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 1889
+    .line 2015
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,41 +33,41 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+    .locals 4
 
-    .line 1892
+    .line 2018
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->progressToOpen:F
 
-    .line 1893
+    .line 2019
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->checkNavBarColor()V
 
     const/4 p1, 0x0
 
-    .line 1894
+    .line 2020
     sput-boolean p1, Lorg/telegram/ui/Stories/StoryViewer;->animationInProgress:Z
 
-    .line 1895
+    .line 2021
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->containerView:Lorg/telegram/ui/Stories/HwFrameLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/HwFrameLayout;->disableHwAcceleration()V
 
-    .line 1896
+    .line 2022
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     if-eqz p1, :cond_0
 
-    .line 1897
+    .line 2023
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1899
+    .line 2025
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -75,7 +75,9 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     if-eqz v1, :cond_1
 
@@ -83,19 +85,17 @@
 
     if-nez p1, :cond_1
 
-    .line 1900
-    invoke-virtual {v1, v2, v2}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
+    .line 2026
+    invoke-virtual {v1, v3, v3}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
 
-    .line 1901
+    .line 2027
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->transitionViewHolder:Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;
 
-    const/4 v1, 0x0
+    iput-object v2, p1, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    iput-object v1, p1, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
-
-    .line 1903
+    .line 2029
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -109,19 +109,26 @@
 
     if-nez p1, :cond_2
 
-    .line 1904
+    .line 2030
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 1905
+    .line 2031
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->transitionViewHolder:Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->storyImage:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {p1, v2, v2}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
+    invoke-virtual {p1, v3, v3}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
 
-    .line 1907
+    .line 2032
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->transitionViewHolder:Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;
+
+    iput-object v2, p1, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->storyImage:Lorg/telegram/messenger/ImageReceiver;
+
+    .line 2034
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -131,16 +138,16 @@
 
     if-eqz p1, :cond_3
 
-    .line 1909
+    .line 2036
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->updatePosition()V
 
-    .line 1911
+    .line 2038
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
 
-    .line 1912
+    .line 2039
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$10;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->locker:Lorg/telegram/messenger/AnimationNotificationsLocker;

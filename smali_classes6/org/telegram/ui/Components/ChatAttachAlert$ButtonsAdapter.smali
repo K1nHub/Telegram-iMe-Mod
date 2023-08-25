@@ -58,19 +58,19 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 4516
+    .line 4594
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 4507
+    .line 4585
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachMenuBots:Ljava/util/List;
 
-    .line 4517
+    .line 4595
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -81,10 +81,10 @@
 .method public getItemCount()I
     .locals 3
 
-    .line 4603
+    .line 4681
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
-    .line 4604
+    .line 4682
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->editingMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -97,7 +97,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 4605
+    .line 4683
     iget v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -119,14 +119,14 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 4718
+    .line 4796
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     const/4 v1, 0x1
 
     if-ge p1, v0, :cond_1
 
-    .line 4719
+    .line 4797
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachBotsStartRow:I
 
     if-lt p1, v0, :cond_0
@@ -159,43 +159,43 @@
 
     const/4 v0, 0x0
 
-    .line 4612
+    .line 4690
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     const/4 v1, -0x1
 
-    .line 4613
+    .line 4691
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->templatesButton:I
 
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->binanceButton:I
 
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->walletButton:I
 
-    .line 4614
+    .line 4692
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->galleryButton:I
 
-    .line 4615
+    .line 4693
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->documentButton:I
 
-    .line 4616
+    .line 4694
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->musicButton:I
 
-    .line 4617
+    .line 4695
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->pollButton:I
 
-    .line 4618
+    .line 4696
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->contactButton:I
 
-    .line 4619
+    .line 4697
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->locationButton:I
 
-    .line 4620
+    .line 4698
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachBotsStartRow:I
 
-    .line 4621
+    .line 4699
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachBotsEndRow:I
 
-    .line 4622
+    .line 4700
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -208,39 +208,39 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 4623
+    .line 4701
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->galleryButton:I
 
     add-int/lit8 v0, v2, 0x1
 
-    .line 4624
+    .line 4702
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->documentButton:I
 
-    .line 4625
+    .line 4703
     iget-boolean v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->allowEnterCaption:Z
 
     if-eqz v1, :cond_1a
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 4626
+    .line 4704
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->musicButton:I
 
     goto/16 :goto_4
 
-    .line 4628
+    .line 4706
     :cond_0
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->editingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v1, :cond_4
 
-    .line 4629
+    .line 4707
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
     move-result v0
@@ -268,7 +268,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 4630
+    .line 4708
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->editingMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -279,7 +279,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4631
+    .line 4709
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -290,7 +290,7 @@
 
     goto/16 :goto_4
 
-    .line 4633
+    .line 4711
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -302,7 +302,7 @@
 
     goto/16 :goto_4
 
-    .line 4636
+    .line 4714
     :cond_3
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -314,30 +314,30 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 4637
+    .line 4715
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->documentButton:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 4638
+    .line 4716
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->musicButton:I
 
     goto/16 :goto_4
 
-    .line 4642
+    .line 4720
     :cond_4
     check-cast v2, Lorg/telegram/ui/ChatActivity;
 
-    .line 4643
+    .line 4721
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->getDialogType()Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v1
 
-    .line 4644
+    .line 4722
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v3
@@ -356,7 +356,7 @@
 
     return-void
 
-    .line 4649
+    .line 4727
     :cond_5
     iget v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -366,10 +366,10 @@
 
     iput v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->galleryButton:I
 
-    .line 4650
+    .line 4728
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16100(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
+    invoke-static {v4}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16000(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
 
     move-result v4
 
@@ -377,13 +377,13 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16200(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
+    invoke-static {v4}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16100(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
 
     move-result v4
 
     if-eqz v4, :cond_a
 
-    .line 4651
+    .line 4729
     :cond_6
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -413,24 +413,24 @@
 
     if-nez v4, :cond_a
 
-    .line 4652
+    .line 4730
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     check-cast v4, Lorg/telegram/ui/ChatActivity;
 
-    .line 4654
+    .line 4732
     iget v5, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     iput v5, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachBotsStartRow:I
 
-    .line 4655
+    .line 4733
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachMenuBots:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->clear()V
 
-    .line 4656
+    .line 4734
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v5, v5, Lorg/telegram/ui/Components/ChatAttachAlert;->currentAccount:I
@@ -463,7 +463,7 @@
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
 
-    .line 4657
+    .line 4735
     invoke-virtual {v4}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v7
@@ -488,14 +488,14 @@
 
     if-eqz v7, :cond_7
 
-    .line 4658
+    .line 4736
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachMenuBots:Ljava/util/List;
 
     invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 4662
+    .line 4740
     :cond_9
     iget v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -509,10 +509,10 @@
 
     iput v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
-    .line 4663
+    .line 4741
     iput v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachBotsEndRow:I
 
-    .line 4667
+    .line 4745
     :cond_a
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->isCloud()Z
 
@@ -528,7 +528,7 @@
 
     if-eqz v4, :cond_c
 
-    .line 4668
+    .line 4746
     :cond_b
     iget v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -538,7 +538,7 @@
 
     iput v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->documentButton:I
 
-    .line 4670
+    .line 4748
     :cond_c
     invoke-virtual {v2, v0}, Lorg/telegram/ui/ChatActivity;->isAllowTemplates(Z)Z
 
@@ -562,7 +562,7 @@
 
     if-ne v1, v0, :cond_e
 
-    .line 4671
+    .line 4749
     :cond_d
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -572,7 +572,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->templatesButton:I
 
-    .line 4673
+    .line 4751
     :cond_e
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->isNeedToShowWallet()Z
 
@@ -580,7 +580,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 4674
+    .line 4752
     sget-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->WALLET:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
     invoke-interface {v3, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -589,7 +589,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 4675
+    .line 4753
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -598,7 +598,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->walletButton:I
 
-    .line 4677
+    .line 4755
     :cond_f
     sget-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->BINANCE:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
@@ -608,7 +608,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 4678
+    .line 4756
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -617,17 +617,17 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->binanceButton:I
 
-    .line 4683
+    .line 4761
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16300(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16200(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
 
     move-result v0
 
     if-eqz v0, :cond_12
 
-    .line 4685
+    .line 4763
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->isCloud()Z
 
     move-result v0
@@ -642,7 +642,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 4686
+    .line 4764
     :cond_11
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -652,17 +652,17 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->locationButton:I
 
-    .line 4689
+    .line 4767
     :cond_12
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16400(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16300(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
 
     move-result v0
 
     if-eqz v0, :cond_14
 
-    .line 4691
+    .line 4769
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->isCloud()Z
 
     move-result v0
@@ -677,7 +677,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 4692
+    .line 4770
     :cond_13
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -689,17 +689,17 @@
 
     goto :goto_2
 
-    .line 4693
+    .line 4771
     :cond_14
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16300(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16200(Lorg/telegram/ui/Components/ChatAttachAlert;)Z
 
     move-result v0
 
     if-eqz v0, :cond_16
 
-    .line 4695
+    .line 4773
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->isCloud()Z
 
     move-result v0
@@ -714,7 +714,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 4696
+    .line 4774
     :cond_15
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -724,7 +724,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->contactButton:I
 
-    .line 4699
+    .line 4777
     :cond_16
     :goto_2
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->isCloud()Z
@@ -741,7 +741,7 @@
 
     if-eqz v0, :cond_18
 
-    .line 4700
+    .line 4778
     :cond_17
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
@@ -751,7 +751,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->musicButton:I
 
-    .line 4702
+    .line 4780
     :cond_18
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -775,12 +775,12 @@
     :goto_3
     if-eqz v0, :cond_1a
 
-    .line 4703
+    .line 4781
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-eqz v0, :cond_1a
 
-    .line 4705
+    .line 4783
     sget-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->CONTACT:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
     invoke-interface {v3, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -789,7 +789,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 4706
+    .line 4784
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -798,7 +798,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->contactButton:I
 
-    .line 4709
+    .line 4787
     :cond_1a
     :goto_4
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -809,7 +809,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 10
 
-    .line 4540
+    .line 4618
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -822,13 +822,13 @@
 
     goto/16 :goto_0
 
-    .line 4575
+    .line 4653
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;
 
-    .line 4576
+    .line 4654
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachBotsStartRow:I
 
     if-lt p2, v0, :cond_1
@@ -839,14 +839,14 @@
 
     sub-int/2addr p2, v0
 
-    .line 4578
+    .line 4656
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 4579
+    .line 4657
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->attachMenuBots:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -855,7 +855,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
 
-    .line 4580
+    .line 4658
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->currentAccount:I
@@ -878,20 +878,20 @@
 
     goto/16 :goto_0
 
-    .line 4584
+    .line 4662
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->buttonsCount:I
 
     sub-int/2addr p2, v0
 
-    .line 4585
+    .line 4663
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 4586
+    .line 4664
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->currentAccount:I
@@ -932,20 +932,20 @@
 
     goto/16 :goto_0
 
-    .line 4542
+    .line 4620
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;
 
-    .line 4544
+    .line 4622
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->walletButton:I
 
     const/4 v8, 0x6
 
     if-ne p2, v0, :cond_3
 
-    .line 4545
+    .line 4623
     sget p2, Lcom/iMe/common/IdFabric$CustomType;->CHAT_ATTACH_ALERT_WALLET:I
 
     sget v0, Lorg/telegram/messenger/R$string;->drawer_wallet_item_title:I
@@ -968,7 +968,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4546
+    .line 4624
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -977,13 +977,13 @@
 
     goto/16 :goto_0
 
-    .line 4547
+    .line 4625
     :cond_3
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->binanceButton:I
 
     if-ne p2, v0, :cond_4
 
-    .line 4548
+    .line 4626
     sget p2, Lcom/iMe/common/IdFabric$CustomType;->CHAT_ATTACH_ALERT_WALLET_BINANCE:I
 
     sget v0, Lorg/telegram/messenger/R$string;->wallet_binance_attach_title:I
@@ -1008,7 +1008,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4549
+    .line 4627
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1017,13 +1017,13 @@
 
     goto/16 :goto_0
 
-    .line 4550
+    .line 4628
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->templatesButton:I
 
     if-ne p2, v0, :cond_5
 
-    .line 4551
+    .line 4629
     sget p2, Lcom/iMe/common/IdFabric$CustomType;->CHAT_ATTACH_ALERT_WALLET_TEMPLATES:I
 
     sget v0, Lorg/telegram/messenger/R$string;->chat_templates:I
@@ -1048,7 +1048,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4552
+    .line 4630
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1057,7 +1057,7 @@
 
     goto/16 :goto_0
 
-    .line 4554
+    .line 4632
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->galleryButton:I
 
@@ -1065,7 +1065,7 @@
 
     const/4 v3, 0x1
 
-    .line 4555
+    .line 4633
     sget p2, Lorg/telegram/messenger/R$string;->ChatGallery:I
 
     const-string v0, "ChatGallery"
@@ -1088,7 +1088,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4556
+    .line 4634
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1097,7 +1097,7 @@
 
     goto/16 :goto_0
 
-    .line 4557
+    .line 4635
     :cond_6
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->documentButton:I
 
@@ -1107,7 +1107,7 @@
 
     const/4 v3, 0x4
 
-    .line 4558
+    .line 4636
     sget p2, Lorg/telegram/messenger/R$string;->ChatDocument:I
 
     const-string v0, "ChatDocument"
@@ -1130,7 +1130,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4559
+    .line 4637
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1139,7 +1139,7 @@
 
     goto/16 :goto_0
 
-    .line 4560
+    .line 4638
     :cond_7
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->locationButton:I
 
@@ -1147,7 +1147,7 @@
 
     const/4 v3, 0x6
 
-    .line 4561
+    .line 4639
     sget p2, Lorg/telegram/messenger/R$string;->ChatLocation:I
 
     const-string v0, "ChatLocation"
@@ -1168,7 +1168,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4562
+    .line 4640
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1177,7 +1177,7 @@
 
     goto :goto_0
 
-    .line 4563
+    .line 4641
     :cond_8
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->musicButton:I
 
@@ -1187,7 +1187,7 @@
 
     const/4 v3, 0x3
 
-    .line 4564
+    .line 4642
     sget p2, Lorg/telegram/messenger/R$string;->AttachMusic:I
 
     const-string v0, "AttachMusic"
@@ -1208,7 +1208,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4565
+    .line 4643
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1217,7 +1217,7 @@
 
     goto :goto_0
 
-    .line 4566
+    .line 4644
     :cond_9
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->pollButton:I
 
@@ -1227,7 +1227,7 @@
 
     const/16 v3, 0x9
 
-    .line 4567
+    .line 4645
     sget p2, Lorg/telegram/messenger/R$string;->Poll:I
 
     const-string v0, "Poll"
@@ -1250,7 +1250,7 @@
 
     const/16 p2, 0x9
 
-    .line 4568
+    .line 4646
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1259,7 +1259,7 @@
 
     goto :goto_0
 
-    .line 4569
+    .line 4647
     :cond_a
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->contactButton:I
 
@@ -1267,7 +1267,7 @@
 
     const/4 v3, 0x5
 
-    .line 4570
+    .line 4648
     sget p2, Lorg/telegram/messenger/R$string;->AttachContact:I
 
     const-string v0, "AttachContact"
@@ -1288,7 +1288,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;->setTextAndIcon(ILjava/lang/CharSequence;Lorg/telegram/ui/Components/RLottieDrawable;II)V
 
-    .line 4571
+    .line 4649
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1305,7 +1305,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 4530
+    .line 4608
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachBotButton;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -1316,7 +1316,7 @@
 
     goto :goto_0
 
-    .line 4526
+    .line 4604
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;
 
@@ -1329,13 +1329,13 @@
     :goto_0
     const/4 p2, 0x1
 
-    .line 4533
+    .line 4611
     invoke-virtual {p1, p2}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    .line 4534
+    .line 4612
     invoke-virtual {p1, p2}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 4535
+    .line 4613
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -1346,12 +1346,12 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 4593
+    .line 4671
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$ButtonsAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$16000(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$15900(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/view/View;)V
 
     return-void
 .end method

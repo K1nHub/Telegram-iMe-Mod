@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Z)V
     .locals 0
 
-    .line 442
+    .line 495
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$4;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$4;->val$enter:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 445
+    .line 498
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$4;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$4;->val$enter:Z
@@ -56,7 +56,7 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$602(Lorg/telegram/ui/Components/InviteMembersBottomSheet;F)F
 
-    .line 446
+    .line 499
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$4;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$700(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/view/ViewGroup;
@@ -65,12 +65,12 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 447
+    .line 500
     iget-boolean p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$4;->val$enter:Z
 
     if-nez p1, :cond_1
 
-    .line 448
+    .line 501
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$4;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$800(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/widget/ScrollView;

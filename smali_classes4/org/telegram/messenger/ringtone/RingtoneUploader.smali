@@ -478,7 +478,7 @@
 
     iput-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_uploadRingtone;->mime_type:Ljava/lang/String;
 
-    const-string p3, "ogg"
+    const-string/jumbo p3, "ogg"
 
     .line 42
     invoke-virtual {p3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

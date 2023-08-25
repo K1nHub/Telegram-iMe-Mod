@@ -140,7 +140,7 @@
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationBalanceView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;
 
     .line 34
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountBalance:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-static {p1}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalance(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
@@ -149,9 +149,9 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 35
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->imageCoinIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v1, "imageCoinIcon"
+    const-string v1, "imageLogo"
 
     invoke-static {v3, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -174,7 +174,7 @@
     invoke-static/range {v3 .. v8}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
     .line 36
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
@@ -250,7 +250,7 @@
     new-array v1, v1, [Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 45
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountBalance:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     const/4 v3, 0x0
 
@@ -307,7 +307,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 47
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
@@ -318,7 +318,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 48
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountBalance:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 

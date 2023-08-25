@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;F)V
     .locals 0
 
-    .line 325
+    .line 338
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$storyCell:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$radius:F
@@ -47,10 +47,10 @@
 
     const/4 v0, 0x0
 
-    .line 335
+    .line 348
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawAvatar:Z
 
-    .line 336
+    .line 349
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->invalidate()V
 
     return-void
@@ -61,7 +61,7 @@
 .method protected drawAbove(Landroid/graphics/Canvas;F)V
     .locals 6
 
-    .line 342
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$storyCell:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$radius:F
@@ -84,7 +84,7 @@
 .method protected hide()V
     .locals 2
 
-    .line 334
+    .line 347
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$storyCell:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3$$ExternalSyntheticLambda0;
@@ -99,14 +99,14 @@
 .method protected show()V
     .locals 2
 
-    .line 328
+    .line 341
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$storyCell:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawAvatar:Z
 
-    .line 329
+    .line 342
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->invalidate()V
 
     return-void

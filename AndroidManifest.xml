@@ -8,6 +8,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.READ_CALL_LOG"/>
@@ -30,6 +31,9 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
@@ -53,6 +57,7 @@
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
     <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
     <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
@@ -95,11 +100,10 @@
         </intent>
     </queries>
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
     <permission android:name="com.iMe.android.web.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
     <uses-permission android:name="com.iMe.android.web.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
-    <application android:allowAudioPlaybackCapture="true" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:backupAgent="org.telegram.messenger.BackupAgent" android:hardwareAccelerated="@bool/useHardwareAcceleration" android:icon="@mipmap/fork_launcher_rocket_round" android:label="Telegram" android:largeHeap="true" android:manageSpaceActivity="org.telegram.ui.ExternalActionActivity" android:name="org.telegram.messenger.ApplicationLoaderImpl" android:preserveLegacyExternalStorage="true" android:requestLegacyExternalStorage="true" android:restoreAnyVersion="true" android:supportsRtl="false" android:theme="@style/Theme.TMessages.Start">
+    <application android:allowAudioPlaybackCapture="true" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:backupAgent="org.telegram.messenger.BackupAgent" android:hardwareAccelerated="@bool/useHardwareAcceleration" android:icon="@mipmap/fork_launcher_rocket_round" android:label="iMe Direct" android:largeHeap="true" android:manageSpaceActivity="org.telegram.ui.ExternalActionActivity" android:name="org.telegram.messenger.ApplicationLoaderImpl" android:preserveLegacyExternalStorage="true" android:requestLegacyExternalStorage="true" android:restoreAnyVersion="true" android:supportsRtl="false" android:theme="@style/Theme.TMessages.Start">
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDFc-hXz0kN_vaEF31KDWeGoX1nKDLZpiM"/>
         <service android:exported="true" android:name="org.telegram.messenger.GcmPushListenerService">
             <intent-filter>
@@ -227,7 +231,7 @@
                 <data android:mimeType="vnd.android.cursor.item/vnd.com.iMe.android.android.call.video"/>
             </intent-filter>
         </activity-alias>
-        <activity-alias android:enabled="false" android:exported="true" android:name="org.telegram.ui.LaunchActivityBlueIcon" android:targetActivity="org.telegram.ui.LaunchActivity">
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/fork_launcher_blue_round" android:name="org.telegram.ui.LaunchActivityBlueIcon" android:targetActivity="org.telegram.ui.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

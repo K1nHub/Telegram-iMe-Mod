@@ -472,7 +472,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "n > 0 required but it was "
+    const-string/jumbo v2, "n > 0 required but it was "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -506,7 +506,7 @@
     .line 55
     new-instance p0, Ljava/lang/NullPointerException;
 
-    const-string p1, "next is null"
+    const-string/jumbo p1, "next is null"
 
     invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

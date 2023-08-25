@@ -36,6 +36,8 @@
 
 .field private final bscScanUrl:Ljava/lang/String;
 
+.field private final dynamicLinksDomain:Ljava/lang/String;
+
 .field private final environment:Lcom/iMe/storage/domain/model/common/Environment;
 
 .field private final etherScanUrl:Ljava/lang/String;
@@ -77,7 +79,7 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->Companion:Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Companion;
 
-    .line 89
+    .line 93
     sget-object v0, Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Companion$availableEnvironments$2;->INSTANCE:Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Companion$availableEnvironments$2;
 
     invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -89,7 +91,7 @@
     return-void
 .end method
 
-.method private constructor <init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;I)V
+.method private constructor <init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
     .locals 3
 
     move-object v0, p0
@@ -182,13 +184,18 @@
     .line 24
     iput v1, v0, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->hintDefaultShowsCount:I
 
+    move-object/from16 v1, p20
+
+    .line 25
+    iput-object v1, v0, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->dynamicLinksDomain:Ljava/lang/String;
+
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p19}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;I)V
+    invoke-direct/range {p0 .. p20}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -247,6 +254,15 @@
 
     .line 14
     iget-object v0, p0, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->bscScanUrl:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final getDynamicLinksDomain()Ljava/lang/String;
+    .locals 1
+
+    .line 25
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->dynamicLinksDomain:Ljava/lang/String;
 
     return-object v0
 .end method

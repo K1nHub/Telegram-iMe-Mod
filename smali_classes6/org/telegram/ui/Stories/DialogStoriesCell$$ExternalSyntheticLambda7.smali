@@ -2,46 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda7;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda7;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda7;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda7;->INSTANCE:Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda7;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
+    iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    check-cast p2, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$gz2EI8O_9oz35wm3FIlBXjVMI6s(Lorg/telegram/ui/Stories/DialogStoriesCell;)V
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$g80X72rWOZKluoi2AuZKUO64Hyc(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

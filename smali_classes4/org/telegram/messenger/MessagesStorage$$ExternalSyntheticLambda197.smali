@@ -36,6 +36,8 @@
 
 .field public final synthetic f$21:Z
 
+.field public final synthetic f$22:Lorg/telegram/messenger/MessageLoaderLogger;
+
 .field public final synthetic f$3:J
 
 .field public final synthetic f$4:J
@@ -52,7 +54,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$TL_messages_messages;IJJIIIIIIIIIZZIIZIZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$TL_messages_messages;IJJIIIIIIIIIZZIIZIZZLorg/telegram/messenger/MessageLoaderLogger;)V
     .locals 3
 
     move-object v0, p0
@@ -147,13 +149,17 @@
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda197;->f$21:Z
 
+    move-object/from16 v1, p25
+
+    iput-object v1, v0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda197;->f$22:Lorg/telegram/messenger/MessageLoaderLogger;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 26
+    .locals 27
 
     move-object/from16 v0, p0
 
@@ -183,7 +189,7 @@
 
     iget v15, v0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda197;->f$12:I
 
-    move-object/from16 v25, v1
+    move-object/from16 v26, v1
 
     iget v1, v0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda197;->f$13:I
 
@@ -221,9 +227,13 @@
 
     move/from16 v24, v1
 
-    move-object/from16 v1, v25
+    iget-object v1, v0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda197;->f$22:Lorg/telegram/messenger/MessageLoaderLogger;
 
-    invoke-static/range {v1 .. v24}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$MwmFr1IIGUngQxBUhM2bBDoocFo(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$TL_messages_messages;IJJIIIIIIIIIZZIIZIZZ)V
+    move-object/from16 v25, v1
+
+    move-object/from16 v1, v26
+
+    invoke-static/range {v1 .. v25}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$ObbtszBz5mfC0Tkl5CMqnhYI974(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$TL_messages_messages;IJJIIIIIIIIIZZIIZIZZLorg/telegram/messenger/MessageLoaderLogger;)V
 
     return-void
 .end method

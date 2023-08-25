@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHiddenChatsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HiddenChatsController.kt\ncom/iMe/fork/controller/HiddenChatsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,123:1\n56#2,6:124\n1855#3,2:130\n819#3:132\n847#3,2:133\n1549#3:135\n1620#3,3:136\n*S KotlinDebug\n*F\n+ 1 HiddenChatsController.kt\ncom/iMe/fork/controller/HiddenChatsController\n*L\n17#1:124,6\n38#1:130,2\n113#1:132\n113#1:133,2\n27#1:135\n27#1:136,3\n*E\n"
+    value = "SMAP\nHiddenChatsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HiddenChatsController.kt\ncom/iMe/fork/controller/HiddenChatsController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,125:1\n56#2,6:126\n1855#3,2:132\n819#3:134\n847#3,2:135\n1549#3:137\n1620#3,3:138\n*S KotlinDebug\n*F\n+ 1 HiddenChatsController.kt\ncom/iMe/fork/controller/HiddenChatsController\n*L\n17#1:126,6\n38#1:132,2\n115#1:134\n115#1:135,2\n27#1:137\n27#1:138,3\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/iMe/fork/controller/HiddenChatsController;->Companion:Lcom/iMe/fork/controller/HiddenChatsController$Companion;
 
-    .line 118
+    .line 120
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v1, 0x5
@@ -491,7 +491,7 @@
 
     move-result-wide v2
 
-    .line 113
+    .line 115
     invoke-static {v2, v3}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v2
@@ -535,6 +535,33 @@
     return-object v0
 .end method
 
+.method public final hideChats(JZ)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Long;
+
+    .line 85
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    const/4 p2, 0x0
+
+    aput-object p1, v0, p2
+
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1, p3}, Lcom/iMe/fork/controller/HiddenChatsController;->hideChats(Ljava/util/List;Z)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public final hideChats(Ljava/util/List;Z)Z
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -552,37 +579,37 @@
 
     const/4 v0, 0x1
 
-    .line 86
+    .line 88
     iput-boolean v0, p0, Lcom/iMe/fork/controller/HiddenChatsController;->isHiddenChatsHidden:Z
 
-    .line 87
+    .line 89
     invoke-virtual {p0}, Lcom/iMe/fork/controller/HiddenChatsController;->saveConfig()V
 
     if-eqz p2, :cond_0
 
-    .line 90
+    .line 92
     iget-object p2, p0, Lcom/iMe/fork/controller/HiddenChatsController;->hiddenChatDialogs:Ljava/util/List;
 
     invoke-interface {p2, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 91
+    .line 93
     invoke-direct {p0, p1}, Lcom/iMe/fork/controller/HiddenChatsController;->removeRecentChatsAndPeer(Ljava/util/List;)V
 
-    .line 92
+    .line 94
     invoke-direct {p0, p1}, Lcom/iMe/fork/controller/HiddenChatsController;->insertHiddenChats(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 94
+    .line 96
     :cond_0
     iget-object p2, p0, Lcom/iMe/fork/controller/HiddenChatsController;->hiddenChatDialogs:Ljava/util/List;
 
     invoke-interface {p2, p1}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
 
-    .line 95
+    .line 97
     invoke-direct {p0, p1}, Lcom/iMe/fork/controller/HiddenChatsController;->removeHiddenChats(Ljava/util/List;)V
 
-    .line 98
+    .line 100
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -592,14 +619,14 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/MessagesStorage;->checkIfFolderEmpty(I)V
 
-    .line 99
+    .line 101
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/MessagesStorage;->checkIfFolderEmpty(I)V
 
-    .line 101
+    .line 103
     iget-object p1, p0, Lcom/iMe/fork/controller/HiddenChatsController;->hiddenChatDialogs:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
@@ -612,14 +639,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 102
+    .line 104
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/MessagesController;->ensureFolderDialogExists(I)Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;
 
-    .line 103
+    .line 105
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -628,7 +655,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/MessagesController;->sortDialogs(Landroidx/collection/LongSparseArray;)V
 
-    .line 104
+    .line 106
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -639,7 +666,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 106
+    .line 108
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -647,7 +674,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/MessagesStorage;->resetAllUnreadCounters(Z)V
 
-    .line 107
+    .line 109
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -658,7 +685,7 @@
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 108
+    .line 110
     iget-object p1, p0, Lcom/iMe/fork/controller/HiddenChatsController;->hiddenChatDialogs:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -671,7 +698,7 @@
 .method public final isChatHidden(J)Z
     .locals 1
 
-    .line 111
+    .line 113
     iget-object v0, p0, Lcom/iMe/fork/controller/HiddenChatsController;->hiddenChatDialogs:Ljava/util/List;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;

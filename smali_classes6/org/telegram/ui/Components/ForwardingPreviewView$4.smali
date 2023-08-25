@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 226
+    .line 229
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 
     move-object/from16 v0, p0
 
-    .line 281
+    .line 284
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
@@ -49,20 +49,20 @@
     :goto_0
     if-ge v4, v1, :cond_2
 
-    .line 285
+    .line 288
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    .line 286
+    .line 289
     instance-of v7, v6, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v7, :cond_1
 
-    .line 287
+    .line 290
     check-cast v6, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 288
+    .line 291
     invoke-virtual {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object v7
@@ -73,11 +73,11 @@
 
     goto :goto_1
 
-    .line 293
+    .line 296
     :cond_0
     invoke-virtual {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentPosition()Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 294
+    .line 297
     invoke-virtual {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->getBackgroundDrawable()Lorg/telegram/ui/Components/MessageBackgroundDrawable;
 
     move-object v5, v7
@@ -96,7 +96,7 @@
 
     if-ge v4, v5, :cond_22
 
-    .line 299
+    .line 302
     iget-object v5, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$100(Lorg/telegram/ui/Components/ForwardingPreviewView;)Ljava/util/ArrayList;
@@ -109,7 +109,7 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 300
+    .line 303
     iget-object v6, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -135,7 +135,7 @@
 
     if-ge v6, v1, :cond_18
 
-    .line 304
+    .line 307
     iget-object v8, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v8, v8, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -144,17 +144,17 @@
 
     move-result-object v8
 
-    .line 305
+    .line 308
     instance-of v9, v8, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v9, :cond_17
 
-    .line 306
+    .line 309
     move-object v9, v8
 
     check-cast v9, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 307
+    .line 310
     invoke-virtual {v8}, Landroid/view/View;->getY()F
 
     move-result v10
@@ -193,7 +193,7 @@
 
     goto/16 :goto_4
 
-    .line 310
+    .line 313
     :cond_5
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
@@ -203,7 +203,7 @@
 
     if-nez v4, :cond_6
 
-    .line 311
+    .line 314
     iget-object v10, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
@@ -226,7 +226,7 @@
     :cond_7
     if-nez v4, :cond_8
 
-    .line 314
+    .line 317
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v10
@@ -251,7 +251,7 @@
     :cond_9
     if-ne v4, v5, :cond_a
 
-    .line 317
+    .line 320
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->willRemovedAfterAnimation()Z
 
     move-result v7
@@ -269,7 +269,7 @@
 
     goto/16 :goto_4
 
-    .line 321
+    .line 324
     :cond_b
     iget-object v7, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
@@ -283,30 +283,30 @@
 
     if-nez v7, :cond_c
 
-    .line 322
+    .line 325
     iget-object v7, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     iput v3, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->left:I
 
-    .line 323
+    .line 326
     iput v3, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->top:I
 
-    .line 324
+    .line 327
     iput v3, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->right:I
 
-    .line 325
+    .line 328
     iput v3, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->bottom:I
 
-    .line 327
+    .line 330
     iput-boolean v3, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->pinnedBotton:Z
 
-    .line 328
+    .line 331
     iput-boolean v3, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->pinnedTop:Z
 
-    .line 329
+    .line 332
     iput-object v9, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 330
+    .line 333
     iget-object v7, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {v7}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$100(Lorg/telegram/ui/Components/ForwardingPreviewView;)Ljava/util/ArrayList;
@@ -315,7 +315,7 @@
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 333
+    .line 336
     :cond_c
     iget-object v7, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
@@ -325,7 +325,7 @@
 
     iput-boolean v10, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->pinnedTop:Z
 
-    .line 334
+    .line 337
     iget-object v7, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->isPinnedBottom()Z
@@ -334,7 +334,7 @@
 
     iput-boolean v10, v7, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->pinnedBotton:Z
 
-    .line 336
+    .line 339
     invoke-virtual {v9}, Landroid/view/ViewGroup;->getLeft()I
 
     move-result v7
@@ -345,7 +345,7 @@
 
     add-int/2addr v7, v10
 
-    .line 337
+    .line 340
     invoke-virtual {v9}, Landroid/view/ViewGroup;->getLeft()I
 
     move-result v10
@@ -356,7 +356,7 @@
 
     add-int/2addr v10, v11
 
-    .line 338
+    .line 341
     invoke-virtual {v9}, Landroid/view/ViewGroup;->getTop()I
 
     move-result v11
@@ -367,7 +367,7 @@
 
     add-int/2addr v11, v12
 
-    .line 339
+    .line 342
     invoke-virtual {v9}, Landroid/view/ViewGroup;->getTop()I
 
     move-result v12
@@ -378,7 +378,7 @@
 
     add-int/2addr v12, v13
 
-    .line 341
+    .line 344
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentPosition()Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
     move-result-object v13
@@ -391,14 +391,14 @@
 
     if-nez v13, :cond_d
 
-    .line 342
+    .line 345
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
     sub-int/2addr v11, v13
 
-    .line 345
+    .line 348
     :cond_d
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentPosition()Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
@@ -410,14 +410,14 @@
 
     if-nez v13, :cond_e
 
-    .line 346
+    .line 349
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
     add-int/2addr v12, v13
 
-    .line 349
+    .line 352
     :cond_e
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->willRemovedAfterAnimation()Z
 
@@ -425,12 +425,12 @@
 
     if-eqz v13, :cond_f
 
-    .line 350
+    .line 353
     iget-object v13, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     iput-object v9, v13, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 353
+    .line 356
     :cond_f
     iget-object v8, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
@@ -440,11 +440,11 @@
 
     if-ge v11, v9, :cond_11
 
-    .line 354
+    .line 357
     :cond_10
     iput v11, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->top:I
 
-    .line 356
+    .line 359
     :cond_11
     iget v9, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->bottom:I
 
@@ -452,11 +452,11 @@
 
     if-le v12, v9, :cond_13
 
-    .line 357
+    .line 360
     :cond_12
     iput v12, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->bottom:I
 
-    .line 359
+    .line 362
     :cond_13
     iget v9, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->left:I
 
@@ -464,11 +464,11 @@
 
     if-ge v7, v9, :cond_15
 
-    .line 360
+    .line 363
     :cond_14
     iput v7, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->left:I
 
-    .line 362
+    .line 365
     :cond_15
     iget v7, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->right:I
 
@@ -476,7 +476,7 @@
 
     if-le v10, v7, :cond_17
 
-    .line 363
+    .line 366
     :cond_16
     iput v10, v8, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->right:I
 
@@ -489,7 +489,7 @@
     :cond_18
     move v5, v3
 
-    .line 368
+    .line 371
     :goto_5
     iget-object v6, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
@@ -503,7 +503,7 @@
 
     if-ge v5, v6, :cond_3
 
-    .line 369
+    .line 372
     iget-object v6, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$100(Lorg/telegram/ui/Components/ForwardingPreviewView;)Ljava/util/ArrayList;
@@ -524,7 +524,7 @@
 
     goto/16 :goto_b
 
-    .line 373
+    .line 376
     :cond_19
     iget-object v8, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
@@ -534,7 +534,7 @@
 
     move-result v8
 
-    .line 374
+    .line 377
     iget-object v9, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     iget v10, v9, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->left:I
@@ -547,7 +547,7 @@
 
     add-float/2addr v10, v11
 
-    .line 375
+    .line 378
     iget v11, v9, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->top:I
 
     int-to-float v11, v11
@@ -556,7 +556,7 @@
 
     add-float/2addr v11, v12
 
-    .line 376
+    .line 379
     iget v12, v9, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->right:I
 
     int-to-float v12, v12
@@ -567,7 +567,7 @@
 
     add-float/2addr v12, v8
 
-    .line 377
+    .line 380
     iget v8, v9, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->bottom:I
 
     int-to-float v8, v8
@@ -576,12 +576,12 @@
 
     add-float/2addr v8, v13
 
-    .line 379
+    .line 382
     iget-boolean v13, v9, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->backgroundChangeBounds:Z
 
     if-nez v13, :cond_1a
 
-    .line 380
+    .line 383
     iget-object v9, v9, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v9}, Landroid/view/ViewGroup;->getTranslationY()F
@@ -590,7 +590,7 @@
 
     add-float/2addr v11, v9
 
-    .line 381
+    .line 384
     iget-object v9, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     iget-object v9, v9, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -604,7 +604,7 @@
     :cond_1a
     const/16 v9, 0x14
 
-    .line 384
+    .line 387
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
@@ -617,7 +617,7 @@
 
     if-gez v13, :cond_1b
 
-    .line 385
+    .line 388
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -626,7 +626,7 @@
 
     int-to-float v11, v11
 
-    .line 388
+    .line 391
     :cond_1b
     iget-object v13, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
@@ -648,7 +648,7 @@
 
     if-lez v13, :cond_1c
 
-    .line 389
+    .line 392
     iget-object v8, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v8, v8, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -665,7 +665,7 @@
 
     int-to-float v8, v8
 
-    .line 392
+    .line 395
     :cond_1c
     iget-object v9, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
@@ -709,10 +709,10 @@
 
     if-eqz v9, :cond_1f
 
-    .line 394
+    .line 397
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 395
+    .line 398
     iget-object v14, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     iget-object v14, v14, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -750,7 +750,7 @@
     :cond_1f
     move-object/from16 v13, p1
 
-    .line 398
+    .line 401
     :goto_8
     iget-object v3, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
@@ -792,21 +792,21 @@
 
     invoke-virtual/range {v17 .. v26}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawBackground(Landroid/graphics/Canvas;IIIIZZZI)V
 
-    .line 399
+    .line 402
     iget-object v2, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->transitionParams:Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;
 
     const/4 v3, 0x0
 
     iput-object v3, v2, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 400
+    .line 403
     iget-boolean v4, v6, Lorg/telegram/messenger/MessageObject$GroupedMessages;->hasCaption:Z
 
     iput-boolean v4, v2, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->drawCaptionLayout:Z
 
     if-eqz v9, :cond_21
 
-    .line 402
+    .line 405
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     const/4 v2, 0x0
@@ -814,7 +814,7 @@
     :goto_9
     if-ge v2, v1, :cond_21
 
-    .line 404
+    .line 407
     iget-object v4, v0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -823,7 +823,7 @@
 
     move-result-object v4
 
-    .line 405
+    .line 408
     instance-of v7, v4, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v7, :cond_20
@@ -838,12 +838,12 @@
 
     if-ne v9, v6, :cond_20
 
-    .line 407
+    .line 410
     invoke-virtual {v7}, Landroid/view/ViewGroup;->getLeft()I
 
     move-result v9
 
-    .line 408
+    .line 411
     invoke-virtual {v7}, Landroid/view/ViewGroup;->getTop()I
 
     move-result v7
@@ -860,7 +860,7 @@
 
     add-float/2addr v9, v13
 
-    .line 409
+    .line 412
     invoke-virtual {v4, v9}, Landroid/view/View;->setPivotX(F)V
 
     int-to-float v7, v7
@@ -873,7 +873,7 @@
 
     add-float/2addr v7, v9
 
-    .line 410
+    .line 413
     invoke-virtual {v4, v7}, Landroid/view/View;->setPivotY(F)V
 
     goto :goto_a
@@ -916,7 +916,7 @@
 
     const/4 v0, 0x0
 
-    .line 263
+    .line 266
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -924,20 +924,20 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 264
+    .line 267
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 265
+    .line 268
     instance-of v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v2, :cond_0
 
-    .line 266
+    .line 269
     check-cast v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 267
+    .line 270
     iget-object v2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -961,11 +961,11 @@
 
     goto :goto_0
 
-    .line 270
+    .line 273
     :cond_1
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->drawChatBackgroundElements(Landroid/graphics/Canvas;)V
 
-    .line 271
+    .line 274
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -974,19 +974,19 @@
 .method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 9
 
-    .line 230
+    .line 233
     instance-of v0, p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_9
 
-    .line 231
+    .line 234
     move-object v0, p2
 
     check-cast v0, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 233
+    .line 236
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v2
@@ -997,13 +997,13 @@
 
     return v1
 
-    .line 237
+    .line 240
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 239
+    .line 242
     iget-object p3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -1014,14 +1014,14 @@
 
     if-nez p3, :cond_1
 
-    .line 240
+    .line 243
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawCheckBox(Landroid/graphics/Canvas;)V
 
-    .line 241
+    .line 244
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 242
+    .line 245
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getX()F
 
     move-result p3
@@ -1032,7 +1032,7 @@
 
     invoke-virtual {p1, p3, p4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 243
+    .line 246
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p3
@@ -1057,7 +1057,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawMessageText(Landroid/graphics/Canvas;Ljava/util/ArrayList;FZFZ)V
 
-    .line 245
+    .line 248
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object p3
@@ -1074,11 +1074,11 @@
 
     if-eqz p3, :cond_3
 
-    .line 246
+    .line 249
     :cond_2
     invoke-virtual {v0, p1, p4}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawNamesLayout(Landroid/graphics/Canvas;F)V
 
-    .line 248
+    .line 251
     :cond_3
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentPosition()Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
@@ -1103,11 +1103,11 @@
 
     if-eqz p3, :cond_6
 
-    .line 249
+    .line 252
     :cond_5
     invoke-virtual {v0, p1, p4, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawTime(Landroid/graphics/Canvas;FZ)V
 
-    .line 251
+    .line 254
     :cond_6
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentPosition()Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
@@ -1134,10 +1134,10 @@
     :cond_7
     const/4 p3, 0x0
 
-    .line 252
+    .line 255
     invoke-virtual {v0, p1, p3, p4}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawCaptionLayout(Landroid/graphics/Canvas;ZF)V
 
-    .line 254
+    .line 257
     :cond_8
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getTransitionParams()Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
 
@@ -1145,7 +1145,7 @@
 
     invoke-virtual {p3}, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->recordDrawingStatePreview()V
 
-    .line 255
+    .line 258
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2
@@ -1157,10 +1157,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 276
+    .line 279
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 277
+    .line 280
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$4;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$000(Lorg/telegram/ui/Components/ForwardingPreviewView;)V

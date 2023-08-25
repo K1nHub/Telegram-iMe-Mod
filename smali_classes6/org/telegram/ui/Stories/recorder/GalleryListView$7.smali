@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBarMenu;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 6
 
-    .line 219
+    .line 244
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$7;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     move-object v0, p0
@@ -47,10 +47,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 222
+    .line 247
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 223
+    .line 248
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$7;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$400(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Landroid/widget/TextView;

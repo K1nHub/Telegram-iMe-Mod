@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/graphics/Bitmap;I)V
     .locals 0
 
-    .line 864
+    .line 913
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->val$originalBitmap:Landroid/graphics/Bitmap;
@@ -48,10 +48,10 @@
 .method public getContainerView()Landroid/view/ViewGroup;
     .locals 1
 
-    .line 879
+    .line 928
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4800(Lorg/telegram/ui/Stories/recorder/PaintView;)Landroid/widget/FrameLayout;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4900(Lorg/telegram/ui/Stories/recorder/PaintView;)Landroid/widget/FrameLayout;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
 .method public getSnapshotDrawingView()Landroid/view/View;
     .locals 1
 
-    .line 884
+    .line 933
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     return-object v0
@@ -70,7 +70,7 @@
 .method public isPipetteAvailable()Z
     .locals 1
 
-    .line 906
+    .line 955
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->val$originalBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
@@ -89,7 +89,7 @@
 .method public isPipetteVisible()Z
     .locals 1
 
-    .line 900
+    .line 949
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->hasPipette:Z
 
     return v0
@@ -98,14 +98,14 @@
 .method public onColorSelected(I)V
     .locals 2
 
-    .line 911
+    .line 960
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4900(Lorg/telegram/ui/Stories/recorder/PaintView;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$5000(Lorg/telegram/ui/Stories/recorder/PaintView;Z)V
 
-    .line 913
+    .line 962
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->val$currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->selectColor(I)V
 
-    .line 914
+    .line 963
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->val$currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -123,15 +123,15 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->saveColors()V
 
-    .line 915
+    .line 964
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$5000(Lorg/telegram/ui/Stories/recorder/PaintView;I)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$5100(Lorg/telegram/ui/Stories/recorder/PaintView;I)V
 
-    .line 916
+    .line 965
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$1600(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$1700(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
 
     move-result-object p1
 
@@ -147,7 +147,7 @@
 .method public onDrawImageOverCanvas(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 889
+    .line 938
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$000(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/RenderView;
@@ -158,10 +158,10 @@
 
     move-result-object p1
 
-    .line 890
+    .line 939
     invoke-virtual {p2}, Landroid/graphics/Canvas;->save()I
 
-    .line 891
+    .line 940
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$000(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/RenderView;
@@ -184,10 +184,10 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 892
+    .line 941
     invoke-virtual {p2, p1}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
 
-    .line 893
+    .line 942
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$000(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/RenderView;
@@ -236,14 +236,14 @@
 
     invoke-virtual {p2, p1, v0, v1, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 894
+    .line 943
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->val$originalBitmap:Landroid/graphics/Bitmap;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, p1, v1, v1, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 895
+    .line 944
     invoke-virtual {p2}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -254,7 +254,7 @@
 
     const/4 v0, 0x1
 
-    .line 869
+    .line 918
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->hasPipette:Z
 
     return-void
@@ -265,7 +265,7 @@
 
     const/4 v0, 0x0
 
-    .line 874
+    .line 923
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$12;->hasPipette:Z
 
     return-void

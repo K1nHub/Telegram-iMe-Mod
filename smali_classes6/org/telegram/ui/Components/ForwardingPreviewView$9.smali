@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/ForwardingMessagesParams;)V
     .locals 0
 
-    .line 554
+    .line 557
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$9;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$9;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -41,7 +41,7 @@
 
     if-ltz p1, :cond_0
 
-    .line 558
+    .line 561
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$9;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->previewMessages:Ljava/util/ArrayList;
@@ -52,7 +52,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 559
+    .line 562
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$9;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->previewMessages:Ljava/util/ArrayList;
@@ -63,7 +63,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 560
+    .line 563
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$9;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$500(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject$GroupedMessages;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 562
+    .line 565
     iget-object v0, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;

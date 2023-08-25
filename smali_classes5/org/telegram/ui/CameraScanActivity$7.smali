@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/CameraScanActivity;)V
     .locals 0
 
-    .line 983
+    .line 989
     iput-object p1, p0, Lorg/telegram/ui/CameraScanActivity$7;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$run$0()V
     .locals 4
 
-    .line 989
+    .line 995
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity$7;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
@@ -82,7 +82,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 993
+    .line 999
     :catch_0
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity$7;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 994
+    .line 1000
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity$7;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CameraScanActivity;->access$500(Lorg/telegram/ui/CameraScanActivity;)Lorg/telegram/messenger/camera/CameraView;
@@ -118,7 +118,7 @@
 .method public run()V
     .locals 2
 
-    .line 986
+    .line 992
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity$7;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CameraScanActivity;->access$500(Lorg/telegram/ui/CameraScanActivity;)Lorg/telegram/messenger/camera/CameraView;
@@ -147,7 +147,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 987
+    .line 993
     iget-object v0, p0, Lorg/telegram/ui/CameraScanActivity$7;->this$0:Lorg/telegram/ui/CameraScanActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CameraScanActivity;->access$2200(Lorg/telegram/ui/CameraScanActivity;)Landroid/os/Handler;

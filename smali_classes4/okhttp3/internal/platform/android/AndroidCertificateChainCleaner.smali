@@ -103,7 +103,7 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

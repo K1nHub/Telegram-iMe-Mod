@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$TextSizeCell;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 579
+    .line 581
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TextSizeCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$TextSizeCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getContentDescription()Ljava/lang/CharSequence;
     .locals 3
 
-    .line 601
+    .line 603
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$TextSizeCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$TextSizeCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$TextSizeCell;->access$1500(Lorg/telegram/ui/ArticleViewer$TextSizeCell;)I
@@ -91,7 +91,7 @@
 .method public getStepsCount()I
     .locals 2
 
-    .line 606
+    .line 608
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$TextSizeCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$TextSizeCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$TextSizeCell;->access$1600(Lorg/telegram/ui/ArticleViewer$TextSizeCell;)I
@@ -112,7 +112,7 @@
 .method public onSeekBarDrag(ZF)V
     .locals 2
 
-    .line 582
+    .line 584
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$TextSizeCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$TextSizeCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$TextSizeCell;->access$1500(Lorg/telegram/ui/ArticleViewer$TextSizeCell;)I
@@ -145,35 +145,35 @@
 
     move-result p1
 
-    .line 583
+    .line 585
     sget p2, Lorg/telegram/messenger/SharedConfig;->ivFontSize:I
 
     if-eq p1, p2, :cond_0
 
-    .line 584
+    .line 586
     sput p1, Lorg/telegram/messenger/SharedConfig;->ivFontSize:I
 
-    .line 585
+    .line 587
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    .line 586
+    .line 588
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
-    .line 587
+    .line 589
     sget p2, Lorg/telegram/messenger/SharedConfig;->ivFontSize:I
 
     const-string v0, "iv_font_size"
 
     invoke-interface {p1, v0, p2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 588
+    .line 590
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 589
+    .line 591
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$TextSizeCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$TextSizeCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$TextSizeCell;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -192,14 +192,14 @@
 
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
-    .line 590
+    .line 592
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$TextSizeCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$TextSizeCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$TextSizeCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$1900(Lorg/telegram/ui/ArticleViewer;)V
 
-    .line 591
+    .line 593
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$TextSizeCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$TextSizeCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ArticleViewer$TextSizeCell;->invalidate()V

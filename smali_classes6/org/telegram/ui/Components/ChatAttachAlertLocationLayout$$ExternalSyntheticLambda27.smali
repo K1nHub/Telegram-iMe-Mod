@@ -2,48 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda27;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda27;->f$1:Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDate(ZILjava/lang/String;)V
-    .locals 2
+.method public final didSetColor()V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda27;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda27;->f$1:Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
-
-    invoke-static {v0, v1, p1, p2, p3}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$SJGbcaLAoz09659GzNUvUB1QgXI(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;ZILjava/lang/String;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$mREHFb_XbN53ruYNqiyQRtKRseM(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;)V
 
     return-void
 .end method
 
-.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
-    .locals 1
+.method public synthetic onAnimationProgress(F)V
+    .locals 0
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

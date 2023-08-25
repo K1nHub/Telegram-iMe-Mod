@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$2$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    .line 203
+    .line 219
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 205
+    .line 221
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$2$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$updateLayout(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)V

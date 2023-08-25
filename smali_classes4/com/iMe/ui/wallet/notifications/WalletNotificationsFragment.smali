@@ -150,7 +150,7 @@
 
     move-result-object v2
 
-    const-string v3, "mvpDelegate"
+    const-string/jumbo v3, "mvpDelegate"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1056,7 +1056,7 @@
         }
     .end annotation
 
-    const-string v0, "notifications"
+    const-string/jumbo v0, "notifications"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1189,7 +1189,7 @@
 .method public updateNotificationAsRead(ILcom/iMe/model/wallet/notification/NotificationItem;)V
     .locals 1
 
-    const-string v0, "notification"
+    const-string/jumbo v0, "notification"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

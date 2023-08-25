@@ -32,14 +32,14 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 21
+    .locals 22
 
     move-object/from16 v0, p0
 
-    .line 48
+    .line 50
     sget-object v1, Lcom/iMe/storage/domain/model/common/Environment;->STAGE:Lcom/iMe/storage/domain/model/common/Environment;
 
-    .line 49
+    .line 51
     sget-object v2, Lcom/iMe/storage/common/AppConfiguration$Common;->INSTANCE:Lcom/iMe/storage/common/AppConfiguration$Common;
 
     invoke-virtual {v2}, Lcom/iMe/storage/common/AppConfiguration$Common;->getStageGoogleServices()Lcom/google/firebase/FirebaseOptions;
@@ -76,10 +76,12 @@
 
     const v19, 0x7fffffff
 
-    const/16 v20, 0x0
+    const-string v20, "imestage.page.link"
 
-    .line 47
-    invoke-direct/range {v0 .. v20}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const/16 v21, 0x0
+
+    .line 49
+    invoke-direct/range {v0 .. v21}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILjava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method

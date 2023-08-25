@@ -152,7 +152,7 @@
         }
     .end annotation
 
-    const-string v0, "networkId"
+    const-string/jumbo v0, "networkId"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -188,7 +188,7 @@
 
     move-result-object p2
 
-    const-string p4, "mvpDelegate"
+    const-string/jumbo p4, "mvpDelegate"
 
     invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

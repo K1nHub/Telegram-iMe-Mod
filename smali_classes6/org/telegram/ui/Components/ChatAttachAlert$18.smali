@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;)V
     .locals 0
 
-    .line 3440
+    .line 3486
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,19 +54,19 @@
 
     move-object v0, p0
 
-    .line 3443
+    .line 3489
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13800(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13700(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 3444
+    .line 3490
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13800(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13700(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     move-result-object v2
 
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 3445
+    .line 3491
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -100,7 +100,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3446
+    .line 3492
     move-object v3, v1
 
     check-cast v3, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
@@ -125,13 +125,13 @@
 
     goto :goto_0
 
-    .line 3447
+    .line 3493
     :cond_1
     instance-of v2, v1, Lorg/telegram/ui/PassportActivity;
 
     if-eqz v2, :cond_2
 
-    .line 3448
+    .line 3494
     check-cast v1, Lorg/telegram/ui/PassportActivity;
 
     move-object v2, p1
@@ -162,19 +162,19 @@
         }
     .end annotation
 
-    .line 3454
+    .line 3500
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13800(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13700(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3455
+    .line 3501
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13800(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13700(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     move-result-object v1
 
@@ -192,7 +192,7 @@
 
     goto :goto_0
 
-    .line 3456
+    .line 3502
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -202,7 +202,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 3457
+    .line 3503
     move-object v2, v0
 
     check-cast v2, Lorg/telegram/ui/ChatActivity;
@@ -221,13 +221,13 @@
 
     goto :goto_0
 
-    .line 3458
+    .line 3504
     :cond_1
     instance-of p4, v0, Lorg/telegram/ui/PassportActivity;
 
     if-eqz p4, :cond_2
 
-    .line 3459
+    .line 3505
     check-cast v0, Lorg/telegram/ui/PassportActivity;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/PassportActivity;->didSelectPhotos(Ljava/util/ArrayList;ZI)V
@@ -240,19 +240,19 @@
 .method public startDocumentSelectActivity()V
     .locals 2
 
-    .line 3465
+    .line 3511
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13800(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13700(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3466
+    .line 3512
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13800(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13700(Lorg/telegram/ui/Components/ChatAttachAlert;)Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     move-result-object v0
 
@@ -260,7 +260,7 @@
 
     goto :goto_0
 
-    .line 3467
+    .line 3513
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -270,20 +270,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 3468
+    .line 3514
     check-cast v0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;
 
     invoke-interface {v0}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$DocumentSelectActivityDelegate;->startDocumentSelectActivity()V
 
     goto :goto_0
 
-    .line 3469
+    .line 3515
     :cond_1
     instance-of v1, v0, Lorg/telegram/ui/PassportActivity;
 
     if-eqz v1, :cond_2
 
-    .line 3470
+    .line 3516
     check-cast v0, Lorg/telegram/ui/PassportActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/PassportActivity;->startDocumentSelectActivity()V
@@ -296,12 +296,12 @@
 .method public startMusicSelectActivity()V
     .locals 2
 
-    .line 3476
+    .line 3522
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13900(Lorg/telegram/ui/Components/ChatAttachAlert;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$13800(Lorg/telegram/ui/Components/ChatAttachAlert;Z)V
 
     return-void
 .end method

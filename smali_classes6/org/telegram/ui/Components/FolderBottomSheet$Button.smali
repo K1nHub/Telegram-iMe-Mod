@@ -76,10 +76,10 @@
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 12
 
-    .line 668
+    .line 673
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 663
+    .line 668
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -92,30 +92,30 @@
 
     const/4 v0, 0x0
 
-    .line 708
+    .line 713
     iput v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 740
+    .line 745
     iput v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countScale:F
 
-    .line 780
+    .line 785
     iput v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledT:F
 
     const/4 v0, 0x1
 
-    .line 781
+    .line 786
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabled:Z
 
-    .line 670
+    .line 675
     new-instance v1, Landroid/view/View;
 
     invoke-direct {v1, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->rippleView:Landroid/view/View;
 
-    .line 671
+    .line 676
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -136,7 +136,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 672
+    .line 677
     iget-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->rippleView:Landroid/view/View;
 
     const/4 v2, -0x1
@@ -149,7 +149,7 @@
 
     const/16 v1, 0x8
 
-    .line 674
+    .line 679
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -166,14 +166,14 @@
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 676
+    .line 681
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->paint:Landroid/graphics/Paint;
 
-    .line 677
+    .line 682
     sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -182,7 +182,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 679
+    .line 684
     new-instance v1, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {v1, v0, v0, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -197,15 +197,15 @@
 
     move-object v7, v8
 
-    .line 680
+    .line 685
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 681
+    .line 686
     iget-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 682
+    .line 687
     iget-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v2, 0xe
@@ -218,7 +218,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 683
+    .line 688
     iget-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v11, "fonts/rmedium.ttf"
@@ -229,7 +229,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 684
+    .line 689
     iget-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -238,17 +238,17 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 685
+    .line 690
     iget-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 686
+    .line 691
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 688
+    .line 693
     new-instance v1, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {v1, v9, v9, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -257,15 +257,15 @@
 
     const v2, 0x3e99999a    # 0.3f
 
-    .line 689
+    .line 694
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 690
+    .line 695
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p2, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 691
+    .line 696
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v1, 0xc
@@ -278,7 +278,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 692
+    .line 697
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -287,7 +287,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 693
+    .line 698
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -296,19 +296,19 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 694
+    .line 699
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string p2, ""
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 695
+    .line 700
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 697
+    .line 702
     invoke-virtual {p0, v9}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -317,7 +317,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Components/FolderBottomSheet$Button;F)F
     .locals 0
 
-    .line 658
+    .line 663
     iput p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
     return p1
@@ -326,7 +326,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/Components/FolderBottomSheet$Button;F)F
     .locals 0
 
-    .line 658
+    .line 663
     iput p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countScale:F
 
     return p1
@@ -335,17 +335,17 @@
 .method private animateCount()V
     .locals 3
 
-    .line 743
+    .line 748
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 744
+    .line 749
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 745
+    .line 750
     iput-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -353,7 +353,7 @@
 
     new-array v0, v0, [F
 
-    .line 748
+    .line 753
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -362,14 +362,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAnimator:Landroid/animation/ValueAnimator;
 
-    .line 749
+    .line 754
     new-instance v1, Lorg/telegram/ui/Components/FolderBottomSheet$Button$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/FolderBottomSheet$Button$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/FolderBottomSheet$Button;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 753
+    .line 758
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/FolderBottomSheet$Button$2;
@@ -378,7 +378,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 760
+    .line 765
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/view/animation/OvershootInterpolator;
@@ -389,14 +389,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 761
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0xc8
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 762
+    .line 767
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -415,7 +415,7 @@
 .method private synthetic lambda$animateCount$1(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 750
+    .line 755
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -434,7 +434,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countScale:F
 
-    .line 751
+    .line 756
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -443,7 +443,7 @@
 .method private synthetic lambda$setEnabled$2(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 794
+    .line 799
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -456,7 +456,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledT:F
 
-    .line 795
+    .line 800
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -465,7 +465,7 @@
 .method private synthetic lambda$setLoading$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 720
+    .line 725
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -478,7 +478,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
-    .line 721
+    .line 726
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -497,7 +497,7 @@
 .method public isLoading()Z
     .locals 1
 
-    .line 737
+    .line 742
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loading:Z
 
     return v0
@@ -510,12 +510,12 @@
 
     move-object/from16 v1, p1
 
-    .line 830
+    .line 835
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->rippleView:Landroid/view/View;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 832
+    .line 837
     iget v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
     const/4 v3, 0x0
@@ -530,12 +530,12 @@
 
     if-lez v2, :cond_1
 
-    .line 833
+    .line 838
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     if-nez v2, :cond_0
 
-    .line 834
+    .line 839
     new-instance v2, Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     iget-object v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
@@ -548,7 +548,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
-    .line 836
+    .line 841
     :cond_0
     iget v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
@@ -566,7 +566,7 @@
 
     float-to-int v2, v2
 
-    .line 837
+    .line 842
     iget-object v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
@@ -581,7 +581,7 @@
 
     invoke-virtual {v7, v4, v2, v8, v9}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setBounds(IIII)V
 
-    .line 838
+    .line 843
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     iget v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
@@ -592,15 +592,15 @@
 
     invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setAlpha(I)V
 
-    .line 839
+    .line 844
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/CircularProgressDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 840
+    .line 845
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 843
+    .line 848
     :cond_1
     iget v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
@@ -616,10 +616,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 846
+    .line 851
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 847
+    .line 852
     iget v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
     const/16 v4, -0x18
@@ -638,7 +638,7 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 848
+    .line 853
     iget v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
     mul-float/2addr v2, v7
@@ -649,7 +649,7 @@
 
     move v4, v8
 
-    .line 851
+    .line 856
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -657,7 +657,7 @@
 
     move-result v2
 
-    .line 852
+    .line 857
     iget-object v3, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAlphaAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v9, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAlpha:F
@@ -668,7 +668,7 @@
 
     const v9, 0x417a8f5c    # 15.66f
 
-    .line 854
+    .line 859
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v9
@@ -687,10 +687,10 @@
 
     add-float/2addr v9, v2
 
-    .line 855
+    .line 860
     sget-object v10, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
-    .line 856
+    .line 861
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v11
@@ -713,7 +713,7 @@
 
     float-to-int v11, v11
 
-    .line 857
+    .line 862
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v13
@@ -740,7 +740,7 @@
 
     float-to-int v13, v13
 
-    .line 858
+    .line 863
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v14
@@ -763,7 +763,7 @@
 
     float-to-int v14, v14
 
-    .line 859
+    .line 864
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v15
@@ -790,10 +790,10 @@
 
     float-to-int v7, v15
 
-    .line 855
+    .line 860
     invoke-virtual {v10, v11, v13, v14, v7}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 861
+    .line 866
     iget-object v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     iget v8, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
@@ -816,17 +816,17 @@
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
-    .line 862
+    .line 867
     iget-object v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 863
+    .line 868
     iget-object v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 866
+    .line 871
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v7
@@ -851,7 +851,7 @@
 
     float-to-int v7, v7
 
-    .line 867
+    .line 872
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v8
@@ -870,7 +870,7 @@
 
     float-to-int v8, v8
 
-    .line 868
+    .line 873
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v13
@@ -915,7 +915,7 @@
 
     float-to-int v2, v13
 
-    .line 869
+    .line 874
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v9
@@ -932,25 +932,25 @@
 
     float-to-int v9, v9
 
-    .line 865
+    .line 870
     invoke-virtual {v10, v7, v8, v2, v9}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 871
+    .line 876
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v2, v10}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 873
+    .line 878
     iget v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countScale:F
 
     cmpl-float v7, v7, v6
 
     if-eqz v7, :cond_3
 
-    .line 874
+    .line 879
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 875
+    .line 880
     iget v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countScale:F
 
     invoke-virtual {v10}, Landroid/graphics/Rect;->centerX()I
@@ -967,7 +967,7 @@
 
     invoke-virtual {v1, v7, v7, v8, v9}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 877
+    .line 882
     :cond_3
     iget-object v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->paint:Landroid/graphics/Paint;
 
@@ -987,7 +987,7 @@
 
     const/16 v7, 0xa
 
-    .line 878
+    .line 883
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -1006,7 +1006,7 @@
 
     const v2, 0x3e99999a    # 0.3f
 
-    .line 880
+    .line 885
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -1023,7 +1023,7 @@
 
     invoke-virtual {v10, v2, v7}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 881
+    .line 886
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     iget v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
@@ -1038,30 +1038,30 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
-    .line 882
+    .line 887
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 883
+    .line 888
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 884
+    .line 889
     iget v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countScale:F
 
     cmpl-float v2, v2, v6
 
     if-eqz v2, :cond_4
 
-    .line 885
+    .line 890
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_4
     if-eqz v4, :cond_5
 
-    .line 888
+    .line 893
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_5
@@ -1071,15 +1071,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 5
 
-    .line 895
+    .line 900
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.Button"
 
-    .line 896
+    .line 901
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 897
+    .line 902
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1144,7 +1144,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 769
+    .line 774
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->cancelAnimation()V
@@ -1152,7 +1152,7 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 771
+    .line 776
     iget v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->lastCount:I
 
     if-eq p1, v0, :cond_1
@@ -1161,10 +1161,10 @@
 
     if-lez v0, :cond_1
 
-    .line 772
+    .line 777
     invoke-direct {p0}, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->animateCount()V
 
-    .line 774
+    .line 779
     :cond_1
     iput p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->lastCount:I
 
@@ -1177,11 +1177,11 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 775
+    .line 780
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countAlpha:F
 
-    .line 776
+    .line 781
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1200,7 +1200,7 @@
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 777
+    .line 782
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -1209,22 +1209,22 @@
 .method public setEnabled(Z)V
     .locals 3
 
-    .line 786
+    .line 791
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabled:Z
 
     if-eq v0, p1, :cond_2
 
-    .line 787
+    .line 792
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 788
+    .line 793
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 789
+    .line 794
     iput-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -1234,7 +1234,7 @@
 
     const/4 v1, 0x0
 
-    .line 792
+    .line 797
     iget v2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledT:F
 
     aput v2, v0, v1
@@ -1261,14 +1261,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledAnimator:Landroid/animation/ValueAnimator;
 
-    .line 793
+    .line 798
     new-instance v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/FolderBottomSheet$Button$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/FolderBottomSheet$Button;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 802
+    .line 807
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/FolderBottomSheet$Button$3;
@@ -1277,7 +1277,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 812
+    .line 817
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->enabledAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1289,22 +1289,22 @@
 .method public setLoading(Z)V
     .locals 3
 
-    .line 712
+    .line 717
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loading:Z
 
     if-eq v0, p1, :cond_2
 
-    .line 713
+    .line 718
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 714
+    .line 719
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 715
+    .line 720
     iput-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -1314,7 +1314,7 @@
 
     const/4 v1, 0x0
 
-    .line 718
+    .line 723
     iget v2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingT:F
 
     aput v2, v0, v1
@@ -1341,14 +1341,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingAnimator:Landroid/animation/ValueAnimator;
 
-    .line 719
+    .line 724
     new-instance v1, Lorg/telegram/ui/Components/FolderBottomSheet$Button$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/FolderBottomSheet$Button$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/FolderBottomSheet$Button;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 723
+    .line 728
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/FolderBottomSheet$Button$1;
@@ -1357,21 +1357,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 730
+    .line 735
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x140
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 731
+    .line 736
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 732
+    .line 737
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->loadingAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1385,18 +1385,18 @@
 
     if-eqz p2, :cond_0
 
-    .line 702
+    .line 707
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->cancelAnimation()V
 
-    .line 704
+    .line 709
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 705
+    .line 710
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -1405,7 +1405,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 818
+    .line 823
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-eq v0, p1, :cond_1

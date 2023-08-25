@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;
-.super Landroid/text/style/ImageSpan;
+.super Lorg/telegram/ui/ActionBar/BaseFragment;
 .source "StoryRecorder.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraBtnSpan(Landroid/content/Context;)Ljava/lang/CharSequence;
+    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showLimitReachedSheet(Lorg/telegram/ui/Stories/StoriesController$StoryLimit;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,77 +15,70 @@
 
 
 # instance fields
-.field final synthetic val$cameraDrawable:Landroid/graphics/drawable/Drawable;
+.field final synthetic this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
 
 # direct methods
-.method constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+.method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 4194
-    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;->val$cameraDrawable:Landroid/graphics/drawable/Drawable;
+    .line 4333
+    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-direct {p0, p1}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
-    .locals 2
+.method public getParentActivity()Landroid/app/Activity;
+    .locals 1
 
-    .line 4202
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    .line 4341
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    sub-int v0, p8, p6
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$10400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/app/Activity;
 
-    .line 4203
-    div-int/lit8 v0, v0, 0x2
+    move-result-object v0
 
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    int-to-float v0, v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 4204
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;->val$cameraDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p9}, Landroid/graphics/Paint;->getAlpha()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
-
-    .line 4205
-    invoke-super/range {p0 .. p9}, Landroid/text/style/ImageSpan;->draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
-
-    .line 4206
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    return-void
+    return-object v0
 .end method
 
-.method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
+.method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .locals 2
+
+    .line 4346
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20$1;
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
+
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20$1;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    return-object v0
+.end method
+
+.method public isLightStatusBar()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
     .locals 0
 
-    .line 4197
-    invoke-super/range {p0 .. p5}, Landroid/text/style/ImageSpan;->getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
+    .line 4357
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    move-result p1
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    div-int/lit8 p1, p1, 0x3
-
-    mul-int/lit8 p1, p1, 0x2
+    const/4 p1, 0x0
 
     return p1
 .end method

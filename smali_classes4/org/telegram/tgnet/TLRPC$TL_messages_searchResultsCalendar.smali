@@ -71,31 +71,31 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 58008
+    .line 58063
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 58017
+    .line 58072
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->periods:Ljava/util/ArrayList;
 
-    .line 58018
+    .line 58073
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->messages:Ljava/util/ArrayList;
 
-    .line 58019
+    .line 58074
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->chats:Ljava/util/ArrayList;
 
-    .line 58020
+    .line 58075
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -108,7 +108,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;
     .locals 1
 
-    .line 58023
+    .line 58078
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -119,7 +119,7 @@
 
     return-object p0
 
-    .line 58025
+    .line 58080
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -145,13 +145,13 @@
 
     throw p0
 
-    .line 58030
+    .line 58085
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;-><init>()V
 
-    .line 58031
+    .line 58086
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -162,7 +162,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 58036
+    .line 58091
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -184,46 +184,46 @@
     :cond_0
     move v0, v2
 
-    .line 58037
+    .line 58092
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->inexact:Z
 
-    .line 58038
+    .line 58093
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->count:I
 
-    .line 58039
+    .line 58094
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->min_date:I
 
-    .line 58040
+    .line 58095
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->min_msg_id:I
 
-    .line 58041
+    .line 58096
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 58042
+    .line 58097
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->offset_id_offset:I
 
-    .line 58044
+    .line 58099
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -239,7 +239,7 @@
 
     return-void
 
-    .line 58047
+    .line 58102
     :cond_2
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -259,7 +259,7 @@
 
     throw p1
 
-    .line 58051
+    .line 58106
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -270,7 +270,7 @@
     :goto_1
     if-ge v5, v0, :cond_5
 
-    .line 58053
+    .line 58108
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -283,7 +283,7 @@
 
     return-void
 
-    .line 58057
+    .line 58112
     :cond_4
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->periods:Ljava/util/ArrayList;
 
@@ -293,7 +293,7 @@
 
     goto :goto_1
 
-    .line 58059
+    .line 58114
     :cond_5
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -305,7 +305,7 @@
 
     return-void
 
-    .line 58062
+    .line 58117
     :cond_6
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -325,7 +325,7 @@
 
     throw p1
 
-    .line 58066
+    .line 58121
     :cond_7
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -336,7 +336,7 @@
     :goto_2
     if-ge v5, v0, :cond_9
 
-    .line 58068
+    .line 58123
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -349,7 +349,7 @@
 
     return-void
 
-    .line 58072
+    .line 58127
     :cond_8
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->messages:Ljava/util/ArrayList;
 
@@ -359,7 +359,7 @@
 
     goto :goto_2
 
-    .line 58074
+    .line 58129
     :cond_9
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -371,7 +371,7 @@
 
     return-void
 
-    .line 58077
+    .line 58132
     :cond_a
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -391,7 +391,7 @@
 
     throw p1
 
-    .line 58081
+    .line 58136
     :cond_b
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -402,7 +402,7 @@
     :goto_3
     if-ge v5, v0, :cond_d
 
-    .line 58083
+    .line 58138
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -415,7 +415,7 @@
 
     return-void
 
-    .line 58087
+    .line 58142
     :cond_c
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->chats:Ljava/util/ArrayList;
 
@@ -425,7 +425,7 @@
 
     goto :goto_3
 
-    .line 58089
+    .line 58144
     :cond_d
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -437,7 +437,7 @@
 
     return-void
 
-    .line 58092
+    .line 58147
     :cond_e
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -457,7 +457,7 @@
 
     throw p1
 
-    .line 58096
+    .line 58151
     :cond_f
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -466,7 +466,7 @@
     :goto_4
     if-ge v2, v0, :cond_11
 
-    .line 58098
+    .line 58153
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -479,7 +479,7 @@
 
     return-void
 
-    .line 58102
+    .line 58157
     :cond_10
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->users:Ljava/util/ArrayList;
 
@@ -496,12 +496,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 58107
+    .line 58162
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58108
+    .line 58163
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->inexact:Z
 
     if-eqz v0, :cond_0
@@ -520,32 +520,32 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->flags:I
 
-    .line 58109
+    .line 58164
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58110
+    .line 58165
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58111
+    .line 58166
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->min_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58112
+    .line 58167
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->min_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58113
+    .line 58168
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 58114
+    .line 58169
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->offset_id_offset:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
@@ -553,17 +553,17 @@
     :cond_1
     const v0, 0x1cb5c415
 
-    .line 58116
+    .line 58171
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58117
+    .line 58172
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->periods:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 58118
+    .line 58173
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v2, 0x0
@@ -573,7 +573,7 @@
     :goto_1
     if-ge v3, v1, :cond_2
 
-    .line 58120
+    .line 58175
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->periods:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -588,18 +588,18 @@
 
     goto :goto_1
 
-    .line 58122
+    .line 58177
     :cond_2
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58123
+    .line 58178
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 58124
+    .line 58179
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v2
@@ -607,7 +607,7 @@
     :goto_2
     if-ge v3, v1, :cond_3
 
-    .line 58126
+    .line 58181
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -622,18 +622,18 @@
 
     goto :goto_2
 
-    .line 58128
+    .line 58183
     :cond_3
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58129
+    .line 58184
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 58130
+    .line 58185
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v2
@@ -641,7 +641,7 @@
     :goto_3
     if-ge v3, v1, :cond_4
 
-    .line 58132
+    .line 58187
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -656,24 +656,24 @@
 
     goto :goto_3
 
-    .line 58134
+    .line 58189
     :cond_4
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 58135
+    .line 58190
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 58136
+    .line 58191
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_4
     if-ge v2, v0, :cond_5
 
-    .line 58138
+    .line 58193
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchResultsCalendar;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

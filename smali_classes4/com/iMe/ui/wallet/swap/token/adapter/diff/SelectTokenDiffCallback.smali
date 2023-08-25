@@ -28,11 +28,11 @@
 .method public areContentsTheSame(Lcom/iMe/model/wallet/select/SelectableTokenItem;Lcom/iMe/model/wallet/select/SelectableTokenItem;)Z
     .locals 1
 
-    const-string v0, "oldItem"
+    const-string/jumbo v0, "oldItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newItem"
+    const-string/jumbo v0, "newItem"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -62,11 +62,11 @@
 .method public areItemsTheSame(Lcom/iMe/model/wallet/select/SelectableTokenItem;Lcom/iMe/model/wallet/select/SelectableTokenItem;)Z
     .locals 1
 
-    const-string v0, "oldItem"
+    const-string/jumbo v0, "oldItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newItem"
+    const-string/jumbo v0, "newItem"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -112,11 +112,11 @@
 .method public getChangePayload(Lcom/iMe/model/wallet/select/SelectableTokenItem;Lcom/iMe/model/wallet/select/SelectableTokenItem;)Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "oldItem"
+    const-string/jumbo v0, "oldItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "newItem"
+    const-string/jumbo v0, "newItem"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

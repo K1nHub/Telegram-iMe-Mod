@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MentionsContainerView;)V
     .locals 0
 
-    .line 156
+    .line 168
     iput-object p1, p0, Lorg/telegram/ui/Components/MentionsContainerView$3;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -44,7 +44,7 @@
     :cond_0
     add-int/lit8 p1, p1, -0x1
 
-    .line 164
+    .line 176
     iget-object v1, p0, Lorg/telegram/ui/Components/MentionsContainerView$3;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/MentionsContainerView;->access$200(Lorg/telegram/ui/Components/MentionsContainerView;)Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -55,14 +55,14 @@
 
     move-result-object v1
 
-    .line 165
+    .line 177
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;
 
     if-eqz v2, :cond_1
 
     return v0
 
-    .line 167
+    .line 179
     :cond_1
     instance-of v0, v1, Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -72,7 +72,7 @@
 
     return p1
 
-    .line 170
+    .line 182
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$3;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 
@@ -101,7 +101,7 @@
     :cond_3
     add-int/lit8 p1, p1, -0x1
 
-    .line 173
+    .line 185
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/MentionsContainerView$3;->this$0:Lorg/telegram/ui/Components/MentionsContainerView;
 

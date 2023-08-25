@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;",
+        "Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$21\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$21\n*L\n144#1:158,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$21\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,168:1\n129#2,5:169\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$21\n*L\n154#1:169,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
     .locals 4
 
     const-string v0, "$this$single"
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 144
+    .line 154
     check-cast p2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 133
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 144
+    .line 154
     check-cast v1, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/data/network/api/own/DonationsApi;
+    const-class v2, Lcom/iMe/storage/data/network/api/own/CancelApi;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,11 +113,11 @@
 
     move-result-object v2
 
-    .line 144
-    check-cast v2, Lcom/iMe/storage/data/network/api/own/DonationsApi;
+    .line 154
+    check-cast v2, Lcom/iMe/storage/data/network/api/own/CancelApi;
 
     .line 133
-    const-class v3, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
+    const-class v3, Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSourceFactory;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -127,12 +127,12 @@
 
     move-result-object p1
 
-    .line 144
-    check-cast p1, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
+    .line 154
+    check-cast p1, Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSourceFactory;
 
-    new-instance v0, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;
+    new-instance v0, Lcom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl;
 
-    invoke-direct {v0, v2, p1, v1, p2}, Lcom/iMe/storage/data/repository/crypto/donations/DonationsRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/DonationsApi;Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;)V
+    invoke-direct {v0, v2, p1, v1, p2}, Lcom/iMe/storage/data/repository/crypto/cancel/CancelRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/CancelApi;Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSourceFactory;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;)V
 
     return-object v0
 .end method
@@ -140,12 +140,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 144
+    .line 154
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$21;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$21;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/repository/crypto/cancel/CancelRepository;
 
     move-result-object p1
 

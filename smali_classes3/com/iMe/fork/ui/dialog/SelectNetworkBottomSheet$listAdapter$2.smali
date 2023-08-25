@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;-><init>(Landroid/content/Context;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
+    value = Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;-><init>(Landroid/content/Context;Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;
     .locals 2
 
-    .line 62
+    .line 65
     new-instance v0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$listAdapter$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 62
+    .line 65
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$listAdapter$2;->invoke()Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;
 
     move-result-object v0

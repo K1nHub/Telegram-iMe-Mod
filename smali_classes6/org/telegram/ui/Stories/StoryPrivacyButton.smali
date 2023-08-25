@@ -100,7 +100,9 @@
 
     const v3, 0x3f19999a    # 0.6f
 
-    invoke-direct {v2, p0, v3}, Lorg/telegram/ui/Components/ButtonBounce;-><init>(Landroid/view/View;F)V
+    const/high16 v4, 0x40a00000    # 5.0f
+
+    invoke-direct {v2, p0, v3, v4}, Lorg/telegram/ui/Components/ButtonBounce;-><init>(Landroid/view/View;FF)V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 

@@ -124,56 +124,64 @@
     .line 7
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 8
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_customize:I
 
     const-string v2, "SETTINGS_CUSTOMIZATION"
 
     const/4 v3, 0x0
 
+    .line 7
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CUSTOMIZATION:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 8
+    .line 10
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 11
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_settings_menu:I
 
     const-string v2, "SETTINGS_SIDE_MENU"
 
     const/4 v3, 0x1
 
+    .line 10
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_SIDE_MENU:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 9
+    .line 13
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 14
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_interface_settings:I
 
     const-string v2, "SETTINGS_BASIC_TOOLBAR"
 
     const/4 v3, 0x2
 
+    .line 13
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_BASIC_TOOLBAR:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 10
+    .line 16
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 17
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_openprofile:I
 
     const-string v2, "SETTINGS_CHAT_PROFILE"
 
     const/4 v3, 0x3
 
+    .line 16
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHAT_PROFILE:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 11
+    .line 19
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_drawer_cloud:I
@@ -186,67 +194,77 @@
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CLOUD:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 12
+    .line 20
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 21
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_chats_list:I
 
     const-string v2, "SETTINGS_CHAT_LIST_VIEW"
 
     const/4 v3, 0x5
 
+    .line 20
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHAT_LIST_VIEW:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 13
+    .line 23
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 24
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_msgbubble3:I
 
     const-string v2, "SETTINGS_CHATS"
 
     const/4 v3, 0x6
 
+    .line 23
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHATS:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 14
+    .line 26
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 27
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_settings_chat:I
 
     const-string v2, "SETTINGS_MESSAGES"
 
     const/4 v3, 0x7
 
+    .line 26
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_MESSAGES:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 15
+    .line 29
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 30
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_filter_icon_heart:I
 
     const-string v2, "SETTINGS_REACTIONS_BUTTON"
 
     const/16 v3, 0x8
 
+    .line 29
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_REACTIONS_BUTTON:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
-    .line 16
+    .line 32
     new-instance v0, Lcom/iMe/fork/enums/SettingsToolsCategory;
 
+    .line 33
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_block2:I
 
     const-string v2, "SETTINGS_CONFIRMATION"
 
     const/16 v3, 0x9
 
+    .line 32
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/fork/enums/SettingsToolsCategory;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CONFIRMATION:Lcom/iMe/fork/enums/SettingsToolsCategory;
@@ -318,7 +336,7 @@
 .method public final getTitle()Ljava/lang/String;
     .locals 2
 
-    .line 18
+    .line 36
     sget-object v0, Lcom/iMe/fork/enums/SettingsToolsCategory$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -329,7 +347,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 28
+    .line 46
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -349,7 +367,7 @@
 
     goto/16 :goto_0
 
-    .line 27
+    .line 45
     :pswitch_1
     sget v0, Lorg/telegram/messenger/R$string;->settings_tools_reactions:I
 
@@ -363,7 +381,7 @@
 
     goto :goto_0
 
-    .line 26
+    .line 44
     :pswitch_2
     sget v0, Lorg/telegram/messenger/R$string;->settings_interface_message_header:I
 
@@ -377,7 +395,7 @@
 
     goto :goto_0
 
-    .line 25
+    .line 43
     :pswitch_3
     sget v0, Lorg/telegram/messenger/R$string;->settings_interface_chat_header:I
 
@@ -391,7 +409,7 @@
 
     goto :goto_0
 
-    .line 24
+    .line 42
     :pswitch_4
     sget v0, Lorg/telegram/messenger/R$string;->ChatList:I
 
@@ -407,7 +425,7 @@
 
     goto :goto_0
 
-    .line 23
+    .line 41
     :pswitch_5
     sget v0, Lorg/telegram/messenger/R$string;->folder_fab_settings_fab_cloud:I
 
@@ -421,7 +439,7 @@
 
     goto :goto_0
 
-    .line 22
+    .line 40
     :pswitch_6
     sget v0, Lorg/telegram/messenger/R$string;->settings_tools_chat_profile:I
 
@@ -435,7 +453,7 @@
 
     goto :goto_0
 
-    .line 21
+    .line 39
     :pswitch_7
     sget v0, Lorg/telegram/messenger/R$string;->settings_tools_base_toolbar:I
 
@@ -449,7 +467,7 @@
 
     goto :goto_0
 
-    .line 20
+    .line 38
     :pswitch_8
     sget v0, Lorg/telegram/messenger/R$string;->settings_interface_drawer_header:I
 
@@ -463,7 +481,7 @@
 
     goto :goto_0
 
-    .line 19
+    .line 37
     :pswitch_9
     sget v0, Lorg/telegram/messenger/R$string;->settings_tools_customization:I
 

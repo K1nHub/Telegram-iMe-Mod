@@ -34,7 +34,7 @@
 .method public final prepareChatIdForBotAPI(J)J
     .locals 2
 
-    .line 17
+    .line 18
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

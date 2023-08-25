@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;)V
     .locals 0
 
-    .line 2282
+    .line 2287
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2303
+    .line 2308
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -50,7 +50,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 2285
+    .line 2290
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -65,7 +65,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2286
+    .line 2291
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -74,7 +74,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$5102(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Z)Z
 
-    .line 2287
+    .line 2292
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -83,7 +83,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$5002(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 2288
+    .line 2293
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -94,7 +94,7 @@
 
     if-nez p1, :cond_1
 
-    .line 2289
+    .line 2294
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -110,7 +110,7 @@
     :goto_0
     if-ge v0, p1, :cond_1
 
-    .line 2291
+    .line 2296
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -121,14 +121,14 @@
 
     move-result-object v1
 
-    .line 2292
+    .line 2297
     instance-of v2, v1, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     if-eqz v2, :cond_0
 
     const/4 p1, 0x4
 
-    .line 2293
+    .line 2298
     invoke-virtual {v1, p1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1

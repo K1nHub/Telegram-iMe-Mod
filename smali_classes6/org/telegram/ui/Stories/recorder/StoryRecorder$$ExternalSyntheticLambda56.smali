@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/camera/CameraView$CameraViewDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final onCameraInit()V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda56;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$vNI0PwPzfmmpc1_Yd9R49DcO1qM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$s29zCSZnWAbE-pX-_Kr4bMzC8Gc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Integer;)V
 
     return-void
 .end method

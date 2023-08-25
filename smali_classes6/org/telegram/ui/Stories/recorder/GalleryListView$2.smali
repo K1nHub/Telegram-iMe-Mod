@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 134
+    .line 159
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$2;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(Landroid/content/Context;I)V
@@ -35,10 +35,10 @@
 .method public onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
 
-    .line 137
+    .line 162
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/GridLayoutManager;->onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
 
-    .line 138
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$2;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->firstLayout:Z
@@ -47,10 +47,10 @@
 
     const/4 p2, 0x0
 
-    .line 139
+    .line 164
     iput-boolean p2, p1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->firstLayout:Z
 
-    .line 140
+    .line 165
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->firstLayout()V
 
     :cond_0

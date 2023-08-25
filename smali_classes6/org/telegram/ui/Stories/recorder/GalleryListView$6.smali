@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/GalleryListView;)V
     .locals 0
 
-    .line 205
+    .line 230
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$6;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 209
+    .line 234
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$6;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$100(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/lang/Runnable;
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 210
+    .line 235
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$6;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$100(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/lang/Runnable;
@@ -64,7 +64,7 @@
 
     if-lt p1, v0, :cond_1
 
-    .line 213
+    .line 238
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$6;->this$0:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->access$200(Lorg/telegram/ui/Stories/recorder/GalleryListView;)Ljava/util/ArrayList;

@@ -25,10 +25,10 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 439
+    .line 449
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 440
+    .line 450
     new-instance v0, Lcom/google/android/gms/maps/model/MarkerOptions;
 
     invoke-direct {v0}, Lcom/google/android/gms/maps/model/MarkerOptions;-><init>()V
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 436
+    .line 446
     invoke-direct {p0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;-><init>()V
 
     return-void
@@ -50,7 +50,7 @@
 .method static synthetic access$1000(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;)Lcom/google/android/gms/maps/model/MarkerOptions;
     .locals 0
 
-    .line 436
+    .line 446
     iget-object p0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     return-object p0
@@ -61,7 +61,7 @@
 .method public anchor(FF)Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;
     .locals 1
 
-    .line 463
+    .line 473
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/maps/model/MarkerOptions;->anchor(FF)Lcom/google/android/gms/maps/model/MarkerOptions;
@@ -72,7 +72,7 @@
 .method public flat(Z)Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;
     .locals 1
 
-    .line 481
+    .line 491
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/MarkerOptions;->flat(Z)Lcom/google/android/gms/maps/model/MarkerOptions;
@@ -83,7 +83,7 @@
 .method public icon(I)Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;
     .locals 1
 
-    .line 457
+    .line 467
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     invoke-static {p1}, Lcom/google/android/gms/maps/model/BitmapDescriptorFactory;->fromResource(I)Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -98,7 +98,7 @@
 .method public icon(Landroid/graphics/Bitmap;)Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;
     .locals 1
 
-    .line 451
+    .line 461
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     invoke-static {p1}, Lcom/google/android/gms/maps/model/BitmapDescriptorFactory;->fromBitmap(Landroid/graphics/Bitmap;)Lcom/google/android/gms/maps/model/BitmapDescriptor;
@@ -113,7 +113,7 @@
 .method public position(Lorg/telegram/messenger/IMapsProvider$LatLng;)Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;
     .locals 6
 
-    .line 445
+    .line 455
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
@@ -132,7 +132,7 @@
 .method public snippet(Ljava/lang/String;)Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;
     .locals 1
 
-    .line 475
+    .line 485
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/MarkerOptions;->snippet(Ljava/lang/String;)Lcom/google/android/gms/maps/model/MarkerOptions;
@@ -143,7 +143,7 @@
 .method public title(Ljava/lang/String;)Lorg/telegram/messenger/IMapsProvider$IMarkerOptions;
     .locals 1
 
-    .line 469
+    .line 479
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMarkerOptions;->markerOptions:Lcom/google/android/gms/maps/model/MarkerOptions;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/MarkerOptions;->title(Ljava/lang/String;)Lcom/google/android/gms/maps/model/MarkerOptions;

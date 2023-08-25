@@ -8,26 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$1:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
+.field public final synthetic f$2:Lorg/telegram/messenger/support/LongSparseIntArray;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ILorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/support/LongSparseIntArray;Lorg/telegram/messenger/support/LongSparseIntArray;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/tgnet/TLObject;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    iput p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:I
-
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     return-void
 .end method
@@ -35,17 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/tgnet/TLObject;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$1:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    iget v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:I
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$2:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda159;->f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$vAnpF7LT-bVQ2fEFi-dEsoT3Vn4(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ILorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$WTDTkm1SCPG21Ku0jqNbMgjIOOs(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/support/LongSparseIntArray;Lorg/telegram/messenger/support/LongSparseIntArray;)V
 
     return-void
 .end method

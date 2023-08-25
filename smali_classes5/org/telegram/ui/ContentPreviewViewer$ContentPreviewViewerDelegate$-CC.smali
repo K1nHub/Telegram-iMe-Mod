@@ -52,6 +52,14 @@
     return-void
 .end method
 
+.method public static $default$isPhotoEditor(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public static $default$isStoryReply(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
     .locals 1
 

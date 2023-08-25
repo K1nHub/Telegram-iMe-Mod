@@ -68,7 +68,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 74
+    .line 75
     invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->access$createGson()Lcom/google/gson/Gson;
 
     move-result-object p1
@@ -79,7 +79,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 74
+    .line 75
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -60,7 +60,7 @@
 
     const/16 v0, 0x8
 
-    .line 68
+    .line 75
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -77,7 +77,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 68
+    .line 75
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$linkedWalletViewCornerRadius$2;->invoke()Ljava/lang/Float;
 
     move-result-object v0

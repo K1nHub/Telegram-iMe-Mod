@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Landroid/widget/EditText;
-
-.field public final synthetic f$1:Landroid/widget/EditText;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/widget/EditText;Landroid/widget/EditText;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;->f$0:Landroid/widget/EditText;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;->f$1:Landroid/widget/EditText;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;->f$0:Landroid/widget/EditText;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;->f$0:Ljava/lang/Runnable;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;->f$1:Landroid/widget/EditText;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$RJ-LAbtw4DDtmKR4rUhwNLbgDpA(Landroid/widget/EditText;Landroid/widget/EditText;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$BOfPGzW3IUaXMUiFEIOgRZDPXzM(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

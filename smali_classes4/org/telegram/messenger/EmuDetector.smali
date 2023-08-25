@@ -570,7 +570,7 @@
 
     move-result-object v0
 
-    const-string v1, "nox"
+    const-string/jumbo v1, "nox"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 

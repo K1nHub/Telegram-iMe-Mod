@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 352
+    .line 406
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$1$2;->invoke(Landroid/view/View;)V
@@ -70,14 +70,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 353
+    .line 407
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$1$2;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$1$2;->$this_apply:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokensHeaderBinding;
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokensHeaderBinding;->networkTypeView:Lcom/iMe/ui/custom/NetworkTypeView;
 
-    const-string v1, "networkTypeView"
+    const-string/jumbo v1, "networkTypeView"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

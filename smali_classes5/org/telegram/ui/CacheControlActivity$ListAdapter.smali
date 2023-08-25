@@ -56,12 +56,12 @@
 .method public constructor <init>(Lorg/telegram/ui/CacheControlActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 2477
+    .line 2478
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
 
-    .line 2478
+    .line 2479
     iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -70,7 +70,7 @@
 .method private synthetic lambda$onBindViewHolder$2(Landroid/view/View;)V
     .locals 1
 
-    .line 2756
+    .line 2757
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$4900(Lorg/telegram/ui/CacheControlActivity;)Z
@@ -81,12 +81,12 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/CacheControlActivity;->access$4902(Lorg/telegram/ui/CacheControlActivity;Z)Z
 
-    .line 2757
+    .line 2758
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$3200(Lorg/telegram/ui/CacheControlActivity;)V
 
-    .line 2758
+    .line 2759
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$5200(Lorg/telegram/ui/CacheControlActivity;)V
@@ -97,7 +97,7 @@
 .method private synthetic lambda$onBindViewHolder$3(Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
     .locals 0
 
-    .line 2759
+    .line 2760
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/CacheControlActivity;->access$5100(Lorg/telegram/ui/CacheControlActivity;Landroid/view/View;)V
@@ -112,7 +112,7 @@
 
     if-nez p0, :cond_0
 
-    .line 2514
+    .line 2515
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->setKeepMedia(I)V
 
     goto :goto_0
@@ -124,7 +124,7 @@
 
     const/4 p0, 0x0
 
-    .line 2516
+    .line 2517
     invoke-static {p0}, Lorg/telegram/messenger/SharedConfig;->setKeepMedia(I)V
 
     goto :goto_0
@@ -134,7 +134,7 @@
 
     if-ne p0, v2, :cond_2
 
-    .line 2518
+    .line 2519
     invoke-static {v1}, Lorg/telegram/messenger/SharedConfig;->setKeepMedia(I)V
 
     goto :goto_0
@@ -142,7 +142,7 @@
     :cond_2
     if-ne p0, v0, :cond_3
 
-    .line 2520
+    .line 2521
     invoke-static {v2}, Lorg/telegram/messenger/SharedConfig;->setKeepMedia(I)V
 
     :cond_3
@@ -153,7 +153,7 @@
 .method private static synthetic lambda$onCreateViewHolder$1(Ljava/util/ArrayList;I)V
     .locals 1
 
-    .line 2714
+    .line 2715
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -188,7 +188,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 2489
+    .line 2490
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -205,7 +205,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 2825
+    .line 2826
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -226,14 +226,14 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 4
 
-    .line 2483
+    .line 2484
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
 
     int-to-long v0, v0
 
-    .line 2484
+    .line 2485
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$3300(Lorg/telegram/ui/CacheControlActivity;)J
@@ -321,7 +321,7 @@
 
     move/from16 v2, p2
 
-    .line 2729
+    .line 2730
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -334,7 +334,7 @@
 
     check-cast v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;
 
-    .line 2730
+    .line 2731
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v4
@@ -371,18 +371,18 @@
 
     goto/16 :goto_9
 
-    .line 2744
+    .line 2745
     :cond_0
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 2746
+    .line 2747
     iget v2, v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;->index:I
 
     if-gez v2, :cond_1
 
-    .line 2747
+    .line 2748
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$4600(Lorg/telegram/ui/CacheControlActivity;)Z
@@ -391,7 +391,7 @@
 
     goto :goto_0
 
-    .line 2749
+    .line 2750
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -403,7 +403,7 @@
 
     aget-boolean v2, v2, v4
 
-    .line 2751
+    .line 2752
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -417,7 +417,7 @@
 
     if-gez v10, :cond_2
 
-    const/16 v11, 0x8
+    const/16 v11, 0x9
 
     goto :goto_1
 
@@ -472,7 +472,7 @@
     :cond_5
     invoke-virtual {v1, v4, v8, v2, v6}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 2752
+    .line 2753
     iget v2, v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;->colorKey:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
@@ -481,7 +481,7 @@
 
     invoke-virtual {v1, v2, v4, v6}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCheckBoxColor(III)V
 
-    .line 2753
+    .line 2754
     iget v2, v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;->index:I
 
     if-gez v2, :cond_6
@@ -504,14 +504,14 @@
     :goto_4
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setCollapsed(Ljava/lang/Boolean;)V
 
-    .line 2754
+    .line 2755
     iget v2, v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;->index:I
 
     const/4 v4, -0x1
 
     if-ne v2, v4, :cond_7
 
-    .line 2755
+    .line 2756
     new-instance v2, Lorg/telegram/ui/CacheControlActivity$ListAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/CacheControlActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/CacheControlActivity$ListAdapter;)V
@@ -524,11 +524,11 @@
 
     goto :goto_5
 
-    .line 2761
+    .line 2762
     :cond_7
     invoke-virtual {v1, v5, v5}, Lorg/telegram/ui/Cells/CheckBoxCell;->setOnSectionsClickListener(Landroid/view/View$OnClickListener;Landroid/view/View$OnClickListener;)V
 
-    .line 2763
+    .line 2764
     :goto_5
     iget-boolean v2, v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;->pad:Z
 
@@ -536,7 +536,7 @@
 
     goto/16 :goto_9
 
-    .line 2735
+    .line 2736
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -554,7 +554,7 @@
 
     if-nez v1, :cond_17
 
-    .line 2736
+    .line 2737
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$3700(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;
@@ -563,7 +563,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    .line 2737
+    .line 2738
     invoke-static {v2}, Lorg/telegram/ui/CacheControlActivity;->access$3400(Lorg/telegram/ui/CacheControlActivity;)J
 
     move-result-wide v2
@@ -576,7 +576,7 @@
 
     move v6, v7
 
-    .line 2738
+    .line 2739
     :cond_9
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -613,7 +613,7 @@
 
     div-float/2addr v2, v7
 
-    .line 2739
+    .line 2740
     :goto_6
     iget-object v7, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -664,20 +664,20 @@
 
     div-float/2addr v3, v4
 
-    .line 2736
+    .line 2737
     :cond_c
     :goto_7
     invoke-virtual {v1, v6, v2, v3}, Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;->setData(ZFF)V
 
     goto/16 :goto_9
 
-    .line 2766
+    .line 2767
     :cond_d
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/TextCell;
 
-    .line 2767
+    .line 2768
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -688,10 +688,10 @@
 
     move-result-object v4
 
-    .line 2768
+    .line 2769
     iget v3, v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;->keepMediaType:I
 
-    .line 2769
+    .line 2770
     iget-object v10, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v10}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -718,7 +718,7 @@
 
     new-array v5, v7, [Ljava/lang/Object;
 
-    .line 2772
+    .line 2773
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -731,7 +731,7 @@
 
     move-result-object v5
 
-    .line 2774
+    .line 2775
     :cond_e
     invoke-virtual {v4, v3}, Lorg/telegram/messenger/CacheByChatsController;->getKeepMedia(I)I
 
@@ -741,7 +741,7 @@
 
     move-result-object v12
 
-    .line 2775
+    .line 2776
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -758,7 +758,7 @@
 
     if-nez v3, :cond_f
 
-    .line 2776
+    .line 2777
     sget v2, Lorg/telegram/messenger/R$string;->PrivateChats:I
 
     const-string v3, "PrivateChats"
@@ -787,7 +787,7 @@
 
     goto/16 :goto_8
 
-    .line 2777
+    .line 2778
     :cond_f
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -805,7 +805,7 @@
 
     if-ne v3, v7, :cond_10
 
-    .line 2778
+    .line 2779
     sget v2, Lorg/telegram/messenger/R$string;->GroupChats:I
 
     const-string v3, "GroupChats"
@@ -834,7 +834,7 @@
 
     goto :goto_8
 
-    .line 2779
+    .line 2780
     :cond_10
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -852,7 +852,7 @@
 
     if-ne v3, v8, :cond_11
 
-    .line 2780
+    .line 2781
     sget v2, Lorg/telegram/messenger/R$string;->CacheChannels:I
 
     const-string v3, "CacheChannels"
@@ -881,7 +881,7 @@
 
     goto :goto_8
 
-    .line 2781
+    .line 2782
     :cond_11
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -899,7 +899,7 @@
 
     if-ne v2, v9, :cond_12
 
-    .line 2782
+    .line 2783
     sget v2, Lorg/telegram/messenger/R$string;->CacheStories:I
 
     const-string v3, "CacheStories"
@@ -926,20 +926,20 @@
 
     invoke-virtual/range {v10 .. v16}, Lorg/telegram/ui/Cells/TextCell;->setTextAndValueAndColorfulIcon(Ljava/lang/String;Ljava/lang/CharSequence;ZIIZ)V
 
-    .line 2784
+    .line 2785
     :cond_12
     :goto_8
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Cells/TextCell;->setSubtitle(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_9
 
-    .line 2814
+    .line 2815
     :cond_13
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 2815
+    .line 2816
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -956,7 +956,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2816
+    .line 2817
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -973,7 +973,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setTopMargin(I)V
 
-    .line 2817
+    .line 2818
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/CacheControlActivity;->access$3600(Lorg/telegram/ui/CacheControlActivity;)Ljava/util/ArrayList;
@@ -992,7 +992,7 @@
 
     goto :goto_9
 
-    .line 2810
+    .line 2811
     :cond_14
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -1000,7 +1000,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/StorageUsageView;
 
-    .line 2811
+    .line 2812
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/CacheControlActivity;->access$3500(Lorg/telegram/ui/CacheControlActivity;)Z
@@ -1035,13 +1035,13 @@
 
     goto :goto_9
 
-    .line 2797
+    .line 2798
     :cond_15
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 2805
+    .line 2806
     iget-object v2, v3, Lorg/telegram/ui/CacheControlActivity$ItemInner;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
@@ -1050,7 +1050,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2806
+    .line 2807
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -1065,7 +1065,7 @@
 
     goto :goto_9
 
-    .line 2787
+    .line 2788
     :cond_16
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -1073,7 +1073,7 @@
 
     int-to-long v2, v2
 
-    .line 2792
+    .line 2793
     iget-object v4, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/CacheControlActivity;->access$3300(Lorg/telegram/ui/CacheControlActivity;)J
@@ -1084,7 +1084,7 @@
 
     if-nez v2, :cond_17
 
-    .line 2793
+    .line 2794
     sget v2, Lorg/telegram/messenger/R$string;->MigrateOldFolder:I
 
     const-string v3, "MigrateOldFolder"
@@ -1117,7 +1117,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    .line 2611
+    .line 2612
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -1126,7 +1126,7 @@
 
     goto/16 :goto_4
 
-    .line 2681
+    .line 2682
     :pswitch_0
     new-instance p2, Lorg/telegram/ui/Components/SlideChooseView;
 
@@ -1134,7 +1134,7 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/Components/SlideChooseView;-><init>(Landroid/content/Context;)V
 
-    .line 2683
+    .line 2684
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1143,7 +1143,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2685
+    .line 2686
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$4400(Lorg/telegram/ui/CacheControlActivity;)J
@@ -1164,7 +1164,7 @@
 
     div-float/2addr v0, v1
 
-    .line 2686
+    .line 2687
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -1175,7 +1175,7 @@
 
     if-gtz v4, :cond_0
 
-    .line 2691
+    .line 2692
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1191,7 +1191,7 @@
 
     const/4 p1, 0x5
 
-    .line 2694
+    .line 2695
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1207,7 +1207,7 @@
 
     const/16 p1, 0x10
 
-    .line 2697
+    .line 2698
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1223,7 +1223,7 @@
 
     const/16 p1, 0x20
 
-    .line 2700
+    .line 2701
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1233,14 +1233,14 @@
     :cond_3
     const p1, 0x7fffffff
 
-    .line 2702
+    .line 2703
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2703
+    .line 2704
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -1249,7 +1249,7 @@
 
     move v4, v2
 
-    .line 2704
+    .line 2705
     :goto_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1257,7 +1257,7 @@
 
     if-ge v4, v5, :cond_6
 
-    .line 2705
+    .line 2706
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -1274,7 +1274,7 @@
 
     const-string v6, "300 MB"
 
-    .line 2706
+    .line 2707
     invoke-static {v6, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
@@ -1283,7 +1283,7 @@
 
     goto :goto_1
 
-    .line 2707
+    .line 2708
     :cond_4
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1297,7 +1297,7 @@
 
     if-ne v5, p1, :cond_5
 
-    .line 2708
+    .line 2709
     sget v5, Lorg/telegram/messenger/R$string;->NoLimit:I
 
     const-string v6, "NoLimit"
@@ -1313,7 +1313,7 @@
     :cond_5
     new-array v5, v3, [Ljava/lang/Object;
 
-    .line 2710
+    .line 2711
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1333,7 +1333,7 @@
 
     goto :goto_0
 
-    .line 2713
+    .line 2714
     :cond_6
     new-instance v2, Lorg/telegram/ui/CacheControlActivity$ListAdapter$$ExternalSyntheticLambda2;
 
@@ -1341,7 +1341,7 @@
 
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/SlideChooseView;->setCallback(Lorg/telegram/ui/Components/SlideChooseView$Callback;)V
 
-    .line 2716
+    .line 2717
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v2
@@ -1352,7 +1352,7 @@
 
     move-result p1
 
-    .line 2717
+    .line 2718
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1363,20 +1363,20 @@
 
     if-gez p1, :cond_7
 
-    .line 2719
+    .line 2720
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
     sub-int/2addr p1, v3
 
-    .line 2721
+    .line 2722
     :cond_7
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Components/SlideChooseView;->setOptions(I[Ljava/lang/String;)V
 
     goto/16 :goto_3
 
-    .line 2678
+    .line 2679
     :pswitch_1
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -1394,7 +1394,7 @@
 
     goto/16 :goto_4
 
-    .line 2597
+    .line 2598
     :pswitch_2
     new-instance p1, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -1406,21 +1406,21 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
 
-    .line 2598
+    .line 2599
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 2599
+    .line 2600
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setItemsCount(I)V
 
-    .line 2600
+    .line 2601
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIgnoreHeightCheck(Z)V
 
     const/16 p2, 0x1a
 
-    .line 2601
+    .line 2602
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 2602
+    .line 2603
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1431,7 +1431,7 @@
 
     goto/16 :goto_4
 
-    .line 2606
+    .line 2607
     :pswitch_3
     new-instance p1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -1447,7 +1447,7 @@
 
     invoke-direct {p1, p2, v0, v1, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2607
+    .line 2608
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1458,7 +1458,7 @@
 
     goto/16 :goto_4
 
-    .line 2594
+    .line 2595
     :pswitch_4
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -1476,7 +1476,7 @@
 
     goto/16 :goto_4
 
-    .line 2551
+    .line 2552
     :pswitch_5
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -1492,7 +1492,7 @@
 
     goto/16 :goto_4
 
-    .line 2614
+    .line 2615
     :pswitch_6
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -1508,7 +1508,7 @@
 
     move-result-object p1
 
-    .line 2635
+    .line 2636
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CachedMediaLayout;
@@ -1521,7 +1521,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/CachedMediaLayout;->setDelegate(Lorg/telegram/ui/CachedMediaLayout$Delegate;)V
 
-    .line 2672
+    .line 2673
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CachedMediaLayout;
@@ -1534,7 +1534,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/CachedMediaLayout;->setCacheModel(Lorg/telegram/ui/Storage/CacheModel;)V
 
-    .line 2673
+    .line 2674
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/CacheControlActivity;->access$1600(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/Components/NestedSizeNotifierLayout;
@@ -1549,7 +1549,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/NestedSizeNotifierLayout;->setChildLayout(Lorg/telegram/ui/Components/NestedSizeNotifierLayout$ChildLayout;)V
 
-    .line 2674
+    .line 2675
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1558,7 +1558,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2675
+    .line 2676
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -1569,7 +1569,7 @@
 
     goto/16 :goto_4
 
-    .line 2547
+    .line 2548
     :pswitch_7
     new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
@@ -1577,7 +1577,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 2548
+    .line 2549
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1588,7 +1588,7 @@
 
     goto/16 :goto_4
 
-    .line 2538
+    .line 2539
     :pswitch_8
     new-instance p1, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -1600,21 +1600,21 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
 
-    .line 2539
+    .line 2540
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 2540
+    .line 2541
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setItemsCount(I)V
 
-    .line 2541
+    .line 2542
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIgnoreHeightCheck(Z)V
 
     const/16 p2, 0x19
 
-    .line 2542
+    .line 2543
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 2543
+    .line 2544
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1625,7 +1625,7 @@
 
     goto/16 :goto_4
 
-    .line 2533
+    .line 2534
     :pswitch_9
     new-instance p1, Lorg/telegram/ui/CacheControlActivity$UserCell;
 
@@ -1643,7 +1643,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/CacheControlActivity$UserCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2534
+    .line 2535
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1654,7 +1654,7 @@
 
     goto/16 :goto_4
 
-    .line 2509
+    .line 2510
     :pswitch_a
     new-instance p2, Lorg/telegram/ui/Components/SlideChooseView;
 
@@ -1662,7 +1662,7 @@
 
     invoke-direct {p2, v4}, Lorg/telegram/ui/Components/SlideChooseView;-><init>(Landroid/content/Context;)V
 
-    .line 2511
+    .line 2512
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1671,12 +1671,12 @@
 
     invoke-virtual {p2, v4}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2512
+    .line 2513
     sget-object v4, Lorg/telegram/ui/CacheControlActivity$ListAdapter$$ExternalSyntheticLambda3;->INSTANCE:Lorg/telegram/ui/CacheControlActivity$ListAdapter$$ExternalSyntheticLambda3;
 
     invoke-virtual {p2, v4}, Lorg/telegram/ui/Components/SlideChooseView;->setCallback(Lorg/telegram/ui/Components/SlideChooseView$Callback;)V
 
-    .line 2523
+    .line 2524
     sget v4, Lorg/telegram/messenger/SharedConfig;->keepMedia:I
 
     if-ne v4, v1, :cond_8
@@ -1695,7 +1695,7 @@
 
     const-string v6, "Days"
 
-    .line 2530
+    .line 2531
     invoke-static {v6, v1, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
@@ -1739,7 +1739,7 @@
 
     goto :goto_4
 
-    .line 2505
+    .line 2506
     :pswitch_b
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -1747,7 +1747,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 2506
+    .line 2507
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1758,7 +1758,7 @@
 
     goto :goto_4
 
-    .line 2501
+    .line 2502
     :pswitch_c
     new-instance p1, Lorg/telegram/ui/Components/StorageUsageView;
 
@@ -1766,7 +1766,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/StorageUsageView;-><init>(Landroid/content/Context;)V
 
-    .line 2502
+    .line 2503
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1777,7 +1777,7 @@
 
     goto :goto_4
 
-    .line 2497
+    .line 2498
     :cond_9
     new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -1785,7 +1785,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 2498
+    .line 2499
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1794,7 +1794,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2724
+    .line 2725
     :goto_4
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

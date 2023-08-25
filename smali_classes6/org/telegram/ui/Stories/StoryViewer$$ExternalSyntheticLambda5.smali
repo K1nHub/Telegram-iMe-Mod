@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->$r8$lambda$2tt6cToGbfQsfqMZNP2fo_j1cNI(Lorg/telegram/ui/Stories/StoryViewer;)V
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->cancelSwipeToReply()V
 
     return-void
 .end method

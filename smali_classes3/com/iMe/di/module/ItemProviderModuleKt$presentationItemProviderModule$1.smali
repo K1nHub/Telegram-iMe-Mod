@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nItemProviderModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,82:1\n147#2,14:83\n161#2,2:113\n147#2,14:115\n161#2,2:145\n147#2,14:147\n161#2,2:177\n147#2,14:179\n161#2,2:209\n147#2,14:211\n161#2,2:241\n147#2,14:243\n161#2,2:273\n147#2,14:275\n161#2,2:305\n147#2,14:307\n161#2,2:337\n147#2,14:339\n161#2,2:369\n147#2,14:371\n161#2,2:401\n147#2,14:403\n161#2,2:433\n147#2,14:435\n161#2,2:465\n147#2,14:467\n161#2,2:497\n147#2,14:499\n161#2,2:529\n147#2,14:531\n161#2,2:561\n147#2,14:563\n161#2,2:593\n147#2,14:595\n161#2,2:625\n147#2,14:627\n161#2,2:657\n147#2,14:659\n161#2,2:689\n147#2,14:691\n161#2,2:721\n147#2,14:723\n161#2,2:753\n147#2,14:755\n161#2,2:785\n147#2,14:787\n161#2,2:817\n147#2,14:819\n161#2,2:849\n147#2,14:851\n161#2,2:881\n147#2,14:883\n161#2,2:913\n147#2,14:915\n161#2,2:945\n147#2,14:947\n161#2,2:977\n147#2,14:979\n161#2,2:1009\n147#2,14:1011\n161#2,2:1041\n147#2,14:1043\n161#2,2:1073\n147#2,14:1075\n161#2,2:1105\n147#2,14:1107\n161#2,2:1137\n147#2,14:1139\n161#2,2:1169\n147#2,14:1171\n161#2,2:1201\n147#2,14:1203\n161#2,2:1233\n147#2,14:1235\n161#2,2:1265\n216#3:97\n217#3:112\n216#3:129\n217#3:144\n216#3:161\n217#3:176\n216#3:193\n217#3:208\n216#3:225\n217#3:240\n216#3:257\n217#3:272\n216#3:289\n217#3:304\n216#3:321\n217#3:336\n216#3:353\n217#3:368\n216#3:385\n217#3:400\n216#3:417\n217#3:432\n216#3:449\n217#3:464\n216#3:481\n217#3:496\n216#3:513\n217#3:528\n216#3:545\n217#3:560\n216#3:577\n217#3:592\n216#3:609\n217#3:624\n216#3:641\n217#3:656\n216#3:673\n217#3:688\n216#3:705\n217#3:720\n216#3:737\n217#3:752\n216#3:769\n217#3:784\n216#3:801\n217#3:816\n216#3:833\n217#3:848\n216#3:865\n217#3:880\n216#3:897\n217#3:912\n216#3:929\n217#3:944\n216#3:961\n217#3:976\n216#3:993\n217#3:1008\n216#3:1025\n217#3:1040\n216#3:1057\n217#3:1072\n216#3:1089\n217#3:1104\n216#3:1121\n217#3:1136\n216#3:1153\n217#3:1168\n216#3:1185\n217#3:1200\n216#3:1217\n217#3:1232\n216#3:1249\n217#3:1264\n105#4,14:98\n105#4,14:130\n105#4,14:162\n105#4,14:194\n105#4,14:226\n105#4,14:258\n105#4,14:290\n105#4,14:322\n105#4,14:354\n105#4,14:386\n105#4,14:418\n105#4,14:450\n105#4,14:482\n105#4,14:514\n105#4,14:546\n105#4,14:578\n105#4,14:610\n105#4,14:642\n105#4,14:674\n105#4,14:706\n105#4,14:738\n105#4,14:770\n105#4,14:802\n105#4,14:834\n105#4,14:866\n105#4,14:898\n105#4,14:930\n105#4,14:962\n105#4,14:994\n105#4,14:1026\n105#4,14:1058\n105#4,14:1090\n105#4,14:1122\n105#4,14:1154\n105#4,14:1186\n105#4,14:1218\n105#4,14:1250\n*S KotlinDebug\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n*L\n43#1:83,14\n43#1:113,2\n44#1:115,14\n44#1:145,2\n45#1:147,14\n45#1:177,2\n46#1:179,14\n46#1:209,2\n47#1:211,14\n47#1:241,2\n48#1:243,14\n48#1:273,2\n49#1:275,14\n49#1:305,2\n50#1:307,14\n50#1:337,2\n51#1:339,14\n51#1:369,2\n52#1:371,14\n52#1:401,2\n53#1:403,14\n53#1:433,2\n54#1:435,14\n54#1:465,2\n55#1:467,14\n55#1:497,2\n56#1:499,14\n56#1:529,2\n57#1:531,14\n57#1:561,2\n58#1:563,14\n58#1:593,2\n59#1:595,14\n59#1:625,2\n60#1:627,14\n60#1:657,2\n61#1:659,14\n61#1:689,2\n62#1:691,14\n62#1:721,2\n63#1:723,14\n63#1:753,2\n64#1:755,14\n64#1:785,2\n65#1:787,14\n65#1:817,2\n66#1:819,14\n66#1:849,2\n67#1:851,14\n67#1:881,2\n68#1:883,14\n68#1:913,2\n69#1:915,14\n69#1:945,2\n70#1:947,14\n70#1:977,2\n71#1:979,14\n71#1:1009,2\n72#1:1011,14\n72#1:1041,2\n73#1:1043,14\n73#1:1073,2\n74#1:1075,14\n74#1:1105,2\n75#1:1107,14\n75#1:1137,2\n76#1:1139,14\n76#1:1169,2\n77#1:1171,14\n77#1:1201,2\n78#1:1203,14\n78#1:1233,2\n79#1:1235,14\n79#1:1265,2\n43#1:97\n43#1:112\n44#1:129\n44#1:144\n45#1:161\n45#1:176\n46#1:193\n46#1:208\n47#1:225\n47#1:240\n48#1:257\n48#1:272\n49#1:289\n49#1:304\n50#1:321\n50#1:336\n51#1:353\n51#1:368\n52#1:385\n52#1:400\n53#1:417\n53#1:432\n54#1:449\n54#1:464\n55#1:481\n55#1:496\n56#1:513\n56#1:528\n57#1:545\n57#1:560\n58#1:577\n58#1:592\n59#1:609\n59#1:624\n60#1:641\n60#1:656\n61#1:673\n61#1:688\n62#1:705\n62#1:720\n63#1:737\n63#1:752\n64#1:769\n64#1:784\n65#1:801\n65#1:816\n66#1:833\n66#1:848\n67#1:865\n67#1:880\n68#1:897\n68#1:912\n69#1:929\n69#1:944\n70#1:961\n70#1:976\n71#1:993\n71#1:1008\n72#1:1025\n72#1:1040\n73#1:1057\n73#1:1072\n74#1:1089\n74#1:1104\n75#1:1121\n75#1:1136\n76#1:1153\n76#1:1168\n77#1:1185\n77#1:1200\n78#1:1217\n78#1:1232\n79#1:1249\n79#1:1264\n43#1:98,14\n44#1:130,14\n45#1:162,14\n46#1:194,14\n47#1:226,14\n48#1:258,14\n49#1:290,14\n50#1:322,14\n51#1:354,14\n52#1:386,14\n53#1:418,14\n54#1:450,14\n55#1:482,14\n56#1:514,14\n57#1:546,14\n58#1:578,14\n59#1:610,14\n60#1:642,14\n61#1:674,14\n62#1:706,14\n63#1:738,14\n64#1:770,14\n65#1:802,14\n66#1:834,14\n67#1:866,14\n68#1:898,14\n69#1:930,14\n70#1:962,14\n71#1:994,14\n72#1:1026,14\n73#1:1058,14\n74#1:1090,14\n75#1:1122,14\n76#1:1154,14\n77#1:1186,14\n78#1:1218,14\n79#1:1250,14\n*E\n"
+    value = "SMAP\nItemProviderModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,92:1\n147#2,14:93\n161#2,2:123\n147#2,14:125\n161#2,2:155\n147#2,14:157\n161#2,2:187\n147#2,14:189\n161#2,2:219\n147#2,14:221\n161#2,2:251\n147#2,14:253\n161#2,2:283\n147#2,14:285\n161#2,2:315\n147#2,14:317\n161#2,2:347\n147#2,14:349\n161#2,2:379\n147#2,14:381\n161#2,2:411\n147#2,14:413\n161#2,2:443\n147#2,14:445\n161#2,2:475\n147#2,14:477\n161#2,2:507\n147#2,14:509\n161#2,2:539\n147#2,14:541\n161#2,2:571\n147#2,14:573\n161#2,2:603\n147#2,14:605\n161#2,2:635\n147#2,14:637\n161#2,2:667\n147#2,14:669\n161#2,2:699\n147#2,14:701\n161#2,2:731\n147#2,14:733\n161#2,2:763\n147#2,14:765\n161#2,2:795\n147#2,14:797\n161#2,2:827\n147#2,14:829\n161#2,2:859\n147#2,14:861\n161#2,2:891\n147#2,14:893\n161#2,2:923\n147#2,14:925\n161#2,2:955\n147#2,14:957\n161#2,2:987\n147#2,14:989\n161#2,2:1019\n147#2,14:1021\n161#2,2:1051\n147#2,14:1053\n161#2,2:1083\n147#2,14:1085\n161#2,2:1115\n147#2,14:1117\n161#2,2:1147\n147#2,14:1149\n161#2,2:1179\n147#2,14:1181\n161#2,2:1211\n147#2,14:1213\n161#2,2:1243\n147#2,14:1245\n161#2,2:1275\n147#2,14:1277\n161#2,2:1307\n147#2,14:1309\n161#2,2:1339\n147#2,14:1341\n161#2,2:1371\n147#2,14:1373\n161#2,2:1403\n147#2,14:1405\n161#2,2:1435\n216#3:107\n217#3:122\n216#3:139\n217#3:154\n216#3:171\n217#3:186\n216#3:203\n217#3:218\n216#3:235\n217#3:250\n216#3:267\n217#3:282\n216#3:299\n217#3:314\n216#3:331\n217#3:346\n216#3:363\n217#3:378\n216#3:395\n217#3:410\n216#3:427\n217#3:442\n216#3:459\n217#3:474\n216#3:491\n217#3:506\n216#3:523\n217#3:538\n216#3:555\n217#3:570\n216#3:587\n217#3:602\n216#3:619\n217#3:634\n216#3:651\n217#3:666\n216#3:683\n217#3:698\n216#3:715\n217#3:730\n216#3:747\n217#3:762\n216#3:779\n217#3:794\n216#3:811\n217#3:826\n216#3:843\n217#3:858\n216#3:875\n217#3:890\n216#3:907\n217#3:922\n216#3:939\n217#3:954\n216#3:971\n217#3:986\n216#3:1003\n217#3:1018\n216#3:1035\n217#3:1050\n216#3:1067\n217#3:1082\n216#3:1099\n217#3:1114\n216#3:1131\n217#3:1146\n216#3:1163\n217#3:1178\n216#3:1195\n217#3:1210\n216#3:1227\n217#3:1242\n216#3:1259\n217#3:1274\n216#3:1291\n217#3:1306\n216#3:1323\n217#3:1338\n216#3:1355\n217#3:1370\n216#3:1387\n217#3:1402\n216#3:1419\n217#3:1434\n105#4,14:108\n105#4,14:140\n105#4,14:172\n105#4,14:204\n105#4,14:236\n105#4,14:268\n105#4,14:300\n105#4,14:332\n105#4,14:364\n105#4,14:396\n105#4,14:428\n105#4,14:460\n105#4,14:492\n105#4,14:524\n105#4,14:556\n105#4,14:588\n105#4,14:620\n105#4,14:652\n105#4,14:684\n105#4,14:716\n105#4,14:748\n105#4,14:780\n105#4,14:812\n105#4,14:844\n105#4,14:876\n105#4,14:908\n105#4,14:940\n105#4,14:972\n105#4,14:1004\n105#4,14:1036\n105#4,14:1068\n105#4,14:1100\n105#4,14:1132\n105#4,14:1164\n105#4,14:1196\n105#4,14:1228\n105#4,14:1260\n105#4,14:1292\n105#4,14:1324\n105#4,14:1356\n105#4,14:1388\n105#4,14:1420\n*S KotlinDebug\n*F\n+ 1 ItemProviderModule.kt\ncom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n*L\n48#1:93,14\n48#1:123,2\n49#1:125,14\n49#1:155,2\n50#1:157,14\n50#1:187,2\n51#1:189,14\n51#1:219,2\n52#1:221,14\n52#1:251,2\n53#1:253,14\n53#1:283,2\n54#1:285,14\n54#1:315,2\n55#1:317,14\n55#1:347,2\n56#1:349,14\n56#1:379,2\n57#1:381,14\n57#1:411,2\n58#1:413,14\n58#1:443,2\n59#1:445,14\n59#1:475,2\n60#1:477,14\n60#1:507,2\n61#1:509,14\n61#1:539,2\n62#1:541,14\n62#1:571,2\n63#1:573,14\n63#1:603,2\n64#1:605,14\n64#1:635,2\n65#1:637,14\n65#1:667,2\n66#1:669,14\n66#1:699,2\n67#1:701,14\n67#1:731,2\n68#1:733,14\n68#1:763,2\n69#1:765,14\n69#1:795,2\n70#1:797,14\n70#1:827,2\n71#1:829,14\n71#1:859,2\n72#1:861,14\n72#1:891,2\n73#1:893,14\n73#1:923,2\n74#1:925,14\n74#1:955,2\n75#1:957,14\n75#1:987,2\n76#1:989,14\n76#1:1019,2\n77#1:1021,14\n77#1:1051,2\n78#1:1053,14\n78#1:1083,2\n79#1:1085,14\n79#1:1115,2\n80#1:1117,14\n80#1:1147,2\n81#1:1149,14\n81#1:1179,2\n82#1:1181,14\n82#1:1211,2\n83#1:1213,14\n83#1:1243,2\n84#1:1245,14\n84#1:1275,2\n85#1:1277,14\n85#1:1307,2\n86#1:1309,14\n86#1:1339,2\n87#1:1341,14\n87#1:1371,2\n88#1:1373,14\n88#1:1403,2\n89#1:1405,14\n89#1:1435,2\n48#1:107\n48#1:122\n49#1:139\n49#1:154\n50#1:171\n50#1:186\n51#1:203\n51#1:218\n52#1:235\n52#1:250\n53#1:267\n53#1:282\n54#1:299\n54#1:314\n55#1:331\n55#1:346\n56#1:363\n56#1:378\n57#1:395\n57#1:410\n58#1:427\n58#1:442\n59#1:459\n59#1:474\n60#1:491\n60#1:506\n61#1:523\n61#1:538\n62#1:555\n62#1:570\n63#1:587\n63#1:602\n64#1:619\n64#1:634\n65#1:651\n65#1:666\n66#1:683\n66#1:698\n67#1:715\n67#1:730\n68#1:747\n68#1:762\n69#1:779\n69#1:794\n70#1:811\n70#1:826\n71#1:843\n71#1:858\n72#1:875\n72#1:890\n73#1:907\n73#1:922\n74#1:939\n74#1:954\n75#1:971\n75#1:986\n76#1:1003\n76#1:1018\n77#1:1035\n77#1:1050\n78#1:1067\n78#1:1082\n79#1:1099\n79#1:1114\n80#1:1131\n80#1:1146\n81#1:1163\n81#1:1178\n82#1:1195\n82#1:1210\n83#1:1227\n83#1:1242\n84#1:1259\n84#1:1274\n85#1:1291\n85#1:1306\n86#1:1323\n86#1:1338\n87#1:1355\n87#1:1370\n88#1:1387\n88#1:1402\n89#1:1419\n89#1:1434\n48#1:108,14\n49#1:140,14\n50#1:172,14\n51#1:204,14\n52#1:236,14\n53#1:268,14\n54#1:300,14\n55#1:332,14\n56#1:364,14\n57#1:396,14\n58#1:428,14\n59#1:460,14\n60#1:492,14\n61#1:524,14\n62#1:556,14\n63#1:588,14\n64#1:620,14\n65#1:652,14\n66#1:684,14\n67#1:716,14\n68#1:748,14\n69#1:780,14\n70#1:812,14\n71#1:844,14\n72#1:876,14\n73#1:908,14\n74#1:940,14\n75#1:972,14\n76#1:1004,14\n77#1:1036,14\n78#1:1068,14\n79#1:1100,14\n80#1:1132,14\n81#1:1164,14\n82#1:1196,14\n83#1:1228,14\n84#1:1260,14\n85#1:1292,14\n86#1:1324,14\n87#1:1356,14\n88#1:1388,14\n89#1:1420,14\n*E\n"
 .end annotation
 
 
@@ -63,7 +63,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 42
+    .line 47
     check-cast p1, Lorg/koin/core/module/Module;
 
     invoke-virtual {p0, p1}, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1;->invoke(Lorg/koin/core/module/Module;)V
@@ -80,7 +80,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 43
+    .line 48
     sget-object v5, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$1;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$1;
 
     .line 151
@@ -130,7 +130,7 @@
 
     invoke-direct {v2, p1, v1}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 44
+    .line 49
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$2;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$2;
 
     .line 151
@@ -175,7 +175,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 45
+    .line 50
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$3;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$3;
 
     .line 151
@@ -216,7 +216,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 46
+    .line 51
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$4;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$4;
 
     .line 151
@@ -257,7 +257,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 47
+    .line 52
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$5;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$5;
 
     .line 151
@@ -298,7 +298,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 48
+    .line 53
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$6;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$6;
 
     .line 151
@@ -339,7 +339,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 49
+    .line 54
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$7;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$7;
 
     .line 151
@@ -380,7 +380,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 50
+    .line 55
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$8;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$8;
 
     .line 151
@@ -421,7 +421,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 51
+    .line 56
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$9;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$9;
 
     .line 151
@@ -462,7 +462,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 52
+    .line 57
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$10;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$10;
 
     .line 151
@@ -503,7 +503,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 53
+    .line 58
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$11;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$11;
 
     .line 151
@@ -544,7 +544,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 54
+    .line 59
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$12;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$12;
 
     .line 151
@@ -585,7 +585,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 55
+    .line 60
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$13;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$13;
 
     .line 151
@@ -626,7 +626,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 56
+    .line 61
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$14;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$14;
 
     .line 151
@@ -667,7 +667,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 57
+    .line 62
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$15;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$15;
 
     .line 151
@@ -708,7 +708,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 58
+    .line 63
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$16;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$16;
 
     .line 151
@@ -749,7 +749,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 59
+    .line 64
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$17;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$17;
 
     .line 151
@@ -790,7 +790,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 60
+    .line 65
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$18;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$18;
 
     .line 151
@@ -831,7 +831,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 61
+    .line 66
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$19;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$19;
 
     .line 151
@@ -872,7 +872,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 62
+    .line 67
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$20;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$20;
 
     .line 151
@@ -913,7 +913,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 63
+    .line 68
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$21;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$21;
 
     .line 151
@@ -954,7 +954,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 64
+    .line 69
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$22;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$22;
 
     .line 151
@@ -995,7 +995,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 65
+    .line 70
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$23;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$23;
 
     .line 151
@@ -1036,7 +1036,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 66
+    .line 71
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$24;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$24;
 
     .line 151
@@ -1077,7 +1077,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 67
+    .line 72
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$25;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$25;
 
     .line 151
@@ -1118,7 +1118,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 68
+    .line 73
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$26;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$26;
 
     .line 151
@@ -1159,7 +1159,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 69
+    .line 74
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$27;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$27;
 
     .line 151
@@ -1200,7 +1200,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 70
+    .line 75
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$28;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$28;
 
     .line 151
@@ -1241,7 +1241,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 71
+    .line 76
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$29;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$29;
 
     .line 151
@@ -1282,7 +1282,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 72
+    .line 77
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$30;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$30;
 
     .line 151
@@ -1323,7 +1323,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 73
+    .line 78
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$31;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$31;
 
     .line 151
@@ -1364,7 +1364,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 74
+    .line 79
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$32;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$32;
 
     .line 151
@@ -1405,7 +1405,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 75
+    .line 80
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$33;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$33;
 
     .line 151
@@ -1446,7 +1446,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 76
+    .line 81
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$34;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$34;
 
     .line 151
@@ -1487,7 +1487,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 77
+    .line 82
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35;
 
     .line 151
@@ -1528,7 +1528,7 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 78
+    .line 83
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$36;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$36;
 
     .line 151
@@ -1569,8 +1569,213 @@
 
     invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 79
+    .line 84
     sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$37;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$37;
+
+    .line 151
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 109
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 112
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 113
+    const-class v2, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 112
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 217
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 161
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 162
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
+
+    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 85
+    sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$38;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$38;
+
+    .line 151
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 109
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 112
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 113
+    const-class v2, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 112
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 217
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 161
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 162
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
+
+    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 86
+    sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$39;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$39;
+
+    .line 151
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 109
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 112
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 113
+    const-class v2, Lcom/iMe/ui/adapter/provider/CryptoBoxesListHeaderProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 112
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 217
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 161
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 162
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
+
+    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 87
+    sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$40;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$40;
+
+    .line 151
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 109
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 112
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 113
+    const-class v2, Lcom/iMe/ui/adapter/provider/CryptoBoxesChatProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 112
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 217
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 161
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 162
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
+
+    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 88
+    sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$41;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$41;
+
+    .line 151
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 109
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 112
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 113
+    const-class v2, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 112
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 217
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 161
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 162
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
+
+    invoke-direct {v1, p1, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 89
+    sget-object v10, Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$42;->INSTANCE:Lcom/iMe/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$42;
 
     .line 151
     invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
@@ -1586,7 +1791,7 @@
     new-instance v0, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v1, Lcom/iMe/ui/adapter/provider/CustomTokenProvider;
+    const-class v1, Lcom/iMe/ui/adapter/provider/CryptoBoxActionProvider;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 

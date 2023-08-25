@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda16;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$MhFVfrUcpNUlZSu0Z2RECQwWJqo(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$KGCJEaMJEKNcFiNNfttWJdZV_SY(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

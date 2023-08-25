@@ -1908,7 +1908,7 @@
     const/high16 v7, 0x41900000    # 18.0f
 
     .line 204
-    invoke-virtual {v4, v3, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v4, v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 205
     iget-object v4, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->nameField:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2148,7 +2148,7 @@
     .line 245
     iget-object v5, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v5, v3, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 246
     iget-object v5, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2229,7 +2229,7 @@
     iput-object v5, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->linkField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     .line 259
-    invoke-virtual {v5, v3, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v3, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 260
     iget-object v5, v0, Lorg/telegram/ui/ThemeSetUrlActivity;->linkField:Lorg/telegram/ui/Components/EditTextBoldCursor;

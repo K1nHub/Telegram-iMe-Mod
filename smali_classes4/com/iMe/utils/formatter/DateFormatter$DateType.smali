@@ -78,7 +78,7 @@
 .method static constructor <clinit>()V
     .locals 19
 
-    .line 46
+    .line 41
     new-instance v0, Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
     const-string v1, "UTC"
@@ -101,7 +101,7 @@
 
     sput-object v0, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ISO:Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
-    .line 47
+    .line 42
     new-instance v0, Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
     const-string v6, "ONLY_TIME"
@@ -122,7 +122,7 @@
 
     sput-object v0, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ONLY_TIME:Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
-    .line 48
+    .line 43
     new-instance v0, Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
     const-string v13, "ONLY_DATE"
@@ -143,7 +143,7 @@
 
     sput-object v0, Lcom/iMe/utils/formatter/DateFormatter$DateType;->ONLY_DATE:Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
-    .line 49
+    .line 44
     new-instance v0, Lcom/iMe/utils/formatter/DateFormatter$DateType;
 
     const-string v2, "DATE_AND_TIME"
@@ -184,7 +184,7 @@
         }
     .end annotation
 
-    .line 45
+    .line 40
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     iput-object p3, p0, Lcom/iMe/utils/formatter/DateFormatter$DateType;->format:Ljava/lang/String;
@@ -201,7 +201,7 @@
 
     if-eqz p5, :cond_0
 
-    .line 45
+    .line 40
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object p4
@@ -249,7 +249,7 @@
 .method public final getFormat()Ljava/lang/String;
     .locals 1
 
-    .line 45
+    .line 40
     iget-object v0, p0, Lcom/iMe/utils/formatter/DateFormatter$DateType;->format:Ljava/lang/String;
 
     return-object v0
@@ -258,7 +258,7 @@
 .method public final getTimeZone()Ljava/util/TimeZone;
     .locals 1
 
-    .line 45
+    .line 40
     iget-object v0, p0, Lcom/iMe/utils/formatter/DateFormatter$DateType;->timeZone:Ljava/util/TimeZone;
 
     return-object v0

@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletAppearanceSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAppearanceSettingsFragment.kt\ncom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,104:1\n56#2,6:105\n*S KotlinDebug\n*F\n+ 1 WalletAppearanceSettingsFragment.kt\ncom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$presenter$2\n*L\n25#1:105,6\n*E\n"
+    value = "SMAP\nWalletAppearanceSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletAppearanceSettingsFragment.kt\ncom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,130:1\n56#2,6:131\n*S KotlinDebug\n*F\n+ 1 WalletAppearanceSettingsFragment.kt\ncom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$presenter$2\n*L\n25#1:131,6\n*E\n"
 .end annotation
 
 
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 25
+    .line 24
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;
 
     move-result-object v0

@@ -26,12 +26,12 @@
     .line 15
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 18
+    .line 17
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CREATE_ACCOUNT:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/CreateAccountProvider;->itemViewType:I
 
-    .line 19
+    .line 18
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_dashboard_account_empty:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/CreateAccountProvider;->layoutId:I
@@ -52,7 +52,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
+    .line 22
     sget v0, Lorg/telegram/messenger/R$id;->card_empty_account:I
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -61,7 +61,7 @@
 
     move-result-object p1
 
-    .line 26
+    .line 23
     sget v0, Lorg/telegram/messenger/R$id;->frame_root:I
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -70,7 +70,7 @@
 
     move-result-object p1
 
-    .line 27
+    .line 24
     sget v0, Lorg/telegram/messenger/R$id;->horizontal_action_buttons:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/CreateAccountProvider$convert$1;
@@ -108,7 +108,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 30
     sget p3, Lorg/telegram/messenger/R$id;->horizontal_action_buttons:I
 
     new-instance v0, Lcom/iMe/ui/adapter/provider/CreateAccountProvider$convert$2;
@@ -145,7 +145,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 18
+    .line 17
     iget v0, p0, Lcom/iMe/ui/adapter/provider/CreateAccountProvider;->itemViewType:I
 
     return v0
@@ -154,7 +154,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 19
+    .line 18
     iget v0, p0, Lcom/iMe/ui/adapter/provider/CreateAccountProvider;->layoutId:I
 
     return v0

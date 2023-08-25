@@ -16,6 +16,10 @@
 
 .field private final collection:Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;
 
+.field private final isNetworkLogoVisible:Z
+
+.field private final networkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
 .field private final tokens:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -28,7 +32,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;)V
+.method public constructor <init>(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;Z)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -36,7 +40,9 @@
             "Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;",
             "Ljava/util/List<",
             "Lcom/iMe/model/wallet/home/nft/NftTokenItem;",
-            ">;)V"
+            ">;",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;",
+            "Z)V"
         }
     .end annotation
 
@@ -48,16 +54,26 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 11
-    invoke-direct {p0}, Lcom/chad/library/adapter/base/entity/node/BaseExpandNode;-><init>()V
+    const-string v0, "networkItem"
 
-    .line 9
-    iput-object p1, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->collection:Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;
-
-    .line 10
-    iput-object p2, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->tokens:Ljava/util/List;
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 14
+    invoke-direct {p0}, Lcom/chad/library/adapter/base/entity/node/BaseExpandNode;-><init>()V
+
+    .line 10
+    iput-object p1, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->collection:Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;
+
+    .line 11
+    iput-object p2, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->tokens:Ljava/util/List;
+
+    .line 12
+    iput-object p3, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->networkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    .line 13
+    iput-boolean p4, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->isNetworkLogoVisible:Z
+
+    .line 16
     invoke-static {p2}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object p1
@@ -67,24 +83,38 @@
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/wallet/home/nft/NftCollectionItem;Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;ILjava/lang/Object;)Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
+.method public static synthetic copy$default(Lcom/iMe/model/wallet/home/nft/NftCollectionItem;Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;ZILjava/lang/Object;)Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
     .locals 0
 
-    and-int/lit8 p4, p3, 0x1
+    and-int/lit8 p6, p5, 0x1
 
-    if-eqz p4, :cond_0
+    if-eqz p6, :cond_0
 
     iget-object p1, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->collection:Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;
 
     :cond_0
-    and-int/lit8 p3, p3, 0x2
+    and-int/lit8 p6, p5, 0x2
 
-    if-eqz p3, :cond_1
+    if-eqz p6, :cond_1
 
     iget-object p2, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->tokens:Ljava/util/List;
 
     :cond_1
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->copy(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;)Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
+    and-int/lit8 p6, p5, 0x4
+
+    if-eqz p6, :cond_2
+
+    iget-object p3, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->networkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    :cond_2
+    and-int/lit8 p5, p5, 0x8
+
+    if-eqz p5, :cond_3
+
+    iget-boolean p4, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->isNetworkLogoVisible:Z
+
+    :cond_3
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->copy(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;Z)Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
     move-result-object p0
 
@@ -117,7 +147,23 @@
     return-object v0
 .end method
 
-.method public final copy(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;)Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
+.method public final component3()Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+    .locals 1
+
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->networkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    return-object v0
+.end method
+
+.method public final component4()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->isNetworkLogoVisible:Z
+
+    return v0
+.end method
+
+.method public final copy(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;Z)Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -125,7 +171,9 @@
             "Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;",
             "Ljava/util/List<",
             "Lcom/iMe/model/wallet/home/nft/NftTokenItem;",
-            ">;)",
+            ">;",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;",
+            "Z)",
             "Lcom/iMe/model/wallet/home/nft/NftCollectionItem;"
         }
     .end annotation
@@ -138,9 +186,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "networkItem"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
-    invoke-direct {v0, p1, p2}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;-><init>(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;-><init>(Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;Ljava/util/List;Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;Z)V
 
     return-object v0
 .end method
@@ -239,7 +291,7 @@
         }
     .end annotation
 
-    .line 14
+    .line 16
     iget-object v0, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->childNode:Ljava/util/List;
 
     return-object v0
@@ -248,8 +300,17 @@
 .method public final getCollection()Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;
     .locals 1
 
-    .line 9
+    .line 10
     iget-object v0, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->collection:Lcom/iMe/storage/domain/model/crypto/nft/avatar/NftCollection;
+
+    return-object v0
+.end method
+
+.method public final getNetworkItem()Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+    .locals 1
+
+    .line 12
+    iget-object v0, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->networkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
     return-object v0
 .end method
@@ -265,7 +326,7 @@
         }
     .end annotation
 
-    .line 10
+    .line 11
     iget-object v0, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->tokens:Ljava/util/List;
 
     return-object v0
@@ -310,6 +371,15 @@
     return v0
 .end method
 
+.method public final isNetworkLogoVisible()Z
+    .locals 1
+
+    .line 13
+    iget-boolean v0, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->isNetworkLogoVisible:Z
+
+    return v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 
@@ -332,6 +402,22 @@
     iget-object v1, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->tokens:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", networkItem="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->networkItem:Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isNetworkLogoVisible="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;->isNetworkLogoVisible:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

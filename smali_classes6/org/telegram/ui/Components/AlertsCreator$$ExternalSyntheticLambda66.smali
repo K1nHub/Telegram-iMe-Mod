@@ -8,54 +8,38 @@
 # instance fields
 .field public final synthetic f$0:J
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:Lorg/telegram/ui/Components/NumberPicker;
 
-.field public final synthetic f$10:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+.field public final synthetic f$2:Lorg/telegram/ui/Components/NumberPicker;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$3:Lorg/telegram/ui/Components/NumberPicker;
 
-.field public final synthetic f$3:I
+.field public final synthetic f$4:Ljava/util/Calendar;
 
-.field public final synthetic f$4:Lorg/telegram/messenger/MessagesStorage$IntCallback;
+.field public final synthetic f$5:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
-.field public final synthetic f$5:I
-
-.field public final synthetic f$6:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-.field public final synthetic f$7:Ljava/util/ArrayList;
-
-.field public final synthetic f$8:Ljava/util/ArrayList;
-
-.field public final synthetic f$9:Lorg/telegram/messenger/MessagesStorage$IntCallback;
+.field public final synthetic f$6:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
 
 # direct methods
-.method public synthetic constructor <init>(JIZILorg/telegram/messenger/MessagesStorage$IntCallback;ILorg/telegram/ui/ActionBar/BaseFragment;Ljava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
+.method public synthetic constructor <init>(JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Ljava/util/Calendar;Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-wide p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$0:J
 
-    iput p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$1:I
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$1:Lorg/telegram/ui/Components/NumberPicker;
 
-    iput-boolean p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$2:Z
+    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$2:Lorg/telegram/ui/Components/NumberPicker;
 
-    iput p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$3:I
+    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$3:Lorg/telegram/ui/Components/NumberPicker;
 
-    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$4:Lorg/telegram/messenger/MessagesStorage$IntCallback;
+    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$4:Ljava/util/Calendar;
 
-    iput p7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$5:I
+    iput-object p7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$5:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
-    iput-object p8, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$6:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    iput-object p9, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$7:Ljava/util/ArrayList;
-
-    iput-object p10, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$8:Ljava/util/ArrayList;
-
-    iput-object p11, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$9:Lorg/telegram/messenger/MessagesStorage$IntCallback;
-
-    iput-object p12, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$10:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+    iput-object p8, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$6:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     return-void
 .end method
@@ -63,33 +47,25 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 13
+    .locals 9
 
     iget-wide v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$0:J
 
-    iget v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$1:I
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$1:Lorg/telegram/ui/Components/NumberPicker;
 
-    iget-boolean v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$2:Z
+    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$2:Lorg/telegram/ui/Components/NumberPicker;
 
-    iget v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$3:I
+    iget-object v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$3:Lorg/telegram/ui/Components/NumberPicker;
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$4:Lorg/telegram/messenger/MessagesStorage$IntCallback;
+    iget-object v5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$4:Ljava/util/Calendar;
 
-    iget v6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$5:I
+    iget-object v6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$5:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$6:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$6:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    iget-object v8, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$7:Ljava/util/ArrayList;
+    move-object v8, p1
 
-    iget-object v9, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$8:Ljava/util/ArrayList;
-
-    iget-object v10, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$9:Lorg/telegram/messenger/MessagesStorage$IntCallback;
-
-    iget-object v11, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;->f$10:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    move-object v12, p1
-
-    invoke-static/range {v0 .. v12}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$cdTzTFfz1LaknqcS51wRqXB2aPI(JIZILorg/telegram/messenger/MessagesStorage$IntCallback;ILorg/telegram/ui/ActionBar/BaseFragment;Ljava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$cgJmC3An0_ui_WLIlQnWVg-KfDY(JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Ljava/util/Calendar;Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
 
     return-void
 .end method

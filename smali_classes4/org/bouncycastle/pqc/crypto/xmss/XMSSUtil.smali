@@ -207,7 +207,7 @@
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "offset hast to be >= 0"
+    const-string/jumbo p1, "offset hast to be >= 0"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -308,7 +308,7 @@
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "offset + length must not be greater then size of source array"
+    const-string/jumbo p1, "offset + length must not be greater then size of source array"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -326,7 +326,7 @@
     :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "offset hast to be >= 0"
+    const-string/jumbo p1, "offset hast to be >= 0"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

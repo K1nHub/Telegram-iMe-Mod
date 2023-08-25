@@ -132,13 +132,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 4
 
-    .line 1409
+    .line 1501
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    .line 1410
+    .line 1502
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1361
+    .line 1453
     new-instance v0, Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0xb
@@ -149,7 +149,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
-    .line 1362
+    .line 1454
     new-instance v0, Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0xc
@@ -158,7 +158,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
-    .line 1369
+    .line 1461
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -169,7 +169,7 @@
 
     const/high16 v0, 0x42240000    # 41.0f
 
-    .line 1374
+    .line 1466
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
@@ -178,7 +178,7 @@
 
     const/16 v0, 0x1e
 
-    .line 1375
+    .line 1467
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -187,35 +187,35 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->circleRadiusAmplitude:F
 
-    .line 1377
+    .line 1469
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockBackgroundPaint:Landroid/graphics/Paint;
 
-    .line 1378
+    .line 1470
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockPaint:Landroid/graphics/Paint;
 
-    .line 1379
+    .line 1471
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockOutlinePaint:Landroid/graphics/Paint;
 
-    .line 1380
+    .line 1472
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
-    .line 1381
+    .line 1473
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -224,30 +224,30 @@
 
     const/4 v0, 0x0
 
-    .line 1398
+    .line 1490
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->wavesEnterAnimation:F
 
-    .line 1399
+    .line 1491
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showWaves:Z
 
-    .line 1401
+    .line 1493
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
-    .line 1412
+    .line 1504
     new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;
 
     invoke-direct {v0, p0, p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Landroid/view/View;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->virtualViewHelper:Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle$VirtualViewHelper;
 
-    .line 1413
+    .line 1505
     invoke-static {p0, v0}, Landroidx/core/view/ViewCompat;->setAccessibilityDelegate(Landroid/view/View;Landroidx/core/view/AccessibilityDelegateCompat;)V
 
-    .line 1415
+    .line 1507
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0x2f
@@ -260,7 +260,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Components/BlobDrawable;->minRadius:F
 
-    .line 1416
+    .line 1508
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v2, 0x37
@@ -273,12 +273,12 @@
 
     iput v3, v0, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 1417
+    .line 1509
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob()V
 
-    .line 1419
+    .line 1511
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -289,7 +289,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->minRadius:F
 
-    .line 1420
+    .line 1512
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -300,26 +300,26 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 1421
+    .line 1513
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BlobDrawable;->generateBlob()V
 
-    .line 1423
+    .line 1515
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockOutlinePaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 1424
+    .line 1516
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockOutlinePaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 1425
+    .line 1517
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockOutlinePaint:Landroid/graphics/Paint;
 
     const v1, 0x3fd9999a    # 1.7f
@@ -330,7 +330,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1427
+    .line 1519
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -341,10 +341,10 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4602(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4802(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 1428
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    .line 1520
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -352,7 +352,7 @@
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceLockShadow:I
 
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -364,14 +364,14 @@
 
     const/4 v0, 0x5
 
-    .line 1429
+    .line 1521
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintBackground:I
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result p1
 
@@ -381,7 +381,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 1431
+    .line 1523
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0xe
@@ -394,7 +394,7 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1432
+    .line 1524
     sget p1, Lorg/telegram/messenger/R$drawable;->tooltip_arrow:I
 
     invoke-static {p2, p1}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -403,7 +403,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
-    .line 1433
+    .line 1525
     sget p1, Lorg/telegram/messenger/R$string;->SlideUpToLock:I
 
     const-string v0, "SlideUpToLock"
@@ -414,12 +414,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipMessage:Ljava/lang/String;
 
-    .line 1436
+    .line 1528
     invoke-static {p2}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object p1
 
-    .line 1437
+    .line 1529
     invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
     move-result p1
@@ -430,49 +430,49 @@
 
     mul-float/2addr p1, p1
 
-    .line 1438
+    .line 1530
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->touchSlop:F
 
-    .line 1440
+    .line 1532
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->updateColors()V
 
     return-void
 .end method
 
-.method static synthetic access$7800(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)F
+.method static synthetic access$10100(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)F
     .locals 0
 
-    .line 1342
-    iget p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
-
-    return p0
-.end method
-
-.method static synthetic access$7902(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Z)Z
-    .locals 0
-
-    .line 1342
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
-
-    return p1
-.end method
-
-.method static synthetic access$9900(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)F
-    .locals 0
-
-    .line 1342
+    .line 1434
     iget p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->startTranslation:F
 
     return p0
 .end method
 
+.method static synthetic access$8000(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;)F
+    .locals 0
+
+    .line 1434
+    iget p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
+
+    return p0
+.end method
+
+.method static synthetic access$8102(Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;Z)Z
+    .locals 0
+
+    .line 1434
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
+
+    return p1
+.end method
+
 .method private checkDrawables()V
     .locals 5
 
-    .line 1444
+    .line 1536
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -480,7 +480,7 @@
 
     return-void
 
-    .line 1447
+    .line 1539
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -498,12 +498,12 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4702(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4902(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 1448
+    .line 1540
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -513,7 +513,7 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoicePressed:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -523,7 +523,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1450
+    .line 1542
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -540,12 +540,12 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4802(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5002(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 1451
+    .line 1543
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -553,7 +553,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -563,7 +563,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1453
+    .line 1545
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -580,12 +580,12 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4902(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5102(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 1454
+    .line 1546
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -593,7 +593,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -603,7 +603,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1456
+    .line 1548
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -620,12 +620,12 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5002(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5202(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 1457
+    .line 1549
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -635,7 +635,7 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -645,7 +645,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1459
+    .line 1551
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -662,12 +662,12 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5102(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5302(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 1460
+    .line 1552
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -675,7 +675,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -691,7 +691,7 @@
 .method private drawIconInternal(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;FI)V
     .locals 3
 
-    .line 2044
+    .line 2136
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->checkDrawables()V
 
     const/4 v0, 0x0
@@ -710,11 +710,11 @@
 
     goto :goto_0
 
-    .line 2067
+    .line 2159
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2068
+    .line 2160
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -743,21 +743,21 @@
 
     float-to-int v0, v0
 
-    .line 2069
+    .line 2161
     invoke-virtual {p2, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 2070
+    .line 2162
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2071
+    .line 2163
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2073
+    .line 2165
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     sub-float/2addr v2, p4
 
-    .line 2074
+    .line 2166
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p4
@@ -784,18 +784,18 @@
 
     float-to-int p2, p5
 
-    .line 2075
+    .line 2167
     invoke-virtual {p3, p2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 2076
+    .line 2168
     invoke-virtual {p3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2077
+    .line 2169
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_3
 
-    .line 2046
+    .line 2138
     :cond_1
     :goto_0
     iget-boolean p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->canceledByGesture:Z
@@ -808,19 +808,19 @@
 
     if-nez p4, :cond_2
 
-    .line 2047
+    .line 2139
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;
 
     move-result-object p1
 
-    .line 2048
+    .line 2140
     invoke-virtual {p1, v2}, Landroid/view/View;->setAlpha(F)V
 
     const/16 p1, 0x8
 
-    .line 2049
+    .line 2141
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -828,14 +828,14 @@
     :cond_2
     if-eqz p3, :cond_5
 
-    .line 2052
+    .line 2144
     iget p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
     cmpg-float p4, p4, v2
 
     if-gez p4, :cond_5
 
-    .line 2053
+    .line 2145
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isInVideoMode()Z
@@ -846,7 +846,7 @@
 
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p3
 
@@ -855,11 +855,11 @@
     :cond_3
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p3
 
-    .line 2054
+    .line 2146
     :goto_1
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
@@ -867,7 +867,7 @@
 
     invoke-virtual {p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 2055
+    .line 2147
     iget p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
     const p5, 0x3f6e147b    # 0.93f
@@ -892,23 +892,23 @@
     :goto_2
     float-to-int p4, v0
 
-    .line 2056
+    .line 2148
     invoke-virtual {p3, p4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 2057
+    .line 2149
     invoke-virtual {p3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     const/16 p5, 0xff
 
-    .line 2058
+    .line 2150
     invoke-virtual {p3, p5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     sub-int/2addr p5, p4
 
-    .line 2060
+    .line 2152
     invoke-virtual {p2, p5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 2061
+    .line 2153
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_3
@@ -916,10 +916,10 @@
     :cond_5
     if-nez p3, :cond_6
 
-    .line 2063
+    .line 2155
     invoke-virtual {p2, p5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 2064
+    .line 2156
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     :cond_6
@@ -934,7 +934,7 @@
 
     const/4 v0, 0x1
 
-    .line 2145
+    .line 2237
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->canceledByGesture:Z
 
     return-void
@@ -943,7 +943,7 @@
 .method protected dispatchHoverEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 2083
+    .line 2175
     invoke-super {p0, p1}, Landroid/view/View;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -976,10 +976,10 @@
 .method public drawIcon(Landroid/graphics/Canvas;IIF)V
     .locals 8
 
-    .line 2025
+    .line 2117
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->checkDrawables()V
 
-    .line 2026
+    .line 2118
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->isSendButtonVisible()Z
 
     move-result v0
@@ -988,7 +988,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2027
+    .line 2119
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -997,7 +997,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2028
+    .line 2120
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isInVideoMode()Z
@@ -1008,7 +1008,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -1017,18 +1017,18 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     :goto_0
     move-object v1, v0
 
-    .line 2030
+    .line 2122
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -1039,7 +1039,7 @@
 
     goto :goto_2
 
-    .line 2032
+    .line 2124
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -1051,7 +1051,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -1060,17 +1060,17 @@
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     goto :goto_1
 
-    .line 2034
+    .line 2126
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
 
     move-result-object v0
 
@@ -1108,10 +1108,10 @@
 
     invoke-virtual {v0, v1, v2, v3, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2035
+    .line 2127
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
 
     move-result-object v0
 
@@ -1119,7 +1119,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 2037
+    .line 2129
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -1154,7 +1154,7 @@
 
     invoke-virtual {v5, v0, v1, p2, p3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2040
+    .line 2132
     :cond_4
     iget v6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
@@ -1176,7 +1176,7 @@
 .method public drawWaves(Landroid/graphics/Canvas;FFF)V
     .locals 6
 
-    .line 2165
+    .line 2257
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->wavesEnterAnimation:F
@@ -1185,7 +1185,7 @@
 
     move-result v0
 
-    .line 2166
+    .line 2258
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
     const v2, 0x3f333333    # 0.7f
@@ -1201,11 +1201,11 @@
     :cond_0
     div-float/2addr v1, v2
 
-    .line 2167
+    .line 2259
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2168
+    .line 2260
     iget v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     mul-float/2addr v2, v1
@@ -1228,20 +1228,20 @@
 
     mul-float/2addr v2, p4
 
-    .line 2169
+    .line 2261
     invoke-virtual {p1, v2, v2, p2, p3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 2170
+    .line 2262
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v3, v2, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, p2, p3, p1, v3}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 2171
+    .line 2263
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2172
+    .line 2264
     iget v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     mul-float/2addr v2, v1
@@ -1262,20 +1262,20 @@
 
     mul-float/2addr v2, p4
 
-    .line 2173
+    .line 2265
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2174
+    .line 2266
     invoke-virtual {p1, v2, v2, p2, p3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 2175
+    .line 2267
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v0, p4, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p4, p2, p3, p1, v0}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 2176
+    .line 2268
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1286,7 +1286,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2097
+    .line 2189
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->exitTransition:F
 
     return v0
@@ -1297,7 +1297,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 1497
+    .line 1589
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
     return v0
@@ -1306,7 +1306,7 @@
 .method public getScale()F
     .locals 1
 
-    .line 1474
+    .line 1566
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     return v0
@@ -1317,7 +1317,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2130
+    .line 2222
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
     return v0
@@ -1326,7 +1326,7 @@
 .method public getTransformToSeekbarProgressStep3()F
     .locals 1
 
-    .line 2092
+    .line 2184
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
     return v0
@@ -1335,7 +1335,7 @@
 .method public isSendButtonVisible()Z
     .locals 1
 
-    .line 1501
+    .line 1593
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
     return v0
@@ -1348,14 +1348,14 @@
 
     move-object/from16 v7, p1
 
-    .line 1605
+    .line 1697
     iget-boolean v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->skipDraw:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1609
+    .line 1701
     :cond_0
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
@@ -1373,7 +1373,7 @@
 
     if-le v0, v8, :cond_1
 
-    .line 1610
+    .line 1702
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getHeight()I
@@ -1397,7 +1397,7 @@
     :cond_1
     move v11, v10
 
-    .line 1612
+    .line 1704
     :goto_0
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1413,7 +1413,7 @@
 
     const/16 v0, 0xaa
 
-    .line 1613
+    .line 1705
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1424,7 +1424,7 @@
 
     float-to-int v0, v0
 
-    .line 1616
+    .line 1708
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     add-int/2addr v1, v12
@@ -1435,10 +1435,10 @@
 
     int-to-float v13, v0
 
-    .line 1617
+    .line 1709
     iput v13, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawingCy:F
 
-    .line 1619
+    .line 1711
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
     const v2, 0x461c4000    # 10000.0f
@@ -1449,7 +1449,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1620
+    .line 1712
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->startTranslation:F
 
     sub-float/2addr v2, v1
@@ -1462,7 +1462,7 @@
 
     int-to-float v1, v1
 
-    .line 1621
+    .line 1713
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1473,7 +1473,7 @@
 
     if-lez v2, :cond_2
 
-    .line 1622
+    .line 1714
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1488,7 +1488,7 @@
     :cond_3
     move v14, v10
 
-    .line 1628
+    .line 1720
     :goto_1
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
@@ -1545,7 +1545,7 @@
 
     goto :goto_2
 
-    .line 1635
+    .line 1727
     :goto_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -1555,7 +1555,7 @@
 
     sub-long v8, v1, v8
 
-    .line 1636
+    .line 1728
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->animateToAmplitude:F
 
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
@@ -1564,7 +1564,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 1637
+    .line 1729
     iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->animateAmplitudeDiff:F
 
     long-to-float v3, v8
@@ -1583,7 +1583,7 @@
 
     if-lez v2, :cond_7
 
-    .line 1640
+    .line 1732
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
 
     goto :goto_4
@@ -1593,15 +1593,15 @@
 
     if-gez v2, :cond_7
 
-    .line 1644
+    .line 1736
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
 
-    .line 1647
+    .line 1739
     :cond_7
     :goto_4
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
-    .line 1651
+    .line 1743
     :cond_8
     iget-boolean v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->canceledByGesture:Z
 
@@ -1609,7 +1609,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 1652
+    .line 1744
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
@@ -1624,7 +1624,7 @@
 
     goto :goto_5
 
-    .line 1654
+    .line 1746
     :cond_9
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
@@ -1634,7 +1634,7 @@
 
     add-float v1, v1, v19
 
-    .line 1656
+    .line 1748
     :goto_5
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->circleRadius:F
 
@@ -1650,10 +1650,10 @@
 
     mul-float/2addr v2, v1
 
-    .line 1658
+    .line 1750
     iput v10, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
-    .line 1663
+    .line 1755
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
     cmpl-float v1, v1, v10
@@ -1666,7 +1666,7 @@
 
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
 
     move-result-object v1
 
@@ -1676,7 +1676,7 @@
 
     const v4, 0x3ebd70a4    # 0.37f
 
-    .line 1668
+    .line 1760
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
     cmpl-float v23, v3, v1
@@ -1706,12 +1706,12 @@
 
     div-float/2addr v3, v5
 
-    .line 1669
+    .line 1761
     invoke-static {v10, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
-    .line 1670
+    .line 1762
     :goto_7
     iget v10, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
@@ -1729,19 +1729,19 @@
 
     iput v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
-    .line 1672
+    .line 1764
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v15}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v4
 
-    .line 1673
+    .line 1765
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v3
 
-    .line 1674
+    .line 1766
     iget v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
@@ -1752,7 +1752,7 @@
 
     const/16 v1, 0x10
 
-    .line 1676
+    .line 1768
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1763,10 +1763,10 @@
 
     add-float/2addr v2, v1
 
-    .line 1678
+    .line 1770
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
 
     move-result-object v1
 
@@ -1800,7 +1800,7 @@
 
     goto/16 :goto_b
 
-    .line 1680
+    .line 1772
     :cond_c
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->exitTransition:F
 
@@ -1823,7 +1823,7 @@
     :cond_d
     div-float v4, v1, v3
 
-    .line 1685
+    .line 1777
     :goto_8
     iget-object v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -1844,7 +1844,7 @@
 
     move-result v1
 
-    .line 1687
+    .line 1779
     :goto_9
     sget-object v5, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -1852,14 +1852,14 @@
 
     move-result v4
 
-    .line 1688
+    .line 1780
     invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v1
 
     const/16 v5, 0x10
 
-    .line 1690
+    .line 1782
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -1878,7 +1878,7 @@
 
     const v10, 0x81e0
 
-    .line 1693
+    .line 1785
     invoke-static {v10}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v15
@@ -1899,7 +1899,7 @@
 
     const/4 v3, 0x0
 
-    .line 1694
+    .line 1786
     invoke-static {v3, v15}, Ljava/lang/Math;->max(FF)F
 
     move-result v5
@@ -1937,7 +1937,7 @@
 
     const/16 v26, 0x0
 
-    .line 1698
+    .line 1790
     :goto_b
     iget-boolean v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->canceledByGesture:Z
 
@@ -1961,7 +1961,7 @@
 
     mul-float/2addr v5, v1
 
-    .line 1702
+    .line 1794
     :cond_11
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
@@ -1971,10 +1971,10 @@
 
     if-lez v1, :cond_12
 
-    .line 1703
+    .line 1795
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v1
 
@@ -1982,7 +1982,7 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceBackground:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -1990,7 +1990,7 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_recordedVoiceBackground:I
 
-    invoke-static {v3, v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v3, v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v3
 
@@ -2004,11 +2004,11 @@
 
     goto :goto_c
 
-    .line 1705
+    .line 1797
     :cond_12
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v1
 
@@ -2016,7 +2016,7 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceBackground:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -2025,10 +2025,10 @@
     :goto_c
     const/4 v1, 0x0
 
-    .line 1710
+    .line 1802
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->checkDrawables()V
 
-    .line 1711
+    .line 1803
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->isSendButtonVisible()Z
 
     move-result v2
@@ -2037,7 +2037,7 @@
 
     if-eqz v2, :cond_16
 
-    .line 1712
+    .line 1804
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -2052,17 +2052,17 @@
 
     add-float/2addr v2, v1
 
-    .line 1713
+    .line 1805
     iput v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
     cmpl-float v1, v2, v3
 
     if-lez v1, :cond_13
 
-    .line 1715
+    .line 1807
     iput v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
-    .line 1717
+    .line 1809
     :cond_13
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -2074,7 +2074,7 @@
 
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -2083,16 +2083,16 @@
     :cond_14
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 1719
+    .line 1811
     :cond_15
     :goto_d
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -2103,7 +2103,7 @@
 
     goto :goto_f
 
-    .line 1721
+    .line 1813
     :cond_16
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -2115,7 +2115,7 @@
 
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5000(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -2124,17 +2124,17 @@
     :cond_17
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4900(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     goto :goto_e
 
-    .line 1723
+    .line 1815
     :goto_f
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -2180,10 +2180,10 @@
 
     invoke-virtual {v1, v2, v11, v10, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1724
+    .line 1816
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -2191,7 +2191,7 @@
 
     if-eqz v3, :cond_18
 
-    .line 1726
+    .line 1818
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v1
@@ -2229,7 +2229,7 @@
     :cond_18
     const/16 v0, 0x39
 
-    .line 1729
+    .line 1821
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2242,12 +2242,12 @@
 
     sub-float v10, v1, v0
 
-    .line 1739
+    .line 1831
     iget-boolean v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->incIdle:Z
 
     if-eqz v0, :cond_19
 
-    .line 1740
+    .line 1832
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->idleProgress:F
 
     const v2, 0x3c23d70a    # 0.01f
@@ -2262,15 +2262,15 @@
 
     const/4 v0, 0x0
 
-    .line 1742
+    .line 1834
     iput-boolean v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->incIdle:Z
 
-    .line 1743
+    .line 1835
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->idleProgress:F
 
     goto :goto_10
 
-    .line 1746
+    .line 1838
     :cond_19
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->idleProgress:F
 
@@ -2288,24 +2288,24 @@
 
     const/4 v0, 0x1
 
-    .line 1748
+    .line 1840
     iput-boolean v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->incIdle:Z
 
-    .line 1749
+    .line 1841
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->idleProgress:F
 
     :cond_1a
     :goto_10
     const v0, 0x81e0
 
-    .line 1753
+    .line 1845
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_1b
 
-    .line 1754
+    .line 1846
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0x2f
@@ -2318,7 +2318,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->minRadius:F
 
-    .line 1755
+    .line 1847
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0x2f
@@ -2345,7 +2345,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 1757
+    .line 1849
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0x32
@@ -2358,7 +2358,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->minRadius:F
 
-    .line 1758
+    .line 1850
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const/16 v1, 0x32
@@ -2385,12 +2385,12 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->maxRadius:F
 
-    .line 1760
+    .line 1852
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-virtual {v0, v8, v9}, Lorg/telegram/ui/Components/BlobDrawable;->updateAmplitude(J)V
 
-    .line 1761
+    .line 1853
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
@@ -2399,12 +2399,12 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/BlobDrawable;->update(FF)V
 
-    .line 1762
+    .line 1854
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-virtual {v0, v8, v9}, Lorg/telegram/ui/Components/BlobDrawable;->updateAmplitude(J)V
 
-    .line 1763
+    .line 1855
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget v1, v0, Lorg/telegram/ui/Components/BlobDrawable;->amplitude:F
@@ -2413,7 +2413,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/BlobDrawable;->update(FF)V
 
-    .line 1768
+    .line 1860
     :cond_1b
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -2421,7 +2421,7 @@
 
     iput-wide v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastUpdateTime:J
 
-    .line 1769
+    .line 1861
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
     cmpl-float v1, v0, v19
@@ -2438,7 +2438,7 @@
     :goto_11
     const v1, 0x81e0
 
-    .line 1771
+    .line 1863
     invoke-static {v1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v1
@@ -2465,7 +2465,7 @@
 
     if-nez v2, :cond_1e
 
-    .line 1772
+    .line 1864
     iget-boolean v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showWaves:Z
 
     if-eqz v2, :cond_1d
@@ -2480,23 +2480,23 @@
 
     add-float/2addr v2, v5
 
-    .line 1773
+    .line 1865
     iput v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->wavesEnterAnimation:F
 
     cmpl-float v2, v2, v1
 
     if-lez v2, :cond_1d
 
-    .line 1775
+    .line 1867
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->wavesEnterAnimation:F
 
-    .line 1778
+    .line 1870
     :cond_1d
     iget-boolean v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->voiceEnterTransitionInProgress:Z
 
     if-nez v1, :cond_1e
 
-    .line 1779
+    .line 1871
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->wavesEnterAnimation:F
@@ -2505,10 +2505,10 @@
 
     move-result v1
 
-    .line 1780
+    .line 1872
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1781
+    .line 1873
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     const/high16 v5, 0x3f800000    # 1.0f
@@ -2537,7 +2537,7 @@
 
     mul-float/2addr v2, v5
 
-    .line 1782
+    .line 1874
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     add-int/2addr v3, v12
@@ -2546,7 +2546,7 @@
 
     invoke-virtual {v7, v2, v2, v3, v13}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1783
+    .line 1875
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
@@ -2559,10 +2559,10 @@
 
     invoke-virtual {v2, v3, v13, v7, v5}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 1784
+    .line 1876
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1785
+    .line 1877
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     mul-float/2addr v2, v11
@@ -2585,10 +2585,10 @@
 
     mul-float/2addr v2, v0
 
-    .line 1786
+    .line 1878
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1787
+    .line 1879
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     add-int/2addr v0, v12
@@ -2597,7 +2597,7 @@
 
     invoke-virtual {v7, v2, v2, v0, v13}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1788
+    .line 1880
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
@@ -2610,7 +2610,7 @@
 
     invoke-virtual {v0, v1, v13, v7, v2}, Lorg/telegram/ui/Components/BlobDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 1789
+    .line 1881
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_12
@@ -2618,16 +2618,16 @@
     :cond_1e
     move-object/from16 v22, v3
 
-    .line 1794
+    .line 1886
     :goto_12
     iget-boolean v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->voiceEnterTransitionInProgress:Z
 
     if-nez v0, :cond_23
 
-    .line 1795
+    .line 1887
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v0
 
@@ -2641,7 +2641,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1796
+    .line 1888
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -2650,7 +2650,7 @@
 
     if-nez v0, :cond_23
 
-    .line 1797
+    .line 1889
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
     const/4 v1, 0x0
@@ -2659,7 +2659,7 @@
 
     if-eqz v0, :cond_22
 
-    .line 1798
+    .line 1890
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
     cmpl-float v0, v0, v1
@@ -2668,7 +2668,7 @@
 
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
 
     move-result-object v0
 
@@ -2678,7 +2678,7 @@
 
     sub-float v1, v13, v31
 
-    .line 1801
+    .line 1893
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     add-int v3, v12, v2
@@ -2693,14 +2693,14 @@
 
     sub-float v2, v2, v31
 
-    .line 1807
+    .line 1899
     iget-object v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
+    invoke-static {v5}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1808
+    .line 1900
     invoke-virtual {v5}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v18
@@ -2717,7 +2717,7 @@
 
     move/from16 v18, v10
 
-    .line 1809
+    .line 1901
     :goto_13
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -2727,7 +2727,7 @@
 
     int-to-float v10, v11
 
-    .line 1810
+    .line 1902
     invoke-virtual {v9}, Landroid/view/View;->getY()F
 
     move-result v11
@@ -2738,7 +2738,7 @@
 
     int-to-float v8, v8
 
-    .line 1811
+    .line 1903
     invoke-virtual {v9}, Landroid/view/View;->getX()F
 
     move-result v10
@@ -2747,7 +2747,7 @@
 
     float-to-int v8, v8
 
-    .line 1812
+    .line 1904
     invoke-virtual {v9}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v9
@@ -2756,7 +2756,7 @@
 
     goto :goto_13
 
-    .line 1815
+    .line 1907
     :cond_1f
     invoke-virtual {v5}, Landroid/view/View;->getY()F
 
@@ -2772,7 +2772,7 @@
 
     sub-float/2addr v9, v11
 
-    .line 1816
+    .line 1908
     invoke-virtual {v5}, Landroid/view/View;->getY()F
 
     move-result v11
@@ -2795,7 +2795,7 @@
 
     sub-float/2addr v11, v10
 
-    .line 1817
+    .line 1909
     invoke-virtual {v5}, Landroid/view/View;->getX()F
 
     move-result v10
@@ -2820,13 +2820,13 @@
 
     iget-object v14, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v14}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$800(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
+    invoke-static {v14}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
 
     move-result v14
 
     sub-float/2addr v10, v14
 
-    .line 1818
+    .line 1910
     invoke-virtual {v5}, Landroid/view/View;->getX()F
 
     move-result v14
@@ -2841,13 +2841,13 @@
 
     iget-object v8, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$800(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
+    invoke-static {v8}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
 
     move-result v8
 
     add-float/2addr v14, v8
 
-    .line 1819
+    .line 1911
     iget-object v8, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v8}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isInVideoMode()Z
@@ -2872,7 +2872,7 @@
     :goto_14
     sub-float/2addr v1, v9
 
-    .line 1821
+    .line 1913
     iget v8, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSeekbarStep3:F
 
     const/high16 v24, 0x3f800000    # 1.0f
@@ -2915,17 +2915,17 @@
 
     add-float/2addr v5, v0
 
-    .line 1827
+    .line 1919
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0, v14, v9, v10, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1828
+    .line 1920
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v1
 
@@ -2942,7 +2942,7 @@
 
     move/from16 v34, v14
 
-    .line 1830
+    .line 1922
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     add-int/2addr v0, v12
@@ -2951,7 +2951,7 @@
 
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v1
 
@@ -2970,7 +2970,7 @@
 
     move/from16 v8, v31
 
-    .line 1833
+    .line 1925
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     add-int/2addr v0, v12
@@ -2979,13 +2979,13 @@
 
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v1
 
     invoke-virtual {v7, v0, v13, v8, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1835
+    .line 1927
     :goto_15
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
@@ -2993,7 +2993,7 @@
 
     sub-float v1, v0, v25
 
-    .line 1837
+    .line 1929
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     int-to-float v2, v2
@@ -3002,7 +3002,7 @@
 
     invoke-virtual {v7, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1838
+    .line 1930
     iget v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
     sub-float v2, v0, v15
@@ -3033,7 +3033,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawIconInternal(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;FI)V
 
-    .line 1839
+    .line 1931
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_16
@@ -3051,7 +3051,7 @@
 
     move/from16 v8, v31
 
-    .line 1843
+    .line 1935
     :goto_16
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->isSendButtonVisible()Z
 
@@ -3067,7 +3067,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 1844
+    .line 1936
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -3076,7 +3076,7 @@
 
     const/16 v5, 0x3c
 
-    .line 1845
+    .line 1937
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -3115,7 +3115,7 @@
 
     add-float/2addr v9, v5
 
-    .line 1847
+    .line 1939
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v14
@@ -3128,7 +3128,7 @@
 
     add-float v14, v14, v16
 
-    .line 1848
+    .line 1940
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v16
@@ -3161,7 +3161,7 @@
 
     mul-float v24, v24, v20
 
-    .line 1851
+    .line 1943
     iget v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->snapAnimationProgress:F
 
     sub-float v30, v22, v1
@@ -3184,7 +3184,7 @@
 
     goto :goto_18
 
-    .line 1855
+    .line 1947
     :cond_25
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -3208,7 +3208,7 @@
 
     const/16 v1, 0x3c
 
-    .line 1856
+    .line 1948
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3265,7 +3265,7 @@
 
     add-float/2addr v1, v5
 
-    .line 1857
+    .line 1949
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v9
@@ -3288,7 +3288,7 @@
 
     const/high16 v9, 0x41800000    # 16.0f
 
-    .line 1858
+    .line 1950
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v16
@@ -3319,14 +3319,14 @@
 
     const/4 v1, 0x0
 
-    .line 1860
+    .line 1952
     iput v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->snapAnimationProgress:F
 
     move/from16 v4, v30
 
     const/4 v1, 0x0
 
-    .line 1864
+    .line 1956
     :goto_18
     iget-boolean v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showTooltip:Z
 
@@ -3378,7 +3378,7 @@
 
     if-ltz v3, :cond_28
 
-    .line 1865
+    .line 1957
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->isSendButtonVisible()Z
 
     move-result v3
@@ -3400,16 +3400,16 @@
     :cond_28
     const/4 v3, 0x0
 
-    .line 1866
+    .line 1958
     iput-boolean v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showTooltip:Z
 
-    .line 1868
+    .line 1960
     :cond_29
     iget-boolean v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showTooltip:Z
 
     if-eqz v3, :cond_2a
 
-    .line 1869
+    .line 1961
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipAlpha:F
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -3428,7 +3428,7 @@
 
     add-float/2addr v3, v4
 
-    .line 1870
+    .line 1962
     iput v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipAlpha:F
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -3437,10 +3437,10 @@
 
     if-ltz v3, :cond_2b
 
-    .line 1872
+    .line 1964
     iput v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipAlpha:F
 
-    .line 1873
+    .line 1965
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->increaseLockRecordAudioVideoHintShowed()V
 
     goto :goto_1b
@@ -3450,7 +3450,7 @@
 
     move-wide/from16 v4, v32
 
-    .line 1877
+    .line 1969
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipAlpha:F
 
     long-to-float v4, v4
@@ -3467,10 +3467,10 @@
 
     if-gez v3, :cond_2b
 
-    .line 1879
+    .line 1971
     iput v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipAlpha:F
 
-    .line 1884
+    .line 1976
     :cond_2b
     :goto_1b
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipAlpha:F
@@ -3481,30 +3481,30 @@
 
     float-to-int v3, v3
 
-    .line 1886
+    .line 1978
     iget-object v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1887
+    .line 1979
     iget-object v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1888
+    .line 1980
     iget-object v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v4, v3}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 1890
+    .line 1982
     iget-object v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
     if-eqz v4, :cond_2d
 
-    .line 1891
+    .line 1983
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1892
+    .line 1984
     iget-object v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -3525,7 +3525,7 @@
 
     invoke-virtual {v4, v10, v10, v5, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1893
+    .line 1985
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -3554,12 +3554,12 @@
 
     invoke-virtual {v7, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1894
+    .line 1986
     iget-object v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
     const/16 v2, 0x8
 
-    .line 1895
+    .line 1987
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -3578,7 +3578,7 @@
 
     const/16 v20, 0x24
 
-    .line 1896
+    .line 1988
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -3605,30 +3605,30 @@
 
     float-to-int v11, v11
 
-    .line 1894
+    .line 1986
     invoke-virtual {v4, v5, v10, v2, v11}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1898
+    .line 1990
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1899
+    .line 1991
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v7}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1900
+    .line 1992
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1902
+    .line 1994
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v2, v12
 
     const/high16 v4, 0x41880000    # 17.0f
 
-    .line 1903
+    .line 1995
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v4
@@ -3657,12 +3657,12 @@
 
     invoke-virtual {v7, v2, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1904
+    .line 1996
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->path:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->reset()V
 
-    .line 1905
+    .line 1997
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->path:Landroid/graphics/Path;
 
     const/high16 v4, 0x40a00000    # 5.0f
@@ -3679,14 +3679,14 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/graphics/Path;->setLastPoint(FF)V
 
-    .line 1906
+    .line 1998
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->path:Landroid/graphics/Path;
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1907
+    .line 1999
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->path:Landroid/graphics/Path;
 
     const/high16 v4, 0x40a00000    # 5.0f
@@ -3701,40 +3701,40 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1909
+    .line 2001
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
     const/4 v4, -0x1
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1910
+    .line 2002
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1911
+    .line 2003
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
     sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 1912
+    .line 2004
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
     sget-object v3, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 1913
+    .line 2005
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
     sget-object v3, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    .line 1914
+    .line 2006
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
     const/high16 v3, 0x3fc00000    # 1.5f
@@ -3745,23 +3745,23 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1915
+    .line 2007
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->path:Landroid/graphics/Path;
 
     iget-object v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->p:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v2, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1916
+    .line 2008
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1918
+    .line 2010
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1919
+    .line 2011
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
-    .line 1920
+    .line 2012
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v3
@@ -3790,7 +3790,7 @@
 
     iget-object v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
-    .line 1921
+    .line 2013
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v5
@@ -3825,15 +3825,15 @@
 
     add-int/2addr v10, v11
 
-    .line 1919
+    .line 2011
     invoke-virtual {v2, v3, v4, v5, v10}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1923
+    .line 2015
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1924
+    .line 2016
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_1c
@@ -3846,11 +3846,11 @@
 
     move-object/from16 v22, v11
 
-    .line 1928
+    .line 2020
     :goto_1c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1929
+    .line 2021
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -3861,7 +3861,7 @@
 
     iget-object v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/widget/FrameLayout;
+    invoke-static {v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/widget/FrameLayout;
 
     move-result-object v4
 
@@ -3875,7 +3875,7 @@
 
     invoke-virtual {v7, v4, v4, v2, v3}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 1931
+    .line 2023
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -3915,7 +3915,7 @@
     :cond_30
     const/4 v2, 0x0
 
-    .line 1938
+    .line 2030
     :goto_1d
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
@@ -3929,7 +3929,7 @@
 
     goto :goto_1e
 
-    .line 1947
+    .line 2039
     :cond_31
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
@@ -3943,14 +3943,14 @@
 
     add-float/2addr v3, v5
 
-    .line 1948
+    .line 2040
     iput v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
     cmpl-float v3, v3, v4
 
     if-lez v3, :cond_33
 
-    .line 1950
+    .line 2042
     iput v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
     goto :goto_1f
@@ -3959,10 +3959,10 @@
     :goto_1e
     const/4 v3, 0x0
 
-    .line 1939
+    .line 2031
     iput-boolean v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showTooltip:Z
 
-    .line 1940
+    .line 2032
     iget v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
     const/4 v4, 0x0
@@ -3975,21 +3975,21 @@
 
     sub-float/2addr v3, v5
 
-    .line 1941
+    .line 2033
     iput v3, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
     cmpg-float v3, v3, v4
 
     if-gez v3, :cond_33
 
-    .line 1943
+    .line 2035
     iput v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
     :cond_33
     :goto_1f
     const/high16 v3, 0x42900000    # 72.0f
 
-    .line 1955
+    .line 2047
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v3
@@ -3998,7 +3998,7 @@
 
     const/high16 v5, 0x41a00000    # 20.0f
 
-    .line 1956
+    .line 2048
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v5
@@ -4033,10 +4033,10 @@
     :goto_20
     const/4 v2, 0x0
 
-    .line 1960
+    .line 2052
     invoke-virtual {v7, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1961
+    .line 2053
     iget v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     sub-float v15, v10, v15
@@ -4053,10 +4053,10 @@
 
     int-to-float v4, v12
 
-    .line 1962
+    .line 2054
     invoke-virtual {v7, v2, v2, v4, v14}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1964
+    .line 2056
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     const/high16 v5, 0x41900000    # 18.0f
@@ -4079,10 +4079,10 @@
 
     invoke-virtual {v2, v10, v15, v11, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1965
+    .line 2057
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -4090,7 +4090,7 @@
 
     iget v2, v2, Landroid/graphics/RectF;->left:F
 
-    .line 1966
+    .line 2058
     invoke-static/range {v30 .. v30}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v10
@@ -4115,7 +4115,7 @@
 
     iget v11, v11, Landroid/graphics/RectF;->right:F
 
-    .line 1967
+    .line 2059
     invoke-static/range {v30 .. v30}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v15
@@ -4136,19 +4136,19 @@
 
     float-to-int v15, v15
 
-    .line 1965
+    .line 2057
     invoke-virtual {v0, v2, v10, v11, v15}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1969
+    .line 2061
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v0, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1970
+    .line 2062
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -4163,10 +4163,10 @@
 
     invoke-virtual {v7, v0, v2, v5, v10}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1971
+    .line 2063
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/RectF;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/RectF;
 
     move-result-object v0
 
@@ -4174,12 +4174,12 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 1973
+    .line 2065
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     const/high16 v2, 0x40c00000    # 6.0f
 
-    .line 1974
+    .line 2066
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
@@ -4198,7 +4198,7 @@
 
     sub-float/2addr v2, v5
 
-    .line 1975
+    .line 2067
     invoke-static/range {v21 .. v21}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v5
@@ -4209,7 +4209,7 @@
 
     const/4 v10, 0x6
 
-    .line 1976
+    .line 2068
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -4228,7 +4228,7 @@
 
     const/16 v11, 0xc
 
-    .line 1977
+    .line 2069
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -4245,30 +4245,30 @@
 
     add-float/2addr v14, v11
 
-    .line 1973
+    .line 2065
     invoke-virtual {v0, v2, v5, v10, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1979
+    .line 2071
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     iget v2, v0, Landroid/graphics/RectF;->bottom:F
 
-    .line 1980
+    .line 2072
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v0
 
-    .line 1981
+    .line 2073
     iget-object v5, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v5}, Landroid/graphics/RectF;->centerY()F
 
     move-result v5
 
-    .line 1982
+    .line 2074
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1983
+    .line 2075
     invoke-static/range {v21 .. v21}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v10
@@ -4285,10 +4285,10 @@
 
     move/from16 v10, v36
 
-    .line 1984
+    .line 2076
     invoke-virtual {v7, v10, v0, v5}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 1985
+    .line 2077
     iget-object v11, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     move/from16 v17, v8
@@ -4315,7 +4315,7 @@
 
     if-eqz v11, :cond_35
 
-    .line 1988
+    .line 2080
     invoke-static/range {v21 .. v21}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v8
@@ -4329,7 +4329,7 @@
     :cond_35
     if-eqz v11, :cond_37
 
-    .line 1992
+    .line 2084
     iget-object v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     const/high16 v5, 0x41000000    # 8.0f
@@ -4346,10 +4346,10 @@
 
     invoke-virtual {v0, v5, v5, v8, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1993
+    .line 2085
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1994
+    .line 2086
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -4368,7 +4368,7 @@
 
     invoke-virtual {v7, v5, v5, v0, v3}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 1995
+    .line 2087
     invoke-static/range {v31 .. v31}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
@@ -4431,7 +4431,7 @@
 
     const/16 v0, 0x8
 
-    .line 1997
+    .line 2089
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4449,7 +4449,7 @@
     :cond_36
     const/high16 v0, 0x41000000    # 8.0f
 
-    .line 1999
+    .line 2091
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
@@ -4482,7 +4482,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 2000
+    .line 2092
     iget-object v1, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->rectF:Landroid/graphics/RectF;
 
     const/4 v2, 0x0
@@ -4497,14 +4497,14 @@
 
     const/4 v1, 0x0
 
-    .line 2002
+    .line 2094
     invoke-static/range {v31 .. v31}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
 
     const/4 v3, 0x0
 
-    .line 2003
+    .line 2095
     invoke-static/range {v31 .. v31}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
@@ -4549,20 +4549,20 @@
 
     move-object/from16 v0, p1
 
-    .line 2001
+    .line 2093
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 2006
+    .line 2098
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2008
+    .line 2100
     :cond_37
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2009
+    .line 2101
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2011
+    .line 2103
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -4571,7 +4571,7 @@
 
     if-eqz v0, :cond_39
 
-    .line 2012
+    .line 2104
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     add-int v12, v20, v0
@@ -4580,7 +4580,7 @@
 
     iget-object v2, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v2
 
@@ -4590,7 +4590,7 @@
 
     invoke-virtual {v7, v0, v3, v8, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 2013
+    .line 2105
     iget-boolean v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->canceledByGesture:Z
 
     if-eqz v0, :cond_38
@@ -4604,11 +4604,11 @@
     :cond_38
     move v15, v1
 
-    .line 2014
+    .line 2106
     :goto_21
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2015
+    .line 2107
     iget v0, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
     int-to-float v0, v0
@@ -4617,7 +4617,7 @@
 
     invoke-virtual {v7, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2016
+    .line 2108
     iget v4, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
     const/high16 v0, 0x437f0000    # 255.0f
@@ -4636,7 +4636,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawIconInternal(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;FI)V
 
-    .line 2017
+    .line 2109
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_22
@@ -4644,7 +4644,7 @@
     :cond_39
     move/from16 v8, v17
 
-    .line 2019
+    .line 2111
     :goto_22
     iput v8, v6, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->drawingCircleRadius:F
 
@@ -4654,29 +4654,29 @@
 .method protected onMeasure(II)V
     .locals 11
 
-    .line 1577
+    .line 1669
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
     const/16 v0, 0xc2
 
-    .line 1578
+    .line 1670
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 1579
+    .line 1671
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastSize:I
 
     const/4 v2, 0x0
 
     if-eq v1, p2, :cond_1
 
-    .line 1580
+    .line 1672
     iput p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastSize:I
 
-    .line 1581
+    .line 1673
     new-instance p2, Landroid/text/StaticLayout;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipMessage:Ljava/lang/String;
@@ -4703,14 +4703,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
-    .line 1582
+    .line 1674
     invoke-virtual {p2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p2
 
     const/4 v1, 0x0
 
-    .line 1583
+    .line 1675
     iput v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipWidth:F
 
     move v1, v2
@@ -4718,21 +4718,21 @@
     :goto_0
     if-ge v1, p2, :cond_1
 
-    .line 1585
+    .line 1677
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v3, v1}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v3
 
-    .line 1586
+    .line 1678
     iget v4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipWidth:F
 
     cmpl-float v4, v3, v4
 
     if-lez v4, :cond_0
 
-    .line 1587
+    .line 1679
     iput v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipWidth:F
 
     :cond_0
@@ -4740,7 +4740,7 @@
 
     goto :goto_0
 
-    .line 1591
+    .line 1683
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
@@ -4754,7 +4754,7 @@
 
     if-le p2, v1, :cond_2
 
-    .line 1592
+    .line 1684
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {p2}, Landroid/text/StaticLayout;->getHeight()I
@@ -4774,14 +4774,14 @@
     :cond_2
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 1594
+    .line 1686
     invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 1596
+    .line 1688
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p1
@@ -4794,7 +4794,7 @@
 
     const/16 p2, 0x8c
 
-    .line 1597
+    .line 1689
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -4805,7 +4805,7 @@
 
     if-lez v0, :cond_3
 
-    .line 1598
+    .line 1690
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -4817,7 +4817,7 @@
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 1600
+    .line 1692
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
     sub-float/2addr p2, v0
@@ -4834,38 +4834,38 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 1549
+    .line 1641
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_3
 
-    .line 1550
+    .line 1642
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     float-to-int v0, v0
 
-    .line 1551
+    .line 1643
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 1552
+    .line 1644
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 1553
+    .line 1645
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/RectF;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/RectF;
 
     move-result-object p1
 
@@ -4881,13 +4881,13 @@
 
     return p1
 
-    .line 1554
+    .line 1646
     :cond_0
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->pressed:Z
 
     if-eqz v3, :cond_3
 
-    .line 1555
+    .line 1647
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -4896,10 +4896,10 @@
 
     if-ne p1, v3, :cond_2
 
-    .line 1556
+    .line 1648
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/RectF;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/RectF;
 
     move-result-object p1
 
@@ -4913,7 +4913,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1557
+    .line 1649
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isInVideoMode()Z
@@ -4922,7 +4922,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1558
+    .line 1650
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -4935,7 +4935,7 @@
 
     goto :goto_0
 
-    .line 1560
+    .line 1652
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -4947,7 +4947,7 @@
 
     invoke-virtual {p1, v0, v3, v1, v2}, Lorg/telegram/messenger/MediaController;->stopRecording(IZILjava/lang/String;)V
 
-    .line 1561
+    .line 1653
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -4956,20 +4956,20 @@
 
     invoke-interface {p1, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordAudio(I)V
 
-    .line 1563
+    .line 1655
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    .line 1564
+    .line 1656
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$SlideTextView;
 
     move-result-object p1
 
@@ -4985,7 +4985,7 @@
 .method public setAmplitude(D)V
     .locals 5
 
-    .line 1464
+    .line 1556
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     const-wide v1, 0x409c200000000000L    # 1800.0
@@ -5002,7 +5002,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/BlobDrawable;->setValue(FZ)V
 
-    .line 1465
+    .line 1557
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     invoke-static {v1, v2, p1, p2}, Ljava/lang/Math;->min(DD)D
@@ -5017,7 +5017,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/BlobDrawable;->setValue(FZ)V
 
-    .line 1467
+    .line 1559
     invoke-static {v1, v2, p1, p2}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide p1
@@ -5028,7 +5028,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->animateToAmplitude:F
 
-    .line 1468
+    .line 1560
     iget p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->amplitude:F
 
     sub-float/2addr p1, p2
@@ -5039,7 +5039,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->animateAmplitudeDiff:F
 
-    .line 1470
+    .line 1562
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5050,10 +5050,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2102
+    .line 2194
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->exitTransition:F
 
-    .line 2103
+    .line 2195
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5064,10 +5064,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 1485
+    .line 1577
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
-    .line 1486
+    .line 1578
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5086,55 +5086,55 @@
 
     const/4 p1, 0x0
 
-    .line 1511
+    .line 1603
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
-    .line 1512
+    .line 1604
     iput v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
-    .line 1513
+    .line 1605
     iput v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->startTranslation:F
 
-    .line 1514
+    .line 1606
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     const/4 v0, 0x0
 
-    .line 1515
+    .line 1607
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->snapAnimationProgress:F
 
-    .line 1516
+    .line 1608
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
-    .line 1517
+    .line 1609
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->exitTransition:F
 
-    .line 1519
+    .line 1611
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
-    .line 1520
+    .line 1612
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipAlpha:F
 
-    .line 1521
+    .line 1613
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showTooltip:Z
 
-    .line 1522
+    .line 1614
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->progressToSendButton:F
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1523
+    .line 1615
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
-    .line 1524
+    .line 1616
     iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelLockProgress:F
 
-    .line 1525
+    .line 1617
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->canceledByGesture:Z
 
     return p1
 
-    .line 1528
+    .line 1620
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
@@ -5144,7 +5144,7 @@
 
     return v2
 
-    .line 1531
+    .line 1623
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
@@ -5152,17 +5152,17 @@
 
     if-nez v0, :cond_2
 
-    .line 1532
+    .line 1624
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->startTranslation:F
 
-    .line 1534
+    .line 1626
     :cond_2
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockAnimatedTranslation:F
 
-    .line 1535
+    .line 1627
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1536
+    .line 1628
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->canceledByGesture:Z
 
     const/4 v0, 0x1
@@ -5179,7 +5179,7 @@
 
     goto :goto_0
 
-    .line 1539
+    .line 1631
     :cond_3
     iget p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->startTranslation:F
 
@@ -5199,7 +5199,7 @@
 
     if-ltz p1, :cond_4
 
-    .line 1540
+    .line 1632
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
     return v2
@@ -5212,7 +5212,7 @@
 .method public setMovingCords(FF)V
     .locals 3
 
-    .line 2149
+    .line 2241
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastMovingX:F
 
     sub-float v1, p1, v0
@@ -5231,13 +5231,13 @@
 
     add-float/2addr v1, v2
 
-    .line 2150
+    .line 2242
     iput p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastMovingY:F
 
-    .line 2151
+    .line 2243
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lastMovingX:F
 
-    .line 2152
+    .line 2244
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showTooltip:Z
 
     if-eqz p1, :cond_0
@@ -5256,7 +5256,7 @@
 
     if-lez p1, :cond_0
 
-    .line 2153
+    .line 2245
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p1
@@ -5272,10 +5272,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 1479
+    .line 1571
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->scale:F
 
-    .line 1480
+    .line 1572
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5286,10 +5286,10 @@
 
     const/4 v0, 0x0
 
-    .line 1505
+    .line 1597
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->sendButtonVisible:Z
 
-    .line 1506
+    .line 1598
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5300,10 +5300,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2135
+    .line 2227
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideToCancelProgress:F
 
-    .line 2136
+    .line 2228
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -5316,7 +5316,7 @@
 
     const/16 v1, 0x8c
 
-    .line 2137
+    .line 2229
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -5327,7 +5327,7 @@
 
     if-lez v2, :cond_0
 
-    .line 2138
+    .line 2230
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5345,10 +5345,10 @@
 
     float-to-int p1, v0
 
-    .line 2140
+    .line 2232
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->slideDelta:I
 
-    .line 2141
+    .line 2233
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5359,10 +5359,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 1491
+    .line 1583
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->snapAnimationProgress:F
 
-    .line 1492
+    .line 1584
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5371,10 +5371,10 @@
 .method public setTransformToSeekbar(F)V
     .locals 0
 
-    .line 2087
+    .line 2179
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->transformToSeekbar:F
 
-    .line 2088
+    .line 2180
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5383,7 +5383,7 @@
 .method public showTooltipIfNeed()V
     .locals 2
 
-    .line 2122
+    .line 2214
     sget v0, Lorg/telegram/messenger/SharedConfig;->lockRecordAudioVideoHint:I
 
     const/4 v1, 0x3
@@ -5392,10 +5392,10 @@
 
     const/4 v0, 0x1
 
-    .line 2123
+    .line 2215
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showTooltip:Z
 
-    .line 2124
+    .line 2216
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -5420,11 +5420,11 @@
     :cond_0
     const/high16 p2, 0x3f000000    # 0.5f
 
-    .line 2159
+    .line 2251
     :goto_0
     iput p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->wavesEnterAnimation:F
 
-    .line 2161
+    .line 2253
     :cond_1
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->showWaves:Z
 
@@ -5434,10 +5434,10 @@
 .method public updateColors()V
     .locals 4
 
-    .line 2107
+    .line 2199
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v0
 
@@ -5445,20 +5445,20 @@
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceBackground:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2108
+    .line 2200
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tinyWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
@@ -5470,14 +5470,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2109
+    .line 2201
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->bigWaveDrawable:Lorg/telegram/ui/Components/BlobDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
@@ -5489,14 +5489,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2110
+    .line 2202
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipPaint:Landroid/text/TextPaint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintText:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
@@ -5504,7 +5504,7 @@
 
     const/4 v0, 0x5
 
-    .line 2111
+    .line 2203
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5513,7 +5513,7 @@
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintBackground:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
@@ -5523,14 +5523,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 2112
+    .line 2204
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->tooltipBackgroundArrow:Landroid/graphics/drawable/Drawable;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v3, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v3, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v2
 
@@ -5540,47 +5540,47 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2114
+    .line 2206
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockBackgroundPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceLockBackground:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2115
+    .line 2207
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceLock:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2116
+    .line 2208
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->lockOutlinePaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$900(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1000(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2118
+    .line 2210
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$RecordCircle;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$5600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/graphics/Paint;
 
     move-result-object v0
 

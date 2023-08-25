@@ -29,7 +29,7 @@
 
     check-cast p1, Landroid/view/View;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$cqr-Zcyq5Cbz1aW_wyENrocq2nI(ILandroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$ChoksWofQUxDdCCgGOn3UuWdD9A(ILandroid/view/View;)V
 
     return-void
 .end method

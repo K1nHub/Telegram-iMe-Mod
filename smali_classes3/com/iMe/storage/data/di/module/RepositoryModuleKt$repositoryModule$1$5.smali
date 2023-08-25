@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n129#2,5:163\n129#2,5:168\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n*L\n77#1:158,5\n78#1:163,5\n79#1:168,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,168:1\n129#2,5:169\n129#2,5:174\n129#2,5:179\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n*L\n79#1:169,5\n80#1:174,5\n81#1:179,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 76
+    .line 78
     new-instance p2, Lcom/iMe/storage/data/repository/catalog/CatalogRepositoryImpl;
 
     .line 133
@@ -180,7 +180,7 @@
 
     move-object v1, p2
 
-    .line 76
+    .line 78
     invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/data/repository/catalog/CatalogRepositoryImpl;-><init>(Lcom/iMe/storage/data/network/api/own/CatalogApi;Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;Lcom/iMe/storage/data/locale/db/dao/minor/catalog/CatalogLanguageDao;Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/domain/storage/PreferenceHelper;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
@@ -189,7 +189,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 75
+    .line 77
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -66,28 +66,28 @@
         }
     .end annotation
 
-    .line 281
+    .line 284
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 282
+    .line 285
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
 
-    .line 283
+    .line 286
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 284
+    .line 287
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->file:Ljava/io/File;
 
-    .line 285
+    .line 288
     iput-object p4, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->onDone:Ljava/lang/Runnable;
 
-    .line 286
+    .line 289
     iput-object p5, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->onProgress:Lorg/telegram/messenger/Utilities$Callback;
 
-    .line 287
+    .line 290
     iput-object p6, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->onCancel:Ljava/lang/Runnable;
 
-    .line 289
+    .line 292
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->start()V
 
     return-void
@@ -96,18 +96,18 @@
 .method private synthetic lambda$start$0(Lorg/telegram/messenger/VideoEditedInfo;)V
     .locals 1
 
-    .line 306
+    .line 309
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 309
+    .line 312
     :cond_0
     iput-object p1, v0, Lorg/telegram/messenger/MessageObject;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 310
+    .line 313
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -124,27 +124,27 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 3
 
-    .line 331
+    .line 334
     sget p2, Lorg/telegram/messenger/NotificationCenter;->filePreparingStarted:I
 
     const/4 v0, 0x0
 
     if-ne p1, p2, :cond_0
 
-    .line 332
+    .line 335
     aget-object p1, p3, v0
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
     goto :goto_0
 
-    .line 335
+    .line 338
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->fileNewChunkAvailable:I
 
     if-ne p1, p2, :cond_2
 
-    .line 336
+    .line 339
     aget-object p1, p3, v0
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
@@ -155,14 +155,14 @@
 
     const/4 p1, 0x1
 
-    .line 337
+    .line 340
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/String;
 
     const/4 p1, 0x2
 
-    .line 338
+    .line 341
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/Long;
@@ -171,7 +171,7 @@
 
     const/4 p1, 0x3
 
-    .line 339
+    .line 342
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/Long;
@@ -182,7 +182,7 @@
 
     const/4 v1, 0x4
 
-    .line 340
+    .line 343
     aget-object p3, p3, v1
 
     check-cast p3, Ljava/lang/Float;
@@ -191,12 +191,12 @@
 
     move-result p3
 
-    .line 342
+    .line 345
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->onProgress:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz v1, :cond_1
 
-    .line 343
+    .line 346
     invoke-static {p3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p3
@@ -210,23 +210,23 @@
 
     if-lez p1, :cond_4
 
-    .line 347
+    .line 350
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->onDone:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 348
+    .line 351
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->stop(Z)V
 
     goto :goto_0
 
-    .line 351
+    .line 354
     :cond_2
     sget p2, Lorg/telegram/messenger/NotificationCenter;->filePreparingFailed:I
 
     if-ne p1, p2, :cond_4
 
-    .line 352
+    .line 355
     aget-object p1, p3, v0
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
@@ -235,21 +235,21 @@
 
     if-ne p1, p2, :cond_4
 
-    .line 353
+    .line 356
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->stop(Z)V
 
-    .line 355
+    .line 358
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->file:Ljava/io/File;
 
     if-eqz p1, :cond_3
 
-    .line 356
+    .line 359
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 359
+    .line 362
     :catch_0
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->onCancel:Ljava/lang/Runnable;
@@ -264,14 +264,14 @@
 .method public start()V
     .locals 8
 
-    .line 293
+    .line 296
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 297
+    .line 300
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
 
@@ -283,7 +283,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 298
+    .line 301
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -294,7 +294,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 299
+    .line 302
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -305,17 +305,17 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 301
+    .line 304
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 302
+    .line 305
     iput v0, v4, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 303
+    .line 306
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->file:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -324,7 +324,7 @@
 
     iput-object v0, v4, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    .line 304
+    .line 307
     new-instance v0, Lorg/telegram/messenger/MessageObject;
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
@@ -341,7 +341,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 305
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo$$ExternalSyntheticLambda0;
@@ -356,14 +356,14 @@
 .method public stop(Z)V
     .locals 2
 
-    .line 315
+    .line 318
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 319
+    .line 322
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
 
@@ -375,7 +375,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 320
+    .line 323
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -386,7 +386,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 321
+    .line 324
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -399,7 +399,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 324
+    .line 327
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -411,7 +411,7 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 326
+    .line 329
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/DownloadButton$BuildingVideo;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     return-void

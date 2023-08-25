@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTokenManagementFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenManagementFragment.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,440:1\n56#2,6:441\n*S KotlinDebug\n*F\n+ 1 TokenManagementFragment.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementFragment$presenter$2\n*L\n62#1:441,6\n*E\n"
+    value = "SMAP\nTokenManagementFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenManagementFragment.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,478:1\n56#2,6:479\n*S KotlinDebug\n*F\n+ 1 TokenManagementFragment.kt\ncom/iMe/ui/wallet/crypto/token/TokenManagementFragment$presenter$2\n*L\n63#1:479,6\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
 .method public final invoke()Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
     .locals 5
 
-    .line 62
+    .line 63
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
     new-instance v1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$presenter$2$1;
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 62
+    .line 63
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 61
+    .line 62
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/crypto/token/TokenManagementPresenter;
 
     move-result-object v0

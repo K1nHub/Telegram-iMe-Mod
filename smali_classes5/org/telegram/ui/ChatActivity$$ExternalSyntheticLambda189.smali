@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda189;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$YFFhmlsst6T8TjdwStFj9yPktvo(Lorg/telegram/ui/ChatActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$UK23rIQpKbIDvJtHcQBs5rDVZhA(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method

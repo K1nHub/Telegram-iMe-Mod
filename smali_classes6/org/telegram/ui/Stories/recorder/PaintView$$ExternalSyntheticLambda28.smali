@@ -2,46 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;
+.implements Landroidx/core/util/Consumer;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda28;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda28;->f$1:Z
+    iput p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda28;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-    .locals 6
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda28;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda28;->f$1:Z
+    iget v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda28;->f$1:I
 
-    move-object v2, p1
+    check-cast p1, Ljava/lang/Integer;
 
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$eZpvCqq1aKxpZ1hTnGFGRXTJlEw(Lorg/telegram/ui/Stories/recorder/PaintView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$Tp2XYwZmvYWc_yythi3EgS-DV8Y(Lorg/telegram/ui/Stories/recorder/PaintView;ILjava/lang/Integer;)V
 
     return-void
 .end method

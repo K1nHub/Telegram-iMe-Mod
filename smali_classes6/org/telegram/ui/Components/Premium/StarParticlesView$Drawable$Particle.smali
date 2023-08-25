@@ -48,7 +48,7 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;)V
     .locals 0
 
-    .line 380
+    .line 381
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;)F
     .locals 0
 
-    .line 380
+    .line 381
     iget p0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingX:F
 
     return p0
@@ -68,7 +68,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;)F
     .locals 0
 
-    .line 380
+    .line 381
     iget p0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingY:F
 
     return p0
@@ -79,7 +79,7 @@
 .method public draw(Landroid/graphics/Canvas;JF)V
     .locals 10
 
-    .line 409
+    .line 410
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->useRotate:Z
@@ -88,12 +88,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 410
+    .line 411
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->starIndex:I
 
     if-nez v1, :cond_0
 
-    .line 411
+    .line 412
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points1:[F
 
     iget v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount1:I
@@ -108,14 +108,14 @@
 
     add-int/2addr v4, v2
 
-    .line 412
+    .line 413
     aget v1, v1, v4
 
     iput v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingY:F
 
     add-int/2addr v3, v2
 
-    .line 413
+    .line 414
     iput v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount1:I
 
     goto :goto_0
@@ -123,7 +123,7 @@
     :cond_0
     if-ne v1, v2, :cond_1
 
-    .line 415
+    .line 416
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points2:[F
 
     iget v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount2:I
@@ -138,14 +138,14 @@
 
     add-int/2addr v4, v2
 
-    .line 416
+    .line 417
     aget v1, v1, v4
 
     iput v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingY:F
 
     add-int/2addr v3, v2
 
-    .line 417
+    .line 418
     iput v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount2:I
 
     goto :goto_0
@@ -155,7 +155,7 @@
 
     if-ne v1, v3, :cond_3
 
-    .line 419
+    .line 420
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points3:[F
 
     iget v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount3:I
@@ -170,25 +170,25 @@
 
     add-int/2addr v4, v2
 
-    .line 420
+    .line 421
     aget v1, v1, v4
 
     iput v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingY:F
 
     add-int/2addr v3, v2
 
-    .line 421
+    .line 422
     iput v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount3:I
 
     goto :goto_0
 
-    .line 424
+    .line 425
     :cond_2
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
     iput v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingX:F
 
-    .line 425
+    .line 426
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
     iput v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingY:F
@@ -197,7 +197,7 @@
     :goto_0
     const/4 v1, 0x0
 
-    .line 428
+    .line 429
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->excludeRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->isEmpty()Z
@@ -227,17 +227,17 @@
 
     if-nez v1, :cond_a
 
-    .line 432
+    .line 433
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 433
+    .line 434
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingX:F
 
     iget v3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->drawingY:F
 
     invoke-virtual {p1, v1, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 434
+    .line 435
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->randomRotate:F
 
     const/4 v3, 0x0
@@ -246,7 +246,7 @@
 
     if-eqz v4, :cond_5
 
-    .line 435
+    .line 436
     iget-object v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->access$200(Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;)[Landroid/graphics/Bitmap;
@@ -287,7 +287,7 @@
 
     invoke-virtual {p1, v1, v4, v6}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 437
+    .line 438
     :cond_5
     iget v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->inProgress:F
 
@@ -301,7 +301,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 438
+    .line 439
     :cond_6
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->overshootInterpolator:Landroid/view/animation/OvershootInterpolator;
 
@@ -313,10 +313,10 @@
 
     mul-float/2addr v1, v4
 
-    .line 439
+    .line 440
     invoke-virtual {p1, v1, v1, v3, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 442
+    .line 443
     :cond_7
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
@@ -344,12 +344,12 @@
 
     sub-float p2, v0, p2
 
-    .line 444
+    .line 445
     invoke-static {p2, v0, v3}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v3
 
-    .line 446
+    .line 447
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
@@ -362,7 +362,7 @@
     :cond_9
     iget-object p3, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->paint:Landroid/graphics/Paint;
 
-    .line 447
+    .line 448
     :goto_1
     iget p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->alpha:I
 
@@ -378,7 +378,7 @@
 
     invoke-virtual {p3, p2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 448
+    .line 449
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->access$200(Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;)[Landroid/graphics/Bitmap;
@@ -431,10 +431,10 @@
 
     invoke-virtual {p1, p2, p4, v1, p3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 449
+    .line 450
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 451
+    .line 452
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
@@ -444,7 +444,7 @@
 
     const/4 p1, 0x4
 
-    .line 452
+    .line 453
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -469,7 +469,7 @@
 
     mul-float/2addr p1, p3
 
-    .line 453
+    .line 454
     iget p3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->vecX:F
@@ -480,7 +480,7 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
-    .line 454
+    .line 455
     iget p3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->vecY:F
@@ -491,14 +491,14 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
-    .line 456
+    .line 457
     iget p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->inProgress:F
 
     cmpl-float p3, p1, v0
 
     if-eqz p3, :cond_b
 
-    .line 457
+    .line 458
     invoke-static {p2}, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->access$300(Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;)F
 
     move-result p2
@@ -515,7 +515,7 @@
 
     if-lez p1, :cond_b
 
-    .line 459
+    .line 460
     iput v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->inProgress:F
 
     :cond_b
@@ -525,7 +525,7 @@
 .method public genPosition(J)V
     .locals 10
 
-    .line 466
+    .line 467
     sget-object v0, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v0}, Ljava/util/Random;->nextInt()I
@@ -548,7 +548,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->starIndex:I
 
-    .line 467
+    .line 468
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-wide v1, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->minLifeTime:J
@@ -571,17 +571,17 @@
 
     const/4 p1, 0x0
 
-    .line 468
+    .line 469
     iput p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->randomRotate:F
 
-    .line 470
+    .line 471
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-boolean v0, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->distributionAlgorithm:Z
 
     if-eqz v0, :cond_5
 
-    .line 472
+    .line 473
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
 
     iget p2, p2, Landroid/graphics/RectF;->left:F
@@ -610,7 +610,7 @@
 
     add-float/2addr p2, v0
 
-    .line 473
+    .line 474
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -652,7 +652,7 @@
 
     if-ge v2, v4, :cond_4
 
-    .line 475
+    .line 476
     iget-object v4, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -683,7 +683,7 @@
 
     add-float/2addr v4, v5
 
-    .line 476
+    .line 477
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -718,7 +718,7 @@
 
     move v7, v1
 
-    .line 478
+    .line 479
     :goto_1
     iget-object v8, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
@@ -730,14 +730,14 @@
 
     if-ge v7, v8, :cond_2
 
-    .line 481
+    .line 482
     iget-object v8, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-boolean v9, v8, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->startFromCenter:Z
 
     if-eqz v9, :cond_0
 
-    .line 482
+    .line 483
     iget-object v8, v8, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -750,7 +750,7 @@
 
     sub-float/2addr v8, v4
 
-    .line 483
+    .line 484
     iget-object v9, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v9, v9, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
@@ -765,7 +765,7 @@
 
     goto :goto_2
 
-    .line 485
+    .line 486
     :cond_0
     iget-object v8, v8, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
 
@@ -779,7 +779,7 @@
 
     sub-float/2addr v8, v4
 
-    .line 486
+    .line 487
     iget-object v9, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v9, v9, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->particles:Ljava/util/ArrayList;
@@ -828,22 +828,22 @@
 
     goto/16 :goto_0
 
-    .line 500
+    .line 501
     :cond_4
     iput p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
-    .line 501
+    .line 502
     iput v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
     goto/16 :goto_3
 
-    .line 503
+    .line 504
     :cond_5
     iget-boolean v0, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->isCircle:Z
 
     if-eqz v0, :cond_6
 
-    .line 504
+    .line 505
     sget-object p2, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {p2}, Ljava/util/Random;->nextInt()I
@@ -880,7 +880,7 @@
 
     add-float/2addr p2, v1
 
-    .line 505
+    .line 506
     sget-object v0, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v0}, Ljava/util/Random;->nextInt()I
@@ -895,7 +895,7 @@
 
     int-to-float v0, v0
 
-    .line 506
+    .line 507
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -924,7 +924,7 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
-    .line 507
+    .line 508
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -951,7 +951,7 @@
 
     goto :goto_3
 
-    .line 509
+    .line 510
     :cond_6
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
 
@@ -983,7 +983,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
-    .line 510
+    .line 511
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -1016,7 +1016,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
-    .line 514
+    .line 515
     :goto_3
     iget p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
@@ -1050,7 +1050,7 @@
 
     move-result-wide v0
 
-    .line 515
+    .line 516
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v2
@@ -1059,7 +1059,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->vecX:F
 
-    .line 516
+    .line 517
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v0
@@ -1068,7 +1068,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->vecY:F
 
-    .line 517
+    .line 518
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-boolean p2, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->svg:Z
@@ -1081,7 +1081,7 @@
 
     const/high16 p2, 0x42f00000    # 120.0f
 
-    .line 518
+    .line 519
     sget-object v2, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v2, v1}, Ljava/util/Random;->nextInt(I)I
@@ -1105,7 +1105,7 @@
     :cond_7
     const/high16 p2, 0x437f0000    # 255.0f
 
-    .line 520
+    .line 521
     sget-object v2, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v2, v1}, Ljava/util/Random;->nextInt(I)I
@@ -1124,7 +1124,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->alpha:I
 
-    .line 522
+    .line 523
     :goto_4
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
@@ -1168,7 +1168,7 @@
     :cond_9
     const/high16 p2, 0x42340000    # 45.0f
 
-    .line 529
+    .line 530
     sget-object v1, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v1}, Ljava/util/Random;->nextInt()I
@@ -1189,7 +1189,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->randomRotate:F
 
-    .line 531
+    .line 532
     :cond_a
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
@@ -1199,26 +1199,26 @@
 
     if-eq v0, v1, :cond_b
 
-    .line 532
+    .line 533
     iput p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->inProgress:F
 
-    .line 534
+    .line 535
     :cond_b
     iget-boolean p1, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->startFromCenter:Z
 
     if-eqz p1, :cond_c
 
-    .line 535
+    .line 536
     iget p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
     iput p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x2:F
 
-    .line 536
+    .line 537
     iget p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
     iput p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y2:F
 
-    .line 537
+    .line 538
     iget-object p1, p2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->centerX()F
@@ -1227,7 +1227,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->x:F
 
-    .line 538
+    .line 539
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->rect:Landroid/graphics/RectF;
@@ -1245,14 +1245,14 @@
 .method public updatePoint()V
     .locals 6
 
-    .line 393
+    .line 394
     iget v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->starIndex:I
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 394
+    .line 395
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points1:[F
@@ -1269,14 +1269,14 @@
 
     add-int/2addr v4, v1
 
-    .line 395
+    .line 396
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
     aput v5, v2, v4
 
     add-int/2addr v3, v1
 
-    .line 396
+    .line 397
     iput v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount1:I
 
     goto :goto_0
@@ -1284,7 +1284,7 @@
     :cond_0
     if-ne v0, v1, :cond_1
 
-    .line 398
+    .line 399
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points2:[F
@@ -1301,14 +1301,14 @@
 
     add-int/2addr v4, v1
 
-    .line 399
+    .line 400
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
     aput v5, v2, v4
 
     add-int/2addr v3, v1
 
-    .line 400
+    .line 401
     iput v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount2:I
 
     goto :goto_0
@@ -1318,7 +1318,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 402
+    .line 403
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->this$0:Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->points3:[F
@@ -1335,14 +1335,14 @@
 
     add-int/2addr v4, v1
 
-    .line 403
+    .line 404
     iget v5, p0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable$Particle;->y:F
 
     aput v5, v2, v4
 
     add-int/2addr v3, v1
 
-    .line 404
+    .line 405
     iput v3, v0, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->pointsCount3:I
 
     :cond_2

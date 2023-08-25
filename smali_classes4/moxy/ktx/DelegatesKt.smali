@@ -30,7 +30,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -45,7 +45,7 @@
 
     move-result-object p0
 
-    const-string v1, "mvpDelegate"
+    const-string/jumbo v1, "mvpDelegate"
 
     invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -97,7 +97,7 @@
     .line 13
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p3, "name"
+    const-string/jumbo p3, "name"
 
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkParameterIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -112,7 +112,7 @@
 
     move-result-object p0
 
-    const-string p4, "mvpDelegate"
+    const-string/jumbo p4, "mvpDelegate"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

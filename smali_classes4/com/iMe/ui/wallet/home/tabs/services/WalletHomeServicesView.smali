@@ -26,6 +26,9 @@
     .end annotation
 .end method
 
+.method public abstract openCryptoBoxesScreen()V
+.end method
+
 .method public abstract openStakingScreen()V
 .end method
 

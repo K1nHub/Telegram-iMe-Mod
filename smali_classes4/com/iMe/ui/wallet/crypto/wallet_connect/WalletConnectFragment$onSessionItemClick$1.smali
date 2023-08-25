@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 182
+    .line 235
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$onSessionItemClick$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 2
 
-    .line 186
+    .line 239
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment$onSessionItemClick$1;->this$0:Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;->access$getPresenter(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectFragment;)Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$$ExternalSyntheticLambda11;->f$1:Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$kTgNORDGoA575jqMJiU6BBAbtnw(Landroid/content/SharedPreferences;Lorg/telegram/ui/Cells/TextCheckCell;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/voip/VoIPHelper;->$r8$lambda$I02cvaGGeQCAKvABcHP_JboVEFQ(Landroid/content/SharedPreferences;Lorg/telegram/ui/Cells/TextCheckCell;Landroid/view/View;)V
 
     return-void
 .end method

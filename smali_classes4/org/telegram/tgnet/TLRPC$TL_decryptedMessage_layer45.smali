@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27226
+    .line 27235
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage;-><init>()V
 
     return-void
@@ -28,42 +28,42 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 27231
+    .line 27240
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
-    .line 27232
+    .line 27241
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->random_id:J
 
-    .line 27233
+    .line 27242
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->ttl:I
 
-    .line 27234
+    .line 27243
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->message:Ljava/lang/String;
 
-    .line 27235
+    .line 27244
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
     and-int/lit16 v0, v0, 0x200
 
     if-eqz v0, :cond_0
 
-    .line 27236
+    .line 27245
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
-    .line 27238
+    .line 27247
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
@@ -82,7 +82,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 27239
+    .line 27248
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -97,7 +97,7 @@
 
     return-void
 
-    .line 27242
+    .line 27251
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -121,7 +121,7 @@
 
     throw p1
 
-    .line 27246
+    .line 27255
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -130,7 +130,7 @@
     :goto_0
     if-ge v2, v0, :cond_4
 
-    .line 27248
+    .line 27257
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -143,7 +143,7 @@
 
     return-void
 
-    .line 27252
+    .line 27261
     :cond_3
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->entities:Ljava/util/ArrayList;
 
@@ -153,7 +153,7 @@
 
     goto :goto_0
 
-    .line 27255
+    .line 27264
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
@@ -161,14 +161,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 27256
+    .line 27265
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->via_bot_name:Ljava/lang/String;
 
-    .line 27258
+    .line 27267
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
@@ -176,7 +176,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 27259
+    .line 27268
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide p1
@@ -190,44 +190,44 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 27264
+    .line 27273
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer45;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27265
+    .line 27274
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27266
+    .line 27275
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->random_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 27267
+    .line 27276
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->ttl:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27268
+    .line 27277
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->message:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 27269
+    .line 27278
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
     and-int/lit16 v0, v0, 0x200
 
     if-eqz v0, :cond_0
 
-    .line 27270
+    .line 27279
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 27272
+    .line 27281
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
@@ -237,17 +237,17 @@
 
     const v0, 0x1cb5c415
 
-    .line 27273
+    .line 27282
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27274
+    .line 27283
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 27275
+    .line 27284
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -255,7 +255,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 27277
+    .line 27286
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -270,7 +270,7 @@
 
     goto :goto_0
 
-    .line 27280
+    .line 27289
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
@@ -278,12 +278,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 27281
+    .line 27290
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->via_bot_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 27283
+    .line 27292
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->flags:I
 
@@ -291,7 +291,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 27284
+    .line 27293
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->reply_to_random_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

@@ -33,10 +33,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 56452
+    .line 56507
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 56456
+    .line 56511
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,7 +51,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 56460
+    .line 56515
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$TL_messages_messageViews;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_messageViews;
 
     move-result-object p1
@@ -62,29 +62,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 56464
+    .line 56519
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessagesViews;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 56465
+    .line 56520
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessagesViews;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     const v0, 0x1cb5c415
 
-    .line 56466
+    .line 56521
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 56467
+    .line 56522
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessagesViews;->id:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 56468
+    .line 56523
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -92,7 +92,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 56470
+    .line 56525
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessagesViews;->id:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 56472
+    .line 56527
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessagesViews;->increment:Z
 

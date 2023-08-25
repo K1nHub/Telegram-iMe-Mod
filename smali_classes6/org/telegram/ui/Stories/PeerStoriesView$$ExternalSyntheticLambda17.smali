@@ -2,56 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-.field public final synthetic f$1:Lorg/telegram/messenger/MessagesController;
-
-.field public final synthetic f$2:J
-
-.field public final synthetic f$3:Z
-
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$User;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/messenger/MessagesController;JZLorg/telegram/tgnet/TLRPC$User;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->INSTANCE:Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/messenger/MessagesController;
-
-    iput-wide p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$2:J
-
-    iput-boolean p5, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$3:Z
-
-    iput-object p6, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$4:Lorg/telegram/tgnet/TLRPC$User;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/messenger/MessagesController;
-
-    iget-wide v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$2:J
-
-    iget-boolean v4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$3:Z
-
-    iget-object v5, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda17;->f$4:Lorg/telegram/tgnet/TLRPC$User;
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$WUlU9y-UoT3i9agxv52ljOqVfiA(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/messenger/MessagesController;JZLorg/telegram/tgnet/TLRPC$User;)V
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$stOLQGRiLK3LQnyGVG8YwZALtCM(Landroid/view/View;)V
 
     return-void
 .end method

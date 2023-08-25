@@ -76,12 +76,12 @@
     .line 1591
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "onError is null"
+    const-string/jumbo v0, "onError is null"
 
     .line 1592
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "onComplete is null"
+    const-string/jumbo v0, "onComplete is null"
 
     .line 1593
     invoke-static {p3, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -91,12 +91,12 @@
     .line 1594
     invoke-static {p4, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "onAfterTerminate is null"
+    const-string/jumbo v0, "onAfterTerminate is null"
 
     .line 1595
     invoke-static {p5, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "onDispose is null"
+    const-string/jumbo v0, "onDispose is null"
 
     .line 1596
     invoke-static {p6, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -218,7 +218,7 @@
 .method public final andThen(Lio/reactivex/CompletableSource;)Lio/reactivex/Completable;
     .locals 1
 
-    const-string v0, "next is null"
+    const-string/jumbo v0, "next is null"
 
     .line 1181
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -249,7 +249,7 @@
         }
     .end annotation
 
-    const-string v0, "next is null"
+    const-string/jumbo v0, "next is null"
 
     .line 1083
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -269,7 +269,7 @@
 .method public final doFinally(Lio/reactivex/functions/Action;)Lio/reactivex/Completable;
     .locals 1
 
-    const-string v0, "onFinally is null"
+    const-string/jumbo v0, "onFinally is null"
 
     .line 1690
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -400,12 +400,12 @@
         }
     .end annotation
 
-    const-string v0, "onError is null"
+    const-string/jumbo v0, "onError is null"
 
     .line 2379
     invoke-static {p2, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "onComplete is null"
+    const-string/jumbo v0, "onComplete is null"
 
     .line 2380
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -424,7 +424,7 @@
 .method public final subscribe(Lio/reactivex/CompletableObserver;)V
     .locals 1
 
-    const-string v0, "observer is null"
+    const-string/jumbo v0, "observer is null"
 
     .line 2302
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

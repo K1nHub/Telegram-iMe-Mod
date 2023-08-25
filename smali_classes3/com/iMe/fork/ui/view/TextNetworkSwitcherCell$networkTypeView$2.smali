@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/ui/custom/NetworkTypeView;
     .locals 1
 
-    .line 30
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell$networkTypeView$2;->this$0:Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->access$initNetworkTypeView(Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;)Lcom/iMe/ui/custom/NetworkTypeView;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 30
+    .line 29
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell$networkTypeView$2;->invoke()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object v0

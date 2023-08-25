@@ -29,7 +29,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$HlyPByCO7r1bLKRPKzIM4acr5Dw(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$K9JfWltNcrTGKyYeT5i-tLgGcIY(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$User;)V
 
     return-void
 .end method

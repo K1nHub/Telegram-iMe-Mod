@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,323:1\n1549#2:324\n1620#2,3:325\n1271#2,2:328\n1285#2,4:330\n1549#2:352\n1620#2,3:353\n1549#2:356\n1620#2,3:357\n1549#2:368\n1620#2,3:369\n1045#2:372\n1559#2:373\n1590#2,4:374\n26#3:334\n26#3:336\n26#3:338\n26#3:340\n26#3:342\n26#3:344\n26#3:346\n26#3:348\n26#3:351\n26#3:361\n26#3:364\n26#3:365\n26#3:367\n70#4:335\n70#4:337\n70#4:339\n70#4:341\n70#4:343\n70#4:345\n70#4:347\n82#4:349\n82#4:350\n82#4:360\n70#4:363\n70#4:366\n1#5:362\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n*L\n64#1:324\n64#1:325,3\n65#1:328,2\n65#1:330,4\n227#1:352\n227#1:353,3\n239#1:356\n239#1:357,3\n303#1:368\n303#1:369,3\n310#1:372\n311#1:373\n311#1:374,4\n79#1:334\n85#1:336\n91#1:338\n107#1:340\n113#1:342\n124#1:344\n130#1:346\n144#1:348\n221#1:351\n252#1:361\n271#1:364\n277#1:365\n283#1:367\n84#1:335\n90#1:337\n106#1:339\n112#1:341\n123#1:343\n129#1:345\n137#1:347\n158#1:349\n200#1:350\n243#1:360\n270#1:363\n282#1:366\n*E\n"
+    value = "SMAP\nWalletRepositoryImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n+ 4 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,382:1\n1549#2:383\n1620#2,3:384\n1271#2,2:387\n1285#2,4:389\n1747#2,3:413\n1549#2:417\n1620#2,3:418\n1549#2:421\n1620#2,3:422\n1549#2:433\n1620#2,3:434\n1045#2:437\n1559#2:438\n1590#2,4:439\n26#3:393\n26#3:395\n26#3:397\n26#3:399\n26#3:401\n26#3:403\n26#3:405\n26#3:407\n26#3:409\n26#3:411\n26#3:416\n26#3:426\n26#3:429\n26#3:430\n26#3:432\n70#4:394\n70#4:396\n70#4:398\n70#4:400\n70#4:402\n70#4:404\n70#4:406\n82#4:408\n82#4:410\n82#4:412\n82#4:425\n70#4:428\n70#4:431\n1#5:427\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/iMe/storage/data/repository/wallet/WalletRepositoryImpl\n*L\n64#1:383\n64#1:384,3\n65#1:387,2\n65#1:389,4\n263#1:413,3\n285#1:417\n285#1:418,3\n298#1:421\n298#1:422,3\n361#1:433\n361#1:434,3\n368#1:437\n369#1:438\n369#1:439,4\n77#1:393\n83#1:395\n89#1:397\n105#1:399\n111#1:401\n122#1:403\n128#1:405\n142#1:407\n168#1:409\n214#1:411\n269#1:416\n313#1:426\n334#1:429\n340#1:430\n346#1:432\n82#1:394\n88#1:396\n104#1:398\n110#1:400\n121#1:402\n127#1:404\n135#1:406\n156#1:408\n191#1:410\n223#1:412\n302#1:425\n331#1:428\n345#1:431\n*E\n"
 .end annotation
 
 
@@ -68,20 +68,30 @@
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$e96WlfEHQFfp8Gg2Nwvgb-yuexA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$K5koo8-8SiAww9BqcOeMlf6do3Y(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getWalletBalance$lambda$13(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getWalletMultiChainBalance$lambda$18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$eLkRhLoi9bropcGdpeMEKI14TGI(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$Ke6Q3S2nyZF25UpqeiXXadPo3K0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getTokensBalance$lambda$17(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getTokensBalance$lambda$21(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$LISlSisiS07sE1kvK4DK3ni-i2Q(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getWalletBalance$lambda$12(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
@@ -135,31 +145,31 @@
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 52
     iput-object p1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 52
+    .line 53
     iput-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 53
+    .line 54
     iput-object p3, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->dataSourceFactory:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 54
+    .line 55
     iput-object p4, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletBalanceDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
-    .line 55
+    .line 56
     iput-object p5, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 56
+    .line 57
     iput-object p6, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    .line 57
+    .line 58
     iput-object p7, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
-    .line 58
+    .line 59
     iput-object p8, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     .line 63
@@ -274,7 +284,7 @@
 .method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     return-object p0
@@ -283,7 +293,7 @@
 .method public static final synthetic access$getLastUpdateBalanceTime$p(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;)Ljava/util/HashMap;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->lastUpdateBalanceTime:Ljava/util/HashMap;
 
     return-object p0
@@ -292,7 +302,7 @@
 .method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
@@ -301,7 +311,7 @@
 .method public static final synthetic access$getTelegramGateway$p(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;)Lcom/iMe/storage/domain/gateway/TelegramGateway;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     return-object p0
@@ -310,7 +320,7 @@
 .method public static final synthetic access$getTokensSettingsFromDisplayResponse(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;Ljava/lang/String;)Ljava/util/List;
     .locals 0
 
-    .line 50
+    .line 51
     invoke-direct {p0, p1, p2}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getTokensSettingsFromDisplayResponse(Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p0
@@ -321,7 +331,7 @@
 .method public static final synthetic access$getWalletBalanceDao$p(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;)Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
     .locals 0
 
-    .line 50
+    .line 51
     iget-object p0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletBalanceDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
     return-object p0
@@ -330,7 +340,7 @@
 .method private final getLastUpdateBalanceTimeByNetworkType(Ljava/lang/String;)J
     .locals 2
 
-    .line 290
+    .line 349
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->lastUpdateBalanceTime:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -341,7 +351,6 @@
 
     if-nez p1, :cond_0
 
-    .line 291
     sget-object p1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v0, 0x2
@@ -352,7 +361,6 @@
 
     goto :goto_0
 
-    .line 290
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
@@ -362,14 +370,14 @@
     return-wide v0
 .end method
 
-.method private static final getTokensBalance$lambda$17(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method private static final getTokensBalance$lambda$21(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 230
+    .line 288
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -386,7 +394,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 150
+    .line 148
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -407,7 +415,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 149
+    .line 147
     iget-object p0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getTokensSettings(Ljava/lang/String;)Ljava/util/List;
@@ -433,7 +441,7 @@
         }
     .end annotation
 
-    .line 297
+    .line 355
     invoke-virtual {p1}, Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;->getPayload()Ljava/lang/Object;
 
     move-result-object p1
@@ -444,14 +452,14 @@
 
     move-result-object p1
 
-    .line 298
+    .line 356
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0, p2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getTokensSettings(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 299
+    .line 357
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -493,7 +501,7 @@
 
     check-cast v3, Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;
 
-    .line 305
+    .line 363
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -513,7 +521,7 @@
 
     check-cast v5, Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;
 
-    .line 306
+    .line 364
     invoke-virtual {v5}, Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;->getTokenAddress()Ljava/lang/String;
 
     move-result-object v5
@@ -533,13 +541,13 @@
     :cond_2
     const/4 v4, 0x0
 
-    .line 305
+    .line 363
     :goto_1
     check-cast v4, Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;
 
     if-eqz v4, :cond_3
 
-    .line 307
+    .line 365
     invoke-virtual {v4}, Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;->getPosition()I
 
     move-result v2
@@ -560,7 +568,7 @@
 
     const/4 v8, 0x0
 
-    .line 304
+    .line 362
     invoke-static/range {v3 .. v8}, Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;->copy$default(Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;IZLjava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;
 
     move-result-object v2
@@ -629,7 +637,7 @@
 
     const/4 v6, 0x0
 
-    .line 312
+    .line 370
     invoke-static/range {v1 .. v6}, Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;->copy$default(Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;IZLjava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/locale/prefs/model/TokenDisplaySettings$Crypto;
 
     move-result-object v0
@@ -648,14 +656,14 @@
     return-object p1
 .end method
 
-.method private static final getWalletBalance$lambda$13(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+.method private static final getWalletBalance$lambda$12(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 186
+    .line 179
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -663,6 +671,40 @@
     check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
+.end method
+
+.method private static final getWalletMultiChainBalance$lambda$18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 254
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
+
+    return-object p0
+.end method
+
+.method private final isUpdateTimeoutReached(Ljava/lang/String;)Z
+    .locals 4
+
+    .line 376
+    invoke-direct {p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getLastUpdateBalanceTimeByNetworkType(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x2
+
+    invoke-static {v2, v3, v0, v1}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->isMinutesAgo(JJ)Z
+
+    move-result p1
+
+    return p1
 .end method
 
 
@@ -685,10 +727,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 127
+    .line 125
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 128
+    .line 126
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/TokenCommonRequest;
 
     invoke-static {p1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
@@ -701,7 +743,7 @@
 
     move-result-object p1
 
-    .line 129
+    .line 127
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -721,7 +763,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 130
+    .line 128
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -769,10 +811,10 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 76
+    .line 74
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->dataSourceFactory:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 77
+    .line 75
     invoke-virtual {p4}, Lcom/iMe/storage/domain/model/crypto/Network;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object p4
@@ -781,12 +823,12 @@
 
     move-result-object p4
 
-    .line 78
+    .line 76
     invoke-interface {p4, p1, p2, p3}, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;->getTransferMetadata(Lcom/iMe/storage/domain/model/wallet/token/Token;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 79
+    .line 77
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -824,10 +866,10 @@
         }
     .end annotation
 
-    .line 88
+    .line 86
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 89
+    .line 87
     new-instance v7, Lcom/iMe/storage/data/network/model/request/wallet/CustomTokensRequest;
 
     const/4 v2, 0x0
@@ -848,7 +890,7 @@
 
     move-result-object p1
 
-    .line 90
+    .line 88
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -868,7 +910,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 91
+    .line 89
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -911,20 +953,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 133
+    .line 131
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 135
+    .line 133
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/DisplayedTokensRequest;
 
     invoke-direct {v1, p1}, Lcom/iMe/storage/data/network/model/request/wallet/DisplayedTokensRequest;-><init>(Ljava/lang/String;)V
 
-    .line 134
+    .line 132
     invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getDisplayedTokens(Lcom/iMe/storage/data/network/model/request/wallet/DisplayedTokensRequest;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 137
+    .line 135
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -944,7 +986,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 144
+    .line 142
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -980,15 +1022,15 @@
         }
     .end annotation
 
-    .line 280
+    .line 343
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 281
+    .line 344
     invoke-interface {v0}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getSupportedNetworks()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 282
+    .line 345
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1008,7 +1050,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 283
+    .line 346
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1051,10 +1093,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 82
+    .line 80
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 83
+    .line 81
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/TokenCommonRequest;
 
     invoke-static {p1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
@@ -1067,7 +1109,7 @@
 
     move-result-object p1
 
-    .line 84
+    .line 82
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1087,7 +1129,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 85
+    .line 83
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1128,10 +1170,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 110
+    .line 108
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 111
+    .line 109
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/TokenCommonRequest;
 
     invoke-static {p1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
@@ -1144,7 +1186,7 @@
 
     move-result-object p1
 
-    .line 112
+    .line 110
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1164,7 +1206,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 113
+    .line 111
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1217,18 +1259,18 @@
 
     if-eqz p2, :cond_0
 
-    .line 225
+    .line 279
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
     move-result-object v1
 
     goto :goto_1
 
-    .line 226
+    .line 281
     :cond_0
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletBalanceDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
-    .line 227
+    .line 283
     iget-object v2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v2}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountId()J
@@ -1263,7 +1305,7 @@
     .line 1621
     check-cast v6, Lcom/iMe/storage/domain/model/wallet/token/Token;
 
-    .line 227
+    .line 285
     invoke-virtual {v6}, Lcom/iMe/storage/domain/model/wallet/token/Token;->getAddress()Ljava/lang/String;
 
     move-result-object v6
@@ -1273,18 +1315,18 @@
 
     goto :goto_0
 
-    .line 227
+    .line 282
     :cond_1
     invoke-virtual {v1, v2, v3, p3, v4}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;->getTokensBalances(JLjava/lang/String;Ljava/util/List;)Lio/reactivex/Single;
 
     move-result-object v1
 
-    .line 228
+    .line 286
     invoke-virtual {v1}, Lio/reactivex/Single;->toObservable()Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 229
+    .line 287
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
     move-result-object v2
@@ -1293,7 +1335,7 @@
 
     move-result-object v1
 
-    .line 230
+    .line 288
     sget-object v2, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensBalance$2;->INSTANCE:Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensBalance$2;
 
     new-instance v3, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda2;
@@ -1307,14 +1349,8 @@
     :goto_1
     if-nez p2, :cond_3
 
-    const/4 p2, 0x2
-
-    .line 235
-    invoke-direct {p0, p3}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getLastUpdateBalanceTimeByNetworkType(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    invoke-static {p2, v2, v3}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->isMinutesAgo(IJ)Z
+    .line 294
+    invoke-direct {p0, p3}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->isUpdateTimeoutReached(Ljava/lang/String;)Z
 
     move-result p2
 
@@ -1322,7 +1358,7 @@
 
     goto :goto_2
 
-    .line 251
+    .line 311
     :cond_2
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
@@ -1330,7 +1366,7 @@
 
     goto :goto_4
 
-    .line 236
+    .line 295
     :cond_3
     :goto_2
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
@@ -1363,7 +1399,7 @@
     .line 1621
     check-cast v0, Lcom/iMe/storage/domain/model/wallet/token/Token;
 
-    .line 239
+    .line 298
     invoke-static {v0}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     move-result-object v0
@@ -1373,18 +1409,18 @@
 
     goto :goto_3
 
-    .line 238
+    .line 297
     :cond_4
     new-instance p1, Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;
 
-    invoke-direct {p1, v2, p3}, Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;-><init>(Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {p1, p3, v2}, Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;-><init>(Ljava/lang/String;Ljava/util/List;)V
 
-    .line 237
+    .line 296
     invoke-interface {p2, p1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getWalletTokensBalance(Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 243
+    .line 302
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 82
@@ -1404,18 +1440,18 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 224
+    .line 277
     :goto_4
     invoke-static {v1, p1}, Lio/reactivex/Observable;->concat(Lio/reactivex/ObservableSource;Lio/reactivex/ObservableSource;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string p2, "concat(\n                \u2026ble.empty()\n            )"
+    const-string p2, "concat(\n            if (\u2026)\n            }\n        )"
 
-    .line 230
+    .line 288
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 252
+    .line 313
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1457,16 +1493,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 149
-    new-instance v0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda3;
+    .line 147
+    new-instance v0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda4;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;Ljava/lang/String;)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->fromCallable(Ljava/util/concurrent/Callable;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 150
+    .line 148
     sget-object v1, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$2;->INSTANCE:Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$2;
 
     new-instance v2, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda0;
@@ -1477,20 +1513,20 @@
 
     move-result-object v0
 
-    .line 154
+    .line 152
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 156
+    .line 154
     new-instance v2, Lcom/iMe/storage/data/network/model/request/wallet/DisplayedTokensRequest;
 
     invoke-direct {v2, p1}, Lcom/iMe/storage/data/network/model/request/wallet/DisplayedTokensRequest;-><init>(Ljava/lang/String;)V
 
-    .line 155
+    .line 153
     invoke-interface {v1, v2}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getDisplayedTokens(Lcom/iMe/storage/data/network/model/request/wallet/DisplayedTokensRequest;)Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 158
+    .line 156
     iget-object v2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 82
@@ -1510,14 +1546,34 @@
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 147
+    .line 145
     invoke-static {v0, p1}, Lio/reactivex/Observable;->concat(Lio/reactivex/ObservableSource;Lio/reactivex/ObservableSource;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string v0, "concat(\n                \u2026          }\n            )"
+    const-string v0, "concat(\n            Obse\u2026              }\n        )"
 
-    .line 150
+    .line 148
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 168
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+
+    .line 26
+    new-instance v1, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$$inlined$handleError$1;
+
+    invoke-direct {v1, v0}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getTokensSettings$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+
+    new-instance v0, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
+
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
@@ -1542,26 +1598,26 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 182
+    .line 175
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletBalanceDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
 
-    .line 183
+    .line 176
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountId()J
 
     move-result-wide v1
 
-    invoke-virtual {v0, v1, v2, p2}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;->getAllWalletBalances(JLjava/lang/String;)Lio/reactivex/Single;
+    invoke-virtual {v0, v1, v2, p2}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;->getBalancesByNetwork(JLjava/lang/String;)Lio/reactivex/Single;
 
     move-result-object v0
 
-    .line 184
+    .line 177
     invoke-virtual {v0}, Lio/reactivex/Single;->toObservable()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 185
+    .line 178
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
     move-result-object v1
@@ -1570,12 +1626,12 @@
 
     move-result-object v0
 
-    .line 186
+    .line 179
     sget-object v1, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1;->INSTANCE:Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletBalance$1;
 
-    new-instance v2, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda1;
+    new-instance v2, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda3;
 
-    invoke-direct {v2, v1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
@@ -1583,14 +1639,8 @@
 
     if-nez p1, :cond_1
 
-    const/4 p1, 0x2
-
-    .line 195
-    invoke-direct {p0, p2}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->getLastUpdateBalanceTimeByNetworkType(Ljava/lang/String;)J
-
-    move-result-wide v1
-
-    invoke-static {p1, v1, v2}, Lcom/iMe/storage/data/utils/extentions/DateExtKt;->isMinutesAgo(IJ)Z
+    .line 188
+    invoke-direct {p0, p2}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->isUpdateTimeoutReached(Ljava/lang/String;)Z
 
     move-result p1
 
@@ -1598,7 +1648,7 @@
 
     goto :goto_0
 
-    .line 220
+    .line 212
     :cond_0
     invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
 
@@ -1606,25 +1656,25 @@
 
     goto :goto_1
 
-    .line 196
+    .line 189
     :cond_1
     :goto_0
     iget-object p1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 197
+    .line 190
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, v3, p2, v2, v3}, Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;-><init>(Ljava/util/List;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v1, p2, v3, v2, v3}, Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;-><init>(Ljava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     invoke-interface {p1, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getWalletTokensBalance(Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 200
+    .line 191
     iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 82
@@ -1644,18 +1694,18 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 181
+    .line 174
     :goto_1
     invoke-static {v0, p1}, Lio/reactivex/Observable;->concat(Lio/reactivex/ObservableSource;Lio/reactivex/ObservableSource;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string p2, "concat(\n                \u2026ble.empty()\n            )"
+    const-string p2, "concat(\n            wall\u2026)\n            }\n        )"
 
-    .line 186
+    .line 179
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 221
+    .line 214
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1668,6 +1718,193 @@
     invoke-direct {p2, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string p2, "errorHandler: ErrorHandl\u2026ndleError(it).toError() }"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public getWalletMultiChainBalance(ZLjava/util/List;)Lio/reactivex/Observable;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(Z",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;",
+            ">;>;>;"
+        }
+    .end annotation
+
+    const-string v0, "networksIds"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 221
+    iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
+
+    .line 222
+    new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/MultiChainBalanceRequest;
+
+    invoke-direct {v1, p2}, Lcom/iMe/storage/data/network/model/request/wallet/MultiChainBalanceRequest;-><init>(Ljava/util/List;)V
+
+    invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getWalletMultiChainBalance(Lcom/iMe/storage/data/network/model/request/wallet/MultiChainBalanceRequest;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 223
+    iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
+
+    .line 82
+    new-instance v2, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletMultiChainBalance$$inlined$flatMapSuccess$1;
+
+    invoke-direct {v2, v1, p2, p0}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletMultiChainBalance$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Ljava/util/List;Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;)V
+
+    new-instance v1, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v1, v2}, Lcom/iMe/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    const-string v1, "errorHandler: FirebaseFu\u2026R>().toObservable()\n    }"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz p1, :cond_0
+
+    goto :goto_2
+
+    .line 247
+    :cond_0
+    iget-object p1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletBalanceDao:Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
+
+    .line 249
+    iget-object v1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
+
+    invoke-interface {v1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountId()J
+
+    move-result-wide v1
+
+    .line 248
+    invoke-virtual {p1, v1, v2, p2}, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;->getBalancesByMultipleNetworks(JLjava/util/List;)Lio/reactivex/Single;
+
+    move-result-object p1
+
+    .line 252
+    invoke-virtual {p1}, Lio/reactivex/Single;->toObservable()Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 253
+    invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorResumeNext(Lio/reactivex/ObservableSource;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 254
+    sget-object v1, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletMultiChainBalance$1;->INSTANCE:Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletMultiChainBalance$1;
+
+    new-instance v2, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda1;
+
+    invoke-direct {v2, v1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 1747
+    instance-of v1, p2, Ljava/util/Collection;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    goto :goto_0
+
+    .line 1748
+    :cond_1
+    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :cond_2
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 263
+    invoke-direct {p0, v1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->isUpdateTimeoutReached(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v2, 0x1
+
+    :cond_3
+    :goto_0
+    if-eqz v2, :cond_4
+
+    goto :goto_1
+
+    .line 266
+    :cond_4
+    invoke-static {}, Lio/reactivex/Observable;->empty()Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 246
+    :goto_1
+    invoke-static {p1, v0}, Lio/reactivex/Observable;->concat(Lio/reactivex/ObservableSource;Lio/reactivex/ObservableSource;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    const-string p1, "{\n            Observable\u2026}\n            )\n        }"
+
+    .line 254
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 269
+    :goto_2
+    iget-object p1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+
+    .line 26
+    new-instance p2, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletMultiChainBalance$$inlined$handleError$1;
+
+    invoke-direct {p2, p1}, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl$getWalletMultiChainBalance$$inlined$handleError$1;-><init>(Lcom/iMe/storage/data/network/handlers/ErrorHandler;)V
+
+    new-instance p1, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, p2}, Lcom/iMe/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -1700,12 +1937,12 @@
 
     invoke-static {p5, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 261
+    .line 322
     iget-object p1, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
     if-eqz p3, :cond_0
 
-    .line 266
+    .line 327
     invoke-static {p3}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     move-result-object p3
@@ -1721,18 +1958,18 @@
     :cond_0
     const/4 p3, 0x0
 
-    .line 263
+    .line 324
     :goto_0
-    new-instance v0, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
+    new-instance v0, Lcom/iMe/storage/data/network/model/request/wallet/WalletTransactionsRequest;
 
-    invoke-direct {v0, p2, p4, p5, p3}, Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/List;)V
+    invoke-direct {v0, p2, p4, p5, p3}, Lcom/iMe/storage/data/network/model/request/wallet/WalletTransactionsRequest;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/List;)V
 
-    .line 262
-    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getWalletTransactions(Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;)Lio/reactivex/Observable;
+    .line 323
+    invoke-interface {p1, v0}, Lcom/iMe/storage/data/network/api/own/WalletApi;->getWalletTransactions(Lcom/iMe/storage/data/network/model/request/wallet/WalletTransactionsRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 270
+    .line 331
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1752,7 +1989,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 271
+    .line 334
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1804,10 +2041,10 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
+    .line 96
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 100
+    .line 98
     new-instance v8, Lcom/iMe/storage/data/network/model/request/wallet/TokensSearchRequest;
 
     const/4 v5, 0x0
@@ -1826,12 +2063,12 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/data/network/model/request/wallet/TokensSearchRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 99
+    .line 97
     invoke-interface {v0, v8}, Lcom/iMe/storage/data/network/api/own/WalletApi;->searchTokens(Lcom/iMe/storage/data/network/model/request/wallet/TokensSearchRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 106
+    .line 104
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1851,7 +2088,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 107
+    .line 105
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1897,10 +2134,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 274
+    .line 337
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->dataSourceFactory:Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 275
+    .line 338
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/Network;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v1
@@ -1909,7 +2146,7 @@
 
     move-result-object v0
 
-    .line 276
+    .line 339
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/Network;->getId()Ljava/lang/String;
 
     move-result-object p2
@@ -1918,7 +2155,7 @@
 
     move-result-object p1
 
-    .line 277
+    .line 340
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
@@ -1959,26 +2196,26 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 116
+    .line 114
     iget-object v0, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->walletApi:Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 118
+    .line 116
     new-instance v1, Lcom/iMe/storage/data/network/model/request/wallet/SetTokenVisibilityRequest;
 
-    .line 119
+    .line 117
     invoke-static {p1}, Lcom/iMe/storage/data/mapper/wallet/TokenMappingKt;->mapToRequest(Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;
 
     move-result-object p1
 
-    .line 118
+    .line 116
     invoke-direct {v1, p1, p2}, Lcom/iMe/storage/data/network/model/request/wallet/SetTokenVisibilityRequest;-><init>(Lcom/iMe/storage/data/network/model/request/wallet/TokenRequest;Z)V
 
-    .line 117
+    .line 115
     invoke-interface {v0, v1}, Lcom/iMe/storage/data/network/api/own/WalletApi;->setTokenVisibility(Lcom/iMe/storage/data/network/model/request/wallet/SetTokenVisibilityRequest;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 123
+    .line 121
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 70
@@ -1998,7 +2235,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 124
+    .line 122
     iget-object p2, p0, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;->errorHandler:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26

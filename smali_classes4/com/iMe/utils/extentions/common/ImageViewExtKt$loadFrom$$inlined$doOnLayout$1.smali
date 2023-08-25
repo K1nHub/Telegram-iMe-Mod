@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 ImageViewExt.kt\ncom/iMe/utils/extentions/common/ImageViewExtKt\n*L\n1#1,432:1\n72#2:433\n73#2:437\n78#3,3:434\n*E\n"
+    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 ImageViewExt.kt\ncom/iMe/utils/extentions/common/ImageViewExtKt\n*L\n1#1,432:1\n72#2:433\n73#2:437\n85#3,3:434\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
     .line 52
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 78
+    .line 85
     iget-object p1, p0, Lcom/iMe/utils/extentions/common/ImageViewExtKt$loadFrom$$inlined$doOnLayout$1;->$placeholderDrawable$inlined:Lorg/telegram/ui/Components/LoadingDrawable;
 
     iget-object p2, p0, Lcom/iMe/utils/extentions/common/ImageViewExtKt$loadFrom$$inlined$doOnLayout$1;->$this_loadFrom$inlined:Landroid/widget/ImageView;
@@ -78,7 +78,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
 
-    .line 79
+    .line 86
     iget-object p1, p0, Lcom/iMe/utils/extentions/common/ImageViewExtKt$loadFrom$$inlined$doOnLayout$1;->$this_loadFrom$inlined:Landroid/widget/ImageView;
 
     iget-object p2, p0, Lcom/iMe/utils/extentions/common/ImageViewExtKt$loadFrom$$inlined$doOnLayout$1;->$url$inlined:Ljava/lang/String;

@@ -47,7 +47,7 @@
 .method public abstract getLastLoggedInGuid()Ljava/lang/String;
 .end method
 
-.method public abstract getLoggedIndWalletsBlockchains()Ljava/util/List;
+.method public abstract getLoggedInWalletsBlockchains()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -85,6 +85,9 @@
 .end method
 
 .method public abstract isAuthorized(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Z
+.end method
+
+.method public abstract isCurrentBlockchainAuthorized()Z
 .end method
 
 .method public abstract isCurrentBlockchainWalletCreated()Z

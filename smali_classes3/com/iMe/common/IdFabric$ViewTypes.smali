@@ -36,6 +36,16 @@
 
 .field public static final CREATE_ACCOUNT:I
 
+.field public static final CRYPTOBOX:I
+
+.field public static final CRYPTOBOXES_CHAT:I
+
+.field public static final CRYPTOBOXES_HEADER:I
+
+.field public static final CRYPTOBOXES_LIST_HEADER:I
+
+.field public static final CRYPTOBOX_ACTION:I
+
 .field public static final CRYPTO_ACCOUNT:I
 
 .field public static final DIALOGS_EMPTY_CELL:I
@@ -919,6 +929,41 @@
     sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
 
     sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->NETWORK_CELL:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 124
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
+
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CRYPTOBOX:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 125
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
+
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CRYPTOBOX_ACTION:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 126
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
+
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CRYPTOBOXES_HEADER:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 127
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
+
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->CRYPTOBOXES_LIST_HEADER:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 128
+    sput v1, Lcom/iMe/common/IdFabric$ViewTypes;->id:I
+
+    sput v0, Lcom/iMe/common/IdFabric$ViewTypes;->CRYPTOBOXES_CHAT:I
 
     return-void
 .end method

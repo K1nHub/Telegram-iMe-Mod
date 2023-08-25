@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nImageViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ImageViewExt.kt\ncom/iMe/utils/extentions/common/ImageViewExtKt\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,111:1\n68#2,4:112\n40#2:116\n56#2:117\n75#2:118\n*S KotlinDebug\n*F\n+ 1 ImageViewExt.kt\ncom/iMe/utils/extentions/common/ImageViewExtKt\n*L\n77#1:112,4\n77#1:116\n77#1:117\n77#1:118\n*E\n"
+    value = "SMAP\nImageViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ImageViewExt.kt\ncom/iMe/utils/extentions/common/ImageViewExtKt\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,127:1\n68#2,4:128\n40#2:132\n56#2:133\n75#2:134\n*S KotlinDebug\n*F\n+ 1 ImageViewExt.kt\ncom/iMe/utils/extentions/common/ImageViewExtKt\n*L\n84#1:128,4\n84#1:132\n84#1:133\n84#1:134\n*E\n"
 .end annotation
 
 
@@ -50,7 +50,7 @@
 .method private static final loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;Z)V
     .locals 1
 
-    .line 89
+    .line 101
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -65,24 +65,39 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
-    .line 90
+    instance-of v0, p2, Landroid/app/Activity;
+
+    if-eqz v0, :cond_1
+
+    move-object v0, p2
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->isDestroyed()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    .line 102
+    :cond_1
     invoke-static {p2}, Lcom/iMe/utils/glide/GlideApp;->with(Landroid/content/Context;)Lcom/iMe/utils/glide/GlideRequests;
 
     move-result-object p2
 
-    .line 91
+    .line 103
     invoke-virtual {p2}, Lcom/iMe/utils/glide/GlideRequests;->asDrawable()Lcom/iMe/utils/glide/GlideRequest;
 
     move-result-object p2
 
-    .line 92
+    .line 104
     invoke-virtual {p2, p1}, Lcom/iMe/utils/glide/GlideRequest;->load(Ljava/lang/String;)Lcom/iMe/utils/glide/GlideRequest;
 
     move-result-object p1
 
-    .line 93
+    .line 105
     new-instance p2, Lcom/iMe/utils/glide/SvgSoftwareLayerSetter;
 
     invoke-direct {p2}, Lcom/iMe/utils/glide/SvgSoftwareLayerSetter;-><init>()V
@@ -91,9 +106,9 @@
 
     move-result-object p1
 
-    if-eqz p3, :cond_1
+    if-eqz p3, :cond_2
 
-    .line 96
+    .line 108
     invoke-virtual {p1, p3}, Lcom/iMe/utils/glide/GlideRequest;->placeholder(Landroid/graphics/drawable/Drawable;)Lcom/iMe/utils/glide/GlideRequest;
 
     move-result-object p1
@@ -102,23 +117,23 @@
 
     move-result-object p1
 
-    :cond_1
-    if-eqz p4, :cond_2
+    :cond_2
+    if-eqz p4, :cond_3
 
-    .line 103
+    .line 115
     invoke-virtual {p1}, Lcom/iMe/utils/glide/GlideRequest;->circleCrop()Lcom/iMe/utils/glide/GlideRequest;
 
     move-result-object p1
 
     goto :goto_1
 
-    .line 105
-    :cond_2
+    .line 117
+    :cond_3
     invoke-virtual {p1}, Lcom/iMe/utils/glide/GlideRequest;->fitCenter()Lcom/iMe/utils/glide/GlideRequest;
 
     move-result-object p1
 
-    .line 108
+    .line 120
     :goto_1
     sget-object p2, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->DATA:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
@@ -126,10 +141,10 @@
 
     move-result-object p1
 
-    .line 109
+    .line 121
     invoke-virtual {p1, p0}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
-    :cond_3
+    :cond_4
     return-void
 .end method
 
@@ -148,7 +163,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 66
+    .line 73
     invoke-virtual {p0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -171,13 +186,13 @@
 
     goto :goto_0
 
-    .line 68
+    .line 75
     :cond_0
     new-instance p2, Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-direct {p2}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
 
-    .line 70
+    .line 77
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultSelector:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -188,20 +203,20 @@
 
     const v3, 0x3e19999a    # 0.15f
 
-    .line 71
+    .line 78
     invoke-static {v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withAlpha(IF)I
 
     move-result v2
 
-    .line 69
+    .line 76
     invoke-virtual {p2, v1, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(II)V
 
     const/4 v1, 0x1
 
-    .line 73
+    .line 80
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setAppearByGradient(Z)V
 
-    .line 76
+    .line 83
     invoke-virtual {p0}, Landroid/widget/ImageView;->getHeight()I
 
     move-result v1
@@ -229,7 +244,7 @@
 
     if-nez v1, :cond_1
 
-    .line 78
+    .line 85
     invoke-virtual {p0}, Landroid/widget/ImageView;->getHeight()I
 
     move-result v1
@@ -242,7 +257,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
 
-    .line 79
+    .line 86
     invoke-virtual {p0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -263,7 +278,7 @@
 
     goto :goto_0
 
-    .line 82
+    .line 89
     :cond_2
     invoke-virtual {p0}, Landroid/widget/ImageView;->getHeight()I
 
@@ -277,7 +292,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
 
-    .line 83
+    .line 90
     invoke-virtual {p0}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -306,9 +321,28 @@
 
     const/4 p3, 0x1
 
-    .line 64
+    .line 67
     :cond_1
     invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;Z)V
+
+    return-void
+.end method
+
+.method public static final setImageColor(Landroid/widget/ImageView;I)V
+    .locals 2
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 126
+    new-instance v0, Landroid/graphics/PorterDuffColorFilter;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v0, p1, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     return-void
 .end method
@@ -320,7 +354,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 63
     invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object p1
@@ -354,17 +388,17 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 31
+    .line 34
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->with(Landroid/view/View;)Lcom/bumptech/glide/RequestManager;
 
     move-result-object v0
 
-    .line 32
+    .line 35
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/Object;)Lcom/bumptech/glide/RequestBuilder;
 
     move-result-object p1
 
-    .line 33
+    .line 36
     new-instance v0, Lcom/iMe/utils/extentions/common/ImageViewExtKt$withGlide$1;
 
     invoke-direct {v0, p2, p3}, Lcom/iMe/utils/extentions/common/ImageViewExtKt$withGlide$1;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V
@@ -373,7 +407,7 @@
 
     move-result-object p1
 
-    .line 56
+    .line 59
     invoke-virtual {p1, p0}, Lcom/bumptech/glide/RequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/ViewTarget;
 
     return-void
@@ -397,7 +431,7 @@
 
     move-object p3, v0
 
-    .line 26
+    .line 29
     :cond_1
     invoke-static {p0, p1, p2, p3}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->withGlide(Landroid/widget/ImageView;Ljava/lang/Object;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V
 

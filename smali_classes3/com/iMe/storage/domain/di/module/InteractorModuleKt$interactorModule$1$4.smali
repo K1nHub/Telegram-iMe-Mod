@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,90:1\n129#2,5:91\n129#2,5:96\n129#2,5:101\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n*L\n42#1:91,5\n43#1:96,5\n44#1:101,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,104:1\n129#2,5:105\n129#2,5:110\n129#2,5:115\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$4\n*L\n43#1:105,5\n44#1:110,5\n45#1:115,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 42
     new-instance p2, Lcom/iMe/storage/domain/interactor/notification/PushNotificationInteractor;
 
     .line 133
@@ -116,7 +116,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 41
+    .line 42
     invoke-direct {p2, v0, v2, p1}, Lcom/iMe/storage/domain/interactor/notification/PushNotificationInteractor;-><init>(Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;Lcom/iMe/storage/domain/repository/notification/PushNotificationRepository;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
@@ -125,7 +125,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 40
+    .line 41
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

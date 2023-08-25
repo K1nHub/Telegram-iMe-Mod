@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/Paint/Views/EntityView;->runStickyXAnimator([F)V
+    value = Lorg/telegram/ui/Components/Paint/Views/EntityView;->runStickyYAnimator([F)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 0
 
-    .line 283
+    .line 422
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,28 +35,21 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 286
+    .line 425
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$500(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$100(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 287
+    .line 426
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$502(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-
-    .line 289
-    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntityView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/EntityView;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$602(Lorg/telegram/ui/Components/Paint/Views/EntityView;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->access$102(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
     :cond_0
     return-void

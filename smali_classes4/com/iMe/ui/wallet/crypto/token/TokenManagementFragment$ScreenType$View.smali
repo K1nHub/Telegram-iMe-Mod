@@ -30,13 +30,13 @@
 
     const/4 v0, 0x0
 
-    .line 432
+    .line 470
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 430
+    .line 468
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType$View;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 431
+    .line 469
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType$View;->isCustomToken:Ljava/lang/Boolean;
 
     return-void
@@ -51,7 +51,7 @@
 
     const/4 p2, 0x0
 
-    .line 429
+    .line 467
     :cond_0
     invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType$View;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/Boolean;)V
 
@@ -63,7 +63,7 @@
 .method public final getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 430
+    .line 468
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType$View;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
@@ -72,7 +72,7 @@
 .method public final isCustomToken()Ljava/lang/Boolean;
     .locals 1
 
-    .line 431
+    .line 469
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType$View;->isCustomToken:Ljava/lang/Boolean;
 
     return-object v0

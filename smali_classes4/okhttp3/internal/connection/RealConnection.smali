@@ -151,7 +151,7 @@
 
     move-result-object p2
 
-    const-string v3, "null cannot be cast to non-null type java.security.cert.X509Certificate"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.security.cert.X509Certificate"
 
     invoke-static {p2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -522,7 +522,7 @@
 
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string v0, "null cannot be cast to non-null type java.security.cert.X509Certificate"
+    const-string/jumbo v0, "null cannot be cast to non-null type java.security.cert.X509Certificate"
 
     invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -786,7 +786,7 @@
     :try_start_2
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string v0, "null cannot be cast to non-null type javax.net.ssl.SSLSocket"
+    const-string/jumbo v0, "null cannot be cast to non-null type javax.net.ssl.SSLSocket"
 
     invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -1197,7 +1197,7 @@
 
     const-string v1, "User-Agent"
 
-    const-string v2, "okhttp/4.9.3"
+    const-string/jumbo v2, "okhttp/4.9.3"
 
     .line 504
     invoke-virtual {v0, v1, v2}, Lokhttp3/Request$Builder;->header(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;
@@ -3134,7 +3134,7 @@
     goto :goto_0
 
     :cond_0
-    const-string v1, "none"
+    const-string/jumbo v1, "none"
 
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;

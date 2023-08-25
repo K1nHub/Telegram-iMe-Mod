@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 39
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$currentUser$2;->invoke()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v0
@@ -69,7 +69,7 @@
 .method public final invoke()Lorg/telegram/tgnet/TLRPC$User;
     .locals 1
 
-    .line 34
+    .line 39
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;

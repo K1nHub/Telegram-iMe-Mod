@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 1541
+    .line 1642
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$9;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,38 +33,41 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 2
 
-    .line 1544
+    .line 1645
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$9;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyBackAnimator:Landroid/animation/ValueAnimator;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    .line 1545
-    iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
+    .line 1646
+    iput v1, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
 
-    .line 1546
-    iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyProgress:F
+    .line 1647
+    iput v1, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyProgress:F
 
-    .line 1549
+    .line 1648
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    .line 1550
-    invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    .line 1552
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
+    goto :goto_0
 
     :cond_0
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    move-result-object v0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 1650
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    :cond_1
     return-void
 .end method

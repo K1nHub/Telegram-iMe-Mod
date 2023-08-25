@@ -190,7 +190,7 @@
     const/4 v0, 0x1
 
     :goto_1
-    const-string v1, "null frame before EOS"
+    const-string/jumbo v1, "null frame before EOS"
 
     .line 198
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V

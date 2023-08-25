@@ -18,5 +18,8 @@
 .method public abstract findView(JIIILorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;)Z
 .end method
 
+.method public abstract loadNext(Z)V
+.end method
+
 .method public abstract preLayout(JILjava/lang/Runnable;)V
 .end method

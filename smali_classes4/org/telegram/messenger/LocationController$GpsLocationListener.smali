@@ -25,7 +25,7 @@
 .method private constructor <init>(Lorg/telegram/messenger/LocationController;)V
     .locals 0
 
-    .line 108
+    .line 109
     iput-object p1, p0, Lorg/telegram/messenger/LocationController$GpsLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/LocationController;Lorg/telegram/messenger/LocationController$1;)V
     .locals 0
 
-    .line 108
+    .line 109
     invoke-direct {p0, p1}, Lorg/telegram/messenger/LocationController$GpsLocationListener;-><init>(Lorg/telegram/messenger/LocationController;)V
 
     return-void
@@ -51,7 +51,7 @@
 
     return-void
 
-    .line 115
+    .line 116
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/LocationController$GpsLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 
@@ -77,7 +77,7 @@
 
     if-ne p0, v0, :cond_2
 
-    .line 116
+    .line 117
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/LocationController$GpsLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 
@@ -103,12 +103,12 @@
 
     if-lez v0, :cond_3
 
-    .line 117
+    .line 118
     iget-object v0, p0, Lorg/telegram/messenger/LocationController$GpsLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/LocationController;->access$600(Lorg/telegram/messenger/LocationController;Landroid/location/Location;)V
 
-    .line 118
+    .line 119
     iget-object p1, p0, Lorg/telegram/messenger/LocationController$GpsLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 121
+    .line 122
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/LocationController$GpsLocationListener;->this$0:Lorg/telegram/messenger/LocationController;
 

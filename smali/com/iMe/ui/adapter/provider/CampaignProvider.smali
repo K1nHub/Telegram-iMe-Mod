@@ -131,7 +131,7 @@
     move-result-object v2
 
     .line 35
-    sget v3, Lorg/telegram/messenger/R$id;->image_avatar:I
+    sget v3, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->getPhoto()Ljava/lang/String;
 

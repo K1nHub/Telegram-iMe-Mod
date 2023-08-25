@@ -45,7 +45,7 @@
 
     iget-boolean v3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda4;->f$3:Z
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$dp_V9acsJV4-8IrRLjcampul4mE(Lorg/telegram/ui/ProfileActivity;Landroid/animation/ValueAnimator;FZLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$4zgkOWrnsvk-xCg4IMO6iWH4SgU(Lorg/telegram/ui/ProfileActivity;Landroid/animation/ValueAnimator;FZLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

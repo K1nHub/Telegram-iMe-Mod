@@ -44,7 +44,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;)V
     .locals 0
 
-    .line 161
+    .line 163
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$1;)V
     .locals 0
 
-    .line 161
+    .line 163
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;-><init>(Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;)V
 
     return-void
@@ -64,7 +64,7 @@
 .method private randX()F
     .locals 4
 
-    .line 241
+    .line 243
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->longAnimation:Z
@@ -73,7 +73,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 242
+    .line 244
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -122,7 +122,7 @@
 
     return v0
 
-    .line 244
+    .line 246
     :cond_0
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
@@ -156,7 +156,7 @@
 .method private randY()F
     .locals 3
 
-    .line 233
+    .line 235
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
@@ -199,7 +199,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 249
+    .line 251
     iget v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->progress:F
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
@@ -228,21 +228,21 @@
 
     const/4 v2, 0x0
 
-    .line 250
+    .line 252
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->progress:F
 
-    .line 251
+    .line 253
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
 
     move-result v0
 
-    .line 252
+    .line 254
     iget v4, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromX:F
 
     iget v5, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toX:F
@@ -251,7 +251,7 @@
 
     move-result v4
 
-    .line 254
+    .line 256
     iget-object v5, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-boolean v5, v5, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->longAnimation:Z
@@ -260,14 +260,14 @@
 
     const v6, 0x3f333333    # 0.7f
 
-    .line 256
+    .line 258
     iget v7, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->progress:F
 
     cmpg-float v8, v7, v5
 
     if-gez v8, :cond_0
 
-    .line 257
+    .line 259
     iget v6, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromY:F
 
     iget v8, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toY1:F
@@ -284,7 +284,7 @@
 
     goto :goto_0
 
-    .line 259
+    .line 261
     :cond_0
     iget v3, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toY1:F
 
@@ -304,7 +304,7 @@
 
     move-result v3
 
-    .line 262
+    .line 264
     :goto_0
     iget v5, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
 
@@ -314,14 +314,14 @@
 
     move-result v0
 
-    .line 264
+    .line 266
     iget-object v5, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-boolean v6, v5, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->longAnimation:Z
 
     if-nez v6, :cond_1
 
-    .line 265
+    .line 267
     iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
@@ -342,7 +342,7 @@
 
     const/16 v6, 0x10
 
-    .line 267
+    .line 269
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -369,26 +369,26 @@
 
     mul-float/2addr v0, v5
 
-    .line 271
+    .line 273
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 272
+    .line 274
     iget-boolean v6, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->mirror:Z
 
     if-eqz v6, :cond_2
 
     const/high16 v6, -0x40800000    # -1.0f
 
-    .line 273
+    .line 275
     invoke-virtual {p1, v6, v1, v4, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 275
+    .line 277
     :cond_2
     iget v6, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->randomRotation:F
 
     invoke-virtual {p1, v6, v4, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 276
+    .line 278
     iget-object v6, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -413,7 +413,7 @@
 
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setAlpha(I)V
 
-    .line 277
+    .line 279
     iget-object v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -436,14 +436,14 @@
 
     invoke-virtual {v1, v2, v5, v4, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 278
+    .line 280
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 279
+    .line 281
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -452,7 +452,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setAlpha(I)V
 
-    .line 280
+    .line 282
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -463,15 +463,15 @@
 
     const/4 v0, 0x0
 
-    .line 175
+    .line 177
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->progress:F
 
-    .line 177
+    .line 179
     invoke-direct {p0}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->randX()F
 
     move-result v1
 
-    .line 178
+    .line 180
     invoke-direct {p0}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->randY()F
 
     move-result v2
@@ -485,12 +485,12 @@
 
     if-ge v4, v5, :cond_3
 
-    .line 180
+    .line 182
     invoke-direct {p0}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->randX()F
 
     move-result v5
 
-    .line 181
+    .line 183
     invoke-direct {p0}, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->randY()F
 
     move-result v6
@@ -499,7 +499,7 @@
 
     move v8, v3
 
-    .line 183
+    .line 185
     :goto_1
     iget-object v9, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
@@ -511,7 +511,7 @@
 
     if-ge v8, v9, :cond_1
 
-    .line 184
+    .line 186
     iget-object v9, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v9, v9, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->particles:Ljava/util/ArrayList;
@@ -526,7 +526,7 @@
 
     sub-float/2addr v9, v5
 
-    .line 185
+    .line 187
     iget-object v10, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v10, v10, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->particles:Ljava/util/ArrayList;
@@ -574,7 +574,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 202
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
@@ -591,11 +591,11 @@
     :cond_4
     move v3, v4
 
-    .line 201
+    .line 203
     :goto_2
     iput v1, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toX:F
 
-    .line 202
+    .line 204
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -612,7 +612,7 @@
 
     if-lez v0, :cond_5
 
-    .line 203
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
@@ -629,7 +629,7 @@
 
     goto :goto_3
 
-    .line 205
+    .line 207
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
@@ -645,7 +645,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromX:F
 
-    .line 206
+    .line 208
     iget v3, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toX:F
 
     cmpl-float v3, v3, v0
@@ -654,10 +654,10 @@
 
     sub-float/2addr v0, v1
 
-    .line 207
+    .line 209
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toX:F
 
-    .line 211
+    .line 213
     :cond_6
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
@@ -710,7 +710,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromY:F
 
-    .line 214
+    .line 216
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-boolean v3, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->longAnimation:Z
@@ -721,7 +721,7 @@
 
     if-eqz v3, :cond_7
 
-    .line 215
+    .line 217
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -766,7 +766,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
 
-    .line 216
+    .line 218
     sget-object v2, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v2}, Ljava/util/Random;->nextInt()I
@@ -791,7 +791,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toSize:F
 
-    .line 217
+    .line 219
     iget v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
 
     const/high16 v2, 0x40000000    # 2.0f
@@ -832,7 +832,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toY1:F
 
-    .line 218
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
@@ -849,7 +849,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toY2:F
 
-    .line 219
+    .line 221
     sget-object v0, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v0}, Ljava/util/Random;->nextInt()I
@@ -870,7 +870,7 @@
 
     goto :goto_4
 
-    .line 221
+    .line 223
     :cond_7
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
 
@@ -916,7 +916,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->fromSize:F
 
-    .line 222
+    .line 224
     sget-object v1, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v1}, Ljava/util/Random;->nextInt()I
@@ -941,10 +941,10 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toSize:F
 
-    .line 223
+    .line 225
     iput v2, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->toY1:F
 
-    .line 224
+    .line 226
     iget-object v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->this$0:Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect;->bounds:Landroid/graphics/Rect;
@@ -961,10 +961,10 @@
 
     const-wide/16 v0, 0x708
 
-    .line 225
+    .line 227
     iput-wide v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->duration:J
 
-    .line 227
+    .line 229
     :goto_4
     iget-wide v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->duration:J
 
@@ -978,7 +978,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/Reactions/AnimatedEmojiEffect$Particle;->duration:J
 
-    .line 228
+    .line 230
     sget-object v0, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v0}, Ljava/util/Random;->nextBoolean()Z
@@ -989,7 +989,7 @@
 
     const/high16 v0, 0x41a00000    # 20.0f
 
-    .line 229
+    .line 231
     sget-object v1, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v1}, Ljava/util/Random;->nextInt()I

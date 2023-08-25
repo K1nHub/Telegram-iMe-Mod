@@ -43,7 +43,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "onCreateIncomingConnection "
+    const-string/jumbo p1, "onCreateIncomingConnection "
 
     .line 40
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -109,7 +109,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "onCreateIncomingConnectionFailed "
+    const-string/jumbo p1, "onCreateIncomingConnectionFailed "
 
     .line 64
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -141,7 +141,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "onCreateOutgoingConnection "
+    const-string/jumbo p1, "onCreateOutgoingConnection "
 
     .line 84
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -197,7 +197,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "onCreateOutgoingConnectionFailed "
+    const-string/jumbo p1, "onCreateOutgoingConnectionFailed "
 
     .line 74
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V

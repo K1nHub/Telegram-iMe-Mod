@@ -8,6 +8,7 @@
     value = {
         Lcom/iMe/storage/domain/model/google/DynamicLinkData$BinancePayment;,
         Lcom/iMe/storage/domain/model/google/DynamicLinkData$Companion;,
+        Lcom/iMe/storage/domain/model/google/DynamicLinkData$CryptoBox;,
         Lcom/iMe/storage/domain/model/google/DynamicLinkData$NotSupported;
     }
 .end annotation
@@ -15,6 +16,8 @@
 
 # static fields
 .field private static final BINANCE_PAYMENT_ID_QUERY_KEY:Ljava/lang/String; = "binance_payment_id"
+
+.field private static final CRYPTOBOX_ID_QUERY_KEY:Ljava/lang/String; = "cryptobox_id"
 
 .field public static final Companion:Lcom/iMe/storage/domain/model/google/DynamicLinkData$Companion;
 

@@ -301,7 +301,7 @@
 
     move-result-object v3
 
-    const-string v4, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams"
+    const-string/jumbo v4, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams"
 
     invoke-static {v3, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$lxhMT8LPFQol3ZYTK4FK8Lh-qYs(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->$r8$lambda$10z8Tnm5ryI9EyxeZW5_KSw_iz4(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

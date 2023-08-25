@@ -33,7 +33,7 @@
         }
     .end annotation
 
-    .line 284
+    .line 297
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-virtual {p1}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -42,7 +42,7 @@
 
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 288
+    .line 299
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -61,7 +61,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 350
+    .line 369
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getScrollOffsetY$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -84,7 +84,7 @@
 
     add-int/2addr v0, v1
 
-    .line 351
+    .line 370
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getScrollOffsetY$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -107,7 +107,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 352
+    .line 371
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -128,7 +128,7 @@
 
     add-int/2addr v2, v3
 
-    .line 355
+    .line 374
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr v1, v3
@@ -137,7 +137,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 358
+    .line 377
     iget-boolean v3, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->fullHeight:Z
 
     const/4 v4, 0x0
@@ -148,7 +148,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 359
+    .line 378
     iget-object v3, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v3}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getBackgroundPaddingTop$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -167,7 +167,7 @@
 
     sub-int/2addr v3, v1
 
-    .line 360
+    .line 381
     iget-object v8, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v8}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getBackgroundPaddingTop$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -188,7 +188,7 @@
 
     int-to-float v3, v3
 
-    .line 363
+    .line 386
     sget v7, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     int-to-float v7, v7
@@ -206,7 +206,7 @@
     :cond_0
     move v3, v5
 
-    .line 365
+    .line 388
     :goto_0
     iget-object v7, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
@@ -222,7 +222,7 @@
 
     sub-int v7, v8, v1
 
-    .line 366
+    .line 391
     iget-object v9, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v9}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getBackgroundPaddingTop$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -247,7 +247,7 @@
 
     move v3, v5
 
-    .line 369
+    .line 395
     :goto_1
     iget-object v8, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
@@ -261,7 +261,7 @@
 
     invoke-virtual {v8, v4, v1, v9, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 370
+    .line 396
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getShadowDrawable$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Landroid/graphics/drawable/Drawable;
@@ -279,7 +279,7 @@
     :cond_3
     if-nez v4, :cond_4
 
-    .line 372
+    .line 398
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
@@ -292,7 +292,7 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 373
+    .line 399
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->rect:Landroid/graphics/RectF;
 
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
@@ -327,6 +327,7 @@
 
     int-to-float v8, v8
 
+    .line 400
     iget-object v9, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v9}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getBackgroundPaddingTop$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -345,13 +346,15 @@
 
     int-to-float v1, v9
 
+    .line 399
     invoke-virtual {v2, v4, v5, v8, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 374
+    .line 402
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->rect:Landroid/graphics/RectF;
 
     const/16 v2, 0xc
 
+    .line 403
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -360,6 +363,7 @@
 
     mul-float/2addr v4, v3
 
+    .line 404
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -368,19 +372,21 @@
 
     mul-float/2addr v2, v3
 
+    .line 405
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
+    .line 401
     invoke-virtual {p1, v1, v4, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :cond_4
     const/16 v1, 0x24
 
-    .line 376
+    .line 408
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 377
+    .line 409
     iget-object v2, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -409,6 +415,7 @@
 
     const/4 v4, 0x4
 
+    .line 410
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -417,9 +424,10 @@
 
     int-to-float v0, v0
 
+    .line 409
     invoke-virtual {v2, v3, v5, v1, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 378
+    .line 411
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
@@ -432,28 +440,32 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 379
+    .line 413
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->rect:Landroid/graphics/RectF;
 
+    .line 414
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
+    .line 415
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
+    .line 416
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
+    .line 412
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     if-lez v7, :cond_5
 
-    .line 381
+    .line 419
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
@@ -464,7 +476,7 @@
 
     const/16 v1, 0xff
 
-    .line 382
+    .line 422
     invoke-static {v0}, Landroid/graphics/Color;->red(I)I
 
     move-result v2
@@ -477,6 +489,7 @@
 
     float-to-int v2, v2
 
+    .line 423
     invoke-static {v0}, Landroid/graphics/Color;->green(I)I
 
     move-result v4
@@ -487,6 +500,7 @@
 
     float-to-int v4, v4
 
+    .line 424
     invoke-static {v0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v0
@@ -497,16 +511,17 @@
 
     float-to-int v0, v0
 
+    .line 420
     invoke-static {v1, v2, v4, v0}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v0
 
-    .line 383
+    .line 426
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 384
+    .line 428
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getBackgroundPaddingLeft$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -515,12 +530,14 @@
 
     int-to-float v2, v0
 
+    .line 429
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     sub-int/2addr v0, v7
 
     int-to-float v3, v0
 
+    .line 430
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -535,14 +552,17 @@
 
     int-to-float v4, v0
 
+    .line 431
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     int-to-float v5, v0
 
+    .line 432
     sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     move-object v1, p1
 
+    .line 427
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     :cond_5
@@ -556,7 +576,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 294
+    .line 305
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -587,7 +607,7 @@
 
     if-gez v0, :cond_0
 
-    .line 295
+    .line 306
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
@@ -596,7 +616,7 @@
 
     goto :goto_0
 
-    .line 299
+    .line 310
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -609,17 +629,17 @@
 .method protected onLayout(ZIIII)V
     .locals 2
 
-    .line 334
+    .line 353
     iget v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->lastNotifyWidth:I
 
     sub-int v1, p4, p2
 
     if-eq v0, v1, :cond_0
 
-    .line 335
+    .line 354
     iput v1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->lastNotifyWidth:I
 
-    .line 336
+    .line 355
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getListAdapter(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;
@@ -628,11 +648,11 @@
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 338
+    .line 357
     :cond_0
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 339
+    .line 358
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$updateLayout(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)V
@@ -641,28 +661,28 @@
 .end method
 
 .method protected onMeasure(II)V
-    .locals 5
+    .locals 7
 
-    .line 305
+    .line 317
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Z)V
 
-    .line 306
+    .line 318
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2, v0, v2, v2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 307
+    .line 319
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0, v2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Z)V
 
-    .line 308
+    .line 320
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -681,14 +701,33 @@
 
     const/4 v0, 0x6
 
-    .line 309
+    .line 321
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setHorizontalPadding(Landroid/view/View;Ljava/lang/Number;)V
 
-    .line 310
+    .line 322
+    iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
+
+    invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    int-to-double v3, v0
+
+    const-wide/high16 v5, 0x401a000000000000L    # 6.5
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v3
+
+    .line 323
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
@@ -703,34 +742,28 @@
 
     const/16 v0, 0xfa
 
-    .line 311
+    .line 324
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     goto :goto_0
 
-    .line 313
     :cond_0
-    iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
+    const/16 v0, 0x38
 
-    invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getCurrentItemsList(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    .line 326
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    const/16 v3, 0x38
+    int-to-double v5, v0
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    mul-double/2addr v3, v5
 
-    move-result v3
+    double-to-int v0, v3
 
-    mul-int/2addr v0, v3
-
-    .line 315
+    .line 328
     :goto_0
     iget-object v3, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
@@ -740,6 +773,7 @@
 
     add-int/2addr v3, v0
 
+    .line 330
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getBackgroundPaddingTop$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
@@ -748,16 +782,17 @@
 
     add-int/2addr v3, v0
 
+    .line 331
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr v3, v0
 
-    .line 316
+    .line 332
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 317
+    .line 333
     div-int/lit8 v0, p2, 0x5
 
     mul-int/lit8 v4, v0, 0x3
@@ -783,14 +818,14 @@
     :cond_2
     if-nez v0, :cond_3
 
-    .line 322
+    .line 338
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getBackgroundPaddingTop$p$s-983463646(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)I
 
     move-result v0
 
-    .line 324
+    .line 340
     :cond_3
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
@@ -804,12 +839,12 @@
 
     if-eq v4, v0, :cond_4
 
-    .line 325
+    .line 341
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v4, v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Z)V
 
-    .line 326
+    .line 342
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v4}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getListView(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -818,7 +853,7 @@
 
     invoke-virtual {v4, v2, v0, v2, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 327
+    .line 343
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0, v2}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Z)V
@@ -831,11 +866,11 @@
     :cond_5
     move v1, v2
 
-    .line 329
+    .line 345
     :goto_2
     iput-boolean v1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->fullHeight:Z
 
-    .line 330
+    .line 348
     invoke-static {v3, p2}, Ljava/lang/Math;->min(II)I
 
     move-result p2
@@ -846,6 +881,7 @@
 
     move-result p2
 
+    .line 346
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -858,7 +894,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 302
+    .line 314
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
@@ -887,7 +923,7 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 343
+    .line 362
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$RootView;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getIgnoreLayout$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Z
@@ -898,7 +934,7 @@
 
     return-void
 
-    .line 346
+    .line 365
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

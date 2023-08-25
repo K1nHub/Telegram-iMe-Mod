@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/binance/android/opensdk/api/BinanceAPI;
     .locals 2
 
-    .line 54
+    .line 63
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binanceApi$2;->this$0:Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -69,7 +69,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 54
+    .line 63
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/binancepay/WalletHomeBinancePayFragment$binanceApi$2;->invoke()Lcom/binance/android/opensdk/api/BinanceAPI;
 
     move-result-object v0

@@ -39,7 +39,7 @@
 
     iget-wide v2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$$ExternalSyntheticLambda2;->f$2:J
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->$r8$lambda$ocMdM54CoEcJw1gE00nVHTVVolQ(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/content/Context;JLandroid/view/View;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->$r8$lambda$jxP29FNTjkm4BmF48BziTFueZds(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/content/Context;JLandroid/view/View;)V
 
     return-void
 .end method

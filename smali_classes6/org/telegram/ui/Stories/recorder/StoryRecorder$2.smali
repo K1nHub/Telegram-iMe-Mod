@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 1407
+    .line 1434
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 4
 
-    .line 1411
+    .line 1438
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1e
 
     if-lt p1, v0, :cond_0
 
-    .line 1412
+    .line 1439
     invoke-static {}, Landroidx/core/view/WindowInsetsCompat$Type;->displayCutout()I
 
     move-result v1
@@ -60,37 +60,37 @@
 
     move-result-object v1
 
-    .line 1413
+    .line 1440
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iget v3, v1, Landroid/graphics/Insets;->top:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
-    .line 1414
+    .line 1441
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iget v3, v1, Landroid/graphics/Insets;->bottom:I
 
     invoke-static {v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$1102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
-    .line 1415
+    .line 1442
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iget v3, v1, Landroid/graphics/Insets;->left:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
-    .line 1416
+    .line 1443
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iget v1, v1, Landroid/graphics/Insets;->right:I
 
-    invoke-static {v2, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    invoke-static {v2, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
     goto :goto_0
 
-    .line 1418
+    .line 1445
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -98,9 +98,9 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
-    .line 1419
+    .line 1446
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getStableInsetBottom()I
@@ -109,25 +109,25 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$1102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
-    .line 1420
+    .line 1447
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getStableInsetLeft()I
 
     move-result v2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
-    .line 1421
+    .line 1448
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getStableInsetRight()I
 
     move-result v2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
 
-    .line 1423
+    .line 1450
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -139,12 +139,12 @@
 
     if-lt p1, v0, :cond_1
 
-    .line 1425
+    .line 1452
     sget-object p1, Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;
 
     return-object p1
 
-    .line 1427
+    .line 1454
     :cond_1
     invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
 

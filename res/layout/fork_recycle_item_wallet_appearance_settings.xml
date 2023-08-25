@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/linear_root" android:layout_width="fill_parent" android:layout_height="wrap_content"
+<LinearLayout android:orientation="vertical" android:id="@id/linear_root" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/wallet_card_elevation"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout android:padding="@dimen/margin_under_normal" android:paddingTop="@dimen/margin_under_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
         <androidx.appcompat.widget.AppCompatImageView android:id="@id/image_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/margin_extra_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/fork_ic_settings_help" />

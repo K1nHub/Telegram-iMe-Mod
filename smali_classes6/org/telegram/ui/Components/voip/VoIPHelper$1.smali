@@ -38,7 +38,7 @@
 .method constructor <init>(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$InputPeer;ZZLandroid/app/Activity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/AccountInstance;)V
     .locals 0
 
-    .line 270
+    .line 265
     iput-object p3, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$1;->val$user:Lorg/telegram/tgnet/TLRPC$User;
 
     iput-object p4, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$1;->val$chat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -67,7 +67,7 @@
 .method protected onJoin()V
     .locals 13
 
-    .line 273
+    .line 268
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$1;->val$user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/VoIPHelper$1;->val$chat:Lorg/telegram/tgnet/TLRPC$Chat;

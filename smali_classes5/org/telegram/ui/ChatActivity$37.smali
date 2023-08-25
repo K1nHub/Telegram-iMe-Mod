@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroidx/recyclerview/widget/LinearLayoutManager;)V
     .locals 0
 
-    .line 8350
+    .line 8417
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$37;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$37;->val$messagesSearchLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -39,7 +39,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 8353
+    .line 8420
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$37;->val$messagesSearchLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findLastVisibleItemPosition()I
@@ -60,7 +60,7 @@
     :goto_0
     if-lez p2, :cond_1
 
-    .line 8355
+    .line 8422
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$37;->val$messagesSearchLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getItemCount()I
@@ -71,7 +71,7 @@
 
     if-le p1, p2, :cond_1
 
-    .line 8356
+    .line 8423
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$37;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;

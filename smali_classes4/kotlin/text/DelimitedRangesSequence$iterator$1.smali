@@ -352,7 +352,7 @@
     .line 1214
     iget-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
-    const-string v2, "null cannot be cast to non-null type kotlin.ranges.IntRange"
+    const-string/jumbo v2, "null cannot be cast to non-null type kotlin.ranges.IntRange"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

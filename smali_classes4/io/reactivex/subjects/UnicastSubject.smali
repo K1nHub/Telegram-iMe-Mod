@@ -670,7 +670,7 @@
 .method public onError(Ljava/lang/Throwable;)V
     .locals 1
 
-    const-string v0, "onError called with null. Null values are generally not allowed in 2.x operators and sources."
+    const-string/jumbo v0, "onError called with null. Null values are generally not allowed in 2.x operators and sources."
 
     .line 341
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -719,7 +719,7 @@
         }
     .end annotation
 
-    const-string v0, "onNext called with null. Null values are generally not allowed in 2.x operators and sources."
+    const-string/jumbo v0, "onNext called with null. Null values are generally not allowed in 2.x operators and sources."
 
     .line 331
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

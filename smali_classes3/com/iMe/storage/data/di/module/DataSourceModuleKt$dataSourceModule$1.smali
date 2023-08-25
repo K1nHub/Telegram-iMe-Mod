@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,111:1\n103#2,6:112\n109#2,5:139\n103#2,6:144\n109#2,5:171\n103#2,6:176\n109#2,5:203\n103#2,6:208\n109#2,5:235\n103#2,6:240\n109#2,5:267\n103#2,6:272\n109#2,5:299\n103#2,6:304\n109#2,5:331\n103#2,6:336\n109#2,5:363\n103#2,6:368\n109#2,5:395\n103#2,6:400\n109#2,5:427\n103#2,6:432\n109#2,5:459\n103#2,6:464\n109#2,5:491\n103#2,6:496\n109#2,5:523\n201#3,6:118\n207#3:138\n201#3,6:150\n207#3:170\n201#3,6:182\n207#3:202\n201#3,6:214\n207#3:234\n201#3,6:246\n207#3:266\n201#3,6:278\n207#3:298\n201#3,6:310\n207#3:330\n201#3,6:342\n207#3:362\n201#3,6:374\n207#3:394\n201#3,6:406\n207#3:426\n201#3,6:438\n207#3:458\n201#3,6:470\n207#3:490\n201#3,6:502\n207#3:522\n105#4,14:124\n105#4,14:156\n105#4,14:188\n105#4,14:220\n105#4,14:252\n105#4,14:284\n105#4,14:316\n105#4,14:348\n105#4,14:380\n105#4,14:412\n105#4,14:444\n105#4,14:476\n105#4,14:508\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1\n*L\n42#1:112,6\n42#1:139,5\n50#1:144,6\n50#1:171,5\n55#1:176,6\n55#1:203,5\n60#1:208,6\n60#1:235,5\n65#1:240,6\n65#1:267,5\n74#1:272,6\n74#1:299,5\n79#1:304,6\n79#1:331,5\n85#1:336,6\n85#1:363,5\n90#1:368,6\n90#1:395,5\n96#1:400,6\n96#1:427,5\n99#1:432,6\n99#1:459,5\n102#1:464,6\n102#1:491,5\n105#1:496,6\n105#1:523,5\n42#1:118,6\n42#1:138\n50#1:150,6\n50#1:170\n55#1:182,6\n55#1:202\n60#1:214,6\n60#1:234\n65#1:246,6\n65#1:266\n74#1:278,6\n74#1:298\n79#1:310,6\n79#1:330\n85#1:342,6\n85#1:362\n90#1:374,6\n90#1:394\n96#1:406,6\n96#1:426\n99#1:438,6\n99#1:458\n102#1:470,6\n102#1:490\n105#1:502,6\n105#1:522\n42#1:124,14\n50#1:156,14\n55#1:188,14\n60#1:220,14\n65#1:252,14\n74#1:284,14\n79#1:316,14\n85#1:348,14\n90#1:380,14\n96#1:412,14\n99#1:444,14\n102#1:476,14\n105#1:508,14\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,150:1\n103#2,6:151\n109#2,5:178\n103#2,6:183\n109#2,5:210\n103#2,6:215\n109#2,5:242\n103#2,6:247\n109#2,5:274\n103#2,6:279\n109#2,5:306\n103#2,6:311\n109#2,5:338\n103#2,6:343\n109#2,5:370\n103#2,6:375\n109#2,5:402\n103#2,6:407\n109#2,5:434\n103#2,6:439\n109#2,5:466\n103#2,6:471\n109#2,5:498\n103#2,6:503\n109#2,5:530\n103#2,6:535\n109#2,5:562\n103#2,6:567\n109#2,5:594\n201#3,6:157\n207#3:177\n201#3,6:189\n207#3:209\n201#3,6:221\n207#3:241\n201#3,6:253\n207#3:273\n201#3,6:285\n207#3:305\n201#3,6:317\n207#3:337\n201#3,6:349\n207#3:369\n201#3,6:381\n207#3:401\n201#3,6:413\n207#3:433\n201#3,6:445\n207#3:465\n201#3,6:477\n207#3:497\n201#3,6:509\n207#3:529\n201#3,6:541\n207#3:561\n201#3,6:573\n207#3:593\n105#4,14:163\n105#4,14:195\n105#4,14:227\n105#4,14:259\n105#4,14:291\n105#4,14:323\n105#4,14:355\n105#4,14:387\n105#4,14:419\n105#4,14:451\n105#4,14:483\n105#4,14:515\n105#4,14:547\n105#4,14:579\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1\n*L\n45#1:151,6\n45#1:178,5\n53#1:183,6\n53#1:210,5\n58#1:215,6\n58#1:242,5\n63#1:247,6\n63#1:274,5\n68#1:279,6\n68#1:306,5\n80#1:311,6\n80#1:338,5\n87#1:343,6\n87#1:370,5\n95#1:375,6\n95#1:402,5\n102#1:407,6\n102#1:434,5\n110#1:439,6\n110#1:466,5\n117#1:471,6\n117#1:498,5\n124#1:503,6\n124#1:530,5\n131#1:535,6\n131#1:562,5\n138#1:567,6\n138#1:594,5\n45#1:157,6\n45#1:177\n53#1:189,6\n53#1:209\n58#1:221,6\n58#1:241\n63#1:253,6\n63#1:273\n68#1:285,6\n68#1:305\n80#1:317,6\n80#1:337\n87#1:349,6\n87#1:369\n95#1:381,6\n95#1:401\n102#1:413,6\n102#1:433\n110#1:445,6\n110#1:465\n117#1:477,6\n117#1:497\n124#1:509,6\n124#1:529\n131#1:541,6\n131#1:561\n138#1:573,6\n138#1:593\n45#1:163,14\n53#1:195,14\n58#1:227,14\n63#1:259,14\n68#1:291,14\n80#1:323,14\n87#1:355,14\n95#1:387,14\n102#1:419,14\n110#1:451,14\n117#1:483,14\n124#1:515,14\n131#1:547,14\n138#1:579,14\n*E\n"
 .end annotation
 
 
@@ -63,7 +63,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 39
+    .line 41
     check-cast p1, Lorg/koin/core/module/Module;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1;->invoke(Lorg/koin/core/module/Module;)V
@@ -84,7 +84,7 @@
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 45
     sget-object v7, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1;
 
     .line 204
@@ -145,7 +145,7 @@
 
     invoke-direct {v4, v0, v3}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 50
+    .line 53
     sget-object v12, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$2;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$2;
 
     const/4 v11, 0x0
@@ -201,7 +201,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 55
+    .line 58
     sget-object v12, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$3;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$3;
 
     const/4 v11, 0x0
@@ -257,7 +257,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 60
+    .line 63
     sget-object v12, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$4;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$4;
 
     const/4 v11, 0x0
@@ -313,7 +313,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 65
+    .line 68
     sget-object v12, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$5;
 
     const/4 v11, 0x0
@@ -369,7 +369,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 74
+    .line 80
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getEVM_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v11
@@ -425,7 +425,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 79
+    .line 87
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getTON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v11
@@ -481,7 +481,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 85
+    .line 95
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getTRON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v11
@@ -537,7 +537,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 90
+    .line 102
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getBTC_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v11
@@ -593,7 +593,7 @@
 
     invoke-direct {v3, v0, v1}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 96
+    .line 110
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getDEX_SWAP_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v11
@@ -651,7 +651,7 @@
 
     invoke-direct {v1, v0, v3}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 99
+    .line 117
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getETH_APPROVE_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v11
@@ -709,7 +709,7 @@
 
     invoke-direct {v1, v0, v3}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 102
+    .line 124
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getETH_CANCEL_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v11
@@ -767,7 +767,7 @@
 
     invoke-direct {v1, v0, v3}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 105
+    .line 131
     sget-object v12, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$13;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$13;
 
     const/4 v11, 0x0
@@ -786,7 +786,63 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/storage/data/datasource/wallet_connect/WalletConnectDataSource;
+    const-class v3, Lcom/iMe/storage/data/datasource/wallet_connect/WalletConnectDataSource;
+
+    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v10
+
+    move-object v8, v1
+
+    move-object v13, v15
+
+    .line 112
+    invoke-direct/range {v8 .. v14}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 207
+    new-instance v3, Lorg/koin/core/instance/SingleInstanceFactory;
+
+    invoke-direct {v3, v1}, Lorg/koin/core/instance/SingleInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 109
+    invoke-virtual {v0, v3}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 110
+    invoke-virtual/range {p1 .. p1}, Lorg/koin/core/module/Module;->get_createdAtStart()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    .line 111
+    invoke-virtual {v0, v3}, Lorg/koin/core/module/Module;->prepareForCreationAtStart(Lorg/koin/core/instance/SingleInstanceFactory;)V
+
+    .line 113
+    :cond_c
+    new-instance v1, Lorg/koin/core/definition/KoinDefinition;
+
+    invoke-direct {v1, v0, v3}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 138
+    sget-object v12, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$14;->INSTANCE:Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$14;
+
+    const/4 v11, 0x0
+
+    .line 204
+    invoke-virtual {v2}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v9
+
+    .line 109
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v14
+
+    .line 112
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 113
+    const-class v2, Lcom/iMe/storage/data/datasource/cryptobox/CryptoBoxDataSource;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -812,13 +868,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     .line 111
     invoke-virtual {v0, v2}, Lorg/koin/core/module/Module;->prepareForCreationAtStart(Lorg/koin/core/instance/SingleInstanceFactory;)V
 
     .line 113
-    :cond_c
+    :cond_d
     new-instance v1, Lorg/koin/core/definition/KoinDefinition;
 
     invoke-direct {v1, v0, v2}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V

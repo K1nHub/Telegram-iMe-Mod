@@ -6,20 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+.field public final synthetic f$0:Lcom/iMe/manager/TelegramApiManager;
 
-.field public final synthetic f$1:Lcom/iMe/manager/TelegramApiManager;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/manager/TelegramApiManager;)V
+.method public synthetic constructor <init>(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+    iput-object p1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$0:Lcom/iMe/manager/TelegramApiManager;
 
-    iput-object p2, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$1:Lcom/iMe/manager/TelegramApiManager;
+    iput-object p2, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;
 
     return-void
 .end method
@@ -29,11 +29,11 @@
 .method public final subscribe(Lio/reactivex/ObservableEmitter;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v0, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$0:Lcom/iMe/manager/TelegramApiManager;
 
-    iget-object v1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$1:Lcom/iMe/manager/TelegramApiManager;
+    iget-object v1, p0, Lcom/iMe/manager/TelegramApiManager$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$NYbKcg_3xRQqFE7e7Tkt1eGej7g(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/manager/TelegramApiManager;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {v0, v1, p1}, Lcom/iMe/manager/TelegramApiManager;->$r8$lambda$92Wu8nIFEuQLiacyJw8qpu9fHa8(Lcom/iMe/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

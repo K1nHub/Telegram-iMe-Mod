@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSettingsRecycleAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsRecycleAdapter.kt\ncom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,43:1\n1#2:44\n*E\n"
+    value = "SMAP\nWalletSettingsRecycleAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSettingsRecycleAdapter.kt\ncom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,42:1\n1#2:43\n*E\n"
 .end annotation
 
 
@@ -58,7 +58,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
+    .line 23
     sget v0, Lorg/telegram/messenger/R$id;->linear_root:I
 
     const/4 v1, 0x0
@@ -67,23 +67,25 @@
 
     move-result-object v2
 
-    .line 26
+    .line 24
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2, v0, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 27
+    .line 26
     sget v2, Lorg/telegram/messenger/R$id;->text_setting_description:I
 
+    .line 27
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
+    .line 25
     invoke-static {v0, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 28
+    .line 29
     sget v3, Lorg/telegram/messenger/R$id;->text_setting_title:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -92,7 +94,7 @@
 
     move-result-object v0
 
-    .line 29
+    .line 30
     sget v4, Lorg/telegram/messenger/R$id;->image_icon:I
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
@@ -101,7 +103,7 @@
 
     move-result-object v0
 
-    .line 30
+    .line 31
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getIcon()I
 
     move-result v5
@@ -110,7 +112,7 @@
 
     move-result-object v0
 
-    .line 31
+    .line 32
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getDescription()Ljava/lang/Integer;
 
     move-result-object v4
@@ -126,7 +128,7 @@
 
     move-result-object v0
 
-    .line 32
+    .line 33
     sget v1, Lorg/telegram/messenger/R$id;->view_divider:I
 
     invoke-static {p1, p0}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->isLastItem(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$Adapter;)Z
@@ -139,7 +141,7 @@
 
     move-result-object p1
 
-    .line 33
+    .line 34
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/adapter/WalletSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getTitle()I
@@ -154,7 +156,7 @@
 
     move-result-object p1
 
-    .line 36
+    .line 37
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/settings/WalletSettingsItem;->getDescription()Ljava/lang/Integer;
 
     move-result-object p2
@@ -176,7 +178,7 @@
     :cond_1
     const-string p2, ""
 
-    .line 34
+    .line 35
     :cond_2
     invoke-virtual {p1, v2, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 

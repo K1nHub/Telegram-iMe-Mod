@@ -36,6 +36,8 @@
 
 .field public static final archivedStickersCountDidLoad:I
 
+.field public static final articleClosed:I
+
 .field public static final attachMenuBotsDidLoad:I
 
 .field public static final audioDidSent:I
@@ -384,6 +386,8 @@
 
 .field public static final onEmojiInteractionsReceived:I
 
+.field public static final onReceivedChannelDifference:I
+
 .field public static final onRequestPermissionResultReceived:I
 
 .field public static final onUserRingtonesUpdated:I
@@ -472,6 +476,8 @@
 
 .field public static final startSpoilers:I
 
+.field public static final stealthModeChanged:I
+
 .field public static final stickersDidLoad:I
 
 .field public static final stickersImportComplete:I
@@ -484,9 +490,13 @@
 
 .field public static final stopSpoilers:I
 
+.field public static final storiesBlocklistUpdate:I
+
 .field public static storiesDraftsUpdated:I = 0x0
 
 .field public static final storiesEnabledUpdate:I
+
+.field public static final storiesLimitUpdate:I
 
 .field public static storiesListUpdated:I = 0x0
 
@@ -1519,1119 +1529,1154 @@
     .line 163
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->updateMentionsCount:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->articleClosed:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 164
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didUpdatePollResults:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->updateMentionsCount:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 165
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->chatOnlineCountDidLoad:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didUpdatePollResults:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 166
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->videoLoadingStateChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->chatOnlineCountDidLoad:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 167
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->newPeopleNearbyAvailable:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->videoLoadingStateChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 168
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->stopAllHeavyOperations:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->newPeopleNearbyAvailable:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 169
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->stopAllHeavyOperations:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 170
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->stopSpoilers:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 171
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->startSpoilers:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->stopSpoilers:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 172
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->sendingMessagesChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->startSpoilers:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 173
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didUpdateReactions:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->sendingMessagesChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 174
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didUpdateExtendedMedia:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didUpdateReactions:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 175
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didVerifyMessagesStickers:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didUpdateExtendedMedia:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 176
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->scheduledMessagesUpdated:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didVerifyMessagesStickers:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 177
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->newSuggestionsAvailable:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->scheduledMessagesUpdated:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 178
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didLoadChatInviter:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->newSuggestionsAvailable:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 179
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didLoadChatAdmins:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didLoadChatInviter:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 180
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->historyImportProgressChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didLoadChatAdmins:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 181
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->stickersImportProgressChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->historyImportProgressChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 182
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->stickersImportComplete:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->stickersImportProgressChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 183
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->dialogDeleted:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->stickersImportComplete:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 184
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->webViewResultSent:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->dialogDeleted:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 185
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->voiceTranscriptionUpdate:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->webViewResultSent:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 186
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->animatedEmojiDocumentLoaded:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->voiceTranscriptionUpdate:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 187
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->recentEmojiStatusesUpdate:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->animatedEmojiDocumentLoaded:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 188
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->updateSearchSettings:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->recentEmojiStatusesUpdate:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 190
+    .line 189
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->messageTranslated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->updateSearchSettings:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 191
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->messageTranslating:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->messageTranslated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 192
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->dialogIsTranslatable:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->messageTranslating:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 193
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->dialogTranslate:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->dialogIsTranslatable:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 195
+    .line 194
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didGenerateFingerprintKeyPair:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->dialogTranslate:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 197
+    .line 196
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->walletPendingTransactionsChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didGenerateFingerprintKeyPair:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 198
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->walletSyncProgressChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->walletPendingTransactionsChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 200
+    .line 199
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->httpFileDidLoad:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->walletSyncProgressChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 201
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->httpFileDidFailedLoad:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->httpFileDidLoad:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 203
+    .line 202
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didUpdateConnectionState:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->httpFileDidFailedLoad:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 205
+    .line 204
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->fileUploaded:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didUpdateConnectionState:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 206
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->fileUploadFailed:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->fileUploaded:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 207
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->fileUploadProgressChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->fileUploadFailed:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 208
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->fileLoadProgressChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->fileUploadProgressChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 209
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->fileLoaded:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->fileLoadProgressChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 210
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->fileLoadFailed:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->fileLoaded:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 211
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->filePreparingStarted:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->fileLoadFailed:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 212
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->fileNewChunkAvailable:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->filePreparingStarted:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 213
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->filePreparingFailed:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->fileNewChunkAvailable:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 215
+    .line 214
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->dialogsUnreadCounterChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->filePreparingFailed:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 217
+    .line 216
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingProgressDidChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->dialogsUnreadCounterChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 218
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidReset:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->messagePlayingProgressDidChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 219
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingPlayStateChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidReset:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 220
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidStart:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->messagePlayingPlayStateChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 221
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidSeek:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidStart:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 222
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->messagePlayingGoingToStop:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidSeek:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 223
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->recordProgressChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingGoingToStop:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 224
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->recordStarted:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->recordProgressChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 225
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->recordStartError:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->recordStarted:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 226
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->recordStopped:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->recordStartError:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 227
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->screenshotTook:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->recordStopped:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 228
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->albumsDidLoad:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->screenshotTook:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 229
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->audioDidSent:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->albumsDidLoad:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 230
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->audioRecordTooShort:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->audioDidSent:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 231
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->audioRouteChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->audioRecordTooShort:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 233
+    .line 232
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didStartedCall:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->audioRouteChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 234
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->groupCallUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didStartedCall:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 235
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->groupCallSpeakingUsersUpdated:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->groupCallUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 236
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->groupCallScreencastStateChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->groupCallSpeakingUsersUpdated:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 237
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->activeGroupCallsUpdated:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->groupCallScreencastStateChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 238
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->applyGroupCallVisibleParticipants:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->activeGroupCallsUpdated:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 239
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->groupCallTypingsUpdated:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->applyGroupCallVisibleParticipants:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 240
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didEndCall:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->groupCallTypingsUpdated:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 241
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->closeInCallActivity:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didEndCall:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 242
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->groupCallVisibilityChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->closeInCallActivity:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 244
+    .line 243
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->appDidLogout:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->groupCallVisibilityChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 246
+    .line 245
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->configLoaded:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->appDidLogout:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 248
+    .line 247
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->needDeleteDialog:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->configLoaded:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 250
+    .line 249
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->newEmojiSuggestionsAvailable:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->needDeleteDialog:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 252
+    .line 251
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->themeUploadedToServer:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->newEmojiSuggestionsAvailable:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 253
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->themeUploadError:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->themeUploadedToServer:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 255
+    .line 254
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->dialogFiltersUpdated:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->themeUploadError:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 256
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->filterSettingsUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->dialogFiltersUpdated:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 257
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->suggestedFiltersLoaded:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->filterSettingsUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 259
+    .line 258
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->updateBotMenuButton:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->suggestedFiltersLoaded:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 261
+    .line 260
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didUpdatePremiumGiftStickers:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->updateBotMenuButton:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 262
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didUpdatePremiumGiftFieldIcon:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didUpdatePremiumGiftStickers:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 263
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->storiesEnabledUpdate:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didUpdatePremiumGiftFieldIcon:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 264
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
+
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->storiesEnabledUpdate:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 265
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
+
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->storiesBlocklistUpdate:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 266
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->pushMessagesUpdated:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    .line 267
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
-
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->stopEncodingService:I
-
-    add-int/lit8 v0, v1, 0x1
-
-    .line 268
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
-
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->wallpapersDidLoad:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->storiesLimitUpdate:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 269
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->wallpapersNeedReload:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->pushMessagesUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 270
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didReceiveSmsCode:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->stopEncodingService:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 271
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didReceiveCall:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->wallpapersDidLoad:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 272
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->wallpapersNeedReload:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 273
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->invalidateMotionBackground:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didReceiveSmsCode:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 274
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->closeOtherAppActivities:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didReceiveCall:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 275
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->cameraInitied:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 276
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->didReplacedPhotoInMemCache:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->invalidateMotionBackground:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 277
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didSetNewTheme:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->closeOtherAppActivities:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 278
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->themeListUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->cameraInitied:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 279
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didApplyNewTheme:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->didReplacedPhotoInMemCache:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 280
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->themeAccentListUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didSetNewTheme:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 281
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->needCheckSystemBarColors:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->themeListUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 282
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->needShareTheme:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didApplyNewTheme:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 283
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->needSetDayNightTheme:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->themeAccentListUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 284
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->goingToPreviewTheme:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->needCheckSystemBarColors:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 285
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->locationPermissionGranted:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->needShareTheme:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 286
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->locationPermissionDenied:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->needSetDayNightTheme:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 287
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->reloadInterface:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->goingToPreviewTheme:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 288
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->suggestedLangpack:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->locationPermissionGranted:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 289
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didSetNewWallpapper:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->locationPermissionDenied:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 290
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->proxySettingsChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->reloadInterface:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 291
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->proxyCheckDone:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->suggestedLangpack:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 292
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->proxyChangedByRotation:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didSetNewWallpapper:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 293
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->liveLocationsChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->proxySettingsChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 294
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->newLocationAvailable:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->proxyCheckDone:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 295
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->liveLocationsCacheChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->proxyChangedByRotation:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 296
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->notificationsCountUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->liveLocationsChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 297
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->playerDidStartPlaying:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->newLocationAvailable:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 298
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->closeSearchByActiveAction:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->liveLocationsCacheChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 299
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->messagePlayingSpeedChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->notificationsCountUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 300
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->screenStateChanged:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->playerDidStartPlaying:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 301
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didClearDatabase:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->closeSearchByActiveAction:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 302
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->voipServiceCreated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->messagePlayingSpeedChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 303
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->webRtcMicAmplitudeEvent:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->screenStateChanged:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 304
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->webRtcSpeakerAmplitudeEvent:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didClearDatabase:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 305
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->showBulletin:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->voipServiceCreated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 306
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->appUpdateAvailable:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->webRtcMicAmplitudeEvent:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 307
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->onDatabaseMigration:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->webRtcSpeakerAmplitudeEvent:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 308
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->onEmojiInteractionsReceived:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->showBulletin:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 309
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->emojiPreviewThemesChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->appUpdateAvailable:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 310
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->reactionsDidLoad:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->onDatabaseMigration:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 311
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->attachMenuBotsDidLoad:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->onEmojiInteractionsReceived:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 312
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->chatAvailableReactionsUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->emojiPreviewThemesChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 313
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->dialogsUnreadReactionsCounterChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->reactionsDidLoad:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 314
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->onDatabaseOpened:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->attachMenuBotsDidLoad:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 315
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->onDownloadingFilesChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->chatAvailableReactionsUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 316
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->onActivityResultReceived:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->dialogsUnreadReactionsCounterChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 317
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->onRequestPermissionResultReceived:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->onDatabaseOpened:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 318
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->onUserRingtonesUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->onDownloadingFilesChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 319
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->currentUserPremiumStatusChanged:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->onActivityResultReceived:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 320
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->premiumPromoUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->onRequestPermissionResultReceived:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 321
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->premiumStatusChangedGlobal:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->onUserRingtonesUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 322
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->currentUserShowLimitReachedDialog:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->currentUserPremiumStatusChanged:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 323
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->billingProductDetailsUpdated:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->premiumPromoUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 324
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->billingConfirmPurchaseError:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->premiumStatusChangedGlobal:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 325
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->premiumStickersPreviewLoaded:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->currentUserShowLimitReachedDialog:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 326
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->userEmojiStatusUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->billingProductDetailsUpdated:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 327
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->requestPermissions:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->billingConfirmPurchaseError:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 328
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->permissionsGranted:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->premiumStickersPreviewLoaded:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 329
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->topicsDidLoaded:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->userEmojiStatusUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 330
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->chatSwithcedToForum:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->requestPermissions:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 331
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->didUpdateGlobalAutoDeleteTimer:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->permissionsGranted:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 332
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->onDatabaseReset:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->topicsDidLoaded:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 333
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->wallpaperSettedToUser:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->chatSwithcedToForum:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 334
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->storiesUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->didUpdateGlobalAutoDeleteTimer:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 335
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->storiesListUpdated:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->onDatabaseReset:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 336
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->storiesDraftsUpdated:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->wallpaperSettedToUser:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 337
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->chatlistFolderUpdate:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->storiesUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 338
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->uploadStoryProgress:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->storiesListUpdated:I
 
     add-int/lit8 v1, v0, 0x1
 
     .line 339
     sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v0, Lorg/telegram/messenger/NotificationCenter;->uploadStoryEnd:I
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->storiesDraftsUpdated:I
 
     add-int/lit8 v0, v1, 0x1
 
     .line 340
     sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
 
-    sput v1, Lorg/telegram/messenger/NotificationCenter;->customTypefacesLoaded:I
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->chatlistFolderUpdate:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 341
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
+
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->uploadStoryProgress:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 342
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
+
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->uploadStoryEnd:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 343
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
+
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->customTypefacesLoaded:I
+
+    add-int/lit8 v0, v1, 0x1
+
+    .line 344
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
+
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->stealthModeChanged:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    .line 345
+    sput v1, Lorg/telegram/messenger/NotificationCenter;->totalEvents:I
+
+    sput v0, Lorg/telegram/messenger/NotificationCenter;->onReceivedChannelDifference:I
 
     const/4 v0, 0x5
 
     new-array v0, v0, [Lorg/telegram/messenger/NotificationCenter;
 
-    .line 381
+    .line 386
     sput-object v0, Lorg/telegram/messenger/NotificationCenter;->Instance:[Lorg/telegram/messenger/NotificationCenter;
 
     return-void
@@ -2640,31 +2685,31 @@
 .method public constructor <init>(I)V
     .locals 2
 
-    .line 412
+    .line 417
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 344
+    .line 349
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->observers:Landroid/util/SparseArray;
 
-    .line 345
+    .line 350
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
-    .line 346
+    .line 351
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
-    .line 347
+    .line 352
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -2673,28 +2718,28 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPosts:Ljava/util/ArrayList;
 
-    .line 348
+    .line 353
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnables:Ljava/util/ArrayList;
 
-    .line 349
+    .line 354
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnablesTmp:Ljava/util/ArrayList;
 
-    .line 350
+    .line 355
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPostsTmp:Ljava/util/ArrayList;
 
-    .line 351
+    .line 356
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
@@ -2703,36 +2748,36 @@
 
     const/4 v0, 0x0
 
-    .line 355
+    .line 360
     iput v0, p0, Lorg/telegram/messenger/NotificationCenter;->broadcasting:I
 
     const/4 v0, 0x1
 
-    .line 358
+    .line 363
     iput v0, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressPointer:I
 
-    .line 360
+    .line 365
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->heavyOperationsCounter:Ljava/util/HashSet;
 
-    .line 362
+    .line 367
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
-    .line 588
+    .line 593
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->alreadyPostedRannubles:Landroid/util/SparseArray;
 
-    .line 413
+    .line 418
     iput p1, p0, Lorg/telegram/messenger/NotificationCenter;->currentAccount:I
 
     return-void
@@ -2743,10 +2788,10 @@
 
     const/4 v0, 0x0
 
-    .line 443
+    .line 448
     iput-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->checkForExpiredNotifications:Ljava/lang/Runnable;
 
-    .line 444
+    .line 449
     iget-object v1, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
@@ -2757,7 +2802,7 @@
 
     return-void
 
-    .line 448
+    .line 453
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -2771,7 +2816,7 @@
 
     move-wide v7, v4
 
-    .line 450
+    .line 455
     :goto_0
     iget-object v9, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
@@ -2781,7 +2826,7 @@
 
     if-ge v6, v9, :cond_3
 
-    .line 451
+    .line 456
     iget-object v9, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v9, v6}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2790,7 +2835,7 @@
 
     check-cast v9, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;
 
-    .line 452
+    .line 457
     iget-wide v9, v9, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;->time:J
 
     sub-long v11, v1, v9
@@ -2803,12 +2848,12 @@
 
     if-nez v0, :cond_1
 
-    .line 454
+    .line 459
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 456
+    .line 461
     :cond_1
     iget-object v9, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
@@ -2824,7 +2869,7 @@
 
     goto :goto_1
 
-    .line 458
+    .line 463
     :cond_2
     invoke-static {v9, v10, v7, v8}, Ljava/lang/Math;->min(JJ)J
 
@@ -2838,7 +2883,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 462
+    .line 467
     :goto_2
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2846,7 +2891,7 @@
 
     if-ge v3, v6, :cond_4
 
-    .line 463
+    .line 468
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -2874,7 +2919,7 @@
 
     sub-long/2addr v3, v1
 
-    .line 468
+    .line 473
     new-instance v0, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/NotificationCenter;)V
@@ -2902,7 +2947,7 @@
         }
     .end annotation
 
-    .line 695
+    .line 700
     sget v0, Lorg/telegram/messenger/NotificationCenter;->didReplacedPhotoInMemCache:I
 
     if-eq p1, v0, :cond_1
@@ -2917,7 +2962,7 @@
 
     goto :goto_0
 
-    .line 698
+    .line 703
     :cond_0
     new-instance p1, Ljava/util/ArrayList;
 
@@ -2925,7 +2970,7 @@
 
     return-object p1
 
-    .line 696
+    .line 701
     :cond_1
     :goto_0
     new-instance p1, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;
@@ -2940,23 +2985,23 @@
 .method public static getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
     .locals 3
 
-    .line 400
+    .line 405
     sget-object v0, Lorg/telegram/messenger/NotificationCenter;->globalInstance:Lorg/telegram/messenger/NotificationCenter;
 
     if-nez v0, :cond_1
 
-    .line 402
+    .line 407
     const-class v1, Lorg/telegram/messenger/NotificationCenter;
 
     monitor-enter v1
 
-    .line 403
+    .line 408
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/NotificationCenter;->globalInstance:Lorg/telegram/messenger/NotificationCenter;
 
     if-nez v0, :cond_0
 
-    .line 405
+    .line 410
     new-instance v0, Lorg/telegram/messenger/NotificationCenter;
 
     const/4 v2, -0x1
@@ -2965,7 +3010,7 @@
 
     sput-object v0, Lorg/telegram/messenger/NotificationCenter;->globalInstance:Lorg/telegram/messenger/NotificationCenter;
 
-    .line 407
+    .line 412
     :cond_0
     monitor-exit v1
 
@@ -2988,19 +3033,19 @@
 .method public static getInstance(I)Lorg/telegram/messenger/NotificationCenter;
     .locals 3
 
-    .line 386
+    .line 391
     sget-object v0, Lorg/telegram/messenger/NotificationCenter;->Instance:[Lorg/telegram/messenger/NotificationCenter;
 
     aget-object v0, v0, p0
 
     if-nez v0, :cond_1
 
-    .line 388
+    .line 393
     const-class v1, Lorg/telegram/messenger/NotificationCenter;
 
     monitor-enter v1
 
-    .line 389
+    .line 394
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/NotificationCenter;->Instance:[Lorg/telegram/messenger/NotificationCenter;
 
@@ -3008,7 +3053,7 @@
 
     if-nez v0, :cond_0
 
-    .line 391
+    .line 396
     sget-object v0, Lorg/telegram/messenger/NotificationCenter;->Instance:[Lorg/telegram/messenger/NotificationCenter;
 
     new-instance v2, Lorg/telegram/messenger/NotificationCenter;
@@ -3019,7 +3064,7 @@
 
     move-object v0, v2
 
-    .line 393
+    .line 398
     :cond_0
     monitor-exit v1
 
@@ -3042,7 +3087,7 @@
 .method private synthetic lambda$checkForExpiredNotifications$0()V
     .locals 1
 
-    .line 468
+    .line 473
     new-instance v0, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/NotificationCenter;)V
@@ -3055,21 +3100,21 @@
 .method private static synthetic lambda$listenEmojiLoading$3(Landroid/view/View;II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 780
+    .line 785
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_0
 
     if-eqz p0, :cond_0
 
-    .line 781
+    .line 786
     invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 782
+    .line 787
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -3083,17 +3128,17 @@
 
     const/4 p4, 0x0
 
-    .line 802
+    .line 807
     aget-object p5, p2, p4
 
     if-eqz p5, :cond_1
 
     if-eqz p3, :cond_0
 
-    .line 804
+    .line 809
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
-    .line 806
+    .line 811
     :cond_0
     aget-object p3, p2, p4
 
@@ -3101,7 +3146,7 @@
 
     const/4 p1, 0x0
 
-    .line 807
+    .line 812
     aput-object p1, p2, p4
 
     :cond_1
@@ -3113,10 +3158,10 @@
 
     const/4 v0, 0x0
 
-    .line 596
+    .line 601
     invoke-virtual {p0, p1, v0, p2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationNameInternal(IZ[Ljava/lang/Object;)V
 
-    .line 597
+    .line 602
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->alreadyPostedRannubles:Landroid/util/SparseArray;
 
     invoke-virtual {p1, p3}, Landroid/util/SparseArray;->remove(I)V
@@ -3127,7 +3172,7 @@
 .method private synthetic lambda$postNotificationNameOnUIThread$1(I[Ljava/lang/Object;)V
     .locals 0
 
-    .line 536
+    .line 541
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     return-void
@@ -3140,13 +3185,13 @@
 
     return-void
 
-    .line 779
+    .line 784
     :cond_0
     new-instance v0, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda4;-><init>(Landroid/view/View;)V
 
-    .line 786
+    .line 791
     new-instance v1, Lorg/telegram/messenger/NotificationCenter$1;
 
     invoke-direct {v1, v0}, Lorg/telegram/messenger/NotificationCenter$1;-><init>(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;)V
@@ -3159,7 +3204,7 @@
 .method private postNotificationDebounced(I[Ljava/lang/Object;)V
     .locals 2
 
-    .line 591
+    .line 596
     invoke-static {p2}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
@@ -3168,7 +3213,7 @@
 
     add-int/2addr v0, p1
 
-    .line 592
+    .line 597
     iget-object v1, p0, Lorg/telegram/messenger/NotificationCenter;->alreadyPostedRannubles:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->indexOfKey(I)I
@@ -3179,20 +3224,20 @@
 
     goto :goto_0
 
-    .line 595
+    .line 600
     :cond_0
     new-instance v1, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0, p1, p2, v0}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/NotificationCenter;I[Ljava/lang/Object;I)V
 
-    .line 599
+    .line 604
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->alreadyPostedRannubles:Landroid/util/SparseArray;
 
     invoke-virtual {p1, v0, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     const-wide/16 p1, 0xfa
 
-    .line 600
+    .line 605
     invoke-static {v1, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     :goto_0
@@ -3202,7 +3247,7 @@
 .method private shouldDebounce(I[Ljava/lang/Object;)Z
     .locals 0
 
-    .line 605
+    .line 610
     sget p2, Lorg/telegram/messenger/NotificationCenter;->updateInterfaces:I
 
     if-ne p1, p2, :cond_0
@@ -3223,12 +3268,12 @@
 .method public addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
     .locals 3
 
-    .line 662
+    .line 667
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v0, :cond_1
 
-    .line 663
+    .line 668
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -3247,7 +3292,7 @@
 
     goto :goto_0
 
-    .line 664
+    .line 669
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -3257,14 +3302,14 @@
 
     throw p1
 
-    .line 667
+    .line 672
     :cond_1
     :goto_0
     iget v0, p0, Lorg/telegram/messenger/NotificationCenter;->broadcasting:I
 
     if-eqz v0, :cond_3
 
-    .line 668
+    .line 673
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -3275,23 +3320,23 @@
 
     if-nez v0, :cond_2
 
-    .line 670
+    .line 675
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 671
+    .line 676
     iget-object v1, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 673
+    .line 678
     :cond_2
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
 
-    .line 676
+    .line 681
     :cond_3
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->observers:Landroid/util/SparseArray;
 
@@ -3303,7 +3348,7 @@
 
     if-nez v0, :cond_4
 
-    .line 678
+    .line 683
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->observers:Landroid/util/SparseArray;
 
     invoke-direct {p0, p2}, Lorg/telegram/messenger/NotificationCenter;->createArrayForId(I)Ljava/util/ArrayList;
@@ -3314,7 +3359,7 @@
 
     move-object v0, v1
 
-    .line 680
+    .line 685
     :cond_4
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -3324,11 +3369,11 @@
 
     return-void
 
-    .line 683
+    .line 688
     :cond_5
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 684
+    .line 689
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p1, :cond_6
@@ -3337,7 +3382,7 @@
 
     if-nez p1, :cond_6
 
-    .line 685
+    .line 690
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -3348,10 +3393,10 @@
 
     const/4 p1, 0x1
 
-    .line 686
+    .line 691
     sput-boolean p1, Lorg/telegram/messenger/NotificationCenter;->alreadyLogged:Z
 
-    .line 687
+    .line 692
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3403,12 +3448,12 @@
 .method public addPostponeNotificationsCallback(Lorg/telegram/messenger/NotificationCenter$PostponeNotificationCallback;)V
     .locals 2
 
-    .line 727
+    .line 732
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v0, :cond_1
 
-    .line 728
+    .line 733
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -3427,7 +3472,7 @@
 
     goto :goto_0
 
-    .line 729
+    .line 734
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -3437,7 +3482,7 @@
 
     throw p1
 
-    .line 732
+    .line 737
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->postponeCallbackList:Ljava/util/ArrayList;
@@ -3448,7 +3493,7 @@
 
     if-nez v0, :cond_2
 
-    .line 733
+    .line 738
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->postponeCallbackList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -3460,21 +3505,21 @@
 .method public doOnIdle(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 753
+    .line 758
     invoke-virtual {p0}, Lorg/telegram/messenger/NotificationCenter;->isAnimationInProgress()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 754
+    .line 759
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 756
+    .line 761
     :cond_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
@@ -3485,7 +3530,7 @@
 .method public getCurrentHeavyOperationFlags()I
     .locals 1
 
-    .line 528
+    .line 533
     iget v0, p0, Lorg/telegram/messenger/NotificationCenter;->currentHeavyOperationFlags:I
 
     return v0
@@ -3502,7 +3547,7 @@
         }
     .end annotation
 
-    .line 532
+    .line 537
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->observers:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -3517,7 +3562,7 @@
 .method public hasObservers(I)Z
     .locals 1
 
-    .line 723
+    .line 728
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->observers:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->indexOfKey(I)I
@@ -3540,7 +3585,7 @@
 .method public isAnimationInProgress()Z
     .locals 1
 
-    .line 524
+    .line 529
     iget v0, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressCount:I
 
     if-lez v0, :cond_0
@@ -3563,7 +3608,7 @@
 
     new-array v0, v0, [Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
 
-    .line 801
+    .line 806
     new-instance v1, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda5;
 
     invoke-direct {v1, p0, p1, v0, p2}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/NotificationCenter;I[Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Ljava/lang/Runnable;)V
@@ -3572,7 +3617,7 @@
 
     aput-object v1, v0, p2
 
-    .line 810
+    .line 815
     aget-object p2, v0, p2
 
     invoke-virtual {p0, p2, p1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
@@ -3583,7 +3628,7 @@
 .method public onAnimationFinish(I)V
     .locals 4
 
-    .line 480
+    .line 485
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -3592,14 +3637,14 @@
 
     check-cast v0, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;
 
-    .line 481
+    .line 486
     iget-object v1, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->delete(I)V
 
     if-eqz v0, :cond_1
 
-    .line 483
+    .line 488
     iget v0, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressCount:I
 
     const/4 v1, 0x1
@@ -3608,7 +3653,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressCount:I
 
-    .line 484
+    .line 489
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->heavyOperationsCounter:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
@@ -3617,7 +3662,7 @@
 
     if-nez v0, :cond_0
 
-    .line 485
+    .line 490
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->heavyOperationsCounter:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3626,7 +3671,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 486
+    .line 491
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->heavyOperationsCounter:Ljava/util/HashSet;
 
     invoke-virtual {p1}, Ljava/util/HashSet;->isEmpty()Z
@@ -3635,7 +3680,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 487
+    .line 492
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -3656,16 +3701,16 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 490
+    .line 495
     :cond_0
     iget p1, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressCount:I
 
     if-nez p1, :cond_1
 
-    .line 491
+    .line 496
     invoke-virtual {p0}, Lorg/telegram/messenger/NotificationCenter;->runDelayedNotifications()V
 
-    .line 494
+    .line 499
     :cond_1
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->checkForExpiredNotifications:Ljava/lang/Runnable;
 
@@ -3679,14 +3724,14 @@
 
     if-nez p1, :cond_2
 
-    .line 495
+    .line 500
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->checkForExpiredNotifications:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 496
+    .line 501
     iput-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->checkForExpiredNotifications:Ljava/lang/Runnable;
 
     :cond_2
@@ -3696,7 +3741,7 @@
 .method public varargs postNotificationName(I[Ljava/lang/Object;)V
     .locals 13
 
-    .line 540
+    .line 545
     sget v0, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
 
     const/4 v1, 0x1
@@ -3737,7 +3782,7 @@
 
     if-nez v0, :cond_8
 
-    .line 542
+    .line 547
     iget-object v4, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v4}, Landroid/util/SparseArray;->size()I
@@ -3746,14 +3791,14 @@
 
     if-lez v4, :cond_8
 
-    .line 543
+    .line 548
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
-    .line 545
+    .line 550
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -3762,7 +3807,7 @@
 
     move v7, v6
 
-    .line 546
+    .line 551
     :goto_2
     iget-object v8, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
@@ -3772,7 +3817,7 @@
 
     if-ge v6, v8, :cond_6
 
-    .line 547
+    .line 552
     iget-object v8, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v8, v6}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -3781,7 +3826,7 @@
 
     check-cast v8, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;
 
-    .line 548
+    .line 553
     iget-wide v9, v8, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;->time:J
 
     sub-long v9, v4, v9
@@ -3794,12 +3839,12 @@
 
     if-nez v3, :cond_2
 
-    .line 550
+    .line 555
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 552
+    .line 557
     :cond_2
     iget-object v9, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
@@ -3813,7 +3858,7 @@
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 554
+    .line 559
     :cond_3
     iget-object v8, v8, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;->allowedIds:[I
 
@@ -3821,13 +3866,13 @@
 
     move v9, v2
 
-    .line 556
+    .line 561
     :goto_3
     array-length v10, v8
 
     if-ge v9, v10, :cond_5
 
-    .line 557
+    .line 562
     aget v10, v8, v9
 
     if-ne v10, p1, :cond_4
@@ -3858,18 +3903,18 @@
     :goto_5
     move v0, v1
 
-    .line 568
+    .line 573
     :cond_8
     sget v1, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
 
     if-ne p1, v1, :cond_9
 
-    .line 569
+    .line 574
     aget-object v1, p2, v2
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 570
+    .line 575
     iget v4, p0, Lorg/telegram/messenger/NotificationCenter;->currentHeavyOperationFlags:I
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -3884,18 +3929,18 @@
 
     goto :goto_6
 
-    .line 571
+    .line 576
     :cond_9
     sget v1, Lorg/telegram/messenger/NotificationCenter;->stopAllHeavyOperations:I
 
     if-ne p1, v1, :cond_a
 
-    .line 572
+    .line 577
     aget-object v1, p2, v2
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 573
+    .line 578
     iget v4, p0, Lorg/telegram/messenger/NotificationCenter;->currentHeavyOperationFlags:I
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -3906,7 +3951,7 @@
 
     iput v1, p0, Lorg/telegram/messenger/NotificationCenter;->currentHeavyOperationFlags:I
 
-    .line 575
+    .line 580
     :cond_a
     :goto_6
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/NotificationCenter;->shouldDebounce(I[Ljava/lang/Object;)Z
@@ -3919,19 +3964,19 @@
 
     if-eqz v1, :cond_b
 
-    .line 576
+    .line 581
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationDebounced(I[Ljava/lang/Object;)V
 
     goto :goto_7
 
-    .line 578
+    .line 583
     :cond_b
     invoke-virtual {p0, p1, v0, p2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationNameInternal(IZ[Ljava/lang/Object;)V
 
     :goto_7
     if-eqz v3, :cond_c
 
-    .line 582
+    .line 587
     :goto_8
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -3939,7 +3984,7 @@
 
     if-ge v2, p1, :cond_c
 
-    .line 583
+    .line 588
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -3963,12 +4008,12 @@
 .method public varargs postNotificationNameInternal(IZ[Ljava/lang/Object;)V
     .locals 4
 
-    .line 610
+    .line 615
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v0, :cond_1
 
-    .line 611
+    .line 616
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -3987,7 +4032,7 @@
 
     goto :goto_0
 
-    .line 612
+    .line 617
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -4003,26 +4048,26 @@
 
     if-nez p2, :cond_2
 
-    .line 615
+    .line 620
     invoke-virtual {p0}, Lorg/telegram/messenger/NotificationCenter;->isAnimationInProgress()Z
 
     move-result p2
 
     if-eqz p2, :cond_2
 
-    .line 616
+    .line 621
     new-instance p2, Lorg/telegram/messenger/NotificationCenter$DelayedPost;
 
     invoke-direct {p2, p1, p3, v0}, Lorg/telegram/messenger/NotificationCenter$DelayedPost;-><init>(I[Ljava/lang/Object;Lorg/telegram/messenger/NotificationCenter$1;)V
 
-    .line 617
+    .line 622
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPosts:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
 
-    .line 620
+    .line 625
     :cond_2
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->postponeCallbackList:Ljava/util/ArrayList;
 
@@ -4036,7 +4081,7 @@
 
     move p2, v1
 
-    .line 621
+    .line 626
     :goto_1
     iget-object v2, p0, Lorg/telegram/messenger/NotificationCenter;->postponeCallbackList:Ljava/util/ArrayList;
 
@@ -4046,7 +4091,7 @@
 
     if-ge p2, v2, :cond_4
 
-    .line 622
+    .line 627
     iget-object v2, p0, Lorg/telegram/messenger/NotificationCenter;->postponeCallbackList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4063,7 +4108,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 623
+    .line 628
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPosts:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/messenger/NotificationCenter$DelayedPost;
@@ -4079,7 +4124,7 @@
 
     goto :goto_1
 
-    .line 628
+    .line 633
     :cond_4
     iget p2, p0, Lorg/telegram/messenger/NotificationCenter;->broadcasting:I
 
@@ -4087,7 +4132,7 @@
 
     iput p2, p0, Lorg/telegram/messenger/NotificationCenter;->broadcasting:I
 
-    .line 629
+    .line 634
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->observers:Landroid/util/SparseArray;
 
     invoke-virtual {p2, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -4098,7 +4143,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 630
+    .line 635
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -4107,7 +4152,7 @@
 
     move v0, v1
 
-    .line 631
+    .line 636
     :goto_2
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -4115,14 +4160,14 @@
 
     if-ge v0, v2, :cond_5
 
-    .line 632
+    .line 637
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
 
-    .line 633
+    .line 638
     iget v3, p0, Lorg/telegram/messenger/NotificationCenter;->currentAccount:I
 
     invoke-interface {v2, p1, v3, p3}, Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;->didReceivedNotification(II[Ljava/lang/Object;)V
@@ -4131,7 +4176,7 @@
 
     goto :goto_2
 
-    .line 636
+    .line 641
     :cond_5
     iget p1, p0, Lorg/telegram/messenger/NotificationCenter;->broadcasting:I
 
@@ -4141,7 +4186,7 @@
 
     if-nez p1, :cond_b
 
-    .line 638
+    .line 643
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
@@ -4152,7 +4197,7 @@
 
     move p1, v1
 
-    .line 639
+    .line 644
     :goto_3
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
@@ -4162,14 +4207,14 @@
 
     if-ge p1, p2, :cond_7
 
-    .line 640
+    .line 645
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {p2, p1}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result p2
 
-    .line 641
+    .line 646
     iget-object p3, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {p3, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -4180,7 +4225,7 @@
 
     move v0, v1
 
-    .line 642
+    .line 647
     :goto_4
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -4188,7 +4233,7 @@
 
     if-ge v0, v2, :cond_6
 
-    .line 643
+    .line 648
     invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -4206,13 +4251,13 @@
 
     goto :goto_3
 
-    .line 646
+    .line 651
     :cond_7
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->clear()V
 
-    .line 648
+    .line 653
     :cond_8
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
@@ -4224,7 +4269,7 @@
 
     move p1, v1
 
-    .line 649
+    .line 654
     :goto_5
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
@@ -4234,14 +4279,14 @@
 
     if-ge p1, p2, :cond_a
 
-    .line 650
+    .line 655
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {p2, p1}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result p2
 
-    .line 651
+    .line 656
     iget-object p3, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {p3, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -4252,7 +4297,7 @@
 
     move v0, v1
 
-    .line 652
+    .line 657
     :goto_6
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -4260,7 +4305,7 @@
 
     if-ge v0, v2, :cond_9
 
-    .line 653
+    .line 658
     invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -4278,7 +4323,7 @@
 
     goto :goto_5
 
-    .line 656
+    .line 661
     :cond_a
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->addAfterBroadcast:Landroid/util/SparseArray;
 
@@ -4291,7 +4336,7 @@
 .method public varargs postNotificationNameOnUIThread(I[Ljava/lang/Object;)V
     .locals 1
 
-    .line 536
+    .line 541
     new-instance v0, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/NotificationCenter;I[Ljava/lang/Object;)V
@@ -4304,7 +4349,7 @@
 .method public removeDelayed(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 761
+    .line 766
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -4315,12 +4360,12 @@
 .method public removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
     .locals 2
 
-    .line 702
+    .line 707
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v0, :cond_1
 
-    .line 703
+    .line 708
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -4339,7 +4384,7 @@
 
     goto :goto_0
 
-    .line 704
+    .line 709
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -4349,14 +4394,14 @@
 
     throw p1
 
-    .line 707
+    .line 712
     :cond_1
     :goto_0
     iget v0, p0, Lorg/telegram/messenger/NotificationCenter;->broadcasting:I
 
     if-eqz v0, :cond_3
 
-    .line 708
+    .line 713
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -4367,23 +4412,23 @@
 
     if-nez v0, :cond_2
 
-    .line 710
+    .line 715
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 711
+    .line 716
     iget-object v1, p0, Lorg/telegram/messenger/NotificationCenter;->removeAfterBroadcast:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 713
+    .line 718
     :cond_2
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
 
-    .line 716
+    .line 721
     :cond_3
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->observers:Landroid/util/SparseArray;
 
@@ -4395,7 +4440,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 718
+    .line 723
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     :cond_4
@@ -4429,12 +4474,12 @@
 .method public removePostponeNotificationsCallback(Lorg/telegram/messenger/NotificationCenter$PostponeNotificationCallback;)V
     .locals 2
 
-    .line 738
+    .line 743
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v0, :cond_1
 
-    .line 739
+    .line 744
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -4453,7 +4498,7 @@
 
     goto :goto_0
 
-    .line 740
+    .line 745
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -4463,7 +4508,7 @@
 
     throw p1
 
-    .line 743
+    .line 748
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->postponeCallbackList:Ljava/util/ArrayList;
@@ -4474,7 +4519,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 744
+    .line 749
     invoke-virtual {p0}, Lorg/telegram/messenger/NotificationCenter;->runDelayedNotifications()V
 
     :cond_2
@@ -4484,7 +4529,7 @@
 .method public runDelayedNotifications()V
     .locals 5
 
-    .line 501
+    .line 506
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPosts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -4495,26 +4540,26 @@
 
     if-nez v0, :cond_1
 
-    .line 502
+    .line 507
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPostsTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 503
+    .line 508
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPostsTmp:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPosts:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 504
+    .line 509
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPosts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     move v0, v1
 
-    .line 505
+    .line 510
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPostsTmp:Ljava/util/ArrayList;
 
@@ -4524,7 +4569,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 506
+    .line 511
     iget-object v2, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPostsTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4533,7 +4578,7 @@
 
     check-cast v2, Lorg/telegram/messenger/NotificationCenter$DelayedPost;
 
-    .line 507
+    .line 512
     invoke-static {v2}, Lorg/telegram/messenger/NotificationCenter$DelayedPost;->access$100(Lorg/telegram/messenger/NotificationCenter$DelayedPost;)I
 
     move-result v3
@@ -4550,13 +4595,13 @@
 
     goto :goto_0
 
-    .line 509
+    .line 514
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedPostsTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 512
+    .line 517
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnables:Ljava/util/ArrayList;
 
@@ -4566,24 +4611,24 @@
 
     if-nez v0, :cond_3
 
-    .line 513
+    .line 518
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 514
+    .line 519
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnablesTmp:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 515
+    .line 520
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 516
+    .line 521
     :goto_1
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnablesTmp:Ljava/util/ArrayList;
 
@@ -4593,7 +4638,7 @@
 
     if-ge v1, v0, :cond_2
 
-    .line 517
+    .line 522
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4608,7 +4653,7 @@
 
     goto :goto_1
 
-    .line 519
+    .line 524
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->delayedRunnablesTmp:Ljava/util/ArrayList;
 
@@ -4623,7 +4668,7 @@
 
     const/4 v0, 0x1
 
-    .line 417
+    .line 422
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/messenger/NotificationCenter;->setAnimationInProgress(I[IZ)I
 
     move-result p1
@@ -4634,10 +4679,10 @@
 .method public setAnimationInProgress(I[IZ)I
     .locals 5
 
-    .line 421
+    .line 426
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 422
+    .line 427
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->heavyOperationsCounter:Ljava/util/HashSet;
 
     invoke-virtual {p1}, Ljava/util/HashSet;->isEmpty()Z
@@ -4650,7 +4695,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 423
+    .line 428
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -4671,7 +4716,7 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 426
+    .line 431
     :cond_0
     iget p1, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressCount:I
 
@@ -4679,7 +4724,7 @@
 
     iput p1, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressCount:I
 
-    .line 427
+    .line 432
     iget p1, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressPointer:I
 
     add-int/2addr p1, v0
@@ -4688,7 +4733,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 430
+    .line 435
     iget-object p3, p0, Lorg/telegram/messenger/NotificationCenter;->heavyOperationsCounter:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4697,7 +4742,7 @@
 
     invoke-virtual {p3, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 432
+    .line 437
     :cond_1
     new-instance p1, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;
 
@@ -4705,22 +4750,22 @@
 
     invoke-direct {p1, p3}, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;-><init>(Lorg/telegram/messenger/NotificationCenter$1;)V
 
-    .line 433
+    .line 438
     iput-object p2, p1, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;->allowedIds:[I
 
-    .line 434
+    .line 439
     iget-object p2, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     iget p3, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressPointer:I
 
     invoke-virtual {p2, p3, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 435
+    .line 440
     iget-object p1, p0, Lorg/telegram/messenger/NotificationCenter;->checkForExpiredNotifications:Ljava/lang/Runnable;
 
     if-nez p1, :cond_2
 
-    .line 436
+    .line 441
     new-instance p1, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/messenger/NotificationCenter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/NotificationCenter;)V
@@ -4731,7 +4776,7 @@
 
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 439
+    .line 444
     :cond_2
     iget p1, p0, Lorg/telegram/messenger/NotificationCenter;->animationInProgressPointer:I
 
@@ -4741,7 +4786,7 @@
 .method public updateAllowedNotifications(I[I)V
     .locals 1
 
-    .line 473
+    .line 478
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter;->allowedNotifications:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -4752,7 +4797,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 475
+    .line 480
     iput-object p2, p1, Lorg/telegram/messenger/NotificationCenter$AllowedNotifications;->allowedIds:[I
 
     :cond_0

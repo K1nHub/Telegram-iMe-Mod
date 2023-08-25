@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface$$ExternalSyntheticLambda0;->f$0:Ljava/util/ArrayList;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$y1JIhHgwvZxMLzK_qvguiRCuIkw(Ljava/util/ArrayList;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->$r8$lambda$ztetaghDyEJXDKvn97vmHEyOg7k(Ljava/util/ArrayList;)V
 
     return-void
 .end method

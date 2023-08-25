@@ -91,7 +91,7 @@
 
     const/16 v4, 0x24
 
-    const-string v5, "name"
+    const-string/jumbo v5, "name"
 
     if-eqz v1, :cond_2
 
@@ -263,7 +263,7 @@
 
     move-result-object v0
 
-    const-string v1, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.get, V of kotlin.collections.MapsKt__MapsKt.get>"
+    const-string/jumbo v1, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.get, V of kotlin.collections.MapsKt__MapsKt.get>"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

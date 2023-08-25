@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/wallet/common/WalletRootPresenter;",
+        "Lcom/iMe/ui/kikliko/EmojiViewPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n129#2,5:553\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$7\n*L\n157#1:553,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n129#2,5:864\n129#2,5:869\n129#2,5:874\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$7\n*L\n184#1:864,5\n185#1:869,5\n186#1:874,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/common/WalletRootPresenter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/kikliko/EmojiViewPresenter;
     .locals 3
 
     const-string v0, "$this$factory"
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    const-class p2, Lcom/iMe/storage/domain/interactor/kikliko/KiklikoInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 157
-    check-cast p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    .line 184
+    check-cast p2, Lcom/iMe/storage/domain/interactor/kikliko/KiklikoInteractor;
 
     .line 133
-    const-class v1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    const-class v1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 157
-    check-cast v1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    .line 185
+    check-cast v1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
-    const-class v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    const-class v2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,12 +113,13 @@
 
     move-result-object p1
 
-    .line 157
-    check-cast p1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    .line 186
+    check-cast p1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    new-instance v0, Lcom/iMe/ui/wallet/common/WalletRootPresenter;
+    .line 183
+    new-instance v0, Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
-    invoke-direct {v0, v1, p1, p2}, Lcom/iMe/ui/wallet/common/WalletRootPresenter;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
+    invoke-direct {v0, p2, p1, v1}, Lcom/iMe/ui/kikliko/EmojiViewPresenter;-><init>(Lcom/iMe/storage/domain/interactor/kikliko/KiklikoInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     return-object v0
 .end method
@@ -126,12 +127,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 157
+    .line 182
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$7;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/wallet/common/WalletRootPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$7;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/kikliko/EmojiViewPresenter;
 
     move-result-object p1
 

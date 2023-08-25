@@ -117,6 +117,11 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey2:I
 
+    const/4 v0, -0x1
+
+    .line 79
+    iput v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey3:I
+
     .line 80
     iput p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->itemsCount:I
 

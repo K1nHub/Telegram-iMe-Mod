@@ -28,19 +28,19 @@
 .method public constructor <init>(FFFF)V
     .locals 0
 
-    .line 69
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
+    .line 72
     iput p1, p0, Lorg/telegram/messenger/SvgHelper$Line;->x1:F
 
-    .line 71
+    .line 73
     iput p2, p0, Lorg/telegram/messenger/SvgHelper$Line;->y1:F
 
-    .line 72
+    .line 74
     iput p3, p0, Lorg/telegram/messenger/SvgHelper$Line;->x2:F
 
-    .line 73
+    .line 75
     iput p4, p0, Lorg/telegram/messenger/SvgHelper$Line;->y2:F
 
     return-void

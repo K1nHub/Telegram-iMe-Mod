@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/SearchField;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/SearchField;-><init>(Landroid/content/Context;ZFLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SearchField;)V
     .locals 0
 
-    .line 120
+    .line 123
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchField$3;->this$0:Lorg/telegram/ui/Components/SearchField;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
 
-    .line 133
+    .line 136
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchField$3;->this$0:Lorg/telegram/ui/Components/SearchField;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SearchField;->access$100(Lorg/telegram/ui/Components/SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -62,7 +62,7 @@
     :cond_0
     move p1, v1
 
-    .line 134
+    .line 137
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/SearchField$3;->this$0:Lorg/telegram/ui/Components/SearchField;
 
@@ -88,7 +88,7 @@
     :goto_1
     if-eq p1, v0, :cond_5
 
-    .line 136
+    .line 139
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchField$3;->this$0:Lorg/telegram/ui/Components/SearchField;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SearchField;->access$200(Lorg/telegram/ui/Components/SearchField;)Landroid/widget/ImageView;
@@ -105,7 +105,7 @@
 
     move v3, v1
 
-    .line 137
+    .line 140
     :cond_2
     invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -113,7 +113,7 @@
 
     const-wide/16 v2, 0x96
 
-    .line 138
+    .line 141
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -129,7 +129,7 @@
     :cond_3
     move v3, v2
 
-    .line 139
+    .line 142
     :goto_2
     invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
@@ -142,16 +142,16 @@
     :cond_4
     move v1, v2
 
-    .line 140
+    .line 143
     :goto_3
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 141
+    .line 144
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 143
+    .line 146
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchField$3;->this$0:Lorg/telegram/ui/Components/SearchField;
 

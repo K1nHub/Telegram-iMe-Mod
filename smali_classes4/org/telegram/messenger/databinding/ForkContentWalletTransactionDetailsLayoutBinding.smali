@@ -17,7 +17,7 @@
 
 .field public final dividerComment:Lcom/iMe/ui/custom/DividerView;
 
-.field public final imageCoinIcon:Landroidx/appcompat/widget/AppCompatImageView;
+.field public final imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
 .field public final imageStakingIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
@@ -106,7 +106,7 @@
     move-object v1, p9
 
     .line 142
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->imageCoinIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
     move-object v1, p10
 
@@ -311,7 +311,7 @@
     if-eqz v11, :cond_0
 
     .line 233
-    sget v1, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v1, Lorg/telegram/messenger/R$id;->image_logo:I
 
     .line 234
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;

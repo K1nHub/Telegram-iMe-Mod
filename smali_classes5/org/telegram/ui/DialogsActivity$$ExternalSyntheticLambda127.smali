@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda127;->f$2:[Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Tiu28BgYDGpHUMgX_1mETxEN9hc(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;[Ljava/lang/Object;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$byOYu3EdcRMRs9Xa6SFVibLIcHQ(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;[Ljava/lang/Object;)V
 
     return-void
 .end method

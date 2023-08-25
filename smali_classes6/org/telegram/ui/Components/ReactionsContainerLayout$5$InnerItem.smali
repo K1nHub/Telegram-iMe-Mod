@@ -24,10 +24,10 @@
 
     const/4 p1, 0x0
 
-    .line 409
+    .line 411
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 410
+    .line 412
     iput-object p3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$InnerItem;->reaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     return-void
@@ -49,7 +49,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 416
+    .line 418
     const-class v2, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$InnerItem;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -60,11 +60,11 @@
 
     goto :goto_2
 
-    .line 417
+    .line 419
     :cond_1
     check-cast p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$InnerItem;
 
-    .line 418
+    .line 420
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -73,7 +73,7 @@
 
     if-nez v2, :cond_3
 
-    .line 419
+    .line 421
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$5$InnerItem;->reaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     if-eqz v2, :cond_2

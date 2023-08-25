@@ -100,6 +100,21 @@
     return-object v0
 .end method
 
+.method public static final isChatProfileEnabled()Ljava/lang/String;
+    .locals 2
+
+    .line 208
+    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
+
+    const-string v1, "isChatProfileEnabled"
+
+    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static final isChatSortingEnabledByDefault()Ljava/lang/String;
     .locals 2
 
@@ -208,7 +223,7 @@
 .method public static final isDialogsPremiumHintEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 208
+    .line 205
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isDialogsPremiumHintEnabled"
@@ -373,7 +388,7 @@
 .method public static final isMusicIntroShown()Ljava/lang/String;
     .locals 2
 
-    .line 184
+    .line 181
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "showMusicIntro"
@@ -388,7 +403,7 @@
 .method public static final isNewTelegramAuthorizationRulesRead()Ljava/lang/String;
     .locals 2
 
-    .line 205
+    .line 202
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "isNewTelegramAuthorizationRulesRead"
@@ -433,25 +448,10 @@
 .method public static final isPinnedPlayerNightThemeEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 181
-    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
-
-    const-string v1, "isPinnedPlayerNightTheme"
-
-    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static final isPinnedPlayerThemeOverridden()Ljava/lang/String;
-    .locals 2
-
     .line 178
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
-    const-string v1, "isPinnedPlayerThemeOverridden"
+    const-string v1, "isPinnedPlayerNightTheme"
 
     invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
 
@@ -688,7 +688,7 @@
 .method public static final isSuggestPremiumReactionsEmoji()Ljava/lang/String;
     .locals 2
 
-    .line 196
+    .line 193
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "suggestPremiumReactionsEmoji"
@@ -748,7 +748,7 @@
 .method public static final lastSelectedLanguages()Ljava/lang/String;
     .locals 2
 
-    .line 193
+    .line 190
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "lastSelectedLanguages"
@@ -782,6 +782,21 @@
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "promoSubscribeDialogShowCountLeft"
+
+    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static final selectedChatProfileDialogTypes()Ljava/lang/String;
+    .locals 2
+
+    .line 211
+    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
+
+    const-string v1, "selectedChatProfileDialogTypes"
 
     invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
 
@@ -853,7 +868,7 @@
 .method public static final selectedDrawerHolidayIconType()Ljava/lang/String;
     .locals 2
 
-    .line 202
+    .line 199
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedDrawerHolidayIconType"
@@ -913,10 +928,25 @@
 .method public static final selectedFilterTabsWidthMode()Ljava/lang/String;
     .locals 2
 
-    .line 199
+    .line 196
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "filterTabsWidthMode"
+
+    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static final selectedFormattingPanelType()Ljava/lang/String;
+    .locals 2
+
+    .line 214
+    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
+
+    const-string v1, "selectedFormattingPanelType"
 
     invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
 
@@ -958,7 +988,7 @@
 .method public static final selectedTemplatesMode()Ljava/lang/String;
     .locals 2
 
-    .line 187
+    .line 184
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesMode"
@@ -973,7 +1003,7 @@
 .method public static final selectedTemplatesSortingType()Ljava/lang/String;
     .locals 2
 
-    .line 190
+    .line 187
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesSortingType"
@@ -992,6 +1022,21 @@
     sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
 
     const-string v1, "videoVoiceCamera"
+
+    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static final showStoryFabEnableHintCountLeft()Ljava/lang/String;
+    .locals 2
+
+    .line 217
+    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
+
+    const-string v1, "showStoryFabEnableHintCountLeft"
 
     invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
 

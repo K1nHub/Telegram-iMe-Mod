@@ -418,6 +418,7 @@
     <string name="create_chat_template">Створити шаблон</string>
     <string name="create_folder_change_fab_section_description">Виберіть тип кнопки FAB, яка з’явиться в цій папці.</string>
     <string name="create_folder_change_fab_title">Змінити кнопку FAB</string>
+    <string name="cryptobox_details_balance">Баланс</string>
     <string name="currency_punkpanda">PUNKPANDA</string>
     <string name="currency_punkpanda_site">https://www.punkpandafarm.com/</string>
     <string name="currency_short_punkpanda">PPM</string>
@@ -1719,7 +1720,7 @@ iMe Wallet."</string>
     <string name="wallet_details_created">Підключений</string>
     <string name="wallet_details_info_bitcoin_description">Це ваш активний акаунт блокчейна Bitcoin.</string>
     <string name="wallet_details_info_bitcoin_title">Bitcoin</string>
-    <string name="wallet_details_info_evm_description">Це ваш активний обліковий запис EVM-сумісних блокчейнів, таких як Ethereum, BNB Chain, Polygon i Fantom.</string>
+    <string name="wallet_details_info_evm_description">Це ваш активний обліковий запис EVM-сумісних блокчейнів, таких як Ethereum, BNB Chain, Polygon, Fantom i Mantle.</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">Це ваш активний обліковий запис блокчейна The Open Network (TON).</string>
     <string name="wallet_details_info_ton_title">TON</string>

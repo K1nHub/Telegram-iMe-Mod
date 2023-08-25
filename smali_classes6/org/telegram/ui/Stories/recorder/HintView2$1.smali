@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Stories/recorder/HintView2$1;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/graphics/drawable/Drawable;
 .source "HintView2.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/recorder/HintView2;->bounceShow()V
+    value = Lorg/telegram/ui/Stories/recorder/HintView2;->setSelectorColor(I)Lorg/telegram/ui/Stories/recorder/HintView2;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,30 +22,59 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/HintView2;)V
     .locals 0
 
-    .line 361
+    .line 305
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/HintView2$1;->this$0:Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public draw(Landroid/graphics/Canvas;)V
+    .locals 2
+
+    .line 308
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 310
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/HintView2$1;->this$0:Lorg/telegram/ui/Stories/recorder/HintView2;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->access$000(Lorg/telegram/ui/Stories/recorder/HintView2;)Landroid/graphics/Path;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/HintView2$1;->this$0:Lorg/telegram/ui/Stories/recorder/HintView2;
+
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->access$100(Lorg/telegram/ui/Stories/recorder/HintView2;)Landroid/graphics/Paint;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 311
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    return-void
+.end method
+
+.method public getOpacity()I
     .locals 1
 
-    .line 364
-    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/HintView2$1;->this$0:Lorg/telegram/ui/Stories/recorder/HintView2;
+    const/4 v0, -0x2
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    return v0
+.end method
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->access$002(Lorg/telegram/ui/Stories/recorder/HintView2;F)F
+.method public setAlpha(I)V
+    .locals 0
 
-    .line 365
-    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/HintView2$1;->this$0:Lorg/telegram/ui/Stories/recorder/HintView2;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+.method public setColorFilter(Landroid/graphics/ColorFilter;)V
+    .locals 0
 
     return-void
 .end method

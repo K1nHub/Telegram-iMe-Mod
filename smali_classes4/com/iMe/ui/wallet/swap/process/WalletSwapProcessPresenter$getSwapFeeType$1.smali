@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->getSwapFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->getSwapFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 879
+    .line 901
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$getSwapFeeType$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -59,7 +59,7 @@
 .method public final invoke()V
     .locals 1
 
-    .line 879
+    .line 901
     iget-object v0, p0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter$getSwapFeeType$1;->this$0:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$chooseSwapFee(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessPresenter;)V

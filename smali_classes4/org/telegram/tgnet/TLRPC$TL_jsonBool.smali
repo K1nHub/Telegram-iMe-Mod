@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 3418
+    .line 3419
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$JSONValue;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 3424
+    .line 3425
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result p1
@@ -45,12 +45,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 3428
+    .line 3429
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_jsonBool;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3429
+    .line 3430
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_jsonBool;->value:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V

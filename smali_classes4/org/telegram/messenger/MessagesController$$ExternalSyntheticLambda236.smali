@@ -8,26 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$3:J
+.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+.field public final synthetic f$4:Landroid/os/Bundle;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZZJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/os/Bundle;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$1:Z
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$2:Z
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    iput-wide p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$3:J
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$4:Landroid/os/Bundle;
 
     return-void
 .end method
@@ -39,13 +43,15 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    iget-wide v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$3:J
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$bgTmji6PWxnHnR9gBv_yZVJZr4I(Lorg/telegram/messenger/MessagesController;ZZJ)V
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda236;->f$4:Landroid/os/Bundle;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$_YnEBzpT0f7OxH94_aOuCv0uG50(Lorg/telegram/messenger/MessagesController;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/os/Bundle;)V
 
     return-void
 .end method

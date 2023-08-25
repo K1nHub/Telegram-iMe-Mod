@@ -24,13 +24,13 @@
 .method private constructor <init>(I[Ljava/lang/Object;)V
     .locals 0
 
-    .line 370
+    .line 375
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 371
+    .line 376
     iput p1, p0, Lorg/telegram/messenger/NotificationCenter$DelayedPost;->id:I
 
-    .line 372
+    .line 377
     iput-object p2, p0, Lorg/telegram/messenger/NotificationCenter$DelayedPost;->args:[Ljava/lang/Object;
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(I[Ljava/lang/Object;Lorg/telegram/messenger/NotificationCenter$1;)V
     .locals 0
 
-    .line 368
+    .line 373
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/NotificationCenter$DelayedPost;-><init>(I[Ljava/lang/Object;)V
 
     return-void
@@ -48,7 +48,7 @@
 .method static synthetic access$100(Lorg/telegram/messenger/NotificationCenter$DelayedPost;)I
     .locals 0
 
-    .line 368
+    .line 373
     iget p0, p0, Lorg/telegram/messenger/NotificationCenter$DelayedPost;->id:I
 
     return p0
@@ -57,7 +57,7 @@
 .method static synthetic access$200(Lorg/telegram/messenger/NotificationCenter$DelayedPost;)[Ljava/lang/Object;
     .locals 0
 
-    .line 368
+    .line 373
     iget-object p0, p0, Lorg/telegram/messenger/NotificationCenter$DelayedPost;->args:[Ljava/lang/Object;
 
     return-object p0

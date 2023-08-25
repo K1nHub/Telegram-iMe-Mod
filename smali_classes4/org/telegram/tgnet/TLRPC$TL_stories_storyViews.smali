@@ -22,7 +22,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$TL_storyViews;",
+            "Lorg/telegram/tgnet/TLRPC$StoryViews;",
             ">;"
         }
     .end annotation
@@ -160,7 +160,7 @@
 
     move-result v6
 
-    invoke-static {p1, v6, p2}, Lorg/telegram/tgnet/TLRPC$TL_storyViews;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_storyViews;
+    invoke-static {p1, v6, p2}, Lorg/telegram/tgnet/TLRPC$StoryViews;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$StoryViews;
 
     move-result-object v6
 
@@ -272,9 +272,9 @@
 
     move-result-object v4
 
-    check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_storyViews;
+    check-cast v4, Lorg/telegram/tgnet/TLRPC$StoryViews;
 
-    invoke-virtual {v4, p1}, Lorg/telegram/tgnet/TLRPC$TL_storyViews;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+    invoke-virtual {v4, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     add-int/lit8 v3, v3, 0x1
 

@@ -253,7 +253,7 @@
     :try_start_1
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
-    const-string v2, "network"
+    const-string/jumbo v2, "network"
 
     const-wide/16 v3, 0x1
 
@@ -291,7 +291,7 @@
     .line 720
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
-    const-string v1, "network"
+    const-string/jumbo v1, "network"
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 

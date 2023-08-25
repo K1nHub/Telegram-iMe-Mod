@@ -29,11 +29,11 @@
 # instance fields
 .field private currentAmount:Ljava/math/BigDecimal;
 
-.field private currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+.field private currentStep:Lcom/iMe/model/staking/TransactionStep;
 
 .field private feeTokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-.field private feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+.field private feeType:Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
 .field private forcedAmountText:Ljava/lang/String;
 
@@ -272,9 +272,9 @@
     iput-object p4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     .line 74
-    sget-object p4, Lcom/iMe/model/staking/StakingTransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Loading;
+    sget-object p4, Lcom/iMe/model/staking/TransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/TransactionStep$Loading;
 
-    iput-object p4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iput-object p4, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     if-eqz p3, :cond_5
 
@@ -481,11 +481,11 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$onActionSuccess(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
+.method public static final synthetic access$onActionSuccess(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/TransactionStep;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Ljava/lang/String;)V
     .locals 0
 
     .line 46
-    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionSuccess(Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionSuccess(Lcom/iMe/model/staking/TransactionStep;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -508,11 +508,11 @@
     return-void
 .end method
 
-.method public static final synthetic access$setCurrentStep$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/StakingTransactionStep;)V
+.method public static final synthetic access$setCurrentStep$p(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/TransactionStep;)V
     .locals 0
 
     .line 46
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     return-void
 .end method
@@ -627,7 +627,7 @@
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -811,7 +811,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -920,7 +920,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1728,7 +1728,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1749,9 +1749,9 @@
     .locals 1
 
     .line 197
-    sget-object v0, Lcom/iMe/model/staking/StakingTransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Loading;
+    sget-object v0, Lcom/iMe/model/staking/TransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/TransactionStep$Loading;
 
-    iput-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iput-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     .line 198
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -1779,17 +1779,17 @@
     return-void
 .end method
 
-.method private final onActionSuccess(Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
+.method private final onActionSuccess(Lcom/iMe/model/staking/TransactionStep;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Ljava/lang/String;)V
     .locals 0
 
     .line 434
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->wrappedAction:Ljava/lang/String;
 
     .line 435
-    iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    iput-object p2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     .line 436
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     .line 437
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -1803,7 +1803,7 @@
     return-void
 .end method
 
-.method static synthetic onActionSuccess$default(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;ILjava/lang/Object;)V
+.method static synthetic onActionSuccess$default(Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/iMe/model/staking/TransactionStep;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Ljava/lang/String;ILjava/lang/Object;)V
     .locals 0
 
     and-int/lit8 p5, p4, 0x2
@@ -1821,7 +1821,7 @@
 
     .line 429
     :cond_1
-    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionSuccess(Lcom/iMe/model/staking/StakingTransactionStep;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionSuccess(Lcom/iMe/model/staking/TransactionStep;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1912,7 +1912,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1999,7 +1999,7 @@
 
     move-result-object p1
 
-    const-string/jumbo v0, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v0, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -2397,20 +2397,20 @@
     return v0
 .end method
 
-.method public final getCurrentStep()Lcom/iMe/model/staking/StakingTransactionStep;
+.method public final getCurrentStep()Lcom/iMe/model/staking/TransactionStep;
     .locals 1
 
     .line 74
-    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     return-object v0
 .end method
 
-.method public final getFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+.method public final getFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
     .locals 1
 
     .line 76
-    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     return-object v0
 .end method
@@ -2873,16 +2873,16 @@
     .locals 3
 
     .line 137
-    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     .line 138
-    instance-of v1, v0, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;
+    instance-of v1, v0, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;
 
     if-eqz v1, :cond_0
 
-    check-cast v0, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;
+    check-cast v0, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;
 
-    invoke-virtual {v0}, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;->getTokenTicker()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;->getTokenTicker()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2892,7 +2892,7 @@
 
     .line 139
     :cond_0
-    sget-object v1, Lcom/iMe/model/staking/StakingTransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Prepare;
+    sget-object v1, Lcom/iMe/model/staking/TransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/TransactionStep$Prepare;
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -2906,11 +2906,11 @@
 
     .line 140
     :cond_1
-    new-instance v1, Lcom/iMe/model/staking/StakingTransactionStep$Execute;
+    new-instance v1, Lcom/iMe/model/staking/TransactionStep$StakingExecute;
 
     iget v2, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->screenType:I
 
-    invoke-direct {v1, v2}, Lcom/iMe/model/staking/StakingTransactionStep$Execute;-><init>(I)V
+    invoke-direct {v1, v2}, Lcom/iMe/model/staking/TransactionStep$StakingExecute;-><init>(I)V
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -2924,7 +2924,7 @@
 
     .line 141
     :cond_2
-    sget-object v1, Lcom/iMe/model/staking/StakingTransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Loading;
+    sget-object v1, Lcom/iMe/model/staking/TransactionStep$Loading;->INSTANCE:Lcom/iMe/model/staking/TransactionStep$Loading;
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -2952,7 +2952,7 @@
 
     .line 142
     :cond_3
-    sget-object v1, Lcom/iMe/model/staking/StakingTransactionStep$RetryLoading;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$RetryLoading;
+    sget-object v1, Lcom/iMe/model/staking/TransactionStep$RetryLoading;->INSTANCE:Lcom/iMe/model/staking/TransactionStep$RetryLoading;
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -3024,21 +3024,21 @@
 
     .line 171
     :goto_2
-    iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
-    instance-of p1, p1, Lcom/iMe/model/staking/StakingTransactionStep$Execute;
+    instance-of p1, p1, Lcom/iMe/model/staking/TransactionStep$StakingExecute;
 
     if-eqz p1, :cond_2
 
     .line 172
-    sget-object p1, Lcom/iMe/model/staking/StakingTransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Prepare;
+    sget-object p1, Lcom/iMe/model/staking/TransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/TransactionStep$Prepare;
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     const/4 p1, 0x0
 
     .line 173
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->feeType:Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     .line 175
     :cond_2
@@ -3117,9 +3117,9 @@
     .locals 1
 
     .line 92
-    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
-    instance-of v0, v0, Lcom/iMe/model/staking/StakingTransactionStep$ApprovalNeeded;
+    instance-of v0, v0, Lcom/iMe/model/staking/TransactionStep$ApprovalNeeded;
 
     return v0
 .end method
@@ -3162,16 +3162,16 @@
     invoke-interface {p1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionView;->updateWithdrawalFee()V
 
     .line 160
-    iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iget-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
-    instance-of p1, p1, Lcom/iMe/model/staking/StakingTransactionStep$Execute;
+    instance-of p1, p1, Lcom/iMe/model/staking/TransactionStep$StakingExecute;
 
     if-eqz p1, :cond_0
 
     .line 161
-    sget-object p1, Lcom/iMe/model/staking/StakingTransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/StakingTransactionStep$Prepare;
+    sget-object p1, Lcom/iMe/model/staking/TransactionStep$Prepare;->INSTANCE:Lcom/iMe/model/staking/TransactionStep$Prepare;
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/StakingTransactionStep;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->currentStep:Lcom/iMe/model/staking/TransactionStep;
 
     .line 162
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->prepareAction()V

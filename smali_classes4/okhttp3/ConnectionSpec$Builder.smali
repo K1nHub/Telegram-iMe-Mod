@@ -142,7 +142,7 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -170,7 +170,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "no cipher suites for cleartext connections"
+    const-string/jumbo v0, "no cipher suites for cleartext connections"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -231,7 +231,7 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -257,7 +257,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "no cipher suites for cleartext connections"
+    const-string/jumbo v0, "no cipher suites for cleartext connections"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -285,7 +285,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "no TLS extensions for cleartext connections"
+    const-string/jumbo v0, "no TLS extensions for cleartext connections"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -332,7 +332,7 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -360,7 +360,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "no TLS versions for cleartext connections"
+    const-string/jumbo v0, "no TLS versions for cleartext connections"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -421,7 +421,7 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -447,7 +447,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "no TLS versions for cleartext connections"
+    const-string/jumbo v0, "no TLS versions for cleartext connections"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

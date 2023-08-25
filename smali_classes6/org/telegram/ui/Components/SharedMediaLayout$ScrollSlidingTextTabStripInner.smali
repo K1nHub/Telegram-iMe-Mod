@@ -26,15 +26,15 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 8306
+    .line 8311
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    .line 8307
+    .line 8312
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/4 p1, 0x0
 
-    .line 8303
+    .line 8308
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;->backgroundColor:I
 
     return-void
@@ -45,7 +45,7 @@
 .method protected drawBackground(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 8311
+    .line 8316
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->chatBlurEnabled()Z
 
     move-result v0
@@ -56,19 +56,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 8312
+    .line 8317
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;->backgroundPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
-    .line 8313
+    .line 8318
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 8315
+    .line 8320
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;->backgroundPaint:Landroid/graphics/Paint;
 
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 8316
+    .line 8321
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getMeasuredWidth()I
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 8317
+    .line 8322
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getY()F
@@ -109,10 +109,10 @@
 .method public setBackgroundColor(I)V
     .locals 0
 
-    .line 8323
+    .line 8328
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ScrollSlidingTextTabStripInner;->backgroundColor:I
 
-    .line 8324
+    .line 8329
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->invalidate()V
 
     return-void

@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AnimatedFileDrawable;)V
     .locals 0
 
-    .line 184
+    .line 190
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,24 +52,24 @@
 .method private synthetic lambda$run$0()V
     .locals 2
 
-    .line 198
+    .line 204
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheGenRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 199
+    .line 205
     invoke-static {}, Lorg/telegram/messenger/utils/BitmapsCache;->decrementTaskCounter()V
 
-    .line 200
+    .line 206
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheGenRunnable:Ljava/lang/Runnable;
 
-    .line 202
+    .line 208
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -77,10 +77,10 @@
 
     iput-boolean v1, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->generatingCache:Z
 
-    .line 203
+    .line 209
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$000(Lorg/telegram/ui/Components/AnimatedFileDrawable;)V
 
-    .line 204
+    .line 210
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$200(Lorg/telegram/ui/Components/AnimatedFileDrawable;)V
@@ -91,14 +91,14 @@
 .method private synthetic lambda$run$1()V
     .locals 1
 
-    .line 196
+    .line 202
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->bitmapsCache:Lorg/telegram/messenger/utils/BitmapsCache;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/utils/BitmapsCache;->createCache()V
 
-    .line 197
+    .line 203
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/AnimatedFileDrawable$2$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/AnimatedFileDrawable$2;)V
@@ -113,7 +113,7 @@
 .method public run()V
     .locals 3
 
-    .line 187
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Z
@@ -140,7 +140,7 @@
 
     if-nez v1, :cond_1
 
-    .line 188
+    .line 194
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -149,15 +149,15 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$602(Lorg/telegram/ui/Components/AnimatedFileDrawable;F)F
 
-    .line 189
+    .line 195
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->lottieCacheGenerateQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-nez v0, :cond_0
 
-    .line 190
+    .line 196
     invoke-static {}, Lorg/telegram/ui/Components/RLottieDrawable;->createCacheGenQueue()V
 
-    .line 192
+    .line 198
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -167,13 +167,13 @@
 
     const/4 v1, 0x0
 
-    .line 193
+    .line 199
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$102(Lorg/telegram/ui/Components/AnimatedFileDrawable;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 194
+    .line 200
     invoke-static {}, Lorg/telegram/messenger/utils/BitmapsCache;->incrementTaskCounter()V
 
-    .line 195
+    .line 201
     sget-object v0, Lorg/telegram/ui/Components/RLottieDrawable;->lottieCacheGenerateQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$2;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;

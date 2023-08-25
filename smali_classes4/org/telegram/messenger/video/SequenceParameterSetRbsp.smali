@@ -388,7 +388,7 @@
     invoke-virtual {v0, v2}, Lcom/googlecode/mp4parser/h264/read/CAVLCReader;->readBool(Ljava/lang/String;)Z
 
     :cond_6
-    const-string v2, "num_short_term_ref_pic_sets"
+    const-string/jumbo v2, "num_short_term_ref_pic_sets"
 
     .line 87
     invoke-virtual {v0, v2}, Lcom/googlecode/mp4parser/h264/read/CAVLCReader;->readUE(Ljava/lang/String;)I
@@ -407,7 +407,7 @@
 
     if-eqz v2, :cond_7
 
-    const-string v2, "num_long_term_ref_pics_sps"
+    const-string/jumbo v2, "num_long_term_ref_pics_sps"
 
     .line 93
     invoke-virtual {v0, v2}, Lcom/googlecode/mp4parser/h264/read/CAVLCReader;->readUE(Ljava/lang/String;)I
@@ -583,14 +583,14 @@
     goto :goto_1
 
     :cond_3
-    const-string v7, "num_negative_pics"
+    const-string/jumbo v7, "num_negative_pics"
 
     .line 130
     invoke-virtual {p2, v7}, Lcom/googlecode/mp4parser/h264/read/CAVLCReader;->readUE(Ljava/lang/String;)I
 
     move-result v7
 
-    const-string v8, "num_positive_pics"
+    const-string/jumbo v8, "num_positive_pics"
 
     invoke-virtual {p2, v8}, Lcom/googlecode/mp4parser/h264/read/CAVLCReader;->readUE(Ljava/lang/String;)I
 

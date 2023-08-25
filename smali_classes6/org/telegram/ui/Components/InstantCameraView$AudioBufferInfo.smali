@@ -32,24 +32,24 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 1755
+    .line 1754
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0xa
 
     new-array v1, v0, [Ljava/nio/ByteBuffer;
 
-    .line 1748
+    .line 1747
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->buffer:[Ljava/nio/ByteBuffer;
 
     new-array v1, v0, [J
 
-    .line 1749
+    .line 1748
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
 
     new-array v1, v0, [I
 
-    .line 1750
+    .line 1749
     iput-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->read:[I
 
     const/4 v1, 0x0
@@ -57,7 +57,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1757
+    .line 1756
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->buffer:[Ljava/nio/ByteBuffer;
 
     const/16 v3, 0x800
@@ -68,7 +68,7 @@
 
     aput-object v3, v2, v1
 
-    .line 1758
+    .line 1757
     iget-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->buffer:[Ljava/nio/ByteBuffer;
 
     aget-object v2, v2, v1

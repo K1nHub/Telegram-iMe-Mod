@@ -128,7 +128,7 @@
 
     move-result-object p0
 
-    const-string p1, "null cannot be cast to non-null type android.os.Handler"
+    const-string/jumbo p1, "null cannot be cast to non-null type android.os.Handler"
 
     invoke-static {p0, p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

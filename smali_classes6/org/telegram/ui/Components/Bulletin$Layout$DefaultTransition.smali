@@ -41,12 +41,12 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 876
+    .line 882
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0xff
 
-    .line 878
+    .line 884
     iput-wide v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition;->duration:J
 
     return-void
@@ -55,7 +55,7 @@
 .method private static synthetic lambda$animateEnter$0(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 907
+    .line 913
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result p1
@@ -72,7 +72,7 @@
 .method private static synthetic lambda$animateExit$1(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 935
+    .line 941
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result p1
@@ -102,7 +102,7 @@
         }
     .end annotation
 
-    .line 882
+    .line 888
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p5
@@ -113,7 +113,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 884
+    .line 890
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result p5
@@ -124,7 +124,7 @@
 
     invoke-interface {p4, p5}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 886
+    .line 892
     :cond_0
     sget-object p5, Lorg/telegram/ui/Components/Bulletin$Layout;->IN_OUT_OFFSET_Y2:Landroid/util/Property;
 
@@ -142,12 +142,12 @@
 
     move-result-object p5
 
-    .line 887
+    .line 893
     iget-wide v0, p0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition;->duration:J
 
     invoke-virtual {p5, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 888
+    .line 894
     sget-object v0, Lorg/telegram/ui/Components/Easings;->easeOutQuad:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p5, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
@@ -156,7 +156,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 890
+    .line 896
     :cond_1
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$1;
 
@@ -167,14 +167,14 @@
     :cond_2
     if-eqz p4, :cond_3
 
-    .line 907
+    .line 913
     new-instance p2, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p4, p1}, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda0;-><init>(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;)V
 
     invoke-virtual {p5, p2}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 909
+    .line 915
     :cond_3
     invoke-virtual {p5}, Landroid/animation/ObjectAnimator;->start()V
 
@@ -195,7 +195,7 @@
         }
     .end annotation
 
-    .line 914
+    .line 920
     sget-object p5, Lorg/telegram/ui/Components/Bulletin$Layout;->IN_OUT_OFFSET_Y2:Landroid/util/Property;
 
     const/4 v0, 0x1
@@ -218,10 +218,10 @@
 
     const-wide/16 v0, 0xaf
 
-    .line 915
+    .line 921
     invoke-virtual {p5, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 916
+    .line 922
     sget-object v0, Lorg/telegram/ui/Components/Easings;->easeInQuad:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p5, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
@@ -230,7 +230,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 918
+    .line 924
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$2;
 
@@ -241,14 +241,14 @@
     :cond_1
     if-eqz p4, :cond_2
 
-    .line 935
+    .line 941
     new-instance p2, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p4, p1}, Lorg/telegram/ui/Components/Bulletin$Layout$DefaultTransition$$ExternalSyntheticLambda1;-><init>(Landroidx/core/util/Consumer;Lorg/telegram/ui/Components/Bulletin$Layout;)V
 
     invoke-virtual {p5, p2}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 937
+    .line 943
     :cond_2
     invoke-virtual {p5}, Landroid/animation/ObjectAnimator;->start()V
 

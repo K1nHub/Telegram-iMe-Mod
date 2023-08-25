@@ -1525,7 +1525,7 @@
     :catchall_0
     move-exception v0
 
-    goto/16 :goto_5f
+    goto/16 :goto_60
 
     :cond_7
     :try_start_3
@@ -1564,7 +1564,7 @@
     :catchall_1
     move-exception v0
 
-    goto/16 :goto_5e
+    goto/16 :goto_5f
 
     .line 186
     :cond_8
@@ -1834,7 +1834,7 @@
 
     move v6, v12
 
-    goto/16 :goto_5d
+    goto/16 :goto_5e
 
     .line 233
     :cond_13
@@ -1909,13 +1909,13 @@
     const/4 v4, -0x1
 
     :goto_8
-    if-eqz v4, :cond_84
+    if-eqz v4, :cond_85
 
-    if-eq v4, v11, :cond_83
+    if-eq v4, v11, :cond_84
 
-    if-eq v4, v14, :cond_82
+    if-eq v4, v14, :cond_83
 
-    if-eq v4, v13, :cond_81
+    if-eq v4, v13, :cond_82
 
     :try_start_14
     const-string v4, "channel_id"
@@ -2031,7 +2031,7 @@
     :goto_b
     move-object v1, v0
 
-    goto/16 :goto_5d
+    goto/16 :goto_5e
 
     :cond_17
     move v6, v12
@@ -2176,7 +2176,7 @@
     :catchall_5
     move-exception v0
 
-    goto/16 :goto_59
+    goto/16 :goto_5a
 
     :cond_1a
     move-object/from16 v22, v15
@@ -2210,7 +2210,7 @@
 
     cmp-long v15, v4, v19
 
-    if-eqz v15, :cond_7e
+    if-eqz v15, :cond_7f
 
     move/from16 v23, v7
 
@@ -2363,7 +2363,7 @@
     :try_end_21
     .catchall {:try_start_21 .. :try_end_21} :catchall_5
 
-    goto/16 :goto_56
+    goto/16 :goto_57
 
     :cond_20
     move-wide/from16 v31, v28
@@ -2397,7 +2397,7 @@
     :try_end_23
     .catchall {:try_start_23 .. :try_end_23} :catchall_5
 
-    goto/16 :goto_56
+    goto/16 :goto_57
 
     :cond_21
     :try_start_24
@@ -2431,7 +2431,7 @@
     :try_end_25
     .catchall {:try_start_25 .. :try_end_25} :catchall_5
 
-    goto/16 :goto_56
+    goto/16 :goto_57
 
     :cond_22
     :try_start_26
@@ -2525,7 +2525,7 @@
     .line 366
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_7f
 
     .line 367
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2562,7 +2562,7 @@
     :try_end_27
     .catchall {:try_start_27 .. :try_end_27} :catchall_5
 
-    goto/16 :goto_56
+    goto/16 :goto_57
 
     :cond_24
     :try_start_28
@@ -2669,7 +2669,7 @@
     .line 384
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_7f
 
     .line 385
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2708,7 +2708,7 @@
     :try_end_29
     .catchall {:try_start_29 .. :try_end_29} :catchall_5
 
-    goto/16 :goto_56
+    goto/16 :goto_57
 
     .line 387
     :cond_26
@@ -2717,7 +2717,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_7e
+    if-nez v7, :cond_7f
 
     const-string v7, "msg_id"
 
@@ -2981,7 +2981,7 @@
     const/16 v27, 0x0
 
     :goto_1a
-    if-eqz v27, :cond_7e
+    if-eqz v27, :cond_7f
 
     move/from16 v27, v7
 
@@ -3071,7 +3071,7 @@
     :catchall_6
     move-exception v0
 
-    goto/16 :goto_55
+    goto/16 :goto_56
 
     :cond_34
     const/4 v12, 0x0
@@ -3351,7 +3351,7 @@
     :try_end_3d
     .catchall {:try_start_3d .. :try_end_3d} :catchall_7
 
-    if-nez v9, :cond_6d
+    if-nez v9, :cond_6e
 
     :try_start_3e
     invoke-virtual {v8, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -3360,7 +3360,7 @@
 
     if-eqz v9, :cond_40
 
-    goto/16 :goto_46
+    goto/16 :goto_47
 
     .line 477
     :cond_40
@@ -5205,7 +5205,7 @@
     :try_start_3f
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    goto/16 :goto_44
+    goto/16 :goto_45
 
     :pswitch_0
     move/from16 v7, v29
@@ -5214,7 +5214,7 @@
 
     move-wide/from16 v54, v49
 
-    goto/16 :goto_45
+    goto/16 :goto_46
 
     :pswitch_1
     const-string v3, "YouHaveNewMessage"
@@ -5247,7 +5247,7 @@
 
     move-wide/from16 v54, v49
 
-    goto/16 :goto_3e
+    goto/16 :goto_3f
 
     :pswitch_2
     if-lez v24, :cond_44
@@ -5287,7 +5287,7 @@
 
     move-wide/from16 v54, v49
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
     :cond_44
     move/from16 v3, v29
@@ -7023,7 +7023,7 @@
     :goto_31
     move/from16 v3, v27
 
-    goto/16 :goto_4a
+    goto/16 :goto_4b
 
     :pswitch_14
     move/from16 v3, v29
@@ -7322,7 +7322,7 @@
 
     move v15, v7
 
-    goto/16 :goto_3d
+    goto/16 :goto_3e
 
     :pswitch_19
     move-object/from16 v4, v39
@@ -7356,7 +7356,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_1a
     move-object/from16 v4, v39
@@ -7390,7 +7390,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_1b
     move-object/from16 v4, v39
@@ -7424,7 +7424,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_1c
     move-object/from16 v4, v39
@@ -7458,7 +7458,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_1d
     move-object/from16 v4, v39
@@ -7492,7 +7492,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_1e
     move-object/from16 v4, v39
@@ -7504,29 +7504,45 @@
     const-string v3, "NotificationGroupKickMember"
 
     .line 888
-    sget v5, Lorg/telegram/messenger/R$string;->NotificationGroupKickMember:I
+    sget v11, Lorg/telegram/messenger/R$string;->NotificationGroupKickMember:I
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    const/4 v12, 0x1
+
+    aget-object v15, v6, v12
+
+    aput-object v15, v5, v12
+
+    array-length v12, v6
 
     const/4 v9, 0x2
 
-    new-array v9, v9, [Ljava/lang/Object;
+    if-gt v12, v9, :cond_69
 
-    const/4 v11, 0x0
+    const-string v6, ""
 
-    aget-object v12, v6, v11
+    goto :goto_33
 
-    aput-object v12, v9, v11
+    :cond_69
+    aget-object v6, v6, v9
 
-    const/4 v11, 0x1
+    :goto_33
+    aput-object v6, v5, v9
 
-    aget-object v6, v6, v11
-
-    aput-object v6, v9, v11
-
-    invoke-static {v3, v5, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v11, v5}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_1f
     move-object/from16 v4, v39
@@ -7560,7 +7576,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_20
     move-object/from16 v4, v39
@@ -7594,7 +7610,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_21
     move-object/from16 v4, v39
@@ -7634,7 +7650,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_22
     move-object/from16 v4, v39
@@ -7668,7 +7684,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_33
+    goto/16 :goto_34
 
     :pswitch_23
     move-object/from16 v4, v39
@@ -7708,7 +7724,7 @@
 
     move-result-object v3
 
-    goto :goto_33
+    goto :goto_34
 
     :pswitch_24
     move-object/from16 v4, v39
@@ -7742,7 +7758,7 @@
 
     move-result-object v3
 
-    goto :goto_33
+    goto :goto_34
 
     :pswitch_25
     move-object/from16 v4, v39
@@ -7776,7 +7792,7 @@
 
     move-result-object v3
 
-    goto :goto_33
+    goto :goto_34
 
     :pswitch_26
     move-object/from16 v4, v39
@@ -7810,7 +7826,7 @@
 
     move-result-object v3
 
-    :goto_33
+    :goto_34
     move-object/from16 v21, v3
 
     move-object/from16 v39, v4
@@ -7821,7 +7837,7 @@
 
     move/from16 v7, v29
 
-    goto/16 :goto_48
+    goto/16 :goto_49
 
     :pswitch_27
     move-object/from16 v4, v39
@@ -7870,7 +7886,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     :pswitch_28
     move-object/from16 v4, v39
@@ -7916,7 +7932,7 @@
 
     move-result-object v3
 
-    goto :goto_33
+    goto :goto_34
 
     :pswitch_29
     move-object/from16 v4, v39
@@ -7965,7 +7981,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     :pswitch_2a
     move-object/from16 v4, v39
@@ -8008,7 +8024,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     :pswitch_2b
     move-object/from16 v4, v39
@@ -8051,7 +8067,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     :pswitch_2c
     move-object/from16 v4, v39
@@ -8094,7 +8110,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     :pswitch_2d
     move-object/from16 v4, v39
@@ -8143,7 +8159,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_34
+    goto/16 :goto_35
 
     :pswitch_2e
     move-object/from16 v4, v39
@@ -8192,7 +8208,7 @@
 
     move-result-object v3
 
-    goto :goto_34
+    goto :goto_35
 
     :pswitch_2f
     move-object/from16 v4, v39
@@ -8241,7 +8257,7 @@
 
     move-result-object v3
 
-    goto :goto_34
+    goto :goto_35
 
     :pswitch_30
     move-object/from16 v4, v39
@@ -8284,14 +8300,14 @@
 
     move-result-object v3
 
-    :goto_34
+    :goto_35
     move-object/from16 v39, v4
 
     move-object/from16 v21, v6
 
     move v15, v7
 
-    goto/16 :goto_3a
+    goto/16 :goto_3b
 
     :pswitch_31
     move-object/from16 v11, v39
@@ -8305,7 +8321,7 @@
 
     const/4 v9, 0x2
 
-    if-le v3, v9, :cond_69
+    if-le v3, v9, :cond_6a
 
     aget-object v3, v6, v9
 
@@ -8313,7 +8329,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_69
+    if-nez v3, :cond_6a
 
     const-string v3, "NotificationMessageGroupStickerEmoji"
 
@@ -8369,9 +8385,9 @@
 
     move-result-object v6
 
-    goto/16 :goto_36
+    goto/16 :goto_37
 
-    :cond_69
+    :cond_6a
     const-string v3, "NotificationMessageGroupSticker"
 
     .line 800
@@ -8420,7 +8436,7 @@
 
     move-result-object v6
 
-    goto/16 :goto_36
+    goto/16 :goto_37
 
     :pswitch_32
     move-object/from16 v11, v39
@@ -8463,7 +8479,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_35
+    goto/16 :goto_36
 
     :pswitch_33
     move-object/from16 v11, v39
@@ -8506,7 +8522,7 @@
 
     move-result-object v3
 
-    goto :goto_35
+    goto :goto_36
 
     :pswitch_34
     move-object/from16 v11, v39
@@ -8549,7 +8565,7 @@
 
     move-result-object v3
 
-    goto :goto_35
+    goto :goto_36
 
     :pswitch_35
     move-object/from16 v11, v39
@@ -8592,7 +8608,7 @@
 
     move-result-object v3
 
-    goto :goto_35
+    goto :goto_36
 
     :pswitch_36
     move-object/from16 v11, v39
@@ -8629,12 +8645,12 @@
 
     move-result-object v3
 
-    :goto_35
+    :goto_36
     move-object/from16 v21, v6
 
     move v15, v7
 
-    goto/16 :goto_39
+    goto/16 :goto_3a
 
     :pswitch_37
     move-object/from16 v11, v39
@@ -8677,7 +8693,7 @@
 
     move-result-object v3
 
-    goto :goto_35
+    goto :goto_36
 
     :pswitch_38
     move-object/from16 v11, v39
@@ -8720,19 +8736,19 @@
     .line 762
     aget-object v6, v6, v9
 
-    :goto_36
+    :goto_37
     move-object/from16 v21, v3
 
     move v15, v7
 
-    :goto_37
+    :goto_38
     move-object/from16 v39, v11
 
     move/from16 v3, v27
 
     move/from16 v7, v29
 
-    goto/16 :goto_49
+    goto/16 :goto_4a
 
     :pswitch_39
     move-object/from16 v11, v39
@@ -8764,7 +8780,7 @@
 
     move v15, v7
 
-    goto/16 :goto_3c
+    goto/16 :goto_3d
 
     :pswitch_3a
     move-object/from16 v11, v39
@@ -8814,7 +8830,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_3b
+    goto/16 :goto_3c
 
     :pswitch_3b
     move-object/from16 v11, v39
@@ -8864,7 +8880,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_3b
+    goto/16 :goto_3c
 
     :pswitch_3c
     move-object/from16 v11, v39
@@ -8914,7 +8930,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_3b
+    goto/16 :goto_3c
 
     :pswitch_3d
     move-object/from16 v11, v39
@@ -8962,7 +8978,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_3b
+    goto/16 :goto_3c
 
     :pswitch_3e
     move-object/from16 v11, v39
@@ -9016,7 +9032,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_3b
+    goto/16 :goto_3c
 
     :pswitch_3f
     move-object/from16 v11, v39
@@ -9053,7 +9069,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_40
     move-object/from16 v11, v39
@@ -9090,7 +9106,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_41
     move-object/from16 v11, v39
@@ -9127,7 +9143,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_42
     move-object/from16 v11, v39
@@ -9164,7 +9180,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_43
     move-object/from16 v11, v39
@@ -9207,7 +9223,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_44
     move-object/from16 v11, v39
@@ -9250,7 +9266,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_45
     move-object/from16 v11, v39
@@ -9293,7 +9309,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_46
     move-object/from16 v11, v39
@@ -9330,7 +9346,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_47
     move-object/from16 v11, v39
@@ -9344,7 +9360,7 @@
 
     const/4 v5, 0x1
 
-    if-le v3, v5, :cond_6a
+    if-le v3, v5, :cond_6b
 
     aget-object v3, v6, v5
 
@@ -9352,7 +9368,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_6a
+    if-nez v3, :cond_6b
 
     const-string v3, "ChannelMessageStickerEmoji"
 
@@ -9404,9 +9420,9 @@
 
     move-object/from16 v21, v3
 
-    goto/16 :goto_37
+    goto/16 :goto_38
 
-    :cond_6a
+    :cond_6b
     const-string v3, "ChannelMessageSticker"
 
     .line 685
@@ -9433,7 +9449,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_48
     move-object/from16 v11, v39
@@ -9470,7 +9486,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_49
     move-object/from16 v11, v39
@@ -9507,7 +9523,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_38
+    goto/16 :goto_39
 
     :pswitch_4a
     move-object/from16 v11, v39
@@ -9544,7 +9560,7 @@
 
     move-result-object v3
 
-    goto :goto_38
+    goto :goto_39
 
     :pswitch_4b
     move-object/from16 v11, v39
@@ -9581,7 +9597,7 @@
 
     move-result-object v3
 
-    goto :goto_38
+    goto :goto_39
 
     :pswitch_4c
     move-object/from16 v11, v39
@@ -9618,7 +9634,7 @@
 
     move-result-object v3
 
-    goto :goto_38
+    goto :goto_39
 
     :pswitch_4d
     move-object/from16 v11, v39
@@ -9655,16 +9671,16 @@
 
     move-result-object v3
 
-    :goto_38
+    :goto_39
     move-object/from16 v21, v6
 
-    :goto_39
+    :goto_3a
     move-object/from16 v39, v11
 
-    :goto_3a
+    :goto_3b
     move/from16 v7, v29
 
-    goto/16 :goto_42
+    goto/16 :goto_43
 
     :pswitch_4e
     move-object/from16 v11, v39
@@ -9692,23 +9708,23 @@
 
     move-result-object v3
 
-    :goto_3b
+    :goto_3c
     move-object/from16 v21, v3
 
-    :goto_3c
+    :goto_3d
     move-object/from16 v39, v11
 
-    :goto_3d
+    :goto_3e
     move/from16 v3, v27
 
     move/from16 v7, v29
 
-    :goto_3e
+    :goto_3f
     const/4 v6, 0x0
 
     const/16 v24, 0x1
 
-    goto/16 :goto_4a
+    goto/16 :goto_4b
 
     :pswitch_4f
     move/from16 v7, v29
@@ -9760,7 +9776,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_3f
+    goto/16 :goto_40
 
     :pswitch_50
     move/from16 v7, v29
@@ -9810,7 +9826,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_3f
+    goto/16 :goto_40
 
     :pswitch_51
     move/from16 v7, v29
@@ -9860,7 +9876,7 @@
 
     move-result-object v3
 
-    goto :goto_3f
+    goto :goto_40
 
     :pswitch_52
     move/from16 v7, v29
@@ -9908,7 +9924,7 @@
 
     move-result-object v3
 
-    goto :goto_3f
+    goto :goto_40
 
     :pswitch_53
     move-object/from16 v12, v28
@@ -9960,12 +9976,12 @@
 
     move-result-object v3
 
-    :goto_3f
+    :goto_40
     move-object/from16 v21, v3
 
     move/from16 v3, v27
 
-    goto/16 :goto_3e
+    goto/16 :goto_3f
 
     :pswitch_54
     move/from16 v7, v29
@@ -10008,7 +10024,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_55
     move/from16 v7, v29
@@ -10048,7 +10064,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_47
+    goto/16 :goto_48
 
     :pswitch_56
     move/from16 v7, v29
@@ -10091,7 +10107,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_57
     move/from16 v7, v29
@@ -10128,7 +10144,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_58
     move/from16 v7, v29
@@ -10165,7 +10181,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_59
     move/from16 v7, v29
@@ -10202,7 +10218,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_5a
     move/from16 v7, v29
@@ -10245,7 +10261,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_5b
     move/from16 v7, v29
@@ -10288,7 +10304,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_5c
     move/from16 v7, v29
@@ -10331,7 +10347,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_5d
     move/from16 v7, v29
@@ -10368,7 +10384,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_5e
     move/from16 v7, v29
@@ -10382,7 +10398,7 @@
 
     const/4 v5, 0x1
 
-    if-le v3, v5, :cond_6b
+    if-le v3, v5, :cond_6c
 
     aget-object v3, v6, v5
 
@@ -10390,7 +10406,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_6b
+    if-nez v3, :cond_6c
 
     const-string v3, "NotificationMessageStickerEmoji"
 
@@ -10440,9 +10456,9 @@
 
     move-result-object v6
 
-    goto/16 :goto_40
+    goto/16 :goto_41
 
-    :cond_6b
+    :cond_6c
     const-string v3, "NotificationMessageSticker"
 
     .line 565
@@ -10469,7 +10485,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_5f
     move/from16 v7, v29
@@ -10506,7 +10522,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_60
     move/from16 v7, v29
@@ -10543,7 +10559,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_61
     move/from16 v7, v29
@@ -10571,7 +10587,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_47
+    goto/16 :goto_48
 
     :pswitch_62
     move/from16 v7, v29
@@ -10608,7 +10624,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_63
     move/from16 v7, v29
@@ -10645,7 +10661,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_64
     move/from16 v7, v29
@@ -10682,7 +10698,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_65
     move/from16 v7, v29
@@ -10719,7 +10735,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_66
     move/from16 v7, v29
@@ -10737,7 +10753,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_47
+    goto/16 :goto_48
 
     :pswitch_67
     move/from16 v7, v29
@@ -10774,7 +10790,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_68
     move/from16 v7, v29
@@ -10811,7 +10827,7 @@
 
     move-result-object v3
 
-    goto/16 :goto_41
+    goto/16 :goto_42
 
     :pswitch_69
     move/from16 v7, v29
@@ -10848,12 +10864,12 @@
     .line 508
     aget-object v6, v6, v9
 
-    :goto_40
+    :goto_41
     move-object/from16 v21, v3
 
     move/from16 v3, v27
 
-    goto/16 :goto_49
+    goto/16 :goto_4a
 
     :pswitch_6a
     move/from16 v7, v29
@@ -10896,7 +10912,7 @@
 
     move-result-object v3
 
-    goto :goto_41
+    goto :goto_42
 
     :pswitch_6b
     move/from16 v7, v29
@@ -10933,7 +10949,7 @@
 
     move-result-object v3
 
-    goto :goto_41
+    goto :goto_42
 
     :pswitch_6c
     move/from16 v7, v29
@@ -10970,10 +10986,10 @@
 
     move-result-object v3
 
-    :goto_41
+    :goto_42
     move-object/from16 v21, v6
 
-    :goto_42
+    :goto_43
     const/16 v24, 0x0
 
     move-object v6, v3
@@ -11000,7 +11016,7 @@
 
     move-result-object v3
 
-    goto :goto_43
+    goto :goto_44
 
     :pswitch_6e
     move/from16 v7, v29
@@ -11016,15 +11032,15 @@
 
     move-result-object v3
 
-    :goto_43
+    :goto_44
     move-object/from16 v21, v3
 
     move/from16 v3, v37
 
-    goto :goto_48
+    goto :goto_49
 
-    :goto_44
-    if-eqz v3, :cond_6c
+    :goto_45
+    if-eqz v3, :cond_6d
 
     .line 1181
     new-instance v3, Ljava/lang/StringBuilder;
@@ -11045,18 +11061,18 @@
     :try_end_3f
     .catchall {:try_start_3f .. :try_end_3f} :catchall_6
 
-    :cond_6c
-    :goto_45
+    :cond_6d
+    :goto_46
     move/from16 v3, v27
 
     const/4 v6, 0x0
 
     const/16 v21, 0x0
 
-    goto :goto_49
+    goto :goto_4a
 
-    :cond_6d
-    :goto_46
+    :cond_6e
+    :goto_47
     move-object/from16 v51, v3
 
     move-wide/from16 v54, v4
@@ -11077,24 +11093,24 @@
 
     move-result-object v3
 
-    :goto_47
+    :goto_48
     move-object/from16 v21, v3
 
     move/from16 v3, v27
 
-    :goto_48
+    :goto_49
     const/4 v6, 0x0
 
-    :goto_49
+    :goto_4a
     const/16 v24, 0x0
 
     .line 1188
-    :goto_4a
+    :goto_4b
     sget-boolean v4, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
     :try_end_40
     .catchall {:try_start_40 .. :try_end_40} :catchall_7
 
-    if-eqz v4, :cond_6e
+    if-eqz v4, :cond_6f
 
     .line 1189
     :try_start_41
@@ -11134,13 +11150,13 @@
     :try_end_41
     .catchall {:try_start_41 .. :try_end_41} :catchall_6
 
-    goto :goto_4b
+    goto :goto_4c
 
-    :cond_6e
+    :cond_6f
     move-wide/from16 v11, v54
 
-    :goto_4b
-    if-eqz v21, :cond_7f
+    :goto_4c
+    if-eqz v21, :cond_80
 
     .line 1192
     :try_start_42
@@ -11161,15 +11177,15 @@
     :try_start_43
     iput-wide v8, v4, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
 
-    if-eqz v6, :cond_6f
+    if-eqz v6, :cond_70
 
-    goto :goto_4c
+    goto :goto_4d
 
-    :cond_6f
+    :cond_70
     move-object/from16 v6, v21
 
     .line 1195
-    :goto_4c
+    :goto_4d
     iput-object v6, v4, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     const-wide/16 v5, 0x3e8
@@ -11181,7 +11197,7 @@
 
     iput v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
-    if-eqz v10, :cond_70
+    if-eqz v10, :cond_71
 
     .line 1198
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageActionPinMessage;
@@ -11190,8 +11206,8 @@
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
-    :cond_70
-    if-eqz v48, :cond_71
+    :cond_71
+    if-eqz v48, :cond_72
 
     .line 1201
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
@@ -11203,14 +11219,14 @@
     iput v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     .line 1203
-    :cond_71
+    :cond_72
     iput-wide v11, v4, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const-wide/16 v5, 0x0
 
     cmp-long v8, v13, v5
 
-    if-eqz v8, :cond_72
+    if-eqz v8, :cond_73
 
     .line 1205
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
@@ -11224,14 +11240,14 @@
 
     move-wide/from16 v8, v25
 
-    goto :goto_4d
+    goto :goto_4e
 
-    :cond_72
+    :cond_73
     const-wide/16 v5, 0x0
 
     cmp-long v8, v25, v5
 
-    if-eqz v8, :cond_73
+    if-eqz v8, :cond_74
 
     .line 1208
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
@@ -11245,9 +11261,9 @@
     .line 1209
     iput-wide v8, v5, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    goto :goto_4d
+    goto :goto_4e
 
-    :cond_73
+    :cond_74
     move-wide/from16 v8, v25
 
     .line 1211
@@ -11263,7 +11279,7 @@
     iput-wide v11, v5, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
     .line 1214
-    :goto_4d
+    :goto_4e
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     or-int/lit16 v5, v5, 0x100
@@ -11274,7 +11290,7 @@
 
     cmp-long v11, v40, v5
 
-    if-eqz v11, :cond_74
+    if-eqz v11, :cond_75
 
     .line 1216
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
@@ -11286,14 +11302,14 @@
     .line 1217
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    goto :goto_4e
+    goto :goto_4f
 
-    :cond_74
+    :cond_75
     const-wide/16 v5, 0x0
 
     cmp-long v5, v1, v5
 
-    if-eqz v5, :cond_75
+    if-eqz v5, :cond_76
 
     .line 1219
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
@@ -11305,10 +11321,10 @@
     .line 1220
     iput-wide v1, v5, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
-    goto :goto_4e
+    goto :goto_4f
 
-    :cond_75
-    if-eqz v42, :cond_76
+    :cond_76
+    if-eqz v42, :cond_77
 
     .line 1222
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
@@ -11322,32 +11338,32 @@
     .line 1223
     iput-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    goto :goto_4e
+    goto :goto_4f
 
     .line 1225
-    :cond_76
+    :cond_77
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iput-object v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    :goto_4e
-    if-nez v44, :cond_78
+    :goto_4f
+    if-nez v44, :cond_79
 
-    if-eqz v10, :cond_77
-
-    goto :goto_4f
-
-    :cond_77
-    const/4 v1, 0x0
+    if-eqz v10, :cond_78
 
     goto :goto_50
 
     :cond_78
-    :goto_4f
+    const/4 v1, 0x0
+
+    goto :goto_51
+
+    :cond_79
+    :goto_50
     const/4 v1, 0x1
 
     .line 1227
-    :goto_50
+    :goto_51
     iput-boolean v1, v4, Lorg/telegram/tgnet/TLRPC$Message;->mentioned:Z
 
     .line 1228
@@ -11377,7 +11393,7 @@
 
     invoke-direct/range {v18 .. v27}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZ)V
 
-    if-eqz v7, :cond_79
+    if-eqz v7, :cond_7a
 
     .line 1233
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -11400,7 +11416,7 @@
     .line 1235
     iput v7, v2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->reply_to_top_id:I
 
-    :cond_79
+    :cond_7a
     move-object/from16 v2, v51
 
     .line 1237
@@ -11408,7 +11424,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_7b
+    if-nez v2, :cond_7c
 
     move-object/from16 v2, v16
 
@@ -11416,20 +11432,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7a
-
-    goto :goto_51
-
-    :cond_7a
-    const/4 v2, 0x0
+    if-eqz v2, :cond_7b
 
     goto :goto_52
 
     :cond_7b
-    :goto_51
+    const/4 v2, 0x0
+
+    goto :goto_53
+
+    :cond_7c
+    :goto_52
     const/4 v2, 0x1
 
-    :goto_52
+    :goto_53
     iput-boolean v2, v1, Lorg/telegram/messenger/MessageObject;->isReactionPush:Z
 
     move-object/from16 v2, v38
@@ -11439,7 +11455,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_7d
+    if-nez v2, :cond_7e
 
     move-object/from16 v2, v39
 
@@ -11447,22 +11463,22 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7c
-
-    goto :goto_53
-
-    :cond_7c
-    const/4 v4, 0x0
+    if-eqz v4, :cond_7d
 
     goto :goto_54
 
     :cond_7d
+    const/4 v4, 0x0
+
+    goto :goto_55
+
+    :cond_7e
     move-object/from16 v2, v39
 
-    :goto_53
+    :goto_54
     const/4 v4, 0x1
 
-    :goto_54
+    :goto_55
     iput-boolean v4, v1, Lorg/telegram/messenger/MessageObject;->isStoryPush:Z
 
     const-string v4, "MESSAGE_STORY_MENTION"
@@ -11502,29 +11518,29 @@
 
     const/4 v9, 0x0
 
-    goto :goto_57
+    goto :goto_58
 
     :catchall_7
     move-exception v0
 
     move-object v3, v8
 
-    :goto_55
+    :goto_56
     move-object v1, v0
 
-    goto :goto_58
-
-    :cond_7e
-    :goto_56
-    move/from16 v36, v6
+    goto :goto_59
 
     :cond_7f
+    :goto_57
+    move/from16 v36, v6
+
+    :cond_80
     move-object v3, v8
 
     const/4 v9, 0x1
 
-    :goto_57
-    if-eqz v9, :cond_80
+    :goto_58
+    if-eqz v9, :cond_81
 
     .line 1250
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
@@ -11532,7 +11548,7 @@
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     .line 1253
-    :cond_80
+    :cond_81
     invoke-static/range {v36 .. v36}, Lorg/telegram/tgnet/ConnectionsManager;->onInternalPushReceived(I)V
 
     .line 1254
@@ -11544,7 +11560,7 @@
     :try_end_43
     .catchall {:try_start_43 .. :try_end_43} :catchall_8
 
-    goto/16 :goto_63
+    goto/16 :goto_64
 
     :catchall_8
     move-exception v0
@@ -11553,10 +11569,10 @@
 
     move-object v8, v3
 
-    :goto_58
+    :goto_59
     move-object/from16 v7, v30
 
-    goto :goto_5a
+    goto :goto_5b
 
     :catchall_9
     move-exception v0
@@ -11565,10 +11581,10 @@
 
     move-object v3, v8
 
-    :goto_59
+    :goto_5a
     move-object v1, v0
 
-    goto/16 :goto_5c
+    goto/16 :goto_5d
 
     :catchall_a
     move-exception v0
@@ -11592,12 +11608,12 @@
 
     move-object v1, v0
 
-    :goto_5a
+    :goto_5b
     move/from16 v6, v36
 
-    goto/16 :goto_5d
+    goto/16 :goto_5e
 
-    :cond_81
+    :cond_82
     move-object/from16 v30, v7
 
     move-object v3, v8
@@ -11631,9 +11647,9 @@
 
     move/from16 v15, v36
 
-    goto/16 :goto_5b
+    goto/16 :goto_5c
 
-    :cond_82
+    :cond_83
     move-object/from16 v30, v7
 
     move-object v3, v8
@@ -11654,7 +11670,7 @@
 
     return-void
 
-    :cond_83
+    :cond_84
     move-object/from16 v30, v7
 
     move-object v3, v8
@@ -11741,7 +11757,7 @@
 
     return-void
 
-    :cond_84
+    :cond_85
     move-object/from16 v30, v7
 
     move-object v3, v8
@@ -11774,7 +11790,7 @@
 
     const/4 v5, 0x2
 
-    if-eq v4, v5, :cond_85
+    if-eq v4, v5, :cond_86
 
     .line 239
     sget-object v1, Lorg/telegram/messenger/PushListenerController;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
@@ -11783,7 +11799,7 @@
 
     return-void
 
-    :cond_85
+    :cond_86
     const/4 v4, 0x0
 
     .line 242
@@ -11824,17 +11840,17 @@
     :catchall_d
     move-exception v0
 
-    :goto_5b
+    :goto_5c
     move-object v1, v0
 
     move-object v8, v3
 
     move v6, v15
 
-    :goto_5c
+    :goto_5d
     move-object/from16 v7, v30
 
-    goto :goto_5d
+    goto :goto_5e
 
     :catchall_e
     move-exception v0
@@ -11849,10 +11865,10 @@
 
     move v6, v15
 
-    :goto_5d
+    :goto_5e
     const/4 v2, -0x1
 
-    goto :goto_61
+    goto :goto_62
 
     :catchall_f
     move-exception v0
@@ -11861,20 +11877,6 @@
 
     move-object v3, v8
 
-    :goto_5e
-    move-object v1, v0
-
-    const/4 v2, -0x1
-
-    const/4 v6, -0x1
-
-    goto :goto_61
-
-    :catchall_10
-    move-exception v0
-
-    move-object/from16 v30, v7
-
     :goto_5f
     move-object v1, v0
 
@@ -11882,7 +11884,21 @@
 
     const/4 v6, -0x1
 
-    goto :goto_60
+    goto :goto_62
+
+    :catchall_10
+    move-exception v0
+
+    move-object/from16 v30, v7
+
+    :goto_60
+    move-object v1, v0
+
+    const/4 v2, -0x1
+
+    const/4 v6, -0x1
+
+    goto :goto_61
 
     :catchall_11
     move-exception v0
@@ -11895,11 +11911,11 @@
 
     const/4 v7, 0x0
 
-    :goto_60
+    :goto_61
     const/4 v8, 0x0
 
-    :goto_61
-    if-eq v6, v2, :cond_86
+    :goto_62
+    if-eq v6, v2, :cond_87
 
     .line 1257
     invoke-static {v6}, Lorg/telegram/tgnet/ConnectionsManager;->onInternalPushReceived(I)V
@@ -11916,17 +11932,17 @@
 
     invoke-virtual {v2}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    goto :goto_62
+    goto :goto_63
 
     .line 1261
-    :cond_86
+    :cond_87
     invoke-static {}, Lorg/telegram/messenger/PushListenerController;->onDecryptError()V
 
     .line 1263
-    :goto_62
+    :goto_63
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v2, :cond_87
+    if-eqz v2, :cond_88
 
     .line 1264
     new-instance v2, Ljava/lang/StringBuilder;
@@ -11952,11 +11968,13 @@
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     .line 1266
-    :cond_87
+    :cond_88
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :goto_63
+    :goto_64
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

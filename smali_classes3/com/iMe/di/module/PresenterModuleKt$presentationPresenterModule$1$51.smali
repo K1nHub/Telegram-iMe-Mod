@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$51\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n129#2,5:553\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$51\n*L\n426#1:553,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$51\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n129#2,5:864\n129#2,5:869\n129#2,5:874\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$51\n*L\n605#1:864,5\n606#1:869,5\n607#1:874,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 426
+    .line 604
     new-instance p2, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;
 
     .line 133
@@ -90,6 +90,7 @@
 
     check-cast v0, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
+    .line 133
     const-class v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -102,6 +103,7 @@
 
     check-cast v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
+    .line 133
     const-class v3, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -114,7 +116,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 426
+    .line 604
     invoke-direct {p2, v0, v2, p1}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsPresenter;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
 
     return-object p2
@@ -123,7 +125,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 426
+    .line 603
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

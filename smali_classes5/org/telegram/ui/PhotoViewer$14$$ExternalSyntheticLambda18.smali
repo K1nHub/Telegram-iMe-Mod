@@ -2,44 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer$14;
-
-.field public final synthetic f$1:Lorg/telegram/messenger/UserConfig;
-
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer$14;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/PhotoViewer$14;
-
-    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/messenger/UserConfig;
-
-    iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 3
+.method public final run(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/PhotoViewer$14;
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$0:Ljava/lang/Runnable;
 
-    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/messenger/UserConfig;
+    check-cast p1, Landroid/net/Uri;
 
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda18;->f$2:Lorg/telegram/tgnet/TLRPC$Photo;
-
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$iO5fi3EobZToWF2maOxG4qYH6yo(Lorg/telegram/ui/PhotoViewer$14;Lorg/telegram/messenger/UserConfig;Lorg/telegram/tgnet/TLRPC$Photo;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$e9yXQrDk82IGQqsob2H5eRRfqOY(Ljava/lang/Runnable;Landroid/net/Uri;)V
 
     return-void
 .end method

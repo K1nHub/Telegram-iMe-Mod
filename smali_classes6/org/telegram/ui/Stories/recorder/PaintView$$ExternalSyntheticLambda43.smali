@@ -2,40 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback2;
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;->INSTANCE:Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
-
-    check-cast p1, Landroid/graphics/Bitmap;
-
-    check-cast p2, Ljava/lang/Float;
-
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
-
-    move-result p2
-
-    invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;->drawBlurBitmap(Landroid/graphics/Bitmap;F)V
+    invoke-static {}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$H7s6lJjQ7Ni4b6mQJx55lb061tY()V
 
     return-void
 .end method

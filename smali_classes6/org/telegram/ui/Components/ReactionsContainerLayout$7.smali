@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 461
+    .line 463
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$7;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
 
-    .line 464
+    .line 466
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
@@ -44,14 +44,14 @@
 
     if-nez p2, :cond_0
 
-    .line 466
+    .line 468
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
 
     iput p4, p1, Landroid/graphics/Rect;->left:I
 
-    .line 467
+    .line 469
     :cond_0
     iget-object p4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$7;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -67,7 +67,7 @@
 
     if-ne p2, p4, :cond_1
 
-    .line 468
+    .line 470
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

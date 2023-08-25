@@ -55,7 +55,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v1, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -747,7 +747,7 @@
     :cond_1
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string p2, "null cannot be cast to non-null type java.security.cert.X509Certificate"
+    const-string/jumbo p2, "null cannot be cast to non-null type java.security.cert.X509Certificate"
 
     invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
     .locals 0
 
-    .line 1235
+    .line 1232
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 1238
+    .line 1235
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -44,12 +44,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 1243
+    .line 1240
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 1244
+    .line 1241
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

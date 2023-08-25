@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$15\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$15\n*L\n120#1:158,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$15\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,168:1\n129#2,5:169\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$15\n*L\n122#1:169,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 120
+    .line 122
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/storage/data/network/api/own/AccountLevelApi;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 120
+    .line 122
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 120
+    .line 122
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 120
+    .line 122
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -149,7 +149,7 @@
 
     move-result-object p1
 
-    .line 120
+    .line 122
     move-object v3, p1
 
     check-cast v3, Lcom/iMe/storage/domain/gateway/TelegramGateway;
@@ -166,7 +166,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 119
+    .line 121
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -411,44 +411,6 @@
     return-object p1
 .end method
 
-.method public final isDonationsEnabled(J)Lio/reactivex/Observable;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(J)",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/Boolean;",
-            ">;>;"
-        }
-    .end annotation
-
-    .line 33
-    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->donationsRepository:Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;
-
-    .line 34
-    invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/donations/DonationsRepository;->isDonationsEnabled(J)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    .line 35
-    iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string p2, "donationsRepository\n    \u2026(schedulersProvider.io())"
-
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p1
-.end method
-
 .method public final sendDonation(JLcom/iMe/storage/domain/model/crypto/send/TransferArgs;)Lio/reactivex/Observable;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

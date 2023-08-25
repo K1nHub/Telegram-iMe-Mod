@@ -24,7 +24,7 @@
 
     const/4 v0, 0x0
 
-    .line 12
+    .line 16
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/crypto/swap/SwapUiState;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$PrepareSwap;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
@@ -37,7 +37,7 @@
 .method public final getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 12
+    .line 16
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/swap/SwapUiState$PrepareSwap;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0

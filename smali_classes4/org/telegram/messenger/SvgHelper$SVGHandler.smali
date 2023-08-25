@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field private alphaOnly:Z
+
 .field private bitmap:Landroid/graphics/Bitmap;
 
 .field private boundsMode:Z
@@ -59,15 +61,15 @@
 .method private constructor <init>(IILjava/lang/Integer;ZF)V
     .locals 3
 
-    .line 1120
+    .line 1127
     invoke-direct {p0}, Lorg/xml/sax/helpers/DefaultHandler;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1109
+    .line 1115
     iput v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->scale:F
 
-    .line 1110
+    .line 1116
     new-instance v1, Landroid/graphics/Paint;
 
     const/4 v2, 0x1
@@ -76,50 +78,50 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    .line 1111
+    .line 1117
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rect:Landroid/graphics/RectF;
 
-    .line 1112
+    .line 1118
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rectTmp:Landroid/graphics/RectF;
 
-    .line 1114
+    .line 1120
     iput v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalScale:F
 
     const/4 v0, 0x0
 
-    .line 1116
+    .line 1122
     iput-boolean v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushed:Z
 
-    .line 1118
+    .line 1124
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
-    .line 1121
+    .line 1128
     iput p5, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalScale:F
 
-    .line 1122
+    .line 1129
     iput p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->desiredWidth:I
 
-    .line 1123
+    .line 1130
     iput p2, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->desiredHeight:I
 
-    .line 1124
+    .line 1131
     iput-object p3, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paintColor:Ljava/lang/Integer;
 
     if-eqz p4, :cond_0
 
-    .line 1126
+    .line 1133
     new-instance p1, Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     invoke-direct {p1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;-><init>()V
@@ -133,21 +135,30 @@
 .method synthetic constructor <init>(IILjava/lang/Integer;ZFLorg/telegram/messenger/SvgHelper$1;)V
     .locals 0
 
-    .line 1102
+    .line 1108
     invoke-direct/range {p0 .. p5}, Lorg/telegram/messenger/SvgHelper$SVGHandler;-><init>(IILjava/lang/Integer;ZF)V
 
     return-void
 .end method
 
+.method static synthetic access$102(Lorg/telegram/messenger/SvgHelper$SVGHandler;Z)Z
+    .locals 0
+
+    .line 1108
+    iput-boolean p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->alphaOnly:Z
+
+    return p1
+.end method
+
 .method private doColor(Lorg/telegram/messenger/SvgHelper$Properties;Ljava/lang/Integer;Z)V
     .locals 1
 
-    .line 1202
+    .line 1209
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paintColor:Ljava/lang/Integer;
 
     if-eqz v0, :cond_0
 
-    .line 1203
+    .line 1210
     iget-object p2, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -161,7 +172,7 @@
     :cond_0
     const v0, 0xffffff
 
-    .line 1205
+    .line 1212
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
@@ -172,7 +183,7 @@
 
     or-int/2addr p2, v0
 
-    .line 1206
+    .line 1213
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setColor(I)V
@@ -180,7 +191,7 @@
     :goto_0
     const-string/jumbo p2, "opacity"
 
-    .line 1208
+    .line 1215
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/SvgHelper$Properties;->getFloat(Ljava/lang/String;)Ljava/lang/Float;
 
     move-result-object p2
@@ -196,7 +207,7 @@
     :cond_1
     const-string/jumbo p2, "stroke-opacity"
 
-    .line 1210
+    .line 1217
     :goto_1
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/SvgHelper$Properties;->getFloat(Ljava/lang/String;)Ljava/lang/Float;
 
@@ -205,7 +216,7 @@
     :cond_2
     if-nez p2, :cond_3
 
-    .line 1213
+    .line 1220
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     const/16 p2, 0xff
@@ -214,7 +225,7 @@
 
     goto :goto_2
 
-    .line 1215
+    .line 1222
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
@@ -239,12 +250,12 @@
 
     const-string v0, "display"
 
-    .line 1141
+    .line 1148
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "none"
+    const-string/jumbo v1, "none"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -259,7 +270,7 @@
     :cond_0
     const-string v0, "fill"
 
-    .line 1144
+    .line 1151
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -270,7 +281,7 @@
 
     const-string/jumbo v4, "url(#"
 
-    .line 1145
+    .line 1152
     invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
@@ -279,7 +290,7 @@
 
     const/4 p1, 0x5
 
-    .line 1146
+    .line 1153
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -290,7 +301,7 @@
 
     return v1
 
-    .line 1149
+    .line 1156
     :cond_1
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getHex(Ljava/lang/String;)Ljava/lang/Integer;
 
@@ -298,10 +309,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 1151
+    .line 1158
     invoke-direct {p0, p1, v2, v3}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doColor(Lorg/telegram/messenger/SvgHelper$Properties;Ljava/lang/Integer;Z)V
 
-    .line 1152
+    .line 1159
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
@@ -310,7 +321,7 @@
 
     return v3
 
-    .line 1154
+    .line 1161
     :cond_2
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -326,19 +337,19 @@
 
     if-nez p1, :cond_4
 
-    .line 1155
+    .line 1162
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 1156
+    .line 1163
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paintColor:Ljava/lang/Integer;
 
     if-eqz p1, :cond_3
 
-    .line 1157
+    .line 1164
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -349,7 +360,7 @@
 
     goto :goto_0
 
-    .line 1159
+    .line 1166
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
@@ -369,12 +380,12 @@
 
     const-string v0, "display"
 
-    .line 1168
+    .line 1175
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "none"
+    const-string/jumbo v1, "none"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -389,26 +400,26 @@
     :cond_0
     const-string/jumbo v0, "stroke"
 
-    .line 1171
+    .line 1178
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getHex(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
     if-eqz v0, :cond_8
 
-    .line 1173
+    .line 1180
     invoke-direct {p0, p1, v0, v1}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doColor(Lorg/telegram/messenger/SvgHelper$Properties;Ljava/lang/Integer;Z)V
 
     const-string/jumbo v0, "stroke-width"
 
-    .line 1174
+    .line 1181
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getFloat(Ljava/lang/String;)Ljava/lang/Float;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 1177
+    .line 1184
     iget-object v1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
@@ -420,21 +431,21 @@
     :cond_1
     const-string/jumbo v0, "stroke-linecap"
 
-    .line 1179
+    .line 1186
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string/jumbo v1, "round"
 
-    .line 1180
+    .line 1187
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1181
+    .line 1188
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
@@ -446,14 +457,14 @@
     :cond_2
     const-string/jumbo v2, "square"
 
-    .line 1182
+    .line 1189
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 1183
+    .line 1190
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Cap;->SQUARE:Landroid/graphics/Paint$Cap;
@@ -465,14 +476,14 @@
     :cond_3
     const-string v2, "butt"
 
-    .line 1184
+    .line 1191
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 1185
+    .line 1192
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
@@ -483,21 +494,21 @@
     :goto_0
     const-string/jumbo v0, "stroke-linejoin"
 
-    .line 1187
+    .line 1194
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/SvgHelper$Properties;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     const-string v0, "miter"
 
-    .line 1188
+    .line 1195
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 1189
+    .line 1196
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
@@ -506,7 +517,7 @@
 
     goto :goto_1
 
-    .line 1190
+    .line 1197
     :cond_5
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -514,7 +525,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 1191
+    .line 1198
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
@@ -526,21 +537,21 @@
     :cond_6
     const-string v0, "bevel"
 
-    .line 1192
+    .line 1199
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_7
 
-    .line 1193
+    .line 1200
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Join;->BEVEL:Landroid/graphics/Paint$Join;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    .line 1195
+    .line 1202
     :cond_7
     :goto_1
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
@@ -560,24 +571,24 @@
 .method private popTransform()V
     .locals 2
 
-    .line 1237
+    .line 1244
     iget-boolean v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushed:Z
 
     if-eqz v0, :cond_1
 
-    .line 1238
+    .line 1245
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 1239
-    invoke-static {v0, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$600(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;)V
+    .line 1246
+    invoke-static {v0, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$700(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 1241
+    .line 1248
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
@@ -593,8 +604,8 @@
 
     const-string/jumbo v0, "transform"
 
-    .line 1223
-    invoke-static {v0, p1}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
+    .line 1230
+    invoke-static {v0, p1}, Lorg/telegram/messenger/SvgHelper;->access$300(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -607,34 +618,34 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1224
+    .line 1231
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushed:Z
 
     if-eqz v0, :cond_2
 
-    .line 1226
-    invoke-static {p1}, Lorg/telegram/messenger/SvgHelper;->access$500(Ljava/lang/String;)Landroid/graphics/Matrix;
+    .line 1233
+    invoke-static {p1}, Lorg/telegram/messenger/SvgHelper;->access$600(Ljava/lang/String;)Landroid/graphics/Matrix;
 
     move-result-object p1
 
-    .line 1227
+    .line 1234
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 1228
-    invoke-static {v0, p1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$600(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;)V
+    .line 1235
+    invoke-static {v0, p1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$700(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;)V
 
     goto :goto_1
 
-    .line 1230
+    .line 1237
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v0}, Landroid/graphics/Canvas;->save()I
 
-    .line 1231
+    .line 1238
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
@@ -649,12 +660,12 @@
 .method public characters([CII)V
     .locals 1
 
-    .line 1482
+    .line 1489
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->styles:Ljava/lang/StringBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1483
+    .line 1490
     invoke-virtual {v0, p1, p2, p3}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     :cond_0
@@ -670,7 +681,7 @@
 .method public endElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 6
 
-    .line 1489
+    .line 1496
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
@@ -754,13 +765,13 @@
 
     goto :goto_3
 
-    .line 1491
+    .line 1498
     :pswitch_0
     iget-object p1, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->styles:Ljava/lang/StringBuilder;
 
     if-eqz p1, :cond_8
 
-    .line 1492
+    .line 1499
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -773,7 +784,7 @@
 
     move p2, v0
 
-    .line 1493
+    .line 1500
     :goto_1
     array-length v1, p1
 
@@ -781,7 +792,7 @@
 
     if-ge p2, v1, :cond_7
 
-    .line 1494
+    .line 1501
     aget-object v1, p1, p2
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -804,7 +815,7 @@
 
     aput-object v1, p1, p2
 
-    .line 1495
+    .line 1502
     aget-object v1, p1, p2
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -825,7 +836,7 @@
 
     goto :goto_2
 
-    .line 1498
+    .line 1505
     :cond_4
     aget-object v1, p1, p2
 
@@ -839,7 +850,7 @@
 
     goto :goto_2
 
-    .line 1502
+    .line 1509
     :cond_5
     aget-object v3, p1, p2
 
@@ -851,7 +862,7 @@
 
     move-result-object v3
 
-    .line 1503
+    .line 1510
     aget-object v4, p1, p2
 
     add-int/lit8 v1, v1, 0x1
@@ -860,7 +871,7 @@
 
     move-result-object v1
 
-    .line 1504
+    .line 1511
     iget-object v4, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
     new-instance v5, Lorg/telegram/messenger/SvgHelper$StyleSet;
@@ -875,13 +886,13 @@
 
     goto :goto_1
 
-    .line 1506
+    .line 1513
     :cond_7
     iput-object v2, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->styles:Ljava/lang/StringBuilder;
 
     goto :goto_3
 
-    .line 1514
+    .line 1521
     :pswitch_1
     iput-boolean v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->boundsMode:Z
 
@@ -909,7 +920,7 @@
 .method public getBitmap()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 1520
+    .line 1527
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->bitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -918,7 +929,7 @@
 .method public getDrawable()Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 1
 
-    .line 1524
+    .line 1531
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     return-object v0
@@ -939,7 +950,7 @@
 
     move-object/from16 v2, p4
 
-    .line 1248
+    .line 1255
     iget-boolean v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->boundsMode:Z
 
     const-string/jumbo v4, "style"
@@ -954,7 +965,7 @@
 
     return-void
 
-    .line 1251
+    .line 1258
     :cond_0
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->hashCode()I
 
@@ -1181,9 +1192,9 @@
 
     packed-switch v3, :pswitch_data_0
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    .line 1295
+    .line 1302
     :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1191,19 +1202,19 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->styles:Ljava/lang/StringBuilder;
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :pswitch_1
     const-string/jumbo v1, "x"
 
-    .line 1303
-    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1310
+    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v1
 
     if-nez v1, :cond_d
 
-    .line 1305
+    .line 1312
     invoke-static {v14}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
@@ -1211,59 +1222,59 @@
     :cond_d
     const-string/jumbo v3, "y"
 
-    .line 1307
-    invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1314
+    invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v3
 
     if-nez v3, :cond_e
 
-    .line 1309
+    .line 1316
     invoke-static {v14}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v3
 
-    .line 1311
+    .line 1318
     :cond_e
-    invoke-static {v13, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    invoke-static {v13, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v5
 
-    .line 1312
-    invoke-static {v12, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1319
+    invoke-static {v12, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v6
 
-    .line 1313
-    invoke-static {v4, v2, v15}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;Ljava/lang/Float;)Ljava/lang/Float;
+    .line 1320
+    invoke-static {v4, v2, v15}, Lorg/telegram/messenger/SvgHelper;->access$900(Ljava/lang/String;Lorg/xml/sax/Attributes;Ljava/lang/Float;)Ljava/lang/Float;
 
     move-result-object v4
 
-    .line 1314
+    .line 1321
     invoke-direct {v0, v2}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushTransform(Lorg/xml/sax/Attributes;)V
 
-    .line 1315
+    .line 1322
     new-instance v7, Lorg/telegram/messenger/SvgHelper$Properties;
 
     iget-object v8, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
     invoke-direct {v7, v2, v8, v15}, Lorg/telegram/messenger/SvgHelper$Properties;-><init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;Lorg/telegram/messenger/SvgHelper$1;)V
 
-    .line 1316
+    .line 1323
     invoke-direct {v0, v7}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doFill(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
     move-result v2
 
     if-eqz v2, :cond_12
 
-    .line 1317
+    .line 1324
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v2, :cond_10
 
     if-eqz v4, :cond_f
 
-    .line 1319
+    .line 1326
     new-instance v8, Lorg/telegram/messenger/SvgHelper$RoundRect;
 
     new-instance v9, Landroid/graphics/RectF;
@@ -1306,11 +1317,11 @@
 
     iget-object v9, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v8, v9}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v8, v9}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto/16 :goto_1
 
-    .line 1321
+    .line 1328
     :cond_f
     new-instance v8, Landroid/graphics/RectF;
 
@@ -1346,14 +1357,14 @@
 
     iget-object v9, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v8, v9}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v8, v9}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto :goto_1
 
     :cond_10
     if-eqz v4, :cond_11
 
-    .line 1325
+    .line 1332
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -1386,7 +1397,7 @@
 
     invoke-virtual {v2, v8, v9, v10, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1326
+    .line 1333
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     iget-object v8, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rectTmp:Landroid/graphics/RectF;
@@ -1405,7 +1416,7 @@
 
     goto :goto_1
 
-    .line 1328
+    .line 1335
     :cond_11
     iget-object v12, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
@@ -1443,7 +1454,7 @@
 
     invoke-virtual/range {v12 .. v17}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1332
+    .line 1339
     :cond_12
     :goto_1
     invoke-direct {v0, v7}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
@@ -1452,14 +1463,14 @@
 
     if-eqz v2, :cond_16
 
-    .line 1333
+    .line 1340
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v2, :cond_14
 
     if-eqz v4, :cond_13
 
-    .line 1335
+    .line 1342
     new-instance v7, Lorg/telegram/messenger/SvgHelper$RoundRect;
 
     new-instance v8, Landroid/graphics/RectF;
@@ -1502,11 +1513,11 @@
 
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v7, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v7, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto/16 :goto_2
 
-    .line 1337
+    .line 1344
     :cond_13
     new-instance v4, Landroid/graphics/RectF;
 
@@ -1542,14 +1553,14 @@
 
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v4, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v4, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto :goto_2
 
     :cond_14
     if-eqz v4, :cond_15
 
-    .line 1341
+    .line 1348
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -1582,7 +1593,7 @@
 
     invoke-virtual {v2, v7, v8, v1, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1342
+    .line 1349
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rectTmp:Landroid/graphics/RectF;
@@ -1601,7 +1612,7 @@
 
     goto :goto_2
 
-    .line 1344
+    .line 1351
     :cond_15
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
@@ -1639,18 +1650,18 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1348
+    .line 1355
     :cond_16
     :goto_2
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->popTransform()V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :pswitch_2
     const-string v1, "d"
 
-    .line 1457
-    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
+    .line 1464
+    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$300(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1658,36 +1669,36 @@
 
     move-result-object v1
 
-    .line 1458
+    .line 1465
     invoke-direct {v0, v2}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushTransform(Lorg/xml/sax/Attributes;)V
 
-    .line 1459
+    .line 1466
     new-instance v3, Lorg/telegram/messenger/SvgHelper$Properties;
 
     iget-object v4, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
     invoke-direct {v3, v2, v4, v15}, Lorg/telegram/messenger/SvgHelper$Properties;-><init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;Lorg/telegram/messenger/SvgHelper$1;)V
 
-    .line 1460
+    .line 1467
     invoke-direct {v0, v3}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doFill(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
     move-result v2
 
     if-eqz v2, :cond_18
 
-    .line 1461
+    .line 1468
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v2, :cond_17
 
-    .line 1462
+    .line 1469
     iget-object v4, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v1, v4}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v1, v4}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto :goto_3
 
-    .line 1464
+    .line 1471
     :cond_17
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
@@ -1695,7 +1706,7 @@
 
     invoke-virtual {v2, v1, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1467
+    .line 1474
     :cond_18
     :goto_3
     invoke-direct {v0, v3}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
@@ -1704,19 +1715,19 @@
 
     if-eqz v2, :cond_1a
 
-    .line 1468
+    .line 1475
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v2, :cond_19
 
-    .line 1469
+    .line 1476
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v1, v3}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v1, v3}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto :goto_4
 
-    .line 1471
+    .line 1478
     :cond_19
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
@@ -1724,65 +1735,65 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1474
+    .line 1481
     :cond_1a
     :goto_4
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->popTransform()V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :pswitch_3
     const-string/jumbo v1, "x1"
 
-    .line 1352
-    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1359
+    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v1
 
     const-string/jumbo v3, "x2"
 
-    .line 1353
-    invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1360
+    invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v3
 
     const-string/jumbo v4, "y1"
 
-    .line 1354
-    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1361
+    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v4
 
     const-string/jumbo v5, "y2"
 
-    .line 1355
-    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1362
+    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v5
 
-    .line 1356
+    .line 1363
     new-instance v6, Lorg/telegram/messenger/SvgHelper$Properties;
 
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
     invoke-direct {v6, v2, v7, v15}, Lorg/telegram/messenger/SvgHelper$Properties;-><init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;Lorg/telegram/messenger/SvgHelper$1;)V
 
-    .line 1357
+    .line 1364
     invoke-direct {v0, v6}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_32
+    if-eqz v6, :cond_33
 
-    .line 1358
+    .line 1365
     invoke-direct {v0, v2}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushTransform(Lorg/xml/sax/Attributes;)V
 
-    .line 1359
+    .line 1366
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     if-eqz v2, :cond_1b
 
-    .line 1360
+    .line 1367
     new-instance v6, Lorg/telegram/messenger/SvgHelper$Line;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -1805,11 +1816,11 @@
 
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v6, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v6, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto :goto_5
 
-    .line 1362
+    .line 1369
     :cond_1b
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
@@ -1833,26 +1844,26 @@
 
     invoke-virtual/range {v7 .. v12}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 1364
+    .line 1371
     :goto_5
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->popTransform()V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    .line 1292
+    .line 1299
     :pswitch_4
     iput-boolean v10, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->boundsMode:Z
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    .line 1253
+    .line 1260
     :pswitch_5
-    invoke-static {v13, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    invoke-static {v13, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v1
 
-    .line 1254
-    invoke-static {v12, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1261
+    invoke-static {v12, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v3
 
@@ -1863,8 +1874,8 @@
     :cond_1c
     const-string/jumbo v4, "viewBox"
 
-    .line 1256
-    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
+    .line 1263
+    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$300(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1872,12 +1883,12 @@
 
     const-string v1, " "
 
-    .line 1258
+    .line 1265
     invoke-virtual {v2, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1259
+    .line 1266
     aget-object v2, v1, v9
 
     invoke-static {v2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -1888,7 +1899,7 @@
 
     move-result-object v2
 
-    .line 1260
+    .line 1267
     aget-object v1, v1, v6
 
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -1906,7 +1917,7 @@
 
     if-nez v3, :cond_1f
 
-    .line 1264
+    .line 1271
     :cond_1e
     iget v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->desiredWidth:I
 
@@ -1916,7 +1927,7 @@
 
     move-result-object v1
 
-    .line 1265
+    .line 1272
     iget v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->desiredHeight:I
 
     int-to-float v2, v2
@@ -1925,7 +1936,7 @@
 
     move-result-object v3
 
-    .line 1267
+    .line 1274
     :cond_1f
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
@@ -1939,7 +1950,7 @@
 
     double-to-int v1, v1
 
-    .line 1268
+    .line 1275
     invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
 
     move-result v2
@@ -1958,7 +1969,7 @@
 
     goto :goto_6
 
-    .line 1272
+    .line 1279
     :cond_20
     iget v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->desiredWidth:I
 
@@ -1980,7 +1991,7 @@
 
     div-float/2addr v4, v2
 
-    .line 1273
+    .line 1280
     invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
@@ -1997,34 +2008,44 @@
 
     goto :goto_7
 
-    .line 1270
+    .line 1277
     :cond_21
     :goto_6
     iget v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->desiredWidth:I
 
-    .line 1271
+    .line 1278
     iget v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->desiredHeight:I
 
-    .line 1277
+    .line 1284
     :cond_22
     :goto_7
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_24
 
-    .line 1278
+    .line 1285
+    iget-boolean v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->alphaOnly:Z
+
+    if-eqz v3, :cond_23
+
+    sget-object v3, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
+
+    goto :goto_8
+
+    :cond_23
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
+    :goto_8
     invoke-static {v1, v2, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 1279
+    .line 1286
     invoke-virtual {v1, v8}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 1280
+    .line 1287
     new-instance v1, Landroid/graphics/Canvas;
 
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->bitmap:Landroid/graphics/Bitmap;
@@ -2033,14 +2054,14 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
-    .line 1281
+    .line 1288
     iget v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->scale:F
 
     cmpl-float v3, v2, v14
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_33
 
-    .line 1282
+    .line 1289
     iget v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalScale:F
 
     mul-float v4, v3, v2
@@ -2049,22 +2070,22 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Canvas;->scale(FF)V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    .line 1285
-    :cond_23
+    .line 1292
+    :cond_24
     iput v1, v3, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->width:I
 
-    .line 1286
+    .line 1293
     iput v2, v3, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->height:I
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :pswitch_6
     const-string v1, "id"
 
-    .line 1298
-    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
+    .line 1305
+    invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$300(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -2074,51 +2095,51 @@
 
     move-result v1
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_33
 
-    .line 1299
+    .line 1306
     iput-boolean v10, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->boundsMode:Z
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :pswitch_7
     const-string/jumbo v3, "points"
 
-    .line 1422
-    invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$1100(Ljava/lang/String;Lorg/xml/sax/Attributes;)Lorg/telegram/messenger/SvgHelper$NumberParse;
+    .line 1429
+    invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$1200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Lorg/telegram/messenger/SvgHelper$NumberParse;
 
     move-result-object v3
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_33
 
-    .line 1424
+    .line 1431
     new-instance v4, Landroid/graphics/Path;
 
     invoke-direct {v4}, Landroid/graphics/Path;-><init>()V
 
-    .line 1425
-    invoke-static {v3}, Lorg/telegram/messenger/SvgHelper$NumberParse;->access$100(Lorg/telegram/messenger/SvgHelper$NumberParse;)Ljava/util/ArrayList;
+    .line 1432
+    invoke-static {v3}, Lorg/telegram/messenger/SvgHelper$NumberParse;->access$200(Lorg/telegram/messenger/SvgHelper$NumberParse;)Ljava/util/ArrayList;
 
     move-result-object v3
 
-    .line 1426
+    .line 1433
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    if-le v5, v10, :cond_32
+    if-le v5, v10, :cond_33
 
-    .line 1427
+    .line 1434
     invoke-direct {v0, v2}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushTransform(Lorg/xml/sax/Attributes;)V
 
-    .line 1428
+    .line 1435
     new-instance v5, Lorg/telegram/messenger/SvgHelper$Properties;
 
     iget-object v6, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
     invoke-direct {v5, v2, v6, v15}, Lorg/telegram/messenger/SvgHelper$Properties;-><init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;Lorg/telegram/messenger/SvgHelper$1;)V
 
-    .line 1429
+    .line 1436
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2141,15 +2162,15 @@
 
     invoke-virtual {v4, v2, v6}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 1430
-    :goto_8
+    .line 1437
+    :goto_9
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v9, v2, :cond_24
+    if-ge v9, v2, :cond_25
 
-    .line 1431
+    .line 1438
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2162,7 +2183,7 @@
 
     add-int/lit8 v6, v9, 0x1
 
-    .line 1432
+    .line 1439
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -2173,75 +2194,46 @@
 
     move-result v6
 
-    .line 1433
+    .line 1440
     invoke-virtual {v4, v2, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
     add-int/lit8 v9, v9, 0x2
 
-    goto :goto_8
+    goto :goto_9
 
-    .line 1435
-    :cond_24
+    .line 1442
+    :cond_25
     invoke-virtual {v1, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_26
 
-    .line 1436
+    .line 1443
     invoke-virtual {v4}, Landroid/graphics/Path;->close()V
 
-    .line 1438
-    :cond_25
+    .line 1445
+    :cond_26
     invoke-direct {v0, v5}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doFill(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_27
-
-    .line 1439
-    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
-
-    if-eqz v1, :cond_26
-
-    .line 1440
-    iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
-
-    invoke-static {v1, v4, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
-
-    goto :goto_9
-
-    .line 1442
-    :cond_26
-    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
-
-    iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
-
-    invoke-virtual {v1, v4, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
-
-    .line 1445
-    :cond_27
-    :goto_9
-    invoke-direct {v0, v5}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_28
 
     .line 1446
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_27
 
     .line 1447
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v1, v4, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v1, v4, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto :goto_a
 
     .line 1449
-    :cond_28
+    :cond_27
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
@@ -2249,59 +2241,88 @@
     invoke-virtual {v1, v4, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 1452
-    :cond_29
+    :cond_28
     :goto_a
+    invoke-direct {v0, v5}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2a
+
+    .line 1453
+    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
+    if-eqz v1, :cond_29
+
+    .line 1454
+    iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
+
+    invoke-static {v1, v4, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+
+    goto :goto_b
+
+    .line 1456
+    :cond_29
+    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
+
+    iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v4, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 1459
+    :cond_2a
+    :goto_b
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->popTransform()V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    .line 1369
+    .line 1376
     :pswitch_8
-    invoke-static {v11, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    invoke-static {v11, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v1
 
-    .line 1370
-    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1377
+    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v3
 
     const-string/jumbo v4, "r"
 
-    .line 1371
-    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1378
+    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v4
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_33
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_33
 
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_33
 
-    .line 1373
+    .line 1380
     invoke-direct {v0, v2}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushTransform(Lorg/xml/sax/Attributes;)V
 
-    .line 1374
+    .line 1381
     new-instance v5, Lorg/telegram/messenger/SvgHelper$Properties;
 
     iget-object v6, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
     invoke-direct {v5, v2, v6, v15}, Lorg/telegram/messenger/SvgHelper$Properties;-><init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;Lorg/telegram/messenger/SvgHelper$1;)V
 
-    .line 1375
+    .line 1382
     invoke-direct {v0, v5}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doFill(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2c
 
-    .line 1376
+    .line 1383
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_2b
 
-    .line 1377
+    .line 1384
     new-instance v6, Lorg/telegram/messenger/SvgHelper$Circle;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -2320,12 +2341,12 @@
 
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v6, v7}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v6, v7}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
-    goto :goto_b
+    goto :goto_c
 
-    .line 1379
-    :cond_2a
+    .line 1386
+    :cond_2b
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -2344,21 +2365,21 @@
 
     invoke-virtual {v2, v6, v7, v8, v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1382
-    :cond_2b
-    :goto_b
+    .line 1389
+    :cond_2c
+    :goto_c
     invoke-direct {v0, v5}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_2e
 
-    .line 1383
+    .line 1390
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_2d
 
-    .line 1384
+    .line 1391
     new-instance v5, Lorg/telegram/messenger/SvgHelper$Circle;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -2377,12 +2398,12 @@
 
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v2, v5, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v2, v5, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
-    goto :goto_c
+    goto :goto_d
 
-    .line 1386
-    :cond_2c
+    .line 1393
+    :cond_2d
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -2401,55 +2422,55 @@
 
     invoke-virtual {v2, v1, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1389
-    :cond_2d
-    :goto_c
+    .line 1396
+    :cond_2e
+    :goto_d
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->popTransform()V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
-    .line 1394
+    .line 1401
     :pswitch_9
-    invoke-static {v11, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    invoke-static {v11, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v1
 
-    .line 1395
-    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1402
+    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v3
 
-    .line 1396
-    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1403
+    invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v4
 
     const-string/jumbo v5, "ry"
 
-    .line 1397
-    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
+    .line 1404
+    invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$800(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v5
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_33
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_33
 
-    if-eqz v4, :cond_32
+    if-eqz v4, :cond_33
 
-    if-eqz v5, :cond_32
+    if-eqz v5, :cond_33
 
-    .line 1399
+    .line 1406
     invoke-direct {v0, v2}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->pushTransform(Lorg/xml/sax/Attributes;)V
 
-    .line 1400
+    .line 1407
     new-instance v6, Lorg/telegram/messenger/SvgHelper$Properties;
 
     iget-object v7, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->globalStyles:Ljava/util/HashMap;
 
     invoke-direct {v6, v2, v7, v15}, Lorg/telegram/messenger/SvgHelper$Properties;-><init>(Lorg/xml/sax/Attributes;Ljava/util/HashMap;Lorg/telegram/messenger/SvgHelper$1;)V
 
-    .line 1401
+    .line 1408
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
@@ -2494,54 +2515,17 @@
 
     invoke-virtual {v2, v7, v8, v1, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1402
+    .line 1409
     invoke-direct {v0, v6}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doFill(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
-
-    .line 1403
-    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
-
-    if-eqz v1, :cond_2e
-
-    .line 1404
-    new-instance v2, Lorg/telegram/messenger/SvgHelper$Oval;
-
-    iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rect:Landroid/graphics/RectF;
-
-    invoke-direct {v2, v3}, Lorg/telegram/messenger/SvgHelper$Oval;-><init>(Landroid/graphics/RectF;)V
-
-    iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
-
-    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
-
-    goto :goto_d
-
-    .line 1406
-    :cond_2e
-    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
-
-    iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rect:Landroid/graphics/RectF;
-
-    iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
-
-    invoke-virtual {v1, v2, v3}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
-
-    .line 1409
-    :cond_2f
-    :goto_d
-    invoke-direct {v0, v6}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_30
 
     .line 1410
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_2f
 
     .line 1411
     new-instance v2, Lorg/telegram/messenger/SvgHelper$Oval;
@@ -2552,12 +2536,12 @@
 
     iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1000(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
 
     goto :goto_e
 
     .line 1413
-    :cond_30
+    :cond_2f
     iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
 
     iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rect:Landroid/graphics/RectF;
@@ -2567,13 +2551,52 @@
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     .line 1416
-    :cond_31
+    :cond_30
     :goto_e
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->popTransform()V
+    invoke-direct {v0, v6}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->doStroke(Lorg/telegram/messenger/SvgHelper$Properties;)Z
 
+    move-result v1
+
+    if-eqz v1, :cond_32
+
+    .line 1417
+    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->drawable:Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+
+    if-eqz v1, :cond_31
+
+    .line 1418
+    new-instance v2, Lorg/telegram/messenger/SvgHelper$Oval;
+
+    iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rect:Landroid/graphics/RectF;
+
+    invoke-direct {v2, v3}, Lorg/telegram/messenger/SvgHelper$Oval;-><init>(Landroid/graphics/RectF;)V
+
+    iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
+
+    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->access$1100(Lorg/telegram/messenger/SvgHelper$SvgDrawable;Ljava/lang/Object;Landroid/graphics/Paint;)V
+
+    goto :goto_f
+
+    .line 1420
+    :cond_31
+    iget-object v1, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->canvas:Landroid/graphics/Canvas;
+
+    iget-object v2, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->rect:Landroid/graphics/RectF;
+
+    iget-object v3, v0, Lorg/telegram/messenger/SvgHelper$SVGHandler;->paint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    .line 1423
     :cond_32
     :goto_f
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/SvgHelper$SVGHandler;->popTransform()V
+
+    :cond_33
+    :goto_10
     return-void
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

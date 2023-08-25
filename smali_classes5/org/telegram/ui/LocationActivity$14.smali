@@ -26,14 +26,14 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity;Landroid/content/Context;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 1318
+    .line 1331
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$14;->this$0:Lorg/telegram/ui/LocationActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/LocationActivity$14;->val$padding:Landroid/graphics/Rect;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1320
+    .line 1333
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -48,7 +48,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 1324
+    .line 1337
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$14;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$3400(Lorg/telegram/ui/LocationActivity;)Landroid/graphics/drawable/Drawable;
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0, v1, v4, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1325
+    .line 1338
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$14;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$3400(Lorg/telegram/ui/LocationActivity;)Landroid/graphics/drawable/Drawable;
@@ -88,7 +88,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1327
+    .line 1340
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$14;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LocationActivity;->access$600(Lorg/telegram/ui/LocationActivity;)I
@@ -110,12 +110,12 @@
     :cond_0
     const/16 v0, 0x24
 
-    .line 1328
+    .line 1341
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 1329
+    .line 1342
     iget-object v1, p0, Lorg/telegram/ui/LocationActivity$14;->val$padding:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
@@ -128,7 +128,7 @@
 
     add-int/2addr v1, v2
 
-    .line 1330
+    .line 1343
     iget-object v2, p0, Lorg/telegram/ui/LocationActivity$14;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -167,22 +167,24 @@
 
     invoke-virtual {v2, v3, v5, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1331
-    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
+    .line 1344
+    iget-object v0, p0, Lorg/telegram/ui/LocationActivity$14;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
 
-    .line 1332
+    .line 1345
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
 
-    .line 1333
+    .line 1346
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1334
+    .line 1347
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$14;->rect:Landroid/graphics/RectF;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

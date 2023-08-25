@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$$ExternalSyntheticLambda0;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$$ExternalSyntheticLambda0;-><init>()V
-
-    sput-object v0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$$ExternalSyntheticLambda0;->INSTANCE:Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$$ExternalSyntheticLambda0;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 0
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {p1}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;->$r8$lambda$8WUugmkbrViNXRHTLRQriKF8FfI(Ljava/lang/Integer;)V
+    invoke-static {v0, p1}, Lcom/iMe/ui/adapter/provider/CryptoAccountProvider;->$r8$lambda$tlZ01BXp7gsbRb-KTfjBpcEg0fw(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method

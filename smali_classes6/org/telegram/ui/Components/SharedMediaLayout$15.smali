@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
     .locals 0
 
-    .line 2680
+    .line 2681
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$15;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,17 +35,17 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 3
 
-    .line 2683
+    .line 2684
     instance-of p3, p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     const/4 p4, 0x0
 
     if-eqz p3, :cond_2
 
-    .line 2684
+    .line 2685
     check-cast p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
-    .line 2685
+    .line 2686
     iget-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$15;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -66,7 +66,7 @@
 
     move-result v0
 
-    .line 2686
+    .line 2687
     rem-int/2addr p3, v0
 
     const/4 v1, 0x1
@@ -92,35 +92,35 @@
     :cond_1
     move v1, p4
 
-    .line 2687
+    .line 2688
     :goto_1
     iput-boolean v1, p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->isLast:Z
 
-    .line 2688
+    .line 2689
     iput p4, p1, Landroid/graphics/Rect;->left:I
 
-    .line 2689
+    .line 2690
     iput p4, p1, Landroid/graphics/Rect;->top:I
 
-    .line 2690
+    .line 2691
     iput p4, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2691
+    .line 2692
     iput p4, p1, Landroid/graphics/Rect;->right:I
 
     goto :goto_2
 
-    .line 2693
+    .line 2694
     :cond_2
     iput p4, p1, Landroid/graphics/Rect;->left:I
 
-    .line 2694
+    .line 2695
     iput p4, p1, Landroid/graphics/Rect;->top:I
 
-    .line 2695
+    .line 2696
     iput p4, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 2696
+    .line 2697
     iput p4, p1, Landroid/graphics/Rect;->right:I
 
     :goto_2

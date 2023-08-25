@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
     .locals 0
 
-    .line 1628
+    .line 2070
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 6
 
-    .line 1631
+    .line 2073
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v3

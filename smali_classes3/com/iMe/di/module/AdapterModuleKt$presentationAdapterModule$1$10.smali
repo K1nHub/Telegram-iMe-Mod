@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n129#2,5:126\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$10\n*L\n82#1:121,5\n83#1:126,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,183:1\n129#2,5:184\n129#2,5:189\n129#2,5:194\n129#2,5:199\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$10\n*L\n107#1:184,5\n108#1:189,5\n109#1:194,5\n110#1:199,5\n*E\n"
 .end annotation
 
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 133
-    const-class p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+    const-class p2, Lcom/iMe/ui/adapter/provider/FilterProvider;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 82
-    check-cast p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
+    .line 107
+    check-cast p2, Lcom/iMe/ui/adapter/provider/FilterProvider;
 
     .line 133
-    const-class v1, Lcom/iMe/ui/adapter/provider/HeaderWithRightButtonProvider;
+    const-class v1, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 82
-    check-cast v1, Lcom/iMe/ui/adapter/provider/HeaderWithRightButtonProvider;
+    .line 108
+    check-cast v1, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     .line 133
-    const-class v2, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;
+    const-class v2, Lcom/iMe/ui/adapter/provider/HeaderWithRightButtonProvider;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,11 +113,11 @@
 
     move-result-object v2
 
-    .line 82
-    check-cast v2, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;
+    .line 109
+    check-cast v2, Lcom/iMe/ui/adapter/provider/HeaderWithRightButtonProvider;
 
     .line 133
-    const-class v3, Lcom/iMe/ui/adapter/provider/FilterProvider;
+    const-class v3, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -127,13 +127,13 @@
 
     move-result-object p1
 
-    .line 83
-    check-cast p1, Lcom/iMe/ui/adapter/provider/FilterProvider;
+    .line 110
+    check-cast p1, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;
 
-    .line 81
+    .line 106
     new-instance v0, Lcom/iMe/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;
 
-    invoke-direct {v0, p2, v2, p1, v1}, Lcom/iMe/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/GlobalStateProvider;Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;Lcom/iMe/ui/adapter/provider/FilterProvider;Lcom/iMe/ui/adapter/provider/HeaderWithRightButtonProvider;)V
+    invoke-direct {v0, v1, p1, p2, v2}, Lcom/iMe/ui/wallet/staking/programmes/adapter/StakingProgrammesRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/GlobalStateProvider;Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;Lcom/iMe/ui/adapter/provider/FilterProvider;Lcom/iMe/ui/adapter/provider/HeaderWithRightButtonProvider;)V
 
     return-object v0
 .end method
@@ -141,7 +141,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 80
+    .line 105
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

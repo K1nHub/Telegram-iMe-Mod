@@ -52,7 +52,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 0
 
-    .line 419
+    .line 422
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iput p5, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->val$currentAccount:I
@@ -61,7 +61,7 @@
 
     const/4 p1, -0x1
 
-    .line 421
+    .line 424
     iput p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->scrollAnimationIndex:I
 
     return-void
@@ -70,14 +70,14 @@
 .method private synthetic lambda$endAnimations$2(I)V
     .locals 2
 
-    .line 467
+    .line 470
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->scrollAnimationIndex:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 468
+    .line 471
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -86,7 +86,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 469
+    .line 472
     iput v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->scrollAnimationIndex:I
 
     :cond_0
@@ -96,14 +96,14 @@
 .method private synthetic lambda$onAllAnimationsDone$0(I)V
     .locals 2
 
-    .line 448
+    .line 451
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->scrollAnimationIndex:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 449
+    .line 452
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -112,7 +112,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 450
+    .line 453
     iput v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->scrollAnimationIndex:I
 
     :cond_0
@@ -122,7 +122,7 @@
 .method private synthetic lambda$onAllAnimationsDone$1()V
     .locals 1
 
-    .line 456
+    .line 459
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$200(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
@@ -135,18 +135,18 @@
 .method public endAnimations()V
     .locals 2
 
-    .line 462
+    .line 465
     invoke-super {p0}, Landroidx/recyclerview/widget/ChatListItemAnimator;->endAnimations()V
 
-    .line 463
+    .line 466
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 464
+    .line 467
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 466
+    .line 469
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->val$currentAccount:I
 
@@ -164,18 +164,18 @@
 .method protected onAllAnimationsDone()V
     .locals 2
 
-    .line 443
+    .line 446
     invoke-super {p0}, Landroidx/recyclerview/widget/ChatListItemAnimator;->onAllAnimationsDone()V
 
-    .line 444
+    .line 447
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 445
+    .line 448
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 447
+    .line 450
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->val$currentAccount:I
 
@@ -187,7 +187,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 454
+    .line 457
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateAfterAnimations:Z
@@ -196,10 +196,10 @@
 
     const/4 v1, 0x0
 
-    .line 455
+    .line 458
     iput-boolean v1, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->updateAfterAnimations:Z
 
-    .line 456
+    .line 459
     new-instance v0, Lorg/telegram/ui/Components/ForwardingPreviewView$5$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ForwardingPreviewView$5$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ForwardingPreviewView$5;)V
@@ -213,24 +213,24 @@
 .method public onAnimationStart()V
     .locals 4
 
-    .line 425
+    .line 428
     invoke-super {p0}, Landroidx/recyclerview/widget/ChatListItemAnimator;->onAnimationStart()V
 
-    .line 426
+    .line 429
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeBoundsRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 427
+    .line 430
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->changeBoundsRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 429
+    .line 432
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->scrollAnimationIndex:I
 
     const/4 v1, 0x0
@@ -239,7 +239,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 430
+    .line 433
     iget v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->val$currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -256,16 +256,16 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->scrollAnimationIndex:I
 
-    .line 432
+    .line 435
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 433
+    .line 436
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 434
+    .line 437
     iput-object v1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$5;->finishRunnable:Ljava/lang/Runnable;
 
     :cond_1

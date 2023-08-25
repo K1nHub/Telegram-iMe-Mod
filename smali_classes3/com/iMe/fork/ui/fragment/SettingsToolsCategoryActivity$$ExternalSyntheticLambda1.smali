@@ -33,7 +33,7 @@
 
     iget v1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda1;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$98gLpmlN2QSJOYwEXT-enr7jGw8(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
+    invoke-static {v0, v1, p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$GHJpbkTv7wQWniQshDQQykWSmAg(Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;ILandroid/content/DialogInterface;)V
 
     return-void
 .end method

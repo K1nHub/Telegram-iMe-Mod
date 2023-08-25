@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda239;->f$0:Lorg/telegram/tgnet/TLObject;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda239;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda239;->f$1:Z
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda239;->f$0:Lorg/telegram/tgnet/TLObject;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda239;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$5ETQP9Ye5lpT2IIAaUZSbzXkqv0(Lorg/telegram/tgnet/TLObject;)V
+    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda239;->f$1:Z
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$ChMAJYtXlnC171acRvxKExyePR4(Lorg/telegram/messenger/MessagesController;Z)V
 
     return-void
 .end method

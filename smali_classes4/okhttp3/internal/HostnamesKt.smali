@@ -781,7 +781,7 @@
     :cond_8
     new-instance p0, Ljava/lang/NullPointerException;
 
-    const-string v0, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v0, "null cannot be cast to non-null type java.lang.String"
 
     invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

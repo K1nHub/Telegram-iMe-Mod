@@ -9,21 +9,21 @@
 # instance fields
 .field public final constraintTradeInfo:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final imageCoinIcon:Landroidx/appcompat/widget/AppCompatImageView;
+.field public final imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
 .field private final rootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-.field public final textAccountBalance:Landroidx/appcompat/widget/AppCompatTextView;
-
 .field public final textAccountBalanceInDollars:Landroidx/appcompat/widget/AppCompatTextView;
-
-.field public final textAccountTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
 .field public final textCoinTicker:Lcom/iMe/ui/custom/TickerView;
 
+.field public final textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+.field public final textTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
 
 # direct methods
-.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/TickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+.method private constructor <init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/TickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
     .locals 2
 
     move-object v0, p0
@@ -44,27 +44,27 @@
     move-object v1, p4
 
     .line 100
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->imageCoinIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
     move-object v1, p9
 
     .line 105
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountBalance:Landroidx/appcompat/widget/AppCompatTextView;
-
-    move-object v1, p10
-
-    .line 106
     iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountBalanceInDollars:Landroidx/appcompat/widget/AppCompatTextView;
 
-    move-object v1, p11
+    move-object/from16 v1, p14
 
-    .line 107
-    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    move-object/from16 v1, p16
-
-    .line 112
+    .line 110
     iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textCoinTicker:Lcom/iMe/ui/custom/TickerView;
+
+    move-object/from16 v1, p17
+
+    .line 113
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    move-object/from16 v1, p18
+
+    .line 114
+    iput-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     return-void
 .end method
@@ -92,7 +92,7 @@
     if-eqz v3, :cond_0
 
     .line 155
-    sget v1, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget v1, Lorg/telegram/messenger/R$id;->image_logo:I
 
     .line 156
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -152,7 +152,7 @@
     if-eqz v8, :cond_0
 
     .line 185
-    sget v1, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
     .line 186
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -164,7 +164,7 @@
     if-eqz v9, :cond_0
 
     .line 191
-    sget v1, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_apr_title:I
 
     .line 192
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -176,7 +176,7 @@
     if-eqz v10, :cond_0
 
     .line 197
-    sget v1, Lorg/telegram/messenger/R$id;->text_account_title:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_apr_value:I
 
     .line 198
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -188,7 +188,7 @@
     if-eqz v11, :cond_0
 
     .line 203
-    sget v1, Lorg/telegram/messenger/R$id;->text_apr_title:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_apy_title:I
 
     .line 204
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -200,7 +200,7 @@
     if-eqz v12, :cond_0
 
     .line 209
-    sget v1, Lorg/telegram/messenger/R$id;->text_apr_value:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_apy_value:I
 
     .line 210
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -212,19 +212,19 @@
     if-eqz v13, :cond_0
 
     .line 215
-    sget v1, Lorg/telegram/messenger/R$id;->text_apy_title:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
 
     .line 216
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v14
 
-    check-cast v14, Landroidx/appcompat/widget/AppCompatTextView;
+    check-cast v14, Lcom/iMe/ui/custom/TickerView;
 
     if-eqz v14, :cond_0
 
     .line 221
-    sget v1, Lorg/telegram/messenger/R$id;->text_apy_value:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_staking_end_title:I
 
     .line 222
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -236,19 +236,19 @@
     if-eqz v15, :cond_0
 
     .line 227
-    sget v1, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_staking_end_value:I
 
     .line 228
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
 
     move-result-object v16
 
-    check-cast v16, Lcom/iMe/ui/custom/TickerView;
+    check-cast v16, Landroidx/appcompat/widget/AppCompatTextView;
 
     if-eqz v16, :cond_0
 
     .line 233
-    sget v1, Lorg/telegram/messenger/R$id;->text_staking_end_title:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
     .line 234
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -260,7 +260,7 @@
     if-eqz v17, :cond_0
 
     .line 239
-    sget v1, Lorg/telegram/messenger/R$id;->text_staking_end_value:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_title:I
 
     .line 240
     invoke-static {v0, v1}, Landroidx/viewbinding/ViewBindings;->findChildViewById(Landroid/view/View;I)Landroid/view/View;
@@ -314,11 +314,11 @@
 
     move-object v1, v2
 
-    invoke-direct/range {v0 .. v21}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/TickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
+    invoke-direct/range {v0 .. v21}, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;-><init>(Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/constraintlayout/widget/ConstraintLayout;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/AppCompatImageView;Landroidx/appcompat/widget/LinearLayoutCompat;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Lcom/iMe/ui/custom/TickerView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;Landroidx/appcompat/widget/AppCompatTextView;)V
 
     return-object v22
 
-    .line 270
+    .line 269
     :cond_0
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
@@ -328,7 +328,7 @@
 
     move-result-object v0
 
-    .line 271
+    .line 270
     new-instance v1, Ljava/lang/NullPointerException;
 
     const-string v2, "Missing required view with ID: "

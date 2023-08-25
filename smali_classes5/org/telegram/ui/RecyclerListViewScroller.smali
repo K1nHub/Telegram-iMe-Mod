@@ -23,10 +23,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 19
     iput-object p1, p0, Lorg/telegram/ui/RecyclerListViewScroller;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-void
@@ -37,7 +37,7 @@
 
     int-to-float p1, p1
 
-    .line 29
+    .line 34
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -52,7 +52,7 @@
 
     float-to-int p1, p1
 
-    .line 30
+    .line 35
     iget-object p2, p0, Lorg/telegram/ui/RecyclerListViewScroller;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->lastScrolled:I
@@ -63,7 +63,7 @@
 
     invoke-virtual {p2, v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
 
-    .line 31
+    .line 36
     iput p1, p0, Lorg/telegram/ui/RecyclerListViewScroller;->lastScrolled:I
 
     return-void
@@ -74,22 +74,22 @@
 .method public cancel()V
     .locals 1
 
-    .line 46
+    .line 51
     iget-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 47
+    .line 52
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 48
+    .line 53
     iget-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 49
+    .line 54
     iput-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -99,7 +99,7 @@
 .method public isRunning()Z
     .locals 1
 
-    .line 54
+    .line 59
     iget-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
@@ -116,17 +116,30 @@
 .end method
 
 .method public smoothScrollBy(I)V
+    .locals 3
+
+    .line 23
+    sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    const-wide/16 v1, 0xc8
+
+    invoke-virtual {p0, p1, v1, v2, v0}, Lorg/telegram/ui/RecyclerListViewScroller;->smoothScrollBy(IJLandroid/view/animation/Interpolator;)V
+
+    return-void
+.end method
+
+.method public smoothScrollBy(IJLandroid/view/animation/Interpolator;)V
     .locals 2
 
-    .line 22
+    .line 27
     iget-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 23
+    .line 28
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 24
+    .line 29
     iget-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -134,14 +147,14 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 26
+    .line 31
     iput v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->lastScrolled:I
 
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
-    .line 27
+    .line 32
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -150,14 +163,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    .line 28
+    .line 33
     new-instance v1, Lorg/telegram/ui/RecyclerListViewScroller$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/RecyclerListViewScroller$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/RecyclerListViewScroller;I)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 33
+    .line 38
     iget-object v0, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/RecyclerListViewScroller$1;
@@ -166,21 +179,17 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 40
+    .line 45
     iget-object p1, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    const-wide/16 v0, 0xc8
+    invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    .line 41
+    .line 46
     iget-object p1, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    invoke-virtual {p1, p4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 42
+    .line 47
     iget-object p1, p0, Lorg/telegram/ui/RecyclerListViewScroller;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V

@@ -10,15 +10,11 @@
 
 .field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Z
-
-.field public final synthetic f$4:Ljava/lang/Runnable;
+.field public final synthetic f$2:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;ZZLjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,11 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$1:Ljava/util/ArrayList;
 
-    iput-boolean p3, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$2:Z
-
-    iput-boolean p4, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$3:Z
-
-    iput-object p5, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$4:Ljava/lang/Runnable;
+    iput-wide p3, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$2:J
 
     return-void
 .end method
@@ -39,19 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$0:Lorg/telegram/ui/Stories/StoriesStorage;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$1:Ljava/util/ArrayList;
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$2:Z
+    iget-wide v2, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$2:J
 
-    iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$3:Z
-
-    iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda10;->f$4:Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Stories/StoriesStorage;->$r8$lambda$NLJYbXaVll6fPntAdBbvpxoXBCU(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;ZZLjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesStorage;->$r8$lambda$itkwaaHUAeHiBWI67PsmZtY6Oas(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;J)V
 
     return-void
 .end method

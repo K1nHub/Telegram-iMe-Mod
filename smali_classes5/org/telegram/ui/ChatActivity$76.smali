@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Z[Z)V
     .locals 0
 
-    .line 11577
+    .line 11674
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$76;->val$loading:Z
@@ -43,23 +43,23 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 11580
+    .line 11677
     iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$76;->val$loading:Z
 
     const/16 v0, 0x8
 
     if-eqz p1, :cond_0
 
-    .line 11581
+    .line 11678
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33500(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33600(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 11582
+    .line 11679
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->val$startedLoading:[Z
 
     const/4 v0, 0x0
@@ -68,19 +68,19 @@
 
     if-nez p1, :cond_1
 
-    .line 11583
+    .line 11680
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/CircularProgressDrawable;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/CircularProgressDrawable;->reset()V
 
-    .line 11584
+    .line 11681
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33800(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -88,11 +88,11 @@
 
     goto :goto_0
 
-    .line 11587
+    .line 11684
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$76;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33700(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33800(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
 
     move-result-object p1
 

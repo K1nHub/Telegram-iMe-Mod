@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;
 
-    check-cast p1, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->$r8$lambda$XD03CSIbimCXcykR5zN5Ur_aTMY(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->$r8$lambda$Gk0WCk2_SCeaUVh3HmhE5tctuhQ(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Ljava/lang/Integer;)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->$r8$lambda$pE5Luyfc5v2JQqCGWfc5wkHnrbg(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->$r8$lambda$IG0p-xqQH5OTIp3sPihcBzdvFcM(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     return-void
 .end method

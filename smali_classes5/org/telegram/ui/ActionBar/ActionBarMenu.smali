@@ -827,8 +827,8 @@
     return-object p1
 .end method
 
-.method public getItemsMeasuredWidth()I
-    .locals 5
+.method public getItemsMeasuredWidth(Z)I
+    .locals 6
 
     .line 523
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
@@ -840,38 +840,61 @@
     move v2, v1
 
     :goto_0
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_2
 
     .line 525
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
+    if-nez p1, :cond_0
+
     .line 526
-    instance-of v4, v3, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    invoke-virtual {v3}, Landroid/view/View;->getAlpha()F
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    cmpl-float v4, v4, v5
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
+
+    move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 527
+    goto :goto_1
+
+    .line 529
+    :cond_0
+    instance-of v4, v3, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    if-eqz v4, :cond_1
+
+    .line 530
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
 
     add-int/2addr v2, v3
 
-    :cond_0
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     return v2
 .end method
 
 .method public getVisibleItemsMeasuredWidth()I
     .locals 6
 
-    .line 535
+    .line 538
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -883,12 +906,12 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 536
+    .line 539
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 537
+    .line 540
     instance-of v4, v3, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v4, :cond_0
@@ -901,7 +924,7 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 538
+    .line 541
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -1078,15 +1101,15 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 576
+    .line 579
     invoke-super/range {p0 .. p5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
 
-    .line 577
+    .line 580
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu;->onLayoutListener:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
 
-    .line 578
+    .line 581
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -1329,7 +1352,7 @@
 .method public searchFieldVisible()Z
     .locals 5
 
-    .line 545
+    .line 548
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -1341,12 +1364,12 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 547
+    .line 550
     invoke-virtual {p0, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 548
+    .line 551
     instance-of v4, v3, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v4, :cond_0
@@ -1465,7 +1488,7 @@
 .method public setOnLayoutListener(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 571
+    .line 574
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenu;->onLayoutListener:Ljava/lang/Runnable;
 
     return-void
@@ -1722,7 +1745,7 @@
 .method public translateXItems(F)V
     .locals 4
 
-    .line 556
+    .line 559
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -1732,17 +1755,17 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 558
+    .line 561
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 559
+    .line 562
     instance-of v3, v2, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v3, :cond_0
 
-    .line 560
+    .line 563
     check-cast v2, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setTransitionOffset(F)V

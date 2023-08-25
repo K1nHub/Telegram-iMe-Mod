@@ -4,11 +4,17 @@
 
 
 # static fields
-.field public static constructor:I = -0x4c08854
+.field public static constructor:I = 0x46e9b9ec
 
 
 # instance fields
 .field public count:I
+
+.field public flags:I
+
+.field public next_offset:Ljava/lang/String;
+
+.field public reactions_count:I
 
 .field public users:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -54,6 +60,10 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->users:Ljava/util/ArrayList;
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->next_offset:Ljava/lang/String;
 
     return-void
 .end method
@@ -115,7 +125,19 @@
 
     move-result v0
 
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->flags:I
+
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
+
+    move-result v0
+
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->count:I
+
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->reactions_count:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -125,9 +147,9 @@
 
     const v2, 0x1cb5c415
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     if-eq v0, v2, :cond_1
 
@@ -138,13 +160,13 @@
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
-    new-array p2, v3, [Ljava/lang/Object;
+    new-array p2, v4, [Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, p2, v4
+    aput-object v0, p2, v3
 
     invoke-static {v1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -159,7 +181,7 @@
 
     move-result v0
 
-    move v5, v4
+    move v5, v3
 
     :goto_0
     if-ge v5, v0, :cond_3
@@ -199,13 +221,13 @@
     :cond_4
     new-instance p1, Ljava/lang/RuntimeException;
 
-    new-array p2, v3, [Ljava/lang/Object;
+    new-array p2, v4, [Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, p2, v4
+    aput-object v0, p2, v3
 
     invoke-static {v1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -221,7 +243,7 @@
     move-result v0
 
     :goto_1
-    if-ge v4, v0, :cond_7
+    if-ge v3, v0, :cond_7
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -240,11 +262,24 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_7
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->flags:I
+
+    and-int/2addr v0, v4
+
+    if-eqz v0, :cond_8
+
+    invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->next_offset:Ljava/lang/String;
+
+    :cond_8
     return-void
 .end method
 
@@ -255,7 +290,15 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->flags:I
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->count:I
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->reactions_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
@@ -321,5 +364,16 @@
     goto :goto_1
 
     :cond_1
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->flags:I
+
+    and-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->next_offset:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
+
+    :cond_2
     return-void
 .end method

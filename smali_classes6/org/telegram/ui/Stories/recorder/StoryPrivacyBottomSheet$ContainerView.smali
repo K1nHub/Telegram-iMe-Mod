@@ -26,13 +26,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Landroid/content/Context;)V
     .locals 2
 
-    .line 1919
+    .line 2139
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    .line 1920
+    .line 2140
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1923
+    .line 2143
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -51,10 +51,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 1928
+    .line 2148
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$4600(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$5200(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v0
 
@@ -64,14 +64,14 @@
 
     const/4 v1, 0x0
 
-    .line 1929
+    .line 2149
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->top:F
 
     const/4 v2, 0x0
 
     move v3, v2
 
-    .line 1931
+    .line 2151
     :goto_0
     array-length v4, v0
 
@@ -79,20 +79,20 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 1932
+    .line 2152
     aget-object v4, v0, v3
 
     if-nez v4, :cond_0
 
     goto :goto_1
 
-    .line 1935
+    .line 2155
     :cond_0
     aget-object v4, v0, v3
 
     check-cast v4, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
-    .line 1936
+    .line 2156
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v6
@@ -115,7 +115,7 @@
 
     move-result v5
 
-    .line 1937
+    .line 2157
     iget v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->top:F
 
     invoke-virtual {v4}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->top()F
@@ -128,10 +128,10 @@
 
     iput v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->top:F
 
-    .line 1938
+    .line 2158
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    invoke-static {v5}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$10600(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Z
+    invoke-static {v5}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$11900(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Z
 
     move-result v5
 
@@ -139,7 +139,7 @@
 
     iget v5, v4, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->pageType:I
 
-    .line 1939
+    .line 2159
     :cond_1
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getVisibility()I
 
@@ -147,7 +147,7 @@
 
     if-nez v5, :cond_2
 
-    .line 1940
+    .line 2160
     invoke-virtual {v4}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateTops()V
 
     :cond_2
@@ -156,7 +156,7 @@
 
     goto :goto_0
 
-    .line 1943
+    .line 2163
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->isActionBar:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -177,7 +177,7 @@
 
     move-result v0
 
-    .line 1944
+    .line 2164
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     int-to-float v1, v1
@@ -198,12 +198,12 @@
 
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->top:F
 
-    .line 1945
+    .line 2165
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$10700(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)I
+    invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$12000(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)I
 
     move-result v3
 
@@ -217,7 +217,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$10800(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)I
+    invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$12100(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)I
 
     move-result v6
 
@@ -243,7 +243,7 @@
 
     const/16 v3, 0xe
 
-    .line 1946
+    .line 2166
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -254,25 +254,25 @@
 
     int-to-float v0, v0
 
-    .line 1947
+    .line 2167
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$10900(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Landroid/graphics/Paint;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$12200(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Landroid/graphics/Paint;
 
     move-result-object v2
 
     invoke-virtual {p1, v1, v0, v0, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1948
+    .line 2168
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1949
+    .line 2169
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
-    .line 1950
+    .line 2170
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1951
+    .line 2171
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -281,7 +281,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 1956
+    .line 2176
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -298,7 +298,7 @@
 
     if-gez v0, :cond_0
 
-    .line 1957
+    .line 2177
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->dismiss()V
@@ -307,7 +307,7 @@
 
     return p1
 
-    .line 1960
+    .line 2180
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -319,7 +319,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1966
+    .line 2186
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -330,7 +330,7 @@
 
     move-result p1
 
-    .line 1967
+    .line 2187
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -339,7 +339,7 @@
 
     move-result p2
 
-    .line 1965
+    .line 2185
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

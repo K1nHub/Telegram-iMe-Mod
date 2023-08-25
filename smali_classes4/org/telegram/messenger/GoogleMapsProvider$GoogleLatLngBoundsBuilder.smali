@@ -25,10 +25,10 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 489
+    .line 499
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 490
+    .line 500
     new-instance v0, Lcom/google/android/gms/maps/model/LatLngBounds$Builder;
 
     invoke-direct {v0}, Lcom/google/android/gms/maps/model/LatLngBounds$Builder;-><init>()V
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 486
+    .line 496
     invoke-direct {p0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleLatLngBoundsBuilder;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
 .method public build()Lorg/telegram/messenger/IMapsProvider$ILatLngBounds;
     .locals 3
 
-    .line 501
+    .line 511
     new-instance v0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleLatLngBounds;
 
     iget-object v1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleLatLngBoundsBuilder;->builder:Lcom/google/android/gms/maps/model/LatLngBounds$Builder;
@@ -71,7 +71,7 @@
 .method public include(Lorg/telegram/messenger/IMapsProvider$LatLng;)Lorg/telegram/messenger/IMapsProvider$ILatLngBoundsBuilder;
     .locals 6
 
-    .line 495
+    .line 505
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleLatLngBoundsBuilder;->builder:Lcom/google/android/gms/maps/model/LatLngBounds$Builder;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;

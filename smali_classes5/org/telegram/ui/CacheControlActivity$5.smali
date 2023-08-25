@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity;)V
     .locals 0
 
-    .line 1470
+    .line 1471
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$5;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
@@ -35,7 +35,7 @@
 .method protected onMoveAnimationUpdate(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
 
-    .line 1473
+    .line 1474
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$5;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$1200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/Components/RecyclerListView;

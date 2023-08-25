@@ -46,14 +46,14 @@
         }
     .end annotation
 
-    .line 377
+    .line 376
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showTokensListsDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 379
+    .line 378
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$ShowTokensListsDialogCommand;->tokenLists:Ljava/util/List;
 
     return-void
@@ -64,7 +64,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V
     .locals 1
 
-    .line 384
+    .line 383
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$ShowTokensListsDialogCommand;->tokenLists:Ljava/util/List;
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;->showTokensListsDialog(Ljava/util/List;)V
@@ -75,7 +75,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 373
+    .line 372
     check-cast p1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$ShowTokensListsDialogCommand;->apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V

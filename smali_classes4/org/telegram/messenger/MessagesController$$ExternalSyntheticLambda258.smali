@@ -2,32 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda258;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda258;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda258;-><init>()V
+
+    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda258;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda258;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda258;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 1
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda258;->f$0:Ljava/lang/Runnable;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$4DiDk7ZJzl0BL0u4mL_zGdUPlnw(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    return-void
+    invoke-static {p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$PbwQNzxaG5XZ4hdWlVlwH-gskoM(Lorg/telegram/tgnet/TLRPC$Updates;Lorg/telegram/tgnet/TLRPC$Updates;)I
+
+    move-result p1
+
+    return p1
 .end method

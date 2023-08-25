@@ -311,6 +311,16 @@
     return v0
 .end method
 
+.method public synthetic isPhotoEditor()Z
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate$-CC;->$default$isPhotoEditor(Lorg/telegram/ui/ContentPreviewViewer$ContentPreviewViewerDelegate;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public synthetic isStoryReply()Z
     .locals 1
 

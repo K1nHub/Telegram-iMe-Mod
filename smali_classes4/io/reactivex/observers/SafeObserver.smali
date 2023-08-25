@@ -332,7 +332,7 @@
     .line 166
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string v1, "onError called with null. Null values are generally not allowed in 2.x operators and sources."
+    const-string/jumbo v1, "onError called with null. Null values are generally not allowed in 2.x operators and sources."
 
     invoke-direct {p1, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -408,7 +408,7 @@
     .line 87
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string v3, "onNext called with null. Null values are generally not allowed in 2.x operators and sources."
+    const-string/jumbo v3, "onNext called with null. Null values are generally not allowed in 2.x operators and sources."
 
     invoke-direct {p1, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

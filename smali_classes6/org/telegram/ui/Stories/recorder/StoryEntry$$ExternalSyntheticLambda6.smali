@@ -41,7 +41,7 @@
 
     check-cast p1, [I
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$VcDfuRwZ8EjC5BZV9qJUW2RxOi0(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$zsb2AUwsICisnMCI9MGDz_NHAVM(Lorg/telegram/ui/Stories/recorder/StoryEntry;Landroid/graphics/Bitmap;Ljava/lang/Runnable;[I)V
 
     return-void
 .end method

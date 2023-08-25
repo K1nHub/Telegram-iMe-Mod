@@ -56,7 +56,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 473
+    .line 534
     new-instance v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$NetworkSwitchType;
 
     const-string v1, "GLOBAL"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$NetworkSwitchType;->GLOBAL:Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$NetworkSwitchType;
 
-    .line 474
+    .line 535
     new-instance v0, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$NetworkSwitchType;
 
     const-string v1, "CROSS_CHAIN"
@@ -95,7 +95,7 @@
         }
     .end annotation
 
-    .line 472
+    .line 533
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

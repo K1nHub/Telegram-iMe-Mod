@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 27
+    .line 35
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$mutualContactsArr$2;->invoke()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -68,7 +68,7 @@
         }
     .end annotation
 
-    .line 28
+    .line 36
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$mutualContactsArr$2;->this$0:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
     sget-object v1, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$mutualContactsArr$2$1;->INSTANCE:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$mutualContactsArr$2$1;

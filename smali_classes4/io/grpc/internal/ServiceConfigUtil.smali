@@ -391,7 +391,7 @@
         }
     .end annotation
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     .line 215
     invoke-static {p0, v0}, Lio/grpc/internal/JsonUtil;->getListOfObjects(Ljava/util/Map;Ljava/lang/String;)Ljava/util/List;
@@ -415,7 +415,7 @@
         }
     .end annotation
 
-    const-string v0, "nonFatalStatusCodes"
+    const-string/jumbo v0, "nonFatalStatusCodes"
 
     .line 184
     invoke-static {p0, v0}, Lio/grpc/internal/ServiceConfigUtil;->getListOfStatusCodesAsSet(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Set;

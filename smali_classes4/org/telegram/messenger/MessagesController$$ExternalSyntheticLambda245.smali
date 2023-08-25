@@ -2,38 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:J
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZZJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$0:Lorg/telegram/messenger/MessagesController;
 
+    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$1:Z
+
+    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$2:Z
+
+    iput-wide p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$3:J
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
+    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$1:Z
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$Dialog;
+    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$2:Z
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$QARWBnkgQofRtpaIzrEVrHlMk2o(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$Dialog;)I
+    iget-wide v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda245;->f$3:J
 
-    move-result p1
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$bgTmji6PWxnHnR9gBv_yZVJZr4I(Lorg/telegram/messenger/MessagesController;ZZJ)V
 
-    return p1
+    return-void
 .end method

@@ -32,6 +32,8 @@
 
 .field private minimumHeight:I
 
+.field private setMeassuredHeightToLastItem:Z
+
 .field private skipFirstItem:Z
 
 
@@ -39,7 +41,7 @@
 .method public constructor <init>(Landroid/content/Context;ILandroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
 
-    .line 25
+    .line 26
     invoke-direct {p0, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
     .line 12
@@ -62,10 +64,13 @@
     .line 20
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->canScrollVertically:Z
 
-    .line 26
-    iput-object p3, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listView:Landroidx/recyclerview/widget/RecyclerView;
+    .line 23
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setMeassuredHeightToLastItem:Z
 
     .line 27
+    iput-object p3, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listView:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 28
     iput p2, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->additionalHeight:I
 
     return-void
@@ -74,7 +79,7 @@
 .method public constructor <init>(Landroid/content/Context;IZILandroidx/recyclerview/widget/RecyclerView;)V
     .locals 0
 
-    .line 31
+    .line 32
     invoke-direct {p0, p1, p2, p3}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
     .line 12
@@ -97,10 +102,13 @@
     .line 20
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->canScrollVertically:Z
 
-    .line 32
-    iput-object p5, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listView:Landroidx/recyclerview/widget/RecyclerView;
+    .line 23
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setMeassuredHeightToLastItem:Z
 
     .line 33
+    iput-object p5, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listView:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 34
     iput p4, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->additionalHeight:I
 
     return-void
@@ -109,14 +117,14 @@
 .method private calcLastItemHeight()V
     .locals 12
 
-    .line 60
+    .line 61
     iget v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listHeight:I
 
     if-gtz v0, :cond_0
 
     return-void
 
-    .line 63
+    .line 64
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listView:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -128,7 +136,7 @@
 
     return-void
 
-    .line 67
+    .line 68
     :cond_1
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemCount()I
 
@@ -136,7 +144,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 70
+    .line 71
     iget-boolean v2, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->skipFirstItem:Z
 
     const/4 v3, 0x0
@@ -146,12 +154,12 @@
     :goto_0
     if-ge v2, v1, :cond_7
 
-    .line 71
+    .line 72
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemViewType(I)I
 
     move-result v5
 
-    .line 72
+    .line 73
     iget-object v6, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->heights:Landroid/util/SparseArray;
 
     const/4 v7, 0x0
@@ -164,19 +172,19 @@
 
     if-nez v6, :cond_2
 
-    .line 74
+    .line 75
     iget-object v6, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v0, v6, v5}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->createViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object v6
 
-    .line 75
+    .line 76
     iget-object v7, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->heights:Landroid/util/SparseArray;
 
     invoke-virtual {v7, v5, v6}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 76
+    .line 77
     iget-object v5, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -185,7 +193,7 @@
 
     if-nez v5, :cond_2
 
-    .line 77
+    .line 78
     iget-object v5, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->generateDefaultLayoutParams()Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -194,16 +202,16 @@
 
     invoke-virtual {v5, v7}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 80
+    .line 81
     :cond_2
     iget-boolean v5, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->bind:Z
 
     if-eqz v5, :cond_3
 
-    .line 81
+    .line 82
     invoke-virtual {v0, v6, v2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
-    .line 84
+    .line 85
     :cond_3
     iget-object v5, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -213,7 +221,7 @@
 
     check-cast v5, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
-    .line 85
+    .line 86
     iget v7, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listWidth:I
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getWidthMode()I
@@ -248,7 +256,7 @@
 
     move-result v7
 
-    .line 86
+    .line 87
     iget v8, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listHeight:I
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getHeightMode()I
@@ -283,12 +291,12 @@
 
     move-result v5
 
-    .line 87
+    .line 88
     iget-object v8, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v8, v7, v5}, Landroid/view/View;->measure(II)V
 
-    .line 88
+    .line 89
     iget-object v5, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
@@ -299,20 +307,20 @@
 
     if-nez v2, :cond_4
 
-    .line 90
+    .line 91
     iget-object v4, v6, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
 
-    .line 92
+    .line 93
     :cond_4
     iget-boolean v5, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->fixedLastItemHeight:Z
 
     if-eqz v5, :cond_5
 
-    .line 93
+    .line 94
     iget v5, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listHeight:I
 
     add-int/2addr v5, v4
@@ -321,7 +329,7 @@
 
     goto :goto_1
 
-    .line 97
+    .line 98
     :cond_5
     iget v5, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listHeight:I
 
@@ -334,14 +342,14 @@
 
     goto/16 :goto_0
 
-    .line 102
+    .line 103
     :cond_7
     :goto_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->fixedLastItemHeight:Z
 
     if-eqz v0, :cond_8
 
-    .line 103
+    .line 104
     iget v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->minimumHeight:I
 
     iget v1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listHeight:I
@@ -370,7 +378,7 @@
 
     goto :goto_2
 
-    .line 105
+    .line 106
     :cond_8
     iget v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->minimumHeight:I
 
@@ -405,8 +413,17 @@
 .method public canScrollVertically()Z
     .locals 1
 
-    .line 55
+    .line 56
     iget-boolean v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->canScrollVertically:Z
+
+    return v0
+.end method
+
+.method public getLastItemHeight()I
+    .locals 1
+
+    .line 191
+    iget v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->lastItemHeight:I
 
     return v0
 .end method
@@ -414,48 +431,53 @@
 .method public measureChildWithMargins(Landroid/view/View;II)V
     .locals 1
 
-    .line 166
+    .line 167
+    iget-boolean p2, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setMeassuredHeightToLastItem:Z
+
+    const/4 p3, 0x0
+
+    if-eqz p2, :cond_0
+
+    .line 168
     iget-object p2, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p2
 
-    .line 167
+    .line 169
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p2
 
-    .line 168
+    .line 170
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getItemCount()I
 
-    move-result p3
+    move-result v0
 
-    add-int/lit8 p3, p3, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    const/4 v0, 0x0
+    if-ne p2, v0, :cond_0
 
-    if-ne p2, p3, :cond_0
-
-    .line 169
+    .line 171
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p2
 
     check-cast p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
-    .line 170
-    iget p3, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->lastItemHeight:I
-
-    invoke-static {p3, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result p3
-
-    iput p3, p2, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
-
     .line 172
+    iget v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->lastItemHeight:I
+
+    invoke-static {v0, p3}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    iput v0, p2, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+
+    .line 175
     :cond_0
-    invoke-super {p0, p1, v0, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->measureChildWithMargins(Landroid/view/View;II)V
+    invoke-super {p0, p1, p3, p3}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->measureChildWithMargins(Landroid/view/View;II)V
 
     return-void
 .end method
@@ -463,15 +485,15 @@
 .method public onAdapterChanged(Landroidx/recyclerview/widget/RecyclerView$Adapter;Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 1
 
-    .line 122
+    .line 123
     iget-object v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->heights:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 123
+    .line 124
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
-    .line 124
+    .line 125
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onAdapterChanged(Landroidx/recyclerview/widget/RecyclerView$Adapter;Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     return-void
@@ -480,10 +502,10 @@
 .method public onItemsAdded(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 136
+    .line 137
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onItemsAdded(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 137
+    .line 138
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
     return-void
@@ -492,15 +514,15 @@
 .method public onItemsChanged(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 1
 
-    .line 129
+    .line 130
     iget-object v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->heights:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 130
+    .line 131
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
-    .line 131
+    .line 132
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onItemsChanged(Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-void
@@ -509,10 +531,10 @@
 .method public onItemsMoved(Landroidx/recyclerview/widget/RecyclerView;III)V
     .locals 0
 
-    .line 148
+    .line 149
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onItemsMoved(Landroidx/recyclerview/widget/RecyclerView;III)V
 
-    .line 149
+    .line 150
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
     return-void
@@ -521,10 +543,10 @@
 .method public onItemsRemoved(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 142
+    .line 143
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onItemsRemoved(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 143
+    .line 144
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
     return-void
@@ -533,10 +555,10 @@
 .method public onItemsUpdated(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 154
+    .line 155
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onItemsUpdated(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 155
+    .line 156
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
     return-void
@@ -545,10 +567,10 @@
 .method public onItemsUpdated(Landroidx/recyclerview/widget/RecyclerView;IILjava/lang/Object;)V
     .locals 0
 
-    .line 160
+    .line 161
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onItemsUpdated(Landroidx/recyclerview/widget/RecyclerView;IILjava/lang/Object;)V
 
-    .line 161
+    .line 162
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
     return-void
@@ -557,17 +579,17 @@
 .method public onMeasure(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;II)V
     .locals 2
 
-    .line 111
+    .line 112
     iget v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listHeight:I
 
-    .line 112
+    .line 113
     invoke-static {p3}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->listWidth:I
 
-    .line 113
+    .line 114
     invoke-static {p4}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
@@ -576,10 +598,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 115
+    .line 116
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
-    .line 117
+    .line 118
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onMeasure(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;II)V
 
@@ -589,10 +611,10 @@
 .method public setAdditionalHeight(I)V
     .locals 0
 
-    .line 37
+    .line 38
     iput p1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->additionalHeight:I
 
-    .line 38
+    .line 39
     invoke-direct {p0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->calcLastItemHeight()V
 
     return-void
@@ -601,7 +623,7 @@
 .method public setBind(Z)V
     .locals 0
 
-    .line 46
+    .line 47
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->bind:Z
 
     return-void
@@ -610,7 +632,7 @@
 .method public setMinimumLastViewHeight(I)V
     .locals 0
 
-    .line 180
+    .line 183
     iput p1, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->minimumHeight:I
 
     return-void
@@ -621,7 +643,7 @@
 
     const/4 v0, 0x1
 
-    .line 42
+    .line 43
     iput-boolean v0, p0, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->skipFirstItem:Z
 
     return-void

@@ -14,7 +14,11 @@
 
 
 # instance fields
+.field private customElevation:F
+
 .field private isMatchParentHeight:Z
+
+.field private isWhiteBackground:Z
 
 .field private final itemViewType:I
 
@@ -45,25 +49,25 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 12
+    .line 13
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 15
+    .line 18
     sget-object v0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$onRetryButtonClickAction$1;->INSTANCE:Lcom/iMe/ui/adapter/provider/GlobalStateProvider$onRetryButtonClickAction$1;
 
     iput-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onRetryButtonClickAction:Lkotlin/jvm/functions/Function0;
 
-    .line 16
+    .line 19
     sget-object v0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$onEmptyButtonClickAction$1;->INSTANCE:Lcom/iMe/ui/adapter/provider/GlobalStateProvider$onEmptyButtonClickAction$1;
 
     iput-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onEmptyButtonClickAction:Lkotlin/jvm/functions/Function0;
 
-    .line 18
+    .line 21
     sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->GLOBAL_STATE:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->itemViewType:I
 
-    .line 19
+    .line 22
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_global_state:I
 
     iput v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->layoutId:I
@@ -84,7 +88,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 26
     sget v0, Lorg/telegram/messenger/R$id;->global_state_layout:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/GlobalStateProvider$convert$1;
@@ -122,7 +126,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 43
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/common/GlobalStateItem;)V
 
     return-void
@@ -131,7 +135,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 12
+    .line 13
     check-cast p2, Lcom/iMe/model/common/GlobalStateItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/common/GlobalStateItem;)V
@@ -142,7 +146,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
     .locals 0
 
-    .line 12
+    .line 13
     check-cast p2, Lcom/iMe/model/common/GlobalStateItem;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/common/GlobalStateItem;Ljava/util/List;)V
@@ -150,10 +154,19 @@
     return-void
 .end method
 
+.method public final getCustomElevation()F
+    .locals 1
+
+    .line 17
+    iget v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->customElevation:F
+
+    return v0
+.end method
+
 .method public getItemViewType()I
     .locals 1
 
-    .line 18
+    .line 21
     iget v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->itemViewType:I
 
     return v0
@@ -162,7 +175,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 19
+    .line 22
     iget v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->layoutId:I
 
     return v0
@@ -179,7 +192,7 @@
         }
     .end annotation
 
-    .line 16
+    .line 19
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onEmptyButtonClickAction:Lkotlin/jvm/functions/Function0;
 
     return-object v0
@@ -196,7 +209,7 @@
         }
     .end annotation
 
-    .line 15
+    .line 18
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onRetryButtonClickAction:Lkotlin/jvm/functions/Function0;
 
     return-object v0
@@ -205,16 +218,34 @@
 .method public final isMatchParentHeight()Z
     .locals 1
 
-    .line 14
+    .line 15
     iget-boolean v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isMatchParentHeight:Z
 
     return v0
 .end method
 
+.method public final isWhiteBackground()Z
+    .locals 1
+
+    .line 16
+    iget-boolean v0, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isWhiteBackground:Z
+
+    return v0
+.end method
+
+.method public final setCustomElevation(F)V
+    .locals 0
+
+    .line 17
+    iput p1, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->customElevation:F
+
+    return-void
+.end method
+
 .method public final setMatchParentHeight(Z)V
     .locals 0
 
-    .line 14
+    .line 15
     iput-boolean p1, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isMatchParentHeight:Z
 
     return-void
@@ -235,7 +266,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 16
+    .line 19
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onEmptyButtonClickAction:Lkotlin/jvm/functions/Function0;
 
     return-void
@@ -256,8 +287,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 15
+    .line 18
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->onRetryButtonClickAction:Lkotlin/jvm/functions/Function0;
+
+    return-void
+.end method
+
+.method public final setWhiteBackground(Z)V
+    .locals 0
+
+    .line 16
+    iput-boolean p1, p0, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;->isWhiteBackground:Z
 
     return-void
 .end method

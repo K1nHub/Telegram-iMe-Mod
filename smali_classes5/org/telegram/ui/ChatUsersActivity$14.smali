@@ -30,7 +30,7 @@
 
     move-object v0, p1
 
-    .line 1495
+    .line 1496
     iput-object v0, v13, Lorg/telegram/ui/ChatUsersActivity$14;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     move-object/from16 v0, p14
@@ -77,7 +77,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 1498
+    .line 1499
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$14;->val$needShowBulletin:[Z
 
     const/4 p2, 0x0
@@ -94,7 +94,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1499
+    .line 1500
     iget-wide p1, p0, Lorg/telegram/ui/ChatUsersActivity$14;->val$peerId:J
 
     const-wide/16 v0, 0x0
@@ -103,7 +103,7 @@
 
     if-lez p1, :cond_0
 
-    .line 1500
+    .line 1501
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -120,7 +120,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1502
+    .line 1503
     iget-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$14;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -133,7 +133,7 @@
 
     goto :goto_0
 
-    .line 1505
+    .line 1506
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -153,7 +153,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1507
+    .line 1508
     iget-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$14;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;

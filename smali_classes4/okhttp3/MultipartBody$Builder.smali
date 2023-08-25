@@ -201,7 +201,7 @@
 
     move-result-object v0
 
-    const-string v1, "multipart"
+    const-string/jumbo v1, "multipart"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -220,7 +220,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "multipart != "
+    const-string/jumbo v1, "multipart != "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

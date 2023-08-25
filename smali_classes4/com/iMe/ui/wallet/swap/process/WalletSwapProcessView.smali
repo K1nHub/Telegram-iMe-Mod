@@ -43,7 +43,7 @@
     .end annotation
 .end method
 
-.method public abstract setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;Lcom/iMe/model/wallet/swap/SwapSide;)V
+.method public abstract setupNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;Lcom/iMe/model/wallet/swap/SwapSide;)V
     .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method

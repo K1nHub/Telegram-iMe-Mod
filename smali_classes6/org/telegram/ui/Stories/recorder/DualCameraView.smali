@@ -110,7 +110,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const/16 v0, 0x1b
+    const/16 v0, 0x21
 
     new-array v0, v0, [I
 
@@ -123,7 +123,7 @@
 
     new-array v0, v0, [I
 
-    .line 545
+    .line 551
     sput-object v0, Lorg/telegram/ui/Stories/recorder/DualCameraView;->dualWhitelistByModel:[I
 
     return-void
@@ -145,9 +145,13 @@
         -0x44e051be
         0x71c1c593
         0x3a3982da
+        -0x58c35c36
+        0x71e4b6b8
         -0x2a83a9b9
         -0x77d931cc
         0x53dfb612
+        -0x30f5a643
+        -0x5319aa6b
         -0x5319a6e7
         0x53dfb612
         0x53df8e7e
@@ -159,6 +163,8 @@
         -0x476971bb
         -0xefa312e
         -0x7be1a72f
+        -0x7b91e473
+        0x4be082ed    # 2.9427162E7f
     .end array-data
 .end method
 
@@ -475,7 +481,7 @@
 .method public static dualAvailableDefault(Landroid/content/Context;Z)Z
     .locals 5
 
-    .line 551
+    .line 557
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result v0
@@ -486,14 +492,14 @@
 
     if-lt v0, v2, :cond_0
 
-    .line 552
+    .line 558
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v0
 
     if-le v0, v2, :cond_0
 
-    .line 553
+    .line 559
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->allowPreparingHevcPlayers()Z
 
     move-result v0
@@ -512,7 +518,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 556
+    .line 562
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object p0
@@ -537,7 +543,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 558
+    .line 564
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -568,7 +574,7 @@
 
     move v0, v1
 
-    .line 559
+    .line 565
     :goto_2
     sget-object v3, Lorg/telegram/ui/Stories/recorder/DualCameraView;->dualWhitelistByDevice:[I
 
@@ -576,7 +582,7 @@
 
     if-ge v0, v4, :cond_3
 
-    .line 560
+    .line 566
     aget v3, v3, v0
 
     if-ne v3, p1, :cond_2
@@ -594,7 +600,7 @@
     :goto_3
     if-nez p0, :cond_5
 
-    .line 566
+    .line 572
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -619,7 +625,7 @@
 
     move-result p1
 
-    .line 567
+    .line 573
     :goto_4
     sget-object v0, Lorg/telegram/ui/Stories/recorder/DualCameraView;->dualWhitelistByModel:[I
 
@@ -627,7 +633,7 @@
 
     if-ge v1, v3, :cond_5
 
-    .line 568
+    .line 574
     aget v0, v0, v1
 
     if-ne v0, p1, :cond_4
@@ -654,7 +660,7 @@
 .method public static dualAvailableStatic(Landroid/content/Context;)Z
     .locals 2
 
-    .line 580
+    .line 586
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -805,7 +811,7 @@
 .method private getSavedDualMatrix()Landroid/graphics/Matrix;
     .locals 5
 
-    .line 585
+    .line 591
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -825,12 +831,12 @@
     :cond_0
     const-string v1, ";"
 
-    .line 589
+    .line 595
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 590
+    .line 596
     array-length v1, v0
 
     const/16 v3, 0x9
@@ -844,13 +850,13 @@
 
     const/4 v3, 0x0
 
-    .line 594
+    .line 600
     :goto_0
     array-length v4, v0
 
     if-ge v3, v4, :cond_2
 
-    .line 596
+    .line 602
     :try_start_0
     aget-object v4, v0, v3
 
@@ -869,18 +875,18 @@
     :catch_0
     move-exception v0
 
-    .line 598
+    .line 604
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v2
 
-    .line 602
+    .line 608
     :cond_2
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 603
+    .line 609
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->setValues([F)V
 
     return-object v0
@@ -1084,7 +1090,7 @@
 .method private resetSavedDual()V
     .locals 3
 
-    .line 612
+    .line 618
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1115,7 +1121,7 @@
 .method private saveDual()V
     .locals 4
 
-    .line 616
+    .line 622
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1124,7 +1130,7 @@
 
     move-result-object v0
 
-    .line 617
+    .line 623
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView;->isDual()Z
 
     move-result v1
@@ -1133,7 +1139,7 @@
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 618
+    .line 624
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView;->isDual()Z
 
     move-result v1
@@ -1146,7 +1152,7 @@
 
     new-array v1, v1, [F
 
-    .line 620
+    .line 626
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView;->getDualPosition()Landroid/graphics/Matrix;
 
     move-result-object v3
@@ -1155,7 +1161,7 @@
 
     const-string v3, ";"
 
-    .line 621
+    .line 627
     invoke-static {v3, v1}, Lcom/google/common/primitives/Floats;->join(Ljava/lang/String;[F)Ljava/lang/String;
 
     move-result-object v1
@@ -1164,11 +1170,11 @@
 
     goto :goto_0
 
-    .line 623
+    .line 629
     :cond_0
     invoke-interface {v0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 625
+    .line 631
     :goto_0
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
@@ -2976,7 +2982,7 @@
 .method public isSavedDual()Z
     .locals 4
 
-    .line 608
+    .line 614
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0

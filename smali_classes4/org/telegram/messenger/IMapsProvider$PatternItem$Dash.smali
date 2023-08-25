@@ -22,10 +22,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 170
+    .line 172
     invoke-direct {p0}, Lorg/telegram/messenger/IMapsProvider$PatternItem;-><init>()V
 
-    .line 171
+    .line 173
     iput p1, p0, Lorg/telegram/messenger/IMapsProvider$PatternItem$Dash;->length:I
 
     return-void

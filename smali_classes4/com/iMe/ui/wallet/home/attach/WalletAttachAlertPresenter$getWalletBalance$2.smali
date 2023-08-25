@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 104
+    .line 102
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletBalance$2;->invoke(Ljava/lang/Throwable;)V
@@ -62,7 +62,7 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .locals 1
 
-    .line 118
+    .line 116
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletBalance$2;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;

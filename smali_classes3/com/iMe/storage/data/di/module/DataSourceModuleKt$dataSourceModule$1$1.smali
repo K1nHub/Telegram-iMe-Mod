@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,111:1\n129#2,5:112\n129#2,5:117\n129#2,5:122\n129#2,5:127\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n*L\n44#1:112,5\n45#1:117,5\n46#1:122,5\n47#1:127,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,150:1\n129#2,5:151\n129#2,5:156\n129#2,5:161\n129#2,5:166\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$1\n*L\n47#1:151,5\n48#1:156,5\n49#1:161,5\n50#1:166,5\n*E\n"
 .end annotation
 
 
@@ -74,10 +74,10 @@
 
     invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 43
+    .line 46
     new-instance p2, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
 
-    .line 44
+    .line 47
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getEVM_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v1
@@ -95,7 +95,7 @@
 
     check-cast v1, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 45
+    .line 48
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getTON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v2
@@ -111,7 +111,7 @@
 
     check-cast v2, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 46
+    .line 49
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getTRON_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v4
@@ -127,7 +127,7 @@
 
     check-cast v4, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 47
+    .line 50
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getBTC_CRYPTO_TRANSFER_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v5
@@ -143,7 +143,7 @@
 
     check-cast p1, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;
 
-    .line 43
+    .line 46
     invoke-direct {p2, v1, v2, v4, p1}, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;-><init>(Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSource;)V
 
     return-object p2
@@ -152,7 +152,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 42
+    .line 45
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

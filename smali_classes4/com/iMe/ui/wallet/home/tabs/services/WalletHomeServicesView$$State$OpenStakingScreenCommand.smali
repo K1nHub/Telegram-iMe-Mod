@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView$$State;)V
     .locals 1
 
-    .line 165
+    .line 181
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "openStakingScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;)V
     .locals 0
 
-    .line 170
+    .line 186
     invoke-interface {p1}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;->openStakingScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 163
+    .line 179
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView$$State$OpenStakingScreenCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesView;)V

@@ -37,6 +37,8 @@
 
 .field public final paint:Landroid/graphics/Paint;
 
+.field private final resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
 .field shader:Landroid/graphics/Shader;
 
 .field public x1:F
@@ -64,34 +66,57 @@
 
     move v4, p4
 
-    .line 167
+    .line 169
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIIII)V
 
     return-void
 .end method
 
 .method public constructor <init>(IIIII)V
+    .locals 7
+
+    const/4 v5, -0x1
+
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    .line 173
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;-><init>(IIIIILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(IIIIILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 170
+    .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    .line 150
+    .line 152
     iput v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->cx:F
 
-    .line 151
+    .line 153
     iput v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->cy:F
 
-    .line 153
+    .line 155
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
-    .line 154
+    .line 156
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -104,12 +129,12 @@
 
     new-array v0, v0, [I
 
-    .line 157
+    .line 159
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colors:[I
 
     const/4 v0, 0x0
 
-    .line 160
+    .line 162
     iput v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -122,19 +147,22 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->y2:F
 
-    .line 171
+    .line 177
+    iput-object p6, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    .line 178
     iput p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey1:I
 
-    .line 172
+    .line 179
     iput p2, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey2:I
 
-    .line 173
+    .line 180
     iput p3, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey3:I
 
-    .line 174
+    .line 181
     iput p4, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey4:I
 
-    .line 175
+    .line 182
     iput p5, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey5:I
 
     return-void
@@ -154,21 +182,25 @@
 
     move-object/from16 v0, p0
 
-    .line 204
+    .line 211
     iget v1, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey1:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v2, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
-    .line 205
+    .line 212
     iget v2, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey2:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
-    .line 206
+    .line 213
     iget v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey3:I
 
     const/4 v4, 0x0
@@ -180,11 +212,13 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v5, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
-    .line 207
+    .line 214
     :goto_0
     iget v5, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey4:I
 
@@ -195,11 +229,13 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
-    .line 208
+    .line 215
     :goto_1
     iget v6, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colorKey5:I
 
@@ -210,11 +246,13 @@
     goto :goto_2
 
     :cond_2
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v7, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v6
 
-    .line 209
+    .line 216
     :goto_2
     iget-object v7, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->colors:[I
 
@@ -246,27 +284,27 @@
 
     if-eq v8, v6, :cond_7
 
-    .line 210
+    .line 217
     :cond_3
     aput v1, v7, v4
 
-    .line 211
+    .line 218
     aput v2, v7, v12
 
-    .line 212
+    .line 219
     aput v3, v7, v11
 
-    .line 213
+    .line 220
     aput v5, v7, v10
 
-    .line 214
+    .line 221
     aput v6, v7, v9
 
     const/high16 v1, 0x42c80000    # 100.0f
 
     if-nez v3, :cond_4
 
-    .line 216
+    .line 223
     new-instance v2, Landroid/graphics/LinearGradient;
 
     iget v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
@@ -318,7 +356,7 @@
     :cond_4
     if-nez v5, :cond_5
 
-    .line 218
+    .line 225
     new-instance v2, Landroid/graphics/LinearGradient;
 
     iget v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
@@ -370,7 +408,7 @@
     :cond_5
     if-nez v6, :cond_6
 
-    .line 220
+    .line 227
     new-instance v2, Landroid/graphics/LinearGradient;
 
     iget v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->x1:F
@@ -427,7 +465,7 @@
 
     goto :goto_3
 
-    .line 222
+    .line 229
     :cond_6
     new-instance v2, Landroid/graphics/LinearGradient;
 
@@ -487,7 +525,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->shader:Landroid/graphics/Shader;
 
-    .line 224
+    .line 231
     :goto_3
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->shader:Landroid/graphics/Shader;
 
@@ -495,7 +533,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 225
+    .line 232
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->paint:Landroid/graphics/Paint;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->shader:Landroid/graphics/Shader;
@@ -543,10 +581,10 @@
 .method public gradientMatrix(IIIIFF)V
     .locals 2
 
-    .line 179
+    .line 186
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->chekColors()V
 
-    .line 180
+    .line 187
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->exactly:Z
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -565,12 +603,12 @@
 
     div-float/2addr p2, v1
 
-    .line 185
+    .line 192
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p3}, Landroid/graphics/Matrix;->reset()V
 
-    .line 186
+    .line 193
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     iget p4, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->cx:F
@@ -583,12 +621,12 @@
 
     invoke-virtual {p3, p1, p2, p4, v0}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 187
+    .line 194
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1, p5, p6}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 188
+    .line 195
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->shader:Landroid/graphics/Shader;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
@@ -612,15 +650,15 @@
 
     div-float/2addr p2, v1
 
-    .line 195
+    .line 202
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->chekColors()V
 
-    .line 196
+    .line 203
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p3}, Landroid/graphics/Matrix;->reset()V
 
-    .line 197
+    .line 204
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     const/high16 v0, 0x42960000    # 75.0f
@@ -629,7 +667,7 @@
 
     invoke-virtual {p3, p1, p2, v0, v1}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 198
+    .line 205
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     neg-int p2, p4
@@ -640,7 +678,7 @@
 
     invoke-virtual {p1, p5, p2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 199
+    .line 206
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->shader:Landroid/graphics/Shader;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
@@ -654,15 +692,15 @@
 .method public gradientMatrixLinear(FF)V
     .locals 3
 
-    .line 230
+    .line 237
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->chekColors()V
 
-    .line 232
+    .line 239
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 233
+    .line 240
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -675,12 +713,12 @@
 
     invoke-virtual {v0, v1, p1, v2, v2}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 234
+    .line 241
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1, v2, p2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 235
+    .line 242
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->shader:Landroid/graphics/Shader;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->matrix:Landroid/graphics/Matrix;

@@ -8,26 +8,26 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$User;
+.field public final synthetic f$1:Z
 
-.field public final synthetic f$2:Ljava/lang/String;
+.field public final synthetic f$2:I
 
-.field public final synthetic f$3:I
+.field public final synthetic f$3:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ZILjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$1:Lorg/telegram/tgnet/TLRPC$User;
+    iput-boolean p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$1:Z
 
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$2:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$2:I
 
-    iput p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$3:I
+    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$3:Ljava/lang/String;
 
     return-void
 .end method
@@ -41,11 +41,11 @@
 
     iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v2, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$1:Lorg/telegram/tgnet/TLRPC$User;
+    iget-boolean v2, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$1:Z
 
-    iget-object v3, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$2:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$2:I
 
-    iget v4, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$3:I
+    iget-object v4, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda138;->f$3:Ljava/lang/String;
 
     move-object v5, p1
 
@@ -59,7 +59,7 @@
 
     move-object/from16 v10, p6
 
-    invoke-static/range {v1 .. v10}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$mVPDq4-Wr70ek3Ncy2KjWlVTx5A(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;ILorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    invoke-static/range {v1 .. v10}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$eH597gQPpU-_D9Q9rqraKAS7938(Lorg/telegram/ui/LaunchActivity;ZILjava/lang/String;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     move-result v1
 

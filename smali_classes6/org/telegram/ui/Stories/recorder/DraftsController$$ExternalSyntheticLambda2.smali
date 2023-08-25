@@ -10,11 +10,9 @@
 
 .field public final synthetic f$1:Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
 
-.field public final synthetic f$2:J
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;J)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,23 +21,19 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
 
-    iput-wide p3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;->f$2:J
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
 
-    iget-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;->f$2:J
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/DraftsController;->$r8$lambda$Dmb_jcjH9ONQa8qF0hnhPLkM8YQ(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;J)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->$r8$lambda$d8fdfB-WP1XUXz56k0kwXC7i_7c(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
 
     return-void
 .end method

@@ -12,6 +12,11 @@
 
 
 # virtual methods
+.method public abstract openNetworksSettingsScreen()V
+    .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
+    .end annotation
+.end method
+
 .method public abstract setupSettingsItems(Ljava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -2,58 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PhotoViewer$14;
 
-.field public final synthetic f$1:Ljava/util/ArrayList;
-
-.field public final synthetic f$2:Lorg/telegram/ui/ChatActivity;
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer$14;Ljava/util/ArrayList;Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer$14;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/PhotoViewer$14;
 
-    iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$1:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/ui/ChatActivity;
+    iput-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$1:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-    .locals 9
+.method public final run(Ljava/lang/Object;)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/PhotoViewer$14;
 
-    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$1:Ljava/util/ArrayList;
+    iget-boolean v1, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$1:Z
 
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$14$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/ui/ChatActivity;
+    check-cast p1, Landroid/net/Uri;
 
-    move-object v3, p1
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$dk4p2--GzAiPtwqnIG6HgyKeTH0(Lorg/telegram/ui/PhotoViewer$14;ZLandroid/net/Uri;)V
 
-    move-object v4, p2
-
-    move-object v5, p3
-
-    move v6, p4
-
-    move-object v7, p5
-
-    move-object v8, p6
-
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/PhotoViewer$14;->$r8$lambda$VFt7wOrONHIMxQCvQ1je6KUi4Co(Lorg/telegram/ui/PhotoViewer$14;Ljava/util/ArrayList;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

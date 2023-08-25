@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 373
+    .line 410
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$setupAddressOptions$1$1;->invoke(Landroid/view/View;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 373
+    .line 410
     iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$setupAddressOptions$1$1;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;->access$openQRScan(Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;)V

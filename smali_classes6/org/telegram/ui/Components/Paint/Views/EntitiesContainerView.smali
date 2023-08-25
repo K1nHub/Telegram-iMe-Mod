@@ -18,15 +18,9 @@
 # instance fields
 .field private delegate:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;
 
-.field private gestureDetector:Landroid/view/ScaleGestureDetector;
-
 .field private hasTransformed:Z
 
-.field private previousAngle:F
-
 .field private previousScale:F
-
-.field private rotationGestureDetector:Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;
 
 
 # direct methods
@@ -46,14 +40,10 @@
 
     invoke-direct {v0, p1, p0}, Landroid/view/ScaleGestureDetector;-><init>(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->gestureDetector:Landroid/view/ScaleGestureDetector;
-
     .line 28
     new-instance p1, Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;-><init>(Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector$OnRotationGestureListener;)V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->rotationGestureDetector:Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;
 
     .line 29
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->delegate:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;
@@ -105,19 +95,19 @@
 .method protected measureChildWithMargins(Landroid/view/View;IIII)V
     .locals 1
 
-    .line 120
+    .line 115
     instance-of v0, p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v0, :cond_0
 
-    .line 121
+    .line 116
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p4
 
     check-cast p4, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 122
+    .line 117
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result p5
@@ -146,7 +136,7 @@
 
     const/4 p3, 0x0
 
-    .line 123
+    .line 118
     invoke-static {p3, p3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p3
@@ -155,7 +145,7 @@
 
     goto :goto_0
 
-    .line 125
+    .line 120
     :cond_0
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
@@ -163,120 +153,30 @@
     return-void
 .end method
 
-.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    .line 46
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
-
-    move-result p1
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_0
-
-    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->delegate:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;
-
-    invoke-interface {p1}, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;->shouldReceiveTouches()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
-.method public onRotation(Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;)V
-    .locals 3
-
-    .line 106
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->delegate:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;
-
-    invoke-interface {v0}, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;->onSelectedEntityRequest()Lorg/telegram/ui/Components/Paint/Views/EntityView;
-
-    move-result-object v0
-
-    .line 107
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;->getAngle()F
-
-    move-result p1
-
-    .line 108
-    iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->previousAngle:F
-
-    sub-float/2addr v1, p1
-
-    .line 109
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getRotation()F
-
-    move-result v2
-
-    add-float/2addr v2, v1
-
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->rotate(F)V
-
-    .line 110
-    iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->previousAngle:F
-
-    return-void
-.end method
-
-.method public onRotationBegin(Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;)V
-    .locals 0
-
-    .line 100
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;->getStartAngle()F
-
-    move-result p1
-
-    iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->previousAngle:F
-
-    const/4 p1, 0x1
-
-    .line 101
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->hasTransformed:Z
-
-    return-void
-.end method
-
-.method public onRotationEnd(Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;)V
-    .locals 0
-
-    return-void
-.end method
-
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
     .locals 2
 
-    .line 75
+    .line 70
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
     move-result p1
 
-    .line 76
+    .line 71
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->previousScale:F
 
     div-float v0, p1, v0
 
-    .line 78
+    .line 73
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->delegate:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;
 
     invoke-interface {v1}, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;->onSelectedEntityRequest()Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     move-result-object v1
 
-    .line 79
+    .line 74
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->scale(F)V
 
-    .line 81
+    .line 76
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->previousScale:F
 
     const/4 p1, 0x0
@@ -289,12 +189,12 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 88
+    .line 83
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->previousScale:F
 
     const/4 p1, 0x1
 
-    .line 89
+    .line 84
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->hasTransformed:Z
 
     return p1
@@ -307,9 +207,9 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 4
+    .locals 3
 
-    .line 51
+    .line 46
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->delegate:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;
 
     invoke-interface {v0}, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;->onSelectedEntityRequest()Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -322,7 +222,7 @@
 
     return v1
 
-    .line 56
+    .line 51
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -332,26 +232,26 @@
 
     if-ne v0, v2, :cond_4
 
-    .line 57
+    .line 52
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_1
+    if-nez p1, :cond_1
 
-    .line 59
+    .line 54
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->hasTransformed:Z
 
     goto :goto_0
 
     :cond_1
-    if-eq v0, v2, :cond_2
+    if-eq p1, v2, :cond_2
 
-    const/4 v3, 0x2
+    const/4 v0, 0x2
 
-    if-ne v0, v3, :cond_4
+    if-ne p1, v0, :cond_4
 
-    .line 61
+    .line 56
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->hasTransformed:Z
 
@@ -361,23 +261,13 @@
 
     if-eqz p1, :cond_3
 
-    .line 62
+    .line 57
     invoke-interface {p1}, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView$EntitiesContainerViewDelegate;->onEntityDeselect()V
 
     :cond_3
     return v1
 
-    .line 68
     :cond_4
     :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->gestureDetector:Landroid/view/ScaleGestureDetector;
-
-    invoke-virtual {v0, p1}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    .line 69
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->rotationGestureDetector:Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;
-
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/RotationGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
     return v2
 .end method

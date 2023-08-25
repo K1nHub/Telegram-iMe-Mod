@@ -58,15 +58,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 18
+    .line 16
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/firebase/DynamicLinksInteractor;->dynamicLinksRepository:Lcom/iMe/storage/domain/repository/firebase/DynamicLinksRepository;
 
-    .line 19
+    .line 17
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/firebase/DynamicLinksRepository;->getLink(Lcom/iMe/storage/data/utils/system/AndroidActivityHolder;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 20
+    .line 18
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/firebase/DynamicLinksInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

@@ -28,10 +28,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 32431
+    .line 32440
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessagePeerVote;-><init>()V
 
-    .line 32434
+    .line 32443
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -46,7 +46,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 32437
+    .line 32446
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -57,7 +57,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerVote;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 32438
+    .line 32447
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -72,7 +72,7 @@
 
     return-void
 
-    .line 32441
+    .line 32450
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -96,7 +96,7 @@
 
     throw p1
 
-    .line 32445
+    .line 32454
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -105,7 +105,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 32447
+    .line 32456
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerVoteMultiple;->options:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 32449
+    .line 32458
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -132,29 +132,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 32453
+    .line 32462
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerVoteMultiple;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32454
+    .line 32463
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerVote;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     const v0, 0x1cb5c415
 
-    .line 32455
+    .line 32464
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32456
+    .line 32465
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerVoteMultiple;->options:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 32457
+    .line 32466
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -162,7 +162,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 32459
+    .line 32468
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerVoteMultiple;->options:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -177,7 +177,7 @@
 
     goto :goto_0
 
-    .line 32461
+    .line 32470
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerVote;->date:I
 

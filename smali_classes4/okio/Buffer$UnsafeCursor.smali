@@ -110,7 +110,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "not attached to a buffer"
+    const-string/jumbo v1, "not attached to a buffer"
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -184,7 +184,7 @@
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "no more bytes"
+    const-string/jumbo v1, "no more bytes"
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -318,7 +318,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "newSize < 0: "
+    const-string/jumbo v4, "newSize < 0: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -433,7 +433,7 @@
     :cond_8
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "not attached to a buffer"
+    const-string/jumbo v2, "not attached to a buffer"
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -742,7 +742,7 @@
 
     move-result-object p1
 
-    const-string p2, "offset=%s > size=%s"
+    const-string/jumbo p2, "offset=%s > size=%s"
 
     invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -761,7 +761,7 @@
     :cond_a
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string p2, "not attached to a buffer"
+    const-string/jumbo p2, "not attached to a buffer"
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)V
     .locals 0
 
-    .line 1734
+    .line 1937
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,7 +62,7 @@
 .method public getTopOffset(I)I
     .locals 0
 
-    .line 1737
+    .line 1940
     sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     return p1

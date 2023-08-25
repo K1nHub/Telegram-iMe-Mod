@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor$$ExternalSyntheticLambda10;->f$0:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->$r8$lambda$gsfsSCtq4eppc04EAKUtNfq3_V8(Ljava/lang/String;)Ljava/util/List;
+    invoke-static {v0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->$r8$lambda$Ar1zxs2eMjJeUEtDq6DQ-wYQh8U(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 

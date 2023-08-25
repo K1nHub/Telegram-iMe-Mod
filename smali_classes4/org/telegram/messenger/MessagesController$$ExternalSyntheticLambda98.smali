@@ -10,13 +10,13 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Ljava/util/ArrayList;
+.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;
+.field public final synthetic f$3:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLandroidx/collection/LongSparseArray;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +25,9 @@
 
     iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$1:J
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$2:Ljava/util/ArrayList;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$2:Landroidx/collection/LongSparseArray;
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;
+    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$3:Z
 
     return-void
 .end method
@@ -41,11 +41,11 @@
 
     iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$1:J
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$2:Ljava/util/ArrayList;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$2:Landroidx/collection/LongSparseArray;
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;
+    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda98;->f$3:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$20HFdyA6dSnvlqoo3WiSDKmd_68(Lorg/telegram/messenger/MessagesController;JLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$b5EK12TYNa_MNPI0X1QAAi1GPLw(Lorg/telegram/messenger/MessagesController;JLandroidx/collection/LongSparseArray;Z)V
 
     return-void
 .end method

@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
+.field public final synthetic f$0:Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final didSetColor()V
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;
 
-    invoke-static {v0}, Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;->$r8$lambda$ugOb0SywcdRIzvyhRZTL2KssXRU(Lcom/iMe/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
 .end method

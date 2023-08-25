@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;)V
     .locals 0
 
-    .line 568
+    .line 570
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3$1;->this$1:Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 571
+    .line 573
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3$1;->this$1:Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
@@ -44,7 +44,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->firstFrameRendered:Z
 
-    .line 572
+    .line 574
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

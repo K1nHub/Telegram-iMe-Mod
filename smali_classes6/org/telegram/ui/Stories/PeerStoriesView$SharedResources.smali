@@ -31,6 +31,10 @@
 
 .field public final imageBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
+.field public likeDrawable:Landroid/graphics/drawable/Drawable;
+
+.field public likeDrawableFilled:Landroid/graphics/drawable/Drawable;
+
 .field public muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
 .field public noSoundDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -52,45 +56,45 @@
 .method constructor <init>(Landroid/content/Context;)V
     .locals 10
 
-    .line 4455
+    .line 5259
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4441
+    .line 5243
     new-instance v0, Lorg/telegram/ui/Components/BitmapShaderTools;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/BitmapShaderTools;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->bitmapShaderTools:Lorg/telegram/ui/Components/BitmapShaderTools;
 
-    .line 4443
+    .line 5245
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->rect1:Landroid/graphics/RectF;
 
-    .line 4444
+    .line 5246
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->rect2:Landroid/graphics/RectF;
 
-    .line 4445
+    .line 5247
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->finalRect:Landroid/graphics/RectF;
 
-    .line 4446
+    .line 5248
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->dimPaint:Landroid/graphics/Paint;
 
-    .line 4457
+    .line 5261
     sget v0, Lorg/telegram/messenger/R$drawable;->media_share:I
 
     invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -99,7 +103,36 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->shareDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 4458
+    .line 5262
+    sget v0, Lorg/telegram/messenger/R$drawable;->media_like:I
+
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->likeDrawable:Landroid/graphics/drawable/Drawable;
+
+    .line 5263
+    sget v0, Lorg/telegram/messenger/R$drawable;->media_like_active:I
+
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->likeDrawableFilled:Landroid/graphics/drawable/Drawable;
+
+    .line 5264
+    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
+
+    sget-object v2, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    const v3, -0xd1c8
+
+    invoke-direct {v1, v3, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 5265
     sget v0, Lorg/telegram/messenger/R$drawable;->media_more:I
 
     invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -108,7 +141,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->optionsDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 4459
+    .line 5266
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -117,7 +150,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->deleteDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 4460
+    .line 5267
     new-instance v0, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v8, Lorg/telegram/messenger/R$raw;->media_mute_unmute:I
@@ -146,7 +179,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 4462
+    .line 5269
     new-instance v0, Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -171,15 +204,15 @@
 
     const/4 v3, 0x1
 
-    .line 4463
+    .line 5270
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
-    .line 4464
+    .line 5271
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->noSoundDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
-    .line 4467
+    .line 5274
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v3}, Landroid/graphics/Paint;-><init>(I)V
@@ -188,10 +221,10 @@
 
     const v1, 0x55ffffff    # 3.518437E13f
 
-    .line 4468
+    .line 5275
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 4469
+    .line 5276
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v3}, Landroid/graphics/Paint;-><init>(I)V
@@ -200,19 +233,19 @@
 
     const/4 v1, -0x1
 
-    .line 4470
+    .line 5277
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     const/high16 v0, -0x1000000
 
     const/16 v2, 0x66
 
-    .line 4474
+    .line 5279
     invoke-static {v0, v2}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v2
 
-    .line 4475
+    .line 5280
     sget v3, Lorg/telegram/messenger/R$drawable;->shadow_story_top:I
 
     invoke-static {p1, v3}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -221,7 +254,7 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->topOverlayGradient:Landroid/graphics/drawable/Drawable;
 
-    .line 4476
+    .line 5281
     sget v3, Lorg/telegram/messenger/R$drawable;->shadow_story_bottom:I
 
     invoke-static {p1, v3}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -230,17 +263,17 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->bottomOverlayGradient:Landroid/graphics/drawable/Drawable;
 
-    .line 4479
+    .line 5284
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->gradientBackgroundPaint:Landroid/graphics/Paint;
 
-    .line 4480
+    .line 5285
     invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 4482
+    .line 5287
     new-instance p1, Landroid/graphics/drawable/ColorDrawable;
 
     const v2, 0x3dcccccd    # 0.1f
@@ -259,61 +292,61 @@
 .method static synthetic access$100(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 4433
+    .line 5235
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->dimPaint:Landroid/graphics/Paint;
 
     return-object p0
 .end method
 
-.method static synthetic access$1100(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/Paint;
+.method static synthetic access$1200(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 4433
+    .line 5235
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->gradientBackgroundPaint:Landroid/graphics/Paint;
 
     return-object p0
 .end method
 
-.method static synthetic access$1200(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
+.method static synthetic access$1300(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 4433
+    .line 5235
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->bottomOverlayGradient:Landroid/graphics/drawable/Drawable;
 
     return-object p0
 .end method
 
-.method static synthetic access$6700(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/RectF;
+.method static synthetic access$7200(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 4433
+    .line 5235
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->rect1:Landroid/graphics/RectF;
 
     return-object p0
 .end method
 
-.method static synthetic access$6800(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/RectF;
+.method static synthetic access$7300(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 4433
+    .line 5235
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->rect2:Landroid/graphics/RectF;
 
     return-object p0
 .end method
 
-.method static synthetic access$6900(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/RectF;
+.method static synthetic access$7400(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 4433
+    .line 5235
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->finalRect:Landroid/graphics/RectF;
 
     return-object p0
 .end method
 
-.method static synthetic access$700(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
+.method static synthetic access$800(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 4433
+    .line 5235
     iget-object p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->topOverlayGradient:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -330,7 +363,7 @@
 
     if-nez p2, :cond_2
 
-    .line 4487
+    .line 5292
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz p1, :cond_0
@@ -345,7 +378,7 @@
     :goto_0
     invoke-virtual {p2, v2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 4488
+    .line 5293
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz p1, :cond_1
@@ -363,7 +396,7 @@
     :cond_2
     if-eqz p1, :cond_4
 
-    .line 4492
+    .line 5297
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->getCurrentFrame()I
@@ -372,25 +405,25 @@
 
     if-le p1, v0, :cond_3
 
-    .line 4493
+    .line 5298
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 4495
+    .line 5300
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 4496
+    .line 5301
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
     goto :goto_2
 
-    .line 4498
+    .line 5303
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -412,13 +445,13 @@
 
     goto :goto_2
 
-    .line 4501
+    .line 5306
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 4502
+    .line 5307
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V

@@ -22,15 +22,18 @@
         "Lkotlin/jvm/functions/Function1<",
         "Lcom/iMe/storage/domain/model/Result<",
         "+",
+        "Ljava/util/Map<",
+        "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
+        "+",
         "Ljava/lang/String;",
-        ">;",
+        ">;>;",
         "Lkotlin/Unit;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n1#1,111:1\n101#2,10:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n1#1,111:1\n100#2,10:112\n*E\n"
 .end annotation
 
 
@@ -75,8 +78,11 @@
             "(",
             "Lcom/iMe/storage/domain/model/Result<",
             "+",
+            "Ljava/util/Map<",
+            "Lcom/iMe/storage/domain/model/crypto/BlockchainType;",
+            "+",
             "Ljava/lang/String;",
-            ">;)V"
+            ">;>;)V"
         }
     .end annotation
 
@@ -101,9 +107,9 @@
 
     move-result-object p1
 
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Ljava/util/Map;
 
-    invoke-virtual {v0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->setLinkedWalletAddress(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->setLinkedWalletsAddresses(Ljava/util/Map;)V
 
     .line 115
     iget-object p1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager$runWithCryptoInformationCheck$$inlined$subscribeWithErrorHandle$default$1;->$endAction$inlined:Lcom/iMe/fork/utils/Callbacks$Callback;

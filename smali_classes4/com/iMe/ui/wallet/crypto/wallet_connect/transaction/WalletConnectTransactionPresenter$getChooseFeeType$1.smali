@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getChooseFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    value = Lcom/iMe/ui/wallet/crypto/wallet_connect/transaction/WalletConnectTransactionPresenter;->getChooseFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

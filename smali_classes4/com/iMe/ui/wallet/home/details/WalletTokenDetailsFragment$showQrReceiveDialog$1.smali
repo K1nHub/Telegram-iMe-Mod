@@ -36,7 +36,7 @@
 
     move-object v4, p2
 
-    .line 762
+    .line 1117
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/QRCodeBottomSheet;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
@@ -47,7 +47,7 @@
 .method public getCustomQrCenterImageUrl()Ljava/lang/String;
     .locals 1
 
-    .line 769
+    .line 1124
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$showQrReceiveDialog$1;->$tokenLogoUrl:Ljava/lang/String;
 
     return-object v0
@@ -56,7 +56,7 @@
 .method public getType()I
     .locals 1
 
-    .line 771
+    .line 1126
     sget v0, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_RECEIVE:I
 
     return v0

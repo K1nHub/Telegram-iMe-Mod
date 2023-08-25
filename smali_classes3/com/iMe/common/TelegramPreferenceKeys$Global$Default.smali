@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramPreferenceKeys.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/iMe/common/TelegramPreferenceKeys$Global$Default\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,960:1\n11335#2:961\n11670#2,3:962\n11335#2:965\n11670#2,3:966\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/iMe/common/TelegramPreferenceKeys$Global$Default\n*L\n287#1:961\n287#1:962,3\n338#1:965\n338#1:966,3\n*E\n"
+    value = "SMAP\nTelegramPreferenceKeys.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/iMe/common/TelegramPreferenceKeys$Global$Default\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,978:1\n11335#2:979\n11670#2,3:980\n11335#2:983\n11670#2,3:984\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/iMe/common/TelegramPreferenceKeys$Global$Default\n*L\n296#1:979\n296#1:980,3\n347#1:983\n347#1:984,3\n*E\n"
 .end annotation
 
 
@@ -32,7 +32,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 210
+    .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,6 +63,14 @@
 .end method
 
 .method public static final isCallsConfirmationEnabled()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public static final isChatProfileEnabled()Z
     .locals 1
 
     const/4 v0, 0x1
@@ -254,14 +262,6 @@
     return v0
 .end method
 
-.method public static final isPinnedPlayerThemeOverridden()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public static final isPlayerPinned()Z
     .locals 1
 
@@ -438,10 +438,33 @@
     return v0
 .end method
 
+.method public static final selectedChatProfileDialogTypes()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Lcom/iMe/fork/enums/ChatProfileDialogType;",
+            ">;"
+        }
+    .end annotation
+
+    .line 413
+    invoke-static {}, Lcom/iMe/fork/enums/ChatProfileDialogType;->values()[Lcom/iMe/fork/enums/ChatProfileDialogType;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/collections/ArraysKt;->toSet([Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static final selectedChatProfileTelegramIdMode()Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
     .locals 1
 
-    .line 317
+    .line 326
     sget-object v0, Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;->TELEGRAM_API:Lcom/iMe/fork/enums/ChatProfileTelegramIdMode;
 
     return-object v0
@@ -458,7 +481,7 @@
         }
     .end annotation
 
-    .line 338
+    .line 347
     invoke-static {}, Lcom/iMe/fork/enums/DialogType;->values()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v0
@@ -480,7 +503,7 @@
 
     aget-object v4, v0, v3
 
-    .line 338
+    .line 347
     invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v4
@@ -492,7 +515,7 @@
 
     goto :goto_0
 
-    .line 338
+    .line 347
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -504,7 +527,7 @@
 .method public static final selectedDrawerHeaderSubtitle()Lcom/iMe/ui/drawer/DrawerAccountData;
     .locals 1
 
-    .line 248
+    .line 257
     sget-object v0, Lcom/iMe/ui/drawer/DrawerAccountData;->PHONE:Lcom/iMe/ui/drawer/DrawerAccountData;
 
     return-object v0
@@ -513,7 +536,7 @@
 .method public static final selectedDrawerHeaderTitle()Lcom/iMe/ui/drawer/DrawerAccountData;
     .locals 1
 
-    .line 245
+    .line 254
     sget-object v0, Lcom/iMe/ui/drawer/DrawerAccountData;->NAME:Lcom/iMe/ui/drawer/DrawerAccountData;
 
     return-object v0
@@ -522,7 +545,7 @@
 .method public static final selectedDrawerHolidayIconType()Lcom/iMe/fork/enums/DrawerHolidayIconType;
     .locals 1
 
-    .line 395
+    .line 401
     sget-object v0, Lcom/iMe/fork/enums/DrawerHolidayIconType;->DEFAULT:Lcom/iMe/fork/enums/DrawerHolidayIconType;
 
     return-object v0
@@ -539,7 +562,7 @@
         }
     .end annotation
 
-    .line 263
+    .line 272
     sget-object v0, Lcom/iMe/ui/drawer/DrawerSwitchableItem;->Companion:Lcom/iMe/ui/drawer/DrawerSwitchableItem$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/ui/drawer/DrawerSwitchableItem$Companion;->getDefaultItems()Ljava/util/Set;
@@ -560,7 +583,7 @@
         }
     .end annotation
 
-    .line 287
+    .line 296
     invoke-static {}, Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;->values()[Lcom/iMe/fork/enums/ExtendedAvatarPreviewerItem;
 
     move-result-object v0
@@ -582,7 +605,7 @@
 
     aget-object v4, v0, v3
 
-    .line 287
+    .line 296
     invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v4
@@ -594,7 +617,7 @@
 
     goto :goto_0
 
-    .line 287
+    .line 296
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -606,7 +629,7 @@
 .method public static final selectedFilterTabsNotificationMode()Lcom/iMe/fork/enums/FilterTabNotificationMode;
     .locals 1
 
-    .line 347
+    .line 356
     sget-object v0, Lcom/iMe/fork/enums/FilterTabNotificationMode;->NUMBER:Lcom/iMe/fork/enums/FilterTabNotificationMode;
 
     return-object v0
@@ -615,8 +638,17 @@
 .method public static final selectedFilterTabsWidthMode()Lcom/iMe/fork/enums/FilterTabWidthMode;
     .locals 1
 
-    .line 392
+    .line 398
     sget-object v0, Lcom/iMe/fork/enums/FilterTabWidthMode;->DEFAULT:Lcom/iMe/fork/enums/FilterTabWidthMode;
+
+    return-object v0
+.end method
+
+.method public static final selectedFormattingPanelType()Lcom/iMe/fork/enums/FormattingPanelType;
+    .locals 1
+
+    .line 416
+    sget-object v0, Lcom/iMe/fork/enums/FormattingPanelType;->DEFAULT:Lcom/iMe/fork/enums/FormattingPanelType;
 
     return-object v0
 .end method
@@ -632,7 +664,7 @@
         }
     .end annotation
 
-    .line 332
+    .line 341
     sget-object v0, Lcom/iMe/fork/enums/PhotoViewerMenuItem;->Companion:Lcom/iMe/fork/enums/PhotoViewerMenuItem$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/fork/enums/PhotoViewerMenuItem$Companion;->getDefaultEnumNames()Ljava/util/Set;
@@ -645,7 +677,7 @@
 .method public static final selectedStickersSize()Lcom/iMe/fork/enums/StickersSize;
     .locals 1
 
-    .line 230
+    .line 239
     sget-object v0, Lcom/iMe/fork/enums/StickersSize;->MEDIUM:Lcom/iMe/fork/enums/StickersSize;
 
     return-object v0
@@ -654,7 +686,7 @@
 .method public static final selectedTemplatesMode()Lcom/iMe/fork/enums/TemplatesMode;
     .locals 1
 
-    .line 380
+    .line 386
     sget-object v0, Lcom/iMe/fork/enums/TemplatesMode;->OVAL:Lcom/iMe/fork/enums/TemplatesMode;
 
     return-object v0
@@ -663,7 +695,7 @@
 .method public static final selectedTemplatesSortingType()Lcom/iMe/fork/enums/TemplatesSortingType;
     .locals 1
 
-    .line 383
+    .line 389
     sget-object v0, Lcom/iMe/fork/enums/TemplatesSortingType;->DATE:Lcom/iMe/fork/enums/TemplatesSortingType;
 
     return-object v0
@@ -672,7 +704,7 @@
 .method public static final selectedVideoVoiceCamera()Ljava/lang/String;
     .locals 1
 
-    .line 308
+    .line 317
     sget-object v0, Lcom/iMe/fork/enums/VideoVoiceCamera;->ASK:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -680,4 +712,12 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static final showStoryFabEnableHintCountLeft()I
+    .locals 1
+
+    const/4 v0, 0x3
+
+    return v0
 .end method

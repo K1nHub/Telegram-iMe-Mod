@@ -14,11 +14,17 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;
+
+
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 238
+    .line 731
+    iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter$1;->this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;
+
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,9 +35,15 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    const/16 p2, 0x2e
+    .line 734
+    iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter$1;->this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;
 
-    .line 241
+    iget-object p2, p2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
+
+    invoke-static {p2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$800(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)I
+
+    move-result p2
+
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

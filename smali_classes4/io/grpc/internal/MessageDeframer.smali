@@ -1360,7 +1360,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    const-string v1, "numMessages must be > 0"
+    const-string/jumbo v1, "numMessages must be > 0"
 
     .line 156
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V

@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ItemOptions;Landroid/view/View;Landroid/view/ViewGroup;)V
     .locals 0
 
-    .line 534
+    .line 570
     iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$4;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ItemOptions$4;->val$dimViewFinal:Landroid/view/View;
@@ -43,12 +43,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 537
+    .line 573
     iget-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$4;->val$dimViewFinal:Landroid/view/View;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->removeFromParent(Landroid/view/View;)V
 
-    .line 538
+    .line 574
     iget-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$4;->val$container:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;

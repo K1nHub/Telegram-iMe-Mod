@@ -609,7 +609,7 @@
 
     move-result p2
 
-    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {p1, p2}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     :cond_0
     return-object p0
@@ -647,7 +647,7 @@
 
     move-result v3
 
-    invoke-static {v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v2, v3}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     add-int/lit8 v1, v1, 0x1
 

@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/Cells/ReactedUserHolderView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Cells/ReactedUserHolderView;-><init>(IILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,13 +19,13 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Cells/ReactedUserHolderView;Z)V
+.method constructor <init>(Lorg/telegram/ui/Cells/ReactedUserHolderView;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 60
+    .line 82
     iput-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$1;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;-><init>(Z)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;-><init>(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method public openStory(JLjava/lang/Runnable;)V
     .locals 1
 
-    .line 63
+    .line 85
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$1;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Cells/ReactedUserHolderView;->openStory(JLjava/lang/Runnable;)V

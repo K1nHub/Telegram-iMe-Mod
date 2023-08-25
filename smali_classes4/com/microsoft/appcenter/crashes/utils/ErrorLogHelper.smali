@@ -951,7 +951,7 @@
     .line 257
     new-instance v1, Ljava/io/File;
 
-    const-string v3, "new"
+    const-string/jumbo v3, "new"
 
     invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
     :try_end_0

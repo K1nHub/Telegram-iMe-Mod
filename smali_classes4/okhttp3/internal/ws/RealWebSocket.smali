@@ -1203,7 +1203,7 @@
 
     move-object/from16 v11, p2
 
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2046,7 +2046,7 @@
     :cond_2
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "null cannot be cast to non-null type okhttp3.internal.ws.RealWebSocket.Close"
+    const-string/jumbo v1, "null cannot be cast to non-null type okhttp3.internal.ws.RealWebSocket.Close"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -2190,7 +2190,7 @@
     :cond_7
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "null cannot be cast to non-null type okhttp3.internal.ws.RealWebSocket.Message"
+    const-string/jumbo v1, "null cannot be cast to non-null type okhttp3.internal.ws.RealWebSocket.Message"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -2311,7 +2311,7 @@
     :try_start_7
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v4, "null cannot be cast to non-null type okhttp3.internal.ws.RealWebSocket.Close"
+    const-string/jumbo v4, "null cannot be cast to non-null type okhttp3.internal.ws.RealWebSocket.Close"
 
     invoke-direct {v0, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

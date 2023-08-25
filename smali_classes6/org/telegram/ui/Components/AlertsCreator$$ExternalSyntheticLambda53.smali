@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$7L1BAZZssGSKwsoWyT5pbwpPwog(Landroid/content/DialogInterface;I)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Syop7oJd_27sfcTfYo-72kPFJ4Q(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

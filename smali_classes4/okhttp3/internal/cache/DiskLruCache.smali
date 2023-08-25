@@ -962,7 +962,7 @@
 
     const-string v2, "(this as java.lang.String).substring(startIndex)"
 
-    const-string v3, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v3, "null cannot be cast to non-null type java.lang.String"
 
     const/4 v4, 0x2
 
@@ -1393,7 +1393,7 @@
     :try_start_1
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v1, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

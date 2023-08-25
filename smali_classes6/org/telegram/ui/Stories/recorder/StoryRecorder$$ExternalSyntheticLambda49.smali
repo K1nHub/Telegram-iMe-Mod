@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lorg/telegram/messenger/Utilities$Callback4;
 
 
 # instance fields
@@ -22,14 +22,20 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda49;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    check-cast p1, Ljava/lang/Float;
+    check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$WMwo23lKM0ulovsmXHLIup9Kvos(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Float;)V
+    check-cast p2, Ljava/lang/Boolean;
+
+    check-cast p3, Ljava/lang/Boolean;
+
+    check-cast p4, Ljava/lang/Runnable;
+
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$d8246GX20adT7EMezpydhfhLO3c(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Runnable;)V
 
     return-void
 .end method

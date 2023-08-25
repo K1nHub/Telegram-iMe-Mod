@@ -77,7 +77,7 @@
 
     move-object v9, p1
 
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$C8TAJBY5YokU5hmLGTXhx0fQmxQ(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/CubicBezierInterpolator;FFFFFFFLandroid/animation/ValueAnimator;)V
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$znObRgmW7Ka7XfQyORsBmNJzmqY(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/CubicBezierInterpolator;FFFFFFFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

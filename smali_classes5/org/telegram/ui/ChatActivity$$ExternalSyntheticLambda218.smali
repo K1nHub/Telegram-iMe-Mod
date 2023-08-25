@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda218;->f$1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$XlPE_PH6tktSmHpoZ0YzFhpjO1s(Lorg/telegram/ui/ChatActivity;I)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$69fPRLKlR2h7MyYlslBbl8vapz4(Lorg/telegram/ui/ChatActivity;I)V
 
     return-void
 .end method

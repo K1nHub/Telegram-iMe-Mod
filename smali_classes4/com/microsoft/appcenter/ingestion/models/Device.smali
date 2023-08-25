@@ -988,7 +988,7 @@
 
     invoke-virtual {p0, v0}, Lcom/microsoft/appcenter/ingestion/models/Device;->setModel(Ljava/lang/String;)V
 
-    const-string v0, "oemName"
+    const-string/jumbo v0, "oemName"
 
     .line 427
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1445,7 +1445,7 @@
 
     invoke-virtual {v0, v1}, Lorg/json/JSONStringer;->value(Ljava/lang/Object;)Lorg/json/JSONStringer;
 
-    const-string v0, "oemName"
+    const-string/jumbo v0, "oemName"
 
     .line 448
     invoke-virtual {p1, v0}, Lorg/json/JSONStringer;->key(Ljava/lang/String;)Lorg/json/JSONStringer;

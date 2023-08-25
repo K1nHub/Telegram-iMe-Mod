@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;Landroid/view/View;ZLjava/util/List;Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$OnSpoilerClickedListener;)V
     .locals 0
 
-    .line 21
+    .line 23
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
@@ -51,7 +51,7 @@
 .method public onDown(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 24
+    .line 26
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -64,7 +64,7 @@
 
     float-to-int p1, p1
 
-    .line 25
+    .line 27
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getScrollY()I
@@ -73,12 +73,12 @@
 
     add-int/2addr p1, v1
 
-    .line 26
+    .line 28
     iget-boolean v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$offsetPadding:Z
 
     if-eqz v1, :cond_0
 
-    .line 27
+    .line 29
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getPaddingLeft()I
@@ -87,7 +87,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 28
+    .line 30
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getPaddingTop()I
@@ -96,8 +96,26 @@
 
     sub-int/2addr p1, v1
 
-    .line 30
+    .line 32
     :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$000(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    .line 33
+    iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$100(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)I
+
+    move-result v1
+
+    sub-int/2addr p1, v1
+
+    .line 34
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$spoilers:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -117,7 +135,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 31
+    .line 35
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
@@ -128,12 +146,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 32
+    .line 36
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$002(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$202(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;Z)Z
 
     return v0
 
@@ -146,10 +164,10 @@
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 5
 
-    .line 41
+    .line 45
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$000(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$200(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)Z
 
     move-result v0
 
@@ -157,17 +175,17 @@
 
     if-eqz v0, :cond_2
 
-    .line 42
+    .line 46
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->playSoundEffect(I)V
 
-    .line 44
+    .line 48
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$002(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$202(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;Z)Z
 
-    .line 45
+    .line 49
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -180,7 +198,7 @@
 
     float-to-int p1, p1
 
-    .line 46
+    .line 50
     iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getScrollY()I
@@ -189,12 +207,12 @@
 
     add-int/2addr p1, v2
 
-    .line 47
+    .line 51
     iget-boolean v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$offsetPadding:Z
 
     if-eqz v2, :cond_0
 
-    .line 48
+    .line 52
     iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getPaddingLeft()I
@@ -203,7 +221,7 @@
 
     sub-int/2addr v0, v2
 
-    .line 49
+    .line 53
     iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getPaddingTop()I
@@ -212,8 +230,26 @@
 
     sub-int/2addr p1, v2
 
-    .line 51
+    .line 55
     :cond_0
+    iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
+
+    invoke-static {v2}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$000(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)I
+
+    move-result v2
+
+    sub-int/2addr v0, v2
+
+    .line 56
+    iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->this$0:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;
+
+    invoke-static {v2}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->access$100(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)I
+
+    move-result v2
+
+    sub-int/2addr p1, v2
+
+    .line 57
     iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$spoilers:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -233,7 +269,7 @@
 
     check-cast v3, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 52
+    .line 58
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v4
@@ -244,7 +280,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 53
+    .line 59
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$1;->val$clickedListener:Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector$OnSpoilerClickedListener;
 
     int-to-float v0, v0

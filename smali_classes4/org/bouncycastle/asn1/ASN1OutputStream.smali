@@ -497,7 +497,7 @@
     :cond_0
     new-instance p1, Ljava/io/IOException;
 
-    const-string v0, "null object detected"
+    const-string/jumbo v0, "null object detected"
 
     invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -525,7 +525,7 @@
     :cond_0
     new-instance p1, Ljava/io/IOException;
 
-    const-string v0, "null object detected"
+    const-string/jumbo v0, "null object detected"
 
     invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$3;Landroid/view/View;)V
     .locals 0
 
-    .line 1467
+    .line 1482
     invoke-direct {p0, p2}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
 
     return-void
@@ -29,29 +29,29 @@
 .method protected setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
     .locals 0
 
-    .line 1471
+    .line 1486
     invoke-super/range {p0 .. p5}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
-    .line 1473
+    .line 1488
     instance-of p3, p1, Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz p3, :cond_0
 
-    .line 1474
+    .line 1489
     check-cast p1, Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 p3, 0x1
 
     const/4 p4, 0x0
 
-    .line 1475
+    .line 1490
     invoke-virtual {p1, p4, p4, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
-    .line 1476
+    .line 1491
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->stop()V
 
     :cond_0

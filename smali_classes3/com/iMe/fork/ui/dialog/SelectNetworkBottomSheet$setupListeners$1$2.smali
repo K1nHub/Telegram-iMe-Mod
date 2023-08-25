@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectNetworkBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectNetworkBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,462:1\n766#2:463\n857#2,2:464\n*S KotlinDebug\n*F\n+ 1 SelectNetworkBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2\n*L\n192#1:463\n192#1:464,2\n*E\n"
+    value = "SMAP\nSelectNetworkBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectNetworkBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,518:1\n766#2:519\n857#2,2:520\n*S KotlinDebug\n*F\n+ 1 SelectNetworkBottomSheet.kt\ncom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2\n*L\n198#1:519\n198#1:520,2\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    .line 177
+    .line 182
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 .method public onSearchCollapse()V
     .locals 2
 
-    .line 183
+    .line 188
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getNetworks$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
@@ -48,14 +48,14 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setFilteredNetworks$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Ljava/util/List;)V
 
-    .line 184
+    .line 189
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setSearching$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Z)V
 
-    .line 185
+    .line 190
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getListAdapter(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;
@@ -74,13 +74,13 @@
 .end method
 
 .method public onTextChanged(Landroid/widget/EditText;)V
-    .locals 7
+    .locals 8
 
     const-string v0, "editText"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 189
+    .line 194
     invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p1
@@ -89,7 +89,7 @@
 
     move-result-object p1
 
-    .line 190
+    .line 195
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {p1}, Lkotlin/text/StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
@@ -102,26 +102,29 @@
 
     invoke-static {v0, v1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setSearching$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Z)V
 
-    .line 191
+    .line 196
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$isSearching$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_6
 
-    .line 192
+    .line 197
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getNetworks$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 766
-    new-instance v3, Ljava/util/ArrayList;
+    .line 198
+    iget-object v3, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    .line 766
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     .line 857
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -132,20 +135,62 @@
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    move-object v5, v4
+    move-object v6, v5
 
-    check-cast v5, Lcom/iMe/storage/domain/model/crypto/Network;
+    check-cast v6, Lcom/iMe/model/wallet/crypto/NetworkItem;
 
-    .line 193
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/crypto/Network;->getFullName()Ljava/lang/String;
+    .line 200
+    instance-of v7, v6, Lcom/iMe/model/wallet/crypto/NetworkItem$All;
+
+    if-eqz v7, :cond_1
+
+    .line 201
+    invoke-static {v3}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getResourceManager(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    move-result-object v6
+
+    sget v7, Lorg/telegram/messenger/R$string;->networks_all:I
+
+    invoke-interface {v6, v7}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 202
+    invoke-static {v6, p1, v2}, Lkotlin/text/StringsKt;->contains(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+
+    move-result v6
+
+    goto :goto_2
+
+    .line 205
+    :cond_1
+    instance-of v7, v6, Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    if-eqz v7, :cond_4
+
+    .line 206
+    check-cast v6, Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    invoke-virtual {v6}, Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;->getFullName()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7, p1, v2}, Lkotlin/text/StringsKt;->contains(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+
+    move-result v7
+
+    if-nez v7, :cond_3
+
+    .line 207
+    invoke-virtual {v6}, Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;->getShortName()Ljava/lang/String;
 
     move-result-object v6
 
@@ -153,44 +198,41 @@
 
     move-result v6
 
-    if-nez v6, :cond_2
-
-    .line 194
-    invoke-virtual {v5}, Lcom/iMe/storage/domain/model/crypto/Network;->getShortName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5, p1, v2}, Lkotlin/text/StringsKt;->contains(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
+    if-eqz v6, :cond_2
 
     goto :goto_1
 
-    :cond_1
-    const/4 v5, 0x0
+    :cond_2
+    const/4 v6, 0x0
 
     goto :goto_2
 
-    :cond_2
+    :cond_3
     :goto_1
-    move v5, v2
+    move v6, v2
 
     :goto_2
-    if-eqz v5, :cond_0
+    if-eqz v6, :cond_0
 
     .line 857
-    invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 192
-    :cond_3
-    invoke-static {v0, v3}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setFilteredNetworks$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Ljava/util/List;)V
+    .line 207
+    :cond_4
+    new-instance p1, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p1
 
     .line 197
-    :cond_4
+    :cond_5
+    invoke-static {v0, v4}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$setFilteredNetworks$p(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;Ljava/util/List;)V
+
+    .line 213
+    :cond_6
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$setupListeners$1$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;->access$getListAdapter(Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet;)Lcom/iMe/fork/ui/dialog/SelectNetworkBottomSheet$ListAdapter;

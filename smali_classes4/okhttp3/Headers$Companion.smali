@@ -177,7 +177,7 @@
     :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "name is empty"
+    const-string/jumbo v0, "name is empty"
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -404,7 +404,7 @@
 .method public final varargs of([Ljava/lang/String;)Lokhttp3/Headers;
     .locals 7
 
-    const-string v0, "namesAndValues"
+    const-string/jumbo v0, "namesAndValues"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -436,7 +436,7 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlin.Array<kotlin.String>"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -468,7 +468,7 @@
     .line 385
     aget-object v5, p1, v4
 
-    const-string v6, "null cannot be cast to non-null type kotlin.CharSequence"
+    const-string/jumbo v6, "null cannot be cast to non-null type kotlin.CharSequence"
 
     invoke-static {v5, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

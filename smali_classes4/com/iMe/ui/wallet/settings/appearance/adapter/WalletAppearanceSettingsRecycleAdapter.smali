@@ -26,7 +26,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 15
+    .line 23
     sget v0, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_appearance_settings:I
 
     const/4 v1, 0x0
@@ -35,7 +35,7 @@
 
     invoke-direct {p0, v0, v1, v2, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;-><init>(ILjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 14
+    .line 22
     iput-object p1, p0, Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     return-void
@@ -54,7 +54,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 27
     sget v0, Lorg/telegram/messenger/R$id;->linear_root:I
 
     const/4 v1, 0x0
@@ -63,23 +63,25 @@
 
     move-result-object v1
 
-    .line 22
+    .line 28
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedBackgroundColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 23
+    .line 30
     sget v1, Lorg/telegram/messenger/R$id;->text_setting_description:I
 
+    .line 31
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
+    .line 29
     invoke-static {v0, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 24
+    .line 33
     sget v2, Lorg/telegram/messenger/R$id;->text_setting_title:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -88,7 +90,7 @@
 
     move-result-object v0
 
-    .line 25
+    .line 34
     sget v3, Lorg/telegram/messenger/R$id;->image_icon:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
@@ -97,7 +99,7 @@
 
     move-result-object v0
 
-    .line 26
+    .line 35
     invoke-virtual {p2}, Lcom/iMe/model/wallet/settings/InterfaceSettingItem;->getIcon()I
 
     move-result v4
@@ -106,7 +108,7 @@
 
     move-result-object v0
 
-    .line 27
+    .line 36
     sget v3, Lorg/telegram/messenger/R$id;->view_divider:I
 
     invoke-static {p1, p0}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->isLastItem(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$Adapter;)Z
@@ -119,7 +121,7 @@
 
     move-result-object p1
 
-    .line 28
+    .line 37
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/settings/InterfaceSettingItem;->getTitle()I
@@ -134,7 +136,7 @@
 
     move-result-object p1
 
-    .line 29
+    .line 38
     iget-object v0, p0, Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/settings/InterfaceSettingItem;->getDescription()I
@@ -149,7 +151,7 @@
 
     move-result-object p1
 
-    .line 30
+    .line 39
     sget v0, Lorg/telegram/messenger/R$id;->view_switch:I
 
     new-instance v1, Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter$convert$1;
@@ -164,7 +166,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 13
+    .line 21
     check-cast p2, Lcom/iMe/model/wallet/settings/InterfaceSettingItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/wallet/settings/appearance/adapter/WalletAppearanceSettingsRecycleAdapter;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/settings/InterfaceSettingItem;)V
@@ -179,7 +181,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
+    .line 60
     sget v0, Lorg/telegram/messenger/R$id;->view_switch:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -188,7 +190,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/Switch;
 
-    .line 38
+    .line 61
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Switch;->isChecked()Z
 
     move-result v1
@@ -199,7 +201,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
 
-    .line 40
+    .line 63
     invoke-super {p0, p1, p2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClick(Landroid/view/View;I)V
 
     return-void

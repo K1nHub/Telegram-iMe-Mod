@@ -49,15 +49,17 @@
 
 .field showCompletedIcon:Z
 
+.field private wasDrawn:Z
+
 
 # direct methods
 .method public constructor <init>(ILandroid/content/Context;)V
     .locals 12
 
-    .line 42
+    .line 45
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 25
+    .line 27
     new-instance p2, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -66,38 +68,46 @@
 
     iput-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->paint:Landroid/graphics/Paint;
 
-    .line 26
+    .line 28
     new-instance p2, Landroid/graphics/Paint;
 
     invoke-direct {p2, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->paint2:Landroid/graphics/Paint;
 
-    .line 28
+    .line 30
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
-    .line 33
+    .line 35
     new-instance p2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p2, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
 
     iput-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 34
+    .line 36
     new-instance p2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p2, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
 
     iput-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 43
+    .line 46
     iput p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
-    .line 45
+    .line 47
+    iget-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
+
+    iput-boolean v0, p1, Lorg/telegram/messenger/ImageReceiver;->ignoreNotifications:Z
+
+    .line 48
+    iput-boolean v0, p2, Lorg/telegram/messenger/ImageReceiver;->ignoreNotifications:Z
+
+    .line 50
     new-instance p1, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v2, Lorg/telegram/messenger/R$raw;->download_progress:I
@@ -124,7 +134,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 46
+    .line 51
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
@@ -139,7 +149,7 @@
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 47
+    .line 52
     new-instance p1, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v6, Lorg/telegram/messenger/R$raw;->download_finish:I
@@ -164,7 +174,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 48
+    .line 53
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -177,31 +187,31 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 50
+    .line 55
     iget-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    .line 51
+    .line 56
     iget-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    .line 53
+    .line 58
     iget-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAutoRepeat(I)V
 
-    .line 54
+    .line 59
     iget-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 55
+    .line 60
     iget-object p1, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
@@ -214,7 +224,7 @@
 
     const/4 v0, 0x0
 
-    .line 198
+    .line 208
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
@@ -224,7 +234,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 199
+    .line 209
     iget v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
@@ -245,7 +255,7 @@
 
     goto :goto_0
 
-    .line 201
+    .line 211
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
@@ -255,16 +265,16 @@
 .end method
 
 .method private updateDownloadingListeners()V
-    .locals 6
+    .locals 7
 
-    .line 145
+    .line 153
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
 
     move-result-object v0
 
-    .line 146
+    .line 154
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
@@ -273,7 +283,7 @@
 
     move v3, v2
 
-    .line 147
+    .line 155
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
@@ -283,7 +293,7 @@
 
     if-ge v3, v4, :cond_0
 
-    .line 148
+    .line 156
     iget-object v4, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -306,7 +316,7 @@
 
     invoke-virtual {v1, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 149
+    .line 157
     iget v4, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
@@ -327,85 +337,87 @@
 
     goto :goto_0
 
-    .line 151
+    .line 159
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 152
+    move v3, v2
+
+    .line 160
     :goto_1
-    iget-object v3, v0, Lorg/telegram/messenger/DownloadController;->downloadingFiles:Ljava/util/ArrayList;
+    iget-object v4, v0, Lorg/telegram/messenger/DownloadController;->downloadingFiles:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    if-ge v2, v3, :cond_3
-
-    .line 153
-    iget-object v3, v0, Lorg/telegram/messenger/DownloadController;->downloadingFiles:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 154
-    iget v4, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
-
-    invoke-static {v4}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Lorg/telegram/messenger/FileLoader;->isLoadingFile(Ljava/lang/String;)Z
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-ge v3, v4, :cond_3
 
-    .line 155
-    invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 161
+    iget-object v4, v0, Lorg/telegram/messenger/DownloadController;->downloadingFiles:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;
+    check-cast v4, Lorg/telegram/messenger/MessageObject;
 
-    if-nez v4, :cond_1
+    invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
 
-    .line 157
-    new-instance v4, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;
+    move-result-object v4
 
-    const/4 v5, 0x0
-
-    invoke-direct {v4, p0, v3, v5}, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;-><init>(Lorg/telegram/ui/DownloadProgressIcon;Ljava/lang/String;Lorg/telegram/ui/DownloadProgressIcon$1;)V
-
-    .line 159
-    :cond_1
+    .line 162
     iget v5, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
-    invoke-static {v5}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
+    invoke-static {v5}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object v5
 
-    invoke-virtual {v5, v3, v4}, Lorg/telegram/messenger/DownloadController;->addLoadingFileObserver(Ljava/lang/String;Lorg/telegram/messenger/DownloadController$FileDownloadProgressListener;)V
+    invoke-virtual {v5, v4}, Lorg/telegram/messenger/FileLoader;->isLoadingFile(Ljava/lang/String;)Z
 
-    .line 160
-    iget-object v3, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
+    move-result v5
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-eqz v5, :cond_2
+
+    .line 163
+    invoke-virtual {v1, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;
+
+    if-nez v5, :cond_1
+
+    .line 165
+    new-instance v5, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;
+
+    const/4 v6, 0x0
+
+    invoke-direct {v5, p0, v4, v6}, Lorg/telegram/ui/DownloadProgressIcon$ProgressObserver;-><init>(Lorg/telegram/ui/DownloadProgressIcon;Ljava/lang/String;Lorg/telegram/ui/DownloadProgressIcon$1;)V
+
+    .line 167
+    :cond_1
+    iget v6, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
+
+    invoke-static {v6}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v4, v5}, Lorg/telegram/messenger/DownloadController;->addLoadingFileObserver(Ljava/lang/String;Lorg/telegram/messenger/DownloadController$FileDownloadProgressListener;)V
+
+    .line 168
+    iget-object v4, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 163
+    .line 171
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
@@ -413,26 +425,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
-    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
+    iget-boolean v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->wasDrawn:Z
 
-    move-result v0
+    if-nez v0, :cond_5
 
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {p0}, Landroid/view/View;->getAlpha()F
-
-    move-result v0
-
-    cmpl-float v0, v0, v1
-
-    if-eqz v0, :cond_6
-
-    .line 164
-    :cond_4
+    .line 172
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
@@ -443,26 +442,36 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
-    .line 165
-    iput v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 166
-    iput v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
+    .line 173
+    iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
+
+    .line 174
+    iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
+
+    const/4 v0, 0x1
+
+    .line 175
+    iput-boolean v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->showCompletedIcon:Z
 
     goto :goto_2
 
-    :cond_5
+    :cond_4
     const/4 v0, 0x0
 
-    .line 168
+    .line 177
     iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
-    .line 169
+    .line 178
     iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
 
-    :cond_6
+    .line 179
+    iput-boolean v2, p0, Lorg/telegram/ui/DownloadProgressIcon;->showCompletedIcon:Z
+
+    :cond_5
     :goto_2
     return-void
 .end method
@@ -472,15 +481,15 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 206
+    .line 216
     sget p2, Lorg/telegram/messenger/NotificationCenter;->onDownloadingFilesChanged:I
 
     if-ne p1, p2, :cond_0
 
-    .line 207
+    .line 217
     invoke-direct {p0}, Lorg/telegram/ui/DownloadProgressIcon;->updateDownloadingListeners()V
 
-    .line 208
+    .line 218
     invoke-virtual {p0}, Lorg/telegram/ui/DownloadProgressIcon;->updateProgress()V
 
     :cond_0
@@ -490,13 +499,13 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 127
+    .line 135
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 128
+    .line 136
     invoke-direct {p0}, Lorg/telegram/ui/DownloadProgressIcon;->updateDownloadingListeners()V
 
-    .line 129
+    .line 137
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -507,12 +516,12 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 130
+    .line 138
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 131
+    .line 139
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
@@ -523,13 +532,13 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 136
+    .line 144
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 137
+    .line 145
     invoke-direct {p0}, Lorg/telegram/ui/DownloadProgressIcon;->detachCurrentListeners()V
 
-    .line 138
+    .line 146
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -540,12 +549,12 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 139
+    .line 147
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 140
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
@@ -556,10 +565,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 68
+    .line 73
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 69
+    .line 74
     invoke-virtual {p0}, Landroid/view/View;->getAlpha()F
 
     move-result v0
@@ -572,7 +581,7 @@
 
     return-void
 
-    .line 73
+    .line 78
     :cond_0
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentColor:I
 
@@ -584,14 +593,14 @@
 
     if-eq v0, v3, :cond_1
 
-    .line 74
+    .line 79
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentColor:I
 
-    .line 75
+    .line 80
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->paint:Landroid/graphics/Paint;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -600,7 +609,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 76
+    .line 81
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->paint2:Landroid/graphics/Paint;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -609,7 +618,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 77
+    .line 82
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
@@ -624,7 +633,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 78
+    .line 83
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
@@ -639,14 +648,14 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 79
+    .line 84
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->paint2:Landroid/graphics/Paint;
 
     const/16 v2, 0x64
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 82
+    .line 87
     :cond_1
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
 
@@ -656,7 +665,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 83
+    .line 88
     iget v3, p0, Lorg/telegram/ui/DownloadProgressIcon;->progressDt:F
 
     add-float/2addr v0, v3
@@ -671,7 +680,7 @@
 
     if-lez v4, :cond_2
 
-    .line 85
+    .line 90
     iput v2, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
 
     goto :goto_0
@@ -685,16 +694,16 @@
 
     if-gez v0, :cond_3
 
-    .line 87
+    .line 92
     iput v2, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
 
     goto :goto_0
 
-    .line 89
+    .line 94
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 93
+    .line 98
     :cond_4
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
@@ -713,7 +722,7 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 94
+    .line 99
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
@@ -722,14 +731,14 @@
 
     const/16 v4, 0x10
 
-    .line 96
+    .line 101
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     int-to-float v4, v4
 
-    .line 97
+    .line 102
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
@@ -742,7 +751,7 @@
 
     sub-float/2addr v5, v6
 
-    .line 98
+    .line 103
     sget-object v6, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     int-to-float v0, v0
@@ -761,12 +770,12 @@
 
     invoke-virtual {v6, v4, v7, v8, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 99
+    .line 104
     iget-object v8, p0, Lorg/telegram/ui/DownloadProgressIcon;->paint2:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v6, v3, v3, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 101
+    .line 106
     iget v8, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentProgress:F
 
     mul-float/2addr v5, v8
@@ -775,15 +784,15 @@
 
     invoke-virtual {v6, v4, v7, v5, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 102
+    .line 107
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v6, v3, v3, v0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 104
+    .line 109
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 105
+    .line 110
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -792,42 +801,44 @@
 
     invoke-virtual {p1, v1, v1, v0, v7}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 106
+    .line 111
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
     cmpl-float v0, v0, v2
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     if-eqz v0, :cond_5
 
-    .line 107
-    iput-boolean v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->showCompletedIcon:Z
+    .line 112
+    iput-boolean v3, p0, Lorg/telegram/ui/DownloadProgressIcon;->showCompletedIcon:Z
 
-    .line 109
+    .line 114
     :cond_5
     iget-boolean v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->showCompletedIcon:Z
 
     if-eqz v0, :cond_6
 
-    .line 110
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
     goto :goto_1
 
-    .line 112
+    .line 117
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 115
+    .line 120
     :goto_1
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
     cmpl-float v0, v0, v2
+
+    const/4 v2, 0x1
 
     if-nez v0, :cond_7
 
@@ -835,7 +846,7 @@
 
     if-nez v0, :cond_7
 
-    .line 116
+    .line 121
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->getCurrentFrame()I
@@ -844,32 +855,43 @@
 
     if-nez v0, :cond_7
 
-    .line 117
+    .line 122
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
+    invoke-virtual {v0, v3, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 118
+    .line 123
     iget-object v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    const/4 v0, 0x1
+    .line 124
+    iput-boolean v2, p0, Lorg/telegram/ui/DownloadProgressIcon;->showCompletedIcon:Z
 
-    .line 119
-    iput-boolean v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->showCompletedIcon:Z
-
-    .line 122
+    .line 127
     :cond_7
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
+    .line 128
+    invoke-virtual {p0}, Landroid/view/View;->getAlpha()F
+
+    move-result p1
+
+    cmpl-float p1, p1, v1
+
+    if-eqz p1, :cond_8
+
+    .line 129
+    iput-boolean v2, p0, Lorg/telegram/ui/DownloadProgressIcon;->wasDrawn:Z
+
+    :cond_8
     return-void
 .end method
 
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 60
+    .line 65
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -892,12 +914,12 @@
 
     const/16 p1, 0xf
 
-    .line 61
+    .line 66
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 62
+    .line 67
     iget-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     int-to-float v0, p1
@@ -922,7 +944,7 @@
 
     invoke-virtual {p2, v0, v0, v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 63
+    .line 68
     iget-object p2, p0, Lorg/telegram/ui/DownloadProgressIcon;->downloadCompleteImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -946,10 +968,48 @@
     return-void
 .end method
 
+.method public setAlpha(F)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    cmpl-float v0, p1, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    .line 263
+    iput-boolean v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->wasDrawn:Z
+
+    .line 265
+    :cond_0
+    invoke-super {p0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+.end method
+
+.method public setVisibility(I)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x0
+
+    .line 271
+    iput-boolean v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->wasDrawn:Z
+
+    .line 273
+    :cond_0
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    return-void
+.end method
+
 .method public updateProgress()V
     .locals 9
 
-    .line 175
+    .line 185
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -962,7 +1022,7 @@
 
     move-wide v5, v3
 
-    .line 178
+    .line 188
     :goto_0
     iget-object v7, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
@@ -972,7 +1032,7 @@
 
     if-ge v2, v7, :cond_0
 
-    .line 179
+    .line 189
     iget-object v7, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -985,7 +1045,7 @@
 
     add-long/2addr v3, v7
 
-    .line 180
+    .line 190
     iget-object v7, p0, Lorg/telegram/ui/DownloadProgressIcon;->currentListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1009,7 +1069,7 @@
 
     if-nez v0, :cond_1
 
-    .line 183
+    .line 193
     iput v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
     goto :goto_1
@@ -1021,10 +1081,10 @@
 
     div-float/2addr v0, v2
 
-    .line 185
+    .line 195
     iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
-    .line 187
+    .line 197
     :goto_1
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
@@ -1032,7 +1092,7 @@
 
     if-lez v2, :cond_2
 
-    .line 188
+    .line 198
     iput v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
     goto :goto_2
@@ -1044,10 +1104,10 @@
 
     if-gez v0, :cond_3
 
-    .line 190
+    .line 200
     iput v1, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
 
-    .line 193
+    .line 203
     :cond_3
     :goto_2
     iget v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progress:F
@@ -1066,7 +1126,7 @@
 
     iput v0, p0, Lorg/telegram/ui/DownloadProgressIcon;->progressDt:F
 
-    .line 194
+    .line 204
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EditTextBoldCursor;->init()V
+    value = Lorg/telegram/ui/Components/EditTextBoldCursor;->getTextCursorDrawable()Landroid/graphics/drawable/Drawable;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,13 +19,13 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+.method constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/graphics/drawable/shapes/Shape;)V
     .locals 0
 
-    .line 314
+    .line 299
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$3;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-direct {p0}, Landroid/graphics/drawable/ShapeDrawable;-><init>()V
+    invoke-direct {p0, p2}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
 
     return-void
 .end method
@@ -33,62 +33,17 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 2
+    .locals 1
 
-    .line 318
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$3;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    iget-boolean v1, v0, Lorg/telegram/ui/Components/EditTextBoldCursor;->drawInMaim:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 p1, 0x1
-
-    .line 319
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->access$202(Lorg/telegram/ui/Components/EditTextBoldCursor;Z)Z
-
-    goto :goto_0
-
-    .line 321
-    :cond_0
+    .line 302
     invoke-super {p0, p1}, Landroid/graphics/drawable/ShapeDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    :goto_0
+    .line 303
+    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$3;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/4 v0, 0x1
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->access$202(Lorg/telegram/ui/Components/EditTextBoldCursor;Z)Z
+
     return-void
-.end method
-
-.method public getIntrinsicHeight()I
-    .locals 1
-
-    .line 327
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$3;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->access$300(Lorg/telegram/ui/Components/EditTextBoldCursor;)I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, 0x14
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getIntrinsicWidth()I
-    .locals 1
-
-    .line 332
-    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$3;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->access$400(Lorg/telegram/ui/Components/EditTextBoldCursor;)F
-
-    move-result v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v0
-
-    return v0
 .end method

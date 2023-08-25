@@ -2040,9 +2040,9 @@
     .line 743
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda38;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda41;
 
-    invoke-direct {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda38;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda41;-><init>(Landroid/view/View;)V
 
     const-wide/16 v1, 0x12c
 

@@ -374,7 +374,7 @@
     invoke-virtual {p1}, Lcom/otaliastudios/opengl/texture/GlTexture;->unbind()V
 
     :goto_1
-    const-string p1, "onPostDraw end"
+    const-string/jumbo p1, "onPostDraw end"
 
     .line 177
     invoke-static {p1}, Lcom/otaliastudios/opengl/core/Egloo;->checkGlError(Ljava/lang/String;)V

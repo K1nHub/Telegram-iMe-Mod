@@ -714,7 +714,7 @@
     invoke-virtual {p0, v1}, Lcom/microsoft/appcenter/ingestion/models/one/Extensions;->setApp(Lcom/microsoft/appcenter/ingestion/models/one/AppExtension;)V
 
     :cond_5
-    const-string v0, "net"
+    const-string/jumbo v0, "net"
 
     .line 319
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
@@ -1131,7 +1131,7 @@
 
     if-eqz v0, :cond_6
 
-    const-string v0, "net"
+    const-string/jumbo v0, "net"
 
     .line 387
     invoke-virtual {p1, v0}, Lorg/json/JSONStringer;->key(Ljava/lang/String;)Lorg/json/JSONStringer;

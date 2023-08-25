@@ -6754,6 +6754,12 @@
 
     .line 1124
     :cond_1
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->storyViewerAttached()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout;->currentActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz v0, :cond_2

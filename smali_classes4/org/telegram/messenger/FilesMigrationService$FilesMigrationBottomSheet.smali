@@ -365,19 +365,19 @@
 .method public dismiss()V
     .locals 1
 
-    .line 314
+    .line 327
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     const/4 v0, 0x0
 
-    .line 315
+    .line 328
     sput-object v0, Lorg/telegram/messenger/FilesMigrationService;->filesMigrationBottomSheet:Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;
 
     return-void
 .end method
 
 .method public migrateOldFolder()V
-    .locals 7
+    .locals 12
 
     .line 287
     iget-object v0, p0, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -411,64 +411,117 @@
     :cond_1
     move v2, v4
 
-    :goto_0
-    const-string v5, "android.permission.READ_EXTERNAL_STORAGE"
-
     .line 294
-    invoke-virtual {v0, v5}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+    :goto_0
+    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-result v6
+    const-string v6, "android.permission.READ_MEDIA_AUDIO"
 
-    if-nez v6, :cond_2
+    const-string v7, "android.permission.READ_MEDIA_VIDEO"
+
+    const-string v8, "android.permission.READ_EXTERNAL_STORAGE"
+
+    const-string v9, "android.permission.READ_MEDIA_IMAGES"
+
+    const/16 v10, 0x21
+
+    if-lt v5, v10, :cond_2
+
+    .line 296
+    invoke-virtual {v0, v9}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v11
+
+    if-nez v11, :cond_2
+
+    .line 297
+    invoke-virtual {v0, v7}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v11
+
+    if-nez v11, :cond_2
+
+    .line 298
+    invoke-virtual {v0, v6}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v11
+
+    if-eqz v11, :cond_4
+
+    :cond_2
+    if-ge v5, v10, :cond_3
+
+    .line 300
+    invoke-virtual {v0, v8}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v11
+
+    if-nez v11, :cond_3
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     move v3, v4
 
+    :cond_4
     :goto_1
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_6
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_5
 
     goto :goto_2
 
-    .line 308
-    :cond_3
+    .line 321
+    :cond_5
     invoke-static {}, Lorg/telegram/messenger/FilesMigrationService;->start()V
 
-    .line 309
+    .line 322
     invoke-virtual {p0}, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;->dismiss()V
 
     return-void
 
-    .line 297
-    :cond_4
+    .line 304
+    :cond_6
     :goto_2
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_8
 
-    .line 299
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-lt v5, v10, :cond_7
 
-    :cond_5
-    if-nez v2, :cond_6
+    .line 307
+    invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 302
+    .line 308
+    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 309
+    invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_3
+
+    .line 311
+    :cond_7
+    invoke-virtual {v4, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_8
+    :goto_3
+    if-nez v2, :cond_9
+
+    .line 315
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 304
-    :cond_6
+    .line 317
+    :cond_9
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     new-array v1, v1, [Ljava/lang/String;
 
-    .line 305
+    .line 318
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1

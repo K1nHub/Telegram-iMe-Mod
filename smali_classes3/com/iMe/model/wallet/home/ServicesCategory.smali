@@ -20,6 +20,8 @@
 
 .field public static final enum CHANNELS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
+.field public static final enum CRYPTOBOXES:Lcom/iMe/model/wallet/home/ServicesCategory;
+
 .field public static final enum NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
 .field public static final enum PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
@@ -31,7 +33,7 @@
 .method private static final synthetic $values()[Lcom/iMe/model/wallet/home/ServicesCategory;
     .locals 3
 
-    const/4 v0, 0x5
+    const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/iMe/model/wallet/home/ServicesCategory;
 
@@ -41,27 +43,33 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->STAKING:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->CRYPTOBOXES:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->STAKING:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/model/wallet/home/ServicesCategory;->PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+
+    const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
@@ -85,42 +93,53 @@
     .line 5
     new-instance v0, Lcom/iMe/model/wallet/home/ServicesCategory;
 
-    const-string v1, "STAKING"
+    const-string v1, "CRYPTOBOXES"
 
     const/4 v2, 0x1
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/home/ServicesCategory;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/model/wallet/home/ServicesCategory;->STAKING:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sput-object v0, Lcom/iMe/model/wallet/home/ServicesCategory;->CRYPTOBOXES:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     .line 6
     new-instance v0, Lcom/iMe/model/wallet/home/ServicesCategory;
 
-    const-string v1, "ADS"
+    const-string v1, "STAKING"
 
     const/4 v2, 0x2
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/home/ServicesCategory;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sput-object v0, Lcom/iMe/model/wallet/home/ServicesCategory;->STAKING:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     .line 7
     new-instance v0, Lcom/iMe/model/wallet/home/ServicesCategory;
 
-    const-string v1, "NEUROBOTS"
+    const-string v1, "ADS"
 
     const/4 v2, 0x3
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/home/ServicesCategory;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
+    sput-object v0, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
     .line 8
     new-instance v0, Lcom/iMe/model/wallet/home/ServicesCategory;
 
-    const-string v1, "PREMIUM"
+    const-string v1, "NEUROBOTS"
 
     const/4 v2, 0x4
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/home/ServicesCategory;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
+
+    .line 9
+    new-instance v0, Lcom/iMe/model/wallet/home/ServicesCategory;
+
+    const-string v1, "PREMIUM"
+
+    const/4 v2, 0x5
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/home/ServicesCategory;-><init>(Ljava/lang/String;I)V
 

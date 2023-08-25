@@ -6,28 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:[I
+.field public final synthetic f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Components/NumberPicker;
+.field public final synthetic f$1:Ljava/lang/Runnable;
 
-.field public final synthetic f$2:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
-
-.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+.field public final synthetic f$2:Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;
 
 
 # direct methods
-.method public synthetic constructor <init>([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+.method public synthetic constructor <init>([Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$0:[I
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$1:Lorg/telegram/ui/Components/NumberPicker;
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$1:Ljava/lang/Runnable;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$2:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
-
-    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$3:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$2:Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;
 
     return-void
 .end method
@@ -35,17 +31,15 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 4
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$0:[I
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$1:Lorg/telegram/ui/Components/NumberPicker;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$1:Ljava/lang/Runnable;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$2:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$2:Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;->f$3:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
-
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$SYnK87ln8gTaqyfj7Uy437292zU([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$G8uux0Qqbgqm3Qt6UIX6_DLmRI8([Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;Landroid/view/View;)V
 
     return-void
 .end method

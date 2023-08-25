@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoAccessManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,102:1\n288#2,2:103\n819#2:105\n847#2,2:106\n1747#2,3:110\n1549#2:113\n1620#2,3:114\n13579#3,2:108\n*S KotlinDebug\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl\n*L\n38#1:103,2\n41#1:105\n41#1:106,2\n92#1:110,3\n100#1:113\n100#1:114,3\n55#1:108,2\n*E\n"
+    value = "SMAP\nCryptoAccessManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,105:1\n288#2,2:106\n819#2:108\n847#2,2:109\n1747#2,3:113\n1549#2:116\n1620#2,3:117\n13579#3,2:111\n*S KotlinDebug\n*F\n+ 1 CryptoAccessManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl\n*L\n38#1:106,2\n41#1:108\n41#1:109,2\n95#1:113,3\n103#1:116\n103#1:117,3\n55#1:111,2\n*E\n"
 .end annotation
 
 
@@ -198,7 +198,7 @@
         }
     .end annotation
 
-    .line 100
+    .line 103
     iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletPublicAddresses()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
@@ -243,7 +243,7 @@
     .line 1621
     check-cast v2, Ljava/lang/String;
 
-    .line 100
+    .line 103
     sget-object v3, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->Companion:Lcom/iMe/storage/domain/model/crypto/BlockchainType$Companion;
 
     invoke-virtual {v3, v2}, Lcom/iMe/storage/domain/model/crypto/BlockchainType$Companion;->map(Ljava/lang/String;)Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -376,7 +376,7 @@
     return-object v0
 .end method
 
-.method public getLoggedIndWalletsBlockchains()Ljava/util/List;
+.method public getLoggedInWalletsBlockchains()Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -387,7 +387,7 @@
         }
     .end annotation
 
-    .line 97
+    .line 100
     iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->wallets:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -529,7 +529,7 @@
 .method public isAnyBip39PhraseBasedWalletCreated()Z
     .locals 5
 
-    .line 92
+    .line 95
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->isAnyWalletCreated()Z
 
     move-result v0
@@ -581,7 +581,7 @@
 
     check-cast v3, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 93
+    .line 96
     iget-object v4, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->wallets:Ljava/util/Map;
 
     invoke-interface {v4, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -617,7 +617,7 @@
 .method public isAnyWalletCreated()Z
     .locals 1
 
-    .line 89
+    .line 92
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->getLastLoggedInGuid()Ljava/lang/String;
 
     move-result-object v0
@@ -745,10 +745,27 @@
     return v0
 .end method
 
+.method public isCurrentBlockchainAuthorized()Z
+    .locals 1
+
+    .line 83
+    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->isAuthorized(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isCurrentBlockchainWalletCreated()Z
     .locals 1
 
-    .line 86
+    .line 89
     iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -769,7 +786,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 83
+    .line 86
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;->getLastLoggedInGuid()Ljava/lang/String;
 
     move-result-object v0

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/recorder/PaintView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Landroid/app/Activity;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;IILorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Stories/recorder/PaintView;-><init>(Landroid/content/Context;ZLjava/io/File;ZLorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Landroid/app/Activity;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;IILorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 366
+    .line 387
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->val$onInit:Ljava/lang/Runnable;
@@ -42,7 +42,7 @@
 .method public invalidateInputView()V
     .locals 1
 
-    .line 400
+    .line 421
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$900(Lorg/telegram/ui/Stories/recorder/PaintView;)Landroid/view/View;
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 401
+    .line 422
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$900(Lorg/telegram/ui/Stories/recorder/PaintView;)Landroid/view/View;
@@ -67,7 +67,7 @@
 .method public onBeganDrawing()V
     .locals 2
 
-    .line 377
+    .line 398
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$500(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -76,14 +76,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 378
+    .line 399
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$600(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
-    .line 380
+    .line 401
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -101,7 +101,7 @@
 .method public onFinishedDrawing(Z)V
     .locals 1
 
-    .line 385
+    .line 406
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$800(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/UndoStore;
@@ -114,7 +114,7 @@
 
     invoke-interface {p1}, Lorg/telegram/ui/Components/Paint/UndoStore$UndoStoreDelegate;->historyChanged()V
 
-    .line 386
+    .line 407
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$700(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
@@ -131,12 +131,12 @@
 .method public onFirstDraw()V
     .locals 1
 
-    .line 370
+    .line 391
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->val$onInit:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 371
+    .line 392
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -146,7 +146,7 @@
 .method public resetBrush()V
     .locals 3
 
-    .line 407
+    .line 428
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$1000(Lorg/telegram/ui/Stories/recorder/PaintView;)Z
@@ -157,14 +157,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 408
+    .line 429
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$1002(Lorg/telegram/ui/Stories/recorder/PaintView;Z)Z
 
     return-void
 
-    .line 411
+    .line 432
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -176,7 +176,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;->select(I)V
 
-    .line 412
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     sget-object v2, Lorg/telegram/ui/Components/Paint/Brush;->BRUSHES_LIST:Ljava/util/List;
@@ -195,7 +195,7 @@
 .method public shouldDraw()Z
     .locals 3
 
-    .line 391
+    .line 412
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$500(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -214,7 +214,7 @@
     :goto_0
     if-nez v0, :cond_1
 
-    .line 393
+    .line 414
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$4;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v2, 0x0

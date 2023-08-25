@@ -14,7 +14,11 @@
 # instance fields
 .field private gestureDetector:Landroidx/core/view/GestureDetectorCompat;
 
+.field private horizontalPadding:I
+
 .field private trackingTap:Z
+
+.field private verticalPadding:I
 
 
 # direct methods
@@ -34,7 +38,7 @@
 
     const/4 v0, 0x1
 
-    .line 17
+    .line 19
     invoke-direct {p0, p1, p2, v0, p3}, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;-><init>(Landroid/view/View;Ljava/util/List;ZLorg/telegram/ui/Components/spoilers/SpoilersClickDetector$OnSpoilerClickedListener;)V
 
     return-void
@@ -54,10 +58,10 @@
         }
     .end annotation
 
-    .line 20
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
+    .line 23
     new-instance v0, Landroidx/core/view/GestureDetectorCompat;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -87,7 +91,25 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)Z
+.method static synthetic access$000(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)I
+    .locals 0
+
+    .line 12
+    iget p0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->horizontalPadding:I
+
+    return p0
+.end method
+
+.method static synthetic access$100(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)I
+    .locals 0
+
+    .line 12
+    iget p0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->verticalPadding:I
+
+    return p0
+.end method
+
+.method static synthetic access$200(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;)Z
     .locals 0
 
     .line 12
@@ -96,7 +118,7 @@
     return p0
 .end method
 
-.method static synthetic access$002(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;Z)Z
+.method static synthetic access$202(Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;Z)Z
     .locals 0
 
     .line 12
@@ -110,7 +132,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 64
+    .line 70
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->gestureDetector:Landroidx/core/view/GestureDetectorCompat;
 
     invoke-virtual {v0, p1}, Landroidx/core/view/GestureDetectorCompat;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -118,4 +140,16 @@
     move-result p1
 
     return p1
+.end method
+
+.method public setAdditionalOffsets(II)V
+    .locals 0
+
+    .line 74
+    iput p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->horizontalPadding:I
+
+    .line 75
+    iput p2, p0, Lorg/telegram/ui/Components/spoilers/SpoilersClickDetector;->verticalPadding:I
+
+    return-void
 .end method

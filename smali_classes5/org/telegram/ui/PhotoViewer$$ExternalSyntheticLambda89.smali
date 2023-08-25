@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
@@ -22,20 +22,14 @@
 
 
 # virtual methods
-.method public final didSetImage(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
+.method public final run(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda89;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$T3W9Zt3M7DO4ew3D2KIynmPmZJY(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/messenger/ImageReceiver;ZZZ)V
+    check-cast p1, Ljava/lang/Boolean;
 
-    return-void
-.end method
-
-.method public synthetic onAnimationReady(Lorg/telegram/messenger/ImageReceiver;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate$-CC;->$default$onAnimationReady(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;Lorg/telegram/messenger/ImageReceiver;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$g82rTgOoD3XVPwzZ23JQqB7egAw(Lorg/telegram/ui/PhotoViewer;Ljava/lang/Boolean;)V
 
     return-void
 .end method

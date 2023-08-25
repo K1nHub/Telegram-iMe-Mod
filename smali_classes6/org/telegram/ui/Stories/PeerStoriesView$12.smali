@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Stories/PeerStoriesView$12;
-.super Lorg/telegram/ui/Components/ChatAttachAlert;
+.super Lorg/telegram/ui/WrappedResourceProvider;
 .source "PeerStoriesView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/PeerStoriesView;->createChatAttachView()V
+    value = Lorg/telegram/ui/Stories/PeerStoriesView;->createEnterView()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,95 +14,35 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 7
+.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 0
 
-    .line 1727
-    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$12;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move-object v2, p3
-
-    move v3, p4
-
-    move v4, p5
-
-    move v5, p6
-
-    move-object v6, p7
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/ChatAttachAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .line 1644
+    invoke-direct {p0, p2}, Lorg/telegram/ui/WrappedResourceProvider;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismissInternal()V
-    .locals 0
+.method public appendColors()V
+    .locals 4
 
-    .line 1733
-    invoke-super {p0}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismissInternal()V
+    .line 1647
+    iget-object v0, p0, Lorg/telegram/ui/WrappedResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
-    return-void
-.end method
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
 
-.method public onDismissAnimationStart()V
-    .locals 2
+    const/4 v2, -0x1
 
-    .line 1738
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$12;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+    const/16 v3, 0x1e
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v2, v3}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
-    move-result-object v0
+    move-result v2
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1739
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$12;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setFocusable(Z)V
-
-    .line 1741
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$12;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    .line 1742
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$12;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
-
-    :cond_1
     return-void
 .end method

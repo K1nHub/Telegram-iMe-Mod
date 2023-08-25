@@ -187,9 +187,9 @@
 
     move-result-object v5
 
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_storyViews;
+    check-cast v5, Lorg/telegram/tgnet/TLRPC$StoryViews;
 
-    iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$TL_storyViews;
+    iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
 
     :cond_1
     add-int/lit8 v3, v3, 0x1

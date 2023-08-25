@@ -75,7 +75,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda125;->f$8:Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;
 
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$8WZhxT11wUq6QDGb0oto_V1hqVA(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;)V
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$aDElBGcqDo4mutbMemzIGq3ZJHU(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;JZLorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImportPeer;)V
 
     return-void
 .end method

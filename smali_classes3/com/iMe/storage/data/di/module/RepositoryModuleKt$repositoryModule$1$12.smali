@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n129#2,5:163\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n*L\n102#1:158,5\n103#1:163,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,168:1\n129#2,5:169\n129#2,5:174\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$12\n*L\n104#1:169,5\n105#1:174,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 102
+    .line 104
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 102
+    .line 104
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 102
+    .line 104
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 103
+    .line 105
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/gateway/TelegramGateway;
@@ -149,7 +149,7 @@
 
     move-result-object p2
 
-    .line 103
+    .line 105
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
@@ -165,12 +165,12 @@
 
     move-result-object p1
 
-    .line 103
+    .line 105
     move-object v7, p1
 
     check-cast v7, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 101
+    .line 103
     new-instance p1, Lcom/iMe/storage/data/repository/crypto/CryptoWalletRepositoryImpl;
 
     move-object v1, p1
@@ -183,7 +183,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 100
+    .line 102
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

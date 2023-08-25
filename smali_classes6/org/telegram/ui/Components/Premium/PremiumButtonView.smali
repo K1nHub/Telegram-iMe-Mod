@@ -14,6 +14,8 @@
 
 .field counterView:Lorg/telegram/ui/Components/CounterView;
 
+.field public drawGradient:Z
+
 .field private drawOverlayColor:Z
 
 .field flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
@@ -61,10 +63,10 @@
 
     move/from16 v2, p2
 
-    .line 63
+    .line 79
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 34
+    .line 49
     new-instance v3, Landroid/graphics/Paint;
 
     const/4 v4, 0x1
@@ -73,31 +75,34 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->paintOverlayPaint:Landroid/graphics/Paint;
 
-    .line 47
+    .line 62
     new-instance v3, Landroid/graphics/Path;
 
     invoke-direct {v3}, Landroid/graphics/Path;-><init>()V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->path:Landroid/graphics/Path;
 
-    .line 114
+    .line 72
+    iput-boolean v4, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->drawGradient:Z
+
+    .line 130
     new-instance v3, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {v3, v0}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterOffset:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 115
+    .line 131
     new-instance v3, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {v3, v0}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterOffset2:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 64
+    .line 80
     iput v2, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->radius:I
 
-    .line 66
+    .line 82
     new-instance v3, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;-><init>()V
@@ -106,35 +111,35 @@
 
     const v5, 0x3f99999a    # 1.2f
 
-    .line 67
+    .line 83
     iput v5, v3, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->animationSpeedScale:F
 
     const/4 v5, 0x0
 
-    .line 68
+    .line 84
     iput-boolean v5, v3, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->drawFrame:Z
 
     const/high16 v6, 0x40800000    # 4.0f
 
-    .line 69
+    .line 85
     iput v6, v3, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->repeatProgress:F
 
-    .line 70
+    .line 86
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 71
+    .line 87
     invoke-virtual {v3, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 72
+    .line 88
     new-instance v6, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-direct {v6, v1}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    .line 73
+    .line 89
     sget-object v12, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const v7, 0x3eb33333    # 0.35f
@@ -145,21 +150,21 @@
 
     invoke-virtual/range {v6 .. v12}, Lorg/telegram/ui/Components/AnimatedTextView;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 74
+    .line 90
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v7, 0x11
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 75
+    .line 91
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v8, -0x1
 
     invoke-virtual {v6, v8}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 76
+    .line 92
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v9, 0xe
@@ -172,7 +177,7 @@
 
     invoke-virtual {v6, v10}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 77
+    .line 93
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const-string v10, "fonts/rmedium.ttf"
@@ -183,24 +188,24 @@
 
     invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 79
+    .line 95
     new-instance v6, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v6, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 80
+    .line 96
     invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 81
+    .line 97
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v11, 0x8
 
     invoke-virtual {v6, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 83
+    .line 99
     new-instance v6, Landroid/widget/FrameLayout;
 
     invoke-direct {v6, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -209,14 +214,14 @@
 
     const/4 v12, -0x2
 
-    .line 84
+    .line 100
     invoke-static {v12, v12, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v13
 
     invoke-virtual {v6, v3, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 85
+    .line 101
     iget-object v6, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     const/16 v13, 0x78
@@ -231,7 +236,7 @@
 
     invoke-virtual {v6, v2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 87
+    .line 103
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v6, 0x10
@@ -242,7 +247,7 @@
 
     invoke-virtual {v3, v2, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 88
+    .line 104
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v14, 0x18
@@ -267,14 +272,14 @@
 
     invoke-virtual {v3, v2, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 89
+    .line 105
     iget-object v2, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     if-eqz p3, :cond_0
 
-    .line 92
+    .line 108
     new-instance v2, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-direct {v2, v1, v4, v4, v4}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;ZZZ)V
@@ -283,7 +288,7 @@
 
     const/16 v1, 0x22
 
-    .line 93
+    .line 109
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -294,12 +299,12 @@
 
     invoke-virtual {v2, v3, v5, v1, v5}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 94
+    .line 110
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 95
+    .line 111
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
@@ -310,7 +315,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 96
+    .line 112
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -321,7 +326,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 97
+    .line 113
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -330,7 +335,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 98
+    .line 114
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView;->getDrawable()Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
@@ -339,7 +344,7 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAllowCancel(Z)V
 
-    .line 99
+    .line 115
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -356,12 +361,12 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 100
+    .line 116
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 102
+    .line 118
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->paintOverlayPaint:Landroid/graphics/Paint;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -372,7 +377,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 103
+    .line 119
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->updateOverlayProgress()V
 
     :cond_0
@@ -384,7 +389,7 @@
 
     const/16 v0, 0x8
 
-    .line 59
+    .line 75
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -397,7 +402,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Components/Premium/PremiumButtonView;F)F
     .locals 0
 
-    .line 32
+    .line 35
     iput p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
     return p1
@@ -406,7 +411,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/Premium/PremiumButtonView;)V
     .locals 0
 
-    .line 32
+    .line 35
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->updateOverlayProgress()V
 
     return-void
@@ -415,7 +420,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/Premium/PremiumButtonView;)Z
     .locals 0
 
-    .line 32
+    .line 35
     iget-boolean p0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->showOverlay:Z
 
     return p0
@@ -424,7 +429,7 @@
 .method private synthetic lambda$setIcon$0()V
     .locals 3
 
-    .line 232
+    .line 253
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -437,7 +442,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 233
+    .line 254
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -448,15 +453,15 @@
 .method private updateOverlay(Z)V
     .locals 4
 
-    .line 184
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 185
+    .line 206
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 186
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -468,7 +473,7 @@
 
     if-nez p1, :cond_2
 
-    .line 189
+    .line 210
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->showOverlay:Z
 
     if-eqz p1, :cond_1
@@ -481,7 +486,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
-    .line 190
+    .line 211
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->updateOverlayProgress()V
 
     return-void
@@ -493,7 +498,7 @@
 
     const/4 v2, 0x0
 
-    .line 193
+    .line 214
     iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
     aput v3, p1, v2
@@ -518,14 +523,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayAnimator:Landroid/animation/ValueAnimator;
 
-    .line 194
+    .line 215
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Premium/PremiumButtonView$1;-><init>(Lorg/telegram/ui/Components/Premium/PremiumButtonView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 201
+    .line 222
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView$2;
@@ -534,21 +539,21 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 208
+    .line 229
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0xfa
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 209
+    .line 230
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 210
+    .line 231
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -559,14 +564,14 @@
 .method private updateOverlayProgress()V
     .locals 5
 
-    .line 214
+    .line 235
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 215
+    .line 236
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v1, 0xc
@@ -587,7 +592,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 216
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     iget v2, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
@@ -596,7 +601,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 217
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -613,7 +618,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 218
+    .line 239
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
@@ -636,7 +641,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 219
+    .line 240
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
@@ -655,7 +660,7 @@
     :goto_1
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 220
+    .line 241
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -666,12 +671,12 @@
 .method public checkCounterView()V
     .locals 4
 
-    .line 277
+    .line 298
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterView:Lorg/telegram/ui/Components/CounterView;
 
     if-nez v0, :cond_0
 
-    .line 278
+    .line 299
     new-instance v0, Lorg/telegram/ui/Components/CounterView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -686,10 +691,10 @@
 
     const/4 v1, 0x3
 
-    .line 279
+    .line 300
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CounterView;->setGravity(I)V
 
-    .line 280
+    .line 301
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterView:Lorg/telegram/ui/Components/CounterView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -698,7 +703,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/CounterView;->setColors(II)V
 
-    .line 281
+    .line 302
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterView:Lorg/telegram/ui/Components/CounterView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
@@ -709,10 +714,10 @@
 
     const/4 v0, 0x0
 
-    .line 282
+    .line 303
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 283
+    .line 304
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterView:Lorg/telegram/ui/Components/CounterView;
 
     const/4 v1, -0x1
@@ -736,12 +741,12 @@
 
     const/4 v0, 0x0
 
-    .line 224
+    .line 245
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->showOverlay:Z
 
     const/4 v0, 0x1
 
-    .line 225
+    .line 246
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->updateOverlay(Z)V
 
     return-void
@@ -750,7 +755,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 124
+    .line 140
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterView:Lorg/telegram/ui/Components/CounterView;
 
     const/4 v1, 0x0
@@ -759,7 +764,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 125
+    .line 141
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterOffset:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
@@ -788,7 +793,7 @@
 
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
-    .line 126
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterOffset2:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -823,7 +828,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
-    .line 127
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterOffset:Lorg/telegram/ui/Components/AnimatedFloat;
@@ -836,7 +841,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 128
+    .line 144
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterView:Lorg/telegram/ui/Components/CounterView;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->counterOffset2:Lorg/telegram/ui/Components/AnimatedFloat;
@@ -857,16 +862,16 @@
 
     goto :goto_0
 
-    .line 130
+    .line 146
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     if-eqz v0, :cond_1
 
-    .line 131
+    .line 147
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 134
+    .line 150
     :cond_1
     :goto_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
@@ -885,7 +890,7 @@
 
     invoke-virtual {v0, v1, v1, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 135
+    .line 151
     iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -896,9 +901,9 @@
 
     iget-boolean v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->drawOverlayColor:Z
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_6
 
-    .line 136
+    .line 152
     :cond_2
     iget-boolean v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->inc:Z
 
@@ -906,7 +911,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 137
+    .line 153
     iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->progress:F
 
     add-float/2addr v3, v5
@@ -921,12 +926,12 @@
 
     const/4 v3, 0x0
 
-    .line 139
+    .line 155
     iput-boolean v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->inc:Z
 
     goto :goto_1
 
-    .line 142
+    .line 158
     :cond_3
     iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->progress:F
 
@@ -940,12 +945,17 @@
 
     const/4 v3, 0x1
 
-    .line 144
+    .line 160
     iput-boolean v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->inc:Z
 
-    .line 147
+    .line 163
     :cond_4
     :goto_1
+    iget-boolean v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->drawGradient:Z
+
+    if-eqz v3, :cond_5
+
+    .line 164
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v5
@@ -982,7 +992,7 @@
 
     invoke-virtual/range {v5 .. v11}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->updateMainGradientMatrix(IIIIFF)V
 
-    .line 148
+    .line 165
     iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->radius:I
 
     int-to-float v5, v3
@@ -999,20 +1009,42 @@
 
     invoke-virtual {p1, v0, v5, v3, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 149
+    goto :goto_2
+
+    .line 167
+    :cond_5
+    iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->paintOverlayPaint:Landroid/graphics/Paint;
+
+    const/16 v5, 0xff
+
+    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 168
+    iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->radius:I
+
+    int-to-float v5, v3
+
+    int-to-float v3, v3
+
+    iget-object v6, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->paintOverlayPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v5, v3, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    .line 170
+    :goto_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 152
-    :cond_5
+    .line 173
+    :cond_6
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->IS_BILLING_UNAVAILABLE:Z
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_7
 
     iget-boolean v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->isFlickerDisabled:Z
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_7
 
-    .line 153
+    .line 174
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -1021,7 +1053,7 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setParentWidth(I)V
 
-    .line 154
+    .line 175
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget v5, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->radius:I
@@ -1032,19 +1064,19 @@
 
     invoke-virtual {v3, p1, v0, v5, v6}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 157
-    :cond_6
+    .line 178
+    :cond_7
     iget v3, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
     cmpl-float v1, v3, v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_9
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->drawOverlayColor:Z
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_9
 
-    .line 158
+    .line 179
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->paintOverlayPaint:Landroid/graphics/Paint;
 
     const/high16 v5, 0x437f0000    # 255.0f
@@ -1055,19 +1087,19 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 159
+    .line 180
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayProgress:F
 
     cmpl-float v1, v1, v4
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
 
-    .line 160
+    .line 181
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 161
+    .line 182
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->path:Landroid/graphics/Path;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -1112,15 +1144,15 @@
 
     invoke-virtual {v1, v3, v4, v2, v5}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 162
+    .line 183
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 163
+    .line 184
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 164
+    .line 185
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->radius:I
 
     int-to-float v2, v1
@@ -1131,13 +1163,13 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 165
+    .line 186
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 167
-    :cond_7
+    .line 188
+    :cond_8
     iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->radius:I
 
     int-to-float v2, v1
@@ -1148,9 +1180,9 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 172
-    :cond_8
-    :goto_2
+    .line 193
+    :cond_9
+    :goto_3
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -1159,7 +1191,7 @@
 .method public getIconView()Lorg/telegram/ui/Components/RLottieImageView;
     .locals 1
 
-    .line 108
+    .line 124
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     return-object v0
@@ -1168,7 +1200,7 @@
 .method public getTextView()Lorg/telegram/ui/Components/AnimatedTextView;
     .locals 1
 
-    .line 111
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     return-object v0
@@ -1177,14 +1209,14 @@
 .method public hideIcon()V
     .locals 2
 
-    .line 240
+    .line 261
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setOnRestartCallback(Ljava/lang/Runnable;)V
 
-    .line 241
+    .line 262
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v1, 0x8
@@ -1197,7 +1229,7 @@
 .method public isEnabled()Z
     .locals 1
 
-    .line 257
+    .line 278
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->isEnabled()Z
@@ -1210,7 +1242,7 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 119
+    .line 135
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -1221,7 +1253,7 @@
 
     const/4 v0, 0x0
 
-    .line 261
+    .line 282
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setButton(Ljava/lang/String;Landroid/view/View$OnClickListener;Z)V
 
     return-void
@@ -1230,7 +1262,7 @@
 .method public setButton(Ljava/lang/String;Landroid/view/View$OnClickListener;Z)V
     .locals 2
 
-    .line 265
+    .line 286
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->isButtonTextSet:Z
 
     const/4 v1, 0x1
@@ -1241,13 +1273,13 @@
 
     move p3, v1
 
-    .line 268
+    .line 289
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->isButtonTextSet:Z
 
     if-eqz p3, :cond_1
 
-    .line 269
+    .line 290
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView;->isAnimating()Z
@@ -1256,18 +1288,18 @@
 
     if-eqz v0, :cond_1
 
-    .line 270
+    .line 291
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView;->cancelAnimation()V
 
-    .line 272
+    .line 293
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0, p1, p3}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 273
+    .line 294
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
@@ -1278,10 +1310,10 @@
 .method public setEnabled(Z)V
     .locals 1
 
-    .line 251
+    .line 272
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 252
+    .line 273
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->buttonLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
@@ -1292,10 +1324,10 @@
 .method public setFlickerDisabled(Z)V
     .locals 0
 
-    .line 245
+    .line 266
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->isFlickerDisabled:Z
 
-    .line 246
+    .line 267
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -1304,31 +1336,31 @@
 .method public setIcon(I)V
     .locals 2
 
-    .line 229
+    .line 250
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v1, 0x18
 
     invoke-virtual {v0, p1, v1, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 230
+    .line 251
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     const/high16 v0, 0x40000000    # 2.0f
 
     iput v0, p1, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->progress:F
 
-    .line 231
+    .line 252
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumButtonView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Premium/PremiumButtonView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/PremiumButtonView;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setOnRestartCallback(Ljava/lang/Runnable;)V
 
-    .line 235
+    .line 256
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 236
+    .line 257
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->iconView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v0, 0x0
@@ -1338,23 +1370,34 @@
     return-void
 .end method
 
+.method public setOverlayColor(I)V
+    .locals 1
+
+    .line 42
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->paintOverlayPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
+
+    return-void
+.end method
+
 .method public setOverlayText(Ljava/lang/String;ZZ)V
     .locals 1
 
     const/4 v0, 0x1
 
-    .line 176
+    .line 197
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->showOverlay:Z
 
-    .line 177
+    .line 198
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->drawOverlayColor:Z
 
-    .line 178
+    .line 199
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {p2, p1, p3}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 179
+    .line 200
     invoke-direct {p0, p3}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->updateOverlay(Z)V
 
     return-void

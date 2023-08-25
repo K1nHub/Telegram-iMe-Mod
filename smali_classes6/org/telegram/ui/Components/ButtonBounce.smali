@@ -10,7 +10,11 @@
 
 .field private isPressed:Z
 
+.field private final overshoot:F
+
 .field private pressedT:F
+
+.field private releaseDelay:J
 
 .field private view:Landroid/view/View;
 
@@ -25,41 +29,68 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;)V
-    .locals 0
+    .locals 2
 
-    .line 15
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const-wide/16 v0, 0x0
+
     .line 16
+    iput-wide v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->releaseDelay:J
+
+    .line 19
     iput-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->view:Landroid/view/View;
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 17
+    .line 20
     iput p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->durationMultiplier:F
+
+    const/high16 p1, 0x40a00000    # 5.0f
+
+    .line 21
+    iput p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->overshoot:F
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/view/View;F)V
-    .locals 0
+.method public constructor <init>(Landroid/view/View;FF)V
+    .locals 2
 
-    .line 20
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
+    const-wide/16 v0, 0x0
+
+    .line 16
+    iput-wide v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->releaseDelay:J
+
+    .line 25
     iput-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->view:Landroid/view/View;
 
-    .line 22
+    .line 26
     iput p2, p0, Lorg/telegram/ui/Components/ButtonBounce;->durationMultiplier:F
 
+    .line 27
+    iput p3, p0, Lorg/telegram/ui/Components/ButtonBounce;->overshoot:F
+
     return-void
+.end method
+
+.method static synthetic access$000(Lorg/telegram/ui/Components/ButtonBounce;)Landroid/animation/ValueAnimator;
+    .locals 0
+
+    .line 11
+    iget-object p0, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
+
+    return-object p0
 .end method
 
 .method static synthetic access$002(Lorg/telegram/ui/Components/ButtonBounce;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 10
+    .line 11
     iput-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
     return-object p1
@@ -68,7 +99,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/Components/ButtonBounce;F)F
     .locals 0
 
-    .line 10
+    .line 11
     iput p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->pressedT:F
 
     return p1
@@ -77,7 +108,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/ButtonBounce;)V
     .locals 0
 
-    .line 10
+    .line 11
     invoke-direct {p0}, Lorg/telegram/ui/Components/ButtonBounce;->invalidate()V
 
     return-void
@@ -86,12 +117,12 @@
 .method private invalidate()V
     .locals 1
 
-    .line 76
+    .line 92
     iget-object v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->view:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 77
+    .line 93
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -101,7 +132,7 @@
 .method private synthetic lambda$setPressed$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 41
+    .line 53
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -114,7 +145,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->pressedT:F
 
-    .line 42
+    .line 54
     invoke-direct {p0}, Lorg/telegram/ui/Components/ButtonBounce;->invalidate()V
 
     return-void
@@ -129,7 +160,7 @@
 
     sub-float v1, v0, p1
 
-    .line 68
+    .line 84
     iget v2, p0, Lorg/telegram/ui/Components/ButtonBounce;->pressedT:F
 
     sub-float/2addr v0, v2
@@ -144,7 +175,7 @@
 .method public isPressed()Z
     .locals 1
 
-    .line 72
+    .line 88
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->isPressed:Z
 
     return v0
@@ -153,20 +184,25 @@
 .method public setPressed(Z)V
     .locals 3
 
-    .line 34
+    .line 44
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->isPressed:Z
 
     if-eq v0, p1, :cond_3
 
-    .line 35
+    .line 45
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->isPressed:Z
 
-    .line 36
+    .line 46
     iget-object v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
+
+    const/4 v1, 0x0
+
+    .line 47
+    iput-object v1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 37
+    .line 49
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
@@ -176,7 +212,7 @@
 
     const/4 v1, 0x0
 
-    .line 39
+    .line 51
     iget v2, p0, Lorg/telegram/ui/Components/ButtonBounce;->pressedT:F
 
     aput v2, v0, v1
@@ -201,14 +237,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
-    .line 40
+    .line 52
     new-instance v1, Lorg/telegram/ui/Components/ButtonBounce$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ButtonBounce$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ButtonBounce;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 44
+    .line 56
     iget-object v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/ButtonBounce$1;
@@ -217,19 +253,19 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 52
+    .line 66
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->isPressed:Z
 
     if-eqz p1, :cond_2
 
-    .line 53
+    .line 67
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 54
+    .line 68
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
     const/high16 v0, 0x42700000    # 60.0f
@@ -242,21 +278,28 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
+    .line 69
+    iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
+
     goto :goto_1
 
-    .line 56
+    .line 71
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
 
-    const/high16 v1, 0x40a00000    # 5.0f
+    iget v1, p0, Lorg/telegram/ui/Components/ButtonBounce;->overshoot:F
 
     invoke-direct {v0, v1}, Landroid/view/animation/OvershootInterpolator;-><init>(F)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 57
+    .line 72
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
     const/high16 v0, 0x43af0000    # 350.0f
@@ -269,7 +312,14 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 59
+    .line 73
+    iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
+
+    iget-wide v0, p0, Lorg/telegram/ui/Components/ButtonBounce;->releaseDelay:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
+
+    .line 75
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->animator:Landroid/animation/ValueAnimator;
 
@@ -279,10 +329,19 @@
     return-void
 .end method
 
+.method public setReleaseDelay(J)Lorg/telegram/ui/Components/ButtonBounce;
+    .locals 0
+
+    .line 31
+    iput-wide p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->releaseDelay:J
+
+    return-object p0
+.end method
+
 .method public setView(Landroid/view/View;)V
     .locals 0
 
-    .line 26
+    .line 36
     iput-object p1, p0, Lorg/telegram/ui/Components/ButtonBounce;->view:Landroid/view/View;
 
     return-void

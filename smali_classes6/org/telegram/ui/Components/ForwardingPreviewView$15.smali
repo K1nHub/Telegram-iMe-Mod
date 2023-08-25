@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;)V
     .locals 0
 
-    .line 1264
+    .line 1267
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$15;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1267
+    .line 1270
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$15;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/Components/ForwardingPreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1268
+    .line 1271
     iget v0, p1, Lorg/telegram/ui/Components/ForwardingPreviewView;->yOffset:F
 
     iget v1, p1, Lorg/telegram/ui/Components/ForwardingPreviewView;->chatTopOffset:I

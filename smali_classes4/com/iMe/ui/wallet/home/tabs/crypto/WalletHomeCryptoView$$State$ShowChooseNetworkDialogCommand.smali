@@ -23,48 +23,53 @@
 
 
 # instance fields
-.field public final action:Lkotlin/jvm/functions/Function1;
+.field public final availableNetworksItems:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lkotlin/jvm/functions/Function1<",
-            "-",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
-            "Lkotlin/Unit;",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem;",
             ">;"
         }
     .end annotation
 .end field
 
-.field public final network:Lcom/iMe/storage/domain/model/crypto/Network;
+.field public final network:Lcom/iMe/model/wallet/crypto/NetworkItem;
+
+.field public final purpose:Lcom/iMe/model/wallet/home/NetworkChoosePurpose;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State;Lcom/iMe/storage/domain/model/crypto/Network;Lkotlin/jvm/functions/Function1;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State;Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;Lcom/iMe/model/wallet/home/NetworkChoosePurpose;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
-            "Lkotlin/jvm/functions/Function1<",
-            "-",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
-            "Lkotlin/Unit;",
-            ">;)V"
+            "Lcom/iMe/model/wallet/crypto/NetworkItem;",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem;",
+            ">;",
+            "Lcom/iMe/model/wallet/home/NetworkChoosePurpose;",
+            ")V"
         }
     .end annotation
 
-    .line 429
+    .line 485
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showChooseNetworkDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 431
-    iput-object p2, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->network:Lcom/iMe/storage/domain/model/crypto/Network;
+    .line 487
+    iput-object p2, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->network:Lcom/iMe/model/wallet/crypto/NetworkItem;
 
-    .line 432
-    iput-object p3, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->action:Lkotlin/jvm/functions/Function1;
+    .line 488
+    iput-object p3, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->availableNetworksItems:Ljava/util/List;
+
+    .line 489
+    iput-object p4, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->purpose:Lcom/iMe/model/wallet/home/NetworkChoosePurpose;
 
     return-void
 .end method
@@ -72,14 +77,16 @@
 
 # virtual methods
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V
-    .locals 2
+    .locals 3
 
-    .line 437
-    iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->network:Lcom/iMe/storage/domain/model/crypto/Network;
+    .line 494
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->network:Lcom/iMe/model/wallet/crypto/NetworkItem;
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->action:Lkotlin/jvm/functions/Function1;
+    iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->availableNetworksItems:Ljava/util/List;
 
-    invoke-interface {p1, v0, v1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;->showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Lkotlin/jvm/functions/Function1;)V
+    iget-object v2, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->purpose:Lcom/iMe/model/wallet/home/NetworkChoosePurpose;
+
+    invoke-interface {p1, v0, v1, v2}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;->showChooseNetworkDialog(Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;Lcom/iMe/model/wallet/home/NetworkChoosePurpose;)V
 
     return-void
 .end method
@@ -87,7 +94,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 423
+    .line 476
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V

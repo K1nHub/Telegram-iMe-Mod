@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/chat/ChatPresenter;",
+        "Lcom/iMe/feature/profile/ProfilePresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n129#3,5:564\n129#3,5:569\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n*L\n149#1:553\n151#1:554,5\n152#1:559,5\n153#1:564,5\n154#1:569,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n44#2:864\n129#3,5:865\n129#3,5:870\n129#3,5:875\n129#3,5:880\n129#3,5:885\n129#3,5:890\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n*L\n170#1:864\n173#1:865,5\n174#1:870,5\n175#1:875,5\n176#1:880,5\n177#1:885,5\n178#1:890,5\n*E\n"
 .end annotation
 
 
@@ -61,8 +61,8 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/chat/ChatPresenter;
-    .locals 13
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/profile/ProfilePresenter;
+    .locals 8
 
     const-string v0, "$this$factory"
 
@@ -73,7 +73,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
-    const-class v0, Lorg/telegram/tgnet/TLRPC$Chat;
+    const-class v0, Lcom/iMe/feature/profile/ProfileData;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -87,10 +87,10 @@
 
     move-object v1, p2
 
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$Chat;
+    check-cast v1, Lcom/iMe/feature/profile/ProfileData;
 
     .line 133
-    const-class p2, Lcom/iMe/manager/TelegramApi;
+    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -102,10 +102,42 @@
 
     move-result-object p2
 
-    .line 151
-    move-object v2, p2
+    .line 173
+    move-object v4, p2
 
-    check-cast v2, Lcom/iMe/manager/TelegramApi;
+    check-cast v4, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
+
+    .line 133
+    const-class p2, Lcom/iMe/feature/profile/GroupMembershipUseCase;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 174
+    move-object v7, p2
+
+    check-cast v7, Lcom/iMe/feature/profile/GroupMembershipUseCase;
+
+    .line 133
+    const-class p2, Lcom/iMe/feature/profile/ProfileUseCase;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 175
+    move-object v5, p2
+
+    check-cast v5, Lcom/iMe/feature/profile/ProfileUseCase;
 
     .line 133
     const-class p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -118,13 +150,13 @@
 
     move-result-object p2
 
-    .line 151
-    move-object v4, p2
+    .line 176
+    move-object v2, p2
 
-    check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
+    const-class p2, Lcom/iMe/feature/socialMedias/SocialUseCase;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -134,125 +166,13 @@
 
     move-result-object p2
 
-    .line 152
-    move-object v5, p2
-
-    check-cast v5, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 152
-    move-object v7, p2
-
-    check-cast v7, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 152
-    move-object v8, p2
-
-    check-cast v8, Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;
-
-    .line 133
-    const-class p2, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 153
-    move-object v9, p2
-
-    check-cast v9, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/gateway/TelegramGateway;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 153
-    move-object v10, p2
-
-    check-cast v10, Lcom/iMe/storage/domain/gateway/TelegramGateway;
-
-    .line 133
-    const-class p2, Lcom/iMe/manager/multireply/MultiReplyInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 153
-    move-object v11, p2
-
-    check-cast v11, Lcom/iMe/manager/multireply/MultiReplyInteractor;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/translate/TranslationInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 154
-    move-object v12, p2
-
-    check-cast v12, Lcom/iMe/storage/domain/interactor/translate/TranslationInteractor;
-
-    .line 133
-    const-class p2, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;
-
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 154
+    .line 177
     move-object v6, p2
 
-    check-cast v6, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;
+    check-cast v6, Lcom/iMe/feature/socialMedias/SocialUseCase;
 
     .line 133
-    const-class p2, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    const-class p2, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
 
     invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -262,17 +182,17 @@
 
     move-result-object p1
 
-    .line 154
+    .line 178
     move-object v3, p1
 
-    check-cast v3, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+    check-cast v3, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
 
-    .line 150
-    new-instance p1, Lcom/iMe/ui/chat/ChatPresenter;
+    .line 171
+    new-instance p1, Lcom/iMe/feature/profile/ProfilePresenter;
 
     move-object v0, p1
 
-    invoke-direct/range {v0 .. v12}, Lcom/iMe/ui/chat/ChatPresenter;-><init>(Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/manager/TelegramApi;Lcom/iMe/storage/domain/utils/rx/RxEventBus;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;Lcom/iMe/storage/domain/gateway/TelegramGateway;Lcom/iMe/manager/multireply/MultiReplyInteractor;Lcom/iMe/storage/domain/interactor/translate/TranslationInteractor;)V
+    invoke-direct/range {v0 .. v7}, Lcom/iMe/feature/profile/ProfilePresenter;-><init>(Lcom/iMe/feature/profile/ProfileData;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;Lcom/iMe/feature/profile/ProfileUseCase;Lcom/iMe/feature/socialMedias/SocialUseCase;Lcom/iMe/feature/profile/GroupMembershipUseCase;)V
 
     return-object p1
 .end method
@@ -280,12 +200,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 149
+    .line 170
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/chat/ChatPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/profile/ProfilePresenter;
 
     move-result-object p1
 

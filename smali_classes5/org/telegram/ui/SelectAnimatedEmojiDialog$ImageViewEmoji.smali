@@ -250,66 +250,6 @@
     return-void
 .end method
 
-.method public createPremiumLockView()V
-    .locals 4
-
-    .line 2932
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    if-nez v0, :cond_0
-
-    .line 2933
-    new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    sget v2, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->TYPE_STICKERS_PREMIUM_LOCKED:I
-
-    invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;-><init>(Landroid/content/Context;I)V
-
-    iput-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    const/16 v0, 0xc
-
-    .line 2934
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v0
-
-    .line 2935
-    iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    invoke-virtual {v1, v0, v0}, Landroid/widget/ImageView;->measure(II)V
-
-    .line 2936
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getMeasuredWidth()I
-
-    move-result v1
-
-    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
-
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getMeasuredHeight()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/widget/ImageView;->layout(IIII)V
-
-    :cond_0
-    return-void
-.end method
-
 .method public drawSelected(Landroid/graphics/Canvas;Landroid/view/View;)V
     .locals 5
 

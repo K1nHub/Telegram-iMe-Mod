@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Stories/SelfStoryViewsPage$2;
-.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
+.super Ljava/lang/Object;
 .source "SelfStoryViewsPage.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$ScrollListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/SelfStoryViewsPage;-><init>(Lorg/telegram/ui/Stories/StoryViewer;Landroid/content/Context;)V
+    value = Lorg/telegram/ui/Stories/SelfStoryViewsPage;-><init>(Lorg/telegram/ui/Stories/StoryViewer;Landroid/content/Context;Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;Lcom/google/android/exoplayer2/util/Consumer;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,23 +25,23 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 0
 
-    .line 91
+    .line 205
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$2;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .locals 0
+.method public onScroll()V
+    .locals 1
 
-    .line 94
-    iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$2;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
+    .line 208
+    iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$2;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$200(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
 .end method

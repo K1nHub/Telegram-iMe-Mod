@@ -208,17 +208,28 @@
         }
     .end annotation
 
-    .line 771
+    .line 775
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
-    .line 772
+    .line 776
     iget-object v1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v1, p1}, Lorg/telegram/ui/Components/MediaActivity;->access$002(Lorg/telegram/ui/Components/MediaActivity;Landroid/util/SparseArray;)Landroid/util/SparseArray;
 
-    .line 773
+    .line 777
+    iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$700(Lorg/telegram/ui/Components/MediaActivity;)I
+
+    move-result p1
+
+    const/4 v1, 0x1
+
+    if-ne p1, v1, :cond_1
+
+    .line 778
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$900(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
@@ -227,32 +238,30 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedTextView;->cancelAnimation()V
 
-    .line 774
+    .line 779
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$900(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    new-array v2, v1, [Ljava/lang/Object;
+    new-array v3, v2, [Ljava/lang/Object;
 
-    const-string v3, "StoriesSelected"
+    const-string v4, "StoriesSelected"
 
-    invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v0, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    const/4 v4, 0x1
+    xor-int/2addr v4, v1
 
-    xor-int/2addr v3, v4
+    invoke-virtual {p1, v3, v4}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
-
-    .line 775
+    .line 780
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1700(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
@@ -261,7 +270,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 776
+    .line 781
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1700(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
@@ -270,26 +279,26 @@
 
     if-lez v0, :cond_0
 
-    move v2, v4
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    move v2, v1
+    move v3, v2
 
     :goto_0
-    invoke-virtual {p1, v2}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setEnabled(Z)V
+    invoke-virtual {p1, v3}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setEnabled(Z)V
 
-    .line 777
+    .line 782
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1700(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v4}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setCount(IZ)V
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setCount(IZ)V
 
-    .line 778
+    .line 783
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity;->sharedMediaLayout:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -298,26 +307,26 @@
 
     move-result p1
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    if-ne p1, v2, :cond_1
+    if-ne p1, v3, :cond_1
 
-    .line 779
+    .line 784
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1700(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     move-result-object p1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const-string v2, "ArchiveStories"
+    const-string v3, "ArchiveStories"
 
-    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0, v4}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setText(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setText(Ljava/lang/CharSequence;Z)V
 
     :cond_1
     return-void
@@ -369,7 +378,7 @@
 .method protected onTabProgress(F)V
     .locals 8
 
-    .line 786
+    .line 792
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->access$700(Lorg/telegram/ui/Components/MediaActivity;)I
@@ -387,7 +396,7 @@
 
     sub-float v0, p1, v0
 
-    .line 789
+    .line 795
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/MediaActivity;->access$1500(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;
@@ -396,7 +405,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 790
+    .line 796
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/MediaActivity;->access$1500(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;
@@ -426,7 +435,7 @@
 
     sub-float/2addr v0, v5
 
-    .line 795
+    .line 801
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -437,7 +446,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 796
+    .line 802
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -454,7 +463,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 797
+    .line 803
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -467,7 +476,7 @@
 
     invoke-virtual {p1, v5}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 798
+    .line 804
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -486,7 +495,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 799
+    .line 805
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -497,7 +506,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 800
+    .line 806
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -518,7 +527,7 @@
 
     return-void
 
-    .line 804
+    .line 810
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
@@ -532,7 +541,7 @@
 
     invoke-virtual {p1, v5}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 805
+    .line 811
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -551,7 +560,7 @@
 
     invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 806
+    .line 812
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -562,7 +571,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 807
+    .line 813
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -581,7 +590,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 809
+    .line 815
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -592,7 +601,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 810
+    .line 816
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1800(Lorg/telegram/ui/Components/MediaActivity;)[Landroid/widget/FrameLayout;
@@ -615,7 +624,7 @@
 .method protected onTabScroll(Z)V
     .locals 1
 
-    .line 816
+    .line 822
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->access$1500(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;
@@ -624,7 +633,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 817
+    .line 823
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->access$1500(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;
@@ -641,26 +650,41 @@
     .locals 9
 
     .line 689
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->isActionModeShowed:Z
+    iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    if-ne v0, p1, :cond_0
+    invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->access$700(Lorg/telegram/ui/Components/MediaActivity;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 690
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->showActionMode(Z)V
 
     return-void
 
-    .line 692
-    :cond_0
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->isActionModeShowed:Z
-
     .line 693
-    iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
+    :cond_0
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->isActionModeShowed:Z
 
-    if-eqz v0, :cond_1
+    if-ne v0, p1, :cond_1
 
-    .line 694
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
+    return-void
 
     .line 696
     :cond_1
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout;->isActionModeShowed:Z
+
+    .line 697
+    iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
+
+    if-eqz v0, :cond_2
+
+    .line 698
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
+
+    .line 700
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MediaActivity;->access$700(Lorg/telegram/ui/Components/MediaActivity;)I
@@ -669,17 +693,17 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_3
 
-    .line 697
+    .line 701
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->disableScroll(Z)V
 
-    :cond_2
+    :cond_3
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_5
 
-    .line 700
+    .line 704
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/MediaActivity;->access$900(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
@@ -688,16 +712,16 @@
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 701
+    .line 705
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
-    .line 702
+    .line 706
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
@@ -706,8 +730,8 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 704
-    :cond_3
+    .line 708
+    :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout;->getActionModeLayout()Landroid/widget/LinearLayout;
 
     move-result-object v2
@@ -716,8 +740,8 @@
 
     goto :goto_0
 
-    .line 706
-    :cond_4
+    .line 710
+    :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/MediaActivity;->access$1100(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
@@ -726,7 +750,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 708
+    .line 712
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
@@ -738,31 +762,31 @@
 
     const/4 v4, 0x0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
     move v5, v3
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     move v5, v4
 
     :goto_1
     invoke-virtual {v2, v5, v1}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
-    .line 709
+    .line 713
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
-    .line 710
+    .line 714
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 711
+    .line 715
     iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$900(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/AnimatedTextView;
@@ -773,13 +797,13 @@
 
     new-array v7, v1, [F
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_7
 
     move v8, v3
 
     goto :goto_2
 
-    :cond_6
+    :cond_7
     move v8, v4
 
     :goto_2
@@ -791,7 +815,7 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 712
+    .line 716
     iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1100(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
@@ -802,13 +826,13 @@
 
     new-array v7, v1, [F
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_8
 
     move v8, v4
 
     goto :goto_3
 
-    :cond_7
+    :cond_8
     move v8, v3
 
     :goto_3
@@ -820,46 +844,8 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 713
+    .line 717
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout;->getActionModeLayout()Landroid/widget/LinearLayout;
-
-    move-result-object v5
-
-    sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    new-array v7, v1, [F
-
-    if-eqz p1, :cond_8
-
-    move v8, v3
-
-    goto :goto_4
-
-    :cond_8
-    move v8, v4
-
-    :goto_4
-    aput v8, v7, v0
-
-    invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 714
-    iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
-
-    invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_b
-
-    .line 716
-    iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
-
-    invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v5
 
@@ -871,9 +857,47 @@
 
     move v8, v3
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_9
+    move v8, v4
+
+    :goto_4
+    aput v8, v7, v0
+
+    invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 718
+    iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
+
+    invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_c
+
+    .line 720
+    iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
+
+    invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object v5
+
+    sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    new-array v7, v1, [F
+
+    if-eqz p1, :cond_a
+
+    move v8, v3
+
+    goto :goto_5
+
+    :cond_a
     move v8, v4
 
     :goto_5
@@ -885,7 +909,7 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 717
+    .line 721
     iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
@@ -896,13 +920,13 @@
 
     new-array v7, v1, [F
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_b
 
     move v8, v4
 
     goto :goto_6
 
-    :cond_a
+    :cond_b
     iget-object v8, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/MediaActivity;->access$1000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
@@ -924,17 +948,17 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 719
-    :cond_b
+    .line 723
+    :cond_c
     iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1300(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v5
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_e
 
-    .line 720
+    .line 724
     iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1300(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -943,7 +967,7 @@
 
     invoke-virtual {v5, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 721
+    .line 725
     iget-object v5, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/MediaActivity;->access$1300(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -954,13 +978,13 @@
 
     new-array v7, v1, [F
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_d
 
     move v8, v3
 
     goto :goto_7
 
-    :cond_c
+    :cond_d
     move v8, v4
 
     :goto_7
@@ -972,8 +996,8 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 723
-    :cond_d
+    .line 727
+    :cond_e
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout;->getClosestTab()I
 
     move-result v5
@@ -982,16 +1006,16 @@
 
     move-result v5
 
-    if-nez v5, :cond_e
+    if-nez v5, :cond_f
 
     move v5, v1
 
     goto :goto_8
 
-    :cond_e
+    :cond_f
     move v5, v0
 
-    .line 724
+    .line 728
     :goto_8
     iget-object v6, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
@@ -999,9 +1023,9 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_11
+    if-eqz v6, :cond_12
 
-    .line 725
+    .line 729
     iget-object v6, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/MediaActivity;->access$1400(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -1010,7 +1034,7 @@
 
     invoke-virtual {v6, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 726
+    .line 730
     iget-object v6, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/MediaActivity;->access$1400(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -1021,16 +1045,16 @@
 
     new-array v8, v1, [F
 
-    if-nez p1, :cond_10
+    if-nez p1, :cond_11
 
-    if-eqz v5, :cond_f
+    if-eqz v5, :cond_10
 
     goto :goto_9
 
-    :cond_f
+    :cond_10
     move v4, v3
 
-    :cond_10
+    :cond_11
     :goto_9
     aput v4, v8, v0
 
@@ -1040,17 +1064,17 @@
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 728
-    :cond_11
+    .line 732
+    :cond_12
     iget-object v4, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/MediaActivity;->access$1500(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;
 
     move-result-object v4
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_14
 
-    .line 729
+    .line 733
     iget-object v4, p0, Lorg/telegram/ui/Components/MediaActivity$6;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/MediaActivity;->access$1500(Lorg/telegram/ui/Components/MediaActivity;)Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;
@@ -1061,11 +1085,11 @@
 
     new-array v1, v1, [F
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_13
 
     const v3, 0x3ecccccd    # 0.4f
 
-    :cond_12
+    :cond_13
     aput v3, v1, v0
 
     invoke-static {v4, v6, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -1074,27 +1098,27 @@
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 731
-    :cond_13
+    .line 735
+    :cond_14
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 732
+    .line 736
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v1, 0x12c
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 733
+    .line 737
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 734
+    .line 738
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lorg/telegram/ui/Components/MediaActivity$6$1;
@@ -1103,7 +1127,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 766
+    .line 770
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$6;->actionModeAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V

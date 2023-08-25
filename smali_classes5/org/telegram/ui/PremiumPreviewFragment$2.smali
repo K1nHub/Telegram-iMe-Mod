@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment;Landroid/content/Context;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 519
+    .line 562
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$2;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iput-object p3, p0, Lorg/telegram/ui/PremiumPreviewFragment$2;->val$padding:Landroid/graphics/Rect;
@@ -39,7 +39,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 522
+    .line 565
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$2;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment;->shadowDrawable:Landroid/graphics/drawable/Drawable;
@@ -120,14 +120,14 @@
 
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 523
+    .line 566
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$2;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 524
+    .line 567
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void

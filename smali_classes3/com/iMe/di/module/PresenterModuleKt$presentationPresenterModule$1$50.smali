@@ -68,7 +68,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 424
+    .line 602
     new-instance p1, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingPresenter;
 
     invoke-direct {p1}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingPresenter;-><init>()V
@@ -79,7 +79,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 424
+    .line 602
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

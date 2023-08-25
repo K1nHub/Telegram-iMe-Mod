@@ -48,7 +48,7 @@
 .method public final invoke()Ljava/lang/Float;
     .locals 2
 
-    .line 24
+    .line 25
     iget-object v0, p0, Lcom/iMe/ui/custom/ImageHeaderView$networkIconCornerSize$2;->this$0:Lcom/iMe/ui/custom/ImageHeaderView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
@@ -77,7 +77,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 24
+    .line 25
     invoke-virtual {p0}, Lcom/iMe/ui/custom/ImageHeaderView$networkIconCornerSize$2;->invoke()Ljava/lang/Float;
 
     move-result-object v0

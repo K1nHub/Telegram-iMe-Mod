@@ -26,7 +26,7 @@
     const/high16 v1, 0x41900000    # 18.0f
 
     .line 27
-    invoke-virtual {v0, p1, v1}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 28
     iget-object v0, p0, Lorg/telegram/ui/Components/OutlineEditText;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;

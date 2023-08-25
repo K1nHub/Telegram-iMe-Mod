@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30689
+    .line 30698
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 30719
+    .line 30728
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 30710
+    .line 30719
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 30713
+    .line 30722
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 30701
+    .line 30710
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 30707
+    .line 30716
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowContacts;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 30716
+    .line 30725
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowChatParticipants;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 30695
+    .line 30704
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowAll;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 30698
+    .line 30707
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 30704
+    .line 30713
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowChatParticipants;
 
@@ -99,7 +99,7 @@
 
     goto :goto_1
 
-    .line 30723
+    .line 30732
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -129,7 +129,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 30726
+    .line 30735
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

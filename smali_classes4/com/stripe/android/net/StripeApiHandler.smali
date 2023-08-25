@@ -1553,7 +1553,7 @@
 
     const-string v0, "-1"
 
-    const-string v1, "networkaddress.cache.ttl"
+    const-string/jumbo v1, "networkaddress.cache.ttl"
 
     const/4 v2, 0x0
 

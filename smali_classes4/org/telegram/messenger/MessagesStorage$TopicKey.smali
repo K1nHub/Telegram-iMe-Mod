@@ -24,7 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 16342
+    .line 16355
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,15 +33,15 @@
 .method public static of(JI)Lorg/telegram/messenger/MessagesStorage$TopicKey;
     .locals 1
 
-    .line 16347
+    .line 16360
     new-instance v0, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
     invoke-direct {v0}, Lorg/telegram/messenger/MessagesStorage$TopicKey;-><init>()V
 
-    .line 16348
+    .line 16361
     iput-wide p0, v0, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    .line 16349
+    .line 16362
     iput p2, v0, Lorg/telegram/messenger/MessagesStorage$TopicKey;->topicId:I
 
     return-object v0
@@ -63,7 +63,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 16355
+    .line 16368
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -76,11 +76,11 @@
 
     goto :goto_1
 
-    .line 16356
+    .line 16369
     :cond_1
     check-cast p1, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    .line 16357
+    .line 16370
     iget-wide v2, p0, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
     iget-wide v4, p1, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
@@ -115,7 +115,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 16362
+    .line 16375
     iget-wide v1, p0, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -146,7 +146,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 16367
+    .line 16380
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

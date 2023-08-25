@@ -2,32 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Adapters/BaseLocationAdapter;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Adapters/BaseLocationAdapter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Adapters/BaseLocationAdapter;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Adapters/BaseLocationAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Adapters/BaseLocationAdapter;
 
+    iput-object p2, p0, Lorg/telegram/ui/Adapters/BaseLocationAdapter$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/tgnet/TLObject;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Adapters/BaseLocationAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Adapters/BaseLocationAdapter;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Adapters/BaseLocationAdapter;->$r8$lambda$LhEps_belgVy8dM0QymDPif70Jg(Lorg/telegram/ui/Adapters/BaseLocationAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/BaseLocationAdapter$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/tgnet/TLObject;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Adapters/BaseLocationAdapter;->$r8$lambda$zKhvRg4tJR67bQmvjIlZlJiWZI8(Lorg/telegram/ui/Adapters/BaseLocationAdapter;Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

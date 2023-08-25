@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,552:1\n44#2:553\n129#3,5:554\n129#3,5:559\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n*L\n288#1:553\n290#1:554,5\n291#1:559,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,863:1\n44#2:864\n129#3,5:865\n129#3,5:870\n129#3,5:875\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n*L\n419#1:864\n422#1:865,5\n423#1:870,5\n424#1:875,5\n*E\n"
 .end annotation
 
 
@@ -88,7 +88,7 @@
     check-cast p2, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;
 
     .line 133
-    const-class v0, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
+    const-class v0, Lcom/iMe/utils/validator/wallet/CustomPriceValidator;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -100,11 +100,11 @@
 
     move-result-object v0
 
-    .line 290
-    check-cast v0, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
+    .line 422
+    check-cast v0, Lcom/iMe/utils/validator/wallet/CustomPriceValidator;
 
     .line 133
-    const-class v2, Lcom/iMe/utils/validator/wallet/CustomPriceValidator;
+    const-class v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -114,11 +114,11 @@
 
     move-result-object v2
 
-    .line 290
-    check-cast v2, Lcom/iMe/utils/validator/wallet/CustomPriceValidator;
+    .line 423
+    check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
-    const-class v3, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    const-class v3, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
 
     invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -128,13 +128,13 @@
 
     move-result-object p1
 
-    .line 291
-    check-cast p1, Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 424
+    check-cast p1, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
 
-    .line 289
+    .line 420
     new-instance v1, Lcom/iMe/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;
 
-    invoke-direct {v1, p2, v0, p1, v2}, Lcom/iMe/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;-><init>(Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/utils/validator/wallet/CustomPriceValidator;)V
+    invoke-direct {v1, p2, p1, v2, v0}, Lcom/iMe/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;-><init>(Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/utils/validator/wallet/CustomPriceValidator;)V
 
     return-object v1
 .end method
@@ -142,7 +142,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 288
+    .line 419
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

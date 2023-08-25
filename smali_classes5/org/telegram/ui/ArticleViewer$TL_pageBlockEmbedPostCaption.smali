@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 428
+    .line 430
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer$1;)V
     .locals 0
 
-    .line 428
+    .line 430
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockEmbedPostCaption;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
 .method static synthetic access$11502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockEmbedPostCaption;Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
     .locals 0
 
-    .line 428
+    .line 430
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockEmbedPostCaption;->parent:Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
     return-object p1

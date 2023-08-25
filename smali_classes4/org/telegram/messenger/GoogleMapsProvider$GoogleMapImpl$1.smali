@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lorg/telegram/messenger/IMapsProvider$ICancelableCallback;)V
     .locals 0
 
-    .line 225
+    .line 235
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;
 
     iput-object p2, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$1;->val$callback:Lorg/telegram/messenger/IMapsProvider$ICancelableCallback;
@@ -42,7 +42,7 @@
 .method public onCancel()V
     .locals 1
 
-    .line 233
+    .line 243
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$1;->val$callback:Lorg/telegram/messenger/IMapsProvider$ICancelableCallback;
 
     invoke-interface {v0}, Lorg/telegram/messenger/IMapsProvider$ICancelableCallback;->onCancel()V
@@ -53,7 +53,7 @@
 .method public onFinish()V
     .locals 1
 
-    .line 228
+    .line 238
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$1;->val$callback:Lorg/telegram/messenger/IMapsProvider$ICancelableCallback;
 
     invoke-interface {v0}, Lorg/telegram/messenger/IMapsProvider$ICancelableCallback;->onFinish()V

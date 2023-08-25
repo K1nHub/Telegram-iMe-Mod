@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 211
+    .line 235
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public final newInstance()Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
     .locals 1
 
-    .line 212
+    .line 236
     new-instance v0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
     invoke-direct {v0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;-><init>()V

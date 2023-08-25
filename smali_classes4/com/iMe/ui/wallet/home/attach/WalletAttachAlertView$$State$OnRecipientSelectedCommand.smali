@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State;Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 1
 
-    .line 475
+    .line 470
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "onRecipientSelected"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 477
+    .line 472
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->id:Ljava/lang/String;
 
-    .line 478
+    .line 473
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->address:Ljava/lang/String;
 
-    .line 479
+    .line 474
     iput-boolean p4, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->isContactSelected:Z
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V
     .locals 3
 
-    .line 484
+    .line 479
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->id:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->address:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 467
+    .line 462
     check-cast p1, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView$$State$OnRecipientSelectedCommand;->apply(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertView;)V

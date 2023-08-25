@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/GalleryListView$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->$r8$lambda$5kXNB-4n-P1vMcFhLJLUw-7Ydtw(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->$r8$lambda$xxVKnG9qVOdIuc81Yp-5awQkVDU(Lorg/telegram/ui/Stories/recorder/GalleryListView;Lorg/telegram/messenger/MediaController$AlbumEntry;Landroid/view/View;)V
 
     return-void
 .end method

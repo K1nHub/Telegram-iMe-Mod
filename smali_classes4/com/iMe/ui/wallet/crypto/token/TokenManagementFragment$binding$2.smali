@@ -59,13 +59,14 @@
 .method public final invoke()Lorg/telegram/messenger/databinding/ForkFragmentTokenManagementBinding;
     .locals 1
 
-    .line 66
+    .line 68
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$binding$2;->this$0:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/BaseFragmentExtKt;->getLayoutInflater(Lorg/telegram/ui/ActionBar/BaseFragment;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
+    .line 67
     invoke-static {v0}, Lorg/telegram/messenger/databinding/ForkFragmentTokenManagementBinding;->inflate(Landroid/view/LayoutInflater;)Lorg/telegram/messenger/databinding/ForkFragmentTokenManagementBinding;
 
     move-result-object v0

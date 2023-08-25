@@ -4841,7 +4841,7 @@
     iput-object v8, v0, Lorg/telegram/ui/TwoStepVerificationActivity;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     .line 256
-    invoke-virtual {v8, v6, v11}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v8, v6, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 257
     iget-object v8, v0, Lorg/telegram/ui/TwoStepVerificationActivity;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;

@@ -1929,7 +1929,7 @@
 .method private canFinishPreload()Z
     .locals 2
 
-    .line 1996
+    .line 2001
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isStory:Z
 
     if-eqz v0, :cond_0
@@ -1954,7 +1954,7 @@
 .method private cancel(Z)V
     .locals 2
 
-    .line 1273
+    .line 1278
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda10;
@@ -1969,7 +1969,7 @@
 .method private cancelRequests()V
     .locals 8
 
-    .line 1329
+    .line 1334
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_6
@@ -1982,7 +1982,7 @@
 
     move v3, v2
 
-    .line 1331
+    .line 1336
     :goto_0
     iget-object v4, p0, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
@@ -1992,7 +1992,7 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 1332
+    .line 1337
     iget-object v4, p0, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2001,14 +2001,14 @@
 
     check-cast v4, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
-    .line 1333
+    .line 1338
     invoke-static {v4}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$400(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)I
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 1334
+    .line 1339
     iget v5, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2023,14 +2023,14 @@
 
     invoke-virtual {v5, v6, v7}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
-    .line 1335
+    .line 1340
     iget v5, v4, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->connectionType:I
 
     if-ne v5, v0, :cond_0
 
     move v7, v2
 
-    .line 1336
+    .line 1341
     :cond_0
     aget v5, v1, v7
 
@@ -2058,7 +2058,7 @@
     :cond_3
     const v3, 0x10002
 
-    .line 1341
+    .line 1346
     :goto_2
     aget v4, v1, v2
 
@@ -2066,7 +2066,7 @@
 
     if-le v4, v5, :cond_5
 
-    .line 1342
+    .line 1347
     iget-boolean v4, p0, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
     if-eqz v4, :cond_4
@@ -2078,7 +2078,7 @@
     :cond_4
     iget v4, p0, Lorg/telegram/messenger/FileLoadOperation;->datacenterId:I
 
-    .line 1343
+    .line 1348
     :goto_3
     iget v5, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
@@ -2102,7 +2102,7 @@
 
     const/4 v0, 0x0
 
-    .line 1352
+    .line 1357
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->fileOutputStream:Ljava/io/RandomAccessFile;
     :try_end_0
@@ -2110,7 +2110,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1354
+    .line 1359
     :try_start_1
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -2125,17 +2125,17 @@
     :catch_0
     move-exception v1
 
-    .line 1356
+    .line 1361
     :try_start_2
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1358
+    .line 1363
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->fileOutputStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 1359
+    .line 1364
     iput-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->fileOutputStream:Ljava/io/RandomAccessFile;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
@@ -2145,10 +2145,10 @@
     :catch_1
     move-exception v1
 
-    .line 1362
+    .line 1367
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1365
+    .line 1370
     :cond_0
     :goto_1
     :try_start_3
@@ -2158,7 +2158,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1367
+    .line 1372
     :try_start_4
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -2173,17 +2173,17 @@
     :catch_2
     move-exception v1
 
-    .line 1369
+    .line 1374
     :try_start_5
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1371
+    .line 1376
     :goto_2
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 1372
+    .line 1377
     iput-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
@@ -2193,10 +2193,10 @@
     :catch_3
     move-exception v1
 
-    .line 1375
+    .line 1380
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1378
+    .line 1383
     :cond_1
     :goto_3
     :try_start_6
@@ -2206,7 +2206,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 1380
+    .line 1385
     :try_start_7
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -2221,17 +2221,17 @@
     :catch_4
     move-exception v1
 
-    .line 1382
+    .line 1387
     :try_start_8
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1384
+    .line 1389
     :goto_4
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->fileReadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 1385
+    .line 1390
     iput-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->fileReadStream:Ljava/io/RandomAccessFile;
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_5
@@ -2241,10 +2241,10 @@
     :catch_5
     move-exception v1
 
-    .line 1388
+    .line 1393
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1391
+    .line 1396
     :cond_2
     :goto_5
     :try_start_9
@@ -2252,12 +2252,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 1392
+    .line 1397
     monitor-enter p0
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_7
 
-    .line 1394
+    .line 1399
     :try_start_a
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->filePartsStream:Ljava/io/RandomAccessFile;
 
@@ -2280,20 +2280,20 @@
     :catch_6
     move-exception v1
 
-    .line 1396
+    .line 1401
     :try_start_b
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1398
+    .line 1403
     :goto_6
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->filePartsStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 1399
+    .line 1404
     iput-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->filePartsStream:Ljava/io/RandomAccessFile;
 
-    .line 1400
+    .line 1405
     monitor-exit p0
 
     goto :goto_8
@@ -2311,10 +2311,10 @@
     :catch_7
     move-exception v1
 
-    .line 1403
+    .line 1408
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1407
+    .line 1412
     :cond_3
     :goto_8
     :try_start_d
@@ -2322,10 +2322,10 @@
 
     if-eqz v1, :cond_4
 
-    .line 1408
+    .line 1413
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 1409
+    .line 1414
     iput-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->fiv:Ljava/io/RandomAccessFile;
     :try_end_d
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_8
@@ -2335,10 +2335,10 @@
     :catch_8
     move-exception v0
 
-    .line 1412
+    .line 1417
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1414
+    .line 1419
     :cond_4
     :goto_9
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
@@ -2349,7 +2349,7 @@
 
     move v1, v0
 
-    .line 1415
+    .line 1420
     :goto_a
     iget-object v2, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
@@ -2359,7 +2359,7 @@
 
     if-ge v1, v2, :cond_8
 
-    .line 1416
+    .line 1421
     iget-object v2, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2368,21 +2368,21 @@
 
     check-cast v2, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
-    .line 1417
+    .line 1422
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v3
 
     if-eqz v3, :cond_5
 
-    .line 1418
+    .line 1423
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v3
 
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1419
+    .line 1424
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v2
@@ -2391,7 +2391,7 @@
 
     goto :goto_b
 
-    .line 1420
+    .line 1425
     :cond_5
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
@@ -2399,14 +2399,14 @@
 
     if-eqz v3, :cond_6
 
-    .line 1421
+    .line 1426
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object v3
 
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1422
+    .line 1427
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object v2
@@ -2415,7 +2415,7 @@
 
     goto :goto_b
 
-    .line 1423
+    .line 1428
     :cond_6
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
@@ -2423,14 +2423,14 @@
 
     if-eqz v3, :cond_7
 
-    .line 1424
+    .line 1429
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object v3
 
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1425
+    .line 1430
     invoke-static {v2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object v2
@@ -2443,7 +2443,7 @@
 
     goto :goto_a
 
-    .line 1428
+    .line 1433
     :cond_8
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
@@ -2468,7 +2468,7 @@
 
     move v10, v9
 
-    .line 2030
+    .line 2035
     :goto_0
     iget-object v2, v6, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
@@ -2478,7 +2478,7 @@
 
     if-ge v10, v2, :cond_3
 
-    .line 2031
+    .line 2036
     iget-object v2, v6, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2489,7 +2489,7 @@
 
     check-cast v11, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
-    .line 2032
+    .line 2037
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
 
     move-result-wide v2
@@ -2498,12 +2498,12 @@
 
     move-result-wide v12
 
-    .line 2033
+    .line 2038
     iget-boolean v0, v6, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-eqz v0, :cond_0
 
-    .line 2034
+    .line 2039
     iget-object v0, v6, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -2518,7 +2518,7 @@
 
     goto :goto_1
 
-    .line 2036
+    .line 2041
     :cond_0
     iget-object v1, v6, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
@@ -2547,7 +2547,7 @@
 
     goto :goto_2
 
-    .line 2041
+    .line 2046
     :cond_1
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$400(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)I
 
@@ -2555,7 +2555,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2042
+    .line 2047
     iget v0, v6, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2593,7 +2593,7 @@
     :cond_4
     const v3, 0x10002
 
-    .line 2047
+    .line 2052
     :goto_4
     aget v4, v8, v2
 
@@ -2601,7 +2601,7 @@
 
     if-le v4, v5, :cond_6
 
-    .line 2048
+    .line 2053
     iget-boolean v4, v6, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
     if-eqz v4, :cond_5
@@ -2613,7 +2613,7 @@
     :cond_5
     iget v4, v6, Lorg/telegram/messenger/FileLoadOperation;->datacenterId:I
 
-    .line 2049
+    .line 2054
     :goto_5
     iget v5, v6, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
@@ -2628,7 +2628,7 @@
 
     goto :goto_3
 
-    .line 2052
+    .line 2057
     :cond_7
     iget-object v2, v6, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
@@ -2638,7 +2638,7 @@
 
     move v10, v9
 
-    .line 2053
+    .line 2058
     :goto_6
     iget-object v0, v6, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
@@ -2648,7 +2648,7 @@
 
     if-ge v10, v0, :cond_c
 
-    .line 2054
+    .line 2059
     iget-object v0, v6, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2659,12 +2659,12 @@
 
     check-cast v11, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
-    .line 2055
+    .line 2060
     iget-boolean v0, v6, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-eqz v0, :cond_8
 
-    .line 2056
+    .line 2061
     iget-object v0, v6, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -2679,7 +2679,7 @@
 
     goto :goto_7
 
-    .line 2058
+    .line 2063
     :cond_8
     iget-object v1, v6, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
@@ -2701,7 +2701,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/messenger/FileLoadOperation;->removePart(Ljava/util/ArrayList;JJ)V
 
-    .line 2060
+    .line 2065
     :goto_7
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
@@ -2709,14 +2709,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 2061
+    .line 2066
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v0
 
     iput-boolean v9, v0, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 2062
+    .line 2067
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v0
@@ -2725,7 +2725,7 @@
 
     goto :goto_8
 
-    .line 2063
+    .line 2068
     :cond_9
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
@@ -2733,14 +2733,14 @@
 
     if-eqz v0, :cond_a
 
-    .line 2064
+    .line 2069
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object v0
 
     iput-boolean v9, v0, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 2065
+    .line 2070
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object v0
@@ -2749,7 +2749,7 @@
 
     goto :goto_8
 
-    .line 2066
+    .line 2071
     :cond_a
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
@@ -2757,21 +2757,21 @@
 
     if-eqz v0, :cond_b
 
-    .line 2067
+    .line 2072
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object v0
 
     iput-boolean v9, v0, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 2068
+    .line 2073
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;->freeResources()V
 
-    .line 2070
+    .line 2075
     :cond_b
     :goto_8
     invoke-static {v11}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -2786,23 +2786,23 @@
 
     goto :goto_6
 
-    .line 2072
+    .line 2077
     :cond_c
     iget-object v0, v6, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2073
+    .line 2078
     iput v9, v6, Lorg/telegram/messenger/FileLoadOperation;->requestsCount:I
 
     if-nez p2, :cond_d
 
-    .line 2074
+    .line 2079
     iget-boolean v0, v6, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-eqz v0, :cond_d
 
-    .line 2075
+    .line 2080
     iget v0, v6, Lorg/telegram/messenger/FileLoadOperation;->totalPreloadedBytes:I
 
     int-to-long v0, v0
@@ -2811,13 +2811,13 @@
 
     goto :goto_9
 
-    .line 2076
+    .line 2081
     :cond_d
     iget-object v0, v6, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-nez v0, :cond_e
 
-    .line 2077
+    .line 2082
     iput-wide v7, v6, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     iput-wide v7, v6, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
@@ -2830,14 +2830,14 @@
 .method private copyNotLoadedRanges()V
     .locals 2
 
-    .line 739
+    .line 744
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 742
+    .line 747
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -2853,12 +2853,12 @@
 .method private delayRequestInfo(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)V
     .locals 2
 
-    .line 1596
+    .line 1601
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1597
+    .line 1602
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v0
@@ -2867,7 +2867,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1598
+    .line 1603
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object p1
@@ -2876,7 +2876,7 @@
 
     goto :goto_0
 
-    .line 1599
+    .line 1604
     :cond_0
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
@@ -2884,7 +2884,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1600
+    .line 1605
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object p1
@@ -2893,7 +2893,7 @@
 
     goto :goto_0
 
-    .line 1601
+    .line 1606
     :cond_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
@@ -2901,7 +2901,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1602
+    .line 1607
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object p1
@@ -2920,14 +2920,14 @@
 
     move-object/from16 v1, p5
 
-    .line 1607
+    .line 1612
     invoke-virtual/range {p5 .. p5}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
     move-result v2
 
     move-wide/from16 v3, p1
 
-    .line 1609
+    .line 1614
     :cond_0
     iget-object v5, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBuffer:[B
 
@@ -2984,10 +2984,10 @@
 
     long-to-int v2, v2
 
-    .line 1617
+    .line 1622
     iput v2, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBufferCount:I
 
-    .line 1618
+    .line 1623
     invoke-virtual/range {p5 .. p5}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
     move-result v2
@@ -3000,10 +3000,10 @@
 
     long-to-int v2, v2
 
-    .line 1620
+    .line 1625
     invoke-virtual {v1, v2}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
 
-    .line 1621
+    .line 1626
     iget-object v2, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBuffer:[B
 
     iget v3, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBufferCount:I
@@ -3012,7 +3012,7 @@
 
     return-wide v10
 
-    .line 1615
+    .line 1620
     :cond_3
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -3020,16 +3020,16 @@
 
     throw v1
 
-    .line 1624
+    .line 1629
     :cond_4
     iget v5, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBufferCount:I
 
     if-eqz v5, :cond_5
 
-    .line 1625
+    .line 1630
     invoke-virtual {v1, v7}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
 
-    .line 1626
+    .line 1631
     iget-object v5, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBuffer:[B
 
     iget v12, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBufferCount:I
@@ -3038,7 +3038,7 @@
 
     invoke-virtual {v1, v5, v12, v13, v7}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BIIZ)V
 
-    .line 1627
+    .line 1632
     iput v7, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBufferCount:I
 
     goto :goto_1
@@ -3052,15 +3052,15 @@
 
     long-to-int v5, v8
 
-    .line 1633
+    .line 1638
     invoke-virtual {v1, v5}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
 
-    .line 1634
+    .line 1639
     iget-object v5, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBuffer:[B
 
     invoke-virtual {v1, v5, v7, v6, v7}, Lorg/telegram/tgnet/NativeByteBuffer;->readBytes([BIIZ)V
 
-    .line 1636
+    .line 1641
     :goto_1
     iget-object v5, v0, Lorg/telegram/messenger/FileLoadOperation;->preloadTempBuffer:[B
 
@@ -3109,7 +3109,7 @@
 
     const/16 v7, 0xc
 
-    .line 1641
+    .line 1646
     aget-byte v7, v5, v7
 
     and-int/lit16 v7, v7, 0xff
@@ -3147,7 +3147,7 @@
     :cond_7
     const/4 v6, 0x4
 
-    .line 1643
+    .line 1648
     aget-byte v6, v5, v6
 
     const/16 v8, 0x6d
@@ -3193,7 +3193,7 @@
 
     return-wide v3
 
-    .line 1631
+    .line 1636
     :cond_9
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -3211,7 +3211,7 @@
 .method public static floorDiv(JJ)J
     .locals 6
 
-    .line 2439
+    .line 2444
     div-long v0, p0, p2
 
     xor-long v2, p0, p2
@@ -3604,7 +3604,7 @@
 .method private synthetic lambda$cancel$11(Z)V
     .locals 2
 
-    .line 1274
+    .line 1279
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
     const/4 v1, 0x3
@@ -3617,25 +3617,25 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1275
+    .line 1280
     invoke-direct {p0}, Lorg/telegram/messenger/FileLoadOperation;->cancelRequests()V
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 1276
+    .line 1281
     invoke-virtual {p0, v0, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     :cond_0
     if-eqz p1, :cond_5
 
-    .line 1279
+    .line 1284
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     if-eqz p1, :cond_1
 
-    .line 1281
+    .line 1286
     :try_start_0
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
@@ -3643,7 +3643,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1282
+    .line 1287
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->deleteOnExit()V
@@ -3655,17 +3655,17 @@
     :catch_0
     move-exception p1
 
-    .line 1285
+    .line 1290
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1288
+    .line 1293
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
     if-eqz p1, :cond_2
 
-    .line 1290
+    .line 1295
     :try_start_1
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
@@ -3673,7 +3673,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1291
+    .line 1296
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->deleteOnExit()V
@@ -3685,17 +3685,17 @@
     :catch_1
     move-exception p1
 
-    .line 1294
+    .line 1299
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1297
+    .line 1302
     :cond_2
     :goto_1
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileParts:Ljava/io/File;
 
     if-eqz p1, :cond_3
 
-    .line 1299
+    .line 1304
     :try_start_2
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
@@ -3703,7 +3703,7 @@
 
     if-nez p1, :cond_3
 
-    .line 1300
+    .line 1305
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileParts:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->deleteOnExit()V
@@ -3715,17 +3715,17 @@
     :catch_2
     move-exception p1
 
-    .line 1303
+    .line 1308
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1306
+    .line 1311
     :cond_3
     :goto_2
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheIvTemp:Ljava/io/File;
 
     if-eqz p1, :cond_4
 
-    .line 1308
+    .line 1313
     :try_start_3
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
@@ -3733,7 +3733,7 @@
 
     if-nez p1, :cond_4
 
-    .line 1309
+    .line 1314
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheIvTemp:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->deleteOnExit()V
@@ -3745,17 +3745,17 @@
     :catch_3
     move-exception p1
 
-    .line 1312
+    .line 1317
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1315
+    .line 1320
     :cond_4
     :goto_3
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFilePreload:Ljava/io/File;
 
     if-eqz p1, :cond_5
 
-    .line 1317
+    .line 1322
     :try_start_4
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
@@ -3763,7 +3763,7 @@
 
     if-nez p1, :cond_5
 
-    .line 1318
+    .line 1323
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFilePreload:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->deleteOnExit()V
@@ -3775,7 +3775,7 @@
     :catch_4
     move-exception p1
 
-    .line 1321
+    .line 1326
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_5
@@ -3820,26 +3820,43 @@
 .end method
 
 .method private synthetic lambda$getDownloadedLengthFromOffset$4([JJJLjava/util/concurrent/CountDownLatch;)V
-    .locals 6
+    .locals 7
 
-    .line 711
-    iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
+    const/4 v0, 0x0
 
-    move-object v0, p0
+    .line 712
+    :try_start_0
+    iget-object v2, p0, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
-    move-wide v2, p2
+    move-object v1, p0
 
-    move-wide v4, p4
+    move-wide v3, p2
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/messenger/FileLoadOperation;->getDownloadedLengthFromOffsetInternal(Ljava/util/ArrayList;JJ)J
+    move-wide v5, p4
+
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/messenger/FileLoadOperation;->getDownloadedLengthFromOffsetInternal(Ljava/util/ArrayList;JJ)J
 
     move-result-wide p2
 
-    const/4 p4, 0x0
+    aput-wide p2, p1, v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    aput-wide p2, p1, p4
+    goto :goto_0
 
-    .line 712
+    :catchall_0
+    move-exception p2
+
+    .line 714
+    invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    const-wide/16 p2, 0x0
+
+    .line 715
+    aput-wide p2, p1, v0
+
+    .line 717
+    :goto_0
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
     const/4 p3, 0x3
@@ -3850,10 +3867,10 @@
 
     const-wide/16 p3, 0x1
 
-    .line 713
+    .line 718
     aput-wide p3, p1, p2
 
-    .line 715
+    .line 720
     :cond_0
     invoke-virtual {p6}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
@@ -3863,15 +3880,15 @@
 .method private synthetic lambda$onFail$17(I)V
     .locals 1
 
-    .line 2014
+    .line 2019
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 2015
+    .line 2020
     invoke-interface {v0, p0, p1}, Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;->didFailedLoadingFile(Lorg/telegram/messenger/FileLoadOperation;I)V
 
-    .line 2017
+    .line 2022
     :cond_0
     invoke-direct {p0}, Lorg/telegram/messenger/FileLoadOperation;->notifyStreamListeners()V
 
@@ -3883,7 +3900,7 @@
 
     const/4 v0, 0x0
 
-    .line 1545
+    .line 1550
     :try_start_0
     invoke-direct {p0, p1, v0, v0}, Lorg/telegram/messenger/FileLoadOperation;->onFinishLoadingFile(ZIZ)V
     :try_end_0
@@ -3891,7 +3908,7 @@
 
     goto :goto_0
 
-    .line 1547
+    .line 1552
     :catch_0
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
@@ -3904,7 +3921,7 @@
 
     const/4 v0, 0x0
 
-    .line 1560
+    .line 1565
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     return-void
@@ -3913,12 +3930,12 @@
 .method private synthetic lambda$onFinishLoadingFile$14(Z)V
     .locals 5
 
-    .line 1566
+    .line 1571
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 1567
+    .line 1572
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3974,7 +3991,7 @@
     :cond_0
     if-eqz p1, :cond_6
 
-    .line 1570
+    .line 1575
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentType:I
 
     const/high16 v0, 0x3000000
@@ -3983,7 +4000,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1571
+    .line 1576
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
@@ -4005,7 +4022,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 1573
+    .line 1578
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
@@ -4027,7 +4044,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 1575
+    .line 1580
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
@@ -4049,7 +4066,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 1577
+    .line 1582
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->ext:Ljava/lang/String;
 
     if-eqz p1, :cond_5
@@ -4080,7 +4097,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 1578
+    .line 1583
     :cond_4
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
@@ -4098,7 +4115,7 @@
 
     goto :goto_0
 
-    .line 1580
+    .line 1585
     :cond_5
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
@@ -4114,7 +4131,7 @@
 
     invoke-virtual {p1, v0, v2, v1}, Lorg/telegram/messenger/StatsController;->incrementReceivedItemsCount(III)V
 
-    .line 1584
+    .line 1589
     :cond_6
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
@@ -4131,25 +4148,25 @@
 
     if-eqz p1, :cond_0
 
-    .line 1465
+    .line 1470
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 1468
+    .line 1473
     invoke-virtual {p2}, Ljava/io/File;->delete()Z
 
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 1471
+    .line 1476
     invoke-virtual {p3}, Ljava/io/File;->delete()Z
 
     :cond_2
     if-eqz p4, :cond_e
 
-    .line 1475
+    .line 1480
     iget-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->ungzip:Z
 
     const/4 p2, 0x1
@@ -4158,7 +4175,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 1477
+    .line 1482
     :try_start_0
     new-instance p1, Ljava/util/zip/GZIPInputStream;
 
@@ -4168,26 +4185,26 @@
 
     invoke-direct {p1, v0}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 1478
+    .line 1483
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileGzipTemp:Ljava/io/File;
 
     const/high16 v1, 0x200000
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/FileLoader;->copyFile(Ljava/io/InputStream;Ljava/io/File;I)Z
 
-    .line 1479
+    .line 1484
     invoke-virtual {p1}, Ljava/util/zip/GZIPInputStream;->close()V
 
-    .line 1480
+    .line 1485
     invoke-virtual {p4}, Ljava/io/File;->delete()Z
 
-    .line 1481
+    .line 1486
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileGzipTemp:Ljava/io/File;
     :try_end_0
     .catch Ljava/util/zip/ZipException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1482
+    .line 1487
     :try_start_1
     iput-boolean p3, p0, Lorg/telegram/messenger/FileLoadOperation;->ungzip:Z
     :try_end_1
@@ -4211,7 +4228,7 @@
 
     move-object p1, p4
 
-    .line 1486
+    .line 1491
     :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isFilNotFoundException(Ljava/lang/Throwable;)Z
 
@@ -4221,12 +4238,12 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1487
+    .line 1492
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_3
 
-    .line 1488
+    .line 1493
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4257,26 +4274,26 @@
 
     goto :goto_3
 
-    .line 1484
+    .line 1489
     :catch_1
     :goto_2
     iput-boolean p3, p0, Lorg/telegram/messenger/FileLoadOperation;->ungzip:Z
 
-    .line 1492
+    .line 1497
     :cond_4
     :goto_3
     iget-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->ungzip:Z
 
     if-nez p1, :cond_d
 
-    .line 1494
+    .line 1499
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->parentObject:Ljava/lang/Object;
 
     instance-of p1, p1, Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     if-eqz p1, :cond_5
 
-    .line 1496
+    .line 1501
     :try_start_2
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
@@ -4291,26 +4308,26 @@
     :catch_2
     move-exception p1
 
-    .line 1499
+    .line 1504
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_7
 
-    .line 1503
+    .line 1508
     :cond_5
     :try_start_3
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->pathSaveData:Lorg/telegram/messenger/FilePathDatabase$PathData;
 
     if-eqz p1, :cond_8
 
-    .line 1504
+    .line 1509
     sget-object p1, Lorg/telegram/messenger/FileLoadOperation;->lockObject:Ljava/lang/Object;
 
     monitor-enter p1
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 1505
+    .line 1510
     :try_start_4
     new-instance v0, Ljava/io/File;
 
@@ -4324,7 +4341,7 @@
 
     move v0, p2
 
-    .line 1507
+    .line 1512
     :goto_4
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
@@ -4334,7 +4351,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 1508
+    .line 1513
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->storeFileName:Ljava/lang/String;
 
     const/16 v2, 0x2e
@@ -4345,7 +4362,7 @@
 
     if-lez v1, :cond_6
 
-    .line 1511
+    .line 1516
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4382,7 +4399,7 @@
 
     goto :goto_5
 
-    .line 1513
+    .line 1518
     :cond_6
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -4406,7 +4423,7 @@
 
     move-result-object v1
 
-    .line 1515
+    .line 1520
     :goto_5
     new-instance v2, Ljava/io/File;
 
@@ -4420,7 +4437,7 @@
 
     goto :goto_4
 
-    .line 1518
+    .line 1523
     :cond_7
     monitor-exit p1
 
@@ -4436,7 +4453,7 @@
     :try_start_5
     throw v0
 
-    .line 1520
+    .line 1525
     :cond_8
     :goto_6
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
@@ -4452,7 +4469,7 @@
     :catch_3
     move-exception p1
 
-    .line 1523
+    .line 1528
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_7
@@ -4460,12 +4477,12 @@
 
     if-nez p3, :cond_9
 
-    .line 1526
+    .line 1531
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->renameRetryCount:I
 
     if-ne v0, p1, :cond_9
 
-    .line 1528
+    .line 1533
     :try_start_6
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
@@ -4475,7 +4492,7 @@
 
     if-eqz p3, :cond_9
 
-    .line 1530
+    .line 1535
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
@@ -4487,19 +4504,19 @@
     :catchall_3
     move-exception v0
 
-    .line 1533
+    .line 1538
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_9
     :goto_8
     if-nez p3, :cond_c
 
-    .line 1537
+    .line 1542
     sget-boolean p3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p3, :cond_a
 
-    .line 1538
+    .line 1543
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4532,7 +4549,7 @@
 
     invoke-static {p3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1540
+    .line 1545
     :cond_a
     iget p3, p0, Lorg/telegram/messenger/FileLoadOperation;->renameRetryCount:I
 
@@ -4542,10 +4559,10 @@
 
     if-ge p3, p1, :cond_b
 
-    .line 1542
+    .line 1547
     iput p2, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
-    .line 1543
+    .line 1548
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p2, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda11;
@@ -4558,13 +4575,13 @@
 
     return-void
 
-    .line 1552
+    .line 1557
     :cond_b
     iput-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     goto :goto_9
 
-    .line 1554
+    .line 1559
     :cond_c
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->pathSaveData:Lorg/telegram/messenger/FilePathDatabase$PathData;
 
@@ -4578,7 +4595,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 1555
+    .line 1560
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->pathSaveData:Lorg/telegram/messenger/FilePathDatabase$PathData;
@@ -4589,7 +4606,7 @@
 
     goto :goto_9
 
-    .line 1559
+    .line 1564
     :cond_d
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -4601,7 +4618,7 @@
 
     return-void
 
-    .line 1565
+    .line 1570
     :cond_e
     :goto_9
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
@@ -4618,19 +4635,19 @@
 .method private synthetic lambda$pause$6()V
     .locals 3
 
-    .line 751
+    .line 756
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isStory:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 752
+    .line 757
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 753
+    .line 758
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4660,12 +4677,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 755
+    .line 760
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/FileLoadOperation;->clearOperaion(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)V
 
     goto :goto_1
 
-    .line 757
+    .line 762
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
@@ -4676,7 +4693,7 @@
 
     if-ge v1, v0, :cond_2
 
-    .line 758
+    .line 763
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -4753,14 +4770,14 @@
 .method private synthetic lambda$removeStreamListener$5(Lorg/telegram/messenger/FileLoadOperationStream;)V
     .locals 1
 
-    .line 731
+    .line 736
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->streamListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 734
+    .line 739
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
@@ -4774,19 +4791,19 @@
 
     if-eqz p2, :cond_0
 
-    .line 1663
+    .line 1668
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto/16 :goto_3
 
-    .line 1665
+    .line 1670
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestingCdnOffsets:Z
 
-    .line 1666
+    .line 1671
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Vector;
 
-    .line 1667
+    .line 1672
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -4795,12 +4812,12 @@
 
     if-nez p2, :cond_2
 
-    .line 1668
+    .line 1673
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
     if-nez p2, :cond_1
 
-    .line 1669
+    .line 1674
     new-instance p2, Ljava/util/HashMap;
 
     invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
@@ -4810,7 +4827,7 @@
     :cond_1
     move p2, v0
 
-    .line 1671
+    .line 1676
     :goto_0
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
@@ -4820,7 +4837,7 @@
 
     if-ge p2, v1, :cond_2
 
-    .line 1672
+    .line 1677
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4829,7 +4846,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_fileHash;
 
-    .line 1673
+    .line 1678
     iget-object v2, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
     iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->offset:J
@@ -4847,7 +4864,7 @@
     :cond_2
     move p1, v0
 
-    .line 1676
+    .line 1681
     :goto_1
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
@@ -4857,7 +4874,7 @@
 
     if-ge p1, p2, :cond_7
 
-    .line 1677
+    .line 1682
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4866,7 +4883,7 @@
 
     check-cast p2, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
-    .line 1678
+    .line 1683
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-nez v1, :cond_4
@@ -4888,7 +4905,7 @@
 
     goto :goto_1
 
-    .line 1679
+    .line 1684
     :cond_4
     :goto_2
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
@@ -4897,28 +4914,28 @@
 
     const/4 p1, 0x0
 
-    .line 1680
+    .line 1685
     invoke-virtual {p0, p2, p1}, Lorg/telegram/messenger/FileLoadOperation;->processRequestResult(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
     move-result p1
 
     if-nez p1, :cond_7
 
-    .line 1681
+    .line 1686
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object p1
 
     if-eqz p1, :cond_5
 
-    .line 1682
+    .line 1687
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object p1
 
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1683
+    .line 1688
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object p1
@@ -4927,7 +4944,7 @@
 
     goto :goto_3
 
-    .line 1684
+    .line 1689
     :cond_5
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
@@ -4935,14 +4952,14 @@
 
     if-eqz p1, :cond_6
 
-    .line 1685
+    .line 1690
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object p1
 
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1686
+    .line 1691
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object p1
@@ -4951,7 +4968,7 @@
 
     goto :goto_3
 
-    .line 1687
+    .line 1692
     :cond_6
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
@@ -4959,14 +4976,14 @@
 
     if-eqz p1, :cond_7
 
-    .line 1688
+    .line 1693
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object p1
 
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1689
+    .line 1694
     invoke-static {p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object p1
@@ -4983,22 +5000,22 @@
 
     const-wide/16 v0, 0x0
 
-    .line 1247
+    .line 1252
     iput-wide v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 1248
+    .line 1253
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/FileLoadOperation;->clearOperaion(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)V
 
-    .line 1249
+    .line 1254
     iput-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     const/4 p1, -0x1
 
-    .line 1250
+    .line 1255
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     return-void
@@ -5060,12 +5077,12 @@
 .method private synthetic lambda$start$7(ZJZ)V
     .locals 9
 
-    .line 796
+    .line 801
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->streamListeners:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 797
+    .line 802
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -5077,7 +5094,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 800
+    .line 805
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     int-to-long v1, p1
@@ -5088,7 +5105,7 @@
 
     mul-long/2addr p2, v1
 
-    .line 801
+    .line 806
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     if-eqz p1, :cond_3
@@ -5101,14 +5118,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 802
+    .line 807
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 803
+    .line 808
     iget-wide v1, p0, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
@@ -5119,7 +5136,7 @@
 
     iput-wide v1, p0, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
-    .line 804
+    .line 809
     iget-object v4, p0, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
@@ -5144,7 +5161,7 @@
 
     invoke-direct/range {v3 .. v8}, Lorg/telegram/messenger/FileLoadOperation;->removePart(Ljava/util/ArrayList;JJ)V
 
-    .line 805
+    .line 810
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$400(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)I
@@ -5153,7 +5170,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 806
+    .line 811
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -5168,20 +5185,20 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
-    .line 807
+    .line 812
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->requestsCount:I
 
     sub-int/2addr p1, v0
 
     iput p1, p0, Lorg/telegram/messenger/FileLoadOperation;->requestsCount:I
 
-    .line 809
+    .line 814
     :cond_1
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p1, :cond_2
 
-    .line 810
+    .line 815
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5207,21 +5224,21 @@
     :cond_2
     const/4 p1, 0x0
 
-    .line 812
+    .line 817
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
-    .line 814
+    .line 819
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     if-nez p1, :cond_5
 
-    .line 815
+    .line 820
     iput-wide p2, p0, Lorg/telegram/messenger/FileLoadOperation;->streamPriorityStartOffset:J
 
     goto :goto_0
 
-    .line 818
+    .line 823
     :cond_4
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
@@ -5239,7 +5256,7 @@
     :goto_0
     if-eqz p4, :cond_7
 
-    .line 824
+    .line 829
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
     if-eqz p1, :cond_6
@@ -5262,7 +5279,7 @@
 
     if-nez p1, :cond_6
 
-    .line 825
+    .line 830
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
     iget-wide p2, p0, Lorg/telegram/messenger/FileLoadOperation;->streamStartOffset:J
@@ -5277,18 +5294,18 @@
 
     if-eqz p1, :cond_6
 
-    .line 826
+    .line 831
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->nextPartWasPreloaded:Z
 
     :cond_6
     const/4 p1, -0x1
 
-    .line 829
+    .line 834
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     const/4 p1, 0x0
 
-    .line 830
+    .line 835
     iput-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->nextPartWasPreloaded:Z
 
     :cond_7
@@ -5300,7 +5317,7 @@
 
     const/4 v0, -0x1
 
-    .line 835
+    .line 840
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     return-void
@@ -5309,7 +5326,7 @@
 .method private synthetic lambda$start$9([Z)V
     .locals 7
 
-    .line 1189
+    .line 1194
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     const/4 v1, 0x1
@@ -5329,7 +5346,7 @@
     :cond_0
     move p1, v2
 
-    .line 1190
+    .line 1195
     :goto_0
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadPrefixSize:I
 
@@ -5356,7 +5373,7 @@
     :cond_1
     move v0, v2
 
-    .line 1191
+    .line 1196
     :goto_1
     iget-wide v3, p0, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
@@ -5376,7 +5393,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1193
+    .line 1198
     :cond_2
     :try_start_0
     invoke-direct {p0, v2, v1, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFinishLoadingFile(ZIZ)V
@@ -5385,7 +5402,7 @@
 
     goto :goto_2
 
-    .line 1195
+    .line 1200
     :catch_0
     invoke-virtual {p0, v1, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
@@ -5394,7 +5411,7 @@
     :cond_3
     const/4 p1, -0x1
 
-    .line 1198
+    .line 1203
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     :goto_2
@@ -5406,10 +5423,10 @@
 
     const/4 v0, 0x0
 
-    .line 2276
+    .line 2281
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/FileLoadOperation;->processRequestResult(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
-    .line 2277
+    .line 2282
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object p1
@@ -5424,15 +5441,15 @@
 
     const/4 v0, 0x0
 
-    .line 2374
+    .line 2379
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->reuploadingCdn:Z
 
     if-nez p4, :cond_2
 
-    .line 2376
+    .line 2381
     check-cast p3, Lorg/telegram/tgnet/TLRPC$Vector;
 
-    .line 2377
+    .line 2382
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -5441,19 +5458,19 @@
 
     if-nez p2, :cond_1
 
-    .line 2378
+    .line 2383
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
     if-nez p2, :cond_0
 
-    .line 2379
+    .line 2384
     new-instance p2, Ljava/util/HashMap;
 
     invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
-    .line 2381
+    .line 2386
     :cond_0
     :goto_0
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
@@ -5464,7 +5481,7 @@
 
     if-ge v0, p2, :cond_1
 
-    .line 2382
+    .line 2387
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5473,7 +5490,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_fileHash;
 
-    .line 2383
+    .line 2388
     iget-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
     iget-wide v1, p2, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->offset:J
@@ -5488,13 +5505,13 @@
 
     goto :goto_0
 
-    .line 2386
+    .line 2391
     :cond_1
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     goto :goto_2
 
-    .line 2388
+    .line 2393
     :cond_2
     iget-object p3, p4, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -5518,21 +5535,21 @@
 
     goto :goto_1
 
-    .line 2393
+    .line 2398
     :cond_3
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto :goto_2
 
-    .line 2389
+    .line 2394
     :cond_4
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
-    .line 2390
+    .line 2395
     invoke-direct {p0, p2, v0}, Lorg/telegram/messenger/FileLoadOperation;->clearOperaion(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)V
 
-    .line 2391
+    .line 2396
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     :goto_2
@@ -5542,7 +5559,7 @@
 .method private synthetic lambda$startDownloadRequest$20(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;IILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 9
 
-    .line 2306
+    .line 2311
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -5553,13 +5570,13 @@
 
     return-void
 
-    .line 2309
+    .line 2314
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 2310
+    .line 2315
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5626,18 +5643,18 @@
 
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2312
+    .line 2317
     :cond_1
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     if-ne p1, p2, :cond_3
 
-    .line 2313
+    .line 2318
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p2, :cond_2
 
-    .line 2314
+    .line 2319
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5663,7 +5680,7 @@
     :cond_2
     const/4 p2, 0x0
 
-    .line 2316
+    .line 2321
     iput-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     :cond_3
@@ -5671,19 +5688,19 @@
 
     if-eqz p6, :cond_6
 
-    .line 2319
+    .line 2324
     iget v0, p6, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
 
     const/16 v1, -0x7d0
 
     if-ne v0, v1, :cond_4
 
-    .line 2320
+    .line 2325
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2321
+    .line 2326
     iget-wide p2, p0, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
     iget p4, p1, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->chunkSize:I
@@ -5694,7 +5711,7 @@
 
     iput-wide p2, p0, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
-    .line 2322
+    .line 2327
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -5717,7 +5734,7 @@
 
     return-void
 
-    .line 2324
+    .line 2329
     :cond_4
     iget-object v0, p6, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -5727,18 +5744,18 @@
 
     if-eqz v0, :cond_5
 
-    .line 2325
+    .line 2330
     invoke-direct {p0, p1}, Lorg/telegram/messenger/FileLoadOperation;->requestReference(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)V
 
     return-void
 
-    .line 2327
+    .line 2332
     :cond_5
     instance-of p4, p4, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFile;
 
     if-eqz p4, :cond_6
 
-    .line 2328
+    .line 2333
     iget-object p4, p6, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v0, "FILE_TOKEN_INVALID"
@@ -5749,18 +5766,18 @@
 
     if-eqz p4, :cond_6
 
-    .line 2329
+    .line 2334
     iput-boolean p2, p0, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
-    .line 2330
+    .line 2335
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/FileLoadOperation;->clearOperaion(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)V
 
-    .line 2331
+    .line 2336
     invoke-virtual {p0, p3}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     return-void
 
-    .line 2336
+    .line 2341
     :cond_6
     instance-of p4, p5, Lorg/telegram/tgnet/TLRPC$TL_upload_fileCdnRedirect;
 
@@ -5768,10 +5785,10 @@
 
     if-eqz p4, :cond_c
 
-    .line 2337
+    .line 2342
     check-cast p5, Lorg/telegram/tgnet/TLRPC$TL_upload_fileCdnRedirect;
 
-    .line 2338
+    .line 2343
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->file_hashes:Ljava/util/ArrayList;
 
     invoke-virtual {p4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -5780,12 +5797,12 @@
 
     if-nez p4, :cond_8
 
-    .line 2339
+    .line 2344
     iget-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
     if-nez p4, :cond_7
 
-    .line 2340
+    .line 2345
     new-instance p4, Ljava/util/HashMap;
 
     invoke-direct {p4}, Ljava/util/HashMap;-><init>()V
@@ -5795,7 +5812,7 @@
     :cond_7
     move p4, p2
 
-    .line 2342
+    .line 2347
     :goto_0
     iget-object p6, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->file_hashes:Ljava/util/ArrayList;
 
@@ -5805,7 +5822,7 @@
 
     if-ge p4, p6, :cond_8
 
-    .line 2343
+    .line 2348
     iget-object p6, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->file_hashes:Ljava/util/ArrayList;
 
     invoke-virtual {p6, p4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5814,7 +5831,7 @@
 
     check-cast p6, Lorg/telegram/tgnet/TLRPC$TL_fileHash;
 
-    .line 2344
+    .line 2349
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
     iget-wide v2, p6, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->offset:J
@@ -5829,7 +5846,7 @@
 
     goto :goto_0
 
-    .line 2347
+    .line 2352
     :cond_8
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->encryption_iv:[B
 
@@ -5853,23 +5870,23 @@
 
     goto :goto_1
 
-    .line 2353
+    .line 2358
     :cond_9
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
-    .line 2354
+    .line 2359
     iget-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->notCheckedCdnRanges:Ljava/util/ArrayList;
 
     if-nez p4, :cond_a
 
-    .line 2355
+    .line 2360
     new-instance p4, Ljava/util/ArrayList;
 
     invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->notCheckedCdnRanges:Ljava/util/ArrayList;
 
-    .line 2356
+    .line 2361
     new-instance p6, Lorg/telegram/messenger/FileLoadOperation$Range;
 
     const-wide/16 v1, 0x0
@@ -5886,36 +5903,36 @@
 
     invoke-virtual {p4, p6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2358
+    .line 2363
     :cond_a
     iget p4, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->dc_id:I
 
     iput p4, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnDatacenterId:I
 
-    .line 2359
+    .line 2364
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->encryption_iv:[B
 
     iput-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnIv:[B
 
-    .line 2360
+    .line 2365
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->encryption_key:[B
 
     iput-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnKey:[B
 
-    .line 2361
+    .line 2366
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$upload_File;->file_token:[B
 
     iput-object p4, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnToken:[B
 
-    .line 2362
+    .line 2367
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/FileLoadOperation;->clearOperaion(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)V
 
-    .line 2363
+    .line 2368
     invoke-virtual {p0, p3}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     goto/16 :goto_4
 
-    .line 2348
+    .line 2353
     :cond_b
     :goto_1
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_error;
@@ -5924,55 +5941,55 @@
 
     const-string p3, "bad redirect response"
 
-    .line 2349
+    .line 2354
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const/16 p3, 0x190
 
-    .line 2350
+    .line 2355
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
 
-    .line 2351
+    .line 2356
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/FileLoadOperation;->processRequestResult(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
     goto/16 :goto_4
 
-    .line 2365
+    .line 2370
     :cond_c
     instance-of p4, p5, Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFileReuploadNeeded;
 
     if-eqz p4, :cond_d
 
-    .line 2366
+    .line 2371
     iget-boolean p4, p0, Lorg/telegram/messenger/FileLoadOperation;->reuploadingCdn:Z
 
     if-nez p4, :cond_17
 
-    .line 2367
+    .line 2372
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/FileLoadOperation;->clearOperaion(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)V
 
-    .line 2368
+    .line 2373
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->reuploadingCdn:Z
 
-    .line 2369
+    .line 2374
     check-cast p5, Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFileReuploadNeeded;
 
-    .line 2370
+    .line 2375
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_upload_reuploadCdnFile;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_upload_reuploadCdnFile;-><init>()V
 
-    .line 2371
+    .line 2376
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnToken:[B
 
     iput-object p2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_reuploadCdnFile;->file_token:[B
 
-    .line 2372
+    .line 2377
     iget-object p2, p5, Lorg/telegram/tgnet/TLRPC$upload_CdnFile;->request_token:[B
 
     iput-object p2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_reuploadCdnFile;->request_token:[B
 
-    .line 2373
+    .line 2378
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -5999,13 +6016,13 @@
 
     goto/16 :goto_4
 
-    .line 2399
+    .line 2404
     :cond_d
     instance-of p2, p5, Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     if-eqz p2, :cond_e
 
-    .line 2400
+    .line 2405
     move-object p2, p5
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_upload_file;
@@ -6014,20 +6031,20 @@
 
     goto :goto_2
 
-    .line 2401
+    .line 2406
     :cond_e
     instance-of p2, p5, Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     if-eqz p2, :cond_f
 
-    .line 2402
+    .line 2407
     move-object p2, p5
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     invoke-static {p1, p2}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$602(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
-    .line 2403
+    .line 2408
     iget-wide p2, p0, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
     const-wide/16 v0, 0x0
@@ -6044,7 +6061,7 @@
 
     if-eqz p2, :cond_10
 
-    .line 2404
+    .line 2409
     invoke-static {p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object p2
@@ -6057,7 +6074,7 @@
 
     goto :goto_2
 
-    .line 2407
+    .line 2412
     :cond_f
     move-object p2, p5
 
@@ -6069,7 +6086,7 @@
     :goto_2
     if-eqz p5, :cond_16
 
-    .line 2410
+    .line 2415
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentType:I
 
     const/high16 p3, 0x3000000
@@ -6078,7 +6095,7 @@
 
     if-ne p2, p3, :cond_11
 
-    .line 2411
+    .line 2416
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
@@ -6106,7 +6123,7 @@
 
     if-ne p2, p3, :cond_12
 
-    .line 2413
+    .line 2418
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
@@ -6134,7 +6151,7 @@
 
     if-ne p2, p3, :cond_13
 
-    .line 2415
+    .line 2420
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/StatsController;->getInstance(I)Lorg/telegram/messenger/StatsController;
@@ -6160,7 +6177,7 @@
 
     if-ne p2, p3, :cond_16
 
-    .line 2417
+    .line 2422
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->ext:Ljava/lang/String;
 
     if-eqz p2, :cond_15
@@ -6191,7 +6208,7 @@
 
     if-eqz p2, :cond_15
 
-    .line 2418
+    .line 2423
     :cond_14
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
@@ -6215,7 +6232,7 @@
 
     goto :goto_3
 
-    .line 2420
+    .line 2425
     :cond_15
     iget p2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
@@ -6237,7 +6254,7 @@
 
     invoke-virtual {p2, p3, v0, p4, p5}, Lorg/telegram/messenger/StatsController;->incrementReceivedBytesCount(IIJ)V
 
-    .line 2424
+    .line 2429
     :cond_16
     :goto_3
     invoke-virtual {p0, p1, p6}, Lorg/telegram/messenger/FileLoadOperation;->processRequestResult(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
@@ -6287,7 +6304,7 @@
 .method private onFinishLoadingFile(ZIZ)V
     .locals 9
 
-    .line 1433
+    .line 1438
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
     const/4 v1, 0x1
@@ -6299,16 +6316,16 @@
     :cond_0
     const/4 v0, 0x3
 
-    .line 1436
+    .line 1441
     iput v0, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
-    .line 1437
+    .line 1442
     invoke-direct {p0}, Lorg/telegram/messenger/FileLoadOperation;->notifyStreamListeners()V
 
-    .line 1438
+    .line 1443
     invoke-direct {p0}, Lorg/telegram/messenger/FileLoadOperation;->cleanup()V
 
-    .line 1439
+    .line 1444
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-nez v0, :cond_2
@@ -6317,20 +6334,20 @@
 
     goto :goto_0
 
-    .line 1459
+    .line 1464
     :cond_1
     iget-object v4, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheIvTemp:Ljava/io/File;
 
-    .line 1460
+    .line 1465
     iget-object v5, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileParts:Ljava/io/File;
 
-    .line 1461
+    .line 1466
     iget-object v6, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFilePreload:Ljava/io/File;
 
-    .line 1462
+    .line 1467
     iget-object v7, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
-    .line 1463
+    .line 1468
     sget-object p2, Lorg/telegram/messenger/FileLoadOperation;->filesQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p3, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda4;
@@ -6347,16 +6364,16 @@
 
     const/4 p1, 0x0
 
-    .line 1587
+    .line 1592
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheIvTemp:Ljava/io/File;
 
-    .line 1588
+    .line 1593
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileParts:Ljava/io/File;
 
-    .line 1589
+    .line 1594
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFilePreload:Ljava/io/File;
 
-    .line 1590
+    .line 1595
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
@@ -6365,19 +6382,19 @@
 
     goto/16 :goto_2
 
-    .line 1440
+    .line 1445
     :cond_2
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadFinished:Z
 
-    .line 1441
+    .line 1446
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz p1, :cond_4
 
     if-ne p2, v1, :cond_3
 
-    .line 1443
+    .line 1448
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -6398,7 +6415,7 @@
 
     goto :goto_1
 
-    .line 1445
+    .line 1450
     :cond_3
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -6442,19 +6459,19 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1448
+    .line 1453
     :cond_4
     :goto_1
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->fileMetadata:Lorg/telegram/messenger/FilePathDatabase$FileMeta;
 
     if-eqz p1, :cond_6
 
-    .line 1449
+    .line 1454
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
     if-eqz p1, :cond_5
 
-    .line 1450
+    .line 1455
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -6477,13 +6494,13 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/FilePathDatabase;->removeFiles(Ljava/util/List;)V
 
-    .line 1452
+    .line 1457
     :cond_5
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileParts:Ljava/io/File;
 
     if-eqz p1, :cond_6
 
-    .line 1453
+    .line 1458
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -6506,7 +6523,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/FilePathDatabase;->removeFiles(Ljava/util/List;)V
 
-    .line 1456
+    .line 1461
     :cond_6
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
@@ -6514,7 +6531,7 @@
 
     invoke-interface {p1, p0, p2}, Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;->didPreFinishLoading(Lorg/telegram/messenger/FileLoadOperation;Ljava/io/File;)V
 
-    .line 1457
+    .line 1462
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     iget-object p2, p0, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
@@ -6694,7 +6711,7 @@
 .method private requestFileOffsets(J)V
     .locals 10
 
-    .line 1654
+    .line 1659
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestingCdnOffsets:Z
 
     if-eqz v0, :cond_0
@@ -6704,23 +6721,23 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1657
+    .line 1662
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestingCdnOffsets:Z
 
-    .line 1658
+    .line 1663
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFileHashes;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFileHashes;-><init>()V
 
-    .line 1659
+    .line 1664
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->cdnToken:[B
 
     iput-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFileHashes;->file_token:[B
 
-    .line 1660
+    .line 1665
     iput-wide p1, v2, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFileHashes;->offset:J
 
-    .line 1661
+    .line 1666
     iget p1, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -6751,7 +6768,7 @@
 .method private requestReference(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)V
     .locals 6
 
-    .line 2082
+    .line 2087
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestingReference:Z
 
     if-eqz v0, :cond_0
@@ -6763,25 +6780,25 @@
 
     const/4 v1, 0x0
 
-    .line 2085
+    .line 2090
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/FileLoadOperation;->clearOperaion(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)V
 
     const/4 v0, 0x1
 
-    .line 2086
+    .line 2091
     iput-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->requestingReference:Z
 
-    .line 2087
+    .line 2092
     iget-object v2, p0, Lorg/telegram/messenger/FileLoadOperation;->parentObject:Ljava/lang/Object;
 
     instance-of v3, v2, Lorg/telegram/messenger/MessageObject;
 
     if-eqz v3, :cond_1
 
-    .line 2088
+    .line 2093
     check-cast v2, Lorg/telegram/messenger/MessageObject;
 
-    .line 2089
+    .line 2094
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v3
@@ -6796,16 +6813,16 @@
 
     if-eqz v2, :cond_1
 
-    .line 2090
+    .line 2095
     iput-object v2, p0, Lorg/telegram/messenger/FileLoadOperation;->parentObject:Ljava/lang/Object;
 
-    .line 2093
+    .line 2098
     :cond_1
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_2
 
-    .line 2094
+    .line 2099
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -6832,7 +6849,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2096
+    .line 2101
     :cond_2
     iget v2, p0, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
@@ -6937,7 +6954,7 @@
 
     const/4 v0, 0x0
 
-    .line 1269
+    .line 1274
     invoke-direct {p0, v0}, Lorg/telegram/messenger/FileLoadOperation;->cancel(Z)V
 
     return-void
@@ -7201,7 +7218,7 @@
 
     invoke-virtual {v10, v11}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 718
+    .line 723
     :try_start_0
     invoke-virtual {v8}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
@@ -7214,7 +7231,7 @@
 .method public getFileName()Ljava/lang/String;
     .locals 1
 
-    .line 726
+    .line 731
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->fileName:Ljava/lang/String;
 
     return-object v0
@@ -7256,7 +7273,7 @@
 .method public isFinished()Z
     .locals 2
 
-    .line 2448
+    .line 2453
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
     const/4 v1, 0x3
@@ -7286,7 +7303,7 @@
 .method public isPaused()Z
     .locals 1
 
-    .line 1232
+    .line 1237
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->paused:Z
 
     return v0
@@ -7295,7 +7312,7 @@
 .method public isPreloadFinished()Z
     .locals 1
 
-    .line 1265
+    .line 1270
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadFinished:Z
 
     return v0
@@ -7304,7 +7321,7 @@
 .method public isPreloadVideoOperation()Z
     .locals 1
 
-    .line 1261
+    .line 1266
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     return v0
@@ -7313,7 +7330,7 @@
 .method protected onFail(ZI)V
     .locals 7
 
-    .line 2000
+    .line 2005
     invoke-direct {p0}, Lorg/telegram/messenger/FileLoadOperation;->cleanup()V
 
     const/4 v0, 0x1
@@ -7327,21 +7344,21 @@
     :cond_0
     const/4 v1, 0x2
 
-    .line 2001
+    .line 2006
     :goto_0
     iput v1, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
-    .line 2002
+    .line 2007
     iget-object v1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     if-eqz v1, :cond_3
 
-    .line 2003
+    .line 2008
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_3
 
-    .line 2004
+    .line 2009
     iget-wide v1, p0, Lorg/telegram/messenger/FileLoadOperation;->startTime:J
 
     const-wide/16 v3, 0x0
@@ -7370,7 +7387,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 2006
+    .line 2011
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7411,7 +7428,7 @@
 
     goto :goto_2
 
-    .line 2008
+    .line 2013
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -7461,7 +7478,7 @@
     :goto_2
     if-eqz p1, :cond_4
 
-    .line 2013
+    .line 2018
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda3;
@@ -7472,16 +7489,16 @@
 
     goto :goto_3
 
-    .line 2020
+    .line 2025
     :cond_4
     iget-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     if-eqz p1, :cond_5
 
-    .line 2021
+    .line 2026
     invoke-interface {p1, p0, p2}, Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;->didFailedLoadingFile(Lorg/telegram/messenger/FileLoadOperation;I)V
 
-    .line 2023
+    .line 2028
     :cond_5
     invoke-direct {p0}, Lorg/telegram/messenger/FileLoadOperation;->notifyStreamListeners()V
 
@@ -7492,7 +7509,7 @@
 .method public pause()V
     .locals 2
 
-    .line 746
+    .line 751
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
     const/4 v1, 0x1
@@ -7501,11 +7518,11 @@
 
     return-void
 
-    .line 749
+    .line 754
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/messenger/FileLoadOperation;->paused:Z
 
-    .line 750
+    .line 755
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda1;
@@ -7526,7 +7543,7 @@
 
     move-object/from16 v1, p2
 
-    .line 1700
+    .line 1705
     iget v2, v8, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
     const-string v3, " offset "
@@ -7539,7 +7556,7 @@
 
     if-eq v2, v9, :cond_1
 
-    .line 1701
+    .line 1706
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v1, :cond_0
@@ -7550,7 +7567,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1702
+    .line 1707
     new-instance v1, Lorg/telegram/messenger/FileLog$IgnoreSentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7590,7 +7607,7 @@
     :cond_0
     return v10
 
-    .line 1706
+    .line 1711
     :cond_1
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
@@ -7604,7 +7621,7 @@
 
     if-nez v1, :cond_3a
 
-    .line 1709
+    .line 1714
     :try_start_0
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
@@ -7620,12 +7637,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 1710
+    .line 1715
     invoke-direct/range {p0 .. p1}, Lorg/telegram/messenger/FileLoadOperation;->delayRequestInfo(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)V
 
     return v10
 
-    .line 1714
+    .line 1719
     :cond_2
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
@@ -7633,7 +7650,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1715
+    .line 1720
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v1
@@ -7645,7 +7662,7 @@
 
     goto :goto_1
 
-    .line 1716
+    .line 1721
     :cond_3
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
@@ -7653,7 +7670,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 1717
+    .line 1722
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object v1
@@ -7662,7 +7679,7 @@
 
     goto :goto_0
 
-    .line 1718
+    .line 1723
     :cond_4
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
@@ -7670,7 +7687,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 1719
+    .line 1724
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object v1
@@ -7685,7 +7702,7 @@
     :goto_1
     if-eqz v15, :cond_36
 
-    .line 1723
+    .line 1728
     invoke-virtual {v15}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
     move-result v1
@@ -7694,18 +7711,18 @@
 
     goto/16 :goto_1b
 
-    .line 1727
+    .line 1732
     :cond_6
     invoke-virtual {v15}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
     move-result v1
 
-    .line 1728
+    .line 1733
     iget-boolean v2, v8, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
     if-eqz v2, :cond_8
 
-    .line 1729
+    .line 1734
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
 
     move-result-wide v16
@@ -7720,7 +7737,7 @@
 
     mul-long v4, v4, v16
 
-    .line 1731
+    .line 1736
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
     if-eqz v2, :cond_7
@@ -7743,15 +7760,15 @@
     :goto_2
     if-nez v2, :cond_8
 
-    .line 1733
+    .line 1738
     invoke-direct/range {p0 .. p1}, Lorg/telegram/messenger/FileLoadOperation;->delayRequestInfo(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)V
 
-    .line 1734
+    .line 1739
     invoke-direct {v8, v4, v5}, Lorg/telegram/messenger/FileLoadOperation;->requestFileOffsets(J)V
 
     return v9
 
-    .line 1739
+    .line 1744
     :cond_8
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
@@ -7777,14 +7794,14 @@
 
     if-eqz v2, :cond_9
 
-    .line 1740
+    .line 1745
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
 
     move-result-wide v4
 
     div-long v4, v4, v22
 
-    .line 1741
+    .line 1746
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnIv:[B
 
     move-object/from16 v28, v13
@@ -7805,7 +7822,7 @@
 
     int-to-byte v6, v6
 
-    .line 1742
+    .line 1747
     aput-byte v6, v2, v20
 
     shr-long v12, v4, v25
@@ -7816,7 +7833,7 @@
 
     int-to-byte v6, v6
 
-    .line 1743
+    .line 1748
     aput-byte v6, v2, v17
 
     shr-long v4, v4, v24
@@ -7827,10 +7844,10 @@
 
     int-to-byte v4, v4
 
-    .line 1744
+    .line 1749
     aput-byte v4, v2, v16
 
-    .line 1745
+    .line 1750
     iget-object v4, v15, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object v5, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnKey:[B
@@ -7846,13 +7863,13 @@
     :cond_9
     move-object/from16 v28, v13
 
-    .line 1750
+    .line 1755
     :goto_3
     iget-boolean v2, v8, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-eqz v2, :cond_13
 
-    .line 1751
+    .line 1756
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -7861,38 +7878,38 @@
 
     invoke-virtual {v2, v4, v5}, Ljava/io/RandomAccessFile;->writeLong(J)V
 
-    .line 1752
+    .line 1757
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     int-to-long v4, v1
 
     invoke-virtual {v2, v4, v5}, Ljava/io/RandomAccessFile;->writeLong(J)V
 
-    .line 1753
+    .line 1758
     iget v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
     add-int/lit8 v2, v2, 0x10
 
     iput v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
-    .line 1754
+    .line 1759
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
     move-result-object v2
 
-    .line 1755
+    .line 1760
     iget-object v6, v15, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v2, v6}, Ljava/nio/channels/FileChannel;->write(Ljava/nio/ByteBuffer;)I
 
-    .line 1756
+    .line 1761
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v2, :cond_a
 
-    .line 1757
+    .line 1762
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -7925,20 +7942,20 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1759
+    .line 1764
     :cond_a
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
     if-nez v2, :cond_b
 
-    .line 1760
+    .line 1765
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
-    .line 1762
+    .line 1767
     :cond_b
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
@@ -7968,26 +7985,26 @@
 
     invoke-virtual {v2, v3, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1764
+    .line 1769
     iget v2, v8, Lorg/telegram/messenger/FileLoadOperation;->totalPreloadedBytes:I
 
     add-int/2addr v2, v1
 
     iput v2, v8, Lorg/telegram/messenger/FileLoadOperation;->totalPreloadedBytes:I
 
-    .line 1765
+    .line 1770
     iget v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
     add-int/2addr v2, v1
 
     iput v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
-    .line 1767
+    .line 1772
     iget v1, v8, Lorg/telegram/messenger/FileLoadOperation;->moovFound:I
 
     if-nez v1, :cond_e
 
-    .line 1768
+    .line 1773
     iget-wide v2, v8, Lorg/telegram/messenger/FileLoadOperation;->nextAtomOffset:J
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -8012,7 +8029,7 @@
 
     mul-long/2addr v1, v3
 
-    .line 1771
+    .line 1776
     iget-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
     iget v5, v8, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
@@ -8023,7 +8040,7 @@
 
     iput-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
-    .line 1772
+    .line 1777
     iget-wide v5, v8, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
     const-wide/16 v15, 0x2
@@ -8038,12 +8055,12 @@
 
     add-long/2addr v3, v1
 
-    .line 1773
+    .line 1778
     iput-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->foundMoovSize:J
 
     iput-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadNotRequestedBytesCount:J
 
-    .line 1774
+    .line 1779
     iput v9, v8, Lorg/telegram/messenger/FileLoadOperation;->moovFound:I
 
     goto :goto_4
@@ -8051,23 +8068,23 @@
     :cond_c
     const-wide/32 v3, 0x200000
 
-    .line 1776
+    .line 1781
     iput-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->foundMoovSize:J
 
     iput-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadNotRequestedBytesCount:J
 
-    .line 1777
+    .line 1782
     iput v7, v8, Lorg/telegram/messenger/FileLoadOperation;->moovFound:I
 
     :goto_4
     const-wide/16 v3, -0x1
 
-    .line 1779
+    .line 1784
     iput-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
     goto :goto_5
 
-    .line 1781
+    .line 1786
     :cond_d
     iget-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
@@ -8079,7 +8096,7 @@
 
     iput-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
-    .line 1783
+    .line 1788
     :goto_5
     iput-wide v1, v8, Lorg/telegram/messenger/FileLoadOperation;->nextAtomOffset:J
 
@@ -8088,7 +8105,7 @@
     :cond_e
     const-wide/16 v12, 0x0
 
-    .line 1785
+    .line 1790
     :goto_6
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
@@ -8096,28 +8113,28 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/io/RandomAccessFile;->writeLong(J)V
 
-    .line 1786
+    .line 1791
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     iget-wide v2, v8, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
     invoke-virtual {v1, v2, v3}, Ljava/io/RandomAccessFile;->writeLong(J)V
 
-    .line 1787
+    .line 1792
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     iget-wide v2, v8, Lorg/telegram/messenger/FileLoadOperation;->nextAtomOffset:J
 
     invoke-virtual {v1, v2, v3}, Ljava/io/RandomAccessFile;->writeLong(J)V
 
-    .line 1788
+    .line 1793
     iget v1, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
     add-int/lit8 v1, v1, 0x18
 
     iput v1, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
-    .line 1789
+    .line 1794
     iget-wide v1, v8, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
     cmp-long v3, v1, v12
@@ -8161,25 +8178,25 @@
     :goto_8
     if-eqz v1, :cond_12
 
-    .line 1791
+    .line 1796
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v2, v12, v13}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 1792
+    .line 1797
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v2, v9}, Ljava/io/RandomAccessFile;->write(I)V
 
     goto/16 :goto_17
 
-    .line 1793
+    .line 1798
     :cond_12
     iget v2, v8, Lorg/telegram/messenger/FileLoadOperation;->moovFound:I
 
     if-eqz v2, :cond_2f
 
-    .line 1794
+    .line 1799
     iget-wide v2, v8, Lorg/telegram/messenger/FileLoadOperation;->foundMoovSize:J
 
     iget v4, v8, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
@@ -8195,7 +8212,7 @@
     :cond_13
     const-wide/16 v12, 0x0
 
-    .line 1797
+    .line 1802
     iget-wide v2, v8, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     int-to-long v4, v1
@@ -8204,7 +8221,7 @@
 
     iput-wide v2, v8, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
-    .line 1798
+    .line 1803
     iget-wide v6, v8, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
     cmp-long v18, v6, v12
@@ -8215,7 +8232,7 @@
 
     if-gez v1, :cond_15
 
-    .line 1799
+    .line 1804
     iget v1, v8, Lorg/telegram/messenger/FileLoadOperation;->preloadPrefixSize:I
 
     if-lez v1, :cond_14
@@ -8251,7 +8268,7 @@
     :goto_9
     move v1, v9
 
-    .line 1800
+    .line 1805
     :goto_a
     iget-wide v2, v8, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
@@ -8268,7 +8285,7 @@
 
     goto :goto_d
 
-    .line 1804
+    .line 1809
     :cond_17
     iget v14, v8, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
@@ -8311,16 +8328,16 @@
 
     const/4 v10, 0x0
 
-    .line 1806
+    .line 1811
     :goto_d
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    .line 1809
+    .line 1814
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->key:[B
 
     if-eqz v1, :cond_1d
 
-    .line 1810
+    .line 1815
     iget-object v2, v15, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object v3, v8, Lorg/telegram/messenger/FileLoadOperation;->iv:[B
@@ -8345,14 +8362,14 @@
 
     if-eqz v9, :cond_1d
 
-    .line 1811
+    .line 1816
     iget-wide v1, v8, Lorg/telegram/messenger/FileLoadOperation;->bytesCountPadding:J
 
     cmp-long v1, v1, v12
 
     if-eqz v1, :cond_1d
 
-    .line 1812
+    .line 1817
     invoke-virtual {v15}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
     move-result v1
@@ -8363,7 +8380,7 @@
 
     sub-long/2addr v1, v6
 
-    .line 1813
+    .line 1818
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v3, :cond_1c
@@ -8376,7 +8393,7 @@
 
     goto :goto_e
 
-    .line 1814
+    .line 1819
     :cond_1b
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -8402,23 +8419,23 @@
     :goto_e
     long-to-int v1, v1
 
-    .line 1816
+    .line 1821
     invoke-virtual {v15, v1}, Lorg/telegram/tgnet/NativeByteBuffer;->limit(I)V
 
-    .line 1819
+    .line 1824
     :cond_1d
     iget-boolean v1, v8, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
     if-eqz v1, :cond_1e
 
-    .line 1820
+    .line 1825
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
 
     move-result-wide v1
 
     div-long v1, v1, v22
 
-    .line 1821
+    .line 1826
     iget-object v3, v8, Lorg/telegram/messenger/FileLoadOperation;->encryptIv:[B
 
     and-long v6, v1, v26
@@ -8437,7 +8454,7 @@
 
     int-to-byte v6, v6
 
-    .line 1822
+    .line 1827
     aput-byte v6, v3, v20
 
     shr-long v6, v1, v25
@@ -8448,7 +8465,7 @@
 
     int-to-byte v6, v6
 
-    .line 1823
+    .line 1828
     aput-byte v6, v3, v17
 
     shr-long v1, v1, v24
@@ -8459,10 +8476,10 @@
 
     int-to-byte v1, v1
 
-    .line 1824
+    .line 1829
     aput-byte v1, v3, v16
 
-    .line 1825
+    .line 1830
     iget-object v1, v15, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->encryptKey:[B
@@ -8475,13 +8492,13 @@
 
     invoke-static {v1, v2, v3, v7, v6}, Lorg/telegram/messenger/Utilities;->aesCtrDecryption(Ljava/nio/ByteBuffer;[B[BII)V
 
-    .line 1828
+    .line 1833
     :cond_1e
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_1f
 
-    .line 1829
+    .line 1834
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->fileOutputStream:Ljava/io/RandomAccessFile;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -8490,12 +8507,12 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 1830
+    .line 1835
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v1, :cond_1f
 
-    .line 1831
+    .line 1836
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -8540,7 +8557,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1834
+    .line 1839
     :cond_1f
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->fileOutputStream:Ljava/io/RandomAccessFile;
 
@@ -8548,12 +8565,12 @@
 
     move-result-object v1
 
-    .line 1835
+    .line 1840
     iget-object v2, v15, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1, v2}, Ljava/nio/channels/FileChannel;->write(Ljava/nio/ByteBuffer;)I
 
-    .line 1836
+    .line 1841
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -8578,15 +8595,15 @@
 
     invoke-direct/range {v1 .. v7}, Lorg/telegram/messenger/FileLoadOperation;->addPart(Ljava/util/ArrayList;JJZ)V
 
-    .line 1837
+    .line 1842
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    .line 1841
+    .line 1846
     iget-boolean v1, v8, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
     if-eqz v1, :cond_2c
 
-    .line 1842
+    .line 1847
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
 
     move-result-wide v1
@@ -8597,7 +8614,7 @@
 
     div-long v14, v1, v3
 
-    .line 1844
+    .line 1849
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->notCheckedCdnRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -8609,7 +8626,7 @@
     :goto_f
     if-ge v2, v1, :cond_21
 
-    .line 1848
+    .line 1853
     iget-object v3, v8, Lorg/telegram/messenger/FileLoadOperation;->notCheckedCdnRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -8618,7 +8635,7 @@
 
     check-cast v3, Lorg/telegram/messenger/FileLoadOperation$Range;
 
-    .line 1849
+    .line 1854
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$Range;->access$000(Lorg/telegram/messenger/FileLoadOperation$Range;)J
 
     move-result-wide v4
@@ -8650,14 +8667,14 @@
     :goto_10
     if-nez v1, :cond_2c
 
-    .line 1855
+    .line 1860
     iget v1, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnChunkCheckSize:I
 
     int-to-long v2, v1
 
     mul-long v5, v14, v2
 
-    .line 1856
+    .line 1861
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     int-to-long v3, v1
@@ -8680,7 +8697,7 @@
 
     if-eqz v3, :cond_2c
 
-    .line 1857
+    .line 1862
     iget v3, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnChunkCheckSize:I
 
     int-to-long v3, v3
@@ -8720,7 +8737,7 @@
     :cond_23
     move-wide/from16 v5, v37
 
-    .line 1858
+    .line 1863
     :cond_24
     :goto_12
     iget-object v3, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
@@ -8735,19 +8752,19 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_fileHash;
 
-    .line 1859
+    .line 1864
     iget-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->fileReadStream:Ljava/io/RandomAccessFile;
 
     if-nez v4, :cond_25
 
-    .line 1860
+    .line 1865
     iget v4, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnChunkCheckSize:I
 
     new-array v4, v4, [B
 
     iput-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnCheckBytes:[B
 
-    .line 1861
+    .line 1866
     new-instance v4, Ljava/io/RandomAccessFile;
 
     iget-object v7, v8, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
@@ -8758,13 +8775,13 @@
 
     iput-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->fileReadStream:Ljava/io/RandomAccessFile;
 
-    .line 1863
+    .line 1868
     :cond_25
     iget-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->fileReadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v4, v5, v6}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 1864
+    .line 1869
     sget-boolean v4, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v4, :cond_27
@@ -8777,7 +8794,7 @@
 
     goto :goto_13
 
-    .line 1865
+    .line 1870
     :cond_26
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -8787,7 +8804,7 @@
 
     throw v0
 
-    .line 1867
+    .line 1872
     :cond_27
     :goto_13
     iget-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->fileReadStream:Ljava/io/RandomAccessFile;
@@ -8800,15 +8817,15 @@
 
     invoke-virtual {v4, v7, v13, v12}, Ljava/io/RandomAccessFile;->readFully([BII)V
 
-    .line 1869
+    .line 1874
     iget-boolean v4, v8, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
     if-eqz v4, :cond_28
 
-    .line 1870
+    .line 1875
     div-long v12, v5, v22
 
-    .line 1871
+    .line 1876
     iget-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->encryptIv:[B
 
     move/from16 p2, v9
@@ -8831,7 +8848,7 @@
 
     int-to-byte v7, v7
 
-    .line 1872
+    .line 1877
     aput-byte v7, v4, v20
 
     shr-long v9, v12, v25
@@ -8842,7 +8859,7 @@
 
     int-to-byte v7, v7
 
-    .line 1873
+    .line 1878
     aput-byte v7, v4, v17
 
     shr-long v9, v12, v24
@@ -8853,10 +8870,10 @@
 
     int-to-byte v7, v7
 
-    .line 1874
+    .line 1879
     aput-byte v7, v4, v16
 
-    .line 1875
+    .line 1880
     iget-object v7, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnCheckBytes:[B
 
     iget-object v9, v8, Lorg/telegram/messenger/FileLoadOperation;->encryptKey:[B
@@ -8882,7 +8899,7 @@
 
     move/from16 v22, v10
 
-    .line 1878
+    .line 1883
     :goto_14
     iget-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnCheckBytes:[B
 
@@ -8892,7 +8909,7 @@
 
     move-result-object v1
 
-    .line 1879
+    .line 1884
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$TL_fileHash;->hash:[B
 
     invoke-static {v1, v2}, Ljava/util/Arrays;->equals([B[B)Z
@@ -8901,17 +8918,17 @@
 
     if-nez v1, :cond_2b
 
-    .line 1880
+    .line 1885
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2a
 
-    .line 1881
+    .line 1886
     iget-object v0, v8, Lorg/telegram/messenger/FileLoadOperation;->location:Lorg/telegram/tgnet/TLRPC$InputFileLocation;
 
     if-eqz v0, :cond_29
 
-    .line 1882
+    .line 1887
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8983,12 +9000,12 @@
     :cond_29
     move-object/from16 v2, v28
 
-    .line 1883
+    .line 1888
     iget-object v0, v8, Lorg/telegram/messenger/FileLoadOperation;->webLocation:Lorg/telegram/tgnet/TLRPC$InputWebFileLocation;
 
     if-eqz v0, :cond_2a
 
-    .line 1884
+    .line 1889
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9017,17 +9034,17 @@
     :goto_15
     const/4 v1, 0x0
 
-    .line 1887
+    .line 1892
     invoke-virtual {v8, v1, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
-    .line 1888
+    .line 1893
     iget-object v0, v8, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     return v1
 
-    .line 1891
+    .line 1896
     :cond_2b
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->cdnHashes:Ljava/util/HashMap;
 
@@ -9037,7 +9054,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1892
+    .line 1897
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->notCheckedCdnRanges:Ljava/util/ArrayList;
 
     const-wide/16 v3, 0x1
@@ -9059,7 +9076,7 @@
 
     move/from16 v22, v10
 
-    .line 1896
+    .line 1901
     :goto_16
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->fiv:Ljava/io/RandomAccessFile;
 
@@ -9067,17 +9084,17 @@
 
     const-wide/16 v2, 0x0
 
-    .line 1897
+    .line 1902
     invoke-virtual {v1, v2, v3}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 1898
+    .line 1903
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->fiv:Ljava/io/RandomAccessFile;
 
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->iv:[B
 
     invoke-virtual {v1, v2}, Ljava/io/RandomAccessFile;->write([B)V
 
-    .line 1900
+    .line 1905
     :cond_2d
     iget-wide v1, v8, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
@@ -9093,10 +9110,10 @@
 
     if-ne v1, v2, :cond_2e
 
-    .line 1901
+    .line 1906
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/FileLoadOperation;->copyNotLoadedRanges()V
 
-    .line 1902
+    .line 1907
     iget-object v1, v8, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     iget-wide v3, v8, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
@@ -9116,7 +9133,7 @@
     :goto_17
     const/4 v2, 0x0
 
-    .line 1906
+    .line 1911
     :goto_18
     iget-object v3, v8, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
@@ -9126,7 +9143,7 @@
 
     if-ge v2, v3, :cond_34
 
-    .line 1907
+    .line 1912
     iget-object v3, v8, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9135,7 +9152,7 @@
 
     check-cast v3, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
-    .line 1908
+    .line 1913
     iget-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-nez v4, :cond_31
@@ -9157,7 +9174,7 @@
 
     goto :goto_18
 
-    .line 1909
+    .line 1914
     :cond_31
     :goto_19
     iget-object v4, v8, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
@@ -9166,21 +9183,21 @@
 
     const/4 v5, 0x0
 
-    .line 1910
+    .line 1915
     invoke-virtual {v8, v3, v5}, Lorg/telegram/messenger/FileLoadOperation;->processRequestResult(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
     move-result v2
 
     if-nez v2, :cond_34
 
-    .line 1911
+    .line 1916
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v2
 
     if-eqz v2, :cond_32
 
-    .line 1912
+    .line 1917
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v2
@@ -9189,7 +9206,7 @@
 
     iput-boolean v4, v2, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1913
+    .line 1918
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v2
@@ -9198,7 +9215,7 @@
 
     goto :goto_1a
 
-    .line 1914
+    .line 1919
     :cond_32
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
@@ -9206,7 +9223,7 @@
 
     if-eqz v2, :cond_33
 
-    .line 1915
+    .line 1920
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object v2
@@ -9215,7 +9232,7 @@
 
     iput-boolean v4, v2, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1916
+    .line 1921
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     move-result-object v2
@@ -9224,7 +9241,7 @@
 
     goto :goto_1a
 
-    .line 1917
+    .line 1922
     :cond_33
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
@@ -9232,7 +9249,7 @@
 
     if-eqz v2, :cond_34
 
-    .line 1918
+    .line 1923
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object v2
@@ -9241,7 +9258,7 @@
 
     iput-boolean v4, v2, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
-    .line 1919
+    .line 1924
     invoke-static {v3}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     move-result-object v2
@@ -9256,12 +9273,12 @@
 
     const/4 v2, 0x0
 
-    .line 1927
+    .line 1932
     invoke-direct {v8, v1, v2, v10}, Lorg/telegram/messenger/FileLoadOperation;->onFinishLoadingFile(ZIZ)V
 
     goto/16 :goto_1d
 
-    .line 1928
+    .line 1933
     :cond_35
     iget v1, v8, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
@@ -9269,7 +9286,7 @@
 
     if-eq v1, v2, :cond_3c
 
-    .line 1929
+    .line 1934
     iget v0, v0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->connectionType:I
 
     invoke-virtual {v8, v0}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
@@ -9282,7 +9299,7 @@
 
     move v2, v10
 
-    .line 1724
+    .line 1729
     invoke-direct {v8, v1, v2, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFinishLoadingFile(ZIZ)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -9292,7 +9309,7 @@
     :catch_0
     move-exception v0
 
-    .line 1932
+    .line 1937
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isFilNotFoundException(Ljava/lang/Throwable;)Z
 
     move-result v1
@@ -9315,7 +9332,7 @@
     :goto_1c
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1933
+    .line 1938
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isENOSPC(Ljava/lang/Exception;)Z
 
     move-result v1
@@ -9326,7 +9343,7 @@
 
     const/4 v1, 0x0
 
-    .line 1934
+    .line 1939
     invoke-virtual {v8, v1, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto :goto_1d
@@ -9334,26 +9351,26 @@
     :cond_38
     const/4 v1, 0x0
 
-    .line 1935
+    .line 1940
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isEROFS(Ljava/lang/Exception;)Z
 
     move-result v0
 
     if-eqz v0, :cond_39
 
-    .line 1936
+    .line 1941
     iget-object v0, v8, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->checkSdCard(Ljava/io/File;)V
 
     const/4 v3, 0x1
 
-    .line 1937
+    .line 1942
     invoke-virtual {v8, v3, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto :goto_1d
 
-    .line 1939
+    .line 1944
     :cond_39
     invoke-virtual {v8, v1, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
@@ -9364,7 +9381,7 @@
 
     const/4 v5, 0x0
 
-    .line 1943
+    .line 1948
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v6, "LIMIT_INVALID"
@@ -9381,7 +9398,7 @@
 
     if-nez v3, :cond_3d
 
-    .line 1944
+    .line 1949
     iget-object v2, v8, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
@@ -9402,27 +9419,27 @@
 
     invoke-direct/range {v1 .. v6}, Lorg/telegram/messenger/FileLoadOperation;->removePart(Ljava/util/ArrayList;JJ)V
 
-    .line 1945
+    .line 1950
     iget-boolean v1, v8, Lorg/telegram/messenger/FileLoadOperation;->forceSmallChunk:Z
 
     if-nez v1, :cond_3b
 
     const/4 v1, 0x1
 
-    .line 1946
+    .line 1951
     iput-boolean v1, v8, Lorg/telegram/messenger/FileLoadOperation;->forceSmallChunk:Z
 
     const v1, 0x8000
 
-    .line 1947
+    .line 1952
     iput v1, v8, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     const/4 v1, 0x4
 
-    .line 1948
+    .line 1953
     iput v1, v8, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
 
-    .line 1950
+    .line 1955
     :cond_3b
     iget v0, v0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->connectionType:I
 
@@ -9434,7 +9451,7 @@
 
     goto/16 :goto_21
 
-    .line 1951
+    .line 1956
     :cond_3d
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -9446,7 +9463,7 @@
 
     if-eqz v3, :cond_3f
 
-    .line 1952
+    .line 1957
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v2, ""
@@ -9455,15 +9472,15 @@
 
     move-result-object v1
 
-    .line 1953
+    .line 1958
     new-instance v3, Ljava/util/Scanner;
 
     invoke-direct {v3, v1}, Ljava/util/Scanner;-><init>(Ljava/lang/String;)V
 
-    .line 1954
+    .line 1959
     invoke-virtual {v3, v2}, Ljava/util/Scanner;->useDelimiter(Ljava/lang/String;)Ljava/util/Scanner;
 
-    .line 1957
+    .line 1962
     :try_start_1
     invoke-virtual {v3}, Ljava/util/Scanner;->nextInt()I
 
@@ -9485,12 +9502,12 @@
 
     const/4 v1, 0x0
 
-    .line 1962
+    .line 1967
     invoke-virtual {v8, v1, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto :goto_1d
 
-    .line 1964
+    .line 1969
     :cond_3e
     invoke-virtual {v14}, Ljava/lang/Integer;->intValue()I
 
@@ -9500,19 +9517,19 @@
 
     const-wide/16 v1, 0x0
 
-    .line 1965
+    .line 1970
     iput-wide v1, v8, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     iput-wide v1, v8, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
-    .line 1966
+    .line 1971
     iget v0, v0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->connectionType:I
 
     invoke-virtual {v8, v0}, Lorg/telegram/messenger/FileLoadOperation;->startDownloadRequest(I)V
 
     goto :goto_1d
 
-    .line 1968
+    .line 1973
     :cond_3f
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -9524,7 +9541,7 @@
 
     if-eqz v0, :cond_41
 
-    .line 1969
+    .line 1974
     iget-wide v0, v8, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     iget v2, v8, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
@@ -9543,7 +9560,7 @@
 
     const/4 v3, 0x0
 
-    .line 1971
+    .line 1976
     :try_start_2
     invoke-direct {v8, v1, v3, v3}, Lorg/telegram/messenger/FileLoadOperation;->onFinishLoadingFile(ZIZ)V
     :try_end_2
@@ -9556,10 +9573,10 @@
 
     move-object v1, v0
 
-    .line 1973
+    .line 1978
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1974
+    .line 1979
     invoke-virtual {v8, v3, v3}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto :goto_1f
@@ -9567,7 +9584,7 @@
     :cond_40
     const/4 v3, 0x0
 
-    .line 1977
+    .line 1982
     invoke-virtual {v8, v3, v3}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto :goto_1f
@@ -9575,7 +9592,7 @@
     :cond_41
     const/4 v3, 0x0
 
-    .line 1979
+    .line 1984
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v5, "RETRY_LIMIT"
@@ -9586,7 +9603,7 @@
 
     if-eqz v0, :cond_42
 
-    .line 1980
+    .line 1985
     invoke-virtual {v8, v3, v7}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     :goto_1f
@@ -9594,18 +9611,18 @@
 
     goto/16 :goto_21
 
-    .line 1982
+    .line 1987
     :cond_42
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_44
 
-    .line 1983
+    .line 1988
     iget-object v0, v8, Lorg/telegram/messenger/FileLoadOperation;->location:Lorg/telegram/tgnet/TLRPC$InputFileLocation;
 
     if-eqz v0, :cond_43
 
-    .line 1984
+    .line 1989
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9674,13 +9691,13 @@
 
     goto :goto_20
 
-    .line 1985
+    .line 1990
     :cond_43
     iget-object v0, v8, Lorg/telegram/messenger/FileLoadOperation;->webLocation:Lorg/telegram/tgnet/TLRPC$InputWebFileLocation;
 
     if-eqz v0, :cond_44
 
-    .line 1986
+    .line 1991
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9711,7 +9728,7 @@
     :goto_20
     const/4 v1, 0x0
 
-    .line 1989
+    .line 1994
     invoke-virtual {v8, v1, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     :goto_21
@@ -9721,7 +9738,7 @@
 .method protected removeStreamListener(Lorg/telegram/messenger/FileLoadOperationStream;)V
     .locals 2
 
-    .line 730
+    .line 735
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda8;
@@ -9736,7 +9753,7 @@
 .method public setDelegate(Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;)V
     .locals 0
 
-    .line 2435
+    .line 2440
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     return-void
@@ -9771,7 +9788,7 @@
 .method public setIsPreloadVideoOperation(Z)V
     .locals 5
 
-    .line 1236
+    .line 1241
     iget-boolean v0, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-eq v0, p1, :cond_4
@@ -9793,30 +9810,30 @@
 
     if-eqz v0, :cond_3
 
-    .line 1240
+    .line 1245
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_1
 
-    .line 1241
+    .line 1246
     iput-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     const/4 p1, 0x0
 
-    .line 1242
+    .line 1247
     iput p1, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
-    .line 1243
+    .line 1248
     iput-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->preloadFinished:Z
 
-    .line 1244
+    .line 1249
     invoke-virtual {p0}, Lorg/telegram/messenger/FileLoadOperation;->start()Z
 
     goto :goto_0
 
-    .line 1245
+    .line 1250
     :cond_1
     iget v0, p0, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
@@ -9824,7 +9841,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 1246
+    .line 1251
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda9;
@@ -9835,13 +9852,13 @@
 
     goto :goto_0
 
-    .line 1253
+    .line 1258
     :cond_2
     iput-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     goto :goto_0
 
-    .line 1256
+    .line 1261
     :cond_3
     iput-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
@@ -9910,7 +9927,7 @@
 .method public start()Z
     .locals 4
 
-    .line 765
+    .line 770
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->stream:Lorg/telegram/messenger/FileLoadOperationStream;
 
     iget-wide v1, p0, Lorg/telegram/messenger/FileLoadOperation;->streamOffset:J
@@ -9929,24 +9946,24 @@
 
     move-object/from16 v7, p0
 
-    .line 769
+    .line 774
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->startTime:J
 
-    .line 770
+    .line 775
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/FileLoadOperation;->updateParams()V
 
-    .line 771
+    .line 776
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->parentObject:Ljava/lang/Object;
 
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_storyItem;
 
     iput-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isStory:Z
 
-    .line 772
+    .line 777
     iget v1, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     const/4 v8, 0x1
@@ -9955,30 +9972,30 @@
 
     if-nez v1, :cond_7
 
-    .line 773
+    .line 778
     iget-boolean v1, v7, Lorg/telegram/messenger/FileLoadOperation;->forceSmallChunk:Z
 
     if-eqz v1, :cond_1
 
-    .line 774
+    .line 779
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "debug_loading: restart with small chunk"
 
-    .line 775
+    .line 780
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_0
     const v0, 0x8000
 
-    .line 777
+    .line 782
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     const/4 v0, 0x4
 
-    .line 778
+    .line 783
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
 
     goto :goto_3
@@ -9986,37 +10003,37 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 780
+    .line 785
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadChunkSizeBig:I
 
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
-    .line 781
+    .line 786
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->maxDownloadRequestsBig:I
 
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
 
     goto :goto_3
 
-    .line 782
+    .line 787
     :cond_2
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isStream:Z
 
     if-eqz v0, :cond_3
 
-    .line 783
+    .line 788
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadChunkSizeAnimation:I
 
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
-    .line 784
+    .line 789
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->maxDownloadRequestsAnimation:I
 
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
 
     goto :goto_3
 
-    .line 786
+    .line 791
     :cond_3
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
@@ -10038,7 +10055,7 @@
     :goto_0
     if-eqz v0, :cond_5
 
-    .line 787
+    .line 792
     iget v1, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadChunkSizeBig:I
 
     goto :goto_1
@@ -10051,7 +10068,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 788
+    .line 793
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->maxDownloadRequestsBig:I
 
     goto :goto_2
@@ -10062,7 +10079,7 @@
     :goto_2
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
 
-    .line 791
+    .line 796
     :cond_7
     :goto_3
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->state:I
@@ -10076,16 +10093,16 @@
     :cond_8
     move v0, v9
 
-    .line 792
+    .line 797
     :goto_4
     iget-boolean v10, v7, Lorg/telegram/messenger/FileLoadOperation;->paused:Z
 
-    .line 793
+    .line 798
     iput-boolean v9, v7, Lorg/telegram/messenger/FileLoadOperation;->paused:Z
 
     if-eqz p1, :cond_9
 
-    .line 795
+    .line 800
     sget-object v11, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v12, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda13;
@@ -10109,7 +10126,7 @@
     :cond_9
     if-eqz v0, :cond_a
 
-    .line 834
+    .line 839
     sget-object v1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda0;
@@ -10124,7 +10141,7 @@
 
     return v10
 
-    .line 841
+    .line 846
     :cond_b
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->location:Lorg/telegram/tgnet/TLRPC$InputFileLocation;
 
@@ -10134,12 +10151,12 @@
 
     if-nez v0, :cond_c
 
-    .line 842
+    .line 847
     invoke-virtual {v7, v8, v9}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     return v9
 
-    .line 846
+    .line 851
     :cond_c
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
@@ -10153,7 +10170,7 @@
 
     iput-wide v1, v7, Lorg/telegram/messenger/FileLoadOperation;->streamStartOffset:J
 
-    .line 848
+    .line 853
     iget-boolean v1, v7, Lorg/telegram/messenger/FileLoadOperation;->allowDisordererFileSave:Z
 
     const-wide/16 v2, 0x0
@@ -10172,21 +10189,21 @@
 
     if-lez v0, :cond_d
 
-    .line 849
+    .line 854
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
-    .line 850
+    .line 855
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
-    .line 858
+    .line 863
     :cond_d
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->webLocation:Lorg/telegram/tgnet/TLRPC$InputWebFileLocation;
 
@@ -10204,7 +10221,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 859
+    .line 864
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->webFile:Lorg/telegram/messenger/WebFile;
 
     iget-object v0, v0, Lorg/telegram/messenger/WebFile;->url:Ljava/lang/String;
@@ -10213,12 +10230,12 @@
 
     move-result-object v0
 
-    .line 860
+    .line 865
     iget-boolean v13, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
     if-eqz v13, :cond_e
 
-    .line 861
+    .line 866
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -10231,7 +10248,7 @@
 
     move-result-object v4
 
-    .line 862
+    .line 867
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -10250,12 +10267,12 @@
 
     move-result-object v5
 
-    .line 863
+    .line 868
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->key:[B
 
     if-eqz v6, :cond_10
 
-    .line 864
+    .line 869
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -10270,7 +10287,7 @@
 
     goto :goto_6
 
-    .line 867
+    .line 872
     :cond_e
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -10284,7 +10301,7 @@
 
     move-result-object v1
 
-    .line 868
+    .line 873
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -10301,12 +10318,12 @@
 
     move-result-object v5
 
-    .line 869
+    .line 874
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->key:[B
 
     if-eqz v6, :cond_f
 
-    .line 870
+    .line 875
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -10339,7 +10356,7 @@
 
     goto/16 :goto_e
 
-    .line 874
+    .line 879
     :cond_11
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->location:Lorg/telegram/tgnet/TLRPC$InputFileLocation;
 
@@ -10359,7 +10376,7 @@
 
     if-eqz v15, :cond_17
 
-    .line 875
+    .line 880
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->datacenterId:I
 
     const/high16 v15, -0x80000000
@@ -10376,13 +10393,13 @@
 
     goto/16 :goto_a
 
-    .line 880
+    .line 885
     :cond_12
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
     if-eqz v0, :cond_13
 
-    .line 881
+    .line 886
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10407,7 +10424,7 @@
 
     move-result-object v4
 
-    .line 882
+    .line 887
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10438,12 +10455,12 @@
 
     move-result-object v5
 
-    .line 883
+    .line 888
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->key:[B
 
     if-eqz v0, :cond_19
 
-    .line 884
+    .line 889
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10470,7 +10487,7 @@
 
     goto/16 :goto_6
 
-    .line 887
+    .line 892
     :cond_13
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -10496,7 +10513,7 @@
 
     move-result-object v0
 
-    .line 888
+    .line 893
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -10525,12 +10542,12 @@
 
     move-result-object v5
 
-    .line 889
+    .line 894
     iget-object v1, v7, Lorg/telegram/messenger/FileLoadOperation;->key:[B
 
     if-eqz v1, :cond_14
 
-    .line 890
+    .line 895
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -10560,13 +10577,13 @@
     :cond_14
     const/4 v1, 0x0
 
-    .line 892
+    .line 897
     :goto_8
     iget-object v4, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_15
 
-    .line 893
+    .line 898
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -10596,7 +10613,7 @@
     :cond_15
     const/4 v4, 0x0
 
-    .line 895
+    .line 900
     :goto_9
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -10624,14 +10641,14 @@
 
     goto/16 :goto_d
 
-    .line 876
+    .line 881
     :cond_16
     :goto_a
     invoke-virtual {v7, v8, v9}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     return v9
 
-    .line 898
+    .line 903
     :cond_17
     iget v11, v7, Lorg/telegram/messenger/FileLoadOperation;->datacenterId:I
 
@@ -10647,13 +10664,13 @@
 
     goto/16 :goto_2c
 
-    .line 902
+    .line 907
     :cond_18
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
     if-eqz v0, :cond_1a
 
-    .line 903
+    .line 908
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10676,7 +10693,7 @@
 
     move-result-object v4
 
-    .line 904
+    .line 909
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10703,12 +10720,12 @@
 
     move-result-object v5
 
-    .line 905
+    .line 910
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->key:[B
 
     if-eqz v0, :cond_19
 
-    .line 906
+    .line 911
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10738,7 +10755,7 @@
 
     goto/16 :goto_7
 
-    .line 909
+    .line 914
     :cond_1a
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -10762,7 +10779,7 @@
 
     move-result-object v0
 
-    .line 910
+    .line 915
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -10787,12 +10804,12 @@
 
     move-result-object v5
 
-    .line 911
+    .line 916
     iget-object v1, v7, Lorg/telegram/messenger/FileLoadOperation;->key:[B
 
     if-eqz v1, :cond_1b
 
-    .line 912
+    .line 917
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -10820,13 +10837,13 @@
     :cond_1b
     const/4 v1, 0x0
 
-    .line 914
+    .line 919
     :goto_b
     iget-object v4, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_1c
 
-    .line 915
+    .line 920
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -10854,7 +10871,7 @@
     :cond_1c
     const/4 v4, 0x0
 
-    .line 917
+    .line 922
     :goto_c
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -10883,7 +10900,7 @@
 
     move-object v4, v0
 
-    .line 922
+    .line 927
     :goto_e
     new-instance v0, Ljava/util/ArrayList;
 
@@ -10893,7 +10910,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
-    .line 923
+    .line 928
     new-instance v0, Ljava/util/ArrayList;
 
     iget v3, v7, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
@@ -10904,20 +10921,20 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->delayedRequestInfos:Ljava/util/ArrayList;
 
-    .line 924
+    .line 929
     iput v8, v7, Lorg/telegram/messenger/FileLoadOperation;->state:I
 
-    .line 926
+    .line 931
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->parentObject:Ljava/lang/Object;
 
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     if-eqz v3, :cond_1d
 
-    .line 927
+    .line 932
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_theme;
 
-    .line 928
+    .line 933
     new-instance v3, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -10950,13 +10967,13 @@
 
     goto :goto_f
 
-    .line 930
+    .line 935
     :cond_1d
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
     if-nez v0, :cond_1e
 
-    .line 931
+    .line 936
     new-instance v0, Ljava/io/File;
 
     iget-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->storePath:Ljava/io/File;
@@ -10969,7 +10986,7 @@
 
     goto :goto_f
 
-    .line 933
+    .line 938
     :cond_1e
     new-instance v0, Ljava/io/File;
 
@@ -10979,7 +10996,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
-    .line 936
+    .line 941
     :goto_f
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
@@ -10989,7 +11006,7 @@
 
     if-eqz v0, :cond_22
 
-    .line 937
+    .line 942
     iget-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->parentObject:Ljava/lang/Object;
 
     instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_theme;
@@ -11018,13 +11035,13 @@
 
     if-eqz v3, :cond_22
 
-    .line 938
+    .line 943
     :cond_1f
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_20
 
-    .line 939
+    .line 944
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11067,7 +11084,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 941
+    .line 946
     :cond_20
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
@@ -11083,7 +11100,7 @@
 
     if-nez v0, :cond_21
 
-    .line 942
+    .line 947
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
@@ -11094,7 +11111,7 @@
     :cond_22
     if-nez v0, :cond_4a
 
-    .line 949
+    .line 954
     new-instance v0, Ljava/io/File;
 
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->tempPath:Ljava/io/File;
@@ -11103,12 +11120,12 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
-    .line 950
+    .line 955
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->ungzip:Z
 
     if-eqz v0, :cond_23
 
-    .line 951
+    .line 956
     new-instance v0, Ljava/io/File;
 
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->tempPath:Ljava/io/File;
@@ -11131,7 +11148,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileGzipTemp:Ljava/io/File;
 
-    .line 955
+    .line 960
     :cond_23
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptFile:Z
 
@@ -11139,7 +11156,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 956
+    .line 961
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/FileLoader;->getInternalCacheDir()Ljava/io/File;
@@ -11162,13 +11179,13 @@
 
     invoke-direct {v0, v6, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 958
+    .line 963
     :try_start_0
     new-instance v5, Ljava/io/RandomAccessFile;
 
     invoke-direct {v5, v0, v4}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 959
+    .line 964
     invoke-virtual {v0}, Ljava/io/File;->length()J
 
     move-result-wide v10
@@ -11177,14 +11194,14 @@
 
     new-array v6, v0, [B
 
-    .line 960
+    .line 965
     iput-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptKey:[B
 
     const/16 v13, 0x10
 
     new-array v14, v13, [B
 
-    .line 961
+    .line 966
     iput-object v14, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptIv:[B
 
     const-wide/16 v14, 0x0
@@ -11195,17 +11212,17 @@
 
     const-wide/16 v16, 0x30
 
-    .line 962
+    .line 967
     rem-long v10, v10, v16
 
     cmp-long v10, v10, v14
 
     if-nez v10, :cond_24
 
-    .line 963
+    .line 968
     invoke-virtual {v5, v6, v9, v0}, Ljava/io/RandomAccessFile;->read([BII)I
 
-    .line 964
+    .line 969
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptIv:[B
 
     invoke-virtual {v5, v0, v9, v13}, Ljava/io/RandomAccessFile;->read([BII)I
@@ -11214,25 +11231,25 @@
 
     goto :goto_10
 
-    .line 966
+    .line 971
     :cond_24
     sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v0, v6}, Ljava/security/SecureRandom;->nextBytes([B)V
 
-    .line 967
+    .line 972
     sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptIv:[B
 
     invoke-virtual {v0, v6}, Ljava/security/SecureRandom;->nextBytes([B)V
 
-    .line 968
+    .line 973
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptKey:[B
 
     invoke-virtual {v5, v0}, Ljava/io/RandomAccessFile;->write([B)V
 
-    .line 969
+    .line 974
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->encryptIv:[B
 
     invoke-virtual {v5, v0}, Ljava/io/RandomAccessFile;->write([B)V
@@ -11241,7 +11258,7 @@
 
     move v6, v8
 
-    .line 973
+    .line 978
     :goto_10
     :try_start_1
     invoke-virtual {v5}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
@@ -11257,11 +11274,11 @@
     :catch_0
     move-exception v0
 
-    .line 975
+    .line 980
     :try_start_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 977
+    .line 982
     :goto_11
     invoke-virtual {v5}, Ljava/io/RandomAccessFile;->close()V
     :try_end_2
@@ -11279,7 +11296,7 @@
 
     move v6, v9
 
-    .line 979
+    .line 984
     :goto_12
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isENOSPC(Ljava/lang/Exception;)Z
 
@@ -11287,15 +11304,15 @@
 
     if-eqz v5, :cond_25
 
-    .line 980
+    .line 985
     invoke-static {v8}, Lorg/telegram/ui/LaunchActivity;->checkFreeDiscSpaceStatic(I)V
 
-    .line 981
+    .line 986
     invoke-static {v0, v9}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     goto :goto_13
 
-    .line 982
+    .line 987
     :cond_25
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isEROFS(Ljava/lang/Exception;)Z
 
@@ -11303,17 +11320,17 @@
 
     if-eqz v5, :cond_26
 
-    .line 983
+    .line 988
     iget-object v5, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-static {v5}, Lorg/telegram/messenger/SharedConfig;->checkSdCard(Ljava/io/File;)V
 
-    .line 984
+    .line 989
     invoke-static {v0, v9}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     goto :goto_13
 
-    .line 986
+    .line 991
     :cond_26
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -11327,7 +11344,7 @@
 
     aput-boolean v9, v5, v9
 
-    .line 992
+    .line 997
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->supportsPreloading:Z
 
     const-wide/16 v13, 0x8
@@ -11336,7 +11353,7 @@
 
     if-eqz v2, :cond_33
 
-    .line 993
+    .line 998
     new-instance v0, Ljava/io/File;
 
     iget-object v15, v7, Lorg/telegram/messenger/FileLoadOperation;->tempPath:Ljava/io/File;
@@ -11345,7 +11362,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFilePreload:Ljava/io/File;
 
-    .line 996
+    .line 1001
     :try_start_3
     new-instance v0, Ljava/io/RandomAccessFile;
 
@@ -11355,12 +11372,12 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
-    .line 997
+    .line 1002
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->length()J
 
     move-result-wide v15
 
-    .line 999
+    .line 1004
     iput v8, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
     const-wide/16 v17, 0x0
@@ -11373,7 +11390,7 @@
 
     if-lez v0, :cond_31
 
-    .line 1001
+    .line 1006
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->readByte()B
@@ -11405,7 +11422,7 @@
 
     goto/16 :goto_19
 
-    .line 1007
+    .line 1012
     :cond_29
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
@@ -11431,7 +11448,7 @@
 
     move-object v2, v4
 
-    .line 1009
+    .line 1014
     :try_start_4
     iget-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
@@ -11442,7 +11459,7 @@
     :goto_16
     goto/16 :goto_1a
 
-    .line 1012
+    .line 1017
     :cond_2a
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
@@ -11458,7 +11475,7 @@
 
     if-ltz v0, :cond_32
 
-    .line 1014
+    .line 1019
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     int-to-long v13, v0
@@ -11469,7 +11486,7 @@
 
     goto :goto_16
 
-    .line 1017
+    .line 1022
     :cond_2b
     new-instance v0, Lorg/telegram/messenger/FileLoadOperation$PreloadRange;
 
@@ -11487,7 +11504,7 @@
 
     add-long v13, v17, v3
 
-    .line 1019
+    .line 1024
     :try_start_5
     iget-object v9, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
@@ -11503,7 +11520,7 @@
 
     goto :goto_16
 
-    .line 1023
+    .line 1028
     :cond_2c
     iget-object v9, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
@@ -11519,7 +11536,7 @@
 
     if-eqz v25, :cond_2e
 
-    .line 1025
+    .line 1030
     iget-wide v10, v7, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
@@ -11549,7 +11566,7 @@
     :goto_17
     iput v5, v7, Lorg/telegram/messenger/FileLoadOperation;->moovFound:I
 
-    .line 1026
+    .line 1031
     iput-wide v8, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadNotRequestedBytesCount:J
 
     goto :goto_18
@@ -11559,7 +11576,7 @@
 
     move/from16 v25, v6
 
-    .line 1028
+    .line 1033
     :goto_18
     iget-object v5, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
@@ -11569,7 +11586,7 @@
 
     iput-wide v5, v7, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
-    .line 1029
+    .line 1034
     iget-object v5, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v5}, Ljava/io/RandomAccessFile;->readLong()J
@@ -11580,32 +11597,32 @@
 
     add-long v5, v13, v23
 
-    .line 1032
+    .line 1037
     iget-object v8, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
     if-nez v8, :cond_2f
 
-    .line 1033
+    .line 1038
     new-instance v8, Ljava/util/HashMap;
 
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
-    .line 1035
+    .line 1040
     :cond_2f
     iget-object v8, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
     if-nez v8, :cond_30
 
-    .line 1036
+    .line 1041
     new-instance v8, Ljava/util/HashMap;
 
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
-    .line 1038
+    .line 1043
     :cond_30
     iget-object v8, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadedBytesRanges:Ljava/util/HashMap;
 
@@ -11615,7 +11632,7 @@
 
     invoke-virtual {v8, v9, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1039
+    .line 1044
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
     invoke-static/range {v19 .. v20}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -11630,7 +11647,7 @@
 
     invoke-virtual {v0, v8, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1041
+    .line 1046
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->totalPreloadedBytes:I
 
     int-to-long v8, v0
@@ -11641,7 +11658,7 @@
 
     iput v0, v7, Lorg/telegram/messenger/FileLoadOperation;->totalPreloadedBytes:I
 
-    .line 1042
+    .line 1047
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
 
     int-to-long v8, v0
@@ -11696,7 +11713,7 @@
 
     move/from16 v25, v6
 
-    .line 1045
+    .line 1050
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     iget v3, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStreamFileOffset:I
@@ -11729,11 +11746,11 @@
 
     move v3, v9
 
-    .line 1047
+    .line 1052
     :goto_1d
     invoke-static {v0, v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1049
+    .line 1054
     :goto_1e
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
@@ -11745,10 +11762,10 @@
 
     const/4 v3, 0x0
 
-    .line 1050
+    .line 1055
     iput-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFilePreload:Ljava/io/File;
 
-    .line 1052
+    .line 1057
     :try_start_7
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
     :try_end_7
@@ -11756,7 +11773,7 @@
 
     if-eqz v0, :cond_34
 
-    .line 1054
+    .line 1059
     :try_start_8
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -11771,11 +11788,11 @@
     :catch_7
     move-exception v0
 
-    .line 1056
+    .line 1061
     :try_start_9
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1058
+    .line 1063
     :goto_1f
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
@@ -11783,7 +11800,7 @@
 
     const/4 v3, 0x0
 
-    .line 1059
+    .line 1064
     iput-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_8
@@ -11793,7 +11810,7 @@
     :catch_8
     move-exception v0
 
-    .line 1062
+    .line 1067
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_20
@@ -11809,7 +11826,7 @@
     :goto_20
     if-eqz v12, :cond_36
 
-    .line 1068
+    .line 1073
     new-instance v0, Ljava/io/File;
 
     iget-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->tempPath:Ljava/io/File;
@@ -11818,7 +11835,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileParts:Ljava/io/File;
 
-    .line 1069
+    .line 1074
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
@@ -11827,12 +11844,12 @@
 
     if-nez v0, :cond_35
 
-    .line 1070
+    .line 1075
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileParts:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 1073
+    .line 1078
     :cond_35
     :try_start_a
     new-instance v0, Ljava/io/RandomAccessFile;
@@ -11843,14 +11860,14 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->filePartsStream:Ljava/io/RandomAccessFile;
 
-    .line 1074
+    .line 1079
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->length()J
 
     move-result-wide v3
 
     const-wide/16 v5, 0x8
 
-    .line 1075
+    .line 1080
     rem-long v5, v3, v5
 
     const-wide/16 v8, 0x4
@@ -11861,7 +11878,7 @@
 
     sub-long/2addr v3, v8
 
-    .line 1077
+    .line 1082
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->filePartsStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->readInt()I
@@ -11872,7 +11889,7 @@
 
     const-wide/16 v8, 0x2
 
-    .line 1078
+    .line 1083
     div-long/2addr v3, v8
 
     cmp-long v3, v5, v3
@@ -11884,21 +11901,21 @@
     :goto_21
     if-ge v3, v0, :cond_36
 
-    .line 1080
+    .line 1085
     iget-object v4, v7, Lorg/telegram/messenger/FileLoadOperation;->filePartsStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v4}, Ljava/io/RandomAccessFile;->readLong()J
 
     move-result-wide v4
 
-    .line 1081
+    .line 1086
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->filePartsStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v6}, Ljava/io/RandomAccessFile;->readLong()J
 
     move-result-wide v14
 
-    .line 1082
+    .line 1087
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     new-instance v13, Lorg/telegram/messenger/FileLoadOperation$Range;
@@ -11921,7 +11938,7 @@
 
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1083
+    .line 1088
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
     new-instance v6, Lorg/telegram/messenger/FileLoadOperation$Range;
@@ -11949,7 +11966,7 @@
     :catch_9
     move-exception v0
 
-    .line 1088
+    .line 1093
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isFilNotFoundException(Ljava/lang/Throwable;)Z
 
     move-result v3
@@ -11960,13 +11977,13 @@
 
     invoke-static {v0, v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1092
+    .line 1097
     :cond_36
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->fileMetadata:Lorg/telegram/messenger/FilePathDatabase$FileMeta;
 
     if-eqz v0, :cond_37
 
-    .line 1093
+    .line 1098
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -11983,7 +12000,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/messenger/FilePathDatabase;->saveFileDialogId(Ljava/io/File;Lorg/telegram/messenger/FilePathDatabase$FileMeta;)V
 
-    .line 1094
+    .line 1099
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -12000,7 +12017,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/messenger/FilePathDatabase;->saveFileDialogId(Ljava/io/File;Lorg/telegram/messenger/FilePathDatabase$FileMeta;)V
 
-    .line 1098
+    .line 1103
     :cond_37
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
@@ -12012,14 +12029,14 @@
 
     if-eqz v25, :cond_38
 
-    .line 1100
+    .line 1105
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     goto/16 :goto_23
 
-    .line 1102
+    .line 1107
     :cond_38
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
@@ -12029,7 +12046,7 @@
 
     if-eqz v1, :cond_39
 
-    .line 1103
+    .line 1108
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     int-to-long v5, v0
@@ -12042,12 +12059,12 @@
 
     if-eqz v0, :cond_39
 
-    .line 1104
+    .line 1109
     iput-wide v5, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
     goto :goto_22
 
-    .line 1106
+    .line 1111
     :cond_39
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileTemp:Ljava/io/File;
 
@@ -12073,54 +12090,8 @@
 
     iput-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
-    .line 1108
-    :goto_22
-    iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_3b
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3b
-
-    .line 1109
-    iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
-
-    new-instance v3, Lorg/telegram/messenger/FileLoadOperation$Range;
-
-    iget-wide v9, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
-
-    iget-wide v11, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
-
-    const/4 v13, 0x0
-
-    move-object v8, v3
-
-    invoke-direct/range {v8 .. v13}, Lorg/telegram/messenger/FileLoadOperation$Range;-><init>(JJLorg/telegram/messenger/FileLoadOperation$1;)V
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 1110
-    iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
-
-    new-instance v3, Lorg/telegram/messenger/FileLoadOperation$Range;
-
-    iget-wide v9, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
-
-    iget-wide v11, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
-
-    move-object v8, v3
-
-    invoke-direct/range {v8 .. v13}, Lorg/telegram/messenger/FileLoadOperation$Range;-><init>(JJLorg/telegram/messenger/FileLoadOperation$1;)V
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_23
-
     .line 1113
-    :cond_3a
+    :goto_22
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_3b
@@ -12136,7 +12107,7 @@
 
     new-instance v3, Lorg/telegram/messenger/FileLoadOperation$Range;
 
-    const-wide/16 v9, 0x0
+    iget-wide v9, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     iget-wide v11, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
@@ -12153,6 +12124,8 @@
 
     new-instance v3, Lorg/telegram/messenger/FileLoadOperation$Range;
 
+    iget-wide v9, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
+
     iget-wide v11, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
     move-object v8, v3
@@ -12161,19 +12134,63 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1117
+    goto :goto_23
+
+    .line 1118
+    :cond_3a
+    iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_3b
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3b
+
+    .line 1119
+    iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
+
+    new-instance v3, Lorg/telegram/messenger/FileLoadOperation$Range;
+
+    const-wide/16 v9, 0x0
+
+    iget-wide v11, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
+
+    const/4 v13, 0x0
+
+    move-object v8, v3
+
+    invoke-direct/range {v8 .. v13}, Lorg/telegram/messenger/FileLoadOperation$Range;-><init>(JJLorg/telegram/messenger/FileLoadOperation$1;)V
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 1120
+    iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
+
+    new-instance v3, Lorg/telegram/messenger/FileLoadOperation$Range;
+
+    iget-wide v11, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
+
+    move-object v8, v3
+
+    invoke-direct/range {v8 .. v13}, Lorg/telegram/messenger/FileLoadOperation$Range;-><init>(JJLorg/telegram/messenger/FileLoadOperation$1;)V
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 1122
     :cond_3b
     :goto_23
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_3d
 
-    .line 1118
+    .line 1123
     iget-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
     iput-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
-    .line 1119
+    .line 1124
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -12183,7 +12200,7 @@
     :goto_24
     if-ge v3, v0, :cond_3c
 
-    .line 1122
+    .line 1127
     iget-object v4, v7, Lorg/telegram/messenger/FileLoadOperation;->notLoadedBytesRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -12192,7 +12209,7 @@
 
     check-cast v4, Lorg/telegram/messenger/FileLoadOperation$Range;
 
-    .line 1123
+    .line 1128
     iget-wide v5, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     invoke-static {v4}, Lorg/telegram/messenger/FileLoadOperation$Range;->access$100(Lorg/telegram/messenger/FileLoadOperation$Range;)J
@@ -12213,24 +12230,24 @@
 
     goto :goto_24
 
-    .line 1125
+    .line 1130
     :cond_3c
     iget-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     iput-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
-    .line 1128
+    .line 1133
     :cond_3d
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_3f
 
-    .line 1129
+    .line 1134
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-eqz v0, :cond_3e
 
-    .line 1130
+    .line 1135
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12251,7 +12268,7 @@
 
     goto :goto_25
 
-    .line 1132
+    .line 1137
     :cond_3e
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -12291,7 +12308,7 @@
     :goto_25
     if-eqz v1, :cond_44
 
-    .line 1137
+    .line 1142
     new-instance v0, Ljava/io/File;
 
     iget-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->tempPath:Ljava/io/File;
@@ -12300,7 +12317,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheIvTemp:Ljava/io/File;
 
-    .line 1139
+    .line 1144
     :try_start_b
     new-instance v0, Ljava/io/RandomAccessFile;
 
@@ -12310,7 +12327,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->fiv:Ljava/io/RandomAccessFile;
 
-    .line 1140
+    .line 1145
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
     :try_end_b
     .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_b
@@ -12323,7 +12340,7 @@
 
     if-nez v25, :cond_44
 
-    .line 1141
+    .line 1146
     :try_start_c
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheIvTemp:Ljava/io/File;
 
@@ -12337,7 +12354,7 @@
 
     const-wide/16 v5, 0x40
 
-    .line 1142
+    .line 1147
     rem-long/2addr v0, v5
     :try_end_c
     .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_a
@@ -12346,7 +12363,7 @@
 
     if-nez v0, :cond_40
 
-    .line 1143
+    .line 1148
     :try_start_d
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->fiv:Ljava/io/RandomAccessFile;
 
@@ -12365,7 +12382,7 @@
     :cond_40
     const-wide/16 v3, 0x0
 
-    .line 1145
+    .line 1150
     :cond_41
     :try_start_e
     iput-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
@@ -12386,13 +12403,13 @@
 
     const-wide/16 v3, 0x0
 
-    .line 1149
+    .line 1154
     :goto_26
     iput-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     iput-wide v3, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
-    .line 1150
+    .line 1155
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isENOSPC(Ljava/lang/Exception;)Z
 
     move-result v1
@@ -12401,12 +12418,12 @@
 
     const/4 v1, 0x1
 
-    .line 1151
+    .line 1156
     invoke-static {v1}, Lorg/telegram/ui/LaunchActivity;->checkFreeDiscSpaceStatic(I)V
 
     const/4 v1, 0x0
 
-    .line 1152
+    .line 1157
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     goto :goto_27
@@ -12414,28 +12431,28 @@
     :cond_42
     const/4 v1, 0x0
 
-    .line 1153
+    .line 1158
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isEROFS(Ljava/lang/Exception;)Z
 
     move-result v3
 
     if-eqz v3, :cond_43
 
-    .line 1154
+    .line 1159
     iget-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-static {v3}, Lorg/telegram/messenger/SharedConfig;->checkSdCard(Ljava/io/File;)V
 
-    .line 1155
+    .line 1160
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     goto :goto_27
 
-    .line 1157
+    .line 1162
     :cond_43
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1161
+    .line 1166
     :cond_44
     :goto_27
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
@@ -12456,14 +12473,14 @@
 
     if-lez v0, :cond_45
 
-    .line 1162
+    .line 1167
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/FileLoadOperation;->copyNotLoadedRanges()V
 
-    .line 1164
+    .line 1169
     :cond_45
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/FileLoadOperation;->updateProgress()V
 
-    .line 1166
+    .line 1171
     :try_start_f
     new-instance v0, Ljava/io/RandomAccessFile;
 
@@ -12473,7 +12490,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->fileOutputStream:Ljava/io/RandomAccessFile;
 
-    .line 1167
+    .line 1172
     iget-wide v1, v7, Lorg/telegram/messenger/FileLoadOperation;->downloadedBytes:J
 
     const-wide/16 v3, 0x0
@@ -12482,7 +12499,7 @@
 
     if-eqz v3, :cond_46
 
-    .line 1168
+    .line 1173
     invoke-virtual {v0, v1, v2}, Ljava/io/RandomAccessFile;->seek(J)V
     :try_end_f
     .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_c
@@ -12499,10 +12516,10 @@
 
     const/4 v1, 0x0
 
-    .line 1171
+    .line 1176
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1172
+    .line 1177
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isENOSPC(Ljava/lang/Exception;)Z
 
     move-result v2
@@ -12511,12 +12528,12 @@
 
     const/4 v2, 0x1
 
-    .line 1173
+    .line 1178
     invoke-static {v2}, Lorg/telegram/ui/LaunchActivity;->checkFreeDiscSpaceStatic(I)V
 
     const/4 v3, -0x1
 
-    .line 1174
+    .line 1179
     invoke-virtual {v7, v2, v3}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     return v1
@@ -12526,43 +12543,43 @@
 
     const/4 v3, -0x1
 
-    .line 1176
+    .line 1181
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isEROFS(Ljava/lang/Exception;)Z
 
     move-result v4
 
     if-eqz v4, :cond_48
 
-    .line 1177
+    .line 1182
     iget-object v4, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->checkSdCard(Ljava/io/File;)V
 
-    .line 1178
+    .line 1183
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1179
+    .line 1184
     invoke-virtual {v7, v2, v3}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     return v1
 
-    .line 1183
+    .line 1188
     :cond_48
     :goto_28
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->fileOutputStream:Ljava/io/RandomAccessFile;
 
     if-nez v0, :cond_49
 
-    .line 1184
+    .line 1189
     invoke-virtual {v7, v2, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     return v1
 
-    .line 1187
+    .line 1192
     :cond_49
     iput-boolean v2, v7, Lorg/telegram/messenger/FileLoadOperation;->started:Z
 
-    .line 1188
+    .line 1193
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda16;
@@ -12582,22 +12599,22 @@
 
     move v1, v9
 
-    .line 1202
+    .line 1207
     iput-boolean v2, v7, Lorg/telegram/messenger/FileLoadOperation;->started:Z
 
-    .line 1204
+    .line 1209
     :try_start_10
     invoke-direct {v7, v1, v2, v1}, Lorg/telegram/messenger/FileLoadOperation;->onFinishLoadingFile(ZIZ)V
     :try_end_10
     .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_e
 
-    .line 1205
+    .line 1210
     :try_start_11
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->pathSaveData:Lorg/telegram/messenger/FilePathDatabase$PathData;
 
     if-eqz v0, :cond_4b
 
-    .line 1206
+    .line 1211
     iget-object v1, v7, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
@@ -12621,11 +12638,11 @@
     :catch_e
     move-exception v0
 
-    .line 1209
+    .line 1214
     :goto_29
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 1210
+    .line 1215
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isENOSPC(Ljava/lang/Exception;)Z
 
     move-result v1
@@ -12634,12 +12651,12 @@
 
     const/4 v1, 0x1
 
-    .line 1211
+    .line 1216
     invoke-static {v1}, Lorg/telegram/ui/LaunchActivity;->checkFreeDiscSpaceStatic(I)V
 
     const/4 v2, -0x1
 
-    .line 1212
+    .line 1217
     invoke-virtual {v7, v1, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     goto :goto_2a
@@ -12649,7 +12666,7 @@
 
     const/4 v2, -0x1
 
-    .line 1213
+    .line 1218
     :goto_2a
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isEROFS(Ljava/lang/Exception;)Z
 
@@ -12657,12 +12674,12 @@
 
     if-eqz v0, :cond_4d
 
-    .line 1214
+    .line 1219
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->cacheFileFinal:Ljava/io/File;
 
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->checkSdCard(Ljava/io/File;)V
 
-    .line 1215
+    .line 1220
     invoke-virtual {v7, v1, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     const/4 v2, 0x0
@@ -12672,7 +12689,7 @@
     :cond_4d
     const/4 v2, 0x0
 
-    .line 1218
+    .line 1223
     invoke-virtual {v7, v1, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     :goto_2b
@@ -12684,7 +12701,7 @@
 
     move v2, v9
 
-    .line 899
+    .line 904
     invoke-virtual {v7, v1, v2}, Lorg/telegram/messenger/FileLoadOperation;->onFail(ZI)V
 
     return v2
@@ -12695,12 +12712,12 @@
 
     move-object/from16 v7, p0
 
-    .line 2100
+    .line 2105
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v0, :cond_1
 
-    .line 2101
+    .line 2106
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-eqz v0, :cond_1
@@ -12735,7 +12752,7 @@
 
     goto :goto_0
 
-    .line 2102
+    .line 2107
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -12745,12 +12762,12 @@
 
     throw v0
 
-    .line 2105
+    .line 2110
     :cond_1
     :goto_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    .line 2108
+    .line 2113
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->paused:Z
 
     if-nez v0, :cond_2b
@@ -12787,7 +12804,7 @@
 
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
-    .line 2109
+    .line 2114
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -12823,7 +12840,7 @@
 
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
-    .line 2110
+    .line 2115
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -12832,7 +12849,7 @@
 
     goto/16 :goto_17
 
-    .line 2117
+    .line 2122
     :cond_3
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isStory:Z
 
@@ -12840,7 +12857,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2118
+    .line 2123
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
 
     iget-object v1, v7, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
@@ -12860,7 +12877,7 @@
 
     goto :goto_2
 
-    .line 2120
+    .line 2125
     :cond_4
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->streamPriorityStartOffset:J
 
@@ -12887,7 +12904,7 @@
 
     if-lez v0, :cond_6
 
-    .line 2121
+    .line 2126
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentMaxDownloadRequests:I
 
     iget-object v1, v7, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
@@ -12913,14 +12930,14 @@
     :goto_3
     if-ge v13, v12, :cond_2a
 
-    .line 2127
+    .line 2132
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     const/4 v14, 0x2
 
     if-eqz v0, :cond_f
 
-    .line 2128
+    .line 2133
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->moovFound:I
 
     if-eqz v0, :cond_7
@@ -12931,12 +12948,12 @@
 
     if-gtz v0, :cond_7
 
-    .line 2129
+    .line 2134
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     return-void
 
-    .line 2134
+    .line 2139
     :cond_7
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->nextPreloadDownloadOffset:J
 
@@ -12948,7 +12965,7 @@
 
     const/high16 v0, 0x200000
 
-    .line 2137
+    .line 2142
     iget v1, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     div-int/2addr v0, v1
@@ -12960,7 +12977,7 @@
     :goto_4
     if-eqz v0, :cond_b
 
-    .line 2139
+    .line 2144
     iget-object v3, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -12979,7 +12996,7 @@
 
     goto :goto_6
 
-    .line 2143
+    .line 2148
     :cond_8
     iget v3, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
@@ -12987,7 +13004,7 @@
 
     add-long/2addr v1, v4
 
-    .line 2144
+    .line 2149
     iget-wide v4, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
     cmp-long v6, v1, v4
@@ -12996,7 +13013,7 @@
 
     goto :goto_5
 
-    .line 2147
+    .line 2152
     :cond_9
     iget v6, v7, Lorg/telegram/messenger/FileLoadOperation;->moovFound:I
 
@@ -13016,7 +13033,7 @@
 
     int-to-long v1, v3
 
-    .line 2148
+    .line 2153
     div-long/2addr v4, v1
 
     int-to-long v1, v3
@@ -13041,7 +13058,7 @@
     :goto_6
     if-nez v2, :cond_c
 
-    .line 2152
+    .line 2157
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -13050,23 +13067,23 @@
 
     if-eqz v2, :cond_c
 
-    .line 2153
+    .line 2158
     invoke-direct {v7, v11, v11, v11}, Lorg/telegram/messenger/FileLoadOperation;->onFinishLoadingFile(ZIZ)V
 
-    .line 2158
+    .line 2163
     :cond_c
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
     if-nez v2, :cond_d
 
-    .line 2159
+    .line 2164
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
-    .line 2161
+    .line 2166
     :cond_d
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedPreloadedBytesRanges:Ljava/util/HashMap;
 
@@ -13080,12 +13097,12 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2162
+    .line 2167
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v2, :cond_e
 
-    .line 2163
+    .line 2168
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -13118,7 +13135,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2165
+    .line 2170
     :cond_e
     iget-wide v2, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadNotRequestedBytesCount:J
 
@@ -13136,13 +13153,13 @@
 
     goto/16 :goto_b
 
-    .line 2167
+    .line 2172
     :cond_f
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_16
 
-    .line 2168
+    .line 2173
     iget-wide v1, v7, Lorg/telegram/messenger/FileLoadOperation;->streamPriorityStartOffset:J
 
     cmp-long v3, v1, v9
@@ -13154,7 +13171,7 @@
     :cond_10
     iget-wide v1, v7, Lorg/telegram/messenger/FileLoadOperation;->streamStartOffset:J
 
-    .line 2169
+    .line 2174
     :goto_7
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -13173,7 +13190,7 @@
     :goto_8
     if-ge v5, v0, :cond_13
 
-    .line 2173
+    .line 2178
     iget-object v6, v7, Lorg/telegram/messenger/FileLoadOperation;->notRequestedBytesRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -13186,7 +13203,7 @@
 
     if-eqz v17, :cond_12
 
-    .line 2175
+    .line 2180
     invoke-static {v6}, Lorg/telegram/messenger/FileLoadOperation$Range;->access$000(Lorg/telegram/messenger/FileLoadOperation$Range;)J
 
     move-result-wide v17
@@ -13207,7 +13224,7 @@
 
     goto :goto_9
 
-    .line 2180
+    .line 2185
     :cond_11
     invoke-static {v6}, Lorg/telegram/messenger/FileLoadOperation$Range;->access$000(Lorg/telegram/messenger/FileLoadOperation$Range;)J
 
@@ -13225,12 +13242,12 @@
 
     if-gez v17, :cond_12
 
-    .line 2181
+    .line 2186
     invoke-static {v6}, Lorg/telegram/messenger/FileLoadOperation$Range;->access$000(Lorg/telegram/messenger/FileLoadOperation$Range;)J
 
     move-result-wide v14
 
-    .line 2184
+    .line 2189
     :cond_12
     invoke-static {v6}, Lorg/telegram/messenger/FileLoadOperation$Range;->access$000(Lorg/telegram/messenger/FileLoadOperation$Range;)J
 
@@ -13269,7 +13286,7 @@
 
     goto :goto_a
 
-    .line 2191
+    .line 2196
     :cond_15
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -13278,13 +13295,13 @@
     :cond_16
     move/from16 v16, v12
 
-    .line 2197
+    .line 2202
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
     :goto_a
     move-wide v8, v0
 
-    .line 2200
+    .line 2205
     :goto_b
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadPrefixSize:I
 
@@ -13302,12 +13319,12 @@
 
     if-eqz v0, :cond_17
 
-    .line 2201
+    .line 2206
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     goto/16 :goto_16
 
-    .line 2206
+    .line 2211
     :cond_17
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
@@ -13325,12 +13342,12 @@
 
     if-ltz v0, :cond_18
 
-    .line 2207
+    .line 2212
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     goto/16 :goto_16
 
-    .line 2212
+    .line 2217
     :cond_18
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
@@ -13340,7 +13357,7 @@
 
     if-eqz v1, :cond_19
 
-    .line 2213
+    .line 2218
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     int-to-long v2, v0
@@ -13355,10 +13372,10 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/messenger/FileLoadOperation;->addPart(Ljava/util/ArrayList;JJZ)V
 
-    .line 2214
+    .line 2219
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    .line 2220
+    .line 2225
     :cond_19
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->totalBytesCount:J
 
@@ -13404,7 +13421,7 @@
 
     if-ne v6, v0, :cond_1d
 
-    .line 2224
+    .line 2229
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestsCount:I
 
     const/4 v1, 0x2
@@ -13425,7 +13442,7 @@
     :cond_1d
     move v14, v6
 
-    .line 2230
+    .line 2235
     :goto_e
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isForceRequest:Z
 
@@ -13438,26 +13455,26 @@
     :cond_1e
     const/4 v0, 0x0
 
-    .line 2231
+    .line 2236
     :goto_f
     iget-boolean v1, v7, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
     if-eqz v1, :cond_1f
 
-    .line 2232
+    .line 2237
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFile;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFile;-><init>()V
 
-    .line 2233
+    .line 2238
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->cdnToken:[B
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFile;->file_token:[B
 
-    .line 2234
+    .line 2239
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFile;->offset:J
 
-    .line 2235
+    .line 2240
     iget v2, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getCdnFile;->limit:I
@@ -13471,61 +13488,61 @@
 
     goto :goto_11
 
-    .line 2239
+    .line 2244
     :cond_1f
     iget-object v1, v7, Lorg/telegram/messenger/FileLoadOperation;->webLocation:Lorg/telegram/tgnet/TLRPC$InputWebFileLocation;
 
     if-eqz v1, :cond_20
 
-    .line 2240
+    .line 2245
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getWebFile;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_upload_getWebFile;-><init>()V
 
-    .line 2241
+    .line 2246
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->webLocation:Lorg/telegram/tgnet/TLRPC$InputWebFileLocation;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getWebFile;->location:Lorg/telegram/tgnet/TLRPC$InputWebFileLocation;
 
     long-to-int v2, v8
 
-    .line 2242
+    .line 2247
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getWebFile;->offset:I
 
-    .line 2243
+    .line 2248
     iget v2, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getWebFile;->limit:I
 
     goto :goto_10
 
-    .line 2246
+    .line 2251
     :cond_20
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getFile;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_upload_getFile;-><init>()V
 
-    .line 2247
+    .line 2252
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->location:Lorg/telegram/tgnet/TLRPC$InputFileLocation;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getFile;->location:Lorg/telegram/tgnet/TLRPC$InputFileLocation;
 
-    .line 2248
+    .line 2253
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getFile;->offset:J
 
-    .line 2249
+    .line 2254
     iget v2, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getFile;->limit:I
 
     const/4 v2, 0x1
 
-    .line 2250
+    .line 2255
     iput-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_upload_getFile;->cdn_supported:Z
 
     goto :goto_10
 
-    .line 2254
+    .line 2259
     :goto_11
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
@@ -13537,33 +13554,33 @@
 
     iput-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestedBytesCount:J
 
-    .line 2255
+    .line 2260
     new-instance v10, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     invoke-direct {v10}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;-><init>()V
 
-    .line 2256
+    .line 2261
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2257
+    .line 2262
     invoke-static {v10, v8, v9}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$802(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;J)J
 
-    .line 2258
+    .line 2263
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentDownloadChunkSize:I
 
     iput v0, v10, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->chunkSize:I
 
-    .line 2259
+    .line 2264
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->forceSmallChunk:Z
 
     invoke-static {v10, v0}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$902(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)Z
 
-    .line 2260
+    .line 2265
     iput v14, v10, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->connectionType:I
 
-    .line 2262
+    .line 2267
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isPreloadVideoOperation:Z
 
     if-nez v0, :cond_23
@@ -13580,7 +13597,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 2263
+    .line 2268
     invoke-static {v10}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
 
     move-result-wide v1
@@ -13597,14 +13614,14 @@
 
     if-eqz v0, :cond_23
 
-    .line 2265
+    .line 2270
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_upload_file;-><init>()V
 
     invoke-static {v10, v1}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$502(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_upload_file;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
-    .line 2267
+    .line 2272
     :try_start_0
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
@@ -13622,7 +13639,7 @@
 
     goto :goto_12
 
-    .line 2268
+    .line 2273
     :cond_21
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -13632,7 +13649,7 @@
 
     throw v0
 
-    .line 2270
+    .line 2275
     :cond_22
     :goto_12
     new-instance v1, Lorg/telegram/tgnet/NativeByteBuffer;
@@ -13645,7 +13662,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 2271
+    .line 2276
     iget-object v2, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoadOperation$PreloadRange;->access$1100(Lorg/telegram/messenger/FileLoadOperation$PreloadRange;)J
@@ -13654,7 +13671,7 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 2272
+    .line 2277
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->preloadStream:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
@@ -13665,7 +13682,7 @@
 
     invoke-virtual {v0, v2}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;)I
 
-    .line 2273
+    .line 2278
     iget-object v0, v1, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -13675,14 +13692,14 @@
     :try_start_1
     invoke-virtual {v0, v8}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 2274
+    .line 2279
     invoke-static {v10}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     move-result-object v0
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$upload_File;->bytes:Lorg/telegram/tgnet/NativeByteBuffer;
 
-    .line 2275
+    .line 2280
     sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/messenger/FileLoadOperation$$ExternalSyntheticLambda6;
@@ -13703,7 +13720,7 @@
     :cond_23
     const/4 v8, 0x0
 
-    .line 2286
+    .line 2291
     :catch_1
     iget-wide v0, v7, Lorg/telegram/messenger/FileLoadOperation;->streamPriorityStartOffset:J
 
@@ -13713,12 +13730,12 @@
 
     if-eqz v0, :cond_25
 
-    .line 2287
+    .line 2292
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v0, :cond_24
 
-    .line 2288
+    .line 2293
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -13740,10 +13757,10 @@
     :cond_24
     const-wide/16 v11, 0x0
 
-    .line 2290
+    .line 2295
     iput-wide v11, v7, Lorg/telegram/messenger/FileLoadOperation;->streamPriorityStartOffset:J
 
-    .line 2291
+    .line 2296
     iput-object v10, v7, Lorg/telegram/messenger/FileLoadOperation;->priorityRequestInfo:Lorg/telegram/messenger/FileLoadOperation$RequestInfo;
 
     goto :goto_13
@@ -13751,7 +13768,7 @@
     :cond_25
     const-wide/16 v11, 0x0
 
-    .line 2293
+    .line 2298
     :goto_13
     iget-object v0, v7, Lorg/telegram/messenger/FileLoadOperation;->location:Lorg/telegram/tgnet/TLRPC$InputFileLocation;
 
@@ -13759,42 +13776,42 @@
 
     if-eqz v1, :cond_26
 
-    .line 2294
+    .line 2299
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerPhotoFileLocation;
 
-    .line 2295
+    .line 2300
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerPhotoFileLocation;->photo_id:J
 
     cmp-long v0, v0, v11
 
     if-nez v0, :cond_26
 
-    .line 2296
+    .line 2301
     invoke-direct {v7, v10}, Lorg/telegram/messenger/FileLoadOperation;->requestReference(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)V
 
     const/4 v1, 0x1
 
     goto/16 :goto_15
 
-    .line 2300
+    .line 2305
     :cond_26
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->forceSmallChunk:Z
 
     invoke-static {v10, v0}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$902(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)Z
 
-    .line 2301
+    .line 2306
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_27
 
-    .line 2302
+    .line 2307
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, v10, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->requestStartTime:J
 
-    .line 2304
+    .line 2309
     :cond_27
     iget-boolean v0, v7, Lorg/telegram/messenger/FileLoadOperation;->isCdn:Z
 
@@ -13810,7 +13827,7 @@
     :goto_14
     move v9, v0
 
-    .line 2305
+    .line 2310
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -13847,12 +13864,12 @@
 
     invoke-static {v10, v0}, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->access$402(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;I)I
 
-    .line 2427
+    .line 2432
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_29
 
-    .line 2428
+    .line 2433
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -13911,7 +13928,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2430
+    .line 2435
     :cond_29
     iget v0, v7, Lorg/telegram/messenger/FileLoadOperation;->requestsCount:I
 
@@ -13938,7 +13955,7 @@
     :goto_16
     return-void
 
-    .line 2111
+    .line 2116
     :cond_2b
     :goto_17
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
@@ -13949,7 +13966,7 @@
 .method public updateProgress()V
     .locals 8
 
-    .line 1226
+    .line 1231
     iget-object v0, p0, Lorg/telegram/messenger/FileLoadOperation;->delegate:Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;
 
     if-eqz v0, :cond_0
@@ -13970,7 +13987,7 @@
 
     move-object v1, p0
 
-    .line 1227
+    .line 1232
     invoke-interface/range {v0 .. v5}, Lorg/telegram/messenger/FileLoadOperation$FileLoadOperationDelegate;->didChangedLoadProgress(Lorg/telegram/messenger/FileLoadOperation;JJ)V
 
     :cond_0

@@ -272,7 +272,7 @@
 
     const/high16 v11, 0x41900000    # 18.0f
 
-    invoke-virtual {v9, v8, v11}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v9, v8, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 347
     iget-object v9, v0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ColorPicker;->colorEditText:[Lorg/telegram/ui/Components/EditTextBoldCursor;

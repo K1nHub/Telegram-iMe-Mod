@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$67;)V
     .locals 0
 
-    .line 13571
+    .line 13838
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 13574
+    .line 13841
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$67;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -52,7 +52,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 13575
+    .line 13842
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$67;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -69,7 +69,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 13580
+    .line 13847
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$67;->this$0:Lorg/telegram/ui/PhotoViewer;

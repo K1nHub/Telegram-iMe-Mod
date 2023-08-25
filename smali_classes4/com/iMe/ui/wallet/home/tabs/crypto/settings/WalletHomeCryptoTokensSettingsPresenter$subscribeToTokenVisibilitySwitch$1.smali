@@ -57,7 +57,7 @@
 
     invoke-static {v13, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 404
+    .line 411
     iget-object v1, v0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;
 
     invoke-static {v1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;->access$getItems$p(Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;)Ljava/util/List;
@@ -66,12 +66,12 @@
 
     iget-object v15, v0, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter;
 
-    .line 406
+    .line 413
     invoke-interface {v14, v13}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
     move-result v12
 
-    .line 407
+    .line 414
     invoke-virtual/range {p1 .. p1}, Lcom/iMe/model/wallet/home/FoundTokenItem;->isEnabled()Z
 
     move-result v1
@@ -108,10 +108,10 @@
 
     move-result-object v1
 
-    .line 405
+    .line 412
     invoke-interface {v14, v0, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 409
+    .line 416
     invoke-virtual {v15}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -126,7 +126,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 403
+    .line 410
     check-cast p1, Lcom/iMe/model/wallet/home/FoundTokenItem;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$1;->invoke(Lcom/iMe/model/wallet/home/FoundTokenItem;)Lcom/iMe/model/wallet/home/FoundTokenItem;

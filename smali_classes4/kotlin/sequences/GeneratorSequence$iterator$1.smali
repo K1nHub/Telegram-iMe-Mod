@@ -193,7 +193,7 @@
     .line 601
     iget-object v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
-    const-string v1, "null cannot be cast to non-null type T of kotlin.sequences.GeneratorSequence"
+    const-string/jumbo v1, "null cannot be cast to non-null type T of kotlin.sequences.GeneratorSequence"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

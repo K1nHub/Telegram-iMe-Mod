@@ -45,6 +45,9 @@
 .method public abstract isInScheduleMode()Z
 .end method
 
+.method public abstract isPhotoEditor()Z
+.end method
+
 .method public abstract isStoryReply()Z
 .end method
 

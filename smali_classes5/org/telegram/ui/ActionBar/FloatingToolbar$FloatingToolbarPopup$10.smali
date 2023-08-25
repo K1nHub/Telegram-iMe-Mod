@@ -17,25 +17,25 @@
 # instance fields
 .field final synthetic this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
-.field final synthetic val$overflowButtonStartX:F
+.field final synthetic val$bottom:F
 
-.field final synthetic val$overflowButtonTargetX:F
+.field final synthetic val$startHeight:I
 
-.field final synthetic val$startWidth:I
+.field final synthetic val$targetHeight:I
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;FFI)V
+.method constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;IIF)V
     .locals 0
 
-    .line 628
+    .line 712
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
-    iput p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$overflowButtonStartX:F
+    iput p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$targetHeight:I
 
-    iput p3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$overflowButtonTargetX:F
+    iput p3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$startHeight:I
 
-    iput p4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$startWidth:I
+    iput p4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$bottom:F
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
@@ -45,60 +45,73 @@
 
 # virtual methods
 .method protected applyTransformation(FLandroid/view/animation/Transformation;)V
-    .locals 1
+    .locals 2
 
-    .line 631
-    iget p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$overflowButtonStartX:F
+    .line 715
+    iget p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$targetHeight:I
 
-    iget v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$overflowButtonTargetX:F
+    iget v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$startHeight:I
 
-    sub-float/2addr v0, p2
+    sub-int/2addr p2, v0
 
-    mul-float/2addr p1, v0
+    int-to-float p2, p2
 
-    add-float/2addr p2, p1
+    mul-float/2addr p1, p2
 
-    .line 632
+    float-to-int p1, p1
+
+    .line 716
+    iget-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$400(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/view/ViewGroup;
+
+    move-result-object v0
+
+    iget v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$startHeight:I
+
+    add-int/2addr v1, p1
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$1900(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/view/View;I)V
+
+    .line 717
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$1300(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$2000(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
+    .line 718
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$400(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/view/ViewGroup;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getWidth()I
+    iget p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$bottom:F
 
-    move-result p1
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
-    iget v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->val$startWidth:I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$400(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/view/ViewGroup;
 
-    sub-int/2addr p1, v0
+    move-result-object v0
 
-    int-to-float p1, p1
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getHeight()I
 
-    :goto_0
-    add-float/2addr p2, p1
+    move-result v0
 
-    .line 634
+    int-to-float v0, v0
+
+    sub-float/2addr p2, v0
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setY(F)V
+
+    .line 719
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$1900(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/widget/ImageButton;
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$2100(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
 
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Landroid/widget/ImageButton;->setX(F)V
-
+    :cond_0
     return-void
 .end method

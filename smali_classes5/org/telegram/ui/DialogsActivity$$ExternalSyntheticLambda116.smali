@@ -39,7 +39,7 @@
 
     iget-boolean v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda116;->f$2:Z
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$k0Mcaa5Wu_Q0h_DSFK7IfUmFvUM(Lorg/telegram/ui/DialogsActivity;JZ)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Xdk9MFy81E02pui0OIemCKrRc2Y(Lorg/telegram/ui/DialogsActivity;JZ)V
 
     return-void
 .end method

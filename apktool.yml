@@ -1,5 +1,5 @@
 !!brut.androlib.apk.ApkInfo
-apkFileName: iMe+Direct+9.7.4.apk
+apkFileName: ime_android_10_0_1.apk
 doNotCompress:
 - resources.arsc
 - png
@@ -131,11 +131,11 @@ doNotCompress:
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
-  renameManifestPackage: org.telegram.messenger
+  renameManifestPackage: null
 resourcesAreCompressed: false
 sdkInfo:
   minSdkVersion: '23'
-  targetSdkVersion: '31'
+  targetSdkVersion: '33'
 sharedLibrary: false
 sparseResources: true
 unknownFiles:
@@ -357,5 +357,5 @@ usesFramework:
   tag: null
 version: 2.8.1
 versionInfo:
-  versionCode: '970409'
-  versionName: 9.7.4
+  versionCode: '1000109'
+  versionName: 10.0.1

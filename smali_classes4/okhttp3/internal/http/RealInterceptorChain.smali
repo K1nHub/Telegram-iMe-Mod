@@ -343,7 +343,7 @@
 
     const-string v1, " must call proceed() exactly once"
 
-    const-string v4, "network interceptor "
+    const-string/jumbo v4, "network interceptor "
 
     if-eqz v0, :cond_4
 

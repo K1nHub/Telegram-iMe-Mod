@@ -30,6 +30,8 @@
 
 .field final entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
+.field private entryDestroyed:Z
+
 .field firstFramePath:Ljava/lang/String;
 
 .field private firstSecondSize:J
@@ -56,6 +58,14 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$5mv70vRPDy8hKbOzVMDRtLkKwc8(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->lambda$sendUploadedRequest$6(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$8RYkQksKKOFPn75S4F8JYeYlAMk(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
     .locals 0
 
@@ -64,10 +74,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$BLX9apc4-pd4TYu2mypm_VXF8Ik(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$Bm3YpP7_lVChXxxM4z3M5c4HfKU(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->lambda$sendUploadedRequest$5(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->lambda$sendUploadedRequest$3(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -88,14 +98,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YK47ZkxmZurOU7vUQpXrJ8InPJA(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->lambda$sendUploadedRequest$3(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$fsAZ3lYDGPUU7e94D2hbRz856DU(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Ljava/io/File;)V
     .locals 0
 
@@ -104,20 +106,28 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$vtTOY6LVObnpqPxYYjy5yHeyQpY(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->lambda$sendUploadedRequest$5(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
     .locals 2
 
-    .line 1314
+    .line 1432
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, -0x1
 
-    .line 1306
+    .line 1424
     iput-wide v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstSecondSize:J
 
-    .line 1315
+    .line 1433
     sget-object p1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {p1}, Ljava/security/SecureRandom;->nextLong()J
@@ -126,20 +136,20 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->random_id:J
 
-    .line 1316
+    .line 1434
     iget-boolean p1, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
 
-    .line 1317
+    .line 1435
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 1318
+    .line 1436
     iget-object p1, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->uploadThumbFile:Ljava/io/File;
 
     if-eqz p1, :cond_0
 
-    .line 1319
+    .line 1437
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p1
@@ -150,8 +160,17 @@
     return-void
 .end method
 
-.method private static synthetic lambda$sendUploadedRequest$3(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$sendUploadedRequest$3(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
+
+    .line 1770
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    new-instance p2, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;
+
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Stories/StoriesController;)V
+
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -159,7 +178,7 @@
 .method private synthetic lambda$sendUploadedRequest$4(Lorg/telegram/tgnet/TLRPC$TL_updateStory;)V
     .locals 1
 
-    .line 1620
+    .line 1778
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -179,46 +198,81 @@
     return-void
 .end method
 
-.method private synthetic lambda$sendUploadedRequest$5(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 9
+.method private synthetic lambda$sendUploadedRequest$5(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    .line 1783
+    iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entryDestroyed:Z
+
+    .line 1784
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->getDraftsController()Lorg/telegram/ui/Stories/recorder/DraftsController;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    invoke-virtual {v0, v1, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/DraftsController;->saveForEdit(Lorg/telegram/ui/Stories/recorder/StoryEntry;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+
+    .line 1785
+    iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
+
+    if-nez p1, :cond_0
+
+    .line 1786
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->invalidateStoryLimit()V
+
+    :cond_0
+    return-void
+.end method
+
+.method private synthetic lambda$sendUploadedRequest$6(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 10
 
     if-eqz p1, :cond_9
 
-    .line 1578
+    .line 1732
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
     const/4 p2, 0x0
 
     const/4 v0, 0x0
 
+    move-object v3, p2
+
     move v1, v0
 
     move v2, v1
 
-    .line 1581
+    .line 1735
     :goto_0
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
+    iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v4
 
-    if-ge v1, v3, :cond_5
+    if-ge v1, v4, :cond_5
 
-    .line 1582
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
+    .line 1736
+    iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_updateStory;
+    instance-of v4, v4, Lorg/telegram/tgnet/TLRPC$TL_updateStory;
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    .line 1583
+    .line 1737
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -227,176 +281,200 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_updateStory;
 
-    .line 1584
+    .line 1738
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
-    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
+    iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
-    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
+    iput-object v4, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
 
-    .line 1585
-    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstFramePath:Ljava/lang/String;
+    .line 1739
+    iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstFramePath:Ljava/lang/String;
 
-    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
+    iput-object v4, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
 
-    .line 1586
-    iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
+    .line 1740
+    iget-boolean v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
 
-    xor-int/2addr v3, v4
+    xor-int/2addr v4, v5
 
-    iput-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->justUploaded:Z
+    iput-boolean v4, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->justUploaded:Z
 
-    .line 1587
-    iget v3, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    .line 1741
+    iget v4, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
 
-    if-nez p2, :cond_0
+    if-nez v3, :cond_0
 
-    move-object p2, v2
-
-    :cond_0
-    move v2, v3
-
-    .line 1592
-    :cond_1
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_updateStoryID;
-
-    if-eqz v3, :cond_4
-
-    .line 1593
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_updateStoryID;
-
-    if-nez p2, :cond_4
-
-    .line 1595
-    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_storyItem;
-
-    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_storyItem;-><init>()V
-
-    .line 1596
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
-
-    invoke-static {v5}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
-
-    move-result v5
-
-    invoke-static {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
-
-    move-result v5
-
-    iput v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
-
-    .line 1597
-    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
-
-    iget v7, v6, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
-
-    const v8, 0x7fffffff
-
-    if-ne v7, v8, :cond_2
-
-    const v7, 0x15180
-
-    :cond_2
-    add-int/2addr v5, v7
-
-    iput v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->expire_date:I
-
-    .line 1598
-    iget-object v5, v6, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
-
-    invoke-static {v5}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->toOutput(Ljava/util/ArrayList;)Ljava/util/ArrayList;
-
-    move-result-object v5
-
-    iput-object v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->privacy:Ljava/util/ArrayList;
-
-    .line 1599
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
-
-    iget v5, v5, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
-
-    if-ne v5, v8, :cond_3
-
-    move v5, v4
+    move-object v3, v2
 
     goto :goto_1
 
-    :cond_3
-    move v5, v0
+    .line 1745
+    :cond_0
+    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+
+    iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     :goto_1
-    iput-boolean v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->pinned:Z
+    move v2, v4
 
-    .line 1600
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+    .line 1748
+    :cond_1
+    iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
-    invoke-static {v5}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result v5
+    move-result-object v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    instance-of v4, v4, Lorg/telegram/tgnet/TLRPC$TL_updateStoryID;
 
-    move-result-object v5
+    if-eqz v4, :cond_4
 
-    iget-wide v5, v5, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+    .line 1749
+    iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
-    iput-wide v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    .line 1601
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
+    move-result-object v4
 
-    iput-object v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
+    check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_updateStoryID;
 
-    .line 1602
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstFramePath:Ljava/lang/String;
+    if-nez v3, :cond_4
 
-    iput-object v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
+    .line 1751
+    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_storyItem;
 
-    .line 1603
-    iget v3, v3, Lorg/telegram/tgnet/TLRPC$TL_updateStoryID;->id:I
+    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_storyItem;-><init>()V
 
-    iput v3, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    .line 1752
+    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    .line 1604
-    iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
+    invoke-static {v6}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
 
-    xor-int/2addr v3, v4
+    move-result v6
 
-    iput-boolean v3, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->justUploaded:Z
+    invoke-static {v6}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
+
+    move-result v6
+
+    iput v6, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
+
+    .line 1753
+    iget-object v7, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    iget v8, v7, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
+
+    const v9, 0x7fffffff
+
+    if-ne v8, v9, :cond_2
+
+    const v8, 0x15180
+
+    :cond_2
+    add-int/2addr v6, v8
+
+    iput v6, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->expire_date:I
+
+    .line 1754
+    iput-object p2, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->parsedPrivacy:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
+
+    .line 1755
+    iget-object v6, v7, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
+
+    invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->toOutput(Ljava/util/ArrayList;)Ljava/util/ArrayList;
+
+    move-result-object v6
+
+    iput-object v6, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->privacy:Ljava/util/ArrayList;
+
+    .line 1756
+    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    iget v6, v6, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
+
+    if-ne v6, v9, :cond_3
+
+    move v6, v5
+
+    goto :goto_2
+
+    :cond_3
+    move v6, v0
+
+    :goto_2
+    iput-boolean v6, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->pinned:Z
+
+    .line 1757
+    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-static {v6}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
+
+    move-result v6
+
+    invoke-static {v6}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v6
+
+    iget-wide v6, v6, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+
+    iput-wide v6, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+
+    .line 1758
+    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
+
+    iput-object v6, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
+
+    .line 1759
+    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstFramePath:Ljava/lang/String;
+
+    iput-object v6, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
+
+    .line 1760
+    iget v4, v4, Lorg/telegram/tgnet/TLRPC$TL_updateStoryID;->id:I
+
+    iput v4, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+
+    .line 1761
+    iget-boolean v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
+
+    xor-int/2addr v4, v5
+
+    iput-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->justUploaded:Z
 
     :cond_4
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    .line 1608
+    .line 1765
     :cond_5
-    iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->canceled:Z
+    iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    if-eqz v0, :cond_6
+    invoke-static {p2}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
 
-    .line 1609
+    move-result p2
+
+    invoke-static {p2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object p2
+
+    iget-wide v0, p2, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+
+    .line 1766
+    iget-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->canceled:Z
+
+    if-eqz p2, :cond_6
+
+    .line 1767
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;-><init>()V
 
-    .line 1610
+    .line 1768
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;->id:Ljava/util/ArrayList;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -405,7 +483,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1611
+    .line 1769
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -416,55 +494,52 @@
 
     move-result-object p2
 
-    sget-object v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda6;
+    new-instance v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda7;
+
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_6
     if-eqz v2, :cond_7
 
-    .line 1615
-    iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
+    .line 1773
+    iget-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
 
-    if-eqz v0, :cond_8
-
-    :cond_7
     if-eqz p2, :cond_8
 
-    .line 1616
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateStory;
+    :cond_7
+    if-eqz v3, :cond_8
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateStory;-><init>()V
+    .line 1774
+    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_updateStory;
 
-    .line 1617
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_updateStory;-><init>()V
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
+    .line 1775
+    iput-wide v0, p2, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->user_id:J
 
-    move-result v1
+    .line 1776
+    iput-object v3, p2, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
-    invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    .line 1777
+    new-instance v2, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda4;
 
-    move-result-object v1
+    invoke-direct {v2, p0, p2}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Lorg/telegram/tgnet/TLRPC$TL_updateStory;)V
 
-    iget-wide v1, v1, Lorg/telegram/messenger/UserConfig;->clientUserId:J
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->user_id:J
+    .line 1782
+    :cond_8
+    new-instance p2, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;
 
-    .line 1618
-    iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
-
-    .line 1619
-    new-instance p2, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda3;
-
-    invoke-direct {p2, p0, v0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Lorg/telegram/tgnet/TLRPC$TL_updateStory;)V
+    invoke-direct {p2, p0, v0, v1, v3}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1623
-    :cond_8
+    .line 1789
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -487,9 +562,9 @@
 
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->processUpdateArray(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZI)Z
 
-    .line 1627
+    .line 1793
     :cond_9
-    :goto_2
+    :goto_3
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
@@ -502,15 +577,15 @@
 .method private synthetic lambda$start$0(Lorg/telegram/messenger/VideoEditedInfo;)V
     .locals 4
 
-    .line 1352
+    .line 1470
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->info:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 1353
+    .line 1471
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     iput-object p1, v0, Lorg/telegram/messenger/MessageObject;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 1354
+    .line 1472
     iget-wide v0, p1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
 
     const-wide/16 v2, 0x3e8
@@ -519,7 +594,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->duration:J
 
-    .line 1355
+    .line 1473
     invoke-virtual {p1}, Lorg/telegram/messenger/VideoEditedInfo;->needConvert()Z
 
     move-result p1
@@ -528,7 +603,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1356
+    .line 1474
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -539,7 +614,7 @@
 
     goto :goto_0
 
-    .line 1358
+    .line 1476
     :cond_0
     new-instance p1, Ljava/io/File;
 
@@ -563,7 +638,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1360
+    .line 1478
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -588,7 +663,7 @@
 .method private synthetic lambda$start$1()V
     .locals 0
 
-    .line 1371
+    .line 1489
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->upload()V
 
     return-void
@@ -597,12 +672,12 @@
 .method private synthetic lambda$start$2(Ljava/io/File;)V
     .locals 1
 
-    .line 1368
+    .line 1486
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->buildPhoto(Ljava/io/File;)V
 
-    .line 1369
+    .line 1487
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
@@ -617,7 +692,7 @@
 
     move-object/from16 v0, p0
 
-    .line 1632
+    .line 1798
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->shareUserIds:Ljava/util/ArrayList;
@@ -630,13 +705,13 @@
 
     goto/16 :goto_4
 
-    .line 1635
+    .line 1801
     :cond_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 1636
+    .line 1802
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
@@ -654,7 +729,7 @@
 
     move-result-object v2
 
-    .line 1637
+    .line 1803
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -697,7 +772,7 @@
     :goto_2
     if-ge v13, v1, :cond_4
 
-    .line 1639
+    .line 1805
     iget-object v4, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v4, v4, Lorg/telegram/ui/Stories/recorder/StoryEntry;->shareUserIds:Ljava/util/ArrayList;
@@ -712,7 +787,7 @@
 
     move-result-wide v8
 
-    .line 1640
+    .line 1806
     iget-object v4, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
@@ -721,7 +796,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 1641
+    .line 1807
     iget-object v4, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -787,7 +862,7 @@
     :cond_3
     move/from16 v24, v13
 
-    .line 1643
+    .line 1809
     iget-object v4, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -854,7 +929,7 @@
     :cond_4
     move v4, v14
 
-    .line 1646
+    .line 1812
     iput-boolean v4, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->putMessages:Z
 
     :cond_5
@@ -865,14 +940,14 @@
 .method private sendUploadedRequest(Lorg/telegram/tgnet/TLRPC$InputFile;)V
     .locals 6
 
-    .line 1464
+    .line 1583
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->canceled:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1467
+    .line 1586
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -891,54 +966,54 @@
 
     if-eqz p1, :cond_b
 
-    .line 1473
+    .line 1592
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 1474
+    .line 1593
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedDocument;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedDocument;-><init>()V
 
-    .line 1475
+    .line 1594
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$InputMedia;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 1476
+    .line 1595
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;-><init>()V
 
-    .line 1477
+    .line 1596
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
     invoke-static {v4, p1, v1}, Lorg/telegram/messenger/SendMessagesHelper;->fillVideoAttribute(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;Lorg/telegram/messenger/VideoEditedInfo;)V
 
-    .line 1478
+    .line 1597
     iput-boolean v2, p1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->supports_streaming:Z
 
-    .line 1479
+    .line 1598
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
     or-int/lit8 v1, v1, 0x4
 
     iput v1, p1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 1480
+    .line 1599
     iget-wide v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstSecondSize:J
 
     long-to-int v1, v4
 
     iput v1, p1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->preload_prefix_size:I
 
-    .line 1481
+    .line 1600
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$InputMedia;->attributes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1482
+    .line 1601
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->stickers:Ljava/util/List;
@@ -963,7 +1038,7 @@
 
     if-nez p1, :cond_4
 
-    .line 1483
+    .line 1602
     :cond_2
     iget p1, v0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
@@ -971,7 +1046,7 @@
 
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
-    .line 1484
+    .line 1603
     new-instance p1, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -982,17 +1057,17 @@
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$InputMedia;->stickers:Ljava/util/ArrayList;
 
-    .line 1485
+    .line 1604
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStickers:Ljava/util/List;
 
     if-eqz v1, :cond_3
 
-    .line 1486
+    .line 1605
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1488
+    .line 1607
     :cond_3
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$InputMedia;->attributes:Ljava/util/ArrayList;
 
@@ -1002,7 +1077,7 @@
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1491
+    .line 1610
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -1030,28 +1105,28 @@
 
     const-string p1, "video/mp4"
 
-    .line 1492
+    .line 1611
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$InputMedia;->mime_type:Ljava/lang/String;
 
     move-object v1, v0
 
     goto :goto_3
 
-    .line 1494
+    .line 1613
     :cond_7
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedPhoto;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedPhoto;-><init>()V
 
-    .line 1495
+    .line 1614
     iput-object p1, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 1497
+    .line 1616
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
 
     move-result-object p1
 
-    .line 1499
+    .line 1618
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
     const/16 v4, 0x2e
@@ -1064,7 +1139,7 @@
 
     if-eq v0, v4, :cond_8
 
-    .line 1501
+    .line 1620
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
     add-int/2addr v0, v2
@@ -1082,16 +1157,16 @@
     :cond_8
     const-string v0, "txt"
 
-    .line 1503
+    .line 1622
     :goto_2
     invoke-virtual {p1, v0}, Landroid/webkit/MimeTypeMap;->getMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1504
+    .line 1623
     iput-object p1, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->mime_type:Ljava/lang/String;
 
-    .line 1505
+    .line 1624
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->stickers:Ljava/util/List;
@@ -1116,7 +1191,7 @@
 
     if-nez p1, :cond_b
 
-    .line 1506
+    .line 1625
     :cond_9
     iget p1, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
@@ -1124,19 +1199,19 @@
 
     iput p1, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->flags:I
 
-    .line 1507
+    .line 1626
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStickers:Ljava/util/List;
 
     if-eqz p1, :cond_a
 
-    .line 1508
+    .line 1627
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->stickers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1510
+    .line 1629
     :cond_a
     new-instance p1, Ljava/util/ArrayList;
 
@@ -1148,9 +1223,25 @@
 
     iput-object p1, v1, Lorg/telegram/tgnet/TLRPC$InputMedia;->stickers:Ljava/util/ArrayList;
 
-    .line 1516
+    .line 1635
     :cond_b
     :goto_3
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_c
+
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1161,53 +1252,69 @@
 
     move-result-object p1
 
-    iget p1, p1, Lorg/telegram/messenger/MessagesController;->storyCaptionLengthLimit:I
+    iget p1, p1, Lorg/telegram/messenger/MessagesController;->storyCaptionLengthLimitPremium:I
 
-    .line 1517
+    goto :goto_4
+
+    :cond_c
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p1
+
+    iget p1, p1, Lorg/telegram/messenger/MessagesController;->storyCaptionLengthLimitDefault:I
+
+    .line 1636
+    :goto_4
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_16
 
-    .line 1518
+    .line 1637
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;-><init>()V
 
-    .line 1519
+    .line 1638
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget v5, v4, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStoryId:I
 
     iput v5, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->id:I
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
-    .line 1521
+    .line 1640
     iget-boolean v5, v4, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMedia:Z
 
-    if-eqz v5, :cond_c
+    if-eqz v5, :cond_d
 
-    .line 1522
+    .line 1641
     iget v5, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->flags:I
 
     or-int/2addr v5, v2
 
     iput v5, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->flags:I
 
-    .line 1523
+    .line 1642
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->media:Lorg/telegram/tgnet/TLRPC$InputMedia;
 
-    .line 1526
-    :cond_c
+    .line 1645
+    :cond_d
     iget-boolean v1, v4, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedCaption:Z
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_11
 
     iget-object v1, v4, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_11
 
-    .line 1527
+    .line 1646
     iget v4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->flags:I
 
     or-int/lit8 v4, v4, 0x2
@@ -1218,16 +1325,16 @@
 
     aput-object v1, v4, v3
 
-    .line 1529
+    .line 1648
     aget-object v1, v4, v3
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    if-le v1, p1, :cond_d
+    if-le v1, p1, :cond_e
 
-    .line 1530
+    .line 1649
     aget-object v1, v4, v3
 
     invoke-interface {v1, v3, p1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
@@ -1236,8 +1343,25 @@
 
     aput-object v1, v4, v3
 
-    .line 1532
-    :cond_d
+    .line 1651
+    :cond_e
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
+
+    move-result v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/messenger/MessagesController;->storyEntitiesAllowed()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_f
+
+    .line 1652
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1254,16 +1378,25 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->entities:Ljava/util/ArrayList;
 
-    .line 1533
+    goto :goto_5
+
+    .line 1654
+    :cond_f
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->entities:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
+
+    .line 1656
+    :goto_5
     aget-object v1, v4, v3
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    if-le v1, p1, :cond_e
+    if-le v1, p1, :cond_10
 
-    .line 1534
+    .line 1657
     aget-object v1, v4, v3
 
     invoke-interface {v1, v3, p1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
@@ -1272,8 +1405,8 @@
 
     aput-object p1, v4, v3
 
-    .line 1536
-    :cond_e
+    .line 1659
+    :cond_10
     aget-object p1, v4, v3
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -1282,45 +1415,121 @@
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->caption:Ljava/lang/String;
 
-    .line 1539
-    :cond_f
+    .line 1662
+    :cond_11
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedPrivacy:Z
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_12
 
-    .line 1540
+    .line 1663
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->flags:I
 
     or-int/lit8 v1, v1, 0x4
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->flags:I
 
-    .line 1541
+    .line 1664
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->privacy_rules:Ljava/util/ArrayList;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    goto/16 :goto_4
+    .line 1667
+    :cond_12
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 1546
-    :cond_10
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMediaAreas:Ljava/util/ArrayList;
+
+    if-eqz p1, :cond_13
+
+    .line 1668
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->media_areas:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
+    .line 1670
+    :cond_13
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
+
+    if-eqz p1, :cond_15
+
+    .line 1671
+    :goto_6
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    if-ge v3, p1, :cond_15
+
+    .line 1672
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
+
+    .line 1673
+    iget-object p1, p1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->mediaArea:Lorg/telegram/tgnet/TLRPC$MediaArea;
+
+    if-eqz p1, :cond_14
+
+    .line 1674
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->media_areas:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_14
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_6
+
+    .line 1678
+    :cond_15
+    iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->media_areas:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result p1
+
+    if-nez p1, :cond_1e
+
+    .line 1679
+    iget p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->flags:I
+
+    or-int/lit8 p1, p1, 0x8
+
+    iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_editStory;->flags:I
+
+    goto/16 :goto_a
+
+    .line 1684
+    :cond_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;-><init>()V
 
-    .line 1547
+    .line 1685
     iget-wide v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->random_id:J
 
     iput-wide v4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->random_id:J
 
-    .line 1548
+    .line 1686
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->media:Lorg/telegram/tgnet/TLRPC$InputMedia;
 
-    .line 1549
+    .line 1687
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->privacy_rules:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -1329,26 +1538,26 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1550
+    .line 1688
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v4, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->pinned:Z
 
     iput-boolean v4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->pinned:Z
 
-    .line 1551
+    .line 1689
     iget-boolean v4, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->allowScreenshots:Z
 
     xor-int/2addr v4, v2
 
     iput-boolean v4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->noforwards:Z
 
-    .line 1553
+    .line 1691
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1a
 
-    .line 1554
+    .line 1692
     iget v4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
 
     or-int/lit8 v4, v4, 0x3
@@ -1359,16 +1568,16 @@
 
     aput-object v1, v4, v3
 
-    .line 1556
+    .line 1694
     aget-object v1, v4, v3
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    if-le v1, p1, :cond_11
+    if-le v1, p1, :cond_17
 
-    .line 1557
+    .line 1695
     aget-object v1, v4, v3
 
     invoke-interface {v1, v3, p1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
@@ -1377,8 +1586,25 @@
 
     aput-object v1, v4, v3
 
-    .line 1559
-    :cond_11
+    .line 1697
+    :cond_17
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
+
+    move-result v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/messenger/MessagesController;->storyEntitiesAllowed()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_18
+
+    .line 1698
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1395,16 +1621,25 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->entities:Ljava/util/ArrayList;
 
-    .line 1560
+    goto :goto_7
+
+    .line 1700
+    :cond_18
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->entities:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
+
+    .line 1702
+    :goto_7
     aget-object v1, v4, v3
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    if-le v1, p1, :cond_12
+    if-le v1, p1, :cond_19
 
-    .line 1561
+    .line 1703
     aget-object v1, v4, v3
 
     invoke-interface {v1, v3, p1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
@@ -1413,8 +1648,8 @@
 
     aput-object p1, v4, v3
 
-    .line 1563
-    :cond_12
+    .line 1705
+    :cond_19
     aget-object p1, v4, v3
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -1423,35 +1658,96 @@
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->caption:Ljava/lang/String;
 
-    .line 1566
-    :cond_13
+    .line 1708
+    :cond_1a
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    iget p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
+    iget v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
 
-    const v1, 0x7fffffff
+    const v4, 0x7fffffff
 
-    if-ne p1, v1, :cond_14
+    if-ne v1, v4, :cond_1b
 
-    .line 1567
+    .line 1709
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->pinned:Z
 
-    goto :goto_4
+    goto :goto_8
 
-    .line 1569
-    :cond_14
-    iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
+    .line 1711
+    :cond_1b
+    iget v2, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
 
-    or-int/lit8 v1, v1, 0x8
+    or-int/lit8 v2, v2, 0x8
 
-    iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
+    iput v2, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
 
-    .line 1570
-    iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->period:I
+    .line 1712
+    iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->period:I
 
-    .line 1576
-    :cond_15
-    :goto_4
+    .line 1715
+    :goto_8
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
+
+    if-eqz p1, :cond_1e
+
+    .line 1716
+    :goto_9
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    if-ge v3, p1, :cond_1d
+
+    .line 1717
+    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
+
+    .line 1718
+    iget-object p1, p1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->mediaArea:Lorg/telegram/tgnet/TLRPC$MediaArea;
+
+    if-eqz p1, :cond_1c
+
+    .line 1719
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->media_areas:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_1c
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_9
+
+    .line 1722
+    :cond_1d
+    iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->media_areas:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result p1
+
+    if-nez p1, :cond_1e
+
+    .line 1723
+    iget p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
+
+    or-int/lit8 p1, p1, 0x20
+
+    iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendStory;->flags:I
+
+    .line 1730
+    :cond_1e
+    :goto_a
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1462,9 +1758,9 @@
 
     move-result-object p1
 
-    new-instance v1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda5;
+    new-instance v1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda6;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -1478,7 +1774,7 @@
 .method private startForeground()V
     .locals 3
 
-    .line 1324
+    .line 1442
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -1487,14 +1783,14 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1325
+    .line 1443
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
     const-string v2, "path"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1326
+    .line 1444
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1505,7 +1801,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1328
+    .line 1446
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1518,7 +1814,7 @@
     :catchall_0
     move-exception v0
 
-    .line 1330
+    .line 1448
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -1528,19 +1824,19 @@
 .method private upload()V
     .locals 9
 
-    .line 1379
+    .line 1497
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->shareUserIds:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 1380
+    .line 1498
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->putMessages()V
 
     goto :goto_2
 
-    .line 1382
+    .line 1500
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
@@ -1626,10 +1922,10 @@
 
     const/4 v0, 0x1
 
-    .line 1650
+    .line 1816
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->canceled:Z
 
-    .line 1651
+    .line 1817
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
@@ -1638,7 +1934,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1652
+    .line 1818
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v1
@@ -1647,7 +1943,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/MediaController;->cancelVideoConvert(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 1654
+    .line 1820
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
@@ -1665,12 +1961,12 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/FileLoader;->cancelFileUpload(Ljava/lang/String;Z)V
 
-    .line 1655
+    .line 1821
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->currentRequest:I
 
     if-ltz v1, :cond_1
 
-    .line 1656
+    .line 1822
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1685,7 +1981,7 @@
 
     invoke-virtual {v1, v2, v0}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
-    .line 1658
+    .line 1824
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->cleanup()V
 
@@ -1695,7 +1991,7 @@
 .method public cleanup()V
     .locals 5
 
-    .line 1387
+    .line 1505
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1710,7 +2006,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1388
+    .line 1506
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1725,7 +2021,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1389
+    .line 1507
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1740,7 +2036,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1390
+    .line 1508
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1755,7 +2051,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1391
+    .line 1509
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1770,7 +2066,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1392
+    .line 1510
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -1785,7 +2081,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1393
+    .line 1511
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$100(Lorg/telegram/ui/Stories/StoriesController;)Ljava/util/ArrayList;
@@ -1794,7 +2090,7 @@
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1394
+    .line 1512
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$200(Lorg/telegram/ui/Stories/StoriesController;)Ljava/util/ArrayList;
@@ -1803,12 +2099,12 @@
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1395
+    .line 1513
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->edit:Z
 
     if-eqz v0, :cond_0
 
-    .line 1396
+    .line 1514
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$300(Lorg/telegram/ui/Stories/StoriesController;)Ljava/util/HashMap;
@@ -1825,7 +2121,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1398
+    .line 1516
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
@@ -1845,31 +2141,42 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1399
+    .line 1517
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 1400
+    iget-boolean v3, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEditSaved:Z
+
+    if-nez v3, :cond_1
+
+    iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entryDestroyed:Z
+
+    if-nez v3, :cond_1
+
+    .line 1518
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->destroy(Z)V
 
-    .line 1402
+    .line 1519
+    iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entryDestroyed:Z
+
+    .line 1521
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
 
-    sget v1, Lorg/telegram/messenger/NotificationCenter;->uploadStoryEnd:I
+    sget v3, Lorg/telegram/messenger/NotificationCenter;->uploadStoryEnd:I
 
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
-    aput-object v4, v3, v2
+    aput-object v4, v1, v2
 
-    invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -1881,7 +2188,7 @@
 
     move/from16 v1, p1
 
-    .line 1407
+    .line 1526
     sget v2, Lorg/telegram/messenger/NotificationCenter;->filePreparingStarted:I
 
     const/4 v3, 0x1
@@ -1890,26 +2197,26 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1408
+    .line 1527
     aget-object v1, p3, v4
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-ne v1, v2, :cond_6
 
-    .line 1409
+    .line 1528
     aget-object v1, p3, v3
 
     check-cast v1, Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
-    .line 1410
+    .line 1529
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->upload()V
 
     goto/16 :goto_0
 
-    .line 1412
+    .line 1531
     :cond_0
     sget v2, Lorg/telegram/messenger/NotificationCenter;->fileNewChunkAvailable:I
 
@@ -1921,21 +2228,21 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 1413
+    .line 1532
     aget-object v1, p3, v4
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-ne v1, v2, :cond_6
 
-    .line 1414
+    .line 1533
     aget-object v1, p3, v3
 
     move-object v9, v1
 
     check-cast v9, Ljava/lang/String;
 
-    .line 1415
+    .line 1534
     aget-object v1, p3, v7
 
     check-cast v1, Ljava/lang/Long;
@@ -1946,7 +2253,7 @@
 
     const/4 v8, 0x3
 
-    .line 1416
+    .line 1535
     aget-object v8, p3, v8
 
     check-cast v8, Ljava/lang/Long;
@@ -1957,7 +2264,7 @@
 
     const/4 v8, 0x4
 
-    .line 1417
+    .line 1536
     aget-object v8, p3, v8
 
     check-cast v8, Ljava/lang/Float;
@@ -1970,7 +2277,7 @@
 
     mul-float/2addr v8, v6
 
-    .line 1418
+    .line 1537
     iget v6, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->uploadProgress:F
 
     mul-float/2addr v6, v5
@@ -1979,7 +2286,7 @@
 
     iput v8, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->progress:F
 
-    .line 1419
+    .line 1538
     iget-object v5, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v5}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2008,7 +2315,7 @@
 
     invoke-virtual {v5, v6, v7}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1421
+    .line 1540
     iget-wide v3, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstSecondSize:J
 
     const-wide/16 v5, 0x0
@@ -2031,10 +2338,10 @@
 
     if-ltz v3, :cond_1
 
-    .line 1422
+    .line 1541
     iput-wide v1, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstSecondSize:J
 
-    .line 1425
+    .line 1544
     :cond_1
     iget-object v3, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
@@ -2068,48 +2375,48 @@
 
     if-lez v3, :cond_6
 
-    .line 1428
+    .line 1547
     iget-wide v3, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstSecondSize:J
 
     cmp-long v3, v3, v5
 
     if-gez v3, :cond_6
 
-    .line 1429
+    .line 1548
     iput-wide v1, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstSecondSize:J
 
     goto/16 :goto_0
 
-    .line 1434
+    .line 1553
     :cond_2
     sget v2, Lorg/telegram/messenger/NotificationCenter;->filePreparingFailed:I
 
     if-ne v1, v2, :cond_3
 
-    .line 1435
+    .line 1554
     aget-object v1, p3, v4
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-ne v1, v2, :cond_6
 
-    .line 1437
+    .line 1556
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->cleanup()V
 
     goto/16 :goto_0
 
-    .line 1439
+    .line 1558
     :cond_3
     sget v2, Lorg/telegram/messenger/NotificationCenter;->fileUploaded:I
 
     if-ne v1, v2, :cond_4
 
-    .line 1440
+    .line 1559
     aget-object v1, p3, v4
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1441
+    .line 1560
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_6
@@ -2120,28 +2427,28 @@
 
     if-eqz v1, :cond_6
 
-    .line 1442
+    .line 1561
     aget-object v1, p3, v3
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 1443
+    .line 1562
     invoke-direct {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->sendUploadedRequest(Lorg/telegram/tgnet/TLRPC$InputFile;)V
 
     goto/16 :goto_0
 
-    .line 1445
+    .line 1564
     :cond_4
     sget v2, Lorg/telegram/messenger/NotificationCenter;->fileUploadFailed:I
 
     if-ne v1, v2, :cond_5
 
-    .line 1446
+    .line 1565
     aget-object v1, p3, v4
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1447
+    .line 1566
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_6
@@ -2152,7 +2459,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 1448
+    .line 1567
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -2179,23 +2486,23 @@
 
     invoke-virtual {v1, v2, v5}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1449
+    .line 1568
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->cleanup()V
 
     goto :goto_0
 
-    .line 1451
+    .line 1570
     :cond_5
     sget v2, Lorg/telegram/messenger/NotificationCenter;->fileUploadProgressChanged:I
 
     if-ne v1, v2, :cond_6
 
-    .line 1452
+    .line 1571
     aget-object v1, p3, v4
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1453
+    .line 1572
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2204,19 +2511,19 @@
 
     if-eqz v1, :cond_6
 
-    .line 1454
+    .line 1573
     aget-object v1, p3, v3
 
     check-cast v1, Ljava/lang/Long;
 
-    .line 1455
+    .line 1574
     aget-object v2, p3, v7
 
     check-cast v2, Ljava/lang/Long;
 
     const/high16 v8, 0x3f800000    # 1.0f
 
-    .line 1456
+    .line 1575
     invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v9
@@ -2237,7 +2544,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->uploadProgress:F
 
-    .line 1457
+    .line 1576
     iget v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->convertingProgress:F
 
     mul-float/2addr v2, v6
@@ -2248,7 +2555,7 @@
 
     iput v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->progress:F
 
-    .line 1458
+    .line 1577
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2285,7 +2592,7 @@
 .method public isCloseFriends()Z
     .locals 1
 
-    .line 1662
+    .line 1828
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->isCloseFriends:Z
 
     return v0
@@ -2294,7 +2601,7 @@
 .method public start()V
     .locals 9
 
-    .line 1335
+    .line 1453
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
@@ -2307,12 +2614,12 @@
 
     const/4 v0, 0x0
 
-    .line 1336
+    .line 1454
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->sendUploadedRequest(Lorg/telegram/tgnet/TLRPC$InputFile;)V
 
     return-void
 
-    .line 1339
+    .line 1457
     :cond_0
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacy:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
@@ -2338,7 +2645,7 @@
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->isCloseFriends:Z
 
-    .line 1340
+    .line 1458
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2353,7 +2660,7 @@
 
     invoke-virtual {v0, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1341
+    .line 1459
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2368,7 +2675,7 @@
 
     invoke-virtual {v0, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1342
+    .line 1460
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2383,7 +2690,7 @@
 
     invoke-virtual {v0, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1343
+    .line 1461
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2398,7 +2705,7 @@
 
     invoke-virtual {v0, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1344
+    .line 1462
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2413,7 +2720,7 @@
 
     invoke-virtual {v0, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1345
+    .line 1463
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2428,7 +2735,7 @@
 
     invoke-virtual {v0, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1346
+    .line 1464
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
@@ -2439,15 +2746,15 @@
 
     if-eqz v0, :cond_2
 
-    .line 1347
+    .line 1465
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
-    .line 1348
+    .line 1466
     iput v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 1349
+    .line 1467
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StoriesController;->access$000(Lorg/telegram/ui/Stories/StoriesController;)I
@@ -2466,7 +2773,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
-    .line 1350
+    .line 1468
     new-instance v0, Lorg/telegram/messenger/MessageObject;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
@@ -2487,18 +2794,18 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 1351
+    .line 1469
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    new-instance v1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda4;
+    new-instance v1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda5;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->getVideoEditedInfo(Lorg/telegram/messenger/Utilities$Callback;)V
 
     goto :goto_1
 
-    .line 1365
+    .line 1483
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
@@ -2510,23 +2817,23 @@
 
     move-result-object v0
 
-    .line 1366
+    .line 1484
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
-    .line 1367
+    .line 1485
     sget-object v1, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v2, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;
+    new-instance v2, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda3;
 
-    invoke-direct {v2, p0, v0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Ljava/io/File;)V
+    invoke-direct {v2, p0, v0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;Ljava/io/File;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 1375
+    .line 1493
     :goto_1
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->startForeground()V
 

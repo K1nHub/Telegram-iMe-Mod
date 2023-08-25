@@ -50,7 +50,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 53
+    .line 55
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$pageTabs$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -69,7 +69,7 @@
         }
     .end annotation
 
-    .line 53
+    .line 55
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$pageTabs$2;->this$0:Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->access$initPageTabs(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)Ljava/util/List;

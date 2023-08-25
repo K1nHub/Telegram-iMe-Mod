@@ -20,6 +20,8 @@
 
 .field private enabledT:F
 
+.field private globalAlpha:I
+
 .field private lastCount:I
 
 .field private loading:Z
@@ -111,6 +113,11 @@
 
     .line 186
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->enabled:Z
+
+    const/16 v1, 0xff
+
+    .line 218
+    iput v1, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->globalAlpha:I
 
     .line 51
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -509,125 +516,51 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 16
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    .line 220
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->rippleView:Landroid/view/View;
-
-    invoke-virtual {v2, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    .locals 14
 
     .line 222
-    iget v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->rippleView:Landroid/view/View;
 
-    const/4 v3, 0x0
-
-    cmpl-float v2, v2, v3
-
-    const/4 v4, 0x0
-
-    const/high16 v5, 0x437f0000    # 255.0f
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    if-lez v2, :cond_1
-
-    .line 223
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
-
-    if-nez v2, :cond_0
+    invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     .line 224
-    new-instance v2, Lorg/telegram/ui/Components/CircularProgressDrawable;
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
 
-    iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    const/4 v1, 0x0
 
-    invoke-virtual {v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getTextColor()I
+    cmpl-float v0, v0, v1
 
-    move-result v7
+    const/4 v2, 0x0
 
-    invoke-direct {v2, v7}, Lorg/telegram/ui/Components/CircularProgressDrawable;-><init>(I)V
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    iput-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
+    if-lez v0, :cond_1
+
+    .line 225
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
+
+    if-nez v0, :cond_0
 
     .line 226
-    :cond_0
-    iget v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+    new-instance v0, Lorg/telegram/ui/Components/CircularProgressDrawable;
 
-    sub-float v2, v6, v2
+    iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    const/16 v7, 0x18
+    invoke-virtual {v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getTextColor()I
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    move-result v4
 
-    move-result v7
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/CircularProgressDrawable;-><init>(I)V
 
-    int-to-float v7, v7
-
-    mul-float/2addr v2, v7
-
-    float-to-int v2, v2
-
-    .line 227
-    iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
-
-    move-result v8
-
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
-
-    move-result v9
-
-    add-int/2addr v9, v2
-
-    invoke-virtual {v7, v4, v2, v8, v9}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setBounds(IIII)V
+    iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
     .line 228
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
+    :cond_0
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
 
-    iget v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+    sub-float v0, v3, v0
 
-    mul-float/2addr v7, v5
-
-    float-to-int v7, v7
-
-    invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setAlpha(I)V
-
-    .line 229
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
-
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/CircularProgressDrawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 230
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
-
-    .line 233
-    :cond_1
-    iget v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
-
-    cmpg-float v7, v2, v6
-
-    if-gez v7, :cond_5
-
-    cmpl-float v2, v2, v3
-
-    const v7, 0x3ecccccd    # 0.4f
-
-    const/4 v8, 0x1
-
-    if-eqz v2, :cond_2
-
-    .line 236
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 237
-    iget v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
-
-    const/16 v4, -0x18
+    const/16 v4, 0x18
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -635,214 +568,288 @@
 
     int-to-float v4, v4
 
-    mul-float/2addr v2, v4
+    mul-float/2addr v0, v4
 
-    float-to-int v2, v2
+    float-to-int v0, v0
 
-    int-to-float v2, v2
+    .line 229
+    iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
 
-    invoke-virtual {v1, v3, v2}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v5
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
+
+    move-result v6
+
+    add-int/2addr v6, v0
+
+    invoke-virtual {v4, v2, v0, v5, v6}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setBounds(IIII)V
+
+    .line 230
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
+
+    const/high16 v4, 0x437f0000    # 255.0f
+
+    iget v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+
+    mul-float/2addr v5, v4
+
+    float-to-int v4, v5
+
+    invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/CircularProgressDrawable;->setAlpha(I)V
+
+    .line 231
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingDrawable:Lorg/telegram/ui/Components/CircularProgressDrawable;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/CircularProgressDrawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 232
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 235
+    :cond_1
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+
+    cmpg-float v4, v0, v3
+
+    if-gez v4, :cond_5
+
+    cmpl-float v0, v0, v1
+
+    const v4, 0x3ecccccd    # 0.4f
+
+    const/4 v5, 0x1
+
+    if-eqz v0, :cond_2
 
     .line 238
-    iget v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    mul-float/2addr v2, v7
+    .line 239
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
 
-    sub-float v2, v6, v2
+    const/16 v2, -0x18
 
-    invoke-virtual {v1, v6, v2}, Landroid/graphics/Canvas;->scale(FF)V
-
-    move v4, v8
-
-    .line 241
-    :cond_2
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
-
-    invoke-virtual {v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 242
-    iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countAlphaAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
+    int-to-float v2, v2
 
-    iget v9, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countAlpha:F
+    mul-float/2addr v0, v2
 
-    invoke-virtual {v3, v9}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
+    float-to-int v0, v0
 
-    move-result v3
+    int-to-float v0, v0
 
-    const v9, 0x417a8f5c    # 15.66f
+    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 240
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+
+    mul-float/2addr v0, v4
+
+    sub-float v0, v3, v0
+
+    invoke-virtual {p1, v3, v0}, Landroid/graphics/Canvas;->scale(FF)V
+
+    move v2, v5
+
+    .line 243
+    :cond_2
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+
+    move-result v0
 
     .line 244
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countAlphaAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    iget v6, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countAlpha:F
+
+    invoke-virtual {v1, v6}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
+
+    move-result v1
+
+    const v6, 0x417a8f5c    # 15.66f
+
+    .line 246
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+
+    move-result v7
+
+    add-float/2addr v6, v7
+
+    mul-float/2addr v6, v1
+
+    add-float/2addr v6, v0
+
+    .line 247
+    sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
+
+    .line 248
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    sub-float/2addr v8, v6
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v9
 
     int-to-float v9, v9
 
-    iget-object v10, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    sub-float/2addr v8, v9
 
-    invoke-virtual {v10}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+    const/high16 v9, 0x40000000    # 2.0f
+
+    div-float/2addr v8, v9
+
+    float-to-int v8, v8
+
+    .line 249
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v10
 
-    add-float/2addr v9, v10
+    int-to-float v10, v10
 
-    mul-float/2addr v9, v3
+    iget-object v11, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    add-float/2addr v9, v2
+    invoke-virtual {v11}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getHeight()F
 
-    .line 245
-    sget-object v10, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
+    move-result v11
 
-    .line 246
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    sub-float/2addr v10, v11
+
+    div-float/2addr v10, v9
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
     int-to-float v11, v11
 
-    sub-float/2addr v11, v9
+    sub-float/2addr v10, v11
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+    float-to-int v10, v10
+
+    .line 250
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v11
+
+    int-to-float v11, v11
+
+    sub-float/2addr v11, v6
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v12
 
     int-to-float v12, v12
 
-    sub-float/2addr v11, v12
+    add-float/2addr v11, v12
 
-    const/high16 v12, 0x40000000    # 2.0f
+    div-float/2addr v11, v9
 
-    div-float/2addr v11, v12
+    add-float/2addr v11, v0
 
     float-to-int v11, v11
 
-    .line 247
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    .line 251
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v12
+
+    int-to-float v12, v12
+
+    iget-object v13, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {v13}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getHeight()F
 
     move-result v13
 
-    int-to-float v13, v13
+    add-float/2addr v12, v13
 
-    iget-object v14, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    div-float/2addr v12, v9
 
-    invoke-virtual {v14}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getHeight()F
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v14
+    move-result v5
 
-    sub-float/2addr v13, v14
+    int-to-float v5, v5
 
-    div-float/2addr v13, v12
+    sub-float/2addr v12, v5
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    float-to-int v5, v12
 
-    move-result v14
+    .line 247
+    invoke-virtual {v7, v8, v10, v11, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    int-to-float v14, v14
+    .line 253
+    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    sub-float/2addr v13, v14
+    iget v8, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->globalAlpha:I
 
-    float-to-int v13, v13
+    int-to-float v8, v8
 
-    .line 248
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    iget v10, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
 
-    move-result v14
+    sub-float v10, v3, v10
 
-    int-to-float v14, v14
+    mul-float/2addr v8, v10
 
-    sub-float/2addr v14, v9
+    iget v10, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->enabledT:F
 
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
+    const/high16 v11, 0x3f000000    # 0.5f
 
-    move-result v15
+    invoke-static {v11, v3, v10}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
-    int-to-float v15, v15
+    move-result v10
 
-    add-float/2addr v14, v15
-
-    div-float/2addr v14, v12
-
-    add-float/2addr v14, v2
-
-    float-to-int v14, v14
-
-    .line 249
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v15
-
-    int-to-float v15, v15
-
-    iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
-
-    invoke-virtual {v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getHeight()F
-
-    move-result v7
-
-    add-float/2addr v15, v7
-
-    div-float/2addr v15, v12
-
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    sub-float/2addr v15, v7
-
-    float-to-int v7, v15
-
-    .line 245
-    invoke-virtual {v10, v11, v13, v14, v7}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 251
-    iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
-
-    iget v8, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
-
-    sub-float v8, v6, v8
-
-    mul-float/2addr v8, v5
-
-    iget v11, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->enabledT:F
-
-    const/high16 v13, 0x3f000000    # 0.5f
-
-    invoke-static {v13, v6, v11}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
-
-    move-result v11
-
-    mul-float/2addr v8, v11
+    mul-float/2addr v8, v10
 
     float-to-int v8, v8
 
-    invoke-virtual {v7, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
+    invoke-virtual {v5, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
-    .line 252
-    iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    .line 254
+    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    invoke-virtual {v7, v10}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 253
-    iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    .line 255
+    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v5, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 256
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    .line 258
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result v7
+    move-result v5
 
-    int-to-float v7, v7
+    int-to-float v5, v5
 
-    sub-float/2addr v7, v9
+    sub-float/2addr v5, v6
 
-    div-float/2addr v7, v12
+    div-float/2addr v5, v9
 
-    add-float/2addr v7, v2
+    add-float/2addr v5, v0
 
     const/high16 v8, 0x40a00000    # 5.0f
 
@@ -852,230 +859,236 @@
 
     int-to-float v8, v8
 
-    add-float/2addr v7, v8
+    add-float/2addr v5, v8
 
-    float-to-int v7, v7
-
-    .line 257
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v8
-
-    const/16 v11, 0x12
-
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v14
-
-    sub-int/2addr v8, v14
-
-    int-to-float v8, v8
-
-    div-float/2addr v8, v12
-
-    float-to-int v8, v8
-
-    .line 258
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v14
-
-    int-to-float v14, v14
-
-    sub-float/2addr v14, v9
-
-    div-float/2addr v14, v12
-
-    add-float/2addr v14, v2
-
-    const/high16 v2, 0x41500000    # 13.0f
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    add-float/2addr v14, v2
-
-    const/16 v2, 0x9
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    iget-object v9, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
-
-    invoke-virtual {v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
-
-    move-result v9
-
-    invoke-static {v2, v9}, Ljava/lang/Math;->max(FF)F
-
-    move-result v2
-
-    add-float/2addr v14, v2
-
-    float-to-int v2, v14
+    float-to-int v5, v5
 
     .line 259
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v9
-
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v11
-
-    add-int/2addr v9, v11
-
-    int-to-float v9, v9
-
-    div-float/2addr v9, v12
-
-    float-to-int v9, v9
-
-    .line 255
-    invoke-virtual {v10, v7, v8, v2, v9}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 261
-    sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
-
-    invoke-virtual {v2, v10}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
-
-    .line 263
-    iget v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countScale:F
-
-    cmpl-float v7, v7, v6
-
-    if-eqz v7, :cond_3
-
-    .line 264
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    .line 265
-    iget v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countScale:F
-
-    invoke-virtual {v10}, Landroid/graphics/Rect;->centerX()I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v8
 
+    const/16 v10, 0x12
+
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    sub-int/2addr v8, v12
+
     int-to-float v8, v8
 
-    invoke-virtual {v10}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    invoke-virtual {v1, v7, v7, v8, v9}, Landroid/graphics/Canvas;->scale(FFFF)V
-
-    .line 267
-    :cond_3
-    iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->paint:Landroid/graphics/Paint;
-
-    iget v8, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
-
-    sub-float v8, v6, v8
-
-    mul-float/2addr v8, v5
-
-    mul-float/2addr v8, v3
-
-    mul-float/2addr v8, v3
-
-    iget v9, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->enabledT:F
-
-    invoke-static {v13, v6, v9}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
-
-    move-result v9
-
-    mul-float/2addr v8, v9
+    div-float/2addr v8, v9
 
     float-to-int v8, v8
 
-    invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setAlpha(I)V
+    .line 260
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    const/16 v7, 0xa
+    move-result v12
 
-    .line 268
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    int-to-float v12, v12
+
+    sub-float/2addr v12, v6
+
+    div-float/2addr v12, v9
+
+    add-float/2addr v12, v0
+
+    const/high16 v0, 0x41500000    # 13.0f
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    add-float/2addr v12, v0
+
+    const/16 v0, 0x9
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getCurrentWidth()F
+
+    move-result v6
+
+    invoke-static {v0, v6}, Ljava/lang/Math;->max(FF)F
+
+    move-result v0
+
+    add-float/2addr v12, v0
+
+    float-to-int v0, v12
+
+    .line 261
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v6
+
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v10
+
+    add-int/2addr v6, v10
+
+    int-to-float v6, v6
+
+    div-float/2addr v6, v9
+
+    float-to-int v6, v6
+
+    .line 257
+    invoke-virtual {v7, v5, v8, v0, v6}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 263
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+
+    invoke-virtual {v0, v7}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
+
+    .line 265
+    iget v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countScale:F
+
+    cmpl-float v5, v5, v3
+
+    if-eqz v5, :cond_3
+
+    .line 266
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 267
+    iget v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countScale:F
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->centerY()I
 
     move-result v8
 
     int-to-float v8, v8
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {p1, v5, v5, v6, v8}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    move-result v7
+    .line 269
+    :cond_3
+    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->paint:Landroid/graphics/Paint;
 
-    int-to-float v7, v7
+    iget v6, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->globalAlpha:I
 
-    iget-object v9, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->paint:Landroid/graphics/Paint;
+    int-to-float v6, v6
 
-    invoke-virtual {v1, v2, v8, v7, v9}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    iget v8, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
 
-    const v2, 0x3e99999a    # 0.3f
+    sub-float v8, v3, v8
+
+    mul-float/2addr v6, v8
+
+    mul-float/2addr v6, v1
+
+    mul-float/2addr v6, v1
+
+    iget v8, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->enabledT:F
+
+    invoke-static {v11, v3, v8}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+
+    move-result v8
+
+    mul-float/2addr v6, v8
+
+    float-to-int v6, v6
+
+    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    const/16 v5, 0xa
 
     .line 270
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v6
 
-    neg-int v2, v2
+    int-to-float v6, v6
 
-    const v7, 0x3ecccccd    # 0.4f
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    move-result v5
 
-    move-result v7
+    int-to-float v5, v5
 
-    neg-int v7, v7
+    iget-object v8, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->paint:Landroid/graphics/Paint;
 
-    invoke-virtual {v10, v2, v7}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {p1, v0, v6, v5, v8}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 271
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
-
-    iget v7, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
-
-    sub-float v7, v6, v7
-
-    mul-float/2addr v7, v5
-
-    mul-float/2addr v7, v3
-
-    float-to-int v3, v7
-
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
+    const v0, 0x3e99999a    # 0.3f
 
     .line 272
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
+    move-result v0
+
+    neg-int v0, v0
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v4
+
+    neg-int v4, v4
+
+    invoke-virtual {v7, v0, v4}, Landroid/graphics/Rect;->offset(II)V
 
     .line 273
-    iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
+    iget v4, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->globalAlpha:I
+
+    int-to-float v4, v4
+
+    iget v5, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->loadingT:F
+
+    sub-float v5, v3, v5
+
+    mul-float/2addr v4, v5
+
+    mul-float/2addr v4, v1
+
+    float-to-int v1, v4
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
     .line 274
-    iget v2, v0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countScale:F
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    cmpl-float v2, v2, v6
-
-    if-eqz v2, :cond_4
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 275
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
+
+    .line 276
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->countScale:F
+
+    cmpl-float v0, v0, v3
+
+    if-eqz v0, :cond_4
+
+    .line 277
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_4
-    if-eqz v4, :cond_5
+    if-eqz v2, :cond_5
 
-    .line 278
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+    .line 280
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_5
     return-void
@@ -1084,12 +1097,12 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 285
+    .line 287
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.Button"
 
-    .line 286
+    .line 288
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
@@ -1241,6 +1254,21 @@
     return-void
 .end method
 
+.method public setGlobalAlpha(F)V
+    .locals 1
+
+    const/high16 v0, 0x437f0000    # 255.0f
+
+    mul-float/2addr p1, v0
+
+    float-to-int p1, p1
+
+    .line 297
+    iput p1, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->globalAlpha:I
+
+    return-void
+.end method
+
 .method public setLoading(Z)V
     .locals 3
 
@@ -1344,7 +1372,7 @@
     return-void
 .end method
 
-.method public setText(Ljava/lang/String;Z)V
+.method public setText(Ljava/lang/CharSequence;Z)V
     .locals 1
 
     if-eqz p2, :cond_0
@@ -1365,6 +1393,23 @@
 
     .line 94
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    return-void
+.end method
+
+.method public setTextAlpha(F)V
+    .locals 2
+
+    .line 293
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    const/high16 v1, 0x437f0000    # 255.0f
+
+    mul-float/2addr p1, v1
+
+    float-to-int p1, p1
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
     return-void
 .end method

@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 20
+    .line 18
     invoke-direct {p0}, Lmoxy/viewstate/MvpViewState;-><init>()V
 
     return-void
@@ -57,20 +57,20 @@
     return-void
 .end method
 
-.method public setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+.method public setupNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
     .locals 3
 
-    .line 152
+    .line 150
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupNetworkCommand;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupNetworkCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupNetworkCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
-    .line 153
+    .line 151
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 155
+    .line 153
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -83,7 +83,7 @@
 
     return-void
 
-    .line 159
+    .line 157
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -104,12 +104,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 160
-    invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    .line 158
+    invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
     goto :goto_0
 
-    .line 163
+    .line 161
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -129,17 +129,17 @@
         }
     .end annotation
 
-    .line 23
+    .line 21
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupSessionsItemsCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$SetupSessionsItemsCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;Ljava/util/List;)V
 
-    .line 24
+    .line 22
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 26
+    .line 24
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -152,7 +152,7 @@
 
     return-void
 
-    .line 30
+    .line 28
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -173,12 +173,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 31
+    .line 29
     invoke-interface {v2, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;->setupSessionsItems(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 34
+    .line 32
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -190,17 +190,17 @@
 .method public showChangeNetworkHint()V
     .locals 3
 
-    .line 39
+    .line 37
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowChangeNetworkHintCommand;
 
     invoke-direct {v0, p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowChangeNetworkHintCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;)V
 
-    .line 40
+    .line 38
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 42
+    .line 40
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -213,7 +213,7 @@
 
     return-void
 
-    .line 46
+    .line 44
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -234,12 +234,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 47
+    .line 45
     invoke-interface {v2}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;->showChangeNetworkHint()V
 
     goto :goto_0
 
-    .line 50
+    .line 48
     :cond_1
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -248,34 +248,30 @@
     return-void
 .end method
 
-.method public showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+.method public showChooseNetworkDialog(Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem;",
             "Ljava/util/List<",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
-            ">;",
-            "Lkotlin/jvm/functions/Function1<",
-            "-",
-            "Lcom/iMe/storage/domain/model/crypto/Network;",
-            "Lkotlin/Unit;",
+            "+",
+            "Lcom/iMe/model/wallet/crypto/NetworkItem;",
             ">;)V"
         }
     .end annotation
 
-    .line 169
+    .line 167
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowChooseNetworkDialogCommand;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowChooseNetworkDialogCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowChooseNetworkDialogCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;)V
 
-    .line 170
+    .line 168
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 172
+    .line 170
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -288,7 +284,7 @@
 
     return-void
 
-    .line 176
+    .line 174
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -309,12 +305,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 177
-    invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+    .line 175
+    invoke-interface {v2, p1, p2}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 180
+    .line 178
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -337,17 +333,17 @@
         }
     .end annotation
 
-    .line 87
+    .line 85
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowErrorToastCommand;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowErrorToastCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
-    .line 88
+    .line 86
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 90
+    .line 88
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -360,7 +356,7 @@
 
     return-void
 
-    .line 94
+    .line 92
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -381,12 +377,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 95
+    .line 93
     invoke-interface {v2, p1, p2}, Lcom/iMe/ui/base/mvp/base/BaseView;->showErrorToast(Lcom/iMe/storage/domain/model/Result$Error;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
 
     goto :goto_0
 
-    .line 98
+    .line 96
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -398,17 +394,17 @@
 .method public showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
     .locals 3
 
-    .line 71
+    .line 69
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowLoadingDialogCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowLoadingDialogCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;ZZLio/reactivex/disposables/Disposable;)V
 
-    .line 72
+    .line 70
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 74
+    .line 72
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -421,7 +417,7 @@
 
     return-void
 
-    .line 78
+    .line 76
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -442,12 +438,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 79
+    .line 77
     invoke-interface {v2, p1, p2, p3}, Lcom/iMe/ui/base/mvp/base/BaseView;->showLoadingDialog(ZZLio/reactivex/disposables/Disposable;)V
 
     goto :goto_0
 
-    .line 82
+    .line 80
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
@@ -459,17 +455,17 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 3
 
-    .line 55
+    .line 53
     new-instance v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowToastCommand;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State$ShowToastCommand;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView$$State;Ljava/lang/String;)V
 
-    .line 56
+    .line 54
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 
     invoke-virtual {v1, v0}, Lmoxy/viewstate/ViewCommands;->beforeApply(Lmoxy/viewstate/ViewCommand;)V
 
-    .line 58
+    .line 56
     invoke-virtual {p0}, Lmoxy/viewstate/MvpViewState;->hasNotView()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -482,7 +478,7 @@
 
     return-void
 
-    .line 62
+    .line 60
     :cond_0
     iget-object v1, p0, Lmoxy/viewstate/MvpViewState;->views:Ljava/util/Set;
 
@@ -503,12 +499,12 @@
 
     check-cast v2, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 63
+    .line 61
     invoke-interface {v2, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 66
+    .line 64
     :cond_1
     iget-object p1, p0, Lmoxy/viewstate/MvpViewState;->viewCommands:Lmoxy/viewstate/ViewCommands;
 

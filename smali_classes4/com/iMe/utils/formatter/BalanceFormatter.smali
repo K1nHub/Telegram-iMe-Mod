@@ -110,6 +110,24 @@
     return-object p0
 .end method
 
+.method public static synthetic formatBalance$default(Ljava/lang/Number;Ljava/lang/Integer;ILjava/lang/Object;)Ljava/lang/String;
+    .locals 0
+
+    and-int/lit8 p2, p2, 0x2
+
+    if-eqz p2, :cond_0
+
+    const/4 p1, 0x0
+
+    .line 43
+    :cond_0
+    invoke-static {p0, p1}, Lcom/iMe/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;Ljava/lang/Integer;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static synthetic formatFiatBalance$default(Lcom/iMe/utils/formatter/BalanceFormatter;Ljava/lang/Number;Ljava/lang/Integer;ILjava/lang/Object;)Ljava/lang/String;
     .locals 0
 

@@ -10,6 +10,40 @@
 
 
 # direct methods
+.method public static toBigDecimalOrNull(Ljava/lang/String;)Ljava/math/BigDecimal;
+    .locals 2
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    .line 275
+    :try_start_0
+    sget-object v1, Lkotlin/text/ScreenFloatValueRegEx;->value:Lkotlin/text/Regex;
+
+    invoke-virtual {v1, p0}, Lkotlin/text/Regex;->matches(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 276
+    new-instance v1, Ljava/math/BigDecimal;
+
+    .line 238
+    invoke-direct {v1, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v0, v1
+
+    :catch_0
+    :cond_0
+    return-object v0
+.end method
+
 .method public static toBigIntegerOrNull(Ljava/lang/String;)Ljava/math/BigInteger;
     .locals 1
 

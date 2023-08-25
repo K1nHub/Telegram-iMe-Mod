@@ -42,7 +42,7 @@
 .method constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;Landroid/content/Context;)V
     .locals 0
 
-    .line 527
+    .line 537
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;
 
     invoke-direct {p0, p2}, Lcom/google/android/gms/maps/MapView;-><init>(Landroid/content/Context;)V
@@ -53,7 +53,7 @@
 .method private synthetic lambda$dispatchTouchEvent$0(Landroid/view/MotionEvent;)Ljava/lang/Boolean;
     .locals 0
 
-    .line 531
+    .line 541
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -68,7 +68,7 @@
 .method private synthetic lambda$onInterceptTouchEvent$1(Landroid/view/MotionEvent;)Ljava/lang/Boolean;
     .locals 0
 
-    .line 539
+    .line 549
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -85,7 +85,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 530
+    .line 540
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;
 
     invoke-static {v0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->access$1800(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
@@ -94,7 +94,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 531
+    .line 541
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;
 
     invoke-static {v0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->access$1800(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
@@ -111,7 +111,7 @@
 
     return p1
 
-    .line 533
+    .line 543
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -123,7 +123,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 538
+    .line 548
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;
 
     invoke-static {v0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->access$1900(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
@@ -132,7 +132,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 539
+    .line 549
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;
 
     invoke-static {v0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->access$1900(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Lorg/telegram/messenger/IMapsProvider$ITouchInterceptor;
@@ -149,7 +149,7 @@
 
     return p1
 
-    .line 541
+    .line 551
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -161,10 +161,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 546
+    .line 556
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 547
+    .line 557
     iget-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;
 
     invoke-static {p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->access$2000(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Ljava/lang/Runnable;
@@ -173,7 +173,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 548
+    .line 558
     iget-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView$1;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;
 
     invoke-static {p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;->access$2000(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapView;)Ljava/lang/Runnable;

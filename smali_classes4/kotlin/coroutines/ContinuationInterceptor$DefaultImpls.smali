@@ -71,7 +71,7 @@
 
     if-ne v0, p1, :cond_2
 
-    const-string p1, "null cannot be cast to non-null type E of kotlin.coroutines.ContinuationInterceptor.get"
+    const-string/jumbo p1, "null cannot be cast to non-null type E of kotlin.coroutines.ContinuationInterceptor.get"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

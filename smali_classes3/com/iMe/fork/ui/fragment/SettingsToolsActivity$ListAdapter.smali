@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 92
+    .line 101
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 112
+    .line 119
     invoke-static {}, Lcom/iMe/fork/enums/SettingsToolsCategory;->values()[Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     move-result-object v0
@@ -53,8 +53,8 @@
 .method public getItemViewType(I)I
     .locals 0
 
-    .line 96
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
+    .line 105
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL:I
 
     return p1
 .end method
@@ -74,23 +74,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
-    iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
-
-    const-string v0, "null cannot be cast to non-null type org.telegram.ui.Cells.TextCell"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast p1, Lorg/telegram/ui/Cells/TextCell;
-
-    .line 107
+    .line 114
     invoke-static {}, Lcom/iMe/fork/enums/SettingsToolsCategory;->values()[Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     move-result-object v0
 
     aget-object v0, v0, p2
 
-    .line 108
+    .line 115
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$ListAdapter;->getItemCount()I
 
     move-result v1
@@ -106,8 +97,16 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 109
+    .line 116
     :goto_0
+    iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string p2, "null cannot be cast to non-null type org.telegram.ui.Cells.TextCell"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p1, Lorg/telegram/ui/Cells/TextCell;
+
     invoke-virtual {v0}, Lcom/iMe/fork/enums/SettingsToolsCategory;->getTitle()Ljava/lang/String;
 
     move-result-object p2
@@ -124,7 +123,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 92
+    .line 101
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -139,7 +138,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 99
+    .line 108
     new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
     iget-object p2, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;
@@ -150,7 +149,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 100
+    .line 109
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -159,7 +158,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 102
+    .line 110
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -170,7 +169,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 98
+    .line 107
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

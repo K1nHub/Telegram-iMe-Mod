@@ -572,7 +572,7 @@
     const/high16 v6, 0x41900000    # 18.0f
 
     .line 95
-    invoke-virtual {v5, v3, v6}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v3, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 96
     iget-object v5, v0, Lorg/telegram/ui/ChangeNameActivity;->firstNameField:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -756,7 +756,7 @@
     iput-object v5, v0, Lorg/telegram/ui/ChangeNameActivity;->lastNameField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     .line 126
-    invoke-virtual {v5, v3, v6}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v5, v3, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 127
     iget-object v1, v0, Lorg/telegram/ui/ChangeNameActivity;->lastNameField:Lorg/telegram/ui/Components/EditTextBoldCursor;

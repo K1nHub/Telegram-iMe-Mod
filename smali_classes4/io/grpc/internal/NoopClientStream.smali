@@ -38,7 +38,7 @@
 .method public appendTimeoutInsight(Lio/grpc/internal/InsightBuilder;)V
     .locals 1
 
-    const-string v0, "noop"
+    const-string/jumbo v0, "noop"
 
     .line 89
     invoke-virtual {p1, v0}, Lio/grpc/internal/InsightBuilder;->append(Ljava/lang/Object;)Lio/grpc/internal/InsightBuilder;

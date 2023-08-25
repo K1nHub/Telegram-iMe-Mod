@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda32;->f$1:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$K3KNGUV4-xArxESTNbtbceYmv-Q(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$KBFaFGkzowGSiTpKHroyG9S64lA(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

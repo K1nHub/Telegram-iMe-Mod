@@ -73,11 +73,11 @@
         }
     .end annotation
 
-    const-string v0, "observable"
+    const-string/jumbo v0, "observable"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 224
+    .line 294
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$loadAccountLevelInfo$2;->$isWithLoading:Z
 
     if-eqz v0, :cond_0
@@ -111,7 +111,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 223
+    .line 293
     check-cast p1, Lio/reactivex/Observable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$loadAccountLevelInfo$2;->invoke(Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;

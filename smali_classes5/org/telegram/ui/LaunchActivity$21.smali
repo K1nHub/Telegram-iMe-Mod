@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;[ZLandroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$ChatInvite;)V
     .locals 0
 
-    .line 4855
+    .line 4856
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$21;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$21;->val$dismissLoading:Ljava/lang/Runnable;
@@ -54,7 +54,7 @@
 .method public onError()V
     .locals 3
 
-    .line 4875
+    .line 4876
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
@@ -63,7 +63,7 @@
 
     if-nez v0, :cond_0
 
-    .line 4876
+    .line 4877
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -84,7 +84,7 @@
 
     check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 4877
+    .line 4878
     sget v1, Lorg/telegram/messenger/R$string;->JoinToGroupErrorNotExist:I
 
     const-string v2, "JoinToGroupErrorNotExist"
@@ -95,7 +95,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/app/Dialog;
 
-    .line 4880
+    .line 4881
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->val$dismissLoading:Ljava/lang/Runnable;
@@ -109,7 +109,7 @@
     :catch_0
     move-exception v0
 
-    .line 4882
+    .line 4883
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -119,7 +119,7 @@
 .method public onMessagesLoaded(Z)V
     .locals 2
 
-    .line 4859
+    .line 4860
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$21;->val$dismissLoading:Ljava/lang/Runnable;
 
@@ -132,10 +132,10 @@
     :catch_0
     move-exception p1
 
-    .line 4861
+    .line 4862
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4863
+    .line 4864
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$21;->val$canceled:[Z
 
@@ -147,7 +147,7 @@
 
     return-void
 
-    .line 4866
+    .line 4867
     :cond_0
     new-instance p1, Lorg/telegram/ui/ChatActivity;
 
@@ -155,17 +155,17 @@
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 4867
+    .line 4868
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->val$invite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatInvitePeek;
 
     if-eqz v1, :cond_1
 
-    .line 4868
+    .line 4869
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ChatActivity;->setChatInvite(Lorg/telegram/tgnet/TLRPC$ChatInvite;)V
 
-    .line 4870
+    .line 4871
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$21;->this$0:Lorg/telegram/ui/LaunchActivity;
 

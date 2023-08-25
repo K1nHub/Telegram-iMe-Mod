@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesStorage;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesStorage;JI)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda5;->f$1:J
 
-    iput-object p4, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda5;->f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput p4, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda5;->f$2:I
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda5;->f$1:J
 
-    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda5;->f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget v3, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda5;->f$2:I
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesStorage;->$r8$lambda$VFg5GvspXuHve1UUW3n-jQanMw0(Lorg/telegram/ui/Stories/StoriesStorage;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesStorage;->$r8$lambda$XtSQBTlPaiakiJmU4UyTyITYKvA(Lorg/telegram/ui/Stories/StoriesStorage;JI)V
 
     return-void
 .end method

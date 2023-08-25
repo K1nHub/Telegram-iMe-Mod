@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/EditTextBoldCursor$2;
-.super Landroid/graphics/drawable/ShapeDrawable;
+.super Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 .source "EditTextBoldCursor.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EditTextBoldCursor;->getTextCursorDrawable()Landroid/graphics/drawable/Drawable;
+    value = Lorg/telegram/ui/Components/EditTextBoldCursor;->useAnimatedTextDrawable()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,31 +19,26 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/graphics/drawable/shapes/Shape;)V
+.method constructor <init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 0
 
-    .line 286
+    .line 221
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$2;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-direct {p0, p2}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public draw(Landroid/graphics/Canvas;)V
+.method public invalidateSelf()V
     .locals 1
 
-    .line 289
-    invoke-super {p0, p1}, Landroid/graphics/drawable/ShapeDrawable;->draw(Landroid/graphics/Canvas;)V
+    .line 224
+    iget-object v0, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$2;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 290
-    iget-object p1, p0, Lorg/telegram/ui/Components/EditTextBoldCursor$2;->this$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->access$202(Lorg/telegram/ui/Components/EditTextBoldCursor;Z)Z
+    invoke-virtual {v0}, Landroid/widget/EditText;->invalidate()V
 
     return-void
 .end method

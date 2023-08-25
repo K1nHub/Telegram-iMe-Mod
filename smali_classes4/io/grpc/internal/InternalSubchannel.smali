@@ -1220,12 +1220,12 @@
         }
     .end annotation
 
-    const-string v0, "newAddressGroups"
+    const-string/jumbo v0, "newAddressGroups"
 
     .line 335
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "newAddressGroups contains null entry"
+    const-string/jumbo v0, "newAddressGroups contains null entry"
 
     .line 336
     invoke-static {p1, v0}, Lio/grpc/internal/InternalSubchannel;->checkListHasNoNulls(Ljava/util/List;Ljava/lang/String;)V
@@ -1237,7 +1237,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    const-string v1, "newAddressGroups is empty"
+    const-string/jumbo v1, "newAddressGroups is empty"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 

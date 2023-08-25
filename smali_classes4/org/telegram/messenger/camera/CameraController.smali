@@ -2343,7 +2343,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    const-string v5, "off"
+    const-string/jumbo v5, "off"
 
     .line 606
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2352,7 +2352,7 @@
 
     if-nez v5, :cond_1
 
-    const-string v5, "on"
+    const-string/jumbo v5, "on"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2584,7 +2584,7 @@
 
     move-result-object v1
 
-    const-string v2, "on"
+    const-string/jumbo v2, "on"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2597,7 +2597,7 @@
     goto :goto_0
 
     :cond_0
-    const-string v1, "off"
+    const-string/jumbo v1, "off"
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
@@ -2670,7 +2670,7 @@
 
     move-result-object v1
 
-    const-string v2, "on"
+    const-string/jumbo v2, "on"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2683,7 +2683,7 @@
     goto :goto_0
 
     :cond_0
-    const-string v1, "off"
+    const-string/jumbo v1, "off"
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
@@ -3189,7 +3189,7 @@
 
     move-result-object v2
 
-    const-string v3, "off"
+    const-string/jumbo v3, "off"
 
     .line 855
     invoke-virtual {v2, v3}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V

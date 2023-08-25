@@ -41,7 +41,7 @@
 
     const/4 v0, 0x0
 
-    .line 889
+    .line 893
     invoke-direct {p0, p1, v0, v0, v0}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;ZZZ)V
 
     return-void
@@ -50,28 +50,28 @@
 .method public constructor <init>(Landroid/content/Context;ZZZ)V
     .locals 0
 
-    .line 893
+    .line 897
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x1
 
-    .line 886
+    .line 890
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->adaptWidth:Z
 
-    .line 954
+    .line 958
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->first:Z
 
-    .line 894
+    .line 898
     new-instance p1, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {p1, p2, p3, p4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 895
+    .line 899
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 896
+    .line 900
     new-instance p2, Lorg/telegram/ui/Components/AnimatedTextView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/AnimatedTextView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/AnimatedTextView;)V
@@ -84,12 +84,12 @@
 .method private synthetic lambda$new$0()V
     .locals 3
 
-    .line 897
+    .line 901
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->toSetText:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
 
-    .line 899
+    .line 903
     iget-boolean v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->toSetMoveDown:Z
 
     const/4 v2, 0x1
@@ -98,12 +98,12 @@
 
     const/4 v0, 0x0
 
-    .line 900
+    .line 904
     iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->toSetText:Ljava/lang/CharSequence;
 
     const/4 v0, 0x0
 
-    .line 901
+    .line 905
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->toSetMoveDown:Z
 
     :cond_0
@@ -115,7 +115,7 @@
 .method public cancelAnimation()V
     .locals 1
 
-    .line 943
+    .line 947
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->cancelAnimation()V
@@ -126,7 +126,7 @@
 .method public getDrawable()Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
     .locals 1
 
-    .line 1016
+    .line 1020
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     return-object v0
@@ -135,7 +135,7 @@
 .method public getPaint()Landroid/text/TextPaint;
     .locals 1
 
-    .line 1020
+    .line 1024
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getPaint()Landroid/text/TextPaint;
@@ -148,7 +148,7 @@
 .method public getText()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 983
+    .line 987
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getText()Ljava/lang/CharSequence;
@@ -161,7 +161,7 @@
 .method public getTextColor()I
     .locals 1
 
-    .line 1000
+    .line 1004
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getTextColor()I
@@ -174,7 +174,7 @@
 .method public getTextHeight()I
     .locals 2
 
-    .line 987
+    .line 991
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AnimatedTextView;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v0
@@ -203,10 +203,10 @@
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 1025
+    .line 1029
     invoke-super {p0, p1}, Landroid/view/View;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1026
+    .line 1030
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -215,7 +215,7 @@
 .method public isAnimating()Z
     .locals 1
 
-    .line 947
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->isAnimating()Z
@@ -228,7 +228,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 930
+    .line 934
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
@@ -261,7 +261,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 931
+    .line 935
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -272,15 +272,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 1031
+    .line 1035
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.TextView"
 
-    .line 1032
+    .line 1036
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1033
+    .line 1037
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AnimatedTextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -293,27 +293,27 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 912
+    .line 916
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 913
+    .line 917
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 914
+    .line 918
     iget v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->maxWidth:I
 
     if-lez v1, :cond_0
 
-    .line 915
+    .line 919
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 917
+    .line 921
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->lastMaxWidth:I
 
@@ -327,7 +327,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 918
+    .line 922
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
@@ -352,7 +352,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 919
+    .line 923
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getText()Ljava/lang/CharSequence;
@@ -363,11 +363,11 @@
 
     invoke-virtual {p0, v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 921
+    .line 925
     :cond_1
     iput v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->lastMaxWidth:I
 
-    .line 922
+    .line 926
     iget-boolean v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->adaptWidth:Z
 
     if-eqz v1, :cond_2
@@ -380,7 +380,7 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 923
+    .line 927
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result p1
@@ -407,7 +407,7 @@
 
     add-int/2addr v0, p1
 
-    .line 925
+    .line 929
     :cond_2
     invoke-virtual {p0, v0, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
@@ -417,7 +417,7 @@
 .method public setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
     .locals 7
 
-    .line 1012
+    .line 1016
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     move v1, p1
@@ -436,7 +436,7 @@
 .method public setEllipsizeByGradient(Z)V
     .locals 1
 
-    .line 1037
+    .line 1041
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setEllipsizeByGradient(Z)V
@@ -447,7 +447,7 @@
 .method public setGravity(I)V
     .locals 1
 
-    .line 1008
+    .line 1012
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
@@ -458,7 +458,7 @@
 .method public setIgnoreRTL(Z)V
     .locals 1
 
-    .line 951
+    .line 955
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     iput-boolean p1, v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->ignoreRTL:Z
@@ -469,7 +469,7 @@
 .method public setMaxWidth(I)V
     .locals 0
 
-    .line 907
+    .line 911
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->maxWidth:I
 
     return-void
@@ -478,7 +478,7 @@
 .method public setRightPadding(F)V
     .locals 1
 
-    .line 1041
+    .line 1045
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setRightPadding(F)V
@@ -491,7 +491,7 @@
 
     const/4 v0, 0x1
 
-    .line 935
+    .line 939
     invoke-virtual {p0, p1, v0, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;ZZ)V
 
     return-void
@@ -502,7 +502,7 @@
 
     const/4 v0, 0x1
 
-    .line 939
+    .line 943
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;ZZ)V
 
     return-void
@@ -511,7 +511,7 @@
 .method public setText(Ljava/lang/CharSequence;ZZ)V
     .locals 7
 
-    .line 956
+    .line 960
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->first:Z
 
     const/4 v1, 0x0
@@ -527,13 +527,13 @@
     :cond_0
     move p2, v1
 
-    .line 957
+    .line 961
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->first:Z
 
     if-eqz p2, :cond_2
 
-    .line 959
+    .line 963
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->access$800(Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;)Z
@@ -542,7 +542,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 960
+    .line 964
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->access$400(Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;)Landroid/animation/ValueAnimator;
@@ -551,7 +551,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 961
+    .line 965
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->access$400(Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;)Landroid/animation/ValueAnimator;
@@ -560,7 +560,7 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 962
+    .line 966
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v1, 0x0
@@ -569,7 +569,7 @@
 
     goto :goto_1
 
-    .line 964
+    .line 968
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -579,15 +579,15 @@
 
     if-eqz v0, :cond_2
 
-    .line 965
+    .line 969
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->toSetText:Ljava/lang/CharSequence;
 
-    .line 966
+    .line 970
     iput-boolean p3, p0, Lorg/telegram/ui/Components/AnimatedTextView;->toSetMoveDown:Z
 
     return-void
 
-    .line 970
+    .line 974
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
@@ -598,7 +598,7 @@
 
     float-to-int v0, v0
 
-    .line 971
+    .line 975
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
@@ -629,14 +629,14 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 972
+    .line 976
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, p1, p2, p3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;ZZ)V
 
     int-to-float p1, v0
 
-    .line 973
+    .line 977
     iget-object p3, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {p3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getWidth()F
@@ -659,7 +659,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 974
+    .line 978
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
@@ -670,12 +670,12 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 995
+    .line 999
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 996
+    .line 1000
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -684,7 +684,7 @@
 .method public setTextSize(F)V
     .locals 1
 
-    .line 991
+    .line 995
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
@@ -695,7 +695,7 @@
 .method public setTypeface(Landroid/graphics/Typeface;)V
     .locals 1
 
-    .line 1004
+    .line 1008
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedTextView;->drawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
@@ -706,7 +706,7 @@
 .method public width()I
     .locals 3
 
-    .line 979
+    .line 983
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v0

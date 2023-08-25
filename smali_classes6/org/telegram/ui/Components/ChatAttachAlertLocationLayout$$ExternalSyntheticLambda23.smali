@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Adapters/BaseLocationAdapter$BaseLocationAdapterDelegate;
+.implements Lorg/telegram/messenger/IMapsProvider$OnCameraMoveStartedListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final didLoadSearchResult(Ljava/util/ArrayList;)V
+.method public final onCameraMoveStarted(I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$C0vadsa_TPrM2jXLzNWZZ8gDmSw(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;Ljava/util/ArrayList;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;->$r8$lambda$Dtcc3Oca-q8Opi4dWMlrszaN8Uc(Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout;I)V
 
     return-void
 .end method

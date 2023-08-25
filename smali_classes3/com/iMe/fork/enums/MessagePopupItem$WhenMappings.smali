@@ -59,7 +59,7 @@
 
     :catch_1
     :try_start_2
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_MESSENGERS:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_ONLY_CLOUD:Lcom/iMe/fork/enums/MessagePopupItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -73,7 +73,7 @@
 
     :catch_2
     :try_start_3
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->TRANSLATE:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_MESSENGERS:Lcom/iMe/fork/enums/MessagePopupItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -87,7 +87,7 @@
 
     :catch_3
     :try_start_4
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_PART:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->TRANSLATE:Lcom/iMe/fork/enums/MessagePopupItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -101,7 +101,7 @@
 
     :catch_4
     :try_start_5
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_IMAGE:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_PART:Lcom/iMe/fork/enums/MessagePopupItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -115,7 +115,7 @@
 
     :catch_5
     :try_start_6
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->SAVE_AS:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_IMAGE:Lcom/iMe/fork/enums/MessagePopupItem;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -128,6 +128,20 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
     :catch_6
+    :try_start_7
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->SAVE_AS:Lcom/iMe/fork/enums/MessagePopupItem;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    :catch_7
     sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n*L\n70#1:121,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,183:1\n129#2,5:184\n129#2,5:189\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$6\n*L\n92#1:184,5\n93#1:189,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 91
     new-instance p2, Lcom/iMe/ui/wallet/crypto/buy/adapter/BuyCryptoProductRecycleAdapter;
 
     .line 133
@@ -90,6 +90,7 @@
 
     check-cast v0, Lcom/iMe/ui/adapter/provider/SimplexFooterProvider;
 
+    .line 133
     const-class v2, Lcom/iMe/ui/adapter/provider/SimplexProductProvider;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -102,7 +103,7 @@
 
     check-cast p1, Lcom/iMe/ui/adapter/provider/SimplexProductProvider;
 
-    .line 69
+    .line 91
     invoke-direct {p2, v0, p1}, Lcom/iMe/ui/wallet/crypto/buy/adapter/BuyCryptoProductRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/SimplexFooterProvider;Lcom/iMe/ui/adapter/provider/SimplexProductProvider;)V
 
     return-object p2
@@ -111,7 +112,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 68
+    .line 90
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

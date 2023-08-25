@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/DialogsActivity;I)V
     .locals 0
 
-    .line 4618
+    .line 4619
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$19;->val$fragment:Lorg/telegram/ui/DialogsActivity;
 
     iput p3, p0, Lorg/telegram/ui/LaunchActivity$19;->val$intentAccount:I
@@ -48,12 +48,12 @@
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
     .locals 0
 
-    .line 4621
+    .line 4622
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$19;->val$fragment:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    .line 4622
+    .line 4623
     iget p1, p0, Lorg/telegram/ui/LaunchActivity$19;->val$intentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;

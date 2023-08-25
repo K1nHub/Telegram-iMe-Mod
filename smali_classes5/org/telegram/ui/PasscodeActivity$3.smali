@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;Landroid/content/Context;Landroid/view/View;)V
     .locals 0
 
-    .line 490
+    .line 496
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/PasscodeActivity$3;->val$fragmentContentView:Landroid/view/View;
@@ -39,7 +39,7 @@
 .method protected onLayout(ZIIII)V
     .locals 1
 
-    .line 494
+    .line 500
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$200(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -70,7 +70,7 @@
 
     if-lt p1, p5, :cond_1
 
-    .line 495
+    .line 501
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity;->access$300(Lorg/telegram/ui/PasscodeActivity;)Z
@@ -79,7 +79,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 496
+    .line 502
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->val$fragmentContentView:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -106,7 +106,7 @@
 
     goto :goto_0
 
-    .line 498
+    .line 504
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->val$fragmentContentView:Landroid/view/View;
 
@@ -122,7 +122,7 @@
 
     goto :goto_0
 
-    .line 500
+    .line 506
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -136,7 +136,7 @@
 
     if-eq p1, p2, :cond_2
 
-    .line 501
+    .line 507
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->val$fragmentContentView:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -157,7 +157,7 @@
 
     goto :goto_0
 
-    .line 503
+    .line 509
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->val$fragmentContentView:Landroid/view/View;
 
@@ -171,7 +171,7 @@
 
     invoke-virtual {p1, p4, p4, p2, p5}, Landroid/view/View;->layout(IIII)V
 
-    .line 506
+    .line 512
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PasscodeActivity$3;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -191,7 +191,7 @@
 
     invoke-virtual {p1, p4, p5, p2, p3}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    .line 507
+    .line 513
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->notifyHeightChanged()V
 
     return-void
@@ -200,7 +200,7 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 512
+    .line 518
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -209,10 +209,10 @@
 
     move-result p2
 
-    .line 513
+    .line 519
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 516
+    .line 522
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$3;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$200(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -241,14 +241,14 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 517
+    .line 523
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 519
+    .line 525
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$3;->val$fragmentContentView:Landroid/view/View;
 
@@ -264,7 +264,7 @@
 
     invoke-virtual {v0, v3, p2}, Landroid/view/View;->measure(II)V
 
-    .line 520
+    .line 526
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$3;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$200(Lorg/telegram/ui/PasscodeActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;

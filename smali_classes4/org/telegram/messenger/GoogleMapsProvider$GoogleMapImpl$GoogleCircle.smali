@@ -27,12 +27,12 @@
 .method private constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Circle;)V
     .locals 0
 
-    .line 311
+    .line 321
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 312
+    .line 322
     iput-object p2, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->circle:Lcom/google/android/gms/maps/model/Circle;
 
     return-void
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Circle;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 308
+    .line 318
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;-><init>(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;Lcom/google/android/gms/maps/model/Circle;)V
 
     return-void
@@ -52,7 +52,7 @@
 .method public getRadius()D
     .locals 2
 
-    .line 332
+    .line 342
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->circle:Lcom/google/android/gms/maps/model/Circle;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/model/Circle;->getRadius()D
@@ -65,12 +65,12 @@
 .method public remove()V
     .locals 2
 
-    .line 342
+    .line 352
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->circle:Lcom/google/android/gms/maps/model/Circle;
 
     invoke-virtual {v0}, Lcom/google/android/gms/maps/model/Circle;->remove()V
 
-    .line 343
+    .line 353
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->this$0:Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;
 
     invoke-static {v0}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;->access$1600(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl;)Ljava/util/Map;
@@ -87,7 +87,7 @@
 .method public setCenter(Lorg/telegram/messenger/IMapsProvider$LatLng;)V
     .locals 6
 
-    .line 337
+    .line 347
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->circle:Lcom/google/android/gms/maps/model/Circle;
 
     new-instance v1, Lcom/google/android/gms/maps/model/LatLng;
@@ -106,7 +106,7 @@
 .method public setFillColor(I)V
     .locals 1
 
-    .line 322
+    .line 332
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->circle:Lcom/google/android/gms/maps/model/Circle;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/Circle;->setFillColor(I)V
@@ -117,7 +117,7 @@
 .method public setRadius(D)V
     .locals 1
 
-    .line 327
+    .line 337
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->circle:Lcom/google/android/gms/maps/model/Circle;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/maps/model/Circle;->setRadius(D)V
@@ -128,7 +128,7 @@
 .method public setStrokeColor(I)V
     .locals 1
 
-    .line 317
+    .line 327
     iget-object v0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapImpl$GoogleCircle;->circle:Lcom/google/android/gms/maps/model/Circle;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/maps/model/Circle;->setStrokeColor(I)V

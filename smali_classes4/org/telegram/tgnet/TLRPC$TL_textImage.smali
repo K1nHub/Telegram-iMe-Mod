@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2489
+    .line 2490
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$RichText;-><init>()V
 
     return-void
@@ -36,21 +36,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 2497
+    .line 2498
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_textImage;->document_id:J
 
-    .line 2498
+    .line 2499
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_textImage;->w:I
 
-    .line 2499
+    .line 2500
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -63,22 +63,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2503
+    .line 2504
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_textImage;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2504
+    .line 2505
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_textImage;->document_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 2505
+    .line 2506
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_textImage;->w:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2506
+    .line 2507
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_textImage;->h:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

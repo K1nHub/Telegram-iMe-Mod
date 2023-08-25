@@ -54,14 +54,14 @@
 .method private constructor <init>(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 0
 
-    .line 5255
+    .line 5287
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 5273
+    .line 5305
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->waitngNewMessageFroTypingAnimation:Z
 
     return-void
@@ -70,7 +70,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Cells/DialogCell;Lorg/telegram/ui/Cells/DialogCell$1;)V
     .locals 0
 
-    .line 5255
+    .line 5287
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;-><init>(Lorg/telegram/ui/Cells/DialogCell;)V
 
     return-void
@@ -83,7 +83,7 @@
 
     move-object/from16 v0, p0
 
-    .line 5278
+    .line 5310
     iget-object v1, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/DialogCell;->access$1500(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -114,7 +114,7 @@
 
     if-nez v1, :cond_1
 
-    .line 5280
+    .line 5312
     iget-object v1, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/DialogCell;->access$1600(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -137,7 +137,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 5281
+    .line 5313
     iget-object v1, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/DialogCell;->access$1400(Lorg/telegram/ui/Cells/DialogCell;)J
@@ -151,7 +151,7 @@
     :cond_0
     return v3
 
-    .line 5286
+    .line 5318
     :cond_1
     iget-object v4, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -188,7 +188,7 @@
 
     add-int/2addr v4, v5
 
-    .line 5288
+    .line 5320
     :goto_0
     iget v5, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->read_inbox_max_id:I
 
@@ -230,7 +230,7 @@
 
     add-long/2addr v5, v7
 
-    .line 5289
+    .line 5321
     iget v7, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_reactions_count:I
 
     if-lez v7, :cond_4
@@ -247,7 +247,7 @@
 
     add-long/2addr v5, v7
 
-    .line 5290
+    .line 5322
     iget v7, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_mentions_count:I
 
     if-lez v7, :cond_5
@@ -264,7 +264,7 @@
 
     add-long/2addr v5, v7
 
-    .line 5291
+    .line 5323
     iget-object v7, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-virtual {v7}, Lorg/telegram/ui/Cells/DialogCell;->isForumCell()Z
@@ -291,7 +291,7 @@
 
     if-eqz v7, :cond_7
 
-    .line 5292
+    .line 5324
     :cond_6
     iget-object v7, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -325,7 +325,7 @@
 
     if-nez v7, :cond_7
 
-    .line 5293
+    .line 5325
     iget-object v7, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v7}, Lorg/telegram/ui/Cells/DialogCell;->access$1500(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -357,7 +357,7 @@
     :cond_7
     move-object v7, v8
 
-    .line 5298
+    .line 5330
     :goto_4
     iget-object v11, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -375,7 +375,7 @@
 
     add-int/2addr v11, v12
 
-    .line 5300
+    .line 5332
     iget-object v12, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-virtual {v12}, Lorg/telegram/ui/Cells/DialogCell;->isForumCell()Z
@@ -384,7 +384,7 @@
 
     if-eqz v12, :cond_9
 
-    .line 5301
+    .line 5333
     iget-object v12, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v12}, Lorg/telegram/ui/Cells/DialogCell;->access$1500(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -417,7 +417,7 @@
 
     goto :goto_5
 
-    .line 5302
+    .line 5334
     :cond_8
     invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
 
@@ -426,7 +426,7 @@
     :goto_5
     if-ne v12, v9, :cond_a
 
-    .line 5303
+    .line 5335
     iget-object v9, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v9}, Lorg/telegram/ui/Cells/DialogCell;->access$1500(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -458,7 +458,7 @@
     :cond_9
     move v12, v3
 
-    .line 5309
+    .line 5341
     :cond_a
     iget-object v9, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -468,7 +468,7 @@
 
     if-eqz v9, :cond_c
 
-    .line 5310
+    .line 5342
     iget-object v9, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v9}, Lorg/telegram/ui/Cells/DialogCell;->access$1500(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -497,7 +497,7 @@
 
     if-eqz v9, :cond_b
 
-    .line 5311
+    .line 5343
     iget-object v13, v9, Lorg/telegram/tgnet/TLRPC$DraftMessage;->message:Ljava/lang/String;
 
     invoke-static {v13}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -513,7 +513,7 @@
 
     goto :goto_6
 
-    .line 5314
+    .line 5346
     :cond_c
     iget-object v9, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -523,7 +523,7 @@
 
     if-eqz v9, :cond_d
 
-    .line 5315
+    .line 5347
     iget-object v8, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v8}, Lorg/telegram/ui/Cells/DialogCell;->access$1500(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -552,7 +552,7 @@
 
     goto :goto_7
 
-    .line 5317
+    .line 5349
     :cond_e
     iget-object v9, v8, Lorg/telegram/tgnet/TLRPC$DraftMessage;->message:Ljava/lang/String;
 
@@ -566,7 +566,7 @@
 
     add-int/2addr v9, v8
 
-    .line 5318
+    .line 5350
     :goto_7
     iget-object v8, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -603,7 +603,7 @@
     :cond_f
     move v8, v3
 
-    .line 5319
+    .line 5351
     :goto_8
     iget-object v10, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -629,7 +629,7 @@
 
     move-result v10
 
-    .line 5320
+    .line 5352
     iget v13, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnSizeHash:I
 
     if-ne v13, v11, :cond_10
@@ -650,7 +650,7 @@
 
     iget-object v13, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 5323
+    .line 5355
     invoke-static {v13}, Lorg/telegram/ui/Cells/DialogCell;->access$1400(Lorg/telegram/ui/Cells/DialogCell;)J
 
     move-result-wide v13
@@ -673,7 +673,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnPrintingType:Ljava/lang/Integer;
 
-    .line 5326
+    .line 5358
     invoke-static {v2, v7}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -692,7 +692,7 @@
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 5329
+    .line 5361
     invoke-static {v3}, Lorg/telegram/ui/Cells/DialogCell;->access$2200(Lorg/telegram/ui/Cells/DialogCell;)Z
 
     move-result v3
@@ -707,7 +707,7 @@
 
     return v2
 
-    .line 5334
+    .line 5366
     :cond_10
     iget-wide v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnDialogId:J
 
@@ -730,18 +730,18 @@
     :cond_11
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 5335
+    .line 5367
     :goto_9
     iput v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->typingProgres:F
 
     const/4 v2, 0x0
 
-    .line 5336
+    .line 5368
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->waitngNewMessageFroTypingAnimation:Z
 
     goto :goto_c
 
-    .line 5338
+    .line 5370
     :cond_12
     iget-object v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnPrintingType:Ljava/lang/Integer;
 
@@ -755,7 +755,7 @@
 
     if-eqz v2, :cond_17
 
-    .line 5339
+    .line 5371
     :cond_13
     iget-boolean v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->waitngNewMessageFroTypingAnimation:Z
 
@@ -765,10 +765,10 @@
 
     const/4 v3, 0x1
 
-    .line 5340
+    .line 5372
     iput-boolean v3, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->waitngNewMessageFroTypingAnimation:Z
 
-    .line 5341
+    .line 5373
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -780,7 +780,7 @@
     :cond_14
     if-eqz v2, :cond_15
 
-    .line 5342
+    .line 5374
     iget-wide v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnMessageId:J
 
     int-to-long v13, v4
@@ -791,7 +791,7 @@
 
     const/4 v2, 0x0
 
-    .line 5343
+    .line 5375
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->waitngNewMessageFroTypingAnimation:Z
 
     goto :goto_b
@@ -800,7 +800,7 @@
     :goto_a
     const/4 v2, 0x0
 
-    .line 5345
+    .line 5377
     :goto_b
     iget-wide v13, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnMessageId:J
 
@@ -812,7 +812,7 @@
 
     const/4 v2, 0x0
 
-    .line 5346
+    .line 5378
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->typingOutToTop:Z
 
     goto :goto_c
@@ -820,21 +820,21 @@
     :cond_16
     const/4 v2, 0x1
 
-    .line 5348
+    .line 5380
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->typingOutToTop:Z
 
     :cond_17
     :goto_c
     if-eqz v7, :cond_18
 
-    .line 5353
+    .line 5385
     invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastKnownTypingType:I
 
-    .line 5355
+    .line 5387
     :cond_18
     iget-object v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
@@ -846,30 +846,30 @@
 
     int-to-long v2, v4
 
-    .line 5356
+    .line 5388
     iput-wide v2, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnMessageId:J
 
-    .line 5357
+    .line 5389
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$Dialog;->isFolder:Z
 
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnDialogIsFolder:Z
 
-    .line 5358
+    .line 5390
     iput-wide v5, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnReadState:J
 
-    .line 5359
+    .line 5391
     iput-object v7, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnPrintingType:Ljava/lang/Integer;
 
-    .line 5360
+    .line 5392
     iput v11, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnSizeHash:I
 
-    .line 5361
+    .line 5393
     iput v9, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnDraftHash:I
 
-    .line 5362
+    .line 5394
     iput v12, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastTopicsCount:I
 
-    .line 5363
+    .line 5395
     iget-object v1, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/DialogCell;->access$2200(Lorg/telegram/ui/Cells/DialogCell;)Z
@@ -878,10 +878,10 @@
 
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnPinned:Z
 
-    .line 5364
+    .line 5396
     iput-boolean v8, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnHasCall:Z
 
-    .line 5365
+    .line 5397
     iput-boolean v10, v0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnTranslated:Z
 
     const/4 v1, 0x1
@@ -892,12 +892,12 @@
 .method public updateAnimationValues()V
     .locals 5
 
-    .line 5371
+    .line 5403
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->waitngNewMessageFroTypingAnimation:Z
 
     if-nez v0, :cond_2
 
-    .line 5372
+    .line 5404
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnPrintingType:Ljava/lang/Integer;
 
     const v1, 0x3da3d70a    # 0.08f
@@ -924,17 +924,17 @@
 
     add-float/2addr v0, v1
 
-    .line 5373
+    .line 5405
     iput v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->typingProgres:F
 
-    .line 5374
+    .line 5406
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
     goto :goto_0
 
-    .line 5375
+    .line 5407
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->lastDrawnPrintingType:Ljava/lang/Integer;
 
@@ -948,15 +948,15 @@
 
     sub-float/2addr v0, v1
 
-    .line 5376
+    .line 5408
     iput v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->typingProgres:F
 
-    .line 5377
+    .line 5409
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
-    .line 5379
+    .line 5411
     :cond_1
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->typingProgres:F
@@ -969,7 +969,7 @@
 
     goto :goto_1
 
-    .line 5381
+    .line 5413
     :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -987,10 +987,10 @@
 
     const/4 v0, 0x0
 
-    .line 5382
+    .line 5414
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->waitngNewMessageFroTypingAnimation:Z
 
-    .line 5384
+    .line 5416
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$DialogUpdateHelper;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 

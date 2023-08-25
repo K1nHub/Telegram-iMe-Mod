@@ -32,6 +32,8 @@
 
 
 # instance fields
+.field private final isAvailableForAllNetworks:Z
+
 .field private final title:I
 
 
@@ -65,9 +67,9 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
-    .line 10
+    .line 11
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
     sget v1, Lcom/iMe/storage/R$string;->choose_tokens_order_alphabet:I
@@ -76,33 +78,33 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;-><init>(Ljava/lang/String;II)V
+    const/4 v4, 0x1
+
+    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->ALPHABET:Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
-    .line 11
+    .line 12
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
     sget v1, Lcom/iMe/storage/R$string;->choose_tokens_order_balance:I
 
     const-string v2, "BALANCE"
 
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v2, v4, v1, v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->BALANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
-    .line 12
+    .line 13
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
     sget v1, Lcom/iMe/storage/R$string;->choose_tokens_order_default:I
 
     const-string v2, "DEFAULT"
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v2, v4, v1, v3}, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->DEFAULT:Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;
 
@@ -123,11 +125,11 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;II)V
+.method private constructor <init>(Ljava/lang/String;IIZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)V"
+            "(IZ)V"
         }
     .end annotation
 
@@ -136,6 +138,9 @@
 
     .line 8
     iput p3, p0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->title:I
+
+    .line 9
+    iput-boolean p4, p0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->isAvailableForAllNetworks:Z
 
     return-void
 .end method
@@ -175,6 +180,15 @@
 
     .line 8
     iget v0, p0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->title:I
+
+    return v0
+.end method
+
+.method public final isAvailableForAllNetworks()Z
+    .locals 1
+
+    .line 9
+    iget-boolean v0, p0, Lcom/iMe/storage/domain/model/wallet/token/TokenOrderType;->isAvailableForAllNetworks:Z
 
     return v0
 .end method

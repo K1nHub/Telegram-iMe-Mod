@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State;Z)V
     .locals 1
 
-    .line 508
+    .line 542
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "showRefreshing"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 510
+    .line 544
     iput-boolean p2, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$ShowRefreshingCommand;->show:Z
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V
     .locals 1
 
-    .line 515
+    .line 549
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$ShowRefreshingCommand;->show:Z
 
     invoke-interface {p1, v0}, Lcom/iMe/ui/base/mvp/SwipeRefreshView;->showRefreshing(Z)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 504
+    .line 538
     check-cast p1, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsView$$State$ShowRefreshingCommand;->apply(Lcom/iMe/ui/wallet/transaction/WalletTransactionsView;)V

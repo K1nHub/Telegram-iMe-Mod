@@ -82,7 +82,7 @@
 
     move-result v0
 
-    const-string v1, "name resolver must be started"
+    const-string/jumbo v1, "name resolver must be started"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 

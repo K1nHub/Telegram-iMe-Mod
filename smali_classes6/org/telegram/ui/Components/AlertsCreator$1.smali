@@ -24,7 +24,7 @@
 .method constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZLjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 490
+    .line 488
     iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     iput-object p7, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$parentFragment:Lorg/telegram/ui/ChatActivity;
@@ -39,10 +39,10 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 498
+    .line 496
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 499
+    .line 497
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -63,7 +63,7 @@
 .method protected onSend(ILjava/lang/String;)V
     .locals 0
 
-    .line 493
+    .line 491
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$1;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V

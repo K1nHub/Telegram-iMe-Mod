@@ -40,14 +40,14 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 3572
+    .line 3582
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
     const/4 p1, -0x1
 
-    .line 3574
+    .line 3584
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$11;->animationIndex:I
 
     return-void
@@ -56,7 +56,7 @@
 .method private synthetic lambda$onAllAnimationsDone$0()V
     .locals 2
 
-    .line 3580
+    .line 3590
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -73,7 +73,7 @@
 .method private synthetic lambda$runPendingAnimations$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 3592
+    .line 3602
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -98,10 +98,10 @@
 .method protected onAllAnimationsDone()V
     .locals 1
 
-    .line 3578
+    .line 3588
     invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->onAllAnimationsDone()V
 
-    .line 3579
+    .line 3589
     new-instance v0, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ProfileActivity$11;)V
@@ -114,7 +114,7 @@
 .method public runPendingAnimations()V
     .locals 4
 
-    .line 3586
+    .line 3596
     iget-object v0, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingRemovals:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -123,7 +123,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 3587
+    .line 3597
     iget-object v1, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingMoves:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -132,7 +132,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    .line 3588
+    .line 3598
     iget-object v2, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingChanges:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -141,7 +141,7 @@
 
     xor-int/lit8 v2, v2, 0x1
 
-    .line 3589
+    .line 3599
     iget-object v3, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingAdditions:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -163,31 +163,31 @@
 
     new-array v0, v0, [F
 
-    .line 3591
+    .line 3601
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 3592
+    .line 3602
     new-instance v1, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$11;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3593
+    .line 3603
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->getMoveDuration()J
 
     move-result-wide v1
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3594
+    .line 3604
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 3595
+    .line 3605
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -204,7 +204,7 @@
 
     iput v0, p0, Lorg/telegram/ui/ProfileActivity$11;->animationIndex:I
 
-    .line 3597
+    .line 3607
     :cond_1
     invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->runPendingAnimations()V
 

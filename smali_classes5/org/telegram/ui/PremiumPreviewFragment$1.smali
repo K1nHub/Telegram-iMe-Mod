@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 347
+    .line 390
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -43,7 +43,7 @@
 
     move-object/from16 v0, p0
 
-    .line 430
+    .line 473
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$800(Lorg/telegram/ui/PremiumPreviewFragment;)Z
@@ -56,7 +56,7 @@
 
     if-nez v1, :cond_1
 
-    .line 431
+    .line 474
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-boolean v4, v1, Lorg/telegram/ui/PremiumPreviewFragment;->inc:Z
@@ -65,7 +65,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 432
+    .line 475
     iget v4, v1, Lorg/telegram/ui/PremiumPreviewFragment;->progress:F
 
     add-float/2addr v4, v5
@@ -78,12 +78,12 @@
 
     if-lez v4, :cond_1
 
-    .line 434
+    .line 477
     iput-boolean v2, v1, Lorg/telegram/ui/PremiumPreviewFragment;->inc:Z
 
     goto :goto_0
 
-    .line 437
+    .line 480
     :cond_0
     iget v4, v1, Lorg/telegram/ui/PremiumPreviewFragment;->progress:F
 
@@ -97,14 +97,14 @@
 
     const/4 v4, 0x1
 
-    .line 439
+    .line 482
     iput-boolean v4, v1, Lorg/telegram/ui/PremiumPreviewFragment;->inc:Z
 
     :cond_1
     :goto_0
     const/4 v1, 0x0
 
-    .line 444
+    .line 487
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v4, v4, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -115,7 +115,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 445
+    .line 488
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -128,7 +128,7 @@
 
     move-result-object v1
 
-    .line 448
+    .line 491
     :cond_2
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -144,7 +144,7 @@
     :goto_1
     invoke-static {v4, v2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$902(Lorg/telegram/ui/PremiumPreviewFragment;I)I
 
-    .line 449
+    .line 492
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1000(Lorg/telegram/ui/PremiumPreviewFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -163,7 +163,7 @@
 
     add-int/2addr v1, v4
 
-    .line 450
+    .line 493
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/PremiumPreviewFragment;->access$900(Lorg/telegram/ui/PremiumPreviewFragment;)I
@@ -190,7 +190,7 @@
 
     iput v1, v4, Lorg/telegram/ui/PremiumPreviewFragment;->totalProgress:F
 
-    .line 451
+    .line 494
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget v4, v1, Lorg/telegram/ui/PremiumPreviewFragment;->totalProgress:F
@@ -203,7 +203,7 @@
 
     iput v4, v1, Lorg/telegram/ui/PremiumPreviewFragment;->totalProgress:F
 
-    .line 453
+    .line 496
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1200(Lorg/telegram/ui/PremiumPreviewFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -220,7 +220,7 @@
 
     add-int/2addr v1, v4
 
-    .line 454
+    .line 497
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/PremiumPreviewFragment;->access$900(Lorg/telegram/ui/PremiumPreviewFragment;)I
@@ -229,21 +229,21 @@
 
     if-ge v4, v1, :cond_4
 
-    .line 455
+    .line 498
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$902(Lorg/telegram/ui/PremiumPreviewFragment;I)I
 
-    .line 458
+    .line 501
     :cond_4
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget v6, v4, Lorg/telegram/ui/PremiumPreviewFragment;->progressToFull:F
 
-    .line 459
+    .line 502
     iput v5, v4, Lorg/telegram/ui/PremiumPreviewFragment;->progressToFull:F
 
-    .line 460
+    .line 503
     invoke-static {v4}, Lorg/telegram/ui/PremiumPreviewFragment;->access$900(Lorg/telegram/ui/PremiumPreviewFragment;)I
 
     move-result v4
@@ -258,7 +258,7 @@
 
     if-ge v4, v8, :cond_5
 
-    .line 461
+    .line 504
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -287,7 +287,7 @@
 
     iput v1, v4, Lorg/telegram/ui/PremiumPreviewFragment;->progressToFull:F
 
-    .line 464
+    .line 507
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -301,16 +301,16 @@
 
     if-eqz v1, :cond_7
 
-    .line 465
+    .line 508
     :cond_6
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iput v3, v1, Lorg/telegram/ui/PremiumPreviewFragment;->progressToFull:F
 
-    .line 466
+    .line 509
     iput v3, v1, Lorg/telegram/ui/PremiumPreviewFragment;->totalProgress:F
 
-    .line 468
+    .line 511
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -320,12 +320,12 @@
 
     if-eqz v4, :cond_8
 
-    .line 469
+    .line 512
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 471
+    .line 514
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -393,7 +393,7 @@
 
     int-to-float v1, v1
 
-    .line 472
+    .line 515
     iget-object v4, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1400(Lorg/telegram/ui/PremiumPreviewFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -466,7 +466,7 @@
 
     sub-float/2addr v4, v7
 
-    .line 474
+    .line 517
     invoke-static {v4, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
@@ -477,7 +477,7 @@
 
     div-float/2addr v4, v7
 
-    .line 475
+    .line 518
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -486,14 +486,14 @@
 
     add-float/2addr v4, v7
 
-    .line 476
+    .line 519
     iget-object v7, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v7, v7, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-virtual {v7, v1}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
-    .line 478
+    .line 521
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -514,7 +514,7 @@
 
     const v1, 0x3f19999a    # 0.6f
 
-    .line 479
+    .line 522
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget v4, v2, Lorg/telegram/ui/PremiumPreviewFragment;->totalProgress:F
@@ -545,7 +545,7 @@
     :goto_3
     sub-float v1, v3, v4
 
-    .line 481
+    .line 524
     iget-object v2, v2, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v2}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$100(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;
@@ -554,7 +554,7 @@
 
     invoke-virtual {v2, v7}, Landroid/view/TextureView;->setScaleX(F)V
 
-    .line 482
+    .line 525
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v2, v2, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -565,7 +565,7 @@
 
     invoke-virtual {v2, v7}, Landroid/view/TextureView;->setScaleY(F)V
 
-    .line 483
+    .line 526
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v2, v2, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -576,7 +576,7 @@
 
     invoke-virtual {v2, v1}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 484
+    .line 527
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v2, v2, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -587,7 +587,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 485
+    .line 528
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v2, v2, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -598,7 +598,7 @@
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 486
+    .line 529
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v2, v1, Lorg/telegram/ui/PremiumPreviewFragment;->particlesView:Lorg/telegram/ui/Components/Premium/StarParticlesView;
@@ -609,7 +609,7 @@
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 488
+    .line 531
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->particlesView:Lorg/telegram/ui/Components/Premium/StarParticlesView;
@@ -666,7 +666,7 @@
 
     const/16 v1, 0x48
 
-    .line 489
+    .line 532
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -685,7 +685,7 @@
 
     int-to-float v1, v1
 
-    .line 490
+    .line 533
     iget-object v2, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget v4, v2, Lorg/telegram/ui/PremiumPreviewFragment;->totalProgress:F
@@ -702,7 +702,7 @@
 
     div-float v5, v4, v5
 
-    .line 491
+    .line 534
     :cond_b
     iget-object v2, v2, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
@@ -722,7 +722,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 493
+    .line 536
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -783,7 +783,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->gradientStartX:F
 
-    .line 494
+    .line 537
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -826,7 +826,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->gradientStartY:F
 
-    .line 496
+    .line 539
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$800(Lorg/telegram/ui/PremiumPreviewFragment;)Z
@@ -835,10 +835,10 @@
 
     if-nez v1, :cond_c
 
-    .line 497
+    .line 540
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 499
+    .line 542
     :cond_c
     iget-object v1, v0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -880,7 +880,7 @@
 
     const/4 v14, 0x0
 
-    .line 500
+    .line 543
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -917,7 +917,7 @@
 
     invoke-virtual/range {v12 .. v17}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 502
+    .line 545
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -926,7 +926,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 8
 
-    .line 355
+    .line 398
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -949,7 +949,7 @@
 
     add-float/2addr v0, v1
 
-    .line 356
+    .line 399
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -972,7 +972,7 @@
 
     add-float/2addr v1, v2
 
-    .line 357
+    .line 400
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -1009,7 +1009,7 @@
 
     invoke-virtual {v2, v0, v1, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 358
+    .line 401
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
@@ -1047,10 +1047,10 @@
 
     neg-float v1, v1
 
-    .line 359
+    .line 402
     invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 360
+    .line 403
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -1067,7 +1067,7 @@
 
     goto :goto_0
 
-    .line 362
+    .line 405
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1081,18 +1081,18 @@
 
     if-ne v0, v4, :cond_4
 
-    .line 363
+    .line 406
     :cond_2
     iput-boolean v5, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->iconInterceptedTouch:Z
 
     goto :goto_1
 
-    .line 361
+    .line 404
     :cond_3
     :goto_0
     iput-boolean v6, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->iconInterceptedTouch:Z
 
-    .line 365
+    .line 408
     :cond_4
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -1107,7 +1107,7 @@
 
     return v6
 
-    .line 369
+    .line 412
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -1153,7 +1153,7 @@
 
     add-float/2addr v1, v3
 
-    .line 370
+    .line 413
     iget-object v3, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v3, v3, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -1188,7 +1188,7 @@
 
     invoke-virtual {v2, v0, v1, v3, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 371
+    .line 414
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
@@ -1220,22 +1220,22 @@
 
     neg-float v1, v1
 
-    .line 372
+    .line 415
     invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 373
+    .line 416
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    .line 374
+    .line 417
     iput-boolean v6, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->listInterceptedTouch:Z
 
     goto :goto_2
 
-    .line 375
+    .line 418
     :cond_7
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1249,11 +1249,11 @@
 
     if-ne v0, v4, :cond_9
 
-    .line 376
+    .line 419
     :cond_8
     iput-boolean v5, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->listInterceptedTouch:Z
 
-    .line 378
+    .line 421
     :cond_9
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -1266,14 +1266,14 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 380
+    .line 423
     iget-boolean v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->listInterceptedTouch:Z
 
     if-eqz v0, :cond_a
 
     return v6
 
-    .line 384
+    .line 427
     :cond_a
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1285,19 +1285,19 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 4
 
-    .line 507
+    .line 550
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-ne p2, v0, :cond_0
 
-    .line 508
+    .line 551
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v0, 0x0
 
-    .line 509
+    .line 552
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$1600(Lorg/telegram/ui/PremiumPreviewFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1318,17 +1318,17 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 510
+    .line 553
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    .line 511
+    .line 554
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     const/4 p1, 0x1
 
     return p1
 
-    .line 514
+    .line 557
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -1340,10 +1340,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 415
+    .line 458
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 416
+    .line 459
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -1378,7 +1378,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->gradientScaleX:F
 
-    .line 417
+    .line 460
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -1413,7 +1413,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->gradientScaleY:F
 
-    .line 418
+    .line 461
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -1456,7 +1456,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconRenderer;->gradientStartX:F
 
-    .line 419
+    .line 462
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/PremiumPreviewFragment;->backgroundView:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
@@ -1505,7 +1505,7 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 389
+    .line 432
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -1518,7 +1518,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 390
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     const/4 v1, 0x1
@@ -1527,13 +1527,13 @@
 
     goto :goto_0
 
-    .line 392
+    .line 435
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iput-boolean v2, v0, Lorg/telegram/ui/PremiumPreviewFragment;->isLandscapeMode:Z
 
-    .line 394
+    .line 437
     :goto_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1541,7 +1541,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 395
+    .line 438
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
@@ -1560,7 +1560,7 @@
     :goto_1
     invoke-static {v0, v1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$302(Lorg/telegram/ui/PremiumPreviewFragment;I)I
 
-    .line 397
+    .line 440
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -1572,7 +1572,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 398
+    .line 441
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment;->particlesView:Lorg/telegram/ui/Components/Premium/StarParticlesView;
@@ -1591,7 +1591,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 399
+    .line 442
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/PremiumPreviewFragment;->access$400(Lorg/telegram/ui/PremiumPreviewFragment;)Landroid/widget/FrameLayout;
@@ -1629,7 +1629,7 @@
     :goto_2
     move v0, v2
 
-    .line 401
+    .line 444
     :goto_3
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -1641,7 +1641,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 402
+    .line 445
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     iget-object v1, v1, Lorg/telegram/ui/PremiumPreviewFragment;->layoutManager:Lorg/telegram/ui/Components/FillLastLinearLayoutManager;
@@ -1650,7 +1650,7 @@
 
     goto :goto_4
 
-    .line 404
+    .line 447
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -1670,7 +1670,7 @@
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setAdditionalHeight(I)V
 
-    .line 405
+    .line 448
     :goto_4
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -1678,10 +1678,10 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/FillLastLinearLayoutManager;->setMinimumLastViewHeight(I)V
 
-    .line 406
+    .line 449
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 407
+    .line 450
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p1
@@ -1694,12 +1694,12 @@
 
     shl-int/2addr p1, v3
 
-    .line 408
+    .line 451
     iget p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->lastSize:I
 
     if-eq p2, p1, :cond_6
 
-    .line 409
+    .line 452
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/PremiumPreviewFragment;->access$600(Lorg/telegram/ui/PremiumPreviewFragment;)V
@@ -1711,10 +1711,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 424
+    .line 467
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 425
+    .line 468
     iget-object p3, p0, Lorg/telegram/ui/PremiumPreviewFragment$1;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
 
     invoke-static {p3, p1, p2}, Lorg/telegram/ui/PremiumPreviewFragment;->access$700(Lorg/telegram/ui/PremiumPreviewFragment;II)V

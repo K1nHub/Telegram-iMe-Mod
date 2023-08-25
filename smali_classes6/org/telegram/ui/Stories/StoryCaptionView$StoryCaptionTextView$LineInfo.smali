@@ -23,7 +23,7 @@
 
 .field finalY:F
 
-.field private layoutEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+.field public layoutEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
 .field staticLayout:Landroid/text/StaticLayout;
 
@@ -32,26 +32,8 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/StoryCaptionView$StoryCaptionTextView;)V
     .locals 0
 
-    .line 796
+    .line 1137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method static synthetic access$000(Lorg/telegram/ui/Stories/StoryCaptionView$StoryCaptionTextView$LineInfo;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-    .locals 0
-
-    .line 796
-    iget-object p0, p0, Lorg/telegram/ui/Stories/StoryCaptionView$StoryCaptionTextView$LineInfo;->layoutEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    return-object p0
-.end method
-
-.method static synthetic access$002(Lorg/telegram/ui/Stories/StoryCaptionView$StoryCaptionTextView$LineInfo;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-    .locals 0
-
-    .line 796
-    iput-object p1, p0, Lorg/telegram/ui/Stories/StoryCaptionView$StoryCaptionTextView$LineInfo;->layoutEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
-
-    return-object p1
 .end method

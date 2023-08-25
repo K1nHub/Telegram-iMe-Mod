@@ -11577,7 +11577,7 @@
 
     move-result v8
 
-    const-string v12, "notification"
+    const-string/jumbo v12, "notification"
 
     .line 4055
     invoke-virtual {v1, v12}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -17249,7 +17249,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "onCallUpdated called with wrong call id (got "
+    const-string/jumbo v1, "onCallUpdated called with wrong call id (got "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -19689,7 +19689,7 @@
 
     iput-boolean v0, v1, Lorg/telegram/messenger/voip/VoIPService;->isVideoAvailable:Z
 
-    const-string v0, "notifications_disabled"
+    const-string/jumbo v0, "notifications_disabled"
 
     .line 727
     invoke-virtual {v2, v0, v10}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z

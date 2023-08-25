@@ -25,10 +25,10 @@
 .method private constructor <init>(Lcom/google/android/gms/maps/model/MapStyleOptions;)V
     .locals 0
 
-    .line 616
+    .line 626
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 617
+    .line 627
     iput-object p1, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapStyleOptions;->mapStyleOptions:Lcom/google/android/gms/maps/model/MapStyleOptions;
 
     return-void
@@ -37,7 +37,7 @@
 .method synthetic constructor <init>(Lcom/google/android/gms/maps/model/MapStyleOptions;Lorg/telegram/messenger/GoogleMapsProvider$1;)V
     .locals 0
 
-    .line 613
+    .line 623
     invoke-direct {p0, p1}, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapStyleOptions;-><init>(Lcom/google/android/gms/maps/model/MapStyleOptions;)V
 
     return-void
@@ -46,7 +46,7 @@
 .method static synthetic access$900(Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapStyleOptions;)Lcom/google/android/gms/maps/model/MapStyleOptions;
     .locals 0
 
-    .line 613
+    .line 623
     iget-object p0, p0, Lorg/telegram/messenger/GoogleMapsProvider$GoogleMapStyleOptions;->mapStyleOptions:Lcom/google/android/gms/maps/model/MapStyleOptions;
 
     return-object p0

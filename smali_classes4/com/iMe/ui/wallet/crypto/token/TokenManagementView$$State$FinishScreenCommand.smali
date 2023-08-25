@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State;)V
     .locals 1
 
-    .line 537
+    .line 536
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "finishScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V
     .locals 0
 
-    .line 542
+    .line 541
     invoke-interface {p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->finishScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 535
+    .line 534
     check-cast p1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementView$$State$FinishScreenCommand;->apply(Lcom/iMe/ui/wallet/crypto/token/TokenManagementView;)V

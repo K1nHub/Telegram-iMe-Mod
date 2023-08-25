@@ -31,6 +31,8 @@
 
 .field private final rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
+.field private final stickerEmptyView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
+
 
 # direct methods
 .method public static synthetic $r8$lambda$2DQhVFo4IS-73_R42lDz9jcoKVg(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;Landroid/view/View;I)V
@@ -46,11 +48,11 @@
 
     const-class v0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x4
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 25
+    .line 27
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "rootView"
@@ -67,7 +69,7 @@
 
     aput-object v2, v1, v5
 
-    .line 26
+    .line 28
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "listView"
@@ -84,7 +86,7 @@
 
     aput-object v2, v1, v3
 
-    .line 27
+    .line 29
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "listAdapter"
@@ -95,9 +97,26 @@
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
 
+    move-result-object v2
+
+    const/4 v3, 0x2
+
+    aput-object v2, v1, v3
+
+    .line 30
+    new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
+
+    const-string v3, "stickerEmptyView"
+
+    const-string v4, "getStickerEmptyView()Lorg/telegram/ui/Components/StickerEmptyView;"
+
+    invoke-direct {v2, v0, v3, v4, v5}, Lkotlin/jvm/internal/PropertyReference1Impl;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
+
     move-result-object v0
 
-    const/4 v2, 0x2
+    const/4 v2, 0x3
 
     aput-object v0, v1, v2
 
@@ -109,10 +128,10 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 22
+    .line 24
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
-    .line 25
+    .line 27
     new-instance v0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$rootView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)V
@@ -127,7 +146,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 26
+    .line 28
     new-instance v0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$listView$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)V
@@ -138,7 +157,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 27
+    .line 29
     new-instance v0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$listAdapter$2;
 
     invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)V
@@ -149,13 +168,35 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
+    .line 30
+    new-instance v0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$stickerEmptyView$2;
+
+    invoke-direct {v0, p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$stickerEmptyView$2;-><init>(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)V
+
+    invoke-static {p0, v1, v0, v2, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazyDelegateKt;->resettableLazy$default(Lcom/iMe/ui/base/mvp/MvpFragment;Lcom/iMe/utils/extentions/delegate/ResettableLazyManager;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/iMe/utils/extentions/delegate/ResettableLazy;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->stickerEmptyView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
+
     return-void
+.end method
+
+.method public static final synthetic access$initEmptyView(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
+    .locals 0
+
+    .line 24
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->initEmptyView()Lorg/telegram/ui/Components/StickerEmptyView;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 22
+    .line 24
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -166,7 +207,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 22
+    .line 24
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->initRootView()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -177,7 +218,7 @@
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$ListAdapter;
     .locals 3
 
-    .line 27
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -198,7 +239,7 @@
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 26
+    .line 28
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -219,7 +260,7 @@
 .method private final getRootView()Landroid/widget/FrameLayout;
     .locals 3
 
-    .line 25
+    .line 27
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -237,10 +278,80 @@
     return-object v0
 .end method
 
+.method private final getStickerEmptyView()Lorg/telegram/ui/Components/StickerEmptyView;
+    .locals 3
+
+    .line 30
+    iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->stickerEmptyView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
+
+    sget-object v1, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
+
+    const/4 v2, 0x3
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1}, Lcom/iMe/utils/extentions/delegate/ResettableLazy;->getValue(Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/ui/Components/StickerEmptyView;
+
+    return-object v0
+.end method
+
+.method private final initEmptyView()Lorg/telegram/ui/Components/StickerEmptyView;
+    .locals 6
+
+    .line 77
+    new-instance v0, Lorg/telegram/ui/Components/StickerEmptyView;
+
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;I)V
+
+    .line 78
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/StickerEmptyView;->setAnimateLayoutChange(Z)V
+
+    .line 79
+    iget-object v1, v0, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
+
+    sget v4, Lorg/telegram/messenger/R$string;->SettingsNoResults:I
+
+    const-string v5, "SettingsNoResults"
+
+    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 80
+    iget-object v1, v0, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+
+    const-string v4, "subtitle"
+
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v4, 0x0
+
+    invoke-static {v1, v4, v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 81
+    invoke-static {v0, v4, v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    return-object v0
+.end method
+
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 66
+    .line 70
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -251,10 +362,10 @@
 
     const/4 v1, 0x1
 
-    .line 67
+    .line 71
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 68
+    .line 72
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -265,14 +376,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 69
+    .line 73
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 70
+    .line 74
     new-instance v1, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)V
@@ -289,7 +400,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 74
     new-instance p1, Lcom/iMe/fork/ui/fragment/SettingsToolsCategoryActivity;
 
     invoke-static {}, Lcom/iMe/fork/enums/SettingsToolsCategory;->values()[Lcom/iMe/fork/enums/SettingsToolsCategory;
@@ -308,7 +419,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 62
+    .line 66
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -317,7 +428,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 63
+    .line 67
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -332,20 +443,20 @@
 .method private final setupActionBar()V
     .locals 2
 
-    .line 76
+    .line 85
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 77
+    .line 86
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 78
+    .line 87
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 79
+    .line 88
     sget v1, Lorg/telegram/messenger/R$string;->settings_tools:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -354,7 +465,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 80
+    .line 89
     new-instance v1, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;)V
@@ -383,7 +494,7 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 46
+    .line 50
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -408,7 +519,7 @@
 
     aput-object v10, v1, v2
 
-    .line 47
+    .line 51
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -435,7 +546,7 @@
 
     aput-object v3, v1, v12
 
-    .line 48
+    .line 52
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -456,7 +567,7 @@
 
     aput-object v3, v1, v4
 
-    .line 49
+    .line 53
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -483,7 +594,7 @@
 
     aput-object v3, v1, v4
 
-    .line 50
+    .line 54
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -502,7 +613,7 @@
 
     aput-object v3, v1, v4
 
-    .line 51
+    .line 55
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -529,7 +640,7 @@
 
     aput-object v3, v1, v4
 
-    .line 52
+    .line 56
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -548,7 +659,7 @@
 
     aput-object v3, v1, v4
 
-    .line 53
+    .line 57
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -571,7 +682,7 @@
 
     aput-object v3, v1, v4
 
-    .line 54
+    .line 58
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -600,7 +711,7 @@
 
     aput-object v3, v1, v4
 
-    .line 55
+    .line 59
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -633,7 +744,7 @@
 
     aput-object v3, v1, v2
 
-    .line 45
+    .line 49
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -644,7 +755,7 @@
 .method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
     .locals 0
 
-    .line 22
+    .line 24
     invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
 
     move-result-object p1
@@ -659,15 +770,22 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 31
+    .line 34
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getRootView()Landroid/widget/FrameLayout;
 
     move-result-object p1
 
-    .line 32
+    .line 35
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->setupActionBar()V
 
-    .line 33
+    .line 36
+    invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getStickerEmptyView()Lorg/telegram/ui/Components/StickerEmptyView;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    .line 37
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -680,10 +798,10 @@
 .method public onResume()V
     .locals 1
 
-    .line 41
+    .line 45
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
-    .line 42
+    .line 46
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/SettingsToolsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/SettingsToolsActivity$ListAdapter;
 
     move-result-object v0

@@ -206,7 +206,7 @@
 
     iput v0, p0, Lkotlinx/coroutines/internal/ArrayQueue;->head:I
 
-    const-string v0, "null cannot be cast to non-null type T of kotlinx.coroutines.internal.ArrayQueue"
+    const-string/jumbo v0, "null cannot be cast to non-null type T of kotlinx.coroutines.internal.ArrayQueue"
 
     .line 26
     invoke-static {v3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,90:1\n129#2,5:91\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$1\n*L\n30#1:91,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,104:1\n129#2,5:105\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$1\n*L\n31#1:105,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 30
+    .line 31
     check-cast p2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object p1
 
-    .line 30
+    .line 31
     check-cast p1, Lcom/iMe/storage/domain/repository/translate/TranslationRepository;
 
     new-instance v0, Lcom/iMe/storage/domain/interactor/translate/TranslationInteractor;
@@ -112,7 +112,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 30
+    .line 31
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

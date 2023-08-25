@@ -54,7 +54,7 @@
 
     move-object v8, p5
 
-    .line 10808
+    .line 10863
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
     return-void
@@ -81,7 +81,7 @@
 
     move-object v8, p6
 
-    .line 10812
+    .line 10867
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
     return-void
@@ -108,7 +108,7 @@
 
     move-object/from16 v8, p7
 
-    .line 10816
+    .line 10871
     invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;-><init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
 
     return-void
@@ -117,24 +117,24 @@
 .method public constructor <init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Runnable;)V
     .locals 0
 
-    .line 10819
+    .line 10874
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->this$1:Lorg/telegram/ui/ProfileActivity$SearchAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10820
+    .line 10875
     iput p2, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->guid:I
 
-    .line 10821
+    .line 10876
     iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->searchTitle:Ljava/lang/String;
 
-    .line 10822
+    .line 10877
     iput-object p4, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->rowName:Ljava/lang/String;
 
-    .line 10823
+    .line 10878
     iput-object p8, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->openRunnable:Ljava/lang/Runnable;
 
-    .line 10824
+    .line 10879
     iput p7, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->iconResId:I
 
     const/4 p1, 0x0
@@ -153,7 +153,7 @@
 
     aput-object p6, p3, p2
 
-    .line 10826
+    .line 10881
     iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->path:[Ljava/lang/String;
 
     goto :goto_0
@@ -165,7 +165,7 @@
 
     aput-object p5, p2, p1
 
-    .line 10828
+    .line 10883
     iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->path:[Ljava/lang/String;
 
     :cond_1
@@ -173,64 +173,64 @@
     return-void
 .end method
 
-.method static synthetic access$33200(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+.method static synthetic access$33300(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
     .locals 0
 
-    .line 10797
+    .line 10852
     iget p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->guid:I
 
     return p0
 .end method
 
-.method static synthetic access$33300(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+.method static synthetic access$33400(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
     .locals 0
 
-    .line 10797
+    .line 10852
     iget p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->num:I
 
     return p0
 .end method
 
-.method static synthetic access$33302(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;I)I
+.method static synthetic access$33402(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;I)I
     .locals 0
 
-    .line 10797
+    .line 10852
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->num:I
 
     return p1
 .end method
 
-.method static synthetic access$33500(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
+.method static synthetic access$33600(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)I
     .locals 0
 
-    .line 10797
+    .line 10852
     iget p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->iconResId:I
 
     return p0
 .end method
 
-.method static synthetic access$33600(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Ljava/lang/String;
+.method static synthetic access$33700(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)[Ljava/lang/String;
     .locals 0
 
-    .line 10797
+    .line 10852
     iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->path:[Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method static synthetic access$33700(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
+.method static synthetic access$33800(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)Ljava/lang/String;
     .locals 0
 
-    .line 10797
+    .line 10852
     iget-object p0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->searchTitle:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method static synthetic access$34600(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)V
+.method static synthetic access$34800(Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;)V
     .locals 0
 
-    .line 10797
+    .line 10852
     invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->open()V
 
     return-void
@@ -239,17 +239,17 @@
 .method private open()V
     .locals 2
 
-    .line 10851
+    .line 10906
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->openRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 10852
+    .line 10907
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->this$1:Lorg/telegram/ui/ProfileActivity$SearchAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$33100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$33200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -265,7 +265,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
 
-    .line 10834
+    .line 10889
     instance-of v0, p1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
     const/4 v1, 0x0
@@ -274,11 +274,11 @@
 
     return v1
 
-    .line 10837
+    .line 10892
     :cond_0
     check-cast p1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;
 
-    .line 10838
+    .line 10893
     iget v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->guid:I
 
     iget p1, p1, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->guid:I
@@ -294,27 +294,27 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 10843
+    .line 10898
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/SerializedData;-><init>()V
 
-    .line 10844
+    .line 10899
     iget v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->num:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
     const/4 v1, 0x1
 
-    .line 10845
+    .line 10900
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 10846
+    .line 10901
     iget v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$SearchResult;->guid:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 10847
+    .line 10902
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
 
     move-result-object v0

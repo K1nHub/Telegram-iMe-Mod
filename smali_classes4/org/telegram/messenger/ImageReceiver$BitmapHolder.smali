@@ -30,15 +30,15 @@
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 126
+    .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 127
+    .line 138
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     const/4 p1, 0x1
 
-    .line 128
+    .line 139
     iput-boolean p1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->recycleOnRelease:Z
 
     return-void
@@ -47,21 +47,21 @@
 .method public constructor <init>(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
     .locals 0
 
-    .line 108
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
+    .line 120
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 110
+    .line 121
     iput-object p2, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->key:Ljava/lang/String;
 
-    .line 111
+    .line 122
     iput p3, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->orientation:I
 
     if-eqz p2, :cond_0
 
-    .line 113
+    .line 124
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object p1
@@ -77,21 +77,21 @@
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;Ljava/lang/String;I)V
     .locals 0
 
-    .line 117
+    .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 118
+    .line 129
     iput-object p1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 119
+    .line 130
     iput-object p2, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->key:Ljava/lang/String;
 
-    .line 120
+    .line 131
     iput p3, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->orientation:I
 
     if-eqz p2, :cond_0
 
-    .line 122
+    .line 133
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object p1
@@ -109,7 +109,7 @@
 .method public getHeight()I
     .locals 1
 
-    .line 136
+    .line 147
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
@@ -130,7 +130,7 @@
 .method public getWidth()I
     .locals 1
 
-    .line 132
+    .line 143
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
@@ -151,7 +151,7 @@
 .method public isRecycled()Z
     .locals 1
 
-    .line 140
+    .line 151
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_1
@@ -180,14 +180,14 @@
 .method public release()V
     .locals 5
 
-    .line 144
+    .line 155
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->key:Ljava/lang/String;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
-    .line 145
+    .line 156
     iget-boolean v0, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->recycleOnRelease:Z
 
     if-eqz v0, :cond_0
@@ -196,19 +196,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 146
+    .line 157
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 148
+    .line 159
     :cond_0
     iput-object v1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 149
+    .line 160
     iput-object v1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->drawable:Landroid/graphics/drawable/Drawable;
 
     return-void
 
-    .line 152
+    .line 163
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
@@ -220,7 +220,7 @@
 
     move-result v0
 
-    .line 153
+    .line 164
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v2
@@ -237,74 +237,74 @@
 
     if-eqz v0, :cond_5
 
-    .line 155
+    .line 166
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_2
 
-    .line 156
+    .line 167
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_0
 
-    .line 157
+    .line 168
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_5
 
-    .line 158
+    .line 169
     instance-of v2, v0, Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz v2, :cond_3
 
-    .line 159
+    .line 170
     check-cast v0, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 160
+    .line 171
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/RLottieDrawable;->recycle(Z)V
 
     goto :goto_0
 
-    .line 161
+    .line 172
     :cond_3
     instance-of v2, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     if-eqz v2, :cond_4
 
-    .line 162
+    .line 173
     check-cast v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    .line 163
+    .line 174
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->recycle()V
 
     goto :goto_0
 
-    .line 164
+    .line 175
     :cond_4
     instance-of v2, v0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v2, :cond_5
 
-    .line 165
+    .line 176
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 166
+    .line 177
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 171
+    .line 182
     :cond_5
     :goto_0
     iput-object v1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->key:Ljava/lang/String;
 
-    .line 172
+    .line 183
     iput-object v1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 173
+    .line 184
     iput-object v1, p0, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->drawable:Landroid/graphics/drawable/Drawable;
 
     return-void

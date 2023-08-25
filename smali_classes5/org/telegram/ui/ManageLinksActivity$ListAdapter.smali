@@ -208,12 +208,12 @@
 .method public constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1784
+    .line 1788
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 1785
+    .line 1789
     iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -222,7 +222,7 @@
 .method private synthetic lambda$onBindViewHolder$10(Landroid/view/View;)V
     .locals 0
 
-    .line 2076
+    .line 2082
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -235,7 +235,7 @@
 .method private synthetic lambda$onBindViewHolder$11(Lcom/iMe/model/staking/StakingDetailsItem;Landroid/view/View;)V
     .locals 0
 
-    .line 2099
+    .line 2107
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1, p2}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->newInstance(Lcom/iMe/model/staking/StakingDetailsItem;Lorg/telegram/ui/ActionBar/BaseFragment;)Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;
@@ -250,7 +250,7 @@
 .method private synthetic lambda$onBindViewHolder$12(Landroid/view/View;)V
     .locals 0
 
-    .line 2121
+    .line 2129
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$8800(Lorg/telegram/ui/ManageLinksActivity;)V
@@ -261,7 +261,7 @@
 .method private synthetic lambda$onBindViewHolder$13(Landroid/view/View;)V
     .locals 0
 
-    .line 2141
+    .line 2149
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$8700(Lorg/telegram/ui/ManageLinksActivity;)V
@@ -272,7 +272,7 @@
 .method private synthetic lambda$onBindViewHolder$14(Landroid/view/View;)V
     .locals 0
 
-    .line 2147
+    .line 2155
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$8700(Lorg/telegram/ui/ManageLinksActivity;)V
@@ -283,7 +283,7 @@
 .method private synthetic lambda$onBindViewHolder$15(Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
     .locals 0
 
-    .line 2208
+    .line 2216
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/ManageLinksActivity;->access$8600(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
@@ -294,7 +294,7 @@
 .method private synthetic lambda$onBindViewHolder$16(Landroid/view/View;)V
     .locals 2
 
-    .line 2229
+    .line 2237
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v0, p1, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
@@ -317,7 +317,7 @@
 .method private synthetic lambda$onBindViewHolder$17(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 1
 
-    .line 2295
+    .line 2303
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -340,7 +340,7 @@
 .method private synthetic lambda$onBindViewHolder$18(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 1
 
-    .line 2308
+    .line 2316
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -363,7 +363,7 @@
 .method private synthetic lambda$onBindViewHolder$19(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 1
 
-    .line 2320
+    .line 2328
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -386,7 +386,7 @@
 .method private synthetic lambda$onBindViewHolder$20(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 1
 
-    .line 2322
+    .line 2330
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -409,7 +409,7 @@
 .method private synthetic lambda$onBindViewHolder$21(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 1
 
-    .line 2333
+    .line 2341
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -432,7 +432,7 @@
 .method private synthetic lambda$onBindViewHolder$22(Lorg/telegram/ui/Components/LinkActionView;)V
     .locals 1
 
-    .line 2334
+    .line 2342
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -455,10 +455,10 @@
 .method private synthetic lambda$onBindViewHolder$5()V
     .locals 4
 
-    .line 1983
+    .line 1987
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 1984
+    .line 1988
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
 
     move-result-object v1
@@ -477,7 +477,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 1985
+    .line 1989
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
 
     move-result-object v2
@@ -494,7 +494,7 @@
 
     move-result-object v2
 
-    .line 1983
+    .line 1987
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1300(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -503,10 +503,10 @@
 .method private synthetic lambda$onBindViewHolder$6()V
     .locals 4
 
-    .line 1992
+    .line 1996
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 1993
+    .line 1997
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
 
     move-result-object v1
@@ -525,7 +525,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 1994
+    .line 1998
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
 
     move-result-object v2
@@ -542,7 +542,7 @@
 
     move-result-object v2
 
-    .line 1992
+    .line 1996
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1300(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -551,14 +551,14 @@
 .method private synthetic lambda$onBindViewHolder$7()V
     .locals 1
 
-    .line 2006
+    .line 2010
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     invoke-virtual {v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionClick()V
 
-    .line 2007
+    .line 2011
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$8900(Lorg/telegram/ui/ManageLinksActivity;)Landroid/view/View;
@@ -573,10 +573,10 @@
 .method private synthetic lambda$onBindViewHolder$8()V
     .locals 4
 
-    .line 2010
+    .line 2014
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 2011
+    .line 2015
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -585,14 +585,14 @@
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    .line 2012
+    .line 2016
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getApproveTokenDescriptionModel()Lcom/iMe/model/dialog/DialogModel;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    .line 2010
+    .line 2014
     invoke-static {v1, v2, v3, v3}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
@@ -605,10 +605,10 @@
 .method private synthetic lambda$onBindViewHolder$9()V
     .locals 3
 
-    .line 2024
+    .line 2028
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 2025
+    .line 2029
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
 
     move-result-object v1
@@ -629,12 +629,12 @@
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    .line 2026
+    .line 2030
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getSafeWithdrawalHelpAlertText()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 2024
+    .line 2028
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1300(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -643,7 +643,7 @@
 .method private static synthetic lambda$onCreateViewHolder$0(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 1824
+    .line 1828
     invoke-static {p0}, Lorg/telegram/ui/ManageLinksActivity;->access$8700(Lorg/telegram/ui/ManageLinksActivity;)V
 
     return-void
@@ -652,7 +652,7 @@
 .method private static synthetic lambda$onCreateViewHolder$1(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 1825
+    .line 1829
     invoke-static {p0}, Lorg/telegram/ui/ManageLinksActivity;->access$9200(Lorg/telegram/ui/ManageLinksActivity;)V
 
     return-void
@@ -661,7 +661,7 @@
 .method private static synthetic lambda$onCreateViewHolder$2(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 1826
+    .line 1830
     invoke-static {p0}, Lorg/telegram/ui/ManageLinksActivity;->access$9100(Lorg/telegram/ui/ManageLinksActivity;)V
 
     return-void
@@ -670,7 +670,7 @@
 .method private synthetic lambda$onCreateViewHolder$3()V
     .locals 4
 
-    .line 1944
+    .line 1948
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -693,7 +693,7 @@
 .method private static synthetic lambda$onCreateViewHolder$4(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 1946
+    .line 1950
     invoke-static {p0}, Lorg/telegram/ui/ManageLinksActivity;->access$9000(Lorg/telegram/ui/ManageLinksActivity;)V
 
     return-void
@@ -704,7 +704,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1814
+    .line 1818
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1400(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -717,7 +717,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 2505
+    .line 2513
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6200(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -726,12 +726,12 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 2506
+    .line 2514
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CHOOSE_RECIPIENT_OPTIONS:I
 
     return p1
 
-    .line 2508
+    .line 2516
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -741,12 +741,12 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 2509
+    .line 2517
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_PROGNOSIS:I
 
     return p1
 
-    .line 2511
+    .line 2519
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -756,12 +756,12 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 2512
+    .line 2520
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_INFO:I
 
     return p1
 
-    .line 2514
+    .line 2522
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -771,12 +771,12 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 2515
+    .line 2523
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_ACTIONS:I
 
     return p1
 
-    .line 2517
+    .line 2525
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -786,12 +786,12 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 2518
+    .line 2526
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_SAFE_WITHDRAWAL:I
 
     return p1
 
-    .line 2520
+    .line 2528
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -801,12 +801,12 @@
 
     if-ne p1, v0, :cond_5
 
-    .line 2521
+    .line 2529
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_WITHDRAWAL_FEE:I
 
     return p1
 
-    .line 2523
+    .line 2531
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -816,12 +816,12 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 2524
+    .line 2532
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_IMAGE_VIEW_BUTTON:I
 
     return p1
 
-    .line 2526
+    .line 2534
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -841,7 +841,7 @@
 
     goto/16 :goto_5
 
-    .line 2529
+    .line 2537
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -851,12 +851,12 @@
 
     if-ne p1, v0, :cond_8
 
-    .line 2530
+    .line 2538
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CHOOSE_FEE:I
 
     return p1
 
-    .line 2532
+    .line 2540
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -866,12 +866,12 @@
 
     if-ne p1, v0, :cond_9
 
-    .line 2533
+    .line 2541
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->DONATION_SEE_MORE:I
 
     return p1
 
-    .line 2535
+    .line 2543
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -881,12 +881,12 @@
 
     if-ne p1, v0, :cond_a
 
-    .line 2536
+    .line 2544
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOKEN_BALANCE:I
 
     return p1
 
-    .line 2538
+    .line 2546
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -904,12 +904,12 @@
 
     if-ge p1, v0, :cond_b
 
-    .line 2539
+    .line 2547
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TRANSACTION:I
 
     return p1
 
-    .line 2542
+    .line 2550
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -923,7 +923,7 @@
 
     return p1
 
-    .line 2544
+    .line 2552
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -993,7 +993,7 @@
 
     goto/16 :goto_4
 
-    .line 2546
+    .line 2554
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1037,7 +1037,7 @@
 
     goto/16 :goto_3
 
-    .line 2548
+    .line 2556
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1051,7 +1051,7 @@
 
     return p1
 
-    .line 2550
+    .line 2558
     :cond_f
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1103,7 +1103,7 @@
 
     goto/16 :goto_2
 
-    .line 2552
+    .line 2560
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1143,7 +1143,7 @@
 
     return p1
 
-    .line 2554
+    .line 2562
     :cond_13
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1157,7 +1157,7 @@
 
     return p1
 
-    .line 2556
+    .line 2564
     :cond_14
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1171,7 +1171,7 @@
 
     return p1
 
-    .line 2558
+    .line 2566
     :cond_15
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1185,7 +1185,7 @@
 
     return p1
 
-    .line 2560
+    .line 2568
     :cond_16
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1205,7 +1205,7 @@
 
     goto :goto_1
 
-    .line 2562
+    .line 2570
     :cond_17
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1264,7 +1264,7 @@
     :goto_4
     return v1
 
-    .line 2527
+    .line 2535
     :cond_1e
     :goto_5
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_NETWORK:I
@@ -1275,12 +1275,12 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 1790
+    .line 1794
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 1792
+    .line 1796
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1700(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -1301,7 +1301,7 @@
 
     return v1
 
-    .line 1796
+    .line 1800
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1313,7 +1313,7 @@
 
     return v1
 
-    .line 1798
+    .line 1802
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1325,7 +1325,7 @@
 
     return v1
 
-    .line 1800
+    .line 1804
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1345,7 +1345,7 @@
 
     return v1
 
-    .line 1802
+    .line 1806
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1365,7 +1365,7 @@
 
     return v1
 
-    .line 1804
+    .line 1808
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1377,7 +1377,7 @@
 
     return v1
 
-    .line 1806
+    .line 1810
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1412,7 +1412,7 @@
 
     move/from16 v2, p2
 
-    .line 1965
+    .line 1969
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v3
@@ -1421,21 +1421,21 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 1966
+    .line 1970
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     move-object v2, v1
 
     check-cast v2, Lcom/iMe/ui/custom/StakingPrognosisView;
 
-    .line 1967
+    .line 1971
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     if-eqz v1, :cond_5f
 
-    .line 1969
+    .line 1973
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getDatesText()Ljava/lang/String;
 
     move-result-object v3
@@ -1444,7 +1444,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
-    .line 1970
+    .line 1974
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getPercentageText()Ljava/lang/String;
 
     move-result-object v4
@@ -1453,7 +1453,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
-    .line 1971
+    .line 1975
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getModeText()Ljava/lang/String;
 
     move-result-object v5
@@ -1462,7 +1462,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
-    .line 1972
+    .line 1976
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getTokenProfitText()Ljava/lang/String;
 
     move-result-object v6
@@ -1471,7 +1471,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
-    .line 1973
+    .line 1977
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getChartViewData()Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     move-result-object v7
@@ -1480,19 +1480,19 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
-    .line 1974
+    .line 1978
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v8, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;
 
     invoke-direct {v8, v1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda9;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;)V
 
-    .line 1968
+    .line 1972
     invoke-virtual/range {v2 .. v8}, Lcom/iMe/ui/custom/StakingPrognosisView;->setupViewData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/ui/StatisticActivity$ChartViewData;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_17
 
-    .line 1977
+    .line 1981
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1502,12 +1502,12 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1978
+    .line 1982
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/ui/custom/StakingPercentageView;
 
-    .line 1979
+    .line 1983
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$900(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -1522,19 +1522,19 @@
 
     if-eqz v2, :cond_1
 
-    .line 1980
+    .line 1984
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getCompoundThresholdProgress()F
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/custom/StakingPercentageView;->updateProgress(F)V
 
-    .line 1981
+    .line 1985
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    .line 1982
+    .line 1986
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getStakingAnnualPercentageData()Lcom/iMe/model/staking/StakingAnnualPercentageData;
 
     move-result-object v2
@@ -1543,12 +1543,12 @@
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
-    .line 1981
+    .line 1985
     invoke-virtual {v1, v2, v3}, Lcom/iMe/ui/custom/StakingPercentageView;->setupViewData(Lcom/iMe/model/staking/StakingAnnualPercentageData;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_17
 
-    .line 1988
+    .line 1992
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1564,19 +1564,19 @@
 
     if-eqz v2, :cond_5f
 
-    .line 1989
+    .line 1993
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getCompoundThresholdProgress()F
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/custom/StakingPercentageView;->updateProgress(F)V
 
-    .line 1990
+    .line 1994
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
-    .line 1991
+    .line 1995
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getStakingAnnualPercentageData()Lcom/iMe/model/staking/StakingAnnualPercentageData;
 
     move-result-object v2
@@ -1585,12 +1585,12 @@
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
-    .line 1990
+    .line 1994
     invoke-virtual {v1, v2, v3}, Lcom/iMe/ui/custom/StakingPercentageView;->setupViewData(Lcom/iMe/model/staking/StakingAnnualPercentageData;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_17
 
-    .line 1998
+    .line 2002
     :cond_2
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1600,22 +1600,22 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 1999
+    .line 2003
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2000
+    .line 2004
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     move-object v3, v1
 
-    check-cast v3, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;
+    check-cast v3, Lcom/iMe/ui/custom/TransactionActionButtonsView;
 
-    .line 2002
-    invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getCurrentStep()Lcom/iMe/model/staking/StakingTransactionStep;
+    .line 2006
+    invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getCurrentStep()Lcom/iMe/model/staking/TransactionStep;
 
     move-result-object v1
 
@@ -1631,13 +1631,13 @@
 
     check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    invoke-virtual {v1, v2}, Lcom/iMe/model/staking/StakingTransactionStep;->getButtonText(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/iMe/model/staking/TransactionStep;->getButtonText(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v4
 
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 2003
+    .line 2007
     invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$900(Lorg/telegram/ui/ManageLinksActivity;)Z
 
     move-result v5
@@ -1646,7 +1646,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    .line 2004
+    .line 2008
     invoke-virtual {v1}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->shouldShowApprovalInfoButton()Z
 
     move-result v6
@@ -1659,7 +1659,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    .line 2009
+    .line 2013
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v8, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda12;
@@ -1670,12 +1670,12 @@
 
     invoke-direct {v9, p0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
-    .line 2001
-    invoke-virtual/range {v3 .. v9}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;->setupViewData(Ljava/lang/String;ZZLcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    .line 2005
+    invoke-virtual/range {v3 .. v9}, Lcom/iMe/ui/custom/TransactionActionButtonsView;->setupViewData(Ljava/lang/String;ZZLcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_17
 
-    .line 2018
+    .line 2022
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1685,19 +1685,19 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 2019
+    .line 2023
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2020
+    .line 2024
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;
 
-    .line 2022
+    .line 2026
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->isSafeWithdrawalSelected()Z
 
     move-result v2
@@ -1706,7 +1706,7 @@
 
     iget-object v3, v3, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    .line 2023
+    .line 2027
     invoke-static {v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v4, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda8;
@@ -1717,12 +1717,12 @@
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
-    .line 2021
+    .line 2025
     invoke-virtual {v1, v2, v4, v3}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;->setupViewData(ZLcom/iMe/fork/utils/Callbacks$Callback1;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     goto/16 :goto_17
 
-    .line 2030
+    .line 2034
     :cond_4
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1734,19 +1734,19 @@
 
     if-ne v3, v4, :cond_6
 
-    .line 2031
+    .line 2035
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2032
+    .line 2036
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;
 
-    .line 2034
+    .line 2038
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getWithdrawalFeeText()Ljava/lang/String;
 
     move-result-object v2
@@ -1755,17 +1755,17 @@
 
     iget-object v3, v3, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    .line 2035
+    .line 2039
     invoke-virtual {v3}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getWithdrawalTimeText()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2033
+    .line 2037
     invoke-virtual {v1, v2, v3}, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;->setupViewData(Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v2, 0x19
 
-    .line 2037
+    .line 2041
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1802,7 +1802,7 @@
 
     goto/16 :goto_17
 
-    .line 2039
+    .line 2043
     :cond_6
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1814,12 +1814,12 @@
 
     if-ne v3, v4, :cond_c
 
-    .line 2040
+    .line 2044
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/ui/custom/FeeView;
 
-    .line 2041
+    .line 2045
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$700(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -1834,30 +1834,30 @@
 
     if-eqz v2, :cond_8
 
-    .line 2042
-    invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    .line 2046
+    invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->getFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v2
 
     if-eqz v2, :cond_7
 
-    .line 2044
+    .line 2048
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2045
+    .line 2049
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-virtual {v1, v3, v2}, Lcom/iMe/ui/custom/FeeView;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-virtual {v1, v3, v2}, Lcom/iMe/ui/custom/FeeView;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     goto/16 :goto_17
 
-    .line 2047
+    .line 2051
     :cond_7
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto/16 :goto_17
 
-    .line 2049
+    .line 2053
     :cond_8
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -1885,13 +1885,13 @@
 
     goto :goto_1
 
-    .line 2059
+    .line 2063
     :cond_9
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto/16 :goto_17
 
-    .line 2050
+    .line 2054
     :cond_a
     :goto_1
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
@@ -1900,36 +1900,36 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2051
-    invoke-virtual {v2}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getApproveFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    .line 2055
+    invoke-virtual {v2}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getApproveFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v2
 
     if-eqz v2, :cond_b
 
-    .line 2052
+    .line 2056
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2053
+    .line 2057
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v3, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    invoke-virtual {v3}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getApproveFeeType()Lcom/iMe/ui/custom/FeeView$ChooseFeeType;
+    invoke-virtual {v3}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getApproveFeeType()Lcom/iMe/model/wallet/crypto/send/fee/FeeType;
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Lcom/iMe/ui/custom/FeeView;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/ui/custom/FeeView$ChooseFeeType;)V
+    invoke-virtual {v1, v2, v3}, Lcom/iMe/ui/custom/FeeView;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/model/wallet/crypto/send/fee/FeeType;)V
 
     goto/16 :goto_17
 
-    .line 2055
+    .line 2059
     :cond_b
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto/16 :goto_17
 
-    .line 2061
+    .line 2065
     :cond_c
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1941,12 +1941,12 @@
 
     if-ne v3, v4, :cond_12
 
-    .line 2062
+    .line 2066
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;
 
-    .line 2063
+    .line 2067
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$3500(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -1955,7 +1955,7 @@
 
     if-ne v2, v3, :cond_11
 
-    .line 2064
+    .line 2068
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$400(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -1964,19 +1964,19 @@
 
     if-eqz v2, :cond_d
 
-    .line 2065
+    .line 2069
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getHeaderCell()Lorg/telegram/ui/Cells/HeaderCell;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/HeaderCell;->removeTopMargin()V
 
-    .line 2066
+    .line 2070
     invoke-virtual {v1, v5}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->setNetworkViewTopMargin(I)V
 
     goto :goto_2
 
-    .line 2068
+    .line 2072
     :cond_d
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getHeaderCell()Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -1984,7 +1984,7 @@
 
     invoke-virtual {v2, v7}, Lorg/telegram/ui/Cells/HeaderCell;->setTopMargin(I)V
 
-    .line 2070
+    .line 2074
     :goto_2
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getHeaderCell()Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -2010,7 +2010,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2071
+    .line 2075
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$300(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -2037,7 +2037,7 @@
 
     goto :goto_3
 
-    .line 2080
+    .line 2086
     :cond_e
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
@@ -2047,7 +2047,7 @@
 
     goto/16 :goto_17
 
-    .line 2072
+    .line 2076
     :cond_f
     :goto_3
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
@@ -2056,14 +2056,14 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2073
+    .line 2077
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2074
+    .line 2078
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object v2
@@ -2072,13 +2072,19 @@
 
     iget-object v3, v3, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
+    .line 2079
     invoke-virtual {v3}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-static {v3}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/crypto/Network;)Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
-    .line 2075
+    move-result-object v3
+
+    .line 2078
+    invoke-virtual {v2, v3}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
+
+    .line 2081
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$300(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -2095,7 +2101,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2076
+    .line 2082
     :cond_10
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
@@ -2109,7 +2115,7 @@
 
     goto/16 :goto_17
 
-    .line 2082
+    .line 2088
     :cond_11
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -2119,14 +2125,14 @@
 
     if-ne v2, v3, :cond_5f
 
-    .line 2083
+    .line 2089
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getHeaderCell()Lorg/telegram/ui/Cells/HeaderCell;
 
     move-result-object v2
 
     invoke-virtual {v2, v7}, Lorg/telegram/ui/Cells/HeaderCell;->setTopMargin(I)V
 
-    .line 2084
+    .line 2090
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getHeaderCell()Lorg/telegram/ui/Cells/HeaderCell;
 
     move-result-object v2
@@ -2151,27 +2157,33 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2085
+    .line 2091
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object v2
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2086
+    .line 2092
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;->getNetworkTypeView()Lcom/iMe/ui/custom/NetworkTypeView;
 
     move-result-object v1
 
+    .line 2093
     invoke-static {}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getBSCNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-static {v2}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/crypto/Network;)Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    move-result-object v2
+
+    .line 2092
+    invoke-virtual {v1, v2}, Lcom/iMe/ui/custom/NetworkTypeView;->setNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
 
     goto/16 :goto_17
 
-    .line 2088
+    .line 2096
     :cond_12
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2181,12 +2193,12 @@
 
     if-ne v3, v4, :cond_14
 
-    .line 2089
+    .line 2097
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;
 
-    .line 2090
+    .line 2098
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$800(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -2201,14 +2213,14 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2091
+    .line 2099
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;->getHeaderCell()Lorg/telegram/ui/Cells/HeaderCell;
 
     move-result-object v2
 
     invoke-virtual {v2, v7}, Lorg/telegram/ui/Cells/HeaderCell;->setTopMargin(I)V
 
-    .line 2092
+    .line 2100
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;->getHeaderCell()Lorg/telegram/ui/Cells/HeaderCell;
 
     move-result-object v2
@@ -2233,7 +2245,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2093
+    .line 2101
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
@@ -2244,7 +2256,7 @@
 
     if-nez v2, :cond_13
 
-    .line 2095
+    .line 2103
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object v1
@@ -2253,7 +2265,7 @@
 
     goto/16 :goto_17
 
-    .line 2097
+    .line 2105
     :cond_13
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
@@ -2261,7 +2273,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2098
+    .line 2106
     invoke-virtual {v1}, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object v1
@@ -2274,7 +2286,7 @@
 
     goto/16 :goto_17
 
-    .line 2103
+    .line 2111
     :cond_14
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2288,12 +2300,12 @@
 
     if-ne v3, v4, :cond_18
 
-    .line 2104
+    .line 2112
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/ui/custom/donation/DonationTransactionView;
 
-    .line 2106
+    .line 2114
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$1700(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2310,7 +2322,7 @@
 
     if-ge v2, v3, :cond_15
 
-    .line 2107
+    .line 2115
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$3700(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -2336,10 +2348,10 @@
     :cond_15
     if-eqz v8, :cond_16
 
-    .line 2110
+    .line 2118
     invoke-virtual {v1, v8}, Lcom/iMe/ui/custom/donation/DonationTransactionView;->setTransaction(Lcom/iMe/model/wallet/transaction/TransactionItem;)V
 
-    .line 2112
+    .line 2120
     :cond_16
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -2358,7 +2370,7 @@
 
     goto/16 :goto_17
 
-    .line 2113
+    .line 2121
     :cond_18
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2368,12 +2380,12 @@
 
     if-ne v3, v4, :cond_19
 
-    .line 2114
+    .line 2122
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/ui/custom/donation/DonationBalanceView;
 
-    .line 2115
+    .line 2123
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
@@ -2386,7 +2398,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2116
+    .line 2124
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
@@ -2399,7 +2411,7 @@
 
     goto/16 :goto_17
 
-    .line 2118
+    .line 2126
     :cond_19
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2409,12 +2421,12 @@
 
     if-ne v3, v4, :cond_1a
 
-    .line 2119
+    .line 2127
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lcom/iMe/ui/custom/donation/DonationSeeMoreButton;
 
-    .line 2120
+    .line 2128
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -2451,7 +2463,7 @@
 
     invoke-virtual {v1, v2}, Lcom/iMe/ui/custom/donation/DonationSeeMoreButton;->setText(Ljava/lang/String;)V
 
-    .line 2121
+    .line 2129
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
@@ -2460,7 +2472,7 @@
 
     goto/16 :goto_17
 
-    .line 2123
+    .line 2131
     :cond_1a
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2488,13 +2500,13 @@
 
     goto/16 :goto_17
 
-    .line 2471
+    .line 2479
     :cond_1b
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 2475
+    .line 2483
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$1900(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2503,7 +2515,7 @@
 
     if-ne v2, v3, :cond_1c
 
-    .line 2476
+    .line 2484
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -2524,7 +2536,7 @@
 
     move-result-object v2
 
-    .line 2477
+    .line 2485
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$6000(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2536,7 +2548,7 @@
 
     goto :goto_5
 
-    .line 2480
+    .line 2488
     :cond_1c
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -2546,7 +2558,7 @@
 
     sub-int v3, v2, v3
 
-    .line 2481
+    .line 2489
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ManageLinksActivity;->access$6100(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -2559,7 +2571,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_chatAdminWithInvites;
 
-    .line 2482
+    .line 2490
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ManageLinksActivity;->access$3400(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/HashMap;
@@ -2578,10 +2590,10 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2483
+    .line 2491
     iget v3, v3, Lorg/telegram/tgnet/TLRPC$TL_chatAdminWithInvites;->invites_count:I
 
-    .line 2484
+    .line 2492
     iget-object v6, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ManageLinksActivity;->access$2700(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2602,7 +2614,7 @@
     :goto_5
     if-eqz v2, :cond_5f
 
-    .line 2490
+    .line 2498
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -2623,7 +2635,7 @@
 
     goto/16 :goto_17
 
-    .line 2455
+    .line 2463
     :cond_1e
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -2641,7 +2653,7 @@
 
     if-ge v2, v3, :cond_1f
 
-    .line 2456
+    .line 2464
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$5800(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -2664,7 +2676,7 @@
 
     check-cast v8, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 2457
+    .line 2465
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$2200(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2677,7 +2689,7 @@
 
     goto :goto_6
 
-    .line 2460
+    .line 2468
     :cond_1f
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -2695,7 +2707,7 @@
 
     if-ge v2, v3, :cond_20
 
-    .line 2461
+    .line 2469
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$5900(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -2718,7 +2730,7 @@
 
     check-cast v8, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 2462
+    .line 2470
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$2400(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2734,13 +2746,13 @@
     :cond_20
     move v5, v9
 
-    .line 2466
+    .line 2474
     :goto_6
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/ManageLinksActivity$LinkCell;
 
-    .line 2467
+    .line 2475
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$2100(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2751,18 +2763,18 @@
 
     invoke-virtual {v1, v8, v2}, Lorg/telegram/ui/ManageLinksActivity$LinkCell;->setLink(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;I)V
 
-    .line 2468
+    .line 2476
     iput-boolean v5, v1, Lorg/telegram/ui/ManageLinksActivity$LinkCell;->drawDivider:Z
 
     goto/16 :goto_17
 
-    .line 2443
+    .line 2451
     :cond_21
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/CreationTextCell;
 
-    .line 2444
+    .line 2452
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2775,7 +2787,7 @@
 
     move-result-object v2
 
-    .line 2445
+    .line 2453
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2788,7 +2800,7 @@
 
     move-result-object v3
 
-    .line 2446
+    .line 2454
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
@@ -2803,7 +2815,7 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2447
+    .line 2455
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
@@ -2818,12 +2830,12 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2448
+    .line 2456
     new-instance v4, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-direct {v4, v2, v3}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 2450
+    .line 2458
     sget v2, Lorg/telegram/messenger/R$string;->CreateNewLink:I
 
     const-string v3, "CreateNewLink"
@@ -2848,13 +2860,13 @@
 
     goto/16 :goto_17
 
-    .line 2125
+    .line 2133
     :cond_22
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Components/LinkActionView;
 
-    .line 2127
+    .line 2135
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$200(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -2897,7 +2909,7 @@
 
     goto :goto_8
 
-    .line 2130
+    .line 2138
     :cond_23
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -2933,12 +2945,12 @@
 
     goto :goto_9
 
-    .line 2128
+    .line 2136
     :cond_25
     :goto_8
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/LinkActionView;->setCanEdit(Z)V
 
-    .line 2132
+    .line 2140
     :goto_9
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -2948,10 +2960,10 @@
 
     if-eqz v3, :cond_47
 
-    .line 2133
+    .line 2141
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/LinkActionView;->hideRevokeOption(Z)V
 
-    .line 2134
+    .line 2142
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$2900(Lorg/telegram/ui/ManageLinksActivity;)J
@@ -2960,7 +2972,7 @@
 
     invoke-virtual {v1, v8, v10, v11}, Lorg/telegram/ui/Components/LinkActionView;->loadUsers(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;J)V
 
-    .line 2135
+    .line 2143
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$3900(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -2969,22 +2981,22 @@
 
     if-ne v2, v3, :cond_30
 
-    .line 2136
+    .line 2144
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/LinkActionView;->setMode(Z)V
 
-    .line 2137
+    .line 2145
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getActionsLayout()Landroid/widget/LinearLayout;
 
     move-result-object v2
 
     invoke-virtual {v2, v6}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2138
+    .line 2146
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_search_contact_24:I
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setOptionsViewIcon(I)V
 
-    .line 2139
+    .line 2147
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -3005,7 +3017,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setEditHint(Ljava/lang/String;)V
 
-    .line 2140
+    .line 2148
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$200(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -3014,14 +3026,14 @@
 
     if-eqz v2, :cond_26
 
-    .line 2141
+    .line 2149
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda4;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setFieldClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2142
+    .line 2150
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
@@ -3034,7 +3046,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2143
+    .line 2151
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
@@ -3049,7 +3061,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 2144
+    .line 2152
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
@@ -3062,7 +3074,7 @@
 
     goto/16 :goto_17
 
-    .line 2146
+    .line 2154
     :cond_26
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3082,7 +3094,7 @@
 
     goto/16 :goto_a
 
-    .line 2177
+    .line 2185
     :cond_27
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3092,21 +3104,21 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2178
+    .line 2186
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getFieldContainer()Landroid/widget/FrameLayout;
 
     move-result-object v2
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 2179
+    .line 2187
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2180
+    .line 2188
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAddress()Ljava/lang/String;
 
     move-result-object v2
@@ -3117,7 +3129,7 @@
 
     if-nez v2, :cond_29
 
-    .line 2181
+    .line 2189
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3128,7 +3140,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 2182
+    .line 2190
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3139,10 +3151,10 @@
 
     if-nez v2, :cond_28
 
-    .line 2183
+    .line 2191
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 2184
+    .line 2192
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -3151,22 +3163,22 @@
 
     iget-object v3, v3, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    .line 2185
+    .line 2193
     invoke-virtual {v3}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getAvatarByNetworkType()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2186
-    new-instance v4, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;
+    .line 2194
+    new-instance v4, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
+    invoke-direct {v4, v1}, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
 
-    .line 2183
+    .line 2191
     invoke-static {v2, v3, v4, v9}, Lcom/iMe/utils/helper/GlideHelper;->loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Z)V
 
     goto/16 :goto_17
 
-    .line 2190
+    .line 2198
     :cond_28
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3180,7 +3192,7 @@
 
     goto/16 :goto_17
 
-    .line 2192
+    .line 2200
     :cond_29
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3192,7 +3204,7 @@
 
     if-eqz v2, :cond_2a
 
-    .line 2193
+    .line 2201
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3203,7 +3215,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setAvatar(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 2194
+    .line 2202
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3218,13 +3230,13 @@
 
     goto/16 :goto_17
 
-    .line 2196
+    .line 2204
     :cond_2a
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->resetField()V
 
     goto/16 :goto_17
 
-    .line 2147
+    .line 2155
     :cond_2b
     :goto_a
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda0;
@@ -3233,21 +3245,21 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setFieldClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2148
+    .line 2156
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2149
+    .line 2157
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v2
 
     if-eqz v2, :cond_2c
 
-    .line 2150
+    .line 2158
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3258,7 +3270,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setAvatar(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 2152
+    .line 2160
     :cond_2c
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3270,7 +3282,7 @@
 
     if-eqz v2, :cond_2d
 
-    .line 2153
+    .line 2161
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3281,7 +3293,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setAvatar(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 2155
+    .line 2163
     :cond_2d
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3293,10 +3305,10 @@
 
     if-eqz v2, :cond_2e
 
-    .line 2156
+    .line 2164
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 2157
+    .line 2165
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -3305,20 +3317,20 @@
 
     iget-object v3, v3, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    .line 2158
+    .line 2166
     invoke-virtual {v3}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedTwitterUserAvatarUrl()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2159
-    new-instance v4, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;
+    .line 2167
+    new-instance v4, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
+    invoke-direct {v4, v1}, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
 
-    .line 2156
+    .line 2164
     invoke-static {v2, v3, v4, v9}, Lcom/iMe/utils/helper/GlideHelper;->loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Z)V
 
-    .line 2163
+    .line 2171
     :cond_2e
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3334,7 +3346,7 @@
 
     if-nez v2, :cond_2f
 
-    .line 2164
+    .line 2172
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3345,7 +3357,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 2165
+    .line 2173
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3356,10 +3368,10 @@
 
     if-nez v2, :cond_5f
 
-    .line 2166
+    .line 2174
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    .line 2167
+    .line 2175
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -3368,28 +3380,28 @@
 
     iget-object v3, v3, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
-    .line 2168
+    .line 2176
     invoke-virtual {v3}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getAvatarByNetworkType()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2169
-    new-instance v4, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;
+    .line 2177
+    new-instance v4, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
+    invoke-direct {v4, v1}, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
 
-    .line 2166
+    .line 2174
     invoke-static {v2, v3, v4, v9}, Lcom/iMe/utils/helper/GlideHelper;->loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Z)V
 
     goto/16 :goto_17
 
-    .line 2174
+    .line 2182
     :cond_2f
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->resetField()V
 
     goto/16 :goto_17
 
-    .line 2200
+    .line 2208
     :cond_30
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3399,22 +3411,22 @@
 
     if-ne v2, v3, :cond_36
 
-    .line 2201
+    .line 2209
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/LinkActionView;->setMode(Z)V
 
-    .line 2202
+    .line 2210
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getActionsLayout()Landroid/widget/LinearLayout;
 
     move-result-object v2
 
     invoke-virtual {v2, v6}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2203
+    .line 2211
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_select_token_24:I
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setOptionsViewIcon(I)V
 
-    .line 2204
+    .line 2212
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -3435,7 +3447,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setEditHint(Ljava/lang/String;)V
 
-    .line 2205
+    .line 2213
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$600(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -3444,7 +3456,7 @@
 
     if-eqz v2, :cond_31
 
-    .line 2206
+    .line 2214
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getFieldContainer()Landroid/widget/FrameLayout;
 
     move-result-object v2
@@ -3453,7 +3465,7 @@
 
     goto :goto_b
 
-    .line 2208
+    .line 2216
     :cond_31
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda6;
 
@@ -3461,7 +3473,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setFieldClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2210
+    .line 2218
     :goto_b
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3489,7 +3501,7 @@
 
     goto/16 :goto_c
 
-    .line 2219
+    .line 2227
     :cond_32
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3499,21 +3511,21 @@
 
     if-eqz v2, :cond_33
 
-    .line 2220
+    .line 2228
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->binanceReceivePresenter:Lcom/iMe/ui/wallet/home/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2221
+    .line 2229
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/home/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;->getSelectedToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object v2
 
     if-eqz v2, :cond_5f
 
-    .line 2223
+    .line 2231
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -3550,7 +3562,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 2224
+    .line 2232
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3561,15 +3573,15 @@
 
     move-result-object v2
 
-    new-instance v4, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;
+    new-instance v4, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
+    invoke-direct {v4, v1}, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-static {v3, v2, v4}, Lcom/iMe/utils/helper/GlideHelper;->loadBinanceImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     goto/16 :goto_17
 
-    .line 2227
+    .line 2235
     :cond_33
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3579,7 +3591,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2228
+    .line 2236
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -3600,14 +3612,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setEditHint(Ljava/lang/String;)V
 
-    .line 2229
+    .line 2237
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda3;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setFieldClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2230
+    .line 2238
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
@@ -3620,7 +3632,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2231
+    .line 2239
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
@@ -3629,14 +3641,14 @@
 
     move-result-object v2
 
-    .line 2232
+    .line 2240
     invoke-virtual {v2}, Lcom/iMe/model/staking/StakingDetailsItem;->getName()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 2233
+    .line 2241
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3651,13 +3663,13 @@
 
     move-result-object v4
 
-    new-instance v5, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;
+    new-instance v5, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;
 
-    invoke-direct {v5, v1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
+    invoke-direct {v5, v1}, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-static {v3, v4, v5, v9}, Lcom/iMe/utils/helper/GlideHelper;->loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Z)V
 
-    .line 2234
+    .line 2242
     invoke-virtual {v2}, Lcom/iMe/model/staking/StakingDetailsItem;->getTokenItem()Lcom/iMe/model/wallet/crypto/TokenItem;
 
     move-result-object v2
@@ -3678,7 +3690,7 @@
 
     goto/16 :goto_17
 
-    .line 2211
+    .line 2219
     :cond_34
     :goto_c
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
@@ -3693,7 +3705,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 2212
+    .line 2220
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -3746,7 +3758,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 2213
+    .line 2221
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -3757,7 +3769,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2214
+    .line 2222
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3776,21 +3788,21 @@
 
     move-result-object v3
 
-    new-instance v4, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;
+    new-instance v4, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;
 
-    invoke-direct {v4, v1}, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
+    invoke-direct {v4, v1}, Lcom/iMe/ui/wallet/cryptobox/create/CreateCryptoBoxFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-static {v2, v3, v4, v9}, Lcom/iMe/utils/helper/GlideHelper;->loadImageAsBitmap(Landroid/content/Context;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Z)V
 
     goto/16 :goto_17
 
-    .line 2217
+    .line 2225
     :cond_35
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->resetField()V
 
     goto/16 :goto_17
 
-    .line 2237
+    .line 2245
     :cond_36
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3800,17 +3812,17 @@
 
     if-ne v2, v3, :cond_46
 
-    .line 2238
+    .line 2246
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/LinkActionView;->setMode(Z)V
 
-    .line 2239
+    .line 2247
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getActionsLayout()Landroid/widget/LinearLayout;
 
     move-result-object v2
 
     invoke-virtual {v2, v5}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2240
+    .line 2248
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$700(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -3841,17 +3853,17 @@
     :goto_e
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->hideAllActionButtons(Z)V
 
-    .line 2241
+    .line 2249
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/LinkActionView;->showOptions(Z)V
 
-    .line 2242
+    .line 2250
     invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setEditHint(Ljava/lang/String;)V
 
-    .line 2243
+    .line 2251
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -3860,14 +3872,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 2244
+    .line 2252
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v9}, Landroid/widget/EditText;->setTextIsSelectable(Z)V
 
-    .line 2245
+    .line 2253
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$800(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -3878,7 +3890,7 @@
 
     if-eqz v2, :cond_3c
 
-    .line 2246
+    .line 2254
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result v2
@@ -3893,35 +3905,35 @@
 
     invoke-virtual {v1, v2, v3, v8, v5}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 2247
+    .line 2255
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v6}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2248
+    .line 2256
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2249
+    .line 2257
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->checkAmountReset()Z
 
     move-result v2
 
     if-eqz v2, :cond_39
 
-    .line 2250
+    .line 2258
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2252
+    .line 2260
     :cond_39
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -3929,7 +3941,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 2253
+    .line 2261
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -3949,7 +3961,7 @@
     :cond_3a
     invoke-virtual {v2, v5}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 2254
+    .line 2262
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
@@ -3960,7 +3972,7 @@
 
     if-eqz v2, :cond_3b
 
-    .line 2256
+    .line 2264
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v3
@@ -3971,7 +3983,7 @@
 
     invoke-static {v3, v2, v7}, Lcom/iMe/utils/extentions/common/ViewExtKt;->limitInputLength(Landroid/widget/EditText;II)V
 
-    .line 2258
+    .line 2266
     :cond_3b
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -3985,7 +3997,7 @@
 
     goto/16 :goto_17
 
-    .line 2265
+    .line 2273
     :cond_3c
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -3995,7 +4007,7 @@
 
     if-eqz v2, :cond_40
 
-    .line 2266
+    .line 2274
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result v2
@@ -4010,21 +4022,21 @@
 
     invoke-virtual {v1, v2, v4, v9, v5}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 2267
+    .line 2275
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v6}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2268
+    .line 2276
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2269
+    .line 2277
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4041,7 +4053,7 @@
 
     invoke-static {v2, v3, v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->onAction(Landroid/widget/EditText;ILcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 2270
+    .line 2278
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v3, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
@@ -4052,7 +4064,7 @@
 
     invoke-static {v2, v3}, Lorg/telegram/ui/ManageLinksActivity;->access$4202(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 2271
+    .line 2279
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$4200(Lorg/telegram/ui/ManageLinksActivity;)Ljava/lang/String;
@@ -4061,7 +4073,7 @@
 
     if-eqz v2, :cond_3d
 
-    .line 2272
+    .line 2280
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4074,7 +4086,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2273
+    .line 2281
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4091,12 +4103,12 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 2274
+    .line 2282
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2, v8}, Lorg/telegram/ui/ManageLinksActivity;->access$4202(Lorg/telegram/ui/ManageLinksActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 2276
+    .line 2284
     :cond_3d
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4106,7 +4118,7 @@
 
     if-eqz v2, :cond_3e
 
-    .line 2277
+    .line 2285
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4115,7 +4127,7 @@
 
     goto :goto_f
 
-    .line 2279
+    .line 2287
     :cond_3e
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4129,7 +4141,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/LinkActionView;->addMaxButton(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 2281
+    .line 2289
     :goto_f
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4141,7 +4153,7 @@
 
     if-eqz v2, :cond_3f
 
-    .line 2283
+    .line 2291
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v3
@@ -4152,7 +4164,7 @@
 
     invoke-static {v3, v2, v7}, Lcom/iMe/utils/extentions/common/ViewExtKt;->limitInputLength(Landroid/widget/EditText;II)V
 
-    .line 2285
+    .line 2293
     :cond_3f
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -4166,7 +4178,7 @@
 
     goto/16 :goto_17
 
-    .line 2293
+    .line 2301
     :cond_40
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4196,7 +4208,7 @@
 
     goto/16 :goto_10
 
-    .line 2318
+    .line 2326
     :cond_41
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4206,14 +4218,14 @@
 
     if-eqz v2, :cond_42
 
-    .line 2319
+    .line 2327
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2320
+    .line 2328
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4224,7 +4236,7 @@
 
     invoke-static {v2, v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->onAction(Landroid/widget/EditText;ILcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 2321
+    .line 2329
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -4245,7 +4257,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setActionButtonText(Ljava/lang/String;)V
 
-    .line 2322
+    .line 2330
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda20;
 
     invoke-direct {v2, p0, v1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
@@ -4254,7 +4266,7 @@
 
     goto/16 :goto_17
 
-    .line 2323
+    .line 2331
     :cond_42
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4264,14 +4276,14 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2324
+    .line 2332
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v9}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2325
+    .line 2333
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -4292,7 +4304,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setEditHint(Ljava/lang/String;)V
 
-    .line 2326
+    .line 2334
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -4313,14 +4325,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setActionButtonText(Ljava/lang/String;)V
 
-    .line 2327
+    .line 2335
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2328
+    .line 2336
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4335,19 +4347,19 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2329
+    .line 2337
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2, v1}, Lorg/telegram/ui/ManageLinksActivity;->access$4400(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)V
 
-    .line 2330
+    .line 2338
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2, v1}, Lorg/telegram/ui/ManageLinksActivity;->access$4500(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/Components/LinkActionView;)Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 2331
+    .line 2339
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v4
@@ -4356,10 +4368,10 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/LinkActionView;->showOptions(Z)V
 
-    .line 2332
+    .line 2340
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setOptionsItems(Ljava/util/ArrayList;)V
 
-    .line 2333
+    .line 2341
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4370,14 +4382,14 @@
 
     invoke-static {v2, v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->onAction(Landroid/widget/EditText;ILcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 2334
+    .line 2342
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda23;
 
     invoke-direct {v2, p0, v1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setActionButtonListener(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 2335
+    .line 2343
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4390,7 +4402,7 @@
 
     goto/16 :goto_17
 
-    .line 2294
+    .line 2302
     :cond_43
     :goto_10
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4399,7 +4411,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2295
+    .line 2303
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4410,14 +4422,14 @@
 
     invoke-static {v2, v3, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->onAction(Landroid/widget/EditText;ILcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 2296
+    .line 2304
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2297
+    .line 2305
     invoke-virtual {v2}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->getSelectedAmount()Ljava/lang/String;
 
     move-result-object v2
@@ -4428,7 +4440,7 @@
 
     if-nez v2, :cond_44
 
-    .line 2298
+    .line 2306
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4443,7 +4455,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2299
+    .line 2307
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4464,11 +4476,11 @@
 
     goto :goto_11
 
-    .line 2301
+    .line 2309
     :cond_44
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->resetField()V
 
-    .line 2303
+    .line 2311
     :goto_11
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4480,7 +4492,7 @@
 
     if-eqz v2, :cond_45
 
-    .line 2305
+    .line 2313
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v3
@@ -4491,7 +4503,7 @@
 
     invoke-static {v3, v2, v7}, Lcom/iMe/utils/extentions/common/ViewExtKt;->limitInputLength(Landroid/widget/EditText;II)V
 
-    .line 2307
+    .line 2315
     :cond_45
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4503,14 +4515,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setActionButtonText(Ljava/lang/String;)V
 
-    .line 2308
+    .line 2316
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda21;
 
     invoke-direct {v2, p0, v1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setActionButtonListener(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 2309
+    .line 2317
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4523,7 +4535,7 @@
 
     goto/16 :goto_17
 
-    .line 2343
+    .line 2351
     :cond_46
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4533,26 +4545,26 @@
 
     if-ne v2, v3, :cond_5f
 
-    .line 2344
+    .line 2352
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/LinkActionView;->setCanEdit(Z)V
 
-    .line 2345
+    .line 2353
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/LinkActionView;->setMode(Z)V
 
-    .line 2346
+    .line 2354
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getActionsLayout()Landroid/widget/LinearLayout;
 
     move-result-object v2
 
     invoke-virtual {v2, v6}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 2347
+    .line 2355
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/LinkActionView;->hideAllActionButtons(Z)V
 
-    .line 2348
+    .line 2356
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/LinkActionView;->showOptions(Z)V
 
-    .line 2349
+    .line 2357
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -4573,7 +4585,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setEditHint(Ljava/lang/String;)V
 
-    .line 2350
+    .line 2358
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4582,28 +4594,28 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 2351
+    .line 2359
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v9}, Landroid/widget/EditText;->setTextIsSelectable(Z)V
 
-    .line 2352
+    .line 2360
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
 
     invoke-virtual {v2, v9}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2353
+    .line 2361
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v2, :cond_5f
 
-    .line 2354
+    .line 2362
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v2
@@ -4618,7 +4630,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2355
+    .line 2363
     invoke-virtual {v1}, Lorg/telegram/ui/Components/LinkActionView;->getEditText()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v1
@@ -4631,7 +4643,7 @@
 
     goto/16 :goto_17
 
-    .line 2364
+    .line 2372
     :cond_47
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4663,7 +4675,7 @@
 
     if-nez v2, :cond_48
 
-    .line 2365
+    .line 2373
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$3300(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -4672,7 +4684,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2366
+    .line 2374
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4699,15 +4711,15 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setLink(Ljava/lang/String;)V
 
-    .line 2367
+    .line 2375
     invoke-virtual {v1, v5, v8}, Lorg/telegram/ui/Components/LinkActionView;->setUsers(ILjava/util/ArrayList;)V
 
-    .line 2368
+    .line 2376
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Components/LinkActionView;->hideRevokeOption(Z)V
 
     goto/16 :goto_17
 
-    .line 2371
+    .line 2379
     :cond_48
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4719,7 +4731,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->hideRevokeOption(Z)V
 
-    .line 2372
+    .line 2380
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$3200(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
@@ -4728,19 +4740,19 @@
 
     if-eqz v2, :cond_49
 
-    .line 2373
+    .line 2381
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$3200(Lorg/telegram/ui/ManageLinksActivity;)Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     move-result-object v2
 
-    .line 2374
+    .line 2382
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->link:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/LinkActionView;->setLink(Ljava/lang/String;)V
 
-    .line 2375
+    .line 2383
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ManageLinksActivity;->access$2900(Lorg/telegram/ui/ManageLinksActivity;)J
@@ -4751,11 +4763,11 @@
 
     goto/16 :goto_17
 
-    .line 2377
+    .line 2385
     :cond_49
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/LinkActionView;->setLink(Ljava/lang/String;)V
 
-    .line 2378
+    .line 2386
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$2900(Lorg/telegram/ui/ManageLinksActivity;)J
@@ -4769,12 +4781,12 @@
     :cond_4a
     move v3, v11
 
-    .line 2383
+    .line 2391
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 2385
+    .line 2393
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ManageLinksActivity;->access$5000(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -4783,10 +4795,10 @@
 
     if-ne v2, v5, :cond_4b
 
-    .line 2386
+    .line 2394
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/HeaderCell;->removeTopMargin()V
 
-    .line 2387
+    .line 2395
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -4809,7 +4821,7 @@
 
     goto/16 :goto_17
 
-    .line 2388
+    .line 2396
     :cond_4b
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4819,7 +4831,7 @@
 
     if-ne v2, v5, :cond_4d
 
-    .line 2389
+    .line 2397
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$400(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -4828,10 +4840,10 @@
 
     if-nez v2, :cond_4c
 
-    .line 2390
+    .line 2398
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/HeaderCell;->removeTopMargin()V
 
-    .line 2392
+    .line 2400
     :cond_4c
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4855,7 +4867,7 @@
 
     goto/16 :goto_17
 
-    .line 2393
+    .line 2401
     :cond_4d
     iget-object v5, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4865,7 +4877,7 @@
 
     if-ne v2, v5, :cond_58
 
-    .line 2394
+    .line 2402
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$800(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -4880,13 +4892,13 @@
 
     if-eqz v2, :cond_4f
 
-    .line 2395
+    .line 2403
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/HeaderCell;->removeTopMargin()V
 
-    .line 2396
+    .line 2404
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/HeaderCell;->removeText2TopMargin()V
 
-    .line 2397
+    .line 2405
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -4907,7 +4919,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2398
+    .line 2406
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingCalculatorPresenter:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
@@ -4918,12 +4930,12 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2400
+    .line 2408
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText2Color(I)V
 
-    .line 2401
+    .line 2409
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_4e
@@ -4938,7 +4950,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setText2Gravity(I)V
 
-    .line 2402
+    .line 2410
     invoke-static {v2}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalanceShortText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)Ljava/lang/String;
 
     move-result-object v2
@@ -4947,7 +4959,7 @@
 
     goto/16 :goto_17
 
-    .line 2404
+    .line 2412
     :cond_4f
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -4963,7 +4975,7 @@
 
     if-eqz v5, :cond_52
 
-    .line 2405
+    .line 2413
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
 
     move-result-object v2
@@ -4996,12 +5008,12 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2406
+    .line 2414
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText2Color(I)V
 
-    .line 2407
+    .line 2415
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_51
@@ -5016,7 +5028,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText2Gravity(I)V
 
-    .line 2408
+    .line 2416
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->stakingTransactionPresenter:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
@@ -5029,7 +5041,7 @@
 
     goto/16 :goto_17
 
-    .line 2409
+    .line 2417
     :cond_52
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5065,7 +5077,7 @@
 
     goto :goto_15
 
-    .line 2420
+    .line 2428
     :cond_53
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5075,7 +5087,7 @@
 
     if-eqz v2, :cond_5f
 
-    .line 2421
+    .line 2429
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -5098,12 +5110,12 @@
 
     goto/16 :goto_17
 
-    .line 2410
+    .line 2418
     :cond_54
     :goto_15
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/HeaderCell;->removeTopMargin()V
 
-    .line 2411
+    .line 2419
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -5124,7 +5136,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2412
+    .line 2420
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$600(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -5162,15 +5174,15 @@
 
     if-eqz v2, :cond_57
 
-    .line 2413
+    .line 2421
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/HeaderCell;->removeText2TopMargin()V
 
-    .line 2414
+    .line 2422
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText2Color(I)V
 
-    .line 2415
+    .line 2423
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_56
@@ -5185,7 +5197,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText2Gravity(I)V
 
-    .line 2416
+    .line 2424
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v2, v2, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
@@ -5202,13 +5214,13 @@
 
     goto/16 :goto_17
 
-    .line 2418
+    .line 2426
     :cond_57
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/HeaderCell;->setText2(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_17
 
-    .line 2423
+    .line 2431
     :cond_58
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5218,7 +5230,7 @@
 
     if-ne v2, v3, :cond_59
 
-    .line 2424
+    .line 2432
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -5241,7 +5253,7 @@
 
     goto/16 :goto_17
 
-    .line 2426
+    .line 2434
     :cond_59
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5251,7 +5263,7 @@
 
     if-ne v2, v3, :cond_5c
 
-    .line 2427
+    .line 2435
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ManageLinksActivity;->access$4700(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -5282,7 +5294,7 @@
 
     if-nez v2, :cond_5a
 
-    .line 2428
+    .line 2436
     sget v2, Lorg/telegram/messenger/R$string;->PublicLink:I
 
     const-string v3, "PublicLink"
@@ -5295,7 +5307,7 @@
 
     goto :goto_17
 
-    .line 2429
+    .line 2437
     :cond_5a
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5319,7 +5331,7 @@
 
     if-nez v2, :cond_5b
 
-    .line 2430
+    .line 2438
     sget v2, Lorg/telegram/messenger/R$string;->ChannelInviteLinkTitle:I
 
     const-string v3, "ChannelInviteLinkTitle"
@@ -5332,7 +5344,7 @@
 
     goto :goto_17
 
-    .line 2432
+    .line 2440
     :cond_5b
     sget v2, Lorg/telegram/messenger/R$string;->PermanentLinkForThisAdmin:I
 
@@ -5346,7 +5358,7 @@
 
     goto :goto_17
 
-    .line 2434
+    .line 2442
     :cond_5c
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5356,7 +5368,7 @@
 
     if-ne v2, v3, :cond_5d
 
-    .line 2435
+    .line 2443
     sget v2, Lorg/telegram/messenger/R$string;->RevokedLinks:I
 
     const-string v3, "RevokedLinks"
@@ -5369,7 +5381,7 @@
 
     goto :goto_17
 
-    .line 2436
+    .line 2444
     :cond_5d
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5379,7 +5391,7 @@
 
     if-ne v2, v3, :cond_5e
 
-    .line 2437
+    .line 2445
     sget v2, Lorg/telegram/messenger/R$string;->LinksCreatedByThisAdmin:I
 
     const-string v3, "LinksCreatedByThisAdmin"
@@ -5392,7 +5404,7 @@
 
     goto :goto_17
 
-    .line 2438
+    .line 2446
     :cond_5e
     iget-object v3, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -5402,7 +5414,7 @@
 
     if-ne v2, v3, :cond_5f
 
-    .line 2439
+    .line 2447
     sget v2, Lorg/telegram/messenger/R$string;->LinksCreatedByOtherAdmins:I
 
     const-string v3, "LinksCreatedByOtherAdmins"
@@ -5425,7 +5437,7 @@
 
     move/from16 v1, p2
 
-    .line 1821
+    .line 1825
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->CHOOSE_RECIPIENT_OPTIONS:I
 
     const/4 v3, -0x1
@@ -5440,14 +5452,14 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1822
+    .line 1826
     new-instance v1, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;-><init>(Landroid/content/Context;)V
 
-    .line 1823
+    .line 1827
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     new-instance v8, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda25;
@@ -5468,7 +5480,7 @@
 
     invoke-virtual {v1, v8, v9, v10}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->setupListeners(Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 1829
+    .line 1833
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5477,7 +5489,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1830
+    .line 1834
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -5494,13 +5506,13 @@
 
     goto/16 :goto_8
 
-    .line 1831
+    .line 1835
     :cond_0
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_PROGNOSIS:I
 
     if-ne v1, v2, :cond_1
 
-    .line 1832
+    .line 1836
     new-instance v1, Lcom/iMe/ui/custom/StakingPrognosisView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -5509,57 +5521,18 @@
 
     goto/16 :goto_8
 
-    .line 1833
+    .line 1837
     :cond_1
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_INFO:I
 
     if-ne v1, v2, :cond_2
 
-    .line 1834
+    .line 1838
     new-instance v1, Lcom/iMe/ui/custom/StakingPercentageView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2}, Lcom/iMe/ui/custom/StakingPercentageView;-><init>(Landroid/content/Context;)V
-
-    .line 1835
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
-
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
-
-    .line 1836
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    invoke-virtual {v1, v2, v7, v5, v4}, Landroid/view/View;->setPadding(IIII)V
-
-    goto/16 :goto_8
-
-    .line 1837
-    :cond_2
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_ACTIONS:I
-
-    if-ne v1, v2, :cond_3
-
-    .line 1838
-    new-instance v1, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;
-
-    iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
-
-    invoke-direct {v1, v2}, Lcom/iMe/ui/custom/StakingTransactionActionButtonsView;-><init>(Landroid/content/Context;)V
 
     .line 1839
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -5571,35 +5544,36 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 1840
-    invoke-virtual {v1, v7}, Landroid/view/View;->setClickable(Z)V
-
-    .line 1841
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
+    move-result v5
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
     move-result v4
 
-    invoke-virtual {v1, v2, v7, v4, v7}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v1, v2, v7, v5, v4}, Landroid/view/View;->setPadding(IIII)V
 
     goto/16 :goto_8
 
+    .line 1841
+    :cond_2
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_ACTIONS:I
+
+    if-ne v1, v2, :cond_3
+
     .line 1842
-    :cond_3
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_SAFE_WITHDRAWAL:I
-
-    if-ne v1, v2, :cond_4
-
-    .line 1843
-    new-instance v1, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;
+    new-instance v1, Lcom/iMe/ui/custom/TransactionActionButtonsView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {v1, v2}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Lcom/iMe/ui/custom/TransactionActionButtonsView;-><init>(Landroid/content/Context;)V
 
-    .line 1844
+    .line 1843
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5607,6 +5581,9 @@
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 1844
+    invoke-virtual {v1, v7}, Landroid/view/View;->setClickable(Z)V
 
     .line 1845
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -5622,17 +5599,17 @@
     goto/16 :goto_8
 
     .line 1846
-    :cond_4
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_WITHDRAWAL_FEE:I
+    :cond_3
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_SAFE_WITHDRAWAL:I
 
-    if-ne v1, v2, :cond_6
+    if-ne v1, v2, :cond_4
 
     .line 1847
-    new-instance v1, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;
+    new-instance v1, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {v1, v2}, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Lcom/iMe/ui/custom/StakingSafeWithdrawalView;-><init>(Landroid/content/Context;)V
 
     .line 1848
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -5644,6 +5621,41 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 1849
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    invoke-virtual {v1, v2, v7, v4, v7}, Landroid/view/View;->setPadding(IIII)V
+
+    goto/16 :goto_8
+
+    .line 1850
+    :cond_4
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_WITHDRAWAL_FEE:I
+
+    if-ne v1, v2, :cond_6
+
+    .line 1851
+    new-instance v1, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;
+
+    iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
+
+    invoke-direct {v1, v2}, Lcom/iMe/ui/custom/StakingWithdrawalFeeView;-><init>(Landroid/content/Context;)V
+
+    .line 1852
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 1853
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -5674,20 +5686,20 @@
 
     goto/16 :goto_8
 
-    .line 1850
+    .line 1854
     :cond_6
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->CHOOSE_FEE:I
 
     if-ne v1, v2, :cond_8
 
-    .line 1851
+    .line 1855
     new-instance v1, Lcom/iMe/ui/custom/FeeView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2}, Lcom/iMe/ui/custom/FeeView;-><init>(Landroid/content/Context;)V
 
-    .line 1852
+    .line 1856
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5696,7 +5708,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1853
+    .line 1857
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -5724,43 +5736,11 @@
 
     goto/16 :goto_8
 
-    .line 1854
+    .line 1858
     :cond_8
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_NETWORK:I
 
     if-ne v1, v2, :cond_9
-
-    .line 1855
-    new-instance v1, Lorg/telegram/ui/Cells/HeaderCell;
-
-    iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
-
-    invoke-direct {v1, v2, v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;I)V
-
-    .line 1856
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
-
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 1857
-    new-instance v2, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;
-
-    invoke-direct {v2, v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;-><init>(Lorg/telegram/ui/Cells/HeaderCell;)V
-
-    :goto_1
-    move-object v1, v2
-
-    goto/16 :goto_8
-
-    .line 1858
-    :cond_9
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_IMAGE_VIEW_BUTTON:I
-
-    if-ne v1, v2, :cond_a
 
     .line 1859
     new-instance v1, Lorg/telegram/ui/Cells/HeaderCell;
@@ -5770,11 +5750,43 @@
     invoke-direct {v1, v2, v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;I)V
 
     .line 1860
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    .line 1861
+    new-instance v2, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;
+
+    invoke-direct {v2, v1}, Lcom/iMe/fork/ui/view/HeaderCellWithNetwork;-><init>(Lorg/telegram/ui/Cells/HeaderCell;)V
+
+    :goto_1
+    move-object v1, v2
+
+    goto/16 :goto_8
+
+    .line 1862
+    :cond_9
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL_WITH_IMAGE_VIEW_BUTTON:I
+
+    if-ne v1, v2, :cond_a
+
+    .line 1863
+    new-instance v1, Lorg/telegram/ui/Cells/HeaderCell;
+
+    iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
+
+    invoke-direct {v1, v2, v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;I)V
+
+    .line 1864
     new-instance v2, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;
 
     invoke-direct {v2, v1}, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;-><init>(Lorg/telegram/ui/Cells/HeaderCell;)V
 
-    .line 1861
+    .line 1865
     invoke-virtual {v2}, Lcom/iMe/fork/ui/view/HeaderCellWithImageViewButtonWrapper;->getImageView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object v1
@@ -5785,13 +5797,13 @@
 
     goto :goto_1
 
-    .line 1863
+    .line 1867
     :cond_a
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TRANSACTION:I
 
     if-ne v1, v2, :cond_b
 
-    .line 1864
+    .line 1868
     new-instance v1, Lcom/iMe/ui/custom/donation/DonationTransactionView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -5800,7 +5812,7 @@
 
     goto/16 :goto_8
 
-    .line 1865
+    .line 1869
     :cond_b
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TOKEN_BALANCE:I
 
@@ -5810,14 +5822,14 @@
 
     if-ne v1, v2, :cond_c
 
-    .line 1866
+    .line 1870
     new-instance v1, Lcom/iMe/ui/custom/donation/DonationBalanceView;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2}, Lcom/iMe/ui/custom/donation/DonationBalanceView;-><init>(Landroid/content/Context;)V
 
-    .line 1867
+    .line 1871
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -5838,7 +5850,7 @@
 
     goto/16 :goto_8
 
-    .line 1868
+    .line 1872
     :cond_c
     sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->DONATION_SEE_MORE:I
 
@@ -5846,14 +5858,14 @@
 
     if-ne v1, v2, :cond_d
 
-    .line 1869
+    .line 1873
     new-instance v1, Lcom/iMe/ui/custom/donation/DonationSeeMoreButton;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2}, Lcom/iMe/ui/custom/donation/DonationSeeMoreButton;-><init>(Landroid/content/Context;)V
 
-    .line 1870
+    .line 1874
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -5879,7 +5891,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1875
+    .line 1879
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;
 
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
@@ -5888,7 +5900,7 @@
 
     invoke-direct {v1, v2, v4}, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;-><init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;)V
 
-    .line 1876
+    .line 1880
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -5903,7 +5915,7 @@
 
     goto/16 :goto_8
 
-    .line 1953
+    .line 1957
     :pswitch_0
     new-instance v1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
@@ -5911,7 +5923,7 @@
 
     invoke-direct {v1, v2, v8, v4, v7}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 1954
+    .line 1958
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5922,7 +5934,7 @@
 
     goto/16 :goto_8
 
-    .line 1939
+    .line 1943
     :pswitch_1
     new-instance v1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -5930,7 +5942,7 @@
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 1941
+    .line 1945
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ManageLinksActivity;->access$500(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -5939,7 +5951,7 @@
 
     if-eqz v4, :cond_e
 
-    .line 1942
+    .line 1946
     iget-object v4, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ManageLinksActivity;->access$1200(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -5968,7 +5980,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1943
+    .line 1947
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v2
@@ -5983,7 +5995,7 @@
 
     invoke-static {v2, v4, v5}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setSubstringClickListener(Landroid/widget/TextView;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
-    .line 1946
+    .line 1950
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v2
@@ -6016,7 +6028,7 @@
 
     goto :goto_2
 
-    .line 1948
+    .line 1952
     :cond_e
     sget v2, Lorg/telegram/messenger/R$string;->CreateNewLinkHelp:I
 
@@ -6028,7 +6040,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1949
+    .line 1953
     :goto_2
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
@@ -6044,7 +6056,7 @@
 
     goto/16 :goto_8
 
-    .line 1932
+    .line 1936
     :pswitch_2
     new-instance v1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -6052,7 +6064,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 1933
+    .line 1937
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6061,7 +6073,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1934
+    .line 1938
     sget v2, Lorg/telegram/messenger/R$string;->DeleteAllRevokedLinks:I
 
     const-string v4, "DeleteAllRevokedLinks"
@@ -6072,7 +6084,7 @@
 
     invoke-virtual {v1, v2, v7}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1935
+    .line 1939
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6083,7 +6095,7 @@
 
     goto/16 :goto_8
 
-    .line 1928
+    .line 1932
     :pswitch_3
     new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -6091,7 +6103,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 1929
+    .line 1933
     iget-object v2, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -6106,7 +6118,7 @@
 
     goto/16 :goto_8
 
-    .line 1920
+    .line 1924
     :pswitch_4
     new-instance v1, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -6114,18 +6126,18 @@
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
 
-    .line 1921
+    .line 1925
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
     const/16 v2, 0x9
 
-    .line 1922
+    .line 1926
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 1923
+    .line 1927
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/FlickerLoadingView;->showDate(Z)V
 
-    .line 1925
+    .line 1929
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6136,7 +6148,7 @@
 
     goto/16 :goto_8
 
-    .line 1917
+    .line 1921
     :pswitch_5
     new-instance v1, Lorg/telegram/ui/ManageLinksActivity$LinkCell;
 
@@ -6148,7 +6160,7 @@
 
     goto/16 :goto_8
 
-    .line 1914
+    .line 1918
     :pswitch_6
     new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -6158,7 +6170,7 @@
 
     goto/16 :goto_8
 
-    .line 1910
+    .line 1914
     :pswitch_7
     new-instance v1, Lorg/telegram/ui/Cells/CreationTextCell;
 
@@ -6166,7 +6178,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/Cells/CreationTextCell;-><init>(Landroid/content/Context;)V
 
-    .line 1911
+    .line 1915
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6177,7 +6189,7 @@
 
     goto/16 :goto_8
 
-    .line 1888
+    .line 1892
     :pswitch_8
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -6185,7 +6197,7 @@
 
     move-result v16
 
-    .line 1889
+    .line 1893
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ManageLinksActivity;->access$200(Lorg/telegram/ui/ManageLinksActivity;)Z
@@ -6237,7 +6249,7 @@
     :goto_3
     move/from16 v17, v2
 
-    .line 1890
+    .line 1894
     :goto_4
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -6266,7 +6278,7 @@
     :goto_5
     move/from16 v18, v2
 
-    .line 1892
+    .line 1896
     :goto_6
     new-instance v1, Lorg/telegram/ui/Components/LinkActionView;
 
@@ -6292,17 +6304,17 @@
 
     invoke-direct/range {v8 .. v18}, Lorg/telegram/ui/Components/LinkActionView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/BottomSheet;JZZZZZ)V
 
-    .line 1893
+    .line 1897
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setPermanent(Z)V
 
-    .line 1894
+    .line 1898
     new-instance v2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$1;-><init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/LinkActionView;->setDelegate(Lorg/telegram/ui/Components/LinkActionView$Delegate;)V
 
-    .line 1907
+    .line 1911
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6313,7 +6325,7 @@
 
     goto :goto_8
 
-    .line 1880
+    .line 1884
     :pswitch_9
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -6323,7 +6335,7 @@
 
     if-eqz v1, :cond_13
 
-    .line 1881
+    .line 1885
     new-instance v1, Lorg/telegram/ui/Cells/HeaderCell;
 
     iget-object v8, v0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -6342,7 +6354,7 @@
 
     goto :goto_7
 
-    .line 1883
+    .line 1887
     :cond_13
     new-instance v1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -6350,7 +6362,7 @@
 
     invoke-direct {v1, v2, v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;I)V
 
-    .line 1884
+    .line 1888
     :goto_7
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
@@ -6360,7 +6372,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1958
+    .line 1962
     :goto_8
     new-instance v2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -6370,7 +6382,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1959
+    .line 1963
     new-instance v2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -6397,14 +6409,14 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 2497
+    .line 2505
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     if-eqz v0, :cond_0
 
-    .line 2498
+    .line 2506
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->recycle()V

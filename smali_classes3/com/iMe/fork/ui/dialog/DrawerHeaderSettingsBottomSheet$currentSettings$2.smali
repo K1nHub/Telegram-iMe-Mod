@@ -58,7 +58,7 @@
 .method public final invoke()Lcom/iMe/fork/models/DrawerHeaderSettings;
     .locals 1
 
-    .line 35
+    .line 40
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDrawerHeaderSettings()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object v0
@@ -69,7 +69,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 35
+    .line 40
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$currentSettings$2;->invoke()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object v0

@@ -863,7 +863,7 @@
     const/high16 v3, 0x42100000    # 36.0f
 
     .line 804
-    invoke-virtual {v2, v7, v3}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v2, v7, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 805
     iget-object v2, v0, Lorg/telegram/ui/Components/PasscodeView;->passwordEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -5917,9 +5917,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 1427
     iget-object v0, p0, Lorg/telegram/ui/Components/PasscodeView;->walletLoadingAnimation:Landroid/animation/AnimatorSet;
 
+    if-eqz v0, :cond_0
+
+    .line 1427
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->pause()V
 
     .line 1429

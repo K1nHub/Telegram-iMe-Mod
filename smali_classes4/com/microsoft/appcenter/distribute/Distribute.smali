@@ -1194,7 +1194,7 @@
     invoke-static {v1, v2, p1}, Lcom/microsoft/appcenter/utils/AppCenterLog;->verbose(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_0
-    const-string p1, "no_releases_for_user"
+    const-string/jumbo p1, "no_releases_for_user"
 
     .line 1124
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1203,7 +1203,7 @@
 
     if-nez p1, :cond_3
 
-    const-string p1, "not_found"
+    const-string/jumbo p1, "not_found"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

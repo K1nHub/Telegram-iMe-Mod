@@ -199,7 +199,7 @@
     :cond_0
     new-instance p0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v0, "no write access to output folder"
+    const-string/jumbo v0, "no write access to output folder"
 
     invoke-direct {p0, v0}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 
@@ -241,7 +241,7 @@
     :cond_3
     new-instance p0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v0, "no write access to destination folder"
+    const-string/jumbo v0, "no write access to destination folder"
 
     invoke-direct {p0, v0}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

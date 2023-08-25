@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/messenger/video/TextureRenderer;JFLandroid/graphics/Paint$FontMetricsInt;Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;)V
     .locals 0
 
-    .line 920
+    .line 925
     iput-object p1, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->this$0:Lorg/telegram/messenger/video/TextureRenderer;
 
     iput-object p6, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->val$entity:Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
@@ -47,10 +47,10 @@
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
     .locals 4
 
-    .line 923
+    .line 928
     invoke-super/range {p0 .. p9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
 
-    .line 925
+    .line 930
     iget-object p1, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->val$entity:Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
 
     iget p1, p1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->x:F
@@ -89,7 +89,7 @@
 
     add-float/2addr p1, p2
 
-    .line 926
+    .line 931
     iget p2, p3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->y:F
 
     iget-object p3, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->val$editText:Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
@@ -134,7 +134,7 @@
 
     add-float/2addr p2, p3
 
-    .line 928
+    .line 933
     iget p3, p5, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->rotation:F
 
     const/4 p7, 0x0
@@ -143,7 +143,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 929
+    .line 934
     iget p3, p5, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->x:F
 
     iget p7, p5, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->width:F
@@ -152,14 +152,14 @@
 
     add-float/2addr p3, p7
 
-    .line 930
+    .line 935
     iget p5, p5, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->y:F
 
     div-float/2addr p6, p4
 
     add-float/2addr p5, p6
 
-    .line 931
+    .line 936
     iget-object p6, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->this$0:Lorg/telegram/messenger/video/TextureRenderer;
 
     invoke-static {p6}, Lorg/telegram/messenger/video/TextureRenderer;->access$000(Lorg/telegram/messenger/video/TextureRenderer;)I
@@ -186,7 +186,7 @@
 
     float-to-double p7, p1
 
-    .line 934
+    .line 939
     iget-object p1, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->val$entity:Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
 
     iget p1, p1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->rotation:F
@@ -223,7 +223,7 @@
 
     add-float/2addr p3, p9
 
-    .line 935
+    .line 940
     iget-object p9, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->val$entity:Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
 
     iget p9, p9, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->rotation:F
@@ -262,7 +262,7 @@
 
     move p1, p3
 
-    .line 938
+    .line 943
     :cond_1
     iget-object p3, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->val$e:Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;
 
@@ -288,7 +288,7 @@
 
     int-to-float p5, p5
 
-    .line 939
+    .line 944
     iget p8, p7, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
     int-to-float p8, p8
@@ -305,20 +305,31 @@
 
     sub-float/2addr p1, p6
 
-    .line 940
+    .line 945
     iput p1, p3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->x:F
 
     div-float/2addr p5, p4
 
     sub-float/2addr p2, p5
 
-    .line 941
+    .line 946
     iput p2, p3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->y:F
 
-    .line 942
+    .line 947
     iget p1, p7, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->rotation:F
 
     iput p1, p3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->rotation:F
 
+    .line 949
+    iget-object p1, p3, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->bitmap:Landroid/graphics/Bitmap;
+
+    if-nez p1, :cond_2
+
+    .line 950
+    iget-object p1, p0, Lorg/telegram/messenger/video/TextureRenderer$1;->this$0:Lorg/telegram/messenger/video/TextureRenderer;
+
+    invoke-static {p1, p3}, Lorg/telegram/messenger/video/TextureRenderer;->access$200(Lorg/telegram/messenger/video/TextureRenderer;Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;)V
+
+    :cond_2
     return-void
 .end method

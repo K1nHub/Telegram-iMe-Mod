@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Landroid/content/Context;Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;)V
     .locals 0
 
-    .line 192
+    .line 195
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$2;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$2;->val$resourcesProvider:Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
@@ -39,7 +39,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 201
+    .line 204
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -58,7 +58,7 @@
 
     return p1
 
-    .line 204
+    .line 207
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -70,7 +70,7 @@
 .method protected getNewDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 195
+    .line 198
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$2;->val$resourcesProvider:Lorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;
 
     if-nez v0, :cond_0
@@ -91,7 +91,7 @@
 
     goto :goto_1
 
-    .line 196
+    .line 199
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->getNewDrawable()Landroid/graphics/drawable/Drawable;
 

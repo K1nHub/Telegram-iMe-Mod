@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;-><init>(Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment$ScreenType;)V
+    value = Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;-><init>(Lcom/iMe/model/wallet/swap/WalletSwapScreenType;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

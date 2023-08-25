@@ -2,34 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lio/reactivex/ObservableTransformer;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
+.field public final synthetic f$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
+
+.field public final synthetic f$1:J
+
+.field public final synthetic f$2:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;JLjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$0:Lkotlin/jvm/functions/Function1;
+    iput-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
+
+    iput-wide p2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$1:J
+
+    iput-object p4, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$2:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
-    .locals 1
+.method public final invoke()V
+    .locals 4
 
-    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$0:Lkotlin/jvm/functions/Function1;
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->$r8$lambda$Q3IQ7JGXz9ay4UX9CcKURXDuwEk(Lkotlin/jvm/functions/Function1;Lio/reactivex/Observable;)Lio/reactivex/ObservableSource;
+    iget-wide v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$1:J
 
-    move-result-object p1
+    iget-object v3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter$$ExternalSyntheticLambda4;->f$2:Ljava/lang/String;
 
-    return-object p1
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->$r8$lambda$QIvUx7EePtXghhMk59WICo34Evc(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;JLjava/lang/String;)V
+
+    return-void
 .end method

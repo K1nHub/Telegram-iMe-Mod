@@ -208,7 +208,7 @@
     :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "null context"
+    const-string/jumbo v1, "null context"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -248,8 +248,6 @@
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    nop
 
     :array_0
     .array-data 4

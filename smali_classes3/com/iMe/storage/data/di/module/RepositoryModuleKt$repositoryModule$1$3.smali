@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n129#2,5:163\n129#2,5:168\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n*L\n67#1:158,5\n68#1:163,5\n69#1:168,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,168:1\n129#2,5:169\n129#2,5:174\n129#2,5:179\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$3\n*L\n69#1:169,5\n70#1:174,5\n71#1:179,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 67
+    .line 69
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/data/network/api/own/WalletApi;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 67
+    .line 69
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/data/locale/db/dao/minor/wallet/WalletTokensBalancesDao;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 67
+    .line 69
     move-object v7, p2
 
     check-cast v7, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 68
+    .line 70
     move-object v8, p2
 
     check-cast v8, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
@@ -149,7 +149,7 @@
 
     move-result-object p2
 
-    .line 68
+    .line 70
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -165,7 +165,7 @@
 
     move-result-object p2
 
-    .line 68
+    .line 70
     move-object v9, p2
 
     check-cast v9, Lcom/iMe/storage/domain/gateway/TelegramGateway;
@@ -181,7 +181,7 @@
 
     move-result-object p2
 
-    .line 69
+    .line 71
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/data/datasource/transfer/WalletTransferDataSourceFactory;
@@ -197,12 +197,12 @@
 
     move-result-object p1
 
-    .line 69
+    .line 71
     move-object v2, p1
 
     check-cast v2, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 66
+    .line 68
     new-instance p1, Lcom/iMe/storage/data/repository/wallet/WalletRepositoryImpl;
 
     move-object v1, p1
@@ -215,7 +215,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 65
+    .line 67
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

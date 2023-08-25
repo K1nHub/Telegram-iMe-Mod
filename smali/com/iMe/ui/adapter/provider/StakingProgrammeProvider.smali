@@ -37,17 +37,17 @@
     .line 31
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 35
+    .line 34
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->STAKING_PROGRAMME:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->itemViewType:I
 
-    .line 36
+    .line 35
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_dashboard_account_balance:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->layoutId:I
 
-    .line 39
+    .line 37
     new-instance p1, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$networkIconCornerSize$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$networkIconCornerSize$2;-><init>(Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;)V
@@ -84,7 +84,7 @@
 .method private final getNetworkIconCornerSize()F
     .locals 1
 
-    .line 39
+    .line 37
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->networkIconCornerSize$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -119,7 +119,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 46
+    .line 42
     sget v3, Lorg/telegram/messenger/R$id;->card_account_balance:I
 
     const/4 v4, 0x0
@@ -128,14 +128,14 @@
 
     move-result-object v1
 
-    .line 47
+    .line 43
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v1, v3, v5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 48
+    .line 44
     sget v3, Lorg/telegram/messenger/R$id;->staking_info:I
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_pinnedOverlay:I
@@ -146,8 +146,8 @@
 
     move-result-object v1
 
-    .line 49
-    sget v5, Lorg/telegram/messenger/R$id;->text_account_title:I
+    .line 45
+    sget v5, Lorg/telegram/messenger/R$id;->text_title:I
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
@@ -155,81 +155,94 @@
 
     move-result-object v1
 
-    .line 50
+    .line 47
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     const/4 v7, 0x2
 
     new-array v8, v7, [I
 
-    sget v9, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    .line 48
+    sget v9, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
     aput v9, v8, v4
 
+    .line 49
     sget v10, Lorg/telegram/messenger/R$id;->text_staking_end_value:I
 
     const/4 v11, 0x1
 
     aput v10, v8, v11
 
+    .line 46
     invoke-static {v1, v6, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 51
+    .line 52
     sget v6, Lorg/telegram/messenger/R$id;->text_apr_value:I
 
+    .line 53
     sget-object v8, Lcom/iMe/model/staking/StakingAnnualPercentageMode;->APR:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
     invoke-virtual {v2, v8}, Lcom/iMe/model/staking/StakingProgrammeItem;->getPercentageTextColor(Lcom/iMe/model/staking/StakingAnnualPercentageMode;)I
 
     move-result v8
 
+    .line 51
     invoke-static {v1, v6, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 52
+    .line 56
     sget v8, Lorg/telegram/messenger/R$id;->text_apy_value:I
 
+    .line 57
     sget-object v12, Lcom/iMe/model/staking/StakingAnnualPercentageMode;->APY:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
     invoke-virtual {v2, v12}, Lcom/iMe/model/staking/StakingProgrammeItem;->getPercentageTextColor(Lcom/iMe/model/staking/StakingAnnualPercentageMode;)I
 
     move-result v12
 
+    .line 55
     invoke-static {v1, v8, v12}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 53
+    .line 60
     sget v12, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
+    .line 61
     sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
+    .line 59
     invoke-static {v1, v12, v13}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 54
+    .line 64
     sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     const/4 v14, 0x3
 
     new-array v15, v14, [I
 
+    .line 65
     sget v14, Lorg/telegram/messenger/R$id;->text_apy_title:I
 
     aput v14, v15, v4
 
+    .line 66
     sget v4, Lorg/telegram/messenger/R$id;->text_apr_title:I
 
     aput v4, v15, v11
 
+    .line 67
     sget v11, Lorg/telegram/messenger/R$id;->text_staking_end_title:I
 
     aput v11, v15, v7
 
+    .line 63
     invoke-static {v1, v13, v15}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
@@ -268,13 +281,13 @@
 
     aput v10, v13, v15
 
-    .line 55
+    .line 69
     invoke-static {v1, v13}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v16
 
-    .line 56
-    sget v17, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    .line 79
+    sget v17, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
@@ -300,7 +313,7 @@
 
     move-result-object v1
 
-    .line 57
+    .line 82
     iget-object v13, v0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v15, Lorg/telegram/messenger/R$string;->staking_programme_apy:I
@@ -309,11 +322,12 @@
 
     move-result-object v13
 
+    .line 80
     invoke-virtual {v1, v14, v13}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 58
+    .line 84
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -336,7 +350,7 @@
 
     move-result-object v1
 
-    .line 59
+    .line 87
     iget-object v13, v0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v7, Lorg/telegram/messenger/R$string;->staking_programme_apr:I
@@ -345,11 +359,12 @@
 
     move-result-object v7
 
+    .line 85
     invoke-virtual {v1, v4, v7}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 60
+    .line 89
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -370,7 +385,7 @@
 
     move-result-object v1
 
-    .line 61
+    .line 92
     iget-object v7, v0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v13, Lorg/telegram/messenger/R$string;->staking_programme_expires:I
@@ -379,11 +394,12 @@
 
     move-result-object v7
 
+    .line 90
     invoke-virtual {v1, v11, v7}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 62
+    .line 94
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getEndsAt()Ljava/lang/String;
 
     move-result-object v7
@@ -392,7 +408,7 @@
 
     move-result-object v1
 
-    .line 63
+    .line 95
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getName()Ljava/lang/String;
 
     move-result-object v7
@@ -401,7 +417,7 @@
 
     move-result-object v1
 
-    .line 64
+    .line 96
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v5
@@ -414,7 +430,7 @@
 
     move-result-object v1
 
-    .line 65
+    .line 97
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object v5
@@ -427,7 +443,7 @@
 
     move-result-object v1
 
-    .line 66
+    .line 98
     sget v5, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -446,7 +462,7 @@
 
     move-result-object v1
 
-    .line 67
+    .line 99
     sget v5, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
     const/4 v7, 0x1
@@ -455,12 +471,12 @@
 
     move-result-object v1
 
-    .line 68
+    .line 100
     invoke-virtual {v1, v3, v7}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setVisible(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 69
+    .line 102
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->isParticipated()Z
 
     move-result v3
@@ -477,11 +493,12 @@
 
     aput v12, v11, v7
 
+    .line 101
     invoke-static {v1, v3, v11}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 70
+    .line 107
     sget-object v3, Lcom/iMe/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/iMe/utils/formatter/BalanceFormatter;
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getApy()Ljava/lang/String;
@@ -502,11 +519,12 @@
 
     aput v8, v11, v7
 
+    .line 106
     invoke-static {v1, v9, v11}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 71
+    .line 112
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getApr()Ljava/lang/String;
 
     move-result-object v8
@@ -525,11 +543,12 @@
 
     aput v6, v8, v7
 
+    .line 111
     invoke-static {v1, v3, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setGone(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Z[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 72
+    .line 116
     new-instance v3, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;
 
     invoke-direct {v3, v2, v0}, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider$convert$1$1;-><init>(Lcom/iMe/model/staking/StakingProgrammeItem;Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;)V
@@ -565,8 +584,8 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
-    sget p3, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    .line 130
+    sget p3, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
     invoke-virtual {p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
@@ -580,7 +599,7 @@
 
     move-result-object p1
 
-    .line 89
+    .line 131
     sget p3, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
     invoke-virtual {p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -595,8 +614,8 @@
 
     move-result-object v1
 
-    .line 90
-    sget v2, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    .line 132
+    sget v2, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
@@ -622,35 +641,40 @@
 
     move-result-object p1
 
-    .line 91
+    .line 134
     sget p3, Lorg/telegram/messenger/R$id;->text_apr_value:I
 
+    .line 135
     sget-object v0, Lcom/iMe/model/staking/StakingAnnualPercentageMode;->APR:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
     invoke-virtual {p2, v0}, Lcom/iMe/model/staking/StakingProgrammeItem;->getPercentageTextColor(Lcom/iMe/model/staking/StakingAnnualPercentageMode;)I
 
     move-result v0
 
+    .line 133
     invoke-static {p1, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 92
+    .line 138
     sget p3, Lorg/telegram/messenger/R$id;->text_apy_value:I
 
+    .line 139
     sget-object v0, Lcom/iMe/model/staking/StakingAnnualPercentageMode;->APY:Lcom/iMe/model/staking/StakingAnnualPercentageMode;
 
     invoke-virtual {p2, v0}, Lcom/iMe/model/staking/StakingProgrammeItem;->getPercentageTextColor(Lcom/iMe/model/staking/StakingAnnualPercentageMode;)I
 
     move-result v0
 
+    .line 137
     invoke-static {p1, p3, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v1
 
-    .line 93
+    .line 142
     sget v2, Lorg/telegram/messenger/R$id;->image_network_icon:I
 
+    .line 143
     invoke-virtual {p2}, Lcom/iMe/model/staking/StakingProgrammeItem;->getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     move-result-object p1
@@ -671,6 +695,7 @@
 
     move-result-object v3
 
+    .line 141
     invoke-static/range {v1 .. v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
@@ -701,7 +726,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 35
+    .line 34
     iget v0, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->itemViewType:I
 
     return v0
@@ -710,7 +735,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 36
+    .line 35
     iget v0, p0, Lcom/iMe/ui/adapter/provider/StakingProgrammeProvider;->layoutId:I
 
     return v0

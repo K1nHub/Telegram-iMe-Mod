@@ -19,6 +19,10 @@
 
 .field private final categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
+.field private final clear:Landroid/widget/ImageView;
+
+.field private clearVisible:Z
+
 .field private final editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
 .field public ignoreTextChange:Z
@@ -70,429 +74,548 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$lIhByHsTV4jwG4D4-AURdU7OJoA(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->lambda$new$3(Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 12
+    .locals 22
 
-    .line 1621
-    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    move-object/from16 v6, p0
 
-    .line 1622
-    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    move-object/from16 v7, p1
 
-    .line 1624
+    move-object/from16 v8, p2
+
+    .line 2063
+    invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    .line 2064
+    iput-object v8, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    .line 2066
+    new-instance v9, Landroid/widget/FrameLayout;
+
+    invoke-direct {v9, v7}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object v9, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->box:Landroid/widget/FrameLayout;
+
+    const/16 v0, 0x12
+
+    .line 2067
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchBackground:I
+
+    invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->createRoundRectDrawable(II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {v9, v0}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2068
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/4 v10, 0x1
+
+    const/16 v1, 0x15
+
+    if-lt v0, v1, :cond_0
+
+    .line 2069
+    invoke-virtual {v9, v10}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
+
+    .line 2070
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$1;
+
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$1;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+
+    invoke-virtual {v9, v0}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
+
+    :cond_0
+    const/4 v11, -0x1
+
+    const/16 v12, 0x24
+
+    const/16 v13, 0x77
+
+    const/16 v14, 0xa
+
+    const/4 v15, 0x6
+
+    const/16 v16, 0xa
+
+    const/16 v17, 0x8
+
+    .line 2077
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v9, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2079
     new-instance v0, Landroid/widget/FrameLayout;
 
-    invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v7}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->box:Landroid/widget/FrameLayout;
+    iput-object v0, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->inputBox:Landroid/widget/FrameLayout;
 
-    const/16 v1, 0x12
+    const/16 v12, 0x28
 
-    .line 1625
+    const/16 v13, 0x33
+
+    const/16 v14, 0x26
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    .line 2080
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {v9, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2082
+    new-instance v11, Landroid/widget/ImageView;
+
+    invoke-direct {v11, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+    iput-object v11, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageView:Landroid/widget/ImageView;
+
+    .line 2083
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v11, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    .line 2084
+    new-instance v1, Lorg/telegram/ui/Components/SearchStateDrawable;
+
+    invoke-direct {v1}, Lorg/telegram/ui/Components/SearchStateDrawable;-><init>()V
+
+    iput-object v1, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageDrawable:Lorg/telegram/ui/Components/SearchStateDrawable;
+
+    const/4 v2, 0x0
+
+    .line 2085
+    invoke-virtual {v1, v2, v2}, Lorg/telegram/ui/Components/SearchStateDrawable;->setIconState(IZ)V
+
+    .line 2086
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
+
+    invoke-static {v3, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/SearchStateDrawable;->setColor(I)V
+
+    .line 2087
+    invoke-virtual {v11, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    const/16 v1, 0x33
+
+    const/16 v12, 0x24
+
+    .line 2088
+    invoke-static {v12, v12, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {v9, v11, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2090
+    new-instance v13, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$2;
+
+    invoke-direct {v13, v6, v7}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$2;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Landroid/content/Context;)V
+
+    iput-object v13, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    const/high16 v1, 0x41800000    # 16.0f
+
+    .line 2111
+    invoke-virtual {v13, v10, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
+
+    .line 2112
+    invoke-static {v3, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v1
+
+    invoke-virtual {v13, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
+
+    .line 2113
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v1
+
+    invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
+
+    const/4 v1, 0x0
+
+    .line 2114
+    invoke-virtual {v13, v1}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2115
+    invoke-virtual {v13, v2, v2, v2, v2}, Landroid/widget/EditText;->setPadding(IIII)V
+
+    .line 2116
+    invoke-virtual {v13, v10}, Landroid/widget/EditText;->setMaxLines(I)V
+
+    .line 2117
+    invoke-virtual {v13, v10}, Landroid/widget/EditText;->setLines(I)V
+
+    .line 2118
+    invoke-virtual {v13, v10}, Landroid/widget/EditText;->setSingleLine(Z)V
+
+    const v1, 0x10000003
+
+    .line 2119
+    invoke-virtual {v13, v1}, Landroid/widget/EditText;->setImeOptions(I)V
+
+    .line 2120
+    sget v1, Lorg/telegram/messenger/R$string;->Search:I
+
+    const-string v2, "Search"
+
+    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v13, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
+
+    .line 2121
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
+
+    invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v2
+
+    invoke-virtual {v13, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+
+    .line 2122
+    invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v1
+
+    invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHandlesColor(I)V
+
+    const/16 v1, 0x14
+
+    .line 2123
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchBackground:I
+    invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    invoke-static {v2, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    const/high16 v1, 0x3fc00000    # 1.5f
 
-    move-result v2
+    .line 2124
+    invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createRoundRectDrawable(II)Landroid/graphics/drawable/Drawable;
+    const/4 v1, -0x2
 
-    move-result-object v1
+    .line 2125
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    move-result v1
 
-    .line 1626
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    int-to-float v1, v1
 
-    const/4 v2, 0x1
+    invoke-virtual {v13, v1}, Landroid/widget/EditText;->setTranslationY(F)V
 
-    const/16 v3, 0x15
+    const/4 v14, -0x1
 
-    if-lt v1, v3, :cond_0
+    const/16 v15, 0x28
 
-    .line 1627
-    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
+    const/16 v16, 0x33
 
-    .line 1628
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$1;
+    const/16 v18, 0x0
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$1;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+    const/16 v19, 0x1c
 
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
+    const/16 v20, 0x0
 
-    :cond_0
-    const/4 v3, -0x1
-
-    const/16 v4, 0x24
-
-    const/16 v5, 0x77
-
-    const/16 v6, 0xa
-
-    const/4 v7, 0x6
-
-    const/16 v8, 0xa
-
-    const/16 v9, 0x8
-
-    .line 1635
-    invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    .line 2126
+    invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v13, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1637
-    new-instance v1, Landroid/widget/FrameLayout;
+    .line 2127
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$3;
 
-    invoke-direct {v1, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$3;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
 
-    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->inputBox:Landroid/widget/FrameLayout;
+    invoke-virtual {v13, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    const/16 v4, 0x28
+    .line 2171
+    new-instance v14, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$4;
 
-    const/16 v5, 0x33
+    const/4 v3, 0x0
 
-    const/16 v6, 0x26
+    const/4 v4, 0x0
 
-    const/4 v7, 0x0
+    move-object v0, v14
 
-    const/4 v8, 0x0
+    move-object/from16 v1, p0
 
-    const/4 v9, 0x0
+    move-object/from16 v2, p1
 
-    .line 1638
-    invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    move-object/from16 v5, p2
 
-    move-result-object v3
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$4;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Landroid/content/Context;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    iput-object v14, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
-    .line 1640
-    new-instance v3, Landroid/widget/ImageView;
+    .line 2188
+    invoke-virtual {v13}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
 
-    invoke-direct {v3, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    move-result-object v0
 
-    iput-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageView:Landroid/widget/ImageView;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 1641
-    sget-object v4, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    .line 1642
-    new-instance v4, Lorg/telegram/ui/Components/SearchStateDrawable;
-
-    invoke-direct {v4}, Lorg/telegram/ui/Components/SearchStateDrawable;-><init>()V
-
-    iput-object v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageDrawable:Lorg/telegram/ui/Components/SearchStateDrawable;
-
-    const/4 v5, 0x0
-
-    .line 1643
-    invoke-virtual {v4, v5, v5}, Lorg/telegram/ui/Components/SearchStateDrawable;->setIconState(IZ)V
-
-    .line 1644
-    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
-
-    invoke-static {v6, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v7
-
-    invoke-virtual {v4, v7}, Lorg/telegram/ui/Components/SearchStateDrawable;->setColor(I)V
-
-    .line 1645
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    const/16 v4, 0x33
-
-    const/16 v7, 0x24
-
-    .line 1646
-    invoke-static {v7, v7, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 1648
-    new-instance v4, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$2;
-
-    invoke-direct {v4, p0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$2;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Landroid/content/Context;)V
-
-    iput-object v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    const/high16 v7, 0x41800000    # 16.0f
-
-    .line 1662
-    invoke-virtual {v4, v2, v7}, Landroid/widget/EditText;->setTextSize(IF)V
-
-    .line 1663
-    invoke-static {v6, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v6
-
-    invoke-virtual {v4, v6}, Landroid/widget/EditText;->setHintTextColor(I)V
-
-    .line 1664
-    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
-
-    invoke-static {v6, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v6
-
-    invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
-
-    const/4 v6, 0x0
-
-    .line 1665
-    invoke-virtual {v4, v6}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 1666
-    invoke-virtual {v4, v5, v5, v5, v5}, Landroid/widget/EditText;->setPadding(IIII)V
-
-    .line 1667
-    invoke-virtual {v4, v2}, Landroid/widget/EditText;->setMaxLines(I)V
-
-    .line 1668
-    invoke-virtual {v4, v2}, Landroid/widget/EditText;->setLines(I)V
-
-    .line 1669
-    invoke-virtual {v4, v2}, Landroid/widget/EditText;->setSingleLine(Z)V
-
-    const v2, 0x10000003
-
-    .line 1670
-    invoke-virtual {v4, v2}, Landroid/widget/EditText;->setImeOptions(I)V
-
-    .line 1671
-    sget v2, Lorg/telegram/messenger/R$string;->Search:I
-
-    const-string v5, "Search"
-
-    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-virtual {v13}, Landroid/widget/EditText;->getHint()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    invoke-virtual {v4, v2}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
-
-    .line 1672
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
-
-    invoke-static {v2, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
-
-    .line 1673
-    invoke-static {v2, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v2
-
-    invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHandlesColor(I)V
-
-    const/16 v2, 0x14
-
-    .line 1674
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
-
-    const/high16 v2, 0x3fc00000    # 1.5f
-
-    .line 1675
-    invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
-
-    const/4 v2, -0x2
-
-    .line 1676
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-virtual {v4, v2}, Landroid/widget/EditText;->setTranslationY(F)V
-
-    const/4 v5, -0x1
-
-    const/16 v6, 0x28
-
-    const/16 v7, 0x33
-
-    const/16 v10, 0x1c
-
-    const/4 v11, 0x0
-
-    .line 1677
-    invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v4, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 1678
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$3;
-
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$3;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
-
-    invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    .line 1702
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$4;
-
-    const/4 v8, 0x0
-
-    move-object v5, v1
-
-    move-object v6, p0
-
-    move-object v7, p1
-
-    move-object v10, p2
-
-    invoke-direct/range {v5 .. v10}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$4;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Landroid/content/Context;[Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-
-    iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
-
-    .line 1719
-    invoke-virtual {v4}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
-
-    move-result-object p1
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4}, Landroid/widget/EditText;->getHint()Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v2, ""
 
-    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v1
 
-    invoke-virtual {p1, p2}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
+    invoke-virtual {v0, v1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
 
-    move-result p1
+    move-result v0
 
-    float-to-int p1, p1
+    float-to-int v0, v0
 
-    const/16 p2, 0x10
+    const/16 v1, 0x10
 
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result p2
+    move-result v1
 
-    add-int/2addr p1, p2
+    add-int/2addr v0, v1
 
-    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setDontOccupyWidth(I)V
+    invoke-virtual {v14, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setDontOccupyWidth(I)V
 
-    .line 1720
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda1;
+    .line 2189
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda2;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
 
-    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setOnScrollIntoOccupiedWidth(Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-virtual {v14, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setOnScrollIntoOccupiedWidth(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1737
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda2;
+    .line 2206
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda3;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
 
-    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setOnCategoryClick(Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-virtual {v14, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->setOnCategoryClick(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    const/4 v4, -0x1
+    const/4 v15, -0x1
 
-    const/16 v5, 0x24
+    const/16 v16, 0x24
 
-    const/16 v6, 0x33
+    const/16 v17, 0x33
 
-    const/16 v7, 0x24
+    const/16 v18, 0x24
 
-    const/4 v8, 0x0
+    const/16 v19, 0x0
 
-    const/4 v10, 0x0
+    const/16 v21, 0x0
 
-    .line 1764
-    invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    .line 2233
+    invoke-static/range {v15 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {v0, v1, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v14, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1766
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda0;
+    .line 2235
+    new-instance v0, Landroid/widget/ImageView;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+    invoke-direct {v0, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, p1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iput-object v0, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clear:Landroid/widget/ImageView;
+
+    .line 2236
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    .line 2237
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$5;
+
+    const/high16 v2, 0x3fa00000    # 1.25f
+
+    invoke-direct {v1, v6, v2, v8}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$5;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;FLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2244
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v1
+
+    const/16 v2, 0xf
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-static {v1, v10, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(III)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    const/4 v1, 0x0
+
+    .line 2245
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
+
+    const v1, 0x3f333333    # 0.7f
+
+    .line 2246
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
+
+    .line 2247
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
+
+    const/16 v1, 0x8
+
+    .line 2248
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 2249
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda0;
+
+    invoke-direct {v1, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    const/16 v1, 0x35
+
+    .line 2250
+    invoke-static {v12, v12, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {v9, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2253
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+
+    invoke-virtual {v11, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
 
-.method static synthetic access$1000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+.method static synthetic access$3500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Lorg/telegram/ui/Components/StickerCategoriesListView;
     .locals 0
 
-    .line 1605
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clear()V
-
-    return-void
-.end method
-
-.method static synthetic access$4000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
-    .locals 0
-
-    .line 1605
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->updateButton()V
-
-    return-void
-.end method
-
-.method static synthetic access$4100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Ljava/lang/String;I)V
-    .locals 0
-
-    .line 1605
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->search(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
-    .locals 0
-
-    .line 1605
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    return-object p0
-.end method
-
-.method static synthetic access$800(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Lorg/telegram/ui/Components/StickerCategoriesListView;
-    .locals 0
-
-    .line 1605
+    .line 2045
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     return-object p0
 .end method
 
+.method static synthetic access$3700(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+    .locals 0
+
+    .line 2045
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clear()V
+
+    return-void
+.end method
+
+.method static synthetic access$400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
+    .locals 0
+
+    .line 2045
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)V
+    .locals 0
+
+    .line 2045
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->updateButton()V
+
+    return-void
+.end method
+
+.method static synthetic access$6400(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Ljava/lang/String;I)V
+    .locals 0
+
+    .line 2045
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->search(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method static synthetic access$6500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Landroid/widget/ImageView;
+    .locals 0
+
+    .line 2045
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clear:Landroid/widget/ImageView;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;)Z
+    .locals 0
+
+    .line 2045
+    iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clearVisible:Z
+
+    return p0
+.end method
+
+.method static synthetic access$6602(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;Z)Z
+    .locals 0
+
+    .line 2045
+    iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clearVisible:Z
+
+    return p1
+.end method
+
 .method private clear()V
     .locals 2
 
-    .line 1818
+    .line 2305
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v1, ""
@@ -503,10 +626,10 @@
 
     const/4 v1, -0x1
 
-    .line 1819
+    .line 2306
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->search(Ljava/lang/String;I)V
 
-    .line 1820
+    .line 2307
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectCategory(Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;)V
@@ -517,7 +640,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/Integer;)V
     .locals 2
 
-    .line 1721
+    .line 2190
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->animate()Landroid/view/ViewPropertyAnimator;
@@ -526,7 +649,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1722
+    .line 2191
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -545,7 +668,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setTranslationX(F)V
 
-    .line 1724
+    .line 2193
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->updateButton()V
 
     return-void
@@ -554,7 +677,7 @@
 .method private synthetic lambda$new$1(Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;)V
     .locals 1
 
-    .line 1756
+    .line 2225
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/StickerCategoriesListView;->getSelectedCategory()Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
@@ -563,7 +686,7 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 1757
+    .line 2226
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     const/4 v0, 0x0
@@ -572,18 +695,18 @@
 
     const/4 p1, -0x1
 
-    .line 1758
+    .line 2227
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->search(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 1760
+    .line 2229
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectCategory(Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;)V
 
-    .line 1761
+    .line 2230
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;->emojis:Ljava/lang/String;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
@@ -599,9 +722,18 @@
 .end method
 
 .method private synthetic lambda$new$2(Landroid/view/View;)V
+    .locals 0
+
+    .line 2249
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clear()V
+
+    return-void
+.end method
+
+.method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 1
 
-    .line 1767
+    .line 2254
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageDrawable:Lorg/telegram/ui/Components/SearchStateDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/SearchStateDrawable;->getIconState()I
@@ -612,17 +744,17 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1768
+    .line 2255
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->clear()V
 
-    .line 1769
+    .line 2256
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->categoriesListView:Lorg/telegram/ui/Components/StickerCategoriesListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->scrollToStart()V
 
     goto :goto_0
 
-    .line 1770
+    .line 2257
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageDrawable:Lorg/telegram/ui/Components/SearchStateDrawable;
 
@@ -632,7 +764,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1771
+    .line 2258
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
@@ -645,12 +777,12 @@
 .method private search(Ljava/lang/String;I)V
     .locals 1
 
-    .line 1812
+    .line 2299
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->onSearchQuery:Lorg/telegram/messenger/Utilities$Callback2;
 
     if-eqz v0, :cond_0
 
-    .line 1813
+    .line 2300
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -666,7 +798,7 @@
 
     const/4 v0, 0x0
 
-    .line 1777
+    .line 2264
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->updateButton(Z)V
 
     return-void
@@ -675,7 +807,7 @@
 .method private updateButton(Z)V
     .locals 2
 
-    .line 1791
+    .line 2278
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->isprogress:Z
 
     if-eqz v0, :cond_1
@@ -701,7 +833,7 @@
     :cond_0
     if-eqz p1, :cond_4
 
-    .line 1792
+    .line 2279
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -750,13 +882,13 @@
     :goto_0
     const/4 p1, 0x1
 
-    .line 1793
+    .line 2280
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageDrawable:Lorg/telegram/ui/Components/SearchStateDrawable;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/SearchStateDrawable;->setIconState(I)V
 
-    .line 1794
+    .line 2281
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->isprogress:Z
 
     :cond_4
@@ -768,7 +900,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1801
+    .line 2288
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -781,7 +913,7 @@
 
     const/16 v0, 0x32
 
-    .line 1802
+    .line 2289
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -790,7 +922,7 @@
 
     move-result p2
 
-    .line 1800
+    .line 2287
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -808,7 +940,7 @@
         }
     .end annotation
 
-    .line 1808
+    .line 2295
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->onSearchQuery:Lorg/telegram/messenger/Utilities$Callback2;
 
     return-void
@@ -817,12 +949,12 @@
 .method public showProgress(Z)V
     .locals 1
 
-    .line 1782
+    .line 2269
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->isprogress:Z
 
     if-eqz p1, :cond_0
 
-    .line 1784
+    .line 2271
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->searchImageDrawable:Lorg/telegram/ui/Components/SearchStateDrawable;
 
     const/4 v0, 0x2
@@ -834,7 +966,7 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 1786
+    .line 2273
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$SearchField;->updateButton(Z)V
 
     :goto_0

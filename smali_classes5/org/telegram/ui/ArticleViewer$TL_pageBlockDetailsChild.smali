@@ -24,7 +24,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 383
+    .line 385
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PageBlock;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer$1;)V
     .locals 0
 
-    .line 383
+    .line 385
     invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
 .method static synthetic access$6500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 383
+    .line 385
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->parent:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p0
@@ -51,7 +51,7 @@
 .method static synthetic access$6502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 383
+    .line 385
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->parent:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p1
@@ -60,7 +60,7 @@
 .method static synthetic access$6600(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 383
+    .line 385
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->block:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p0
@@ -69,7 +69,7 @@
 .method static synthetic access$6602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 383
+    .line 385
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockDetailsChild;->block:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p1

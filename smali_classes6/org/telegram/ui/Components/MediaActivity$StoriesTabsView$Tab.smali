@@ -44,12 +44,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;IILjava/lang/CharSequence;)V
     .locals 10
 
-    .line 1267
+    .line 1276
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->this$1:Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1259
+    .line 1268
     new-instance v2, Landroid/text/TextPaint;
 
     const/4 v0, 0x1
@@ -58,14 +58,14 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->paint:Landroid/text/TextPaint;
 
-    .line 1263
+    .line 1272
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->clickRect:Landroid/graphics/RectF;
 
-    .line 1265
+    .line 1274
     new-instance v1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -84,13 +84,13 @@
 
     const/4 v1, -0x1
 
-    .line 1334
+    .line 1343
     iput v1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawableColor:I
 
-    .line 1268
+    .line 1277
     iput p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->i:I
 
-    .line 1270
+    .line 1279
     new-instance v1, Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -121,25 +121,25 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 1271
+    .line 1280
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setMasterParent(Landroid/view/View;)V
 
-    .line 1272
+    .line 1281
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 1273
+    .line 1282
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setPlayInDirectionOfCustomEndFrame(Z)V
 
     const/4 p3, 0x0
 
-    .line 1274
+    .line 1283
     invoke-virtual {v1, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
     const/4 v0, 0x2
 
     if-ne p2, v0, :cond_0
 
-    .line 1277
+    .line 1286
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
 
     move-result p2
@@ -148,7 +148,7 @@
 
     invoke-virtual {v1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1278
+    .line 1287
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
 
     move-result p2
@@ -160,7 +160,7 @@
     :cond_0
     const-string p2, "fonts/rmedium.ttf"
 
-    .line 1282
+    .line 1291
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p2
@@ -169,7 +169,7 @@
 
     const/16 p2, 0xc
 
-    .line 1283
+    .line 1292
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -178,7 +178,7 @@
 
     invoke-virtual {v2, p2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1284
+    .line 1293
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->access$2200(Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -191,7 +191,7 @@
 
     invoke-virtual {v2, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 1285
+    .line 1294
     new-instance v8, Landroid/text/StaticLayout;
 
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -214,7 +214,7 @@
 
     iput-object v8, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->layout:Landroid/text/StaticLayout;
 
-    .line 1286
+    .line 1295
     invoke-virtual {v8}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p4
@@ -235,7 +235,7 @@
     :goto_0
     iput p4, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->layoutWidth:F
 
-    .line 1287
+    .line 1296
     invoke-virtual {v8}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p4
@@ -249,7 +249,7 @@
     :cond_2
     iput v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->layoutLeft:F
 
-    .line 1289
+    .line 1298
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;->access$2200(Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object p1
@@ -284,7 +284,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;)Z
     .locals 0
 
-    .line 1254
+    .line 1263
     iget-boolean p0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->active:Z
 
     return p0
@@ -295,14 +295,14 @@
 .method public setActive(ZZ)V
     .locals 3
 
-    .line 1294
+    .line 1303
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->active:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 1299
+    .line 1308
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->i:I
 
@@ -312,14 +312,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 1300
+    .line 1309
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/16 v0, 0xa
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 1301
+    .line 1310
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
@@ -333,14 +333,14 @@
 
     if-eqz p1, :cond_4
 
-    .line 1307
+    .line 1316
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/16 v0, 0x14
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1308
+    .line 1317
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->getCurrentFrame()I
@@ -351,12 +351,12 @@
 
     if-lt p2, v2, :cond_2
 
-    .line 1309
+    .line 1318
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 1311
+    .line 1320
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -366,14 +366,14 @@
 
     if-gt p2, v0, :cond_3
 
-    .line 1312
+    .line 1321
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
     goto :goto_0
 
-    .line 1314
+    .line 1323
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -381,7 +381,7 @@
 
     goto :goto_0
 
-    .line 1317
+    .line 1326
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -393,27 +393,27 @@
 
     if-lt p2, v0, :cond_5
 
-    .line 1318
+    .line 1327
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/16 v0, 0x27
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1319
+    .line 1328
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
     goto :goto_0
 
-    .line 1321
+    .line 1330
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 1322
+    .line 1331
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
@@ -427,19 +427,19 @@
 
     if-eqz p1, :cond_7
 
-    .line 1326
+    .line 1335
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
     if-eqz p2, :cond_7
 
-    .line 1328
+    .line 1337
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    .line 1331
+    .line 1340
     :cond_7
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->active:Z
@@ -450,7 +450,7 @@
 .method public setColor(I)V
     .locals 3
 
-    .line 1337
+    .line 1346
     iget v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->i:I
 
     const/4 v1, 0x2
@@ -473,23 +473,23 @@
 
     const/16 v0, 0x7f
 
-    .line 1338
+    .line 1347
     invoke-static {p1, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result p1
 
-    .line 1341
+    .line 1350
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->paint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 1342
+    .line 1351
     iget v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawableColor:I
 
     if-eq v0, p1, :cond_1
 
-    .line 1343
+    .line 1352
     iget-object v0, p0, Lorg/telegram/ui/Components/MediaActivity$StoriesTabsView$Tab;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;

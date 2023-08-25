@@ -28,7 +28,7 @@
 
     const/4 v0, 0x0
 
-    .line 11
+    .line 12
     invoke-direct {p0, v0}, Lcom/iMe/model/wallet/details/TokenDetailsArgs;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;->token:Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
@@ -41,7 +41,7 @@
 .method public final getToken()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
     .locals 1
 
-    .line 11
+    .line 12
     iget-object v0, p0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;->token:Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
     return-object v0

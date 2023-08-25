@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/messenger/ImageLoader;I)V
     .locals 0
 
-    .line 2127
+    .line 2130
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$4;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-direct {p0, p2}, Lorg/telegram/messenger/LruCache;-><init>(I)V
@@ -43,10 +43,10 @@
 .method protected entryRemoved(ZLjava/lang/String;Landroid/graphics/drawable/BitmapDrawable;Landroid/graphics/drawable/BitmapDrawable;)V
     .locals 1
 
-    .line 2144
+    .line 2147
     iget-object p1, p0, Lorg/telegram/messenger/ImageLoader$4;->this$0:Lorg/telegram/messenger/ImageLoader;
 
-    invoke-static {p1}, Lorg/telegram/messenger/ImageLoader;->access$3700(Lorg/telegram/messenger/ImageLoader;)Ljava/util/HashMap;
+    invoke-static {p1}, Lorg/telegram/messenger/ImageLoader;->access$3800(Lorg/telegram/messenger/ImageLoader;)Ljava/util/HashMap;
 
     move-result-object p1
 
@@ -56,12 +56,12 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 2145
+    .line 2148
     instance-of p2, p3, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     if-eqz p2, :cond_0
 
-    .line 2146
+    .line 2149
     iget-object p4, p0, Lorg/telegram/messenger/ImageLoader$4;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     iget-object p4, p4, Lorg/telegram/messenger/ImageLoader;->cachedAnimatedFileDrawables:Ljava/util/ArrayList;
@@ -75,7 +75,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2148
+    .line 2151
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -85,20 +85,20 @@
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 2150
+    .line 2153
     move-object p1, p3
 
     check-cast p1, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->recycle()V
 
-    .line 2152
+    .line 2155
     :cond_2
     instance-of p1, p3, Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz p1, :cond_3
 
-    .line 2153
+    .line 2156
     check-cast p3, Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 p1, 0x0
@@ -112,7 +112,7 @@
 .method protected bridge synthetic entryRemoved(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 2127
+    .line 2130
     check-cast p3, Landroid/graphics/drawable/BitmapDrawable;
 
     check-cast p4, Landroid/graphics/drawable/BitmapDrawable;
@@ -125,12 +125,12 @@
 .method public put(Ljava/lang/String;Landroid/graphics/drawable/BitmapDrawable;)Landroid/graphics/drawable/BitmapDrawable;
     .locals 2
 
-    .line 2136
+    .line 2139
     instance-of v0, p2, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 2137
+    .line 2140
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$4;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     iget-object v0, v0, Lorg/telegram/messenger/ImageLoader;->cachedAnimatedFileDrawables:Ljava/util/ArrayList;
@@ -141,7 +141,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2139
+    .line 2142
     :cond_0
     invoke-super {p0, p1, p2}, Lorg/telegram/messenger/LruCache;->put(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -155,7 +155,7 @@
 .method public bridge synthetic put(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 2127
+    .line 2130
     check-cast p2, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/ImageLoader$4;->put(Ljava/lang/String;Landroid/graphics/drawable/BitmapDrawable;)Landroid/graphics/drawable/BitmapDrawable;
@@ -168,20 +168,12 @@
 .method protected sizeOf(Ljava/lang/String;Landroid/graphics/drawable/BitmapDrawable;)I
     .locals 0
 
-    .line 2131
-    invoke-virtual {p2}, Landroid/graphics/drawable/BitmapDrawable;->getIntrinsicWidth()I
+    .line 2134
+    iget-object p1, p0, Lorg/telegram/messenger/ImageLoader$4;->this$0:Lorg/telegram/messenger/ImageLoader;
+
+    invoke-static {p1, p2}, Lorg/telegram/messenger/ImageLoader;->access$3600(Lorg/telegram/messenger/ImageLoader;Landroid/graphics/drawable/BitmapDrawable;)I
 
     move-result p1
-
-    invoke-virtual {p2}, Landroid/graphics/drawable/BitmapDrawable;->getIntrinsicHeight()I
-
-    move-result p2
-
-    mul-int/2addr p1, p2
-
-    mul-int/lit8 p1, p1, 0x4
-
-    mul-int/lit8 p1, p1, 0x2
 
     return p1
 .end method
@@ -189,7 +181,7 @@
 .method protected bridge synthetic sizeOf(Ljava/lang/String;Ljava/lang/Object;)I
     .locals 0
 
-    .line 2127
+    .line 2130
     check-cast p2, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/ImageLoader$4;->sizeOf(Ljava/lang/String;Landroid/graphics/drawable/BitmapDrawable;)I

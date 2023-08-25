@@ -284,7 +284,7 @@
     .locals 2
 
     .line 33
-    invoke-super {p0, p1, p2}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 35
     iget-object v0, p0, Lorg/telegram/ui/Components/HintEditText;->hintPaint:Landroid/text/TextPaint;

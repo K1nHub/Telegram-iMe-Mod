@@ -25,7 +25,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 8369
+    .line 8374
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BlurredRecyclerView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -36,7 +36,7 @@
 .method public updateClip([I)V
     .locals 2
 
-    .line 8374
+    .line 8379
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getPaddingTop()I
 
     move-result v0
@@ -57,7 +57,7 @@
 
     aput v0, p1, v1
 
-    .line 8375
+    .line 8380
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v0

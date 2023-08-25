@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Stories/PeerStoriesView$7;
-.super Lorg/telegram/ui/WrappedResourceProvider;
+.super Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;
 .source "PeerStoriesView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/PeerStoriesView;->createEnterView()V
+    value = Lorg/telegram/ui/Stories/PeerStoriesView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Stories/StoryViewer;Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,35 +14,43 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 1329
-    invoke-direct {p0, p2}, Lorg/telegram/ui/WrappedResourceProvider;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .line 1422
+    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$7;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public appendColors()V
-    .locals 4
+.method public onStateChanged(Z)V
+    .locals 1
 
-    .line 1332
-    iget-object v0, p0, Lorg/telegram/ui/WrappedResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
+    .line 1425
+    iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$7;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
+    iget-object v0, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
-    const/4 v2, -0x1
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1000(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
-    const/16 v3, 0x1e
+    move-result-object p1
 
-    invoke-static {v2, v3}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    iget-object p1, p1, Lorg/telegram/ui/Stories/StoryCaptionView;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$SimpleTextSelectionHelper;
 
-    move-result v2
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
+    move-result p1
+
+    invoke-interface {v0, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setIsInSelectionMode(Z)V
 
     return-void
 .end method

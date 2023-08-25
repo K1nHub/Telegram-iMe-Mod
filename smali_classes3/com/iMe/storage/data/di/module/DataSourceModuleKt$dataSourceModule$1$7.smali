@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,111:1\n129#2,5:112\n129#2,5:117\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$7\n*L\n81#1:112,5\n82#1:117,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$7\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,150:1\n129#2,5:151\n129#2,5:156\n129#2,5:161\n129#2,5:166\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$7\n*L\n89#1:151,5\n90#1:156,5\n91#1:161,5\n92#1:166,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 81
+    .line 89
     check-cast p2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 81
+    .line 90
     check-cast v1, Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;
 
     .line 133
@@ -113,7 +113,7 @@
 
     move-result-object v2
 
-    .line 81
+    .line 91
     check-cast v2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
@@ -127,10 +127,10 @@
 
     move-result-object p1
 
-    .line 82
+    .line 92
     check-cast p1, Lcom/iMe/storage/domain/manager/ton/TonController;
 
-    .line 80
+    .line 88
     new-instance v0, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;
 
     invoke-direct {v0, p2, v2, v1, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/manager/ton/TonController;)V
@@ -141,7 +141,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 79
+    .line 87
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

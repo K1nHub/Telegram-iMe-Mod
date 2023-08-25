@@ -5,27 +5,17 @@
 .implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda23;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/StoriesController;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda23;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda23;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda23;->INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda23;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
+    .locals 1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$zJtd_JCYgDIZipNOwG9c_NyDlVA(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/Stories/StoriesController;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$WuzE829iKmnxrsUm8NBS-N0UgLY(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

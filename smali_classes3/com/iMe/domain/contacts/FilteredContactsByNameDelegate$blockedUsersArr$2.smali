@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 42
+    .line 50
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsersArr$2;->invoke()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -68,7 +68,7 @@
         }
     .end annotation
 
-    .line 43
+    .line 51
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsersArr$2;->this$0:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
     new-instance v1, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsersArr$2$1;

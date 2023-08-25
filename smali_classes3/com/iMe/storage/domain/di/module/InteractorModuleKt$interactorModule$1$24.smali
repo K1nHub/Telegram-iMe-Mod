@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/domain/interactor/socialEmotion/ReactionInteractor;",
+        "Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$24\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,90:1\n129#2,5:91\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$24\n*L\n87#1:91,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$24\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,104:1\n129#2,5:105\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$24\n*L\n97#1:105,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/interactor/socialEmotion/ReactionInteractor;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
     .locals 3
 
     const-string v0, "$this$single"
@@ -72,11 +72,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 87
-    new-instance p2, Lcom/iMe/storage/domain/interactor/socialEmotion/ReactionInteractor;
+    .line 97
+    new-instance p2, Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
 
     .line 133
-    const-class v0, Lcom/iMe/storage/domain/repository/socialEmotion/ReactionRepository;
+    const-class v0, Lcom/iMe/storage/domain/repository/crypto/cryptobox/CryptoBoxRepository;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/iMe/storage/domain/repository/socialEmotion/ReactionRepository;
+    check-cast v0, Lcom/iMe/storage/domain/repository/crypto/cryptobox/CryptoBoxRepository;
 
     const-class v2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
@@ -102,8 +102,8 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 87
-    invoke-direct {p2, v0, p1}, Lcom/iMe/storage/domain/interactor/socialEmotion/ReactionInteractor;-><init>(Lcom/iMe/storage/domain/repository/socialEmotion/ReactionRepository;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
+    .line 97
+    invoke-direct {p2, v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;-><init>(Lcom/iMe/storage/domain/repository/crypto/cryptobox/CryptoBoxRepository;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
 .end method
@@ -111,12 +111,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 87
+    .line 97
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$24;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/interactor/socialEmotion/ReactionInteractor;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$24;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/interactor/crypto/cryptobox/CryptoBoxInteractor;
 
     move-result-object p1
 

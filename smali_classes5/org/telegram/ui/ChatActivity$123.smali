@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->lambda$createMenu$222(Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
+    value = Lorg/telegram/ui/ChatActivity;->lambda$createMenu$223(Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 27392
+    .line 27529
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$123;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .method public run()V
     .locals 2
 
-    .line 27397
+    .line 27534
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$123;->clicked:Z
 
     if-eqz v0, :cond_0
@@ -50,10 +50,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 27400
+    .line 27537
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$123;->clicked:Z
 
-    .line 27401
+    .line 27538
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$123;->this$0:Lorg/telegram/ui/ChatActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;

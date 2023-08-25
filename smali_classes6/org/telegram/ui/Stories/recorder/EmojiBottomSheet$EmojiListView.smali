@@ -89,50 +89,50 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    .line 1223
+    .line 1663
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 1281
+    .line 1721
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->smoothScrolling:Z
 
-    .line 1283
+    .line 1723
     new-instance p1, Landroid/util/SparseArray;
 
     invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
-    .line 1284
+    .line 1724
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedArrays:Ljava/util/ArrayList;
 
-    .line 1285
+    .line 1725
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedLineDrawables:Ljava/util/ArrayList;
 
-    .line 1286
+    .line 1726
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawables:Ljava/util/ArrayList;
 
-    .line 1287
+    .line 1727
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
-    .line 1416
+    .line 1856
     new-instance p1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -146,28 +146,28 @@
     return-void
 .end method
 
-.method static synthetic access$3900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;)Landroid/graphics/ColorFilter;
+.method static synthetic access$3600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;II)V
     .locals 0
 
-    .line 1052
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->whiteFilter:Landroid/graphics/ColorFilter;
-
-    return-object p0
-.end method
-
-.method static synthetic access$900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;II)V
-    .locals 0
-
-    .line 1052
+    .line 1492
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->scrollToPosition(II)V
 
     return-void
 .end method
 
+.method static synthetic access$6200(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;)Landroid/graphics/ColorFilter;
+    .locals 0
+
+    .line 1492
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->whiteFilter:Landroid/graphics/ColorFilter;
+
+    return-object p0
+.end method
+
 .method private scrollToPosition(II)V
     .locals 4
 
-    .line 1249
+    .line 1689
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     if-eqz v0, :cond_5
@@ -182,7 +182,7 @@
 
     goto :goto_1
 
-    .line 1252
+    .line 1692
     :cond_0
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
@@ -190,12 +190,12 @@
 
     check-cast v0, Landroidx/recyclerview/widget/GridLayoutManager;
 
-    .line 1253
+    .line 1693
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1254
+    .line 1694
     invoke-virtual {v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
     move-result v2
@@ -204,7 +204,7 @@
 
     sub-int v1, p1, v2
 
-    .line 1255
+    .line 1695
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
@@ -232,7 +232,7 @@
 
     if-nez v1, :cond_4
 
-    .line 1256
+    .line 1696
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
@@ -256,14 +256,14 @@
     :goto_0
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;->setScrollDirection(I)V
 
-    .line 1257
+    .line 1697
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     invoke-virtual {v0, p1, p2, v2, v3}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;->scrollToPosition(IIZZ)V
 
     goto :goto_1
 
-    .line 1259
+    .line 1699
     :cond_4
     new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$2;
 
@@ -275,13 +275,13 @@
 
     invoke-direct {v1, p0, v2, v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$2;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;Landroid/content/Context;I)V
 
-    .line 1269
+    .line 1709
     invoke-virtual {v1, p1}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 1270
+    .line 1710
     invoke-virtual {v1, p2}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;->setOffset(I)V
 
-    .line 1271
+    .line 1711
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     :cond_5
@@ -294,7 +294,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 1292
+    .line 1732
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getVisibility()I
 
     move-result v0
@@ -303,18 +303,18 @@
 
     return-void
 
-    .line 1296
+    .line 1736
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getSaveCount()I
 
     move-result v0
 
-    .line 1298
+    .line 1738
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v1, 0x0
 
-    .line 1299
+    .line 1739
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->topBound:F
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 1301
+    .line 1741
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView;->selectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->isEmpty()Z
@@ -336,31 +336,31 @@
 
     if-nez v1, :cond_2
 
-    .line 1302
+    .line 1742
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/RecyclerListView;->selectorRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 1303
+    .line 1743
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1304
+    .line 1744
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView;->selectorTransformer:Landroidx/core/util/Consumer;
 
     if-eqz v1, :cond_1
 
-    .line 1305
+    .line 1745
     invoke-interface {v1, p1}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 1307
+    .line 1747
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1308
+    .line 1748
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2
@@ -368,7 +368,7 @@
 
     move v2, v1
 
-    .line 1311
+    .line 1751
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
@@ -378,7 +378,7 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 1312
+    .line 1752
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -387,10 +387,10 @@
 
     check-cast v3, Ljava/util/ArrayList;
 
-    .line 1313
+    .line 1753
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 1314
+    .line 1754
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedArrays:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -399,7 +399,7 @@
 
     goto :goto_0
 
-    .line 1316
+    .line 1756
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
@@ -407,7 +407,7 @@
 
     move v2, v1
 
-    .line 1318
+    .line 1758
     :goto_1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -415,20 +415,20 @@
 
     if-ge v2, v3, :cond_9
 
-    .line 1319
+    .line 1759
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1320
+    .line 1760
     instance-of v4, v3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;
 
     if-eqz v4, :cond_8
 
-    .line 1321
+    .line 1761
     check-cast v3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;
 
-    .line 1323
+    .line 1763
     invoke-virtual {v3}, Landroid/view/View;->getY()F
 
     move-result v4
@@ -459,7 +459,7 @@
 
     goto :goto_4
 
-    .line 1327
+    .line 1767
     :cond_4
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->smoothScrolling:Z
 
@@ -478,7 +478,7 @@
 
     move-result v4
 
-    .line 1328
+    .line 1768
     :goto_2
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
@@ -490,7 +490,7 @@
 
     if-nez v5, :cond_7
 
-    .line 1331
+    .line 1771
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedArrays:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
@@ -499,7 +499,7 @@
 
     if-nez v5, :cond_6
 
-    .line 1332
+    .line 1772
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedArrays:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -516,19 +516,19 @@
 
     goto :goto_3
 
-    .line 1334
+    .line 1774
     :cond_6
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1336
+    .line 1776
     :goto_3
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v4, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1338
+    .line 1778
     :cond_7
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -538,28 +538,28 @@
 
     goto :goto_1
 
-    .line 1342
+    .line 1782
     :cond_9
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 1343
+    .line 1783
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1344
+    .line 1784
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 1346
+    .line 1786
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1347
+    .line 1787
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getPaddingTop()I
 
     move-result v2
@@ -580,14 +580,14 @@
 
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 1349
+    .line 1789
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     move v4, v1
 
-    .line 1350
+    .line 1790
     :goto_5
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
@@ -599,7 +599,7 @@
 
     if-ge v4, v5, :cond_f
 
-    .line 1351
+    .line 1791
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->viewsGroupedByLines:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v4}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -608,21 +608,21 @@
 
     check-cast v5, Ljava/util/ArrayList;
 
-    .line 1352
+    .line 1792
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;
 
-    .line 1353
+    .line 1793
     invoke-virtual {p0, v7}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v8
 
     move v9, v1
 
-    .line 1355
+    .line 1795
     :goto_6
     iget-object v10, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
@@ -632,7 +632,7 @@
 
     if-ge v9, v10, :cond_b
 
-    .line 1356
+    .line 1796
     iget-object v10, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -645,7 +645,7 @@
 
     if-ne v10, v8, :cond_a
 
-    .line 1357
+    .line 1797
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -654,7 +654,7 @@
 
     check-cast v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$DrawingInBackgroundLine;
 
-    .line 1358
+    .line 1798
     iget-object v10, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v9}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -670,7 +670,7 @@
     :goto_7
     if-nez v6, :cond_d
 
-    .line 1363
+    .line 1803
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
@@ -679,7 +679,7 @@
 
     if-nez v6, :cond_c
 
-    .line 1364
+    .line 1804
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -696,7 +696,7 @@
 
     goto :goto_8
 
-    .line 1366
+    .line 1806
     :cond_c
     new-instance v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$DrawingInBackgroundLine;
 
@@ -704,29 +704,29 @@
 
     const/4 v9, 0x7
 
-    .line 1367
+    .line 1807
     invoke-virtual {v6, v9}, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;->setLayerNum(I)V
 
-    .line 1369
+    .line 1809
     :goto_8
     iput v8, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$DrawingInBackgroundLine;->position:I
 
-    .line 1370
+    .line 1810
     invoke-virtual {v6}, Lorg/telegram/ui/Components/DrawingInBackgroundThreadDrawable;->onAttachToWindow()V
 
-    .line 1372
+    .line 1812
     :cond_d
     iget-object v8, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1373
+    .line 1813
     iput-object v5, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
 
-    .line 1374
+    .line 1814
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1375
+    .line 1815
     invoke-virtual {v7}, Landroid/view/View;->getLeft()I
 
     move-result v5
@@ -739,14 +739,14 @@
 
     invoke-virtual {p1, v5, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1376
+    .line 1816
     invoke-virtual {v7}, Landroid/view/View;->getLeft()I
 
     move-result v5
 
     iput v5, v6, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$DrawingInBackgroundLine;->startOffset:I
 
-    .line 1377
+    .line 1817
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v5
@@ -759,7 +759,7 @@
 
     sub-int v9, v5, v8
 
-    .line 1378
+    .line 1818
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v10
@@ -768,7 +768,7 @@
 
     if-lez v10, :cond_e
 
-    .line 1380
+    .line 1820
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getAlpha()F
 
     move-result v11
@@ -781,7 +781,7 @@
 
     invoke-virtual/range {v5 .. v11}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$DrawingInBackgroundLine;->draw(Landroid/graphics/Canvas;JIIF)V
 
-    .line 1382
+    .line 1822
     :cond_e
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -792,7 +792,7 @@
     :cond_f
     move v2, v1
 
-    .line 1385
+    .line 1825
     :goto_9
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
@@ -802,7 +802,7 @@
 
     if-ge v2, v3, :cond_11
 
-    .line 1386
+    .line 1826
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -813,7 +813,7 @@
 
     if-ge v3, v4, :cond_10
 
-    .line 1387
+    .line 1827
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->unusedLineDrawables:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
@@ -826,7 +826,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1388
+    .line 1828
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -837,7 +837,7 @@
 
     iput-object v6, v3, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$DrawingInBackgroundLine;->imageViewEmojis:Ljava/util/ArrayList;
 
-    .line 1389
+    .line 1829
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -850,7 +850,7 @@
 
     goto :goto_a
 
-    .line 1391
+    .line 1831
     :cond_10
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
@@ -867,13 +867,13 @@
 
     goto :goto_9
 
-    .line 1394
+    .line 1834
     :cond_11
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->lineDrawablesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 1396
+    .line 1836
     :goto_b
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -881,19 +881,19 @@
 
     if-ge v1, v2, :cond_14
 
-    .line 1397
+    .line 1837
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     if-eqz v2, :cond_13
 
-    .line 1398
+    .line 1838
     instance-of v3, v2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$EmojiImageView;
 
     if-nez v3, :cond_13
 
-    .line 1400
+    .line 1840
     invoke-virtual {v2}, Landroid/view/View;->getY()F
 
     move-result v3
@@ -938,11 +938,11 @@
 
     goto :goto_c
 
-    .line 1404
+    .line 1844
     :cond_12
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1405
+    .line 1845
     invoke-virtual {v2}, Landroid/view/View;->getX()F
 
     move-result v3
@@ -961,10 +961,10 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1406
+    .line 1846
     invoke-virtual {v2, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1407
+    .line 1847
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_13
@@ -973,11 +973,11 @@
 
     goto :goto_b
 
-    .line 1411
+    .line 1851
     :cond_14
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1413
+    .line 1853
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     return-void
@@ -986,10 +986,10 @@
 .method public setBounds(FF)V
     .locals 0
 
-    .line 1277
+    .line 1717
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->topBound:F
 
-    .line 1278
+    .line 1718
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->bottomBound:F
 
     return-void
@@ -998,20 +998,20 @@
 .method public setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
     .locals 1
 
-    .line 1228
+    .line 1668
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     const/4 v0, 0x0
 
-    .line 1230
+    .line 1670
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
-    .line 1231
+    .line 1671
     instance-of v0, p1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     if-eqz v0, :cond_0
 
-    .line 1232
+    .line 1672
     new-instance v0, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     check-cast p1, Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -1020,14 +1020,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
-    .line 1233
+    .line 1673
     new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$1;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;)V
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;->setAnimationCallback(Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;)V
 
-    .line 1244
+    .line 1684
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     new-instance v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$$ExternalSyntheticLambda0;

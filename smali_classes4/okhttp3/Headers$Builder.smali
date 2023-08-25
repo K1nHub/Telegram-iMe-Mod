@@ -54,7 +54,7 @@
 .method public final add(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers$Builder;
     .locals 1
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -165,7 +165,7 @@
 .method public final addLenient$okhttp(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers$Builder;
     .locals 1
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -197,7 +197,7 @@
 .method public final addUnsafeNonAscii(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers$Builder;
     .locals 1
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -233,7 +233,7 @@
 
     move-result-object v1
 
-    const-string v2, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v2, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -250,7 +250,7 @@
 .method public final get(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -360,7 +360,7 @@
 .method public final removeAll(Ljava/lang/String;)Lokhttp3/Headers$Builder;
     .locals 3
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -417,7 +417,7 @@
 .method public final set(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Headers$Builder;
     .locals 1
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

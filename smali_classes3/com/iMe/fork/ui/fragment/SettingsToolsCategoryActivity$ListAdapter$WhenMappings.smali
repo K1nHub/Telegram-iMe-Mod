@@ -73,7 +73,7 @@
 
     :catch_2
     :try_start_3
-    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHAT_PROFILE:Lcom/iMe/fork/enums/SettingsToolsCategory;
+    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CLOUD:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -87,7 +87,7 @@
 
     :catch_3
     :try_start_4
-    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CLOUD:Lcom/iMe/fork/enums/SettingsToolsCategory;
+    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHAT_LIST_VIEW:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -101,7 +101,7 @@
 
     :catch_4
     :try_start_5
-    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHAT_LIST_VIEW:Lcom/iMe/fork/enums/SettingsToolsCategory;
+    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHATS:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -115,7 +115,7 @@
 
     :catch_5
     :try_start_6
-    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHATS:Lcom/iMe/fork/enums/SettingsToolsCategory;
+    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_MESSAGES:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -129,7 +129,7 @@
 
     :catch_6
     :try_start_7
-    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_MESSAGES:Lcom/iMe/fork/enums/SettingsToolsCategory;
+    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_REACTIONS_BUTTON:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -143,7 +143,7 @@
 
     :catch_7
     :try_start_8
-    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_REACTIONS_BUTTON:Lcom/iMe/fork/enums/SettingsToolsCategory;
+    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CONFIRMATION:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
@@ -157,7 +157,7 @@
 
     :catch_8
     :try_start_9
-    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CONFIRMATION:Lcom/iMe/fork/enums/SettingsToolsCategory;
+    sget-object v1, Lcom/iMe/fork/enums/SettingsToolsCategory;->SETTINGS_CHAT_PROFILE:Lcom/iMe/fork/enums/SettingsToolsCategory;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 

@@ -18,6 +18,7 @@
         Lcom/iMe/model/state/GlobalState$Empty$Balance;,
         Lcom/iMe/model/state/GlobalState$Empty$Common;,
         Lcom/iMe/model/state/GlobalState$Empty$CustomTokens;,
+        Lcom/iMe/model/state/GlobalState$Empty$NetworksSearchResult;,
         Lcom/iMe/model/state/GlobalState$Empty$Staking;,
         Lcom/iMe/model/state/GlobalState$Empty$TokenSearchResult;,
         Lcom/iMe/model/state/GlobalState$Empty$TokenSearchStart;,

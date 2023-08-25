@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt$afterMeasured$1\n+ 2 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,361:1\n88#2:362\n89#2:365\n368#3:363\n350#3:364\n*S KotlinDebug\n*F\n+ 1 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n*L\n88#1:363\n88#1:364\n*E\n"
+    value = "SMAP\nViewExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt$afterMeasured$1\n+ 2 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,383:1\n88#2:384\n89#2:387\n368#3:385\n350#3:386\n*S KotlinDebug\n*F\n+ 1 CatalogRootFragment.kt\ncom/iMe/ui/catalog/CatalogRootFragment\n*L\n88#1:385\n88#1:386\n*E\n"
 .end annotation
 
 
@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lcom/iMe/ui/catalog/CatalogRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$action$inlined:Lkotlin/jvm/functions/Function1;
 
-    .line 245
+    .line 263
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
 .method public onGlobalLayout()V
     .locals 6
 
-    .line 247
+    .line 265
     iget-object v0, p0, Lcom/iMe/ui/catalog/CatalogRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$this_afterMeasured:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
@@ -63,7 +63,7 @@
 
     if-lez v0, :cond_4
 
-    .line 248
+    .line 266
     iget-object v0, p0, Lcom/iMe/ui/catalog/CatalogRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$this_afterMeasured:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -72,10 +72,10 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 249
+    .line 267
     iget-object v0, p0, Lcom/iMe/ui/catalog/CatalogRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$this_afterMeasured:Landroid/view/View;
 
-    .line 362
+    .line 384
     iget-object v1, p0, Lcom/iMe/ui/catalog/CatalogRootFragment$getBottomNavigationPadding$$inlined$afterMeasured$1;->$action$inlined:Lkotlin/jvm/functions/Function1;
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
@@ -136,7 +136,7 @@
     :cond_3
     add-int/2addr v2, v4
 
-    .line 362
+    .line 384
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0

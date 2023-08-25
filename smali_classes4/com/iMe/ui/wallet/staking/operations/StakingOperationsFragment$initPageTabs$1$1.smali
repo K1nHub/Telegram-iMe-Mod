@@ -52,14 +52,14 @@
 .method public final invoke()Landroid/view/View;
     .locals 2
 
-    .line 181
+    .line 198
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$initPageTabs$1$1;->this$0:Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;->access$getNavigationRouter(Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment;)Lcom/iMe/navigation/common/router/base/NavigationRouter;
 
     move-result-object v0
 
-    const-string v1, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.base.mvp.MvpFragment>"
+    const-string/jumbo v1, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.base.mvp.MvpFragment>"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -81,7 +81,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 180
+    .line 197
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/operations/StakingOperationsFragment$initPageTabs$1$1;->invoke()Landroid/view/View;
 
     move-result-object v0

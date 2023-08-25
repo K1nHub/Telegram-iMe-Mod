@@ -37,7 +37,7 @@
 .method public final newInstance()Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;
     .locals 1
 
-    .line 97
+    .line 96
     new-instance v0, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;
 
     invoke-direct {v0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;-><init>()V

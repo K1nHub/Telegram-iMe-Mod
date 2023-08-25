@@ -33,6 +33,8 @@
 
 .field public static final enum FORWARD_MESSENGERS:Lcom/iMe/fork/enums/MessagePopupItem;
 
+.field public static final enum FORWARD_ONLY_CLOUD:Lcom/iMe/fork/enums/MessagePopupItem;
+
 .field public static final enum SAVE_AS:Lcom/iMe/fork/enums/MessagePopupItem;
 
 .field public static final enum SHARE:Lcom/iMe/fork/enums/MessagePopupItem;
@@ -44,7 +46,7 @@
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/MessagePopupItem;
     .locals 3
 
-    const/4 v0, 0x7
+    const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/iMe/fork/enums/MessagePopupItem;
 
@@ -60,33 +62,39 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_MESSENGERS:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_ONLY_CLOUD:Lcom/iMe/fork/enums/MessagePopupItem;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->TRANSLATE:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_MESSENGERS:Lcom/iMe/fork/enums/MessagePopupItem;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_PART:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->TRANSLATE:Lcom/iMe/fork/enums/MessagePopupItem;
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_IMAGE:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_PART:Lcom/iMe/fork/enums/MessagePopupItem;
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->SAVE_AS:Lcom/iMe/fork/enums/MessagePopupItem;
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_IMAGE:Lcom/iMe/fork/enums/MessagePopupItem;
 
     const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/fork/enums/MessagePopupItem;->SAVE_AS:Lcom/iMe/fork/enums/MessagePopupItem;
+
+    const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
@@ -121,53 +129,64 @@
     .line 9
     new-instance v0, Lcom/iMe/fork/enums/MessagePopupItem;
 
-    const-string v1, "FORWARD_MESSENGERS"
+    const-string v1, "FORWARD_ONLY_CLOUD"
 
     const/4 v2, 0x2
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/MessagePopupItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_MESSENGERS:Lcom/iMe/fork/enums/MessagePopupItem;
+    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_ONLY_CLOUD:Lcom/iMe/fork/enums/MessagePopupItem;
 
     .line 10
     new-instance v0, Lcom/iMe/fork/enums/MessagePopupItem;
 
-    const-string v1, "TRANSLATE"
+    const-string v1, "FORWARD_MESSENGERS"
 
     const/4 v2, 0x3
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/MessagePopupItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->TRANSLATE:Lcom/iMe/fork/enums/MessagePopupItem;
+    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->FORWARD_MESSENGERS:Lcom/iMe/fork/enums/MessagePopupItem;
 
     .line 11
     new-instance v0, Lcom/iMe/fork/enums/MessagePopupItem;
 
-    const-string v1, "COPY_PART"
+    const-string v1, "TRANSLATE"
 
     const/4 v2, 0x4
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/MessagePopupItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_PART:Lcom/iMe/fork/enums/MessagePopupItem;
+    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->TRANSLATE:Lcom/iMe/fork/enums/MessagePopupItem;
 
     .line 12
     new-instance v0, Lcom/iMe/fork/enums/MessagePopupItem;
 
-    const-string v1, "COPY_IMAGE"
+    const-string v1, "COPY_PART"
 
     const/4 v2, 0x5
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/MessagePopupItem;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_IMAGE:Lcom/iMe/fork/enums/MessagePopupItem;
+    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_PART:Lcom/iMe/fork/enums/MessagePopupItem;
 
     .line 13
     new-instance v0, Lcom/iMe/fork/enums/MessagePopupItem;
 
-    const-string v1, "SAVE_AS"
+    const-string v1, "COPY_IMAGE"
 
     const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/MessagePopupItem;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->COPY_IMAGE:Lcom/iMe/fork/enums/MessagePopupItem;
+
+    .line 14
+    new-instance v0, Lcom/iMe/fork/enums/MessagePopupItem;
+
+    const-string v1, "SAVE_AS"
+
+    const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/fork/enums/MessagePopupItem;-><init>(Ljava/lang/String;I)V
 
@@ -237,7 +256,7 @@
 .method public final getTitle()Ljava/lang/String;
     .locals 2
 
-    .line 15
+    .line 16
     sget-object v0, Lcom/iMe/fork/enums/MessagePopupItem$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -248,7 +267,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 22
+    .line 24
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -268,7 +287,7 @@
 
     goto :goto_0
 
-    .line 21
+    .line 23
     :pswitch_1
     sget v0, Lorg/telegram/messenger/R$string;->chat_message_popup_option_copy_image:I
 
@@ -282,7 +301,7 @@
 
     goto :goto_0
 
-    .line 20
+    .line 22
     :pswitch_2
     sget v0, Lorg/telegram/messenger/R$string;->chat_message_popup_option_copy_part:I
 
@@ -296,7 +315,7 @@
 
     goto :goto_0
 
-    .line 19
+    .line 21
     :pswitch_3
     sget v0, Lorg/telegram/messenger/R$string;->chat_long_action_translate:I
 
@@ -310,7 +329,7 @@
 
     goto :goto_0
 
-    .line 18
+    .line 20
     :pswitch_4
     sget v0, Lorg/telegram/messenger/R$string;->settings_interface_message_popup_item_forward_messengers:I
 
@@ -324,8 +343,22 @@
 
     goto :goto_0
 
-    .line 17
+    .line 19
     :pswitch_5
+    sget v0, Lorg/telegram/messenger/R$string;->chat_message_popup_option_forward_only_cloud:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "getInternalString((R.str\u2026tion_forward_only_cloud))"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 18
+    :pswitch_6
     sget v0, Lorg/telegram/messenger/R$string;->ShareFile:I
 
     const-string v1, "ShareFile"
@@ -340,8 +373,8 @@
 
     goto :goto_0
 
-    .line 16
-    :pswitch_6
+    .line 17
+    :pswitch_7
     sget v0, Lorg/telegram/messenger/R$string;->chat_message_popup_option_forward_cloud:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -359,6 +392,7 @@
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_7
         :pswitch_6
         :pswitch_5
         :pswitch_4

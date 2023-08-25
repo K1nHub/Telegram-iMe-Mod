@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/PasscodeActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1549
+    .line 1565
     iput-object p1, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 1550
+    .line 1566
     iput-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1562
+    .line 1578
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2500(Lorg/telegram/ui/PasscodeActivity;)I
@@ -53,7 +53,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 1680
+    .line 1696
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2000(Lorg/telegram/ui/PasscodeActivity;)I
@@ -74,7 +74,7 @@
 
     goto :goto_2
 
-    .line 1682
+    .line 1698
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -102,7 +102,7 @@
 
     goto :goto_1
 
-    .line 1684
+    .line 1700
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -130,7 +130,7 @@
 
     goto :goto_0
 
-    .line 1686
+    .line 1702
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -144,7 +144,7 @@
 
     return p1
 
-    .line 1688
+    .line 1704
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -181,12 +181,12 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 1555
+    .line 1571
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 1556
+    .line 1572
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2000(Lorg/telegram/ui/PasscodeActivity;)I
@@ -213,7 +213,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
-    .line 1557
+    .line 1573
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2300(Lorg/telegram/ui/PasscodeActivity;)I
 
     move-result v0
@@ -246,7 +246,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 1595
+    .line 1611
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -273,13 +273,13 @@
 
     goto/16 :goto_3
 
-    .line 1653
+    .line 1669
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/PasscodeActivity$RLottieImageHolderView;
 
-    .line 1654
+    .line 1670
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity$RLottieImageHolderView;->access$2900(Lorg/telegram/ui/PasscodeActivity$RLottieImageHolderView;)Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p2
@@ -290,7 +290,7 @@
 
     invoke-virtual {p2, v0, v1, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1655
+    .line 1671
     invoke-static {p1}, Lorg/telegram/ui/PasscodeActivity$RLottieImageHolderView;->access$2900(Lorg/telegram/ui/PasscodeActivity$RLottieImageHolderView;)Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object p1
@@ -299,7 +299,7 @@
 
     goto/16 :goto_3
 
-    .line 1645
+    .line 1661
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -307,10 +307,10 @@
 
     const/16 v0, 0x2e
 
-    .line 1646
+    .line 1662
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/HeaderCell;->setHeight(I)V
 
-    .line 1647
+    .line 1663
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2800(Lorg/telegram/ui/PasscodeActivity;)I
@@ -319,7 +319,7 @@
 
     if-ne p2, v0, :cond_16
 
-    .line 1648
+    .line 1664
     sget p2, Lorg/telegram/messenger/R$string;->ScreenCaptureHeader:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -330,13 +330,13 @@
 
     goto/16 :goto_3
 
-    .line 1659
+    .line 1675
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1660
+    .line 1676
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$3000(Lorg/telegram/ui/PasscodeActivity;)I
@@ -353,7 +353,7 @@
 
     if-eq v0, v2, :cond_3
 
-    .line 1661
+    .line 1677
     sget p2, Lorg/telegram/messenger/R$string;->PasscodeScreenHint:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -364,10 +364,10 @@
 
     const/4 p2, 0x0
 
-    .line 1662
+    .line 1678
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1663
+    .line 1679
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p1
@@ -376,7 +376,7 @@
 
     goto/16 :goto_3
 
-    .line 1664
+    .line 1680
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -388,7 +388,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 1665
+    .line 1681
     sget p2, Lorg/telegram/messenger/R$string;->AutoLockInfo:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -397,7 +397,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1666
+    .line 1682
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -410,7 +410,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1667
+    .line 1683
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p1
@@ -426,7 +426,7 @@
 
     goto/16 :goto_3
 
-    .line 1668
+    .line 1684
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -436,7 +436,7 @@
 
     if-ne p2, v0, :cond_16
 
-    .line 1669
+    .line 1685
     sget p2, Lorg/telegram/messenger/R$string;->ScreenCaptureInfo:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -445,7 +445,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1670
+    .line 1686
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -458,7 +458,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1671
+    .line 1687
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p1
@@ -474,13 +474,13 @@
 
     goto/16 :goto_3
 
-    .line 1612
+    .line 1628
     :cond_7
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
-    .line 1613
+    .line 1629
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2300(Lorg/telegram/ui/PasscodeActivity;)I
@@ -489,7 +489,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 1614
+    .line 1630
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$1500(Lorg/telegram/ui/PasscodeActivity;)I
@@ -518,7 +518,7 @@
     :goto_0
     invoke-virtual {p1, p2, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1615
+    .line 1631
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$1500(Lorg/telegram/ui/PasscodeActivity;)I
@@ -568,7 +568,7 @@
 
     if-nez p2, :cond_b
 
-    .line 1616
+    .line 1632
     :cond_a
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText7:I
 
@@ -578,7 +578,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1617
+    .line 1633
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
@@ -587,7 +587,7 @@
 
     goto/16 :goto_3
 
-    .line 1619
+    .line 1635
     :cond_b
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
@@ -597,7 +597,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1620
+    .line 1636
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
@@ -606,7 +606,7 @@
 
     goto/16 :goto_3
 
-    .line 1622
+    .line 1638
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -616,7 +616,7 @@
 
     if-ne p2, v0, :cond_11
 
-    .line 1624
+    .line 1640
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2700(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
@@ -643,7 +643,7 @@
     :goto_1
     if-nez p2, :cond_e
 
-    .line 1626
+    .line 1642
     sget p2, Lorg/telegram/messenger/R$string;->AutoLockDisabled:I
 
     new-array v0, v1, [Ljava/lang/Object;
@@ -663,7 +663,7 @@
 
     if-ge p2, v0, :cond_f
 
-    .line 1628
+    .line 1644
     sget v0, Lorg/telegram/messenger/R$string;->AutoLockInTime:I
 
     new-array v4, v2, [Ljava/lang/Object;
@@ -693,7 +693,7 @@
 
     if-ge p2, v0, :cond_10
 
-    .line 1630
+    .line 1646
     sget v0, Lorg/telegram/messenger/R$string;->AutoLockInTime:I
 
     new-array v5, v2, [Ljava/lang/Object;
@@ -728,7 +728,7 @@
 
     goto :goto_2
 
-    .line 1632
+    .line 1648
     :cond_10
     sget v0, Lorg/telegram/messenger/R$string;->AutoLockInTime:I
 
@@ -766,7 +766,7 @@
 
     move-result-object p2
 
-    .line 1634
+    .line 1650
     :goto_2
     sget v0, Lorg/telegram/messenger/R$string;->AutoLock:I
 
@@ -778,7 +778,7 @@
 
     invoke-virtual {p1, v0, p2, v2}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 1635
+    .line 1651
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -787,7 +787,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1636
+    .line 1652
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
@@ -796,7 +796,7 @@
 
     goto/16 :goto_3
 
-    .line 1637
+    .line 1653
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -806,7 +806,7 @@
 
     if-ne p2, v0, :cond_16
 
-    .line 1638
+    .line 1654
     sget p2, Lorg/telegram/messenger/R$string;->DisablePasscode:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -815,7 +815,7 @@
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1639
+    .line 1655
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -824,7 +824,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1640
+    .line 1656
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
@@ -833,13 +833,13 @@
 
     goto :goto_3
 
-    .line 1597
+    .line 1613
     :cond_12
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1598
+    .line 1614
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PasscodeActivity;->access$2000(Lorg/telegram/ui/PasscodeActivity;)I
@@ -848,7 +848,7 @@
 
     if-ne p2, v0, :cond_15
 
-    .line 1600
+    .line 1616
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PasscodeActivity;->access$2700(Lorg/telegram/ui/PasscodeActivity;)Lcom/iMe/fork/controller/LockedSectionsController$SectionPasscodeData;
@@ -859,7 +859,7 @@
 
     if-eqz p2, :cond_13
 
-    .line 1601
+    .line 1617
     sget p2, Lorg/telegram/messenger/R$string;->UnlockFingerprint:I
 
     invoke-static {v0, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -880,7 +880,7 @@
 
     goto :goto_3
 
-    .line 1602
+    .line 1618
     :cond_13
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -890,7 +890,7 @@
 
     if-ne p2, v2, :cond_14
 
-    .line 1603
+    .line 1619
     sget p2, Lorg/telegram/messenger/R$string;->UnlockFingerprint:I
 
     invoke-static {v0, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -911,7 +911,7 @@
 
     goto :goto_3
 
-    .line 1605
+    .line 1621
     :cond_14
     sget p2, Lorg/telegram/messenger/R$string;->UnlockFingerprint:I
 
@@ -925,7 +925,7 @@
 
     goto :goto_3
 
-    .line 1606
+    .line 1622
     :cond_15
     iget-object v0, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->this$0:Lorg/telegram/ui/PasscodeActivity;
 
@@ -935,7 +935,7 @@
 
     if-ne p2, v0, :cond_16
 
-    .line 1607
+    .line 1623
     sget p2, Lorg/telegram/messenger/R$string;->ScreenCaptureShowContent:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -968,7 +968,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 1587
+    .line 1603
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/PasscodeActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -977,7 +977,7 @@
 
     goto :goto_0
 
-    .line 1583
+    .line 1599
     :cond_0
     new-instance p1, Lorg/telegram/ui/PasscodeActivity$RLottieImageHolderView;
 
@@ -989,7 +989,7 @@
 
     goto :goto_0
 
-    .line 1579
+    .line 1595
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -997,7 +997,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 1580
+    .line 1596
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1008,7 +1008,7 @@
 
     goto :goto_0
 
-    .line 1575
+    .line 1591
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -1016,7 +1016,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextSettingsCell;-><init>(Landroid/content/Context;)V
 
-    .line 1576
+    .line 1592
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1027,7 +1027,7 @@
 
     goto :goto_0
 
-    .line 1571
+    .line 1587
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
@@ -1035,7 +1035,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 1572
+    .line 1588
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1044,7 +1044,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1590
+    .line 1606
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

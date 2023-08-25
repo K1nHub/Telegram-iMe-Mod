@@ -81,7 +81,7 @@
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "null cannot be cast to non-null type java.lang.String"
+    const-string/jumbo v6, "null cannot be cast to non-null type java.lang.String"
 
     invoke-static {v3, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -296,7 +296,7 @@
 
     move-result-object v1
 
-    const-string v2, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v2, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

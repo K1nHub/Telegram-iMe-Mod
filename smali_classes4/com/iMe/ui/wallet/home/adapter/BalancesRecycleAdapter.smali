@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBalancesRecycleAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BalancesRecycleAdapter.kt\ncom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter\n+ 2 AnyExt.kt\ncom/iMe/utils/extentions/common/AnyExtKt\n*L\n1#1,114:1\n10#2,2:115\n*S KotlinDebug\n*F\n+ 1 BalancesRecycleAdapter.kt\ncom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter\n*L\n109#1:115,2\n*E\n"
+    value = "SMAP\nBalancesRecycleAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BalancesRecycleAdapter.kt\ncom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter\n+ 2 AnyExt.kt\ncom/iMe/utils/extentions/common/AnyExtKt\n*L\n1#1,105:1\n10#2,2:106\n*S KotlinDebug\n*F\n+ 1 BalancesRecycleAdapter.kt\ncom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter\n*L\n102#1:106,2\n*E\n"
 .end annotation
 
 
@@ -87,7 +87,7 @@
 
     invoke-static {v13, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "nftCollectionProvider"
+    const-string/jumbo v6, "nftCollectionProvider"
 
     move-object/from16 v14, p8
 
@@ -109,7 +109,7 @@
 
     invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "nftTokenProvider"
+    const-string/jumbo v6, "nftTokenProvider"
 
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -135,7 +135,7 @@
     .line 51
     iput-object v5, v0, Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;->nftTokenProvider:Lcom/iMe/ui/adapter/provider/NftTokenProvider;
 
-    const/4 v6, 0x5
+    const/4 v6, 0x4
 
     new-array v6, v6, [I
 
@@ -163,101 +163,94 @@
 
     aput v15, v6, v16
 
-    .line 58
-    sget v15, Lorg/telegram/messenger/R$id;->image_copy:I
-
-    const/16 v16, 0x4
-
-    aput v15, v6, v16
-
     .line 55
     invoke-virtual {v0, v6}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->addChildClickViewIds([I)V
 
-    .line 60
+    .line 59
     invoke-static/range {p10 .. p10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 61
+    .line 60
     invoke-static/range {p11 .. p11}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 62
+    .line 61
     invoke-static/range {p1 .. p1}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 63
+    .line 62
     invoke-static/range {p12 .. p12}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 64
+    .line 63
     invoke-static/range {p2 .. p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 65
+    .line 64
     invoke-static/range {p3 .. p3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 66
+    .line 65
     invoke-static/range {p4 .. p4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 67
+    .line 66
     invoke-static/range {p5 .. p5}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 68
+    .line 67
     invoke-static/range {p6 .. p6}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 69
+    .line 68
     invoke-static/range {p7 .. p7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 70
+    .line 69
     invoke-static/range {p8 .. p8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addFullSpanNodeProvider(Lcom/chad/library/adapter/base/provider/BaseNodeProvider;)V
 
-    .line 71
+    .line 70
     invoke-static/range {p13 .. p13}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asItem(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseItemProvider;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->addItemProvider(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
 
-    .line 72
+    .line 71
     invoke-static/range {p9 .. p9}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->asNode(Lcom/chad/library/adapter/base/provider/BaseItemProvider;)Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
 
     move-result-object v1
@@ -312,14 +305,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 95
+    .line 88
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
-    .line 96
+    .line 89
     instance-of p2, p1, Lcom/iMe/model/wallet/home/BannerItem;
 
     if-eqz p2, :cond_0
@@ -328,7 +321,7 @@
 
     goto :goto_0
 
-    .line 97
+    .line 90
     :cond_0
     instance-of p2, p1, Lcom/iMe/model/wallet/home/HeaderItem;
 
@@ -338,7 +331,7 @@
 
     goto :goto_0
 
-    .line 98
+    .line 91
     :cond_1
     instance-of p2, p1, Lcom/iMe/model/wallet/home/AccountItem$Token;
 
@@ -348,7 +341,7 @@
 
     goto :goto_0
 
-    .line 99
+    .line 92
     :cond_2
     instance-of p2, p1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
@@ -358,7 +351,7 @@
 
     goto :goto_0
 
-    .line 100
+    .line 93
     :cond_3
     instance-of p2, p1, Lcom/iMe/model/wallet/home/TotalBalanceItem;
 
@@ -368,7 +361,7 @@
 
     goto :goto_0
 
-    .line 101
+    .line 94
     :cond_4
     instance-of p2, p1, Lcom/iMe/model/wallet/home/AccountItem$Create;
 
@@ -378,7 +371,7 @@
 
     goto :goto_0
 
-    .line 102
+    .line 95
     :cond_5
     instance-of p2, p1, Lcom/iMe/model/wallet/home/SelectableHeaderItem;
 
@@ -388,7 +381,7 @@
 
     goto :goto_0
 
-    .line 103
+    .line 96
     :cond_6
     instance-of p2, p1, Lcom/iMe/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
@@ -398,7 +391,7 @@
 
     goto :goto_0
 
-    .line 104
+    .line 97
     :cond_7
     instance-of p2, p1, Lcom/iMe/model/wallet/home/CryptoAddTokensItem;
 
@@ -408,7 +401,7 @@
 
     goto :goto_0
 
-    .line 105
+    .line 98
     :cond_8
     instance-of p2, p1, Lcom/iMe/model/wallet/home/CryptoAccountItem;
 
@@ -418,7 +411,7 @@
 
     goto :goto_0
 
-    .line 106
+    .line 99
     :cond_9
     instance-of p2, p1, Lcom/iMe/model/wallet/home/nft/NftCollectionItem;
 
@@ -428,7 +421,7 @@
 
     goto :goto_0
 
-    .line 107
+    .line 100
     :cond_a
     instance-of p2, p1, Lcom/iMe/model/wallet/home/nft/NftTokenItem;
 
@@ -438,7 +431,7 @@
 
     goto :goto_0
 
-    .line 108
+    .line 101
     :cond_b
     instance-of p1, p1, Lcom/iMe/model/common/GlobalStateItem;
 
@@ -448,7 +441,7 @@
 
     goto :goto_0
 
-    .line 109
+    .line 102
     :cond_c
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOKEN_BALANCE:I
 
@@ -483,10 +476,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 90
+    .line 83
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 91
+    .line 84
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;->bannerProvider:Lcom/iMe/ui/adapter/provider/BannerProvider;
 
     invoke-virtual {v0, p1}, Lcom/iMe/ui/adapter/provider/BannerProvider;->onViewRecycled(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
@@ -497,7 +490,7 @@
 .method public final resetOnNetworkViewLayoutAction()V
     .locals 2
 
-    .line 82
+    .line 79
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;->headerWithNetworkSwitcherProvider:Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
 
     const/4 v1, 0x0
@@ -514,7 +507,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 78
+    .line 75
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;->headerWithNetworkSwitcherProvider:Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
 
     invoke-virtual {v0, p1}, Lcom/iMe/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;->setOnNetworkViewLayoutAction(Lcom/iMe/fork/utils/Callbacks$Callback;)V

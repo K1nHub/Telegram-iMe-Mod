@@ -310,7 +310,7 @@
     return-object v0
 
     :pswitch_2
-    const-string v0, "nist256p1"
+    const-string/jumbo v0, "nist256p1"
 
     return-object v0
 
@@ -333,8 +333,6 @@
     const-string/jumbo v0, "secp256k1"
 
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

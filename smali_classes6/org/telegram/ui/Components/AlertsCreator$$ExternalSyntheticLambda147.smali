@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;->f$0:[I
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$y7oLDgLAy76GQdBRZn2CMC71kIw([II)Ljava/lang/String;
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$dUaX3VnLZWiw6iRnhzkaeSpqwFI([II)Ljava/lang/String;
 
     move-result-object p1
 

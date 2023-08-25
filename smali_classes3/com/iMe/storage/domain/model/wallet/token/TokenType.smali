@@ -26,8 +26,6 @@
 
 .field public static final Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenType$Companion;
 
-.field public static final enum FIAT:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
-
 .field public static final enum NFT:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
 
@@ -39,7 +37,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/domain/model/wallet/token/TokenType;
     .locals 3
 
-    const/4 v0, 0x3
+    const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
@@ -52,12 +50,6 @@
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->NFT:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
     const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->FIAT:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
-
-    const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
@@ -92,19 +84,6 @@
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenType;-><init>(Ljava/lang/String;II)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->NFT:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
-
-    .line 9
-    new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenType;
-
-    sget v1, Lcom/iMe/storage/R$string;->wallet_account_type_fiat:I
-
-    const-string v2, "FIAT"
-
-    const/4 v3, 0x2
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/token/TokenType;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->FIAT:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->$values()[Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
@@ -181,7 +160,7 @@
 .method public final isCrypto()Z
     .locals 1
 
-    .line 12
+    .line 11
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->CRYPTO:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
     if-ne p0, v0, :cond_0
@@ -200,7 +179,7 @@
 .method public final isNft()Z
     .locals 1
 
-    .line 11
+    .line 10
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenType;->NFT:Lcom/iMe/storage/domain/model/wallet/token/TokenType;
 
     if-ne p0, v0, :cond_0

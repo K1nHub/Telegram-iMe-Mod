@@ -822,7 +822,7 @@
 
     move-result-object v5
 
-    const-string v6, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v6, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {v5, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1136,8 +1136,6 @@
     invoke-direct {v0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    nop
 
     :array_0
     .array-data 4

@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/models/DrawerHeaderSettings;
     .locals 10
 
-    .line 36
+    .line 41
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$newSettings$2;->this$0:Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->access$getCurrentSettings(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Lcom/iMe/fork/models/DrawerHeaderSettings;
@@ -85,7 +85,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 36
+    .line 41
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$newSettings$2;->invoke()Lcom/iMe/fork/models/DrawerHeaderSettings;
 
     move-result-object v0

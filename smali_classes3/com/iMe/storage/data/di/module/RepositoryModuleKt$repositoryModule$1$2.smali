@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,157:1\n129#2,5:158\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$2\n*L\n63#1:158,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,168:1\n129#2,5:169\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/iMe/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$2\n*L\n65#1:169,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 63
+    .line 65
     check-cast p2, Lcom/iMe/storage/data/network/api/own/WalletApi;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 63
+    .line 65
     check-cast v1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 133
@@ -113,7 +113,7 @@
 
     move-result-object v2
 
-    .line 63
+    .line 65
     check-cast v2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
@@ -127,7 +127,7 @@
 
     move-result-object p1
 
-    .line 63
+    .line 65
     check-cast p1, Lcom/iMe/storage/domain/manager/auth/AuthManager;
 
     new-instance v0, Lcom/iMe/storage/data/repository/wallet/WalletSessionRepositoryImpl;
@@ -140,7 +140,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 62
+    .line 64
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

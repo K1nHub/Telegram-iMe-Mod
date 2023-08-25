@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;IILjava/lang/Runnable;)Landroid/text/SpannableStringBuilder;
+    value = Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;IILjava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/text/SpannableStringBuilder;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,11 +14,17 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 622
+    .line 628
+    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
     return-void
@@ -27,32 +33,34 @@
 
 # virtual methods
 .method public updateDrawState(Landroid/text/TextPaint;)V
-    .locals 2
+    .locals 3
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 625
+    .line 631
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 626
+    .line 632
     invoke-virtual {p1}, Landroid/text/TextPaint;->getAlpha()I
 
     move-result v0
 
-    .line 627
+    .line 633
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v2, p0, Lorg/telegram/messenger/AndroidUtilities$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
     invoke-virtual {p1, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 628
+    .line 634
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
     return-void

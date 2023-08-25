@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,120:1\n129#2,5:121\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$12\n*L\n89#1:121,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$12\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,183:1\n129#2,5:184\n129#2,5:189\n129#2,5:194\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$12\n*L\n121#1:184,5\n122#1:189,5\n123#1:194,5\n*E\n"
 .end annotation
 
 
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 89
+    .line 121
     check-cast p2, Lcom/iMe/ui/adapter/provider/GlobalStateProvider;
 
     .line 133
-    const-class v1, Lcom/iMe/ui/adapter/provider/TweetProvider;
+    const-class v1, Lcom/iMe/ui/adapter/provider/TweetDatesProvider;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,11 +99,11 @@
 
     move-result-object v1
 
-    .line 89
-    check-cast v1, Lcom/iMe/ui/adapter/provider/TweetProvider;
+    .line 122
+    check-cast v1, Lcom/iMe/ui/adapter/provider/TweetDatesProvider;
 
     .line 133
-    const-class v2, Lcom/iMe/ui/adapter/provider/TweetDatesProvider;
+    const-class v2, Lcom/iMe/ui/adapter/provider/TweetProvider;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -113,12 +113,13 @@
 
     move-result-object p1
 
-    .line 89
-    check-cast p1, Lcom/iMe/ui/adapter/provider/TweetDatesProvider;
+    .line 123
+    check-cast p1, Lcom/iMe/ui/adapter/provider/TweetProvider;
 
+    .line 120
     new-instance v0, Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;
 
-    invoke-direct {v0, v1, p1, p2}, Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/TweetProvider;Lcom/iMe/ui/adapter/provider/TweetDatesProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;)V
+    invoke-direct {v0, p1, v1, p2}, Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/TweetProvider;Lcom/iMe/ui/adapter/provider/TweetDatesProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;)V
 
     return-object v0
 .end method
@@ -126,7 +127,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 89
+    .line 119
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

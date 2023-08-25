@@ -57,7 +57,7 @@
     .line 748
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     .line 749
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -247,7 +247,7 @@
 .method private static validateName(Ljava/lang/String;Z)Ljava/lang/String;
     .locals 4
 
-    const-string v0, "name"
+    const-string/jumbo v0, "name"
 
     .line 734
     invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

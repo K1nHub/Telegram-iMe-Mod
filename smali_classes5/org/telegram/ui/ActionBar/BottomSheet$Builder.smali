@@ -24,7 +24,7 @@
 
     const/4 v0, 0x0
 
-    .line 1785
+    .line 1790
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;Z)V
 
     return-void
@@ -35,32 +35,13 @@
 
     const/4 v0, 0x0
 
-    .line 1793
+    .line 1798
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 1
-
-    .line 1800
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 1801
-    new-instance v0, Lorg/telegram/ui/ActionBar/BottomSheet;
-
-    invoke-direct {v0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-
-    iput-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
-
-    .line 1802
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 1
 
     .line 1805
@@ -74,9 +55,28 @@
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     .line 1807
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    .locals 1
+
+    .line 1810
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1811
+    new-instance v0, Lorg/telegram/ui/ActionBar/BottomSheet;
+
+    invoke-direct {v0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
+
+    .line 1812
     invoke-virtual {v0, p4}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 1808
+    .line 1813
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {p1, p4}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
@@ -89,7 +89,7 @@
 .method public create()Lorg/telegram/ui/ActionBar/BottomSheet;
     .locals 1
 
-    .line 1857
+    .line 1862
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-object v0
@@ -98,7 +98,7 @@
 .method public getDismissRunnable()Ljava/lang/Runnable;
     .locals 1
 
-    .line 1896
+    .line 1901
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$3500(Lorg/telegram/ui/ActionBar/BottomSheet;)Ljava/lang/Runnable;
@@ -111,7 +111,7 @@
 .method public setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1891
+    .line 1896
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$3402(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
@@ -122,7 +122,7 @@
 .method public setApplyTopPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1886
+    .line 1891
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$3302(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
@@ -133,7 +133,7 @@
 .method public setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1827
+    .line 1832
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$1902(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)Landroid/view/View;
@@ -144,12 +144,12 @@
 .method public setCustomView(Landroid/view/View;I)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1832
+    .line 1837
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$1902(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)Landroid/view/View;
 
-    .line 1833
+    .line 1838
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iput p2, p1, Lorg/telegram/ui/ActionBar/BottomSheet;->customViewGravity:I
@@ -160,7 +160,7 @@
 .method public setDelegate(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetDelegate;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1881
+    .line 1886
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setDelegate(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetDelegateInterface;)V
@@ -171,7 +171,7 @@
 .method public setDimBehind(Z)Lorg/telegram/ui/ActionBar/BottomSheet;
     .locals 1
 
-    .line 1861
+    .line 1866
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iput-boolean p1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehind:Z
@@ -184,7 +184,7 @@
 
     const/4 v0, 0x0
 
-    .line 1765
+    .line 1770
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;[Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     move-result-object p1
@@ -195,17 +195,17 @@
 .method public setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;[Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1812
+    .line 1817
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2702(Lorg/telegram/ui/ActionBar/BottomSheet;[Ljava/lang/CharSequence;)[Ljava/lang/CharSequence;
 
-    .line 1813
+    .line 1818
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2802(Lorg/telegram/ui/ActionBar/BottomSheet;[Z)[Z
 
-    .line 1814
+    .line 1819
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2402(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/content/DialogInterface$OnClickListener;)Landroid/content/DialogInterface$OnClickListener;
@@ -218,7 +218,7 @@
 
     const/4 v0, 0x0
 
-    .line 1770
+    .line 1775
     invoke-virtual {p0, p1, p2, p3, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;[Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     move-result-object p1
@@ -229,22 +229,22 @@
 .method public setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;[Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1819
+    .line 1824
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2702(Lorg/telegram/ui/ActionBar/BottomSheet;[Ljava/lang/CharSequence;)[Ljava/lang/CharSequence;
 
-    .line 1820
+    .line 1825
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2902(Lorg/telegram/ui/ActionBar/BottomSheet;[I)[I
 
-    .line 1821
+    .line 1826
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {p1, p4}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2802(Lorg/telegram/ui/ActionBar/BottomSheet;[Z)[Z
 
-    .line 1822
+    .line 1827
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2402(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/content/DialogInterface$OnClickListener;)Landroid/content/DialogInterface$OnClickListener;
@@ -255,7 +255,7 @@
 .method public setOnPreDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1910
+    .line 1915
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setOnHideListener(Landroid/content/DialogInterface$OnDismissListener;)V
@@ -268,7 +268,7 @@
 
     const/4 v0, 0x0
 
-    .line 1842
+    .line 1847
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setTitle(Ljava/lang/CharSequence;Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     move-result-object p1
@@ -279,12 +279,12 @@
 .method public setTitle(Ljava/lang/CharSequence;Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1846
+    .line 1851
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$3002(Lorg/telegram/ui/ActionBar/BottomSheet;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 1847
+    .line 1852
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$3102(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
@@ -295,7 +295,7 @@
 .method public setTitleMultipleLines(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1852
+    .line 1857
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$1802(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
@@ -306,7 +306,7 @@
 .method public setUseHardwareLayer(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 1
 
-    .line 1876
+    .line 1881
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iput-boolean p1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->useHardwareLayer:Z
@@ -317,12 +317,12 @@
 .method public show()Lorg/telegram/ui/ActionBar/BottomSheet;
     .locals 1
 
-    .line 1866
+    .line 1871
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    .line 1867
+    .line 1872
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-object v0

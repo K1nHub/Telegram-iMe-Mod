@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNavigationModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,41:1\n151#2,10:42\n161#2,2:68\n151#2,10:70\n161#2,2:96\n151#2,10:98\n161#2,2:124\n103#2,6:126\n109#2,5:153\n103#2,6:158\n109#2,5:185\n103#2,6:190\n109#2,5:217\n216#3:52\n217#3:67\n216#3:80\n217#3:95\n216#3:108\n217#3:123\n201#3,6:132\n207#3:152\n201#3,6:164\n207#3:184\n201#3,6:196\n207#3:216\n105#4,14:53\n105#4,14:81\n105#4,14:109\n105#4,14:138\n105#4,14:170\n105#4,14:202\n*S KotlinDebug\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1\n*L\n20#1:42,10\n20#1:68,2\n21#1:70,10\n21#1:96,2\n24#1:98,10\n24#1:124,2\n28#1:126,6\n28#1:153,5\n34#1:158,6\n34#1:185,5\n35#1:190,6\n35#1:217,5\n20#1:52\n20#1:67\n21#1:80\n21#1:95\n24#1:108\n24#1:123\n28#1:132,6\n28#1:152\n34#1:164,6\n34#1:184\n35#1:196,6\n35#1:216\n20#1:53,14\n21#1:81,14\n24#1:109,14\n28#1:138,14\n34#1:170,14\n35#1:202,14\n*E\n"
+    value = "SMAP\nNavigationModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,44:1\n151#2,10:45\n161#2,2:71\n151#2,10:73\n161#2,2:99\n151#2,10:101\n161#2,2:127\n103#2,6:129\n109#2,5:156\n103#2,6:161\n109#2,5:188\n103#2,6:193\n109#2,5:220\n216#3:55\n217#3:70\n216#3:83\n217#3:98\n216#3:111\n217#3:126\n201#3,6:135\n207#3:155\n201#3,6:167\n207#3:187\n201#3,6:199\n207#3:219\n105#4,14:56\n105#4,14:84\n105#4,14:112\n105#4,14:141\n105#4,14:173\n105#4,14:205\n*S KotlinDebug\n*F\n+ 1 NavigationModule.kt\ncom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1\n*L\n20#1:45,10\n20#1:71,2\n21#1:73,10\n21#1:99,2\n24#1:101,10\n24#1:127,2\n28#1:129,6\n28#1:156,5\n37#1:161,6\n37#1:188,5\n38#1:193,6\n38#1:220,5\n20#1:55\n20#1:70\n21#1:83\n21#1:98\n24#1:111\n24#1:126\n28#1:135,6\n28#1:155\n37#1:167,6\n37#1:187\n38#1:199,6\n38#1:219\n20#1:56,14\n21#1:84,14\n24#1:112,14\n28#1:141,14\n37#1:173,14\n38#1:205,14\n*E\n"
 .end annotation
 
 
@@ -281,7 +281,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 34
+    .line 37
     sget-object v13, Lcom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$5;->INSTANCE:Lcom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$5;
 
     const/4 v12, 0x0
@@ -337,7 +337,7 @@
 
     invoke-direct {v3, v0, v4}, Lorg/koin/core/definition/KoinDefinition;-><init>(Lorg/koin/core/module/Module;Lorg/koin/core/instance/InstanceFactory;)V
 
-    .line 35
+    .line 38
     sget-object v13, Lcom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$6;->INSTANCE:Lcom/iMe/di/module/NavigationModuleKt$presentationNavigationModule$1$6;
 
     const/4 v12, 0x0

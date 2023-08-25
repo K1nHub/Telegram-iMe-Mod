@@ -31,7 +31,7 @@
 
     const/4 v0, 0x0
 
-    .line 40
+    .line 42
     invoke-direct {p0, v0}, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     iput-object p1, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;->networkId:Ljava/lang/String;
@@ -44,7 +44,7 @@
 .method public final getNetworkId()Ljava/lang/String;
     .locals 1
 
-    .line 40
+    .line 42
     iget-object v0, p0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;->networkId:Ljava/lang/String;
 
     return-object v0

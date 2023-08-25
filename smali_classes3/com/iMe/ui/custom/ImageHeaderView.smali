@@ -3,6 +3,12 @@
 .source "ImageHeaderView.kt"
 
 
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nImageHeaderView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ImageHeaderView.kt\ncom/iMe/ui/custom/ImageHeaderView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,99:1\n262#2,2:100\n*S KotlinDebug\n*F\n+ 1 ImageHeaderView.kt\ncom/iMe/ui/custom/ImageHeaderView\n*L\n57#1:100,2\n*E\n"
+.end annotation
+
+
 # instance fields
 .field private binding:Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;
 
@@ -41,10 +47,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 22
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 24
+    .line 25
     new-instance p2, Lcom/iMe/ui/custom/ImageHeaderView$networkIconCornerSize$2;
 
     invoke-direct {p2, p0}, Lcom/iMe/ui/custom/ImageHeaderView$networkIconCornerSize$2;-><init>(Lcom/iMe/ui/custom/ImageHeaderView;)V
@@ -55,7 +61,7 @@
 
     iput-object p2, p0, Lcom/iMe/ui/custom/ImageHeaderView;->networkIconCornerSize$delegate:Lkotlin/Lazy;
 
-    .line 25
+    .line 26
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
@@ -70,7 +76,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/custom/ImageHeaderView;->binding:Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;
 
-    .line 28
+    .line 29
     invoke-direct {p0}, Lcom/iMe/ui/custom/ImageHeaderView;->setupView()V
 
     return-void
@@ -92,7 +98,7 @@
 
     const/4 p3, 0x0
 
-    .line 17
+    .line 18
     :cond_1
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/ui/custom/ImageHeaderView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -102,7 +108,7 @@
 .method private final getNetworkIconCornerSize()F
     .locals 1
 
-    .line 24
+    .line 25
     iget-object v0, p0, Lcom/iMe/ui/custom/ImageHeaderView;->networkIconCornerSize$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -121,10 +127,10 @@
 .method private final setupView()V
     .locals 1
 
-    .line 89
+    .line 93
     invoke-virtual {p0}, Lcom/iMe/ui/custom/ImageHeaderView;->setupColors()V
 
-    .line 90
+    .line 94
     iget-object v0, p0, Lcom/iMe/ui/custom/ImageHeaderView;->binding:Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->getRoot()Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -183,7 +189,7 @@
 
     move-object v6, p5
 
-    .line 33
+    .line 34
     invoke-virtual/range {v1 .. v6}, Lcom/iMe/ui/custom/ImageHeaderView;->setupViewData(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -194,17 +200,17 @@
 .method public final setupColors()V
     .locals 4
 
-    .line 71
+    .line 75
     iget-object v0, p0, Lcom/iMe/ui/custom/ImageHeaderView;->binding:Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;
 
-    .line 72
+    .line 76
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->imageNetworkIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v2, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
     invoke-direct {v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
 
-    .line 73
+    .line 77
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -217,20 +223,20 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    .line 74
+    .line 78
     invoke-direct {p0}, Lcom/iMe/ui/custom/ImageHeaderView;->getNetworkIconCornerSize()F
 
     move-result v3
 
     invoke-virtual {v2, v3}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setCornerSize(F)V
 
-    .line 72
+    .line 76
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 76
+    .line 80
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 77
+    .line 81
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -239,14 +245,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, "setupColors$lambda$6$lambda$5"
+    const-string v2, "setupColors$lambda$7$lambda$6"
 
-    .line 78
+    .line 82
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 80
+    .line 84
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
@@ -261,7 +267,7 @@
 .end method
 
 .method public final setupViewData(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 8
+    .locals 7
 
     const-string v0, "titleText"
 
@@ -271,17 +277,17 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/iMe/ui/custom/ImageHeaderView;->binding:Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;
 
-    .line 41
+    .line 42
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
     if-eqz p1, :cond_0
 
-    const-string p2, "setupViewData$lambda$2$lambda$0"
+    const-string p2, "setupViewData$lambda$3$lambda$0"
 
-    .line 43
+    .line 44
     invoke-static {v1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v3, 0x0
@@ -301,7 +307,7 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 44
+    .line 45
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -310,47 +316,70 @@
 
     :cond_1
     :goto_0
+    const/4 p1, 0x1
+
+    const/4 p2, 0x0
+
     if-eqz p3, :cond_2
 
-    .line 48
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->imageNetworkIcon:Landroidx/appcompat/widget/AppCompatImageView;
-
-    const-string p1, "setupViewData$lambda$2$lambda$1"
-
     .line 49
-    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->imageNetworkIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const/4 p1, 0x0
+    const-string v2, "setupViewData$lambda$3$lambda$1"
 
-    const/4 p2, 0x1
+    .line 50
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {v2, p1, p2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
+    invoke-static {v1, p2, p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x6
 
-    const/4 v6, 0x6
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move-object v2, p3
 
-    move-object v3, p3
-
-    .line 50
-    invoke-static/range {v2 .. v7}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
-
-    .line 53
-    :cond_2
-    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    invoke-virtual {p1, p4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    .line 51
+    invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
     .line 54
-    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
+    :cond_2
+    iget-object p3, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-virtual {p1, p5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p3, p4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 55
+    iget-object p3, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    .line 56
+    invoke-virtual {p3, p5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const-string p4, "setupViewData$lambda$3$lambda$2"
+
+    .line 57
+    invoke-static {p3, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p5}, Lkotlin/text/StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
+
+    move-result p4
+
+    xor-int/2addr p1, p4
+
+    if-eqz p1, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    const/16 p2, 0x8
+
+    .line 262
+    :goto_1
+    invoke-virtual {p3, p2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
@@ -370,10 +399,10 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 67
     iget-object v0, p0, Lcom/iMe/ui/custom/ImageHeaderView;->binding:Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;
 
-    .line 64
+    .line 68
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->imageIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
     const-string v2, "imageIcon"
@@ -396,12 +425,12 @@
 
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;ZILjava/lang/Object;)V
 
-    .line 65
+    .line 69
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 66
+    .line 70
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V

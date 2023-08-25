@@ -2077,6 +2077,41 @@
     return-object p0
 .end method
 
+.method public static subtract(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/Set<",
+            "TT;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "other"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1684
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
+
+    move-result-object p0
+
+    .line 1685
+    invoke-static {p0, p1}, Lkotlin/collections/CollectionsKt__MutableCollectionsKt;->removeAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+
+    return-object p0
+.end method
+
 .method public static take(Ljava/lang/Iterable;I)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;

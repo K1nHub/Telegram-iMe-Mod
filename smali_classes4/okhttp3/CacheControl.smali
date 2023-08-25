@@ -239,7 +239,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "no-cache, "
+    const-string/jumbo v1, "no-cache, "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -249,7 +249,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v1, "no-store, "
+    const-string/jumbo v1, "no-store, "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -315,7 +315,7 @@
 
     if-eqz v1, :cond_6
 
-    const-string v1, "must-revalidate, "
+    const-string/jumbo v1, "must-revalidate, "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -367,7 +367,7 @@
 
     if-eqz v1, :cond_a
 
-    const-string v1, "no-transform, "
+    const-string/jumbo v1, "no-transform, "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

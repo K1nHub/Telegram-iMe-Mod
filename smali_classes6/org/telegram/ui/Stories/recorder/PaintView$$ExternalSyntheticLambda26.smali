@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/core/util/Consumer;
+.implements Landroid/widget/PopupWindow$OnDismissListener;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final onDismiss()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$TWmjYux5Rc2nB-ovnax08q2aejU(Lorg/telegram/ui/Stories/recorder/PaintView;Ljava/lang/Integer;)V
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$_EJk1RULzW9wXD1uWv2hjMryDzM(Lorg/telegram/ui/Stories/recorder/PaintView;)V
 
     return-void
 .end method

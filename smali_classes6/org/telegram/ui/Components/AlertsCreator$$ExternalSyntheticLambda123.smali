@@ -8,14 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
+.field public final synthetic f$1:Ljava/lang/String;
+
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Lorg/telegram/messenger/browser/Browser$Progress;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;JZLorg/telegram/messenger/browser/Browser$Progress;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$1:Ljava/lang/String;
+
+    iput-wide p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$2:J
+
+    iput-boolean p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$3:Z
+
+    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$4:Lorg/telegram/messenger/browser/Browser$Progress;
 
     return-void
 .end method
@@ -23,11 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$RjLQeZvFRvtzE5U3kjrdYUeHVZo(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$1:Ljava/lang/String;
+
+    iget-wide v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$2:J
+
+    iget-boolean v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$3:Z
+
+    iget-object v5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;->f$4:Lorg/telegram/messenger/browser/Browser$Progress;
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$BNiDbf9KCrE5elWiOT6WSIeuyxQ(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;JZLorg/telegram/messenger/browser/Browser$Progress;)V
 
     return-void
 .end method

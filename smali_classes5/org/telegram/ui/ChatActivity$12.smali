@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 2895
+    .line 2913
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 2903
+    .line 2921
     invoke-static {}, Lorg/telegram/ui/ChatActivity;->access$2400()I
 
     move-result p1
@@ -48,7 +48,7 @@
 
     float-to-int p1, p2
 
-    .line 2898
+    .line 2916
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$2402(I)I
 
     return-void

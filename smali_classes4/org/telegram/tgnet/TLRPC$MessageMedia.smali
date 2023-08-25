@@ -85,7 +85,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 61294
+    .line 61349
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -100,7 +100,7 @@
 
     goto/16 :goto_0
 
-    .line 61411
+    .line 61466
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument_layer74;
 
@@ -108,7 +108,7 @@
 
     goto/16 :goto_0
 
-    .line 61393
+    .line 61448
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGeoLive_layer119;
 
@@ -116,7 +116,7 @@
 
     goto/16 :goto_0
 
-    .line 61387
+    .line 61442
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue_layer71;
 
@@ -124,7 +124,7 @@
 
     goto/16 :goto_0
 
-    .line 61453
+    .line 61508
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaContact;
 
@@ -132,7 +132,7 @@
 
     goto/16 :goto_0
 
-    .line 61417
+    .line 61472
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto;
 
@@ -140,7 +140,7 @@
 
     goto/16 :goto_0
 
-    .line 61435
+    .line 61490
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDice_layer111;
 
@@ -148,7 +148,7 @@
 
     goto/16 :goto_0
 
-    .line 61414
+    .line 61469
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaContact_layer81;
 
@@ -156,7 +156,7 @@
 
     goto/16 :goto_0
 
-    .line 61429
+    .line 61484
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVideo_layer45;
 
@@ -164,7 +164,7 @@
 
     goto/16 :goto_0
 
-    .line 61438
+    .line 61493
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGeo;
 
@@ -172,7 +172,7 @@
 
     goto/16 :goto_0
 
-    .line 61444
+    .line 61499
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
@@ -180,7 +180,7 @@
 
     goto/16 :goto_0
 
-    .line 61420
+    .line 61475
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;
 
@@ -188,7 +188,7 @@
 
     goto/16 :goto_0
 
-    .line 61432
+    .line 61487
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDice;
 
@@ -196,7 +196,7 @@
 
     goto/16 :goto_0
 
-    .line 61375
+    .line 61430
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
@@ -204,7 +204,7 @@
 
     goto/16 :goto_0
 
-    .line 61426
+    .line 61481
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto_layer68;
 
@@ -212,7 +212,7 @@
 
     goto/16 :goto_0
 
-    .line 61402
+    .line 61457
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument_old;
 
@@ -220,7 +220,7 @@
 
     goto/16 :goto_0
 
-    .line 61396
+    .line 61451
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
 
@@ -228,7 +228,7 @@
 
     goto/16 :goto_0
 
-    .line 61357
+    .line 61412
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaUnsupported_old;
 
@@ -236,7 +236,7 @@
 
     goto/16 :goto_0
 
-    .line 61408
+    .line 61463
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGame;
 
@@ -244,7 +244,7 @@
 
     goto :goto_0
 
-    .line 61369
+    .line 61424
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;
 
@@ -252,7 +252,7 @@
 
     goto :goto_0
 
-    .line 61405
+    .line 61460
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument_layer68;
 
@@ -260,7 +260,7 @@
 
     goto :goto_0
 
-    .line 61450
+    .line 61505
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaContact_layer131;
 
@@ -268,7 +268,7 @@
 
     goto :goto_0
 
-    .line 61378
+    .line 61433
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaStory;
 
@@ -276,7 +276,7 @@
 
     goto :goto_0
 
-    .line 61363
+    .line 61418
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto_old;
 
@@ -284,7 +284,7 @@
 
     goto :goto_0
 
-    .line 61384
+    .line 61439
     :sswitch_17
     new-instance v0, Lorg/telegram/ui/Stories/MessageMediaStoryFull_old;
 
@@ -292,7 +292,7 @@
 
     goto :goto_0
 
-    .line 61381
+    .line 61436
     :sswitch_18
     new-instance v0, Lorg/telegram/ui/Stories/MessageMediaStoryFull;
 
@@ -300,7 +300,7 @@
 
     goto :goto_0
 
-    .line 61360
+    .line 61415
     :sswitch_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaAudio_layer45;
 
@@ -308,7 +308,7 @@
 
     goto :goto_0
 
-    .line 61390
+    .line 61445
     :sswitch_1a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGeoLive;
 
@@ -316,7 +316,7 @@
 
     goto :goto_0
 
-    .line 61423
+    .line 61478
     :sswitch_1b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto_layer74;
 
@@ -324,7 +324,7 @@
 
     goto :goto_0
 
-    .line 61441
+    .line 61496
     :sswitch_1c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaWebPage;
 
@@ -332,7 +332,7 @@
 
     goto :goto_0
 
-    .line 61399
+    .line 61454
     :sswitch_1d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVideo_old;
 
@@ -340,7 +340,7 @@
 
     goto :goto_0
 
-    .line 61372
+    .line 61427
     :sswitch_1e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaUnsupported;
 
@@ -348,7 +348,7 @@
 
     goto :goto_0
 
-    .line 61447
+    .line 61502
     :sswitch_1f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument_layer159;
 
@@ -356,7 +356,7 @@
 
     goto :goto_0
 
-    .line 61366
+    .line 61421
     :sswitch_20
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice_layer145;
 
@@ -373,7 +373,7 @@
 
     goto :goto_1
 
-    .line 61457
+    .line 61512
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -399,10 +399,10 @@
     :goto_1
     if-eqz v0, :cond_8
 
-    .line 61460
+    .line 61515
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 61461
+    .line 61516
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->video_unused:Lorg/telegram/tgnet/TLRPC$Video;
 
     const-string p1, ""
@@ -411,40 +411,40 @@
 
     if-eqz p0, :cond_4
 
-    .line 61462
+    .line 61517
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
-    .line 61463
+    .line 61518
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->video_unused:Lorg/telegram/tgnet/TLRPC$Video;
 
     instance-of v1, v1, Lorg/telegram/tgnet/TLRPC$TL_videoEncrypted;
 
     if-eqz v1, :cond_2
 
-    .line 61464
+    .line 61519
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 61465
+    .line 61520
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->video_unused:Lorg/telegram/tgnet/TLRPC$Video;
 
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$Video;->key:[B
 
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$Document;->key:[B
 
-    .line 61466
+    .line 61521
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Video;->iv:[B
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->iv:[B
 
     goto :goto_2
 
-    .line 61468
+    .line 61523
     :cond_2
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_document;
 
@@ -452,40 +452,40 @@
 
     iput-object v1, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 61470
+    .line 61525
     :goto_2
     iput p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 61471
+    .line 61526
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     new-array v1, v2, [B
 
     iput-object v1, p2, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 61472
+    .line 61527
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->video_unused:Lorg/telegram/tgnet/TLRPC$Video;
 
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$Video;->id:J
 
     iput-wide v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    .line 61473
+    .line 61528
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$Video;->access_hash:J
 
     iput-wide v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
-    .line 61474
+    .line 61529
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$Video;->date:I
 
     iput v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 61475
+    .line 61530
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$Video;->mime_type:Ljava/lang/String;
 
     if-eqz v2, :cond_3
 
-    .line 61476
+    .line 61531
     iput-object v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     goto :goto_3
@@ -493,10 +493,10 @@
     :cond_3
     const-string/jumbo v2, "video/mp4"
 
-    .line 61478
+    .line 61533
     iput-object v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 61480
+    .line 61535
     :goto_3
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$Video;->size:I
 
@@ -504,14 +504,14 @@
 
     iput-wide v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 61481
+    .line 61536
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Video;->thumb:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 61482
+    .line 61537
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->video_unused:Lorg/telegram/tgnet/TLRPC$Video;
@@ -520,92 +520,92 @@
 
     iput v1, p2, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 61483
+    .line 61538
     iget-object p2, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
-    .line 61484
+    .line 61539
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;-><init>()V
 
-    .line 61485
+    .line 61540
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->video_unused:Lorg/telegram/tgnet/TLRPC$Video;
 
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$Video;->w:I
 
     iput v1, p2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
-    .line 61486
+    .line 61541
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$Video;->h:I
 
     iput v1, p2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
 
-    .line 61487
+    .line 61542
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$Video;->duration:I
 
     int-to-double v0, v0
 
     iput-wide v0, p2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 61488
+    .line 61543
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 61490
+    .line 61545
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
     if-nez p2, :cond_7
 
-    .line 61491
+    .line 61546
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
     goto/16 :goto_6
 
-    .line 61493
+    .line 61548
     :cond_4
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->audio_unused:Lorg/telegram/tgnet/TLRPC$Audio;
 
     if-eqz p0, :cond_8
 
-    .line 61494
+    .line 61549
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
-    .line 61495
+    .line 61550
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->audio_unused:Lorg/telegram/tgnet/TLRPC$Audio;
 
     instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_audioEncrypted;
 
     if-eqz v3, :cond_5
 
-    .line 61496
+    .line 61551
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 61497
+    .line 61552
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->audio_unused:Lorg/telegram/tgnet/TLRPC$Audio;
 
     iget-object v5, v4, Lorg/telegram/tgnet/TLRPC$Audio;->key:[B
 
     iput-object v5, v3, Lorg/telegram/tgnet/TLRPC$Document;->key:[B
 
-    .line 61498
+    .line 61553
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Audio;->iv:[B
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$Document;->iv:[B
 
     goto :goto_4
 
-    .line 61500
+    .line 61555
     :cond_5
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_document;
 
@@ -613,40 +613,40 @@
 
     iput-object v3, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 61502
+    .line 61557
     :goto_4
     iput p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 61503
+    .line 61558
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     new-array v2, v2, [B
 
     iput-object v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 61504
+    .line 61559
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->audio_unused:Lorg/telegram/tgnet/TLRPC$Audio;
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Audio;->id:J
 
     iput-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    .line 61505
+    .line 61560
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Audio;->access_hash:J
 
     iput-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
-    .line 61506
+    .line 61561
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$Audio;->date:I
 
     iput v3, p2, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 61507
+    .line 61562
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$Audio;->mime_type:Ljava/lang/String;
 
     if-eqz v3, :cond_6
 
-    .line 61508
+    .line 61563
     iput-object v3, p2, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     goto :goto_5
@@ -654,10 +654,10 @@
     :cond_6
     const-string v3, "audio/ogg"
 
-    .line 61510
+    .line 61565
     iput-object v3, p2, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 61512
+    .line 61567
     :goto_5
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$Audio;->size:I
 
@@ -665,24 +665,24 @@
 
     iput-wide v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 61513
+    .line 61568
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;-><init>()V
 
     const-string/jumbo v2, "s"
 
-    .line 61514
+    .line 61569
     iput-object v2, p2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 61515
+    .line 61570
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 61516
+    .line 61571
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->audio_unused:Lorg/telegram/tgnet/TLRPC$Audio;
@@ -691,17 +691,17 @@
 
     iput v2, p2, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 61517
+    .line 61572
     iget-object p2, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
-    .line 61518
+    .line 61573
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;-><init>()V
 
-    .line 61519
+    .line 61574
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->audio_unused:Lorg/telegram/tgnet/TLRPC$Audio;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$Audio;->duration:I
@@ -710,22 +710,22 @@
 
     iput-wide v2, p2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 61520
+    .line 61575
     iput-boolean v1, p2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->voice:Z
 
-    .line 61521
+    .line 61576
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 61523
+    .line 61578
     iget-object p2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
     if-nez p2, :cond_7
 
-    .line 61524
+    .line 61579
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->captionLegacy:Ljava/lang/String;
 
     :cond_7
@@ -778,7 +778,7 @@
 .method public copy()Lorg/telegram/tgnet/TLRPC$MessageMedia;
     .locals 3
 
-    .line 61302
+    .line 61357
     :try_start_0
     new-instance v0, Lorg/telegram/tgnet/NativeByteBuffer;
 
@@ -788,12 +788,12 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 61303
+    .line 61358
     invoke-virtual {p0, v0}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     const/4 v1, 0x0
 
-    .line 61304
+    .line 61359
     invoke-virtual {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v1

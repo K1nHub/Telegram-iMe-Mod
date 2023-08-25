@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectPresenter.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter\n+ 2 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,125:1\n16#2,3:126\n42#3,12:129\n100#3,12:141\n1549#4:153\n1620#4,3:154\n*S KotlinDebug\n*F\n+ 1 WalletConnectPresenter.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter\n*L\n97#1:126,3\n98#1:129,12\n109#1:141,12\n120#1:153\n120#1:154,3\n*E\n"
+    value = "SMAP\nWalletConnectPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectPresenter.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter\n+ 2 RxEventBus.kt\ncom/iMe/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,122:1\n16#2,3:123\n42#3,12:126\n100#3,12:138\n1549#4:150\n1620#4,3:151\n*S KotlinDebug\n*F\n+ 1 WalletConnectPresenter.kt\ncom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter\n*L\n96#1:123,3\n97#1:126,12\n108#1:138,12\n119#1:150\n119#1:151,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -68,38 +68,40 @@
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 33
+    .line 37
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 26
+    .line 30
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 27
+    .line 31
     iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->hintsPreferenceHelper:Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
 
-    .line 28
+    .line 32
     iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 29
+    .line 33
     iput-object p4, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 30
+    .line 34
     iput-object p5, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 31
+    .line 35
     iput-object p6, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 32
+    .line 36
     iput-object p7, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->walletConnectManager:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     return-void
 .end method
 
-.method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+.method public static final synthetic access$getCurrentNetwork(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;)Lcom/iMe/storage/domain/model/crypto/Network;
     .locals 0
 
-    .line 24
-    iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    .line 28
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->getCurrentNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object p0
 
     return-object p0
 .end method
@@ -107,17 +109,8 @@
 .method public static final synthetic access$getResourceManager$p(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 0
 
-    .line 24
+    .line 28
     iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    return-object p0
-.end method
-
-.method public static final synthetic access$getRxEventBus$p(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;)Lcom/iMe/storage/domain/utils/rx/RxEventBus;
-    .locals 0
-
-    .line 24
-    iget-object p0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     return-object p0
 .end method
@@ -125,10 +118,23 @@
 .method public static final synthetic access$showSessions(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;Ljava/util/List;)V
     .locals 0
 
-    .line 24
+    .line 28
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->showSessions(Ljava/util/List;)V
 
     return-void
+.end method
+
+.method private final getCurrentNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+    .locals 1
+
+    .line 40
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method private final showSessions(Ljava/util/List;)V
@@ -142,7 +148,7 @@
         }
     .end annotation
 
-    .line 120
+    .line 119
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -179,7 +185,7 @@
     .line 1621
     check-cast v2, Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    .line 120
+    .line 119
     invoke-static {v2}, Lcom/iMe/mapper/wallet/wallet_connect/WCSessionStoreUiMappingKt;->mapToUi(Lcom/trustwallet/walletconnect/WCSessionStoreItem;)Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;
 
     move-result-object v2
@@ -189,7 +195,7 @@
 
     goto :goto_0
 
-    .line 120
+    .line 119
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
@@ -203,7 +209,7 @@
 .method private final subscribeToEvents()V
     .locals 5
 
-    .line 96
+    .line 95
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -260,14 +266,14 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "viewState: BaseView? = n\u2026Error.invoke()\n        })"
+    const-string/jumbo v1, "viewState: BaseView? = n\u2026.invoke(error)\n        })"
 
     .line 49
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 101
+    .line 100
     invoke-static {p0, v0, v3, v1, v3}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -276,20 +282,20 @@
 .method private final subscribeToSessionList()V
     .locals 4
 
-    .line 105
+    .line 104
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->walletConnectInteractor:Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;
 
-    .line 106
+    .line 105
     invoke-virtual {v0}, Lcom/iMe/storage/domain/interactor/crypto/wallet_connect/WalletConnectInteractor;->getWalletConnectSavedSessions()Lio/reactivex/Flowable;
 
     move-result-object v0
 
-    .line 107
+    .line 106
     invoke-virtual {v0}, Lio/reactivex/Flowable;->distinctUntilChanged()Lio/reactivex/Flowable;
 
     move-result-object v0
 
-    .line 108
+    .line 107
     iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -304,7 +310,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
+    .line 108
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -343,7 +349,7 @@
 
     const/4 v2, 0x1
 
-    .line 116
+    .line 115
     invoke-static {p0, v0, v1, v2, v1}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -358,7 +364,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 43
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->walletConnectManager:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;->connect(Ljava/lang/String;)V
@@ -373,7 +379,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 47
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->walletConnectManager:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;->getSessionKey()Ljava/lang/String;
@@ -388,7 +394,7 @@
 .method public final disconnectAll()V
     .locals 1
 
-    .line 46
+    .line 51
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->walletConnectManager:Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;->disconnectAll()V
@@ -399,10 +405,10 @@
 .method public final getDisconnectAllConfirmationDialogModel()Lcom/iMe/model/dialog/DialogModel;
     .locals 6
 
-    .line 67
+    .line 74
     new-instance v0, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 68
+    .line 75
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureSessionsTitle:I
 
     const-string v2, "AreYouSureSessionsTitle"
@@ -411,7 +417,7 @@
 
     move-result-object v1
 
-    .line 69
+    .line 76
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_connect_terminate_all_description:I
@@ -420,7 +426,7 @@
 
     move-result-object v2
 
-    .line 70
+    .line 77
     sget v3, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v4, "Cancel"
@@ -429,7 +435,7 @@
 
     move-result-object v3
 
-    .line 71
+    .line 78
     sget v4, Lorg/telegram/messenger/R$string;->Terminate:I
 
     const-string v5, "Terminate"
@@ -438,7 +444,7 @@
 
     move-result-object v4
 
-    .line 67
+    .line 74
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -447,34 +453,67 @@
 .method protected onFirstViewAttach()V
     .locals 2
 
-    .line 86
+    .line 89
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->getCurrentNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+    invoke-static {v1}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/crypto/Network;)Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
 
-    .line 87
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->setupNetwork(Lcom/iMe/model/wallet/crypto/NetworkItem;)V
+
+    .line 90
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->subscribeToEvents()V
 
-    .line 88
+    .line 91
     invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->subscribeToSessionList()V
 
+    return-void
+.end method
+
+.method public final onNetworkSelected(Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)V
+    .locals 1
+
+    .line 70
+    iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    if-eqz p1, :cond_1
+
+    invoke-static {p1}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToDomain(Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;)Lcom/iMe/storage/domain/model/crypto/Network;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setNetwork(Lcom/iMe/storage/domain/model/crypto/Network;)V
+
+    .line 71
+    iget-object p1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->rxEventBus:Lcom/iMe/storage/domain/utils/rx/RxEventBus;
+
+    sget-object v0, Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$NetworkUpdated;->INSTANCE:Lcom/iMe/storage/domain/utils/rx/event/DomainRxEvents$NetworkUpdated;
+
+    invoke-virtual {p1, v0}, Lcom/iMe/storage/domain/utils/rx/RxEventBus;->publish(Lcom/iMe/storage/domain/utils/rx/event/RxEvent;)V
+
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final showChangeNetworkHintIfNeeded()V
     .locals 2
 
-    .line 75
+    .line 82
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->hintsPreferenceHelper:Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
 
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/Hint$ChangeNetwork$WalletConnectScreen;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/Hint$ChangeNetwork$WalletConnectScreen;
@@ -485,7 +524,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 76
+    .line 83
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -494,7 +533,7 @@
 
     invoke-interface {v0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;->showChangeNetworkHint()V
 
-    .line 77
+    .line 84
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->hintsPreferenceHelper:Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;
 
     invoke-interface {v0, v1}, Lcom/iMe/storage/domain/storage/HintsPreferenceHelper;->onHintShowed(Lcom/iMe/storage/domain/model/wallet/Hint;)V
@@ -504,35 +543,37 @@
 .end method
 
 .method public final startChooseNetworkDialog()V
-    .locals 4
+    .locals 3
 
-    .line 58
+    .line 63
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectView;
 
-    .line 59
-    iget-object v1, p0, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
+    .line 64
+    invoke-direct {p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;->getCurrentNetwork()Lcom/iMe/storage/domain/model/crypto/Network;
 
     move-result-object v1
 
-    .line 60
+    invoke-static {v1}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToUI(Lcom/iMe/storage/domain/model/crypto/Network;)Lcom/iMe/model/wallet/crypto/NetworkItem$Crypto;
+
+    move-result-object v1
+
+    .line 65
     sget-object v2, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/NetworksHelper;
 
     invoke-virtual {v2}, Lcom/iMe/storage/data/utils/crypto/NetworksHelper;->getEVMNetworks()Ljava/util/List;
 
     move-result-object v2
 
-    .line 58
-    new-instance v3, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter$startChooseNetworkDialog$1;
+    invoke-static {v2}, Lcom/iMe/mapper/wallet/NetworkUiMappingKt;->mapToUI(Ljava/util/List;)Ljava/util/List;
 
-    invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter$startChooseNetworkDialog$1;-><init>(Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;)V
+    move-result-object v2
 
-    invoke-interface {v0, v1, v2, v3}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/storage/domain/model/crypto/Network;Ljava/util/List;Lkotlin/jvm/functions/Function1;)V
+    .line 63
+    invoke-interface {v0, v1, v2}, Lcom/iMe/ui/base/mvp/SwitchNetworkView;->showChooseNetworkDialog(Lcom/iMe/model/wallet/crypto/NetworkItem;Ljava/util/List;)V
 
     return-void
 .end method

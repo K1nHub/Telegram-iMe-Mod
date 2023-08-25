@@ -22,14 +22,15 @@
     }
 .end annotation
 
-.annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
+.annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
 .end annotation
 
 
 # virtual methods
+.method public abstract openCryptoBoxActionDetails(Lcom/iMe/model/wallet/transaction/CryptoBoxActionItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
+.end method
+
 .method public abstract openStakingOperationDetails(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
-    .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
-    .end annotation
 .end method
 
 .method public abstract renderInitialItems(Ljava/util/List;)V
@@ -40,6 +41,9 @@
             "Lcom/chad/library/adapter/base/entity/node/BaseNode;",
             ">;)V"
         }
+    .end annotation
+
+    .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
     .end annotation
 .end method
 
@@ -52,9 +56,10 @@
             ">;)V"
         }
     .end annotation
+
+    .annotation runtime Lmoxy/viewstate/strategy/alias/AddToEndSingle;
+    .end annotation
 .end method
 
 .method public abstract showChangeNetworkHint()V
-    .annotation runtime Lmoxy/viewstate/strategy/alias/OneExecution;
-    .end annotation
 .end method

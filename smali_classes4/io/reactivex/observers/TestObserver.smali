@@ -253,7 +253,7 @@
 
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "onError received a null Throwable"
+    const-string/jumbo v2, "onError received a null Throwable"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -390,7 +390,7 @@
 
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "onNext received a null value"
+    const-string/jumbo v2, "onNext received a null value"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

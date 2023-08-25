@@ -2169,7 +2169,7 @@
 .end method
 
 .method private synthetic lambda$onFragmentCreate$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 35
+    .locals 36
 
     move-object/from16 v0, p0
 
@@ -2520,7 +2520,9 @@
 
     const/16 v34, 0x0
 
-    invoke-virtual/range {v18 .. v34}, Lorg/telegram/messenger/MessagesStorage;->getMessages(JJZIIIIIIZIIZZ)V
+    const/16 v35, 0x0
+
+    invoke-virtual/range {v18 .. v35}, Lorg/telegram/messenger/MessagesStorage;->getMessages(JJZIIIIIIZIIZZLorg/telegram/messenger/MessageLoaderLogger;)V
 
     .line 221
     :cond_2

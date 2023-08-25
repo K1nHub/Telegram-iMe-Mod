@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/Paint/Views/TextPaintView;F)V
     .locals 0
 
-    .line 1238
+    .line 1324
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$14;->val$textPaintView:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     iput p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$14;->val$base:F
@@ -42,7 +42,7 @@
 .method public get()F
     .locals 2
 
-    .line 1241
+    .line 1327
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$14;->val$textPaintView:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getBaseFontSize()I
@@ -61,7 +61,7 @@
 .method public set(F)V
     .locals 2
 
-    .line 1246
+    .line 1332
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$14;->val$textPaintView:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$14;->val$base:F

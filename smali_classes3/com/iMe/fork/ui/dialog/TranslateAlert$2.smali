@@ -28,7 +28,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;Landroid/content/Context;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 697
+    .line 698
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     iput-object p3, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->val$containerPaint:Landroid/graphics/Paint;
@@ -37,22 +37,22 @@
 
     const p1, 0x7fffffff
 
-    .line 698
+    .line 699
     iput p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->contentHeight:I
 
-    .line 732
+    .line 733
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
-    .line 733
+    .line 734
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->containerRect:Landroid/graphics/RectF;
 
-    .line 734
+    .line 735
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -65,7 +65,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 738
+    .line 739
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -94,10 +94,10 @@
 
     const/4 v4, 0x0
 
-    .line 739
+    .line 740
     invoke-virtual {p1, v4, v4, v0, v1}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 741
+    .line 742
     iget-object v4, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->containerRect:Landroid/graphics/RectF;
 
     int-to-float v0, v0
@@ -110,7 +110,7 @@
 
     invoke-virtual {v4, v6, v6, v0, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 743
+    .line 744
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$700(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Z
@@ -119,7 +119,7 @@
 
     if-nez v0, :cond_0
 
-    .line 744
+    .line 745
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getSheetContainer()Landroid/view/ViewGroup;
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 746
+    .line 747
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
@@ -158,7 +158,7 @@
 
     invoke-virtual {p1, v6, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 748
+    .line 749
     :goto_0
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->containerRect:Landroid/graphics/RectF;
 
@@ -168,7 +168,7 @@
 
     invoke-virtual {p1, v0, v1, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 749
+    .line 750
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -177,10 +177,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 728
+    .line 729
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 729
+    .line 730
     iget p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->contentHeight:I
 
     sub-int/2addr p5, p3
@@ -197,15 +197,15 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 702
+    .line 703
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 703
+    .line 704
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    .line 704
+    .line 705
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displayMetrics:Landroid/util/DisplayMetrics;
 
     iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
@@ -222,7 +222,7 @@
 
     float-to-int v0, v0
 
-    .line 705
+    .line 706
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$200(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
@@ -245,14 +245,14 @@
 
     if-gtz v1, :cond_0
 
-    .line 706
+    .line 707
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$200(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Lcom/iMe/fork/ui/dialog/TranslateAlert$TextBlocksLayout;
 
     move-result-object v1
 
-    .line 707
+    .line 708
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v3
@@ -311,10 +311,10 @@
 
     const/4 v4, 0x0
 
-    .line 706
+    .line 707
     invoke-virtual {v1, v3, v4}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 711
+    .line 712
     :cond_0
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
@@ -328,7 +328,7 @@
 
     int-to-float v1, v0
 
-    .line 712
+    .line 713
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displayMetrics:Landroid/util/DisplayMetrics;
 
     iget v3, v3, Landroid/util/DisplayMetrics;->heightPixels:I
@@ -353,7 +353,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 713
+    .line 714
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$2;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$600(Lcom/iMe/fork/ui/dialog/TranslateAlert;)V
@@ -366,7 +366,7 @@
 
     const/16 v3, 0x1e0
 
-    .line 716
+    .line 717
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -383,22 +383,22 @@
 
     float-to-int p2, p2
 
-    .line 717
+    .line 718
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result p1
 
-    .line 715
+    .line 716
     invoke-static {p2, p1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    .line 719
+    .line 720
     invoke-static {v0, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
-    .line 714
+    .line 715
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

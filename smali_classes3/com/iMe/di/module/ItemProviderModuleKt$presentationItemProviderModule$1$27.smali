@@ -68,7 +68,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 74
     new-instance p1, Lcom/iMe/ui/adapter/provider/CampaignProvider;
 
     invoke-direct {p1}, Lcom/iMe/ui/adapter/provider/CampaignProvider;-><init>()V
@@ -79,7 +79,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 69
+    .line 74
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

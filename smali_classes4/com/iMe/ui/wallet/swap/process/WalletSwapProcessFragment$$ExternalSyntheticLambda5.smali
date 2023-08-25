@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$S8Y1iSQ93rGBPOzgvUqY1FyeCc0(Landroid/view/View;)V
+    invoke-static {p1}, Lcom/iMe/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$TJ2CNIsqbqmGtUs_avOEkplTeZc(Landroid/view/View;)V
 
     return-void
 .end method

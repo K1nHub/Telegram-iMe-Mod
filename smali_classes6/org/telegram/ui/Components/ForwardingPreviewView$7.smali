@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ForwardingPreviewView;Lorg/telegram/messenger/ForwardingMessagesParams;)V
     .locals 0
 
-    .line 485
+    .line 488
     iput-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -42,7 +42,7 @@
 .method public onItemClick(Landroid/view/View;I)V
     .locals 4
 
-    .line 488
+    .line 491
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -69,7 +69,7 @@
 
     goto :goto_1
 
-    .line 491
+    .line 494
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -85,7 +85,7 @@
 
     move-result p2
 
-    .line 492
+    .line 495
     iget-object v0, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v0, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->selectedIds:Landroid/util/SparseBooleanArray;
@@ -98,7 +98,7 @@
 
     xor-int/2addr v0, v1
 
-    .line 493
+    .line 496
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/ForwardingPreviewView;->forwardingMessagesParams:Lorg/telegram/messenger/ForwardingMessagesParams;
@@ -118,7 +118,7 @@
     :cond_1
     if-nez v0, :cond_2
 
-    .line 497
+    .line 500
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     iget-object v3, v3, Lorg/telegram/messenger/ForwardingMessagesParams;->selectedIds:Landroid/util/SparseBooleanArray;
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 499
+    .line 502
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->val$params:Lorg/telegram/messenger/ForwardingMessagesParams;
 
@@ -135,14 +135,14 @@
 
     invoke-virtual {v3, p2, v0}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 501
+    .line 504
     :goto_0
     check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 502
+    .line 505
     invoke-virtual {p1, v0, v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setChecked(ZZZ)V
 
-    .line 503
+    .line 506
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ForwardingPreviewView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -165,7 +165,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 504
+    .line 507
     iget-object p1, p0, Lorg/telegram/ui/Components/ForwardingPreviewView$7;->this$0:Lorg/telegram/ui/Components/ForwardingPreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->access$300(Lorg/telegram/ui/Components/ForwardingPreviewView;)V

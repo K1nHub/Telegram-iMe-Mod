@@ -497,7 +497,7 @@
     const/high16 v3, 0x41900000    # 18.0f
 
     .line 85
-    invoke-virtual {v0, v2, v3}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
     .line 86
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I

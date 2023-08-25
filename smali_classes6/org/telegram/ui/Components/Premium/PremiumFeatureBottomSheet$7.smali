@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 468
+    .line 497
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$7;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public setAlpha(F)V
     .locals 1
 
-    .line 471
+    .line 500
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result v0
@@ -44,13 +44,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 472
+    .line 501
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 473
+    .line 502
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$7;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$800(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)Landroid/view/ViewGroup;
+    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$900(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)Landroid/view/ViewGroup;
 
     move-result-object p1
 
@@ -63,13 +63,13 @@
 .method public setTag(Ljava/lang/Object;)V
     .locals 0
 
-    .line 479
+    .line 508
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 480
+    .line 509
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$7;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$900(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$1000(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)V
 
     return-void
 .end method

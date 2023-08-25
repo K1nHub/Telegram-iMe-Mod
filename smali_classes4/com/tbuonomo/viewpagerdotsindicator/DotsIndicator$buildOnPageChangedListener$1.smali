@@ -175,7 +175,7 @@
 
     move-result-object v0
 
-    const-string v1, "null cannot be cast to non-null type com.tbuonomo.viewpagerdotsindicator.DotsGradientDrawable"
+    const-string/jumbo v1, "null cannot be cast to non-null type com.tbuonomo.viewpagerdotsindicator.DotsGradientDrawable"
 
     invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -238,7 +238,7 @@
 
     move-result-object v1
 
-    const-string v2, "null cannot be cast to non-null type kotlin.Int"
+    const-string/jumbo v2, "null cannot be cast to non-null type kotlin.Int"
 
     invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

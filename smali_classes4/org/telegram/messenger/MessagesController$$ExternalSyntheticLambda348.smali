@@ -8,34 +8,38 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Ljava/util/HashMap;
+.field public final synthetic f$1:Landroid/content/Context;
 
-.field public final synthetic f$2:Ljava/lang/String;
+.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-.field public final synthetic f$3:Landroidx/collection/LongSparseArray;
+.field public final synthetic f$3:Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
-.field public final synthetic f$4:J
+.field public final synthetic f$4:Ljava/lang/Runnable;
 
-.field public final synthetic f$5:Z
+.field public final synthetic f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Ljava/util/HashMap;Ljava/lang/String;Landroidx/collection/LongSparseArray;JZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesStorage$LongCallback;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$1:Ljava/util/HashMap;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$1:Landroid/content/Context;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$2:Ljava/lang/String;
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$3:Landroidx/collection/LongSparseArray;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$3:Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
-    iput-wide p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$4:J
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$4:Ljava/lang/Runnable;
 
-    iput-boolean p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$5:Z
+    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    iput-object p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;
 
     return-void
 .end method
@@ -47,21 +51,23 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$1:Ljava/util/HashMap;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$1:Landroid/content/Context;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$2:Ljava/lang/String;
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$3:Landroidx/collection/LongSparseArray;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$3:Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
-    iget-wide v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$4:J
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$4:Ljava/lang/Runnable;
 
-    iget-boolean v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$5:Z
+    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    iget-object v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda348;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;
 
     move-object v7, p1
 
     move-object v8, p2
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$_NoJ5Ru8GarHiClBK60ge9NXVWM(Lorg/telegram/messenger/MessagesController;Ljava/util/HashMap;Ljava/lang/String;Landroidx/collection/LongSparseArray;JZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$VimrlEn7JegZzQR3B01M1klUQ24(Lorg/telegram/messenger/MessagesController;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesStorage$LongCallback;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 39
+    .line 44
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$previewView$2;->invoke()Lorg/telegram/ui/Cells/DrawerProfileCell;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Cells/DrawerProfileCell;
     .locals 1
 
-    .line 39
+    .line 44
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$previewView$2;->this$0:Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->access$initPreviewView(Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;)Lorg/telegram/ui/Cells/DrawerProfileCell;

@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFilteredByOnlineContactsDelegate.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,62:1\n766#2:63\n857#2,2:64\n*S KotlinDebug\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n*L\n30#1:63\n30#1:64,2\n*E\n"
+    value = "SMAP\nFilteredByOnlineContactsDelegate.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,59:1\n766#2:60\n857#2,2:61\n*S KotlinDebug\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n*L\n37#1:60\n37#1:61,2\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 29
+    .line 36
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2;->invoke()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -72,7 +72,7 @@
         }
     .end annotation
 
-    .line 30
+    .line 37
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2;->this$0:Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;
 
     invoke-static {v0}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->access$getContacts$p(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)Ljava/util/ArrayList;
@@ -107,7 +107,7 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
-    .line 30
+    .line 37
     iget-wide v5, v4, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
     invoke-static {v1}, Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;->access$getSelfId$p(Lcom/iMe/domain/contacts/FilteredByOnlineContactsDelegate;)J
@@ -139,7 +139,7 @@
 
     goto :goto_0
 
-    .line 30
+    .line 37
     :cond_2
     invoke-static {v2}, Lcom/iMe/fork/utils/CollectionsUtilsKt;->toArrayList(Ljava/util/List;)Ljava/util/ArrayList;
 

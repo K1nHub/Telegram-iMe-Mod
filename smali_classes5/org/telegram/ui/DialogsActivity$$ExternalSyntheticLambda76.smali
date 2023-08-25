@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Cells/DialogsHintCell;
+.field public final synthetic f$0:Lorg/telegram/messenger/AccountInstance;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/DialogsHintCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/AccountInstance;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda76;->f$0:Lorg/telegram/ui/Cells/DialogsHintCell;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda76;->f$0:Lorg/telegram/messenger/AccountInstance;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda76;->f$0:Lorg/telegram/ui/Cells/DialogsHintCell;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda76;->f$0:Lorg/telegram/messenger/AccountInstance;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/DialogsHintCell;->updateColors()V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$mzyv5JK4BQ14Aiif1-i7-Kwo__A(Lorg/telegram/messenger/AccountInstance;)V
 
     return-void
 .end method

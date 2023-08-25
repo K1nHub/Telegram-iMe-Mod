@@ -51,7 +51,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 39
+    .line 47
     invoke-virtual {p0}, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsers$2;->invoke()Ljava/util/HashMap;
 
     move-result-object v0
@@ -72,7 +72,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 48
     iget-object v0, p0, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsers$2;->this$0:Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate;
 
     new-instance v1, Lcom/iMe/domain/contacts/FilteredContactsByNameDelegate$blockedUsers$2$1;

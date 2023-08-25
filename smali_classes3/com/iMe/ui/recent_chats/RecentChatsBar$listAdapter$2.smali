@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
     .locals 2
 
-    .line 27
+    .line 28
     new-instance v0, Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$listAdapter$2;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 27
+    .line 28
     invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$listAdapter$2;->invoke()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 
     move-result-object v0

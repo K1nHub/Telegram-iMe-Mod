@@ -47,7 +47,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 65010
+    .line 65065
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -74,18 +74,18 @@
 
     goto :goto_0
 
-    .line 65042
+    .line 65097
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;-><init>()V
 
-    .line 65043
+    .line 65098
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$Dialog;->isFolder:Z
 
     goto :goto_0
 
-    .line 65036
+    .line 65091
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dialog;
 
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 65039
+    .line 65094
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dialog_layer149;
 
@@ -106,7 +106,7 @@
 
     goto :goto_1
 
-    .line 65047
+    .line 65102
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -134,7 +134,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 65050
+    .line 65105
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

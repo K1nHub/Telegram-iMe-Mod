@@ -74,7 +74,7 @@
     move-result-object p1
 
     .line 32
-    sget v1, Lorg/telegram/messenger/R$id;->text_account_title:I
+    sget v1, Lorg/telegram/messenger/R$id;->text_title:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
@@ -106,7 +106,7 @@
     move-result-object p1
 
     .line 36
-    sget v4, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    sget v4, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
@@ -207,7 +207,7 @@
     move-result-object p1
 
     .line 43
-    sget p2, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget p2, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;
 
@@ -256,7 +256,7 @@
     move-result-object p3
 
     .line 50
-    sget v0, Lorg/telegram/messenger/R$id;->text_account_title:I
+    sget v0, Lorg/telegram/messenger/R$id;->text_title:I
 
     invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
 
@@ -267,7 +267,7 @@
     move-result-object p1
 
     .line 51
-    sget v0, Lorg/telegram/messenger/R$id;->text_account_balance:I
+    sget v0, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
     sget-object v1, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
 
@@ -327,7 +327,7 @@
     move-result-object p1
 
     .line 55
-    sget p2, Lorg/telegram/messenger/R$id;->image_coin_icon:I
+    sget p2, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;
 

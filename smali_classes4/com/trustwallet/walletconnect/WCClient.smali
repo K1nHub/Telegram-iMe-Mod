@@ -290,7 +290,7 @@
 
     move-result-object p2
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Any"
+    const-string/jumbo v0, "null cannot be cast to non-null type kotlin.Any"
 
     if-eqz p2, :cond_d
 
@@ -303,7 +303,7 @@
 
     move-result-object v1
 
-    const-string v2, "object : TypeToken<T>() {} .type"
+    const-string/jumbo v2, "object : TypeToken<T>() {} .type"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -901,7 +901,7 @@
 
     move-result-object v2
 
-    const-string v3, "object : TypeToken<T>() {} .type"
+    const-string/jumbo v3, "object : TypeToken<T>() {} .type"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1206,7 +1206,7 @@
 
     move-result-object v1
 
-    const-string v2, "object : TypeToken<T>() {} .type"
+    const-string/jumbo v2, "object : TypeToken<T>() {} .type"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1338,7 +1338,7 @@
 
     const-string v3, "fromJson(json, typeToken<T>())"
 
-    const-string v4, "object : TypeToken<T>() {} .type"
+    const-string/jumbo v4, "object : TypeToken<T>() {} .type"
 
     const-string v5, "gson"
 
@@ -2855,8 +2855,6 @@
     :cond_1d
     :goto_11
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch -0x1

@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 147
+    .line 145
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$2;->invoke(Lcom/iMe/storage/domain/model/Result;)V
@@ -82,12 +82,12 @@
         }
     .end annotation
 
-    .line 149
+    .line 147
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
     if-eqz v0, :cond_1
 
-    .line 150
+    .line 148
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$2;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;->access$getCachedTransactions$p(Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;)Ljava/util/HashMap;
@@ -114,7 +114,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 151
+    .line 149
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$2;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result$Success;->getData()Ljava/lang/Object;
@@ -127,7 +127,7 @@
 
     move-result-object p1
 
-    .line 153
+    .line 151
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -146,7 +146,7 @@
 
     goto :goto_1
 
-    .line 154
+    .line 152
     :cond_0
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$2;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
@@ -160,13 +160,13 @@
 
     goto :goto_1
 
-    .line 157
+    .line 155
     :cond_1
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
     if-eqz v0, :cond_3
 
-    .line 158
+    .line 156
     move-object v0, p1
 
     check-cast v0, Lcom/iMe/storage/domain/model/Result$Error;
@@ -179,7 +179,7 @@
 
     move-result-object v1
 
-    .line 159
+    .line 157
     sget-object v2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     if-ne v1, v2, :cond_2
@@ -196,7 +196,7 @@
 
     goto :goto_0
 
-    .line 160
+    .line 158
     :cond_2
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$2;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
@@ -208,7 +208,7 @@
 
     invoke-interface {v1}, Lcom/iMe/ui/custom/state/GlobalStateView;->onUnexpectedErrorState()V
 
-    .line 162
+    .line 160
     :goto_0
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$2;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
@@ -232,13 +232,13 @@
 
     goto :goto_1
 
-    .line 165
+    .line 163
     :cond_3
     instance-of p1, p1, Lcom/iMe/storage/domain/model/Result$Loading;
 
     if-eqz p1, :cond_4
 
-    .line 166
+    .line 164
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter$getWalletTransactions$2;->this$0:Lcom/iMe/ui/wallet/home/attach/WalletAttachAlertPresenter;
 
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;

@@ -56,7 +56,7 @@
     move v2, v1
 
     :goto_0
-    const-string v3, "offset must be >= 0"
+    const-string/jumbo v3, "offset must be >= 0"
 
     .line 136
     invoke-static {v2, v3}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
@@ -89,7 +89,7 @@
     move v0, v1
 
     :goto_2
-    const-string v1, "offset + length exceeds array boundary"
+    const-string/jumbo v1, "offset + length exceeds array boundary"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 

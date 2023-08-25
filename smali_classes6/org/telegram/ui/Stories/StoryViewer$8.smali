@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;Z)V
     .locals 0
 
-    .line 1475
+    .line 1568
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->val$open:Z
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1478
+    .line 1571
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->locker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    .line 1479
+    .line 1572
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->val$open:Z
@@ -65,23 +65,27 @@
     :goto_0
     iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
-    .line 1480
+    .line 1573
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
 
     move-result-object p1
 
+    if-eqz p1, :cond_1
+
+    .line 1575
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1481
+    .line 1577
+    :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->containerView:Lorg/telegram/ui/Stories/HwFrameLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/HwFrameLayout;->invalidate()V
 
-    .line 1482
+    .line 1578
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     const/4 v0, 0x0

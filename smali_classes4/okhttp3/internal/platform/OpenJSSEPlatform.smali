@@ -161,7 +161,7 @@
 
     move-result-object p3
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T>"
+    const-string/jumbo v1, "null cannot be cast to non-null type kotlin.Array<T>"
 
     invoke-static {p3, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -317,7 +317,7 @@
     .line 50
     aget-object v0, v0, v3
 
-    const-string v1, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager"
+    const-string/jumbo v1, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager"
 
     invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

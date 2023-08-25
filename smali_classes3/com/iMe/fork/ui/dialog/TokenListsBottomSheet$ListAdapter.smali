@@ -82,7 +82,7 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 5
+    .locals 11
 
     const-string v0, "holder"
 
@@ -115,44 +115,54 @@
     .line 358
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenListInfo;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
     .line 359
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenListInfo;->getIconUrl()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
     .line 360
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenListInfo;->isVerified()Z
 
-    move-result v0
+    move-result v7
 
     .line 361
     invoke-static {v1}, Lcom/iMe/fork/ui/dialog/TokenListsBottomSheet;->access$getTokenLists$p(Lcom/iMe/fork/ui/dialog/TokenListsBottomSheet;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
-    move-result v1
+    move-result v0
 
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    if-eq v1, p2, :cond_0
+    if-eq v0, p2, :cond_0
 
-    move p2, v4
+    move v8, v1
 
     goto :goto_0
 
     :cond_0
     const/4 p2, 0x0
 
-    .line 357
+    move v8, p2
+
     :goto_0
-    invoke-virtual {p1, v2, v3, v0, p2}, Lcom/iMe/ui/custom/ImageTextCheckCell;->setupViewData(Ljava/lang/String;Ljava/lang/String;ZZ)V
+    const/4 v9, 0x4
+
+    const/4 v10, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v3, p1
+
+    .line 357
+    invoke-static/range {v3 .. v10}, Lcom/iMe/ui/custom/ImageTextCheckCell;->setupViewData$default(Lcom/iMe/ui/custom/ImageTextCheckCell;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ZZILjava/lang/Object;)V
 
     .line 363
-    invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setFocusable(Z)V
+    invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     return-void
 .end method

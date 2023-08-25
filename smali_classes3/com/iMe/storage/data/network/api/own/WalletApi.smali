@@ -152,6 +152,28 @@
     .end annotation
 .end method
 
+.method public abstract getWalletMultiChainBalance(Lcom/iMe/storage/data/network/model/request/wallet/MultiChainBalanceRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/wallet/MultiChainBalanceRequest;
+        .annotation runtime Lretrofit2/http/Body;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/iMe/storage/data/network/model/request/wallet/MultiChainBalanceRequest;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/iMe/storage/data/network/model/response/wallet/WalletBalancesResponse;",
+            ">;>;"
+        }
+    .end annotation
+
+    .annotation runtime Lretrofit2/http/POST;
+        value = "getMultiChainBalance"
+    .end annotation
+.end method
+
 .method public abstract getWalletTokensBalance(Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;)Lio/reactivex/Observable;
     .param p1    # Lcom/iMe/storage/data/network/model/request/wallet/TokensBalanceRequest;
         .annotation runtime Lretrofit2/http/Body;
@@ -174,15 +196,15 @@
     .end annotation
 .end method
 
-.method public abstract getWalletTransactions(Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;)Lio/reactivex/Observable;
-    .param p1    # Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;
+.method public abstract getWalletTransactions(Lcom/iMe/storage/data/network/model/request/wallet/WalletTransactionsRequest;)Lio/reactivex/Observable;
+    .param p1    # Lcom/iMe/storage/data/network/model/request/wallet/WalletTransactionsRequest;
         .annotation runtime Lretrofit2/http/Body;
         .end annotation
     .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/iMe/storage/data/network/model/request/wallet/GetWalletTransactionsRequest;",
+            "Lcom/iMe/storage/data/network/model/request/wallet/WalletTransactionsRequest;",
             ")",
             "Lio/reactivex/Observable<",
             "Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse<",
