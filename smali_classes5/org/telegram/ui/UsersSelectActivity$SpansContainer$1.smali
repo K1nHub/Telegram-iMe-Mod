@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;)V
     .locals 0
 
-    .line 365
+    .line 345
     iput-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,26 +35,26 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 368
+    .line 348
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->access$702(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;Landroid/view/View;)Landroid/view/View;
 
-    .line 369
+    .line 349
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->access$802(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 370
+    .line 350
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->access$902(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;Z)Z
 
-    .line 371
+    .line 351
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$1;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;

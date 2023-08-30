@@ -3,8 +3,8 @@
 
 
 # static fields
-.field public static final event_log_restricted_send_games:I = 0x7f111f9a
+.field public static final event_log_restricted_send_games:I = 0x7f111f9f
 
-.field public static final event_log_restricted_send_gifs:I = 0x7f111f9b
+.field public static final event_log_restricted_send_gifs:I = 0x7f111fa0
 
-.field public static final event_log_restricted_send_inline:I = 0x7f111f9c
+.field public static final event_log_restricted_send_inline:I = 0x7f111fa1

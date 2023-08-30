@@ -104,17 +104,17 @@
 
     move-object/from16 v10, p3
 
-    .line 2938
+    .line 2947
     invoke-direct {v7, v9}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 2930
+    .line 2939
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->allSpans:Ljava/util/ArrayList;
 
-    .line 3046
+    .line 3055
     new-instance v11, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v12, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -133,7 +133,7 @@
 
     iput-object v11, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 3047
+    .line 3056
     new-instance v11, Landroid/graphics/LinearGradient;
 
     const/16 v21, 0x8
@@ -174,7 +174,7 @@
 
     iput-object v11, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradient:Landroid/graphics/LinearGradient;
 
-    .line 3048
+    .line 3057
     new-instance v13, Landroid/graphics/Paint;
 
     const/4 v14, 0x1
@@ -183,14 +183,14 @@
 
     iput-object v13, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientPaint:Landroid/graphics/Paint;
 
-    .line 3049
+    .line 3058
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientMatrix:Landroid/graphics/Matrix;
 
-    .line 3051
+    .line 3060
     new-instance v15, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v2, 0x0
@@ -207,7 +207,7 @@
 
     iput-object v15, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 3052
+    .line 3061
     new-instance v0, Landroid/graphics/LinearGradient;
 
     invoke-static/range {v21 .. v21}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -244,7 +244,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradient:Landroid/graphics/LinearGradient;
 
-    .line 3053
+    .line 3062
     new-instance v1, Landroid/graphics/Paint;
 
     const/4 v2, 0x1
@@ -253,17 +253,17 @@
 
     iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientPaint:Landroid/graphics/Paint;
 
-    .line 3054
+    .line 3063
     new-instance v2, Landroid/graphics/Matrix;
 
     invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v2, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientMatrix:Landroid/graphics/Matrix;
 
-    .line 3056
+    .line 3065
     invoke-virtual {v13, v11}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 3057
+    .line 3066
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
@@ -272,10 +272,10 @@
 
     invoke-virtual {v13, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 3058
+    .line 3067
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 3059
+    .line 3068
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
@@ -284,20 +284,20 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 2939
+    .line 2948
     iput-object v10, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-object/from16 v0, p4
 
-    .line 2940
+    .line 2949
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->updateHeight:Ljava/lang/Runnable;
 
     const/4 v0, 0x0
 
-    .line 2942
+    .line 2951
     invoke-virtual {v7, v0}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 2943
+    .line 2952
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -306,7 +306,7 @@
 
     invoke-static {v7, v1}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
-    .line 2945
+    .line 2954
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$SpansContainer;
 
     invoke-direct {v1, v7, v9}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$SpansContainer;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;Landroid/content/Context;)V
@@ -317,31 +317,31 @@
 
     const/4 v3, -0x2
 
-    .line 2946
+    .line 2955
     invoke-static {v2, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v7, v1, v2}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2953
+    .line 2962
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$1;
 
     invoke-direct {v1, v7, v9, v8}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$1;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;Landroid/content/Context;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)V
 
     iput-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 2970
+    .line 2979
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x19
 
     if-lt v2, v3, :cond_0
 
-    .line 2971
+    .line 2980
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setRevealOnFocusHint(Z)V
 
-    .line 2973
+    .line 2982
     :cond_0
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -351,7 +351,7 @@
 
     invoke-virtual {v1, v3, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
-    .line 2974
+    .line 2983
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_hintText:I
@@ -362,7 +362,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
-    .line 2975
+    .line 2984
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -373,7 +373,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 2976
+    .line 2985
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_cursor:I
@@ -384,7 +384,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 2977
+    .line 2986
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v2, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -393,62 +393,62 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHandlesColor(I)V
 
-    .line 2978
+    .line 2987
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v2, 0x3fc00000    # 1.5f
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 2979
+    .line 2988
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v2, 0xa00b0
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2980
+    .line 2989
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 2981
+    .line 2990
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2982
+    .line 2991
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setVerticalScrollBarEnabled(Z)V
 
-    .line 2983
+    .line 2992
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 2984
+    .line 2993
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setTextIsSelectable(Z)V
 
-    .line 2985
+    .line 2994
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0, v0, v0, v0}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 2986
+    .line 2995
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v1, 0x10000006
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 2987
+    .line 2996
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -467,14 +467,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 2988
+    .line 2997
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->spansContainer:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$SpansContainer;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 2989
+    .line 2998
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v1, Lorg/telegram/messenger/R$string;->Search:I
@@ -487,7 +487,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    .line 2990
+    .line 2999
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getPaint()Landroid/text/TextPaint;
@@ -506,7 +506,7 @@
 
     iput v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->hintTextWidth:I
 
-    .line 2991
+    .line 3000
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$2;
@@ -547,7 +547,7 @@
 .method static synthetic access$11700(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)Lorg/telegram/ui/Components/EditTextBoldCursor;
     .locals 0
 
-    .line 2921
+    .line 2930
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-object p0
@@ -556,7 +556,7 @@
 .method static synthetic access$12300(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)Z
     .locals 0
 
-    .line 2921
+    .line 2930
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->ignoreTextChange:Z
 
     return p0
@@ -565,7 +565,7 @@
 .method static synthetic access$12400(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)Lorg/telegram/messenger/Utilities$Callback;
     .locals 0
 
-    .line 2921
+    .line 2930
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->onSearchTextChange:Lorg/telegram/messenger/Utilities$Callback;
 
     return-object p0
@@ -574,7 +574,7 @@
 .method static synthetic access$12500(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)I
     .locals 0
 
-    .line 2921
+    .line 2930
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->hintTextWidth:I
 
     return p0
@@ -583,7 +583,7 @@
 .method static synthetic access$12600(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)I
     .locals 0
 
-    .line 2921
+    .line 2930
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->fieldY:I
 
     return p0
@@ -592,7 +592,7 @@
 .method static synthetic access$12602(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;I)I
     .locals 0
 
-    .line 2921
+    .line 2930
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->fieldY:I
 
     return p1
@@ -601,7 +601,7 @@
 .method static synthetic access$12700(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;F)Landroid/animation/Animator;
     .locals 0
 
-    .line 2921
+    .line 2930
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->getContainerHeightAnimator(F)Landroid/animation/Animator;
 
     move-result-object p0
@@ -612,7 +612,7 @@
 .method static synthetic access$12800(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 2921
+    .line 2930
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->updateHeight:Ljava/lang/Runnable;
 
     return-object p0
@@ -621,7 +621,7 @@
 .method static synthetic access$12900(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)Z
     .locals 0
 
-    .line 2921
+    .line 2930
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->scroll:Z
 
     return p0
@@ -630,7 +630,7 @@
 .method static synthetic access$12902(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;Z)Z
     .locals 0
 
-    .line 2921
+    .line 2930
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->scroll:Z
 
     return p1
@@ -639,7 +639,7 @@
 .method static synthetic access$13002(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;I)I
     .locals 0
 
-    .line 2921
+    .line 2930
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->prevResultContainerHeight:I
 
     return p1
@@ -648,7 +648,7 @@
 .method static synthetic access$13100(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)Z
     .locals 0
 
-    .line 2921
+    .line 2930
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->ignoreScrollEvent:Z
 
     return p0
@@ -657,7 +657,7 @@
 .method static synthetic access$13102(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;Z)Z
     .locals 0
 
-    .line 2921
+    .line 2930
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->ignoreScrollEvent:Z
 
     return p1
@@ -666,7 +666,7 @@
 .method static synthetic access$9000(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)Lorg/telegram/ui/Components/GroupCreateSpan;
     .locals 0
 
-    .line 2921
+    .line 2930
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
     return-object p0
@@ -675,7 +675,7 @@
 .method static synthetic access$9002(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;Lorg/telegram/ui/Components/GroupCreateSpan;)Lorg/telegram/ui/Components/GroupCreateSpan;
     .locals 0
 
-    .line 2921
+    .line 2930
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
     return-object p1
@@ -688,7 +688,7 @@
 
     new-array v0, v0, [F
 
-    .line 3142
+    .line 3151
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->containerHeight:F
 
     const/4 v2, 0x0
@@ -703,7 +703,7 @@
 
     move-result-object p1
 
-    .line 3143
+    .line 3152
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;)V
@@ -716,7 +716,7 @@
 .method private synthetic lambda$getContainerHeightAnimator$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 3143
+    .line 3152
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -737,14 +737,14 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 3064
+    .line 3073
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getScrollY()I
 
     move-result v0
 
     int-to-float v8, v0
 
-    .line 3066
+    .line 3075
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
     move-result v1
@@ -771,13 +771,13 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 3067
+    .line 3076
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 3069
+    .line 3078
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 3071
+    .line 3080
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v2, -0x1
@@ -790,26 +790,26 @@
 
     move-result v1
 
-    .line 3072
+    .line 3081
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
 
-    .line 3073
+    .line 3082
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientMatrix:Landroid/graphics/Matrix;
 
     const/4 v7, 0x0
 
     invoke-virtual {v2, v7, v8}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 3074
+    .line 3083
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradient:Landroid/graphics/LinearGradient;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v3}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 3075
+    .line 3084
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->topGradientPaint:Landroid/graphics/Paint;
 
     const/high16 v9, 0x437f0000    # 255.0f
@@ -820,7 +820,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 3076
+    .line 3085
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getWidth()I
 
     move-result v1
@@ -847,7 +847,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 3078
+    .line 3087
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v2, 0x1
@@ -860,12 +860,12 @@
 
     move-result v1
 
-    .line 3079
+    .line 3088
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
 
-    .line 3080
+    .line 3089
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
@@ -884,14 +884,14 @@
 
     invoke-virtual {v2, v7, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 3081
+    .line 3090
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradient:Landroid/graphics/LinearGradient;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v3}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 3082
+    .line 3091
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->bottomGradientPaint:Landroid/graphics/Paint;
 
     mul-float/2addr v1, v9
@@ -900,7 +900,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 3083
+    .line 3092
     invoke-virtual {p0}, Landroid/widget/ScrollView;->getHeight()I
 
     move-result v1
@@ -937,10 +937,10 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 3085
+    .line 3094
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 3087
+    .line 3096
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -949,7 +949,7 @@
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 0
 
-    .line 3043
+    .line 3052
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result p1
@@ -960,7 +960,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 3095
+    .line 3104
     invoke-super {p0, p1}, Landroid/widget/ScrollView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -971,7 +971,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 3129
+    .line 3138
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -984,7 +984,7 @@
 
     const/16 p2, 0x96
 
-    .line 3130
+    .line 3139
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -995,7 +995,7 @@
 
     move-result p2
 
-    .line 3128
+    .line 3137
     invoke-super {p0, p1, p2}, Landroid/widget/ScrollView;->onMeasure(II)V
 
     return-void
@@ -1004,19 +1004,19 @@
 .method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
     .locals 3
 
-    .line 3116
+    .line 3125
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->ignoreScrollEvent:Z
 
     if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
-    .line 3117
+    .line 3126
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->ignoreScrollEvent:Z
 
     return p1
 
-    .line 3120
+    .line 3129
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
@@ -1040,7 +1040,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 3121
+    .line 3130
     iget v0, p2, Landroid/graphics/Rect;->top:I
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->fieldY:I
@@ -1057,7 +1057,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->top:I
 
-    .line 3122
+    .line 3131
     iget v0, p2, Landroid/graphics/Rect;->bottom:I
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->fieldY:I
@@ -1074,7 +1074,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
-    .line 3123
+    .line 3132
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
 
     move-result p1
@@ -1087,7 +1087,7 @@
 
     const/4 v0, 0x1
 
-    .line 3149
+    .line 3158
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->scroll:Z
 
     return-void
@@ -1096,15 +1096,15 @@
 .method public setContainerHeight(F)V
     .locals 0
 
-    .line 3135
+    .line 3144
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->containerHeight:F
 
-    .line 3136
+    .line 3145
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->spansContainer:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell$SpansContainer;
 
     if-eqz p1, :cond_0
 
-    .line 3137
+    .line 3146
     invoke-virtual {p1}, Landroid/view/ViewGroup;->requestLayout()V
 
     :cond_0
@@ -1122,7 +1122,7 @@
         }
     .end annotation
 
-    .line 3105
+    .line 3114
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->onSearchTextChange:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -1133,17 +1133,17 @@
 
     const/4 v0, 0x1
 
-    .line 3099
+    .line 3108
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->ignoreTextChange:Z
 
-    .line 3100
+    .line 3109
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     const/4 p1, 0x0
 
-    .line 3101
+    .line 3110
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;->ignoreTextChange:Z
 
     return-void

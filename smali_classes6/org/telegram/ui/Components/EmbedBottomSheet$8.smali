@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmbedBottomSheet;Z)V
     .locals 0
 
-    .line 858
+    .line 870
     iput-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->val$canHandleUrl:Z
@@ -39,7 +39,7 @@
 .method public canDismiss()Z
     .locals 2
 
-    .line 924
+    .line 936
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 925
+    .line 937
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -65,7 +65,7 @@
 
     return v0
 
-    .line 929
+    .line 941
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
@@ -89,7 +89,7 @@
     :catch_0
     move-exception v0
 
-    .line 931
+    .line 943
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -103,7 +103,7 @@
 
     const-string v0, "m"
 
-    .line 861
+    .line 873
     iget-boolean v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->val$canHandleUrl:Z
 
     const/4 v2, 0x1
@@ -154,7 +154,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 863
+    .line 875
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$000(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -163,7 +163,7 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 864
+    .line 876
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$400(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/webkit/WebView;
@@ -172,7 +172,7 @@
 
     invoke-virtual {v0, v4}, Landroid/webkit/WebView;->setVisibility(I)V
 
-    .line 865
+    .line 877
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -183,7 +183,7 @@
 
     goto/16 :goto_2
 
-    .line 867
+    .line 879
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -193,7 +193,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 868
+    .line 880
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$400(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/webkit/WebView;
@@ -202,7 +202,7 @@
 
     invoke-virtual {v1, v3}, Landroid/webkit/WebView;->setVisibility(I)V
 
-    .line 869
+    .line 881
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/widget/LinearLayout;
@@ -211,7 +211,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 870
+    .line 882
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1400(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/widget/TextView;
@@ -220,7 +220,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 871
+    .line 883
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$400(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/webkit/WebView;
@@ -229,7 +229,7 @@
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setKeepScreenOn(Z)V
 
-    .line 872
+    .line 884
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -238,7 +238,7 @@
 
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 873
+    .line 885
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -251,7 +251,7 @@
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 874
+    .line 886
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -264,7 +264,7 @@
 
     invoke-virtual {v1, v4}, Landroid/view/TextureView;->setVisibility(I)V
 
-    .line 875
+    .line 887
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -277,7 +277,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 876
+    .line 888
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$300(Lorg/telegram/ui/Components/EmbedBottomSheet;)Lorg/telegram/ui/Components/WebPlayerView;
@@ -290,7 +290,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 878
+    .line 890
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -310,7 +310,7 @@
 
     invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/Components/WebPlayerView;->loadVideo(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$Photo;Ljava/lang/Object;Ljava/lang/String;Z)Z
 
-    .line 879
+    .line 891
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
@@ -319,10 +319,10 @@
 
     const-string v5, "messenger.telegram.org"
 
-    .line 880
+    .line 892
     invoke-virtual {v1, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 882
+    .line 894
     :try_start_0
     iget-object v4, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -336,7 +336,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 884
+    .line 896
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$100(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/view/View;
@@ -345,12 +345,12 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 885
+    .line 897
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1202(Lorg/telegram/ui/Components/EmbedBottomSheet;Z)Z
 
-    .line 886
+    .line 898
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x11
@@ -359,7 +359,7 @@
 
     if-lt v1, v5, :cond_3
 
-    .line 887
+    .line 899
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$400(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/webkit/WebView;
@@ -376,7 +376,7 @@
 
     invoke-virtual {v1, v5, v7}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 890
+    .line 902
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -388,7 +388,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 892
+    .line 904
     :try_start_1
     iget-object v1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -400,7 +400,7 @@
 
     move-result-object v1
 
-    .line 893
+    .line 905
     iget-object v5, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$4300(Lorg/telegram/ui/Components/EmbedBottomSheet;)I
@@ -434,7 +434,7 @@
 
     const-string v5, "t"
 
-    .line 895
+    .line 907
     invoke-virtual {v1, v5}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
@@ -443,7 +443,7 @@
 
     const-string v5, "time_continue"
 
-    .line 897
+    .line 909
     invoke-virtual {v1, v5}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
@@ -451,19 +451,19 @@
     :cond_5
     if-eqz v6, :cond_7
 
-    .line 901
+    .line 913
     invoke-virtual {v6, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_6
 
-    .line 902
+    .line 914
     invoke-virtual {v6, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 903
+    .line 915
     aget-object v1, v0, v3
 
     invoke-static {v1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -490,7 +490,7 @@
 
     goto :goto_1
 
-    .line 905
+    .line 917
     :cond_6
     invoke-static {v6}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -507,14 +507,14 @@
     :catch_0
     move-exception v0
 
-    .line 909
+    .line 921
     :try_start_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_7
     move v1, v3
 
-    .line 912
+    .line 924
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -554,7 +554,7 @@
 
     goto :goto_2
 
-    .line 914
+    .line 926
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$8;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -577,7 +577,7 @@
     :catch_1
     move-exception v0
 
-    .line 917
+    .line 929
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2

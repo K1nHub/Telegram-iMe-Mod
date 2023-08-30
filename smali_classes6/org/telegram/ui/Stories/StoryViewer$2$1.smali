@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer$2;)V
     .locals 0
 
-    .line 794
+    .line 804
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$2$1;->this$1:Lorg/telegram/ui/Stories/StoryViewer$2;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 797
+    .line 807
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$2$1;->this$1:Lorg/telegram/ui/Stories/StoryViewer$2;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer$2;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
@@ -44,7 +44,7 @@
 
     iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToDismissHorizontalOffset:F
 
-    .line 798
+    .line 808
     invoke-static {p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$700(Lorg/telegram/ui/Stories/StoryViewer;)V
 
     return-void

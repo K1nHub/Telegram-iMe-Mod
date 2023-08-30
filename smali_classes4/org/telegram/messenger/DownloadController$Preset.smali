@@ -455,36 +455,42 @@
 
     move-object v0, p0
 
+    move-object v1, p1
+
     .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x5
+    const/4 v2, 0x5
 
-    new-array v1, v1, [I
+    new-array v2, v2, [I
 
     .line 85
-    iput-object v1, v0, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
+    iput-object v2, v0, Lorg/telegram/messenger/DownloadController$Preset;->mask:[I
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    new-array v2, v2, [J
+    new-array v3, v3, [J
 
     .line 86
-    iput-object v2, v0, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
+    iput-object v3, v0, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
 
     .line 95
-    array-length v2, v1
+    array-length v3, v1
 
-    const/4 v3, 0x0
+    array-length v4, v2
 
-    move-object v4, p1
+    invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {p1, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    move-result v3
+
+    const/4 v4, 0x0
+
+    invoke-static {p1, v4, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 96
     iget-object v1, v0, Lorg/telegram/messenger/DownloadController$Preset;->sizes:[J
 
-    aput-wide p2, v1, v3
+    aput-wide p2, v1, v4
 
     const/4 v2, 0x1
 

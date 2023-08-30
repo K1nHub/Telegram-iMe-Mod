@@ -28,46 +28,66 @@
 
 .field private loaded:Z
 
+.field private loadedFailed:Z
+
 .field private loading:Z
+
+.field private loadingFailed:Z
 
 
 # direct methods
-.method public static synthetic $r8$lambda$VXw5McnRkVib5kJoBJdwz3jGn9E(Lorg/telegram/ui/Stories/recorder/DraftsController;Lorg/telegram/messenger/MessagesStorage;)V
+.method public static synthetic $r8$lambda$-_pdOcfzzvhbO25jSuQ7HgY_XY0(Lorg/telegram/ui/Stories/recorder/DraftsController;Ljava/util/ArrayList;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$load$1(Lorg/telegram/messenger/MessagesStorage;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$load$2(Ljava/util/ArrayList;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WuW9OcClD9qCCPcMcN2paGBnlW0(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+.method public static synthetic $r8$lambda$BBZuBhSIo4DmrKDDJbtKbh3gnAg(Lorg/telegram/ui/Stories/recorder/DraftsController;Ljava/util/ArrayList;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$edit$2(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$loadFailed$3(Ljava/util/ArrayList;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$d8fdfB-WP1XUXz56k0kwXC7i_7c(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+.method public static synthetic $r8$lambda$LaE3H6qCsCFYX0UAc_onOmnqxSk(Lorg/telegram/messenger/MessagesStorage;ZLorg/telegram/messenger/Utilities$Callback;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$append$3(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$loadInternal$1(Lorg/telegram/messenger/MessagesStorage;ZLorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ha7RPJ2GCA8AhOiB7DsLxtK-SMU(Lorg/telegram/messenger/MessagesStorage;Ljava/util/ArrayList;)V
+.method public static synthetic $r8$lambda$gmqqHGuA1T2YH88GYtbQj3Pb6es(Lorg/telegram/messenger/MessagesStorage;Ljava/util/ArrayList;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$delete$4(Lorg/telegram/messenger/MessagesStorage;Ljava/util/ArrayList;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$delete$6(Lorg/telegram/messenger/MessagesStorage;Ljava/util/ArrayList;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xdFxiOcmHaBEeqGzzspdlr9larQ(Lorg/telegram/ui/Stories/recorder/DraftsController;Ljava/util/ArrayList;)V
+.method public static synthetic $r8$lambda$jZnP14nmLgTPx0KHDXmXLh0PjHg(Lorg/telegram/messenger/Utilities$Callback;Ljava/util/ArrayList;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$load$0(Ljava/util/ArrayList;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$loadInternal$0(Lorg/telegram/messenger/Utilities$Callback;Ljava/util/ArrayList;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ty3GMAvz82EWPf0DWqbFtfEkDhY(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$append$5(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$uzhRhUcPqWCVJcgX735MpaKwmGg(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->lambda$edit$4(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
 
     return-void
 .end method
@@ -75,18 +95,21 @@
 .method public constructor <init>(I)V
     .locals 1
 
-    .line 47
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 44
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
-    .line 48
+    .line 40
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
+
+    .line 41
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadFailed()V
 
     return-void
 .end method
@@ -94,14 +117,14 @@
 .method private append(Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
     .locals 7
 
-    .line 223
+    .line 267
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
 
-    .line 224
+    .line 268
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -118,11 +141,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->edit:Z
+    iget-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    iget-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->edit:Z
+    iget-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
 
     if-eqz v2, :cond_1
 
@@ -222,18 +245,18 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 225
+    .line 269
     invoke-virtual {v0}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, v0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    invoke-direct {v2, v0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 252
+    .line 303
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -251,12 +274,12 @@
     return-void
 .end method
 
-.method private static synthetic lambda$append$3(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
-    .locals 4
+.method private static synthetic lambda$append$5(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    .locals 5
 
     const/4 v0, 0x0
 
-    .line 228
+    .line 272
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -267,17 +290,17 @@
     return-void
 
     :cond_0
-    const-string v1, "INSERT INTO story_drafts VALUES (?, ?, ?)"
+    const-string v1, "INSERT INTO story_drafts VALUES (?, ?, ?, ?)"
 
-    .line 233
+    .line 277
     invoke-virtual {p0, v1}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
 
-    .line 234
+    .line 278
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 235
+    .line 279
     new-instance p0, Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->getObjectSize()I
@@ -286,79 +309,107 @@
 
     invoke-direct {p0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 236
+    .line 280
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->toStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    const/4 v1, 0x1
+    .line 281
+    iget-wide v1, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->id:J
 
-    .line 237
-    iget-wide v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->id:J
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
+    invoke-virtual {v0, v3, v1, v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    const/4 v1, 0x2
+    .line 282
+    iget-wide v1, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->date:J
 
-    .line 238
-    iget-wide v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->date:J
+    const/4 v4, 0x2
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
+    invoke-virtual {v0, v4, v1, v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    const/4 p1, 0x3
+    const/4 v1, 0x3
 
-    .line 239
-    invoke-virtual {v0, p1, p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
+    .line 283
+    invoke-virtual {v0, v1, p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
-    .line 240
+    const/4 v1, 0x0
+
+    .line 285
+    iget-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
+
+    if-eqz v2, :cond_1
+
+    goto :goto_0
+
+    .line 287
+    :cond_1
+    iget-boolean p1, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isError:Z
+
+    if-eqz p1, :cond_2
+
+    move v3, v4
+
+    goto :goto_0
+
+    :cond_2
+    move v3, v1
+
+    :goto_0
+    const/4 p1, 0x4
+
+    .line 290
+    invoke-virtual {v0, p1, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+
+    .line 291
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 241
+    .line 292
     invoke-virtual {p0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 242
+    .line 293
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catchall_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_0
     move-exception p0
 
-    .line 245
+    .line 296
     :try_start_1
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
-    .line 248
-    :goto_0
+    .line 299
+    :goto_1
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    :cond_1
+    :cond_3
     return-void
 
-    :goto_1
-    if-eqz v0, :cond_2
+    :goto_2
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 250
-    :cond_2
+    .line 301
+    :cond_4
     throw p0
 .end method
 
-.method private static synthetic lambda$delete$4(Lorg/telegram/messenger/MessagesStorage;Ljava/util/ArrayList;)V
+.method private static synthetic lambda$delete$6(Lorg/telegram/messenger/MessagesStorage;Ljava/util/ArrayList;)V
     .locals 2
 
-    .line 373
+    .line 424
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -368,7 +419,7 @@
 
     return-void
 
-    .line 377
+    .line 428
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -411,19 +462,19 @@
     :catch_0
     move-exception p0
 
-    .line 379
+    .line 430
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private static synthetic lambda$edit$2(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
-    .locals 4
+.method private static synthetic lambda$edit$4(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    .locals 5
 
     const/4 v0, 0x0
 
-    .line 137
+    .line 173
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
 
@@ -434,17 +485,17 @@
     return-void
 
     :cond_0
-    const-string v1, "REPLACE INTO story_drafts VALUES (?, ?, ?)"
+    const-string v1, "REPLACE INTO story_drafts VALUES (?, ?, ?, ?)"
 
-    .line 142
+    .line 178
     invoke-virtual {p0, v1}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object v0
 
-    .line 143
+    .line 179
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 144
+    .line 180
     new-instance p0, Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->getObjectSize()I
@@ -453,89 +504,117 @@
 
     invoke-direct {p0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 145
+    .line 181
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->toStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    const/4 v1, 0x1
+    .line 182
+    iget-wide v1, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->id:J
 
-    .line 146
-    iget-wide v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->id:J
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
+    invoke-virtual {v0, v3, v1, v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    const/4 v1, 0x2
+    .line 183
+    iget-wide v1, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->date:J
 
-    .line 147
-    iget-wide v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->date:J
+    const/4 v4, 0x2
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
+    invoke-virtual {v0, v4, v1, v2}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindLong(IJ)V
 
-    const/4 p1, 0x3
+    const/4 v1, 0x3
 
-    .line 148
-    invoke-virtual {v0, p1, p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
+    .line 184
+    invoke-virtual {v0, v1, p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
-    .line 149
+    const/4 v1, 0x0
+
+    .line 186
+    iget-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
+
+    if-eqz v2, :cond_1
+
+    goto :goto_0
+
+    .line 188
+    :cond_1
+    iget-boolean p1, p1, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isError:Z
+
+    if-eqz p1, :cond_2
+
+    move v3, v4
+
+    goto :goto_0
+
+    :cond_2
+    move v3, v1
+
+    :goto_0
+    const/4 p1, 0x4
+
+    .line 191
+    invoke-virtual {v0, p1, v3}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindInteger(II)V
+
+    .line 192
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 150
+    .line 193
     invoke-virtual {p0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 151
+    .line 194
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catchall_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_0
     move-exception p0
 
-    .line 154
+    .line 197
     :try_start_1
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
-    .line 157
-    :goto_0
+    .line 200
+    :goto_1
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    :cond_1
+    :cond_3
     return-void
 
-    :goto_1
-    if-eqz v0, :cond_2
+    :goto_2
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    .line 159
-    :cond_2
+    .line 202
+    :cond_4
     throw p0
 .end method
 
-.method private synthetic lambda$load$0(Ljava/util/ArrayList;)V
+.method private synthetic lambda$load$2(Ljava/util/ArrayList;)V
     .locals 11
 
-    .line 93
+    .line 91
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 94
+    .line 92
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 95
+    .line 93
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
@@ -544,7 +623,7 @@
 
     move v5, v4
 
-    .line 96
+    .line 94
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -552,7 +631,7 @@
 
     if-ge v5, v6, :cond_4
 
-    .line 97
+    .line 95
     invoke-virtual {p1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -567,13 +646,13 @@
 
     goto :goto_2
 
-    .line 101
+    .line 99
     :cond_0
     iget-object v7, v6, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     if-eqz v7, :cond_3
 
-    .line 103
+    .line 101
     invoke-virtual {v7}, Ljava/io/File;->exists()Z
 
     move-result v7
@@ -605,13 +684,13 @@
 
     goto :goto_1
 
-    .line 111
+    .line 109
     :cond_2
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 112
+    .line 110
     iget-wide v6, v6, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftId:J
 
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -622,7 +701,7 @@
 
     goto :goto_2
 
-    .line 109
+    .line 107
     :cond_3
     :goto_1
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -632,19 +711,19 @@
 
     goto :goto_0
 
-    .line 115
+    .line 113
     :cond_4
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Stories/recorder/DraftsController;->delete(Ljava/util/ArrayList;)V
 
-    .line 117
+    .line 115
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loading:Z
 
     const/4 p1, 0x1
 
-    .line 118
+    .line 116
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loaded:Z
 
-    .line 120
+    .line 118
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -660,147 +739,394 @@
     return-void
 .end method
 
-.method private synthetic lambda$load$1(Lorg/telegram/messenger/MessagesStorage;)V
-    .locals 7
+.method private synthetic lambda$loadFailed$3(Ljava/util/ArrayList;)V
+    .locals 12
 
-    .line 63
+    .line 130
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    .line 131
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 132
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    .line 133
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v5, 0x0
+
+    move v6, v5
+
+    .line 134
+    :goto_0
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result v7
+
+    if-ge v6, v7, :cond_3
+
+    .line 135
+    invoke-virtual {p1, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
+
+    invoke-virtual {v7}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->toEntry()Lorg/telegram/ui/Stories/recorder/StoryEntry;
+
+    move-result-object v7
+
+    if-nez v7, :cond_0
+
+    goto :goto_2
+
+    .line 139
+    :cond_0
+    iget-object v8, v7, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
+
+    if-eqz v8, :cond_2
+
+    .line 141
+    invoke-virtual {v8}, Ljava/io/File;->exists()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    iget-wide v8, v7, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftDate:J
+
+    sub-long v8, v0, v8
+
+    const-wide/32 v10, 0x240c8400
+
+    cmp-long v8, v8, v10
+
+    if-lez v8, :cond_1
+
+    goto :goto_1
+
+    .line 146
+    :cond_1
+    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 147
+    iget-wide v7, v7, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftId:J
+
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    .line 144
+    :cond_2
+    :goto_1
+    invoke-virtual {v3, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_2
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    .line 150
+    :cond_3
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/Stories/recorder/DraftsController;->delete(Ljava/util/ArrayList;)V
+
+    .line 152
+    iput-boolean v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadingFailed:Z
+
+    const/4 p1, 0x1
+
+    .line 153
+    iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadedFailed:Z
+
+    .line 155
+    iget p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4}, Lorg/telegram/ui/Stories/StoriesController;->putUploadingDrafts(Ljava/util/ArrayList;)V
+
+    return-void
+.end method
+
+.method private static synthetic lambda$loadInternal$0(Lorg/telegram/messenger/Utilities$Callback;Ljava/util/ArrayList;)V
+    .locals 0
+
+    .line 79
+    invoke-interface {p0, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private static synthetic lambda$loadInternal$1(Lorg/telegram/messenger/MessagesStorage;ZLorg/telegram/messenger/Utilities$Callback;)V
+    .locals 6
+
+    .line 50
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 65
+    .line 52
     :try_start_0
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
+    invoke-virtual {p0}, Lorg/telegram/messenger/MessagesStorage;->getDatabase()Lorg/telegram/SQLite/SQLiteDatabase;
 
-    move-result-object p1
+    move-result-object p0
 
-    if-nez p1, :cond_0
+    if-nez p0, :cond_0
 
     return-void
 
+    .line 56
     :cond_0
-    const-string v2, "SELECT id, data FROM story_drafts ORDER BY date DESC"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x0
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v4, v3, [Ljava/lang/Object;
+    const-string v3, "SELECT id, data, type FROM story_drafts WHERE type = "
 
-    .line 69
-    invoke-virtual {p1, v2, v4}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p1, :cond_1
+
+    const-string p1, "2"
+
+    goto :goto_0
+
+    :cond_1
+    const-string p1, "0 OR type = 1"
+
+    :goto_0
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, " ORDER BY date DESC"
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const/4 v2, 0x0
+
+    new-array v3, v2, [Ljava/lang/Object;
+
+    invoke-virtual {p0, p1, v3}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object v1
 
-    .line 70
-    :cond_1
-    :goto_0
+    .line 57
+    :cond_2
+    :goto_1
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
-    move-result p1
+    move-result p0
 
-    if-eqz p1, :cond_2
+    if-eqz p0, :cond_3
 
-    .line 71
-    invoke-virtual {v1, v3}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
+    .line 58
+    invoke-virtual {v1, v2}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
-    move-result-wide v4
+    move-result-wide p0
 
-    const/4 p1, 0x1
+    const/4 v3, 0x1
 
-    .line 72
-    invoke-virtual {v1, p1}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
+    .line 59
+    invoke-virtual {v1, v3}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
-    move-result-object v2
+    move-result-object v4
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v2, :cond_1
+    if-eqz v4, :cond_2
 
-    .line 75
+    .line 62
     :try_start_1
-    new-instance v6, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
+    new-instance v5, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
 
-    invoke-direct {v6, v2, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;-><init>(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
+    invoke-direct {v5, v4, v3}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;-><init>(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 76
-    iput-wide v4, v6, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->id:J
+    .line 63
+    iput-wide p0, v5, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->id:J
 
-    .line 77
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 64
+    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_0
-    move-exception p1
+    move-exception p0
 
-    .line 79
+    .line 66
     :try_start_2
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 81
-    :goto_1
-    invoke-virtual {v2}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
+    .line 68
+    :goto_2
+    invoke-virtual {v4}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catchall_0
-    move-exception p1
+    move-exception p0
 
-    goto :goto_2
+    goto :goto_3
 
     :catch_1
-    move-exception p1
+    move-exception p0
 
-    .line 85
+    .line 72
     :try_start_3
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
-    .line 88
-    :cond_2
+    .line 75
+    :cond_3
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 92
-    :cond_3
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda3;
+    .line 79
+    :cond_4
+    new-instance p0, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda4;
 
-    invoke-direct {p1, p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/DraftsController;Ljava/util/ArrayList;)V
+    invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/Utilities$Callback;Ljava/util/ArrayList;)V
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 
-    :goto_2
-    if-eqz v1, :cond_4
+    :goto_3
+    if-eqz v1, :cond_5
 
-    .line 88
+    .line 75
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 90
-    :cond_4
-    throw p1
+    .line 77
+    :cond_5
+    throw p0
+.end method
+
+.method private loadFailed()V
+    .locals 2
+
+    .line 124
+    iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadedFailed:Z
+
+    if-nez v0, :cond_1
+
+    iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadingFailed:Z
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    .line 128
+    iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadingFailed:Z
+
+    .line 129
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda6;
+
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Stories/recorder/DraftsController;)V
+
+    invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadInternal(ZLorg/telegram/messenger/Utilities$Callback;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method private loadInternal(ZLorg/telegram/messenger/Utilities$Callback;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(Z",
+            "Lorg/telegram/messenger/Utilities$Callback<",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;",
+            ">;>;)V"
+        }
+    .end annotation
+
+    .line 47
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object v0
+
+    .line 48
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda3;
+
+    invoke-direct {v2, v0, p1, p2}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/MessagesStorage;ZLorg/telegram/messenger/Utilities$Callback;)V
+
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    return-void
 .end method
 
 .method private prepare(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
-    .locals 3
+    .locals 4
 
     if-nez p1, :cond_0
 
     return-void
 
-    .line 169
+    .line 212
     :cond_0
+    iget-wide v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftId:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_1
+
+    .line 213
+    sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
+
+    invoke-virtual {v0}, Ljava/security/SecureRandom;->nextLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftId:J
+
+    .line 214
+    :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -809,15 +1135,15 @@
 
     const/4 v0, 0x1
 
-    .line 170
+    .line 215
     iput-boolean v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isDraft:Z
 
-    .line 172
+    .line 217
     iget-boolean v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDeletable:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 173
+    .line 218
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->prepareFile(Ljava/io/File;)Ljava/io/File;
@@ -828,13 +1154,13 @@
 
     goto :goto_0
 
-    .line 174
-    :cond_1
+    .line 219
+    :cond_2
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 175
+    .line 220
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     iget-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
@@ -843,20 +1169,20 @@
 
     move-result-object v1
 
-    .line 177
+    .line 222
     :try_start_0
     iget-object v2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     invoke-static {v2, v1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/File;Ljava/io/File;)Z
 
-    .line 178
+    .line 223
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->prepareFile(Ljava/io/File;)Ljava/io/File;
 
     move-result-object v1
 
     iput-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
-    .line 179
+    .line 224
     iput-boolean v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fileDeletable:Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -866,11 +1192,11 @@
     :catch_0
     move-exception v0
 
-    .line 181
+    .line 226
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 184
-    :cond_2
+    .line 229
+    :cond_3
     :goto_0
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
@@ -880,7 +1206,7 @@
 
     iput-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
-    .line 185
+    .line 230
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->prepareFile(Ljava/io/File;)Ljava/io/File;
@@ -889,7 +1215,7 @@
 
     iput-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
-    .line 186
+    .line 231
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftThumbFile:Ljava/io/File;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->prepareFile(Ljava/io/File;)Ljava/io/File;
@@ -910,13 +1236,13 @@
 
     return-object p1
 
-    .line 194
+    .line 239
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->draftsFolder:Ljava/io/File;
 
     if-nez v0, :cond_1
 
-    .line 195
+    .line 240
     new-instance v0, Ljava/io/File;
 
     const/4 v1, 0x4
@@ -931,19 +1257,19 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->draftsFolder:Ljava/io/File;
 
-    .line 196
+    .line 241
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 197
+    .line 242
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->draftsFolder:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->mkdir()Z
 
-    .line 200
+    .line 245
     :cond_1
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -961,7 +1287,7 @@
 
     if-nez v0, :cond_2
 
-    .line 201
+    .line 246
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->draftsFolder:Ljava/io/File;
@@ -972,7 +1298,7 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 202
+    .line 247
     invoke-virtual {p1, v0}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     move-result v1
@@ -994,38 +1320,37 @@
 
     return-void
 
-    .line 213
+    .line 258
     :cond_0
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->prepare(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 214
+    .line 259
     sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v0}, Ljava/security/SecureRandom;->nextLong()J
 
     move-result-wide v0
 
-    .line 215
     iput-wide v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftId:J
 
-    .line 216
+    .line 260
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 217
+    .line 261
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 218
+    .line 262
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 219
+    .line 263
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->append(Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
 
     return-void
@@ -1034,14 +1359,14 @@
 .method public cleanup()V
     .locals 1
 
-    .line 387
+    .line 438
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->delete(Ljava/util/ArrayList;)V
 
     const/4 v0, 0x0
 
-    .line 388
+    .line 439
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loaded:Z
 
     return-void
@@ -1062,7 +1387,7 @@
 
     return-void
 
-    .line 357
+    .line 408
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1072,7 +1397,7 @@
 
     move v2, v1
 
-    .line 358
+    .line 409
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1080,7 +1405,7 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 359
+    .line 410
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1089,7 +1414,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 361
+    .line 412
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1210,7 +1535,7 @@
 
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 362
+    .line 413
     iget-wide v4, v3, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftId:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1221,7 +1546,7 @@
 
     const/4 v4, 0x1
 
-    .line 363
+    .line 414
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->destroy(Z)V
 
     :cond_3
@@ -1229,7 +1554,7 @@
 
     goto/16 :goto_0
 
-    .line 366
+    .line 417
     :cond_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1239,20 +1564,20 @@
 
     return-void
 
-    .line 369
+    .line 420
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
 
-    .line 370
+    .line 421
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
 
-    .line 371
+    .line 422
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
 
     move-result-object v2
@@ -1263,7 +1588,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 383
+    .line 434
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1282,17 +1607,17 @@
 .method public delete(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
     .locals 2
 
-    .line 331
+    .line 382
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 332
+    .line 383
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 333
+    .line 384
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->delete(Ljava/util/ArrayList;)V
 
     return-void
@@ -1305,46 +1630,52 @@
 
     return-void
 
-    .line 129
+    .line 163
     :cond_0
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->prepare(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 130
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 131
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
+    .line 165
+    iget-boolean v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isError:Z
 
     const/4 v1, 0x0
 
+    if-nez v0, :cond_1
+
+    .line 166
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
+
     invoke-virtual {v0, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 132
+    .line 168
+    :cond_1
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 133
+    .line 169
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
 
-    .line 134
+    .line 170
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
 
     move-result-object v2
 
-    new-instance v3, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda1;
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;
 
-    invoke-direct {v3, p1, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
+    invoke-direct {v3, p1, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
 
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 161
+    .line 204
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1369,7 +1700,7 @@
 
     return-object v0
 
-    .line 315
+    .line 366
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
@@ -1391,7 +1722,7 @@
 
     check-cast v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 316
+    .line 367
     iget-boolean v3, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
     if-eqz v3, :cond_1
@@ -1408,7 +1739,7 @@
 
     if-nez v3, :cond_1
 
-    .line 317
+    .line 368
     iget-object v3, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1425,7 +1756,7 @@
 
     goto :goto_0
 
-    .line 320
+    .line 371
     :cond_2
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
@@ -1444,7 +1775,7 @@
     :cond_3
     const/4 p1, 0x1
 
-    .line 323
+    .line 374
     iput-boolean p1, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEditSaved:Z
 
     return-object v2
@@ -1454,9 +1785,9 @@
 .end method
 
 .method public load()V
-    .locals 3
+    .locals 2
 
-    .line 55
+    .line 85
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loaded:Z
 
     if-nez v0, :cond_1
@@ -1470,26 +1801,17 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 59
+    .line 89
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->loading:Z
 
-    .line 60
-    iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->currentAccount:I
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+    .line 90
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda5;
 
-    move-result-object v0
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/recorder/DraftsController;)V
 
-    .line 61
-    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
-
-    move-result-object v1
-
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda4;
-
-    invoke-direct {v2, p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Stories/recorder/DraftsController;Lorg/telegram/messenger/MessagesStorage;)V
-
-    invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+    invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->loadInternal(ZLorg/telegram/messenger/Utilities$Callback;)V
 
     :cond_1
     :goto_0
@@ -1503,20 +1825,20 @@
 
     if-eqz p4, :cond_5
 
-    .line 281
+    .line 332
     iget-object v0, p4, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-nez v0, :cond_0
 
     goto/16 :goto_2
 
-    .line 285
+    .line 336
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 286
+    .line 337
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1537,7 +1859,7 @@
 
     check-cast v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 287
+    .line 338
     iget-boolean v3, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
     if-eqz v3, :cond_1
@@ -1548,53 +1870,53 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 288
+    .line 339
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 291
+    .line 342
     :cond_2
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->delete(Ljava/util/ArrayList;)V
 
-    .line 293
+    .line 344
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;->prepare(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 294
+    .line 345
     sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v0}, Ljava/security/SecureRandom;->nextLong()J
 
     move-result-wide v0
 
-    .line 295
+    .line 346
     iput-wide v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftId:J
 
-    .line 296
+    .line 347
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;-><init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
     const/4 v1, 0x1
 
-    .line 297
+    .line 348
     iput-boolean v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
-    iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->edit:Z
+    iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
 
-    .line 298
+    .line 349
     iput-wide p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStoryPeerId:J
 
     iput-wide p2, v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryPeerId:J
 
-    .line 299
+    .line 350
     iget p2, p4, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
 
     iput p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStoryId:I
 
     iput p2, v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryId:I
 
-    .line 300
+    .line 351
     iget p2, p4, Lorg/telegram/tgnet/TLRPC$StoryItem;->expire_date:I
 
     int-to-long p2, p2
@@ -1607,14 +1929,14 @@
 
     iput-wide p2, v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editExpireDate:J
 
-    .line 301
+    .line 352
     iget-object p2, p4, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object p3, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz p3, :cond_3
 
-    .line 302
+    .line 353
     iget-wide p2, p3, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editDocumentId:J
@@ -1623,34 +1945,34 @@
 
     goto :goto_1
 
-    .line 303
+    .line 354
     :cond_3
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     if-eqz p2, :cond_4
 
-    .line 304
+    .line 355
     iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
     iput-wide p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editPhotoId:J
 
     iput-wide p2, v0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editPhotoId:J
 
-    .line 306
+    .line 357
     :cond_4
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 307
+    .line 358
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
     const/4 p3, 0x0
 
     invoke-virtual {p2, p3, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 308
+    .line 359
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->append(Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;)V
 
     :cond_5

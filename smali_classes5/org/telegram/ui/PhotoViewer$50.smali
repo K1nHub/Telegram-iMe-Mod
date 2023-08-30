@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 9352
+    .line 9363
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public onOrientationChanged(I)V
     .locals 7
 
-    .line 9355
+    .line 9366
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;)Landroid/view/OrientationEventListener;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23900(Lorg/telegram/ui/PhotoViewer;)Landroid/view/OrientationEventListener;
 
     move-result-object v0
 
@@ -66,7 +66,7 @@
 
     goto/16 :goto_0
 
-    .line 9358
+    .line 9369
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -78,16 +78,16 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23900(Lorg/telegram/ui/PhotoViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24000(Lorg/telegram/ui/PhotoViewer;)I
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 9359
+    .line 9370
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23900(Lorg/telegram/ui/PhotoViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24000(Lorg/telegram/ui/PhotoViewer;)I
 
     move-result v0
 
@@ -109,18 +109,18 @@
 
     if-gt p1, v2, :cond_1
 
-    .line 9361
+    .line 9372
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1, v5}, Lorg/telegram/ui/PhotoViewer;->access$24002(Lorg/telegram/ui/PhotoViewer;Z)Z
+    invoke-static {p1, v5}, Lorg/telegram/ui/PhotoViewer;->access$24102(Lorg/telegram/ui/PhotoViewer;Z)Z
 
     goto :goto_0
 
-    .line 9362
+    .line 9373
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24000(Lorg/telegram/ui/PhotoViewer;)Z
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24100(Lorg/telegram/ui/PhotoViewer;)Z
 
     move-result v0
 
@@ -132,7 +132,7 @@
 
     if-gt p1, v1, :cond_6
 
-    .line 9363
+    .line 9374
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -142,21 +142,21 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24100(Lorg/telegram/ui/PhotoViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24200(Lorg/telegram/ui/PhotoViewer;)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 9364
+    .line 9375
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$23902(Lorg/telegram/ui/PhotoViewer;I)I
+    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$24002(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 9365
+    .line 9376
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$24002(Lorg/telegram/ui/PhotoViewer;Z)Z
+    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$24102(Lorg/telegram/ui/PhotoViewer;Z)Z
 
     goto :goto_0
 
@@ -167,19 +167,19 @@
 
     if-gt p1, v1, :cond_5
 
-    .line 9369
+    .line 9380
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1, v5}, Lorg/telegram/ui/PhotoViewer;->access$24002(Lorg/telegram/ui/PhotoViewer;Z)Z
+    invoke-static {p1, v5}, Lorg/telegram/ui/PhotoViewer;->access$24102(Lorg/telegram/ui/PhotoViewer;Z)Z
 
     goto :goto_0
 
-    .line 9370
+    .line 9381
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24000(Lorg/telegram/ui/PhotoViewer;)Z
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24100(Lorg/telegram/ui/PhotoViewer;)Z
 
     move-result v0
 
@@ -189,7 +189,7 @@
 
     if-gt p1, v2, :cond_6
 
-    .line 9371
+    .line 9382
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$5200(Lorg/telegram/ui/PhotoViewer;)Landroid/app/Activity;
@@ -198,21 +198,21 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24100(Lorg/telegram/ui/PhotoViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24200(Lorg/telegram/ui/PhotoViewer;)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 9372
+    .line 9383
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$23902(Lorg/telegram/ui/PhotoViewer;I)I
+    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$24002(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 9373
+    .line 9384
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$24002(Lorg/telegram/ui/PhotoViewer;Z)Z
+    invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$24102(Lorg/telegram/ui/PhotoViewer;Z)Z
 
     :cond_6
     :goto_0

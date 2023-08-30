@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;I)V
     .locals 0
 
-    .line 1232
+    .line 1233
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iput p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->val$num:I
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1242
+    .line 1243
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
@@ -68,7 +68,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1243
+    .line 1244
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
@@ -88,7 +88,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1235
+    .line 1236
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;
@@ -117,7 +117,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1236
+    .line 1237
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$8;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3800(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/animation/AnimatorSet;

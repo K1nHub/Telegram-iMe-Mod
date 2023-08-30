@@ -2,32 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/webkit/ValueCallback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/BotWebViewContainer;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 1
+.method public final onReceiveValue(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/BotWebViewContainer;
+    check-cast p1, Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$ZLVdGFuxRgnmLHzkZo6zZnMYG3s(Lorg/telegram/ui/Components/BotWebViewContainer;Landroid/content/DialogInterface;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$zCGqQCoSL7tpeyhkspeFMOddDSE(Ljava/lang/String;)V
 
     return-void
 .end method

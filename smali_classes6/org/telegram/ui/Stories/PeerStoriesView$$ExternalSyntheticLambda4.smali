@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda4;->f$1:Z
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$vqR-qLev4uJEtzPJsDFq1sSSQwE(Lorg/telegram/ui/Stories/PeerStoriesView;ZLandroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$UTP4vsbFpJJW1XkEb6ZzEkggt50(Lorg/telegram/ui/Stories/PeerStoriesView;ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

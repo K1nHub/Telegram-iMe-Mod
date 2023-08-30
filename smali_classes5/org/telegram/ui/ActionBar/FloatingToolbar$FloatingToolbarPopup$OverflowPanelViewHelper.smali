@@ -30,20 +30,20 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/content/Context;I)V
     .locals 0
 
-    .line 1244
+    .line 1249
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1245
+    .line 1250
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mContext:Landroid/content/Context;
 
-    .line 1246
+    .line 1251
     iput p3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mIconTextSpacing:I
 
     const/16 p1, 0x12
 
-    .line 1247
+    .line 1252
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -52,7 +52,7 @@
 
     const/4 p1, 0x0
 
-    .line 1248
+    .line 1253
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->createMenuButton(Landroid/view/MenuItem;)Landroid/view/View;
 
     move-result-object p1
@@ -65,7 +65,7 @@
 .method private createMenuButton(Landroid/view/MenuItem;)Landroid/view/View;
     .locals 7
 
-    .line 1268
+    .line 1273
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
@@ -84,7 +84,7 @@
 
     move-result-object p1
 
-    .line 1269
+    .line 1274
     iget v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mSidePadding:I
 
     const/4 v1, 0x0
@@ -99,7 +99,7 @@
 .method public calculateWidth(Landroid/view/MenuItem;)I
     .locals 4
 
-    .line 1262
+    .line 1267
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mCalculator:Landroid/view/View;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mIconTextSpacing:I
@@ -126,12 +126,12 @@
     :goto_0
     invoke-static {v0, p1, v1, v2}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$3400(Landroid/view/View;Landroid/view/MenuItem;IZ)V
 
-    .line 1263
+    .line 1268
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mCalculator:Landroid/view/View;
 
     invoke-virtual {p1, v3, v3}, Landroid/view/View;->measure(II)V
 
-    .line 1264
+    .line 1269
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mCalculator:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
@@ -146,7 +146,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 1253
+    .line 1258
     iget v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->mIconTextSpacing:I
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->this$1:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
@@ -171,13 +171,13 @@
 
     goto :goto_1
 
-    .line 1255
+    .line 1260
     :cond_1
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->createMenuButton(Landroid/view/MenuItem;)Landroid/view/View;
 
     move-result-object p3
 
-    .line 1257
+    .line 1262
     :goto_1
     invoke-virtual {p3, p2}, Landroid/view/View;->setMinimumWidth(I)V
 

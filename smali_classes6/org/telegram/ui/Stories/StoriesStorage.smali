@@ -2173,7 +2173,7 @@
     if-nez p2, :cond_6
 
     :try_start_0
-    const-string p2, "SELECT dialog_id FROM stories"
+    const-string p2, "SELECT DISTINCT dialog_id FROM stories"
 
     new-array v2, v1, [Ljava/lang/Object;
 
@@ -2194,12 +2194,10 @@
 
     move-result v3
 
-    const/4 v4, 0x1
-
     if-eqz v3, :cond_4
 
     .line 288
-    invoke-virtual {p2, v4}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
+    invoke-virtual {p2, v1}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v3
 
@@ -2296,6 +2294,8 @@
     sget-object p2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v3, "DELETE FROM stories WHERE dialog_id IN(%s)"
+
+    const/4 v4, 0x1
 
     new-array v4, v4, [Ljava/lang/Object;
 

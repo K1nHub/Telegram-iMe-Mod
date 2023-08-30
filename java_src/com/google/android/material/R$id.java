@@ -1,0 +1,47 @@
+package com.google.android.material;
+/* loaded from: classes3.dex */
+public final class R$id {
+    public static final int cancel_button = 2131296437;
+    public static final int circle_center = 2131296476;
+    public static final int confirm_button = 2131296488;
+    public static final int design_menu_item_action_area_stub = 2131296546;
+    public static final int design_menu_item_text = 2131296547;
+    public static final int material_clock_display = 2131296846;
+    public static final int material_clock_face = 2131296847;
+    public static final int material_clock_hand = 2131296848;
+    public static final int material_clock_period_pm_button = 2131296850;
+    public static final int material_clock_period_toggle = 2131296851;
+    public static final int material_hour_tv = 2131296853;
+    public static final int material_label = 2131296854;
+    public static final int material_minute_tv = 2131296856;
+    public static final int material_value_index = 2131296864;
+    public static final int month_grid = 2131296884;
+    public static final int month_navigation_fragment_toggle = 2131296886;
+    public static final int month_navigation_next = 2131296887;
+    public static final int month_navigation_previous = 2131296888;
+    public static final int month_title = 2131296889;
+    public static final int mtrl_anchor_parent = 2131296891;
+    public static final int mtrl_calendar_day_selector_frame = 2131296892;
+    public static final int mtrl_calendar_days_of_week = 2131296893;
+    public static final int mtrl_calendar_frame = 2131296894;
+    public static final int mtrl_calendar_main_pane = 2131296895;
+    public static final int mtrl_calendar_months = 2131296896;
+    public static final int mtrl_calendar_year_selector_frame = 2131296899;
+    public static final int mtrl_child_content_container = 2131296901;
+    public static final int mtrl_internal_children_alpha_tag = 2131296902;
+    public static final int mtrl_picker_header_selection_text = 2131296906;
+    public static final int mtrl_picker_header_toggle = 2131296908;
+    public static final int mtrl_picker_title_text = 2131296912;
+    public static final int row_index_key = 2131297054;
+    public static final int selection_type = 2131297084;
+    public static final int snackbar_action = 2131297107;
+    public static final int snackbar_text = 2131297108;
+    public static final int text_input_error_icon = 2131297257;
+    public static final int textinput_counter = 2131297376;
+    public static final int textinput_error = 2131297377;
+    public static final int textinput_helper_text = 2131297378;
+    public static final int textinput_placeholder = 2131297379;
+    public static final int textinput_prefix_text = 2131297380;
+    public static final int textinput_suffix_text = 2131297381;
+    public static final int view_offset_helper = 2131297448;
+}

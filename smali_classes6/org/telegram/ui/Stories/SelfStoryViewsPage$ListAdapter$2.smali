@@ -40,18 +40,32 @@
 
     move-result-object v0
 
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 749
+    :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateOverlayStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0, p3}, Lorg/telegram/ui/Stories/StoryViewer;->doOnAnimationReady(Ljava/lang/Runnable;)V
+    iget-boolean v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->isShowing:Z
 
-    .line 746
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
+    if-eqz v1, :cond_1
 
-    move-result-object p3
+    return-void
 
-    invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateOverlayStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
+    .line 752
+    :cond_1
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateOverlayStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Lorg/telegram/ui/Stories/StoryViewer;->doOnAnimationReady(Ljava/lang/Runnable;)V
+
+    .line 753
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateOverlayStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object p3
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDialogsFactory.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogsFactory.kt\ncom/iMe/utils/dialogs/DialogsFactoryKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,644:1\n1#2:645\n1864#3,3:646\n1864#3,3:651\n1864#3,3:654\n1549#3:657\n1620#3,3:658\n37#4,2:649\n*S KotlinDebug\n*F\n+ 1 DialogsFactory.kt\ncom/iMe/utils/dialogs/DialogsFactoryKt\n*L\n303#1:646,3\n359#1:651,3\n399#1:654,3\n527#1:657\n527#1:658,3\n328#1:649,2\n*E\n"
+    value = "SMAP\nDialogsFactory.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogsFactory.kt\ncom/iMe/utils/dialogs/DialogsFactoryKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,642:1\n1#2:643\n1864#3,3:644\n1864#3,3:649\n1864#3,3:652\n1549#3:655\n1620#3,3:656\n37#4,2:647\n*S KotlinDebug\n*F\n+ 1 DialogsFactory.kt\ncom/iMe/utils/dialogs/DialogsFactoryKt\n*L\n303#1:644,3\n359#1:649,3\n399#1:652,3\n527#1:655\n527#1:656,3\n328#1:647,2\n*E\n"
 .end annotation
 
 
@@ -969,7 +969,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 558
+    .line 556
     new-instance v3, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -982,7 +982,7 @@
 
     move-result-object v3
 
-    .line 559
+    .line 557
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -993,10 +993,10 @@
 
     const/4 v6, 0x1
 
-    .line 560
+    .line 558
     invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 562
+    .line 560
     new-instance v7, Landroid/widget/TextView;
 
     invoke-virtual {v5}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -1005,7 +1005,7 @@
 
     invoke-direct {v7, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 563
+    .line 561
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -1016,13 +1016,13 @@
 
     const/high16 v9, 0x41700000    # 15.0f
 
-    .line 564
+    .line 562
     invoke-virtual {v7, v6, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 565
+    .line 563
     invoke-virtual {v7, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 566
+    .line 564
     invoke-static {v7}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     const/4 v10, -0x1
@@ -1037,15 +1037,15 @@
 
     const/4 v15, 0x0
 
-    .line 569
+    .line 567
     invoke-static/range {v10 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
-    .line 568
+    .line 566
     invoke-virtual {v5, v7, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 575
+    .line 573
     new-instance v1, Landroid/widget/TextView;
 
     invoke-virtual {v5}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -1054,17 +1054,17 @@
 
     invoke-direct {v1, v7}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 576
+    .line 574
     invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v7
 
     invoke-virtual {v1, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 577
+    .line 575
     invoke-virtual {v1, v6, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 578
+    .line 576
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v4
@@ -1083,15 +1083,15 @@
 
     const/4 v12, 0x0
 
-    .line 581
+    .line 579
     invoke-static/range {v7 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v4
 
-    .line 580
+    .line 578
     invoke-virtual {v5, v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 587
+    .line 585
     new-instance v1, Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -1100,7 +1100,7 @@
 
     invoke-direct {v1, v4}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 588
+    .line 586
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -1115,22 +1115,22 @@
 
     const/4 v11, 0x0
 
-    .line 591
+    .line 589
     invoke-static/range {v7 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v4
 
-    .line 590
+    .line 588
     invoke-virtual {v5, v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 596
+    .line 594
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     iput v6, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 598
+    .line 596
     new-instance v1, Landroid/widget/TextView;
 
     invoke-virtual {v5}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -1143,19 +1143,19 @@
 
     const/4 v7, 0x0
 
-    .line 599
+    .line 597
     invoke-static {v1, v4, v6, v7}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     const/16 v4, 0x10
 
-    .line 600
+    .line 598
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     invoke-static {v1, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setVerticalPadding(Landroid/view/View;Ljava/lang/Number;)V
 
-    .line 601
+    .line 599
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -1166,24 +1166,24 @@
 
     const/high16 v0, 0x41600000    # 14.0f
 
-    .line 602
+    .line 600
     invoke-virtual {v1, v6, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 603
+    .line 601
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     const/16 v0, 0x11
 
-    .line 604
+    .line 602
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 605
+    .line 603
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setAllCaps(Z)V
 
-    .line 606
+    .line 604
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 607
+    .line 605
     new-instance v10, Lcom/iMe/utils/dialogs/DialogsFactoryKt$createInfoBottomSheetDialog$customLayout$1$buttonTextView$1$1;
 
     move-object/from16 v0, p4
@@ -1204,20 +1204,20 @@
 
     const/4 v2, -0x2
 
-    .line 614
+    .line 612
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
-    .line 612
+    .line 610
     invoke-virtual {v5, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 619
+    .line 617
     invoke-virtual {v3, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
     const-string v0, "bottomSheet.apply {\n    \u2026mView(customLayout)\n    }"
 
-    .line 618
+    .line 616
     invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v3
@@ -1230,7 +1230,7 @@
 
     if-eqz p6, :cond_0
 
-    .line 553
+    .line 551
     sget p1, Lorg/telegram/messenger/R$string;->wallet_crypto_buy_information_dialog_title:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1248,7 +1248,7 @@
 
     const/4 p4, 0x0
 
-    .line 552
+    .line 550
     :cond_1
     invoke-static {p0, p1, p2, p3, p4}, Lcom/iMe/utils/dialogs/DialogsFactoryKt;->createInfoBottomSheetDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback;)Lorg/telegram/ui/ActionBar/BottomSheet;
 
@@ -2700,59 +2700,18 @@
     if-ne v0, v1, :cond_0
 
     .line 535
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getChatProfileController()Lcom/iMe/fork/controller/ChatProfileController;
+    invoke-virtual {p0}, Lcom/iMe/fork/controller/ChatProfileController;->isChatProfileEnabled()Z
 
-    move-result-object p2
+    move-result p2
 
-    .line 536
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getChatProfileController()Lcom/iMe/fork/controller/ChatProfileController;
+    xor-int/lit8 p2, p2, 0x1
 
-    move-result-object p3
-
-    invoke-virtual {p3}, Lcom/iMe/fork/controller/ChatProfileController;->isChatProfileEnabled()Z
-
-    move-result p3
-
-    xor-int/lit8 p3, p3, 0x1
-
-    .line 535
-    invoke-virtual {p2, p3}, Lcom/iMe/fork/controller/ChatProfileController;->setChatProfileEnabled(Z)V
+    invoke-virtual {p0, p2}, Lcom/iMe/fork/controller/ChatProfileController;->setChatProfileEnabled(Z)V
 
     goto :goto_0
 
-    .line 538
+    .line 537
     :cond_0
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getChatProfileController()Lcom/iMe/fork/controller/ChatProfileController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/iMe/fork/controller/ChatProfileController;->isChatProfileEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 539
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getChatProfileController()Lcom/iMe/fork/controller/ChatProfileController;
-
-    move-result-object v0
-
-    .line 540
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getChatProfileController()Lcom/iMe/fork/controller/ChatProfileController;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/iMe/fork/controller/ChatProfileController;->isChatProfileEnabled()Z
-
-    move-result v1
-
-    xor-int/lit8 v1, v1, 0x1
-
-    .line 539
-    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/ChatProfileController;->setChatProfileEnabled(Z)V
-
-    .line 542
-    :cond_1
     iget-object p2, p2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast p2, Ljava/util/List;
@@ -2773,11 +2732,28 @@
 
     invoke-virtual {p0, p2}, Lcom/iMe/fork/controller/ChatProfileController;->setSelectedChatProfileTelegramIdMode(Ljava/lang/String;)V
 
-    .line 544
+    .line 538
+    invoke-virtual {p0}, Lcom/iMe/fork/controller/ChatProfileController;->isChatProfileEnabled()Z
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    .line 539
+    invoke-virtual {p0}, Lcom/iMe/fork/controller/ChatProfileController;->isChatProfileEnabled()Z
+
+    move-result p2
+
+    xor-int/lit8 p2, p2, 0x1
+
+    invoke-virtual {p0, p2}, Lcom/iMe/fork/controller/ChatProfileController;->setChatProfileEnabled(Z)V
+
+    .line 542
+    :cond_1
     :goto_0
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ChatProfileController;->saveConfig()V
 
-    .line 546
+    .line 544
     invoke-interface {p1}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     return-void
@@ -3066,7 +3042,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 630
+    .line 628
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -3075,24 +3051,24 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 631
+    .line 629
     new-instance v2, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 632
+    .line 630
     sget v0, Lorg/telegram/messenger/R$string;->staking_programme_level_required_title:I
 
     invoke-interface {p1, v0}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 634
+    .line 632
     sget v3, Lorg/telegram/messenger/R$string;->staking_programme_level_required_description:I
 
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 635
+    .line 633
     invoke-virtual {p2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v5
@@ -3101,7 +3077,7 @@
 
     aput-object v5, v4, v6
 
-    .line 636
+    .line 634
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->getDescriptionResId()I
 
     move-result p2
@@ -3114,12 +3090,12 @@
 
     aput-object p2, v4, v5
 
-    .line 633
+    .line 631
     invoke-interface {p1, v3, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 638
+    .line 636
     sget v3, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v4, "Cancel"
@@ -3128,14 +3104,14 @@
 
     move-result-object v3
 
-    .line 639
+    .line 637
     sget v4, Lorg/telegram/messenger/R$string;->wallet_common_error_not_enough_money_btn_txt:I
 
     invoke-interface {p1, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 631
+    .line 629
     invoke-direct {v2, v0, p2, v3, p1}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v4, 0x0
@@ -3146,12 +3122,12 @@
 
     move-object v3, p3
 
-    .line 629
+    .line 627
     invoke-static/range {v1 .. v6}, Lcom/iMe/utils/dialogs/DialogUtils;->createDialog$default(Landroid/content/Context;Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;Lcom/iMe/fork/utils/Callbacks$Callback;ILjava/lang/Object;)Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 628
+    .line 626
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void

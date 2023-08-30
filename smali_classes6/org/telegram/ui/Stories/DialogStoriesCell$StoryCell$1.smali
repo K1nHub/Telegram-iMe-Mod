@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;Landroid/view/View;)V
     .locals 0
 
-    .line 1177
+    .line 1185
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$1;->this$1:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$1;->val$oldTextView:Landroid/view/View;
@@ -42,7 +42,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 1180
+    .line 1188
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -53,7 +53,7 @@
 
     move-result p1
 
-    .line 1181
+    .line 1189
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$1;->val$oldTextView:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1182
+    .line 1190
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$1;->val$oldTextView:Landroid/view/View;
 
     const/4 v2, 0x5
@@ -79,14 +79,14 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1184
+    .line 1192
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$1;->this$1:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1185
+    .line 1193
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$1;->this$1:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;

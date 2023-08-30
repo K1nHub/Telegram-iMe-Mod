@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
     .locals 0
 
-    .line 4177
+    .line 4196
     iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$5;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 4180
+    .line 4199
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 4181
+    .line 4200
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$5;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4182
+    .line 4201
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$5;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -65,10 +65,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 4188
+    .line 4207
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 4189
+    .line 4208
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$5;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4190
+    .line 4209
     iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$5;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;

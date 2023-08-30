@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity$17;)V
     .locals 0
 
-    .line 3693
+    .line 3696
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$17$1;->this$1:Lorg/telegram/ui/GroupCallActivity$17;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 3696
+    .line 3699
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$17$1;->this$1:Lorg/telegram/ui/GroupCallActivity$17;
 
     const/4 v0, 0x0
@@ -44,7 +44,7 @@
 
     const/4 p1, 0x0
 
-    .line 3697
+    .line 3700
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$17$1;->this$1:Lorg/telegram/ui/GroupCallActivity$17;
 
@@ -54,7 +54,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 3698
+    .line 3701
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$17$1;->this$1:Lorg/telegram/ui/GroupCallActivity$17;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
@@ -63,10 +63,10 @@
 
     const/4 v1, 0x0
 
-    .line 3699
+    .line 3702
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 3700
+    .line 3703
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
     add-int/lit8 p1, p1, 0x1

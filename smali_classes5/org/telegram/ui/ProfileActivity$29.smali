@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 4962
+    .line 4965
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 4967
+    .line 4970
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -52,7 +52,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 4969
+    .line 4972
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -68,12 +68,12 @@
 
     if-eq p2, v0, :cond_1
 
-    .line 4970
+    .line 4973
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->access$14802(Lorg/telegram/ui/ProfileActivity;Z)Z
 
-    .line 4972
+    .line 4975
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 4973
+    .line 4976
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     if-eqz p2, :cond_2
@@ -98,7 +98,7 @@
     :goto_0
     invoke-static {v0, p2}, Lorg/telegram/ui/ProfileActivity;->access$17502(Lorg/telegram/ui/ProfileActivity;Z)Z
 
-    .line 4974
+    .line 4977
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$3100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -129,7 +129,7 @@
     :goto_1
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 4976
+    .line 4979
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -153,7 +153,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 1
 
-    .line 4981
+    .line 4984
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/HintView;
@@ -162,7 +162,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4982
+    .line 4985
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/HintView;
@@ -171,13 +171,13 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/HintView;->hide()V
 
-    .line 4984
+    .line 4987
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$12200(Lorg/telegram/ui/ProfileActivity;)V
 
-    .line 4985
+    .line 4988
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17700(Lorg/telegram/ui/ProfileActivity;)Landroidx/collection/LongSparseArray;
@@ -216,12 +216,12 @@
 
     if-le p1, p3, :cond_1
 
-    .line 4986
+    .line 4989
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$17900(Lorg/telegram/ui/ProfileActivity;Z)V
 
-    .line 4988
+    .line 4991
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$29;->this$0:Lorg/telegram/ui/ProfileActivity;
 

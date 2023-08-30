@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/Stories/PeerStoriesView$28;
-.super Ljava/lang/Object;
+.super Landroid/widget/TextView;
 .source "PeerStoriesView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/Stories/PeerStoriesView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Stories/PeerStoriesView;->createReplyDisabledView()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,49 +14,23 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
+.method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;)V
     .locals 0
 
-    .line 3906
-    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$28;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 3340
+    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public setTranslationY(F)V
+    .locals 0
 
-    .line 3909
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$28;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+    .line 3343
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    iget-boolean v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->isActive:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$300(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 3910
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$28;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setIsSwiping(Z)V
-
-    :cond_0
     return-void
 .end method

@@ -78,7 +78,7 @@
 
     move-object/from16 v1, p1
 
-    .line 3389
+    .line 3395
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     move-object/from16 v1, p2
@@ -91,7 +91,7 @@
 .method private synthetic lambda$onEntityDragEnd$0()V
     .locals 2
 
-    .line 3416
+    .line 3422
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -108,7 +108,7 @@
 .method private synthetic lambda$onEntityDragMultitouchStart$1()V
     .locals 2
 
-    .line 3444
+    .line 3450
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -127,7 +127,7 @@
 .method public dismiss()V
     .locals 3
 
-    .line 3472
+    .line 3478
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
@@ -138,7 +138,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->closeKeyboard()V
 
-    .line 3473
+    .line 3479
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v1, -0x1
@@ -153,7 +153,7 @@
 .method protected editSelectedTextEntity()V
     .locals 3
 
-    .line 3465
+    .line 3471
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
@@ -164,7 +164,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->closeKeyboard()V
 
-    .line 3466
+    .line 3472
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v1, 0x0
@@ -173,7 +173,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
-    .line 3467
+    .line 3473
     invoke-super {p0}, Lorg/telegram/ui/Stories/recorder/PaintView;->editSelectedTextEntity()V
 
     return-void
@@ -182,7 +182,7 @@
 .method public onEntityDragEnd(Z)V
     .locals 6
 
-    .line 3411
+    .line 3417
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$1900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
@@ -191,7 +191,7 @@
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->clearAnimation()V
 
-    .line 3412
+    .line 3418
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$1900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
@@ -222,7 +222,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 3413
+    .line 3419
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -233,7 +233,7 @@
 
     invoke-virtual {v0, v4, p1}, Lorg/telegram/ui/Stories/recorder/TrashView;->onDragInfo(ZZ)V
 
-    .line 3414
+    .line 3420
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -242,7 +242,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 3415
+    .line 3421
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -267,7 +267,7 @@
 
     move-result-object v0
 
-    .line 3417
+    .line 3423
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -294,14 +294,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 3419
+    .line 3425
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/PaintView;->removeCurrentEntity()V
 
-    .line 3421
+    .line 3427
     :cond_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->onEntityDragEnd(Z)V
 
-    .line 3422
+    .line 3428
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->multitouch:Z
 
     return-void
@@ -312,10 +312,10 @@
 
     const/4 v0, 0x0
 
-    .line 3450
+    .line 3456
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->multitouch:Z
 
-    .line 3451
+    .line 3457
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -324,7 +324,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3452
+    .line 3458
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -335,7 +335,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3453
+    .line 3459
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -344,7 +344,7 @@
 
     invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
 
-    .line 3454
+    .line 3460
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -375,7 +375,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 3455
+    .line 3461
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
@@ -394,10 +394,10 @@
 
     const/4 v0, 0x1
 
-    .line 3440
+    .line 3446
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->multitouch:Z
 
-    .line 3441
+    .line 3447
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -408,7 +408,7 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Stories/recorder/TrashView;->onDragInfo(ZZ)V
 
-    .line 3442
+    .line 3448
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -417,7 +417,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 3443
+    .line 3449
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -444,7 +444,7 @@
 
     const-wide/16 v1, 0xb4
 
-    .line 3445
+    .line 3451
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -463,7 +463,7 @@
 .method public onEntityDragStart()V
     .locals 6
 
-    .line 3427
+    .line 3433
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$1900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
@@ -472,7 +472,7 @@
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->clearAnimation()V
 
-    .line 3428
+    .line 3434
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$1900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
@@ -503,7 +503,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 3430
+    .line 3436
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -514,7 +514,7 @@
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3431
+    .line 3437
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -523,7 +523,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3432
+    .line 3438
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -532,7 +532,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 3433
+    .line 3439
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -565,7 +565,7 @@
 .method public onEntityDragTrash(Z)V
     .locals 2
 
-    .line 3460
+    .line 3466
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -582,7 +582,7 @@
 .method public onEntityDraggedBottom(Z)V
     .locals 3
 
-    .line 3405
+    .line 3411
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
@@ -601,7 +601,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;->updateCaption(Ljava/lang/CharSequence;)V
 
-    .line 3406
+    .line 3412
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
@@ -634,7 +634,7 @@
 .method public onEntityDraggedTop(Z)V
     .locals 3
 
-    .line 3392
+    .line 3398
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
@@ -657,7 +657,7 @@
 .method protected onGalleryClick()V
     .locals 2
 
-    .line 3397
+    .line 3403
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
@@ -670,17 +670,17 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;->ignore(Z)V
 
-    .line 3398
+    .line 3404
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$10000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    .line 3399
+    .line 3405
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$10100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
-    .line 3400
+    .line 3406
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
@@ -691,7 +691,7 @@
 .method protected onOpenCloseStickersAlert(Z)V
     .locals 2
 
-    .line 3478
+    .line 3484
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewView;
@@ -700,7 +700,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3479
+    .line 3485
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewView;
@@ -711,7 +711,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 3481
+    .line 3487
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -721,7 +721,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3482
+    .line 3488
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
@@ -730,7 +730,7 @@
 
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->ignoreTouches:Z
 
-    .line 3483
+    .line 3489
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$5600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionContainerView;

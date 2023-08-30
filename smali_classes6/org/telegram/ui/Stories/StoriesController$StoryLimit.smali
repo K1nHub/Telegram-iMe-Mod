@@ -24,13 +24,13 @@
 .method public constructor <init>(IJ)V
     .locals 0
 
-    .line 2821
+    .line 2936
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2822
+    .line 2937
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->type:I
 
-    .line 2823
+    .line 2938
     iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->until:J
 
     return-void
@@ -41,7 +41,7 @@
 .method public active(I)Z
     .locals 5
 
-    .line 2839
+    .line 2954
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->type:I
 
     const/4 v1, 0x2
@@ -56,7 +56,7 @@
 
     return v2
 
-    .line 2842
+    .line 2957
     :cond_0
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -86,7 +86,7 @@
 .method public getLimitReachedType()I
     .locals 2
 
-    .line 2827
+    .line 2942
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->type:I
 
     const/4 v1, 0x2

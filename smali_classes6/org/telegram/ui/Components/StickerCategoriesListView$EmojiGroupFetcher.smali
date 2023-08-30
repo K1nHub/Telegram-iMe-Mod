@@ -51,7 +51,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 864
+    .line 867
     invoke-direct {p0}, Lorg/telegram/messenger/CacheFetcher;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView$1;)V
     .locals 0
 
-    .line 864
+    .line 867
     invoke-direct {p0}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;-><init>()V
 
     return-void
@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 897
+    .line 900
     :try_start_0
     invoke-static {p0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
@@ -95,7 +95,7 @@
 
     aput-object p1, v5, v6
 
-    .line 900
+    .line 903
     invoke-virtual {p0, v3, v5}, Lorg/telegram/SQLite/SQLiteDatabase;->queryFinalized(Ljava/lang/String;[Ljava/lang/Object;)Lorg/telegram/SQLite/SQLiteCursor;
 
     move-result-object p0
@@ -103,7 +103,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 901
+    .line 904
     :try_start_1
     invoke-virtual {p0}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -111,14 +111,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 902
+    .line 905
     invoke-virtual {p0, v6}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 904
+    .line 907
     invoke-virtual {p1, v6}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v3
@@ -127,7 +127,7 @@
 
     move-result-object v3
 
-    .line 905
+    .line 908
     invoke-virtual {p1}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     goto :goto_0
@@ -135,13 +135,13 @@
     :cond_0
     move-object v3, v2
 
-    .line 909
+    .line 912
     :goto_0
     instance-of p1, v3, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;
 
     if-nez p1, :cond_1
 
-    .line 910
+    .line 913
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -150,11 +150,11 @@
 
     goto :goto_1
 
-    .line 912
+    .line 915
     :cond_1
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;
 
-    .line 913
+    .line 916
     iget p1, v3, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->hash:I
 
     int-to-long v4, p1
@@ -182,7 +182,7 @@
     :goto_2
     if-eqz v2, :cond_3
 
-    .line 921
+    .line 924
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     goto :goto_4
@@ -197,12 +197,12 @@
 
     move-object p0, v2
 
-    .line 917
+    .line 920
     :goto_3
     :try_start_2
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 918
+    .line 921
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -213,7 +213,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 921
+    .line 924
     invoke-virtual {p0}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     :cond_3
@@ -230,7 +230,7 @@
 
     invoke-virtual {v2}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 923
+    .line 926
     :cond_4
     throw p1
 .end method
@@ -238,12 +238,12 @@
 .method private static synthetic lambda$getRemote$0(Lorg/telegram/messenger/Utilities$Callback4;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 2
 
-    .line 881
+    .line 884
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroupsNotModified;
 
     const-wide/16 v0, 0x0
 
-    .line 882
+    .line 885
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -258,16 +258,16 @@
 
     goto :goto_0
 
-    .line 883
+    .line 886
     :cond_0
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;
 
     if-eqz p2, :cond_1
 
-    .line 884
+    .line 887
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;
 
-    .line 885
+    .line 888
     sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->hash:I
@@ -284,7 +284,7 @@
 
     goto :goto_0
 
-    .line 887
+    .line 890
     :cond_1
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -299,7 +299,7 @@
 .method private static synthetic lambda$setLocal$2(ILorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;Ljava/lang/Integer;)V
     .locals 2
 
-    .line 931
+    .line 934
     :try_start_0
     invoke-static {p0}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
@@ -313,7 +313,7 @@
 
     if-nez p1, :cond_0
 
-    .line 934
+    .line 937
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -343,15 +343,15 @@
     :cond_0
     const-string v0, "REPLACE INTO emoji_groups VALUES(?, ?)"
 
-    .line 936
+    .line 939
     invoke-virtual {p0, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
 
     move-result-object p0
 
-    .line 937
+    .line 940
     invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->requery()V
 
-    .line 938
+    .line 941
     new-instance v0, Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {p1}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
@@ -360,12 +360,12 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 939
+    .line 942
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     const/4 p1, 0x1
 
-    .line 940
+    .line 943
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
@@ -374,16 +374,16 @@
 
     const/4 p1, 0x2
 
-    .line 941
+    .line 944
     invoke-virtual {p0, p1, v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->bindByteBuffer(ILorg/telegram/tgnet/NativeByteBuffer;)V
 
-    .line 942
+    .line 945
     invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->step()I
 
-    .line 943
+    .line 946
     invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 944
+    .line 947
     invoke-virtual {p0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -393,7 +393,7 @@
     :catch_0
     move-exception p0
 
-    .line 948
+    .line 951
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -416,7 +416,7 @@
         }
     .end annotation
 
-    .line 894
+    .line 897
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
@@ -437,7 +437,7 @@
 .method protected bridge synthetic getLocal(ILjava/lang/Object;Lorg/telegram/messenger/Utilities$Callback2;)V
     .locals 0
 
-    .line 864
+    .line 867
     check-cast p2, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;->getLocal(ILjava/lang/Integer;Lorg/telegram/messenger/Utilities$Callback2;)V
@@ -461,7 +461,7 @@
         }
     .end annotation
 
-    .line 869
+    .line 872
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -470,19 +470,19 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 870
+    .line 873
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiStatusGroups;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiStatusGroups;-><init>()V
 
     long-to-int p3, p3
 
-    .line 871
+    .line 874
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiStatusGroups;->hash:I
 
     goto :goto_0
 
-    .line 872
+    .line 875
     :cond_0
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
@@ -492,19 +492,19 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 873
+    .line 876
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiProfilePhotoGroups;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiProfilePhotoGroups;-><init>()V
 
     long-to-int p3, p3
 
-    .line 874
+    .line 877
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiProfilePhotoGroups;->hash:I
 
     goto :goto_0
 
-    .line 876
+    .line 879
     :cond_1
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiGroups;
 
@@ -512,10 +512,10 @@
 
     long-to-int p3, p3
 
-    .line 877
+    .line 880
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_getEmojiGroups;->hash:I
 
-    .line 880
+    .line 883
     :goto_0
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -533,7 +533,7 @@
 .method protected bridge synthetic getRemote(ILjava/lang/Object;JLorg/telegram/messenger/Utilities$Callback4;)V
     .locals 0
 
-    .line 864
+    .line 867
     check-cast p2, Ljava/lang/Integer;
 
     invoke-virtual/range {p0 .. p5}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiGroupFetcher;->getRemote(ILjava/lang/Integer;JLorg/telegram/messenger/Utilities$Callback4;)V
@@ -544,7 +544,7 @@
 .method protected setLocal(ILjava/lang/Integer;Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;J)V
     .locals 0
 
-    .line 929
+    .line 932
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p4
@@ -565,7 +565,7 @@
 .method protected bridge synthetic setLocal(ILjava/lang/Object;Ljava/lang/Object;J)V
     .locals 0
 
-    .line 864
+    .line 867
     check-cast p2, Ljava/lang/Integer;
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_messages_emojiGroups;

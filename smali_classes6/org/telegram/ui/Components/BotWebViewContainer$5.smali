@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    .line 542
+    .line 558
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 545
+    .line 561
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/Components/BackupImageView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1400(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
 

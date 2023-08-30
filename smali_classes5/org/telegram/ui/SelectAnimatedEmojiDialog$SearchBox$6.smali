@@ -35,16 +35,14 @@
 .method protected isTabIconsAnimationEnabled(Z)Z
     .locals 1
 
-    const/16 v0, 0x4004
+    const/16 p1, 0x4004
 
     .line 4480
-    invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    invoke-static {p1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_1
-
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_1
 
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$6;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
@@ -56,17 +54,20 @@
 
     const/4 v0, 0x4
 
-    if-ne p1, v0, :cond_1
-
-    :cond_0
-    const/4 p1, 0x1
+    if-ne p1, v0, :cond_0
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     const/4 p1, 0x0
 
+    goto :goto_1
+
+    :cond_1
     :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
     return p1
 .end method
 

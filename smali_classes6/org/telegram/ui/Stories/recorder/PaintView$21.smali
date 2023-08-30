@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 3619
+    .line 3620
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 3
 
-    .line 3622
+    .line 3623
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$500(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -51,7 +51,7 @@
 
     return-void
 
-    .line 3625
+    .line 3626
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    .line 3626
+    .line 3627
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4300(Lorg/telegram/ui/Stories/recorder/PaintView;)Z
@@ -106,13 +106,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 3627
+    .line 3628
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 3628
+    .line 3629
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 3629
+    .line 3630
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4600(Lorg/telegram/ui/Stories/recorder/PaintView;)Ljava/lang/Runnable;
@@ -121,7 +121,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3630
+    .line 3631
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4600(Lorg/telegram/ui/Stories/recorder/PaintView;)Ljava/lang/Runnable;

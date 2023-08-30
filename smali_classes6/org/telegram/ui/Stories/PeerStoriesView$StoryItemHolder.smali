@@ -36,17 +36,17 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 4220
+    .line 4327
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 4221
+    .line 4328
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
-    .line 4222
+    .line 4329
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     return-void
@@ -55,7 +55,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;)Z
     .locals 0
 
-    .line 4220
+    .line 4327
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->isVideo:Z
 
     return p0
@@ -64,17 +64,17 @@
 .method private isVideoInternal()Z
     .locals 3
 
-    .line 4283
+    .line 4390
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     if-eqz v0, :cond_0
 
-    .line 4284
+    .line 4391
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->isVideo:Z
 
     return v0
 
-    .line 4286
+    .line 4393
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
@@ -92,7 +92,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 4287
+    .line 4394
     invoke-static {v2}, Lorg/telegram/messenger/MessageObject;->isVideoDocument(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result v0
@@ -107,7 +107,7 @@
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 4289
+    .line 4396
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-nez v2, :cond_3
@@ -116,7 +116,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 4290
+    .line 4397
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -138,19 +138,19 @@
 .method public allowScreenshots()Z
     .locals 2
 
-    .line 4416
+    .line 4523
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     if-eqz v0, :cond_0
 
-    .line 4417
+    .line 4524
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->allowScreenshots:Z
 
     return v0
 
-    .line 4419
+    .line 4526
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
@@ -158,7 +158,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4420
+    .line 4527
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->noforwards:Z
 
     xor-int/2addr v0, v1
@@ -172,12 +172,12 @@
 .method cancelOrDelete()V
     .locals 2
 
-    .line 4308
+    .line 4415
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     if-eqz v0, :cond_0
 
-    .line 4309
+    .line 4416
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
@@ -186,13 +186,13 @@
 
     goto :goto_0
 
-    .line 4310
+    .line 4417
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     if-eqz v0, :cond_1
 
-    .line 4311
+    .line 4418
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->cancel()V
 
     :cond_1
@@ -203,17 +203,17 @@
 .method public checkSendView()V
     .locals 5
 
-    .line 4320
+    .line 4427
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->userStories:Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
     if-nez v1, :cond_0
 
-    .line 4322
+    .line 4429
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v2
 
@@ -223,10 +223,10 @@
 
     if-nez v1, :cond_0
 
-    .line 4324
+    .line 4431
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -236,7 +236,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v2
 
@@ -246,10 +246,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 4326
+    .line 4433
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/TLRPC$TL_userStories;
 
-    .line 4330
+    .line 4437
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -283,7 +283,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v3
 
@@ -302,11 +302,11 @@
 
     if-eqz v0, :cond_4
 
-    .line 4331
+    .line 4438
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6200(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object v0
 
@@ -316,12 +316,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 4332
+    .line 4439
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6200(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object v0
 
@@ -335,10 +335,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 4333
+    .line 4440
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6200(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object v0
 
@@ -346,13 +346,13 @@
 
     goto :goto_0
 
-    .line 4336
+    .line 4443
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v3
 
@@ -364,10 +364,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 4337
+    .line 4444
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6200(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object v0
 
@@ -383,10 +383,10 @@
 
     const/4 v0, 0x0
 
-    .line 4303
+    .line 4410
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
-    .line 4304
+    .line 4411
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     return-void
@@ -395,10 +395,10 @@
 .method public createLink()Ljava/lang/String;
     .locals 4
 
-    .line 4375
+    .line 4482
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -408,7 +408,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v1
 
@@ -420,7 +420,7 @@
 
     move-result-object v0
 
-    .line 4376
+    .line 4483
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const/4 v2, 0x2
@@ -463,12 +463,12 @@
 .method public getLocalPath()Ljava/lang/String;
     .locals 1
 
-    .line 4344
+    .line 4451
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     if-eqz v0, :cond_0
 
-    .line 4345
+    .line 4452
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
 
     return-object v0
@@ -482,14 +482,14 @@
 .method public getPath()Ljava/io/File;
     .locals 3
 
-    .line 4381
+    .line 4488
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->getLocalPath()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 4382
+    .line 4489
     new-instance v0, Ljava/io/File;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->getLocalPath()Ljava/lang/String;
@@ -500,13 +500,13 @@
 
     return-object v0
 
-    .line 4384
+    .line 4491
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     if-eqz v0, :cond_3
 
-    .line 4385
+    .line 4492
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-eqz v0, :cond_1
@@ -515,10 +515,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 4386
+    .line 4493
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -541,12 +541,12 @@
     :cond_1
     if-eqz v0, :cond_3
 
-    .line 4387
+    .line 4494
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     if-eqz v0, :cond_3
 
-    .line 4388
+    .line 4495
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     const v1, 0x7fffffff
@@ -555,10 +555,10 @@
 
     move-result-object v0
 
-    .line 4389
+    .line 4496
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v1
 
@@ -572,17 +572,17 @@
 
     move-result-object v1
 
-    .line 4390
+    .line 4497
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 4391
+    .line 4498
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v1
 
@@ -608,7 +608,7 @@
 .method hasSound()Z
     .locals 5
 
-    .line 4357
+    .line 4464
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->isVideo:Z
 
     const/4 v1, 0x0
@@ -617,7 +617,7 @@
 
     return v1
 
-    .line 4360
+    .line 4467
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
@@ -635,7 +635,7 @@
 
     move v0, v1
 
-    .line 4361
+    .line 4468
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
@@ -651,7 +651,7 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 4362
+    .line 4469
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
@@ -666,7 +666,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 4363
+    .line 4470
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
     if-eqz v4, :cond_1
@@ -685,13 +685,13 @@
     :cond_2
     return v2
 
-    .line 4368
+    .line 4475
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     if-eqz v0, :cond_4
 
-    .line 4369
+    .line 4476
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->muted:Z
@@ -707,7 +707,7 @@
 .method isVideo()Z
     .locals 1
 
-    .line 4353
+    .line 4460
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->isVideo:Z
 
     return v0
@@ -716,20 +716,20 @@
 .method set(Lorg/telegram/tgnet/TLRPC$StoryItem;)V
     .locals 1
 
-    .line 4276
+    .line 4383
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     const/4 v0, 0x0
 
-    .line 4277
+    .line 4384
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
-    .line 4278
+    .line 4385
     instance-of p1, p1, Lorg/telegram/tgnet/TLRPC$TL_storyItemSkipped;
 
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->skipped:Z
 
-    .line 4279
+    .line 4386
     invoke-direct {p0}, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->isVideoInternal()Z
 
     move-result p1
@@ -742,20 +742,20 @@
 .method set(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
     .locals 0
 
-    .line 4296
+    .line 4403
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     const/4 p1, 0x0
 
-    .line 4297
+    .line 4404
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     const/4 p1, 0x0
 
-    .line 4298
+    .line 4405
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->skipped:Z
 
-    .line 4299
+    .line 4406
     invoke-direct {p0}, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->isVideoInternal()Z
 
     move-result p1
@@ -770,10 +770,10 @@
 
     const/4 v0, 0x0
 
-    .line 4231
+    .line 4338
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->captionTranslated:Z
 
-    .line 4232
+    .line 4339
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
@@ -786,14 +786,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 4233
+    .line 4340
     iget-object v2, v3, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->caption:Ljava/lang/CharSequence;
 
-    .line 4234
+    .line 4341
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1000(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
     move-result-object v1
@@ -818,15 +818,15 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->caption:Ljava/lang/CharSequence;
 
-    .line 4235
+    .line 4342
     invoke-static {v0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v0
 
-    .line 4236
+    .line 4343
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v1
 
@@ -836,7 +836,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v2
 
@@ -848,10 +848,10 @@
 
     move-result-object v1
 
-    .line 4237
+    .line 4344
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v2
 
@@ -865,18 +865,18 @@
 
     if-eqz v1, :cond_4
 
-    .line 4238
+    .line 4345
     invoke-static {v5, v0}, Lorg/telegram/messenger/MessageObject;->addLinks(ZLjava/lang/CharSequence;)V
 
     goto/16 :goto_0
 
-    .line 4240
+    .line 4347
     :cond_0
     iget-object v1, v2, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     if-eqz v1, :cond_4
 
-    .line 4241
+    .line 4348
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$StoryItem;->translated:Z
 
     if-eqz v2, :cond_2
@@ -897,10 +897,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 4242
+    .line 4349
     iput-boolean v5, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->captionTranslated:Z
 
-    .line 4243
+    .line 4350
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
@@ -909,12 +909,12 @@
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->translatedText:Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
 
-    .line 4244
+    .line 4351
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
 
     iput-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->caption:Ljava/lang/CharSequence;
 
-    .line 4245
+    .line 4352
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1000(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
     move-result-object v1
@@ -941,19 +941,19 @@
 
     if-eqz v1, :cond_4
 
-    .line 4246
+    .line 4353
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_4
 
-    .line 4247
+    .line 4354
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
 
     invoke-direct {v1, v3}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 4248
+    .line 4355
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -980,7 +980,7 @@
 
     move-result-object v1
 
-    .line 4249
+    .line 4356
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1000(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -1003,10 +1003,10 @@
 
     invoke-static {v0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 4250
+    .line 4357
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -1016,7 +1016,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v3
 
@@ -1028,10 +1028,10 @@
 
     move-result-object v0
 
-    .line 4251
+    .line 4358
     iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v3
 
@@ -1045,10 +1045,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 4252
+    .line 4359
     invoke-static {v5, v1}, Lorg/telegram/messenger/MessageObject;->addLinks(ZLjava/lang/CharSequence;)V
 
-    .line 4253
+    .line 4360
     iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
     const/4 v8, 0x0
@@ -1063,13 +1063,13 @@
 
     invoke-static/range {v6 .. v11}, Lorg/telegram/messenger/MessageObject;->addEntitiesToText(Ljava/lang/CharSequence;Ljava/util/ArrayList;ZZZZ)Z
 
-    .line 4255
+    .line 4362
     :cond_1
     iput-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->caption:Ljava/lang/CharSequence;
 
     goto/16 :goto_0
 
-    .line 4258
+    .line 4365
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1081,7 +1081,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->caption:Ljava/lang/CharSequence;
 
-    .line 4259
+    .line 4366
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1000(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
     move-result-object v1
@@ -1108,7 +1108,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 4260
+    .line 4367
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
@@ -1119,7 +1119,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 4261
+    .line 4368
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -1132,7 +1132,7 @@
 
     invoke-direct {v1, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 4262
+    .line 4369
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
@@ -1163,7 +1163,7 @@
 
     move-result-object v1
 
-    .line 4263
+    .line 4370
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1000(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -1186,10 +1186,10 @@
 
     invoke-static {v0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 4264
+    .line 4371
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -1199,7 +1199,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v2
 
@@ -1211,10 +1211,10 @@
 
     move-result-object v0
 
-    .line 4265
+    .line 4372
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v2
 
@@ -1228,10 +1228,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 4266
+    .line 4373
     invoke-static {v5, v1}, Lorg/telegram/messenger/MessageObject;->addLinks(ZLjava/lang/CharSequence;)V
 
-    .line 4267
+    .line 4374
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
@@ -1252,7 +1252,7 @@
 
     invoke-static/range {v6 .. v11}, Lorg/telegram/messenger/MessageObject;->addEntitiesToText(Ljava/lang/CharSequence;Ljava/util/ArrayList;ZZZZ)Z
 
-    .line 4269
+    .line 4376
     :cond_3
     iput-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->caption:Ljava/lang/CharSequence;
 

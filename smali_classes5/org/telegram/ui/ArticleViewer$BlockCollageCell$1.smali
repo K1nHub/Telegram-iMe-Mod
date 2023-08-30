@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 8274
+    .line 8395
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 8277
+    .line 8398
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17000(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17300(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Z
 
     move-result v0
 
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 8280
+    .line 8401
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 

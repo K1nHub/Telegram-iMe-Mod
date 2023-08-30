@@ -28,7 +28,7 @@
 
     move-object v0, p1
 
-    .line 4852
+    .line 4855
     iput-object v0, v8, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     move-object/from16 v0, p9
@@ -59,7 +59,7 @@
 .method protected onTap(Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;)V
     .locals 4
 
-    .line 4855
+    .line 4858
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -82,7 +82,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4856
+    .line 4859
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 4857
+    .line 4860
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -155,7 +155,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4858
+    .line 4861
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
@@ -176,7 +176,7 @@
 
     goto :goto_0
 
-    .line 4860
+    .line 4863
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 

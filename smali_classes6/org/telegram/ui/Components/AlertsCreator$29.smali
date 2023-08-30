@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[I)V
     .locals 0
 
-    .line 3974
+    .line 3975
     iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$29;->val$values:[I
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,14 +35,14 @@
 .method protected getContentDescription(I)Ljava/lang/CharSequence;
     .locals 5
 
-    .line 3977
+    .line 3978
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$29;->val$values:[I
 
     aget v1, v0, p1
 
     if-nez v1, :cond_0
 
-    .line 3978
+    .line 3979
     sget p1, Lorg/telegram/messenger/R$string;->AutoDeleteNever:I
 
     const-string v0, "AutoDeleteNever"
@@ -53,7 +53,7 @@
 
     return-object p1
 
-    .line 3979
+    .line 3980
     :cond_0
     aget v1, v0, p1
 
@@ -63,7 +63,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 3980
+    .line 3981
     aget p1, v0, p1
 
     div-int/lit16 p1, p1, 0x5a0
@@ -78,7 +78,7 @@
 
     return-object p1
 
-    .line 3981
+    .line 3982
     :cond_1
     aget v1, v0, p1
 
@@ -86,7 +86,7 @@
 
     if-ge v1, v4, :cond_2
 
-    .line 3982
+    .line 3983
     aget p1, v0, p1
 
     div-int/lit16 p1, p1, 0x5a0
@@ -101,7 +101,7 @@
 
     return-object p1
 
-    .line 3983
+    .line 3984
     :cond_2
     aget v1, v0, p1
 
@@ -109,7 +109,7 @@
 
     if-ge v1, v4, :cond_3
 
-    .line 3984
+    .line 3985
     aget p1, v0, p1
 
     div-int/2addr p1, v2
@@ -124,7 +124,7 @@
 
     return-object p1
 
-    .line 3986
+    .line 3987
     :cond_3
     aget p1, v0, p1
 

@@ -27,13 +27,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Landroid/content/Context;)V
     .locals 0
 
-    .line 392
+    .line 393
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
-    .line 393
+    .line 394
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 394
+    .line 395
     new-instance p1, Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-direct {p1, p0}, Landroidx/core/view/NestedScrollingParentHelper;-><init>(Landroid/view/ViewGroup;)V
@@ -48,7 +48,7 @@
 .method public onNestedPreScroll(Landroid/view/View;II[II)V
     .locals 1
 
-    .line 443
+    .line 444
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
     iget p2, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->keyboardHeight:I
@@ -57,13 +57,13 @@
 
     return-void
 
-    .line 446
+    .line 447
     :cond_0
     iget-object p2, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget p2, p2, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
-    .line 447
+    .line 448
     iget p5, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->maxSelfStoriesViewsOffset:F
 
     cmpg-float v0, p2, p5
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x1
 
-    .line 449
+    .line 450
     aput p3, p4, v0
 
     cmpl-float p3, p2, p5
@@ -90,11 +90,11 @@
     :cond_1
     move p5, p2
 
-    .line 453
+    .line 454
     :goto_0
     invoke-virtual {p1, p5}, Lorg/telegram/ui/Stories/SelfStoryViewsView;->setOffset(F)V
 
-    .line 454
+    .line 455
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
@@ -114,7 +114,7 @@
 .method public onNestedScroll(Landroid/view/View;IIIII[I)V
     .locals 0
 
-    .line 425
+    .line 426
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
     iget p2, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->keyboardHeight:I
@@ -128,7 +128,7 @@
 
     if-nez p3, :cond_2
 
-    .line 429
+    .line 430
     iget-object p2, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget p2, p2, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
@@ -146,11 +146,11 @@
     :cond_1
     move p2, p3
 
-    .line 434
+    .line 435
     :goto_0
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/SelfStoryViewsView;->setOffset(F)V
 
-    .line 435
+    .line 436
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
@@ -164,7 +164,7 @@
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;II)V
     .locals 0
 
-    .line 410
+    .line 411
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-virtual {p4, p1, p2, p3}, Landroidx/core/view/NestedScrollingParentHelper;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
@@ -175,7 +175,7 @@
 .method public onStartNestedScroll(Landroid/view/View;Landroid/view/View;II)Z
     .locals 0
 
-    .line 399
+    .line 400
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
     iget p1, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView;->keyboardHeight:I
@@ -202,7 +202,7 @@
 .method public onStopNestedScroll(Landroid/view/View;I)V
     .locals 0
 
-    .line 415
+    .line 416
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ContainerView;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-virtual {p2, p1}, Landroidx/core/view/NestedScrollingParentHelper;->onStopNestedScroll(Landroid/view/View;)V

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickersAlert;)V
     .locals 0
 
-    .line 761
+    .line 758
     iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$6;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,7 +35,7 @@
 .method public getSpanSize(I)I
     .locals 1
 
-    .line 764
+    .line 761
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$6;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$1700(Lorg/telegram/ui/Components/StickersAlert;)Ljava/util/ArrayList;
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert$GridAdapter;->access$4600(Lorg/telegram/ui/Components/StickersAlert$GridAdapter;)Landroid/util/SparseArray;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert$GridAdapter;->access$4500(Lorg/telegram/ui/Components/StickersAlert$GridAdapter;)Landroid/util/SparseArray;
 
     move-result-object v0
 
@@ -69,13 +69,13 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert$GridAdapter;->access$4700(Lorg/telegram/ui/Components/StickersAlert$GridAdapter;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert$GridAdapter;->access$4600(Lorg/telegram/ui/Components/StickersAlert$GridAdapter;)I
 
     move-result v0
 
     if-ne p1, v0, :cond_2
 
-    .line 765
+    .line 762
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$6;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 

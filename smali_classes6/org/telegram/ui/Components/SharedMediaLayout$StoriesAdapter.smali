@@ -19,7 +19,7 @@
 
 .field private final isArchive:Z
 
-.field public storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+.field public final storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
 .field private supportingAdapter:Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
 
@@ -30,16 +30,16 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;Z)V
     .locals 2
 
-    .line 7541
+    .line 7561
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    .line 7542
+    .line 7562
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;)V
 
-    .line 7543
+    .line 7563
     iput-boolean p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->isArchive:Z
 
-    .line 7544
+    .line 7564
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p2
@@ -62,14 +62,17 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-    .line 7545
+    if-eqz p1, :cond_0
+
+    .line 7566
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->link()I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->id:I
 
-    .line 7546
+    .line 7568
+    :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->checkColumns()V
 
     return-void
@@ -78,10 +81,18 @@
 .method private checkColumns()V
     .locals 5
 
-    .line 7568
+    .line 7590
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 7593
+    :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->isArchive:Z
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -91,7 +102,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -99,7 +110,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
@@ -107,16 +118,16 @@
 
     move-result v0
 
-    if-le v0, v1, :cond_5
+    if-le v0, v1, :cond_6
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->getCount()I
 
     move-result v0
 
-    if-lez v0, :cond_5
+    if-lez v0, :cond_6
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -124,9 +135,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
-    .line 7569
+    .line 7594
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->getCount()I
@@ -137,9 +148,9 @@
 
     const/4 v3, 0x0
 
-    if-ge v0, v2, :cond_3
+    if-ge v0, v2, :cond_4
 
-    .line 7570
+    .line 7595
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -154,14 +165,14 @@
 
     aput v2, v0, v1
 
-    .line 7571
+    .line 7596
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -171,7 +182,7 @@
 
     aget-object v0, v0, v3
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -181,7 +192,7 @@
 
     aget-object v0, v0, v1
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -195,7 +206,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -209,15 +220,15 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 7572
+    .line 7597
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0, v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2300(Lorg/telegram/ui/Components/SharedMediaLayout;Z)V
 
-    .line 7574
-    :cond_1
+    .line 7599
+    :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -226,31 +237,31 @@
 
     aget v2, v2, v1
 
-    if-ne v2, v1, :cond_2
+    if-ne v2, v1, :cond_3
 
     move v3, v1
 
-    :cond_2
+    :cond_3
     invoke-static {v0, v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2602(Lorg/telegram/ui/Components/SharedMediaLayout;Z)Z
 
     goto :goto_0
 
-    .line 7575
-    :cond_3
+    .line 7600
+    :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2600(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
-    .line 7576
+    .line 7601
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0, v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2602(Lorg/telegram/ui/Components/SharedMediaLayout;Z)Z
 
-    .line 7577
+    .line 7602
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -267,14 +278,14 @@
 
     aput v2, v0, v1
 
-    .line 7578
+    .line 7603
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -284,7 +295,7 @@
 
     aget-object v0, v0, v3
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -294,7 +305,7 @@
 
     aget-object v0, v0, v1
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -308,7 +319,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -322,21 +333,21 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
-    .line 7579
+    .line 7604
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0, v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2300(Lorg/telegram/ui/Components/SharedMediaLayout;Z)V
 
-    .line 7582
-    :cond_4
+    .line 7607
+    :cond_5
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$10002(Lorg/telegram/ui/Components/SharedMediaLayout;Z)Z
 
-    :cond_5
+    :cond_6
     return-void
 .end method
 
@@ -345,7 +356,7 @@
 .method public columnsCount()I
     .locals 2
 
-    .line 7596
+    .line 7621
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$1000(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
@@ -354,7 +365,7 @@
 
     if-ne p0, v0, :cond_0
 
-    .line 7597
+    .line 7622
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -367,7 +378,7 @@
 
     return v0
 
-    .line 7598
+    .line 7623
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -387,7 +398,7 @@
 
     goto :goto_0
 
-    .line 7601
+    .line 7626
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -397,7 +408,7 @@
 
     return v0
 
-    .line 7599
+    .line 7624
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -416,12 +427,12 @@
 .method public destroy()V
     .locals 2
 
-    .line 7556
+    .line 7578
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     if-eqz v0, :cond_0
 
-    .line 7557
+    .line 7579
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->id:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->unlink(I)V
@@ -431,16 +442,24 @@
 .end method
 
 .method public getItemCount()I
-    .locals 1
+    .locals 2
 
-    .line 7612
+    .line 7637
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    .line 7640
+    :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->isOnlyCache()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -448,21 +467,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
+    if-eqz v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->getCount()I
 
-    move-result v0
+    move-result v1
 
     :goto_0
-    return v0
+    return v1
 .end method
 
 .method public getItemViewType(I)I
@@ -476,53 +493,61 @@
 .method public getLetter(I)Ljava/lang/String;
     .locals 2
 
-    .line 7676
+    .line 7712
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return-object v1
+
+    .line 7715
+    :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->getTopOffset()I
 
     move-result v0
 
     sub-int/2addr p1, v0
 
-    const/4 v0, 0x0
+    if-ltz p1, :cond_3
 
-    if-ltz p1, :cond_2
+    .line 7716
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-    .line 7677
-    iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+    iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->messageObjects:Ljava/util/ArrayList;
 
-    iget-object v1, v1, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->messageObjects:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    move-result v0
 
-    move-result v1
-
-    if-lt p1, v1, :cond_0
+    if-lt p1, v0, :cond_1
 
     goto :goto_0
 
-    .line 7680
-    :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+    .line 7719
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
-    iget-object v1, v1, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->messageObjects:Ljava/util/ArrayList;
+    iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->messageObjects:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
-    .line 7681
+    .line 7720
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
     goto :goto_0
 
-    .line 7684
-    :cond_1
+    .line 7723
+    :cond_2
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
 
     int-to-long v0, p1
@@ -535,20 +560,20 @@
 
     return-object p1
 
-    :cond_2
+    :cond_3
     :goto_0
-    return-object v0
+    return-object v1
 .end method
 
 .method public getPositionForIndex(I)I
     .locals 1
 
-    .line 7622
+    .line 7650
     iget-boolean v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->isArchive:Z
 
     if-eqz v0, :cond_0
 
-    .line 7623
+    .line 7651
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->getTopOffset()I
 
     move-result v0
@@ -572,7 +597,7 @@
 .method public getTotalItemsCount()I
     .locals 1
 
-    .line 7617
+    .line 7645
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->getItemCount()I
 
     move-result v0
@@ -589,33 +614,41 @@
 .end method
 
 .method public load(Z)V
-    .locals 3
+    .locals 4
 
-    .line 7664
+    .line 7696
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 7700
+    :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->columnsCount()I
 
     move-result v0
 
-    .line 7665
-    div-int/lit8 v1, v0, 0x2
+    const/16 v1, 0x64
 
     const/4 v2, 0x1
 
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+    .line 7701
+    div-int/lit8 v3, v0, 0x2
 
-    move-result v1
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
-    mul-int/2addr v1, v0
+    move-result v2
 
-    mul-int/2addr v1, v0
+    mul-int/2addr v2, v0
 
-    const/16 v0, 0x64
+    mul-int/2addr v2, v0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 7666
+    .line 7702
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     invoke-virtual {v1, p1, v0}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->load(ZI)Z
@@ -626,18 +659,18 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 7588
+    .line 7613
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 7589
+    .line 7614
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->supportingAdapter:Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 7590
+    .line 7615
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->notifyDataSetChanged()V
 
-    .line 7592
+    .line 7617
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->checkColumns()V
 
@@ -647,33 +680,41 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 7644
+    .line 7672
+    iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 7675
+    :cond_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
-    .line 7646
+    .line 7677
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     const/4 v0, 0x1
 
-    .line 7647
+    .line 7678
     iput-boolean v0, p1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->isStory:Z
 
-    .line 7648
+    .line 7679
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->getTopOffset()I
 
     move-result v1
 
     sub-int/2addr p2, v1
 
-    if-ltz p2, :cond_4
+    if-ltz p2, :cond_5
 
-    .line 7649
+    .line 7680
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->messageObjects:Ljava/util/ArrayList;
@@ -682,12 +723,12 @@
 
     move-result v1
 
-    if-lt p2, v1, :cond_0
+    if-lt p2, v1, :cond_1
 
     goto :goto_2
 
-    .line 7653
-    :cond_0
+    .line 7685
+    :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->messageObjects:Ljava/util/ArrayList;
@@ -698,25 +739,25 @@
 
     check-cast p2, Lorg/telegram/messenger/MessageObject;
 
-    .line 7654
+    .line 7686
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->columnsCount()I
 
     move-result v1
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setMessageObject(Lorg/telegram/messenger/MessageObject;I)V
 
-    .line 7655
+    .line 7687
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Components/SharedMediaLayout;->isActionModeShowed:Z
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
-    if-eqz p2, :cond_3
+    if-eqz p2, :cond_4
 
-    .line 7656
+    .line 7688
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$9100(Lorg/telegram/ui/Components/SharedMediaLayout;)[Landroid/util/SparseArray;
 
     move-result-object v1
@@ -733,13 +774,13 @@
 
     cmp-long v2, v4, v6
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
     move v2, v3
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     move v2, v0
 
     :goto_0
@@ -753,11 +794,11 @@
 
     move-result p2
 
-    if-ltz p2, :cond_2
+    if-ltz p2, :cond_3
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     move v0, v3
 
     :goto_1
@@ -765,24 +806,27 @@
 
     goto :goto_3
 
-    .line 7658
-    :cond_3
+    .line 7690
+    :cond_4
     invoke-virtual {p1, v3, v3}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setChecked(ZZ)V
 
     goto :goto_3
 
-    :cond_4
+    :cond_5
     :goto_2
     const/4 p2, 0x0
 
-    .line 7650
+    .line 7681
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->columnsCount()I
 
-    move-result v0
+    move-result v1
 
-    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setMessageObject(Lorg/telegram/messenger/MessageObject;I)V
+    invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setMessageObject(Lorg/telegram/messenger/MessageObject;I)V
 
-    :cond_5
+    .line 7682
+    iput-boolean v0, p1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->isStory:Z
+
+    :cond_6
     :goto_3
     return-void
 .end method
@@ -790,19 +834,19 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 1
 
-    .line 7635
+    .line 7663
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p1
 
-    .line 7636
+    .line 7664
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     if-eqz v0, :cond_0
 
-    .line 7637
+    .line 7665
     check-cast p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     const/4 v0, 0x1
@@ -816,7 +860,7 @@
 .method public onFastScrollSingleTap()V
     .locals 3
 
-    .line 7689
+    .line 7728
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;->isArchive:Z

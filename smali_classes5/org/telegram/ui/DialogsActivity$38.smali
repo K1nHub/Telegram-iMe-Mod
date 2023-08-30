@@ -81,7 +81,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 7141
+    .line 7117
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,12 +92,12 @@
 .method private synthetic lambda$onTopicLongClick$0()V
     .locals 2
 
-    .line 7171
+    .line 7147
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$16800(Lorg/telegram/ui/DialogsActivity;)V
 
-    .line 7172
+    .line 7148
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$300(Lorg/telegram/ui/DialogsActivity;)Lcom/iMe/ui/topics/TopicsBar;
@@ -108,10 +108,10 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/ui/topics/TopicsBar;->setEditing(Z)V
 
-    .line 7173
+    .line 7149
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$25400(Lorg/telegram/ui/DialogsActivity;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$25300(Lorg/telegram/ui/DialogsActivity;Z)V
 
     return-void
 .end method
@@ -119,7 +119,7 @@
 .method private synthetic lambda$onTopicLongClick$1()V
     .locals 3
 
-    .line 7175
+    .line 7151
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     new-instance v1, Lorg/telegram/ui/FiltersSetupActivity;
@@ -136,7 +136,7 @@
 .method private synthetic lambda$onTopicLongClick$2(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
     .locals 4
 
-    .line 7176
+    .line 7152
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     new-instance v1, Lorg/telegram/ui/FilterCreateActivity;
@@ -155,7 +155,7 @@
 .method private synthetic lambda$onTopicLongClick$3(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
     .locals 0
 
-    .line 7177
+    .line 7153
     invoke-direct {p0, p1}, Lorg/telegram/ui/DialogsActivity$38;->showDeleteAlert(Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     return-void
@@ -164,10 +164,10 @@
 .method private synthetic lambda$onTopicLongClick$4()V
     .locals 1
 
-    .line 7181
+    .line 7157
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$30500(Lorg/telegram/ui/DialogsActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$30400(Lorg/telegram/ui/DialogsActivity;)V
 
     return-void
 .end method
@@ -175,7 +175,7 @@
 .method private synthetic lambda$onTopicLongClick$5()V
     .locals 3
 
-    .line 7179
+    .line 7155
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
@@ -196,7 +196,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/ForkTopicsController;->setNoTopicFirstEnabled(Z)V
 
-    .line 7180
+    .line 7156
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
@@ -205,7 +205,7 @@
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkTopicsController;->saveConfig()V
 
-    .line 7181
+    .line 7157
     new-instance v0, Lorg/telegram/ui/DialogsActivity$38$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/DialogsActivity$38$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/DialogsActivity$38;)V
@@ -220,7 +220,7 @@
 .method private synthetic lambda$showDeleteAlert$6(Lcom/iMe/storage/domain/model/topics/TopicModel;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 7230
+    .line 7206
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
@@ -237,7 +237,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 7223
+    .line 7199
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -252,7 +252,7 @@
 
     goto :goto_0
 
-    .line 7226
+    .line 7202
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -264,7 +264,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 7227
+    .line 7203
     sget v1, Lorg/telegram/messenger/R$string;->topics_remove:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -273,7 +273,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 7228
+    .line 7204
     sget v1, Lorg/telegram/messenger/R$string;->topics_remove_alert:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -282,7 +282,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 7229
+    .line 7205
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -295,7 +295,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 7230
+    .line 7206
     sget v1, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v2, "Delete"
@@ -310,19 +310,19 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 7231
+    .line 7207
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 7232
+    .line 7208
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v0, -0x1
 
-    .line 7233
+    .line 7209
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -331,7 +331,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 7235
+    .line 7211
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -350,7 +350,7 @@
 .method public canPerformActions()Z
     .locals 2
 
-    .line 7147
+    .line 7123
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$1200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/FilterTabsView;
@@ -375,7 +375,7 @@
 
     return v1
 
-    .line 7150
+    .line 7126
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -387,7 +387,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$30200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$30100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v0
 
@@ -406,10 +406,10 @@
 .method public isTabMenuVisible()Z
     .locals 1
 
-    .line 7215
+    .line 7191
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$26100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$26000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object v0
 
@@ -417,7 +417,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$26100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$26000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object v0
 
@@ -451,15 +451,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 7193
+    .line 7169
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, v2}, Lorg/telegram/ui/DialogsActivity;->access$25700(Lorg/telegram/ui/DialogsActivity;Z)V
+    invoke-static {v0, v2}, Lorg/telegram/ui/DialogsActivity;->access$25600(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 7194
+    .line 7170
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$30400(Lorg/telegram/ui/DialogsActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$30300(Lorg/telegram/ui/DialogsActivity;)I
 
     move-result v0
 
@@ -467,7 +467,7 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 7195
+    .line 7171
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$1200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/FilterTabsView;
@@ -478,7 +478,7 @@
 
     move-result v0
 
-    .line 7196
+    .line 7172
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/DialogsActivity;->isArchive()Z
@@ -491,17 +491,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 7197
+    .line 7173
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v3, v0}, Lorg/telegram/ui/DialogsActivity;->access$30402(Lorg/telegram/ui/DialogsActivity;I)I
+    invoke-static {v3, v0}, Lorg/telegram/ui/DialogsActivity;->access$30302(Lorg/telegram/ui/DialogsActivity;I)I
 
     goto :goto_0
 
     :cond_0
     if-ltz v0, :cond_2
 
-    .line 7198
+    .line 7174
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -516,7 +516,7 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 7199
+    .line 7175
     iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -533,17 +533,17 @@
 
     iget v0, v0, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
-    invoke-static {v3, v0}, Lorg/telegram/ui/DialogsActivity;->access$30402(Lorg/telegram/ui/DialogsActivity;I)I
+    invoke-static {v3, v0}, Lorg/telegram/ui/DialogsActivity;->access$30302(Lorg/telegram/ui/DialogsActivity;I)I
 
     goto :goto_0
 
-    .line 7203
+    .line 7179
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$25700(Lorg/telegram/ui/DialogsActivity;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$25600(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 7204
+    .line 7180
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$1200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/FilterTabsView;
@@ -552,7 +552,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 7205
+    .line 7181
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$1200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/FilterTabsView;
@@ -571,7 +571,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/FilterTabsView;->notifyTabCounterChanged(I)V
 
-    .line 7208
+    .line 7184
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -588,12 +588,12 @@
 
     invoke-virtual {v0, v3, p1, p2}, Lcom/iMe/fork/controller/ForkTopicsController;->selectTopic(ZJ)V
 
-    .line 7209
+    .line 7185
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v2, v2}, Lorg/telegram/ui/DialogsActivity;->access$1800(Lorg/telegram/ui/DialogsActivity;ZZ)V
 
-    .line 7210
+    .line 7186
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/DialogsActivity;->switchToCurrentSelectedMode(Z)V
@@ -608,7 +608,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 7155
+    .line 7131
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -623,7 +623,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$30300(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$30200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v1
 
@@ -653,7 +653,7 @@
 
     goto/16 :goto_4
 
-    .line 7158
+    .line 7134
     :cond_0
     invoke-virtual {p1}, Lcom/iMe/ui/topics/TopicView;->getTopic()Lcom/iMe/storage/domain/model/topics/TopicModel;
 
@@ -663,11 +663,11 @@
 
     return v0
 
-    .line 7162
+    .line 7138
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$26100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
+    invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$26000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object v2
 
@@ -675,7 +675,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$26100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
+    invoke-static {v2}, Lorg/telegram/ui/DialogsActivity;->access$26000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object v2
 
@@ -685,25 +685,25 @@
 
     if-eqz v2, :cond_2
 
-    .line 7163
+    .line 7139
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$26000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ItemOptions;->dismiss()V
 
-    .line 7164
+    .line 7140
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/DialogsActivity;->access$26102(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/ItemOptions;)Lorg/telegram/ui/Components/ItemOptions;
+    invoke-static {p1, v1}, Lorg/telegram/ui/DialogsActivity;->access$26002(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/ItemOptions;)Lorg/telegram/ui/Components/ItemOptions;
 
     return v0
 
-    .line 7167
+    .line 7143
     :cond_2
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
 
@@ -724,7 +724,7 @@
     :cond_3
     move v2, v0
 
-    .line 7168
+    .line 7144
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -734,7 +734,7 @@
 
     const/4 v5, 0x4
 
-    .line 7169
+    .line 7145
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -755,7 +755,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    .line 7170
+    .line 7146
     invoke-static {v5}, Lorg/telegram/ui/DialogsActivity;->access$300(Lorg/telegram/ui/DialogsActivity;)Lcom/iMe/ui/topics/TopicsBar;
 
     move-result-object v5
@@ -795,7 +795,7 @@
 
     const-string v7, "Settings"
 
-    .line 7175
+    .line 7151
     invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
@@ -814,7 +814,7 @@
 
     sget v7, Lorg/telegram/messenger/R$string;->topic_edit:I
 
-    .line 7176
+    .line 7152
     invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v7
@@ -835,7 +835,7 @@
 
     const-string v8, "Delete"
 
-    .line 7177
+    .line 7153
     invoke-static {v8, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v7
@@ -848,7 +848,7 @@
 
     move-result-object p1
 
-    .line 7178
+    .line 7154
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$38;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
@@ -901,14 +901,14 @@
 
     const/4 v0, 0x3
 
-    .line 7183
+    .line 7159
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ItemOptions;->setGravity(I)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object p1
 
     const/4 v0, -0x8
 
-    .line 7184
+    .line 7160
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -945,13 +945,13 @@
 
     move-result-object p1
 
-    .line 7185
+    .line 7161
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ItemOptions;->show()Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object p1
 
-    .line 7168
-    invoke-static {v4, p1}, Lorg/telegram/ui/DialogsActivity;->access$26102(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/ItemOptions;)Lorg/telegram/ui/Components/ItemOptions;
+    .line 7144
+    invoke-static {v4, p1}, Lorg/telegram/ui/DialogsActivity;->access$26002(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/Components/ItemOptions;)Lorg/telegram/ui/Components/ItemOptions;
 
     return v3
 

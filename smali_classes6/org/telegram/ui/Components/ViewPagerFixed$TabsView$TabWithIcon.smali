@@ -24,12 +24,12 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;ILjava/lang/String;)V
     .locals 0
 
-    .line 972
+    .line 974
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;-><init>(ILjava/lang/String;)V
 
     const/16 p1, 0x8
 
-    .line 969
+    .line 971
     iput p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->iconPadding:I
 
     return-void
@@ -38,7 +38,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;ILjava/lang/String;Lorg/telegram/ui/Components/ViewPagerFixed$1;)V
     .locals 0
 
-    .line 965
+    .line 967
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;-><init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;ILjava/lang/String;)V
 
     return-void
@@ -47,7 +47,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 965
+    .line 967
     iget-object p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->icon:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -56,7 +56,7 @@
 .method static synthetic access$1602(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 965
+    .line 967
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->icon:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -65,7 +65,7 @@
 .method static synthetic access$3000(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)I
     .locals 0
 
-    .line 965
+    .line 967
     iget p0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->iconPadding:I
 
     return p0
@@ -76,7 +76,7 @@
 .method public getWidth(ZLandroid/text/TextPaint;)I
     .locals 0
 
-    .line 979
+    .line 981
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->title:Ljava/lang/String;
 
     invoke-virtual {p2, p1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
@@ -111,7 +111,7 @@
 
     const/16 p2, 0x28
 
-    .line 980
+    .line 982
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

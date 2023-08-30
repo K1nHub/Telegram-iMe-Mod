@@ -26,26 +26,26 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 14
 
-    .line 11336
+    .line 11457
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/16 v0, 0x5a
 
-    .line 11337
+    .line 11458
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 11339
+    .line 11460
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
-    .line 11340
+    .line 11461
     sget v1, Lorg/telegram/messenger/R$string;->PreviewFeedback2:I
 
     const-string v2, "PreviewFeedback2"
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 11341
+    .line 11462
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/4 v1, 0x1
@@ -65,14 +65,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 11342
+    .line 11463
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v3, 0x11
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 11343
+    .line 11464
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v3, 0x12
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v4, v6, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 11344
+    .line 11465
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/4 v7, -0x1
@@ -112,24 +112,24 @@
 
     invoke-virtual {p0, v0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 11346
+    .line 11467
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
-    .line 11347
+    .line 11468
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 11348
+    .line 11469
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const/16 v0, 0x13
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 11349
+    .line 11470
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -142,7 +142,7 @@
 
     invoke-virtual {p1, v0, v6, v1, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 11350
+    .line 11471
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const/4 v0, -0x1
@@ -166,10 +166,10 @@
     return-void
 .end method
 
-.method static synthetic access$22300(Lorg/telegram/ui/ArticleViewer$ReportCell;)Z
+.method static synthetic access$22700(Lorg/telegram/ui/ArticleViewer$ReportCell;)Z
     .locals 0
 
-    .line 11329
+    .line 11450
     iget-boolean p0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->hasViews:Z
 
     return p0
@@ -182,7 +182,7 @@
 
     const/16 p2, 0x2c
 
-    .line 11355
+    .line 11476
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -205,17 +205,17 @@
 
     if-nez p1, :cond_0
 
-    .line 11360
+    .line 11481
     iput-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->hasViews:Z
 
-    .line 11361
+    .line 11482
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 11362
+    .line 11483
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v0, 0x11
@@ -227,22 +227,22 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 11364
+    .line 11485
     iput-boolean v1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->hasViews:Z
 
-    .line 11365
+    .line 11486
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 11366
+    .line 11487
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v1, 0x15
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 11367
+    .line 11488
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const-string v1, "Views"
@@ -253,7 +253,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 11369
+    .line 11490
     :goto_0
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
 
@@ -261,25 +261,25 @@
 
     move-result p1
 
-    .line 11370
+    .line 11491
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
-    invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$20000()I
+    invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$20300()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 11371
+    .line 11492
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
-    invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$20000()I
+    invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$20300()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 11372
+    .line 11493
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v1, 0x22

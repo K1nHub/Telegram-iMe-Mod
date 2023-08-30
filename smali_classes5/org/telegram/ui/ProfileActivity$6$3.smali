@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$6;Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 2592
+    .line 2595
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$6$3;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$3;->val$fragment:Lorg/telegram/ui/DialogsActivity;
@@ -48,7 +48,7 @@
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
     .locals 0
 
-    .line 2595
+    .line 2598
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$6$3;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -57,12 +57,12 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$9002(Lorg/telegram/ui/ProfileActivity;Z)Z
 
-    .line 2596
+    .line 2599
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$6$3;->val$fragment:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    .line 2597
+    .line 2600
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$6$3;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -79,7 +79,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 2598
+    .line 2601
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$6$3;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object p1, p1, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;

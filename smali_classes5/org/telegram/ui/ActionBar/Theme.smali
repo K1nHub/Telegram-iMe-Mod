@@ -14356,7 +14356,7 @@
     .line 9047
     sput-object v0, Lorg/telegram/ui/ActionBar/Theme;->viewPos:[I
 
-    .line 10419
+    .line 10429
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
@@ -14367,7 +14367,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 10420
+    .line 10430
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
@@ -15728,12 +15728,12 @@
 .method private static addChatDrawable(Ljava/lang/String;Landroid/graphics/drawable/Drawable;I)V
     .locals 1
 
-    .line 10345
+    .line 10355
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatDrawables:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 10346
+    .line 10356
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->defaultChatDrawableColorKeys:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -15748,12 +15748,12 @@
 .method private static addChatPaint(Ljava/lang/String;Landroid/graphics/Paint;I)V
     .locals 1
 
-    .line 10350
+    .line 10360
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatPaints:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 10351
+    .line 10361
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->defaultChatPaintColors:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -21269,66 +21269,64 @@
 .end method
 
 .method public static createBackgroundDrawable(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;Landroid/util/SparseIntArray;Ljava/io/File;Ljava/lang/String;IIIZZZZLorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;
-    .locals 22
+    .locals 24
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, p0
 
-    move-object/from16 v1, p1
+    move-object/from16 v2, p1
 
-    move-object/from16 v2, p2
+    move-object/from16 v3, p2
 
-    move-object/from16 v3, p3
+    move-object/from16 v4, p3
 
-    move/from16 v4, p5
+    move/from16 v5, p5
 
-    move/from16 v5, p6
+    move/from16 v6, p6
 
-    move/from16 v6, p7
+    move/from16 v7, p7
 
-    move-object/from16 v7, p12
+    move-object/from16 v8, p12
 
     .line 9765
-    new-instance v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;
+    new-instance v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;
 
-    invoke-direct {v8}, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;-><init>()V
+    invoke-direct {v9}, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;-><init>()V
 
     .line 9766
-    sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->wallpaper:Landroid/graphics/drawable/Drawable;
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    iput-object v9, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    const/4 v9, 0x1
-
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
     if-eqz p9, :cond_0
 
     if-eqz p10, :cond_1
 
     :cond_0
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    move v11, v9
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    move v11, v10
+    move v0, v11
 
     :goto_0
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
     .line 9769
-    iget-boolean v12, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isMotion:Z
+    iget-boolean v12, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isMotion:Z
 
     invoke-static {v12}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v12
 
-    iput-object v12, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isWallpaperMotion:Ljava/lang/Boolean;
+    iput-object v12, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isWallpaperMotion:Ljava/lang/Boolean;
 
     .line 9770
-    iget v12, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->color:I
+    iget v12, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->color:I
 
     if-eqz v12, :cond_2
 
@@ -21344,183 +21342,213 @@
 
     if-nez v12, :cond_2
 
-    move v12, v9
+    const/4 v12, 0x1
 
     goto :goto_1
 
     :cond_2
-    move v12, v10
+    move v12, v11
 
     :goto_1
     invoke-static {v12}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v12
 
-    iput-object v12, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
+    iput-object v12, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
 
     goto :goto_3
 
     .line 9772
     :cond_3
-    iget-boolean v12, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isMotion:Z
+    iget-boolean v12, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isMotion:Z
 
     invoke-static {v12}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v12
 
-    iput-object v12, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isWallpaperMotion:Ljava/lang/Boolean;
+    iput-object v12, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isWallpaperMotion:Ljava/lang/Boolean;
 
     .line 9773
-    iget v12, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgColor:I
+    iget v12, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgColor:I
 
     if-eqz v12, :cond_4
 
-    move v12, v9
+    const/4 v12, 0x1
 
     goto :goto_2
 
     :cond_4
-    move v12, v10
+    move v12, v11
 
     :goto_2
     invoke-static {v12}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v12
 
-    iput-object v12, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
+    iput-object v12, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
 
     :goto_3
-    const-wide/16 v12, 0x64
-
-    const/4 v14, 0x2
-
-    if-nez v11, :cond_13
+    if-nez v0, :cond_15
 
     if-eqz p8, :cond_5
 
-    move v11, v10
+    move v15, v11
 
     goto :goto_4
 
     .line 9776
     :cond_5
-    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
-    invoke-virtual {v2, v11}, Landroid/util/SparseIntArray;->get(I)I
+    invoke-virtual {v3, v0}, Landroid/util/SparseIntArray;->get(I)I
 
-    move-result v11
+    move-result v0
+
+    move v15, v0
 
     .line 9777
     :goto_4
-    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
 
-    invoke-virtual {v2, v15}, Landroid/util/SparseIntArray;->get(I)I
+    invoke-virtual {v3, v0}, Landroid/util/SparseIntArray;->get(I)I
 
-    move-result v19
+    move-result v21
 
     .line 9778
-    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
 
-    invoke-virtual {v2, v15}, Landroid/util/SparseIntArray;->get(I)I
+    invoke-virtual {v3, v0}, Landroid/util/SparseIntArray;->get(I)I
 
-    move-result v18
+    move-result v22
 
     .line 9779
-    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
 
-    invoke-virtual {v2, v15}, Landroid/util/SparseIntArray;->get(I)I
+    invoke-virtual {v3, v0}, Landroid/util/SparseIntArray;->get(I)I
 
-    move-result v15
+    move-result v12
 
-    if-eqz v3, :cond_8
+    if-eqz v4, :cond_9
 
-    .line 9781
+    .line 9782
     invoke-virtual/range {p3 .. p3}, Ljava/io/File;->exists()Z
 
-    move-result v16
+    move-result v0
 
-    if-eqz v16, :cond_8
+    if-eqz v0, :cond_9
 
-    if-eqz v11, :cond_7
+    if-eqz v15, :cond_8
 
-    if-eqz v15, :cond_7
+    if-eqz v12, :cond_8
 
-    if-eqz v18, :cond_7
+    if-eqz v22, :cond_8
 
-    .line 9784
+    .line 9786
     :try_start_0
     new-instance v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/16 v20, 0x0
 
-    move v2, v15
+    move v13, v15
 
     move-object v15, v0
 
-    move/from16 v16, v11
+    move/from16 v16, v13
 
-    move/from16 v17, v2
+    move/from16 v17, v12
 
+    move/from16 v18, v22
+
+    move/from16 v19, v21
+
+    :try_start_1
     invoke-direct/range {v15 .. v20}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>(IIIIZ)V
 
-    .line 9785
-    new-instance v2, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    .line 9786
-    sget-object v4, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
-
-    iput-object v4, v2, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
-
     .line 9787
-    invoke-virtual/range {p3 .. p3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    new-instance v15, Landroid/graphics/BitmapFactory$Options;
 
-    move-result-object v3
-
-    invoke-static {v3, v2}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_6
+    invoke-direct {v15}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 9788
-    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+    sget-object v14, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    move-result-object v3
+    iput-object v14, v15, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    sget-object v4, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
+    .line 9789
+    invoke-virtual/range {p3 .. p3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    if-eq v3, v4, :cond_6
+    move-result-object v14
+
+    invoke-static {v14, v15}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v14
+
+    if-eqz v14, :cond_6
 
     .line 9790
-    invoke-virtual {v2, v4, v10}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+    invoke-virtual {v14}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v3
+    move-result-object v15
 
-    .line 9791
-    invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
+    sget-object v10, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    move-object v2, v3
+    if-eq v15, v10, :cond_6
+
+    .line 9792
+    invoke-virtual {v14, v10, v11}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v10
 
     .line 9793
+    invoke-virtual {v14}, Landroid/graphics/Bitmap;->recycle()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+
+    move-object v14, v10
+
     :cond_6
-    invoke-virtual {v0, v5, v2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
+    if-nez v14, :cond_7
 
-    .line 9794
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternColor()I
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternColorFilter(I)V
-
-    .line 9795
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    move v10, v11
 
     goto :goto_5
 
-    .line 9797
     :cond_7
+    const/4 v10, 0x1
+
+    .line 9798
+    :goto_5
+    :try_start_2
+    invoke-virtual {v0, v6, v14}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
+
+    .line 9799
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternColor()I
+
+    move-result v14
+
+    invoke-virtual {v0, v14}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternColorFilter(I)V
+
+    .line 9800
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    goto :goto_6
+
+    :catchall_0
+    move-exception v0
+
+    move v13, v15
+
+    goto :goto_7
+
+    :cond_8
+    move v13, v15
+
+    .line 9802
+    :try_start_3
     invoke-virtual/range {p3 .. p3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -21529,227 +21557,271 @@
 
     move-result-object v0
 
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    .line 9799
-    :goto_5
+    const/4 v10, 0x1
+
+    .line 9804
+    :goto_6
+    :try_start_4
     invoke-static/range {p11 .. p11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isWallpaperMotion:Ljava/lang/Boolean;
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isWallpaperMotion:Ljava/lang/Boolean;
 
-    .line 9800
+    .line 9805
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
-
-    .line 9801
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto/16 :goto_a
-
-    :catchall_0
-    move-exception v0
-
-    .line 9803
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    goto/16 :goto_a
-
-    :cond_8
-    if-eqz v11, :cond_f
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
 
     .line 9806
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    goto :goto_9
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_8
+
+    :catchall_2
+    move-exception v0
+
+    :goto_7
+    const/4 v10, 0x1
+
+    .line 9808
+    :goto_8
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    goto :goto_9
+
+    :cond_9
+    move v13, v15
+
+    move v10, v11
+
+    :goto_9
+    if-eqz v10, :cond_a
+
+    goto/16 :goto_e
+
+    :cond_a
+    if-eqz v13, :cond_11
+
+    .line 9814
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_rotation:I
 
-    const/4 v4, -0x1
+    const/4 v1, -0x1
 
-    invoke-virtual {v2, v0, v4}, Landroid/util/SparseIntArray;->get(II)I
+    invoke-virtual {v3, v0, v1}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v0
 
-    if-ne v0, v4, :cond_9
+    if-ne v0, v1, :cond_b
 
     const/16 v0, 0x2d
 
-    :cond_9
-    if-eqz v15, :cond_c
+    :cond_b
+    if-eqz v12, :cond_e
 
-    if-eqz v18, :cond_c
+    if-eqz v22, :cond_e
 
-    .line 9811
-    new-instance v2, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
+    .line 9819
+    new-instance v1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/16 v20, 0x0
 
-    move v4, v15
+    move-object v15, v1
 
-    move-object v15, v2
+    move/from16 v16, v13
 
-    move/from16 v16, v11
+    move/from16 v17, v12
 
-    move/from16 v17, v4
+    move/from16 v18, v22
+
+    move/from16 v19, v21
 
     invoke-direct/range {v15 .. v20}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>(IIIIZ)V
 
     const/4 v0, 0x0
 
-    if-eqz v3, :cond_b
+    if-eqz v4, :cond_d
 
-    if-eqz v7, :cond_b
+    if-eqz v8, :cond_d
 
-    .line 9815
+    .line 9823
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object v0
 
-    invoke-virtual {v0, v7, v9}, Lorg/telegram/messenger/FileLoader;->getPathToAttach(Lorg/telegram/tgnet/TLObject;Z)Ljava/io/File;
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v8, v3}, Lorg/telegram/messenger/FileLoader;->getPathToAttach(Lorg/telegram/tgnet/TLObject;Z)Ljava/io/File;
 
     move-result-object v0
 
-    const/16 v4, 0x168
+    const/16 v3, 0x168
 
-    .line 9816
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 9824
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v3
 
-    const/16 v7, 0x280
+    const/16 v5, 0x280
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v5
 
-    invoke-static {v0, v4, v7, v10}, Lorg/telegram/messenger/SvgHelper;->getBitmap(Ljava/io/File;IIZ)Landroid/graphics/Bitmap;
+    invoke-static {v0, v3, v5, v11}, Lorg/telegram/messenger/SvgHelper;->getBitmap(Ljava/io/File;IIZ)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_c
+
+    .line 9828
+    :try_start_5
+    new-instance v0, Ljava/io/FileOutputStream;
+
+    invoke-direct {v0, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    .line 9829
+    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v3, v4, v5}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
-    if-eqz v4, :cond_a
+    .line 9830
+    sget-object v5, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
-    .line 9820
-    :try_start_1
-    new-instance v0, Ljava/io/FileOutputStream;
+    const/16 v8, 0x5a
 
-    invoke-direct {v0, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-virtual {v4, v5, v8, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 9821
-    sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
+    .line 9831
+    invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
-    const/16 v7, 0x5a
-
-    invoke-virtual {v4, v3, v7, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
-
-    .line 9822
+    .line 9832
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
 
-    goto :goto_6
+    goto :goto_a
 
     :catch_0
     move-exception v0
 
-    .line 9824
+    .line 9834
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 9825
+    .line 9835
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    :cond_a
-    :goto_6
-    move-object v0, v4
-
-    .line 9829
-    :cond_b
-    invoke-virtual {v2, v5, v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
-
-    .line 9830
-    invoke-virtual {v2, v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPhase(I)V
-
-    .line 9831
-    iput-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_8
-
     :cond_c
-    move v4, v15
+    :goto_a
+    move-object v0, v3
 
-    if-eqz v4, :cond_e
-
-    if-ne v4, v11, :cond_d
-
-    goto :goto_7
-
+    .line 9839
     :cond_d
-    new-array v2, v14, [I
+    invoke-virtual {v1, v6, v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
 
-    aput v11, v2, v10
+    .line 9840
+    invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPhase(I)V
 
-    aput v4, v2, v9
+    .line 9841
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    .line 9836
+    goto :goto_c
+
+    :cond_e
+    if-eqz v12, :cond_10
+
+    if-ne v12, v13, :cond_f
+
+    goto :goto_b
+
+    :cond_f
+    const/4 v1, 0x2
+
+    new-array v3, v1, [I
+
+    aput v13, v3, v11
+
+    const/4 v1, 0x1
+
+    aput v12, v3, v1
+
+    .line 9846
     invoke-static {v0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->getGradientOrientation(I)Landroid/graphics/drawable/GradientDrawable$Orientation;
 
     move-result-object v0
 
-    .line 9837
-    new-instance v3, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
+    .line 9847
+    new-instance v1, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
-    invoke-direct {v3, v0, v2}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
+    invoke-direct {v1, v0, v3}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
-    .line 9838
+    .line 9848
     new-instance v0, Lorg/telegram/ui/ActionBar/Theme$11;
 
     invoke-direct {v0}, Lorg/telegram/ui/ActionBar/Theme$11;-><init>()V
 
-    .line 9848
+    .line 9858
     invoke-static {}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;->ofDeviceScreen()Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v3, v2, v0, v12, v13}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->startDithering(Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;Lorg/telegram/ui/Components/BackgroundGradientDrawable$Listener;J)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
+    const-wide/16 v4, 0x64
+
+    invoke-virtual {v1, v3, v0, v4, v5}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->startDithering(Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;Lorg/telegram/ui/Components/BackgroundGradientDrawable$Listener;J)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
     move-result-object v0
 
     sput-object v0, Lorg/telegram/ui/ActionBar/Theme;->backgroundGradientDisposable:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
-    .line 9849
-    iput-object v3, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    .line 9859
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_8
+    goto :goto_c
 
-    .line 9833
-    :cond_e
-    :goto_7
+    .line 9843
+    :cond_10
+    :goto_b
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-direct {v0, v11}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    invoke-direct {v0, v13}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    .line 9851
-    :goto_8
+    .line 9861
+    :goto_c
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
 
-    goto/16 :goto_a
+    goto/16 :goto_e
 
-    :cond_f
-    if-eqz p4, :cond_10
+    :cond_11
+    if-eqz p4, :cond_12
 
-    .line 9854
-    :try_start_2
+    .line 9864
+    :try_start_6
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v1
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -21769,506 +21841,510 @@
 
     move-result-object v3
 
-    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 9855
-    new-instance v2, Ljava/io/FileInputStream;
+    .line 9865
+    new-instance v1, Ljava/io/FileInputStream;
 
-    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v1, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v2, v10}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
+    invoke-static {v1, v11}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
-    .line 9857
-    new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
+    .line 9867
+    new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
-    invoke-direct {v2, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {v1, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
-    iput-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    .line 9859
+    .line 9869
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
-    goto :goto_a
+    goto :goto_e
 
     :catch_1
     move-exception v0
 
-    .line 9862
+    .line 9872
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    goto :goto_a
+    goto :goto_e
 
-    :cond_10
-    if-lez v4, :cond_13
-
-    .line 9864
-    iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
-
-    if-nez v2, :cond_11
-
-    iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
-
-    if-eqz v2, :cond_13
-
-    .line 9867
-    :cond_11
-    :try_start_3
-    iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
-
-    if-eqz v2, :cond_12
-
-    .line 9868
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getAssetFile(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v0
-
-    goto :goto_9
-
-    .line 9870
     :cond_12
-    new-instance v2, Ljava/io/File;
-
-    iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
-
-    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    .line 9872
-    :goto_9
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_13
+    if-lez v5, :cond_15
 
     .line 9874
-    new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
+    iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
 
-    invoke-direct {v2, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
+    if-nez v0, :cond_13
 
-    sput-object v2, Lorg/telegram/ui/ActionBar/Theme;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
 
-    iput-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    if-eqz v0, :cond_15
 
-    .line 9875
-    invoke-virtual {v2, v9}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
-
-    .line 9876
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    iput-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    goto :goto_a
-
-    :catchall_1
-    move-exception v0
-
-    .line 9879
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    .line 9883
+    .line 9877
     :cond_13
-    :goto_a
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    :try_start_7
+    iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
 
-    if-nez v0, :cond_21
+    if-eqz v0, :cond_14
 
-    if-eqz v1, :cond_14
+    .line 9878
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getAssetFile(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    goto :goto_d
+
+    .line 9880
+    :cond_14
+    new-instance v0, Ljava/io/File;
+
+    iget-object v1, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 9882
+    :goto_d
+    new-instance v1, Ljava/io/FileInputStream;
+
+    invoke-direct {v1, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    invoke-static {v1, v5}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_15
 
     .line 9884
-    iget v0, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->color:I
+    new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
-    goto :goto_b
+    invoke-direct {v1, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
-    :cond_14
-    move v0, v10
+    sput-object v1, Lorg/telegram/ui/ActionBar/Theme;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    :goto_b
-    if-eqz v1, :cond_1e
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+
+    const/4 v3, 0x1
+
+    .line 9885
+    invoke-virtual {v1, v3}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
 
     .line 9886
-    :try_start_4
-    invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isDefault()Z
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    move-result v2
+    iput-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
-    if-eqz v2, :cond_15
+    goto :goto_e
 
-    goto/16 :goto_c
+    :catchall_3
+    move-exception v0
 
     .line 9889
-    :cond_15
-    invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isColor()Z
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    move-result v2
+    .line 9893
+    :cond_15
+    :goto_e
+    iget-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+
+    if-nez v0, :cond_23
 
     if-eqz v2, :cond_16
 
-    iget v2, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
+    .line 9894
+    iget v0, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->color:I
 
-    if-eqz v2, :cond_1f
+    goto :goto_f
 
     :cond_16
-    if-eqz v0, :cond_1c
+    move v0, v11
 
-    .line 9890
-    sget-boolean v2, Lorg/telegram/ui/ActionBar/Theme;->isPatternWallpaper:Z
+    :goto_f
+    if-eqz v2, :cond_20
 
-    if-eqz v2, :cond_17
+    .line 9896
+    :try_start_8
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isDefault()Z
 
-    iget v2, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor2:I
+    move-result v1
 
-    if-eqz v2, :cond_1c
+    if-eqz v1, :cond_17
 
-    .line 9891
+    goto/16 :goto_10
+
+    .line 9899
     :cond_17
-    iget v2, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->isColor()Z
 
-    if-eqz v2, :cond_19
+    move-result v1
 
-    iget v2, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor2:I
+    if-eqz v1, :cond_18
 
-    if-eqz v2, :cond_19
+    iget v1, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
 
-    .line 9892
-    new-instance v2, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
+    if-eqz v1, :cond_21
 
-    iget v3, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->color:I
+    :cond_18
+    if-eqz v0, :cond_1e
 
-    iget v4, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
+    .line 9900
+    sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->isPatternWallpaper:Z
 
-    iget v5, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor2:I
+    if-eqz v1, :cond_19
 
-    iget v7, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor3:I
+    iget v1, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor2:I
 
-    const/16 v20, 0x0
+    if-eqz v1, :cond_1e
 
-    move-object v15, v2
+    .line 9901
+    :cond_19
+    iget v1, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
+
+    if-eqz v1, :cond_1b
+
+    iget v1, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor2:I
+
+    if-eqz v1, :cond_1b
+
+    .line 9902
+    new-instance v1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
+
+    iget v13, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->color:I
+
+    iget v14, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
+
+    iget v15, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor2:I
+
+    iget v3, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor3:I
+
+    const/16 v17, 0x0
+
+    move-object v12, v1
 
     move/from16 v16, v3
 
-    move/from16 v17, v4
+    invoke-direct/range {v12 .. v17}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>(IIIIZ)V
 
-    move/from16 v18, v5
+    .line 9903
+    invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPhase(I)V
 
-    move/from16 v19, v7
-
-    invoke-direct/range {v15 .. v20}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;-><init>(IIIIZ)V
-
-    .line 9893
-    invoke-virtual {v2, v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPhase(I)V
-
-    .line 9894
-    iget-object v3, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
+    .line 9904
+    iget-object v3, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_1a
 
-    .line 9895
+    .line 9905
     new-instance v3, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v4
 
-    iget-object v5, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->fileName:Ljava/lang/String;
+    iget-object v5, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->fileName:Ljava/lang/String;
 
     invoke-direct {v3, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 9896
+    .line 9906
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v4
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_1a
 
-    .line 9897
-    iget v1, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->intensity:F
+    .line 9907
+    iget v2, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->intensity:F
 
     const/high16 v4, 0x42c80000    # 100.0f
 
-    mul-float/2addr v1, v4
+    mul-float/2addr v2, v4
 
-    float-to-int v1, v1
+    float-to-int v2, v2
 
     new-instance v4, Ljava/io/FileInputStream;
 
     invoke-direct {v4, v3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v4, v10}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
+    invoke-static {v4, v11}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    invoke-virtual {v2, v1, v3}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 9898
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    .line 9908
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    iput-object v2, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
 
-    .line 9901
-    :cond_18
-    iput-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    .line 9911
+    :cond_1a
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    goto/16 :goto_d
+    goto/16 :goto_11
 
-    .line 9902
-    :cond_19
-    iget-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
+    .line 9912
+    :cond_1b
+    iget-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isPatternWallpaper:Ljava/lang/Boolean;
 
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1a
+    if-eqz v1, :cond_1c
 
-    .line 9903
-    new-instance v2, Ljava/io/File;
+    .line 9913
+    new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v3
 
-    iget-object v1, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->fileName:Ljava/lang/String;
+    iget-object v2, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->fileName:Ljava/lang/String;
 
-    invoke-direct {v2, v3, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v1, v3, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 9904
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+    .line 9914
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1f
+    if-eqz v2, :cond_21
 
-    .line 9905
-    new-instance v1, Ljava/io/FileInputStream;
+    .line 9915
+    new-instance v2, Ljava/io/FileInputStream;
 
-    invoke-direct {v1, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v2, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v1, v10}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
+    invoke-static {v2, v11}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_21
 
-    .line 9907
+    .line 9917
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v2, v1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
-    iput-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v2, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    .line 9908
-    invoke-virtual {v2, v9}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
+    const/4 v1, 0x1
 
-    .line 9909
+    .line 9918
+    invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
+
+    .line 9919
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
 
-    goto :goto_d
+    goto/16 :goto_11
 
-    .line 9912
-    :cond_1a
-    iget v2, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
+    .line 9922
+    :cond_1c
+    iget v1, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->gradientColor1:I
 
-    if-eqz v2, :cond_1b
+    if-eqz v1, :cond_1d
 
-    new-array v3, v14, [I
+    const/4 v3, 0x2
 
-    aput v0, v3, v10
+    new-array v3, v3, [I
 
-    aput v2, v3, v9
+    aput v0, v3, v11
 
-    .line 9914
-    iget v1, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->rotation:I
+    const/4 v4, 0x1
+
+    aput v1, v3, v4
+
+    .line 9924
+    iget v1, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->rotation:I
 
     invoke-static {v1}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->getGradientOrientation(I)Landroid/graphics/drawable/GradientDrawable$Orientation;
 
     move-result-object v1
 
-    .line 9915
+    .line 9925
     new-instance v2, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     invoke-direct {v2, v1, v3}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
-    .line 9916
+    .line 9926
     new-instance v1, Lorg/telegram/ui/ActionBar/Theme$12;
 
     invoke-direct {v1}, Lorg/telegram/ui/ActionBar/Theme$12;-><init>()V
 
-    .line 9926
+    .line 9936
     invoke-static {}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;->ofDeviceScreen()Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3, v1, v12, v13}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->startDithering(Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;Lorg/telegram/ui/Components/BackgroundGradientDrawable$Listener;J)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
+    const-wide/16 v4, 0x64
+
+    invoke-virtual {v2, v3, v1, v4, v5}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->startDithering(Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;Lorg/telegram/ui/Components/BackgroundGradientDrawable$Listener;J)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
     move-result-object v1
 
     sput-object v1, Lorg/telegram/ui/ActionBar/Theme;->backgroundGradientDisposable:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
-    .line 9927
-    iput-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    .line 9937
+    iput-object v2, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_d
+    goto :goto_11
 
-    .line 9929
-    :cond_1b
+    .line 9939
+    :cond_1d
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {v1, v0}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_d
+    goto :goto_11
 
-    .line 9932
-    :cond_1c
-    new-instance v2, Ljava/io/File;
+    .line 9942
+    :cond_1e
+    new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v3
 
-    iget-object v1, v1, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->fileName:Ljava/lang/String;
+    iget-object v2, v2, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->fileName:Ljava/lang/String;
 
-    invoke-direct {v2, v3, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v1, v3, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 9933
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+    .line 9943
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1d
+    if-eqz v2, :cond_1f
 
-    .line 9934
-    new-instance v1, Ljava/io/FileInputStream;
+    .line 9944
+    new-instance v2, Ljava/io/FileInputStream;
 
-    invoke-direct {v1, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v2, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v1, v10}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
+    invoke-static {v2, v11}, Lorg/telegram/ui/ActionBar/Theme;->loadScreenSizedBitmap(Ljava/io/FileInputStream;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1f
 
-    .line 9936
+    .line 9946
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v2, v1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
-    iput-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v2, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    .line 9937
-    invoke-virtual {v2, v9}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
+    const/4 v1, 0x1
 
-    .line 9938
+    .line 9947
+    invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->setFilterBitmap(Z)V
+
+    .line 9948
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
 
-    .line 9941
-    :cond_1d
-    iget-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
-
-    if-nez v1, :cond_1f
-
-    .line 9942
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->createDefaultWallpaper()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
-
-    .line 9943
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
-
-    goto :goto_d
-
-    .line 9887
-    :cond_1e
-    :goto_c
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->createDefaultWallpaper()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
-
-    .line 9888
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    .line 9950
-    :catchall_2
+    .line 9951
     :cond_1f
-    :goto_d
-    iget-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iget-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
     if-nez v1, :cond_21
 
-    if-nez v0, :cond_20
+    .line 9952
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->createDefaultWallpaper()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+
+    .line 9953
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+
+    goto :goto_11
+
+    .line 9897
+    :cond_20
+    :goto_10
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->createDefaultWallpaper()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+
+    .line 9898
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->isCustomTheme:Ljava/lang/Boolean;
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_4
+
+    .line 9960
+    :catchall_4
+    :cond_21
+    :goto_11
+    iget-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+
+    if-nez v1, :cond_23
+
+    if-nez v0, :cond_22
 
     const v0, -0x291b11
 
-    .line 9954
-    :cond_20
+    .line 9964
+    :cond_22
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {v1, v0}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    :cond_21
+    :cond_23
     const/16 v0, 0x20
 
-    .line 9958
+    .line 9968
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_25
 
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_25
 
-    .line 9959
+    .line 9969
     check-cast v0, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 9961
+    .line 9971
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_24
 
-    .line 9962
+    .line 9972
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -22279,7 +22355,7 @@
 
     move-result v0
 
-    .line 9963
+    .line 9973
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v2, v1, Landroid/graphics/Point;->x:I
@@ -22290,10 +22366,10 @@
 
     move-result v1
 
-    goto :goto_e
+    goto :goto_12
 
-    .line 9965
-    :cond_22
+    .line 9975
+    :cond_24
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -22302,7 +22378,7 @@
 
     move-result v1
 
-    .line 9966
+    .line 9976
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -22311,27 +22387,27 @@
 
     move-result v0
 
-    move/from16 v21, v1
+    move/from16 v23, v1
 
     move v1, v0
 
-    move/from16 v0, v21
+    move/from16 v0, v23
 
-    .line 9968
-    :goto_e
+    .line 9978
+    :goto_12
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 9969
+    .line 9979
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 9970
-    iget-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    .line 9980
+    iget-object v2, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -22341,22 +22417,22 @@
 
     move-result v4
 
-    invoke-virtual {v2, v10, v10, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2, v11, v11, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 9971
-    iget-object v2, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    .line 9981
+    iget-object v2, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 9972
+    .line 9982
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v1, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
-    iput-object v1, v8, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
+    iput-object v1, v9, Lorg/telegram/ui/ActionBar/Theme$BackgroundDrawableSettings;->wallpaper:Landroid/graphics/drawable/Drawable;
 
-    :cond_23
-    return-object v8
+    :cond_25
+    return-object v9
 .end method
 
 .method public static createChatResources(Landroid/content/Context;Z)V
@@ -27267,7 +27343,7 @@
 
     const/4 v0, 0x0
 
-    .line 9978
+    .line 9988
     invoke-static {v0, v0}, Lorg/telegram/ui/ActionBar/Theme;->createDefaultWallpaper(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -27278,7 +27354,7 @@
 .method public static createDefaultWallpaper(II)Landroid/graphics/drawable/Drawable;
     .locals 7
 
-    .line 9982
+    .line 9992
     new-instance v6, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     if-eqz p0, :cond_0
@@ -27309,7 +27385,7 @@
 
     if-gtz p1, :cond_2
 
-    .line 9984
+    .line 9994
     :cond_1
     sget-object p0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -27321,7 +27397,7 @@
 
     move-result p0
 
-    .line 9985
+    .line 9995
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, p1, Landroid/graphics/Point;->x:I
@@ -27335,7 +27411,7 @@
     :cond_2
     const/16 v0, 0x22
 
-    .line 9987
+    .line 9997
     sget v1, Lorg/telegram/messenger/R$raw;->default_pattern:I
 
     const/high16 v2, -0x1000000
@@ -27346,7 +27422,7 @@
 
     invoke-virtual {v6, v0, p0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 9988
+    .line 9998
     invoke-virtual {v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternColor()I
 
     move-result p0
@@ -32601,7 +32677,7 @@
 .method public static getAnimatedOutAudioVisualizerDrawable(Lorg/telegram/messenger/MessageObject;)Lorg/telegram/ui/Components/AudioVisualizerDrawable;
     .locals 1
 
-    .line 10255
+    .line 10265
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->animatedOutVisualizerDrawables:Ljava/util/HashMap;
 
     if-eqz v0, :cond_1
@@ -32610,7 +32686,7 @@
 
     goto :goto_0
 
-    .line 10258
+    .line 10268
     :cond_0
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -32949,26 +33025,26 @@
 .method public static getCachedWallpaper()Landroid/graphics/drawable/Drawable;
     .locals 3
 
-    .line 10185
+    .line 10195
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaperNonBlocking()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 10186
+    .line 10196
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->wallpaperLoadTask:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_0
 
-    .line 10187
+    .line 10197
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    .line 10188
+    .line 10198
     sget-object v1, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda2;
@@ -32977,7 +33053,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 10190
+    .line 10200
     :try_start_0
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
@@ -32988,10 +33064,10 @@
     :catch_0
     move-exception v0
 
-    .line 10192
+    .line 10202
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 10194
+    .line 10204
     :goto_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaperNonBlocking()Landroid/graphics/drawable/Drawable;
 
@@ -33004,14 +33080,14 @@
 .method public static getCachedWallpaperNonBlocking()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 10200
+    .line 10210
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->themedWallpaper:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 10203
+    .line 10213
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->wallpaper:Landroid/graphics/drawable/Drawable;
 
@@ -33031,7 +33107,7 @@
 
     goto :goto_1
 
-    .line 10265
+    .line 10275
     :cond_0
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->chat_status_drawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
@@ -33064,7 +33140,7 @@
 
     goto :goto_0
 
-    .line 10286
+    .line 10296
     :cond_2
     new-instance v0, Lorg/telegram/ui/Components/ChoosingStickerStatusDrawable;
 
@@ -33074,7 +33150,7 @@
 
     goto :goto_0
 
-    .line 10283
+    .line 10293
     :cond_3
     new-instance v1, Lorg/telegram/ui/Components/RoundStatusDrawable;
 
@@ -33084,7 +33160,7 @@
 
     goto :goto_0
 
-    .line 10280
+    .line 10290
     :cond_4
     new-instance v1, Lorg/telegram/ui/Components/PlayingGameDrawable;
 
@@ -33094,7 +33170,7 @@
 
     goto :goto_0
 
-    .line 10277
+    .line 10287
     :cond_5
     new-instance v0, Lorg/telegram/ui/Components/SendingFileDrawable;
 
@@ -33104,7 +33180,7 @@
 
     goto :goto_0
 
-    .line 10274
+    .line 10284
     :cond_6
     new-instance v0, Lorg/telegram/ui/Components/RecordStatusDrawable;
 
@@ -33117,23 +33193,23 @@
     :cond_7
     const/4 v0, 0x0
 
-    .line 10271
+    .line 10281
     new-instance v1, Lorg/telegram/ui/Components/TypingDotsDrawable;
 
     invoke-direct {v1, v3}, Lorg/telegram/ui/Components/TypingDotsDrawable;-><init>(Z)V
 
     aput-object v1, v2, v0
 
-    .line 10289
+    .line 10299
     :goto_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_status_drawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
     aget-object p0, v0, p0
 
-    .line 10290
+    .line 10300
     invoke-virtual {p0}, Lorg/telegram/ui/Components/StatusDrawable;->start()V
 
-    .line 10291
+    .line 10301
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionMessage:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -33480,19 +33556,19 @@
 .method public static getCurrentAudiVisualizerDrawable()Lorg/telegram/ui/Components/AudioVisualizerDrawable;
     .locals 1
 
-    .line 10226
+    .line 10236
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgAudioVisualizeDrawable:Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
     if-nez v0, :cond_0
 
-    .line 10227
+    .line 10237
     new-instance v0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/AudioVisualizerDrawable;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgAudioVisualizeDrawable:Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
-    .line 10229
+    .line 10239
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgAudioVisualizeDrawable:Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
@@ -33502,7 +33578,7 @@
 .method public static getCurrentGradientWallpaper()Lorg/telegram/ui/Components/BackgroundGradientDrawable;
     .locals 5
 
-    .line 10217
+    .line 10227
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->overrideWallpaper:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
@@ -33529,14 +33605,14 @@
 
     aput v2, v3, v1
 
-    .line 10219
+    .line 10229
     iget v0, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->rotation:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->getGradientOrientation(I)Landroid/graphics/drawable/GradientDrawable$Orientation;
 
     move-result-object v0
 
-    .line 10220
+    .line 10230
     new-instance v1, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     invoke-direct {v1, v0, v3}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
@@ -34061,7 +34137,7 @@
 .method public static getFallbackKey(I)I
     .locals 1
 
-    .line 10314
+    .line 10324
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->fallbackKeys:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p0}, Landroid/util/SparseIntArray;->get(I)I
@@ -34074,7 +34150,7 @@
 .method public static getFallbackKeys()Landroid/util/SparseIntArray;
     .locals 1
 
-    .line 10310
+    .line 10320
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->fallbackKeys:Landroid/util/SparseIntArray;
 
     return-object v0
@@ -34083,19 +34159,19 @@
 .method public static getFragmentContextViewWavesDrawable()Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;
     .locals 1
 
-    .line 10296
+    .line 10306
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->fragmentContextViewWavesDrawable:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;
 
     if-nez v0, :cond_0
 
-    .line 10297
+    .line 10307
     new-instance v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/ActionBar/Theme;->fragmentContextViewWavesDrawable:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;
 
-    .line 10299
+    .line 10309
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->fragmentContextViewWavesDrawable:Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable;
 
@@ -34155,19 +34231,19 @@
 .method public static getRadialSeekbarShadowDrawable()Lorg/telegram/ui/RoundVideoProgressShadow;
     .locals 1
 
-    .line 10303
+    .line 10313
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->roundPlayDrawable:Lorg/telegram/ui/RoundVideoProgressShadow;
 
     if-nez v0, :cond_0
 
-    .line 10304
+    .line 10314
     new-instance v0, Lorg/telegram/ui/RoundVideoProgressShadow;
 
     invoke-direct {v0}, Lorg/telegram/ui/RoundVideoProgressShadow;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/ActionBar/Theme;->roundPlayDrawable:Lorg/telegram/ui/RoundVideoProgressShadow;
 
-    .line 10306
+    .line 10316
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->roundPlayDrawable:Lorg/telegram/ui/RoundVideoProgressShadow;
 
@@ -34295,19 +34371,19 @@
 .method public static getSelectedBackgroundSlug()Ljava/lang/String;
     .locals 1
 
-    .line 10175
+    .line 10185
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->overrideWallpaper:Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;
 
     if-eqz v0, :cond_0
 
-    .line 10176
+    .line 10186
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$OverrideWallpaperInfo;->slug:Ljava/lang/String;
 
     return-object v0
 
-    .line 10178
+    .line 10188
     :cond_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasWallpaperFromTheme()Z
 
@@ -34697,7 +34773,7 @@
 .method public static getThemeDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 10322
+    .line 10332
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatDrawables:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -34712,7 +34788,7 @@
 .method public static getThemeDrawableColorKey(Ljava/lang/String;)I
     .locals 1
 
-    .line 10326
+    .line 10336
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatDrawableColorKeys:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -34740,7 +34816,7 @@
         }
     .end annotation
 
-    .line 10318
+    .line 10328
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatDrawables:Ljava/util/HashMap;
 
     return-object v0
@@ -35143,19 +35219,19 @@
 
     const-string v0, "paintDivider"
 
-    .line 10334
+    .line 10344
     invoke-static {p0, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 10335
+    .line 10345
     sget-object p0, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
     return-object p0
 
-    .line 10337
+    .line 10347
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatPaints:Ljava/util/HashMap;
 
@@ -35194,7 +35270,7 @@
 .method public static getThemePaintColorKey(Ljava/lang/String;)I
     .locals 1
 
-    .line 10341
+    .line 10351
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatPaintColors:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -35222,7 +35298,7 @@
         }
     .end annotation
 
-    .line 10330
+    .line 10340
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->defaultChatPaints:Ljava/util/HashMap;
 
     return-object v0
@@ -35296,7 +35372,7 @@
 .method public static getThemedWallpaper(ZLandroid/view/View;)Landroid/graphics/drawable/Drawable;
     .locals 10
 
-    .line 10048
+    .line 10058
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->currentColors:Landroid/util/SparseIntArray;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
@@ -35313,7 +35389,7 @@
 
     if-eqz v3, :cond_8
 
-    .line 10053
+    .line 10063
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->currentColors:Landroid/util/SparseIntArray;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
@@ -35322,7 +35398,7 @@
 
     move-result v4
 
-    .line 10054
+    .line 10064
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->currentColors:Landroid/util/SparseIntArray;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
@@ -35331,7 +35407,7 @@
 
     move-result v5
 
-    .line 10055
+    .line 10065
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->currentColors:Landroid/util/SparseIntArray;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
@@ -35340,7 +35416,7 @@
 
     move-result v6
 
-    .line 10056
+    .line 10066
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->currentColors:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_rotation:I
@@ -35358,14 +35434,14 @@
     :cond_0
     if-nez v4, :cond_1
 
-    .line 10061
+    .line 10071
     new-instance p0, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {p0, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
     return-object p0
 
-    .line 10063
+    .line 10073
     :cond_1
     sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -35375,7 +35451,7 @@
 
     if-eqz v7, :cond_2
 
-    .line 10064
+    .line 10074
     iget-object v9, v7, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -35388,14 +35464,14 @@
 
     if-nez v9, :cond_2
 
-    .line 10065
+    .line 10075
     invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->getPathToWallpaper()Ljava/io/File;
 
     move-result-object v7
 
     if-eqz v7, :cond_2
 
-    .line 10066
+    .line 10076
     invoke-virtual {v7}, Ljava/io/File;->exists()Z
 
     move-result v9
@@ -35412,7 +35488,7 @@
     :goto_0
     if-eqz v5, :cond_3
 
-    .line 10071
+    .line 10081
     new-instance p1, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     const/4 v7, 0x1
@@ -35436,19 +35512,19 @@
 
     aput v4, v5, v0
 
-    .line 10077
+    .line 10087
     invoke-static {v2}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->getGradientOrientation(I)Landroid/graphics/drawable/GradientDrawable$Orientation;
 
     move-result-object v0
 
-    .line 10078
+    .line 10088
     new-instance v1, Lorg/telegram/ui/Components/BackgroundGradientDrawable;
 
     invoke-direct {v1, v0, v5}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
     if-nez p0, :cond_4
 
-    .line 10081
+    .line 10091
     invoke-static {}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;->ofDeviceScreen()Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;
 
     move-result-object v0
@@ -35458,7 +35534,7 @@
     :cond_4
     const/high16 v0, 0x3e000000    # 0.125f
 
-    .line 10083
+    .line 10093
     sget-object v2, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes$Orientation;->PORTRAIT:Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes$Orientation;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;->ofDeviceScreen(FLorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes$Orientation;)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;
@@ -35468,12 +35544,12 @@
     :goto_1
     if-eqz p1, :cond_5
 
-    .line 10087
+    .line 10097
     new-instance v8, Lorg/telegram/ui/ActionBar/Theme$13;
 
     invoke-direct {v8, p0, p1}, Lorg/telegram/ui/ActionBar/Theme$13;-><init>(ZLandroid/view/View;)V
 
-    .line 10104
+    .line 10114
     :cond_5
     invoke-virtual {v1, v0, v8}, Lorg/telegram/ui/Components/BackgroundGradientDrawable;->startDithering(Lorg/telegram/ui/Components/BackgroundGradientDrawable$Sizes;Lorg/telegram/ui/Components/BackgroundGradientDrawable$Listener;)Lorg/telegram/ui/Components/BackgroundGradientDrawable$Disposable;
 
@@ -35489,7 +35565,7 @@
 
     goto :goto_3
 
-    .line 10108
+    .line 10118
     :cond_8
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->themedWallpaperFileOffset:I
 
@@ -35505,20 +35581,20 @@
 
     if-eqz v2, :cond_b
 
-    .line 10109
+    .line 10119
     :cond_9
     iget-object p1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
 
     if-eqz p1, :cond_a
 
-    .line 10110
+    .line 10120
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getAssetFile(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object p1
 
     goto :goto_2
 
-    .line 10112
+    .line 10122
     :cond_a
     new-instance p1, Ljava/io/File;
 
@@ -35531,7 +35607,7 @@
     :goto_2
     move-object v9, p1
 
-    .line 10114
+    .line 10124
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->themedWallpaperFileOffset:I
 
     move-object v2, v8
@@ -35548,7 +35624,7 @@
     :goto_3
     if-eqz v9, :cond_13
 
-    .line 10120
+    .line 10130
     :try_start_0
     new-instance v3, Ljava/io/FileInputStream;
 
@@ -35556,7 +35632,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 10121
+    .line 10131
     :try_start_1
     invoke-virtual {v3}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -35566,7 +35642,7 @@
 
     invoke-virtual {v4, v5, v6}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
 
-    .line 10122
+    .line 10132
     new-instance p1, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {p1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
@@ -35575,20 +35651,20 @@
 
     if-eqz p0, :cond_d
 
-    .line 10125
+    .line 10135
     iput-boolean v0, p1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 10126
+    .line 10136
     iget p0, p1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     int-to-float p0, p0
 
-    .line 10127
+    .line 10137
     iget v5, p1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     int-to-float v5, v5
 
-    .line 10128
+    .line 10138
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -35615,26 +35691,26 @@
 
     goto :goto_4
 
-    .line 10135
+    .line 10145
     :cond_d
     sget-object p0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
     iput-object p0, p1, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 10136
+    .line 10146
     iput-boolean v1, p1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 10137
+    .line 10147
     iput v0, p1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 10138
+    .line 10148
     invoke-static {v3, v8, p1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object p0
 
     if-eqz v2, :cond_10
 
-    .line 10141
+    .line 10151
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getAccent(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
@@ -35643,7 +35719,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 10143
+    .line 10153
     iget p1, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternIntensity:F
 
     const/high16 v0, 0x42c80000    # 100.0f
@@ -35655,7 +35731,7 @@
     :cond_e
     if-eqz p0, :cond_f
 
-    .line 10147
+    .line 10157
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object p1
@@ -35664,21 +35740,21 @@
 
     if-eq p1, v0, :cond_f
 
-    .line 10149
+    .line 10159
     invoke-virtual {p0, v0, v1}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 10150
+    .line 10160
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
     move-object p0, p1
 
-    .line 10152
+    .line 10162
     :cond_f
     invoke-virtual {v2, v4, p0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setPatternBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 10153
+    .line 10163
     invoke-virtual {v2}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->getPatternColor()I
 
     move-result p0
@@ -35687,7 +35763,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 10164
+    .line 10174
     :try_start_2
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_2
@@ -35698,7 +35774,7 @@
     :catch_0
     move-exception p0
 
-    .line 10167
+    .line 10177
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_5
@@ -35707,7 +35783,7 @@
     :cond_10
     if-eqz p0, :cond_11
 
-    .line 10157
+    .line 10167
     :try_start_3
     new-instance p1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -35715,7 +35791,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 10164
+    .line 10174
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_4
@@ -35726,13 +35802,13 @@
     :catch_1
     move-exception p0
 
-    .line 10167
+    .line 10177
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_6
     return-object p1
 
-    .line 10164
+    .line 10174
     :cond_11
     :try_start_5
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
@@ -35751,7 +35827,7 @@
 
     move-object v3, v8
 
-    .line 10160
+    .line 10170
     :goto_7
     :try_start_6
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -35760,7 +35836,7 @@
 
     if-eqz v3, :cond_13
 
-    .line 10164
+    .line 10174
     :try_start_7
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_7
@@ -35771,7 +35847,7 @@
     :catch_2
     move-exception p0
 
-    .line 10167
+    .line 10177
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_9
@@ -35781,7 +35857,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 10164
+    .line 10174
     :try_start_8
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_8
@@ -35792,10 +35868,10 @@
     :catch_3
     move-exception p1
 
-    .line 10167
+    .line 10177
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 10169
+    .line 10179
     :cond_12
     :goto_8
     throw p0
@@ -36468,7 +36544,7 @@
 .method public static isCurrentThemeDay()Z
     .locals 1
 
-    .line 10355
+    .line 10365
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -36544,12 +36620,12 @@
 .method public static isHome(Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)Z
     .locals 3
 
-    .line 10359
+    .line 10369
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     if-eqz v0, :cond_3
 
-    .line 10360
+    .line 10370
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -36572,7 +36648,7 @@
 
     return v1
 
-    .line 10363
+    .line 10373
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -36596,7 +36672,7 @@
 
     return v1
 
-    .line 10366
+    .line 10376
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -36688,12 +36764,12 @@
 .method public static isPatternWallpaper()Z
     .locals 2
 
-    .line 10212
+    .line 10222
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getSelectedBackgroundSlug()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 10213
+    .line 10223
     sget-boolean v1, Lorg/telegram/ui/ActionBar/Theme;->isPatternWallpaper:Z
 
     if-nez v1, :cond_1
@@ -36806,7 +36882,7 @@
 .method public static isWallpaperMotion()Z
     .locals 1
 
-    .line 10208
+    .line 10218
     sget-boolean v0, Lorg/telegram/ui/ActionBar/Theme;->isWallpaperMotion:Z
 
     return v0
@@ -38650,7 +38726,7 @@
 .method private static synthetic lambda$turnOffAutoNight$14(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 2
 
-    .line 10384
+    .line 10394
     new-instance v0, Lorg/telegram/ui/ThemeActivity;
 
     const/4 v1, 0x1
@@ -38665,7 +38741,7 @@
 .method private static synthetic lambda$unrefAudioVisualizeDrawable$13(Lorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 10245
+    .line 10255
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->animatedOutVisualizerDrawables:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -38678,7 +38754,7 @@
 
     const/4 v0, 0x0
 
-    .line 10247
+    .line 10257
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->setParentView(Landroid/view/View;)V
 
     :cond_0
@@ -38823,7 +38899,7 @@
 
     const/4 v0, 0x0
 
-    .line 9994
+    .line 10004
     :try_start_0
     new-instance v1, Landroid/graphics/BitmapFactory$Options;
 
@@ -38831,13 +38907,13 @@
 
     const/4 v2, 0x1
 
-    .line 9995
+    .line 10005
     iput v2, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 9996
+    .line 10006
     iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 9997
+    .line 10007
     invoke-virtual {p0}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
     move-result-object v3
@@ -38846,20 +38922,20 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
 
-    .line 9998
+    .line 10008
     invoke-static {p0, v0, v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 9999
+    .line 10009
     iget p1, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     int-to-float p1, p1
 
-    .line 10000
+    .line 10010
     iget v3, v1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     int-to-float v3, v3
 
-    .line 10002
+    .line 10012
     sget-object v6, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v7, v6, Landroid/graphics/Point;->x:I
@@ -38870,7 +38946,7 @@
 
     move-result v6
 
-    .line 10003
+    .line 10013
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v8, v7, Landroid/graphics/Point;->x:I
@@ -38895,7 +38971,7 @@
 
     div-float v9, v3, v9
 
-    .line 10005
+    .line 10015
     invoke-static {v8, v9}, Ljava/lang/Math;->max(FF)F
 
     move-result v8
@@ -38911,7 +38987,7 @@
 
     div-float v9, v3, v9
 
-    .line 10007
+    .line 10017
     invoke-static {v8, v9}, Ljava/lang/Math;->min(FF)F
 
     move-result v8
@@ -38930,7 +39006,7 @@
     :cond_1
     const/4 v9, 0x0
 
-    .line 10012
+    .line 10022
     iput-boolean v9, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
     cmpl-float v9, v8, v10
@@ -38963,7 +39039,7 @@
 
     if-ltz v3, :cond_3
 
-    .line 10018
+    .line 10028
     iput p1, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     goto :goto_1
@@ -38971,10 +39047,10 @@
     :cond_4
     float-to-int p1, v8
 
-    .line 10020
+    .line 10030
     iput p1, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 10022
+    .line 10032
     :goto_1
     invoke-virtual {p0}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
@@ -38982,12 +39058,12 @@
 
     invoke-virtual {p1, v4, v5}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
 
-    .line 10023
+    .line 10033
     invoke-static {p0, v0, v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 10024
+    .line 10034
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
@@ -39003,7 +39079,7 @@
     :cond_5
     int-to-float v1, v6
 
-    .line 10025
+    .line 10035
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -39032,7 +39108,7 @@
 
     if-ltz v3, :cond_6
 
-    .line 10027
+    .line 10037
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -39057,13 +39133,13 @@
 
     move-result-object v1
 
-    .line 10028
+    .line 10038
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 10038
+    .line 10048
     :try_start_1
     invoke-virtual {p0}, Ljava/io/FileInputStream;->close()V
     :try_end_1
@@ -39089,7 +39165,7 @@
     :catch_2
     move-exception p1
 
-    .line 10034
+    .line 10044
     :try_start_3
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_3
@@ -39097,7 +39173,7 @@
 
     if-eqz p0, :cond_7
 
-    .line 10038
+    .line 10048
     :try_start_4
     invoke-virtual {p0}, Ljava/io/FileInputStream;->close()V
     :try_end_4
@@ -39115,7 +39191,7 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
-    .line 10043
+    .line 10053
     :catch_4
     :cond_8
     throw p1
@@ -43368,7 +43444,7 @@
 .method public static turnOffAutoNight(Landroid/widget/FrameLayout;Ljava/lang/Runnable;)V
     .locals 7
 
-    .line 10397
+    .line 10407
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     if-eqz v0, :cond_2
@@ -43379,7 +43455,7 @@
 
     const/4 v0, 0x0
 
-    .line 10400
+    .line 10410
     :try_start_0
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -43387,7 +43463,7 @@
 
     sget v2, Lorg/telegram/messenger/R$raw;->auto_night_off:I
 
-    .line 10402
+    .line 10412
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     const/4 v0, 0x3
@@ -43396,7 +43472,7 @@
 
     const-string p0, "AutoNightSystemModeOff"
 
-    .line 10403
+    .line 10413
     sget v0, Lorg/telegram/messenger/R$string;->AutoNightSystemModeOff:I
 
     invoke-static {p0, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -43408,7 +43484,7 @@
     :cond_0
     const-string p0, "AutoNightModeOff"
 
-    .line 10404
+    .line 10414
     sget v0, Lorg/telegram/messenger/R$string;->AutoNightModeOff:I
 
     invoke-static {p0, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -43422,7 +43498,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->Settings:I
 
-    .line 10405
+    .line 10415
     invoke-static {p0, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -43431,12 +43507,12 @@
 
     move-object v6, p1
 
-    .line 10400
+    .line 10410
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/BulletinFactory;->createSimpleBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
 
-    .line 10408
+    .line 10418
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -43446,20 +43522,20 @@
     :catch_0
     move-exception p0
 
-    .line 10410
+    .line 10420
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_1
     const/4 p0, 0x0
 
-    .line 10413
+    .line 10423
     sput p0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    .line 10414
+    .line 10424
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->saveAutoNightThemeConfig()V
 
-    .line 10415
+    .line 10425
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->cancelAutoNightThemeCallbacks()V
 
     :cond_2
@@ -43469,14 +43545,14 @@
 .method public static turnOffAutoNight(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 7
 
-    .line 10374
+    .line 10384
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     if-eqz v0, :cond_2
 
     if-eqz p0, :cond_1
 
-    .line 10377
+    .line 10387
     :try_start_0
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -43484,7 +43560,7 @@
 
     sget v2, Lorg/telegram/messenger/R$raw;->auto_night_off:I
 
-    .line 10379
+    .line 10389
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
     const/4 v3, 0x3
@@ -43493,7 +43569,7 @@
 
     const-string v0, "AutoNightSystemModeOff"
 
-    .line 10380
+    .line 10390
     sget v3, Lorg/telegram/messenger/R$string;->AutoNightSystemModeOff:I
 
     invoke-static {v0, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -43505,7 +43581,7 @@
     :cond_0
     const-string v0, "AutoNightModeOff"
 
-    .line 10381
+    .line 10391
     sget v3, Lorg/telegram/messenger/R$string;->AutoNightModeOff:I
 
     invoke-static {v0, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -43519,7 +43595,7 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->Settings:I
 
-    .line 10382
+    .line 10392
     invoke-static {v0, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -43530,12 +43606,12 @@
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 10377
+    .line 10387
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/BulletinFactory;->createSimpleBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
 
-    .line 10385
+    .line 10395
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -43545,20 +43621,20 @@
     :catch_0
     move-exception p0
 
-    .line 10387
+    .line 10397
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_1
     const/4 p0, 0x0
 
-    .line 10390
+    .line 10400
     sput p0, Lorg/telegram/ui/ActionBar/Theme;->selectedAutoNightType:I
 
-    .line 10391
+    .line 10401
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->saveAutoNightThemeConfig()V
 
-    .line 10392
+    .line 10402
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->cancelAutoNightThemeCallbacks()V
 
     :cond_2
@@ -43568,14 +43644,14 @@
 .method public static unrefAudioVisualizeDrawable(Lorg/telegram/messenger/MessageObject;)V
     .locals 4
 
-    .line 10233
+    .line 10243
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgAudioVisualizeDrawable:Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 10236
+    .line 10246
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->getParentView()Landroid/view/View;
 
@@ -43589,20 +43665,20 @@
 
     goto :goto_0
 
-    .line 10239
+    .line 10249
     :cond_1
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->animatedOutVisualizerDrawables:Ljava/util/HashMap;
 
     if-nez v0, :cond_2
 
-    .line 10240
+    .line 10250
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lorg/telegram/ui/ActionBar/Theme;->animatedOutVisualizerDrawables:Ljava/util/HashMap;
 
-    .line 10242
+    .line 10252
     :cond_2
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->animatedOutVisualizerDrawables:Ljava/util/HashMap;
 
@@ -43610,7 +43686,7 @@
 
     invoke-virtual {v0, p0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 10243
+    .line 10253
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgAudioVisualizeDrawable:Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
     const/4 v2, 0x0
@@ -43619,7 +43695,7 @@
 
     invoke-virtual {v0, v2, v3, v1}, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->setWaveform(ZZ[F)V
 
-    .line 10244
+    .line 10254
     new-instance v0, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/Theme$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/MessageObject;)V
@@ -43628,12 +43704,12 @@
 
     invoke-static {v0, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 10250
+    .line 10260
     sput-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgAudioVisualizeDrawable:Lorg/telegram/ui/Components/AudioVisualizerDrawable;
 
     goto :goto_1
 
-    .line 10237
+    .line 10247
     :cond_3
     :goto_0
     sget-object p0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgAudioVisualizeDrawable:Lorg/telegram/ui/Components/AudioVisualizerDrawable;

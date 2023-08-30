@@ -19,27 +19,33 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/SearchViewPager;Landroid/content/Context;IILandroidx/recyclerview/widget/DefaultItemAnimator;ZI)V
-    .locals 7
+.method constructor <init>(Lorg/telegram/ui/Components/SearchViewPager;Landroid/content/Context;Lorg/telegram/ui/DialogsActivity;IILandroidx/recyclerview/widget/DefaultItemAnimator;ZI)V
+    .locals 9
+
+    move-object v8, p0
+
+    move-object v0, p1
 
     .line 177
-    iput-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$1;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
+    iput-object v0, v8, Lorg/telegram/ui/Components/SearchViewPager$1;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     move-object v0, p0
 
     move-object v1, p2
 
-    move v2, p3
+    move-object v2, p3
 
     move v3, p4
 
-    move-object v4, p5
+    move v4, p5
 
-    move v5, p6
+    move-object v5, p6
 
-    move v6, p7
+    move/from16 v6, p7
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;-><init>(Landroid/content/Context;IILandroidx/recyclerview/widget/DefaultItemAnimator;ZI)V
+    move/from16 v7, p8
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;-><init>(Landroid/content/Context;Lorg/telegram/ui/DialogsActivity;IILandroidx/recyclerview/widget/DefaultItemAnimator;ZI)V
 
     return-void
 .end method

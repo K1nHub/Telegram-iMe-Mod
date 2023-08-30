@@ -2,40 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Comparator;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$1:Lorg/telegram/messenger/MessagesController;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/MessagesController;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$1:Lorg/telegram/messenger/MessagesController;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 0
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->decrementShowStoryFabEnableHintCountLeft()V
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    return-void
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda136;->f$1:Lorg/telegram/messenger/MessagesController;
+
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
+
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$Dialog;
+
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$RlwOZMdvbcjRlUPTbmxsa25kvg0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$Dialog;)I
+
+    move-result p1
+
+    return p1
 .end method

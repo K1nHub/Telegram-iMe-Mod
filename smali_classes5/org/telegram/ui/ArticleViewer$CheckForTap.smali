@@ -25,7 +25,7 @@
 .method private constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 687
+    .line 692
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$CheckForTap;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
     .locals 0
 
-    .line 687
+    .line 692
     invoke-direct {p0, p1}, Lorg/telegram/ui/ArticleViewer$CheckForTap;-><init>(Lorg/telegram/ui/ArticleViewer;)V
 
     return-void
@@ -47,7 +47,7 @@
 .method public run()V
     .locals 4
 
-    .line 689
+    .line 694
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$CheckForTap;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$2100(Lorg/telegram/ui/ArticleViewer;)Lorg/telegram/ui/ArticleViewer$CheckForLongPress;
@@ -56,7 +56,7 @@
 
     if-nez v0, :cond_0
 
-    .line 690
+    .line 695
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$CheckForTap;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     new-instance v1, Lorg/telegram/ui/ArticleViewer$CheckForLongPress;
@@ -65,7 +65,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ArticleViewer;->access$2102(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$CheckForLongPress;)Lorg/telegram/ui/ArticleViewer$CheckForLongPress;
 
-    .line 692
+    .line 697
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$CheckForTap;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -81,7 +81,7 @@
 
     iput v1, v0, Lorg/telegram/ui/ArticleViewer$CheckForLongPress;->currentPressCount:I
 
-    .line 693
+    .line 698
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$CheckForTap;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$2300(Lorg/telegram/ui/ArticleViewer;)Lorg/telegram/ui/ArticleViewer$WindowView;
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 694
+    .line 699
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$CheckForTap;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$2300(Lorg/telegram/ui/ArticleViewer;)Lorg/telegram/ui/ArticleViewer$WindowView;

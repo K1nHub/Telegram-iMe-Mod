@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)V
     .locals 0
 
-    .line 4751
+    .line 4755
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -41,14 +41,14 @@
 .method private synthetic lambda$run$0()V
     .locals 5
 
-    .line 4755
+    .line 4759
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     long-to-double v0, v0
 
-    .line 4756
+    .line 4760
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v2}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10500(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)D
@@ -57,17 +57,17 @@
 
     sub-double v2, v0, v2
 
-    .line 4757
+    .line 4761
     iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v4, v0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10502(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;D)D
 
-    .line 4758
+    .line 4762
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10626(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;D)I
 
-    .line 4759
+    .line 4763
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10600(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
@@ -78,14 +78,14 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 4760
+    .line 4764
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10700(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;Z)V
 
-    .line 4761
+    .line 4765
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10800(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
@@ -96,7 +96,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 4762
+    .line 4766
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10900(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
@@ -105,7 +105,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4763
+    .line 4767
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10900(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 4765
+    .line 4769
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
@@ -131,7 +131,7 @@
 .method public run()V
     .locals 1
 
-    .line 4754
+    .line 4758
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$9;)V

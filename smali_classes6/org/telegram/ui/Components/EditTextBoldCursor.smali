@@ -3793,9 +3793,11 @@
 
     if-eqz v0, :cond_0
 
-    const/4 p2, 0x1
-
     .line 590
+    sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    xor-int/lit8 p2, p2, 0x1
+
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
     goto :goto_1

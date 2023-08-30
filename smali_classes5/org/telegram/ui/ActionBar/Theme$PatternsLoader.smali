@@ -1228,7 +1228,7 @@
 .end method
 
 .method private synthetic lambda$new$1(Ljava/util/ArrayList;)V
-    .locals 6
+    .locals 9
 
     .line 1214
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -1259,11 +1259,15 @@
     if-eqz v5, :cond_0
 
     .line 1217
-    invoke-virtual {v5}, Ljava/io/File;->exists()Z
+    invoke-virtual {v5}, Ljava/io/File;->length()J
 
-    move-result v5
+    move-result-wide v5
 
-    if-eqz v5, :cond_0
+    const-wide/16 v7, 0x0
+
+    cmp-long v5, v5, v7
+
+    if-lez v5, :cond_0
 
     .line 1218
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;

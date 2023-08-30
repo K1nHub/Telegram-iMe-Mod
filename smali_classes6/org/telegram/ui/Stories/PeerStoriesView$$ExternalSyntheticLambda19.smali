@@ -2,44 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-.field public final synthetic f$1:J
-
-.field public final synthetic f$2:Z
+.field public final synthetic f$1:Lorg/telegram/ui/Stories/StoryViewer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JZ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/messenger/MessagesController;
+    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    iput-wide p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$1:J
-
-    iput-boolean p4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$2:Z
+    iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/ui/Stories/StoryViewer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final onLongClick(Landroid/view/View;)Z
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/messenger/MessagesController;
+    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    iget-wide v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$1:J
+    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/ui/Stories/StoryViewer;
 
-    iget-boolean v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda19;->f$2:Z
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$CiNrZK1EqFiL6URRe0o4nbF_klQ(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/Stories/StoryViewer;Landroid/view/View;)Z
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$Lw2PZSnsTjmkA9OhvG8A3T4aMW4(Lorg/telegram/messenger/MessagesController;JZ)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

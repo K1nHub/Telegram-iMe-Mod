@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerWebView;Landroid/content/Context;)V
     .locals 0
 
-    .line 391
+    .line 403
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 394
+    .line 406
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 395
+    .line 407
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I

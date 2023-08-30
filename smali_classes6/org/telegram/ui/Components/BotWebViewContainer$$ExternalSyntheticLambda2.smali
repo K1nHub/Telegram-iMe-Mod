@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda2;->f$2:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$SX4GfW7scRD4HFCLBy4Mf1Dq67c(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$zFwG9BE87se5mafA9l7YFgGS8wo(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

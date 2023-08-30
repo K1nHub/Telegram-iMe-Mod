@@ -29,19 +29,19 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
     .locals 0
 
-    .line 108
+    .line 109
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
+    .line 110
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$1;->mNewRect:Landroid/graphics/Rect;
 
-    .line 110
+    .line 111
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -56,17 +56,17 @@
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 0
 
-    .line 114
+    .line 115
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$1;->mNewRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, p2, p3, p4, p5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 115
+    .line 116
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$1;->mOldRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, p6, p7, p8, p9}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 116
+    .line 117
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$000(Lorg/telegram/ui/ActionBar/FloatingToolbar;)Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
@@ -89,14 +89,14 @@
 
     if-nez p1, :cond_0
 
-    .line 117
+    .line 118
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$102(Lorg/telegram/ui/ActionBar/FloatingToolbar;Z)Z
 
-    .line 118
+    .line 119
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->updateLayout()Lorg/telegram/ui/ActionBar/FloatingToolbar;

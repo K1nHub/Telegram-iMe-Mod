@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 1437
+    .line 1447
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$6;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/HwTextureView;-><init>(Landroid/content/Context;)V
@@ -35,17 +35,17 @@
 .method public invalidate()V
     .locals 1
 
-    .line 1440
+    .line 1450
     invoke-super {p0}, Lorg/telegram/ui/Stories/HwTextureView;->invalidate()V
 
-    .line 1441
+    .line 1451
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$6;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
     if-eqz v0, :cond_0
 
-    .line 1442
+    .line 1452
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->invalidate()V
 
     :cond_0

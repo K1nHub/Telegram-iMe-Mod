@@ -116,11 +116,11 @@
     .line 253
     new-instance p1, Lorg/telegram/ui/Components/PhotoViewerWebView$1;
 
-    invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Components/PhotoViewerWebView$1;-><init>(Lorg/telegram/ui/Components/PhotoViewerWebView;Landroid/content/Context;)V
+    invoke-direct {p1, p0, p2, p2}, Lorg/telegram/ui/Components/PhotoViewerWebView$1;-><init>(Lorg/telegram/ui/Components/PhotoViewerWebView;Landroid/content/Context;Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
-    .line 269
+    .line 281
     invoke-virtual {p1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object p1
@@ -129,7 +129,7 @@
 
     invoke-virtual {p1, p3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 270
+    .line 282
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -138,7 +138,7 @@
 
     invoke-virtual {p1, p3}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
 
-    .line 271
+    .line 283
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v0, 0x0
@@ -147,7 +147,7 @@
 
     if-lt p1, v1, :cond_0
 
-    .line 272
+    .line 284
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -161,7 +161,7 @@
 
     if-lt p1, v2, :cond_1
 
-    .line 276
+    .line 288
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -170,17 +170,17 @@
 
     invoke-virtual {p1, v0}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
 
-    .line 277
+    .line 289
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object p1
 
-    .line 278
+    .line 290
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p1, v2, p3}, Landroid/webkit/CookieManager;->setAcceptThirdPartyCookies(Landroid/webkit/WebView;Z)V
 
-    .line 281
+    .line 293
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
@@ -190,7 +190,7 @@
 
     invoke-virtual {p1, v2}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 369
+    .line 381
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     const/16 v2, 0x33
@@ -203,29 +203,29 @@
 
     invoke-virtual {p0, p1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 371
+    .line 383
     new-instance p1, Landroid/widget/LinearLayout;
 
     invoke-direct {p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorLayout:Landroid/widget/LinearLayout;
 
-    .line 372
+    .line 384
     invoke-virtual {p1, p3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 373
+    .line 385
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 374
+    .line 386
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorLayout:Landroid/widget/LinearLayout;
 
     const/16 v2, 0x8
 
     invoke-virtual {p1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 375
+    .line 387
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorLayout:Landroid/widget/LinearLayout;
 
     const/4 v4, -0x2
@@ -236,7 +236,7 @@
 
     invoke-virtual {p0, p1, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 377
+    .line 389
     new-instance p1, Landroid/widget/TextView;
 
     invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -245,10 +245,10 @@
 
     const/high16 v5, 0x41800000    # 16.0f
 
-    .line 378
+    .line 390
     invoke-virtual {p1, p3, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 379
+    .line 391
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorMessage:Landroid/widget/TextView;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
@@ -259,12 +259,12 @@
 
     invoke-virtual {p1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 380
+    .line 392
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorMessage:Landroid/widget/TextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 381
+    .line 393
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorLayout:Landroid/widget/LinearLayout;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorMessage:Landroid/widget/TextView;
@@ -275,17 +275,17 @@
 
     invoke-virtual {p1, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 383
+    .line 395
     new-instance p1, Landroid/widget/TextView;
 
     invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorButton:Landroid/widget/TextView;
 
-    .line 384
+    .line 396
     invoke-virtual {p1, p3, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 385
+    .line 397
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorButton:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
@@ -296,7 +296,7 @@
 
     invoke-virtual {p1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 386
+    .line 398
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorButton:Landroid/widget/TextView;
 
     const/16 v6, 0xc
@@ -319,7 +319,7 @@
 
     invoke-virtual {p1, v7, v8, v6, v9}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 387
+    .line 399
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorButton:Landroid/widget/TextView;
 
     new-array p3, p3, [F
@@ -334,12 +334,12 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 388
+    .line 400
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorButton:Landroid/widget/TextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 389
+    .line 401
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorLayout:Landroid/widget/LinearLayout;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->errorButton:Landroid/widget/TextView;
@@ -364,7 +364,7 @@
 
     invoke-virtual {p1, p3, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 391
+    .line 403
     new-instance p1, Lorg/telegram/ui/Components/PhotoViewerWebView$3;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Components/PhotoViewerWebView$3;-><init>(Lorg/telegram/ui/Components/PhotoViewerWebView;Landroid/content/Context;)V
@@ -373,17 +373,17 @@
 
     const/high16 p3, -0x1000000
 
-    .line 398
+    .line 410
     invoke-virtual {p1, p3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 399
+    .line 411
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBarBlackBackground:Landroid/view/View;
 
     const/4 p3, 0x4
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 400
+    .line 412
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBarBlackBackground:Landroid/view/View;
 
     invoke-static {v3, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -392,17 +392,17 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 402
+    .line 414
     new-instance p1, Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RadialProgressView;-><init>(Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBar:Lorg/telegram/ui/Components/RadialProgressView;
 
-    .line 403
+    .line 415
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 404
+    .line 416
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBar:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-static {v4, v4, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -635,12 +635,12 @@
 
     if-nez p1, :cond_0
 
-    .line 533
+    .line 545
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     if-eqz v0, :cond_0
 
-    .line 534
+    .line 546
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v0, 0x1f4
@@ -652,12 +652,12 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 535
+    .line 547
     iget-boolean p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     if-nez p1, :cond_1
 
-    .line 536
+    .line 548
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
@@ -700,7 +700,7 @@
 .method private synthetic lambda$seekTo$1(JZ)V
     .locals 2
 
-    .line 552
+    .line 564
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -737,7 +737,7 @@
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PhotoViewerWebView;->runJsCode(Ljava/lang/String;)V
 
-    .line 554
+    .line 566
     new-instance p1, Lorg/telegram/ui/Components/PhotoViewerWebView$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/PhotoViewerWebView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/PhotoViewerWebView;)V
@@ -752,7 +752,7 @@
 .method private processYoutubeStoryboards(Ljava/lang/String;)V
     .locals 12
 
-    .line 416
+    .line 428
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->getVideoDuration()I
 
     move-result v0
@@ -761,7 +761,7 @@
 
     div-int/2addr v0, v1
 
-    .line 418
+    .line 430
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->youtubeStoryboards:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
@@ -775,12 +775,12 @@
     :cond_0
     const-string v2, "\\|"
 
-    .line 424
+    .line 436
     invoke-virtual {p1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p1
 
-    .line 425
+    .line 437
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -807,7 +807,7 @@
 
     move-result-object v2
 
-    .line 426
+    .line 438
     aget-object v4, p1, v3
 
     const-string v5, "\\$N"
@@ -820,7 +820,7 @@
 
     aget-object v4, v4, v5
 
-    .line 429
+    .line 441
     array-length v6, p1
 
     const-string v7, "M#"
@@ -831,7 +831,7 @@
 
     if-ne v6, v9, :cond_1
 
-    .line 430
+    .line 442
     aget-object p1, p1, v8
 
     invoke-virtual {p1, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -842,13 +842,13 @@
 
     goto :goto_0
 
-    .line 431
+    .line 443
     :cond_1
     array-length v6, p1
 
     if-ne v6, v8, :cond_2
 
-    .line 432
+    .line 444
     aget-object p1, p1, v5
 
     const-string v6, "t#"
@@ -861,7 +861,7 @@
 
     goto :goto_0
 
-    .line 434
+    .line 446
     :cond_2
     aget-object p1, p1, v9
 
@@ -884,7 +884,7 @@
 
     float-to-double v0, v0
 
-    .line 440
+    .line 452
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -909,7 +909,7 @@
 
     float-to-double v0, v0
 
-    .line 442
+    .line 454
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -931,7 +931,7 @@
 
     float-to-double v0, v0
 
-    .line 444
+    .line 456
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -951,7 +951,7 @@
 
     float-to-double v0, v0
 
-    .line 446
+    .line 458
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -969,7 +969,7 @@
 
     float-to-double v0, v0
 
-    .line 448
+    .line 460
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -982,7 +982,7 @@
     :goto_3
     if-ge v1, v0, :cond_7
 
-    .line 452
+    .line 464
     iget-object v6, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->youtubeStoryboards:Ljava/util/List;
 
     sget-object v7, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
@@ -1022,14 +1022,14 @@
 .method private runJsCode(Ljava/lang/String;)V
     .locals 3
 
-    .line 574
+    .line 586
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    .line 575
+    .line 587
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     const/4 v1, 0x0
@@ -1038,7 +1038,7 @@
 
     goto :goto_0
 
-    .line 578
+    .line 590
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
@@ -1066,7 +1066,7 @@
     :catch_0
     move-exception p1
 
-    .line 580
+    .line 592
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -1078,7 +1078,7 @@
 .method public checkInlinePermissions()Z
     .locals 2
 
-    .line 764
+    .line 776
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -1097,7 +1097,7 @@
 
     goto :goto_0
 
-    .line 767
+    .line 779
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -1123,7 +1123,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 522
+    .line 534
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isTouchDisabled:Z
 
     if-eqz v0, :cond_0
@@ -1132,7 +1132,7 @@
 
     return p1
 
-    .line 525
+    .line 537
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1150,20 +1150,20 @@
 .method public exitFromPip()V
     .locals 4
 
-    .line 773
+    .line 785
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 776
+    .line 788
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->mainInterfacePaused:Z
 
     if-eqz v0, :cond_1
 
-    .line 778
+    .line 790
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -1186,10 +1186,10 @@
     :catchall_0
     move-exception v0
 
-    .line 780
+    .line 792
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 783
+    .line 795
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBarBlackBackground:Landroid/view/View;
@@ -1198,7 +1198,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 784
+    .line 796
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getParent()Landroid/view/ViewParent;
@@ -1209,12 +1209,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 786
+    .line 798
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 788
+    .line 800
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
@@ -1228,7 +1228,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 789
+    .line 801
     invoke-static {}, Lorg/telegram/ui/Components/PipVideoOverlay;->dismiss()V
 
     return-void
@@ -1237,7 +1237,7 @@
 .method public getBufferedPosition()F
     .locals 1
 
-    .line 570
+    .line 582
     iget v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->bufferedPosition:F
 
     return v0
@@ -1246,7 +1246,7 @@
 .method public getCurrentPosition()I
     .locals 1
 
-    .line 566
+    .line 578
     iget v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentPosition:I
 
     return v0
@@ -1255,7 +1255,7 @@
 .method public getVideoDuration()I
     .locals 1
 
-    .line 562
+    .line 574
     iget v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->videoDuration:I
 
     return v0
@@ -1264,7 +1264,7 @@
 .method public getWebView()Landroid/webkit/WebView;
     .locals 1
 
-    .line 529
+    .line 541
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     return-object v0
@@ -1273,7 +1273,7 @@
 .method public getYoutubeStoryboard(I)Ljava/lang/String;
     .locals 4
 
-    .line 481
+    .line 493
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->getVideoDuration()I
 
     move-result v0
@@ -1310,7 +1310,7 @@
 
     float-to-int p1, p1
 
-    .line 487
+    .line 499
     div-int/lit8 p1, p1, 0x19
 
     goto :goto_1
@@ -1328,7 +1328,7 @@
 
     float-to-int p1, p1
 
-    .line 489
+    .line 501
     div-int/lit8 p1, p1, 0x19
 
     goto :goto_1
@@ -1344,7 +1344,7 @@
 
     float-to-int p1, p1
 
-    .line 491
+    .line 503
     div-int/lit8 p1, p1, 0x19
 
     goto :goto_1
@@ -1358,7 +1358,7 @@
 
     goto :goto_0
 
-    .line 495
+    .line 507
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->youtubeStoryboards:Ljava/util/List;
 
@@ -1388,7 +1388,7 @@
 .method public getYoutubeStoryboardImageCount(I)I
     .locals 4
 
-    .line 457
+    .line 469
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->youtubeStoryboards:Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/PhotoViewerWebView;->getYoutubeStoryboard(I)Ljava/lang/String;
@@ -1403,7 +1403,7 @@
 
     if-eq p1, v0, :cond_5
 
-    .line 459
+    .line 471
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->youtubeStoryboards:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1416,7 +1416,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 460
+    .line 472
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->getVideoDuration()I
 
     move-result p1
@@ -1431,7 +1431,7 @@
 
     int-to-double v2, p1
 
-    .line 463
+    .line 475
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
@@ -1454,7 +1454,7 @@
 
     float-to-double v2, p1
 
-    .line 465
+    .line 477
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
@@ -1474,7 +1474,7 @@
 
     float-to-double v2, p1
 
-    .line 467
+    .line 479
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
@@ -1492,7 +1492,7 @@
 
     float-to-double v2, p1
 
-    .line 469
+    .line 481
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
@@ -1508,14 +1508,14 @@
 
     float-to-double v2, p1
 
-    .line 471
+    .line 483
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
 
     goto :goto_0
 
-    .line 473
+    .line 485
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->youtubeStoryboards:Ljava/util/List;
 
@@ -1549,7 +1549,7 @@
 .method public getYoutubeStoryboardImageIndex(I)I
     .locals 3
 
-    .line 499
+    .line 511
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->getVideoDuration()I
 
     move-result v0
@@ -1564,7 +1564,7 @@
 
     int-to-double v0, p1
 
-    .line 503
+    .line 515
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -1588,7 +1588,7 @@
 
     float-to-double v0, p1
 
-    .line 505
+    .line 517
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -1612,7 +1612,7 @@
 
     float-to-double v0, p1
 
-    .line 507
+    .line 519
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -1634,7 +1634,7 @@
 
     float-to-double v0, p1
 
-    .line 509
+    .line 521
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -1654,7 +1654,7 @@
 
     float-to-double v0, p1
 
-    .line 511
+    .line 523
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
@@ -1670,7 +1670,7 @@
 .method public hasYoutubeStoryboards()Z
     .locals 1
 
-    .line 412
+    .line 424
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->youtubeStoryboards:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1693,10 +1693,10 @@
 
     const-string v0, "m"
 
-    .line 695
+    .line 707
     iput-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentWebpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 696
+    .line 708
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_url:Ljava/lang/String;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/WebPlayerView;->getYouTubeVideoId(Ljava/lang/String;)Ljava/lang/String;
@@ -1705,31 +1705,31 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentYoutubeId:Ljava/lang/String;
 
-    .line 697
+    .line 709
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$WebPage;->url:Ljava/lang/String;
 
-    .line 698
+    .line 710
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    .line 701
+    .line 713
     :try_start_0
     iget-object v4, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentYoutubeId:Ljava/lang/String;
 
     if-eqz v4, :cond_6
 
-    .line 702
+    .line 714
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBarBlackBackground:Landroid/view/View;
 
     invoke-virtual {p2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 703
+    .line 715
     iput-boolean v2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isYouTube:Z
 
-    .line 704
+    .line 716
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x11
@@ -1738,7 +1738,7 @@
 
     if-lt p2, v4, :cond_0
 
-    .line 705
+    .line 717
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     new-instance v4, Lorg/telegram/ui/Components/PhotoViewerWebView$YoutubeProxy;
@@ -1754,7 +1754,7 @@
     :cond_0
     if-eqz v1, :cond_4
 
-    .line 710
+    .line 722
     :try_start_1
     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -1762,7 +1762,7 @@
 
     if-lez p1, :cond_1
 
-    .line 711
+    .line 723
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1782,7 +1782,7 @@
 
     const-string p1, "t"
 
-    .line 713
+    .line 725
     invoke-virtual {p2, p1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
@@ -1791,7 +1791,7 @@
 
     const-string p1, "time_continue"
 
-    .line 715
+    .line 727
     invoke-virtual {p2, p1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
@@ -1799,19 +1799,19 @@
     :cond_2
     if-eqz v5, :cond_4
 
-    .line 719
+    .line 731
     invoke-virtual {v5, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_3
 
-    .line 720
+    .line 732
     invoke-virtual {v5, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p1
 
-    .line 721
+    .line 733
     aget-object p2, p1, v3
 
     invoke-static {p2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -1838,7 +1838,7 @@
 
     goto :goto_0
 
-    .line 723
+    .line 735
     :cond_3
     invoke-static {v5}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -1855,14 +1855,14 @@
     :catch_0
     move-exception p1
 
-    .line 727
+    .line 739
     :try_start_2
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
     move p2, v3
 
-    .line 730
+    .line 742
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -1878,7 +1878,7 @@
 
     move-result-object p1
 
-    .line 731
+    .line 743
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
@@ -1887,7 +1887,7 @@
 
     new-array v1, v1, [B
 
-    .line 734
+    .line 746
     :goto_1
     invoke-virtual {p1, v1}, Ljava/io/InputStream;->read([B)I
 
@@ -1897,19 +1897,19 @@
 
     if-eq v4, v5, :cond_5
 
-    .line 735
+    .line 747
     invoke-virtual {v0, v1, v3, v4}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_1
 
-    .line 737
+    .line 749
     :cond_5
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
 
-    .line 738
+    .line 750
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
 
-    .line 739
+    .line 751
     iget-object v4, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     const-string v5, "https://messenger.telegram.org/"
@@ -1950,7 +1950,7 @@
 
     goto :goto_2
 
-    .line 741
+    .line 753
     :cond_6
     new-instance p1, Ljava/util/HashMap;
 
@@ -1960,10 +1960,10 @@
 
     const-string v1, "messenger.telegram.org"
 
-    .line 742
+    .line 754
     invoke-virtual {p1, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 743
+    .line 755
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_url:Ljava/lang/String;
@@ -1977,49 +1977,49 @@
     :catch_1
     move-exception p1
 
-    .line 746
+    .line 758
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 749
+    .line 761
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->pipItem:Landroid/view/View;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 750
+    .line 762
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->pipItem:Landroid/view/View;
 
     const/high16 p2, 0x3f000000    # 0.5f
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 752
+    .line 764
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBar:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 753
+    .line 765
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentYoutubeId:Ljava/lang/String;
 
     if-eqz p1, :cond_7
 
-    .line 754
+    .line 766
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBarBlackBackground:Landroid/view/View;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 756
+    .line 768
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p1, v3}, Landroid/webkit/WebView;->setVisibility(I)V
 
-    .line 757
+    .line 769
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p1, v2}, Landroid/webkit/WebView;->setKeepScreenOn(Z)V
 
-    .line 758
+    .line 770
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentYoutubeId:Ljava/lang/String;
 
     if-eqz p1, :cond_8
@@ -2040,7 +2040,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 759
+    .line 771
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->pipItem:Landroid/view/View;
 
     const/16 p2, 0x8
@@ -2054,7 +2054,7 @@
 .method public isControllable()Z
     .locals 1
 
-    .line 645
+    .line 657
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->isYouTube()Z
 
     move-result v0
@@ -2065,7 +2065,7 @@
 .method public isInAppOnly()Z
     .locals 2
 
-    .line 616
+    .line 628
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isYouTube:Z
 
     if-eqz v0, :cond_0
@@ -2100,7 +2100,7 @@
 .method public isLoaded()Z
     .locals 1
 
-    .line 612
+    .line 624
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBar:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -2123,7 +2123,7 @@
 .method public isPlaying()Z
     .locals 1
 
-    .line 649
+    .line 661
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     return v0
@@ -2132,7 +2132,7 @@
 .method public isYouTube()Z
     .locals 1
 
-    .line 641
+    .line 653
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isYouTube:Z
 
     return v0
@@ -2141,7 +2141,7 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 591
+    .line 603
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getParent()Landroid/view/ViewParent;
@@ -2150,7 +2150,7 @@
 
     if-ne v0, p0, :cond_2
 
-    .line 592
+    .line 604
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentWebpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_width:I
@@ -2164,7 +2164,7 @@
     :cond_0
     move v1, v2
 
-    .line 593
+    .line 605
     :goto_0
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_height:I
 
@@ -2172,13 +2172,13 @@
 
     move v2, v0
 
-    .line 594
+    .line 606
     :cond_1
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 595
+    .line 607
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v3
@@ -2195,12 +2195,12 @@
 
     div-float/2addr v5, v2
 
-    .line 596
+    .line 608
     invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
 
     move-result v4
 
-    .line 597
+    .line 609
     iget-object v5, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v5}, Landroid/webkit/WebView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2213,31 +2213,31 @@
 
     float-to-int v1, v1
 
-    .line 598
+    .line 610
     iput v1, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     mul-float/2addr v2, v4
 
     float-to-int v2, v2
 
-    .line 599
+    .line 611
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     sub-int/2addr v3, v2
 
-    .line 600
+    .line 612
     div-int/lit8 v3, v3, 0x2
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     sub-int/2addr v0, v1
 
-    .line 601
+    .line 613
     div-int/lit8 v0, v0, 0x2
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 604
+    .line 616
     :cond_2
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
@@ -2247,7 +2247,7 @@
 .method public openInPip()Z
     .locals 8
 
-    .line 620
+    .line 632
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->isInAppOnly()Z
 
     move-result v0
@@ -2256,7 +2256,7 @@
 
     if-nez v0, :cond_0
 
-    .line 621
+    .line 633
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->checkInlinePermissions()Z
 
     move-result v2
@@ -2265,7 +2265,7 @@
 
     return v1
 
-    .line 624
+    .line 636
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBar:Lorg/telegram/ui/Components/RadialProgressView;
 
@@ -2277,7 +2277,7 @@
 
     return v1
 
-    .line 627
+    .line 639
     :cond_1
     invoke-static {}, Lorg/telegram/ui/Components/PipVideoOverlay;->isVisible()Z
 
@@ -2287,10 +2287,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 628
+    .line 640
     invoke-static {}, Lorg/telegram/ui/Components/PipVideoOverlay;->dismiss()V
 
-    .line 629
+    .line 641
     new-instance v0, Lorg/telegram/ui/Components/PhotoViewerWebView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/PhotoViewerWebView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/PhotoViewerWebView;)V
@@ -2301,13 +2301,13 @@
 
     return v7
 
-    .line 633
+    .line 645
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBarBlackBackground:Landroid/view/View;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 634
+    .line 646
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -2332,7 +2332,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 635
+    .line 647
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -2346,7 +2346,7 @@
 .method public pauseVideo()V
     .locals 1
 
-    .line 672
+    .line 684
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     if-eqz v0, :cond_1
@@ -2362,17 +2362,17 @@
     :cond_0
     const-string v0, "pauseVideo();"
 
-    .line 676
+    .line 688
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->runJsCode(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 677
+    .line 689
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     const/4 v0, 0x1
 
-    .line 679
+    .line 691
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->checkPlayingPoll(Z)V
 
     :cond_1
@@ -2383,7 +2383,7 @@
 .method public playVideo()V
     .locals 1
 
-    .line 661
+    .line 673
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     if-nez v0, :cond_1
@@ -2399,17 +2399,17 @@
     :cond_0
     const-string v0, "playVideo();"
 
-    .line 665
+    .line 677
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->runJsCode(Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 666
+    .line 678
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     const/4 v0, 0x0
 
-    .line 668
+    .line 680
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->checkPlayingPoll(Z)V
 
     :cond_1
@@ -2426,32 +2426,32 @@
 .method public release()V
     .locals 2
 
-    .line 793
+    .line 805
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->stopLoading()V
 
-    .line 794
+    .line 806
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     const-string v1, "about:blank"
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 795
+    .line 807
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->destroy()V
 
     const/4 v0, 0x0
 
-    .line 796
+    .line 808
     iput v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->videoDuration:I
 
-    .line 797
+    .line 809
     iput v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentPosition:I
 
-    .line 798
+    .line 810
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
@@ -2464,7 +2464,7 @@
 
     const/4 v0, 0x1
 
-    .line 541
+    .line 553
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->seekTo(JZ)V
 
     return-void
@@ -2473,23 +2473,23 @@
 .method public seekTo(JZ)V
     .locals 2
 
-    .line 545
+    .line 557
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isPlaying:Z
 
     long-to-int v1, p1
 
-    .line 546
+    .line 558
     iput v1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->currentPosition:I
 
     if-eqz v0, :cond_0
 
-    .line 548
+    .line 560
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->pauseVideo()V
 
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 551
+    .line 563
     new-instance v0, Lorg/telegram/ui/Components/PhotoViewerWebView$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/Components/PhotoViewerWebView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/PhotoViewerWebView;JZ)V
@@ -2500,7 +2500,7 @@
 
     goto :goto_0
 
-    .line 557
+    .line 569
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2545,10 +2545,10 @@
 .method public setPlaybackSpeed(F)V
     .locals 2
 
-    .line 683
+    .line 695
     iput p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->playbackSpeed:F
 
-    .line 684
+    .line 696
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->progressBar:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -2557,12 +2557,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 685
+    .line 697
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isYouTube:Z
 
     if-eqz v0, :cond_1
 
-    .line 686
+    .line 698
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2588,7 +2588,7 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 689
+    .line 701
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->setPlaybackSpeed:Z
 
     :cond_1
@@ -2599,7 +2599,7 @@
 .method public setTouchDisabled(Z)V
     .locals 0
 
-    .line 517
+    .line 529
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView;->isTouchDisabled:Z
 
     return-void

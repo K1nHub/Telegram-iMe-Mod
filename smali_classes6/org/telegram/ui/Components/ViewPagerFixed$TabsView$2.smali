@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1330
+    .line 1332
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
     .locals 0
 
-    .line 1334
+    .line 1336
     invoke-super {p0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1335
+    .line 1337
     iget-object p2, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$4000(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Z
@@ -49,15 +49,15 @@
 
     const p2, 0x3e99999a    # 0.3f
 
-    .line 1336
+    .line 1338
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1337
+    .line 1339
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleY(F)V
 
     const/4 p2, 0x0
 
-    .line 1338
+    .line 1340
     invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
@@ -65,13 +65,13 @@
     :cond_0
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 1340
+    .line 1342
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1341
+    .line 1343
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1342
+    .line 1344
     invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
 
     :goto_0
@@ -81,7 +81,7 @@
 .method protected canHighlightChildAt(Landroid/view/View;FF)Z
     .locals 3
 
-    .line 1354
+    .line 1356
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2800(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Z
@@ -90,19 +90,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 1355
+    .line 1357
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;
 
     const/4 v1, 0x6
 
-    .line 1356
+    .line 1358
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 1357
+    .line 1359
     invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->access$4100(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;)Landroid/graphics/RectF;
 
     move-result-object v2
@@ -133,7 +133,7 @@
 
     return p1
 
-    .line 1361
+    .line 1363
     :cond_0
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;->canHighlightChildAt(Landroid/view/View;FF)Z
 
@@ -145,10 +145,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 1348
+    .line 1350
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 1349
+    .line 1351
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$2;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

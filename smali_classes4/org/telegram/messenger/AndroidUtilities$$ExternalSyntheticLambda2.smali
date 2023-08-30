@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda2;->f$1:Landroid/view/Window;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$xdIKQTEhB3qVoBA1mc2jxSMUSbg(Lorg/telegram/messenger/AndroidUtilities$IntColorCallback;Landroid/view/Window;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$_09Gt-qdHenfdRj92_VzPUW3a9M(Lorg/telegram/messenger/AndroidUtilities$IntColorCallback;Landroid/view/Window;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

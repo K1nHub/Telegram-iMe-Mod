@@ -679,7 +679,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$11700(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$11800(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -688,22 +688,13 @@
     return p0
 .end method
 
-.method static synthetic access$11800(Lorg/telegram/ui/LoginActivity;)Ljava/lang/String;
+.method static synthetic access$11900(Lorg/telegram/ui/LoginActivity;)Ljava/lang/String;
     .locals 0
 
     .line 204
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity;->cancelDeletionPhone:Ljava/lang/String;
 
     return-object p0
-.end method
-
-.method static synthetic access$11900(Lorg/telegram/ui/LoginActivity;)I
-    .locals 0
-
-    .line 204
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
-
-    return p0
 .end method
 
 .method static synthetic access$1200(Lorg/telegram/ui/LoginActivity;)Landroid/widget/ImageView;
@@ -796,13 +787,13 @@
     return p0
 .end method
 
-.method static synthetic access$12900(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
+.method static synthetic access$12900(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$1300(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -814,13 +805,13 @@
     return-object p0
 .end method
 
-.method static synthetic access$13000(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$13000(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
     .locals 0
 
     .line 204
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    return p0
+    return-object p0
 .end method
 
 .method static synthetic access$13100(Lorg/telegram/ui/LoginActivity;)I
@@ -850,16 +841,7 @@
     return p0
 .end method
 
-.method static synthetic access$13400(Lorg/telegram/ui/LoginActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 204
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/LoginActivity;->tryResetAccount(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$13500(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$13400(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -868,7 +850,16 @@
     return p0
 .end method
 
-.method static synthetic access$13800(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$13500(Lorg/telegram/ui/LoginActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 204
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/LoginActivity;->tryResetAccount(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$13600(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -906,7 +897,16 @@
     return p0
 .end method
 
-.method static synthetic access$14100(Lorg/telegram/ui/LoginActivity;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;)V
+.method static synthetic access$14100(Lorg/telegram/ui/LoginActivity;)I
+    .locals 0
+
+    .line 204
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
+
+    return p0
+.end method
+
+.method static synthetic access$14200(Lorg/telegram/ui/LoginActivity;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;)V
     .locals 0
 
     .line 204
@@ -915,7 +915,7 @@
     return-void
 .end method
 
-.method static synthetic access$14200(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$14300(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -924,7 +924,7 @@
     return p0
 .end method
 
-.method static synthetic access$14300(Lorg/telegram/ui/LoginActivity;)Ljava/lang/Runnable;
+.method static synthetic access$14400(Lorg/telegram/ui/LoginActivity;)Ljava/lang/Runnable;
     .locals 0
 
     .line 204
@@ -933,16 +933,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$14400(Lorg/telegram/ui/LoginActivity;)I
-    .locals 0
-
-    .line 204
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
-
-    return p0
-.end method
-
-.method static synthetic access$14800(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$14500(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -1005,7 +996,16 @@
     return p0
 .end method
 
-.method static synthetic access$15700(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$15400(Lorg/telegram/ui/LoginActivity;)I
+    .locals 0
+
+    .line 204
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
+
+    return p0
+.end method
+
+.method static synthetic access$15800(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -1021,15 +1021,6 @@
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity;->keyboardAnimator:Landroid/animation/ValueAnimator;
 
     return-object p0
-.end method
-
-.method static synthetic access$16000(Lorg/telegram/ui/LoginActivity;)I
-    .locals 0
-
-    .line 204
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
-
-    return p0
 .end method
 
 .method static synthetic access$1602(Lorg/telegram/ui/LoginActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
@@ -1050,6 +1041,15 @@
     return p0
 .end method
 
+.method static synthetic access$16200(Lorg/telegram/ui/LoginActivity;)I
+    .locals 0
+
+    .line 204
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
+
+    return p0
+.end method
+
 .method static synthetic access$1700(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
@@ -1059,7 +1059,7 @@
     return p0
 .end method
 
-.method static synthetic access$17100(Lorg/telegram/ui/LoginActivity;)Z
+.method static synthetic access$17200(Lorg/telegram/ui/LoginActivity;)Z
     .locals 0
 
     .line 204
@@ -1068,7 +1068,7 @@
     return p0
 .end method
 
-.method static synthetic access$17200(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$17300(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -1077,7 +1077,7 @@
     return p0
 .end method
 
-.method static synthetic access$17300(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
+.method static synthetic access$17400(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
     .locals 0
 
     .line 204
@@ -1086,7 +1086,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$17400(Lorg/telegram/ui/LoginActivity;Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;Z)V
+.method static synthetic access$17500(Lorg/telegram/ui/LoginActivity;Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;Z)V
     .locals 0
 
     .line 204
@@ -1095,7 +1095,7 @@
     return-void
 .end method
 
-.method static synthetic access$17500(Lorg/telegram/ui/LoginActivity;)I
+.method static synthetic access$17600(Lorg/telegram/ui/LoginActivity;)I
     .locals 0
 
     .line 204
@@ -1104,7 +1104,7 @@
     return p0
 .end method
 
-.method static synthetic access$17600(Lorg/telegram/ui/LoginActivity;)Landroid/widget/LinearLayout;
+.method static synthetic access$17700(Lorg/telegram/ui/LoginActivity;)Landroid/widget/LinearLayout;
     .locals 0
 
     .line 204
@@ -1113,7 +1113,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$17700(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
+.method static synthetic access$17800(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
     .locals 0
 
     .line 204
@@ -1122,20 +1122,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$17800(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
+.method static synthetic access$17900(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
     .locals 0
 
     .line 204
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity;->startMessagingButton:Landroid/widget/TextView;
-
-    return-object p0
-.end method
-
-.method static synthetic access$17900(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
-    .locals 0
-
-    .line 204
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p0
 .end method
@@ -1159,6 +1150,15 @@
 .end method
 
 .method static synthetic access$18100(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
+    .locals 0
+
+    .line 204
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+
+    return-object p0
+.end method
+
+.method static synthetic access$18200(Lorg/telegram/ui/LoginActivity;)Landroid/view/View;
     .locals 0
 
     .line 204
@@ -2008,14 +2008,14 @@
 .method private fillNextCodeParams(Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;)V
     .locals 2
 
-    .line 2006
+    .line 2007
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->email_pattern:Ljava/lang/String;
 
     const-string v1, "emailPattern"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2007
+    .line 2008
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$TL_account_sentEmailCode;->length:I
 
     const-string v0, "length"
@@ -2028,7 +2028,7 @@
 
     const/4 v1, 0x0
 
-    .line 2008
+    .line 2009
     invoke-virtual {p0, p2, v0, p1, v1}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     return-void
@@ -2039,7 +2039,7 @@
 
     const/4 v0, 0x1
 
-    .line 2012
+    .line 2013
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/LoginActivity;->fillNextCodeParams(Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$auth_SentCode;Z)V
 
     return-void
@@ -2048,14 +2048,14 @@
 .method private fillNextCodeParams(Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$auth_SentCode;Z)V
     .locals 10
 
-    .line 2116
+    .line 2117
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->phone_code_hash:Ljava/lang/String;
 
     const-string v1, "phoneHash"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2117
+    .line 2118
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->next_type:Lorg/telegram/tgnet/TLRPC$auth_CodeType;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_codeTypeCall;
@@ -2074,54 +2074,54 @@
 
     if-eqz v1, :cond_0
 
-    .line 2118
+    .line 2119
     invoke-virtual {p1, v7, v6}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 2119
+    .line 2120
     :cond_0
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_codeTypeFlashCall;
 
     if-eqz v1, :cond_1
 
-    .line 2120
+    .line 2121
     invoke-virtual {p1, v7, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 2121
+    .line 2122
     :cond_1
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_codeTypeSms;
 
     if-eqz v1, :cond_2
 
-    .line 2122
+    .line 2123
     invoke-virtual {p1, v7, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 2123
+    .line 2124
     :cond_2
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_codeTypeMissedCall;
 
     if-eqz v1, :cond_3
 
-    .line 2124
+    .line 2125
     invoke-virtual {p1, v7, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_0
 
-    .line 2125
+    .line 2126
     :cond_3
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_codeTypeFragmentSms;
 
     if-eqz v0, :cond_4
 
-    .line 2126
+    .line 2127
     invoke-virtual {p1, v7, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2128
+    .line 2129
     :cond_4
     :goto_0
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
@@ -2138,22 +2138,22 @@
 
     const/4 v0, 0x1
 
-    .line 2129
+    .line 2130
     invoke-virtual {p1, v7, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2130
+    .line 2131
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
     invoke-virtual {p1, v1, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2131
+    .line 2132
     invoke-virtual {p0, v0, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto/16 :goto_2
 
-    .line 2133
+    .line 2134
     :cond_5
     iget v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->timeout:I
 
@@ -2161,10 +2161,10 @@
 
     const/16 v0, 0x3c
 
-    .line 2134
+    .line 2135
     iput v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->timeout:I
 
-    .line 2136
+    .line 2137
     :cond_6
     iget v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->timeout:I
 
@@ -2174,38 +2174,38 @@
 
     invoke-virtual {p1, v9, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2137
+    .line 2138
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     instance-of v9, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeCall;
 
     if-eqz v9, :cond_7
 
-    .line 2138
+    .line 2139
     invoke-virtual {p1, v7, v6}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2139
+    .line 2140
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
     invoke-virtual {p1, v1, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2140
+    .line 2141
     invoke-virtual {p0, v6, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto/16 :goto_2
 
-    .line 2141
+    .line 2142
     :cond_7
     instance-of v6, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFlashCall;
 
     if-eqz v6, :cond_8
 
-    .line 2142
+    .line 2143
     invoke-virtual {p1, v7, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2143
+    .line 2144
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->pattern:Ljava/lang/String;
@@ -2214,12 +2214,12 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2144
+    .line 2145
     invoke-virtual {p0, v5, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto/16 :goto_2
 
-    .line 2145
+    .line 2146
     :cond_8
     instance-of v5, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSms;
 
@@ -2231,16 +2231,16 @@
 
     goto/16 :goto_1
 
-    .line 2150
+    .line 2151
     :cond_9
     instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFragmentSms;
 
     if-eqz v4, :cond_a
 
-    .line 2151
+    .line 2152
     invoke-virtual {p1, v7, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2152
+    .line 2153
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->url:Ljava/lang/String;
@@ -2249,35 +2249,35 @@
 
     invoke-virtual {p1, v3, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2153
+    .line 2154
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
     invoke-virtual {p1, v1, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2154
+    .line 2155
     invoke-virtual {p0, v2, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto/16 :goto_2
 
-    .line 2155
+    .line 2156
     :cond_a
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeMissedCall;
 
     if-eqz v2, :cond_b
 
-    .line 2156
+    .line 2157
     invoke-virtual {p1, v7, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2157
+    .line 2158
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2158
+    .line 2159
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->prefix:Ljava/lang/String;
@@ -2286,12 +2286,12 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2159
+    .line 2160
     invoke-virtual {p0, v3, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto :goto_2
 
-    .line 2160
+    .line 2161
     :cond_b
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSetUpEmailRequired;
 
@@ -2299,30 +2299,30 @@
 
     if-eqz v2, :cond_c
 
-    .line 2161
+    .line 2162
     iget-boolean p2, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->google_signin_allowed:Z
 
     invoke-virtual {p1, v3, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const/16 p2, 0xc
 
-    .line 2162
+    .line 2163
     invoke-virtual {p0, p2, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto :goto_2
 
-    .line 2163
+    .line 2164
     :cond_c
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;
 
     if-eqz v2, :cond_e
 
-    .line 2164
+    .line 2165
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->google_signin_allowed:Z
 
     invoke-virtual {p1, v3, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 2165
+    .line 2166
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->email_pattern:Ljava/lang/String;
@@ -2331,14 +2331,14 @@
 
     invoke-virtual {p1, v2, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2166
+    .line 2167
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2167
+    .line 2168
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->next_phone_login_date:I
@@ -2347,7 +2347,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2168
+    .line 2169
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->reset_available_period:I
@@ -2356,7 +2356,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2169
+    .line 2170
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->reset_pending_date:I
@@ -2367,24 +2367,24 @@
 
     const/16 p2, 0xe
 
-    .line 2170
+    .line 2171
     invoke-virtual {p0, p2, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto :goto_2
 
-    .line 2146
+    .line 2147
     :cond_d
     :goto_1
     invoke-virtual {p1, v7, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2147
+    .line 2148
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->length:I
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2148
+    .line 2149
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     instance-of p2, p2, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFirebaseSms;
@@ -2393,7 +2393,7 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 2149
+    .line 2150
     invoke-virtual {p0, v4, p3, p1, v8}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     :cond_e
@@ -2578,7 +2578,7 @@
     if-eqz p1, :cond_0
 
     .line 916
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$18600(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$18700(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
 
     :cond_0
     return-void
@@ -2971,7 +2971,7 @@
 .method private synthetic lambda$onCustomTransitionAnimation$28(IILandroid/view/ViewGroup$MarginLayoutParams;IIILorg/telegram/ui/Components/TransformableLoginButtonView;FIFILandroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 8530
+    .line 8540
     invoke-virtual {p12}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p12
@@ -2982,12 +2982,12 @@
 
     move-result p12
 
-    .line 8531
+    .line 8541
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->keyboardLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, p12}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 8532
+    .line 8542
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     int-to-float p2, p2
@@ -3006,7 +3006,7 @@
 
     sub-float/2addr p1, p12
 
-    .line 8535
+    .line 8545
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity;->slideViewsContainer:Landroid/widget/FrameLayout;
 
     const/16 v0, 0x14
@@ -3021,14 +3021,14 @@
 
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 8536
+    .line 8546
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity;->isCustomKeyboardForceDisabled()Z
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    .line 8537
+    .line 8547
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity;->keyboardView:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3043,7 +3043,7 @@
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    .line 8538
+    .line 8548
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity;->keyboardView:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -3060,7 +3060,7 @@
 
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 8541
+    .line 8551
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity;->introView:Landroid/view/View;
 
@@ -3084,12 +3084,12 @@
 
     add-float/2addr p1, p2
 
-    .line 8543
+    .line 8553
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity;->introView:Landroid/view/View;
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 8544
+    .line 8554
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity;->introView:Landroid/view/View;
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setScaleY(F)V
@@ -3106,7 +3106,7 @@
 
     float-to-int p1, p1
 
-    .line 8546
+    .line 8556
     iput p1, p3, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
     int-to-float p1, p6
@@ -3121,13 +3121,13 @@
 
     float-to-int p1, p1
 
-    .line 8547
+    .line 8557
     iput p1, p3, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    .line 8548
+    .line 8558
     invoke-virtual {p7}, Landroid/view/View;->requestLayout()V
 
-    .line 8550
+    .line 8560
     invoke-virtual {p7, p12}, Lorg/telegram/ui/Components/TransformableLoginButtonView;->setProgress(F)V
 
     int-to-float p1, p9
@@ -3138,7 +3138,7 @@
 
     add-float/2addr p8, p1
 
-    .line 8551
+    .line 8561
     invoke-virtual {p7, p8}, Landroid/view/View;->setTranslationX(F)V
 
     int-to-float p1, p11
@@ -3149,7 +3149,7 @@
 
     add-float/2addr p10, p1
 
-    .line 8552
+    .line 8562
     invoke-virtual {p7, p10}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
@@ -3654,7 +3654,7 @@
 
     const/4 v0, 0x0
 
-    .line 8643
+    .line 8653
     invoke-direct {p0, v0}, Lorg/telegram/ui/LoginActivity;->needHideProgress(Z)V
 
     const-string v1, "code"
@@ -3675,24 +3675,24 @@
 
     goto :goto_0
 
-    .line 8649
+    .line 8659
     :cond_0
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 8650
+    .line 8660
     invoke-virtual {p1, v3, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8651
+    .line 8661
     invoke-virtual {p1, v2, p3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8652
+    .line 8662
     invoke-virtual {p1, v1, p4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 p2, 0x5
 
-    .line 8653
+    .line 8663
     invoke-virtual {p0, p2, v4, p1, v0}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto :goto_1
@@ -3701,12 +3701,12 @@
     :goto_0
     const/4 p1, 0x0
 
-    .line 8646
+    .line 8656
     invoke-virtual {p0, v0, v4, p1, v4}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     return-void
 
-    .line 8655
+    .line 8665
     :cond_2
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -3718,7 +3718,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 8656
+    .line 8666
     sget p1, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -3737,7 +3737,7 @@
 
     goto :goto_1
 
-    .line 8657
+    .line 8667
     :cond_3
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -3749,21 +3749,21 @@
 
     if-eqz v5, :cond_4
 
-    .line 8658
+    .line 8668
     new-instance v5, Landroid/os/Bundle;
 
     invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
 
-    .line 8659
+    .line 8669
     invoke-virtual {v5, v3, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8660
+    .line 8670
     invoke-virtual {v5, v2, p3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8661
+    .line 8671
     invoke-virtual {v5, v1, p4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8662
+    .line 8672
     iget p2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -3778,7 +3778,7 @@
 
     invoke-virtual {v5, p3, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 8663
+    .line 8673
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string p2, ""
@@ -3801,12 +3801,12 @@
 
     const/16 p1, 0x8
 
-    .line 8664
+    .line 8674
     invoke-virtual {p0, p1, v4, v5, v0}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
     goto :goto_1
 
-    .line 8666
+    .line 8676
     :cond_4
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
 
@@ -3825,7 +3825,7 @@
 .method private synthetic lambda$tryResetAccount$30(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 6
 
-    .line 8642
+    .line 8652
     new-instance p4, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda21;
 
     move-object v0, p4
@@ -3852,20 +3852,20 @@
 
     const/4 p4, 0x0
 
-    .line 8639
+    .line 8649
     invoke-direct {p0, p4}, Lorg/telegram/ui/LoginActivity;->needShowProgress(I)V
 
-    .line 8640
+    .line 8650
     new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_account_deleteAccount;
 
     invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_account_deleteAccount;-><init>()V
 
     const-string p5, "Forgot password"
 
-    .line 8641
+    .line 8651
     iput-object p5, p4, Lorg/telegram/tgnet/TLRPC$TL_account_deleteAccount;->reason:Ljava/lang/String;
 
-    .line 8642
+    .line 8652
     iget p5, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -4942,12 +4942,21 @@
 
     invoke-virtual {v0}, Lorg/telegram/tgnet/ConnectionsManager;->updateDcSettings()V
 
-    .line 1982
+    .line 1981
+    iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->loadAppConfig()V
+
+    .line 1983
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->future_auth_token:[B
 
     if-eqz v0, :cond_0
 
-    .line 1983
+    .line 1984
     invoke-static {p1}, Lorg/telegram/messenger/AuthTokensHelper;->saveLogInToken(Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;)V
 
     goto :goto_0
@@ -4955,13 +4964,13 @@
     :cond_0
     const-string v0, "onAuthSuccess future_auth_token is empty"
 
-    .line 1985
+    .line 1986
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 1989
+    .line 1990
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -4970,7 +4979,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->putDialogsEndReachedAfterRegistration()V
 
-    .line 1991
+    .line 1992
     :cond_1
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -4982,7 +4991,7 @@
 
     invoke-virtual {v0, v2, v3, v1}, Lorg/telegram/messenger/MediaDataController;->loadStickersByEmojiOrName(Ljava/lang/String;ZZ)V
 
-    .line 1994
+    .line 1995
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -4991,7 +5000,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1996
+    .line 1997
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -5006,10 +5015,10 @@
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
-    .line 1995
+    .line 1996
     invoke-static {v0, v3, v1}, Lcom/iMe/utils/helper/wallet/AuthHelper;->auth(Lcom/iMe/utils/helper/wallet/AuthHelper$Delegate;ZI)V
 
-    .line 2002
+    .line 2003
     :cond_2
     iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;->setup_password_required:Z
 
@@ -6502,14 +6511,14 @@
 .method private showKeyboard(Landroid/view/View;)Z
     .locals 1
 
-    .line 8454
+    .line 8464
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity;->isCustomKeyboardVisible()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 8455
+    .line 8465
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     move-result p1
@@ -6567,7 +6576,7 @@
 .method private tryResetAccount(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
-    .line 8632
+    .line 8642
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->radialProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -6578,7 +6587,7 @@
 
     return-void
 
-    .line 8635
+    .line 8645
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -6588,7 +6597,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 8636
+    .line 8646
     sget v1, Lorg/telegram/messenger/R$string;->ResetMyAccountWarningText:I
 
     const-string v2, "ResetMyAccountWarningText"
@@ -6599,7 +6608,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 8637
+    .line 8647
     sget v1, Lorg/telegram/messenger/R$string;->ResetMyAccountWarning:I
 
     const-string v2, "ResetMyAccountWarning"
@@ -6610,7 +6619,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 8638
+    .line 8648
     sget v1, Lorg/telegram/messenger/R$string;->ResetMyAccountWarningReset:I
 
     const-string v2, "ResetMyAccountWarningReset"
@@ -6625,7 +6634,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 8671
+    .line 8681
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p2, "Cancel"
@@ -6638,7 +6647,7 @@
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 8672
+    .line 8682
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -6651,7 +6660,7 @@
 .method private updateColors()V
     .locals 11
 
-    .line 8566
+    .line 8576
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -6662,14 +6671,14 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 8568
+    .line 8578
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     const/16 v2, 0x38
 
-    .line 8569
+    .line 8579
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -6690,7 +6699,7 @@
 
     move-result-object v3
 
-    .line 8570
+    .line 8580
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v7, 0x0
@@ -6699,7 +6708,7 @@
 
     if-ge v5, v8, :cond_0
 
-    .line 8571
+    .line 8581
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -6714,7 +6723,7 @@
 
     move-result-object v0
 
-    .line 8572
+    .line 8582
     new-instance v5, Landroid/graphics/PorterDuffColorFilter;
 
     const/high16 v8, -0x1000000
@@ -6725,12 +6734,12 @@
 
     invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 8573
+    .line 8583
     new-instance v5, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-direct {v5, v0, v3, v7, v7}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;II)V
 
-    .line 8574
+    .line 8584
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -6743,13 +6752,13 @@
 
     move-object v3, v5
 
-    .line 8577
+    .line 8587
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 8579
+    .line 8589
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->backButtonView:Landroid/widget/ImageView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -6760,7 +6769,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 8580
+    .line 8590
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->backButtonView:Landroid/widget/ImageView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
@@ -6775,12 +6784,12 @@
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 8582
+    .line 8592
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->quickLoginButtonIcon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_1
 
-    .line 8583
+    .line 8593
     new-instance v8, Landroid/graphics/PorterDuffColorFilter;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
@@ -6795,7 +6804,7 @@
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 8584
+    .line 8594
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->quickLoginButtonIcon:Landroid/widget/ImageView;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -6816,13 +6825,13 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 8586
+    .line 8596
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->loginPrivacyPolicyView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_2
 
-    .line 8587
+    .line 8597
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6831,7 +6840,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 8588
+    .line 8598
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->loginPrivacyPolicyView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
@@ -6842,13 +6851,13 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 8590
+    .line 8600
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->updateAppItem:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_3
 
-    .line 8591
+    .line 8601
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
@@ -6859,20 +6868,20 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 8593
+    .line 8603
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->updateAppItemDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
     if-eqz v0, :cond_4
 
-    .line 8594
+    .line 8604
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setIconColor(I)V
 
-    .line 8595
+    .line 8605
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->updateAppItemDrawable:Lorg/telegram/ui/ActionBar/MenuDrawable;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6881,7 +6890,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/MenuDrawable;->setBackColor(I)V
 
-    .line 8599
+    .line 8609
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyDrawable:Lorg/telegram/ui/Components/ProxyDrawable;
 
@@ -6897,12 +6906,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ProxyDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 8600
+    .line 8610
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyDrawable:Lorg/telegram/ui/Components/ProxyDrawable;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/ProxyDrawable;->setColorKey(I)V
 
-    .line 8601
+    .line 8611
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyButtonView:Landroid/widget/ImageView;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6915,7 +6924,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 8603
+    .line 8613
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->radialProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6924,7 +6933,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
-    .line 8605
+    .line 8615
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->floatingButtonIcon:Lorg/telegram/ui/Components/TransformableLoginButtonView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
@@ -6935,7 +6944,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/TransformableLoginButtonView;->setColor(I)V
 
-    .line 8606
+    .line 8616
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->floatingButtonIcon:Lorg/telegram/ui/Components/TransformableLoginButtonView;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6944,7 +6953,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/TransformableLoginButtonView;->setBackgroundColor(I)V
 
-    .line 8608
+    .line 8618
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->floatingProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6953,7 +6962,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
-    .line 8610
+    .line 8620
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->views:[Lorg/telegram/ui/Components/SlideView;
 
     array-length v1, v0
@@ -6963,26 +6972,26 @@
 
     aget-object v2, v0, v7
 
-    .line 8611
+    .line 8621
     invoke-virtual {v2}, Lorg/telegram/ui/Components/SlideView;->updateColors()V
 
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 8614
+    .line 8624
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->keyboardView:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->updateColors()V
 
-    .line 8615
+    .line 8625
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->phoneNumberConfirmView:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     if-eqz v0, :cond_6
 
-    .line 8616
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$18200(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
+    .line 8626
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$18300(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
 
     :cond_6
     return-void
@@ -6991,14 +7000,14 @@
 .method private updateProxyButton(ZZ)V
     .locals 6
 
-    .line 8938
+    .line 8948
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyDrawable:Lorg/telegram/ui/Components/ProxyDrawable;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 8941
+    .line 8951
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -7008,7 +7017,7 @@
 
     move-result v0
 
-    .line 8942
+    .line 8952
     iget v1, p0, Lorg/telegram/ui/LoginActivity;->currentConnectionState:I
 
     if-ne v1, v0, :cond_1
@@ -7017,11 +7026,11 @@
 
     return-void
 
-    .line 8945
+    .line 8955
     :cond_1
     iput v0, p0, Lorg/telegram/ui/LoginActivity;->currentConnectionState:I
 
-    .line 8946
+    .line 8956
     sget-object p2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v0, "mainconfig"
@@ -7036,14 +7045,14 @@
 
     const-string v2, ""
 
-    .line 8947
+    .line 8957
     invoke-interface {p2, v0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v2, "proxy_enabled"
 
-    .line 8948
+    .line 8958
     invoke-interface {p2, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p2
@@ -7065,7 +7074,7 @@
     :cond_2
     move p2, v1
 
-    .line 8949
+    .line 8959
     :goto_0
     iget v0, p0, Lorg/telegram/ui/LoginActivity;->currentConnectionState:I
 
@@ -7073,7 +7082,7 @@
 
     const/4 v4, 0x3
 
-    .line 8952
+    .line 8962
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyButtonView:Landroid/widget/ImageView;
 
     iget v5, p0, Lorg/telegram/ui/LoginActivity;->activityMode:I
@@ -7096,7 +7105,7 @@
     :goto_1
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 8953
+    .line 8963
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity;->proxyDrawable:Lorg/telegram/ui/Components/ProxyDrawable;
 
     iget v5, p0, Lorg/telegram/ui/LoginActivity;->currentConnectionState:I
@@ -8961,7 +8970,7 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 2
 
-    .line 9012
+    .line 9022
     sget p2, Lorg/telegram/messenger/NotificationCenter;->httpFileDidLoad:I
 
     const/4 v0, 0x0
@@ -8980,36 +8989,36 @@
 
     goto :goto_0
 
-    .line 9017
+    .line 9027
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->appUpdateAvailable:I
 
     if-ne p1, p2, :cond_1
 
-    .line 9018
+    .line 9028
     invoke-direct {p0, v1}, Lorg/telegram/ui/LoginActivity;->checkUpdateAppItem(Z)V
 
     goto :goto_1
 
-    .line 9020
+    .line 9030
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didUpdateConnectionState:I
 
     if-ne p1, p2, :cond_3
 
-    .line 9021
+    .line 9031
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/LoginActivity;->updateProxyButton(ZZ)V
 
     goto :goto_1
 
-    .line 9013
+    .line 9023
     :cond_2
     :goto_0
     aget-object p1, p3, v0
 
     check-cast p1, Ljava/lang/String;
 
-    .line 9014
+    .line 9024
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->isAppUpdateAvailable()Z
 
     move-result p2
@@ -9026,7 +9035,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 9015
+    .line 9025
     invoke-direct {p0, v1}, Lorg/telegram/ui/LoginActivity;->checkUpdateAppItem(Z)V
 
     :cond_3
@@ -9045,7 +9054,7 @@
         }
     .end annotation
 
-    .line 8622
+    .line 8632
     new-instance v0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda27;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/LoginActivity;)V
@@ -9202,7 +9211,7 @@
 .method public isLightStatusBar()Z
     .locals 5
 
-    .line 8931
+    .line 8941
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     const/4 v1, 0x0
@@ -9213,7 +9222,7 @@
 
     move-result v0
 
-    .line 8932
+    .line 8942
     invoke-static {v0}, Landroidx/core/graphics/ColorUtils;->calculateLuminance(I)D
 
     move-result-wide v0
@@ -9653,12 +9662,12 @@
 
     if-eqz p1, :cond_2
 
-    .line 8469
+    .line 8479
     iget-object v0, v13, Lorg/telegram/ui/LoginActivity;->introView:Landroid/view/View;
 
     if-eqz v0, :cond_2
 
-    .line 8470
+    .line 8480
     iget-object v0, v13, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -9669,7 +9678,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8471
+    .line 8481
     iget-object v0, v13, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -9682,7 +9691,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 8474
+    .line 8484
     :cond_0
     new-instance v8, Lorg/telegram/ui/Components/TransformableLoginButtonView;
 
@@ -9694,7 +9703,7 @@
 
     invoke-direct {v8, v0}, Lorg/telegram/ui/Components/TransformableLoginButtonView;-><init>(Landroid/content/Context;)V
 
-    .line 8475
+    .line 8485
     iget-object v0, v13, Lorg/telegram/ui/LoginActivity;->startMessagingButton:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -9713,7 +9722,7 @@
 
     invoke-virtual {v8, v0, v1}, Lorg/telegram/ui/Components/TransformableLoginButtonView;->setButtonText(Landroid/text/TextPaint;Ljava/lang/String;)V
 
-    .line 8477
+    .line 8487
     iget-object v0, v13, Lorg/telegram/ui/LoginActivity;->startMessagingButton:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getWidth()I
@@ -9726,7 +9735,7 @@
 
     move-result v7
 
-    .line 8478
+    .line 8488
     iget-object v0, v13, Lorg/telegram/ui/LoginActivity;->floatingButtonIcon:Lorg/telegram/ui/Components/TransformableLoginButtonView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -9735,38 +9744,38 @@
 
     iget v6, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 8479
+    .line 8489
     new-instance v4, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-direct {v4, v5, v7}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    .line 8480
+    .line 8490
     invoke-virtual {v8, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     const/4 v0, 0x2
 
     new-array v1, v0, [I
 
-    .line 8483
+    .line 8493
     iget-object v2, v13, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
     const/4 v14, 0x0
 
-    .line 8484
+    .line 8494
     aget v2, v1, v14
 
     const/4 v15, 0x1
 
     aget v3, v1, v15
 
-    .line 8486
+    .line 8496
     iget-object v9, v13, Lorg/telegram/ui/LoginActivity;->startMessagingButton:Landroid/widget/TextView;
 
     invoke-virtual {v9, v1}, Landroid/widget/TextView;->getLocationInWindow([I)V
 
-    .line 8487
+    .line 8497
     aget v9, v1, v14
 
     sub-int/2addr v9, v2
@@ -9779,13 +9788,13 @@
 
     int-to-float v11, v1
 
-    .line 8488
+    .line 8498
     invoke-virtual {v8, v9}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 8489
+    .line 8499
     invoke-virtual {v8, v11}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 8491
+    .line 8501
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
@@ -9848,7 +9857,7 @@
 
     sub-int v10, v1, v2
 
-    .line 8492
+    .line 8502
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
@@ -9883,7 +9892,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 8493
+    .line 8503
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/LoginActivity;->isCustomKeyboardVisible()Z
 
     move-result v2
@@ -9934,14 +9943,14 @@
 
     new-array v0, v0, [F
 
-    .line 8495
+    .line 8505
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v3
 
-    .line 8496
+    .line 8506
     new-instance v0, Lorg/telegram/ui/LoginActivity$15;
 
     move-object/from16 v1, p2
@@ -9950,19 +9959,19 @@
 
     invoke-virtual {v3, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 8527
+    .line 8537
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
-    .line 8528
+    .line 8538
     invoke-static {v2}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v16
 
-    .line 8529
+    .line 8539
     new-instance v1, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda4;
 
     move-object v0, v1
@@ -9979,19 +9988,19 @@
 
     invoke-virtual {v15, v14}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 8554
+    .line 8564
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v15, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 8556
+    .line 8566
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
     const-wide/16 v1, 0x12c
 
-    .line 8557
+    .line 8567
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     const/4 v1, 0x1
@@ -10002,10 +10011,10 @@
 
     aput-object v15, v1, v2
 
-    .line 8558
+    .line 8568
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 8559
+    .line 8569
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-object v0
@@ -10844,15 +10853,15 @@
 .method public setIntroView(Landroid/view/View;Landroid/widget/TextView;)Lorg/telegram/ui/LoginActivity;
     .locals 0
 
-    .line 8461
+    .line 8471
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity;->introView:Landroid/view/View;
 
-    .line 8462
+    .line 8472
     iput-object p2, p0, Lorg/telegram/ui/LoginActivity;->startMessagingButton:Landroid/widget/TextView;
 
     const/4 p1, 0x1
 
-    .line 8463
+    .line 8473
     iput-boolean p1, p0, Lorg/telegram/ui/LoginActivity;->isAnimatingIntro:Z
 
     return-object p0

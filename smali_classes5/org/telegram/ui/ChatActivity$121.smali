@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
     .locals 0
 
-    .line 27450
+    .line 27452
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$121;->val$popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +38,10 @@
 .method public onClick(Landroid/view/View;)V
     .locals 0
 
-    .line 27453
+    .line 27455
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->hideVisible()V
 
-    .line 27454
+    .line 27456
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$121;->val$popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;

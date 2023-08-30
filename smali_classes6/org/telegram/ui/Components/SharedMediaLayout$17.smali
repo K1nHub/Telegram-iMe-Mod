@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/ExtendedGridLayoutManager;)V
     .locals 0
 
-    .line 2808
+    .line 2818
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -43,7 +43,7 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 0
 
-    .line 2811
+    .line 2821
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     if-eqz p2, :cond_0
@@ -64,7 +64,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 2
 
-    .line 2816
+    .line 2826
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -77,7 +77,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 2817
+    .line 2827
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -127,7 +127,7 @@
 
     if-nez p1, :cond_1
 
-    .line 2818
+    .line 2828
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$6000(Lorg/telegram/ui/Components/SharedMediaLayout;)V
@@ -137,7 +137,7 @@
 
     if-eqz p3, :cond_3
 
-    .line 2820
+    .line 2830
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$000(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)I
@@ -166,7 +166,7 @@
 
     if-ne p2, p3, :cond_3
 
-    .line 2821
+    .line 2831
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -178,7 +178,7 @@
 
     invoke-static {p2, p3, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$400(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;Z)V
 
-    .line 2823
+    .line 2833
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -188,17 +188,17 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView;->checkSection(Z)V
 
-    .line 2824
+    .line 2834
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     iget-object p2, p1, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->fastScrollHintView:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     if-eqz p2, :cond_4
 
-    .line 2825
+    .line 2835
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2827
+    .line 2837
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$17;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 

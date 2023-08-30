@@ -3,7 +3,7 @@
 .source "ArticleViewer.java"
 
 # interfaces
-.implements Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
+.implements Lorg/telegram/ui/PinchToZoomHelper$Callback;
 
 
 # annotations
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 3868
+    .line 3891
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$19;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,40 +35,53 @@
 
 
 # virtual methods
-.method public getClipTopBottom([F)V
-    .locals 2
+.method public synthetic getCurrentTextureView()Landroid/view/TextureView;
+    .locals 1
 
-    .line 3871
-    iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$19;->this$0:Lorg/telegram/ui/ArticleViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$2700(Lorg/telegram/ui/ArticleViewer;)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const/4 v1, 0x0
-
-    aput v0, p1, v1
-
-    .line 3872
-    iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$19;->this$0:Lorg/telegram/ui/ArticleViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$3300(Lorg/telegram/ui/ArticleViewer;)[Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p0}, Lorg/telegram/ui/PinchToZoomHelper$Callback$-CC;->$default$getCurrentTextureView(Lorg/telegram/ui/PinchToZoomHelper$Callback;)Landroid/view/TextureView;
 
     move-result-object v0
 
-    aget-object v0, v0, v1
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
+.method public synthetic onZoomFinished(Lorg/telegram/messenger/MessageObject;)V
+    .locals 0
 
-    move-result v0
+    invoke-static {p0, p1}, Lorg/telegram/ui/PinchToZoomHelper$Callback$-CC;->$default$onZoomFinished(Lorg/telegram/ui/PinchToZoomHelper$Callback;Lorg/telegram/messenger/MessageObject;)V
 
-    int-to-float v0, v0
+    return-void
+.end method
 
-    const/4 v1, 0x1
+.method public onZoomStarted(Lorg/telegram/messenger/MessageObject;)V
+    .locals 1
 
-    aput v0, p1, v1
+    .line 3894
+    iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$19;->this$0:Lorg/telegram/ui/ArticleViewer;
 
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$3300(Lorg/telegram/ui/ArticleViewer;)[Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    aget-object p1, p1, v0
+
+    if-eqz p1, :cond_0
+
+    .line 3895
+    iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$19;->this$0:Lorg/telegram/ui/ArticleViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$3300(Lorg/telegram/ui/ArticleViewer;)[Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object p1
+
+    aget-object p1, p1, v0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
+
+    :cond_0
     return-void
 .end method

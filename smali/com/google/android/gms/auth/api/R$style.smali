@@ -24,11 +24,11 @@
 
 .field public static final TextAppearance_Compat_Notification_Title:I = 0x7f12017e
 
-.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f120282
+.field public static final Widget_Compat_NotificationActionContainer:I = 0x7f120283
 
-.field public static final Widget_Compat_NotificationActionText:I = 0x7f120283
+.field public static final Widget_Compat_NotificationActionText:I = 0x7f120284
 
-.field public static final Widget_Support_CoordinatorLayout:I = 0x7f12030a
+.field public static final Widget_Support_CoordinatorLayout:I = 0x7f12030b
 
 
 # direct methods

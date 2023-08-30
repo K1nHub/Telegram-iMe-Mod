@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 154
+    .line 155
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 174
+    .line 175
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -71,7 +71,7 @@
 
     return p1
 
-    .line 177
+    .line 178
     :cond_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -83,7 +83,7 @@
 .method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 1
 
-    .line 157
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->viewsDrawInParent:Ljava/util/ArrayList;
@@ -98,7 +98,7 @@
 
     return p1
 
-    .line 160
+    .line 161
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -110,12 +110,12 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 165
+    .line 166
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
     const/4 p1, 0x0
 
-    .line 166
+    .line 167
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -127,7 +127,7 @@
 
     if-ge p1, p2, :cond_0
 
-    .line 167
+    .line 168
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/DialogStoriesCell;->afterNextLayout:Ljava/util/ArrayList;
@@ -144,7 +144,7 @@
 
     goto :goto_0
 
-    .line 169
+    .line 170
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$1;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 

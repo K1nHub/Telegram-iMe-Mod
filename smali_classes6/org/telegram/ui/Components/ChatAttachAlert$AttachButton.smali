@@ -175,7 +175,7 @@
     return-void
 .end method
 
-.method static synthetic access$14100(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)Landroid/widget/TextView;
+.method static synthetic access$14200(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)Landroid/widget/TextView;
     .locals 0
 
     .line 1053
@@ -184,7 +184,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$14200(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)Lorg/telegram/ui/Components/RLottieImageView;
+.method static synthetic access$14300(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)Lorg/telegram/ui/Components/RLottieImageView;
     .locals 0
 
     .line 1053
@@ -193,7 +193,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$15200(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)I
+.method static synthetic access$15300(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)I
     .locals 0
 
     .line 1053
@@ -202,7 +202,7 @@
     return p0
 .end method
 
-.method static synthetic access$15300(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)F
+.method static synthetic access$15400(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)F
     .locals 0
 
     .line 1053
@@ -211,7 +211,7 @@
     return p0
 .end method
 
-.method static synthetic access$16600(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)I
+.method static synthetic access$16700(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;)I
     .locals 0
 
     .line 1053

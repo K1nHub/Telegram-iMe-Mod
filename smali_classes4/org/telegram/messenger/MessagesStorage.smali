@@ -22,7 +22,7 @@
 
 .field private static volatile Instance:[Lorg/telegram/messenger/MessagesStorage; = null
 
-.field public static final LAST_DB_VERSION:I = 0x80
+.field public static final LAST_DB_VERSION:I = 0x81
 
 .field private static final lockObjects:[Ljava/lang/Object;
 
@@ -11324,7 +11324,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB);"
+    const-string v0, "CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB, type INTEGER);"
 
     .line 789
     invoke-virtual {p0, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -11350,7 +11350,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/SQLite/SQLitePreparedStatement;->dispose()V
 
-    const-string v0, "PRAGMA user_version = 128"
+    const-string v0, "PRAGMA user_version = 129"
 
     .line 793
     invoke-virtual {p0, v0}, Lorg/telegram/SQLite/SQLiteDatabase;->executeFast(Ljava/lang/String;)Lorg/telegram/SQLite/SQLitePreparedStatement;
@@ -84615,7 +84615,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v1, 0x80
+    const/16 v1, 0x81
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -116283,7 +116283,7 @@
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
     :goto_3
-    const/16 v2, 0x80
+    const/16 v2, 0x81
 
     if-ge v1, v2, :cond_b
 

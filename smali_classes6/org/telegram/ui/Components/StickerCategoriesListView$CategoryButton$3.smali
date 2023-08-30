@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;)V
     .locals 0
 
-    .line 812
+    .line 815
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$3;->this$1:Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 815
+    .line 818
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 816
+    .line 819
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton$3;->this$1:Lorg/telegram/ui/Components/StickerCategoriesListView$CategoryButton;
 
     const/4 v0, 0x0

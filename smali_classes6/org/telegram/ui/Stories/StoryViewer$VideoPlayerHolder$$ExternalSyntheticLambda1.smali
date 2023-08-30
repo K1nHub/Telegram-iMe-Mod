@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;->$r8$lambda$SYtpQL-yVJaO2w3NdYmK-2kSw6A(Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;)V
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;->$r8$lambda$zZECEFhN-GhTbpEd5Age2zC66w0(Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;)V
 
     return-void
 .end method

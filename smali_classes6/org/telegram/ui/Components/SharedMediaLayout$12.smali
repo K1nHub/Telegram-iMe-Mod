@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)V
     .locals 0
 
-    .line 2246
+    .line 2256
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -39,7 +39,7 @@
 .method public getSpanSize(I)I
     .locals 5
 
-    .line 2249
+    .line 2259
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -82,7 +82,7 @@
     :goto_1
     aget v0, v0, v1
 
-    .line 2250
+    .line 2260
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -103,7 +103,7 @@
 
     if-ne v1, v3, :cond_3
 
-    .line 2251
+    .line 2261
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$1000(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
@@ -121,7 +121,7 @@
     :cond_2
     return v2
 
-    .line 2255
+    .line 2265
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -141,7 +141,7 @@
 
     if-ne v1, v3, :cond_5
 
-    .line 2256
+    .line 2266
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -159,7 +159,7 @@
     :cond_4
     return v2
 
-    .line 2260
+    .line 2270
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -179,7 +179,7 @@
 
     if-ne v1, v3, :cond_7
 
-    .line 2261
+    .line 2271
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -197,7 +197,7 @@
     :cond_6
     return v2
 
-    .line 2266
+    .line 2276
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -217,7 +217,7 @@
 
     if-eq v0, v1, :cond_8
 
-    .line 2267
+    .line 2277
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$300(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
@@ -230,7 +230,7 @@
 
     return p1
 
-    .line 2269
+    .line 2279
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -268,7 +268,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 2270
+    .line 2280
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$300(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
@@ -281,7 +281,7 @@
 
     return p1
 
-    .line 2272
+    .line 2282
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$12;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;Landroid/view/View;)V
     .locals 0
 
-    .line 1188
+    .line 1196
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$2;->this$1:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$2;->val$oldTextView:Landroid/view/View;
@@ -39,10 +39,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1191
+    .line 1199
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1192
+    .line 1200
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$2;->this$1:Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -51,7 +51,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$902(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 1193
+    .line 1201
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$2;->val$oldTextView:Landroid/view/View;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->removeFromParent(Landroid/view/View;)V

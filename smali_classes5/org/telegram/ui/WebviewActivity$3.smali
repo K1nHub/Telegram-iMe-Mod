@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/WebviewActivity;)V
     .locals 0
 
-    .line 229
+    .line 231
     iput-object p1, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
@@ -33,7 +33,7 @@
 .method private isInternalUrl(Ljava/lang/String;)Z
     .locals 4
 
-    .line 232
+    .line 234
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -44,13 +44,13 @@
 
     return v1
 
-    .line 235
+    .line 237
     :cond_0
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 236
+    .line 238
     invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v2
@@ -63,7 +63,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 237
+    .line 239
     iget-object v2, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/WebviewActivity;->access$700(Lorg/telegram/ui/WebviewActivity;)I
@@ -79,7 +79,7 @@
 
     const-string v1, "tg://telegram.org"
 
-    .line 239
+    .line 241
     invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
@@ -88,7 +88,7 @@
 
     move-result-object p1
 
-    .line 240
+    .line 242
     iget-object v0, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     const-string v1, "params"
@@ -106,18 +106,18 @@
     :catchall_0
     move-exception p1
 
-    .line 242
+    .line 244
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 245
+    .line 247
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)Z
 
-    .line 247
+    .line 249
     :try_start_1
     new-instance p1, Landroid/content/Intent;
 
@@ -125,7 +125,7 @@
 
     invoke-direct {p1, v1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 248
+    .line 250
     new-instance v0, Landroid/content/ComponentName;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -142,12 +142,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 249
+    .line 251
     invoke-virtual {p1, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     const-string v0, "com.android.browser.application_id"
 
-    .line 250
+    .line 252
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -156,7 +156,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 251
+    .line 253
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
@@ -168,7 +168,7 @@
     :catch_0
     move-exception p1
 
-    .line 253
+    .line 255
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -183,7 +183,7 @@
 .method public onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 1
 
-    .line 263
+    .line 265
     invoke-direct {p0, p2}, Lorg/telegram/ui/WebviewActivity$3;->isInternalUrl(Ljava/lang/String;)Z
 
     move-result v0
@@ -192,7 +192,7 @@
 
     return-void
 
-    .line 266
+    .line 268
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V
 
@@ -202,10 +202,10 @@
 .method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 9
 
-    .line 276
+    .line 278
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 277
+    .line 279
     iget-object p1, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/WebviewActivity;->access$900(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/Components/ContextProgressView;
@@ -226,12 +226,12 @@
 
     if-nez p1, :cond_1
 
-    .line 278
+    .line 280
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 279
+    .line 281
     iget-object p2, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/WebviewActivity;->access$700(Lorg/telegram/ui/WebviewActivity;)I
@@ -254,7 +254,7 @@
 
     if-nez p2, :cond_0
 
-    .line 280
+    .line 282
     iget-object p2, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/WebviewActivity;->access$1000(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -267,7 +267,7 @@
 
     invoke-virtual {p2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 281
+    .line 283
     iget-object p2, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/WebviewActivity;->access$1000(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -280,10 +280,10 @@
 
     new-array p2, p2, [Landroid/animation/Animator;
 
-    .line 282
+    .line 284
     iget-object v7, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 283
+    .line 285
     invoke-static {v7}, Lorg/telegram/ui/WebviewActivity;->access$900(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/Components/ContextProgressView;
 
     move-result-object v7
@@ -300,7 +300,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 284
+    .line 286
     invoke-static {v5}, Lorg/telegram/ui/WebviewActivity;->access$900(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/Components/ContextProgressView;
 
     move-result-object v5
@@ -317,7 +317,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 285
+    .line 287
     invoke-static {v3}, Lorg/telegram/ui/WebviewActivity;->access$900(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/Components/ContextProgressView;
 
     move-result-object v3
@@ -334,7 +334,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 286
+    .line 288
     invoke-static {v3}, Lorg/telegram/ui/WebviewActivity;->access$1000(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v3
@@ -357,7 +357,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 287
+    .line 289
     invoke-static {v3}, Lorg/telegram/ui/WebviewActivity;->access$1000(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v3
@@ -380,7 +380,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 288
+    .line 290
     invoke-static {v2}, Lorg/telegram/ui/WebviewActivity;->access$1000(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v2
@@ -399,7 +399,7 @@
 
     aput-object v1, p2, v0
 
-    .line 282
+    .line 284
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     goto :goto_0
@@ -407,10 +407,10 @@
     :cond_0
     new-array p2, v0, [Landroid/animation/Animator;
 
-    .line 290
+    .line 292
     iget-object v0, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 291
+    .line 293
     invoke-static {v0}, Lorg/telegram/ui/WebviewActivity;->access$900(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/Components/ContextProgressView;
 
     move-result-object v0
@@ -427,7 +427,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 292
+    .line 294
     invoke-static {v0}, Lorg/telegram/ui/WebviewActivity;->access$900(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/Components/ContextProgressView;
 
     move-result-object v0
@@ -444,7 +444,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/WebviewActivity$3;->this$0:Lorg/telegram/ui/WebviewActivity;
 
-    .line 293
+    .line 295
     invoke-static {v0}, Lorg/telegram/ui/WebviewActivity;->access$900(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/ui/Components/ContextProgressView;
 
     move-result-object v0
@@ -459,10 +459,10 @@
 
     aput-object v0, p2, v6
 
-    .line 290
+    .line 292
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 295
+    .line 297
     :goto_0
     new-instance p2, Lorg/telegram/ui/WebviewActivity$3$1;
 
@@ -472,10 +472,10 @@
 
     const-wide/16 v0, 0x96
 
-    .line 305
+    .line 307
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 306
+    .line 308
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     :cond_1
@@ -539,7 +539,7 @@
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 1
 
-    .line 271
+    .line 273
     invoke-direct {p0, p2}, Lorg/telegram/ui/WebviewActivity$3;->isInternalUrl(Ljava/lang/String;)Z
 
     move-result v0

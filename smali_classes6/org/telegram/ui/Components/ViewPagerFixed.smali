@@ -329,7 +329,7 @@
 
     float-to-double v0, p0
 
-    .line 718
+    .line 720
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v0
@@ -342,17 +342,17 @@
 .method private findRecyclerView(Landroid/view/View;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 1942
+    .line 1944
     instance-of v0, p1, Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_2
 
-    .line 1943
+    .line 1945
     check-cast p1, Landroid/view/ViewGroup;
 
     const/4 v0, 0x0
 
-    .line 1944
+    .line 1946
     :goto_0
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -360,28 +360,28 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 1945
+    .line 1947
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1946
+    .line 1948
     instance-of v2, v1, Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz v2, :cond_0
 
-    .line 1947
+    .line 1949
     check-cast v1, Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object v1
 
-    .line 1948
+    .line 1950
     :cond_0
     instance-of v2, v1, Landroid/view/ViewGroup;
 
     if-eqz v2, :cond_1
 
-    .line 1949
+    .line 1951
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->findRecyclerView(Landroid/view/View;)Lorg/telegram/ui/Components/RecyclerListView;
 
     :cond_1
@@ -398,7 +398,7 @@
 .method private findScrollingChild(Landroid/view/ViewGroup;FF)Landroid/view/View;
     .locals 6
 
-    .line 1901
+    .line 1903
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -408,12 +408,12 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 1903
+    .line 1905
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1904
+    .line 1906
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v3
@@ -422,13 +422,13 @@
 
     goto :goto_1
 
-    .line 1907
+    .line 1909
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v3}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 1908
+    .line 1910
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->rect:Landroid/graphics/Rect;
 
     float-to-int v4, p2
@@ -443,7 +443,7 @@
 
     const/4 v3, -0x1
 
-    .line 1909
+    .line 1911
     invoke-virtual {v2, v3}, Landroid/view/View;->canScrollHorizontally(I)Z
 
     move-result v3
@@ -452,13 +452,13 @@
 
     return-object v2
 
-    .line 1911
+    .line 1913
     :cond_1
     instance-of v3, v2, Landroid/view/ViewGroup;
 
     if-eqz v3, :cond_2
 
-    .line 1912
+    .line 1914
     check-cast v2, Landroid/view/ViewGroup;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->rect:Landroid/graphics/Rect;
@@ -498,7 +498,7 @@
 .method private synthetic lambda$onTouchEvent$2(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 595
+    .line 597
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -519,12 +519,12 @@
 .method private synthetic lambda$rebuild$3(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 834
+    .line 836
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->updateTabProgress:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-interface {v0, p1}, Landroid/animation/ValueAnimator$AnimatorUpdateListener;->onAnimationUpdate(Landroid/animation/ValueAnimator;)V
 
-    .line 835
+    .line 837
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -539,7 +539,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1402(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;F)F
 
-    .line 836
+    .line 838
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$800(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -548,7 +548,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
 
-    .line 837
+    .line 839
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -700,7 +700,7 @@
 
     if-nez p2, :cond_0
 
-    .line 386
+    .line 388
     iget v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-nez v1, :cond_0
@@ -740,7 +740,7 @@
     :cond_2
     return v0
 
-    .line 389
+    .line 391
     :cond_3
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->canScroll(Landroid/view/MotionEvent;)Z
 
@@ -750,7 +750,7 @@
 
     return v0
 
-    .line 393
+    .line 395
     :cond_4
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -758,13 +758,13 @@
 
     invoke-interface {v2, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 394
+    .line 396
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->maybeStartTracking:Z
 
-    .line 395
+    .line 397
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
-    .line 396
+    .line 398
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
@@ -777,19 +777,19 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTrackingX:I
 
-    .line 397
+    .line 399
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     if-eqz p1, :cond_5
 
-    .line 398
+    .line 400
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 401
+    .line 403
     :cond_5
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
-    .line 402
+    .line 404
     iget p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-eqz p2, :cond_6
@@ -806,10 +806,10 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
 
-    .line 403
+    .line 405
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->updateViewForIndex(I)V
 
-    .line 404
+    .line 406
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v2, p1, v1
@@ -818,7 +818,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 406
+    .line 408
     aget-object p2, p1, v1
 
     aget-object p1, p1, v0
@@ -833,7 +833,7 @@
 
     goto :goto_1
 
-    .line 408
+    .line 410
     :cond_7
     aget-object p2, p1, v1
 
@@ -849,7 +849,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 411
+    .line 413
     :cond_8
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTabAnimationUpdate()V
@@ -860,7 +860,7 @@
 .method private swapViews()V
     .locals 8
 
-    .line 666
+    .line 668
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     const/4 v1, 0x0
@@ -869,39 +869,39 @@
 
     const/4 v3, 0x1
 
-    .line 667
+    .line 669
     aget-object v4, v0, v3
 
     aput-object v4, v0, v1
 
-    .line 668
+    .line 670
     aput-object v2, v0, v3
 
-    .line 669
+    .line 671
     iget v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
-    .line 670
+    .line 672
     iget v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
 
     iput v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
-    .line 671
+    .line 673
     iput v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
 
-    .line 672
+    .line 674
     iget-object v5, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
 
     aget v6, v5, v1
 
-    .line 673
+    .line 675
     aget v7, v5, v3
 
     aput v7, v5, v1
 
-    .line 674
+    .line 676
     aput v6, v5, v3
 
-    .line 676
+    .line 678
     aget-object v1, v0, v1
 
     aget-object v0, v0, v3
@@ -916,7 +916,7 @@
 
     if-nez p1, :cond_0
 
-    .line 316
+    .line 318
     iget v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     goto :goto_0
@@ -927,7 +927,7 @@
     :goto_0
     if-ltz v0, :cond_7
 
-    .line 317
+    .line 319
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;->getItemCount()I
@@ -938,7 +938,7 @@
 
     goto/16 :goto_3
 
-    .line 320
+    .line 322
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -948,7 +948,7 @@
 
     if-nez v1, :cond_4
 
-    .line 321
+    .line 323
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
@@ -959,7 +959,7 @@
 
     aput v3, v1, p1
 
-    .line 322
+    .line 324
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
@@ -974,7 +974,7 @@
 
     if-nez v1, :cond_2
 
-    .line 324
+    .line 326
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
@@ -987,7 +987,7 @@
 
     goto :goto_1
 
-    .line 326
+    .line 328
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
 
@@ -997,7 +997,7 @@
 
     invoke-virtual {v3, v4}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 328
+    .line 330
     :goto_1
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -1005,26 +1005,26 @@
 
     if-eqz v3, :cond_3
 
-    .line 329
+    .line 331
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
     check-cast v3, Landroid/view/ViewGroup;
 
-    .line 330
+    .line 332
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 332
+    .line 334
     :cond_3
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 333
+    .line 335
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aput-object v1, v3, p1
 
-    .line 334
+    .line 336
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     aget-object v3, v3, p1
@@ -1035,7 +1035,7 @@
 
     invoke-virtual {v1, v3, v0, v4}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;->bindView(Landroid/view/View;II)V
 
-    .line 335
+    .line 337
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object p1, v0, p1
@@ -1044,7 +1044,7 @@
 
     goto/16 :goto_3
 
-    .line 337
+    .line 339
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
 
@@ -1058,7 +1058,7 @@
 
     if-ne v1, v3, :cond_5
 
-    .line 338
+    .line 340
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -1071,7 +1071,7 @@
 
     invoke-virtual {v1, v3, v0, v4}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;->bindView(Landroid/view/View;II)V
 
-    .line 339
+    .line 341
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object p1, v0, p1
@@ -1080,7 +1080,7 @@
 
     goto :goto_3
 
-    .line 341
+    .line 343
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
 
@@ -1094,7 +1094,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 342
+    .line 344
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v1, v1, p1
@@ -1103,14 +1103,14 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 343
+    .line 345
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v1, v1, p1
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 344
+    .line 346
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
@@ -1121,7 +1121,7 @@
 
     aput v3, v1, p1
 
-    .line 345
+    .line 347
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
@@ -1136,7 +1136,7 @@
 
     if-nez v1, :cond_6
 
-    .line 347
+    .line 349
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
@@ -1149,7 +1149,7 @@
 
     goto :goto_2
 
-    .line 349
+    .line 351
     :cond_6
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
 
@@ -1159,21 +1159,21 @@
 
     invoke-virtual {v3, v4}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 351
+    .line 353
     :goto_2
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 352
+    .line 354
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aput-object v1, v3, p1
 
-    .line 353
+    .line 355
     aget-object v1, v3, p1
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 354
+    .line 356
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -1210,7 +1210,7 @@
 
     return v0
 
-    .line 902
+    .line 904
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimationInProgress:Z
 
@@ -1237,7 +1237,7 @@
     :goto_0
     if-nez p1, :cond_3
 
-    .line 906
+    .line 908
     iget v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-eqz v1, :cond_4
@@ -1268,14 +1268,14 @@
 .method public checkTabsAnimationInProgress()Z
     .locals 7
 
-    .line 685
+    .line 687
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimationInProgress:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_7
 
-    .line 687
+    .line 689
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
 
     const/4 v2, -0x1
@@ -1288,7 +1288,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 688
+    .line 690
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v0, v0, v1
@@ -1305,21 +1305,21 @@
 
     if-gez v0, :cond_3
 
-    .line 689
+    .line 691
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 690
+    .line 692
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v3, v0, v5
 
     if-eqz v3, :cond_4
 
-    .line 691
+    .line 693
     aget-object v3, v0, v5
 
     aget-object v0, v0, v1
@@ -1343,7 +1343,7 @@
 
     goto :goto_1
 
-    .line 695
+    .line 697
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -1361,7 +1361,7 @@
 
     if-gez v0, :cond_3
 
-    .line 696
+    .line 698
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v4, v0, v1
@@ -1388,14 +1388,14 @@
 
     invoke-virtual {v4, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 697
+    .line 699
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v2, v0, v5
 
     if-eqz v2, :cond_4
 
-    .line 698
+    .line 700
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setTranslationX(F)V
@@ -1409,24 +1409,24 @@
     :goto_1
     if-eqz v5, :cond_6
 
-    .line 704
+    .line 706
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_5
 
-    .line 705
+    .line 707
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 706
+    .line 708
     iput-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
-    .line 708
+    .line 710
     :cond_5
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimationInProgress:Z
 
-    .line 710
+    .line 712
     :cond_6
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimationInProgress:Z
 
@@ -1496,10 +1496,10 @@
 
     const/4 p1, 0x0
 
-    .line 303
+    .line 305
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->fillTabs(Z)V
 
-    .line 304
+    .line 306
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     return-object p1
@@ -1512,7 +1512,7 @@
 
     move v1, v0
 
-    .line 1923
+    .line 1925
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -1520,7 +1520,7 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 1924
+    .line 1926
     aget-object v3, v2, v1
 
     if-eqz v3, :cond_1
@@ -1533,7 +1533,7 @@
 
     if-nez v2, :cond_1
 
-    .line 1925
+    .line 1927
     iget-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v2, v2, v1
@@ -1546,7 +1546,7 @@
 
     move v3, v0
 
-    .line 1927
+    .line 1929
     :goto_1
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1554,12 +1554,12 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 1928
+    .line 1930
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 1929
+    .line 1931
     invoke-virtual {v4}, Landroid/view/View;->getY()F
 
     move-result v5
@@ -1584,12 +1584,12 @@
 
     if-gez v5, :cond_0
 
-    .line 1930
+    .line 1932
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v5
 
-    .line 1931
+    .line 1933
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v6, v6, v1
@@ -1626,10 +1626,10 @@
 
     invoke-virtual {p1, v6, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1932
+    .line 1934
     invoke-virtual {v4, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1933
+    .line 1935
     invoke-virtual {p1, v5}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     :cond_0
@@ -1649,7 +1649,7 @@
 .method protected fillTabs(Z)V
     .locals 5
 
-    .line 369
+    .line 371
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     if-eqz v0, :cond_3
@@ -1658,12 +1658,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 370
+    .line 372
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->removeTabs()V
 
     const/4 v0, 0x0
 
-    .line 371
+    .line 373
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
@@ -1673,7 +1673,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 373
+    .line 375
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$700(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
@@ -1684,7 +1684,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 374
+    .line 376
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
@@ -1709,7 +1709,7 @@
 
     goto :goto_1
 
-    .line 376
+    .line 378
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
@@ -1735,7 +1735,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 379
+    .line 381
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$800(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -1748,7 +1748,7 @@
 
     invoke-static {p1, v0}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
 
-    .line 381
+    .line 383
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
@@ -1761,7 +1761,7 @@
 .method public getCurrentPosition()I
     .locals 1
 
-    .line 917
+    .line 919
     iget v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     return v0
@@ -1770,7 +1770,7 @@
 .method public getCurrentView()Landroid/view/View;
     .locals 2
 
-    .line 913
+    .line 915
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     const/4 v1, 0x0
@@ -1906,7 +1906,7 @@
 .method public getViewPages()[Landroid/view/View;
     .locals 1
 
-    .line 748
+    .line 750
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     return-object v0
@@ -1921,7 +1921,7 @@
 .method public isCurrentTabFirst()Z
     .locals 1
 
-    .line 752
+    .line 754
     iget v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-nez v0, :cond_0
@@ -1979,7 +1979,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 416
+    .line 418
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     if-eqz v0, :cond_0
@@ -1994,7 +1994,7 @@
 
     return p1
 
-    .line 419
+    .line 421
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->checkTabsAnimationInProgress()Z
 
@@ -2006,11 +2006,11 @@
 
     return p1
 
-    .line 422
+    .line 424
     :cond_1
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 423
+    .line 425
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
     return p1
@@ -2043,7 +2043,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 12
 
-    .line 436
+    .line 438
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     const/4 v1, 0x0
@@ -2061,19 +2061,19 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 440
+    .line 442
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_1
 
-    .line 441
+    .line 443
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
-    .line 443
+    .line 445
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
@@ -2086,7 +2086,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 445
+    .line 447
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
@@ -2099,17 +2099,17 @@
 
     if-eqz v3, :cond_7
 
-    .line 446
+    .line 448
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
-    .line 447
+    .line 449
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v3
 
     iput v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTrackingPointerId:I
 
-    .line 448
+    .line 450
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
@@ -2118,14 +2118,14 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTrackingX:I
 
-    .line 449
+    .line 451
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
     if-eqz v4, :cond_4
 
     int-to-float v3, v3
 
-    .line 450
+    .line 452
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v4, v4, v1
@@ -2150,7 +2150,7 @@
 
     if-gez v3, :cond_3
 
-    .line 451
+    .line 453
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v3, v3, v1
@@ -2163,14 +2163,14 @@
 
     goto :goto_0
 
-    .line 453
+    .line 455
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->swapViews()V
 
-    .line 454
+    .line 456
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
-    .line 455
+    .line 457
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v3, v3, v1
@@ -2183,7 +2183,7 @@
 
     goto :goto_0
 
-    .line 457
+    .line 459
     :cond_4
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -2193,7 +2193,7 @@
 
     int-to-float v3, v3
 
-    .line 458
+    .line 460
     aget-object v4, v4, v2
 
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
@@ -2216,13 +2216,13 @@
 
     if-gez v3, :cond_5
 
-    .line 459
+    .line 461
     invoke-direct {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->swapViews()V
 
-    .line 460
+    .line 462
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
-    .line 461
+    .line 463
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v3, v3, v1
@@ -2235,7 +2235,7 @@
 
     goto :goto_0
 
-    .line 463
+    .line 465
     :cond_5
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -2247,19 +2247,19 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->additionalOffset:F
 
-    .line 466
+    .line 468
     :cond_6
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v3}, Landroid/animation/AnimatorSet;->removeAllListeners()V
 
-    .line 467
+    .line 469
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v3}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 468
+    .line 470
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimationInProgress:Z
 
     goto :goto_1
@@ -2267,17 +2267,17 @@
     :cond_7
     if-eqz p1, :cond_8
 
-    .line 469
+    .line 471
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     if-nez v3, :cond_8
 
-    .line 470
+    .line 472
     iput v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->additionalOffset:F
 
-    .line 473
+    .line 475
     :cond_8
     :goto_1
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
@@ -2288,7 +2288,7 @@
 
     if-eqz p1, :cond_a
 
-    .line 474
+    .line 476
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
@@ -2303,7 +2303,7 @@
 
     if-eqz v3, :cond_a
 
-    .line 475
+    .line 477
     invoke-virtual {v3, v2}, Landroid/view/View;->canScrollHorizontally(I)Z
 
     move-result v5
@@ -2322,7 +2322,7 @@
     :cond_a
     if-eqz p1, :cond_b
 
-    .line 479
+    .line 481
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
@@ -2337,17 +2337,17 @@
 
     if-nez v3, :cond_b
 
-    .line 480
+    .line 482
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTrackingPointerId:I
 
-    .line 481
+    .line 483
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->maybeStartTracking:Z
 
-    .line 482
+    .line 484
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -2356,7 +2356,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTrackingX:I
 
-    .line 483
+    .line 485
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
@@ -2374,7 +2374,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 484
+    .line 486
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v6
@@ -2389,7 +2389,7 @@
 
     if-ne v6, v7, :cond_19
 
-    .line 485
+    .line 487
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
@@ -2406,7 +2406,7 @@
 
     float-to-int v3, v3
 
-    .line 486
+    .line 488
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v6
@@ -2421,7 +2421,7 @@
 
     move-result v6
 
-    .line 487
+    .line 489
     iget-boolean v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
     if-eqz v7, :cond_12
@@ -2447,7 +2447,7 @@
     :cond_e
     move v7, v1
 
-    .line 488
+    .line 490
     :goto_2
     invoke-direct {p0, p1, v7}, Lorg/telegram/ui/Components/ViewPagerFixed;->prepareForMoving(Landroid/view/MotionEvent;Z)Z
 
@@ -2455,27 +2455,27 @@
 
     if-nez v7, :cond_12
 
-    .line 489
+    .line 491
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->maybeStartTracking:Z
 
-    .line 490
+    .line 492
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
-    .line 491
+    .line 493
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v7, v7, v1
 
     invoke-virtual {v7, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 492
+    .line 494
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v8, v7, v2
 
     if-eqz v8, :cond_10
 
-    .line 493
+    .line 495
     aget-object v8, v7, v2
 
     iget-boolean v9, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
@@ -2504,22 +2504,22 @@
 
     invoke-virtual {v8, v7}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 495
+    .line 497
     :cond_10
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     if-eqz v7, :cond_11
 
-    .line 496
+    .line 498
     iget v8, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     invoke-virtual {v7, v8, v1, v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectTab(IIF)V
 
-    .line 498
+    .line 500
     :cond_11
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTabAnimationUpdate()V
 
-    .line 501
+    .line 503
     :cond_12
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->maybeStartTracking:Z
 
@@ -2529,7 +2529,7 @@
 
     if-nez v0, :cond_14
 
-    .line 502
+    .line 504
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -2542,7 +2542,7 @@
 
     float-to-int v0, v0
 
-    .line 503
+    .line 505
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v4
@@ -2570,19 +2570,19 @@
     :cond_13
     move v0, v1
 
-    .line 504
+    .line 506
     :goto_4
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->prepareForMoving(Landroid/view/MotionEvent;Z)Z
 
     goto/16 :goto_12
 
-    .line 506
+    .line 508
     :cond_14
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
     if-eqz p1, :cond_33
 
-    .line 507
+    .line 509
     invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
     move-result p1
@@ -2601,19 +2601,19 @@
 
     div-float/2addr p1, v0
 
-    .line 508
+    .line 510
     iget v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
 
     if-ne v0, v4, :cond_15
 
-    .line 509
+    .line 511
     iput p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backProgress:F
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->onBackProgress(F)Z
 
     goto :goto_5
 
-    .line 511
+    .line 513
     :cond_15
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -2623,19 +2623,19 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 512
+    .line 514
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v4, v0, v2
 
     if-eqz v4, :cond_17
 
-    .line 513
+    .line 515
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
     if-eqz v4, :cond_16
 
-    .line 514
+    .line 516
     aget-object v4, v0, v2
 
     aget-object v0, v0, v1
@@ -2652,7 +2652,7 @@
 
     goto :goto_5
 
-    .line 516
+    .line 518
     :cond_16
     aget-object v4, v0, v2
 
@@ -2668,14 +2668,14 @@
 
     invoke-virtual {v4, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 520
+    .line 522
     :cond_17
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     if-eqz v0, :cond_18
 
-    .line 521
+    .line 523
     iget v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
 
     iget v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
@@ -2684,7 +2684,7 @@
 
     invoke-virtual {v0, v3, v4, v5}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectTab(IIF)V
 
-    .line 523
+    .line 525
     :cond_18
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTabAnimationUpdate()V
 
@@ -2695,7 +2695,7 @@
 
     if-eqz p1, :cond_1a
 
-    .line 525
+    .line 527
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v6
@@ -2724,7 +2724,7 @@
 
     if-ne v6, v7, :cond_33
 
-    .line 526
+    .line 528
     :cond_1a
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
@@ -2732,7 +2732,7 @@
 
     const/16 v7, 0x3e8
 
-    .line 527
+    .line 529
     iget v8, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->maximumVelocity:I
 
     int-to-float v8, v8
@@ -2742,33 +2742,33 @@
     :cond_1b
     if-eqz p1, :cond_1d
 
-    .line 531
+    .line 533
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v6
 
     if-eq v6, v4, :cond_1d
 
-    .line 532
+    .line 534
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v4}, Landroid/view/VelocityTracker;->getXVelocity()F
 
     move-result v4
 
-    .line 533
+    .line 535
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v6}, Landroid/view/VelocityTracker;->getYVelocity()F
 
     move-result v6
 
-    .line 534
+    .line 536
     iget-boolean v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
     if-nez v7, :cond_1e
 
-    .line 535
+    .line 537
     invoke-static {v4}, Ljava/lang/Math;->abs(F)F
 
     move-result v7
@@ -2802,7 +2802,7 @@
     :cond_1c
     move v7, v1
 
-    .line 536
+    .line 538
     :goto_6
     invoke-direct {p0, p1, v7}, Lorg/telegram/ui/Components/ViewPagerFixed;->prepareForMoving(Landroid/view/MotionEvent;Z)Z
 
@@ -2813,14 +2813,14 @@
 
     move v6, v4
 
-    .line 543
+    .line 545
     :cond_1e
     :goto_7
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
     if-eqz p1, :cond_31
 
-    .line 544
+    .line 546
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object p1, p1, v1
@@ -2829,21 +2829,21 @@
 
     move-result p1
 
-    .line 545
+    .line 547
     new-instance v7, Landroid/animation/AnimatorSet;
 
     invoke-direct {v7}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
-    .line 546
+    .line 548
     iget v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->additionalOffset:F
 
     cmpl-float v7, v7, v0
 
     if-eqz v7, :cond_26
 
-    .line 547
+    .line 549
     invoke-static {v4}, Ljava/lang/Math;->abs(F)F
 
     move-result v6
@@ -2854,7 +2854,7 @@
 
     if-lez v6, :cond_21
 
-    .line 548
+    .line 550
     iget-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
     if-eqz v6, :cond_1f
@@ -2883,20 +2883,20 @@
 
     goto/16 :goto_d
 
-    .line 550
+    .line 552
     :cond_21
     iget-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
     if-eqz v6, :cond_24
 
-    .line 551
+    .line 553
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v7, v6, v2
 
     if-eqz v7, :cond_23
 
-    .line 552
+    .line 554
     aget-object v6, v6, v2
 
     invoke-virtual {v6}, Landroid/view/View;->getX()F
@@ -2931,13 +2931,13 @@
 
     goto :goto_d
 
-    .line 554
+    .line 556
     :cond_23
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
 
     goto :goto_d
 
-    .line 557
+    .line 559
     :cond_24
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -2975,7 +2975,7 @@
 
     goto :goto_d
 
-    .line 561
+    .line 563
     :cond_26
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
@@ -3032,23 +3032,23 @@
     :goto_c
     iput-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
 
-    .line 565
+    .line 567
     :goto_d
     iget-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backAnimation:Z
 
     if-eqz v6, :cond_2a
 
-    .line 566
+    .line 568
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result p1
 
-    .line 567
+    .line 569
     iget-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
     if-eqz v6, :cond_29
 
-    .line 568
+    .line 570
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v7, v2, [Landroid/animation/Animator;
@@ -3071,14 +3071,14 @@
 
     invoke-virtual {v6, v7}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 569
+    .line 571
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v7, v6, v2
 
     if-eqz v7, :cond_2d
 
-    .line 570
+    .line 572
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v8, v2, [Landroid/animation/Animator;
@@ -3109,7 +3109,7 @@
 
     goto/16 :goto_e
 
-    .line 573
+    .line 575
     :cond_29
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
@@ -3133,14 +3133,14 @@
 
     invoke-virtual {v6, v7}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 574
+    .line 576
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v7, v6, v2
 
     if-eqz v7, :cond_2d
 
-    .line 575
+    .line 577
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v8, v2, [Landroid/animation/Animator;
@@ -3173,13 +3173,13 @@
 
     goto/16 :goto_e
 
-    .line 578
+    .line 580
     :cond_2a
     iget v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
 
     if-ltz v6, :cond_2c
 
-    .line 579
+    .line 581
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v6, v6, v1
@@ -3196,12 +3196,12 @@
 
     sub-float p1, v6, p1
 
-    .line 580
+    .line 582
     iget-boolean v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->animatingForward:Z
 
     if-eqz v6, :cond_2b
 
-    .line 581
+    .line 583
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v7, v2, [Landroid/animation/Animator;
@@ -3234,14 +3234,14 @@
 
     invoke-virtual {v6, v7}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 582
+    .line 584
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v7, v6, v2
 
     if-eqz v7, :cond_2d
 
-    .line 583
+    .line 585
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v8, v2, [Landroid/animation/Animator;
@@ -3264,7 +3264,7 @@
 
     goto :goto_e
 
-    .line 586
+    .line 588
     :cond_2b
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
@@ -3296,14 +3296,14 @@
 
     invoke-virtual {v6, v7}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 587
+    .line 589
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v7, v6, v2
 
     if-eqz v7, :cond_2d
 
-    .line 588
+    .line 590
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v8, v2, [Landroid/animation/Animator;
@@ -3329,7 +3329,7 @@
     :cond_2c
     move p1, v0
 
-    .line 592
+    .line 594
     :cond_2d
     :goto_e
     iget v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
@@ -3338,7 +3338,7 @@
 
     new-array v6, v3, [F
 
-    .line 593
+    .line 595
     iget v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->backProgress:F
 
     aput v7, v6, v1
@@ -3361,14 +3361,14 @@
 
     move-result-object v6
 
-    .line 594
+    .line 596
     new-instance v7, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda0;
 
     invoke-direct {v7, p0}, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ViewPagerFixed;)V
 
     invoke-virtual {v6, v7}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 597
+    .line 599
     iget-object v7, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v8, v2, [Landroid/animation/Animator;
@@ -3380,19 +3380,19 @@
     :cond_2f
     new-array v3, v3, [F
 
-    .line 599
+    .line 601
     fill-array-data v3, :array_0
 
     invoke-static {v3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v3
 
-    .line 600
+    .line 602
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->updateTabProgress:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v3, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 601
+    .line 603
     iget-object v6, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v7, v2, [Landroid/animation/Animator;
@@ -3401,19 +3401,19 @@
 
     invoke-virtual {v6, v7}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 602
+    .line 604
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     sget-object v6, Lorg/telegram/ui/Components/ViewPagerFixed;->interpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v3, v6}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 604
+    .line 606
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
 
-    .line 605
+    .line 607
     div-int/lit8 v6, v3, 0x2
 
     mul-float v7, p1, v5
@@ -3422,14 +3422,14 @@
 
     div-float/2addr v7, v3
 
-    .line 606
+    .line 608
     invoke-static {v5, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
 
     int-to-float v6, v6
 
-    .line 607
+    .line 609
     invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed;->distanceInfluenceForSnapDuration(F)F
 
     move-result v3
@@ -3438,7 +3438,7 @@
 
     add-float/2addr v6, v3
 
-    .line 608
+    .line 610
     invoke-static {v4}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -3451,7 +3451,7 @@
 
     div-float/2addr v6, v3
 
-    .line 611
+    .line 613
     invoke-static {v6}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3466,7 +3466,7 @@
 
     goto :goto_10
 
-    .line 613
+    .line 615
     :cond_30
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -3489,7 +3489,7 @@
 
     const/16 v3, 0x258
 
-    .line 616
+    .line 618
     invoke-static {p1, v3}, Ljava/lang/Math;->min(II)I
 
     move-result p1
@@ -3498,14 +3498,14 @@
 
     move-result p1
 
-    .line 618
+    .line 620
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     int-to-long v3, p1
 
     invoke-virtual {v0, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 619
+    .line 621
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/ViewPagerFixed$5;
@@ -3514,50 +3514,50 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 646
+    .line 648
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 647
+    .line 649
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimationInProgress:Z
 
-    .line 648
+    .line 650
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
 
-    .line 650
+    .line 652
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTabAnimationUpdate()V
 
     goto :goto_11
 
-    .line 652
+    .line 654
     :cond_31
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->maybeStartTracking:Z
 
-    .line 653
+    .line 655
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     if-eqz p1, :cond_32
 
-    .line 654
+    .line 656
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 657
+    .line 659
     :cond_32
     :goto_11
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz p1, :cond_33
 
-    .line 658
+    .line 660
     invoke-virtual {p1}, Landroid/view/VelocityTracker;->recycle()V
 
     const/4 p1, 0x0
 
-    .line 659
+    .line 661
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->velocityTracker:Landroid/view/VelocityTracker;
 
-    .line 662
+    .line 664
     :cond_33
     :goto_12
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->startedTracking:Z
@@ -3586,10 +3586,10 @@
 
     const/4 v0, 0x0
 
-    .line 756
+    .line 758
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 757
+    .line 759
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;->hasStableId()Z
@@ -3602,19 +3602,19 @@
 
     move p1, v2
 
-    .line 760
+    .line 762
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_1
 
-    .line 761
+    .line 763
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 762
+    .line 764
     iput-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
-    .line 764
+    .line 766
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -3624,17 +3624,17 @@
 
     if-eqz v4, :cond_2
 
-    .line 765
+    .line 767
     aget-object v1, v1, v3
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 766
+    .line 768
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aput-object v0, v1, v3
 
-    .line 768
+    .line 770
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -3642,7 +3642,7 @@
 
     aput-object v4, v1, v3
 
-    .line 770
+    .line 772
     aget-object v4, v1, v3
 
     if-eqz v4, :cond_4
@@ -3678,7 +3678,7 @@
     :goto_0
     move v1, v2
 
-    .line 772
+    .line 774
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
@@ -3688,24 +3688,24 @@
 
     if-nez v4, :cond_7
 
-    .line 773
+    .line 775
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v1, p1, v3
 
     if-eqz v1, :cond_5
 
-    .line 774
+    .line 776
     aget-object p1, p1, v3
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 775
+    .line 777
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aput-object v0, p1, v3
 
-    .line 777
+    .line 779
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -3713,12 +3713,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 778
+    .line 780
     aget-object p1, p1, v2
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 779
+    .line 781
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aput-object v0, p1, v2
@@ -3726,7 +3726,7 @@
     :cond_6
     return-void
 
-    .line 783
+    .line 785
     :cond_7
     iget v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
@@ -3740,7 +3740,7 @@
 
     if-le v4, v5, :cond_8
 
-    .line 784
+    .line 786
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;->getItemCount()I
@@ -3751,16 +3751,16 @@
 
     iput v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
-    .line 786
+    .line 788
     :cond_8
     iget v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-gez v4, :cond_9
 
-    .line 787
+    .line 789
     iput v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
-    .line 789
+    .line 791
     :cond_9
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
 
@@ -3774,7 +3774,7 @@
 
     aput v5, v4, v2
 
-    .line 790
+    .line 792
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
@@ -3789,7 +3789,7 @@
 
     aput-object v5, v4, v2
 
-    .line 791
+    .line 793
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->adapter:Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -3804,21 +3804,21 @@
 
     invoke-virtual {v4, v5, v6, v7}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;->bindView(Landroid/view/View;II)V
 
-    .line 792
+    .line 794
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v4, v4, v2
 
     invoke-virtual {p0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 793
+    .line 795
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v4, v4, v2
 
     invoke-virtual {v4, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 796
+    .line 798
     iget-object v4, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v4, v4, v2
@@ -3856,25 +3856,25 @@
     :cond_b
     if-eqz p1, :cond_c
 
-    .line 802
+    .line 804
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)V
 
-    .line 804
+    .line 806
     :cond_c
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->fillTabs(Z)V
 
     if-eqz p1, :cond_11
 
-    .line 806
+    .line 808
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
-    .line 807
+    .line 809
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v0, p1, v3
@@ -3883,12 +3883,12 @@
 
     if-eqz v0, :cond_d
 
-    .line 808
+    .line 810
     aget-object p1, p1, v3
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 818
+    .line 820
     :cond_d
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -3896,7 +3896,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 819
+    .line 821
     aget-object p1, p1, v2
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -3909,7 +3909,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 821
+    .line 823
     :cond_e
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -3917,7 +3917,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 822
+    .line 824
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v4, v3, [Landroid/animation/Animator;
@@ -3944,7 +3944,7 @@
 
     invoke-virtual {v0, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 825
+    .line 827
     :cond_f
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -3952,7 +3952,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 826
+    .line 828
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v4, v3, [Landroid/animation/Animator;
@@ -3973,13 +3973,13 @@
 
     invoke-virtual {v0, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 829
+    .line 831
     :cond_10
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1402(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;F)F
 
-    .line 830
+    .line 832
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$800(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -3988,7 +3988,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
 
-    .line 831
+    .line 833
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -3997,21 +3997,21 @@
 
     new-array p1, p1, [F
 
-    .line 832
+    .line 834
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 833
+    .line 835
     new-instance v0, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ViewPagerFixed$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ViewPagerFixed;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 839
+    .line 841
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-array v1, v3, [Landroid/animation/Animator;
@@ -4020,21 +4020,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 840
+    .line 842
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     sget-object v0, Lorg/telegram/ui/Components/ViewPagerFixed;->interpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 841
+    .line 843
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0xdc
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 842
+    .line 844
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/ViewPagerFixed$6;
@@ -4043,22 +4043,22 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 860
+    .line 862
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 861
+    .line 863
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimationInProgress:Z
 
-    .line 862
+    .line 864
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_3
 
-    .line 865
+    .line 867
     :cond_11
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -4066,12 +4066,12 @@
 
     if-eqz v1, :cond_12
 
-    .line 866
+    .line 868
     aget-object p1, p1, v3
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 867
+    .line 869
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aput-object v0, p1, v3
@@ -4092,7 +4092,7 @@
 .method public requestDisallowInterceptTouchEvent(Z)V
     .locals 1
 
-    .line 428
+    .line 430
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->allowDisallowInterceptTouch:Z
 
     if-eqz v0, :cond_0
@@ -4107,10 +4107,10 @@
 
     const/4 v0, 0x0
 
-    .line 429
+    .line 431
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 431
+    .line 433
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->requestDisallowInterceptTouchEvent(Z)V
 
@@ -4330,7 +4330,7 @@
 .method public setAllowDisallowInterceptTouch(Z)V
     .locals 0
 
-    .line 1958
+    .line 1960
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->allowDisallowInterceptTouch:Z
 
     return-void
@@ -4339,15 +4339,15 @@
 .method public setPosition(I)V
     .locals 5
 
-    .line 722
+    .line 724
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 723
+    .line 725
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 725
+    .line 727
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -4357,7 +4357,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 726
+    .line 728
     iget-object v2, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewTypes:[I
@@ -4368,40 +4368,40 @@
 
     invoke-virtual {v2, v3, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 727
+    .line 729
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v0, v0, v1
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 728
+    .line 730
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     const/4 v2, 0x0
 
     aput-object v2, v0, v1
 
-    .line 730
+    .line 732
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-eq v0, p1, :cond_2
 
-    .line 732
+    .line 734
     iput p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
-    .line 733
+    .line 735
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     const/4 v2, 0x0
 
     aget-object v1, v1, v2
 
-    .line 734
+    .line 736
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/ViewPagerFixed;->updateViewForIndex(I)V
 
-    .line 735
+    .line 737
     iget-object v3, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v3, v3, v2
@@ -4410,7 +4410,7 @@
 
     invoke-virtual {p0, v3, v1, v4, v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->onItemSelected(Landroid/view/View;Landroid/view/View;II)V
 
-    .line 736
+    .line 738
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     aget-object v0, v0, v2
@@ -4419,14 +4419,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 737
+    .line 739
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     if-eqz v0, :cond_2
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 738
+    .line 740
     invoke-virtual {v0, p1, v2, v1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectTab(IIF)V
 
     :cond_2

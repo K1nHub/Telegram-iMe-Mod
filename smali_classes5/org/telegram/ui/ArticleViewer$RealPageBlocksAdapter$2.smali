@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$RealPageBlocksAdapter;Ljava/lang/String;)V
     .locals 0
 
-    .line 11490
+    .line 11620
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$RealPageBlocksAdapter$2;->this$1:Lorg/telegram/ui/ArticleViewer$RealPageBlocksAdapter;
 
     invoke-direct {p0, p2}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
@@ -35,7 +35,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 11493
+    .line 11623
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$RealPageBlocksAdapter$2;->this$1:Lorg/telegram/ui/ArticleViewer$RealPageBlocksAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$RealPageBlocksAdapter;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -46,7 +46,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v0, v1}, Lorg/telegram/ui/ArticleViewer;->access$21400(Lorg/telegram/ui/ArticleViewer;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0, v1}, Lorg/telegram/ui/ArticleViewer;->access$21700(Lorg/telegram/ui/ArticleViewer;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

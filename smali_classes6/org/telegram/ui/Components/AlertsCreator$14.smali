@@ -27,7 +27,7 @@
 .method constructor <init>(ILorg/telegram/ui/Components/NumberTextView;)V
     .locals 0
 
-    .line 2615
+    .line 2616
     iput p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$maxSymbolsCount:I
 
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
@@ -42,7 +42,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
 
-    .line 2628
+    .line 2629
     iget v0, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$maxSymbolsCount:I
 
     invoke-interface {p1}, Landroid/text/Editable;->length()I
@@ -61,7 +61,7 @@
 
     if-ge v0, p1, :cond_1
 
-    .line 2630
+    .line 2631
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
 
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
@@ -77,14 +77,14 @@
     :cond_0
     invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/NumberTextView;->setNumber(IZ)V
 
-    .line 2631
+    .line 2632
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
 
     invoke-static {p1, v3}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
 
     goto :goto_0
 
-    .line 2633
+    .line 2634
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$14;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
 

@@ -34,27 +34,27 @@
 
     move-object/from16 v1, p1
 
-    .line 391
+    .line 396
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v2, 0x0
 
-    .line 388
+    .line 393
     iput-boolean v2, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->needDivider:Z
 
-    .line 392
+    .line 397
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
 
-    .line 393
+    .line 398
     sget-object v4, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 394
+    .line 399
     iget-object v3, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
 
     const/16 v4, 0x20
@@ -77,14 +77,14 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 396
+    .line 401
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v4, 0x1
 
-    .line 397
+    .line 402
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/4 v5, -0x1
@@ -99,14 +99,14 @@
 
     const/4 v11, 0x4
 
-    .line 398
+    .line 403
     invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v0, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 400
+    .line 405
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -117,17 +117,17 @@
 
     const/high16 v7, 0x41800000    # 16.0f
 
-    .line 401
+    .line 406
     invoke-virtual {v5, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 402
+    .line 407
     iget-object v5, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
 
     const/4 v7, 0x3
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 403
+    .line 408
     iget-object v5, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -138,7 +138,7 @@
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 404
+    .line 409
     iget-object v5, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
 
     const/16 v8, 0x40
@@ -171,7 +171,7 @@
 
     invoke-virtual {v3, v5, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 406
+    .line 411
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -180,15 +180,15 @@
 
     const/high16 v9, 0x41500000    # 13.0f
 
-    .line 407
+    .line 412
     invoke-virtual {v5, v6, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 408
+    .line 413
     iget-object v5, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 409
+    .line 414
     iget-object v5, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
@@ -199,7 +199,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 410
+    .line 415
     iget-object v5, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
 
     const/4 v9, -0x1
@@ -226,7 +226,7 @@
 
     const/4 v3, 0x4
 
-    .line 411
+    .line 416
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -239,17 +239,17 @@
 
     if-eqz p2, :cond_2
 
-    .line 414
+    .line 419
     new-instance v2, Lorg/telegram/ui/Components/Switch;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/Components/Switch;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
 
-    .line 415
+    .line 420
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/Switch;->setDrawIconType(I)V
 
-    .line 416
+    .line 421
     iget-object v1, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
 
     const/16 v2, 0x25
@@ -281,17 +281,17 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 422
+    .line 427
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 423
+    .line 428
     iget-boolean v0, p0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->needDivider:Z
 
     if-eqz v0, :cond_0
 
     const/16 v0, 0x40
 
-    .line 424
+    .line 429
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -331,25 +331,25 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    .line 430
+    .line 435
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 431
+    .line 436
     iget-object v0, p0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
 
     if-eqz v0, :cond_1
 
     const-string v0, "android.widget.Switch"
 
-    .line 432
+    .line 437
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/4 v0, 0x1
 
-    .line 433
+    .line 438
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 434
+    .line 439
     iget-object v0, p0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Switch;->isChecked()Z
@@ -358,7 +358,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
 
-    .line 435
+    .line 440
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 2779
+    .line 2781
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$22$1;->this$1:Lorg/telegram/ui/PaymentFormActivity$22;
 
     invoke-direct {p0}, Lorg/json/JSONObject;-><init>()V
@@ -36,10 +36,10 @@
 
     const-string v1, "ECv2"
 
-    .line 2780
+    .line 2782
     invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2781
+    .line 2783
     iget-object p1, p1, Lorg/telegram/ui/PaymentFormActivity$22;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5000(Lorg/telegram/ui/PaymentFormActivity;)Ljava/lang/String;

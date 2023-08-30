@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramPreferenceMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,310:1\n1#2:311\n1855#3,2:312\n1855#3:314\n1549#3:315\n1620#3,3:316\n1856#3:319\n1549#3:320\n1620#3,3:321\n1855#3,2:324\n1855#3,2:326\n1855#3,2:329\n1855#3,2:332\n1855#3,2:334\n1855#3,2:338\n1045#3:340\n1559#3:341\n1590#3,4:342\n1045#3:346\n1559#3:347\n1590#3,4:348\n13579#4:328\n13580#4:331\n13579#4,2:336\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n*L\n97#1:312,2\n114#1:314\n122#1:315\n122#1:316,3\n114#1:319\n132#1:320\n132#1:321,3\n144#1:324,2\n161#1:326,2\n171#1:329,2\n183#1:332,2\n195#1:334,2\n256#1:338,2\n271#1:340\n272#1:341\n272#1:342,4\n275#1:346\n276#1:347\n276#1:348,4\n169#1:328\n169#1:331\n236#1:336,2\n*E\n"
+    value = "SMAP\nTelegramPreferenceMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,316:1\n1#2:317\n1855#3,2:318\n1855#3:320\n1549#3:321\n1620#3,3:322\n1856#3:325\n1549#3:326\n1620#3,3:327\n1855#3,2:330\n1855#3,2:332\n1855#3,2:335\n1855#3,2:338\n1855#3,2:340\n1855#3,2:344\n1045#3:346\n1559#3:347\n1590#3,4:348\n1045#3:352\n1559#3:353\n1590#3,4:354\n13579#4:334\n13580#4:337\n13579#4,2:342\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceMigrationManager.kt\ncom/iMe/common/TelegramPreferenceMigrationManager\n*L\n97#1:318,2\n114#1:320\n122#1:321\n122#1:322,3\n114#1:325\n132#1:326\n132#1:327,3\n144#1:330,2\n161#1:332,2\n171#1:335,2\n183#1:338,2\n195#1:340,2\n256#1:344,2\n271#1:346\n272#1:347\n272#1:348,4\n275#1:352\n276#1:353\n276#1:354,4\n169#1:334\n169#1:337\n236#1:342,2\n*E\n"
 .end annotation
 
 
@@ -355,7 +355,7 @@
     add-int/2addr v4, v5
 
     :goto_0
-    const/16 v6, 0xd
+    const/16 v6, 0xe
 
     if-ge v4, v6, :cond_23
 
@@ -376,8 +376,34 @@
 
     goto/16 :goto_17
 
-    .line 299
+    .line 307
     :pswitch_1
+    sget-object v6, Lcom/iMe/fork/controller/FiltersController;->Companion:Lcom/iMe/fork/controller/FiltersController$Companion;
+
+    invoke-virtual {v6, v0}, Lcom/iMe/fork/controller/FiltersController$Companion;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
+
+    move-result-object v6
+
+    new-array v7, v5, [Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    .line 308
+    sget-object v8, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_STORY:Lcom/iMe/storage/domain/model/filters/FilterFab;
+
+    aput-object v8, v7, v3
+
+    invoke-static {v7}, Lkotlin/collections/SetsKt;->mutableSetOf([Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Lcom/iMe/fork/controller/FiltersController;->setSelectedAllChatsTabFabs(Ljava/util/Set;)V
+
+    .line 309
+    invoke-virtual {v6}, Lcom/iMe/fork/controller/FiltersController;->saveConfig()V
+
+    goto :goto_1
+
+    .line 299
+    :pswitch_2
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
     move-result-object v6
@@ -410,7 +436,7 @@
     goto :goto_1
 
     .line 291
-    :pswitch_2
+    :pswitch_3
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedRecentChatsDialogTypes()Ljava/lang/String;
 
     move-result-object v6
@@ -443,7 +469,7 @@
     goto :goto_1
 
     .line 283
-    :pswitch_3
+    :pswitch_4
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
     move-result-object v6
@@ -476,7 +502,7 @@
     goto :goto_1
 
     .line 268
-    :pswitch_4
+    :pswitch_5
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
     move-result-object v6
@@ -640,7 +666,7 @@
     goto/16 :goto_1
 
     .line 251
-    :pswitch_5
+    :pswitch_6
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
     move-result-object v6
@@ -735,7 +761,7 @@
     goto/16 :goto_1
 
     .line 217
-    :pswitch_6
+    :pswitch_7
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
     move-result-object v8
@@ -936,7 +962,7 @@
     goto/16 :goto_1
 
     .line 209
-    :pswitch_7
+    :pswitch_8
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
     move-result-object v6
@@ -969,7 +995,7 @@
     goto/16 :goto_1
 
     .line 159
-    :pswitch_8
+    :pswitch_9
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isMultiPanelEnabled()Ljava/lang/String;
 
     move-result-object v6
@@ -1375,7 +1401,7 @@
     goto/16 :goto_1
 
     .line 141
-    :pswitch_9
+    :pswitch_a
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isMultiPanelEnabled()Ljava/lang/String;
 
     move-result-object v6
@@ -1491,7 +1517,7 @@
     goto/16 :goto_1
 
     .line 112
-    :pswitch_a
+    :pswitch_b
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
     move-result-object v10
@@ -1822,7 +1848,7 @@
     goto/16 :goto_16
 
     .line 94
-    :pswitch_b
+    :pswitch_c
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSortingChatsEnabled()Ljava/lang/String;
 
     move-result-object v3
@@ -1957,7 +1983,7 @@
     :goto_16
     const/4 v7, 0x0
 
-    .line 307
+    .line 313
     :goto_17
     invoke-interface/range {p1 .. p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -1980,10 +2006,13 @@
     :cond_23
     return-void
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_b
+        :pswitch_c
         :pswitch_0
+        :pswitch_b
         :pswitch_a
         :pswitch_9
         :pswitch_8

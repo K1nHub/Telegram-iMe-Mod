@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;Lorg/telegram/ui/Components/GroupCreateSpan;)V
     .locals 0
 
-    .line 400
+    .line 380
     iput-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     iput-object p2, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->val$span:Lorg/telegram/ui/Components/GroupCreateSpan;
@@ -39,33 +39,33 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 403
+    .line 383
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     iget-object v0, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->val$span:Lorg/telegram/ui/Components/GroupCreateSpan;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 404
+    .line 384
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->access$1002(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;Landroid/view/View;)Landroid/view/View;
 
-    .line 405
+    .line 385
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->access$802(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 406
+    .line 386
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->access$902(Lorg/telegram/ui/UsersSelectActivity$SpansContainer;Z)Z
 
-    .line 407
+    .line 387
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -78,7 +78,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setAllowDrawCursor(Z)V
 
-    .line 408
+    .line 388
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;
@@ -93,7 +93,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 409
+    .line 389
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$SpansContainer$2;->this$1:Lorg/telegram/ui/UsersSelectActivity$SpansContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/UsersSelectActivity$SpansContainer;->this$0:Lorg/telegram/ui/UsersSelectActivity;

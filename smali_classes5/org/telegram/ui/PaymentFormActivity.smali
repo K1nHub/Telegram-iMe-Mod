@@ -1947,7 +1947,7 @@
 .method private checkPassword()V
     .locals 5
 
-    .line 4130
+    .line 4133
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1958,7 +1958,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4131
+    .line 4134
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1983,7 +1983,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 4132
+    .line 4135
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1994,7 +1994,7 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/UserConfig;->tmpPassword:Lorg/telegram/tgnet/TLRPC$TL_account_tmpPassword;
 
-    .line 4133
+    .line 4136
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -2005,7 +2005,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 4136
+    .line 4139
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -2017,12 +2017,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 4137
+    .line 4140
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->sendData()V
 
     return-void
 
-    .line 4140
+    .line 4143
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -2038,7 +2038,7 @@
 
     if-nez v0, :cond_2
 
-    .line 4142
+    .line 4145
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -2050,7 +2050,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4144
+    .line 4147
     :catch_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -2062,7 +2062,7 @@
 
     return-void
 
-    .line 4147
+    .line 4150
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -2076,18 +2076,18 @@
 
     move-result-object v0
 
-    .line 4148
+    .line 4151
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 4149
+    .line 4152
     invoke-direct {p0, v1}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
-    .line 4150
+    .line 4153
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;-><init>()V
 
-    .line 4151
+    .line 4154
     iget v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2106,7 +2106,7 @@
 .method private createGooglePayButton(Landroid/content/Context;)V
     .locals 6
 
-    .line 2756
+    .line 2758
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -2115,50 +2115,50 @@
 
     const/4 v1, 0x1
 
-    .line 2757
+    .line 2759
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2758
+    .line 2760
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayContainer:Landroid/widget/FrameLayout;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2760
+    .line 2762
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
-    .line 2761
+    .line 2763
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 2762
+    .line 2764
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 2763
+    .line 2765
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->googlepay_button_no_shadow_background:I
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setBackgroundResource(I)V
 
-    .line 2764
+    .line 2766
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayPublicKey:Ljava/lang/String;
 
     const/4 v2, 0x2
 
     if-nez v0, :cond_0
 
-    .line 2765
+    .line 2767
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     const/16 v3, 0xa
@@ -2183,7 +2183,7 @@
 
     goto :goto_0
 
-    .line 2767
+    .line 2769
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
@@ -2205,7 +2205,7 @@
 
     invoke-virtual {v0, v3, v4, v5, v2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 2769
+    .line 2771
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayContainer:Landroid/widget/FrameLayout;
 
@@ -2221,7 +2221,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2770
+    .line 2772
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     new-instance v2, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda5;
@@ -2230,28 +2230,28 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2835
+    .line 2837
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    .line 2836
+    .line 2838
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/16 v2, 0x10
 
-    .line 2837
+    .line 2839
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 2838
+    .line 2840
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2839
+    .line 2841
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setDuplicateParentStateEnabled(Z)V
 
-    .line 2840
+    .line 2842
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     invoke-static {v4, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -2260,20 +2260,20 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2842
+    .line 2844
     new-instance v2, Landroid/widget/ImageView;
 
     invoke-direct {v2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 2843
+    .line 2845
     sget-object v3, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2844
+    .line 2846
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setDuplicateParentStateEnabled(Z)V
 
-    .line 2845
+    .line 2847
     sget v3, Lorg/telegram/messenger/R$drawable;->buy_with_googlepay_button_content:I
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -2282,32 +2282,32 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 2846
+    .line 2848
     invoke-static {v4, v3, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2848
+    .line 2850
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 2849
+    .line 2851
     sget-object p1, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2850
+    .line 2852
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setDuplicateParentStateEnabled(Z)V
 
-    .line 2851
+    .line 2853
     sget p1, Lorg/telegram/messenger/R$drawable;->googlepay_button_overlay:I
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2852
+    .line 2854
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     invoke-static {v4, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -2337,7 +2337,7 @@
 
     const-string v4, "VISA"
 
-    .line 2979
+    .line 2981
     filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;
 
     move-result-object v0
@@ -2350,7 +2350,7 @@
 
     const-string v2, "CRYPTOGRAM_3DS"
 
-    .line 2986
+    .line 2988
     filled-new-array {v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
@@ -2359,7 +2359,7 @@
 
     move-result-object v1
 
-    .line 2990
+    .line 2992
     new-instance v2, Lorg/json/JSONObject;
 
     invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
@@ -2368,15 +2368,15 @@
 
     const-string v4, "CARD"
 
-    .line 2991
+    .line 2993
     invoke-virtual {v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2993
+    .line 2995
     new-instance v3, Lorg/json/JSONObject;
 
     invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
 
-    .line 2994
+    .line 2996
     new-instance v4, Lorg/json/JSONArray;
 
     invoke-direct {v4, v1}, Lorg/json/JSONArray;-><init>(Ljava/util/Collection;)V
@@ -2385,7 +2385,7 @@
 
     invoke-virtual {v3, v1, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2995
+    .line 2997
     new-instance v1, Lorg/json/JSONArray;
 
     invoke-direct {v1, v0}, Lorg/json/JSONArray;-><init>(Ljava/util/Collection;)V
@@ -2396,7 +2396,7 @@
 
     const-string v0, "parameters"
 
-    .line 2997
+    .line 2999
     invoke-virtual {v2, v0, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     return-object v2
@@ -2410,7 +2410,7 @@
         }
     .end annotation
 
-    .line 2975
+    .line 2977
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
@@ -2442,7 +2442,7 @@
         }
     .end annotation
 
-    .line 3816
+    .line 3819
     new-instance v0, Ljava/util/Scanner;
 
     const-string v1, "UTF-8"
@@ -2451,17 +2451,17 @@
 
     const-string v1, "\\A"
 
-    .line 3817
+    .line 3820
     invoke-virtual {v0, v1}, Ljava/util/Scanner;->useDelimiter(Ljava/lang/String;)Ljava/util/Scanner;
 
     move-result-object v0
 
-    .line 3818
+    .line 3821
     invoke-virtual {v0}, Ljava/util/Scanner;->next()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3819
+    .line 3822
     invoke-virtual {p0}, Ljava/io/InputStream;->close()V
 
     return-object v0
@@ -2485,7 +2485,7 @@
 
     move v3, v0
 
-    .line 3059
+    .line 3061
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2493,7 +2493,7 @@
 
     if-ge v3, v4, :cond_0
 
-    .line 3060
+    .line 3062
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -2508,7 +2508,7 @@
 
     goto :goto_0
 
-    .line 3062
+    .line 3064
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -2543,7 +2543,7 @@
 
     const/4 v2, 0x0
 
-    .line 3048
+    .line 3050
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2551,7 +2551,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 3049
+    .line 3051
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -2566,20 +2566,20 @@
 
     goto :goto_0
 
-    .line 3051
+    .line 3053
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->tipAmount:Ljava/lang/Long;
 
     if-eqz p1, :cond_1
 
-    .line 3052
+    .line 3054
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v2
 
     add-long/2addr v0, v2
 
-    .line 3054
+    .line 3056
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -2603,7 +2603,7 @@
 
     move-object/from16 v0, p0
 
-    .line 3251
+    .line 3254
     iget v1, v0, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v2, 0x0
@@ -2634,7 +2634,7 @@
 
     goto/16 :goto_5
 
-    .line 3378
+    .line 3381
     :cond_0
     iget-object v6, v0, Lorg/telegram/ui/PaymentFormActivity;->delegate:Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
@@ -2654,7 +2654,7 @@
 
     if-nez v1, :cond_1
 
-    .line 3379
+    .line 3382
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v7, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -2699,19 +2699,19 @@
 
     goto/16 :goto_5
 
-    .line 3381
+    .line 3384
     :cond_1
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto/16 :goto_5
 
-    .line 3355
+    .line 3358
     :cond_2
     iget-boolean v1, v0, Lorg/telegram/ui/PaymentFormActivity;->isCheckoutPreview:Z
 
     if-eqz v1, :cond_3
 
-    .line 3356
+    .line 3359
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2722,7 +2722,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3358
+    .line 3361
     :cond_3
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -2736,7 +2736,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 3360
+    .line 3363
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -2745,7 +2745,7 @@
 
     if-nez v1, :cond_4
 
-    .line 3361
+    .line 3364
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
@@ -2766,12 +2766,12 @@
 
     if-nez v1, :cond_19
 
-    .line 3362
+    .line 3365
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto/16 :goto_5
 
-    .line 3365
+    .line 3368
     :cond_4
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda34;
 
@@ -2783,7 +2783,7 @@
 
     goto/16 :goto_5
 
-    .line 3346
+    .line 3349
     :cond_5
     iget-boolean v1, v0, Lorg/telegram/ui/PaymentFormActivity;->passwordOk:Z
 
@@ -2796,7 +2796,7 @@
     :cond_6
     move v12, v7
 
-    .line 3351
+    .line 3354
     :goto_0
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
@@ -2844,7 +2844,7 @@
 
     goto/16 :goto_5
 
-    .line 3309
+    .line 3312
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -2856,7 +2856,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 3310
+    .line 3313
     new-instance v3, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
@@ -2911,12 +2911,12 @@
 
     iput-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->passwordFragment:Lorg/telegram/ui/PaymentFormActivity;
 
-    .line 3311
+    .line 3314
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/PaymentFormActivity;->setCurrentPassword(Lorg/telegram/tgnet/TLRPC$account_Password;)V
 
-    .line 3312
+    .line 3315
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->passwordFragment:Lorg/telegram/ui/PaymentFormActivity;
 
     new-instance v2, Lorg/telegram/ui/PaymentFormActivity$24;
@@ -2925,7 +2925,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->setDelegate(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;)V
 
-    .line 3334
+    .line 3337
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->passwordFragment:Lorg/telegram/ui/PaymentFormActivity;
 
     iget-boolean v2, v0, Lorg/telegram/ui/PaymentFormActivity;->isWebView:Z
@@ -2934,13 +2934,13 @@
 
     goto/16 :goto_5
 
-    .line 3336
+    .line 3339
     :cond_8
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->delegate:Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
     if-eqz v3, :cond_9
 
-    .line 3337
+    .line 3340
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentJson:Ljava/lang/String;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
@@ -2953,12 +2953,12 @@
 
     invoke-interface/range {v3 .. v8}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;->didSelectNewCard(Ljava/lang/String;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;)Z
 
-    .line 3338
+    .line 3341
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto/16 :goto_5
 
-    .line 3340
+    .line 3343
     :cond_9
     new-instance v2, Lorg/telegram/ui/PaymentFormActivity;
 
@@ -3020,7 +3020,7 @@
 
     goto/16 :goto_5
 
-    .line 3284
+    .line 3287
     :cond_a
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentJson:Ljava/lang/String;
 
@@ -3032,13 +3032,13 @@
 
     goto :goto_1
 
-    .line 3286
+    .line 3289
     :cond_b
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
     if-eqz v1, :cond_e
 
-    .line 3287
+    .line 3290
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3049,7 +3049,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 3288
+    .line 3291
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3074,7 +3074,7 @@
 
     if-ge v1, v5, :cond_c
 
-    .line 3289
+    .line 3292
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3083,7 +3083,7 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/UserConfig;->tmpPassword:Lorg/telegram/tgnet/TLRPC$TL_account_tmpPassword;
 
-    .line 3290
+    .line 3293
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3092,7 +3092,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 3293
+    .line 3296
     :cond_c
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -3123,7 +3123,7 @@
     :goto_2
     if-ne v12, v7, :cond_10
 
-    .line 3301
+    .line 3304
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
 
     if-nez v1, :cond_10
@@ -3146,7 +3146,7 @@
 
     if-nez v1, :cond_10
 
-    .line 3302
+    .line 3305
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda33;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -3155,7 +3155,7 @@
 
     goto/16 :goto_5
 
-    .line 3304
+    .line 3307
     :cond_10
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
@@ -3205,23 +3205,23 @@
 
     goto/16 :goto_5
 
-    .line 3253
+    .line 3256
     :cond_11
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->delegate:Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
     if-eqz v1, :cond_12
 
-    .line 3254
+    .line 3257
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     invoke-interface {v1, v2}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;->didSelectNewAddress(Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;)V
 
-    .line 3255
+    .line 3258
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto/16 :goto_5
 
-    .line 3258
+    .line 3261
     :cond_12
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -3235,7 +3235,7 @@
 
     goto :goto_4
 
-    .line 3260
+    .line 3263
     :cond_13
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
@@ -3252,7 +3252,7 @@
 
     goto :goto_4
 
-    .line 3261
+    .line 3264
     :cond_15
     :goto_3
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -3265,7 +3265,7 @@
 
     if-eqz v1, :cond_16
 
-    .line 3262
+    .line 3265
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3290,7 +3290,7 @@
 
     if-ge v1, v5, :cond_16
 
-    .line 3263
+    .line 3266
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3299,7 +3299,7 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/UserConfig;->tmpPassword:Lorg/telegram/tgnet/TLRPC$TL_account_tmpPassword;
 
-    .line 3264
+    .line 3267
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3308,7 +3308,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 3267
+    .line 3270
     :cond_16
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -3330,7 +3330,7 @@
     :goto_4
     if-ne v12, v7, :cond_18
 
-    .line 3275
+    .line 3278
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
     if-nez v1, :cond_18
@@ -3349,7 +3349,7 @@
 
     if-nez v1, :cond_18
 
-    .line 3276
+    .line 3279
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda33;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -3358,7 +3358,7 @@
 
     goto :goto_5
 
-    .line 3278
+    .line 3281
     :cond_18
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
@@ -3606,7 +3606,7 @@
 .method private initGooglePay(Landroid/content/Context;)V
     .locals 3
 
-    .line 3015
+    .line 3017
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
@@ -3621,13 +3621,13 @@
 
     goto :goto_1
 
-    .line 3018
+    .line 3020
     :cond_0
     new-instance v0, Lcom/google/android/gms/wallet/Wallet$WalletOptions$Builder;
 
     invoke-direct {v0}, Lcom/google/android/gms/wallet/Wallet$WalletOptions$Builder;-><init>()V
 
-    .line 3019
+    .line 3021
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -3650,29 +3650,29 @@
 
     move-result-object v0
 
-    .line 3020
+    .line 3022
     invoke-virtual {v0, v2}, Lcom/google/android/gms/wallet/Wallet$WalletOptions$Builder;->setTheme(I)Lcom/google/android/gms/wallet/Wallet$WalletOptions$Builder;
 
     move-result-object v0
 
-    .line 3021
+    .line 3023
     invoke-virtual {v0}, Lcom/google/android/gms/wallet/Wallet$WalletOptions$Builder;->build()Lcom/google/android/gms/wallet/Wallet$WalletOptions;
 
     move-result-object v0
 
-    .line 3022
+    .line 3024
     invoke-static {p1, v0}, Lcom/google/android/gms/wallet/Wallet;->getPaymentsClient(Landroid/content/Context;Lcom/google/android/gms/wallet/Wallet$WalletOptions;)Lcom/google/android/gms/wallet/PaymentsClient;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentsClient:Lcom/google/android/gms/wallet/PaymentsClient;
 
-    .line 3024
+    .line 3026
     invoke-virtual {p0}, Lorg/telegram/ui/PaymentFormActivity;->getIsReadyToPayRequest()Lj$/util/Optional;
 
     move-result-object p1
 
-    .line 3025
+    .line 3027
     invoke-virtual {p1}, Lj$/util/Optional;->isPresent()Z
 
     move-result v0
@@ -3681,7 +3681,7 @@
 
     return-void
 
-    .line 3028
+    .line 3030
     :cond_2
     invoke-virtual {p1}, Lj$/util/Optional;->get()Ljava/lang/Object;
 
@@ -3701,7 +3701,7 @@
 
     return-void
 
-    .line 3033
+    .line 3035
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentsClient:Lcom/google/android/gms/wallet/PaymentsClient;
 
@@ -3709,7 +3709,7 @@
 
     move-result-object p1
 
-    .line 3034
+    .line 3036
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -3732,18 +3732,18 @@
 
     const/4 v1, 0x0
 
-    .line 4177
+    .line 4180
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 4178
+    .line 4181
     invoke-direct {p0, v1}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
     if-eqz p1, :cond_0
 
-    .line 4180
+    .line 4183
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->passwordOk:Z
 
-    .line 4181
+    .line 4184
     iget p2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3754,7 +3754,7 @@
 
     iput-object p1, p2, Lorg/telegram/messenger/UserConfig;->tmpPassword:Lorg/telegram/tgnet/TLRPC$TL_account_tmpPassword;
 
-    .line 4182
+    .line 4185
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -3763,12 +3763,12 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 4183
+    .line 4186
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 
     goto :goto_0
 
-    .line 4185
+    .line 4188
     :cond_0
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -3780,7 +3780,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 4187
+    .line 4190
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -3794,7 +3794,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4189
+    .line 4192
     :catch_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -3804,7 +3804,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;F)V
 
-    .line 4190
+    .line 4193
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p1, v0
@@ -3815,7 +3815,7 @@
 
     goto :goto_0
 
-    .line 4192
+    .line 4195
     :cond_1
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -3830,7 +3830,7 @@
 .method private synthetic lambda$checkPassword$63(Lorg/telegram/tgnet/TLRPC$TL_account_getTmpPassword;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 4176
+    .line 4179
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda41;
 
     invoke-direct {v0, p0, p2, p3, p1}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_account_getTmpPassword;)V
@@ -3843,7 +3843,7 @@
 .method private synthetic lambda$checkPassword$64(Lorg/telegram/tgnet/TLRPC$account_Password;[B)V
     .locals 6
 
-    .line 4166
+    .line 4169
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$account_Password;->current_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
@@ -3852,10 +3852,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 4167
+    .line 4170
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
 
-    .line 4168
+    .line 4171
     invoke-static {p2, v0}, Lorg/telegram/messenger/SRPHelper;->getX([BLorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;)[B
 
     move-result-object p2
@@ -3865,7 +3865,7 @@
     :cond_0
     move-object p2, v2
 
-    .line 4173
+    .line 4176
     :goto_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_getTmpPassword;
 
@@ -3873,25 +3873,25 @@
 
     const/16 v1, 0x708
 
-    .line 4174
+    .line 4177
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_getTmpPassword;->period:I
 
-    .line 4176
+    .line 4179
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda60;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda60;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLRPC$TL_account_getTmpPassword;)V
 
-    .line 4197
+    .line 4200
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$account_Password;->current_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
 
     if-eqz v4, :cond_2
 
-    .line 4198
+    .line 4201
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
 
-    .line 4199
+    .line 4202
     iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$account_Password;->srp_id:J
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$account_Password;->srp_B:[B
@@ -3904,22 +3904,22 @@
 
     if-nez p1, :cond_1
 
-    .line 4201
+    .line 4204
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_error;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_error;-><init>()V
 
     const-string p2, "ALGO_INVALID"
 
-    .line 4202
+    .line 4205
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    .line 4203
+    .line 4206
     invoke-interface {v1, v2, p1}, Lorg/telegram/tgnet/RequestDelegate;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 
-    .line 4206
+    .line 4209
     :cond_1
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -3933,7 +3933,7 @@
 
     goto :goto_1
 
-    .line 4208
+    .line 4211
     :cond_2
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_error;
 
@@ -3941,10 +3941,10 @@
 
     const-string p2, "PASSWORD_HASH_INVALID"
 
-    .line 4209
+    .line 4212
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    .line 4210
+    .line 4213
     invoke-interface {v1, v2, p1}, Lorg/telegram/tgnet/RequestDelegate;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     :goto_1
@@ -3960,17 +3960,17 @@
 
     if-nez p1, :cond_2
 
-    .line 4153
+    .line 4156
     check-cast p2, Lorg/telegram/tgnet/TLRPC$account_Password;
 
-    .line 4154
+    .line 4157
     invoke-static {p2, v1}, Lorg/telegram/ui/TwoStepVerificationActivity;->canHandleCurrentPassword(Lorg/telegram/tgnet/TLRPC$account_Password;Z)Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 4155
+    .line 4158
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -3987,27 +3987,27 @@
 
     return-void
 
-    .line 4158
+    .line 4161
     :cond_0
     iget-boolean p1, p2, Lorg/telegram/tgnet/TLRPC$account_Password;->has_password:Z
 
     if-nez p1, :cond_1
 
-    .line 4159
+    .line 4162
     iput-boolean v1, p0, Lorg/telegram/ui/PaymentFormActivity;->passwordOk:Z
 
-    .line 4160
+    .line 4163
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 
     goto :goto_0
 
-    .line 4162
+    .line 4165
     :cond_1
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->getStringBytes(Ljava/lang/String;)[B
 
     move-result-object p1
 
-    .line 4164
+    .line 4167
     sget-object p3, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p4, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda50;
@@ -4018,7 +4018,7 @@
 
     goto :goto_0
 
-    .line 4215
+    .line 4218
     :cond_2
     iget p2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -4026,10 +4026,10 @@
 
     invoke-static {p2, p1, p0, p4, p3}, Lorg/telegram/ui/Components/AlertsCreator;->processError(ILorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;[Ljava/lang/Object;)Landroid/app/Dialog;
 
-    .line 4216
+    .line 4219
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 4217
+    .line 4220
     invoke-direct {p0, v1}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
     :goto_0
@@ -4039,7 +4039,7 @@
 .method private synthetic lambda$checkPassword$66(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
-    .line 4151
+    .line 4154
     new-instance v6, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda46;
 
     move-object v0, v6
@@ -4064,25 +4064,25 @@
 .method private synthetic lambda$createGooglePayButton$32(Landroid/view/View;)V
     .locals 4
 
-    .line 2771
+    .line 2773
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 2773
+    .line 2775
     :try_start_0
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->getBaseRequest()Lorg/json/JSONObject;
 
     move-result-object p1
 
-    .line 2775
+    .line 2777
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->getBaseCardPaymentMethod()Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 2776
+    .line 2778
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayPublicKey:Ljava/lang/String;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
@@ -4096,7 +4096,7 @@
 
     if-nez v1, :cond_0
 
-    .line 2777
+    .line 2779
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$22;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/PaymentFormActivity$22;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -4105,7 +4105,7 @@
 
     goto :goto_0
 
-    .line 2785
+    .line 2787
     :cond_0
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$23;
 
@@ -4116,7 +4116,7 @@
     :goto_0
     const-string v1, "allowedPaymentMethods"
 
-    .line 2799
+    .line 2801
     new-instance v2, Lorg/json/JSONArray;
 
     invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
@@ -4127,12 +4127,12 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2801
+    .line 2803
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 2802
+    .line 2804
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -4143,12 +4143,12 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 2803
+    .line 2805
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->shippingOption:Lorg/telegram/tgnet/TLRPC$TL_shippingOption;
 
     if-eqz v2, :cond_1
 
-    .line 2804
+    .line 2806
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_shippingOption;->prices:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -4156,7 +4156,7 @@
     :cond_1
     const-string v2, "totalPrice"
 
-    .line 2806
+    .line 2808
     invoke-direct {p0, v1}, Lorg/telegram/ui/PaymentFormActivity;->getTotalPriceDecimalString(Ljava/util/ArrayList;)Ljava/lang/String;
 
     move-result-object v1
@@ -4167,10 +4167,10 @@
 
     const-string v2, "FINAL"
 
-    .line 2807
+    .line 2809
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2808
+    .line 2810
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayCountryCode:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -4181,7 +4181,7 @@
 
     const-string v1, "countryCode"
 
-    .line 2809
+    .line 2811
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayCountryCode:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -4189,7 +4189,7 @@
     :cond_2
     const-string v1, "currencyCode"
 
-    .line 2811
+    .line 2813
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -4202,17 +4202,17 @@
 
     const-string v2, "COMPLETE_IMMEDIATE_PURCHASE"
 
-    .line 2812
+    .line 2814
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string v1, "transactionInfo"
 
-    .line 2813
+    .line 2815
     invoke-virtual {p1, v1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string v0, "merchantInfo"
 
-    .line 2815
+    .line 2817
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
@@ -4227,7 +4227,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2826
+    .line 2828
     invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -4238,7 +4238,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2828
+    .line 2830
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentsClient:Lcom/google/android/gms/wallet/PaymentsClient;
 
     invoke-virtual {v0, p1}, Lcom/google/android/gms/wallet/PaymentsClient;->loadPaymentData(Lcom/google/android/gms/wallet/PaymentDataRequest;)Lcom/google/android/gms/tasks/Task;
@@ -4260,7 +4260,7 @@
     :catch_0
     move-exception p1
 
-    .line 2831
+    .line 2833
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
@@ -4354,7 +4354,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 1752
+    .line 1753
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->performClick()Z
@@ -4374,10 +4374,10 @@
 
     const/4 p1, 0x0
 
-    .line 1768
+    .line 1769
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->passwordOk:Z
 
-    .line 1769
+    .line 1770
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 
     return-void
@@ -4386,7 +4386,7 @@
 .method private synthetic lambda$createView$13(Landroid/view/View;)V
     .locals 1
 
-    .line 1825
+    .line 1826
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, 0x0
@@ -4395,7 +4395,7 @@
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 1826
+    .line 1827
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p1, v0
@@ -4412,7 +4412,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 1971
+    .line 1972
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     const/4 p0, 0x1
@@ -4428,7 +4428,7 @@
 .method private synthetic lambda$createView$15(Landroid/widget/TextView;JLandroid/view/View;)V
     .locals 7
 
-    .line 2072
+    .line 2073
     invoke-virtual {p1}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -4439,7 +4439,7 @@
 
     move-result-wide v0
 
-    .line 2073
+    .line 2074
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->tipAmount:Ljava/lang/Long;
 
     const/4 p4, 0x0
@@ -4456,10 +4456,10 @@
 
     const/4 p1, 0x1
 
-    .line 2074
+    .line 2075
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->ignoreOnTextChange:Z
 
-    .line 2075
+    .line 2076
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p1, p4
@@ -4468,24 +4468,24 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2076
+    .line 2077
     iput-boolean p4, p0, Lorg/telegram/ui/PaymentFormActivity;->ignoreOnTextChange:Z
 
     const-wide/16 p1, 0x0
 
-    .line 2077
+    .line 2078
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->tipAmount:Ljava/lang/Long;
 
-    .line 2078
+    .line 2079
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->updateTotalPrice()V
 
     goto :goto_0
 
-    .line 2080
+    .line 2081
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -4515,7 +4515,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2082
+    .line 2083
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -4535,7 +4535,7 @@
 .method private synthetic lambda$createView$16(Landroid/view/View;)V
     .locals 0
 
-    .line 2109
+    .line 2110
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -4544,7 +4544,7 @@
 
     return-void
 
-    .line 2112
+    .line 2113
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->showChoosePaymentMethod()V
 
@@ -4554,7 +4554,7 @@
 .method private synthetic lambda$createView$17(Landroid/view/View;)V
     .locals 14
 
-    .line 2145
+    .line 2146
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -4587,14 +4587,14 @@
 
     invoke-direct/range {v0 .. v13}, Lorg/telegram/ui/PaymentFormActivity;-><init>(Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;Lorg/telegram/tgnet/TLRPC$TL_shippingOption;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 2146
+    .line 2147
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$13;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PaymentFormActivity$13;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDelegate(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;)V
 
-    .line 2153
+    .line 2154
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -4603,7 +4603,7 @@
 .method private synthetic lambda$createView$18(Landroid/view/View;)V
     .locals 14
 
-    .line 2168
+    .line 2169
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -4636,14 +4636,14 @@
 
     invoke-direct/range {v0 .. v13}, Lorg/telegram/ui/PaymentFormActivity;-><init>(Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;Lorg/telegram/tgnet/TLRPC$TL_shippingOption;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 2169
+    .line 2170
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$14;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PaymentFormActivity$14;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDelegate(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;)V
 
-    .line 2176
+    .line 2177
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -4652,7 +4652,7 @@
 .method private synthetic lambda$createView$19(Landroid/view/View;)V
     .locals 14
 
-    .line 2191
+    .line 2192
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -4685,14 +4685,14 @@
 
     invoke-direct/range {v0 .. v13}, Lorg/telegram/ui/PaymentFormActivity;-><init>(Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;Lorg/telegram/tgnet/TLRPC$TL_shippingOption;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 2192
+    .line 2193
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$15;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PaymentFormActivity$15;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDelegate(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;)V
 
-    .line 2199
+    .line 2200
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -4778,7 +4778,7 @@
 .method private synthetic lambda$createView$20(Landroid/view/View;)V
     .locals 14
 
-    .line 2214
+    .line 2215
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -4811,14 +4811,14 @@
 
     invoke-direct/range {v0 .. v13}, Lorg/telegram/ui/PaymentFormActivity;-><init>(Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;Lorg/telegram/tgnet/TLRPC$TL_shippingOption;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 2215
+    .line 2216
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$16;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PaymentFormActivity$16;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDelegate(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;)V
 
-    .line 2222
+    .line 2223
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -4829,10 +4829,10 @@
 
     const/4 v0, 0x0
 
-    .line 2260
+    .line 2261
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
-    .line 2261
+    .line 2262
     invoke-virtual {p1}, Landroid/view/View;->callOnClick()Z
 
     return-void
@@ -4841,7 +4841,7 @@
 .method private synthetic lambda$createView$22(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 2310
+    .line 2311
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->totalPrice:[Ljava/lang/String;
 
     const/4 p2, 0x0
@@ -4860,7 +4860,7 @@
 
     move-object/from16 v1, p2
 
-    .line 2248
+    .line 2249
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -4875,7 +4875,7 @@
 
     if-nez v4, :cond_0
 
-    .line 2249
+    .line 2250
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->getTextView()Landroid/widget/TextView;
@@ -4886,7 +4886,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;F)V
 
-    .line 2251
+    .line 2252
     :try_start_0
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
@@ -4899,7 +4899,7 @@
     :catch_0
     return-void
 
-    .line 2256
+    .line 2257
     :cond_0
     iget-boolean v4, v0, Lorg/telegram/ui/PaymentFormActivity;->isCheckoutPreview:Z
 
@@ -4915,10 +4915,10 @@
 
     if-nez v7, :cond_1
 
-    .line 2257
+    .line 2258
     invoke-direct {v0, v6}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
-    .line 2259
+    .line 2260
     new-instance v2, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda37;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/view/View;)V
@@ -4932,7 +4932,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 2266
+    .line 2267
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
     if-nez v4, :cond_2
@@ -4978,7 +4978,7 @@
     :cond_4
     if-nez v4, :cond_6
 
-    .line 2268
+    .line 2269
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$TL_invoice;->shipping_address_requested:Z
 
     if-nez v4, :cond_5
@@ -5000,7 +5000,7 @@
 
     goto :goto_0
 
-    .line 2270
+    .line 2271
     :cond_6
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
@@ -5024,7 +5024,7 @@
     :goto_0
     if-ne v11, v5, :cond_8
 
-    .line 2275
+    .line 2276
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->additional_methods:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -5033,7 +5033,7 @@
 
     if-nez v2, :cond_8
 
-    .line 2276
+    .line 2277
     invoke-static/range {p2 .. p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda41;
@@ -5044,7 +5044,7 @@
 
     goto :goto_1
 
-    .line 2278
+    .line 2279
     :cond_8
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
@@ -5089,7 +5089,7 @@
     :goto_1
     return-void
 
-    .line 2283
+    .line 2284
     :cond_9
     iget-boolean v1, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->password_missing:Z
 
@@ -5099,7 +5099,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 2284
+    .line 2285
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -5110,7 +5110,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 2285
+    .line 2286
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -5135,7 +5135,7 @@
 
     if-ge v1, v2, :cond_a
 
-    .line 2286
+    .line 2287
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -5146,7 +5146,7 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/UserConfig;->tmpPassword:Lorg/telegram/tgnet/TLRPC$TL_account_tmpPassword;
 
-    .line 2287
+    .line 2288
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -5155,7 +5155,7 @@
 
     invoke-virtual {v1, v7}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 2291
+    .line 2292
     :cond_a
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -5167,10 +5167,10 @@
 
     if-nez v1, :cond_b
 
-    .line 2292
+    .line 2293
     iput-boolean v6, v0, Lorg/telegram/ui/PaymentFormActivity;->needPayAfterTransition:Z
 
-    .line 2293
+    .line 2294
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v9, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -5213,21 +5213,21 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 2294
+    .line 2295
     iput-boolean v7, v0, Lorg/telegram/ui/PaymentFormActivity;->needPayAfterTransition:Z
 
     return-void
 
-    .line 2296
+    .line 2297
     :cond_b
     iget-boolean v1, v0, Lorg/telegram/ui/PaymentFormActivity;->isCheckoutPreview:Z
 
     if-eqz v1, :cond_c
 
-    .line 2297
+    .line 2298
     iput-boolean v7, v0, Lorg/telegram/ui/PaymentFormActivity;->isCheckoutPreview:Z
 
-    .line 2298
+    .line 2299
     iget v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5238,7 +5238,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 2302
+    .line 2303
     :cond_c
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->botUser:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -5248,7 +5248,7 @@
 
     if-nez v1, :cond_e
 
-    .line 2303
+    .line 2304
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5267,21 +5267,21 @@
 
     move-result-object v1
 
-    .line 2304
+    .line 2305
     iget v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    .line 2305
+    .line 2306
     invoke-interface {v2, v1, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
     if-nez v3, :cond_d
 
-    .line 2306
+    .line 2307
     invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
@@ -5292,7 +5292,7 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 2307
+    .line 2308
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -5301,7 +5301,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2308
+    .line 2309
     sget v2, Lorg/telegram/messenger/R$string;->PaymentWarning:I
 
     const-string v3, "PaymentWarning"
@@ -5312,7 +5312,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2309
+    .line 2310
     sget v2, Lorg/telegram/messenger/R$string;->PaymentWarningText:I
 
     new-array v3, v5, [Ljava/lang/Object;
@@ -5331,7 +5331,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2310
+    .line 2311
     sget v2, Lorg/telegram/messenger/R$string;->Continue:I
 
     const-string v3, "Continue"
@@ -5346,7 +5346,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2311
+    .line 2312
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
@@ -5355,7 +5355,7 @@
 
     goto :goto_2
 
-    .line 2313
+    .line 2314
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->totalPrice:[Ljava/lang/String;
 
@@ -5365,7 +5365,7 @@
 
     goto :goto_2
 
-    .line 2316
+    .line 2317
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->totalPrice:[Ljava/lang/String;
 
@@ -5380,14 +5380,14 @@
 .method private synthetic lambda$createView$24(Landroid/view/View;)V
     .locals 1
 
-    .line 2422
+    .line 2424
     iget-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->donePressed:Z
 
     if-eqz p1, :cond_0
 
     return-void
 
-    .line 2426
+    .line 2428
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->recurrentAccepted:Z
 
@@ -5395,12 +5395,12 @@
 
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->recurrentAccepted:Z
 
-    .line 2427
+    .line 2429
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->setChecked(Z)V
 
-    .line 2429
+    .line 2431
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->recurrentAccepted:Z
@@ -5419,7 +5419,7 @@
 
     if-ne p2, p3, :cond_0
 
-    .line 2453
+    .line 2455
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->sendSavePassword(Z)V
 
     const/4 p1, 0x1
@@ -5437,12 +5437,12 @@
 .method private synthetic lambda$createView$27(Landroid/view/View;)V
     .locals 2
 
-    .line 2489
+    .line 2491
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_resendPasswordEmail;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_resendPasswordEmail;-><init>()V
 
-    .line 2490
+    .line 2492
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -5453,7 +5453,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 2493
+    .line 2495
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -5462,7 +5462,7 @@
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2494
+    .line 2496
     sget v0, Lorg/telegram/messenger/R$string;->ResendCodeInfo:I
 
     const-string v1, "ResendCodeInfo"
@@ -5473,7 +5473,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2495
+    .line 2497
     sget v0, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v1, "AppName"
@@ -5484,7 +5484,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2496
+    .line 2498
     sget v0, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v1, "OK"
@@ -5497,7 +5497,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2497
+    .line 2499
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -5512,7 +5512,7 @@
 
     const/4 p1, 0x1
 
-    .line 2514
+    .line 2516
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->sendSavePassword(Z)V
 
     return-void
@@ -5521,7 +5521,7 @@
 .method private synthetic lambda$createView$29(Landroid/view/View;)V
     .locals 3
 
-    .line 2507
+    .line 2509
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -5530,7 +5530,7 @@
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2508
+    .line 2510
     sget v0, Lorg/telegram/messenger/R$string;->TurnPasswordOffQuestion:I
 
     const-string v1, "TurnPasswordOffQuestion"
@@ -5539,14 +5539,14 @@
 
     move-result-object v0
 
-    .line 2509
+    .line 2511
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$account_Password;->has_secure_values:Z
 
     if-eqz v1, :cond_0
 
-    .line 2510
+    .line 2512
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5571,11 +5571,11 @@
 
     move-result-object v0
 
-    .line 2512
+    .line 2514
     :cond_0
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2513
+    .line 2515
     sget v0, Lorg/telegram/messenger/R$string;->TurnPasswordOffQuestionTitle:I
 
     const-string v1, "TurnPasswordOffQuestionTitle"
@@ -5586,7 +5586,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2514
+    .line 2516
     sget v0, Lorg/telegram/messenger/R$string;->Disable:I
 
     const-string v1, "Disable"
@@ -5601,7 +5601,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2515
+    .line 2517
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -5614,17 +5614,17 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2516
+    .line 2518
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 2517
+    .line 2519
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v0, -0x1
 
-    .line 2518
+    .line 2520
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
@@ -5633,7 +5633,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2520
+    .line 2522
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -5673,7 +5673,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 2593
+    .line 2595
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->performClick()Z
@@ -5685,7 +5685,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 2596
+    .line 2598
     invoke-virtual {p1}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -5698,7 +5698,7 @@
 
     if-nez p1, :cond_1
 
-    .line 2598
+    .line 2600
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p1, p3
@@ -5710,7 +5710,7 @@
     :cond_1
     if-ne p1, p3, :cond_2
 
-    .line 2600
+    .line 2602
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 p2, 0x2
@@ -5729,14 +5729,14 @@
 .method private synthetic lambda$createView$4(Landroid/view/View;)V
     .locals 1
 
-    .line 1185
+    .line 1186
     iget-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->saveCardInfo:Z
 
     xor-int/lit8 p1, p1, 0x1
 
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->saveCardInfo:Z
 
-    .line 1186
+    .line 1187
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
@@ -5747,10 +5747,10 @@
 .method private synthetic lambda$createView$5(Lorg/telegram/ui/CountrySelectActivity$Country;)V
     .locals 2
 
-    .line 1279
+    .line 1280
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->country:Lorg/telegram/ui/CountrySelectActivity$Country;
 
-    .line 1280
+    .line 1281
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x4
@@ -5767,7 +5767,7 @@
 .method private synthetic lambda$createView$6(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 1272
+    .line 1273
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -5778,7 +5778,7 @@
 
     return v0
 
-    .line 1275
+    .line 1276
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -5788,22 +5788,22 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 1276
+    .line 1277
     new-instance p1, Lorg/telegram/ui/CountrySelectActivity;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/CountrySelectActivity;-><init>(Z)V
 
-    .line 1277
+    .line 1278
     invoke-virtual {p1, p2}, Lorg/telegram/ui/CountrySelectActivity;->setDisableAnonymousNumbers(Z)V
 
-    .line 1278
+    .line 1279
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda67;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda67;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/CountrySelectActivity;->setCountrySelectActivityDelegate(Lorg/telegram/ui/CountrySelectActivity$CountrySelectActivityDelegate;)V
 
-    .line 1282
+    .line 1283
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     :cond_1
@@ -5819,7 +5819,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 1595
+    .line 1596
     invoke-virtual {p1}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -5833,7 +5833,7 @@
     :cond_0
     add-int/2addr p1, p3
 
-    .line 1596
+    .line 1597
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     array-length v0, p2
@@ -5846,7 +5846,7 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    .line 1601
+    .line 1602
     :cond_1
     aget-object p2, p2, p1
 
@@ -5862,7 +5862,7 @@
 
     if-nez p2, :cond_0
 
-    .line 1602
+    .line 1603
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p2, p1
@@ -5877,7 +5877,7 @@
 
     if-ne p2, p1, :cond_4
 
-    .line 1608
+    .line 1609
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->performClick()Z
@@ -5893,14 +5893,14 @@
 .method private synthetic lambda$createView$8(Landroid/view/View;)V
     .locals 1
 
-    .line 1625
+    .line 1626
     iget-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->saveCardInfo:Z
 
     xor-int/lit8 p1, p1, 0x1
 
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->saveCardInfo:Z
 
-    .line 1626
+    .line 1627
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
@@ -5911,7 +5911,7 @@
 .method private synthetic lambda$createView$9(Landroid/view/View;)V
     .locals 5
 
-    .line 1674
+    .line 1675
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -5926,7 +5926,7 @@
 
     move v1, v0
 
-    .line 1675
+    .line 1676
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
@@ -5934,7 +5934,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 1676
+    .line 1677
     aget-object v2, v2, v1
 
     const/4 v3, 0x1
@@ -5962,7 +5962,7 @@
 .method private synthetic lambda$goToNextStep$40()V
     .locals 2
 
-    .line 3366
+    .line 3369
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -5971,7 +5971,7 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/MessagesController;->newMessageCallback:Lorg/telegram/messenger/MessagesController$NewMessageCallback;
 
-    .line 3367
+    .line 3370
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     sget-object v1, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->PENDING:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
@@ -5984,20 +5984,20 @@
 
     if-nez v0, :cond_1
 
-    .line 3368
+    .line 3371
     sget-object v0, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->FAILED:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     iput-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
-    .line 3369
+    .line 3372
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     if-eqz v1, :cond_0
 
-    .line 3370
+    .line 3373
     invoke-interface {v1, v0}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;->onInvoiceStatusChanged(Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
 
-    .line 3372
+    .line 3375
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -6008,26 +6008,26 @@
 .method private synthetic lambda$initGooglePay$37(Lcom/google/android/gms/tasks/Task;)V
     .locals 1
 
-    .line 3036
+    .line 3038
     invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->isSuccessful()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3037
+    .line 3039
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayContainer:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_1
 
     const/4 v0, 0x0
 
-    .line 3038
+    .line 3040
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 3041
+    .line 3043
     :cond_0
     invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->getException()Ljava/lang/Exception;
 
@@ -6045,20 +6045,20 @@
 .method private synthetic lambda$loadPasswordInfo$33()V
     .locals 1
 
-    .line 2939
+    .line 2941
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->shortPollRunnable:Ljava/lang/Runnable;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2942
+    .line 2944
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->loadPasswordInfo()V
 
     const/4 v0, 0x0
 
-    .line 2943
+    .line 2945
     iput-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->shortPollRunnable:Ljava/lang/Runnable;
 
     return-void
@@ -6069,17 +6069,17 @@
 
     const/4 v0, 0x0
 
-    .line 2921
+    .line 2923
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->loadingPasswordInfo:Z
 
     if-nez p1, :cond_3
 
-    .line 2923
+    .line 2925
     check-cast p2, Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iput-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
-    .line 2924
+    .line 2926
     invoke-static {p2, v0}, Lorg/telegram/ui/TwoStepVerificationActivity;->canHandleCurrentPassword(Lorg/telegram/tgnet/TLRPC$account_Password;Z)Z
 
     move-result p1
@@ -6088,7 +6088,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2925
+    .line 2927
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -6105,7 +6105,7 @@
 
     return-void
 
-    .line 2928
+    .line 2930
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -6117,32 +6117,32 @@
 
     if-eqz v1, :cond_1
 
-    .line 2929
+    .line 2931
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->password_missing:Z
 
-    .line 2930
+    .line 2932
     iput-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->can_save_credentials:Z
 
-    .line 2931
+    .line 2933
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->updateSavePaymentField()V
 
-    .line 2933
+    .line 2935
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     invoke-static {p1}, Lorg/telegram/ui/TwoStepVerificationActivity;->initPasswordNewAlgo(Lorg/telegram/tgnet/TLRPC$account_Password;)V
 
-    .line 2934
+    .line 2936
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->passwordFragment:Lorg/telegram/ui/PaymentFormActivity;
 
     if-eqz p1, :cond_2
 
-    .line 2935
+    .line 2937
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/PaymentFormActivity;->setCurrentPassword(Lorg/telegram/tgnet/TLRPC$account_Password;)V
 
-    .line 2937
+    .line 2939
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
@@ -6154,7 +6154,7 @@
 
     if-nez p1, :cond_3
 
-    .line 2938
+    .line 2940
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda32;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -6163,7 +6163,7 @@
 
     const-wide/16 v0, 0x1388
 
-    .line 2945
+    .line 2947
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     :cond_3
@@ -6173,7 +6173,7 @@
 .method private synthetic lambda$loadPasswordInfo$35(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 2920
+    .line 2922
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda44;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -6194,7 +6194,7 @@
 
     if-ne p1, v2, :cond_5
 
-    .line 3201
+    .line 3204
     invoke-static {p2}, Lcom/google/android/gms/wallet/PaymentData;->getFromIntent(Landroid/content/Intent;)Lcom/google/android/gms/wallet/PaymentData;
 
     move-result-object p1
@@ -6203,7 +6203,7 @@
 
     return-void
 
-    .line 3205
+    .line 3208
     :cond_0
     invoke-virtual {p1}, Lcom/google/android/gms/wallet/PaymentData;->toJson()Ljava/lang/String;
 
@@ -6213,7 +6213,7 @@
 
     return-void
 
-    .line 3210
+    .line 3213
     :cond_1
     :try_start_0
     new-instance p2, Lorg/json/JSONObject;
@@ -6228,24 +6228,24 @@
 
     const-string p2, "tokenizationData"
 
-    .line 3211
+    .line 3214
     invoke-virtual {p1, p2}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object p2
 
     const-string v2, "type"
 
-    .line 3212
+    .line 3215
     invoke-virtual {p2, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     const-string v2, "token"
 
-    .line 3213
+    .line 3216
     invoke-virtual {p2, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3215
+    .line 3218
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayPublicKey:Ljava/lang/String;
 
     if-nez v3, :cond_3
@@ -6256,13 +6256,13 @@
 
     goto :goto_0
 
-    .line 3226
+    .line 3229
     :cond_2
     invoke-static {v2}, Lcom/stripe/android/net/TokenParser;->parseToken(Ljava/lang/String;)Lcom/stripe/android/model/Token;
 
     move-result-object p1
 
-    .line 3227
+    .line 3230
     sget-object p2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v2, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}"
@@ -6289,12 +6289,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentJson:Ljava/lang/String;
 
-    .line 3228
+    .line 3231
     invoke-virtual {p1}, Lcom/stripe/android/model/Token;->getCard()Lcom/stripe/android/model/Card;
 
     move-result-object p1
 
-    .line 3229
+    .line 3232
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -6323,7 +6323,7 @@
 
     goto :goto_1
 
-    .line 3216
+    .line 3219
     :cond_3
     :goto_0
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;
@@ -6332,14 +6332,14 @@
 
     iput-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayCredentials:Lorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;
 
-    .line 3217
+    .line 3220
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;-><init>()V
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;->payment_token:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
-    .line 3218
+    .line 3221
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayCredentials:Lorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;->payment_token:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
@@ -6352,19 +6352,19 @@
 
     const-string p2, "description"
 
-    .line 3219
+    .line 3222
     invoke-virtual {p1, p2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 3220
+    .line 3223
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p2
 
     if-nez p2, :cond_4
 
-    .line 3221
+    .line 3224
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
 
     goto :goto_1
@@ -6372,10 +6372,10 @@
     :cond_4
     const-string p1, "Android Pay"
 
-    .line 3223
+    .line 3226
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
 
-    .line 3231
+    .line 3234
     :goto_1
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
     :try_end_0
@@ -6386,7 +6386,7 @@
     :catch_0
     move-exception p1
 
-    .line 3233
+    .line 3236
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_3
@@ -6394,12 +6394,12 @@
     :cond_5
     if-ne p1, v1, :cond_7
 
-    .line 3237
+    .line 3240
     invoke-static {p2}, Lcom/google/android/gms/wallet/AutoResolveHelper;->getStatusFromIntent(Landroid/content/Intent;)Lcom/google/android/gms/common/api/Status;
 
     move-result-object p1
 
-    .line 3238
+    .line 3241
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -6428,20 +6428,20 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 3241
+    .line 3244
     :cond_7
     :goto_3
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 3242
+    .line 3245
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
-    .line 3243
+    .line 3246
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayButton:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_8
 
-    .line 3244
+    .line 3247
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
     :cond_8
@@ -6451,7 +6451,7 @@
 .method private synthetic lambda$onTransitionAnimationEnd$38()V
     .locals 2
 
-    .line 3161
+    .line 3164
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x0
@@ -6460,7 +6460,7 @@
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 3162
+    .line 3165
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v0, v0, v1
@@ -6475,34 +6475,34 @@
 
     const/4 v0, 0x1
 
-    .line 4020
+    .line 4023
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentStatusSent:Z
 
-    .line 4021
+    .line 4024
     sget-object v1, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->PAID:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     iput-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
-    .line 4022
+    .line 4025
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     if-eqz v2, :cond_0
 
-    .line 4023
+    .line 4026
     invoke-interface {v2, v1}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;->onInvoiceStatusChanged(Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
 
-    .line 4026
+    .line 4029
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 
-    .line 4027
+    .line 4030
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     instance-of v2, v1, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v2, :cond_1
 
-    .line 4028
+    .line 4031
     check-cast v1, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
@@ -6511,7 +6511,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 4030
+    .line 4033
     sget v1, Lorg/telegram/messenger/R$string;->PaymentInfoHint:I
 
     const/4 v3, 0x2
@@ -6542,7 +6542,7 @@
 
     const/16 v0, 0x4d
 
-    .line 4031
+    .line 4034
     aget-object v7, p1, v5
 
     const/4 v8, 0x0
@@ -6562,34 +6562,34 @@
 
     const/4 v0, 0x1
 
-    .line 4053
+    .line 4056
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentStatusSent:Z
 
-    .line 4054
+    .line 4057
     sget-object v1, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->PAID:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     iput-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
-    .line 4055
+    .line 4058
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     if-eqz v2, :cond_0
 
-    .line 4056
+    .line 4059
     invoke-interface {v2, v1}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;->onInvoiceStatusChanged(Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
 
-    .line 4059
+    .line 4062
     :cond_0
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/PaymentFormActivity;->onCheckoutSuccess(Lorg/telegram/ui/ActionBar/INavigationLayout;Landroid/app/Activity;)Z
 
-    .line 4061
+    .line 4064
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     instance-of p2, p1, Lorg/telegram/ui/ChatActivity;
 
     if-eqz p2, :cond_1
 
-    .line 4062
+    .line 4065
     check-cast p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
@@ -6598,7 +6598,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4064
+    .line 4067
     sget p1, Lorg/telegram/messenger/R$string;->PaymentInfoHint:I
 
     const/4 p2, 0x2
@@ -6635,7 +6635,7 @@
 
     move-object v6, p3
 
-    .line 4065
+    .line 4068
     invoke-virtual/range {v1 .. v8}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     :cond_1
@@ -6645,7 +6645,7 @@
 .method private synthetic lambda$sendData$58(Lorg/telegram/ui/ActionBar/INavigationLayout;Landroid/app/Activity;Lorg/telegram/tgnet/TLRPC$Message;)Z
     .locals 4
 
-    .line 4051
+    .line 4054
     iget-object v0, p3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
@@ -6666,7 +6666,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4052
+    .line 4055
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda51;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda51;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/ui/ActionBar/INavigationLayout;Landroid/app/Activity;Lorg/telegram/tgnet/TLRPC$Message;)V
@@ -6688,35 +6688,35 @@
 
     const/4 v0, 0x0
 
-    .line 4037
+    .line 4040
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
     const/4 v1, 0x1
 
-    .line 4038
+    .line 4041
     iput-boolean v1, p0, Lorg/telegram/ui/PaymentFormActivity;->webviewLoading:Z
 
-    .line 4039
+    .line 4042
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 4040
+    .line 4043
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
 
     if-eqz v2, :cond_0
 
-    .line 4041
+    .line 4044
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/ContextProgressView;->setVisibility(I)V
 
-    .line 4043
+    .line 4046
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v2, :cond_1
 
-    .line 4044
+    .line 4047
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 4045
+    .line 4048
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getContentView()Landroid/view/View;
@@ -6727,18 +6727,18 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4048
+    .line 4051
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v2
 
-    .line 4049
+    .line 4052
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
 
-    .line 4050
+    .line 4053
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v4
@@ -6749,15 +6749,15 @@
 
     iput-object v5, v4, Lorg/telegram/messenger/MessagesController;->newMessageCallback:Lorg/telegram/messenger/MessagesController$NewMessageCallback;
 
-    .line 4074
+    .line 4077
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     if-eqz v2, :cond_2
 
-    .line 4075
+    .line 4078
     invoke-virtual {v2, v0}, Landroid/webkit/WebView;->setVisibility(I)V
 
-    .line 4076
+    .line 4079
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentVerificationNeeded;
@@ -6768,21 +6768,21 @@
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 4079
+    .line 4082
     :cond_2
     iput-boolean v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentStatusSent:Z
 
-    .line 4080
+    .line 4083
     sget-object p1, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->PENDING:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
-    .line 4081
+    .line 4084
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     if-eqz v0, :cond_3
 
-    .line 4082
+    .line 4085
     invoke-interface {v0, p1}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;->onInvoiceStatusChanged(Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
 
     :cond_3
@@ -6792,7 +6792,7 @@
 .method private synthetic lambda$sendData$60(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;)V
     .locals 3
 
-    .line 4088
+    .line 4091
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     const/4 v1, 0x0
@@ -6801,28 +6801,28 @@
 
     invoke-static {v0, p1, p0, p2, v2}, Lorg/telegram/ui/Components/AlertsCreator;->processError(ILorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;[Ljava/lang/Object;)Landroid/app/Dialog;
 
-    .line 4089
+    .line 4092
     invoke-direct {p0, v1}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
-    .line 4090
+    .line 4093
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     const/4 p1, 0x1
 
-    .line 4092
+    .line 4095
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentStatusSent:Z
 
-    .line 4093
+    .line 4096
     sget-object p1, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->FAILED:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
-    .line 4094
+    .line 4097
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     if-eqz p2, :cond_0
 
-    .line 4095
+    .line 4098
     invoke-interface {p2, p1}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;->onInvoiceStatusChanged(Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
 
     :cond_0
@@ -6834,12 +6834,12 @@
 
     if-eqz p2, :cond_4
 
-    .line 4005
+    .line 4008
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentResult;
 
     if-eqz p1, :cond_3
 
-    .line 4006
+    .line 4009
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentResult;
 
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentResult;->updates:Lorg/telegram/tgnet/TLRPC$Updates;
@@ -6848,7 +6848,7 @@
 
     new-array p2, p2, [Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 4008
+    .line 4011
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
@@ -6862,7 +6862,7 @@
     :goto_0
     if-ge v1, p3, :cond_2
 
-    .line 4009
+    .line 4012
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6871,12 +6871,12 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Update;
 
-    .line 4010
+    .line 4013
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewMessage;
 
     if-eqz v3, :cond_0
 
-    .line 4011
+    .line 4014
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewMessage;
 
     iget-object p3, v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewMessage;->message:Lorg/telegram/tgnet/TLRPC$Message;
@@ -6885,13 +6885,13 @@
 
     goto :goto_1
 
-    .line 4013
+    .line 4016
     :cond_0
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewChannelMessage;
 
     if-eqz v3, :cond_1
 
-    .line 4014
+    .line 4017
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewChannelMessage;
 
     iget-object p3, v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewChannelMessage;->message:Lorg/telegram/tgnet/TLRPC$Message;
@@ -6905,7 +6905,7 @@
 
     goto :goto_0
 
-    .line 4018
+    .line 4021
     :cond_2
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -6914,7 +6914,7 @@
 
     invoke-virtual {p3, p1, v0}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    .line 4019
+    .line 4022
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda53;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda53;-><init>(Lorg/telegram/ui/PaymentFormActivity;[Lorg/telegram/tgnet/TLRPC$Message;)V
@@ -6923,13 +6923,13 @@
 
     goto :goto_2
 
-    .line 4035
+    .line 4038
     :cond_3
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentVerificationNeeded;
 
     if-eqz p1, :cond_5
 
-    .line 4036
+    .line 4039
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda39;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLObject;)V
@@ -6938,7 +6938,7 @@
 
     goto :goto_2
 
-    .line 4087
+    .line 4090
     :cond_4
     new-instance p2, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda48;
 
@@ -6960,12 +6960,12 @@
 .method private synthetic lambda$sendForm$53(Lorg/telegram/tgnet/TLObject;)V
     .locals 3
 
-    .line 3907
+    .line 3910
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->requestedInfo:Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
-    .line 3908
+    .line 3911
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -6978,15 +6978,15 @@
 
     if-nez p1, :cond_0
 
-    .line 3909
+    .line 3912
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_payments_clearSavedInfo;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_payments_clearSavedInfo;-><init>()V
 
-    .line 3910
+    .line 3913
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_clearSavedInfo;->info:Z
 
-    .line 3911
+    .line 3914
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -6997,16 +6997,16 @@
 
     invoke-virtual {v1, p1, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 3915
+    .line 3918
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 
     const/4 p1, 0x0
 
-    .line 3916
+    .line 3919
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
-    .line 3917
+    .line 3920
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     return-void
@@ -7017,17 +7017,17 @@
 
     const/4 v0, 0x0
 
-    .line 3921
+    .line 3924
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
     const/4 v1, 0x1
 
-    .line 3922
+    .line 3925
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     if-eqz p1, :cond_9
 
-    .line 3924
+    .line 3927
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
@@ -7199,7 +7199,7 @@
     :goto_0
     packed-switch v3, :pswitch_data_0
 
-    .line 3953
+    .line 3956
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -7208,13 +7208,13 @@
 
     goto :goto_1
 
-    .line 3932
+    .line 3935
     :pswitch_0
     invoke-direct {p0, v5}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     goto :goto_1
 
-    .line 3950
+    .line 3953
     :pswitch_1
     invoke-direct {p0, v1}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
@@ -7223,42 +7223,42 @@
     :pswitch_2
     const/16 p1, 0x9
 
-    .line 3929
+    .line 3932
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     goto :goto_1
 
-    .line 3944
+    .line 3947
     :pswitch_3
     invoke-direct {p0, v9}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     goto :goto_1
 
-    .line 3941
+    .line 3944
     :pswitch_4
     invoke-direct {p0, v7}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     goto :goto_1
 
-    .line 3926
+    .line 3929
     :pswitch_5
     invoke-direct {p0, v6}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     goto :goto_1
 
-    .line 3935
+    .line 3938
     :pswitch_6
     invoke-direct {p0, v8}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     goto :goto_1
 
-    .line 3947
+    .line 3950
     :pswitch_7
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     goto :goto_1
 
-    .line 3938
+    .line 3941
     :pswitch_8
     invoke-direct {p0, v10}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
@@ -7296,12 +7296,12 @@
 .method private synthetic lambda$sendForm$55(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 3905
+    .line 3908
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
     if-eqz v0, :cond_0
 
-    .line 3906
+    .line 3909
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda38;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLObject;)V
@@ -7310,7 +7310,7 @@
 
     goto :goto_0
 
-    .line 3920
+    .line 3923
     :cond_0
     new-instance p2, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda45;
 
@@ -7329,12 +7329,12 @@
 
     const/4 v1, 0x0
 
-    .line 3501
+    .line 3504
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     if-nez p1, :cond_2
 
-    .line 3503
+    .line 3506
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -7343,27 +7343,27 @@
 
     return-void
 
-    .line 3506
+    .line 3509
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->shortPollRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_1
 
-    .line 3507
+    .line 3510
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 p1, 0x0
 
-    .line 3508
+    .line 3511
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->shortPollRunnable:Ljava/lang/Runnable;
 
-    .line 3510
+    .line 3513
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 
     goto :goto_1
 
-    .line 3512
+    .line 3515
     :cond_2
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -7375,12 +7375,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 3513
+    .line 3516
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->shakeView(Landroid/view/View;)V
 
-    .line 3514
+    .line 3517
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     const-string v0, ""
@@ -7389,7 +7389,7 @@
 
     goto :goto_1
 
-    .line 3515
+    .line 3518
     :cond_3
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -7403,7 +7403,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 3516
+    .line 3519
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -7422,14 +7422,14 @@
 
     const-string v4, "Seconds"
 
-    .line 3519
+    .line 3522
     invoke-static {v4, p1, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 3521
+    .line 3524
     :cond_4
     div-int/2addr p1, v2
 
@@ -7441,7 +7441,7 @@
 
     move-result-object p1
 
-    .line 3523
+    .line 3526
     :goto_0
     sget v2, Lorg/telegram/messenger/R$string;->AppName:I
 
@@ -7465,7 +7465,7 @@
 
     goto :goto_1
 
-    .line 3525
+    .line 3528
     :cond_5
     sget v0, Lorg/telegram/messenger/R$string;->AppName:I
 
@@ -7484,7 +7484,7 @@
 .method private synthetic lambda$sendSavePassword$42(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 3500
+    .line 3503
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda42;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -7499,15 +7499,15 @@
 
     if-nez p1, :cond_0
 
-    .line 3585
+    .line 3588
     check-cast p2, Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iput-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
-    .line 3586
+    .line 3589
     invoke-static {p2}, Lorg/telegram/ui/TwoStepVerificationActivity;->initPasswordNewAlgo(Lorg/telegram/tgnet/TLRPC$account_Password;)V
 
-    .line 3587
+    .line 3590
     invoke-direct {p0, p3}, Lorg/telegram/ui/PaymentFormActivity;->sendSavePassword(Z)V
 
     :cond_0
@@ -7517,7 +7517,7 @@
 .method private synthetic lambda$sendSavePassword$44(ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 3583
+    .line 3586
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda47;
 
     invoke-direct {v0, p0, p3, p2, p1}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda47;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Z)V
@@ -7532,15 +7532,15 @@
 
     const/4 p2, 0x1
 
-    .line 3609
+    .line 3612
     iput-boolean p2, p0, Lorg/telegram/ui/PaymentFormActivity;->waitingForEmail:Z
 
-    .line 3610
+    .line 3613
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iput-object p1, p2, Lorg/telegram/tgnet/TLRPC$account_Password;->email_unconfirmed_pattern:Ljava/lang/String;
 
-    .line 3611
+    .line 3614
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->updatePasswordFields()V
 
     return-void
@@ -7551,7 +7551,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3581
+    .line 3584
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v1, "SRP_ID_INVALID"
@@ -7562,12 +7562,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 3582
+    .line 3585
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;-><init>()V
 
-    .line 3583
+    .line 3586
     iget p3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -7589,27 +7589,27 @@
 
     const/4 v1, 0x0
 
-    .line 3592
+    .line 3595
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     if-eqz p2, :cond_1
 
-    .line 3594
+    .line 3597
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iput-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$account_Password;->has_password:Z
 
     const/4 p2, 0x0
 
-    .line 3595
+    .line 3598
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$account_Password;->current_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
-    .line 3596
+    .line 3599
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->delegate:Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
     invoke-interface {p2, p1}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;->currentPasswordUpdated(Lorg/telegram/tgnet/TLRPC$account_Password;)V
 
-    .line 3597
+    .line 3600
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto/16 :goto_2
@@ -7617,12 +7617,12 @@
     :cond_1
     if-nez p1, :cond_3
 
-    .line 3599
+    .line 3602
     instance-of p2, p3, Lorg/telegram/tgnet/TLRPC$TL_boolTrue;
 
     if-eqz p2, :cond_3
 
-    .line 3600
+    .line 3603
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -7631,7 +7631,7 @@
 
     return-void
 
-    .line 3603
+    .line 3606
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->goToNextStep()V
 
@@ -7640,7 +7640,7 @@
     :cond_3
     if-eqz p1, :cond_9
 
-    .line 3605
+    .line 3608
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string p3, "EMAIL_UNCONFIRMED"
@@ -7663,7 +7663,7 @@
 
     goto :goto_1
 
-    .line 3621
+    .line 3624
     :cond_4
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -7677,7 +7677,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 3622
+    .line 3625
     sget p1, Lorg/telegram/messenger/R$string;->AppName:I
 
     invoke-static {p3, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -7696,7 +7696,7 @@
 
     goto/16 :goto_2
 
-    .line 3623
+    .line 3626
     :cond_5
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -7708,7 +7708,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 3624
+    .line 3627
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -7727,14 +7727,14 @@
 
     const-string p4, "Seconds"
 
-    .line 3627
+    .line 3630
     invoke-static {p4, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 3629
+    .line 3632
     :cond_6
     div-int/2addr p1, p2
 
@@ -7746,7 +7746,7 @@
 
     move-result-object p1
 
-    .line 3631
+    .line 3634
     :goto_0
     sget p2, Lorg/telegram/messenger/R$string;->AppName:I
 
@@ -7770,7 +7770,7 @@
 
     goto :goto_2
 
-    .line 3633
+    .line 3636
     :cond_7
     sget p2, Lorg/telegram/messenger/R$string;->AppName:I
 
@@ -7784,7 +7784,7 @@
 
     goto :goto_2
 
-    .line 3606
+    .line 3609
     :cond_8
     :goto_1
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
@@ -7799,7 +7799,7 @@
 
     iput p1, p0, Lorg/telegram/ui/PaymentFormActivity;->emailCodeLength:I
 
-    .line 3607
+    .line 3610
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -7808,7 +7808,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 3608
+    .line 3611
     sget p2, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string p3, "OK"
@@ -7823,7 +7823,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3613
+    .line 3616
     sget p2, Lorg/telegram/messenger/R$string;->YourEmailAlmostThereText:I
 
     const-string p3, "YourEmailAlmostThereText"
@@ -7834,7 +7834,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3614
+    .line 3617
     sget p2, Lorg/telegram/messenger/R$string;->YourEmailAlmostThere:I
 
     const-string p3, "YourEmailAlmostThere"
@@ -7845,7 +7845,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3615
+    .line 3618
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -7856,10 +7856,10 @@
 
     if-eqz p1, :cond_9
 
-    .line 3617
+    .line 3620
     invoke-virtual {p1, v1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 3618
+    .line 3621
     invoke-virtual {p1, v1}, Landroid/app/Dialog;->setCancelable(Z)V
 
     :cond_9
@@ -7870,7 +7870,7 @@
 .method private synthetic lambda$sendSavePassword$47(ZLjava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
-    .line 3580
+    .line 3583
     new-instance v6, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda49;
 
     move-object v0, v6
@@ -7895,7 +7895,7 @@
 .method private synthetic lambda$sendSavePassword$48(ZLjava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_account_updatePasswordSettings;)V
     .locals 3
 
-    .line 3580
+    .line 3583
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda63;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda63;-><init>(Lorg/telegram/ui/PaymentFormActivity;ZLjava/lang/String;)V
@@ -7904,12 +7904,12 @@
 
     if-nez p1, :cond_2
 
-    .line 3641
+    .line 3644
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->getStringBytes(Ljava/lang/String;)[B
 
     move-result-object p1
 
-    .line 3642
+    .line 3645
     iget-object p3, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$account_Password;->new_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
@@ -7920,10 +7920,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 3643
+    .line 3646
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
 
-    .line 3644
+    .line 3647
     iget-object v1, p4, Lorg/telegram/tgnet/TLRPC$TL_account_updatePasswordSettings;->new_settings:Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;
 
     invoke-static {p1, p3}, Lorg/telegram/messenger/SRPHelper;->getVBytes([BLorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;)[B
@@ -7932,27 +7932,27 @@
 
     iput-object p1, v1, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->new_password_hash:[B
 
-    .line 3645
+    .line 3648
     iget-object p1, p4, Lorg/telegram/tgnet/TLRPC$TL_account_updatePasswordSettings;->new_settings:Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->new_password_hash:[B
 
     if-nez p1, :cond_0
 
-    .line 3646
+    .line 3649
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_error;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_error;-><init>()V
 
     const-string p3, "ALGO_INVALID"
 
-    .line 3647
+    .line 3650
     iput-object p3, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    .line 3648
+    .line 3651
     invoke-interface {v0, v2, p1}, Lorg/telegram/tgnet/RequestDelegate;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
-    .line 3650
+    .line 3653
     :cond_0
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -7964,7 +7964,7 @@
 
     goto :goto_0
 
-    .line 3652
+    .line 3655
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_error;
 
@@ -7972,15 +7972,15 @@
 
     const-string p2, "PASSWORD_HASH_INVALID"
 
-    .line 3653
+    .line 3656
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    .line 3654
+    .line 3657
     invoke-interface {v0, v2, p1}, Lorg/telegram/tgnet/RequestDelegate;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     goto :goto_0
 
-    .line 3657
+    .line 3660
     :cond_2
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -7997,22 +7997,22 @@
 .method private synthetic lambda$sendSavedForm$49(Lorg/telegram/tgnet/TLObject;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 3846
+    .line 3849
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->requestedInfo:Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
-    .line 3847
+    .line 3850
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     const/4 p1, 0x0
 
-    .line 3848
+    .line 3851
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
     const/4 p2, 0x1
 
-    .line 3849
+    .line 3852
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     return-void
@@ -8023,17 +8023,17 @@
 
     const/4 v0, 0x0
 
-    .line 3853
+    .line 3856
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
     const/4 v1, 0x1
 
-    .line 3854
+    .line 3857
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     if-eqz p1, :cond_0
 
-    .line 3856
+    .line 3859
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -8047,12 +8047,12 @@
 .method private synthetic lambda$sendSavedForm$51(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 3844
+    .line 3847
     instance-of v0, p3, Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
     if-eqz v0, :cond_0
 
-    .line 3845
+    .line 3848
     new-instance p2, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda40;
 
     invoke-direct {p2, p0, p3, p1}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lorg/telegram/tgnet/TLObject;Ljava/lang/Runnable;)V
@@ -8061,7 +8061,7 @@
 
     goto :goto_0
 
-    .line 3852
+    .line 3855
     :cond_0
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda43;
 
@@ -8080,14 +8080,14 @@
 
     move/from16 v1, p5
 
-    .line 2658
+    .line 2660
     new-instance v2, Lorg/telegram/ui/PaymentFormActivity$21;
 
     move-object/from16 v3, p1
 
     invoke-direct {v2, v0, v3}, Lorg/telegram/ui/PaymentFormActivity$21;-><init>(Lorg/telegram/ui/PaymentFormActivity;Ljava/lang/Runnable;)V
 
-    .line 2680
+    .line 2682
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
     const/4 v4, 0x1
@@ -8112,7 +8112,7 @@
     :goto_1
     if-nez v3, :cond_2
 
-    .line 2681
+    .line 2683
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
 
     if-eqz v3, :cond_3
@@ -8125,7 +8125,7 @@
     :cond_3
     if-lt v1, v5, :cond_4
 
-    .line 2684
+    .line 2686
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
     move-result v3
@@ -8138,7 +8138,7 @@
 
     move-object/from16 v3, p2
 
-    .line 2685
+    .line 2687
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -8151,7 +8151,7 @@
 
     const/4 v3, 0x0
 
-    .line 2686
+    .line 2688
     iget-object v4, v6, Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;->title:Ljava/lang/String;
 
     const/4 v5, 0x1
@@ -8175,7 +8175,7 @@
     :cond_4
     move-object/from16 v3, p2
 
-    .line 2690
+    .line 2692
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->size()I
 
     move-result v6
@@ -8184,7 +8184,7 @@
 
     if-ge v1, v6, :cond_5
 
-    .line 2691
+    .line 2693
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->additional_methods:Ljava/util/ArrayList;
@@ -8203,7 +8203,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;
 
-    .line 2693
+    .line 2695
     new-instance v15, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -8246,18 +8246,18 @@
 
     move-object/from16 v3, v18
 
-    .line 2694
+    .line 2696
     invoke-direct {v3, v1}, Lorg/telegram/ui/PaymentFormActivity;->setPaymentMethod(Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;)V
 
-    .line 2695
+    .line 2697
     invoke-direct {v3, v2}, Lorg/telegram/ui/PaymentFormActivity;->setDelegate(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;)V
 
-    .line 2696
+    .line 2698
     invoke-virtual {v0, v3}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_2
 
-    .line 2697
+    .line 2699
     :cond_5
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->size()I
 
@@ -8267,7 +8267,7 @@
 
     if-ne v1, v3, :cond_6
 
-    .line 2698
+    .line 2700
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -8302,10 +8302,10 @@
 
     invoke-direct/range {v4 .. v17}, Lorg/telegram/ui/PaymentFormActivity;-><init>(Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;Lorg/telegram/tgnet/TLRPC$TL_shippingOption;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;ZLorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 2699
+    .line 2701
     invoke-direct {v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->setDelegate(Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;)V
 
-    .line 2700
+    .line 2702
     invoke-virtual {v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     :cond_6
@@ -8318,10 +8318,10 @@
 
     const/4 p1, 0x1
 
-    .line 2967
+    .line 2969
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->setDonePressed(Z)V
 
-    .line 2968
+    .line 2970
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->sendData()V
 
     return-void
@@ -8330,7 +8330,7 @@
 .method private loadPasswordInfo()V
     .locals 4
 
-    .line 2915
+    .line 2917
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->loadingPasswordInfo:Z
 
     if-eqz v0, :cond_0
@@ -8340,15 +8340,15 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 2918
+    .line 2920
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->loadingPasswordInfo:Z
 
-    .line 2919
+    .line 2921
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;-><init>()V
 
-    .line 2920
+    .line 2922
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -8369,7 +8369,7 @@
 .method private onCheckoutSuccess(Lorg/telegram/ui/ActionBar/INavigationLayout;Landroid/app/Activity;)Z
     .locals 3
 
-    .line 3388
+    .line 3391
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->botUser:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
@@ -8422,7 +8422,7 @@
     :cond_1
     if-eqz p1, :cond_6
 
-    .line 3390
+    .line 3393
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-interface {p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
@@ -8449,7 +8449,7 @@
 
     check-cast v1, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 3391
+    .line 3394
     instance-of v2, v1, Lorg/telegram/ui/ChatActivity;
 
     if-nez v2, :cond_3
@@ -8458,13 +8458,13 @@
 
     if-eqz v2, :cond_2
 
-    .line 3392
+    .line 3395
     :cond_3
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     goto :goto_0
 
-    .line 3396
+    .line 3399
     :cond_4
     new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;
 
@@ -8486,12 +8486,12 @@
 
     invoke-interface {p1, v0, v1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
-    .line 3397
+    .line 3400
     instance-of p1, p2, Lorg/telegram/ui/LaunchActivity;
 
     if-eqz p1, :cond_5
 
-    .line 3399
+    .line 3402
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -8503,7 +8503,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3402
+    .line 3405
     :catch_0
     check-cast p2, Lorg/telegram/ui/LaunchActivity;
 
@@ -8525,34 +8525,34 @@
 .method private onPresentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 1
 
-    .line 4341
+    .line 4344
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 4342
+    .line 4345
     instance-of v0, p1, Lorg/telegram/ui/PaymentFormActivity;
 
     if-eqz v0, :cond_0
 
-    .line 4343
+    .line 4346
     check-cast p1, Lorg/telegram/ui/PaymentFormActivity;
 
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     iput-object v0, p1, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
-    .line 4344
+    .line 4347
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     iput-object v0, p1, Lorg/telegram/ui/PaymentFormActivity;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 4345
+    .line 4348
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->needPayAfterTransition:Z
 
     iput-boolean v0, p1, Lorg/telegram/ui/PaymentFormActivity;->needPayAfterTransition:Z
 
-    .line 4346
+    .line 4349
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
     iput-object v0, p1, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
@@ -8566,7 +8566,7 @@
 
     move-object/from16 v1, p0
 
-    .line 3666
+    .line 3669
     iget-object v0, v1, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v2, 0x1
@@ -8583,12 +8583,12 @@
 
     const-string v3, "/"
 
-    .line 3667
+    .line 3670
     invoke-virtual {v0, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3668
+    .line 3671
     array-length v3, v0
 
     const/4 v5, 0x2
@@ -8597,14 +8597,14 @@
 
     if-ne v3, v5, :cond_0
 
-    .line 3669
+    .line 3672
     aget-object v3, v0, v6
 
     invoke-static {v3}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 3670
+    .line 3673
     aget-object v0, v0, v2
 
     invoke-static {v0}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -8622,7 +8622,7 @@
 
     const/4 v10, 0x0
 
-    .line 3675
+    .line 3678
     :goto_0
     new-instance v0, Lcom/stripe/android/model/Card;
 
@@ -8630,7 +8630,7 @@
 
     aget-object v3, v3, v6
 
-    .line 3676
+    .line 3679
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v3
@@ -8645,7 +8645,7 @@
 
     aget-object v3, v3, v15
 
-    .line 3679
+    .line 3682
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v3
@@ -8658,7 +8658,7 @@
 
     aget-object v3, v3, v5
 
-    .line 3680
+    .line 3683
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v3
@@ -8681,7 +8681,7 @@
 
     aget-object v7, v7, v4
 
-    .line 3682
+    .line 3685
     invoke-virtual {v7}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
@@ -8696,7 +8696,7 @@
 
     aget-object v7, v7, v2
 
-    .line 3683
+    .line 3686
     invoke-virtual {v7}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v7
@@ -8715,7 +8715,7 @@
 
     invoke-direct/range {v7 .. v19}, Lcom/stripe/android/model/Card;-><init>(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3685
+    .line 3688
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -8742,19 +8742,19 @@
 
     iput-object v3, v1, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
 
-    .line 3686
+    .line 3689
     invoke-virtual {v0}, Lcom/stripe/android/model/Card;->validateNumber()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 3687
+    .line 3690
     invoke-direct {v1, v6}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return v6
 
-    .line 3689
+    .line 3692
     :cond_1
     invoke-virtual {v0}, Lcom/stripe/android/model/Card;->validateExpMonth()Z
 
@@ -8776,7 +8776,7 @@
 
     goto/16 :goto_2
 
-    .line 3692
+    .line 3695
     :cond_2
     iget-boolean v3, v1, Lorg/telegram/ui/PaymentFormActivity;->need_card_name:Z
 
@@ -8792,12 +8792,12 @@
 
     if-nez v3, :cond_3
 
-    .line 3693
+    .line 3696
     invoke-direct {v1, v5}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return v6
 
-    .line 3695
+    .line 3698
     :cond_3
     invoke-virtual {v0}, Lcom/stripe/android/model/Card;->validateCVC()Z
 
@@ -8805,12 +8805,12 @@
 
     if-nez v3, :cond_4
 
-    .line 3696
+    .line 3699
     invoke-direct {v1, v4}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return v6
 
-    .line 3698
+    .line 3701
     :cond_4
     iget-boolean v3, v1, Lorg/telegram/ui/PaymentFormActivity;->need_card_country:Z
 
@@ -8826,12 +8826,12 @@
 
     if-nez v3, :cond_5
 
-    .line 3699
+    .line 3702
     invoke-direct {v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return v6
 
-    .line 3701
+    .line 3704
     :cond_5
     iget-boolean v2, v1, Lorg/telegram/ui/PaymentFormActivity;->need_card_postcode:Z
 
@@ -8849,7 +8849,7 @@
 
     if-nez v2, :cond_6
 
-    .line 3702
+    .line 3705
     invoke-direct {v1, v3}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return v6
@@ -8857,13 +8857,13 @@
     :cond_6
     const/4 v2, 0x1
 
-    .line 3705
+    .line 3708
     invoke-direct {v1, v2, v2}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
     :try_start_0
     const-string v2, "stripe"
 
-    .line 3707
+    .line 3710
     iget-object v3, v1, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->native_provider:Ljava/lang/String;
@@ -8874,14 +8874,14 @@
 
     if-eqz v2, :cond_7
 
-    .line 3708
+    .line 3711
     new-instance v2, Lcom/stripe/android/Stripe;
 
     iget-object v3, v1, Lorg/telegram/ui/PaymentFormActivity;->providerApiKey:Ljava/lang/String;
 
     invoke-direct {v2, v3}, Lcom/stripe/android/Stripe;-><init>(Ljava/lang/String;)V
 
-    .line 3709
+    .line 3712
     new-instance v3, Lorg/telegram/ui/PaymentFormActivity$25;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/PaymentFormActivity$25;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -8893,7 +8893,7 @@
     :cond_7
     const-string v2, "smartglocal"
 
-    .line 3736
+    .line 3739
     iget-object v3, v1, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->native_provider:Ljava/lang/String;
@@ -8904,12 +8904,12 @@
 
     if-eqz v2, :cond_8
 
-    .line 3737
+    .line 3740
     new-instance v2, Lorg/telegram/ui/PaymentFormActivity$26;
 
     invoke-direct {v2, v1, v0}, Lorg/telegram/ui/PaymentFormActivity$26;-><init>(Lorg/telegram/ui/PaymentFormActivity;Lcom/stripe/android/model/Card;)V
 
-    .line 3807
+    .line 3810
     sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v3, v4, [Ljava/lang/Object;
@@ -8933,7 +8933,7 @@
     :catch_0
     move-exception v0
 
-    .line 3810
+    .line 3813
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_8
@@ -8946,7 +8946,7 @@
     :goto_2
     const/4 v2, 0x1
 
-    .line 3690
+    .line 3693
     invoke-direct {v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return v6
@@ -8955,7 +8955,7 @@
 .method private sendData()V
     .locals 5
 
-    .line 3963
+    .line 3966
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->canceled:Z
 
     if-eqz v0, :cond_0
@@ -8967,25 +8967,25 @@
 
     const/4 v1, 0x1
 
-    .line 3966
+    .line 3969
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 3967
+    .line 3970
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;-><init>()V
 
-    .line 3968
+    .line 3971
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v2, :cond_1
 
-    .line 3969
+    .line 3972
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;-><init>()V
 
-    .line 3970
+    .line 3973
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -9002,7 +9002,7 @@
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3971
+    .line 3974
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -9011,26 +9011,26 @@
 
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;->msg_id:I
 
-    .line 3972
+    .line 3975
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
 
     goto :goto_0
 
-    .line 3974
+    .line 3977
     :cond_1
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;-><init>()V
 
-    .line 3975
+    .line 3978
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceSlug:Ljava/lang/String;
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;->slug:Ljava/lang/String;
 
-    .line 3976
+    .line 3979
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
 
-    .line 3978
+    .line 3981
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -9038,7 +9038,7 @@
 
     iput-wide v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->form_id:J
 
-    .line 3979
+    .line 3982
     iget v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -9053,21 +9053,21 @@
 
     if-eqz v2, :cond_2
 
-    .line 3980
+    .line 3983
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsSaved;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsSaved;-><init>()V
 
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->credentials:Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;
 
-    .line 3981
+    .line 3984
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;->id:Ljava/lang/String;
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;->id:Ljava/lang/String;
 
-    .line 3982
+    .line 3985
     iget v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -9082,18 +9082,18 @@
 
     goto :goto_1
 
-    .line 3983
+    .line 3986
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->googlePayCredentials:Lorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentialsGooglePay;
 
     if-eqz v2, :cond_3
 
-    .line 3984
+    .line 3987
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->credentials:Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;
 
     goto :goto_1
 
-    .line 3986
+    .line 3989
     :cond_3
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputPaymentCredentials;
 
@@ -9101,19 +9101,19 @@
 
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->credentials:Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;
 
-    .line 3987
+    .line 3990
     iget-boolean v3, p0, Lorg/telegram/ui/PaymentFormActivity;->saveCardInfo:Z
 
     iput-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;->save:Z
 
-    .line 3988
+    .line 3991
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;-><init>()V
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;->data:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
-    .line 3989
+    .line 3992
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->credentials:Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$InputPaymentCredentials;->data:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
@@ -9122,7 +9122,7 @@
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
 
-    .line 3991
+    .line 3994
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->requestedInfo:Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
@@ -9132,17 +9132,17 @@
 
     if-eqz v2, :cond_4
 
-    .line 3992
+    .line 3995
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->requested_info_id:Ljava/lang/String;
 
-    .line 3993
+    .line 3996
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->flags:I
 
     or-int/2addr v1, v2
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->flags:I
 
-    .line 3995
+    .line 3998
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->shippingOption:Lorg/telegram/tgnet/TLRPC$TL_shippingOption;
 
@@ -9150,19 +9150,19 @@
 
     if-eqz v1, :cond_5
 
-    .line 3996
+    .line 3999
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_shippingOption;->id:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->shipping_option_id:Ljava/lang/String;
 
-    .line 3997
+    .line 4000
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->flags:I
 
     or-int/2addr v1, v2
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->flags:I
 
-    .line 3999
+    .line 4002
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -9174,7 +9174,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 4000
+    .line 4003
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->tipAmount:Ljava/lang/Long;
 
     if-eqz v1, :cond_6
@@ -9191,14 +9191,14 @@
     :goto_2
     iput-wide v3, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->tip_amount:J
 
-    .line 4001
+    .line 4004
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->flags:I
 
     or-int/lit8 v1, v1, 0x4
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;->flags:I
 
-    .line 4003
+    .line 4006
     :cond_7
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -9218,7 +9218,7 @@
 .method private sendForm()V
     .locals 7
 
-    .line 3864
+    .line 3867
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->canceled:Z
 
     if-eqz v0, :cond_0
@@ -9228,27 +9228,27 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 3867
+    .line 3870
     invoke-direct {p0, v0, v0}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 3868
+    .line 3871
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
-    .line 3869
+    .line 3872
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v1, :cond_1
 
-    .line 3870
+    .line 3873
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;-><init>()V
 
-    .line 3871
+    .line 3874
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -9265,7 +9265,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3872
+    .line 3875
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -9274,30 +9274,30 @@
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;->msg_id:I
 
-    .line 3873
+    .line 3876
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
 
     goto :goto_0
 
-    .line 3875
+    .line 3878
     :cond_1
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;-><init>()V
 
-    .line 3876
+    .line 3879
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceSlug:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;->slug:Ljava/lang/String;
 
-    .line 3877
+    .line 3880
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
 
-    .line 3879
+    .line 3882
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
@@ -9305,14 +9305,14 @@
 
     iput-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->save:Z
 
-    .line 3880
+    .line 3883
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
-    .line 3881
+    .line 3884
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -9321,7 +9321,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 3882
+    .line 3885
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9342,7 +9342,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->name:Ljava/lang/String;
 
-    .line 3883
+    .line 3886
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9353,7 +9353,7 @@
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->flags:I
 
-    .line 3885
+    .line 3888
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -9367,7 +9367,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 3886
+    .line 3889
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9416,7 +9416,7 @@
 
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->phone:Ljava/lang/String;
 
-    .line 3887
+    .line 3890
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9427,7 +9427,7 @@
 
     iput v4, v1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->flags:I
 
-    .line 3889
+    .line 3892
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -9437,7 +9437,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 3890
+    .line 3893
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9462,7 +9462,7 @@
 
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->email:Ljava/lang/String;
 
-    .line 3891
+    .line 3894
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9473,7 +9473,7 @@
 
     iput v4, v1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->flags:I
 
-    .line 3893
+    .line 3896
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -9483,7 +9483,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 3894
+    .line 3897
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9494,7 +9494,7 @@
 
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->shipping_address:Lorg/telegram/tgnet/TLRPC$TL_postAddress;
 
-    .line 3895
+    .line 3898
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9517,7 +9517,7 @@
 
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_postAddress;->street_line1:Ljava/lang/String;
 
-    .line 3896
+    .line 3899
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9538,7 +9538,7 @@
 
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_postAddress;->street_line2:Ljava/lang/String;
 
-    .line 3897
+    .line 3900
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9559,7 +9559,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_postAddress;->city:Ljava/lang/String;
 
-    .line 3898
+    .line 3901
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9582,7 +9582,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_postAddress;->state:Ljava/lang/String;
 
-    .line 3899
+    .line 3902
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9601,7 +9601,7 @@
     :goto_1
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_postAddress;->country_iso2:Ljava/lang/String;
 
-    .line 3900
+    .line 3903
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v4, 0x5
@@ -9618,7 +9618,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_postAddress;->post_code:Ljava/lang/String;
 
-    .line 3901
+    .line 3904
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
@@ -9629,11 +9629,11 @@
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->flags:I
 
-    .line 3903
+    .line 3906
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
-    .line 3904
+    .line 3907
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -9658,7 +9658,7 @@
 
     if-nez p1, :cond_1
 
-    .line 3491
+    .line 3494
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -9667,40 +9667,40 @@
 
     if-nez v1, :cond_1
 
-    .line 3492
+    .line 3495
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getText()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 3493
+    .line 3496
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 3494
+    .line 3497
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->shakeView(Landroid/view/View;)V
 
     return-void
 
-    .line 3497
+    .line 3500
     :cond_0
     invoke-direct {p0, v0, v0}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 3498
+    .line 3501
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_confirmPasswordEmail;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_confirmPasswordEmail;-><init>()V
 
-    .line 3499
+    .line 3502
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_confirmPasswordEmail;->code:Ljava/lang/String;
 
-    .line 3500
+    .line 3503
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -9717,7 +9717,7 @@
 
     goto/16 :goto_2
 
-    .line 3530
+    .line 3533
     :cond_1
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_account_updatePasswordSettings;
 
@@ -9733,25 +9733,25 @@
 
     if-eqz p1, :cond_2
 
-    .line 3534
+    .line 3537
     iget-object v5, p0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v5, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3537
+    .line 3540
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;-><init>()V
 
     iput-object v3, v8, Lorg/telegram/tgnet/TLRPC$TL_account_updatePasswordSettings;->new_settings:Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;
 
-    .line 3538
+    .line 3541
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->flags:I
 
-    .line 3539
+    .line 3542
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->email:Ljava/lang/String;
 
-    .line 3540
+    .line 3543
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputCheckPasswordEmpty;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputCheckPasswordEmpty;-><init>()V
@@ -9764,7 +9764,7 @@
 
     goto/16 :goto_1
 
-    .line 3542
+    .line 3545
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -9778,19 +9778,19 @@
 
     move-result-object v2
 
-    .line 3543
+    .line 3546
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 3544
+    .line 3547
     invoke-direct {p0, v3}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return-void
 
-    .line 3547
+    .line 3550
     :cond_3
     iget-object v5, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -9804,14 +9804,14 @@
 
     move-result-object v5
 
-    .line 3548
+    .line 3551
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-nez v5, :cond_4
 
-    .line 3550
+    .line 3553
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -9838,16 +9838,16 @@
     :catch_0
     move-exception p1
 
-    .line 3552
+    .line 3555
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3554
+    .line 3557
     :goto_0
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return-void
 
-    .line 3557
+    .line 3560
     :cond_4
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -9861,7 +9861,7 @@
 
     move-result-object v3
 
-    .line 3558
+    .line 3561
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -9870,7 +9870,7 @@
 
     if-ge v5, v6, :cond_5
 
-    .line 3559
+    .line 3562
     invoke-direct {p0, v4}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
 
     return-void
@@ -9878,14 +9878,14 @@
     :cond_5
     const/16 v5, 0x2e
 
-    .line 3562
+    .line 3565
     invoke-virtual {v3, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v5
 
     const/16 v6, 0x40
 
-    .line 3563
+    .line 3566
     invoke-virtual {v3, v6}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v6
@@ -9896,7 +9896,7 @@
 
     goto :goto_3
 
-    .line 3569
+    .line 3572
     :cond_6
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_inputCheckPasswordEmpty;
 
@@ -9904,24 +9904,24 @@
 
     iput-object v5, v8, Lorg/telegram/tgnet/TLRPC$TL_account_updatePasswordSettings;->password:Lorg/telegram/tgnet/TLRPC$InputCheckPasswordSRP;
 
-    .line 3570
+    .line 3573
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;-><init>()V
 
     iput-object v5, v8, Lorg/telegram/tgnet/TLRPC$TL_account_updatePasswordSettings;->new_settings:Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;
 
-    .line 3571
+    .line 3574
     iget v6, v5, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->flags:I
 
     or-int/2addr v6, v0
 
     iput v6, v5, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->flags:I
 
-    .line 3572
+    .line 3575
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->hint:Ljava/lang/String;
 
-    .line 3573
+    .line 3576
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$account_Password;->new_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
@@ -9930,10 +9930,10 @@
 
     or-int/lit8 v1, v6, 0x2
 
-    .line 3575
+    .line 3578
     iput v1, v5, Lorg/telegram/tgnet/TLRPC$TL_account_passwordInputSettings;->flags:I
 
-    .line 3576
+    .line 3579
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -9944,11 +9944,11 @@
 
     move-object v6, v3
 
-    .line 3578
+    .line 3581
     :goto_1
     invoke-direct {p0, v0, v0}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 3579
+    .line 3582
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda52;
@@ -9966,7 +9966,7 @@
     :goto_2
     return-void
 
-    .line 3565
+    .line 3568
     :cond_7
     :goto_3
     invoke-direct {p0, v4}, Lorg/telegram/ui/PaymentFormActivity;->shakeField(I)V
@@ -9977,7 +9977,7 @@
 .method private sendSavedForm(Ljava/lang/Runnable;)V
     .locals 4
 
-    .line 3824
+    .line 3827
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->canceled:Z
 
     if-eqz v0, :cond_0
@@ -9987,27 +9987,27 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 3827
+    .line 3830
     invoke-direct {p0, v0, v0}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 3828
+    .line 3831
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
-    .line 3829
+    .line 3832
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v1, :cond_1
 
-    .line 3830
+    .line 3833
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;-><init>()V
 
-    .line 3831
+    .line 3834
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -10024,7 +10024,7 @@
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3832
+    .line 3835
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -10033,43 +10033,43 @@
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceMessage;->msg_id:I
 
-    .line 3833
+    .line 3836
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
 
     goto :goto_0
 
-    .line 3835
+    .line 3838
     :cond_1
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;-><init>()V
 
-    .line 3836
+    .line 3839
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceSlug:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;->slug:Ljava/lang/String;
 
-    .line 3837
+    .line 3840
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
 
-    .line 3839
+    .line 3842
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     iput-boolean v0, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->save:Z
 
-    .line 3840
+    .line 3843
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
     iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
-    .line 3843
+    .line 3846
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -10090,7 +10090,7 @@
 .method private setAddressFields(Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;)V
     .locals 10
 
-    .line 2711
+    .line 2713
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->shipping_address:Lorg/telegram/tgnet/TLRPC$TL_postAddress;
 
     const/4 v1, 0x5
@@ -10111,7 +10111,7 @@
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    .line 2712
+    .line 2714
     iget-object v8, v0, Lorg/telegram/tgnet/TLRPC$TL_postAddress;->street_line1:Ljava/lang/String;
 
     aput-object v8, v7, v6
@@ -10142,7 +10142,7 @@
 
     move-result-object v0
 
-    .line 2713
+    .line 2715
     iget-object v7, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v7, v7, v4
@@ -10159,7 +10159,7 @@
 
     invoke-virtual {v7, v0, v8, v9, v5}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
-    .line 2715
+    .line 2717
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -10181,12 +10181,12 @@
     :goto_0
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2717
+    .line 2719
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->name:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    .line 2718
+    .line 2720
     iget-object v4, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v4, v4, v3
@@ -10203,7 +10203,7 @@
 
     invoke-virtual {v4, v0, v8, v9, v5}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
-    .line 2720
+    .line 2722
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -10223,12 +10223,12 @@
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2722
+    .line 2724
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->phone:Ljava/lang/String;
 
     if-eqz v0, :cond_6
 
-    .line 2723
+    .line 2725
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v0, v0, v2
@@ -10275,7 +10275,7 @@
     :goto_3
     invoke-virtual {v0, v3, v4, v8, v9}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
-    .line 2725
+    .line 2727
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -10295,12 +10295,12 @@
     :goto_4
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2727
+    .line 2729
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->email:Ljava/lang/String;
 
     if-eqz v0, :cond_9
 
-    .line 2728
+    .line 2730
     iget-object v2, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v2, v2, v1
@@ -10327,7 +10327,7 @@
     :goto_5
     invoke-virtual {v2, v0, v3, v4, v5}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
-    .line 2730
+    .line 2732
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -10405,20 +10405,20 @@
 .method private setDonePressed(Z)V
     .locals 2
 
-    .line 4114
+    .line 4117
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->donePressed:Z
 
     xor-int/lit8 p1, p1, 0x1
 
-    .line 4115
+    .line 4118
     iput-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->swipeBackEnabled:Z
 
-    .line 4116
+    .line 4119
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz p1, :cond_0
 
-    .line 4117
+    .line 4120
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->getBackButton()Landroid/widget/ImageView;
 
     move-result-object p1
@@ -10429,7 +10429,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setEnabled(Z)V
 
-    .line 4119
+    .line 4122
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -10439,7 +10439,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4120
+    .line 4123
     aget-object p1, p1, v0
 
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->donePressed:Z
@@ -10455,7 +10455,7 @@
 .method private setPaymentMethod(Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;)V
     .locals 0
 
-    .line 2707
+    .line 2709
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormMethod:Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;
 
     return-void
@@ -10464,7 +10464,7 @@
 .method private shakeField(I)V
     .locals 1
 
-    .line 4103
+    .line 4106
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, v0, p1
@@ -10481,7 +10481,7 @@
 
     const/4 v1, 0x2
 
-    .line 4108
+    .line 4111
     :try_start_0
     invoke-virtual {p1, v0, v1}, Landroid/view/View;->performHapticFeedback(II)Z
     :try_end_0
@@ -10490,7 +10490,7 @@
     :catch_0
     const/high16 v0, 0x40200000    # 2.5f
 
-    .line 4110
+    .line 4113
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;F)V
 
     return-void
@@ -10499,7 +10499,7 @@
 .method private showAlertWithText(Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
-    .line 2952
+    .line 2954
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -10508,7 +10508,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2953
+    .line 2955
     sget v1, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v2, "OK"
@@ -10521,13 +10521,13 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2954
+    .line 2956
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2955
+    .line 2957
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2956
+    .line 2958
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -10542,7 +10542,7 @@
 
     const/4 v0, 0x0
 
-    .line 2623
+    .line 2625
     invoke-direct {p0, v0}, Lorg/telegram/ui/PaymentFormActivity;->showChoosePaymentMethod(Ljava/lang/Runnable;)V
 
     return-void
@@ -10551,7 +10551,7 @@
 .method private showChoosePaymentMethod(Ljava/lang/Runnable;)V
     .locals 8
 
-    .line 2627
+    .line 2629
     new-instance v0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -10564,7 +10564,7 @@
 
     const-string v2, "PaymentCheckoutMethod"
 
-    .line 2628
+    .line 2630
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -10575,27 +10575,27 @@
 
     move-result-object v0
 
-    .line 2629
+    .line 2631
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2630
+    .line 2632
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2631
+    .line 2633
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
     if-eqz v3, :cond_0
 
-    .line 2632
+    .line 2634
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;->title:Ljava/lang/String;
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2633
+    .line 2635
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_payment_card:I
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -10606,16 +10606,16 @@
 
     goto :goto_0
 
-    .line 2634
+    .line 2636
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
 
     if-eqz v3, :cond_1
 
-    .line 2635
+    .line 2637
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2636
+    .line 2638
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_payment_card:I
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -10624,14 +10624,14 @@
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2638
+    .line 2640
     :cond_1
     :goto_0
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2639
+    .line 2641
     iget-object v4, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_credentials:Ljava/util/ArrayList;
@@ -10654,7 +10654,7 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
-    .line 2640
+    .line 2642
     iget-object v6, p0, Lorg/telegram/ui/PaymentFormActivity;->savedCredentialsCard:Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;
 
     if-eqz v6, :cond_3
@@ -10669,13 +10669,13 @@
 
     if-nez v6, :cond_2
 
-    .line 2641
+    .line 2643
     :cond_3
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$TL_paymentSavedCredentialsCard;->title:Ljava/lang/String;
 
     invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2642
+    .line 2644
     sget v6, Lorg/telegram/messenger/R$drawable;->msg_payment_card:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -10684,12 +10684,12 @@
 
     invoke-interface {v2, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2643
+    .line 2645
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 2646
+    .line 2648
     :cond_4
     iget-object v4, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -10712,12 +10712,12 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;
 
-    .line 2647
+    .line 2649
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->title:Ljava/lang/String;
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2648
+    .line 2650
     sget v5, Lorg/telegram/messenger/R$drawable;->msg_payment_provider:I
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -10728,7 +10728,7 @@
 
     goto :goto_2
 
-    .line 2650
+    .line 2652
     :cond_5
     sget v4, Lorg/telegram/messenger/R$string;->PaymentCheckoutMethodNewCard:I
 
@@ -10738,7 +10738,7 @@
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2651
+    .line 2653
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_addbot:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -10747,7 +10747,7 @@
 
     invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2653
+    .line 2655
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v4
@@ -10758,7 +10758,7 @@
 
     move v6, v5
 
-    .line 2654
+    .line 2656
     :goto_3
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -10766,7 +10766,7 @@
 
     if-ge v6, v7, :cond_6
 
-    .line 2655
+    .line 2657
     invoke-interface {v2, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -10786,7 +10786,7 @@
     :cond_6
     new-array v2, v5, [Ljava/lang/CharSequence;
 
-    .line 2657
+    .line 2659
     invoke-interface {v1, v2}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v2
@@ -10799,7 +10799,7 @@
 
     invoke-virtual {v0, v2, v4, v5}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 2703
+    .line 2705
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object p1
@@ -10816,12 +10816,12 @@
 
     move/from16 v1, p2
 
-    .line 4223
+    .line 4226
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v2, :cond_0
 
-    .line 4224
+    .line 4227
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
     :cond_0
@@ -10847,12 +10847,12 @@
 
     if-eqz p1, :cond_4
 
-    .line 4226
+    .line 4229
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     if-eqz v14, :cond_4
 
-    .line 4227
+    .line 4230
     new-instance v14, Landroid/animation/AnimatorSet;
 
     invoke-direct {v14}, Landroid/animation/AnimatorSet;-><init>()V
@@ -10861,24 +10861,24 @@
 
     if-eqz v1, :cond_1
 
-    .line 4229
+    .line 4232
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
 
     invoke-virtual {v14, v13}, Lorg/telegram/ui/Components/ContextProgressView;->setVisibility(I)V
 
-    .line 4230
+    .line 4233
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v14, v13}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 4231
+    .line 4234
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     new-array v6, v6, [Landroid/animation/Animator;
 
     iget-object v15, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 4232
+    .line 4235
     invoke-virtual {v15}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getContentView()Landroid/view/View;
 
     move-result-object v15
@@ -10897,7 +10897,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 4233
+    .line 4236
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getContentView()Landroid/view/View;
 
     move-result-object v2
@@ -10916,7 +10916,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 4234
+    .line 4237
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getContentView()Landroid/view/View;
 
     move-result-object v2
@@ -10941,7 +10941,7 @@
 
     aput v11, v7, v13
 
-    .line 4235
+    .line 4238
     invoke-static {v2, v3, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -10956,7 +10956,7 @@
 
     aput v11, v7, v13
 
-    .line 4236
+    .line 4239
     invoke-static {v2, v3, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -10971,19 +10971,19 @@
 
     aput v11, v5, v13
 
-    .line 4237
+    .line 4240
     invoke-static {v2, v3, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
     aput-object v2, v6, v4
 
-    .line 4231
+    .line 4234
     invoke-virtual {v14, v6}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     goto/16 :goto_0
 
-    .line 4239
+    .line 4242
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
@@ -10991,7 +10991,7 @@
 
     new-array v2, v8, [Landroid/animation/Animator;
 
-    .line 4240
+    .line 4243
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
 
     sget-object v4, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -11000,7 +11000,7 @@
 
     aput v10, v5, v13
 
-    .line 4241
+    .line 4244
     invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -11015,7 +11015,7 @@
 
     aput v10, v5, v13
 
-    .line 4242
+    .line 4245
     invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -11030,19 +11030,19 @@
 
     aput v7, v5, v13
 
-    .line 4243
+    .line 4246
     invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
     aput-object v3, v2, v9
 
-    .line 4240
+    .line 4243
     invoke-virtual {v14, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     goto/16 :goto_0
 
-    .line 4245
+    .line 4248
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
@@ -11052,12 +11052,12 @@
 
     invoke-virtual {v2, v13}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4246
+    .line 4249
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v2, v12}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 4247
+    .line 4250
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     new-array v3, v8, [Landroid/animation/Animator;
@@ -11070,7 +11070,7 @@
 
     aput v10, v6, v13
 
-    .line 4248
+    .line 4251
     invoke-static {v4, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
@@ -11085,7 +11085,7 @@
 
     aput v10, v6, v13
 
-    .line 4249
+    .line 4252
     invoke-static {v4, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
@@ -11100,24 +11100,24 @@
 
     aput v7, v6, v13
 
-    .line 4250
+    .line 4253
     invoke-static {v4, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
 
     aput-object v4, v3, v9
 
-    .line 4247
+    .line 4250
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 4252
+    .line 4255
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->isFinishing()Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    .line 4253
+    .line 4256
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     new-array v3, v8, [Landroid/animation/Animator;
@@ -11142,7 +11142,7 @@
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 4254
+    .line 4257
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getContentView()Landroid/view/View;
 
     move-result-object v4
@@ -11161,7 +11161,7 @@
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 4255
+    .line 4258
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getContentView()Landroid/view/View;
 
     move-result-object v4
@@ -11178,10 +11178,10 @@
 
     aput-object v4, v3, v9
 
-    .line 4253
+    .line 4256
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 4259
+    .line 4262
     :cond_3
     :goto_0
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
@@ -11192,27 +11192,27 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 4278
+    .line 4281
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0x96
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 4279
+    .line 4282
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     goto/16 :goto_2
 
-    .line 4280
+    .line 4283
     :cond_4
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     if-eqz v2, :cond_6
 
-    .line 4281
+    .line 4284
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -11221,17 +11221,17 @@
 
     if-eqz v1, :cond_5
 
-    .line 4283
+    .line 4286
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
 
     invoke-virtual {v2, v13}, Lorg/telegram/ui/Components/ContextProgressView;->setVisibility(I)V
 
-    .line 4284
+    .line 4287
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     invoke-virtual {v2, v13}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 4285
+    .line 4288
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     new-array v3, v6, [Landroid/animation/Animator;
@@ -11244,7 +11244,7 @@
 
     aput v10, v15, v13
 
-    .line 4286
+    .line 4289
     invoke-static {v6, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11259,7 +11259,7 @@
 
     aput v10, v15, v13
 
-    .line 4287
+    .line 4290
     invoke-static {v6, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11274,7 +11274,7 @@
 
     aput v7, v14, v13
 
-    .line 4288
+    .line 4291
     invoke-static {v6, v10, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11289,7 +11289,7 @@
 
     aput v11, v9, v13
 
-    .line 4289
+    .line 4292
     invoke-static {v6, v7, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11304,7 +11304,7 @@
 
     aput v11, v8, v13
 
-    .line 4290
+    .line 4293
     invoke-static {v6, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11319,30 +11319,30 @@
 
     aput v11, v7, v13
 
-    .line 4291
+    .line 4294
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     aput-object v5, v3, v4
 
-    .line 4285
+    .line 4288
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     goto :goto_1
 
-    .line 4293
+    .line 4296
     :cond_5
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v13}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 4294
+    .line 4297
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     invoke-virtual {v2, v12}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 4295
+    .line 4298
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     new-array v3, v6, [Landroid/animation/Animator;
@@ -11355,7 +11355,7 @@
 
     aput v10, v15, v13
 
-    .line 4296
+    .line 4299
     invoke-static {v6, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11370,7 +11370,7 @@
 
     aput v10, v15, v13
 
-    .line 4297
+    .line 4300
     invoke-static {v6, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11385,7 +11385,7 @@
 
     aput v7, v14, v13
 
-    .line 4298
+    .line 4301
     invoke-static {v6, v10, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11400,7 +11400,7 @@
 
     aput v11, v9, v13
 
-    .line 4299
+    .line 4302
     invoke-static {v6, v7, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11415,7 +11415,7 @@
 
     aput v11, v8, v13
 
-    .line 4300
+    .line 4303
     invoke-static {v6, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -11430,17 +11430,17 @@
 
     aput v11, v7, v13
 
-    .line 4301
+    .line 4304
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     aput-object v5, v3, v4
 
-    .line 4295
+    .line 4298
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 4304
+    .line 4307
     :goto_1
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
@@ -11450,14 +11450,14 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 4323
+    .line 4326
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0x96
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 4324
+    .line 4327
     iget-object v1, v0, Lorg/telegram/ui/PaymentFormActivity;->doneItemAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
@@ -11470,7 +11470,7 @@
 .method private showPayAlert(Ljava/lang/String;)V
     .locals 4
 
-    .line 2960
+    .line 2962
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -11479,7 +11479,7 @@
 
     return-void
 
-    .line 2963
+    .line 2965
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -11489,7 +11489,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2964
+    .line 2966
     sget v1, Lorg/telegram/messenger/R$string;->PaymentTransactionReview:I
 
     const-string v2, "PaymentTransactionReview"
@@ -11500,7 +11500,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2965
+    .line 2967
     sget v1, Lorg/telegram/messenger/R$string;->PaymentTransactionMessage2:I
 
     const/4 v2, 0x3
@@ -11535,7 +11535,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2966
+    .line 2968
     sget p1, Lorg/telegram/messenger/R$string;->Continue:I
 
     const-string v1, "Continue"
@@ -11550,7 +11550,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2970
+    .line 2972
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -11563,7 +11563,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2971
+    .line 2973
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -11576,7 +11576,7 @@
 .method private updatePasswordFields()V
     .locals 10
 
-    .line 2856
+    .line 2858
     iget v0, p0, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v1, 0x6
@@ -11593,7 +11593,7 @@
 
     goto/16 :goto_7
 
-    .line 2859
+    .line 2861
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
@@ -11601,7 +11601,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2860
+    .line 2862
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     const/4 v3, 0x3
@@ -11612,50 +11612,50 @@
 
     if-nez v0, :cond_2
 
-    .line 2861
+    .line 2863
     invoke-direct {p0, v5, v5}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 2862
+    .line 2864
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2863
+    .line 2865
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v2
-
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 2864
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
-
-    aget-object v0, v0, v5
-
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 2865
-    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 2866
+    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
+
+    aget-object v0, v0, v5
+
+    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 2867
+    iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
+
+    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 2868
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v0, v0, v2
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2867
+    .line 2869
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2868
+    .line 2870
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v2
@@ -11667,7 +11667,7 @@
     :goto_0
     if-ge v0, v3, :cond_1
 
-    .line 2870
+    .line 2872
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v0
@@ -11684,7 +11684,7 @@
 
     goto :goto_0
 
-    .line 2872
+    .line 2874
     :cond_1
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
@@ -11695,7 +11695,7 @@
 
     if-ge v2, v0, :cond_7
 
-    .line 2873
+    .line 2875
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -11710,16 +11710,16 @@
 
     goto :goto_1
 
-    .line 2876
+    .line 2878
     :cond_2
     invoke-direct {p0, v5, v2}, Lorg/telegram/ui/PaymentFormActivity;->showEditDoneProgress(ZZ)V
 
-    .line 2877
+    .line 2879
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->waitingForEmail:Z
 
     if-eqz v0, :cond_5
 
-    .line 2878
+    .line 2880
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v1
@@ -11752,54 +11752,54 @@
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2879
+    .line 2881
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2880
+    .line 2882
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v2
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2881
+    .line 2883
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2882
+    .line 2884
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2883
+    .line 2885
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v9}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2885
+    .line 2887
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v0, v0, v2
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2886
+    .line 2888
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2887
+    .line 2889
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v2
@@ -11811,7 +11811,7 @@
     :goto_3
     if-ge v0, v3, :cond_4
 
-    .line 2889
+    .line 2891
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v0
@@ -11828,7 +11828,7 @@
 
     goto :goto_3
 
-    .line 2891
+    .line 2893
     :cond_4
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
@@ -11839,7 +11839,7 @@
 
     if-ge v2, v0, :cond_7
 
-    .line 2892
+    .line 2894
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -11854,7 +11854,7 @@
 
     goto :goto_4
 
-    .line 2895
+    .line 2897
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -11862,21 +11862,21 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2896
+    .line 2898
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v2
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2897
+    .line 2899
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2898
+    .line 2900
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v5
@@ -11891,26 +11891,26 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2899
+    .line 2901
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2901
+    .line 2903
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v0, v0, v2
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2902
+    .line 2904
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v0, v0, v5
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2903
+    .line 2905
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v2
@@ -11922,7 +11922,7 @@
     :goto_5
     if-ge v0, v3, :cond_6
 
-    .line 2905
+    .line 2907
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v0
@@ -11942,7 +11942,7 @@
     :cond_6
     move v0, v2
 
-    .line 2907
+    .line 2909
     :goto_6
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
@@ -11952,7 +11952,7 @@
 
     if-ge v0, v1, :cond_7
 
-    .line 2908
+    .line 2910
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -11975,7 +11975,7 @@
 .method private updateSavePaymentField()V
     .locals 8
 
-    .line 3411
+    .line 3414
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     const/4 v1, 0x0
@@ -11994,7 +11994,7 @@
 
     goto/16 :goto_1
 
-    .line 3414
+    .line 3417
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -12017,7 +12017,7 @@
 
     goto :goto_0
 
-    .line 3439
+    .line 3442
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
@@ -12025,14 +12025,14 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3440
+    .line 3443
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3441
+    .line 3444
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     aget-object v1, v0, v2
@@ -12055,7 +12055,7 @@
 
     goto/16 :goto_1
 
-    .line 3415
+    .line 3418
     :cond_3
     :goto_0
     new-instance v0, Landroid/text/SpannableStringBuilder;
@@ -12070,7 +12070,7 @@
 
     invoke-direct {v0, v3}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 3416
+    .line 3419
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->password_missing:Z
@@ -12079,20 +12079,20 @@
 
     if-eqz v3, :cond_4
 
-    .line 3417
+    .line 3420
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->loadPasswordInfo()V
 
     const-string v3, "\n"
 
-    .line 3418
+    .line 3421
     invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3419
+    .line 3422
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v3
 
-    .line 3420
+    .line 3423
     sget v5, Lorg/telegram/messenger/R$string;->PaymentCardSavePaymentInformationInfoLine2:I
 
     const-string v6, "PaymentCardSavePaymentInformationInfoLine2"
@@ -12103,17 +12103,17 @@
 
     const/16 v6, 0x2a
 
-    .line 3421
+    .line 3424
     invoke-virtual {v5, v6}, Ljava/lang/String;->indexOf(I)I
 
     move-result v7
 
-    .line 3422
+    .line 3425
     invoke-virtual {v5, v6}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v6
 
-    .line 3423
+    .line 3426
     invoke-virtual {v0, v5}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     const/4 v5, -0x1
@@ -12126,7 +12126,7 @@
 
     add-int/2addr v6, v3
 
-    .line 3427
+    .line 3430
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v3, v3, v1
@@ -12145,15 +12145,15 @@
 
     const-string v5, ""
 
-    .line 3428
+    .line 3431
     invoke-virtual {v0, v6, v3, v5}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v3, v7, 0x1
 
-    .line 3429
+    .line 3432
     invoke-virtual {v0, v7, v3, v5}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3430
+    .line 3433
     new-instance v3, Lorg/telegram/ui/PaymentFormActivity$LinkSpan;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/PaymentFormActivity$LinkSpan;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -12164,32 +12164,32 @@
 
     invoke-virtual {v0, v3, v7, v6, v5}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 3433
+    .line 3436
     :cond_4
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Cells/TextCheckCell;->setEnabled(Z)V
 
-    .line 3434
+    .line 3437
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v3, v3, v1
 
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3435
+    .line 3438
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3436
+    .line 3439
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3437
+    .line 3440
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     aget-object v1, v0, v2
@@ -12218,7 +12218,7 @@
 .method private updateTotalPrice()V
     .locals 6
 
-    .line 2734
+    .line 2736
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->totalPrice:[Ljava/lang/String;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->prices:Ljava/util/ArrayList;
@@ -12231,7 +12231,7 @@
 
     aput-object v1, v0, v2
 
-    .line 2735
+    .line 2737
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->totalCell:Lorg/telegram/ui/Cells/TextPriceCell;
 
     sget v1, Lorg/telegram/messenger/R$string;->PaymentTransactionTotal:I
@@ -12250,12 +12250,12 @@
 
     invoke-virtual {v0, v1, v3, v4}, Lorg/telegram/ui/Cells/TextPriceCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 2736
+    .line 2738
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 2737
+    .line 2739
     sget v1, Lorg/telegram/messenger/R$string;->PaymentCheckoutPay:I
 
     new-array v3, v4, [Ljava/lang/Object;
@@ -12274,20 +12274,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2739
+    .line 2741
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->tipLayout:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_2
 
-    .line 2740
+    .line 2742
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_contacts_inviteBackground:I
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
 
-    .line 2741
+    .line 2743
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->tipLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getChildCount()I
@@ -12297,7 +12297,7 @@
     :goto_0
     if-ge v2, v1, :cond_2
 
-    .line 2742
+    .line 2744
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->tipLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -12306,7 +12306,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 2743
+    .line 2745
     invoke-virtual {v3}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
 
     move-result-object v4
@@ -12319,14 +12319,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 2744
+    .line 2746
     invoke-virtual {v3}, Landroid/widget/TextView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     invoke-static {v4, v0}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 2745
+    .line 2747
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_contacts_inviteText:I
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -12337,7 +12337,7 @@
 
     goto :goto_1
 
-    .line 2747
+    .line 2749
     :cond_1
     invoke-virtual {v3}, Landroid/widget/TextView;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -12349,7 +12349,7 @@
 
     invoke-static {v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 2748
+    .line 2750
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_secretName:I
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -12358,7 +12358,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2750
+    .line 2752
     :goto_1
     invoke-virtual {v3}, Landroid/widget/TextView;->invalidate()V
 
@@ -15035,7 +15035,7 @@
 
     goto/16 :goto_36
 
-    .line 1194
+    .line 1195
     :cond_36
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -15043,7 +15043,7 @@
 
     if-eqz v0, :cond_39
 
-    .line 1196
+    .line 1197
     :try_start_3
     new-instance v0, Lorg/json/JSONObject;
 
@@ -15060,7 +15060,7 @@
     :try_start_4
     const-string v1, "need_country"
 
-    .line 1198
+    .line 1199
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v1
@@ -15071,7 +15071,7 @@
 
     goto :goto_24
 
-    .line 1200
+    .line 1201
     :catch_3
     :try_start_5
     iput-boolean v6, v7, Lorg/telegram/ui/PaymentFormActivity;->need_card_country:Z
@@ -15082,7 +15082,7 @@
     :try_start_6
     const-string v1, "need_zip"
 
-    .line 1203
+    .line 1204
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v1
@@ -15093,7 +15093,7 @@
 
     goto :goto_25
 
-    .line 1205
+    .line 1206
     :catch_4
     :try_start_7
     iput-boolean v6, v7, Lorg/telegram/ui/PaymentFormActivity;->need_card_postcode:Z
@@ -15104,7 +15104,7 @@
     :try_start_8
     const-string v1, "need_cardholder_name"
 
-    .line 1208
+    .line 1209
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
 
     move-result v1
@@ -15115,7 +15115,7 @@
 
     goto :goto_26
 
-    .line 1210
+    .line 1211
     :catch_5
     :try_start_9
     iput-boolean v6, v7, Lorg/telegram/ui/PaymentFormActivity;->need_card_name:Z
@@ -15123,7 +15123,7 @@
     :goto_26
     const-string v1, "public_token"
 
-    .line 1212
+    .line 1213
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
@@ -15132,7 +15132,7 @@
 
     const-string v1, "public_token"
 
-    .line 1213
+    .line 1214
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -15147,7 +15147,7 @@
     :try_start_a
     const-string v1, "publishable_key"
 
-    .line 1216
+    .line 1217
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -15158,7 +15158,7 @@
 
     goto :goto_27
 
-    .line 1218
+    .line 1219
     :catch_6
     :try_start_b
     iput-object v11, v7, Lorg/telegram/ui/PaymentFormActivity;->providerApiKey:Ljava/lang/String;
@@ -15166,7 +15166,7 @@
     :goto_27
     const-string v1, "google_pay_hidden"
 
-    .line 1221
+    .line 1222
     invoke-virtual {v0, v1, v6}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
@@ -15190,10 +15190,10 @@
     :catch_7
     move-exception v0
 
-    .line 1223
+    .line 1224
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1227
+    .line 1228
     :cond_39
     :goto_29
     iget-boolean v0, v7, Lorg/telegram/ui/PaymentFormActivity;->initGooglePay:Z
@@ -15225,7 +15225,7 @@
 
     if-eqz v0, :cond_3c
 
-    .line 1228
+    .line 1229
     :cond_3b
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/PaymentFormActivity;->initGooglePay(Landroid/content/Context;)V
 
@@ -15234,7 +15234,7 @@
 
     new-array v0, v1, [Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 1231
+    .line 1232
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move v0, v6
@@ -15244,7 +15244,7 @@
 
     if-nez v0, :cond_3d
 
-    .line 1234
+    .line 1235
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/HeaderCell;
@@ -15255,7 +15255,7 @@
 
     aput-object v2, v1, v6
 
-    .line 1235
+    .line 1236
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v6
@@ -15268,7 +15268,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1236
+    .line 1237
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v6
@@ -15283,7 +15283,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1237
+    .line 1238
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
@@ -15305,7 +15305,7 @@
 
     if-ne v0, v1, :cond_3e
 
-    .line 1239
+    .line 1240
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/HeaderCell;
@@ -15316,7 +15316,7 @@
 
     aput-object v2, v1, v9
 
-    .line 1240
+    .line 1241
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v9
@@ -15329,7 +15329,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1241
+    .line 1242
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v9
@@ -15344,7 +15344,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1242
+    .line 1243
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
@@ -15373,7 +15373,7 @@
 
     if-ne v0, v1, :cond_3f
 
-    .line 1245
+    .line 1246
     iget-boolean v1, v7, Lorg/telegram/ui/PaymentFormActivity;->need_card_postcode:Z
 
     if-eqz v1, :cond_40
@@ -15386,16 +15386,16 @@
     :cond_40
     move v1, v6
 
-    .line 1246
+    .line 1247
     :goto_2c
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1247
+    .line 1248
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 1248
+    .line 1249
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -15404,7 +15404,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 1249
+    .line 1250
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     const/16 v5, 0x32
@@ -15415,7 +15415,7 @@
 
     invoke-virtual {v4, v2, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1252
+    .line 1253
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v5, Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -15424,7 +15424,7 @@
 
     aput-object v5, v4, v0
 
-    .line 1253
+    .line 1254
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15435,7 +15435,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
-    .line 1254
+    .line 1255
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15444,7 +15444,7 @@
 
     invoke-virtual {v4, v9, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
-    .line 1255
+    .line 1256
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15457,7 +15457,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 1256
+    .line 1257
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15470,7 +15470,7 @@
 
     invoke-virtual {v4, v10}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 1257
+    .line 1258
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15479,7 +15479,7 @@
 
     invoke-virtual {v4, v10}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1258
+    .line 1259
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15490,7 +15490,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 1259
+    .line 1260
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15503,7 +15503,7 @@
 
     invoke-virtual {v4, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 1260
+    .line 1261
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15518,21 +15518,21 @@
 
     new-array v5, v9, [Landroid/text/InputFilter;
 
-    .line 1263
+    .line 1264
     new-instance v10, Landroid/text/InputFilter$LengthFilter;
 
     invoke-direct {v10, v4}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
 
     aput-object v10, v5, v6
 
-    .line 1264
+    .line 1265
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
 
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    .line 1265
+    .line 1266
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15541,7 +15541,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 1266
+    .line 1267
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15550,7 +15550,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1267
+    .line 1268
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15566,7 +15566,7 @@
     :cond_41
     if-nez v0, :cond_42
 
-    .line 1269
+    .line 1270
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15582,7 +15582,7 @@
 
     if-ne v0, v4, :cond_43
 
-    .line 1271
+    .line 1272
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15593,7 +15593,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1286
+    .line 1287
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15605,7 +15605,7 @@
     :cond_43
     if-ne v0, v9, :cond_44
 
-    .line 1288
+    .line 1289
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15621,7 +15621,7 @@
 
     if-ne v0, v4, :cond_45
 
-    .line 1290
+    .line 1291
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15632,7 +15632,7 @@
 
     goto :goto_2d
 
-    .line 1292
+    .line 1293
     :cond_45
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15642,7 +15642,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 1294
+    .line 1295
     :goto_2d
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15674,7 +15674,7 @@
 
     goto :goto_2e
 
-    .line 1309
+    .line 1310
     :cond_46
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15692,7 +15692,7 @@
 
     goto :goto_2e
 
-    .line 1312
+    .line 1313
     :cond_47
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15710,7 +15710,7 @@
 
     goto :goto_2e
 
-    .line 1300
+    .line 1301
     :cond_48
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15728,7 +15728,7 @@
 
     goto :goto_2e
 
-    .line 1306
+    .line 1307
     :cond_49
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15746,7 +15746,7 @@
 
     goto :goto_2e
 
-    .line 1303
+    .line 1304
     :cond_4a
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15764,7 +15764,7 @@
 
     goto :goto_2e
 
-    .line 1297
+    .line 1298
     :cond_4b
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -15783,7 +15783,7 @@
     :goto_2e
     if-nez v0, :cond_4c
 
-    .line 1317
+    .line 1318
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15799,7 +15799,7 @@
     :cond_4c
     if-ne v0, v9, :cond_4d
 
-    .line 1471
+    .line 1472
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15810,7 +15810,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 1589
+    .line 1590
     :cond_4d
     :goto_2f
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -15825,7 +15825,7 @@
 
     invoke-virtual {v4, v6, v6, v6, v10}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 1590
+    .line 1591
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15844,7 +15844,7 @@
     :goto_30
     invoke-virtual {v4, v5}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 1591
+    .line 1592
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15869,7 +15869,7 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1593
+    .line 1594
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v4, v4, v0
@@ -15884,7 +15884,7 @@
 
     if-ne v0, v4, :cond_4f
 
-    .line 1614
+    .line 1615
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     new-instance v5, Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -15895,7 +15895,7 @@
 
     aput-object v5, v4, v6
 
-    .line 1615
+    .line 1616
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -15917,7 +15917,7 @@
 
     if-ne v0, v4, :cond_50
 
-    .line 1617
+    .line 1618
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     new-instance v5, Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -15930,7 +15930,7 @@
 
     aput-object v5, v4, v10
 
-    .line 1618
+    .line 1619
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -15945,7 +15945,7 @@
 
     invoke-virtual {v4, v5, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1620
+    .line 1621
     new-instance v4, Lorg/telegram/ui/Cells/TextCheckCell;
 
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -15954,14 +15954,14 @@
 
     iput-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1621
+    .line 1622
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1622
+    .line 1623
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     sget v5, Lorg/telegram/messenger/R$string;->PaymentCardSavePaymentInformation:I
@@ -15976,7 +15976,7 @@
 
     invoke-virtual {v4, v5, v10, v6}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
-    .line 1623
+    .line 1624
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -15989,7 +15989,7 @@
 
     invoke-virtual {v4, v5, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1624
+    .line 1625
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     new-instance v5, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda18;
@@ -15998,7 +15998,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1629
+    .line 1630
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     new-instance v5, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -16009,7 +16009,7 @@
 
     aput-object v5, v4, v6
 
-    .line 1630
+    .line 1631
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v4, v4, v6
@@ -16024,10 +16024,10 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1631
+    .line 1632
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/PaymentFormActivity;->updateSavePaymentField()V
 
-    .line 1632
+    .line 1633
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -16047,10 +16047,10 @@
     :cond_50
     if-nez v0, :cond_52
 
-    .line 1634
+    .line 1635
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/PaymentFormActivity;->createGooglePayButton(Landroid/content/Context;)V
 
-    .line 1635
+    .line 1636
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->googlePayContainer:Landroid/widget/FrameLayout;
 
     const/16 v31, -0x2
@@ -16089,24 +16089,24 @@
     :goto_32
     if-eqz v1, :cond_53
 
-    .line 1639
+    .line 1640
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$9;
 
     invoke-direct {v1, v7, v8}, Lorg/telegram/ui/PaymentFormActivity$9;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
 
-    .line 1645
+    .line 1646
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1646
+    .line 1647
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1647
+    .line 1648
     new-instance v3, Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v4, 0x53
@@ -16120,7 +16120,7 @@
 
     if-ne v0, v1, :cond_55
 
-    .line 1650
+    .line 1651
     iget-boolean v1, v7, Lorg/telegram/ui/PaymentFormActivity;->need_card_country:Z
 
     if-eqz v1, :cond_54
@@ -16154,7 +16154,7 @@
 
     goto :goto_33
 
-    .line 1651
+    .line 1652
     :goto_35
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
@@ -16165,7 +16165,7 @@
 
     goto/16 :goto_2a
 
-    .line 1654
+    .line 1655
     :cond_58
     iget-boolean v0, v7, Lorg/telegram/ui/PaymentFormActivity;->need_card_country:Z
 
@@ -16175,7 +16175,7 @@
 
     if-nez v0, :cond_59
 
-    .line 1655
+    .line 1656
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v0, v0, v9
@@ -16184,20 +16184,20 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1656
+    .line 1657
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     aget-object v0, v0, v6
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1658
+    .line 1659
     :cond_59
     iget-boolean v0, v7, Lorg/telegram/ui/PaymentFormActivity;->need_card_postcode:Z
 
     if-eqz v0, :cond_5a
 
-    .line 1659
+    .line 1660
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v1, 0x5
@@ -16213,7 +16213,7 @@
     :cond_5a
     const v1, 0x10000006
 
-    .line 1661
+    .line 1662
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v2, 0x3
@@ -16284,20 +16284,23 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 1131
+    invoke-static {v8, v9}, Lorg/telegram/messenger/AndroidUtilities;->checkAndroidTheme(Landroid/content/Context;Z)V
+
+    .line 1132
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$5;
 
     invoke-direct {v0, v7, v8}, Lorg/telegram/ui/PaymentFormActivity$5;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
-    .line 1143
+    .line 1144
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v0
 
     invoke-virtual {v0, v9}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 1144
+    .line 1145
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -16306,12 +16309,12 @@
 
     invoke-virtual {v0, v9}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
 
-    .line 1146
+    .line 1147
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v0, v10, :cond_5e
 
-    .line 1147
+    .line 1148
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -16320,12 +16323,12 @@
 
     invoke-virtual {v1, v6}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
 
-    .line 1148
+    .line 1149
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v1
 
-    .line 1149
+    .line 1150
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v1, v2, v9}, Landroid/webkit/CookieManager;->setAcceptThirdPartyCookies(Landroid/webkit/WebView;Z)V
@@ -16335,7 +16338,7 @@
 
     if-lt v0, v1, :cond_5f
 
-    .line 1152
+    .line 1153
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$TelegramWebviewProxy;
@@ -16348,7 +16351,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1154
+    .line 1155
     :cond_5f
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
@@ -16358,7 +16361,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 1175
+    .line 1176
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
@@ -16371,7 +16374,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1177
+    .line 1178
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -16384,7 +16387,7 @@
 
     aput-object v1, v0, v3
 
-    .line 1178
+    .line 1179
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -16397,7 +16400,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1180
+    .line 1181
     new-instance v0, Lorg/telegram/ui/Cells/TextCheckCell;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -16406,14 +16409,14 @@
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 1181
+    .line 1182
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1182
+    .line 1183
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     sget v1, Lorg/telegram/messenger/R$string;->PaymentCardSavePaymentInformation:I
@@ -16428,7 +16431,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lorg/telegram/ui/Cells/TextCheckCell;->setTextAndCheck(Ljava/lang/CharSequence;ZZ)V
 
-    .line 1183
+    .line 1184
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -16441,7 +16444,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1184
+    .line 1185
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
 
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda16;
@@ -16450,7 +16453,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1189
+    .line 1190
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -16461,7 +16464,7 @@
 
     aput-object v1, v0, v6
 
-    .line 1190
+    .line 1191
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v6
@@ -16476,10 +16479,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1191
+    .line 1192
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/PaymentFormActivity;->updateSavePaymentField()V
 
-    .line 1192
+    .line 1193
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -16501,7 +16504,7 @@
 
     if-ne v0, v9, :cond_65
 
-    .line 1665
+    .line 1666
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->requestedInfo:Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
     if-nez v0, :cond_61
@@ -16517,7 +16520,7 @@
 
     move-result v0
 
-    .line 1666
+    .line 1667
     :goto_37
     new-array v1, v0, [Lorg/telegram/ui/Cells/RadioCell;
 
@@ -16528,7 +16531,7 @@
     :goto_38
     if-ge v1, v0, :cond_64
 
-    .line 1668
+    .line 1669
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->requestedInfo:Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_validatedRequestedInfo;->shipping_options:Ljava/util/ArrayList;
@@ -16539,7 +16542,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_shippingOption;
 
-    .line 1669
+    .line 1670
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
     new-instance v4, Lorg/telegram/ui/Cells/RadioCell;
@@ -16548,7 +16551,7 @@
 
     aput-object v4, v3, v1
 
-    .line 1670
+    .line 1671
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
     aget-object v3, v3, v1
@@ -16559,7 +16562,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1671
+    .line 1672
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
     aget-object v3, v3, v1
@@ -16570,7 +16573,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1672
+    .line 1673
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
     aget-object v3, v3, v1
@@ -16621,7 +16624,7 @@
     :goto_3a
     invoke-virtual {v3, v2, v4, v5}, Lorg/telegram/ui/Cells/RadioCell;->setText(Ljava/lang/String;ZZ)V
 
-    .line 1673
+    .line 1674
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
     aget-object v2, v2, v1
@@ -16632,7 +16635,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1679
+    .line 1680
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
@@ -16645,7 +16648,7 @@
 
     goto :goto_38
 
-    .line 1681
+    .line 1682
     :cond_64
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -16657,7 +16660,7 @@
 
     aput-object v1, v0, v6
 
-    .line 1682
+    .line 1683
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v6
@@ -16672,7 +16675,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1683
+    .line 1684
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -16698,7 +16701,7 @@
 
     new-array v0, v1, [Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 1685
+    .line 1686
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move v0, v6
@@ -16708,7 +16711,7 @@
 
     if-nez v0, :cond_66
 
-    .line 1688
+    .line 1689
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/HeaderCell;
@@ -16719,7 +16722,7 @@
 
     aput-object v2, v1, v6
 
-    .line 1689
+    .line 1690
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v6
@@ -16732,7 +16735,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1690
+    .line 1691
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v6
@@ -16747,7 +16750,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1691
+    .line 1692
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
@@ -16762,16 +16765,16 @@
 
     invoke-virtual {v1, v2, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1694
+    .line 1695
     :cond_66
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1695
+    .line 1696
     invoke-virtual {v1, v6}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 1696
+    .line 1697
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     const/16 v3, 0x32
@@ -16782,7 +16785,7 @@
 
     invoke-virtual {v2, v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1697
+    .line 1698
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {v7, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -16807,7 +16810,7 @@
 
     if-ne v0, v4, :cond_68
 
-    .line 1701
+    .line 1702
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -16826,7 +16829,7 @@
 
     if-ne v0, v5, :cond_69
 
-    .line 1703
+    .line 1704
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -16845,24 +16848,24 @@
     :goto_3e
     if-eqz v3, :cond_6a
 
-    .line 1708
+    .line 1709
     new-instance v3, Lorg/telegram/ui/PaymentFormActivity$10;
 
     invoke-direct {v3, v7, v8}, Lorg/telegram/ui/PaymentFormActivity$10;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
 
-    .line 1714
+    .line 1715
     invoke-virtual {v7, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1715
+    .line 1716
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1716
+    .line 1717
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v5, 0x53
@@ -16871,7 +16874,7 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1719
+    .line 1720
     :cond_6a
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -16881,7 +16884,7 @@
 
     aput-object v3, v2, v0
 
-    .line 1720
+    .line 1721
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16892,7 +16895,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
-    .line 1721
+    .line 1722
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16901,7 +16904,7 @@
 
     invoke-virtual {v2, v9, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
-    .line 1722
+    .line 1723
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16914,7 +16917,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 1723
+    .line 1724
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16927,7 +16930,7 @@
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 1724
+    .line 1725
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16936,7 +16939,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1725
+    .line 1726
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16947,7 +16950,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 1726
+    .line 1727
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16960,7 +16963,7 @@
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 1727
+    .line 1728
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16971,7 +16974,7 @@
 
     if-nez v0, :cond_6b
 
-    .line 1729
+    .line 1730
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16980,7 +16983,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1730
+    .line 1731
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -16989,7 +16992,7 @@
 
     goto :goto_3f
 
-    .line 1732
+    .line 1733
     :cond_6b
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -16999,7 +17002,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 1733
+    .line 1734
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17008,7 +17011,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1735
+    .line 1736
     :goto_3f
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -17024,7 +17027,7 @@
 
     goto :goto_40
 
-    .line 1741
+    .line 1742
     :cond_6c
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -17040,7 +17043,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 1742
+    .line 1743
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17049,7 +17052,7 @@
 
     goto :goto_40
 
-    .line 1738
+    .line 1739
     :cond_6d
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -17061,7 +17064,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1746
+    .line 1747
     :goto_40
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -17075,7 +17078,7 @@
 
     invoke-virtual {v2, v6, v6, v6, v5}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 1747
+    .line 1748
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17094,7 +17097,7 @@
     :goto_41
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 1748
+    .line 1749
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17119,7 +17122,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1750
+    .line 1751
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v0
@@ -17132,7 +17135,7 @@
 
     if-ne v0, v9, :cond_6f
 
-    .line 1758
+    .line 1759
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -17143,7 +17146,7 @@
 
     aput-object v2, v1, v6
 
-    .line 1759
+    .line 1760
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v1, v1, v6
@@ -17166,7 +17169,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1760
+    .line 1761
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v1, v1, v6
@@ -17181,7 +17184,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1761
+    .line 1762
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -17196,7 +17199,7 @@
 
     invoke-virtual {v1, v2, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1763
+    .line 1764
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -17207,7 +17210,7 @@
 
     aput-object v2, v1, v6
 
-    .line 1764
+    .line 1765
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v1, v1, v6
@@ -17218,7 +17221,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1765
+    .line 1766
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v1, v1, v6
@@ -17233,7 +17236,7 @@
 
     invoke-virtual {v1, v2, v6}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1766
+    .line 1767
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -17248,7 +17251,7 @@
 
     invoke-virtual {v1, v2, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1767
+    .line 1768
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v1, v1, v6
@@ -17259,7 +17262,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1772
+    .line 1773
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -17270,7 +17273,7 @@
 
     aput-object v2, v1, v9
 
-    .line 1773
+    .line 1774
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v1, v1, v9
@@ -17283,7 +17286,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1774
+    .line 1775
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -17321,14 +17324,14 @@
 
     if-ne v0, v1, :cond_af
 
-    .line 2445
+    .line 2447
     new-instance v0, Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-direct {v0, v8}, Lorg/telegram/ui/Cells/EditTextSettingsCell;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
-    .line 2446
+    .line 2448
     sget v1, Lorg/telegram/messenger/R$string;->PasswordCode:I
 
     const-string v2, "PasswordCode"
@@ -17339,7 +17342,7 @@
 
     invoke-virtual {v0, v11, v1, v6}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->setTextAndHint(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 2447
+    .line 2449
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -17350,7 +17353,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2448
+    .line 2450
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -17359,29 +17362,29 @@
 
     const/4 v1, 0x3
 
-    .line 2449
+    .line 2451
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setInputType(I)V
 
     const/4 v1, 0x6
 
-    .line 2450
+    .line 2452
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 2451
+    .line 2453
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda26;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 2458
+    .line 2460
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$19;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/PaymentFormActivity$19;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 2476
+    .line 2478
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
@@ -17394,7 +17397,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2478
+    .line 2480
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -17407,7 +17410,7 @@
 
     aput-object v1, v0, v2
 
-    .line 2479
+    .line 2481
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v0, v0, v2
@@ -17422,7 +17425,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2480
+    .line 2482
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -17437,7 +17440,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2482
+    .line 2484
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -17448,7 +17451,7 @@
 
     aput-object v1, v0, v9
 
-    .line 2483
+    .line 2485
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v9
@@ -17459,7 +17462,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2484
+    .line 2486
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v9
@@ -17472,7 +17475,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 2485
+    .line 2487
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v9
@@ -17483,7 +17486,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    .line 2486
+    .line 2488
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v9
@@ -17498,7 +17501,7 @@
 
     invoke-virtual {v0, v1, v9}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 2487
+    .line 2489
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -17513,7 +17516,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2488
+    .line 2490
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v9
@@ -17524,7 +17527,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2500
+    .line 2502
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -17535,7 +17538,7 @@
 
     aput-object v1, v0, v6
 
-    .line 2501
+    .line 2503
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v6
@@ -17546,7 +17549,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2502
+    .line 2504
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v6
@@ -17559,7 +17562,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 2503
+    .line 2505
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v6
@@ -17570,7 +17573,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/TextSettingsCell;->setTextColor(I)V
 
-    .line 2504
+    .line 2506
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v6
@@ -17585,7 +17588,7 @@
 
     invoke-virtual {v0, v1, v6}, Lorg/telegram/ui/Cells/TextSettingsCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 2505
+    .line 2507
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -17600,7 +17603,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2506
+    .line 2508
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
     aget-object v0, v0, v6
@@ -17615,7 +17618,7 @@
 
     new-array v0, v1, [Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 2524
+    .line 2526
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move v0, v6
@@ -17625,7 +17628,7 @@
 
     if-nez v0, :cond_72
 
-    .line 2527
+    .line 2529
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/HeaderCell;
@@ -17636,7 +17639,7 @@
 
     aput-object v2, v1, v6
 
-    .line 2528
+    .line 2530
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v6
@@ -17649,7 +17652,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2529
+    .line 2531
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v6
@@ -17664,7 +17667,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2530
+    .line 2532
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
@@ -17686,7 +17689,7 @@
 
     if-ne v0, v1, :cond_73
 
-    .line 2532
+    .line 2534
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/HeaderCell;
@@ -17697,7 +17700,7 @@
 
     aput-object v2, v1, v9
 
-    .line 2533
+    .line 2535
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v9
@@ -17710,7 +17713,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2534
+    .line 2536
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
     aget-object v1, v1, v9
@@ -17725,7 +17728,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2535
+    .line 2537
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
@@ -17740,17 +17743,17 @@
 
     invoke-virtual {v1, v2, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2538
+    .line 2540
     :cond_73
     :goto_43
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2539
+    .line 2541
     invoke-virtual {v1, v6}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 2540
+    .line 2542
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     const/16 v3, 0x32
@@ -17761,7 +17764,7 @@
 
     invoke-virtual {v2, v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2541
+    .line 2543
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {v7, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -17772,24 +17775,24 @@
 
     if-nez v0, :cond_74
 
-    .line 2544
+    .line 2546
     new-instance v4, Lorg/telegram/ui/PaymentFormActivity$20;
 
     invoke-direct {v4, v7, v8}, Lorg/telegram/ui/PaymentFormActivity$20;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
 
-    .line 2550
+    .line 2552
     invoke-virtual {v7, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
     invoke-virtual {v4, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2551
+    .line 2553
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2552
+    .line 2554
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v5, 0x53
@@ -17803,7 +17806,7 @@
     :cond_74
     const/16 v5, 0x53
 
-    .line 2555
+    .line 2557
     :goto_44
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -17813,7 +17816,7 @@
 
     aput-object v4, v2, v0
 
-    .line 2556
+    .line 2558
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17824,7 +17827,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
-    .line 2557
+    .line 2559
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17833,7 +17836,7 @@
 
     invoke-virtual {v2, v9, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
-    .line 2558
+    .line 2560
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17846,7 +17849,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 2559
+    .line 2561
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17859,7 +17862,7 @@
 
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 2560
+    .line 2562
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17868,7 +17871,7 @@
 
     invoke-virtual {v2, v10}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2561
+    .line 2563
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17879,7 +17882,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 2562
+    .line 2564
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17892,7 +17895,7 @@
 
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 2563
+    .line 2565
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17907,7 +17910,7 @@
 
     goto :goto_45
 
-    .line 2570
+    .line 2572
     :cond_75
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -17917,7 +17920,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2571
+    .line 2573
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17928,7 +17931,7 @@
 
     goto :goto_46
 
-    .line 2566
+    .line 2568
     :cond_76
     :goto_45
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -17939,7 +17942,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 2567
+    .line 2569
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17948,7 +17951,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2568
+    .line 2570
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -17968,7 +17971,7 @@
 
     goto :goto_47
 
-    .line 2583
+    .line 2585
     :cond_77
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -17986,7 +17989,7 @@
 
     goto :goto_47
 
-    .line 2580
+    .line 2582
     :cond_78
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -18004,7 +18007,7 @@
 
     goto :goto_47
 
-    .line 2576
+    .line 2578
     :cond_79
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -18020,14 +18023,14 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 2577
+    .line 2579
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v2}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 2587
+    .line 2589
     :goto_47
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -18041,7 +18044,7 @@
 
     invoke-virtual {v2, v6, v6, v6, v10}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 2588
+    .line 2590
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -18060,7 +18063,7 @@
     :goto_48
     invoke-virtual {v2, v10}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 2589
+    .line 2591
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v2, v0
@@ -18085,7 +18088,7 @@
 
     invoke-virtual {v1, v2, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2591
+    .line 2593
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v0
@@ -18098,7 +18101,7 @@
 
     if-ne v0, v9, :cond_7b
 
-    .line 2606
+    .line 2608
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -18109,7 +18112,7 @@
 
     aput-object v2, v1, v6
 
-    .line 2607
+    .line 2609
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v1, v1, v6
@@ -18124,7 +18127,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2608
+    .line 2610
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v1, v1, v6
@@ -18139,7 +18142,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2609
+    .line 2611
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -18161,7 +18164,7 @@
 
     if-ne v0, v1, :cond_7c
 
-    .line 2611
+    .line 2613
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     new-instance v2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -18172,7 +18175,7 @@
 
     aput-object v2, v1, v9
 
-    .line 2612
+    .line 2614
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v1, v1, v9
@@ -18187,7 +18190,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2613
+    .line 2615
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     aget-object v1, v1, v9
@@ -18202,7 +18205,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2614
+    .line 2616
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -18225,13 +18228,13 @@
 
     goto/16 :goto_42
 
-    .line 2617
+    .line 2619
     :cond_7d
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/PaymentFormActivity;->updatePasswordFields()V
 
     goto/16 :goto_64
 
-    .line 1778
+    .line 1779
     :cond_7e
     :goto_4a
     new-instance v0, Lorg/telegram/ui/Cells/PaymentInfoCell;
@@ -18240,7 +18243,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentInfoCell:Lorg/telegram/ui/Cells/PaymentInfoCell;
 
-    .line 1779
+    .line 1780
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -18249,12 +18252,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1780
+    .line 1781
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_7f
 
-    .line 1781
+    .line 1782
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentInfoCell:Lorg/telegram/ui/Cells/PaymentInfoCell;
 
     iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -18269,13 +18272,13 @@
 
     goto :goto_4b
 
-    .line 1782
+    .line 1783
     :cond_7f
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentReceipt:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentReceipt;
 
     if-eqz v0, :cond_80
 
-    .line 1783
+    .line 1784
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentInfoCell:Lorg/telegram/ui/Cells/PaymentInfoCell;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->currentBotName:Ljava/lang/String;
@@ -18284,13 +18287,13 @@
 
     goto :goto_4b
 
-    .line 1784
+    .line 1785
     :cond_80
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->invoiceSlug:Ljava/lang/String;
 
     if-eqz v0, :cond_81
 
-    .line 1785
+    .line 1786
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentInfoCell:Lorg/telegram/ui/Cells/PaymentInfoCell;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -18317,7 +18320,7 @@
 
     invoke-virtual/range {v31 .. v36}, Lorg/telegram/ui/Cells/PaymentInfoCell;->setInfo(Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$WebDocument;Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 1787
+    .line 1788
     :cond_81
     :goto_4b
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -18332,7 +18335,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1789
+    .line 1790
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -18343,7 +18346,7 @@
 
     aput-object v1, v0, v6
 
-    .line 1790
+    .line 1791
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -18356,7 +18359,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1792
+    .line 1793
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -18369,12 +18372,12 @@
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->prices:Ljava/util/ArrayList;
 
-    .line 1793
+    .line 1794
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->shippingOption:Lorg/telegram/tgnet/TLRPC$TL_shippingOption;
 
     if-eqz v1, :cond_82
 
-    .line 1794
+    .line 1795
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_shippingOption;->prices:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -18382,12 +18385,12 @@
     :cond_82
     new-array v0, v9, [Ljava/lang/String;
 
-    .line 1796
+    .line 1797
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->totalPrice:[Ljava/lang/String;
 
     move v0, v6
 
-    .line 1798
+    .line 1799
     :goto_4c
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->prices:Ljava/util/ArrayList;
 
@@ -18397,7 +18400,7 @@
 
     if-ge v0, v1, :cond_83
 
-    .line 1799
+    .line 1800
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->prices:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -18406,12 +18409,12 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_labeledPrice;
 
-    .line 1801
+    .line 1802
     new-instance v3, Lorg/telegram/ui/Cells/TextPriceCell;
 
     invoke-direct {v3, v8}, Lorg/telegram/ui/Cells/TextPriceCell;-><init>(Landroid/content/Context;)V
 
-    .line 1802
+    .line 1803
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {v7, v12}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -18420,7 +18423,7 @@
 
     invoke-virtual {v3, v12}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1803
+    .line 1804
     iget-object v12, v1, Lorg/telegram/tgnet/TLRPC$TL_labeledPrice;->label:Ljava/lang/String;
 
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
@@ -18441,7 +18444,7 @@
 
     invoke-virtual {v3, v12, v1, v6}, Lorg/telegram/ui/Cells/TextPriceCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1804
+    .line 1805
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -18454,7 +18457,7 @@
 
     goto :goto_4c
 
-    .line 1807
+    .line 1808
     :cond_83
     iget v0, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
@@ -18466,12 +18469,12 @@
 
     if-eqz v0, :cond_84
 
-    .line 1808
+    .line 1809
     new-instance v0, Lorg/telegram/ui/Cells/TextPriceCell;
 
     invoke-direct {v0, v8}, Lorg/telegram/ui/Cells/TextPriceCell;-><init>(Landroid/content/Context;)V
 
-    .line 1809
+    .line 1810
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -18480,7 +18483,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1810
+    .line 1811
     sget v3, Lorg/telegram/messenger/R$string;->PaymentTip:I
 
     const-string v4, "PaymentTip"
@@ -18511,12 +18514,12 @@
 
     invoke-virtual {v0, v3, v4, v6}, Lorg/telegram/ui/Cells/TextPriceCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1811
+    .line 1812
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     invoke-virtual {v3, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1814
+    .line 1815
     :cond_84
     new-instance v0, Lorg/telegram/ui/Cells/TextPriceCell;
 
@@ -18524,7 +18527,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->totalCell:Lorg/telegram/ui/Cells/TextPriceCell;
 
-    .line 1815
+    .line 1816
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -18533,7 +18536,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1816
+    .line 1817
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->totalPrice:[Ljava/lang/String;
 
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->prices:Ljava/util/ArrayList;
@@ -18544,7 +18547,7 @@
 
     aput-object v4, v0, v6
 
-    .line 1817
+    .line 1818
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->totalCell:Lorg/telegram/ui/Cells/TextPriceCell;
 
     sget v4, Lorg/telegram/messenger/R$string;->PaymentTransactionTotal:I
@@ -18561,7 +18564,7 @@
 
     invoke-virtual {v0, v4, v5, v9}, Lorg/telegram/ui/Cells/TextPriceCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1819
+    .line 1820
     iget v0, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v4, 0x4
@@ -18578,22 +18581,22 @@
 
     if-eqz v0, :cond_8a
 
-    .line 1820
+    .line 1821
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1821
+    .line 1822
     invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 1822
+    .line 1823
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v4
 
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 1823
+    .line 1824
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v5, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -18622,26 +18625,26 @@
 
     invoke-virtual {v4, v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1824
+    .line 1825
     new-instance v4, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda11;
 
     invoke-direct {v4, v7}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
 
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1829
+    .line 1830
     new-instance v4, Lorg/telegram/ui/Cells/TextPriceCell;
 
     invoke-direct {v4, v8}, Lorg/telegram/ui/Cells/TextPriceCell;-><init>(Landroid/content/Context;)V
 
-    .line 1830
+    .line 1831
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
     invoke-virtual {v4, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1831
+    .line 1832
     sget v3, Lorg/telegram/messenger/R$string;->PaymentTipOptional:I
 
     const-string v5, "PaymentTipOptional"
@@ -18652,22 +18655,22 @@
 
     invoke-virtual {v4, v3, v11, v6}, Lorg/telegram/ui/Cells/TextPriceCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1832
+    .line 1833
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     new-array v3, v9, [Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 1834
+    .line 1835
     iput-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    .line 1835
+    .line 1836
     new-instance v4, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-direct {v4, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
     aput-object v4, v3, v6
 
-    .line 1836
+    .line 1837
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18678,7 +18681,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
 
-    .line 1837
+    .line 1838
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18687,7 +18690,7 @@
 
     invoke-virtual {v3, v9, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
-    .line 1838
+    .line 1839
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18700,7 +18703,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 1839
+    .line 1840
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18711,7 +18714,7 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 1840
+    .line 1841
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18720,7 +18723,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1841
+    .line 1842
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18733,7 +18736,7 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 1842
+    .line 1843
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18746,7 +18749,7 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 1843
+    .line 1844
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18755,7 +18758,7 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 1844
+    .line 1845
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18764,7 +18767,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 1845
+    .line 1846
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18773,7 +18776,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 1846
+    .line 1847
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v6
@@ -18796,7 +18799,7 @@
 
     invoke-virtual {v3, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 1847
+    .line 1848
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v6
@@ -18809,7 +18812,7 @@
 
     invoke-virtual {v1, v6, v6, v6, v5}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 1848
+    .line 1849
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v6
@@ -18828,7 +18831,7 @@
     :goto_4e
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 1849
+    .line 1850
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v6
@@ -18853,7 +18856,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1850
+    .line 1851
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v6
@@ -18864,7 +18867,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 1969
+    .line 1970
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v6
@@ -18873,14 +18876,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 1976
+    .line 1977
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v1, v1, v6
 
     invoke-virtual {v1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 1978
+    .line 1979
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -18893,21 +18896,21 @@
 
     if-nez v1, :cond_89
 
-    .line 1979
+    .line 1980
     new-instance v12, Landroid/widget/HorizontalScrollView;
 
     invoke-direct {v12, v8}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 1980
+    .line 1981
     invoke-virtual {v12, v6}, Landroid/widget/HorizontalScrollView;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 1981
+    .line 1982
     invoke-virtual {v12, v6}, Landroid/widget/HorizontalScrollView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1982
+    .line 1983
     invoke-virtual {v12, v6}, Landroid/widget/HorizontalScrollView;->setClipToPadding(Z)V
 
-    .line 1983
+    .line 1984
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -18918,7 +18921,7 @@
 
     invoke-virtual {v12, v1, v6, v3, v6}, Landroid/widget/HorizontalScrollView;->setPadding(IIII)V
 
-    .line 1984
+    .line 1985
     invoke-virtual {v12, v9}, Landroid/widget/HorizontalScrollView;->setFillViewport(Z)V
 
     const/16 v17, -0x1
@@ -18935,7 +18938,7 @@
 
     const/16 v23, 0x0
 
-    .line 1985
+    .line 1986
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
@@ -18946,7 +18949,7 @@
 
     new-array v13, v9, [I
 
-    .line 1988
+    .line 1989
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -18957,7 +18960,7 @@
 
     move-result v5
 
-    .line 1990
+    .line 1991
     new-instance v3, Lorg/telegram/ui/PaymentFormActivity$12;
 
     move-object/from16 v17, v4
@@ -18990,10 +18993,10 @@
 
     iput-object v10, v7, Lorg/telegram/ui/PaymentFormActivity;->tipLayout:Landroid/widget/LinearLayout;
 
-    .line 2047
+    .line 2048
     invoke-virtual {v10, v14}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2048
+    .line 2049
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->tipLayout:Landroid/widget/LinearLayout;
 
     const/16 v2, 0x1e
@@ -19008,7 +19011,7 @@
 
     invoke-virtual {v12, v1, v2}, Landroid/widget/HorizontalScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2049
+    .line 2050
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_contacts_inviteBackground:I
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -19020,12 +19023,12 @@
     :goto_4f
     if-ge v6, v9, :cond_8b
 
-    .line 2052
+    .line 2053
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_87
 
-    .line 2053
+    .line 2054
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -19050,7 +19053,7 @@
 
     goto :goto_50
 
-    .line 2055
+    .line 2056
     :cond_87
     iget-object v2, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -19068,7 +19071,7 @@
 
     move-result-wide v2
 
-    .line 2057
+    .line 2058
     :goto_50
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -19084,7 +19087,7 @@
 
     move-result-object v4
 
-    .line 2058
+    .line 2059
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -19093,37 +19096,37 @@
 
     const/4 v12, 0x1
 
-    .line 2059
+    .line 2060
     invoke-virtual {v5, v12, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v10, "fonts/rmedium.ttf"
 
-    .line 2060
+    .line 2061
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v10
 
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2061
+    .line 2062
     invoke-virtual {v5, v12}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 2062
+    .line 2063
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v10
 
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2063
+    .line 2064
     invoke-virtual {v5, v12}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 2064
+    .line 2065
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/16 v10, 0xf
 
-    .line 2065
+    .line 2066
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -19136,7 +19139,7 @@
 
     invoke-virtual {v5, v10, v14, v12, v14}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 2066
+    .line 2067
     sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_chats_secretName:I
 
     invoke-virtual {v7, v10}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -19147,7 +19150,7 @@
 
     const/16 v10, 0xf
 
-    .line 2067
+    .line 2068
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -19164,15 +19167,15 @@
 
     const/4 v10, 0x1
 
-    .line 2068
+    .line 2069
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     const/16 v10, 0x11
 
-    .line 2069
+    .line 2070
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2070
+    .line 2071
     iget-object v10, v7, Lorg/telegram/ui/PaymentFormActivity;->tipLayout:Landroid/widget/LinearLayout;
 
     const/16 v31, -0x2
@@ -19205,14 +19208,14 @@
 
     invoke-virtual {v10, v5, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2071
+    .line 2072
     new-instance v10, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda20;
 
     invoke-direct {v10, v7, v5, v2, v3}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/widget/TextView;J)V
 
     invoke-virtual {v5, v10}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2084
+    .line 2085
     invoke-virtual {v5}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v2
@@ -19237,7 +19240,7 @@
 
     add-int/2addr v2, v3
 
-    .line 2085
+    .line 2086
     sget v3, Lorg/telegram/messenger/R$id;->width_tag:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -19246,7 +19249,7 @@
 
     invoke-virtual {v5, v3, v4}, Landroid/widget/TextView;->setTag(ILjava/lang/Object;)V
 
-    .line 2086
+    .line 2087
     aget v3, v0, v14
 
     invoke-static {v3, v2}, Ljava/lang/Math;->max(II)I
@@ -19255,7 +19258,7 @@
 
     aput v3, v0, v14
 
-    .line 2087
+    .line 2088
     aget v3, v13, v14
 
     add-int/2addr v3, v2
@@ -19282,7 +19285,7 @@
 
     const/16 v17, 0x0
 
-    .line 2092
+    .line 2093
     :cond_8b
     :goto_52
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -19291,7 +19294,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2094
+    .line 2095
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -19304,7 +19307,7 @@
 
     aput-object v1, v0, v2
 
-    .line 2095
+    .line 2096
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     aget-object v0, v0, v2
@@ -19319,7 +19322,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2096
+    .line 2097
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -19336,7 +19339,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2098
+    .line 2099
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     new-instance v1, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19345,7 +19348,7 @@
 
     aput-object v1, v0, v14
 
-    .line 2099
+    .line 2100
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v0, v0, v14
@@ -19358,7 +19361,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2100
+    .line 2101
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v0, v0, v14
@@ -19421,12 +19424,12 @@
 
     invoke-virtual {v0, v1, v3, v4, v5}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
-    .line 2102
+    .line 2103
     iget-boolean v0, v7, Lorg/telegram/ui/PaymentFormActivity;->isCheckoutPreview:Z
 
     if-eqz v0, :cond_8e
 
-    .line 2103
+    .line 2104
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->cardName:Ljava/lang/String;
 
     if-eqz v0, :cond_8d
@@ -19448,7 +19451,7 @@
     :goto_54
     move v6, v14
 
-    .line 2105
+    .line 2106
     :goto_55
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -19456,7 +19459,7 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2106
+    .line 2107
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19465,14 +19468,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2107
+    .line 2108
     iget v0, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_8f
 
-    .line 2108
+    .line 2109
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v0, v0, v14
@@ -19488,7 +19491,7 @@
 
     move-object/from16 v1, v17
 
-    .line 2117
+    .line 2118
     :goto_56
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -19500,7 +19503,7 @@
 
     if-ge v0, v3, :cond_91
 
-    .line 2118
+    .line 2119
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->users:Ljava/util/ArrayList;
@@ -19511,7 +19514,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2119
+    .line 2120
     iget-wide v4, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iget-object v9, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -19529,7 +19532,7 @@
 
     goto :goto_56
 
-    .line 2123
+    .line 2124
     :cond_91
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -19541,7 +19544,7 @@
 
     aput-object v3, v0, v4
 
-    .line 2124
+    .line 2125
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v0, v0, v4
@@ -19554,7 +19557,7 @@
 
     if-eqz v1, :cond_95
 
-    .line 2127
+    .line 2128
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v0, v0, v4
@@ -19613,7 +19616,7 @@
     :goto_57
     invoke-virtual {v0, v11, v3, v4, v5}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
-    .line 2128
+    .line 2129
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19624,7 +19627,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2132
+    .line 2133
     :cond_95
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -19642,7 +19645,7 @@
     :goto_58
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2134
+    .line 2135
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->validateRequest:Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     if-nez v0, :cond_97
@@ -19662,7 +19665,7 @@
     :cond_97
     if-eqz v0, :cond_98
 
-    .line 2135
+    .line 2136
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
     goto :goto_59
@@ -19672,7 +19675,7 @@
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->saved_info:Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;
 
-    .line 2137
+    .line 2138
     :goto_59
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -19684,7 +19687,7 @@
 
     aput-object v3, v1, v4
 
-    .line 2138
+    .line 2139
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19693,7 +19696,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2139
+    .line 2140
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19702,26 +19705,26 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2140
+    .line 2141
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->shipping_address:Lorg/telegram/tgnet/TLRPC$TL_postAddress;
 
     if-eqz v1, :cond_9a
 
-    .line 2141
+    .line 2142
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
 
     invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2142
+    .line 2143
     iget v1, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v3, 0x4
 
     if-ne v1, v3, :cond_99
 
-    .line 2143
+    .line 2144
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19734,7 +19737,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2144
+    .line 2145
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19747,7 +19750,7 @@
 
     goto :goto_5a
 
-    .line 2156
+    .line 2157
     :cond_99
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -19761,7 +19764,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2160
+    .line 2161
     :cond_9a
     :goto_5a
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19774,7 +19777,7 @@
 
     aput-object v3, v1, v4
 
-    .line 2161
+    .line 2162
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19783,7 +19786,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2162
+    .line 2163
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19792,26 +19795,26 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2163
+    .line 2164
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->name:Ljava/lang/String;
 
     if-eqz v1, :cond_9c
 
-    .line 2164
+    .line 2165
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
 
     invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2165
+    .line 2166
     iget v1, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v3, 0x4
 
     if-ne v1, v3, :cond_9b
 
-    .line 2166
+    .line 2167
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19824,7 +19827,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2167
+    .line 2168
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19837,7 +19840,7 @@
 
     goto :goto_5b
 
-    .line 2179
+    .line 2180
     :cond_9b
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -19851,7 +19854,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2183
+    .line 2184
     :cond_9c
     :goto_5b
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19864,7 +19867,7 @@
 
     aput-object v3, v1, v4
 
-    .line 2184
+    .line 2185
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19873,7 +19876,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2185
+    .line 2186
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19882,24 +19885,24 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2186
+    .line 2187
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->phone:Ljava/lang/String;
 
     if-eqz v1, :cond_9e
 
-    .line 2187
+    .line 2188
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
 
     invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2188
+    .line 2189
     iget v1, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     if-ne v1, v4, :cond_9d
 
-    .line 2189
+    .line 2190
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19912,7 +19915,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2190
+    .line 2191
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -19925,7 +19928,7 @@
 
     goto :goto_5c
 
-    .line 2202
+    .line 2203
     :cond_9d
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -19939,7 +19942,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2206
+    .line 2207
     :cond_9e
     :goto_5c
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19950,7 +19953,7 @@
 
     aput-object v3, v1, v18
 
-    .line 2207
+    .line 2208
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v18
@@ -19959,7 +19962,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2208
+    .line 2209
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -19968,26 +19971,26 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2209
+    .line 2210
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;->email:Ljava/lang/String;
 
     if-eqz v1, :cond_a0
 
-    .line 2210
+    .line 2211
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v18
 
     invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2211
+    .line 2212
     iget v1, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v3, 0x4
 
     if-ne v1, v3, :cond_9f
 
-    .line 2212
+    .line 2213
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v18
@@ -20000,7 +20003,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2213
+    .line 2214
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v18
@@ -20013,7 +20016,7 @@
 
     goto :goto_5d
 
-    .line 2225
+    .line 2226
     :cond_9f
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -20027,14 +20030,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2229
+    .line 2230
     :cond_a0
     :goto_5d
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->shippingOption:Lorg/telegram/tgnet/TLRPC$TL_shippingOption;
 
     if-eqz v1, :cond_a1
 
-    .line 2230
+    .line 2231
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     new-instance v3, Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -20045,7 +20048,7 @@
 
     aput-object v3, v1, v4
 
-    .line 2231
+    .line 2232
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -20058,7 +20061,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2232
+    .line 2233
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     aget-object v1, v1, v4
@@ -20079,7 +20082,7 @@
 
     invoke-virtual {v1, v3, v5, v9, v14}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;->setTextAndValueAndIcon(Ljava/lang/String;Ljava/lang/CharSequence;IZ)V
 
-    .line 2233
+    .line 2234
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -20088,11 +20091,11 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2235
+    .line 2236
     :cond_a1
     invoke-direct {v7, v0}, Lorg/telegram/ui/PaymentFormActivity;->setAddressFields(Lorg/telegram/tgnet/TLRPC$TL_paymentRequestedInfo;)V
 
-    .line 2238
+    .line 2239
     :cond_a2
     iget v0, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
@@ -20100,7 +20103,7 @@
 
     if-ne v0, v1, :cond_ac
 
-    .line 2239
+    .line 2240
     iget-boolean v0, v7, Lorg/telegram/ui/PaymentFormActivity;->isCheckoutPreview:Z
 
     const/4 v1, 0x1
@@ -20111,7 +20114,7 @@
 
     iput-boolean v0, v7, Lorg/telegram/ui/PaymentFormActivity;->recurrentAccepted:Z
 
-    .line 2240
+    .line 2241
     new-instance v0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -20120,19 +20123,19 @@
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
-    .line 2241
+    .line 2242
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_a3
 
-    .line 2242
+    .line 2243
     new-instance v1, Landroid/view/View;
 
     invoke-direct {v1, v8}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 2243
+    .line 2244
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -20145,7 +20148,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2244
+    .line 2245
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     const/4 v4, -0x1
@@ -20161,7 +20164,7 @@
     :cond_a3
     const/4 v4, -0x1
 
-    .line 2246
+    .line 2247
     :goto_5e
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
@@ -20175,7 +20178,7 @@
 
     invoke-virtual {v15, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2247
+    .line 2248
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     new-instance v3, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda21;
@@ -20184,14 +20187,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2319
+    .line 2320
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
-    .line 2320
+    .line 2321
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_contacts_inviteText:I
 
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -20200,7 +20203,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2321
+    .line 2322
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->PaymentCheckoutPay:I
@@ -20223,21 +20226,21 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2322
+    .line 2323
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     const/high16 v4, 0x41600000    # 14.0f
 
     invoke-virtual {v1, v5, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2323
+    .line 2324
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     const/16 v4, 0x11
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2324
+    .line 2325
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     const-string v4, "fonts/rmedium.ttf"
@@ -20248,7 +20251,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2325
+    .line 2326
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
@@ -20261,7 +20264,7 @@
 
     invoke-virtual {v1, v4, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2327
+    .line 2328
     new-instance v1, Lorg/telegram/ui/Components/ContextProgressView;
 
     invoke-direct {v1, v8, v14}, Lorg/telegram/ui/Components/ContextProgressView;-><init>(Landroid/content/Context;I)V
@@ -20270,15 +20273,15 @@
 
     const/4 v4, 0x4
 
-    .line 2328
+    .line 2329
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/ContextProgressView;->setVisibility(I)V
 
-    .line 2329
+    .line 2330
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
-    .line 2330
+    .line 2331
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
 
     const v4, 0x2fffffff
@@ -20287,7 +20290,7 @@
 
     invoke-virtual {v3, v4, v1}, Lorg/telegram/ui/Components/ContextProgressView;->setColors(II)V
 
-    .line 2331
+    .line 2332
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
@@ -20300,7 +20303,7 @@
 
     invoke-virtual {v1, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2333
+    .line 2334
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -20329,7 +20332,7 @@
     :goto_60
     invoke-virtual {v1, v3}, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->setChecked(Z)V
 
-    .line 2334
+    .line 2335
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->payTextView:Landroid/widget/TextView;
 
     iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -20354,12 +20357,12 @@
     :goto_61
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 2336
+    .line 2337
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 2337
+    .line 2338
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getContentView()Landroid/view/View;
@@ -20370,43 +20373,46 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2339
-    new-instance v1, Lorg/telegram/ui/PaymentFormActivity$17;
+    const/4 v1, 0x1
 
-    invoke-direct {v1, v7, v8}, Lorg/telegram/ui/PaymentFormActivity$17;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
+    .line 2340
+    invoke-static {v8, v1}, Lorg/telegram/messenger/AndroidUtilities;->checkAndroidTheme(Landroid/content/Context;Z)V
 
-    iput-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
+    .line 2341
+    new-instance v3, Lorg/telegram/ui/PaymentFormActivity$17;
 
-    const/4 v3, -0x1
+    invoke-direct {v3, v7, v8}, Lorg/telegram/ui/PaymentFormActivity$17;-><init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
 
-    .line 2346
-    invoke-virtual {v1, v3}, Landroid/webkit/WebView;->setBackgroundColor(I)V
+    iput-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
-    .line 2347
-    iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
-
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    move-result-object v1
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+    const/4 v4, -0x1
 
     .line 2348
-    iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
+    invoke-virtual {v3, v4}, Landroid/webkit/WebView;->setBackgroundColor(I)V
 
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    .line 2349
+    iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
-    move-result-object v1
+    invoke-virtual {v3}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
-    invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
+    move-result-object v3
 
-    const/16 v1, 0x15
+    invoke-virtual {v3, v1}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    if-lt v0, v1, :cond_a7
+    .line 2350
+    iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
-    .line 2351
+    invoke-virtual {v3}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
+
+    const/16 v3, 0x15
+
+    if-lt v0, v3, :cond_a7
+
+    .line 2353
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -20415,17 +20421,17 @@
 
     invoke-virtual {v0, v14}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
 
-    .line 2352
+    .line 2354
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v0
 
-    .line 2353
-    iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
+    .line 2355
+    iget-object v3, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
-    invoke-virtual {v0, v1, v3}, Landroid/webkit/CookieManager;->setAcceptThirdPartyCookies(Landroid/webkit/WebView;Z)V
+    invoke-virtual {v0, v3, v1}, Landroid/webkit/CookieManager;->setAcceptThirdPartyCookies(Landroid/webkit/WebView;Z)V
 
-    .line 2356
+    .line 2358
     :cond_a7
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
@@ -20435,7 +20441,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 2399
+    .line 2401
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -20444,7 +20450,7 @@
 
     if-eqz v0, :cond_ab
 
-    .line 2400
+    .line 2402
     new-instance v0, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/PaymentFormActivity;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -20455,7 +20461,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
-    .line 2401
+    .line 2403
     iget-object v1, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
@@ -20478,21 +20484,21 @@
     :goto_62
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->setChecked(Z)V
 
-    .line 2402
+    .line 2404
     sget v0, Lorg/telegram/messenger/R$string;->PaymentCheckoutAcceptRecurrent:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2403
+    .line 2405
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v1, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const/16 v3, 0x2a
 
-    .line 2404
+    .line 2406
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v3
@@ -20509,7 +20515,7 @@
 
     if-eq v4, v5, :cond_a9
 
-    .line 2406
+    .line 2408
     new-instance v5, Landroid/text/SpannableString;
 
     add-int/lit8 v9, v3, 0x1
@@ -20520,7 +20526,7 @@
 
     invoke-direct {v5, v9}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 2407
+    .line 2409
     new-instance v9, Lorg/telegram/ui/Components/URLSpanNoUnderline;
 
     iget-object v10, v7, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
@@ -20543,10 +20549,10 @@
 
     add-int/2addr v4, v9
 
-    .line 2408
+    .line 2410
     invoke-virtual {v1, v3, v4, v5}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 2409
+    .line 2411
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -20572,7 +20578,7 @@
     :cond_a9
     const-string v3, "%1$s"
 
-    .line 2412
+    .line 2414
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
@@ -20583,12 +20589,12 @@
 
     add-int/lit8 v3, v0, 0x4
 
-    .line 2414
+    .line 2416
     iget-object v4, v7, Lorg/telegram/ui/PaymentFormActivity;->currentBotName:Ljava/lang/String;
 
     invoke-virtual {v1, v0, v3, v4}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 2415
+    .line 2417
     new-instance v3, Lorg/telegram/ui/Components/TypefaceSpan;
 
     const-string v4, "fonts/rmedium.ttf"
@@ -20611,13 +20617,13 @@
 
     invoke-virtual {v1, v3, v0, v4, v5}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 2418
+    .line 2420
     :cond_aa
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2420
+    .line 2422
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -20638,7 +20644,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2421
+    .line 2423
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda7;
@@ -20647,7 +20653,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2431
+    .line 2433
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->recurrentAcceptCell:Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;
 
     const/16 v25, -0x1
@@ -20670,7 +20676,7 @@
 
     invoke-virtual {v15, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2434
+    .line 2436
     :cond_ab
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
@@ -20682,14 +20688,14 @@
 
     invoke-virtual {v15, v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2435
+    .line 2437
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setVisibility(I)V
 
-    .line 2438
+    .line 2440
     :cond_ac
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -20703,7 +20709,7 @@
 
     aput-object v1, v0, v3
 
-    .line 2439
+    .line 2441
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     aget-object v0, v0, v3
@@ -20720,7 +20726,7 @@
 
     if-eqz v6, :cond_ae
 
-    .line 2440
+    .line 2442
     iget v0, v7, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v1, 0x4
@@ -20739,7 +20745,7 @@
 
     if-nez v0, :cond_ae
 
-    .line 2441
+    .line 2443
     :cond_ad
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -20754,7 +20760,7 @@
     :cond_ae
     const/4 v1, 0x1
 
-    .line 2443
+    .line 2445
     :goto_63
     iget-object v0, v7, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
 
@@ -20770,7 +20776,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2619
+    .line 2621
     :cond_af
     :goto_64
     iget-object v0, v7, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -20806,7 +20812,7 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 1
 
-    .line 3182
+    .line 3185
     sget p2, Lorg/telegram/messenger/NotificationCenter;->twoStepPasswordChanged:I
 
     const/4 p3, 0x0
@@ -20815,48 +20821,48 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 3183
+    .line 3186
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iput-boolean p3, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->password_missing:Z
 
-    .line 3184
+    .line 3187
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->can_save_credentials:Z
 
-    .line 3185
+    .line 3188
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->updateSavePaymentField()V
 
     goto :goto_0
 
-    .line 3186
+    .line 3189
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didRemoveTwoStepPassword:I
 
     if-ne p1, p2, :cond_1
 
-    .line 3187
+    .line 3190
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->password_missing:Z
 
-    .line 3188
+    .line 3191
     iput-boolean p3, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->can_save_credentials:Z
 
-    .line 3189
+    .line 3192
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->updateSavePaymentField()V
 
     goto :goto_0
 
-    .line 3190
+    .line 3193
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->paymentFinished:I
 
     if-ne p1, p2, :cond_2
 
-    .line 3191
+    .line 3194
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentStatusSent:Z
 
-    .line 3192
+    .line 3195
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     :cond_2
@@ -20867,7 +20873,7 @@
 .method public fillNumber(Ljava/lang/String;)V
     .locals 7
 
-    .line 3448
+    .line 3451
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -20883,7 +20889,7 @@
 
     if-nez p1, :cond_0
 
-    .line 3451
+    .line 3454
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getSimState()I
 
     move-result v2
@@ -20896,7 +20902,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 3452
+    .line 3455
     :cond_0
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -20906,7 +20912,7 @@
 
     if-lt v2, v3, :cond_2
 
-    .line 3453
+    .line 3456
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -20938,7 +20944,7 @@
     :cond_3
     if-nez p1, :cond_4
 
-    .line 3457
+    .line 3460
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getLine1Number()Ljava/lang/String;
 
     move-result-object p1
@@ -20950,14 +20956,14 @@
     :cond_4
     const/4 v0, 0x0
 
-    .line 3461
+    .line 3464
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_8
 
-    .line 3462
+    .line 3465
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -20971,12 +20977,12 @@
 
     if-lt v3, v1, :cond_6
 
-    .line 3464
+    .line 3467
     invoke-virtual {p1, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 3465
+    .line 3468
     iget-object v6, p0, Lorg/telegram/ui/PaymentFormActivity;->codesMap:Ljava/util/HashMap;
 
     invoke-virtual {v6, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -20987,12 +20993,12 @@
 
     if-eqz v6, :cond_5
 
-    .line 3468
+    .line 3471
     invoke-virtual {p1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3469
+    .line 3472
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v3, v3, v2
@@ -21014,12 +21020,12 @@
     :goto_3
     if-nez v3, :cond_7
 
-    .line 3474
+    .line 3477
     invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3475
+    .line 3478
     iget-object v3, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v2, v3, v2
@@ -21033,7 +21039,7 @@
     :cond_7
     if-eqz v0, :cond_8
 
-    .line 3479
+    .line 3482
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/16 v1, 0x9
@@ -21042,7 +21048,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3480
+    .line 3483
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object v0, p1, v1
@@ -21062,7 +21068,7 @@
     :catch_0
     move-exception p1
 
-    .line 3486
+    .line 3489
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_8
@@ -21081,7 +21087,7 @@
         }
     .end annotation
 
-    .line 3004
+    .line 3006
     :try_start_0
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->getBaseRequest()Lorg/json/JSONObject;
 
@@ -21089,12 +21095,12 @@
 
     const-string v1, "allowedPaymentMethods"
 
-    .line 3005
+    .line 3007
     new-instance v2, Lorg/json/JSONArray;
 
     invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
 
-    .line 3006
+    .line 3008
     invoke-direct {p0}, Lorg/telegram/ui/PaymentFormActivity;->getBaseCardPaymentMethod()Lorg/json/JSONObject;
 
     move-result-object v3
@@ -21103,10 +21109,10 @@
 
     move-result-object v2
 
-    .line 3005
+    .line 3007
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 3008
+    .line 3010
     invoke-static {v0}, Lj$/util/Optional;->of(Ljava/lang/Object;)Lj$/util/Optional;
 
     move-result-object v0
@@ -21115,7 +21121,7 @@
 
     return-object v0
 
-    .line 3010
+    .line 3012
     :catch_0
     invoke-static {}, Lj$/util/Optional;->empty()Lj$/util/Optional;
 
@@ -21127,7 +21133,7 @@
 .method public getOtherSameFragmentDiff()I
     .locals 3
 
-    .line 3076
+    .line 3078
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     const/4 v1, 0x0
@@ -21142,7 +21148,7 @@
 
     goto :goto_2
 
-    .line 3079
+    .line 3081
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
@@ -21158,7 +21164,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 3081
+    .line 3083
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
@@ -21169,7 +21175,7 @@
 
     move-result v0
 
-    .line 3084
+    .line 3086
     :cond_1
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -21184,7 +21190,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 3085
+    .line 3087
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     invoke-interface {v2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
@@ -21197,7 +21203,7 @@
 
     check-cast v2, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 3086
+    .line 3088
     instance-of v2, v2, Lorg/telegram/ui/PaymentFormActivity;
 
     if-eqz v2, :cond_2
@@ -21242,12 +21248,12 @@
 
     move-object/from16 v0, p0
 
-    .line 4362
+    .line 4365
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4364
+    .line 4367
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -21270,7 +21276,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4365
+    .line 4368
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -21295,7 +21301,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4366
+    .line 4369
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->scrollView:Landroid/widget/ScrollView;
@@ -21310,7 +21316,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4367
+    .line 4370
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -21325,7 +21331,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4368
+    .line 4371
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -21340,7 +21346,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4369
+    .line 4372
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -21355,7 +21361,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4370
+    .line 4373
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -21370,7 +21376,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4371
+    .line 4374
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -21385,7 +21391,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4372
+    .line 4375
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -21412,7 +21418,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4373
+    .line 4376
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
@@ -21433,7 +21439,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4374
+    .line 4377
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->progressView:Lorg/telegram/ui/Components/ContextProgressView;
@@ -21460,7 +21466,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4375
+    .line 4378
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
@@ -21475,7 +21481,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4376
+    .line 4379
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->progressViewButton:Lorg/telegram/ui/Components/ContextProgressView;
@@ -21488,14 +21494,14 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4378
+    .line 4381
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     if-eqz v2, :cond_0
 
     move v2, v12
 
-    .line 4379
+    .line 4382
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -21503,7 +21509,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 4380
+    .line 4383
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -21536,7 +21542,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4381
+    .line 4384
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -21561,7 +21567,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4382
+    .line 4385
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -21582,7 +21588,7 @@
 
     goto :goto_0
 
-    .line 4385
+    .line 4388
     :cond_0
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -21606,7 +21612,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4386
+    .line 4389
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v14, 0x0
@@ -21629,7 +21635,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4388
+    .line 4391
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
@@ -21641,7 +21647,7 @@
 
     move v2, v12
 
-    .line 4389
+    .line 4392
     :goto_1
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
 
@@ -21649,7 +21655,7 @@
 
     if-ge v2, v5, :cond_3
 
-    .line 4390
+    .line 4393
     new-instance v5, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
@@ -21674,7 +21680,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4391
+    .line 4394
     new-instance v5, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
@@ -21699,7 +21705,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4392
+    .line 4395
     new-instance v5, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
@@ -21730,7 +21736,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4393
+    .line 4396
     new-instance v5, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
@@ -21763,7 +21769,7 @@
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4394
+    .line 4397
     new-instance v5, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/PaymentFormActivity;->radioCells:[Lorg/telegram/ui/Cells/RadioCell;
@@ -21796,7 +21802,7 @@
 
     goto/16 :goto_1
 
-    .line 4397
+    .line 4400
     :cond_2
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -21830,7 +21836,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4398
+    .line 4401
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/16 v23, 0x0
@@ -21863,7 +21869,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4399
+    .line 4402
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKBOXCHECK:I
@@ -21891,7 +21897,7 @@
     :cond_3
     move v2, v12
 
-    .line 4401
+    .line 4404
     :goto_2
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -21899,7 +21905,7 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 4402
+    .line 4405
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
@@ -21924,7 +21930,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4403
+    .line 4406
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->headerCell:[Lorg/telegram/ui/Cells/HeaderCell;
@@ -21966,7 +21972,7 @@
     :cond_4
     move v2, v12
 
-    .line 4405
+    .line 4408
     :goto_3
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -21974,7 +21980,7 @@
 
     if-ge v2, v3, :cond_5
 
-    .line 4406
+    .line 4409
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->sectionCell:[Lorg/telegram/ui/Cells/ShadowSectionCell;
@@ -22012,7 +22018,7 @@
     :cond_5
     move v2, v12
 
-    .line 4408
+    .line 4411
     :goto_4
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -22020,7 +22026,7 @@
 
     if-ge v2, v3, :cond_6
 
-    .line 4409
+    .line 4412
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -22051,7 +22057,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4410
+    .line 4413
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -22086,7 +22092,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4411
+    .line 4414
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomCell:[Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -22124,7 +22130,7 @@
     :cond_6
     move v2, v12
 
-    .line 4413
+    .line 4416
     :goto_5
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
 
@@ -22134,7 +22140,7 @@
 
     if-ge v2, v3, :cond_7
 
-    .line 4414
+    .line 4417
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->dividers:Ljava/util/ArrayList;
@@ -22169,7 +22175,7 @@
 
     goto :goto_5
 
-    .line 4417
+    .line 4420
     :cond_7
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -22195,7 +22201,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4418
+    .line 4421
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
@@ -22232,7 +22238,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4419
+    .line 4422
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->codeFieldCell:Lorg/telegram/ui/Cells/EditTextSettingsCell;
@@ -22267,7 +22273,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4421
+    .line 4424
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->textView:Landroid/widget/TextView;
@@ -22282,7 +22288,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4423
+    .line 4426
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -22309,7 +22315,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4424
+    .line 4427
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -22340,7 +22346,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4425
+    .line 4428
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -22365,7 +22371,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4426
+    .line 4429
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -22388,7 +22394,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4427
+    .line 4430
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->checkCell1:Lorg/telegram/ui/Cells/TextCheckCell;
@@ -22409,7 +22415,7 @@
 
     move v2, v12
 
-    .line 4429
+    .line 4432
     :goto_6
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
 
@@ -22417,7 +22423,7 @@
 
     if-ge v2, v3, :cond_8
 
-    .line 4430
+    .line 4433
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -22442,7 +22448,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4431
+    .line 4434
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -22467,7 +22473,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4432
+    .line 4435
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->settingsCell:[Lorg/telegram/ui/Cells/TextSettingsCell;
@@ -22502,7 +22508,7 @@
 
     goto :goto_6
 
-    .line 4435
+    .line 4438
     :cond_8
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -22526,7 +22532,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4437
+    .line 4440
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -22559,7 +22565,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4438
+    .line 4441
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -22596,7 +22602,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4439
+    .line 4442
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -22629,7 +22635,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4440
+    .line 4443
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -22662,7 +22668,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4441
+    .line 4444
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->linearLayout2:Landroid/widget/LinearLayout;
@@ -22691,7 +22697,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4443
+    .line 4446
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -22706,7 +22712,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4444
+    .line 4447
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -22729,7 +22735,7 @@
 
     move v2, v11
 
-    .line 4446
+    .line 4449
     :goto_7
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
@@ -22737,7 +22743,7 @@
 
     if-ge v2, v3, :cond_9
 
-    .line 4447
+    .line 4450
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -22762,7 +22768,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4448
+    .line 4451
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -22797,7 +22803,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4449
+    .line 4452
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/PaymentFormActivity;->detailSettingsCell:[Lorg/telegram/ui/Cells/TextDetailSettingsCell;
@@ -22832,7 +22838,7 @@
 
     goto :goto_7
 
-    .line 4452
+    .line 4455
     :cond_9
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -22858,7 +22864,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4453
+    .line 4456
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentInfoCell:Lorg/telegram/ui/Cells/PaymentInfoCell;
@@ -22897,7 +22903,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4454
+    .line 4457
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentInfoCell:Lorg/telegram/ui/Cells/PaymentInfoCell;
@@ -22928,7 +22934,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4455
+    .line 4458
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/PaymentFormActivity;->paymentInfoCell:Lorg/telegram/ui/Cells/PaymentInfoCell;
@@ -22961,7 +22967,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4457
+    .line 4460
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
@@ -22982,7 +22988,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4458
+    .line 4461
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
@@ -23011,7 +23017,7 @@
 .method public isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 4126
+    .line 4129
     iget-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->swipeBackEnabled:Z
 
     return p1
@@ -23024,7 +23030,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 3199
+    .line 3202
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda36;
 
     invoke-direct {p1, p0, p2, p3}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/ui/PaymentFormActivity;ILandroid/content/Intent;)V
@@ -23038,12 +23044,12 @@
 .method public onBackPressed()Z
     .locals 2
 
-    .line 4352
+    .line 4355
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->shouldNavigateBack:Z
 
     if-eqz v0, :cond_0
 
-    .line 4353
+    .line 4356
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->webViewUrl:Ljava/lang/String;
@@ -23052,12 +23058,12 @@
 
     const/4 v0, 0x0
 
-    .line 4354
+    .line 4357
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->shouldNavigateBack:Z
 
     return v0
 
-    .line 4357
+    .line 4360
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->donePressed:Z
 
@@ -23069,27 +23075,27 @@
 .method public onBecomeFullyVisible()V
     .locals 2
 
-    .line 3138
+    .line 3141
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onBecomeFullyVisible()V
 
-    .line 3140
+    .line 3143
     iget v0, p0, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
 
-    .line 3141
+    .line 3144
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->needPayAfterTransition:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 3142
+    .line 3145
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->needPayAfterTransition:Z
 
-    .line 3143
+    .line 3146
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->bottomLayout:Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->callOnClick()Z
@@ -23101,7 +23107,7 @@
 .method public onFragmentCreate()Z
     .locals 2
 
-    .line 3067
+    .line 3069
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -23112,7 +23118,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3068
+    .line 3070
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -23123,7 +23129,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3069
+    .line 3071
     iget v0, p0, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v1, 0x4
@@ -23134,7 +23140,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3070
+    .line 3072
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -23146,7 +23152,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3072
+    .line 3074
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
@@ -23158,26 +23164,35 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 3096
+    .line 3098
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->delegate:Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 3097
+    .line 3099
     invoke-interface {v0}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormActivityDelegate;->onFragmentDestroyed()V
 
-    .line 3099
+    .line 3101
     :cond_0
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->checkAndroidTheme(Landroid/content/Context;Z)V
+
+    .line 3102
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentStatusSent:Z
 
     if-nez v0, :cond_1
 
-    .line 3100
+    .line 3103
     sget-object v0, Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;->CANCELLED:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     iput-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
-    .line 3101
+    .line 3104
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     if-eqz v0, :cond_1
@@ -23188,14 +23203,14 @@
 
     if-nez v0, :cond_1
 
-    .line 3102
+    .line 3105
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormCallback:Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->invoiceStatus:Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;->onInvoiceStatusChanged(Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
 
-    .line 3105
+    .line 3108
     :cond_1
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -23207,7 +23222,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3106
+    .line 3109
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -23218,7 +23233,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3107
+    .line 3110
     iget v0, p0, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     const/4 v1, 0x4
@@ -23229,7 +23244,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 3108
+    .line 3111
     :cond_2
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
@@ -23241,13 +23256,13 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3110
+    .line 3113
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     if-eqz v0, :cond_5
 
-    .line 3112
+    .line 3115
     :try_start_0
     invoke-virtual {v0}, Landroid/webkit/WebView;->getParent()Landroid/view/ViewParent;
 
@@ -23255,20 +23270,20 @@
 
     if-eqz v0, :cond_4
 
-    .line 3114
+    .line 3117
     check-cast v0, Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 3116
+    .line 3119
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->stopLoading()V
 
-    .line 3117
+    .line 3120
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     const-string v1, "about:blank"
@@ -23277,15 +23292,15 @@
 
     const/4 v0, 0x0
 
-    .line 3118
+    .line 3121
     iput-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->webViewUrl:Ljava/lang/String;
 
-    .line 3119
+    .line 3122
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->destroy()V
 
-    .line 3120
+    .line 3123
     iput-object v0, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -23295,10 +23310,10 @@
     :catch_0
     move-exception v0
 
-    .line 3122
+    .line 3125
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3126
+    .line 3129
     :cond_5
     :goto_0
     :try_start_1
@@ -23331,7 +23346,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 3127
+    .line 3130
     :cond_7
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -23352,17 +23367,17 @@
     :catchall_0
     move-exception v0
 
-    .line 3130
+    .line 3133
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3132
+    .line 3135
     :cond_8
     :goto_1
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
     const/4 v0, 0x1
 
-    .line 3133
+    .line 3136
     iput-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity;->canceled:Z
 
     return-void
@@ -23474,24 +23489,24 @@
 
     if-nez p2, :cond_5
 
-    .line 3151
+    .line 3154
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->webView:Landroid/webkit/WebView;
 
     const/4 p2, 0x4
 
     if-eqz p1, :cond_1
 
-    .line 3152
+    .line 3155
     iget v0, p0, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
     if-eq v0, p2, :cond_5
 
-    .line 3153
+    .line 3156
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentFormMethod:Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;
 
     if-eqz p2, :cond_0
 
-    .line 3154
+    .line 3157
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_paymentFormMethod;->url:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->webViewUrl:Ljava/lang/String;
@@ -23500,7 +23515,7 @@
 
     goto :goto_0
 
-    .line 3156
+    .line 3159
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity;->paymentForm:Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;
 
@@ -23512,7 +23527,7 @@
 
     goto :goto_0
 
-    .line 3159
+    .line 3162
     :cond_1
     iget p1, p0, Lorg/telegram/ui/PaymentFormActivity;->currentStep:I
 
@@ -23520,7 +23535,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 3160
+    .line 3163
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda35;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PaymentFormActivity$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -23536,7 +23551,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 3165
+    .line 3168
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 p2, 0x1
@@ -23545,7 +23560,7 @@
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 3166
+    .line 3169
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p1, p2
@@ -23559,12 +23574,12 @@
 
     if-ne p1, p2, :cond_4
 
-    .line 3168
+    .line 3171
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     if-eqz p1, :cond_5
 
-    .line 3169
+    .line 3172
     aget-object p1, p1, v0
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
@@ -23576,19 +23591,19 @@
 
     if-ne p1, p2, :cond_5
 
-    .line 3172
+    .line 3175
     iget-boolean p1, p0, Lorg/telegram/ui/PaymentFormActivity;->waitingForEmail:Z
 
     if-nez p1, :cond_5
 
-    .line 3173
+    .line 3176
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p1, v0
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 3174
+    .line 3177
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity;->inputFields:[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     aget-object p1, p1, v0
@@ -23603,10 +23618,10 @@
 .method public presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
     .locals 0
 
-    .line 4330
+    .line 4333
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->onPresentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 4331
+    .line 4334
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     move-result p1
@@ -23617,10 +23632,10 @@
 .method public presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
     .locals 0
 
-    .line 4336
+    .line 4339
     invoke-direct {p0, p1}, Lorg/telegram/ui/PaymentFormActivity;->onPresentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 4337
+    .line 4340
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
     move-result p1

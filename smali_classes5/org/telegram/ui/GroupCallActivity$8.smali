@@ -40,12 +40,12 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 3069
+    .line 3072
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$8;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
-    .line 3073
+    .line 3076
     new-instance p1, Landroid/graphics/Matrix;
 
     invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
@@ -54,7 +54,7 @@
 
     const/high16 p1, -0x40800000    # -1.0f
 
-    .line 3074
+    .line 3077
     iput p1, p0, Lorg/telegram/ui/GroupCallActivity$8;->targetX:F
 
     return-void
@@ -63,7 +63,7 @@
 .method private setTarget()V
     .locals 2
 
-    .line 3082
+    .line 3085
     sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     const/16 v1, 0x64
@@ -94,17 +94,17 @@
 .method protected createLayout(I)Z
     .locals 11
 
-    .line 3087
+    .line 3090
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->createLayout(I)Z
 
     move-result p1
 
-    .line 3088
+    .line 3091
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextWidth()I
 
     move-result v0
 
-    .line 3089
+    .line 3092
     iget v1, p0, Lorg/telegram/ui/GroupCallActivity$8;->lastTextWidth:I
 
     if-eq v0, v1, :cond_0
@@ -115,10 +115,10 @@
 
     mul-float/2addr v2, v1
 
-    .line 3090
+    .line 3093
     iput v2, p0, Lorg/telegram/ui/GroupCallActivity$8;->gradientWidth:F
 
-    .line 3091
+    .line 3094
     new-instance v2, Landroid/graphics/LinearGradient;
 
     const/4 v4, 0x0
@@ -189,7 +189,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/GroupCallActivity$8;->linearGradient:Landroid/graphics/LinearGradient;
 
-    .line 3092
+    .line 3095
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getPaint()Landroid/graphics/Paint;
 
     move-result-object v1
@@ -198,7 +198,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 3093
+    .line 3096
     iput v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->lastTextWidth:I
 
     :cond_0
@@ -216,12 +216,12 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 3101
+    .line 3104
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->linearGradient:Landroid/graphics/LinearGradient;
 
     if-eqz v0, :cond_7
 
-    .line 3102
+    .line 3105
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/GroupCallActivity;->call:Lorg/telegram/messenger/ChatObject$Call;
@@ -238,7 +238,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3103
+    .line 3106
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCallActivity;->call:Lorg/telegram/messenger/ChatObject$Call;
@@ -295,13 +295,13 @@
     :cond_1
     move v1, v2
 
-    .line 3110
+    .line 3113
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 3111
+    .line 3114
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->matrix:Landroid/graphics/Matrix;
 
     iget v3, p0, Lorg/telegram/ui/GroupCallActivity$8;->lastTextWidth:I
@@ -318,12 +318,12 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 3113
+    .line 3116
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 3114
+    .line 3117
     iget-wide v3, p0, Lorg/telegram/ui/GroupCallActivity$8;->lastUpdateTime:J
 
     sub-long v3, v0, v3
@@ -336,11 +336,11 @@
 
     const-wide/16 v3, 0x11
 
-    .line 3118
+    .line 3121
     :cond_2
     iput-wide v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->lastUpdateTime:J
 
-    .line 3119
+    .line 3122
     iget v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->duration:F
 
     cmpl-float v1, v0, v2
@@ -353,7 +353,7 @@
 
     if-ltz v0, :cond_5
 
-    .line 3120
+    .line 3123
     :cond_3
     sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
@@ -369,10 +369,10 @@
 
     iput v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->duration:F
 
-    .line 3121
+    .line 3124
     iput v2, p0, Lorg/telegram/ui/GroupCallActivity$8;->time:F
 
-    .line 3122
+    .line 3125
     iget v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->targetX:F
 
     const/high16 v1, -0x40800000    # -1.0f
@@ -381,19 +381,19 @@
 
     if-nez v0, :cond_4
 
-    .line 3123
+    .line 3126
     invoke-direct {p0}, Lorg/telegram/ui/GroupCallActivity$8;->setTarget()V
 
-    .line 3125
+    .line 3128
     :cond_4
     iget v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->targetX:F
 
     iput v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->startX:F
 
-    .line 3126
+    .line 3129
     invoke-direct {p0}, Lorg/telegram/ui/GroupCallActivity$8;->setTarget()V
 
-    .line 3128
+    .line 3131
     :cond_5
     iget v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->time:F
 
@@ -429,17 +429,17 @@
 
     iput v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->time:F
 
-    .line 3129
+    .line 3132
     iget v1, p0, Lorg/telegram/ui/GroupCallActivity$8;->duration:F
 
     cmpl-float v0, v0, v1
 
     if-lez v0, :cond_6
 
-    .line 3130
+    .line 3133
     iput v1, p0, Lorg/telegram/ui/GroupCallActivity$8;->time:F
 
-    .line 3132
+    .line 3135
     :cond_6
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -451,7 +451,7 @@
 
     move-result v0
 
-    .line 3133
+    .line 3136
     iget v1, p0, Lorg/telegram/ui/GroupCallActivity$8;->gradientWidth:F
 
     iget v3, p0, Lorg/telegram/ui/GroupCallActivity$8;->startX:F
@@ -470,22 +470,22 @@
 
     sub-float/2addr v3, v1
 
-    .line 3134
+    .line 3137
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v3, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 3136
+    .line 3139
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$8;->linearGradient:Landroid/graphics/LinearGradient;
 
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$8;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 3137
+    .line 3140
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 3139
+    .line 3142
     :cond_7
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->onDraw(Landroid/graphics/Canvas;)V
 

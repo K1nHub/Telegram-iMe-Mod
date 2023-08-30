@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    .line 1389
+    .line 1405
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$7;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .method public didFindQr(Ljava/lang/String;)V
     .locals 4
 
-    .line 1393
+    .line 1409
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$7;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
@@ -62,7 +62,7 @@
 
     move-result-object p1
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/json/JSONObject;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -71,7 +71,7 @@
     :catch_0
     move-exception p1
 
-    .line 1395
+    .line 1411
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -81,10 +81,10 @@
 .method public getSubtitleText()Ljava/lang/String;
     .locals 1
 
-    .line 1401
+    .line 1417
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$7;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1900(Lorg/telegram/ui/Components/BotWebViewContainer;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1700(Lorg/telegram/ui/Components/BotWebViewContainer;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -94,21 +94,21 @@
 .method public onDismiss()V
     .locals 3
 
-    .line 1406
+    .line 1422
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$7;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const-string v1, "scan_qr_popup_closed"
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/json/JSONObject;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/json/JSONObject;)V
 
-    .line 1407
+    .line 1423
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$7;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$2002(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1802(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
 
     return-void
 .end method

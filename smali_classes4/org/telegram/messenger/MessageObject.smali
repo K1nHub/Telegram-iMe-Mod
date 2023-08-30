@@ -14936,6 +14936,14 @@
 
     if-eqz v0, :cond_0
 
+    invoke-static {p0}, Lorg/telegram/messenger/MessageObject;->getMedia(Lorg/telegram/tgnet/TLRPC$Message;)Lorg/telegram/tgnet/TLRPC$MessageMedia;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
+
+    if-eqz v0, :cond_0
+
     .line 6400
     invoke-static {p0}, Lorg/telegram/messenger/MessageObject;->getMedia(Lorg/telegram/tgnet/TLRPC$Message;)Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -14954,6 +14962,14 @@
     move-result-object v0
 
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGame;
+
+    if-eqz v0, :cond_1
+
+    invoke-static {p0}, Lorg/telegram/messenger/MessageObject;->getMedia(Lorg/telegram/tgnet/TLRPC$Message;)Lorg/telegram/tgnet/TLRPC$MessageMedia;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->game:Lorg/telegram/tgnet/TLRPC$TL_game;
 
     if-eqz v0, :cond_1
 

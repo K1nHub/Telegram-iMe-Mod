@@ -65,7 +65,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 2245
+    .line 2248
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -76,14 +76,14 @@
 .method private synthetic lambda$onPhotoShoot$0(Ljava/lang/Integer;)V
     .locals 5
 
-    .line 2281
+    .line 2284
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2282
+    .line 2285
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
@@ -94,7 +94,7 @@
 
     return-void
 
-    .line 2285
+    .line 2288
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -111,7 +111,7 @@
     :cond_1
     const/16 v0, 0x5a
 
-    .line 2286
+    .line 2289
     :goto_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -121,16 +121,16 @@
 
     if-ne p1, v2, :cond_2
 
-    .line 2289
+    .line 2292
     :try_start_0
     new-instance p1, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {p1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 2290
+    .line 2293
     iput-boolean v3, p1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 2291
+    .line 2294
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
@@ -143,12 +143,12 @@
 
     invoke-static {v4, p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 2292
+    .line 2295
     iget v4, p1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2293
+    .line 2296
     :try_start_1
     iget v2, p1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
     :try_end_1
@@ -165,7 +165,7 @@
 
     const/16 v0, 0x10e
 
-    .line 2299
+    .line 2302
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -179,7 +179,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryEntry;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 2300
+    .line 2303
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
@@ -194,12 +194,12 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacySelector;->applySaved(ILorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 2301
+    .line 2304
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2302
+    .line 2305
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-virtual {p1, v3, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
@@ -210,7 +210,7 @@
 .method private synthetic lambda$onVideoRecordEnd$4()V
     .locals 3
 
-    .line 2422
+    .line 2425
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
@@ -235,7 +235,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2423
+    .line 2426
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v1, 0x1
@@ -244,7 +244,7 @@
 
     invoke-static {v0, v2, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
 
-    .line 2426
+    .line 2429
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v0
@@ -268,7 +268,7 @@
 .method private synthetic lambda$onVideoRecordStart$1()V
     .locals 2
 
-    .line 2379
+    .line 2382
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v1, 0x1
@@ -281,7 +281,7 @@
 .method private synthetic lambda$onVideoRecordStart$2(Ljava/lang/String;J)V
     .locals 5
 
-    .line 2334
+    .line 2337
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/RecordControl;
@@ -292,7 +292,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2335
+    .line 2338
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/RecordControl;
@@ -301,7 +301,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/RecordControl;->stopRecordingLoading(Z)V
 
-    .line 2337
+    .line 2340
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -321,7 +321,7 @@
 
     goto/16 :goto_2
 
-    .line 2341
+    .line 2344
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -329,7 +329,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2342
+    .line 2345
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
@@ -340,17 +340,17 @@
 
     if-gtz v0, :cond_4
 
-    .line 2345
+    .line 2348
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p2, v2, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
 
-    .line 2346
+    .line 2349
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p2, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
-    .line 2347
+    .line 2350
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/VideoTimerView;
@@ -359,7 +359,7 @@
 
     invoke-virtual {p2, v2, v1}, Lorg/telegram/ui/Stories/recorder/VideoTimerView;->setRecording(ZZ)V
 
-    .line 2348
+    .line 2351
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/RecordControl;
@@ -368,7 +368,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 2349
+    .line 2352
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/RecordControl;
@@ -377,7 +377,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/recorder/RecordControl;->stopRecordingLoading(Z)V
 
-    .line 2352
+    .line 2355
     :cond_2
     :try_start_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
@@ -388,7 +388,7 @@
 
     invoke-virtual {p2}, Ljava/io/File;->delete()Z
 
-    .line 2353
+    .line 2356
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 p3, 0x0
@@ -402,13 +402,13 @@
     :catch_0
     move-exception p2
 
-    .line 2355
+    .line 2358
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     if-eqz p1, :cond_3
 
-    .line 2359
+    .line 2362
     :try_start_1
     new-instance p2, Ljava/io/File;
 
@@ -423,20 +423,20 @@
     :catch_1
     move-exception p1
 
-    .line 2361
+    .line 2364
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
     :goto_1
     return-void
 
-    .line 2367
+    .line 2370
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0, v2, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
 
-    .line 2369
+    .line 2372
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
@@ -449,7 +449,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryEntry;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 2370
+    .line 2373
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
@@ -464,12 +464,12 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacySelector;->applySaved(ILorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 2371
+    .line 2374
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2372
+    .line 2375
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -494,7 +494,7 @@
 
     if-lez p2, :cond_5
 
-    .line 2374
+    .line 2377
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -503,7 +503,7 @@
 
     iput p1, p3, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
-    .line 2375
+    .line 2378
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -512,7 +512,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
-    .line 2376
+    .line 2379
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -521,7 +521,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->setupMatrix()V
 
-    .line 2378
+    .line 2381
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -541,10 +541,10 @@
 .method private synthetic lambda$onVideoRecordStart$3(Ljava/lang/Runnable;Z)V
     .locals 1
 
-    .line 2382
+    .line 2385
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 2384
+    .line 2387
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintTextView;
@@ -573,19 +573,19 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Stories/recorder/HintTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 2385
+    .line 2388
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
 
-    .line 2386
+    .line 2389
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
-    .line 2388
+    .line 2391
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/VideoTimerView;
@@ -594,7 +594,7 @@
 
     invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/Stories/recorder/VideoTimerView;->setRecording(ZZ)V
 
-    .line 2389
+    .line 2392
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1, p2, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
@@ -607,7 +607,7 @@
 .method public canRecordAudio()Z
     .locals 1
 
-    .line 2248
+    .line 2251
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
@@ -620,7 +620,7 @@
 .method public onFlipClick()V
     .locals 2
 
-    .line 2445
+    .line 2448
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -667,7 +667,7 @@
 
     goto :goto_0
 
-    .line 2448
+    .line 2451
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -677,7 +677,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2449
+    .line 2452
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -686,7 +686,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2451
+    .line 2454
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -696,7 +696,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->switchCamera()V
 
-    .line 2452
+    .line 2455
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -717,7 +717,7 @@
 .method public onFlipLongClick()V
     .locals 1
 
-    .line 2457
+    .line 2460
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -726,7 +726,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2458
+    .line 2461
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -742,7 +742,7 @@
 .method public onGalleryClick()V
     .locals 2
 
-    .line 2438
+    .line 2441
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
@@ -759,7 +759,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2439
+    .line 2442
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v1, 0x1
@@ -773,7 +773,7 @@
 .method public onPhotoShoot()V
     .locals 6
 
-    .line 2253
+    .line 2256
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
@@ -820,7 +820,7 @@
 
     goto/16 :goto_4
 
-    .line 2256
+    .line 2259
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -830,7 +830,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2257
+    .line 2260
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
@@ -839,7 +839,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2259
+    .line 2262
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -851,7 +851,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2261
+    .line 2264
     :catch_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -859,7 +859,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7802(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/io/File;)Ljava/io/File;
 
-    .line 2263
+    .line 2266
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -875,7 +875,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7802(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/io/File;)Ljava/io/File;
 
-    .line 2264
+    .line 2267
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -884,7 +884,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->startTakePictureAnimation()V
 
-    .line 2266
+    .line 2269
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -921,12 +921,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 2267
+    .line 2270
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2268
+    .line 2271
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -935,7 +935,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->pauseAsTakingPicture()V
 
-    .line 2269
+    .line 2272
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -950,7 +950,7 @@
 
     move-result-object v0
 
-    .line 2270
+    .line 2273
     :try_start_1
     new-instance v3, Ljava/io/FileOutputStream;
 
@@ -968,7 +968,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 2271
+    .line 2274
     :try_start_2
     sget-object v4, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -978,7 +978,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 2273
+    .line 2276
     :try_start_3
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
@@ -998,7 +998,7 @@
     :catchall_0
     move-exception v4
 
-    .line 2270
+    .line 2273
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -1022,11 +1022,11 @@
 
     move v4, v2
 
-    .line 2274
+    .line 2277
     :goto_1
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2276
+    .line 2279
     :goto_2
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
@@ -1038,7 +1038,7 @@
     :goto_3
     if-nez v4, :cond_3
 
-    .line 2279
+    .line 2282
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -1049,7 +1049,7 @@
 
     move-result-object v0
 
-    .line 2280
+    .line 2283
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
@@ -1074,13 +1074,13 @@
 
     goto :goto_4
 
-    .line 2305
+    .line 2308
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2306
+    .line 2309
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
@@ -1093,7 +1093,7 @@
 
     invoke-static {v0, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryEntry;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 2307
+    .line 2310
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
@@ -1108,12 +1108,12 @@
 
     invoke-static {v0, v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacySelector;->applySaved(ILorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 2308
+    .line 2311
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2309
+    .line 2312
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
@@ -1126,7 +1126,7 @@
 .method public onVideoDuration(J)V
     .locals 2
 
-    .line 2433
+    .line 2436
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/VideoTimerView;
@@ -1143,7 +1143,7 @@
 .method public onVideoRecordEnd(Z)V
     .locals 3
 
-    .line 2417
+    .line 2420
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
@@ -1162,7 +1162,7 @@
 
     goto :goto_1
 
-    .line 2420
+    .line 2423
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -1170,7 +1170,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2421
+    .line 2424
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;)V
@@ -1195,7 +1195,7 @@
 .method public onVideoRecordLocked()V
     .locals 3
 
-    .line 2402
+    .line 2405
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintTextView;
@@ -1220,7 +1220,7 @@
 .method public onVideoRecordStart(ZLjava/lang/Runnable;)V
     .locals 11
 
-    .line 2315
+    .line 2318
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
@@ -1275,7 +1275,7 @@
 
     goto/16 :goto_0
 
-    .line 2318
+    .line 2321
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -1285,7 +1285,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2319
+    .line 2322
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -1294,7 +1294,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2321
+    .line 2324
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -1304,7 +1304,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2322
+    .line 2325
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -1313,7 +1313,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2324
+    .line 2327
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -1323,14 +1323,14 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2325
+    .line 2328
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2326
+    .line 2329
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
@@ -1339,7 +1339,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 2328
+    .line 2331
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -1351,7 +1351,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2330
+    .line 2333
     :catch_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -1359,7 +1359,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7802(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/io/File;)Ljava/io/File;
 
-    .line 2332
+    .line 2335
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
@@ -1373,7 +1373,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7802(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/io/File;)Ljava/io/File;
 
-    .line 2333
+    .line 2336
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v3
@@ -1406,17 +1406,17 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    .line 2390
+    .line 2393
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     move-result-object v9
 
     const/4 v10, 0x0
 
-    .line 2333
+    .line 2336
     invoke-virtual/range {v3 .. v10}, Lorg/telegram/messenger/camera/CameraController;->recordVideo(Lorg/telegram/messenger/camera/CameraSession;Ljava/io/File;ZLorg/telegram/messenger/camera/CameraController$VideoTakeCallback;Ljava/lang/Runnable;Lorg/telegram/messenger/camera/CameraController$ICameraView;Z)V
 
-    .line 2392
+    .line 2395
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
@@ -1425,12 +1425,12 @@
 
     if-nez p1, :cond_4
 
-    .line 2393
+    .line 2396
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
 
-    .line 2394
+    .line 2397
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
@@ -1439,7 +1439,7 @@
 
     invoke-static {p1, p2, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$8400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
 
-    .line 2395
+    .line 2398
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$2500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
@@ -1454,7 +1454,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->switchMode(Z)V
 
-    .line 2396
+    .line 2399
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$4100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/RecordControl;
@@ -1477,7 +1477,7 @@
 .method public onZoom(F)V
     .locals 2
 
-    .line 2464
+    .line 2467
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/ZoomControlView;
@@ -1488,7 +1488,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/ZoomControlView;->setZoom(FZ)V
 
-    .line 2465
+    .line 2468
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     const/4 v0, 0x0

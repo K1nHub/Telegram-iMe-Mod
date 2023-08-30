@@ -74,38 +74,38 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 3611
+    .line 3620
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3479
+    .line 3488
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
-    .line 3480
+    .line 3489
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
-    .line 3481
+    .line 3490
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
-    .line 3482
+    .line 3491
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
-    .line 3483
+    .line 3492
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -114,10 +114,10 @@
 
     const/4 v1, 0x4
 
-    .line 3612
+    .line 3621
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
-    .line 3613
+    .line 3622
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;-><init>()V
@@ -138,45 +138,45 @@
         }
     .end annotation
 
-    .line 3616
+    .line 3625
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3479
+    .line 3488
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
-    .line 3480
+    .line 3489
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
-    .line 3481
+    .line 3490
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
-    .line 3482
+    .line 3491
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
-    .line 3483
+    .line 3492
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
-    .line 3617
+    .line 3626
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
     const/4 v2, 0x0
@@ -185,7 +185,7 @@
 
     if-ne p1, v3, :cond_2
 
-    .line 3619
+    .line 3628
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;-><init>()V
@@ -196,19 +196,19 @@
 
     if-eqz p3, :cond_a
 
-    .line 3620
+    .line 3629
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_a
 
-    .line 3621
+    .line 3630
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
-    .line 3622
+    .line 3631
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -216,7 +216,7 @@
 
     if-ge v2, v0, :cond_1
 
-    .line 3623
+    .line 3632
     invoke-virtual {p3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -227,7 +227,7 @@
 
     move-result-wide v0
 
-    .line 3624
+    .line 3633
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -236,7 +236,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3625
+    .line 3634
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -247,17 +247,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 3626
+    .line 3635
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v1, :cond_0
 
-    .line 3627
+    .line 3636
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3628
+    .line 3637
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -267,7 +267,7 @@
 
     goto :goto_0
 
-    .line 3631
+    .line 3640
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -280,7 +280,7 @@
 
     if-ne p1, v3, :cond_3
 
-    .line 3634
+    .line 3643
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;-><init>()V
@@ -294,7 +294,7 @@
 
     if-ne p1, v3, :cond_6
 
-    .line 3636
+    .line 3645
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;-><init>()V
@@ -305,19 +305,19 @@
 
     if-eqz p3, :cond_a
 
-    .line 3637
+    .line 3646
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_a
 
-    .line 3638
+    .line 3647
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
-    .line 3639
+    .line 3648
     :goto_1
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -325,7 +325,7 @@
 
     if-ge v2, v0, :cond_5
 
-    .line 3640
+    .line 3649
     invoke-virtual {p3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -336,7 +336,7 @@
 
     move-result-wide v0
 
-    .line 3641
+    .line 3650
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -345,7 +345,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3642
+    .line 3651
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -356,17 +356,17 @@
 
     if-eqz v0, :cond_4
 
-    .line 3643
+    .line 3652
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v1, :cond_4
 
-    .line 3644
+    .line 3653
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3645
+    .line 3654
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -376,7 +376,7 @@
 
     goto :goto_1
 
-    .line 3648
+    .line 3657
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -393,19 +393,19 @@
 
     if-eqz p3, :cond_a
 
-    .line 3651
+    .line 3660
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_a
 
-    .line 3652
+    .line 3661
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;-><init>()V
 
-    .line 3653
+    .line 3662
     :goto_2
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -413,7 +413,7 @@
 
     if-ge v2, v0, :cond_8
 
-    .line 3654
+    .line 3663
     invoke-virtual {p3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -424,7 +424,7 @@
 
     move-result-wide v0
 
-    .line 3655
+    .line 3664
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -433,7 +433,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3656
+    .line 3665
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -444,17 +444,17 @@
 
     if-eqz v0, :cond_7
 
-    .line 3657
+    .line 3666
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v1, :cond_7
 
-    .line 3658
+    .line 3667
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3659
+    .line 3668
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -464,7 +464,7 @@
 
     goto :goto_2
 
-    .line 3662
+    .line 3671
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -479,7 +479,7 @@
 
     if-eqz p3, :cond_a
 
-    .line 3666
+    .line 3675
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     :cond_a
@@ -498,47 +498,47 @@
         }
     .end annotation
 
-    .line 3485
+    .line 3494
     const-class v0, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3479
+    .line 3488
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
-    .line 3480
+    .line 3489
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
-    .line 3481
+    .line 3490
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
-    .line 3482
+    .line 3491
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
-    .line 3483
+    .line 3492
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
-    .line 3487
+    .line 3496
     const-class v2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     invoke-direct {p0, p2, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->containsRule(Ljava/util/ArrayList;Ljava/lang/Class;)Ljava/lang/Object;
@@ -551,17 +551,17 @@
 
     if-eqz v2, :cond_2
 
-    .line 3488
+    .line 3497
     iput v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
-    .line 3489
+    .line 3498
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;-><init>()V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3491
+    .line 3500
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->containsRule(Ljava/util/ArrayList;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p2
@@ -570,17 +570,17 @@
 
     if-eqz p2, :cond_a
 
-    .line 3493
+    .line 3502
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
-    .line 3494
+    .line 3503
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
 
-    .line 3495
+    .line 3504
     :goto_0
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
@@ -590,7 +590,7 @@
 
     if-ge v4, v1, :cond_1
 
-    .line 3496
+    .line 3505
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -603,22 +603,22 @@
 
     move-result-wide v1
 
-    .line 3497
+    .line 3506
     invoke-virtual {p1, v1, v2}, Lorg/telegram/messenger/MessagesController;->getInputUser(J)Lorg/telegram/tgnet/TLRPC$InputUser;
 
     move-result-object v3
 
-    .line 3498
+    .line 3507
     instance-of v5, v3, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v5, :cond_0
 
-    .line 3499
+    .line 3508
     iget-object v5, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3500
+    .line 3509
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -627,7 +627,7 @@
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3501
+    .line 3510
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -637,7 +637,7 @@
 
     goto :goto_0
 
-    .line 3504
+    .line 3513
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -645,7 +645,7 @@
 
     goto/16 :goto_3
 
-    .line 3506
+    .line 3515
     :cond_2
     const-class v2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;
 
@@ -657,10 +657,10 @@
 
     const/4 p1, 0x1
 
-    .line 3507
+    .line 3516
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
-    .line 3508
+    .line 3517
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;-><init>()V
@@ -669,7 +669,7 @@
 
     goto/16 :goto_3
 
-    .line 3509
+    .line 3518
     :cond_3
     const-class v2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
@@ -683,20 +683,20 @@
 
     const/4 p2, 0x3
 
-    .line 3510
+    .line 3519
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
-    .line 3512
+    .line 3521
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;-><init>()V
 
-    .line 3513
+    .line 3522
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
 
-    .line 3514
+    .line 3523
     :goto_1
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
@@ -706,7 +706,7 @@
 
     if-ge v4, v0, :cond_5
 
-    .line 3515
+    .line 3524
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -719,22 +719,22 @@
 
     move-result-wide v0
 
-    .line 3516
+    .line 3525
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/MessagesController;->getInputUser(J)Lorg/telegram/tgnet/TLRPC$InputUser;
 
     move-result-object v3
 
-    .line 3517
+    .line 3526
     instance-of v5, v3, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v5, :cond_4
 
-    .line 3518
+    .line 3527
     iget-object v5, p2, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3519
+    .line 3528
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -743,7 +743,7 @@
 
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3520
+    .line 3529
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -753,7 +753,7 @@
 
     goto :goto_1
 
-    .line 3523
+    .line 3532
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -761,7 +761,7 @@
 
     goto :goto_3
 
-    .line 3524
+    .line 3533
     :cond_6
     const-class v2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
@@ -773,17 +773,17 @@
 
     const/4 v2, 0x2
 
-    .line 3525
+    .line 3534
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
-    .line 3526
+    .line 3535
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;-><init>()V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3528
+    .line 3537
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->containsRule(Ljava/util/ArrayList;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p2
@@ -792,17 +792,17 @@
 
     if-eqz p2, :cond_a
 
-    .line 3530
+    .line 3539
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
-    .line 3531
+    .line 3540
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
 
-    .line 3532
+    .line 3541
     :goto_2
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
@@ -812,7 +812,7 @@
 
     if-ge v4, v1, :cond_8
 
-    .line 3533
+    .line 3542
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -825,22 +825,22 @@
 
     move-result-wide v1
 
-    .line 3534
+    .line 3543
     invoke-virtual {p1, v1, v2}, Lorg/telegram/messenger/MessagesController;->getInputUser(J)Lorg/telegram/tgnet/TLRPC$InputUser;
 
     move-result-object v3
 
-    .line 3535
+    .line 3544
     instance-of v5, v3, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v5, :cond_7
 
-    .line 3536
+    .line 3545
     iget-object v5, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3537
+    .line 3546
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -849,7 +849,7 @@
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3538
+    .line 3547
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -859,7 +859,7 @@
 
     goto :goto_2
 
-    .line 3541
+    .line 3550
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -867,7 +867,7 @@
 
     goto :goto_3
 
-    .line 3544
+    .line 3553
     :cond_9
     iput v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
@@ -887,45 +887,45 @@
         }
     .end annotation
 
-    .line 3671
+    .line 3680
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3479
+    .line 3488
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
-    .line 3480
+    .line 3489
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
-    .line 3481
+    .line 3490
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
-    .line 3482
+    .line 3491
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
-    .line 3483
+    .line 3492
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
-    .line 3672
+    .line 3681
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
     const/4 v0, 0x0
@@ -934,7 +934,7 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 3674
+    .line 3683
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;-><init>()V
@@ -943,19 +943,19 @@
 
     if-eqz p2, :cond_b
 
-    .line 3675
+    .line 3684
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_b
 
-    .line 3676
+    .line 3685
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
-    .line 3677
+    .line 3686
     :goto_0
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -963,7 +963,7 @@
 
     if-ge v0, p3, :cond_1
 
-    .line 3678
+    .line 3687
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p3
@@ -972,12 +972,12 @@
 
     if-eqz p3, :cond_0
 
-    .line 3680
+    .line 3689
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3681
+    .line 3690
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-wide v2, p3, Lorg/telegram/tgnet/TLRPC$InputUser;->user_id:J
@@ -988,7 +988,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3682
+    .line 3691
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -998,7 +998,7 @@
 
     goto :goto_0
 
-    .line 3685
+    .line 3694
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -1011,7 +1011,7 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 3688
+    .line 3697
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;-><init>()V
@@ -1025,7 +1025,7 @@
 
     if-ne p1, v1, :cond_6
 
-    .line 3690
+    .line 3699
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;-><init>()V
@@ -1034,19 +1034,19 @@
 
     if-eqz p2, :cond_b
 
-    .line 3691
+    .line 3700
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_b
 
-    .line 3692
+    .line 3701
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
-    .line 3693
+    .line 3702
     :goto_1
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -1054,7 +1054,7 @@
 
     if-ge v0, p3, :cond_5
 
-    .line 3694
+    .line 3703
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p3
@@ -1063,12 +1063,12 @@
 
     if-eqz p3, :cond_4
 
-    .line 3696
+    .line 3705
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3697
+    .line 3706
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-wide v2, p3, Lorg/telegram/tgnet/TLRPC$InputUser;->user_id:J
@@ -1079,7 +1079,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3698
+    .line 3707
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1089,7 +1089,7 @@
 
     goto :goto_1
 
-    .line 3701
+    .line 3710
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -1104,19 +1104,19 @@
 
     if-eqz p2, :cond_b
 
-    .line 3704
+    .line 3713
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_b
 
-    .line 3705
+    .line 3714
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;-><init>()V
 
-    .line 3706
+    .line 3715
     :goto_2
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -1124,7 +1124,7 @@
 
     if-ge v0, p3, :cond_8
 
-    .line 3707
+    .line 3716
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p3
@@ -1133,12 +1133,12 @@
 
     if-eqz p3, :cond_7
 
-    .line 3709
+    .line 3718
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3710
+    .line 3719
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-wide v2, p3, Lorg/telegram/tgnet/TLRPC$InputUser;->user_id:J
@@ -1149,7 +1149,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3711
+    .line 3720
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedInputUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1159,7 +1159,7 @@
 
     goto :goto_2
 
-    .line 3714
+    .line 3723
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -1174,7 +1174,7 @@
 
     if-eqz p2, :cond_b
 
-    .line 3718
+    .line 3727
     :goto_3
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -1182,7 +1182,7 @@
 
     if-ge v0, p1, :cond_b
 
-    .line 3719
+    .line 3728
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -1191,7 +1191,7 @@
 
     if-eqz p1, :cond_a
 
-    .line 3721
+    .line 3730
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$InputUser;->user_id:J
@@ -1229,7 +1229,7 @@
 
     const/4 v0, 0x0
 
-    .line 3592
+    .line 3601
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1237,14 +1237,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 3593
+    .line 3602
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$PrivacyRule;
 
-    .line 3594
+    .line 3603
     invoke-virtual {p2, v1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
     move-result v2
@@ -1278,12 +1278,12 @@
         }
     .end annotation
 
-    .line 3821
+    .line 3830
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
 
-    .line 3822
+    .line 3831
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1292,7 +1292,7 @@
 
     move v2, v1
 
-    .line 3823
+    .line 3832
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1300,7 +1300,7 @@
 
     if-ge v2, v3, :cond_a
 
-    .line 3824
+    .line 3833
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1311,13 +1311,13 @@
 
     goto/16 :goto_3
 
-    .line 3828
+    .line 3837
     :cond_0
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     if-eqz v4, :cond_1
 
-    .line 3829
+    .line 3838
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;-><init>()V
@@ -1326,13 +1326,13 @@
 
     goto/16 :goto_3
 
-    .line 3830
+    .line 3839
     :cond_1
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;
 
     if-eqz v4, :cond_2
 
-    .line 3831
+    .line 3840
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;-><init>()V
@@ -1341,13 +1341,13 @@
 
     goto/16 :goto_3
 
-    .line 3832
+    .line 3841
     :cond_2
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
     if-eqz v4, :cond_3
 
-    .line 3833
+    .line 3842
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;-><init>()V
@@ -1356,23 +1356,23 @@
 
     goto :goto_3
 
-    .line 3834
+    .line 3843
     :cond_3
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
     if-eqz v4, :cond_6
 
-    .line 3835
+    .line 3844
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
-    .line 3836
+    .line 3845
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;-><init>()V
 
     move v5, v1
 
-    .line 3837
+    .line 3846
     :goto_1
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
@@ -1382,7 +1382,7 @@
 
     if-ge v5, v6, :cond_5
 
-    .line 3838
+    .line 3847
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1399,12 +1399,12 @@
 
     move-result-object v6
 
-    .line 3839
+    .line 3848
     instance-of v7, v6, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v7, :cond_4
 
-    .line 3840
+    .line 3849
     iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1414,29 +1414,29 @@
 
     goto :goto_1
 
-    .line 3843
+    .line 3852
     :cond_5
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 3844
+    .line 3853
     :cond_6
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
     if-eqz v4, :cond_9
 
-    .line 3845
+    .line 3854
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
-    .line 3846
+    .line 3855
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;-><init>()V
 
     move v5, v1
 
-    .line 3847
+    .line 3856
     :goto_2
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
@@ -1446,7 +1446,7 @@
 
     if-ge v5, v6, :cond_8
 
-    .line 3848
+    .line 3857
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1463,12 +1463,12 @@
 
     move-result-object v6
 
-    .line 3849
+    .line 3858
     instance-of v7, v6, Lorg/telegram/tgnet/TLRPC$TL_inputUserEmpty;
 
     if-nez v7, :cond_7
 
-    .line 3850
+    .line 3859
     iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1478,7 +1478,7 @@
 
     goto :goto_2
 
-    .line 3853
+    .line 3862
     :cond_8
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1506,7 +1506,7 @@
         }
     .end annotation
 
-    .line 3860
+    .line 3869
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1515,7 +1515,7 @@
 
     move v2, v1
 
-    .line 3861
+    .line 3870
     :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -1523,7 +1523,7 @@
 
     if-ge v2, v3, :cond_8
 
-    .line 3862
+    .line 3871
     invoke-virtual {p0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1534,13 +1534,13 @@
 
     goto/16 :goto_3
 
-    .line 3866
+    .line 3875
     :cond_0
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
     if-eqz v4, :cond_1
 
-    .line 3867
+    .line 3876
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;-><init>()V
@@ -1549,13 +1549,13 @@
 
     goto/16 :goto_3
 
-    .line 3868
+    .line 3877
     :cond_1
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;
 
     if-eqz v4, :cond_2
 
-    .line 3869
+    .line 3878
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;-><init>()V
@@ -1564,13 +1564,13 @@
 
     goto :goto_3
 
-    .line 3870
+    .line 3879
     :cond_2
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
 
     if-eqz v4, :cond_3
 
-    .line 3871
+    .line 3880
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;-><init>()V
@@ -1579,23 +1579,23 @@
 
     goto :goto_3
 
-    .line 3872
+    .line 3881
     :cond_3
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     if-eqz v4, :cond_5
 
-    .line 3873
+    .line 3882
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
-    .line 3874
+    .line 3883
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;-><init>()V
 
     move v5, v1
 
-    .line 3875
+    .line 3884
     :goto_1
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
@@ -1605,7 +1605,7 @@
 
     if-ge v5, v6, :cond_4
 
-    .line 3876
+    .line 3885
     iget-object v6, v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
@@ -1628,29 +1628,29 @@
 
     goto :goto_1
 
-    .line 3878
+    .line 3887
     :cond_4
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 3879
+    .line 3888
     :cond_5
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     if-eqz v4, :cond_7
 
-    .line 3880
+    .line 3889
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
-    .line 3881
+    .line 3890
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;-><init>()V
 
     move v5, v1
 
-    .line 3882
+    .line 3891
     :goto_2
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
@@ -1660,7 +1660,7 @@
 
     if-ge v5, v6, :cond_6
 
-    .line 3883
+    .line 3892
     iget-object v6, v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
@@ -1683,7 +1683,7 @@
 
     goto :goto_2
 
-    .line 3885
+    .line 3894
     :cond_6
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1708,7 +1708,7 @@
 
     return v0
 
-    .line 3895
+    .line 3904
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
@@ -1718,7 +1718,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 3896
+    .line 3905
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -1740,7 +1740,7 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 3898
+    .line 3907
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -1767,7 +1767,7 @@
     :cond_3
     if-ne v1, v3, :cond_4
 
-    .line 3900
+    .line 3909
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$User;->close_friend:Z
 
     return p1
@@ -1777,7 +1777,7 @@
 
     if-ne v1, v2, :cond_5
 
-    .line 3902
+    .line 3911
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -1799,7 +1799,7 @@
 .method public isCloseFriends()Z
     .locals 2
 
-    .line 3737
+    .line 3746
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
     const/4 v1, 0x1
@@ -1818,7 +1818,7 @@
 .method public isNone()Z
     .locals 1
 
-    .line 3733
+    .line 3742
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1849,7 +1849,7 @@
 .method public isShare()Z
     .locals 2
 
-    .line 3729
+    .line 3738
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
     const/4 v1, 0x5
@@ -1870,7 +1870,7 @@
 .method public toString()Ljava/lang/String;
     .locals 9
 
-    .line 3743
+    .line 3752
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1881,7 +1881,7 @@
 
     if-nez v0, :cond_0
 
-    .line 3744
+    .line 3753
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1898,7 +1898,7 @@
 
     return-object v0
 
-    .line 3746
+    .line 3755
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -1910,7 +1910,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3747
+    .line 3756
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyNone:I
 
     invoke-static {v2, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -1919,7 +1919,7 @@
 
     return-object v0
 
-    .line 3749
+    .line 3758
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -1929,7 +1929,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$InputPrivacyRule;
 
-    .line 3750
+    .line 3759
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
     const/4 v4, 0x4
@@ -1942,7 +1942,7 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 3751
+    .line 3760
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1961,13 +1961,13 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$InputPrivacyRule;
 
-    .line 3752
+    .line 3761
     :cond_2
     instance-of v0, v5, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     if-eqz v0, :cond_3
 
-    .line 3753
+    .line 3762
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     iget-object v0, v5, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
@@ -1982,14 +1982,14 @@
 
     const-string v2, "StoryPrivacyEveryoneExclude"
 
-    .line 3755
+    .line 3764
     invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 3758
+    .line 3767
     :cond_3
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyEveryone:I
 
@@ -2004,7 +2004,7 @@
     :cond_4
     if-ne v3, v7, :cond_5
 
-    .line 3760
+    .line 3769
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyCloseFriends:I
 
     const-string v1, "StoryPrivacyCloseFriends"
@@ -2022,12 +2022,12 @@
 
     if-ne v3, v4, :cond_6
 
-    .line 3761
+    .line 3770
     instance-of v4, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     if-eqz v4, :cond_6
 
-    .line 3762
+    .line 3771
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
@@ -2038,7 +2038,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 3763
+    .line 3772
     invoke-static {v8, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -2048,7 +2048,7 @@
     :cond_6
     if-ne v3, v6, :cond_a
 
-    .line 3765
+    .line 3774
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2067,7 +2067,7 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$InputPrivacyRule;
 
-    .line 3766
+    .line 3775
     :cond_7
     instance-of v0, v5, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
@@ -2075,7 +2075,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 3767
+    .line 3776
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     iget-object v0, v5, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
@@ -2090,14 +2090,14 @@
 
     const-string v2, "StoryPrivacyContactsExclude"
 
-    .line 3769
+    .line 3778
     invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 3771
+    .line 3780
     :cond_8
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyAllContacts:I
 
@@ -2107,7 +2107,7 @@
 
     return-object v0
 
-    .line 3774
+    .line 3783
     :cond_9
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyAllContacts:I
 
@@ -2120,12 +2120,12 @@
     :cond_a
     if-nez v3, :cond_d
 
-    .line 3777
+    .line 3786
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     if-eqz v3, :cond_c
 
-    .line 3778
+    .line 3787
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
@@ -2136,7 +2136,7 @@
 
     if-gtz v0, :cond_b
 
-    .line 3780
+    .line 3789
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyNone:I
 
     invoke-static {v2, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -2148,14 +2148,14 @@
     :cond_b
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 3782
+    .line 3791
     invoke-static {v8, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 3785
+    .line 3794
     :cond_c
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyNone:I
 
@@ -2165,7 +2165,7 @@
 
     return-object v0
 
-    .line 3788
+    .line 3797
     :cond_d
     sget v0, Lorg/telegram/messenger/R$string;->StoryPrivacyNone:I
 
@@ -2187,7 +2187,7 @@
         }
     .end annotation
 
-    .line 3792
+    .line 3801
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -2196,7 +2196,7 @@
 
     move v2, v1
 
-    .line 3793
+    .line 3802
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
@@ -2206,7 +2206,7 @@
 
     if-ge v2, v3, :cond_7
 
-    .line 3794
+    .line 3803
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->rules:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2215,12 +2215,12 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$InputPrivacyRule;
 
-    .line 3795
+    .line 3804
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowAll;
 
     if-eqz v4, :cond_0
 
-    .line 3796
+    .line 3805
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowAll;-><init>()V
@@ -2229,13 +2229,13 @@
 
     goto/16 :goto_3
 
-    .line 3797
+    .line 3806
     :cond_0
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowCloseFriends;
 
     if-eqz v4, :cond_1
 
-    .line 3798
+    .line 3807
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowCloseFriends;-><init>()V
@@ -2244,13 +2244,13 @@
 
     goto :goto_3
 
-    .line 3799
+    .line 3808
     :cond_1
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowContacts;
 
     if-eqz v4, :cond_2
 
-    .line 3800
+    .line 3809
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowContacts;-><init>()V
@@ -2259,23 +2259,23 @@
 
     goto :goto_3
 
-    .line 3801
+    .line 3810
     :cond_2
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
     if-eqz v4, :cond_4
 
-    .line 3802
+    .line 3811
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;
 
-    .line 3803
+    .line 3812
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;-><init>()V
 
     move v5, v1
 
-    .line 3804
+    .line 3813
     :goto_1
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
@@ -2285,7 +2285,7 @@
 
     if-ge v5, v6, :cond_3
 
-    .line 3805
+    .line 3814
     iget-object v6, v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueDisallowUsers;->users:Ljava/util/ArrayList;
 
     iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueDisallowUsers;->users:Ljava/util/ArrayList;
@@ -2308,29 +2308,29 @@
 
     goto :goto_1
 
-    .line 3807
+    .line 3816
     :cond_3
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 3808
+    .line 3817
     :cond_4
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
     if-eqz v4, :cond_6
 
-    .line 3809
+    .line 3818
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;
 
-    .line 3810
+    .line 3819
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;-><init>()V
 
     move v5, v1
 
-    .line 3811
+    .line 3820
     :goto_2
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
@@ -2340,7 +2340,7 @@
 
     if-ge v5, v6, :cond_5
 
-    .line 3812
+    .line 3821
     iget-object v6, v4, Lorg/telegram/tgnet/TLRPC$TL_privacyValueAllowUsers;->users:Ljava/util/ArrayList;
 
     iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyValueAllowUsers;->users:Ljava/util/ArrayList;
@@ -2363,7 +2363,7 @@
 
     goto :goto_2
 
-    .line 3814
+    .line 3823
     :cond_5
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

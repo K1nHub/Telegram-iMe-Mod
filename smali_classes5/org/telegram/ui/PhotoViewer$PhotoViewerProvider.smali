@@ -116,6 +116,9 @@
 .method public abstract onPreOpen()V
 .end method
 
+.method public abstract onReleasePlayerBeforeClose(I)V
+.end method
+
 .method public abstract openPhotoForEdit(Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 

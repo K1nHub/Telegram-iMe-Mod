@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController$SavedFilterState;)V
     .locals 0
 
-    .line 2077
+    .line 2078
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public fillAndGetCurveBuffer()Ljava/nio/ByteBuffer;
     .locals 1
 
-    .line 2201
+    .line 2202
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->fillBuffer()V
 
-    .line 2202
+    .line 2203
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
@@ -58,7 +58,7 @@
 .method public getBlurAngle()F
     .locals 1
 
-    .line 2186
+    .line 2187
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurAngle:F
@@ -69,7 +69,7 @@
 .method public getBlurExcludeBlurSize()F
     .locals 1
 
-    .line 2181
+    .line 2182
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeBlurSize:F
@@ -80,7 +80,7 @@
 .method public getBlurExcludePoint()Lorg/telegram/ui/Components/Point;
     .locals 1
 
-    .line 2191
+    .line 2192
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
@@ -91,7 +91,7 @@
 .method public getBlurExcludeSize()F
     .locals 1
 
-    .line 2176
+    .line 2177
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeSize:F
@@ -102,7 +102,7 @@
 .method public getBlurType()I
     .locals 1
 
-    .line 2171
+    .line 2172
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurType:I
@@ -113,7 +113,7 @@
 .method public getContrastValue()F
     .locals 2
 
-    .line 2110
+    .line 2111
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->contrastValue:F
@@ -136,7 +136,7 @@
 .method public getEnhanceValue()F
     .locals 2
 
-    .line 2100
+    .line 2101
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->enhanceValue:F
@@ -151,7 +151,7 @@
 .method public getExposureValue()F
     .locals 2
 
-    .line 2105
+    .line 2106
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->exposureValue:F
@@ -166,7 +166,7 @@
 .method public getFadeValue()F
     .locals 2
 
-    .line 2135
+    .line 2136
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->fadeValue:F
@@ -181,7 +181,7 @@
 .method public getGrainValue()F
     .locals 2
 
-    .line 2130
+    .line 2131
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->grainValue:F
@@ -200,7 +200,7 @@
 .method public getHighlightsValue()F
     .locals 2
 
-    .line 2095
+    .line 2096
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->highlightsValue:F
@@ -221,7 +221,7 @@
 .method public getSaturationValue()F
     .locals 2
 
-    .line 2152
+    .line 2153
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->saturationValue:F
@@ -251,7 +251,7 @@
 .method public getShadowsValue()F
     .locals 2
 
-    .line 2090
+    .line 2091
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->shadowsValue:F
@@ -272,7 +272,7 @@
 .method public getSharpenValue()F
     .locals 2
 
-    .line 2125
+    .line 2126
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->sharpenValue:F
@@ -295,7 +295,7 @@
 .method public getSoftenSkinValue()F
     .locals 2
 
-    .line 2085
+    .line 2086
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->softenSkinValue:F
@@ -310,7 +310,7 @@
 .method public getTintHighlightsColor()I
     .locals 1
 
-    .line 2161
+    .line 2162
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintHighlightsColor:I
@@ -321,7 +321,7 @@
 .method public getTintHighlightsIntensityValue()F
     .locals 1
 
-    .line 2141
+    .line 2142
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintHighlightsColor:I
@@ -342,7 +342,7 @@
 .method public getTintShadowsColor()I
     .locals 1
 
-    .line 2166
+    .line 2167
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintShadowsColor:I
@@ -353,7 +353,7 @@
 .method public getTintShadowsIntensityValue()F
     .locals 1
 
-    .line 2147
+    .line 2148
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintShadowsColor:I
@@ -374,7 +374,7 @@
 .method public getVignetteValue()F
     .locals 2
 
-    .line 2120
+    .line 2121
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->vignetteValue:F
@@ -389,7 +389,7 @@
 .method public getWarmthValue()F
     .locals 2
 
-    .line 2115
+    .line 2116
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->warmthValue:F
@@ -404,7 +404,7 @@
 .method public shouldDrawCurvesPass()Z
     .locals 1
 
-    .line 2196
+    .line 2197
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$1;->val$lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;

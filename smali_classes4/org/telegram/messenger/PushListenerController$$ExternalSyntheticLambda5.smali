@@ -45,7 +45,7 @@
 
     iget-wide v3, p0, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda5;->f$3:J
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$WHk2xlzbP-DzuH8js5NADkbNDVY(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;J)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$RnNzy96er50m7BOW506q8-bj4sE(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;J)V
 
     return-void
 .end method

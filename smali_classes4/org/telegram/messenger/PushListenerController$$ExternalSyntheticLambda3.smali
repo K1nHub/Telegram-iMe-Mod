@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda3;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updates;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$swoE-5CRXa6sDNZ8FzJJacZD9ck(ILorg/telegram/tgnet/TLRPC$TL_updates;)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$b7abWDLvBglo08Wszb99zjQvssA(ILorg/telegram/tgnet/TLRPC$TL_updates;)V
 
     return-void
 .end method

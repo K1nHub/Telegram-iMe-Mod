@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract clip(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+.method public abstract clip(Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
 .end method

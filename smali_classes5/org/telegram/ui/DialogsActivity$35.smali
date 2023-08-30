@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 6843
+    .line 6819
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAnimation(III)V
     .locals 0
 
-    .line 6849
+    .line 6825
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 6850
+    .line 6826
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -47,7 +47,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 6851
+    .line 6827
     sget p2, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_camera:I
 
     if-eq p1, p2, :cond_1
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 6856
+    .line 6832
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -70,7 +70,7 @@
 
     goto :goto_1
 
-    .line 6852
+    .line 6828
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -91,7 +91,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$29800(Lorg/telegram/ui/DialogsActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$29700(Lorg/telegram/ui/DialogsActivity;)I
 
     move-result p1
 
@@ -119,7 +119,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 6853
+    .line 6829
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object p1
@@ -134,10 +134,10 @@
 .method public setImageResource(I)V
     .locals 0
 
-    .line 6863
+    .line 6839
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 6864
+    .line 6840
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -146,7 +146,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 6865
+    .line 6841
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Stories/recorder/HintView2;

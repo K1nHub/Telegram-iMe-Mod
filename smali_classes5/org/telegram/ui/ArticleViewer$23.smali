@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ArticleViewer;->open(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;Ljava/lang/String;Z)Z
+    value = Lorg/telegram/ui/ArticleViewer;->showProgressView(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,79 +17,113 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ArticleViewer;
 
+.field final synthetic val$show:Z
+
 
 # direct methods
-.method public static synthetic $r8$lambda$WzArsyyV9lH-lShriOSS9omzW0Y(Lorg/telegram/ui/ArticleViewer$23;)V
+.method constructor <init>(Lorg/telegram/ui/ArticleViewer;Z)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/ArticleViewer$23;->lambda$onAnimationEnd$0()V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
-    .locals 0
-
-    .line 4419
+    .line 4531
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/ArticleViewer$23;->val$show:Z
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
-.method private synthetic lambda$onAnimationEnd$0()V
-    .locals 2
 
-    .line 4423
+# virtual methods
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
+
+    .line 4545
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10600(Lorg/telegram/ui/ArticleViewer;)Lorg/telegram/messenger/AnimationNotificationsLocker;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
-
-    .line 4424
-    iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11000(Lorg/telegram/ui/ArticleViewer;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 4425
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$10700(Lorg/telegram/ui/ArticleViewer;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11000(Lorg/telegram/ui/ArticleViewer;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    .line 4426
-    iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
+    move-result p1
 
-    const/4 v1, 0x0
+    if-eqz p1, :cond_0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ArticleViewer;->access$10702(Lorg/telegram/ui/ArticleViewer;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    .line 4546
+    iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ArticleViewer;->access$11002(Lorg/telegram/ui/ArticleViewer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
     :cond_0
     return-void
 .end method
 
-
-# virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
+    .locals 1
 
-    .line 4422
-    new-instance p1, Lorg/telegram/ui/ArticleViewer$23$$ExternalSyntheticLambda0;
+    .line 4534
+    iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/ArticleViewer$23$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ArticleViewer$23;)V
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11000(Lorg/telegram/ui/ArticleViewer;)Landroid/animation/AnimatorSet;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    move-result-object v0
 
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$11000(Lorg/telegram/ui/ArticleViewer;)Landroid/animation/AnimatorSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    .line 4535
+    iget-boolean p1, p0, Lorg/telegram/ui/ArticleViewer$23;->val$show:Z
+
+    const/4 v0, 0x4
+
+    if-nez p1, :cond_0
+
+    .line 4536
+    iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$11100(Lorg/telegram/ui/ArticleViewer;)Lorg/telegram/ui/Components/ContextProgressView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ContextProgressView;->setVisibility(I)V
+
+    goto :goto_0
+
+    .line 4538
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$23;->this$0:Lorg/telegram/ui/ArticleViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$2800(Lorg/telegram/ui/ArticleViewer;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    :cond_1
+    :goto_0
     return-void
 .end method

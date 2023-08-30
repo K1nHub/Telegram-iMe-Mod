@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
-    .line 4487
+    .line 4490
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$20;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/GroupCallActivity$20;->val$context:Landroid/content/Context;
@@ -45,7 +45,7 @@
 .method private synthetic lambda$createTextView$0(Landroid/widget/TextView;Landroid/view/View;)V
     .locals 1
 
-    .line 4498
+    .line 4501
     iget-object p2, p0, Lorg/telegram/ui/GroupCallActivity$20;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     iget-object v0, p2, Lorg/telegram/ui/GroupCallActivity;->call:Lorg/telegram/messenger/ChatObject$Call;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4499
+    .line 4502
     invoke-static {p2, p1}, Lorg/telegram/ui/GroupCallActivity;->access$16100(Lorg/telegram/ui/GroupCallActivity;Landroid/view/View;)V
 
     :cond_0
@@ -68,14 +68,14 @@
 .method protected createTextView()Landroid/widget/TextView;
     .locals 3
 
-    .line 4490
+    .line 4493
     new-instance v0, Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/GroupCallActivity$20;->val$context:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 4491
+    .line 4494
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItems:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -88,12 +88,12 @@
 
     const/high16 v2, 0x41a00000    # 20.0f
 
-    .line 4492
+    .line 4495
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v2, "fonts/rmedium.ttf"
 
-    .line 4493
+    .line 4496
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v2
@@ -102,18 +102,18 @@
 
     const/16 v2, 0x33
 
-    .line 4494
+    .line 4497
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 4495
+    .line 4498
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 4496
+    .line 4499
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 4497
+    .line 4500
     new-instance v1, Lorg/telegram/ui/GroupCallActivity$20$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/GroupCallActivity$20$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/GroupCallActivity$20;Landroid/widget/TextView;)V

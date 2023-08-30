@@ -10219,7 +10219,7 @@
 .end method
 
 .method private checkPinchToZoom(Landroid/view/MotionEvent;)Z
-    .locals 3
+    .locals 8
 
     .line 3437
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->delegate:Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -10249,99 +10249,107 @@
 
     move-result-object v0
 
-    .line 3442
     :goto_0
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    move-object v2, v0
 
-    if-eqz v2, :cond_5
-
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->photoImage:Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->hasNotThumb()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
+    .line 3442
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_5
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->photoImage:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isSticker()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->hasNotThumb()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_5
+    if-eqz v0, :cond_5
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    if-eqz v2, :cond_5
+
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isSticker()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
     .line 3443
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isAnimatedEmoji()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isAnimatedEmoji()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_5
+    if-nez v0, :cond_5
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->autoPlayingMedia:Z
+    iget-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->autoPlayingMedia:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v0, :cond_5
 
     :cond_2
-    iget-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->isRoundVideo:Z
+    iget-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->isRoundVideo:Z
 
-    if-nez v2, :cond_5
+    if-nez v0, :cond_5
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
     .line 3444
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isAnimatedSticker()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isAnimatedSticker()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_5
+    if-nez v0, :cond_5
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isDocument()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isDocument()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_3
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isGif()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isGif()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_5
+    if-eqz v0, :cond_5
 
     :cond_3
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->needDrawBluredPreview()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->needDrawBluredPreview()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
     goto :goto_1
 
     .line 3447
     :cond_4
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->photoImage:Lorg/telegram/messenger/ImageReceiver;
+    iget-object v5, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->photoImage:Lorg/telegram/messenger/ImageReceiver;
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+    const/4 v6, 0x0
 
-    invoke-virtual {v0, p1, p0, v1, v2}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/messenger/MessageObject;)Z
+    iget-object v7, p0, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    move-object v3, p1
+
+    move-object v4, p0
+
+    invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;)Z
 
     move-result p1
 
@@ -55310,8 +55318,16 @@
 
     goto :goto_186
 
-    .line 7009
     :cond_23b
+    const/16 v2, 0x24
+
+    .line 7009
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
     iget-object v2, v8, Lorg/telegram/ui/Cells/ChatMessageCell;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z

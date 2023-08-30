@@ -1029,18 +1029,3 @@
 
     return-object v0
 .end method
-
-.method public static final showStoryFabEnableHintCountLeft()Ljava/lang/String;
-    .locals 2
-
-    .line 217
-    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
-
-    const-string v1, "showStoryFabEnableHintCountLeft"
-
-    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method

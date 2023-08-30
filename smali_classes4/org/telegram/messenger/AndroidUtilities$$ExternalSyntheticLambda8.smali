@@ -2,52 +2,70 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+.field public final synthetic f$0:Ljava/lang/String;
 
-.field public final synthetic f$1:Landroid/view/View;
+.field public final synthetic f$1:Ljava/lang/String;
 
-.field public final synthetic f$2:F
+.field public final synthetic f$2:Ljava/lang/String;
+
+.field public final synthetic f$3:Ljava/lang/String;
+
+.field public final synthetic f$4:Ljava/lang/String;
+
+.field public final synthetic f$5:Landroid/app/Activity;
+
+.field public final synthetic f$6:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;Landroid/view/View;F)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$0:Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$0:Ljava/lang/String;
 
-    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$1:Landroid/view/View;
+    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$1:Ljava/lang/String;
 
-    iput p3, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$2:F
+    iput-object p3, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$2:Ljava/lang/String;
+
+    iput-object p4, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$3:Ljava/lang/String;
+
+    iput-object p5, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$4:Ljava/lang/String;
+
+    iput-object p6, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$5:Landroid/app/Activity;
+
+    iput-object p7, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$6:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-    .locals 7
+.method public final onClick(Landroid/view/View;)V
+    .locals 8
 
-    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$0:Ljava/lang/Runnable;
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$0:Ljava/lang/String;
 
-    iget-object v1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$1:Landroid/view/View;
+    iget-object v1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$1:Ljava/lang/String;
 
-    iget v2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$2:F
+    iget-object v2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$2:Ljava/lang/String;
 
-    move-object v3, p1
+    iget-object v3, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$3:Ljava/lang/String;
 
-    move v4, p2
+    iget-object v4, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$4:Ljava/lang/String;
 
-    move v5, p3
+    iget-object v5, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$5:Landroid/app/Activity;
 
-    move v6, p4
+    iget-object v6, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda8;->f$6:Ljava/lang/Runnable;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$OKEN8rVVAaV9Lv6LrFX3Sn7PVYQ(Ljava/lang/Runnable;Landroid/view/View;FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    move-object v7, p1
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$IW-JC5bN33AmmstaIDk2rqNWnMU(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;Ljava/lang/Runnable;Landroid/view/View;)V
 
     return-void
 .end method

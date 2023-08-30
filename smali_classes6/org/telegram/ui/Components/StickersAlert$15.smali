@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickersAlert;)V
     .locals 0
 
-    .line 1656
+    .line 1671
     iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$15;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,10 +58,10 @@
 .method public getBottomOffset(I)I
     .locals 0
 
-    .line 1659
+    .line 1674
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$15;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5400(Lorg/telegram/ui/Components/StickersAlert;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5300(Lorg/telegram/ui/Components/StickersAlert;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 
@@ -69,7 +69,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$15;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5400(Lorg/telegram/ui/Components/StickersAlert;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5300(Lorg/telegram/ui/Components/StickersAlert;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 

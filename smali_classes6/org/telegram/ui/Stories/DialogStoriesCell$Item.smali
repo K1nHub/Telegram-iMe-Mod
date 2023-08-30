@@ -24,10 +24,10 @@
 
     const/4 p1, 0x0
 
-    .line 1025
+    .line 1026
     invoke-direct {p0, p1, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 1026
+    .line 1027
     iput-wide p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Item;->dialogId:J
 
     return-void
@@ -44,7 +44,7 @@
 
     return v0
 
-    .line 1032
+    .line 1033
     :cond_0
     instance-of v1, p1, Lorg/telegram/ui/Stories/DialogStoriesCell$Item;
 
@@ -54,11 +54,11 @@
 
     return v2
 
-    .line 1033
+    .line 1034
     :cond_1
     check-cast p1, Lorg/telegram/ui/Stories/DialogStoriesCell$Item;
 
-    .line 1034
+    .line 1035
     iget-wide v3, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Item;->dialogId:J
 
     iget-wide v5, p1, Lorg/telegram/ui/Stories/DialogStoriesCell$Item;->dialogId:J
@@ -83,7 +83,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 1039
+    .line 1040
     iget-wide v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$Item;->dialogId:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;

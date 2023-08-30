@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;IZZ)V
     .locals 0
 
-    .line 13774
+    .line 13790
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$66;->val$isCurrentCaptionEmpty:Z
@@ -49,7 +49,7 @@
 .method private synthetic lambda$onDisappear$0(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 13789
+    .line 13805
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -66,9 +66,9 @@
 
     move-result p1
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->access$28502(Lorg/telegram/ui/PhotoViewer$CaptionScrollView;F)F
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->access$28602(Lorg/telegram/ui/PhotoViewer$CaptionScrollView;F)F
 
-    .line 13790
+    .line 13806
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -85,12 +85,12 @@
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 0
 
-    .line 13777
+    .line 13793
     invoke-super {p0, p1, p2, p3, p4}, Landroid/transition/Fade;->onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
 
     move-result-object p1
 
-    .line 13778
+    .line 13794
     iget-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$66;->val$isCurrentCaptionEmpty:Z
 
     if-nez p3, :cond_1
@@ -109,14 +109,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 13781
+    .line 13797
     new-instance p2, Lorg/telegram/ui/PhotoViewer$66$1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$66$1;-><init>(Lorg/telegram/ui/PhotoViewer$66;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 13788
+    .line 13804
     :cond_0
     move-object p2, p1
 

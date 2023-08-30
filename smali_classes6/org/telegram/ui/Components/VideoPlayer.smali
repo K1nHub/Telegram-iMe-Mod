@@ -1146,41 +1146,15 @@
     .line 859
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->getShort(I)S
 
-    move-result v1
-
-    int-to-float v1, v1
-
-    iput v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->maxlum:F
-
     const/16 v1, 0x13
 
     .line 860
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->getShort(I)S
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const v1, 0x38d1b717    # 1.0E-4f
-
-    mul-float/2addr v0, v1
-
-    iput v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->minlum:F
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
     :catch_0
-    const/4 v0, 0x0
-
-    .line 863
-    iput v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->minlum:F
-
-    iput v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->maxlum:F
-
     :cond_1
-    :goto_0
     return-object p1
 .end method
 

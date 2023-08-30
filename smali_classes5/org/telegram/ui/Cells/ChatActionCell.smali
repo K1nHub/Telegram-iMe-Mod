@@ -5255,7 +5255,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_2a
 
     .line 1334
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -5890,20 +5890,24 @@
 
     goto :goto_e
 
-    .line 1414
+    .line 1413
     :cond_1d
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->giftPremiumSubtitleLayout:Landroid/text/StaticLayout;
 
+    if-eqz v2, :cond_1e
+
+    .line 1414
     invoke-virtual {v2, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
     .line 1416
+    :cond_1e
     :goto_e
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 1418
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->giftPremiumTitleLayout:Landroid/text/StaticLayout;
 
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_1f
 
     const/16 v2, 0x8
 
@@ -5912,7 +5916,7 @@
 
     goto :goto_f
 
-    :cond_1e
+    :cond_1f
     const/16 v2, 0x8
 
     .line 1422
@@ -5924,12 +5928,12 @@
     .line 1423
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatActionCell;->giftPremiumButtonLayout:Landroid/text/StaticLayout;
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_20
 
     invoke-virtual {v5}, Landroid/text/StaticLayout;->getHeight()I
 
     .line 1424
-    :cond_1f
+    :cond_20
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getHeight()I
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -5937,7 +5941,7 @@
     .line 1426
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->themeDelegate:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_21
 
     .line 1427
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -5961,7 +5965,7 @@
     goto :goto_10
 
     .line 1429
-    :cond_20
+    :cond_21
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v2
@@ -5984,7 +5988,7 @@
     :goto_10
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->giftPremiumButtonLayout:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_25
 
     const-string v2, "paintChatActionBackground"
 
@@ -6017,7 +6021,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_22
 
     .line 1437
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->giftButtonRect:Landroid/graphics/RectF;
@@ -6039,22 +6043,14 @@
     invoke-virtual {v10, v2, v5, v6, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     .line 1440
-    :cond_21
+    :cond_22
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v2
 
     iget v2, v2, Lorg/telegram/messenger/MessageObject;->type:I
 
-    if-eq v2, v4, :cond_23
-
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
-
-    move-result-object v2
-
-    iget v2, v2, Lorg/telegram/messenger/MessageObject;->type:I
-
-    if-eq v2, v13, :cond_23
+    if-eq v2, v4, :cond_24
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
@@ -6062,7 +6058,15 @@
 
     iget v2, v2, Lorg/telegram/messenger/MessageObject;->type:I
 
-    if-eq v2, v12, :cond_23
+    if-eq v2, v13, :cond_24
+
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v2
+
+    iget v2, v2, Lorg/telegram/messenger/MessageObject;->type:I
+
+    if-eq v2, v12, :cond_24
 
     .line 1441
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->starsPath:Landroid/graphics/Path;
@@ -6110,29 +6114,29 @@
 
     iget-boolean v2, v2, Lorg/telegram/ui/Components/Premium/StarParticlesView$Drawable;->paused:Z
 
-    if-nez v2, :cond_22
+    if-nez v2, :cond_23
 
     .line 1448
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/ChatActionCell;->invalidate()V
 
     .line 1450
-    :cond_22
+    :cond_23
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_11
 
     .line 1453
-    :cond_23
+    :cond_24
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/ChatActionCell;->invalidate()V
 
     .line 1457
-    :cond_24
+    :cond_25
     :goto_11
     iget-boolean v2, v11, Lorg/telegram/messenger/MessageObject;->settingAvatar:Z
 
     const v4, 0x3dda740e
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_26
 
     iget v5, v0, Lorg/telegram/ui/Cells/ChatActionCell;->progressToProgress:F
 
@@ -6140,7 +6144,7 @@
 
     cmpl-float v7, v5, v6
 
-    if-eqz v7, :cond_25
+    if-eqz v7, :cond_26
 
     add-float/2addr v5, v4
 
@@ -6149,15 +6153,15 @@
 
     goto :goto_12
 
-    :cond_25
-    if-nez v2, :cond_26
+    :cond_26
+    if-nez v2, :cond_27
 
     .line 1459
     iget v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->progressToProgress:F
 
     cmpl-float v5, v2, v3
 
-    if-eqz v5, :cond_26
+    if-eqz v5, :cond_27
 
     sub-float/2addr v2, v4
 
@@ -6165,7 +6169,7 @@
     iput v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->progressToProgress:F
 
     .line 1462
-    :cond_26
+    :cond_27
     :goto_12
     iget v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->progressToProgress:F
 
@@ -6179,12 +6183,12 @@
 
     cmpl-float v2, v2, v3
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_29
 
     .line 1464
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    if-nez v2, :cond_27
+    if-nez v2, :cond_28
 
     .line 1465
     new-instance v2, Lorg/telegram/ui/Components/RadialProgressView;
@@ -6197,7 +6201,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    :cond_27
+    :cond_28
     const/16 v2, 0x10
 
     .line 1467
@@ -6262,18 +6266,18 @@
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 1475
-    :cond_28
+    :cond_29
     iget v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->progressToProgress:F
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     cmpl-float v2, v2, v3
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2a
 
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatActionCell;->giftPremiumButtonLayout:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_2a
 
     .line 1476
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -6323,7 +6327,7 @@
     .line 1481
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    :cond_29
+    :cond_2a
     return-void
 .end method
 

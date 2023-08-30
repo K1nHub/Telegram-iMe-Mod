@@ -2,40 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-.field public final synthetic f$1:Lorg/telegram/ui/Stories/StoryViewer;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/Stories/StoryViewer;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;->INSTANCE:Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
-
-    iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/ui/Stories/StoryViewer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
-    .locals 2
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$ywvsCXs2Tvn0CZezqOPPaANR3jw(Landroid/view/View;)V
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda18;->f$1:Lorg/telegram/ui/Stories/StoryViewer;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$CiNrZK1EqFiL6URRe0o4nbF_klQ(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/Stories/StoryViewer;Landroid/view/View;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

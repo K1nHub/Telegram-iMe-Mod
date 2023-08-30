@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/WebviewActivity;)V
     .locals 0
 
-    .line 162
+    .line 163
     iput-object p1, p0, Lorg/telegram/ui/WebviewActivity$2;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 166
+    .line 167
     iget-object p1, p0, Lorg/telegram/ui/WebviewActivity$2;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -51,7 +51,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 168
+    .line 169
     iget-object p1, p0, Lorg/telegram/ui/WebviewActivity$2;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/WebviewActivity;->access$000(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/messenger/MessageObject;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 169
+    .line 170
     iget-object p1, p0, Lorg/telegram/ui/WebviewActivity$2;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/WebviewActivity;->access$000(Lorg/telegram/ui/WebviewActivity;)Lorg/telegram/messenger/MessageObject;
@@ -73,7 +73,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$Message;->with_my_score:Z
 
-    .line 170
+    .line 171
     iget-object p1, p0, Lorg/telegram/ui/WebviewActivity$2;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -111,7 +111,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 173
+    .line 174
     iget-object p1, p0, Lorg/telegram/ui/WebviewActivity$2;->this$0:Lorg/telegram/ui/WebviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/WebviewActivity;->access$300(Lorg/telegram/ui/WebviewActivity;)Ljava/lang/String;

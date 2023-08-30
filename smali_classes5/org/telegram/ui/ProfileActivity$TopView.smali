@@ -26,13 +26,13 @@
 .method public constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1292
+    .line 1295
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 1293
+    .line 1296
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1290
+    .line 1293
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -51,7 +51,7 @@
 
     move-object/from16 v8, p1
 
-    .line 1312
+    .line 1315
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v1
@@ -80,7 +80,7 @@
     :goto_0
     add-int/2addr v1, v2
 
-    .line 1313
+    .line 1316
     iget-object v2, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$800(Lorg/telegram/ui/ProfileActivity;)F
@@ -101,7 +101,7 @@
 
     add-float v10, v2, v1
 
-    .line 1315
+    .line 1318
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$1000(Lorg/telegram/ui/ProfileActivity;)F
@@ -120,7 +120,7 @@
 
     if-eqz v11, :cond_4
 
-    .line 1318
+    .line 1321
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ProfileActivity;->previousTransitionFragment:Lorg/telegram/ui/Components/ChatActivityInterface;
@@ -133,7 +133,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 1319
+    .line 1322
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -142,7 +142,7 @@
 
     invoke-virtual {v4, v9, v9, v1, v11}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1320
+    .line 1323
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ProfileActivity;->previousTransitionFragment:Lorg/telegram/ui/Components/ChatActivityInterface;
@@ -181,7 +181,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1321
+    .line 1324
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->paint:Landroid/graphics/Paint;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
@@ -200,14 +200,14 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1322
+    .line 1325
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v4, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     goto :goto_1
 
-    .line 1324
+    .line 1327
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -237,7 +237,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->drawBlurRect(Landroid/graphics/Canvas;FLandroid/graphics/Rect;Landroid/graphics/Paint;Z)V
 
-    .line 1327
+    .line 1330
     :cond_2
     :goto_1
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->paint:Landroid/graphics/Paint;
@@ -250,7 +250,7 @@
 
     const/4 v3, 0x0
 
-    .line 1328
+    .line 1331
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -265,24 +265,24 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1329
+    .line 1332
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ProfileActivity;->previousTransitionFragment:Lorg/telegram/ui/Components/ChatActivityInterface;
 
     if-eqz v1, :cond_4
 
-    .line 1330
+    .line 1333
     invoke-interface {v1}, Lorg/telegram/ui/Components/ChatActivityInterface;->getActionBar()Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v1
 
-    .line 1331
+    .line 1334
     iget-object v2, v1, Lorg/telegram/ui/ActionBar/ActionBar;->menu:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     if-nez v2, :cond_3
 
-    .line 1334
+    .line 1337
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v2
@@ -290,12 +290,12 @@
     :cond_3
     move-object v13, v2
 
-    .line 1337
+    .line 1340
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v14
 
-    .line 1338
+    .line 1341
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v2
@@ -322,7 +322,7 @@
 
     const/4 v3, 0x0
 
-    .line 1339
+    .line 1342
     invoke-virtual {v13}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -353,10 +353,10 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 1340
+    .line 1343
     invoke-virtual {v13, v8}, Landroid/widget/LinearLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1341
+    .line 1344
     invoke-virtual {v8, v14}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     :cond_4
@@ -366,7 +366,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 1345
+    .line 1348
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -375,12 +375,12 @@
 
     move-result v1
 
-    .line 1346
+    .line 1349
     iget-object v2, v0, Lorg/telegram/ui/ProfileActivity$TopView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1347
+    .line 1350
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -391,7 +391,7 @@
 
     invoke-virtual {v4, v9, v11, v1, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1348
+    .line 1351
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$1200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$NestedFrameLayout;
@@ -410,7 +410,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->drawBlurRect(Landroid/graphics/Canvas;FLandroid/graphics/Rect;Landroid/graphics/Paint;Z)V
 
-    .line 1351
+    .line 1354
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -420,7 +420,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 1352
+    .line 1355
     iget-object v1, v0, Lorg/telegram/ui/ProfileActivity$TopView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$1400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -446,7 +446,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1298
+    .line 1301
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -471,20 +471,20 @@
 .method public setBackgroundColor(I)V
     .locals 1
 
-    .line 1303
+    .line 1306
     iget v0, p0, Lorg/telegram/ui/ProfileActivity$TopView;->currentColor:I
 
     if-eq p1, v0, :cond_0
 
-    .line 1304
+    .line 1307
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$TopView;->currentColor:I
 
-    .line 1305
+    .line 1308
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$TopView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1306
+    .line 1309
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0

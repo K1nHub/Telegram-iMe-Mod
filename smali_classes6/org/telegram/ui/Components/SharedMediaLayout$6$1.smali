@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
     .locals 0
 
-    .line 1823
+    .line 1825
     iput-object p4, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$1;->val$dividerView:Landroid/view/View;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 1826
+    .line 1828
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$1;->val$dividerView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -44,17 +44,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 1827
+    .line 1829
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$1;->val$dividerView:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1828
+    .line 1830
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->onMeasure(II)V
 
-    .line 1829
+    .line 1831
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$1;->val$dividerView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -75,19 +75,19 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1830
+    .line 1832
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6$1;->val$dividerView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1831
+    .line 1833
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->onMeasure(II)V
 
     goto :goto_0
 
-    .line 1833
+    .line 1835
     :cond_0
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->onMeasure(II)V
 

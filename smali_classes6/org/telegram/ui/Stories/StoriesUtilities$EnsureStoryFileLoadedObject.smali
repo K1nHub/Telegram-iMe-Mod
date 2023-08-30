@@ -30,18 +30,18 @@
 .method private constructor <init>(Lorg/telegram/ui/Stories/StoriesController;J)V
     .locals 1
 
-    .line 831
+    .line 855
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 837
+    .line 861
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->cancelled:Z
 
-    .line 832
+    .line 856
     iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->dialogId:J
 
-    .line 833
+    .line 857
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     return-void
@@ -50,7 +50,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/ui/Stories/StoriesUtilities$1;)V
     .locals 0
 
-    .line 826
+    .line 850
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;-><init>(Lorg/telegram/ui/Stories/StoriesController;J)V
 
     return-void
@@ -59,7 +59,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;)Z
     .locals 0
 
-    .line 826
+    .line 850
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->cancelled:Z
 
     return p0
@@ -72,10 +72,10 @@
 
     const/4 v0, 0x1
 
-    .line 841
+    .line 865
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->cancelled:Z
 
-    .line 842
+    .line 866
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->dialogId:J

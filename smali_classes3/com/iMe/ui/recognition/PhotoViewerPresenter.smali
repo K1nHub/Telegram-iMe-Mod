@@ -73,14 +73,15 @@
 .method public final getPhotoObjects(Landroid/graphics/Bitmap;)V
     .locals 4
 
-    const-string v0, "photo"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 48
     iget-object v0, p0, Lcom/iMe/ui/recognition/PhotoViewerPresenter;->googleServicesInteractor:Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;
 
+    if-nez p1, :cond_0
+
+    return-void
+
     .line 49
+    :cond_0
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;->getPhotoObjects(Landroid/graphics/Bitmap;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -167,14 +168,15 @@
 .method public final getPhotoText(Landroid/graphics/Bitmap;Z)V
     .locals 4
 
-    const-string v0, "imageBitmap"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 25
     iget-object v0, p0, Lcom/iMe/ui/recognition/PhotoViewerPresenter;->googleServicesInteractor:Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;
 
+    if-nez p1, :cond_0
+
+    return-void
+
     .line 26
+    :cond_0
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;->getPhotoText(Landroid/graphics/Bitmap;)Lio/reactivex/Observable;
 
     move-result-object p1

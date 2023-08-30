@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;F)V
     .locals 0
 
-    .line 774
+    .line 780
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$2;->this$0:Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;
 
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$2;->val$rightPadding:F
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 777
+    .line 783
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$2;->this$0:Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer;
 
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$PhotoViewerActionBarContainer$2;->val$rightPadding:F

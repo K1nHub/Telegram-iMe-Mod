@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    .line 992
+    .line 1008
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 2
 
-    .line 995
+    .line 1011
     sget p2, Lorg/telegram/messenger/NotificationCenter;->onRequestPermissionResultReceived:I
 
     if-ne p1, p2, :cond_1
 
     const/4 p1, 0x0
 
-    .line 996
+    .line 1012
     aget-object v0, p3, p1
 
     check-cast v0, Ljava/lang/Integer;
@@ -56,7 +56,7 @@
 
     const/4 v1, 0x2
 
-    .line 998
+    .line 1014
     aget-object p3, p3, v1
 
     check-cast p3, [I
@@ -65,26 +65,26 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1001
+    .line 1017
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
 
     invoke-virtual {v0, p0, p2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1003
+    .line 1019
     aget p1, p3, p1
 
     if-nez p1, :cond_0
 
-    .line 1004
+    .line 1020
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1700(Lorg/telegram/ui/Components/BotWebViewContainer;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1500(Lorg/telegram/ui/Components/BotWebViewContainer;)V
 
     goto :goto_0
 
-    .line 1006
+    .line 1022
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
@@ -94,7 +94,7 @@
 
     const-string p3, "scan_qr_popup_closed"
 
-    invoke-static {p1, p3, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/json/JSONObject;)V
+    invoke-static {p1, p3, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/json/JSONObject;)V
 
     :cond_1
     :goto_0

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/view/View;)V
     .locals 0
 
-    .line 1533
+    .line 1553
     iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$11;->val$oldLikeButton:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 1536
+    .line 1556
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$11;->val$oldLikeButton:Landroid/view/View;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->removeFromParent(Landroid/view/View;)V

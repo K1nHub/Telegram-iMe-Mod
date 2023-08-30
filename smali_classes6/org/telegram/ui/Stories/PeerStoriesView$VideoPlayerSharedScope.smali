@@ -40,10 +40,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 4950
+    .line 5062
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4956
+    .line 5068
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -60,7 +60,7 @@
 
     const/4 v0, 0x0
 
-    .line 4959
+    .line 5071
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->viewsToInvalidate:Ljava/util/ArrayList;
 
@@ -70,7 +70,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 4960
+    .line 5072
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->viewsToInvalidate:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -92,12 +92,12 @@
 .method public isBuffering()Z
     .locals 1
 
-    .line 4965
+    .line 5077
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->player:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;->isBuffering()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->isBuffering()Z
 
     move-result v0
 

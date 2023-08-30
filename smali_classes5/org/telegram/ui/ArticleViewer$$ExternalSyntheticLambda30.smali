@@ -51,7 +51,7 @@
 
     iget v4, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda30;->f$4:I
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$83G06sfNH9-fd7hefZ-ayFHYvSc(Lorg/telegram/ui/ArticleViewer;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/lang/String;I)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$E9Gy6vMsyGpu1sk55z152OKB_xk(Lorg/telegram/ui/ArticleViewer;Ljava/util/ArrayList;Ljava/util/HashMap;Ljava/lang/String;I)V
 
     return-void
 .end method

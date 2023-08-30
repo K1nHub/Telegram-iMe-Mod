@@ -7496,7 +7496,7 @@
 .end method
 
 .method public hasNotThumb()Z
-    .locals 1
+    .locals 2
 
     .line 2269
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver;->currentImageDrawable:Landroid/graphics/drawable/Drawable;
@@ -7509,9 +7509,19 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver;->staticThumbDrawable:Landroid/graphics/drawable/Drawable;
 
-    instance-of v0, v0, Lorg/telegram/ui/Components/VectorAvatarThumbDrawable;
+    instance-of v1, v0, Lorg/telegram/ui/Components/VectorAvatarThumbDrawable;
+
+    if-nez v1, :cond_1
 
     if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver;->currentImageKey:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/messenger/ImageReceiver;->currentMediaKey:Ljava/lang/String;
+
+    if-nez v0, :cond_0
 
     goto :goto_0
 

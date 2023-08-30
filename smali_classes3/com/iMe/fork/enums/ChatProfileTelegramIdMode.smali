@@ -215,6 +215,10 @@
 
     move-result-object v0
 
+    const-string v1, "getString(\"Disable\", R.string.Disable)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     goto :goto_0
 
     :cond_0
@@ -232,6 +236,10 @@
 
     move-result-object v0
 
+    const-string v1, "getInternalString(R.stri\u2026file_id_telegram_bot_api)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     goto :goto_0
 
     .line 12
@@ -241,6 +249,10 @@
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v0
+
+    const-string v1, "getInternalString(R.stri\u2026id_telegram_telegram_api)"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_0
     return-object v0

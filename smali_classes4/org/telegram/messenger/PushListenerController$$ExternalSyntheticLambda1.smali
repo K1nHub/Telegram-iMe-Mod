@@ -27,7 +27,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda1;->f$0:I
 
-    invoke-static {v0}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$ksUB4V0jcpmf75Wn-glW9jl22q0(I)V
+    invoke-static {v0}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$8YJDbWjt3ibOVuA4TKtYaXsWsm0(I)V
 
     return-void
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)V
     .locals 0
 
-    .line 1482
+    .line 1484
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$5;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 1485
+    .line 1487
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -49,12 +49,12 @@
 
     move-result p1
 
-    .line 1486
+    .line 1488
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$5;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->setAnimationIdicatorProgress(F)V
 
-    .line 1487
+    .line 1489
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$5;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$3900(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabsViewDelegate;
@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1488
+    .line 1490
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$5;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$3900(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabsViewDelegate;

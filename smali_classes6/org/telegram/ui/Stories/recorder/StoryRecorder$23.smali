@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 4496
+    .line 4502
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;->val$cameraDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0, p1}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;)V
@@ -35,12 +35,12 @@
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
     .locals 2
 
-    .line 4504
+    .line 4510
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     sub-int v0, p8, p6
 
-    .line 4505
+    .line 4511
     div-int/lit8 v0, v0, 0x2
 
     const/4 v1, 0x1
@@ -57,7 +57,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 4506
+    .line 4512
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;->val$cameraDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p9}, Landroid/graphics/Paint;->getAlpha()I
@@ -66,10 +66,10 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 4507
+    .line 4513
     invoke-super/range {p0 .. p9}, Landroid/text/style/ImageSpan;->draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
 
-    .line 4508
+    .line 4514
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -78,7 +78,7 @@
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
     .locals 0
 
-    .line 4499
+    .line 4505
     invoke-super/range {p0 .. p5}, Landroid/text/style/ImageSpan;->getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
 
     move-result p1

@@ -210,7 +210,7 @@
 
     const/4 v0, 0x1
 
-    .line 2010
+    .line 2016
     invoke-direct {p0, p2, v0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 151
@@ -289,29 +289,29 @@
 
     const v1, 0x15180
 
-    .line 1888
+    .line 1892
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->storyPeriod:I
 
-    .line 1890
+    .line 1894
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 2215
+    .line 2221
     iput-boolean p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->applyWhenDismiss:Z
 
-    .line 2216
+    .line 2222
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->allowSmallChats:Z
 
-    .line 2217
+    .line 2223
     iput-boolean p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->isEdit:Z
 
-    .line 2011
+    .line 2017
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->init(Landroid/content/Context;)V
 
-    .line 2012
+    .line 2018
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$4;
@@ -337,7 +337,7 @@
 
     const/4 v0, 0x1
 
-    .line 1893
+    .line 1897
     invoke-direct {p0, p1, v0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 151
@@ -416,60 +416,73 @@
 
     const v1, 0x15180
 
-    .line 1888
+    .line 1892
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->storyPeriod:I
 
-    .line 1890
+    .line 1894
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 2215
+    .line 2221
     iput-boolean p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->applyWhenDismiss:Z
 
-    .line 2216
+    .line 2222
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->allowSmallChats:Z
 
-    .line 2217
+    .line 2223
     iput-boolean p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->isEdit:Z
 
-    .line 1894
+    .line 1898
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->storyPeriod:I
 
-    .line 1895
+    .line 1899
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->pullSaved()V
 
-    .line 1896
+    .line 1900
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->init(Landroid/content/Context;)V
 
-    .line 1897
+    .line 1901
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    new-instance p3, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$1;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$1;
 
-    invoke-direct {p3, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$1;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Landroid/content/Context;)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$1;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Landroid/content/Context;)V
 
-    invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/ViewPagerFixed;->setAdapter(Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;)V
+    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->setAdapter(Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;)V
 
-    .line 1919
+    .line 1923
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
 
-    .line 1920
+    .line 1924
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesStorage;->getStorageQueue()Lorg/telegram/messenger/DispatchQueue;
 
     move-result-object p2
 
-    new-instance p3, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$$ExternalSyntheticLambda3;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$$ExternalSyntheticLambda3;
 
-    invoke-direct {p3, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Lorg/telegram/messenger/MessagesStorage;)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Lorg/telegram/messenger/MessagesStorage;)V
 
-    invoke-virtual {p2, p3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+    invoke-virtual {p2, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    .line 1937
+    iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesController;->loadBlocklist(Z)V
 
     return-void
 .end method
@@ -1521,7 +1534,7 @@
 
     const/4 v0, 0x0
 
-    .line 2044
+    .line 2050
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->done(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Ljava/lang/Runnable;Z)V
 
     return-void
@@ -1530,12 +1543,12 @@
 .method private done(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Ljava/lang/Runnable;Z)V
     .locals 8
 
-    .line 2048
+    .line 2054
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2049
+    .line 2055
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->warnUsers:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
@@ -1544,7 +1557,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2050
+    .line 2056
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1553,7 +1566,7 @@
 
     move v3, v2
 
-    .line 2051
+    .line 2057
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->warnUsers:Ljava/util/ArrayList;
 
@@ -1563,7 +1576,7 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 2052
+    .line 2058
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->warnUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1572,23 +1585,23 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 2053
+    .line 2059
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/MessagesController;->getUserOrChat(Ljava/lang/String;)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v5
 
-    .line 2054
+    .line 2060
     instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$User;
 
     if-nez v6, :cond_0
 
     goto :goto_1
 
-    .line 2057
+    .line 2063
     :cond_0
     check-cast v5, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2058
+    .line 2064
     iget-wide v6, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1603,7 +1616,7 @@
 
     move-object v5, v6
 
-    .line 2062
+    .line 2068
     :cond_1
     iget-boolean v6, v5, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
@@ -1615,7 +1628,7 @@
 
     if-nez v5, :cond_2
 
-    .line 2063
+    .line 2069
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -1624,7 +1637,7 @@
 
     goto :goto_0
 
-    .line 2067
+    .line 2073
     :cond_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1636,7 +1649,7 @@
 
     if-nez p3, :cond_6
 
-    .line 2068
+    .line 2074
     new-instance p3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p3}, Landroid/text/SpannableStringBuilder;-><init>()V
@@ -1646,7 +1659,7 @@
     :goto_2
     const/4 v4, 0x2
 
-    .line 2069
+    .line 2075
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v5
@@ -1661,10 +1674,10 @@
 
     const-string v4, ", "
 
-    .line 2071
+    .line 2077
     invoke-virtual {p3, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 2073
+    .line 2079
     :cond_4
     new-instance v4, Landroid/text/SpannableString;
 
@@ -1690,7 +1703,7 @@
 
     invoke-direct {v4, v5}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 2074
+    .line 2080
     new-instance v5, Lorg/telegram/ui/Components/TypefaceSpan;
 
     const-string v6, "fonts/rmedium.ttf"
@@ -1709,14 +1722,14 @@
 
     invoke-virtual {v4, v5, v2, v6, v7}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 2075
+    .line 2081
     invoke-virtual {p3, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 2077
+    .line 2083
     :cond_5
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1730,7 +1743,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->StoryRestrictions:I
 
-    .line 2078
+    .line 2084
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1741,7 +1754,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->StoryRestrictionsInfo:I
 
-    .line 2079
+    .line 2085
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1758,7 +1771,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->Proceed:I
 
-    .line 2080
+    .line 2086
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1773,7 +1786,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->Cancel:I
 
-    .line 2083
+    .line 2089
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -1782,12 +1795,12 @@
 
     move-result-object p1
 
-    .line 2084
+    .line 2090
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 
-    .line 2087
+    .line 2093
     :cond_6
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -1795,7 +1808,7 @@
 
     move-result-object p3
 
-    .line 2088
+    .line 2094
     aget-object v0, p3, v2
 
     instance-of v0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
@@ -1822,16 +1835,16 @@
 
     const/4 v0, 0x1
 
-    .line 2090
+    .line 2096
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setLoading(Z)V
 
-    .line 2092
+    .line 2098
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->onDone:Lorg/telegram/messenger/Utilities$Callback4;
 
     if-eqz v0, :cond_a
 
-    .line 2093
+    .line 2099
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->allowScreenshots:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1858,7 +1871,7 @@
     :cond_a
     if-eqz p2, :cond_b
 
-    .line 2102
+    .line 2108
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     :cond_b
@@ -1877,26 +1890,26 @@
         }
     .end annotation
 
-    .line 2541
+    .line 2547
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2542
+    .line 2548
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
 
-    .line 2543
+    .line 2549
     invoke-virtual {v1}, Lorg/telegram/messenger/MessagesController;->getAllDialogs()Ljava/util/ArrayList;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    .line 2544
+    .line 2550
     :goto_0
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1904,14 +1917,14 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 2545
+    .line 2551
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 2546
+    .line 2552
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/MessagesController;->canAddToForward(Lorg/telegram/tgnet/TLRPC$Dialog;)Z
 
     move-result v5
@@ -1920,7 +1933,7 @@
 
     goto :goto_1
 
-    .line 2549
+    .line 2555
     :cond_0
     iget-wide v5, v4, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
@@ -1930,7 +1943,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 2550
+    .line 2556
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1943,7 +1956,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 2551
+    .line 2557
     iget-boolean v5, v4, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-nez v5, :cond_2
@@ -1962,12 +1975,12 @@
 
     if-nez v5, :cond_2
 
-    .line 2552
+    .line 2558
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 2554
+    .line 2560
     :cond_1
     iget-wide v5, v4, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
@@ -1977,7 +1990,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 2555
+    .line 2561
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     neg-long v4, v4
@@ -1992,14 +2005,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 2556
+    .line 2562
     invoke-static {v4}, Lorg/telegram/messenger/ChatObject;->isForum(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v5
 
     if-nez v5, :cond_2
 
-    .line 2557
+    .line 2563
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -2023,14 +2036,14 @@
         }
     .end annotation
 
-    .line 2462
+    .line 2468
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->getContacts()Ljava/util/ArrayList;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 2463
+    .line 2469
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2038,32 +2051,32 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2464
+    .line 2470
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLObject;
 
-    .line 2465
+    .line 2471
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$User;
 
     if-nez v3, :cond_0
 
     goto :goto_1
 
-    .line 2468
+    .line 2474
     :cond_0
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_1
 
-    .line 2469
+    .line 2475
     iget-boolean v2, v2, Lorg/telegram/tgnet/TLRPC$User;->close_friend:Z
 
     if-nez v2, :cond_2
 
-    .line 2470
+    .line 2476
     :cond_1
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -2090,12 +2103,12 @@
         }
     .end annotation
 
-    .line 2441
+    .line 2447
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2442
+    .line 2448
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2108,14 +2121,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 2443
+    .line 2449
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 2444
+    .line 2450
     :cond_0
     iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -2127,7 +2140,7 @@
 
     invoke-virtual {v3, v2, v4, v5}, Lorg/telegram/messenger/ContactsController;->loadContacts(ZJ)V
 
-    .line 2446
+    .line 2452
     :cond_1
     iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -2137,7 +2150,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 2448
+    .line 2454
     :goto_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -2145,7 +2158,7 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 2449
+    .line 2455
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -2154,7 +2167,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 2451
+    .line 2457
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2167,7 +2180,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 2452
+    .line 2458
     invoke-static {v4}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v5
@@ -2186,7 +2199,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 2453
+    .line 2459
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -2201,7 +2214,7 @@
 .method private getParticipantsCount(Lorg/telegram/tgnet/TLRPC$Chat;)I
     .locals 3
 
-    .line 2528
+    .line 2534
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2216,20 +2229,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 2529
+    .line 2535
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
 
     if-lez v0, :cond_0
 
     return v0
 
-    .line 2531
+    .line 2537
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->smallChatsParticipantsCount:Ljava/util/HashMap;
 
     if-eqz v0, :cond_1
 
-    .line 2532
+    .line 2538
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2244,14 +2257,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 2534
+    .line 2540
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
     return p1
 
-    .line 2537
+    .line 2543
     :cond_1
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
@@ -2269,29 +2282,29 @@
         }
     .end annotation
 
-    .line 2478
+    .line 2484
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    .line 2479
+    .line 2485
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 2480
+    .line 2486
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2481
+    .line 2487
     invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getAllDialogs()Ljava/util/ArrayList;
 
     move-result-object v3
 
-    .line 2482
+    .line 2488
     iget v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2304,20 +2317,20 @@
 
     if-eqz v4, :cond_0
 
-    .line 2483
+    .line 2489
     invoke-virtual {v4}, Lj$/util/concurrent/ConcurrentHashMap;->isEmpty()Z
 
     move-result v6
 
     if-eqz v6, :cond_2
 
-    .line 2484
+    .line 2490
     :cond_0
     iget-boolean v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->loadedContacts:Z
 
     if-nez v6, :cond_1
 
-    .line 2485
+    .line 2491
     iget v6, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2331,10 +2344,10 @@
     :cond_1
     const/4 v6, 0x1
 
-    .line 2487
+    .line 2493
     iput-boolean v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->loadedContacts:Z
 
-    .line 2489
+    .line 2495
     :cond_2
     :goto_0
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -2345,14 +2358,14 @@
 
     if-ge v5, v6, :cond_7
 
-    .line 2490
+    .line 2496
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 2491
+    .line 2497
     iget-wide v9, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-static {v9, v10}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
@@ -2361,7 +2374,7 @@
 
     if-eqz v9, :cond_4
 
-    .line 2492
+    .line 2498
     iget-wide v9, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2374,7 +2387,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 2493
+    .line 2499
     iget-boolean v9, v6, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-nez v9, :cond_6
@@ -2399,7 +2412,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 2494
+    .line 2500
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2414,7 +2427,7 @@
 
     goto :goto_1
 
-    .line 2497
+    .line 2503
     :cond_3
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -2426,7 +2439,7 @@
 
     invoke-virtual {v1, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2498
+    .line 2504
     invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -2434,7 +2447,7 @@
     :cond_4
     if-eqz p2, :cond_6
 
-    .line 2500
+    .line 2506
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-static {v7, v8}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
@@ -2443,7 +2456,7 @@
 
     if-eqz v7, :cond_6
 
-    .line 2501
+    .line 2507
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     neg-long v6, v6
@@ -2458,13 +2471,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 2502
-    invoke-static {v6}, Lorg/telegram/messenger/ChatObject;->isForum(Lorg/telegram/tgnet/TLRPC$Chat;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_6
-
+    .line 2508
     invoke-static {v6}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v7
@@ -2473,7 +2480,7 @@
 
     goto :goto_1
 
-    .line 2507
+    .line 2513
     :cond_5
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
@@ -2487,7 +2494,7 @@
 
     invoke-virtual {v1, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2508
+    .line 2514
     invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_6
@@ -2499,7 +2506,7 @@
     :cond_7
     if-eqz v4, :cond_9
 
-    .line 2513
+    .line 2519
     invoke-virtual {v4}, Lj$/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -2522,7 +2529,7 @@
 
     check-cast p2, Ljava/util/Map$Entry;
 
-    .line 2514
+    .line 2520
     invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object p2
@@ -2533,7 +2540,7 @@
 
     move-result-wide v3
 
-    .line 2515
+    .line 2521
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
@@ -2544,7 +2551,7 @@
 
     if-nez p2, :cond_8
 
-    .line 2516
+    .line 2522
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
@@ -2555,7 +2562,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 2517
+    .line 2523
     iget-boolean v3, p2, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-nez v3, :cond_8
@@ -2572,10 +2579,10 @@
 
     if-nez v3, :cond_8
 
-    .line 2518
+    .line 2524
     invoke-virtual {v2, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2519
+    .line 2525
     iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2595,7 +2602,7 @@
 .method private init(Landroid/content/Context;)V
     .locals 3
 
-    .line 1937
+    .line 1943
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$2;
@@ -2604,7 +2611,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->addDelegate(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
 
-    .line 1944
+    .line 1950
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2615,7 +2622,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1945
+    .line 1951
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2626,7 +2633,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1947
+    .line 1953
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->backgroundPaint:Landroid/graphics/Paint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
@@ -2639,7 +2646,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1948
+    .line 1954
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -2648,28 +2655,28 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
 
-    .line 1950
+    .line 1956
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ContainerView;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 1952
+    .line 1958
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    .line 1998
+    .line 2004
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1, p1, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1999
+    .line 2005
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -2692,7 +2699,7 @@
 
     const/4 p3, 0x1
 
-    .line 2081
+    .line 2087
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->done(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Ljava/lang/Runnable;Z)V
 
     return-void
@@ -2705,13 +2712,13 @@
 
     const/4 v0, 0x0
 
-    .line 2095
+    .line 2101
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setLoading(Z)V
 
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2098
+    .line 2104
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_1
@@ -2721,19 +2728,19 @@
 .method private synthetic lambda$new$0(Ljava/util/HashMap;)V
     .locals 1
 
-    .line 1926
+    .line 1930
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->smallChatsParticipantsCount:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
-    .line 1927
+    .line 1931
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->smallChatsParticipantsCount:Ljava/util/HashMap;
 
-    .line 1929
+    .line 1933
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->smallChatsParticipantsCount:Ljava/util/HashMap;
 
@@ -2745,14 +2752,14 @@
 .method private synthetic lambda$new$1(Lorg/telegram/messenger/MessagesStorage;)V
     .locals 1
 
-    .line 1921
+    .line 1925
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesStorage;->getSmallGroupsParticipantsCount()Ljava/util/HashMap;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 1922
+    .line 1926
     invoke-virtual {p1}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result v0
@@ -2761,7 +2768,7 @@
 
     goto :goto_0
 
-    .line 1925
+    .line 1929
     :cond_0
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$$ExternalSyntheticLambda2;
 
@@ -2840,7 +2847,7 @@
 .method private pullSaved()V
     .locals 14
 
-    .line 3937
+    .line 3946
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2865,25 +2872,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 3939
+    .line 3948
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3940
+    .line 3949
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
     move v4, v3
 
-    .line 3941
+    .line 3950
     :goto_0
     array-length v5, v0
 
     if-ge v4, v5, :cond_0
 
-    .line 3943
+    .line 3952
     :try_start_0
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
@@ -2906,7 +2913,7 @@
 
     goto :goto_0
 
-    .line 3948
+    .line 3957
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -2930,39 +2937,39 @@
 
     if-eqz v0, :cond_3
 
-    .line 3950
+    .line 3959
     invoke-virtual {v0, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3951
+    .line 3960
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v6}, Ljava/util/HashMap;->clear()V
 
     move v6, v3
 
-    .line 3952
+    .line 3961
     :goto_1
     array-length v7, v0
 
     if-ge v6, v7, :cond_3
 
-    .line 3953
+    .line 3962
     aget-object v7, v0, v6
 
     invoke-virtual {v7, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 3954
+    .line 3963
     array-length v8, v7
 
     if-gtz v8, :cond_1
 
     goto :goto_3
 
-    .line 3959
+    .line 3968
     :cond_1
     :try_start_1
     aget-object v8, v7, v3
@@ -2973,20 +2980,20 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 3963
+    .line 3972
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
     move v11, v5
 
-    .line 3964
+    .line 3973
     :goto_2
     array-length v12, v7
 
     if-ge v11, v12, :cond_2
 
-    .line 3965
+    .line 3974
     aget-object v12, v7, v11
 
     invoke-static {v12}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -3003,7 +3010,7 @@
 
     goto :goto_2
 
-    .line 3967
+    .line 3976
     :cond_2
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
 
@@ -3019,7 +3026,7 @@
 
     goto :goto_1
 
-    .line 3971
+    .line 3980
     :cond_3
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -3039,25 +3046,25 @@
 
     if-eqz v0, :cond_4
 
-    .line 3973
+    .line 3982
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3974
+    .line 3983
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
     move v6, v3
 
-    .line 3975
+    .line 3984
     :goto_4
     array-length v7, v0
 
     if-ge v6, v7, :cond_4
 
-    .line 3977
+    .line 3986
     :try_start_2
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
@@ -3080,7 +3087,7 @@
 
     goto :goto_4
 
-    .line 3982
+    .line 3991
     :cond_4
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -3100,39 +3107,39 @@
 
     if-eqz v0, :cond_7
 
-    .line 3984
+    .line 3993
     invoke-virtual {v0, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3985
+    .line 3994
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->clear()V
 
     move v4, v3
 
-    .line 3986
+    .line 3995
     :goto_5
     array-length v6, v0
 
     if-ge v4, v6, :cond_7
 
-    .line 3987
+    .line 3996
     aget-object v6, v0, v4
 
     invoke-virtual {v6, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v6
 
-    .line 3988
+    .line 3997
     array-length v7, v6
 
     if-gtz v7, :cond_5
 
     goto :goto_7
 
-    .line 3993
+    .line 4002
     :cond_5
     :try_start_3
     aget-object v7, v6, v3
@@ -3143,20 +3150,20 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 3997
+    .line 4006
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
     move v10, v5
 
-    .line 3998
+    .line 4007
     :goto_6
     array-length v11, v6
 
     if-ge v10, v11, :cond_6
 
-    .line 3999
+    .line 4008
     aget-object v11, v6, v10
 
     invoke-static {v11}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -3173,7 +3180,7 @@
 
     goto :goto_6
 
-    .line 4001
+    .line 4010
     :cond_6
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
 
@@ -3189,7 +3196,7 @@
 
     goto :goto_5
 
-    .line 4005
+    .line 4014
     :cond_7
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -3209,25 +3216,25 @@
 
     if-eqz v0, :cond_8
 
-    .line 4007
+    .line 4016
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4008
+    .line 4017
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
     move v1, v3
 
-    .line 4009
+    .line 4018
     :goto_8
     array-length v2, v0
 
     if-ge v1, v2, :cond_8
 
-    .line 4011
+    .line 4020
     :try_start_4
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedContacts:Ljava/util/ArrayList;
 
@@ -3250,7 +3257,7 @@
 
     goto :goto_8
 
-    .line 4016
+    .line 4025
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
@@ -3266,7 +3273,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsCount:I
 
-    .line 4017
+    .line 4026
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
@@ -3281,7 +3288,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneCount:I
 
-    .line 4019
+    .line 4028
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3302,7 +3309,7 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->allowScreenshots:Z
 
-    .line 4020
+    .line 4029
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3327,12 +3334,12 @@
 .method private save()V
     .locals 7
 
-    .line 4024
+    .line 4033
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 4025
+    .line 4034
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -3360,17 +3367,17 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 4026
+    .line 4035
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v5
 
     if-lez v5, :cond_0
 
-    .line 4027
+    .line 4036
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4029
+    .line 4038
     :cond_0
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -3394,13 +3401,13 @@
 
     goto :goto_0
 
-    .line 4031
+    .line 4040
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 4032
+    .line 4041
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -3424,17 +3431,17 @@
 
     check-cast v5, Ljava/util/Map$Entry;
 
-    .line 4033
+    .line 4042
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v6
 
     if-lez v6, :cond_2
 
-    .line 4034
+    .line 4043
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4036
+    .line 4045
     :cond_2
     invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -3458,7 +3465,7 @@
 
     goto :goto_1
 
-    .line 4038
+    .line 4047
     :cond_3
     iget v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -3476,7 +3483,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
-    .line 4039
+    .line 4048
     invoke-static {v4, v3}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v3
@@ -3487,7 +3494,7 @@
 
     move-result-object v2
 
-    .line 4040
+    .line 4049
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -3500,7 +3507,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
-    .line 4041
+    .line 4050
     invoke-static {v4, v2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v2
@@ -3511,7 +3518,7 @@
 
     move-result-object v1
 
-    .line 4042
+    .line 4051
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -3524,7 +3531,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedContacts:Ljava/util/ArrayList;
 
-    .line 4043
+    .line 4052
     invoke-static {v4, v1}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v1
@@ -3541,7 +3548,7 @@
 
     const-string v2, "story_noforwards"
 
-    .line 4044
+    .line 4053
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -3550,12 +3557,12 @@
 
     const-string v2, "story_keep"
 
-    .line 4045
+    .line 4054
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 4046
+    .line 4055
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -3574,7 +3581,7 @@
         }
     .end annotation
 
-    .line 2228
+    .line 2234
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->onDone2:Lorg/telegram/messenger/Utilities$Callback;
 
     return-object p0
@@ -3585,19 +3592,19 @@
 .method protected canDismissWithSwipe()Z
     .locals 2
 
-    .line 2204
+    .line 2210
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 2205
+    .line 2211
     instance-of v1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     if-eqz v1, :cond_0
 
-    .line 2206
+    .line 2212
     check-cast v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->atTop()Z
@@ -3615,7 +3622,7 @@
 .method public closeKeyboard()V
     .locals 4
 
-    .line 2034
+    .line 2040
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->getViewPages()[Landroid/view/View;
@@ -3624,16 +3631,16 @@
 
     const/4 v1, 0x0
 
-    .line 2035
+    .line 2041
     :goto_0
     array-length v2, v0
 
     if-ge v1, v2, :cond_1
 
-    .line 2036
+    .line 2042
     aget-object v2, v0, v1
 
-    .line 2037
+    .line 2043
     instance-of v3, v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     if-eqz v3, :cond_0
@@ -3646,7 +3653,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 2038
+    .line 2044
     invoke-static {v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->access$1500(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;
 
     move-result-object v2
@@ -3669,14 +3676,14 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 3
 
-    .line 3910
+    .line 3919
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     if-nez p2, :cond_0
 
     return-void
 
-    .line 3913
+    .line 3922
     :cond_0
     sget p3, Lorg/telegram/messenger/NotificationCenter;->contactsDidLoad:I
 
@@ -3686,26 +3693,26 @@
 
     if-ne p1, p3, :cond_2
 
-    .line 3914
+    .line 3923
     invoke-virtual {p2}, Lorg/telegram/ui/Components/ViewPagerFixed;->getViewPages()[Landroid/view/View;
 
     move-result-object p1
 
-    .line 3915
+    .line 3924
     aget-object p2, p1, v0
 
     instance-of p2, p2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     if-eqz p2, :cond_1
 
-    .line 3916
+    .line 3925
     aget-object p2, p1, v0
 
     check-cast p2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateItems(Z)V
 
-    .line 3918
+    .line 3927
     :cond_1
     aget-object p2, p1, v1
 
@@ -3713,7 +3720,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 3919
+    .line 3928
     aget-object p1, p1, v1
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
@@ -3722,43 +3729,43 @@
 
     goto :goto_2
 
-    .line 3921
+    .line 3930
     :cond_2
     sget p3, Lorg/telegram/messenger/NotificationCenter;->storiesBlocklistUpdate:I
 
     if-ne p1, p3, :cond_5
 
-    .line 3922
+    .line 3931
     invoke-virtual {p2}, Lorg/telegram/ui/Components/ViewPagerFixed;->getViewPages()[Landroid/view/View;
 
     move-result-object p1
 
-    .line 3923
+    .line 3932
     :goto_0
     array-length p2, p1
 
     if-ge v0, p2, :cond_5
 
-    .line 3924
+    .line 3933
     aget-object p2, p1, v0
 
     instance-of p2, p2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     if-eqz p2, :cond_4
 
-    .line 3925
+    .line 3934
     aget-object p2, p1, v0
 
     check-cast p2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
-    .line 3926
+    .line 3935
     iget p3, p2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->pageType:I
 
     const/4 v2, 0x6
 
     if-ne p3, v2, :cond_3
 
-    .line 3927
+    .line 3936
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->applyBlocklist(Z)V
 
     goto :goto_1
@@ -3766,7 +3773,7 @@
     :cond_3
     if-nez p3, :cond_4
 
-    .line 3929
+    .line 3938
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateItems(Z)V
 
     :cond_4
@@ -3783,12 +3790,12 @@
 .method public dismiss()V
     .locals 6
 
-    .line 2108
+    .line 2114
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->onDismiss:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz v0, :cond_3
 
-    .line 2110
+    .line 2116
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedType:I
 
     const/4 v1, 0x3
@@ -3797,7 +3804,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2111
+    .line 2117
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
@@ -3806,7 +3813,7 @@
 
     move-result-object v0
 
-    .line 2112
+    .line 2118
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedType:I
@@ -3819,24 +3826,24 @@
 
     invoke-direct {v1, v3, v4, v5}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;-><init>(IILjava/util/ArrayList;)V
 
-    .line 2113
+    .line 2119
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2114
+    .line 2120
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2115
+    .line 2121
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 2116
+    .line 2122
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
@@ -3850,7 +3857,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2118
+    .line 2124
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
@@ -3859,7 +3866,7 @@
 
     move-result-object v0
 
-    .line 2119
+    .line 2125
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedType:I
@@ -3872,24 +3879,24 @@
 
     invoke-direct {v1, v3, v4, v5}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;-><init>(IILjava/util/ArrayList;)V
 
-    .line 2120
+    .line 2126
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2121
+    .line 2127
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2122
+    .line 2128
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 2123
+    .line 2129
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
@@ -3903,7 +3910,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 2125
+    .line 2131
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
     iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -3914,7 +3921,7 @@
 
     goto :goto_0
 
-    .line 2127
+    .line 2133
     :cond_2
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
@@ -3922,25 +3929,25 @@
 
     invoke-direct {v1, v0, v3, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;-><init>(IILjava/util/ArrayList;)V
 
-    .line 2129
+    .line 2135
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->onDismiss:Lorg/telegram/messenger/Utilities$Callback;
 
     invoke-interface {v0, v1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 2130
+    .line 2136
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->onDismiss:Lorg/telegram/messenger/Utilities$Callback;
 
-    .line 2132
+    .line 2138
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
 
-    .line 2133
+    .line 2139
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->save()V
 
-    .line 2134
+    .line 2140
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -3949,7 +3956,7 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 2004
+    .line 2010
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3960,7 +3967,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 2005
+    .line 2011
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3971,7 +3978,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 2006
+    .line 2012
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
     return-void
@@ -3980,15 +3987,15 @@
 .method public enableSharing(Z)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
     .locals 4
 
-    .line 2232
+    .line 2238
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->sendAsMessageEnabled:Z
 
-    .line 2233
+    .line 2239
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     if-eqz p1, :cond_1
 
-    .line 2234
+    .line 2240
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->getViewPages()[Landroid/view/View;
 
     move-result-object p1
@@ -3997,21 +4004,21 @@
 
     move v1, v0
 
-    .line 2235
+    .line 2241
     :goto_0
     array-length v2, p1
 
     if-ge v1, v2, :cond_1
 
-    .line 2236
+    .line 2242
     aget-object v2, p1, v1
 
-    .line 2237
+    .line 2243
     instance-of v3, v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     if-eqz v3, :cond_0
 
-    .line 2238
+    .line 2244
     check-cast v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateButton(Z)V
@@ -4028,15 +4035,15 @@
 .method public isEdit(Z)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
     .locals 4
 
-    .line 2249
+    .line 2255
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->isEdit:Z
 
-    .line 2250
+    .line 2256
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     if-eqz p1, :cond_1
 
-    .line 2251
+    .line 2257
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->getViewPages()[Landroid/view/View;
 
     move-result-object p1
@@ -4045,26 +4052,26 @@
 
     move v1, v0
 
-    .line 2252
+    .line 2258
     :goto_0
     array-length v2, p1
 
     if-ge v1, v2, :cond_1
 
-    .line 2253
+    .line 2259
     aget-object v2, p1, v1
 
-    .line 2254
+    .line 2260
     instance-of v3, v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     if-eqz v3, :cond_0
 
-    .line 2255
+    .line 2261
     check-cast v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateItems(Z)V
 
-    .line 2256
+    .line 2262
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateButton(Z)V
 
     :cond_0
@@ -4079,7 +4086,7 @@
 .method public onBackPressed()V
     .locals 2
 
-    .line 2194
+    .line 2200
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentPosition()I
@@ -4088,10 +4095,10 @@
 
     if-lez v0, :cond_0
 
-    .line 2195
+    .line 2201
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->closeKeyboard()V
 
-    .line 2196
+    .line 2202
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentPosition()I
@@ -4104,7 +4111,7 @@
 
     return-void
 
-    .line 2199
+    .line 2205
     :cond_0
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
@@ -4118,7 +4125,7 @@
 
     return-object p0
 
-    .line 2271
+    .line 2277
     :cond_0
     iget v0, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
@@ -4128,12 +4135,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2273
+    .line 2279
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2274
+    .line 2280
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedContacts:Ljava/util/ArrayList;
 
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
@@ -4147,31 +4154,31 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 2276
+    .line 2282
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2277
+    .line 2283
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2278
+    .line 2284
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 2279
+    .line 2285
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
 
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    .line 2280
+    .line 2286
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContacts:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->selectedContactsByGroup:Ljava/util/HashMap;
@@ -4193,31 +4200,31 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 2282
+    .line 2288
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2283
+    .line 2289
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIds:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2284
+    .line 2290
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 2285
+    .line 2291
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
 
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->selectedUserIdsByGroup:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    .line 2286
+    .line 2292
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryone:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneByGroup:Ljava/util/HashMap;
@@ -4232,7 +4239,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->excludedEveryoneCount:I
 
-    .line 2288
+    .line 2294
     :cond_3
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->isShare()Z
@@ -4243,32 +4250,32 @@
 
     if-eqz v0, :cond_4
 
-    .line 2289
+    .line 2295
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->startedFromSendAsMessage:Z
 
     const/4 v0, 0x5
 
-    .line 2290
+    .line 2296
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->activePage:I
 
-    .line 2291
+    .line 2297
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->messageUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2292
+    .line 2298
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->messageUsers:Ljava/util/ArrayList;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->sendToUsers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2293
+    .line 2299
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->setPosition(I)V
 
-    .line 2295
+    .line 2301
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -4278,14 +4285,14 @@
 
     const/4 v0, 0x0
 
-    .line 2296
+    .line 2302
     aget-object v2, p1, v0
 
     instance-of v2, v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     if-eqz v2, :cond_5
 
-    .line 2297
+    .line 2303
     aget-object v2, p1, v0
 
     check-cast v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
@@ -4298,7 +4305,7 @@
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->bind(I)V
 
-    .line 2299
+    .line 2305
     :cond_5
     aget-object v0, p1, v1
 
@@ -4306,7 +4313,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 2300
+    .line 2306
     aget-object v0, p1, v1
 
     check-cast v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
@@ -4335,7 +4342,7 @@
         }
     .end annotation
 
-    .line 2263
+    .line 2269
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->warnUsers:Ljava/util/ArrayList;
 
     return-object p0
@@ -4353,7 +4360,7 @@
         }
     .end annotation
 
-    .line 2219
+    .line 2225
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->onDismiss:Lorg/telegram/messenger/Utilities$Callback;
 
     return-object p0
@@ -4374,10 +4381,10 @@
         }
     .end annotation
 
-    .line 2223
+    .line 2229
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->onDone:Lorg/telegram/messenger/Utilities$Callback4;
 
-    .line 2224
+    .line 2230
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->applyWhenDismiss:Z
 
     return-object p0

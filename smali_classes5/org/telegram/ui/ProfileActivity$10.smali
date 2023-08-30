@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 3495
+    .line 3498
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$ClippedListView;-><init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method protected allowSelectChildAtPosition(Landroid/view/View;)Z
     .locals 1
 
-    .line 3506
+    .line 3509
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -60,7 +60,7 @@
 .method protected canHighlightChildAt(Landroid/view/View;FF)Z
     .locals 0
 
-    .line 3501
+    .line 3504
     instance-of p1, p1, Lorg/telegram/ui/Cells/AboutLinkCell;
 
     xor-int/lit8 p1, p1, 0x1
@@ -71,7 +71,7 @@
 .method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 9
 
-    .line 3568
+    .line 3571
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
 
     move-result-object v0
@@ -98,7 +98,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 3569
+    .line 3572
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -139,7 +139,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3571
+    .line 3574
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$12300(Lorg/telegram/ui/ProfileActivity;)Landroid/graphics/Paint;
@@ -168,7 +168,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 3573
+    .line 3576
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -232,7 +232,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 3575
+    .line 3578
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$12300(Lorg/telegram/ui/ProfileActivity;)Landroid/graphics/Paint;
@@ -255,7 +255,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 3578
+    .line 3581
     :cond_2
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -275,10 +275,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 3521
+    .line 3524
     invoke-super {p0}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 3522
+    .line 3525
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$14400(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
@@ -287,7 +287,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3523
+    .line 3526
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$14500(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
@@ -303,7 +303,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 3529
+    .line 3532
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -314,12 +314,12 @@
 
     if-nez v0, :cond_1
 
-    .line 3531
+    .line 3534
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v3, :cond_0
 
-    .line 3532
+    .line 3535
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v3
@@ -328,11 +328,11 @@
 
     goto :goto_0
 
-    .line 3534
+    .line 3537
     :cond_0
     invoke-virtual {v3}, Landroid/view/VelocityTracker;->clear()V
 
-    .line 3536
+    .line 3539
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->velocityTracker:Landroid/view/VelocityTracker;
 
@@ -345,22 +345,22 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 3538
+    .line 3541
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v3, :cond_4
 
-    .line 3539
+    .line 3542
     invoke-virtual {v3, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 3540
+    .line 3543
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->velocityTracker:Landroid/view/VelocityTracker;
 
     const/16 v4, 0x3e8
 
     invoke-virtual {v3, v4}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 3541
+    .line 3544
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$10;->velocityTracker:Landroid/view/VelocityTracker;
@@ -386,21 +386,21 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 3544
+    .line 3547
     :cond_3
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v3, :cond_4
 
-    .line 3545
+    .line 3548
     invoke-virtual {v3}, Landroid/view/VelocityTracker;->recycle()V
 
     const/4 v3, 0x0
 
-    .line 3546
+    .line 3549
     iput-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->velocityTracker:Landroid/view/VelocityTracker;
 
-    .line 3549
+    .line 3552
     :cond_4
     :goto_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -411,7 +411,7 @@
 
     if-ne v0, v1, :cond_8
 
-    .line 3551
+    .line 3554
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -421,7 +421,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 3552
+    .line 3555
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$8600(Lorg/telegram/ui/ProfileActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -436,7 +436,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 3554
+    .line 3557
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$4300(Lorg/telegram/ui/ProfileActivity;)Z
@@ -445,7 +445,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 3555
+    .line 3558
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v2
@@ -472,7 +472,7 @@
     :goto_2
     add-int/2addr v2, v3
 
-    .line 3556
+    .line 3559
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -503,7 +503,7 @@
 
     goto :goto_3
 
-    .line 3558
+    .line 3561
     :cond_7
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$10;->this$0:Lorg/telegram/ui/ProfileActivity;
 

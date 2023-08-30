@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;Landroid/content/Context;)V
     .locals 0
 
-    .line 225
+    .line 228
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0, p2}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
@@ -36,10 +36,28 @@
 
 
 # virtual methods
+.method protected onAttachedToWindow()V
+    .locals 2
+
+    .line 276
+    invoke-virtual {p0}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->checkAndroidTheme(Landroid/content/Context;Z)V
+
+    .line 277
+    invoke-super {p0}, Landroid/webkit/WebView;->onAttachedToWindow()V
+
+    return-void
+.end method
+
 .method public onCheckIsTextEditor()Z
     .locals 1
 
-    .line 254
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->isFocusable()Z
@@ -49,10 +67,28 @@
     return v0
 .end method
 
+.method protected onDetachedFromWindow()V
+    .locals 2
+
+    .line 282
+    invoke-virtual {p0}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->checkAndroidTheme(Landroid/content/Context;Z)V
+
+    .line 283
+    invoke-super {p0}, Landroid/webkit/WebView;->onDetachedFromWindow()V
+
+    return-void
+.end method
+
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 259
+    .line 262
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -71,10 +107,10 @@
 .method protected onScrollChanged(IIII)V
     .locals 0
 
-    .line 230
+    .line 233
     invoke-super {p0, p1, p2, p3, p4}, Landroid/webkit/WebView;->onScrollChanged(IIII)V
 
-    .line 232
+    .line 235
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$100(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/Components/BotWebViewContainer$WebViewScrollListener;
@@ -83,7 +119,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 233
+    .line 236
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$100(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/Components/BotWebViewContainer$WebViewScrollListener;
@@ -108,7 +144,7 @@
 
     invoke-interface {p1, p0, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer$WebViewScrollListener;->onWebViewScrolled(Landroid/webkit/WebView;II)V
 
-    .line 236
+    .line 239
     :cond_0
     invoke-virtual {p0}, Landroid/webkit/WebView;->getScrollX()I
 
@@ -116,7 +152,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->prevScrollX:I
 
-    .line 237
+    .line 240
     invoke-virtual {p0}, Landroid/webkit/WebView;->getScrollY()I
 
     move-result p1
@@ -129,14 +165,14 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 265
+    .line 268
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 266
+    .line 269
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -145,7 +181,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$202(Lorg/telegram/ui/Components/BotWebViewContainer;J)J
 
-    .line 268
+    .line 271
     :cond_0
     invoke-super {p0, p1}, Landroid/webkit/WebView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -157,10 +193,10 @@
 .method public setScrollX(I)V
     .locals 0
 
-    .line 242
+    .line 245
     invoke-super {p0, p1}, Landroid/webkit/WebView;->setScrollX(I)V
 
-    .line 243
+    .line 246
     iput p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->prevScrollX:I
 
     return-void
@@ -169,10 +205,10 @@
 .method public setScrollY(I)V
     .locals 0
 
-    .line 248
+    .line 251
     invoke-super {p0, p1}, Landroid/webkit/WebView;->setScrollY(I)V
 
-    .line 249
+    .line 252
     iput p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$2;->prevScrollY:I
 
     return-void

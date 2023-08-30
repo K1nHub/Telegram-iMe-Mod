@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/PushListenerController$$ExternalSyntheticLambda2;->f$2:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$NipNRCaMnfAJv5_B5r53cGX4oOw(IILjava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/PushListenerController;->$r8$lambda$MeJUgzA4g2rYdiQ3EwhBF1J33H4(IILjava/lang/String;)V
 
     return-void
 .end method

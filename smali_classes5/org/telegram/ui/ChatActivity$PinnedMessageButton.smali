@@ -18,26 +18,26 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 3
 
-    .line 10174
+    .line 10175
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/4 p2, 0x1
 
-    .line 10176
+    .line 10177
     invoke-virtual {p0, p2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 10177
+    .line 10178
     invoke-virtual {p0, p2}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 10178
+    .line 10179
     invoke-virtual {p0, p2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 10179
+    .line 10180
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 10180
+    .line 10181
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -46,7 +46,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 10181
+    .line 10182
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -69,12 +69,12 @@
 
     const/high16 p1, 0x41600000    # 14.0f
 
-    .line 10182
+    .line 10183
     invoke-virtual {p0, p2, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string p1, "fonts/rmedium.ttf"
 
-    .line 10183
+    .line 10184
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p1
@@ -83,12 +83,12 @@
 
     const/16 p1, 0x11
 
-    .line 10184
+    .line 10185
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/16 p1, 0xe
 
-    .line 10185
+    .line 10186
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -107,7 +107,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 10191
+    .line 10192
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -134,7 +134,7 @@
 
     move-result p1
 
-    .line 10190
+    .line 10191
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
     return-void

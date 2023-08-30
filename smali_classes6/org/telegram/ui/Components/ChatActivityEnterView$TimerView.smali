@@ -52,27 +52,27 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 0
 
-    .line 11684
+    .line 11683
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    .line 11685
+    .line 11684
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 11671
+    .line 11670
     new-instance p1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceIn:Landroid/text/SpannableStringBuilder;
 
-    .line 11672
+    .line 11671
     new-instance p1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceOut:Landroid/text/SpannableStringBuilder;
 
-    .line 11673
+    .line 11672
     new-instance p1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p1}, Landroid/text/SpannableStringBuilder;-><init>()V
@@ -81,7 +81,7 @@
 
     const/16 p1, 0xf
 
-    .line 11681
+    .line 11680
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -98,7 +98,7 @@
 .method public getLeftProperty()F
     .locals 1
 
-    .line 11861
+    .line 11860
     iget v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->left:F
 
     return v0
@@ -111,14 +111,14 @@
 
     move-object/from16 v1, p1
 
-    .line 11709
+    .line 11708
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->textPaint:Landroid/text/TextPaint;
 
     const/4 v3, 0x1
 
     if-nez v2, :cond_0
 
-    .line 11710
+    .line 11709
     new-instance v2, Landroid/text/TextPaint;
 
     invoke-direct {v2, v3}, Landroid/text/TextPaint;-><init>(I)V
@@ -127,7 +127,7 @@
 
     const/16 v4, 0xf
 
-    .line 11711
+    .line 11710
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -136,7 +136,7 @@
 
     invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 11712
+    .line 11711
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->textPaint:Landroid/text/TextPaint;
 
     const-string v4, "fonts/rmedium.ttf"
@@ -147,7 +147,7 @@
 
     invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 11713
+    .line 11712
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->textPaint:Landroid/text/TextPaint;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -160,13 +160,13 @@
 
     invoke-virtual {v2, v4}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 11715
+    .line 11714
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    .line 11716
+    .line 11715
     iget-boolean v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->isRunning:Z
 
     if-eqz v2, :cond_1
@@ -187,17 +187,17 @@
     :goto_0
     const-wide/16 v8, 0x3e8
 
-    .line 11717
+    .line 11716
     div-long v10, v6, v8
 
-    .line 11718
+    .line 11717
     rem-long v8, v6, v8
 
     long-to-int v2, v8
 
     div-int/lit8 v2, v2, 0xa
 
-    .line 11720
+    .line 11719
     iget-object v8, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v8}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isInVideoMode()Z
@@ -216,19 +216,19 @@
 
     if-ltz v6, :cond_2
 
-    .line 11721
+    .line 11720
     iget-boolean v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->stoppedInternal:Z
 
     if-nez v6, :cond_2
 
-    .line 11722
+    .line 11721
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     const/high16 v7, -0x40800000    # -1.0f
 
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$3002(Lorg/telegram/ui/Components/ChatActivityEnterView;F)F
 
-    .line 11723
+    .line 11722
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -237,10 +237,10 @@
 
     invoke-interface {v6, v9, v3, v12}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordVideo(IZI)V
 
-    .line 11724
+    .line 11723
     iput-boolean v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->stoppedInternal:Z
 
-    .line 11728
+    .line 11727
     :cond_2
     iget-boolean v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->isRunning:Z
 
@@ -256,10 +256,10 @@
 
     if-lez v6, :cond_4
 
-    .line 11729
+    .line 11728
     iput-wide v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->lastSendTypingTime:J
 
-    .line 11730
+    .line 11729
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$600(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
@@ -309,12 +309,12 @@
 
     int-to-long v4, v4
 
-    .line 11733
+    .line 11732
     invoke-static {v4, v5, v2}, Lorg/telegram/messenger/AndroidUtilities;->formatTimerDurationFast(JI)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 11734
+    .line 11733
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -369,39 +369,39 @@
 
     if-eq v4, v6, :cond_d
 
-    .line 11735
+    .line 11734
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    .line 11737
+    .line 11736
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceIn:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v6}, Landroid/text/SpannableStringBuilder;->clear()V
 
-    .line 11738
+    .line 11737
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceOut:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v6}, Landroid/text/SpannableStringBuilder;->clear()V
 
-    .line 11739
+    .line 11738
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v6}, Landroid/text/SpannableStringBuilder;->clear()V
 
-    .line 11740
+    .line 11739
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceIn:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v6, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 11741
+    .line 11740
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceOut:Landroid/text/SpannableStringBuilder;
 
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->oldString:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 11742
+    .line 11741
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v6, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
@@ -423,7 +423,7 @@
 
     if-ge v8, v11, :cond_a
 
-    .line 11751
+    .line 11750
     iget-object v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->oldString:Ljava/lang/String;
 
     invoke-virtual {v11, v8}, Ljava/lang/String;->charAt(I)C
@@ -445,7 +445,7 @@
 
     if-eqz v9, :cond_9
 
-    .line 11758
+    .line 11757
     new-instance v11, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v11}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
@@ -456,7 +456,7 @@
 
     add-int/lit8 v9, v9, 0x1
 
-    .line 11762
+    .line 11761
     :cond_6
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceIn:Landroid/text/SpannableStringBuilder;
 
@@ -464,7 +464,7 @@
 
     invoke-virtual {v14, v11, v6, v9, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 11763
+    .line 11762
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceOut:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v14, v11, v6, v9, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
@@ -483,7 +483,7 @@
 
     if-eqz v10, :cond_9
 
-    .line 11772
+    .line 11771
     iget-object v11, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     new-instance v14, Lorg/telegram/ui/Components/EmptyStubSpan;
@@ -505,12 +505,12 @@
     :cond_a
     if-eqz v9, :cond_b
 
-    .line 11779
+    .line 11778
     new-instance v4, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v4}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
 
-    .line 11780
+    .line 11779
     iget-object v8, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceIn:Landroid/text/SpannableStringBuilder;
 
     add-int/2addr v9, v6
@@ -519,7 +519,7 @@
 
     invoke-virtual {v8, v4, v6, v9, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 11781
+    .line 11780
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceOut:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v3, v4, v6, v9, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
@@ -527,7 +527,7 @@
     :cond_b
     if-eqz v10, :cond_c
 
-    .line 11784
+    .line 11783
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     new-instance v4, Lorg/telegram/ui/Components/EmptyStubSpan;
@@ -538,7 +538,7 @@
 
     invoke-virtual {v3, v4, v7, v10, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 11787
+    .line 11786
     :cond_c
     new-instance v3, Landroid/text/StaticLayout;
 
@@ -566,7 +566,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->inLayout:Landroid/text/StaticLayout;
 
-    .line 11788
+    .line 11787
     new-instance v3, Landroid/text/StaticLayout;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceOut:Landroid/text/SpannableStringBuilder;
@@ -595,25 +595,25 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->outLayout:Landroid/text/StaticLayout;
 
-    .line 11790
+    .line 11789
     iput v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceTransition:F
 
     goto :goto_5
 
-    .line 11792
+    .line 11791
     :cond_d
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     if-nez v4, :cond_e
 
-    .line 11793
+    .line 11792
     new-instance v4, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v4, v2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     iput-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
-    .line 11795
+    .line 11794
     :cond_e
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
@@ -637,7 +637,7 @@
 
     goto :goto_4
 
-    .line 11799
+    .line 11798
     :cond_f
     iget-object v13, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
@@ -683,19 +683,19 @@
 
     goto :goto_5
 
-    .line 11796
+    .line 11795
     :cond_10
     :goto_4
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v3}, Landroid/text/SpannableStringBuilder;->clear()V
 
-    .line 11797
+    .line 11796
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v3, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 11803
+    .line 11802
     :goto_5
     iget v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceTransition:F
 
@@ -709,17 +709,17 @@
 
     sub-float/2addr v3, v6
 
-    .line 11804
+    .line 11803
     iput v3, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceTransition:F
 
     cmpg-float v3, v3, v4
 
     if-gez v3, :cond_11
 
-    .line 11806
+    .line 11805
     iput v4, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceTransition:F
 
-    .line 11810
+    .line 11809
     :cond_11
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -729,7 +729,7 @@
 
     int-to-float v3, v3
 
-    .line 11813
+    .line 11812
     iget v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceTransition:F
 
     cmpl-float v6, v6, v4
@@ -738,12 +738,12 @@
 
     if-nez v6, :cond_12
 
-    .line 11814
+    .line 11813
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
 
     invoke-virtual {v5}, Landroid/text/SpannableStringBuilder;->clearSpans()V
 
-    .line 11815
+    .line 11814
     new-instance v5, Landroid/text/StaticLayout;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
@@ -766,10 +766,10 @@
 
     invoke-direct/range {v13 .. v20}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
-    .line 11816
+    .line 11815
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 11817
+    .line 11816
     invoke-virtual {v5}, Landroid/text/StaticLayout;->getHeight()I
 
     move-result v6
@@ -782,13 +782,13 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 11818
+    .line 11817
     invoke-virtual {v5, v1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 11819
+    .line 11818
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 11820
+    .line 11819
     invoke-virtual {v5, v12}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
@@ -799,7 +799,7 @@
 
     goto/16 :goto_6
 
-    .line 11822
+    .line 11821
     :cond_12
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->inLayout:Landroid/text/StaticLayout;
 
@@ -807,10 +807,10 @@
 
     if-eqz v6, :cond_13
 
-    .line 11823
+    .line 11822
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 11824
+    .line 11823
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->textPaint:Landroid/text/TextPaint;
 
     iget v9, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceTransition:F
@@ -823,7 +823,7 @@
 
     invoke-virtual {v6, v9}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 11825
+    .line 11824
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->inLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getHeight()I
@@ -846,24 +846,24 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 11826
+    .line 11825
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->inLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v6, v1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 11827
+    .line 11826
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 11830
+    .line 11829
     :cond_13
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->outLayout:Landroid/text/StaticLayout;
 
     if-eqz v6, :cond_14
 
-    .line 11831
+    .line 11830
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 11832
+    .line 11831
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->textPaint:Landroid/text/TextPaint;
 
     iget v9, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceTransition:F
@@ -874,7 +874,7 @@
 
     invoke-virtual {v6, v8}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 11833
+    .line 11832
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->outLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getHeight()I
@@ -899,26 +899,26 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 11834
+    .line 11833
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->outLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, v1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 11835
+    .line 11834
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 11838
+    .line 11837
     :cond_14
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 11839
+    .line 11838
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->textPaint:Landroid/text/TextPaint;
 
     const/16 v6, 0xff
 
     invoke-virtual {v5, v6}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 11840
+    .line 11839
     new-instance v5, Landroid/text/StaticLayout;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->replaceStable:Landroid/text/SpannableStringBuilder;
@@ -941,7 +941,7 @@
 
     invoke-direct/range {v13 .. v20}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
-    .line 11841
+    .line 11840
     invoke-virtual {v5}, Landroid/text/StaticLayout;->getHeight()I
 
     move-result v6
@@ -954,13 +954,13 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 11842
+    .line 11841
     invoke-virtual {v5, v1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 11843
+    .line 11842
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 11844
+    .line 11843
     invoke-virtual {v5, v12}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
@@ -969,11 +969,11 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->left:F
 
-    .line 11847
+    .line 11846
     :goto_6
     iput-object v2, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->oldString:Ljava/lang/String;
 
-    .line 11849
+    .line 11848
     iget-boolean v1, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->isRunning:Z
 
     if-nez v1, :cond_15
@@ -984,7 +984,7 @@
 
     if-eqz v1, :cond_16
 
-    .line 11850
+    .line 11849
     :cond_15
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
@@ -997,17 +997,17 @@
 
     const/4 v0, 0x0
 
-    .line 11865
+    .line 11864
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->isRunning:Z
 
     const-wide/16 v1, 0x0
 
-    .line 11866
+    .line 11865
     iput-wide v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->startTime:J
 
     iput-wide v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->stopTime:J
 
-    .line 11867
+    .line 11866
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->stoppedInternal:Z
 
     return-void
@@ -1018,20 +1018,20 @@
 
     const/4 v0, 0x1
 
-    .line 11689
+    .line 11688
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->isRunning:Z
 
-    .line 11690
+    .line 11689
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->startTime:J
 
-    .line 11691
+    .line 11690
     iput-wide v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->lastSendTypingTime:J
 
-    .line 11692
+    .line 11691
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1040,7 +1040,7 @@
 .method public stop()V
     .locals 5
 
-    .line 11696
+    .line 11695
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->isRunning:Z
 
     const-wide/16 v1, 0x0
@@ -1049,28 +1049,28 @@
 
     const/4 v0, 0x0
 
-    .line 11697
+    .line 11696
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->isRunning:Z
 
-    .line 11698
+    .line 11697
     iget-wide v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->startTime:J
 
     cmp-long v0, v3, v1
 
     if-lez v0, :cond_0
 
-    .line 11699
+    .line 11698
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->stopTime:J
 
-    .line 11701
+    .line 11700
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 11703
+    .line 11702
     :cond_1
     iput-wide v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->lastSendTypingTime:J
 
@@ -1080,12 +1080,12 @@
 .method public updateColors()V
     .locals 3
 
-    .line 11855
+    .line 11854
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->textPaint:Landroid/text/TextPaint;
 
     if-eqz v0, :cond_0
 
-    .line 11856
+    .line 11855
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$TimerView;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_recordTime:I

@@ -44,12 +44,12 @@
 .method private constructor <init>(IZ)V
     .locals 0
 
-    .line 2331
+    .line 2337
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     const/4 p1, -0x1
 
-    .line 2328
+    .line 2334
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->padHeight:I
 
     return-void
@@ -58,7 +58,7 @@
 .method public static asChat(Lorg/telegram/tgnet/TLRPC$Chat;Z)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2366
+    .line 2372
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x3
@@ -67,10 +67,10 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2367
+    .line 2373
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 2368
+    .line 2374
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->checked:Z
 
     return-object v0
@@ -79,7 +79,7 @@
 .method public static asCheck(Ljava/lang/CharSequence;IZ)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2390
+    .line 2396
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x7
@@ -88,13 +88,13 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2391
+    .line 2397
     iput p1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->resId:I
 
-    .line 2392
+    .line 2398
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text:Ljava/lang/CharSequence;
 
-    .line 2393
+    .line 2399
     iput-boolean p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->checked:Z
 
     return-object v0
@@ -103,7 +103,7 @@
 .method public static asHeader()Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 2
 
-    .line 2343
+    .line 2349
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x0
@@ -116,7 +116,7 @@
 .method public static asHeader2(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2346
+    .line 2352
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x4
@@ -125,10 +125,10 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2347
+    .line 2353
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text:Ljava/lang/CharSequence;
 
-    .line 2348
+    .line 2354
     iput-object p1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text2:Ljava/lang/CharSequence;
 
     return-object v0
@@ -137,7 +137,7 @@
 .method public static asNoUsers()Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2398
+    .line 2404
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x5
@@ -154,7 +154,7 @@
 
     const/4 v0, -0x1
 
-    .line 2335
+    .line 2341
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->asPad(I)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     move-result-object v0
@@ -165,7 +165,7 @@
 .method public static asPad(I)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2338
+    .line 2344
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, -0x1
@@ -174,7 +174,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2339
+    .line 2345
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->subtractHeight:I
 
     return-object v0
@@ -183,7 +183,7 @@
 .method public static asPadding(I)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2401
+    .line 2407
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, -0x1
@@ -192,7 +192,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2402
+    .line 2408
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->padHeight:I
 
     return-object v0
@@ -201,7 +201,7 @@
 .method public static asSearchField()Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2352
+    .line 2358
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x1
@@ -216,7 +216,7 @@
 .method public static asSection()Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2355
+    .line 2361
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x2
@@ -231,7 +231,7 @@
 .method public static asShadow(Ljava/lang/CharSequence;)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2385
+    .line 2391
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x6
@@ -240,7 +240,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2386
+    .line 2392
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text:Ljava/lang/CharSequence;
 
     return-object v0
@@ -249,7 +249,7 @@
 .method public static asType(IZI)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2378
+    .line 2384
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x3
@@ -258,13 +258,13 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2379
+    .line 2385
     iput p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->type:I
 
-    .line 2380
+    .line 2386
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->checked:Z
 
-    .line 2381
+    .line 2387
     iput p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->typeCount:I
 
     return-object v0
@@ -273,7 +273,7 @@
 .method public static asUser(Lorg/telegram/tgnet/TLRPC$User;ZZ)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 3
 
-    .line 2359
+    .line 2365
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     const/4 v1, 0x3
@@ -282,13 +282,13 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;-><init>(IZ)V
 
-    .line 2360
+    .line 2366
     iput-object p0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2361
+    .line 2367
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->checked:Z
 
-    .line 2362
+    .line 2368
     iput-boolean p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->halfChecked:Z
 
     return-object v0
@@ -310,7 +310,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 2409
+    .line 2415
     const-class v2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -321,11 +321,11 @@
 
     goto/16 :goto_0
 
-    .line 2410
+    .line 2416
     :cond_1
     check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
-    .line 2411
+    .line 2417
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -339,7 +339,7 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 2414
+    .line 2420
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->subtractHeight:I
 
     iget v4, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->subtractHeight:I
@@ -360,7 +360,7 @@
 
     if-ne v2, v3, :cond_6
 
-    .line 2416
+    .line 2422
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v4, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->user:Lorg/telegram/tgnet/TLRPC$User;
@@ -403,7 +403,7 @@
     :cond_6
     if-nez v2, :cond_7
 
-    .line 2418
+    .line 2424
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->resId:I
 
     iget v4, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->resId:I
@@ -417,7 +417,7 @@
 
     if-ne v2, v3, :cond_8
 
-    .line 2420
+    .line 2426
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text:Ljava/lang/CharSequence;
 
     iget-object v3, p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text:Ljava/lang/CharSequence;
@@ -430,7 +430,7 @@
 
     return v1
 
-    .line 2422
+    .line 2428
     :cond_8
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -461,7 +461,7 @@
     :cond_9
     return v1
 
-    .line 2424
+    .line 2430
     :cond_a
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -481,7 +481,7 @@
 
     return v1
 
-    .line 2426
+    .line 2432
     :cond_b
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -525,7 +525,7 @@
 .method public red(Z)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
     .locals 0
 
-    .line 2433
+    .line 2439
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->red:Z
 
     return-object p0

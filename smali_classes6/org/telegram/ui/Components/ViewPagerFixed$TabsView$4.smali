@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)V
     .locals 0
 
-    .line 1427
+    .line 1429
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 1430
+    .line 1432
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

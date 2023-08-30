@@ -56,7 +56,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 674
+    .line 676
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -65,7 +65,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)I
     .locals 0
 
-    .line 650
+    .line 652
     iget p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->selectedType:I
 
     return p0
@@ -74,7 +74,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;I)I
     .locals 0
 
-    .line 650
+    .line 652
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->selectedType:I
 
     return p1
@@ -83,7 +83,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->listView:Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
     return-object p0
@@ -92,7 +92,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->listView:Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
     return-object p1
@@ -101,7 +101,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->layoutManager:Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
 
     return-object p0
@@ -110,7 +110,7 @@
 .method static synthetic access$302(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/ExtendedGridLayoutManager;)Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->layoutManager:Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
 
     return-object p1
@@ -119,7 +119,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->animationSupportingListView:Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
     return-object p0
@@ -128,7 +128,7 @@
 .method static synthetic access$3702(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->animationSupportingListView:Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
     return-object p1
@@ -137,7 +137,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/StickerEmptyView;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     return-object p0
@@ -146,7 +146,7 @@
 .method static synthetic access$4202(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/StickerEmptyView;)Lorg/telegram/ui/Components/StickerEmptyView;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     return-object p1
@@ -155,7 +155,7 @@
 .method static synthetic access$5800(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Landroidx/recyclerview/widget/GridLayoutManager;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->animationSupportingLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     return-object p0
@@ -164,7 +164,7 @@
 .method static synthetic access$5802(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Landroidx/recyclerview/widget/GridLayoutManager;)Landroidx/recyclerview/widget/GridLayoutManager;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->animationSupportingLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     return-object p1
@@ -173,7 +173,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/ClippingImageView;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->animatingImageView:Lorg/telegram/ui/Components/ClippingImageView;
 
     return-object p0
@@ -182,7 +182,7 @@
 .method static synthetic access$602(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/ClippingImageView;)Lorg/telegram/ui/Components/ClippingImageView;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->animatingImageView:Lorg/telegram/ui/Components/ClippingImageView;
 
     return-object p1
@@ -191,7 +191,7 @@
 .method static synthetic access$6100(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/FlickerLoadingView;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     return-object p0
@@ -200,7 +200,7 @@
 .method static synthetic access$6102(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/FlickerLoadingView;)Lorg/telegram/ui/Components/FlickerLoadingView;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     return-object p1
@@ -209,7 +209,7 @@
 .method static synthetic access$6400(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
     .locals 0
 
-    .line 650
+    .line 652
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     return-object p0
@@ -218,7 +218,7 @@
 .method static synthetic access$6402(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;)Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
     .locals 0
 
-    .line 650
+    .line 652
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->scrollHelper:Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper;
 
     return-object p1
@@ -229,10 +229,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 687
+    .line 689
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 688
+    .line 690
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->fastScrollHintView:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     if-eqz p1, :cond_2
@@ -243,7 +243,7 @@
 
     if-nez p1, :cond_2
 
-    .line 690
+    .line 692
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->listView:Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView;->getFastScroll()Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
@@ -252,7 +252,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 692
+    .line 694
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->getScrollBarY()I
 
     move-result v0
@@ -267,7 +267,7 @@
 
     int-to-float v0, v0
 
-    .line 693
+    .line 695
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->selectedType:I
 
     const/16 v2, 0x9
@@ -276,7 +276,7 @@
 
     const/16 v1, 0x40
 
-    .line 694
+    .line 696
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -285,7 +285,7 @@
 
     add-float/2addr v0, v1
 
-    .line 696
+    .line 698
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -309,7 +309,7 @@
 
     int-to-float v1, v1
 
-    .line 697
+    .line 699
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->fastScrollHintView:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -320,24 +320,24 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 698
+    .line 700
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->fastScrollHintView:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 699
+    .line 701
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->fastScrollHintView:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 700
+    .line 702
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->fastScrollHintView:Lorg/telegram/ui/Components/SharedMediaFastScrollTooltip;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 703
+    .line 705
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->getProgress()F
 
@@ -353,7 +353,7 @@
 
     const/4 v0, 0x0
 
-    .line 704
+    .line 706
     invoke-static {p0, p1, v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$400(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;Z)V
 
     :cond_2
@@ -363,7 +363,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 1
 
-    .line 679
+    .line 681
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->animationSupportingListView:Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
 
     if-ne p2, v0, :cond_0
@@ -372,7 +372,7 @@
 
     return p1
 
-    .line 682
+    .line 684
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 

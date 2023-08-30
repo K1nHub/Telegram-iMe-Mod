@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    .line 2597
+    .line 2600
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;->val$show:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2600
+    .line 2603
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 2601
+    .line 2604
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$3200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/ZoomControlView;
@@ -55,7 +55,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2603
+    .line 2606
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 

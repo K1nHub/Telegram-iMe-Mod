@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 8656
+    .line 8777
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 8659
+    .line 8780
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18100(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18400(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
     move-result-object v0
 
@@ -46,11 +46,11 @@
 
     return-void
 
-    .line 8663
+    .line 8784
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18500(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroidx/viewpager/widget/PagerAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18800(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroidx/viewpager/widget/PagerAdapter;
 
     move-result-object v0
 
@@ -60,7 +60,7 @@
 
     const/4 v1, 0x7
 
-    .line 8664
+    .line 8785
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -87,7 +87,7 @@
 
     add-int/2addr v1, v3
 
-    .line 8666
+    .line 8787
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -96,7 +96,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 8667
+    .line 8788
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -107,18 +107,18 @@
 
     goto/16 :goto_1
 
-    .line 8669
+    .line 8790
     :cond_1
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 8670
+    .line 8791
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    .line 8671
+    .line 8792
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
@@ -135,10 +135,10 @@
 
     div-int/2addr v5, v3
 
-    .line 8672
+    .line 8793
     iget-object v6, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17900(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18200(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
 
     move-result v6
 
@@ -152,7 +152,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17800(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18100(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
 
     move-result v6
 
@@ -160,10 +160,10 @@
 
     if-gez v6, :cond_2
 
-    .line 8673
+    .line 8794
     iget-object v6, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17800(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18100(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
 
     move-result v6
 
@@ -187,11 +187,11 @@
 
     goto :goto_1
 
-    .line 8674
+    .line 8795
     :cond_2
     iget-object v6, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17900(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18200(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
 
     move-result v6
 
@@ -210,20 +210,20 @@
 
     goto :goto_1
 
-    .line 8676
+    .line 8797
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17900(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18200(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
 
     move-result v0
 
     if-le v0, v5, :cond_4
 
-    .line 8677
+    .line 8798
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17800(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18100(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
 
     move-result v0
 
@@ -235,7 +235,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17900(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18200(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
 
     move-result v6
 
@@ -247,11 +247,11 @@
 
     goto :goto_0
 
-    .line 8678
+    .line 8799
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17900(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18200(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
 
     move-result v0
 
@@ -259,7 +259,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17800(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18100(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
 
     move-result v0
 
@@ -267,10 +267,10 @@
 
     if-lez v0, :cond_5
 
-    .line 8679
+    .line 8800
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17800(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18100(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)F
 
     move-result v0
 
@@ -290,11 +290,11 @@
 
     move v3, v1
 
-    .line 8682
+    .line 8803
     :goto_2
     iget-object v5, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v5}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18100(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
+    invoke-static {v5}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18400(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
     move-result-object v5
 
@@ -306,7 +306,7 @@
 
     if-ge v3, v5, :cond_7
 
-    .line 8683
+    .line 8804
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -321,10 +321,10 @@
 
     add-int/2addr v5, v6
 
-    .line 8684
+    .line 8805
     iget-object v6, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17900(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18200(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
 
     move-result v6
 
@@ -334,7 +334,7 @@
 
     iget-object v6, v6, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer;->access$18600(Lorg/telegram/ui/ArticleViewer;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer;->access$18900(Lorg/telegram/ui/ArticleViewer;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
 
@@ -345,14 +345,14 @@
 
     iget-object v6, v6, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer;->access$18700(Lorg/telegram/ui/ArticleViewer;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v6}, Lorg/telegram/ui/ArticleViewer;->access$19000(Lorg/telegram/ui/ArticleViewer;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
 
     :goto_3
     const/4 v7, 0x5
 
-    .line 8685
+    .line 8806
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -373,7 +373,7 @@
 
     invoke-virtual {v6, v8, v1, v5, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 8686
+    .line 8807
     invoke-virtual {v6, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     add-int/lit8 v3, v3, 0x1

@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;ILorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 0
 
-    .line 17337
+    .line 17339
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput p2, p0, Lorg/telegram/ui/ChatActivity$94;->val$newEditVisibility:I
@@ -43,7 +43,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 17349
+    .line 17351
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44600(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 17350
+    .line 17352
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v0, 0x0
@@ -78,7 +78,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 17340
+    .line 17342
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$94;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$44600(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
@@ -99,14 +99,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 17341
+    .line 17343
     iget p1, p0, Lorg/telegram/ui/ChatActivity$94;->val$newEditVisibility:I
 
     const/16 v0, 0x8
 
     if-ne p1, v0, :cond_0
 
-    .line 17342
+    .line 17344
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$94;->val$editItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V

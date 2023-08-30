@@ -34,21 +34,21 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1756
+    .line 1760
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
 
-    .line 1757
+    .line 1761
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
 
-    .line 1758
+    .line 1762
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 1759
+    .line 1763
     iput-object p4, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->searchField:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$SearchUsersCell;
 
-    .line 1760
+    .line 1764
     iput-object p5, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->onBack:Ljava/lang/Runnable;
 
     return-void
@@ -57,7 +57,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;Lorg/telegram/ui/Components/RecyclerListView;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 1749
+    .line 1753
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p1
@@ -68,7 +68,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1882
+    .line 1886
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->access$9300(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;)Ljava/util/ArrayList;
@@ -99,7 +99,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1874
+    .line 1878
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->access$9300(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;)Ljava/util/ArrayList;
@@ -124,7 +124,7 @@
 
     goto :goto_0
 
-    .line 1877
+    .line 1881
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
@@ -152,7 +152,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 1768
+    .line 1772
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -187,7 +187,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 7
 
-    .line 1811
+    .line 1815
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->access$9300(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;)Ljava/util/ArrayList;
@@ -212,7 +212,7 @@
 
     goto/16 :goto_8
 
-    .line 1814
+    .line 1818
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
@@ -226,12 +226,12 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;
 
-    .line 1815
+    .line 1819
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v1
 
-    .line 1816
+    .line 1820
     iget-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->reversedLayout:Z
 
     const/4 v3, 0x0
@@ -290,7 +290,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 1817
+    .line 1821
     iget p2, p2, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     if-ne p2, v1, :cond_3
@@ -307,40 +307,40 @@
 
     if-ne v1, v5, :cond_a
 
-    .line 1819
+    .line 1823
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;
 
-    .line 1820
+    .line 1824
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->type:I
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     if-lez v1, :cond_4
 
-    .line 1821
+    .line 1825
     iget v5, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->typeCount:I
 
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-virtual {p1, v1, v5, v6}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;->setType(IILorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 1822
+    .line 1826
     invoke-virtual {p1, v3, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;->setCheckboxAlpha(FZ)V
 
     goto :goto_3
 
-    .line 1823
+    .line 1827
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v1, :cond_6
 
-    .line 1824
+    .line 1828
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;->setUser(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 1825
+    .line 1829
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->halfChecked:Z
 
     if-eqz v1, :cond_5
@@ -356,13 +356,13 @@
 
     goto :goto_3
 
-    .line 1826
+    .line 1830
     :cond_6
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v1, :cond_7
 
-    .line 1827
+    .line 1831
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->this$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
@@ -373,7 +373,7 @@
 
     invoke-virtual {p1, v1, v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;->setChat(Lorg/telegram/tgnet/TLRPC$Chat;I)V
 
-    .line 1829
+    .line 1833
     :cond_7
     :goto_3
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->checked:Z
@@ -393,10 +393,10 @@
     :goto_4
     invoke-virtual {p1, v4, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;->setChecked(ZZ)V
 
-    .line 1830
+    .line 1834
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;->setDivider(Z)V
 
-    .line 1831
+    .line 1835
     iget-boolean p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->red:Z
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;->setRedCheckbox(Z)V
@@ -415,7 +415,7 @@
 
     if-nez v1, :cond_c
 
-    .line 1835
+    .line 1839
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -435,14 +435,14 @@
     :cond_c
     if-ne v1, v5, :cond_10
 
-    .line 1838
+    .line 1842
     iget p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->subtractHeight:I
 
     const/16 v1, 0x21
 
     if-lez p2, :cond_e
 
-    .line 1839
+    .line 1843
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p2, :cond_d
@@ -474,13 +474,13 @@
 
     iget p2, p2, Landroid/graphics/Point;->y:I
 
-    .line 1840
+    .line 1844
     :goto_5
     iget v0, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->subtractHeight:I
 
     sub-int/2addr p2, v0
 
-    .line 1841
+    .line 1845
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -491,20 +491,20 @@
 
     goto :goto_6
 
-    .line 1842
+    .line 1846
     :cond_e
     iget p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->padHeight:I
 
     if-ltz p2, :cond_f
 
-    .line 1844
+    .line 1848
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     goto :goto_6
 
-    .line 1846
+    .line 1850
     :cond_f
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -518,7 +518,7 @@
 
     float-to-int p2, p2
 
-    .line 1847
+    .line 1851
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -527,7 +527,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1849
+    .line 1853
     :goto_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -542,7 +542,7 @@
     :cond_10
     if-ne v1, v4, :cond_11
 
-    .line 1851
+    .line 1855
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -572,7 +572,7 @@
 
     if-ne v1, v4, :cond_12
 
-    .line 1853
+    .line 1857
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$HeaderCell2;
@@ -590,7 +590,7 @@
 
     if-ne v1, v4, :cond_13
 
-    .line 1856
+    .line 1860
     :try_start_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -613,31 +613,31 @@
 
     if-ne v1, v4, :cond_15
 
-    .line 1859
+    .line 1863
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1860
+    .line 1864
     iget-object p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text:Ljava/lang/CharSequence;
 
     if-nez p2, :cond_14
 
     const/16 p2, 0xc
 
-    .line 1861
+    .line 1865
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 1862
+    .line 1866
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_8
 
-    .line 1864
+    .line 1868
     :cond_14
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 1865
+    .line 1869
     iget-object p2, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$ItemInner;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
@@ -649,7 +649,7 @@
 
     if-ne v1, v2, :cond_17
 
-    .line 1868
+    .line 1872
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCell;
@@ -695,7 +695,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 1776
+    .line 1780
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -707,7 +707,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1778
+    .line 1782
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -716,7 +716,7 @@
 
     const/16 p2, 0x23
 
-    .line 1779
+    .line 1783
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -730,7 +730,7 @@
 
     if-ne p2, p1, :cond_2
 
-    .line 1781
+    .line 1785
     new-instance p1, Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -739,7 +739,7 @@
 
     const/16 p2, 0x22
 
-    .line 1782
+    .line 1786
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -753,7 +753,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 1784
+    .line 1788
     new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$UserCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -769,7 +769,7 @@
 
     if-ne p2, v0, :cond_4
 
-    .line 1786
+    .line 1790
     new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$HeaderCell2;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -785,7 +785,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 1788
+    .line 1792
     new-instance p2, Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -796,7 +796,7 @@
 
     invoke-direct {p2, v0, v1, p1, v2}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1789
+    .line 1793
     iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->NoResult:I
@@ -809,7 +809,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1790
+    .line 1794
     iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->SearchEmptyViewFilteredSubtitle2:I
@@ -822,7 +822,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1791
+    .line 1795
     iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->linearLayout:Landroid/widget/LinearLayout;
 
     const/16 v0, 0x18
@@ -844,7 +844,7 @@
 
     if-ne p2, p1, :cond_6
 
-    .line 1794
+    .line 1798
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -855,7 +855,7 @@
 
     const p2, -0xf2f2f3
 
-    .line 1795
+    .line 1799
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
@@ -865,7 +865,7 @@
 
     if-ne p2, p1, :cond_7
 
-    .line 1797
+    .line 1801
     new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;->context:Landroid/content/Context;
@@ -884,7 +884,7 @@
 
     goto :goto_0
 
-    .line 1799
+    .line 1803
     :cond_7
     new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter$1;
 
@@ -892,7 +892,7 @@
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter$1;-><init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page$Adapter;Landroid/content/Context;)V
 
-    .line 1806
+    .line 1810
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

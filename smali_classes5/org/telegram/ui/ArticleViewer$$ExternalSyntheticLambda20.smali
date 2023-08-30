@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/ArticleViewer$BlockChannelCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$nQ5cwN67eDRmANchqhAN0rB6clc(Lorg/telegram/ui/ArticleViewer$BlockChannelCell;)V
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$EziscVnZ19G58cnLjOe-tPOJdEA(Lorg/telegram/ui/ArticleViewer$BlockChannelCell;)V
 
     return-void
 .end method

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ReactedUserHolderView;F)V
     .locals 0
 
-    .line 316
+    .line 318
     iput-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$4;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     iput p2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$4;->val$alpha:F
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 319
+    .line 321
     iget-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$4;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     iget v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$4;->val$alpha:F
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Cells/ReactedUserHolderView;->access$002(Lorg/telegram/ui/Cells/ReactedUserHolderView;F)F
 
-    .line 320
+    .line 322
     iget-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView$4;->this$0:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

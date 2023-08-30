@@ -88,12 +88,12 @@
 .method public constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 9945
+    .line 9953
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 9946
+    .line 9954
     iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -118,7 +118,7 @@
 
     return-object p3
 
-    .line 10681
+    .line 10689
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -128,7 +128,7 @@
 
     move v1, p2
 
-    .line 10682
+    .line 10690
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -136,7 +136,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 10684
+    .line 10692
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -149,7 +149,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 10685
+    .line 10693
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -167,7 +167,7 @@
     :cond_1
     add-int/lit8 v2, v1, -0x1
 
-    .line 10687
+    .line 10695
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move v1, v2
@@ -177,7 +177,7 @@
 
     goto :goto_0
 
-    .line 10690
+    .line 10698
     :cond_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -185,14 +185,14 @@
 
     if-lez p1, :cond_6
 
-    .line 10691
+    .line 10699
     new-instance p1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     move p3, p2
 
-    .line 10692
+    .line 10700
     :goto_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -200,7 +200,7 @@
 
     if-ge p3, v1, :cond_5
 
-    .line 10693
+    .line 10701
     invoke-virtual {v0, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -209,7 +209,7 @@
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_username;->username:Ljava/lang/String;
 
-    .line 10694
+    .line 10702
     new-instance v2, Landroid/text/SpannableString;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -228,22 +228,22 @@
 
     invoke-direct {v2, v3}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 10695
+    .line 10703
     new-instance v3, Lorg/telegram/ui/ProfileActivity$ListAdapter$5;
 
     invoke-direct {v3, p0, v1}, Lorg/telegram/ui/ProfileActivity$ListAdapter$5;-><init>(Lorg/telegram/ui/ProfileActivity$ListAdapter;Ljava/lang/String;)V
 
-    .line 10709
+    .line 10717
     invoke-virtual {v2}, Landroid/text/SpannableString;->length()I
 
     move-result v1
 
     const/16 v4, 0x21
 
-    .line 10695
+    .line 10703
     invoke-virtual {v2, v3, p2, v1, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 10710
+    .line 10718
     new-instance v1, Landroid/text/style/ForegroundColorSpan;
 
     iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -262,10 +262,10 @@
 
     invoke-virtual {v2, v1, p2, v3, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 10711
+    .line 10719
     invoke-virtual {p1, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 10712
+    .line 10720
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -276,7 +276,7 @@
 
     const-string v1, ", "
 
-    .line 10713
+    .line 10721
     invoke-virtual {p1, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     :cond_4
@@ -284,7 +284,7 @@
 
     goto :goto_1
 
-    .line 10716
+    .line 10724
     :cond_5
     sget p2, Lorg/telegram/messenger/R$string;->UsernameAlso:I
 
@@ -294,14 +294,14 @@
 
     move-result-object p2
 
-    .line 10717
+    .line 10725
     new-instance p3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p3, p2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const-string v0, "%1$s"
 
-    .line 10719
+    .line 10727
     invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result p2
@@ -310,7 +310,7 @@
 
     add-int/lit8 v0, p2, 0x4
 
-    .line 10721
+    .line 10729
     invoke-virtual {p3, p2, v0, p1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     :cond_6
@@ -320,14 +320,14 @@
 .method private synthetic lambda$onBindViewHolder$1(Lcom/iMe/feature/socialMedias/SocialNetwork;)Lkotlin/Unit;
     .locals 1
 
-    .line 10165
+    .line 10173
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/iMe/feature/profile/ProfilePresenter;
 
     invoke-virtual {v0, p1}, Lcom/iMe/feature/profile/ProfilePresenter;->onSocialClicked(Lcom/iMe/feature/socialMedias/SocialNetwork;)V
 
-    .line 10166
+    .line 10174
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
@@ -336,12 +336,12 @@
 .method private synthetic lambda$onBindViewHolder$2(Lcom/iMe/feature/socialMedias/SocialNetwork;)Lkotlin/Unit;
     .locals 1
 
-    .line 10169
+    .line 10177
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ProfileActivity;->showSocialMenuBottomSheet(Lcom/iMe/feature/socialMedias/SocialNetwork;)V
 
-    .line 10170
+    .line 10178
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
@@ -350,14 +350,14 @@
 .method private synthetic lambda$onBindViewHolder$3(Lcom/iMe/feature/socialMedias/SocialNetwork;)Lkotlin/Unit;
     .locals 1
 
-    .line 10178
+    .line 10186
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/iMe/feature/profile/ProfilePresenter;
 
     invoke-virtual {v0, p1}, Lcom/iMe/feature/profile/ProfilePresenter;->onSocialAddClicked(Lcom/iMe/feature/socialMedias/SocialNetwork;)V
 
-    .line 10179
+    .line 10187
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
@@ -366,10 +366,10 @@
 .method private synthetic lambda$onBindViewHolder$4(Ljava/util/List;)Lkotlin/Unit;
     .locals 3
 
-    .line 10173
+    .line 10181
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10175
+    .line 10183
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -378,15 +378,15 @@
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ProfileActivity$ListAdapter;)V
 
-    .line 10174
+    .line 10182
     invoke-static {v1, p1, v2}, Lcom/iMe/feature/socialMedias/SocialDialog;->newInstance(Landroid/content/Context;Ljava/util/List;Lkotlin/jvm/functions/Function1;)Lcom/iMe/feature/socialMedias/SocialDialog;
 
     move-result-object p1
 
-    .line 10173
+    .line 10181
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 10183
+    .line 10191
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
@@ -395,7 +395,7 @@
 .method private synthetic lambda$onBindViewHolder$5(Landroid/view/View;)V
     .locals 0
 
-    .line 10223
+    .line 10231
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$33100(Lorg/telegram/ui/ProfileActivity;)V
@@ -406,7 +406,7 @@
 .method private static synthetic lambda$onBindViewHolder$6(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;)V
     .locals 0
 
-    .line 10377
+    .line 10385
     invoke-static {p0, p1}, Lorg/telegram/ui/ProfileActivity;->access$33000(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;)V
 
     return-void
@@ -421,7 +421,7 @@
 
     const-string v0, "On SocialCell click ovverided"
 
-    .line 9955
+    .line 9963
     invoke-static {v0, p0}, Ltimber/log/Timber;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
@@ -432,7 +432,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 10775
+    .line 10783
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$31700(Lorg/telegram/ui/ProfileActivity;)I
@@ -445,7 +445,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 10781
+    .line 10789
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$14900(Lorg/telegram/ui/ProfileActivity;)I
@@ -454,12 +454,12 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 10782
+    .line 10790
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->SOCIAL:I
 
     return p1
 
-    .line 10784
+    .line 10792
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -469,12 +469,12 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 10785
+    .line 10793
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPIC_PROFILE:I
 
     return p1
 
-    .line 10787
+    .line 10795
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -484,12 +484,12 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 10788
+    .line 10796
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_DETAIL_WITH_RANK:I
 
     return p1
 
-    .line 10791
+    .line 10799
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -525,7 +525,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10792
+    .line 10800
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$25700(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -550,7 +550,7 @@
 
     goto/16 :goto_6
 
-    .line 10794
+    .line 10802
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -578,7 +578,7 @@
 
     goto/16 :goto_5
 
-    .line 10796
+    .line 10804
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -598,7 +598,7 @@
 
     goto/16 :goto_4
 
-    .line 10798
+    .line 10806
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -626,7 +626,7 @@
 
     goto/16 :goto_3
 
-    .line 10800
+    .line 10808
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -686,7 +686,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10801
+    .line 10809
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$27900(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -719,7 +719,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10802
+    .line 10810
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$24100(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -744,7 +744,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10803
+    .line 10811
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$28400(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -769,7 +769,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10804
+    .line 10812
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$28900(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -794,7 +794,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10805
+    .line 10813
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$29700(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -827,7 +827,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10806
+    .line 10814
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$29800(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -860,7 +860,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10807
+    .line 10815
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$30200(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -893,7 +893,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10808
+    .line 10816
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$28500(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -910,7 +910,7 @@
 
     goto/16 :goto_2
 
-    .line 10810
+    .line 10818
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -924,7 +924,7 @@
 
     return p1
 
-    .line 10812
+    .line 10820
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -938,7 +938,7 @@
 
     return p1
 
-    .line 10814
+    .line 10822
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -952,7 +952,7 @@
 
     return p1
 
-    .line 10816
+    .line 10824
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -988,7 +988,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10817
+    .line 10825
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$31500(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1013,7 +1013,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10818
+    .line 10826
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$32200(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1038,7 +1038,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10819
+    .line 10827
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$32500(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1063,7 +1063,7 @@
 
     goto :goto_1
 
-    .line 10821
+    .line 10829
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1085,7 +1085,7 @@
 
     return p1
 
-    .line 10823
+    .line 10831
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1099,7 +1099,7 @@
 
     return p1
 
-    .line 10825
+    .line 10833
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1113,7 +1113,7 @@
 
     return p1
 
-    .line 10827
+    .line 10835
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1127,7 +1127,7 @@
 
     return p1
 
-    .line 10829
+    .line 10837
     :cond_f
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1141,7 +1141,7 @@
 
     return p1
 
-    .line 10831
+    .line 10839
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1161,7 +1161,7 @@
 
     goto :goto_0
 
-    .line 10833
+    .line 10841
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1175,7 +1175,7 @@
 
     return p1
 
-    .line 10835
+    .line 10843
     :cond_12
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1240,7 +1240,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 4
 
-    .line 10738
+    .line 10746
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$29000(Lorg/telegram/ui/ProfileActivity;)I
@@ -1255,12 +1255,12 @@
 
     if-eq v0, v3, :cond_4
 
-    .line 10739
+    .line 10747
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
-    .line 10741
+    .line 10749
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$15000(Lorg/telegram/ui/ProfileActivity;)I
@@ -1271,7 +1271,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10742
+    .line 10750
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$24800(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1280,7 +1280,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10743
+    .line 10751
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$24900(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1289,7 +1289,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10744
+    .line 10752
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$25000(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1298,7 +1298,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10745
+    .line 10753
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$14900(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1307,7 +1307,7 @@
 
     goto/16 :goto_0
 
-    .line 10749
+    .line 10757
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1335,7 +1335,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10750
+    .line 10758
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$28900(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1360,7 +1360,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10751
+    .line 10759
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$15100(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1385,7 +1385,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10752
+    .line 10760
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$29700(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1418,7 +1418,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10753
+    .line 10761
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$29800(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1451,7 +1451,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10754
+    .line 10762
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$30200(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1476,7 +1476,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 10755
+    .line 10763
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$30800(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v0
@@ -1509,7 +1509,7 @@
     :goto_0
     return v2
 
-    .line 10757
+    .line 10765
     :cond_4
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -1517,23 +1517,23 @@
 
     if-eqz v3, :cond_5
 
-    .line 10758
+    .line 10766
     check-cast v0, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 10759
+    .line 10767
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/UserCell;->getCurrentObject()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 10760
+    .line 10768
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v3, :cond_5
 
-    .line 10761
+    .line 10769
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 10762
+    .line 10770
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
@@ -1542,7 +1542,7 @@
 
     return v1
 
-    .line 10767
+    .line 10775
     :cond_5
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -1593,7 +1593,7 @@
 
     move/from16 v2, p2
 
-    .line 10159
+    .line 10167
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$14900(Lorg/telegram/ui/ProfileActivity;)I
@@ -1608,17 +1608,17 @@
 
     if-eqz v4, :cond_0
 
-    .line 10160
+    .line 10168
     check-cast v3, Lcom/iMe/feature/profile/ProfileSocialCell;
 
-    .line 10161
+    .line 10169
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity;->presenter:Lcom/iMe/feature/profile/ProfilePresenter;
 
     if-eqz v0, :cond_96
 
-    .line 10163
+    .line 10171
     invoke-virtual {v0}, Lcom/iMe/feature/profile/ProfilePresenter;->getProfileUiState()Lcom/iMe/feature/profile/ProfileUiState;
 
     move-result-object v0
@@ -1635,12 +1635,12 @@
 
     invoke-direct {v5, v1}, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ProfileActivity$ListAdapter;)V
 
-    .line 10162
+    .line 10170
     invoke-virtual {v3, v0, v2, v4, v5}, Lcom/iMe/feature/profile/ProfileSocialCell;->updateState(Lcom/iMe/feature/profile/ProfileUiState;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 
     goto/16 :goto_35
 
-    .line 10186
+    .line 10194
     :cond_0
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1654,7 +1654,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 10187
+    .line 10195
     iget-object v2, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getPaddingLeft()I
@@ -1689,7 +1689,7 @@
 
     goto/16 :goto_35
 
-    .line 10188
+    .line 10196
     :cond_2
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1726,24 +1726,24 @@
 
     if-eqz v8, :cond_6
 
-    .line 10189
+    .line 10197
     check-cast v3, Lorg/telegram/ui/Cells/TextCell;
 
-    .line 10190
+    .line 10198
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-virtual {v3, v0, v4}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 10191
+    .line 10199
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {v3, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 10192
+    .line 10200
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$24800(Lorg/telegram/ui/ProfileActivity;)I
@@ -1752,7 +1752,7 @@
 
     if-ne v2, v0, :cond_4
 
-    .line 10193
+    .line 10201
     sget v0, Lorg/telegram/messenger/R$string;->settings_tools:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1765,7 +1765,7 @@
 
     goto/16 :goto_35
 
-    .line 10194
+    .line 10202
     :cond_4
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1775,7 +1775,7 @@
 
     if-ne v2, v0, :cond_5
 
-    .line 10195
+    .line 10203
     sget v0, Lorg/telegram/messenger/R$string;->topics:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1788,7 +1788,7 @@
 
     goto/16 :goto_35
 
-    .line 10196
+    .line 10204
     :cond_5
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1798,7 +1798,7 @@
 
     if-ne v2, v0, :cond_96
 
-    .line 10197
+    .line 10205
     sget v0, Lorg/telegram/messenger/R$string;->SettingsHelp:I
 
     invoke-static {v6, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -1811,7 +1811,7 @@
 
     goto/16 :goto_35
 
-    .line 10199
+    .line 10207
     :cond_6
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1829,10 +1829,10 @@
 
     if-eqz v11, :cond_e
 
-    .line 10200
+    .line 10208
     check-cast v3, Lcom/iMe/ui/custom/cells/TextDetailWithRankCell;
 
-    .line 10202
+    .line 10210
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
@@ -1843,7 +1843,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 10203
+    .line 10211
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$5300(Lorg/telegram/ui/ProfileActivity;)Z
@@ -1852,7 +1852,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 10204
+    .line 10212
     sget v0, Lorg/telegram/messenger/R$string;->profile_bot_id_item_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1861,7 +1861,7 @@
 
     goto :goto_1
 
-    .line 10205
+    .line 10213
     :cond_7
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1871,7 +1871,7 @@
 
     if-nez v0, :cond_8
 
-    .line 10206
+    .line 10214
     sget v0, Lorg/telegram/messenger/R$string;->profile_user_id_item_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1880,7 +1880,7 @@
 
     goto :goto_1
 
-    .line 10208
+    .line 10216
     :cond_8
     sget v0, Lorg/telegram/messenger/R$string;->profile_my_id_item_title:I
 
@@ -1890,7 +1890,7 @@
 
     goto :goto_1
 
-    .line 10210
+    .line 10218
     :cond_9
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1902,7 +1902,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 10211
+    .line 10219
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$25100(Lorg/telegram/ui/ProfileActivity;)Z
@@ -1911,7 +1911,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 10212
+    .line 10220
     sget v0, Lorg/telegram/messenger/R$string;->profile_album_id_item_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1920,7 +1920,7 @@
 
     goto :goto_1
 
-    .line 10213
+    .line 10221
     :cond_a
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1944,7 +1944,7 @@
 
     if-nez v0, :cond_b
 
-    .line 10214
+    .line 10222
     sget v0, Lorg/telegram/messenger/R$string;->profile_channel_id_item_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -1953,7 +1953,7 @@
 
     goto :goto_1
 
-    .line 10216
+    .line 10224
     :cond_b
     sget v0, Lorg/telegram/messenger/R$string;->profile_group_id_item_title:I
 
@@ -1966,7 +1966,7 @@
     :cond_c
     const/4 v10, 0x0
 
-    .line 10219
+    .line 10227
     :goto_1
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -1976,7 +1976,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 10220
+    .line 10228
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$25200(Lorg/telegram/ui/ProfileActivity;)Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;
@@ -1989,7 +1989,7 @@
 
     invoke-virtual {v3, v0}, Lcom/iMe/ui/custom/cells/TextDetailWithRankCell;->setAccountLevel(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
 
-    .line 10221
+    .line 10229
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$25200(Lorg/telegram/ui/ProfileActivity;)Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;
@@ -2002,14 +2002,14 @@
 
     if-eqz v0, :cond_d
 
-    .line 10222
+    .line 10230
     new-instance v0, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$ListAdapter;)V
 
     invoke-virtual {v3, v0}, Lcom/iMe/ui/custom/cells/TextDetailWithRankCell;->setBadgeClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 10227
+    .line 10235
     :cond_d
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2021,7 +2021,7 @@
 
     goto/16 :goto_35
 
-    .line 10228
+    .line 10236
     :cond_e
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2037,10 +2037,10 @@
 
     if-eqz v11, :cond_f
 
-    .line 10229
+    .line 10237
     check-cast v3, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 10230
+    .line 10238
     sget v0, Lorg/telegram/messenger/R$string;->topic:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2049,12 +2049,12 @@
 
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 10231
+    .line 10239
     invoke-virtual {v3, v7, v7}, Lorg/telegram/ui/Cells/HeaderCell;->setExpandableMode(ZZ)V
 
     goto/16 :goto_35
 
-    .line 10232
+    .line 10240
     :cond_f
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2070,10 +2070,10 @@
 
     if-eqz v11, :cond_10
 
-    .line 10233
+    .line 10241
     check-cast v3, Lcom/iMe/ui/topics/TopicProfileCell;
 
-    .line 10234
+    .line 10242
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getTopicsController()Lcom/iMe/fork/controller/ForkTopicsController;
@@ -2094,7 +2094,7 @@
 
     goto/16 :goto_35
 
-    .line 10236
+    .line 10244
     :cond_10
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2142,13 +2142,13 @@
 
     goto/16 :goto_35
 
-    .line 10671
+    .line 10679
     :pswitch_0
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 10672
+    .line 10680
     sget v2, Lorg/telegram/messenger/R$string;->Notifications:I
 
     invoke-static {v10, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -2183,13 +2183,13 @@
 
     goto/16 :goto_35
 
-    .line 10666
+    .line 10674
     :pswitch_1
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 10667
+    .line 10675
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider:I
@@ -2208,7 +2208,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 10668
+    .line 10676
     sget v2, Lorg/telegram/messenger/R$string;->BotAddToGroupOrChannelInfo:I
 
     const-string v3, "BotAddToGroupOrChannelInfo"
@@ -2221,13 +2221,13 @@
 
     goto/16 :goto_35
 
-    .line 10662
+    .line 10670
     :cond_11
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/SettingsSuggestionCell;
 
-    .line 10663
+    .line 10671
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$24600(Lorg/telegram/ui/ProfileActivity;)I
@@ -2246,7 +2246,7 @@
 
     goto/16 :goto_35
 
-    .line 10659
+    .line 10667
     :cond_13
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2254,7 +2254,7 @@
 
     goto/16 :goto_35
 
-    .line 10618
+    .line 10626
     :cond_14
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -2262,7 +2262,7 @@
 
     check-cast v8, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 10621
+    .line 10629
     :try_start_0
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2276,7 +2276,7 @@
 
     if-nez v0, :cond_15
 
-    .line 10622
+    .line 10630
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$15500(Lorg/telegram/ui/ProfileActivity;)Ljava/util/ArrayList;
@@ -2315,7 +2315,7 @@
 
     goto :goto_3
 
-    .line 10624
+    .line 10632
     :cond_15
     iget-object v0, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2344,7 +2344,7 @@
     :catch_0
     move-exception v0
 
-    .line 10628
+    .line 10636
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -2352,19 +2352,19 @@
     :goto_3
     if-eqz v0, :cond_96
 
-    .line 10632
+    .line 10640
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     if-eqz v3, :cond_18
 
-    .line 10633
+    .line 10641
     move-object v3, v0
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 10634
+    .line 10642
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2373,7 +2373,7 @@
 
     if-nez v4, :cond_16
 
-    .line 10635
+    .line 10643
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
     :goto_4
@@ -2381,13 +2381,13 @@
 
     goto :goto_5
 
-    .line 10637
+    .line 10645
     :cond_16
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantCreator;
 
     if-eqz v4, :cond_17
 
-    .line 10638
+    .line 10646
     sget v3, Lorg/telegram/messenger/R$string;->ChannelCreator:I
 
     const-string v4, "ChannelCreator"
@@ -2398,13 +2398,13 @@
 
     goto :goto_4
 
-    .line 10639
+    .line 10647
     :cond_17
     instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantAdmin;
 
     if-eqz v3, :cond_1a
 
-    .line 10640
+    .line 10648
     sget v3, Lorg/telegram/messenger/R$string;->ChannelAdmin:I
 
     const-string v4, "ChannelAdmin"
@@ -2415,13 +2415,13 @@
 
     goto :goto_4
 
-    .line 10646
+    .line 10654
     :cond_18
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatParticipantCreator;
 
     if-eqz v3, :cond_19
 
-    .line 10647
+    .line 10655
     sget v3, Lorg/telegram/messenger/R$string;->ChannelCreator:I
 
     const-string v4, "ChannelCreator"
@@ -2432,13 +2432,13 @@
 
     goto :goto_5
 
-    .line 10648
+    .line 10656
     :cond_19
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatParticipantAdmin;
 
     if-eqz v3, :cond_1a
 
-    .line 10649
+    .line 10657
     sget v3, Lorg/telegram/messenger/R$string;->ChannelAdmin:I
 
     const-string v4, "ChannelAdmin"
@@ -2452,11 +2452,11 @@
     :cond_1a
     const/4 v10, 0x0
 
-    .line 10654
+    .line 10662
     :goto_5
     invoke-virtual {v8, v10}, Lorg/telegram/ui/Cells/UserCell;->setAdminRole(Ljava/lang/String;)V
 
-    .line 10655
+    .line 10663
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -2501,18 +2501,18 @@
 
     goto/16 :goto_35
 
-    .line 10608
+    .line 10616
     :cond_1c
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 10609
+    .line 10617
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 10611
+    .line 10619
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$31300(Lorg/telegram/ui/ProfileActivity;)I
@@ -2596,7 +2596,7 @@
 
     goto :goto_7
 
-    .line 10614
+    .line 10622
     :cond_1e
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
 
@@ -2618,7 +2618,7 @@
 
     goto/16 :goto_35
 
-    .line 10612
+    .line 10620
     :cond_1f
     :goto_7
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -2641,13 +2641,13 @@
 
     goto/16 :goto_35
 
-    .line 10545
+    .line 10553
     :cond_20
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    .line 10546
+    .line 10554
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$31000(Lorg/telegram/ui/ProfileActivity;)I
@@ -2656,7 +2656,7 @@
 
     if-ne v2, v3, :cond_96
 
-    .line 10547
+    .line 10555
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$31100(Lorg/telegram/ui/ProfileActivity;)I
@@ -2667,7 +2667,7 @@
 
     move-result-object v2
 
-    .line 10549
+    .line 10557
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$9200(Lorg/telegram/ui/ProfileActivity;)J
@@ -2678,7 +2678,7 @@
 
     if-eqz v3, :cond_21
 
-    .line 10550
+    .line 10558
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$9200(Lorg/telegram/ui/ProfileActivity;)J
@@ -2687,7 +2687,7 @@
 
     goto :goto_8
 
-    .line 10551
+    .line 10559
     :cond_21
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2699,7 +2699,7 @@
 
     if-eqz v3, :cond_22
 
-    .line 10552
+    .line 10560
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
@@ -2708,7 +2708,7 @@
 
     goto :goto_8
 
-    .line 10554
+    .line 10562
     :cond_22
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2718,7 +2718,7 @@
 
     neg-long v3, v3
 
-    .line 10556
+    .line 10564
     :goto_8
     iget-object v8, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -2730,7 +2730,7 @@
 
     move-result-object v8
 
-    .line 10558
+    .line 10566
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2749,7 +2749,7 @@
 
     move-result v9
 
-    .line 10559
+    .line 10567
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -2768,7 +2768,7 @@
 
     move-result v11
 
-    .line 10560
+    .line 10568
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -2787,7 +2787,7 @@
 
     move-result v12
 
-    .line 10561
+    .line 10569
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -2812,7 +2812,7 @@
 
     if-eq v2, v8, :cond_28
 
-    .line 10564
+    .line 10572
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -2829,7 +2829,7 @@
 
     if-eqz v9, :cond_23
 
-    .line 10567
+    .line 10575
     sget v2, Lorg/telegram/messenger/R$string;->NotificationsCustom:I
 
     const-string v3, "NotificationsCustom"
@@ -2840,7 +2840,7 @@
 
     goto :goto_9
 
-    .line 10569
+    .line 10577
     :cond_23
     sget v2, Lorg/telegram/messenger/R$string;->NotificationsOn:I
 
@@ -2864,7 +2864,7 @@
 
     if-ge v2, v3, :cond_25
 
-    .line 10573
+    .line 10581
     sget v3, Lorg/telegram/messenger/R$string;->WillUnmuteIn:I
 
     new-array v8, v5, [Ljava/lang/Object;
@@ -2899,7 +2899,7 @@
 
     if-ge v2, v3, :cond_26
 
-    .line 10575
+    .line 10583
     sget v3, Lorg/telegram/messenger/R$string;->WillUnmuteIn:I
 
     new-array v9, v5, [Ljava/lang/Object;
@@ -2939,7 +2939,7 @@
 
     if-ge v2, v3, :cond_27
 
-    .line 10577
+    .line 10585
     sget v3, Lorg/telegram/messenger/R$string;->WillUnmuteIn:I
 
     new-array v9, v5, [Ljava/lang/Object;
@@ -2992,7 +2992,7 @@
 
     goto :goto_b
 
-    .line 10586
+    .line 10594
     :cond_29
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3022,7 +3022,7 @@
 
     if-eqz v9, :cond_2c
 
-    .line 10592
+    .line 10600
     sget v3, Lorg/telegram/messenger/R$string;->NotificationsCustom:I
 
     const-string v4, "NotificationsCustom"
@@ -3036,7 +3036,7 @@
     :cond_2c
     if-eqz v2, :cond_2d
 
-    .line 10594
+    .line 10602
     sget v3, Lorg/telegram/messenger/R$string;->NotificationsOn:I
 
     const-string v4, "NotificationsOn"
@@ -3056,7 +3056,7 @@
     :goto_e
     if-nez v3, :cond_2e
 
-    .line 10598
+    .line 10606
     sget v3, Lorg/telegram/messenger/R$string;->NotificationsOff:I
 
     const-string v4, "NotificationsOff"
@@ -3065,7 +3065,7 @@
 
     move-result-object v3
 
-    .line 10600
+    .line 10608
     :cond_2e
     iget-object v4, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3079,7 +3079,7 @@
 
     if-nez v4, :cond_2f
 
-    .line 10601
+    .line 10609
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     iget-object v8, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -3118,7 +3118,7 @@
 
     move-result-object v3
 
-    .line 10603
+    .line 10611
     :cond_2f
     iget-object v4, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3128,7 +3128,7 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->setAnimationsEnabled(Z)V
 
-    .line 10604
+    .line 10612
     sget v4, Lorg/telegram/messenger/R$string;->Notifications:I
 
     invoke-static {v10, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -3139,28 +3139,28 @@
 
     goto/16 :goto_35
 
-    .line 10416
+    .line 10424
     :cond_30
     :pswitch_2
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/TextCell;
 
-    .line 10417
+    .line 10425
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 10418
+    .line 10426
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 10419
+    .line 10427
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$27500(Lorg/telegram/ui/ProfileActivity;)I
@@ -3169,7 +3169,7 @@
 
     if-ne v2, v3, :cond_32
 
-    .line 10420
+    .line 10428
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -3194,12 +3194,12 @@
 
     move-result-object v2
 
-    .line 10422
+    .line 10430
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     if-nez v2, :cond_31
 
-    .line 10423
+    .line 10431
     sget v2, Lorg/telegram/messenger/R$string;->ShortMessageLifetimeForever:I
 
     const-string v3, "ShortMessageLifetimeForever"
@@ -3210,13 +3210,13 @@
 
     goto :goto_f
 
-    .line 10425
+    .line 10433
     :cond_31
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 10427
+    .line 10435
     :goto_f
     sget v3, Lorg/telegram/messenger/R$string;->MessageLifetime:I
 
@@ -3230,7 +3230,7 @@
 
     goto/16 :goto_35
 
-    .line 10428
+    .line 10436
     :cond_32
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3240,7 +3240,7 @@
 
     if-ne v2, v3, :cond_33
 
-    .line 10429
+    .line 10437
     sget v2, Lorg/telegram/messenger/R$string;->Unblock:I
 
     const-string v3, "Unblock"
@@ -3251,14 +3251,14 @@
 
     invoke-virtual {v0, v2, v7}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
-    .line 10430
+    .line 10438
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-virtual {v0, v12, v2}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
     goto/16 :goto_35
 
-    .line 10431
+    .line 10439
     :cond_33
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3268,12 +3268,12 @@
 
     if-ne v2, v3, :cond_34
 
-    .line 10432
+    .line 10440
     new-instance v2, Lorg/telegram/ui/Components/IdenticonDrawable;
 
     invoke-direct {v2}, Lorg/telegram/ui/Components/IdenticonDrawable;-><init>()V
 
-    .line 10433
+    .line 10441
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -3298,10 +3298,10 @@
 
     move-result-object v3
 
-    .line 10434
+    .line 10442
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/IdenticonDrawable;->setEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 10435
+    .line 10443
     sget v3, Lorg/telegram/messenger/R$string;->EncryptionKey:I
 
     const-string v4, "EncryptionKey"
@@ -3314,7 +3314,7 @@
 
     goto/16 :goto_35
 
-    .line 10436
+    .line 10444
     :cond_34
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3324,12 +3324,12 @@
 
     if-ne v2, v3, :cond_36
 
-    .line 10437
+    .line 10445
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
 
     invoke-virtual {v0, v12, v2}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 10438
+    .line 10446
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$4900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
@@ -3340,7 +3340,7 @@
 
     if-eqz v2, :cond_35
 
-    .line 10439
+    .line 10447
     sget v2, Lorg/telegram/messenger/R$string;->ProfileJoinGroup:I
 
     const-string v3, "ProfileJoinGroup"
@@ -3353,7 +3353,7 @@
 
     goto/16 :goto_35
 
-    .line 10441
+    .line 10449
     :cond_35
     sget v2, Lorg/telegram/messenger/R$string;->ProfileJoinChannel:I
 
@@ -3367,7 +3367,7 @@
 
     goto/16 :goto_35
 
-    .line 10443
+    .line 10451
     :cond_36
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3379,7 +3379,7 @@
 
     if-ne v2, v3, :cond_3e
 
-    .line 10444
+    .line 10452
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -3388,7 +3388,7 @@
 
     if-eqz v3, :cond_3a
 
-    .line 10445
+    .line 10453
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
@@ -3411,7 +3411,7 @@
 
     if-nez v3, :cond_38
 
-    .line 10446
+    .line 10454
     sget v3, Lorg/telegram/messenger/R$string;->ChannelSubscribers:I
 
     const-string v6, "ChannelSubscribers"
@@ -3462,7 +3462,7 @@
 
     goto/16 :goto_35
 
-    .line 10448
+    .line 10456
     :cond_38
     sget v3, Lorg/telegram/messenger/R$string;->ChannelMembers:I
 
@@ -3512,7 +3512,7 @@
 
     goto/16 :goto_35
 
-    .line 10451
+    .line 10459
     :cond_3a
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3536,7 +3536,7 @@
 
     if-nez v3, :cond_3c
 
-    .line 10452
+    .line 10460
     sget v3, Lorg/telegram/messenger/R$string;->ChannelSubscribers:I
 
     const-string v4, "ChannelSubscribers"
@@ -3567,7 +3567,7 @@
 
     goto/16 :goto_35
 
-    .line 10454
+    .line 10462
     :cond_3c
     sget v3, Lorg/telegram/messenger/R$string;->ChannelMembers:I
 
@@ -3597,7 +3597,7 @@
 
     goto/16 :goto_35
 
-    .line 10457
+    .line 10465
     :cond_3e
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3607,7 +3607,7 @@
 
     if-ne v2, v3, :cond_40
 
-    .line 10458
+    .line 10466
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -3616,7 +3616,7 @@
 
     if-eqz v3, :cond_96
 
-    .line 10459
+    .line 10467
     sget v3, Lorg/telegram/messenger/R$string;->SubscribeRequests:I
 
     const-string v6, "SubscribeRequests"
@@ -3667,7 +3667,7 @@
 
     goto/16 :goto_35
 
-    .line 10461
+    .line 10469
     :cond_40
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3677,7 +3677,7 @@
 
     if-ne v2, v3, :cond_44
 
-    .line 10462
+    .line 10470
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -3686,7 +3686,7 @@
 
     if-eqz v3, :cond_42
 
-    .line 10463
+    .line 10471
     sget v3, Lorg/telegram/messenger/R$string;->ChannelAdministrators:I
 
     const-string v6, "ChannelAdministrators"
@@ -3737,7 +3737,7 @@
 
     goto/16 :goto_35
 
-    .line 10465
+    .line 10473
     :cond_42
     sget v3, Lorg/telegram/messenger/R$string;->ChannelAdministrators:I
 
@@ -3769,7 +3769,7 @@
 
     goto/16 :goto_35
 
-    .line 10467
+    .line 10475
     :cond_44
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3779,7 +3779,7 @@
 
     if-ne v2, v3, :cond_48
 
-    .line 10468
+    .line 10476
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -3788,7 +3788,7 @@
 
     if-eqz v3, :cond_46
 
-    .line 10469
+    .line 10477
     sget v3, Lorg/telegram/messenger/R$string;->ChannelBlacklist:I
 
     const-string v6, "ChannelBlacklist"
@@ -3851,7 +3851,7 @@
 
     goto/16 :goto_35
 
-    .line 10471
+    .line 10479
     :cond_46
     sget v3, Lorg/telegram/messenger/R$string;->ChannelBlacklist:I
 
@@ -3883,7 +3883,7 @@
 
     goto/16 :goto_35
 
-    .line 10473
+    .line 10481
     :cond_48
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3893,14 +3893,14 @@
 
     if-ne v2, v3, :cond_4a
 
-    .line 10474
+    .line 10482
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 10475
+    .line 10483
     sget v2, Lorg/telegram/messenger/R$string;->AddMember:I
 
     const-string v3, "AddMember"
@@ -3929,7 +3929,7 @@
 
     goto/16 :goto_35
 
-    .line 10476
+    .line 10484
     :cond_4a
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3939,7 +3939,7 @@
 
     if-ne v2, v3, :cond_4b
 
-    .line 10477
+    .line 10485
     sget v2, Lorg/telegram/messenger/R$string;->SendMessageLocation:I
 
     const-string v3, "SendMessageLocation"
@@ -3952,7 +3952,7 @@
 
     goto/16 :goto_35
 
-    .line 10478
+    .line 10486
     :cond_4b
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3962,7 +3962,7 @@
 
     if-ne v2, v3, :cond_4c
 
-    .line 10479
+    .line 10487
     sget v2, Lorg/telegram/messenger/R$string;->AddToContacts:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -3973,7 +3973,7 @@
 
     invoke-virtual {v0, v2, v3, v7}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
-    .line 10480
+    .line 10488
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
@@ -3982,7 +3982,7 @@
 
     goto/16 :goto_35
 
-    .line 10481
+    .line 10489
     :cond_4c
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -3992,7 +3992,7 @@
 
     if-ne v2, v3, :cond_4e
 
-    .line 10482
+    .line 10490
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -4017,14 +4017,14 @@
 
     if-eqz v2, :cond_4d
 
-    .line 10483
+    .line 10491
     invoke-static {v2}, Lorg/telegram/messenger/ChatObject;->canBlockUsers(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v2
 
     if-eqz v2, :cond_4d
 
-    .line 10484
+    .line 10492
     sget v2, Lorg/telegram/messenger/R$string;->ReportReactionAndBan:I
 
     const-string v3, "ReportReactionAndBan"
@@ -4039,7 +4039,7 @@
 
     goto :goto_1a
 
-    .line 10486
+    .line 10494
     :cond_4d
     sget v2, Lorg/telegram/messenger/R$string;->ReportReaction:I
 
@@ -4053,7 +4053,7 @@
 
     invoke-virtual {v0, v2, v3, v7}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
-    .line 10489
+    .line 10497
     :goto_1a
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
@@ -4061,12 +4061,12 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 10490
+    .line 10498
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
     goto/16 :goto_35
 
-    .line 10491
+    .line 10499
     :cond_4e
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4076,7 +4076,7 @@
 
     if-ne v2, v3, :cond_4f
 
-    .line 10492
+    .line 10500
     sget v2, Lorg/telegram/messenger/R$string;->ReportUserLocation:I
 
     const-string v3, "ReportUserLocation"
@@ -4087,17 +4087,17 @@
 
     invoke-virtual {v0, v2, v7}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
-    .line 10493
+    .line 10501
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-virtual {v0, v12, v2}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 10494
+    .line 10502
     invoke-virtual {v0, v12, v2}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
     goto/16 :goto_35
 
-    .line 10495
+    .line 10503
     :cond_4f
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4107,7 +4107,7 @@
 
     if-ne v2, v3, :cond_50
 
-    .line 10496
+    .line 10504
     sget v2, Lorg/telegram/messenger/R$string;->Language:I
 
     const-string v3, "Language"
@@ -4132,12 +4132,12 @@
 
     const/16 v2, 0x17
 
-    .line 10497
+    .line 10505
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Cells/TextCell;->setImageLeft(I)V
 
     goto/16 :goto_35
 
-    .line 10498
+    .line 10506
     :cond_50
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4147,7 +4147,7 @@
 
     if-ne v2, v3, :cond_51
 
-    .line 10499
+    .line 10507
     sget v2, Lorg/telegram/messenger/R$string;->NotificationsAndSounds:I
 
     const-string v3, "NotificationsAndSounds"
@@ -4162,7 +4162,7 @@
 
     goto/16 :goto_35
 
-    .line 10500
+    .line 10508
     :cond_51
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4172,7 +4172,7 @@
 
     if-ne v2, v3, :cond_52
 
-    .line 10501
+    .line 10509
     sget v2, Lorg/telegram/messenger/R$string;->PrivacySettings:I
 
     const-string v3, "PrivacySettings"
@@ -4187,7 +4187,7 @@
 
     goto/16 :goto_35
 
-    .line 10502
+    .line 10510
     :cond_52
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4197,7 +4197,7 @@
 
     if-ne v2, v3, :cond_53
 
-    .line 10503
+    .line 10511
     sget v2, Lorg/telegram/messenger/R$string;->DataSettings:I
 
     const-string v3, "DataSettings"
@@ -4212,7 +4212,7 @@
 
     goto/16 :goto_35
 
-    .line 10504
+    .line 10512
     :cond_53
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4222,7 +4222,7 @@
 
     if-ne v2, v3, :cond_54
 
-    .line 10505
+    .line 10513
     sget v2, Lorg/telegram/messenger/R$string;->ChatSettings:I
 
     const-string v3, "ChatSettings"
@@ -4237,7 +4237,7 @@
 
     goto/16 :goto_35
 
-    .line 10506
+    .line 10514
     :cond_54
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4247,7 +4247,7 @@
 
     if-ne v2, v3, :cond_55
 
-    .line 10507
+    .line 10515
     sget v2, Lorg/telegram/messenger/R$string;->Filters:I
 
     const-string v3, "Filters"
@@ -4262,7 +4262,7 @@
 
     goto/16 :goto_35
 
-    .line 10508
+    .line 10516
     :cond_55
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4272,7 +4272,7 @@
 
     if-ne v2, v3, :cond_56
 
-    .line 10509
+    .line 10517
     sget v2, Lorg/telegram/messenger/R$string;->StickersName:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -4285,7 +4285,7 @@
 
     goto/16 :goto_35
 
-    .line 10510
+    .line 10518
     :cond_56
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4295,7 +4295,7 @@
 
     if-ne v2, v3, :cond_57
 
-    .line 10511
+    .line 10519
     sget v2, Lorg/telegram/messenger/R$string;->PowerUsage:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -4308,7 +4308,7 @@
 
     goto/16 :goto_35
 
-    .line 10512
+    .line 10520
     :cond_57
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4318,7 +4318,7 @@
 
     if-ne v2, v3, :cond_58
 
-    .line 10513
+    .line 10521
     sget v2, Lorg/telegram/messenger/R$string;->AskAQuestion:I
 
     const-string v3, "AskAQuestion"
@@ -4333,7 +4333,7 @@
 
     goto/16 :goto_35
 
-    .line 10514
+    .line 10522
     :cond_58
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4343,7 +4343,7 @@
 
     if-ne v2, v3, :cond_59
 
-    .line 10515
+    .line 10523
     sget v2, Lorg/telegram/messenger/R$string;->TelegramFAQ:I
 
     const-string v3, "TelegramFAQ"
@@ -4358,7 +4358,7 @@
 
     goto/16 :goto_35
 
-    .line 10516
+    .line 10524
     :cond_59
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4368,7 +4368,7 @@
 
     if-ne v2, v3, :cond_5a
 
-    .line 10517
+    .line 10525
     sget v2, Lorg/telegram/messenger/R$string;->PrivacyPolicy:I
 
     const-string v3, "PrivacyPolicy"
@@ -4383,7 +4383,7 @@
 
     goto/16 :goto_35
 
-    .line 10518
+    .line 10526
     :cond_5a
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4393,7 +4393,7 @@
 
     if-ne v2, v3, :cond_5b
 
-    .line 10519
+    .line 10527
     sget v2, Lorg/telegram/messenger/R$string;->DebugSendLogs:I
 
     const-string v3, "DebugSendLogs"
@@ -4406,7 +4406,7 @@
 
     goto/16 :goto_35
 
-    .line 10520
+    .line 10528
     :cond_5b
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4416,7 +4416,7 @@
 
     if-ne v2, v3, :cond_5c
 
-    .line 10521
+    .line 10529
     sget v2, Lorg/telegram/messenger/R$string;->DebugSendLastLogs:I
 
     const-string v3, "DebugSendLastLogs"
@@ -4429,7 +4429,7 @@
 
     goto/16 :goto_35
 
-    .line 10522
+    .line 10530
     :cond_5c
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4439,7 +4439,7 @@
 
     if-ne v2, v3, :cond_5e
 
-    .line 10523
+    .line 10531
     sget v2, Lorg/telegram/messenger/R$string;->DebugClearLogs:I
 
     const-string v3, "DebugClearLogs"
@@ -4466,7 +4466,7 @@
 
     goto/16 :goto_35
 
-    .line 10524
+    .line 10532
     :cond_5e
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4478,12 +4478,12 @@
 
     const-string v2, "Switch Backend"
 
-    .line 10525
+    .line 10533
     invoke-virtual {v0, v2, v7}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
     goto/16 :goto_35
 
-    .line 10526
+    .line 10534
     :cond_5f
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4493,7 +4493,7 @@
 
     if-ne v2, v3, :cond_60
 
-    .line 10527
+    .line 10535
     sget v2, Lorg/telegram/messenger/R$string;->Devices:I
 
     const-string v3, "Devices"
@@ -4508,7 +4508,7 @@
 
     goto/16 :goto_35
 
-    .line 10528
+    .line 10536
     :cond_60
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4518,7 +4518,7 @@
 
     if-ne v2, v3, :cond_61
 
-    .line 10529
+    .line 10537
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$30600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RLottieDrawable;
@@ -4529,7 +4529,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 10530
+    .line 10538
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$30600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RLottieDrawable;
@@ -4540,7 +4540,7 @@
 
     invoke-virtual {v2, v3, v7}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 10531
+    .line 10539
     sget v2, Lorg/telegram/messenger/R$string;->SetProfilePhoto:I
 
     const-string v3, "SetProfilePhoto"
@@ -4557,14 +4557,14 @@
 
     invoke-virtual {v0, v2, v3, v7}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 10532
+    .line 10540
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 10533
+    .line 10541
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/TextCell;->getImageView()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v2
@@ -4575,17 +4575,17 @@
 
     invoke-virtual {v2, v7, v7, v7, v3}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 10534
+    .line 10542
     invoke-virtual {v0, v14}, Lorg/telegram/ui/Cells/TextCell;->setImageLeft(I)V
 
-    .line 10535
+    .line 10543
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2, v0}, Lorg/telegram/ui/ProfileActivity;->access$30702(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/ui/Cells/TextCell;)Lorg/telegram/ui/Cells/TextCell;
 
     goto/16 :goto_35
 
-    .line 10536
+    .line 10544
     :cond_61
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4595,7 +4595,7 @@
 
     if-ne v2, v3, :cond_62
 
-    .line 10537
+    .line 10545
     sget v2, Lorg/telegram/messenger/R$string;->AddToGroupOrChannel:I
 
     const-string v3, "AddToGroupOrChannel"
@@ -4608,7 +4608,7 @@
 
     invoke-virtual {v0, v2, v3, v7}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
-    .line 10538
+    .line 10546
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
@@ -4617,7 +4617,7 @@
 
     goto/16 :goto_35
 
-    .line 10539
+    .line 10547
     :cond_62
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4627,7 +4627,7 @@
 
     if-ne v2, v3, :cond_96
 
-    .line 10540
+    .line 10548
     sget v2, Lorg/telegram/messenger/R$string;->TelegramPremium:I
 
     const-string v3, "TelegramPremium"
@@ -4662,18 +4662,18 @@
 
     const/16 v2, 0x17
 
-    .line 10541
+    .line 10549
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Cells/TextCell;->setImageLeft(I)V
 
     goto/16 :goto_35
 
-    .line 10385
+    .line 10393
     :cond_63
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/AboutLinkCell;
 
-    .line 10386
+    .line 10394
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$27200(Lorg/telegram/ui/ProfileActivity;)I
@@ -4684,7 +4684,7 @@
 
     if-ne v2, v3, :cond_67
 
-    .line 10387
+    .line 10395
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$6700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
@@ -4728,7 +4728,7 @@
 
     move-result-object v2
 
-    .line 10388
+    .line 10396
     :goto_1c
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4755,7 +4755,7 @@
     :cond_65
     move v5, v7
 
-    .line 10389
+    .line 10397
     :cond_66
     :goto_1d
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -4776,7 +4776,7 @@
 
     goto/16 :goto_35
 
-    .line 10390
+    .line 10398
     :cond_67
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4786,7 +4786,7 @@
 
     if-ne v2, v3, :cond_69
 
-    .line 10391
+    .line 10399
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -4798,7 +4798,7 @@
     :goto_1e
     const-string v3, "\n\n\n"
 
-    .line 10392
+    .line 10400
     invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v4
@@ -4807,20 +4807,20 @@
 
     const-string v4, "\n\n"
 
-    .line 10393
+    .line 10401
     invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_1e
 
-    .line 10395
+    .line 10403
     :cond_68
     invoke-virtual {v0, v2, v5}, Lorg/telegram/ui/Cells/AboutLinkCell;->setText(Ljava/lang/String;Z)V
 
     goto/16 :goto_35
 
-    .line 10396
+    .line 10404
     :cond_69
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -4830,7 +4830,7 @@
 
     if-ne v2, v3, :cond_96
 
-    .line 10398
+    .line 10406
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$6700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
@@ -4855,7 +4855,7 @@
 
     goto :goto_1f
 
-    .line 10403
+    .line 10411
     :cond_6a
     sget v2, Lorg/telegram/messenger/R$string;->UserBio:I
 
@@ -4873,7 +4873,7 @@
 
     invoke-virtual {v0, v2, v3, v7}, Lorg/telegram/ui/Cells/AboutLinkCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 10404
+    .line 10412
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v3, 0x0
@@ -4882,7 +4882,7 @@
 
     goto :goto_22
 
-    .line 10399
+    .line 10407
     :cond_6b
     :goto_1f
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -4912,7 +4912,7 @@
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$UserFull;->about:Ljava/lang/String;
 
-    .line 10400
+    .line 10408
     :goto_20
     sget v3, Lorg/telegram/messenger/R$string;->UserBio:I
 
@@ -4922,7 +4922,7 @@
 
     invoke-virtual {v0, v2, v3, v5}, Lorg/telegram/ui/Cells/AboutLinkCell;->setTextAndValue(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 10401
+    .line 10409
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$6700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$UserFull;
@@ -4947,11 +4947,11 @@
     :goto_21
     invoke-static {v2, v10}, Lorg/telegram/ui/ProfileActivity;->access$27402(Lorg/telegram/ui/ProfileActivity;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 10406
+    .line 10414
     :goto_22
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Cells/AboutLinkCell;->setMoreButtonDisabled(Z)V
 
-    .line 10408
+    .line 10416
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$14900(Lorg/telegram/ui/ProfileActivity;)I
@@ -4968,19 +4968,19 @@
 
     if-ne v2, v3, :cond_96
 
-    .line 10409
+    .line 10417
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/AboutLinkCell;->setDividerVisible()V
 
     goto/16 :goto_35
 
-    .line 10260
+    .line 10268
     :cond_6e
     :pswitch_3
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/TextDetailCell;
 
-    .line 10262
+    .line 10270
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$26300(Lorg/telegram/ui/ProfileActivity;)I
@@ -4991,7 +4991,7 @@
 
     if-ne v2, v3, :cond_73
 
-    .line 10264
+    .line 10272
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -5014,7 +5014,7 @@
 
     if-eqz v3, :cond_6f
 
-    .line 10266
+    .line 10274
     iget-object v6, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ProfileActivity;->access$26400(Lorg/telegram/ui/ProfileActivity;)Ljava/lang/String;
@@ -5027,7 +5027,7 @@
 
     if-nez v6, :cond_6f
 
-    .line 10267
+    .line 10275
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
     move-result-object v3
@@ -5054,7 +5054,7 @@
 
     move-result-object v3
 
-    .line 10268
+    .line 10276
     iget-object v4, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ProfileActivity;->access$26400(Lorg/telegram/ui/ProfileActivity;)Ljava/lang/String;
@@ -5072,7 +5072,7 @@
     :cond_6f
     if-eqz v3, :cond_70
 
-    .line 10269
+    .line 10277
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -5081,7 +5081,7 @@
 
     if-nez v6, :cond_70
 
-    .line 10270
+    .line 10278
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
     move-result-object v6
@@ -5104,12 +5104,12 @@
 
     move-result-object v4
 
-    .line 10271
+    .line 10279
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     goto :goto_23
 
-    .line 10273
+    .line 10281
     :cond_70
     sget v3, Lorg/telegram/messenger/R$string;->PhoneHidden:I
 
@@ -5123,7 +5123,7 @@
 
     const/4 v3, 0x0
 
-    .line 10276
+    .line 10284
     :goto_23
     iget-object v6, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -5145,7 +5145,7 @@
     :goto_24
     invoke-static {v6, v5}, Lorg/telegram/ui/ProfileActivity;->access$26502(Lorg/telegram/ui/ProfileActivity;Z)Z
 
-    .line 10277
+    .line 10285
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$26500(Lorg/telegram/ui/ProfileActivity;)Z
@@ -5170,7 +5170,7 @@
 
     goto/16 :goto_33
 
-    .line 10278
+    .line 10286
     :cond_73
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -5182,12 +5182,12 @@
 
     if-ne v2, v3, :cond_7f
 
-    .line 10281
+    .line 10289
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 10282
+    .line 10290
     iget-object v4, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/ProfileActivity;->access$200(Lorg/telegram/ui/ProfileActivity;)J
@@ -5200,7 +5200,7 @@
 
     if-eqz v4, :cond_7a
 
-    .line 10283
+    .line 10291
     iget-object v4, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -5223,7 +5223,7 @@
 
     if-eqz v4, :cond_74
 
-    .line 10285
+    .line 10293
     iget-object v8, v4, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -5231,7 +5231,7 @@
     :cond_74
     if-eqz v4, :cond_75
 
-    .line 10287
+    .line 10295
     iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -5240,7 +5240,7 @@
 
     if-nez v3, :cond_75
 
-    .line 10288
+    .line 10296
     iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
     goto :goto_26
@@ -5251,7 +5251,7 @@
     :goto_26
     if-nez v4, :cond_76
 
-    .line 10290
+    .line 10298
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
@@ -5267,7 +5267,7 @@
 
     move-object v4, v8
 
-    .line 10291
+    .line 10299
     :goto_27
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -5275,7 +5275,7 @@
 
     if-eqz v8, :cond_78
 
-    .line 10292
+    .line 10300
     :goto_28
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -5283,7 +5283,7 @@
 
     if-ge v7, v8, :cond_78
 
-    .line 10293
+    .line 10301
     invoke-virtual {v4, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -5292,7 +5292,7 @@
 
     if-eqz v8, :cond_77
 
-    .line 10294
+    .line 10302
     iget-boolean v9, v8, Lorg/telegram/tgnet/TLRPC$TL_username;->active:Z
 
     if-eqz v9, :cond_77
@@ -5305,7 +5305,7 @@
 
     if-nez v9, :cond_77
 
-    .line 10295
+    .line 10303
     iget-object v3, v8, Lorg/telegram/tgnet/TLRPC$TL_username;->username:Ljava/lang/String;
 
     goto :goto_29
@@ -5315,7 +5315,7 @@
 
     goto :goto_28
 
-    .line 10300
+    .line 10308
     :cond_78
     :goto_29
     sget v7, Lorg/telegram/messenger/R$string;->Username:I
@@ -5328,7 +5328,7 @@
 
     if-eqz v3, :cond_79
 
-    .line 10302
+    .line 10310
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -5353,7 +5353,7 @@
 
     goto/16 :goto_2c
 
-    .line 10307
+    .line 10315
     :cond_7a
     iget-object v4, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -5363,7 +5363,7 @@
 
     if-eqz v4, :cond_7e
 
-    .line 10308
+    .line 10316
     iget-object v4, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -5384,17 +5384,17 @@
 
     move-result-object v4
 
-    .line 10309
+    .line 10317
     invoke-static {v4}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 10310
+    .line 10318
     iget-object v9, v4, Lorg/telegram/tgnet/TLRPC$Chat;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v9}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 10311
+    .line 10319
     invoke-static {v4}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v9
@@ -5403,7 +5403,7 @@
 
     if-eqz v9, :cond_7c
 
-    .line 10313
+    .line 10321
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5455,7 +5455,7 @@
 
     move-result-object v4
 
-    .line 10314
+    .line 10322
     sget v7, Lorg/telegram/messenger/R$string;->InviteLink:I
 
     const-string v8, "InviteLink"
@@ -5468,7 +5468,7 @@
 
     goto :goto_2b
 
-    .line 10316
+    .line 10324
     :cond_7c
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -5525,7 +5525,7 @@
 
     move-result-object v4
 
-    .line 10317
+    .line 10325
     sget v5, Lorg/telegram/messenger/R$string;->InviteLinkPrivate:I
 
     const-string v8, "InviteLinkPrivate"
@@ -5549,7 +5549,7 @@
 
     goto :goto_2c
 
-    .line 10322
+    .line 10330
     :cond_7e
     new-instance v3, Ljava/util/ArrayList;
 
@@ -5563,7 +5563,7 @@
 
     const/4 v3, 0x0
 
-    .line 10324
+    .line 10332
     :goto_2c
     invoke-direct {v1, v3, v4, v7}, Lorg/telegram/ui/ProfileActivity$ListAdapter;->alsoUsernamesString(Ljava/lang/String;Ljava/util/ArrayList;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
@@ -5581,7 +5581,7 @@
 
     goto/16 :goto_33
 
-    .line 10325
+    .line 10333
     :cond_7f
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -5591,7 +5591,7 @@
 
     if-ne v2, v3, :cond_80
 
-    .line 10326
+    .line 10334
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -5612,7 +5612,7 @@
 
     if-eqz v3, :cond_8a
 
-    .line 10327
+    .line 10335
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -5623,7 +5623,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_channelLocation;
 
-    .line 10328
+    .line 10336
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_channelLocation;->address:Ljava/lang/String;
 
     sget v4, Lorg/telegram/messenger/R$string;->AttachLocation:I
@@ -5638,7 +5638,7 @@
 
     goto/16 :goto_33
 
-    .line 10330
+    .line 10338
     :cond_80
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -5648,7 +5648,7 @@
 
     if-ne v2, v3, :cond_82
 
-    .line 10331
+    .line 10339
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$26900(Lorg/telegram/ui/ProfileActivity;)I
@@ -5665,7 +5665,7 @@
 
     if-eqz v3, :cond_81
 
-    .line 10333
+    .line 10341
     iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     if-eqz v6, :cond_81
@@ -5676,7 +5676,7 @@
 
     if-eqz v6, :cond_81
 
-    .line 10334
+    .line 10342
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
     move-result-object v6
@@ -5701,7 +5701,7 @@
 
     goto :goto_2d
 
-    .line 10336
+    .line 10344
     :cond_81
     sget v3, Lorg/telegram/messenger/R$string;->NumberUnknown:I
 
@@ -5711,7 +5711,7 @@
 
     move-result-object v3
 
-    .line 10338
+    .line 10346
     :goto_2d
     sget v4, Lorg/telegram/messenger/R$string;->TapToChangePhone:I
 
@@ -5723,12 +5723,12 @@
 
     invoke-virtual {v0, v3, v4, v5}, Lorg/telegram/ui/Cells/TextDetailCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 10339
+    .line 10347
     invoke-virtual {v0, v7}, Lorg/telegram/ui/Cells/TextDetailCell;->setContentDescriptionValueFirst(Z)V
 
     goto/16 :goto_33
 
-    .line 10340
+    .line 10348
     :cond_82
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -5738,7 +5738,7 @@
 
     if-ne v2, v3, :cond_8a
 
-    .line 10341
+    .line 10349
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$27100(Lorg/telegram/ui/ProfileActivity;)I
@@ -5753,7 +5753,7 @@
 
     move-result-object v3
 
-    .line 10343
+    .line 10351
     sget v4, Lorg/telegram/messenger/R$string;->Username:I
 
     const-string v8, "Username"
@@ -5764,7 +5764,7 @@
 
     if-eqz v3, :cond_88
 
-    .line 10345
+    .line 10353
     iget-object v8, v3, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
@@ -5775,7 +5775,7 @@
 
     move v8, v7
 
-    .line 10346
+    .line 10354
     :goto_2e
     iget-object v9, v3, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
@@ -5785,7 +5785,7 @@
 
     if-ge v8, v9, :cond_84
 
-    .line 10347
+    .line 10355
     iget-object v9, v3, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5796,7 +5796,7 @@
 
     if-eqz v9, :cond_83
 
-    .line 10348
+    .line 10356
     iget-boolean v10, v9, Lorg/telegram/tgnet/TLRPC$TL_username;->active:Z
 
     if-eqz v10, :cond_83
@@ -5809,7 +5809,7 @@
 
     if-nez v10, :cond_83
 
-    .line 10349
+    .line 10357
     iget-object v8, v9, Lorg/telegram/tgnet/TLRPC$TL_username;->username:Ljava/lang/String;
 
     goto :goto_2f
@@ -5825,13 +5825,13 @@
     :goto_2f
     if-nez v8, :cond_85
 
-    .line 10354
+    .line 10362
     iget-object v8, v3, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
     :cond_85
     if-eqz v8, :cond_87
 
-    .line 10356
+    .line 10364
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
@@ -5840,7 +5840,7 @@
 
     goto :goto_30
 
-    .line 10359
+    .line 10367
     :cond_86
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -5856,7 +5856,7 @@
 
     goto :goto_31
 
-    .line 10357
+    .line 10365
     :cond_87
     :goto_30
     sget v6, Lorg/telegram/messenger/R$string;->UsernameEmpty:I
@@ -5867,7 +5867,7 @@
 
     move-result-object v6
 
-    .line 10361
+    .line 10369
     :goto_31
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
@@ -5877,7 +5877,7 @@
 
     goto :goto_32
 
-    .line 10363
+    .line 10371
     :cond_88
     invoke-static {v3}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
@@ -5885,14 +5885,14 @@
 
     if-eqz v3, :cond_89
 
-    .line 10364
+    .line 10372
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-nez v3, :cond_89
 
-    .line 10365
+    .line 10373
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5907,7 +5907,7 @@
 
     goto :goto_32
 
-    .line 10367
+    .line 10375
     :cond_89
     sget v3, Lorg/telegram/messenger/R$string;->UsernameEmpty:I
 
@@ -5917,18 +5917,18 @@
 
     move-result-object v6
 
-    .line 10370
+    .line 10378
     :goto_32
     invoke-virtual {v0, v6, v4, v5}, Lorg/telegram/ui/Cells/TextDetailCell;->setTextAndValue(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 10371
+    .line 10379
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Cells/TextDetailCell;->setContentDescriptionValueFirst(Z)V
 
     :cond_8a
     :goto_33
     if-eqz v7, :cond_8b
 
-    .line 10374
+    .line 10382
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -5939,7 +5939,7 @@
 
     move-result-object v3
 
-    .line 10375
+    .line 10383
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
     iget-object v5, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -5956,7 +5956,7 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 10376
+    .line 10384
     sget v4, Lorg/telegram/messenger/R$string;->GetQRCode:I
 
     const-string v5, "GetQRCode"
@@ -5967,7 +5967,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Cells/TextDetailCell;->setImage(Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
 
-    .line 10377
+    .line 10385
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v4, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda1;
@@ -5981,13 +5981,13 @@
     :cond_8b
     const/4 v3, 0x0
 
-    .line 10379
+    .line 10387
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/TextDetailCell;->setImage(Landroid/graphics/drawable/Drawable;)V
 
-    .line 10380
+    .line 10388
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Cells/TextDetailCell;->setImageClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 10382
+    .line 10390
     :goto_34
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5997,13 +5997,13 @@
 
     goto/16 :goto_35
 
-    .line 10238
+    .line 10246
     :cond_8c
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 10239
+    .line 10247
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$25600(Lorg/telegram/ui/ProfileActivity;)I
@@ -6030,7 +6030,7 @@
 
     invoke-virtual {v0, v7, v3}, Lorg/telegram/ui/Cells/HeaderCell;->setExpandableMode(ZZ)V
 
-    .line 10240
+    .line 10248
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$25600(Lorg/telegram/ui/ProfileActivity;)I
@@ -6039,7 +6039,7 @@
 
     if-ne v2, v3, :cond_91
 
-    .line 10241
+    .line 10249
     iget-object v2, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$4900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
@@ -6074,7 +6074,7 @@
 
     if-eqz v2, :cond_90
 
-    .line 10242
+    .line 10250
     :cond_8f
     sget v2, Lorg/telegram/messenger/R$string;->ReportChatDescription:I
 
@@ -6088,7 +6088,7 @@
 
     goto :goto_35
 
-    .line 10244
+    .line 10252
     :cond_90
     sget v2, Lorg/telegram/messenger/R$string;->Info:I
 
@@ -6102,7 +6102,7 @@
 
     goto :goto_35
 
-    .line 10246
+    .line 10254
     :cond_91
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6112,7 +6112,7 @@
 
     if-ne v2, v3, :cond_92
 
-    .line 10247
+    .line 10255
     sget v2, Lorg/telegram/messenger/R$string;->ChannelMembers:I
 
     invoke-static {v11, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -6123,7 +6123,7 @@
 
     goto :goto_35
 
-    .line 10248
+    .line 10256
     :cond_92
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6133,7 +6133,7 @@
 
     if-ne v2, v3, :cond_93
 
-    .line 10249
+    .line 10257
     sget v2, Lorg/telegram/messenger/R$string;->SETTINGS:I
 
     const-string v3, "SETTINGS"
@@ -6146,7 +6146,7 @@
 
     goto :goto_35
 
-    .line 10250
+    .line 10258
     :cond_93
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6156,7 +6156,7 @@
 
     if-ne v2, v3, :cond_94
 
-    .line 10251
+    .line 10259
     sget v2, Lorg/telegram/messenger/R$string;->Account:I
 
     const-string v3, "Account"
@@ -6169,7 +6169,7 @@
 
     goto :goto_35
 
-    .line 10252
+    .line 10260
     :cond_94
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6179,7 +6179,7 @@
 
     if-ne v2, v3, :cond_95
 
-    .line 10253
+    .line 10261
     sget v2, Lorg/telegram/messenger/R$string;->SettingsHelp:I
 
     invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -6190,7 +6190,7 @@
 
     goto :goto_35
 
-    .line 10254
+    .line 10262
     :cond_95
     iget-object v3, v1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6200,7 +6200,7 @@
 
     if-ne v2, v3, :cond_96
 
-    .line 10255
+    .line 10263
     sget v2, Lorg/telegram/messenger/R$string;->SettingsDebug:I
 
     const-string v3, "SettingsDebug"
@@ -6229,34 +6229,34 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 13
 
-    .line 9953
+    .line 9961
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->SOCIAL:I
 
     const/4 v0, -0x1
 
     if-ne p2, p1, :cond_0
 
-    .line 9954
+    .line 9962
     new-instance p1, Lcom/iMe/feature/profile/ProfileSocialCell;
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, v1}, Lcom/iMe/feature/profile/ProfileSocialCell;-><init>(Landroid/content/Context;)V
 
-    .line 9955
+    .line 9963
     sget-object v1, Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/ProfileActivity$ListAdapter$$ExternalSyntheticLambda2;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto/16 :goto_6
 
-    .line 9957
+    .line 9965
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOPIC_PROFILE:I
 
     if-ne p2, p1, :cond_1
 
-    .line 9958
+    .line 9966
     new-instance p1, Lcom/iMe/ui/topics/TopicProfileCell;
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -6271,7 +6271,7 @@
 
     goto/16 :goto_6
 
-    .line 9959
+    .line 9967
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_DETAIL_WITH_RANK:I
 
@@ -6279,14 +6279,14 @@
 
     if-ne p2, p1, :cond_2
 
-    .line 9960
+    .line 9968
     new-instance p1, Lcom/iMe/ui/custom/cells/TextDetailWithRankCell;
 
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, v2}, Lcom/iMe/ui/custom/cells/TextDetailWithRankCell;-><init>(Landroid/content/Context;)V
 
-    .line 9961
+    .line 9969
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextDetailCell;->setContentDescriptionValueFirst(Z)V
 
     goto/16 :goto_6
@@ -6296,7 +6296,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    .line 10079
+    .line 10087
     :pswitch_0
     new-instance v2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -6312,14 +6312,14 @@
 
     invoke-direct {v2, v3, v5, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 10080
+    .line 10088
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v3
 
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 10081
+    .line 10089
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v3
@@ -6334,7 +6334,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 10082
+    .line 10090
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object v3
@@ -6345,7 +6345,7 @@
 
     goto/16 :goto_3
 
-    .line 10008
+    .line 10016
     :pswitch_1
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
@@ -6361,7 +6361,7 @@
 
     goto/16 :goto_6
 
-    .line 10133
+    .line 10141
     :pswitch_2
     new-instance p1, Lorg/telegram/ui/Components/Premium/ProfilePremiumCell;
 
@@ -6377,7 +6377,7 @@
 
     goto/16 :goto_6
 
-    .line 10074
+    .line 10082
     :pswitch_3
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -6393,7 +6393,7 @@
 
     goto/16 :goto_6
 
-    .line 10111
+    .line 10119
     :pswitch_4
     new-instance p1, Lorg/telegram/ui/ProfileActivity$ListAdapter$4;
 
@@ -6409,7 +6409,7 @@
 
     goto/16 :goto_6
 
-    .line 10067
+    .line 10075
     :pswitch_5
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6423,7 +6423,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 10068
+    .line 10076
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -6444,7 +6444,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 10070
+    .line 10078
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6454,7 +6454,7 @@
 
     goto/16 :goto_6
 
-    .line 10029
+    .line 10037
     :pswitch_6
     new-instance v1, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;
 
@@ -6462,7 +6462,7 @@
 
     invoke-direct {v1, p0, v2}, Lorg/telegram/ui/ProfileActivity$ListAdapter$3;-><init>(Lorg/telegram/ui/ProfileActivity$ListAdapter;Landroid/content/Context;)V
 
-    .line 10063
+    .line 10071
     new-instance v2, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {v2, p1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
@@ -6471,7 +6471,7 @@
 
     goto :goto_1
 
-    .line 10020
+    .line 10028
     :pswitch_7
     new-instance p1, Lorg/telegram/ui/ProfileActivity$ListAdapter$2;
 
@@ -6481,7 +6481,7 @@
 
     goto/16 :goto_6
 
-    .line 10016
+    .line 10024
     :pswitch_8
     new-instance p1, Lorg/telegram/ui/Cells/UserCell;
 
@@ -6521,7 +6521,7 @@
 
     goto/16 :goto_6
 
-    .line 10012
+    .line 10020
     :pswitch_9
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -6537,7 +6537,7 @@
 
     goto/16 :goto_6
 
-    .line 10004
+    .line 10012
     :pswitch_a
     new-instance p1, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
@@ -6561,7 +6561,7 @@
 
     goto/16 :goto_6
 
-    .line 9999
+    .line 10007
     :pswitch_b
     new-instance v1, Lorg/telegram/ui/Cells/DividerCell;
 
@@ -6577,7 +6577,7 @@
 
     const/16 v2, 0x14
 
-    .line 10000
+    .line 10008
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -6595,7 +6595,7 @@
 
     goto/16 :goto_6
 
-    .line 9995
+    .line 10003
     :pswitch_c
     new-instance p1, Lorg/telegram/ui/Cells/TextCell;
 
@@ -6611,7 +6611,7 @@
 
     goto/16 :goto_6
 
-    .line 9976
+    .line 9984
     :pswitch_d
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -6633,7 +6633,7 @@
 
     goto/16 :goto_6
 
-    .line 9971
+    .line 9979
     :pswitch_e
     new-instance v2, Lorg/telegram/ui/Cells/TextDetailCell;
 
@@ -6654,7 +6654,7 @@
     :cond_5
     invoke-direct {v2, v3, v4, p1}, Lorg/telegram/ui/Cells/TextDetailCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
 
-    .line 9972
+    .line 9980
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Cells/TextDetailCell;->setContentDescriptionValueFirst(Z)V
 
     :goto_2
@@ -6662,7 +6662,7 @@
 
     goto/16 :goto_6
 
-    .line 9966
+    .line 9974
     :pswitch_f
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -6680,7 +6680,7 @@
 
     goto/16 :goto_6
 
-    .line 10084
+    .line 10092
     :goto_3
     :try_start_0
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -6699,12 +6699,12 @@
 
     move-result-object v3
 
-    .line 10085
+    .line 10093
     iget v4, v3, Landroid/content/pm/PackageInfo;->versionCode:I
 
     div-int/lit8 v6, v4, 0xa
 
-    .line 10087
+    .line 10095
     rem-int/2addr v4, v5
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -6717,7 +6717,7 @@
 
     if-eq v4, v5, :cond_7
 
-    .line 10094
+    .line 10102
     :try_start_1
     invoke-static {}, Lorg/telegram/messenger/BuildVars;->isStandaloneApp()Z
 
@@ -6725,7 +6725,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 10095
+    .line 10103
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -6750,7 +6750,7 @@
 
     goto :goto_4
 
-    .line 10097
+    .line 10105
     :cond_6
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -6776,7 +6776,7 @@
 
     goto :goto_4
 
-    .line 10090
+    .line 10098
     :cond_7
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -6803,7 +6803,7 @@
     :goto_4
     const-string v7, "TelegramVersion"
 
-    .line 10101
+    .line 10109
     sget v8, Lorg/telegram/messenger/R$string;->TelegramVersion:I
 
     new-array v9, v1, [Ljava/lang/Object;
@@ -6847,10 +6847,10 @@
     :catch_0
     move-exception v1
 
-    .line 10103
+    .line 10111
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 10105
+    .line 10113
     :goto_5
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->getTextView()Landroid/widget/TextView;
 
@@ -6868,7 +6868,7 @@
 
     invoke-virtual {v1, p1, v4, p1, v3}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 10107
+    .line 10115
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -6894,7 +6894,7 @@
 
     if-eq p2, v1, :cond_8
 
-    .line 10137
+    .line 10145
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v1, -0x2
@@ -6903,7 +6903,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 10139
+    .line 10147
     :cond_8
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -6941,7 +6941,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 10144
+    .line 10152
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -6952,7 +6952,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 10145
+    .line 10153
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v0, 0x1
@@ -6966,7 +6966,7 @@
 .method public onViewDetachedFromWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 10151
+    .line 10159
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -6977,7 +6977,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 10152
+    .line 10160
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v0, 0x0
@@ -6991,7 +6991,7 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 10731
+    .line 10739
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
@@ -7004,7 +7004,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 10732
+    .line 10740
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v0, 0x0

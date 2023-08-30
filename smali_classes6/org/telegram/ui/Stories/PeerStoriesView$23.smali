@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 2304
+    .line 2340
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

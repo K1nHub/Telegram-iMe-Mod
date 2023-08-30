@@ -36,7 +36,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;ZZLorg/telegram/ui/Components/BackupImageView;Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;Lorg/telegram/ui/ActionBar/SimpleTextView;ZLorg/telegram/ui/ChatActivity$PinnedMessageButton;)V
     .locals 0
 
-    .line 24788
+    .line 24790
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$109;->val$animateName:Z
@@ -63,7 +63,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 24792
+    .line 24794
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$31200(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;
@@ -76,7 +76,7 @@
 
     aput-object v0, p1, v1
 
-    .line 24793
+    .line 24795
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$46200(Lorg/telegram/ui/ChatActivity;)[Lorg/telegram/ui/Components/BackupImageView;
@@ -95,7 +95,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 6
 
-    .line 24798
+    .line 24800
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$31200(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;
@@ -112,7 +112,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 24799
+    .line 24801
     iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$109;->val$animateName:Z
 
     if-nez p1, :cond_1
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 24837
+    .line 24839
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -141,7 +141,7 @@
 
     goto/16 :goto_1
 
-    .line 24800
+    .line 24802
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -156,7 +156,7 @@
 
     aput-object v0, p1, v1
 
-    .line 24801
+    .line 24803
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$31200(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;
@@ -169,7 +169,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 24802
+    .line 24804
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$31200(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;
@@ -182,12 +182,12 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 24803
+    .line 24805
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 24804
+    .line 24806
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$109;->val$animateName:Z
 
     const/4 v2, 0x0
@@ -196,7 +196,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 24805
+    .line 24807
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$109;->val$nameTextView:Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;
 
     sget-object v4, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -211,13 +211,13 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 24807
+    .line 24809
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$109;->val$animateText:Z
 
     if-eqz v0, :cond_3
 
-    .line 24808
+    .line 24810
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$109;->val$messageTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-object v4, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -232,13 +232,13 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 24810
+    .line 24812
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$109;->val$animateButton:Z
 
     if-eqz v0, :cond_4
 
-    .line 24811
+    .line 24813
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$109;->val$buttonTextView:Lorg/telegram/ui/ChatActivity$PinnedMessageButton;
 
     sget-object v4, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -253,13 +253,13 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 24813
+    .line 24815
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$109;->val$animateImage:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v0, :cond_5
 
-    .line 24814
+    .line 24816
     sget-object v4, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v5, v1, [F
@@ -272,7 +272,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 24816
+    .line 24818
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -288,7 +288,7 @@
 
     invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 24834
+    .line 24836
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$31200(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;
@@ -299,7 +299,7 @@
 
     invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 24835
+    .line 24837
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$31200(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;

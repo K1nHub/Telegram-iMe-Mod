@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 2240
+    .line 2276
     invoke-direct {p0, p2}, Lorg/telegram/ui/WrappedResourceProvider;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public appendColors()V
     .locals 5
 
-    .line 2243
+    .line 2279
     iget-object v0, p0, Lorg/telegram/ui/WrappedResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I

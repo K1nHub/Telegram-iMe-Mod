@@ -884,6 +884,10 @@
 
     if-nez v2, :cond_1
 
+    iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isError:Z
+
+    if-nez v2, :cond_1
+
     .line 458
     iget-object v2, v7, Lorg/telegram/ui/Stories/recorder/GalleryListView;->drafts:Ljava/util/ArrayList;
 
@@ -2903,6 +2907,10 @@
 
     .line 1409
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
+
+    if-nez v2, :cond_0
+
+    iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isError:Z
 
     if-nez v2, :cond_0
 

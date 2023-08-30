@@ -217,9 +217,9 @@
     :goto_3
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    if-le p1, v4, :cond_5
+    if-le p1, v4, :cond_6
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_6
 
     .line 208
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->val$currentAccount:I
@@ -230,11 +230,11 @@
 
     iget v2, v2, Lorg/telegram/messenger/MessagesController;->storyCaptionLengthLimitPremium:I
 
-    if-ge p1, v2, :cond_5
+    if-ge p1, v2, :cond_6
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->lastLength:I
 
-    if-le p1, v2, :cond_5
+    if-le p1, v2, :cond_6
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
@@ -242,9 +242,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-nez v2, :cond_5
+
+    iget v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->val$currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    iget-boolean v2, v2, Lorg/telegram/messenger/MessagesController;->premiumLocked:Z
+
+    if-eqz v2, :cond_6
 
     .line 209
+    :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->limitTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -269,21 +280,21 @@
     invoke-virtual {v2}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
 
     .line 212
-    :cond_5
+    :cond_6
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->lastLength:I
 
-    if-le p1, v4, :cond_6
+    if-le p1, v4, :cond_7
 
     goto :goto_4
 
-    :cond_6
+    :cond_7
     move v0, v1
 
     .line 215
     :goto_4
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->lastOverLimit:Z
 
-    if-eq v0, p1, :cond_7
+    if-eq v0, p1, :cond_8
 
     .line 216
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
@@ -291,7 +302,7 @@
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->onCaptionLimitUpdate(Z)V
 
     .line 218
-    :cond_7
+    :cond_8
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$2;->lastOverLimit:Z
 
     return-void

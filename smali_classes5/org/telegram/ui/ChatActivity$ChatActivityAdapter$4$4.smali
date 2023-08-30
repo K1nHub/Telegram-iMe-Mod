@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;)V
     .locals 0
 
-    .line 32018
+    .line 32020
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4$4;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 32021
+    .line 32023
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4$4;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -52,7 +52,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 32022
+    .line 32024
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4$4;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -65,7 +65,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 32023
+    .line 32025
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4$4;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -78,7 +78,7 @@
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 32024
+    .line 32026
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4$4;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -91,7 +91,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 32026
+    .line 32028
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4$4;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;
 
@@ -101,7 +101,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAlpha(F)V
 
-    .line 32027
+    .line 32029
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4$4;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$4;->val$messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;

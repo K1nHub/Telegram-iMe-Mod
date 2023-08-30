@@ -46,7 +46,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/app/Activity;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ChatActivity;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 6
 
-    .line 1650
+    .line 1686
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     move-object v0, p0
@@ -66,64 +66,55 @@
     return-void
 .end method
 
-.method static synthetic access$4102(Lorg/telegram/ui/Stories/PeerStoriesView$13;I)I
+.method static synthetic access$4202(Lorg/telegram/ui/Stories/PeerStoriesView$13;I)I
     .locals 0
 
-    .line 1650
+    .line 1686
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
 
     return p1
 .end method
 
-.method static synthetic access$4200(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
-    .locals 0
-
-    .line 1650
-    iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
-
-    return-object p0
-.end method
-
 .method static synthetic access$4300(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
     .locals 0
 
-    .line 1650
+    .line 1686
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method static synthetic access$4400(Lorg/telegram/ui/Stories/PeerStoriesView$13;)I
+.method static synthetic access$4400(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
     .locals 0
 
-    .line 1650
+    .line 1686
+    iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
+
+    return-object p0
+.end method
+
+.method static synthetic access$4500(Lorg/telegram/ui/Stories/PeerStoriesView$13;)I
+    .locals 0
+
+    .line 1686
     iget p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
 
     return p0
 .end method
 
-.method static synthetic access$4500(Lorg/telegram/ui/Stories/PeerStoriesView$13;)F
+.method static synthetic access$4600(Lorg/telegram/ui/Stories/PeerStoriesView$13;)F
     .locals 0
 
-    .line 1650
+    .line 1686
     iget p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topViewEnterProgress:F
 
     return p0
 .end method
 
-.method static synthetic access$4600(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
-    .locals 0
-
-    .line 1650
-    iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
-
-    return-object p0
-.end method
-
 .method static synthetic access$4700(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
     .locals 0
 
-    .line 1650
+    .line 1686
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
 
     return-object p0
@@ -132,25 +123,34 @@
 .method static synthetic access$4800(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
     .locals 0
 
-    .line 1650
+    .line 1686
+    iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
+
+    return-object p0
+.end method
+
+.method static synthetic access$4900(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
+    .locals 0
+
+    .line 1686
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topLineView:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method static synthetic access$4900(Lorg/telegram/ui/Stories/PeerStoriesView$13;)I
+.method static synthetic access$5000(Lorg/telegram/ui/Stories/PeerStoriesView$13;)I
     .locals 0
 
-    .line 1650
+    .line 1686
     iget p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
 
     return p0
 .end method
 
-.method static synthetic access$5000(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
+.method static synthetic access$5100(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
     .locals 0
 
-    .line 1650
+    .line 1686
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topLineView:Landroid/view/View;
 
     return-object p0
@@ -159,7 +159,7 @@
 .method private checkRecording()V
     .locals 2
 
-    .line 1752
+    .line 1788
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -194,14 +194,14 @@
     :goto_1
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1702(Lorg/telegram/ui/Stories/PeerStoriesView;Z)Z
 
-    .line 1753
+    .line 1789
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->isActive:Z
 
     if-eqz v1, :cond_2
 
-    .line 1754
+    .line 1790
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1700(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
@@ -210,11 +210,11 @@
 
     invoke-interface {v1, v0}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setIsRecording(Z)V
 
-    .line 1756
+    .line 1792
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1757
+    .line 1793
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
@@ -227,7 +227,7 @@
 .method private synthetic lambda$checkAnimation$0(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 1684
+    .line 1720
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -240,20 +240,20 @@
 
     float-to-int p1, p1
 
-    .line 1685
+    .line 1721
     iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
 
-    .line 1686
+    .line 1722
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->forceUpdateOffsets:Z
 
-    .line 1687
+    .line 1723
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1688
+    .line 1724
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -262,7 +262,7 @@
 .method private synthetic lambda$checkAnimation$1(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 1714
+    .line 1750
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -285,12 +285,12 @@
 .method public checkAnimation()V
     .locals 11
 
-    .line 1664
+    .line 1700
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getBackgroundTop()I
 
     move-result v0
 
-    .line 1665
+    .line 1701
     iget v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->chatActivityEnterViewAnimateFromTop:I
 
     const-wide/16 v2, 0xfa
@@ -307,47 +307,47 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 1666
+    .line 1702
     iget v8, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
 
     add-int/2addr v8, v1
 
     sub-int/2addr v8, v0
 
-    .line 1667
+    .line 1703
     iput v8, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
 
-    .line 1668
+    .line 1704
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-boolean v6, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->forceUpdateOffsets:Z
 
-    .line 1669
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    .line 1705
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1670
+    .line 1706
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 1671
+    .line 1707
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1674
+    .line 1710
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
 
@@ -359,7 +359,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1675
+    .line 1711
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topView:Landroid/view/View;
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
@@ -386,25 +386,25 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1676
+    .line 1712
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->topLineView:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 1677
+    .line 1713
     iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->animatedTop:I
 
     int-to-float v1, v1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1681
+    .line 1717
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1682
+    .line 1718
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     new-array v1, v5, [F
@@ -419,12 +419,12 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4002(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4102(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 1683
+    .line 1719
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
@@ -434,10 +434,10 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1690
+    .line 1726
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
@@ -447,19 +447,19 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1705
+    .line 1741
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1706
+    .line 1742
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
@@ -467,25 +467,25 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1707
+    .line 1743
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4100(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1708
+    .line 1744
     iput v7, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->chatActivityEnterViewAnimateFromTop:I
 
-    .line 1710
+    .line 1746
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->shouldAnimateEditTextWithBounds:Z
 
     if-eqz v0, :cond_4
 
-    .line 1711
+    .line 1747
     iget v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->messageEditTextPredrawHeigth:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
@@ -510,7 +510,7 @@
 
     int-to-float v0, v0
 
-    .line 1712
+    .line 1748
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/EditTextCaption;->getOffsetY()F
@@ -523,7 +523,7 @@
 
     new-array v0, v5, [F
 
-    .line 1713
+    .line 1749
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/EditTextCaption;->getOffsetY()F
@@ -538,40 +538,40 @@
 
     move-result-object v0
 
-    .line 1714
+    .line 1750
     new-instance v1, Lorg/telegram/ui/Stories/PeerStoriesView$13$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/PeerStoriesView$13$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/PeerStoriesView$13;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1715
+    .line 1751
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->messageEditTextAnimator:Landroid/animation/Animator;
 
     if-eqz v1, :cond_3
 
-    .line 1716
+    .line 1752
     invoke-virtual {v1}, Landroid/animation/Animator;->cancel()V
 
-    .line 1718
+    .line 1754
     :cond_3
     iput-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->messageEditTextAnimator:Landroid/animation/Animator;
 
-    .line 1719
+    .line 1755
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1720
+    .line 1756
     sget-object v1, Landroidx/recyclerview/widget/ChatListItemAnimator;->DEFAULT_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1721
+    .line 1757
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1722
+    .line 1758
     iput-boolean v7, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->shouldAnimateEditTextWithBounds:Z
 
-    .line 1724
+    .line 1760
     :cond_4
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
@@ -583,7 +583,7 @@
 
     const/4 v0, 0x0
 
-    .line 1762
+    .line 1798
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->fillActionModeMenu(Landroid/view/Menu;Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
     return-void
@@ -592,10 +592,10 @@
 .method protected isRecordingStateChanged()V
     .locals 0
 
-    .line 1747
+    .line 1783
     invoke-super {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->isRecordingStateChanged()V
 
-    .line 1748
+    .line 1784
     invoke-direct {p0}, Lorg/telegram/ui/Stories/PeerStoriesView$13;->checkRecording()V
 
     return-void
@@ -604,7 +604,7 @@
 .method protected onLineCountChanged(II)V
     .locals 0
 
-    .line 1729
+    .line 1765
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -613,10 +613,10 @@
 
     const/4 p1, 0x1
 
-    .line 1730
+    .line 1766
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->shouldAnimateEditTextWithBounds:Z
 
-    .line 1731
+    .line 1767
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->getMeasuredHeight()I
@@ -625,7 +625,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->messageEditTextPredrawHeigth:I
 
-    .line 1732
+    .line 1768
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView;->messageEditText:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->getScrollY()I
@@ -634,15 +634,15 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->messageEditTextPredrawScrollY:I
 
-    .line 1733
+    .line 1769
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1734
+    .line 1770
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1735
+    .line 1771
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -660,10 +660,10 @@
 .method protected showConfirmAlert(Ljava/lang/Runnable;)Z
     .locals 1
 
-    .line 1660
+    .line 1696
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;)Z
 
     move-result p1
 
@@ -673,10 +673,10 @@
 .method protected updateRecordInterface(I)V
     .locals 0
 
-    .line 1741
+    .line 1777
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->updateRecordInterface(I)V
 
-    .line 1742
+    .line 1778
     invoke-direct {p0}, Lorg/telegram/ui/Stories/PeerStoriesView$13;->checkRecording()V
 
     return-void

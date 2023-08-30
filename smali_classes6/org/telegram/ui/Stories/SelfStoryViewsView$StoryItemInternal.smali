@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
     .locals 0
 
-    .line 498
+    .line 499
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 499
+    .line 500
     iput-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     return-void
@@ -36,10 +36,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
     .locals 0
 
-    .line 502
+    .line 503
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 503
+    .line 504
     iput-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     return-void

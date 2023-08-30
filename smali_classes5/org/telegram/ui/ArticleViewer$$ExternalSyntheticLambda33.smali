@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda33;->f$4:Lorg/telegram/tgnet/TLRPC$TL_channels_joinChannel;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$lVEa2oM9AZC8K8x9YH-gEkP1ZXs(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$BlockChannelCell;ILorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_channels_joinChannel;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$AHniShGNA4T43S0cUC7VCOtJDxM(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$BlockChannelCell;ILorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_channels_joinChannel;)V
 
     return-void
 .end method

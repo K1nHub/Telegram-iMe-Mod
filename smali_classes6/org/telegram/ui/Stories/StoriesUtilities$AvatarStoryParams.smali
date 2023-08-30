@@ -17,6 +17,8 @@
 # instance fields
 .field public allowLongress:Z
 
+.field public alpha:F
+
 .field public animate:Z
 
 .field public animateFromUnreadState:I
@@ -102,7 +104,7 @@
 
     const/4 v0, 0x0
 
-    .line 984
+    .line 1009
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;-><init>(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -111,49 +113,52 @@
 .method public constructor <init>(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 987
+    .line 1012
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 950
+    .line 974
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->drawSegments:Z
 
-    .line 951
+    .line 975
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->animate:Z
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 954
+    .line 978
     iput v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToSegments:F
 
     const/4 v1, 0x0
 
-    .line 955
+    .line 979
     iput v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToArc:F
 
-    .line 972
+    .line 992
+    iput v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->alpha:F
+
+    .line 997
     iput v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToSate:F
 
     const/4 v0, 0x0
 
-    .line 973
+    .line 998
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->showProgress:Z
 
-    .line 976
+    .line 1001
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->originalAvatarRect:Landroid/graphics/RectF;
 
-    .line 979
+    .line 1004
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->allowLongress:Z
 
-    .line 988
+    .line 1013
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->isStoryCell:Z
 
-    .line 989
+    .line 1014
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -162,7 +167,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)J
     .locals 2
 
-    .line 949
+    .line 973
     iget-wide v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
 
     return-wide v0
@@ -171,7 +176,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;J)J
     .locals 0
 
-    .line 949
+    .line 973
     iput-wide p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
 
     return-wide p1
@@ -180,7 +185,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)Z
     .locals 0
 
-    .line 949
+    .line 973
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->isStoryCell:Z
 
     return p0
@@ -189,7 +194,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
     .locals 0
 
-    .line 949
+    .line 973
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->updateProgressParams()V
 
     return-void
@@ -200,38 +205,38 @@
 
     const/4 v0, 0x0
 
-    .line 1050
+    .line 1075
     invoke-virtual {p1, v0}, Landroid/view/View;->performHapticFeedback(I)Z
 
-    .line 1051
+    .line 1076
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     if-eqz v1, :cond_0
 
-    .line 1052
+    .line 1077
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 1054
+    .line 1079
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
-    .line 1055
+    .line 1080
     instance-of v1, p1, Landroid/view/ViewGroup;
 
     if-eqz v1, :cond_1
 
-    .line 1056
+    .line 1081
     check-cast p1, Landroid/view/ViewGroup;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1058
+    .line 1083
     :cond_1
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->pressed:Z
 
-    .line 1059
+    .line 1084
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->onLongPress()V
 
     return-void
@@ -240,20 +245,20 @@
 .method private processOpenStory(Landroid/view/View;)V
     .locals 8
 
-    .line 1100
+    .line 1125
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    .line 1101
+    .line 1126
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    .line 1102
+    .line 1127
     invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
 
     move-result-object v1
 
-    .line 1103
+    .line 1128
     iget-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->drawHiddenStoriesAsSegments:Z
 
     const/4 v3, 0x0
@@ -262,12 +267,12 @@
 
     const-wide/16 v0, 0x0
 
-    .line 1104
+    .line 1129
     invoke-virtual {p0, v0, v1, v3}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->openStory(JLjava/lang/Runnable;)V
 
     return-void
 
-    .line 1107
+    .line 1132
     :cond_0
     iget-wide v4, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
 
@@ -285,7 +290,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1108
+    .line 1133
     iget-wide v4, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/Stories/StoriesController;->hasStories(J)Z
@@ -294,14 +299,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 1109
+    .line 1134
     iget-wide v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
 
     invoke-virtual {p0, v0, v1, v3}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->openStory(JLjava/lang/Runnable;)V
 
     return-void
 
-    .line 1112
+    .line 1137
     :cond_1
     iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
 
@@ -315,7 +320,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1113
+    .line 1138
     iget-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$User;->stories_unavailable:Z
 
     if-nez v1, :cond_2
@@ -324,12 +329,12 @@
 
     if-lez v0, :cond_2
 
-    .line 1114
+    .line 1139
     new-instance v0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;-><init>()V
 
-    .line 1115
+    .line 1140
     iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
 
     invoke-virtual {v0, v1, v2, p1, p0}, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->load(JLandroid/view/View;Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
@@ -341,14 +346,14 @@
 .method private updateProgressParams()V
     .locals 2
 
-    .line 999
+    .line 1024
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->inc:Z
 
     const v1, 0x3c83126f    # 0.016f
 
     if-eqz v0, :cond_0
 
-    .line 1000
+    .line 1025
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->sweepAngle:F
 
     add-float/2addr v0, v1
@@ -361,17 +366,17 @@
 
     if-ltz v0, :cond_1
 
-    .line 1002
+    .line 1027
     iput v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->sweepAngle:F
 
     const/4 v0, 0x0
 
-    .line 1003
+    .line 1028
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->inc:Z
 
     goto :goto_0
 
-    .line 1006
+    .line 1031
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->sweepAngle:F
 
@@ -385,15 +390,15 @@
 
     if-gez v0, :cond_1
 
-    .line 1008
+    .line 1033
     iput v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->sweepAngle:F
 
     const/4 v0, 0x1
 
-    .line 1009
+    .line 1034
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->inc:Z
 
-    .line 1012
+    .line 1037
     :cond_1
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->globalAngle:F
@@ -412,10 +417,10 @@
 .method public checkOnTouchEvent(Landroid/view/MotionEvent;Landroid/view/View;)Z
     .locals 6
 
-    .line 1020
+    .line 1045
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->child:Landroid/view/View;
 
-    .line 1021
+    .line 1046
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -426,7 +431,7 @@
 
     move-result-object v0
 
-    .line 1022
+    .line 1047
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
@@ -453,7 +458,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 1023
+    .line 1048
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -470,7 +475,7 @@
 
     move-result-object v1
 
-    .line 1026
+    .line 1051
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->isAvatarsEnabled()Z
 
     move-result v4
@@ -479,20 +484,20 @@
 
     goto :goto_0
 
-    .line 1029
+    .line 1054
     :cond_0
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->drawHiddenStoriesAsSegments:Z
 
     if-eqz v4, :cond_1
 
-    .line 1030
+    .line 1055
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->hasHiddenStories()Z
 
     move-result v3
 
     goto :goto_0
 
-    .line 1032
+    .line 1057
     :cond_1
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -525,7 +530,7 @@
     :cond_2
     move v3, v2
 
-    .line 1034
+    .line 1059
     :cond_3
     :goto_0
     iget-wide v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->dialogId:J
@@ -544,12 +549,12 @@
 
     if-eqz v3, :cond_f
 
-    .line 1035
+    .line 1060
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     if-nez v0, :cond_4
 
-    .line 1036
+    .line 1061
     new-instance v0, Lorg/telegram/ui/Components/ButtonBounce;
 
     const/high16 v1, 0x3fc00000    # 1.5f
@@ -562,11 +567,11 @@
 
     goto :goto_1
 
-    .line 1038
+    .line 1063
     :cond_4
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/ButtonBounce;->setView(Landroid/view/View;)V
 
-    .line 1040
+    .line 1065
     :goto_1
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -574,42 +579,42 @@
 
     invoke-interface {v0, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1041
+    .line 1066
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 1042
+    .line 1067
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->pressed:Z
 
-    .line 1043
+    .line 1068
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->startX:F
 
-    .line 1044
+    .line 1069
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->startY:F
 
-    .line 1045
+    .line 1070
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->allowLongress:Z
 
     if-eqz p1, :cond_f
 
-    .line 1046
+    .line 1071
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->longPressRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_5
 
-    .line 1047
+    .line 1072
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1049
+    .line 1074
     :cond_5
     new-instance p1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams$$ExternalSyntheticLambda0;
 
@@ -617,19 +622,19 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->longPressRunnable:Ljava/lang/Runnable;
 
-    .line 1060
+    .line 1085
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result p2
 
     int-to-long v0, p2
 
-    .line 1049
+    .line 1074
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     goto/16 :goto_2
 
-    .line 1063
+    .line 1088
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -643,7 +648,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 1064
+    .line 1089
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->startX:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -680,30 +685,30 @@
 
     if-lez p1, :cond_f
 
-    .line 1065
+    .line 1090
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     if-eqz p1, :cond_8
 
-    .line 1066
+    .line 1091
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ButtonBounce;->setView(Landroid/view/View;)V
 
-    .line 1067
+    .line 1092
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 1069
+    .line 1094
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->longPressRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_9
 
-    .line 1070
+    .line 1095
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1072
+    .line 1097
     :cond_9
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -711,12 +716,12 @@
 
     invoke-interface {p1, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1073
+    .line 1098
     iput-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->pressed:Z
 
     goto :goto_2
 
-    .line 1075
+    .line 1100
     :cond_a
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -732,21 +737,21 @@
 
     if-ne v0, v1, :cond_f
 
-    .line 1076
+    .line 1101
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     if-eqz v0, :cond_c
 
-    .line 1077
+    .line 1102
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/ButtonBounce;->setView(Landroid/view/View;)V
 
-    .line 1078
+    .line 1103
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 1080
+    .line 1105
     :cond_c
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->pressed:Z
 
@@ -758,38 +763,38 @@
 
     if-ne p1, v2, :cond_d
 
-    .line 1081
+    .line 1106
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->processOpenStory(Landroid/view/View;)V
 
-    .line 1083
+    .line 1108
     :cond_d
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
-    .line 1084
+    .line 1109
     instance-of p2, p1, Landroid/view/ViewGroup;
 
     if-eqz p2, :cond_e
 
-    .line 1085
+    .line 1110
     check-cast p1, Landroid/view/ViewGroup;
 
     invoke-virtual {p1, v3}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1087
+    .line 1112
     :cond_e
     iput-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->pressed:Z
 
-    .line 1088
+    .line 1113
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->longPressRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_f
 
-    .line 1089
+    .line 1114
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1092
+    .line 1117
     :cond_f
     :goto_2
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->pressed:Z
@@ -800,7 +805,7 @@
 .method public getScale()F
     .locals 2
 
-    .line 1130
+    .line 1155
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     if-nez v0, :cond_0
@@ -823,7 +828,7 @@
 .method public onDetachFromWindow()V
     .locals 0
 
-    .line 1143
+    .line 1168
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->reset()V
 
     return-void
@@ -838,26 +843,26 @@
 .method public openStory(JLjava/lang/Runnable;)V
     .locals 2
 
-    .line 1122
+    .line 1147
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1123
+    .line 1148
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->child:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    .line 1124
+    .line 1149
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object v1
 
     invoke-virtual {v1, p3}, Lorg/telegram/ui/Stories/StoryViewer;->doOnAnimationReady(Ljava/lang/Runnable;)V
 
-    .line 1125
+    .line 1150
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getOrCreateStoryViewer()Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object p3
@@ -887,26 +892,26 @@
 .method public reset()V
     .locals 2
 
-    .line 1134
+    .line 1159
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->operation:Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 1135
+    .line 1160
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->cancel()V
 
-    .line 1136
+    .line 1161
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->operation:Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;
 
-    .line 1138
+    .line 1163
     :cond_0
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     const/4 v0, 0x0
 
-    .line 1139
+    .line 1164
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->pressed:Z
 
     return-void

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmbedBottomSheet$6;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 526
+    .line 538
     iput-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$1;->this$1:Lorg/telegram/ui/Components/EmbedBottomSheet$6;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$1;->val$switchInlineModeRunnable:Ljava/lang/Runnable;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 529
+    .line 541
     iget-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$1;->this$1:Lorg/telegram/ui/Components/EmbedBottomSheet$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmbedBottomSheet$6;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
@@ -54,7 +54,7 @@
 
     if-nez p1, :cond_0
 
-    .line 530
+    .line 542
     iget-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$1;->this$1:Lorg/telegram/ui/Components/EmbedBottomSheet$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmbedBottomSheet$6;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 531
+    .line 543
     iget-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$1;->this$1:Lorg/telegram/ui/Components/EmbedBottomSheet$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmbedBottomSheet$6;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
@@ -80,7 +80,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 533
+    .line 545
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$1;->val$switchInlineModeRunnable:Ljava/lang/Runnable;
 

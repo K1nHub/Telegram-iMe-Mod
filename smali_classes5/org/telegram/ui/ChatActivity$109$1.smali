@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$109;)V
     .locals 0
 
-    .line 24816
+    .line 24818
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$109$1;->this$1:Lorg/telegram/ui/ChatActivity$109;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 24819
+    .line 24821
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109$1;->this$1:Lorg/telegram/ui/ChatActivity$109;
 
     iget-boolean v0, p1, Lorg/telegram/ui/ChatActivity$109;->val$animateName:Z
@@ -44,12 +44,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 24820
+    .line 24822
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$109;->val$nameTextView:Lorg/telegram/ui/ChatActivity$TrackingWidthSimpleTextView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 24822
+    .line 24824
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109$1;->this$1:Lorg/telegram/ui/ChatActivity$109;
 
@@ -57,12 +57,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 24823
+    .line 24825
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$109;->val$messageTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 24825
+    .line 24827
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109$1;->this$1:Lorg/telegram/ui/ChatActivity$109;
 
@@ -70,12 +70,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 24826
+    .line 24828
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$109;->val$buttonTextView:Lorg/telegram/ui/ChatActivity$PinnedMessageButton;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 24828
+    .line 24830
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109$1;->this$1:Lorg/telegram/ui/ChatActivity$109;
 
@@ -83,10 +83,10 @@
 
     if-eqz p1, :cond_3
 
-    .line 24829
+    .line 24831
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 24831
+    .line 24833
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$109$1;->this$1:Lorg/telegram/ui/ChatActivity$109;
 

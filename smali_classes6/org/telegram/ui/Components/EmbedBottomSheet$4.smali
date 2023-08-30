@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmbedBottomSheet;)V
     .locals 0
 
-    .line 335
+    .line 347
     iput-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
@@ -35,10 +35,10 @@
 .method public onHideCustomView()V
     .locals 2
 
-    .line 358
+    .line 370
     invoke-super {p0}, Landroid/webkit/WebChromeClient;->onHideCustomView()V
 
-    .line 359
+    .line 371
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$900(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/view/View;
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 363
+    .line 375
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 364
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1000(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/widget/FrameLayout;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 365
+    .line 377
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1000(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/widget/FrameLayout;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 367
+    .line 379
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1100(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/webkit/WebChromeClient$CustomViewCallback;
@@ -118,7 +118,7 @@
 
     if-nez v0, :cond_1
 
-    .line 368
+    .line 380
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1100(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/webkit/WebChromeClient$CustomViewCallback;
@@ -127,7 +127,7 @@
 
     invoke-interface {v0}, Landroid/webkit/WebChromeClient$CustomViewCallback;->onCustomViewHidden()V
 
-    .line 370
+    .line 382
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
@@ -141,7 +141,7 @@
 .method public onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V
     .locals 0
 
-    .line 339
+    .line 351
     invoke-virtual {p0, p1, p3}, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V
 
     return-void
@@ -150,7 +150,7 @@
 .method public onShowCustomView(Landroid/view/View;Landroid/webkit/WebChromeClient$CustomViewCallback;)V
     .locals 2
 
-    .line 344
+    .line 356
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$900(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/view/View;
@@ -167,18 +167,18 @@
 
     goto :goto_0
 
-    .line 348
+    .line 360
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->exitFromPip()V
 
-    .line 349
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$902(Lorg/telegram/ui/Components/EmbedBottomSheet;Landroid/view/View;)Landroid/view/View;
 
-    .line 350
+    .line 362
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getSheetContainer()Landroid/view/ViewGroup;
@@ -189,7 +189,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 351
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1000(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/widget/FrameLayout;
@@ -200,7 +200,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 352
+    .line 364
     iget-object v0, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1000(Lorg/telegram/ui/Components/EmbedBottomSheet;)Landroid/widget/FrameLayout;
@@ -215,14 +215,14 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 353
+    .line 365
     iget-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$4;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmbedBottomSheet;->access$1102(Lorg/telegram/ui/Components/EmbedBottomSheet;Landroid/webkit/WebChromeClient$CustomViewCallback;)Landroid/webkit/WebChromeClient$CustomViewCallback;
 
     return-void
 
-    .line 345
+    .line 357
     :cond_1
     :goto_0
     invoke-interface {p2}, Landroid/webkit/WebChromeClient$CustomViewCallback;->onCustomViewHidden()V

@@ -28,7 +28,7 @@
 .method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 0
 
-    .line 3609
+    .line 3610
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$dayPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$hourPicker:Lorg/telegram/ui/Components/NumberPicker;
@@ -39,7 +39,7 @@
 
     const/4 p1, 0x0
 
-    .line 3611
+    .line 3612
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->ignoreLayout:Z
 
     return-void
@@ -52,10 +52,10 @@
 
     const/4 v0, 0x1
 
-    .line 3615
+    .line 3616
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->ignoreLayout:Z
 
-    .line 3617
+    .line 3618
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -71,23 +71,23 @@
     :cond_0
     const/4 v0, 0x5
 
-    .line 3622
+    .line 3623
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$dayPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3623
+    .line 3624
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$hourPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3624
+    .line 3625
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$minutePicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3625
+    .line 3626
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$dayPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -104,7 +104,7 @@
 
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 3626
+    .line 3627
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$hourPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -119,7 +119,7 @@
 
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 3627
+    .line 3628
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->val$minutePicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -136,10 +136,10 @@
 
     const/4 v0, 0x0
 
-    .line 3628
+    .line 3629
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->ignoreLayout:Z
 
-    .line 3629
+    .line 3630
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     return-void
@@ -148,14 +148,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 3634
+    .line 3635
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$23;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 3637
+    .line 3638
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 

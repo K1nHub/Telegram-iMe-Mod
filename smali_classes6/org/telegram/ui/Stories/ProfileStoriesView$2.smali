@@ -22,10 +22,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0lq5ZZR1CL-tuaN98Dp2n6YB1ig(Lorg/telegram/ui/Stories/ProfileStoriesView$2;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+.method public static synthetic $r8$lambda$zSmmeN3WexfDkTwfXazA3yVZU6k(Lorg/telegram/ui/Stories/ProfileStoriesView$2;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
     .locals 0
 
-    invoke-direct/range {p0 .. p7}, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->lambda$findView$0(Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+    invoke-direct/range {p0 .. p8}, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->lambda$findView$0(Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
 
     return-void
 .end method
@@ -41,64 +41,64 @@
     return-void
 .end method
 
-.method private synthetic lambda$findView$0(Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
-    .locals 5
+.method private synthetic lambda$findView$0(Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
+    .locals 4
 
     .line 851
-    iget-object v0, p2, Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;->cachedRect:Landroid/graphics/RectF;
+    iget-object p8, p2, Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;->cachedRect:Landroid/graphics/RectF;
 
-    invoke-virtual {p1, v0}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
+    invoke-virtual {p1, p8}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
     .line 852
-    iget-object v0, p4, Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;->cachedRect:Landroid/graphics/RectF;
+    iget-object p8, p4, Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;->cachedRect:Landroid/graphics/RectF;
 
-    invoke-virtual {p3, v0}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
+    invoke-virtual {p3, p8}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
     .line 853
-    iget-object v0, p2, Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;->cachedRect:Landroid/graphics/RectF;
+    iget-object p8, p2, Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;->cachedRect:Landroid/graphics/RectF;
 
-    invoke-virtual {v0, p6}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
+    invoke-virtual {p8, p6}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
     .line 856
     :try_start_0
     invoke-virtual {p6}, Landroid/graphics/RectF;->width()F
 
-    move-result v0
+    move-result p8
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
-    move-result v1
+    move-result v0
 
-    div-float/2addr v0, v1
+    div-float/2addr p8, v0
 
     .line 857
     invoke-virtual {p6}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v2
+    move-result v1
 
     invoke-virtual {p3}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v3
+    move-result v2
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v1, v2
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    sub-float/2addr v3, p7
+    sub-float/2addr v2, p7
 
     const/high16 p7, 0x40000000    # 2.0f
 
-    mul-float/2addr v3, p7
+    mul-float/2addr v2, p7
 
-    add-float/2addr v3, v0
+    add-float/2addr v2, p8
 
-    mul-float/2addr v2, v3
+    mul-float/2addr v1, v2
 
-    sub-float/2addr v1, v2
+    sub-float/2addr v0, v1
 
     .line 858
     invoke-virtual {p6}, Landroid/graphics/RectF;->centerY()F
@@ -108,32 +108,32 @@
     .line 859
     invoke-virtual {p3}, Landroid/graphics/RectF;->width()F
 
+    move-result v1
+
+    div-float/2addr v1, p7
+
+    mul-float/2addr v1, p8
+
+    invoke-virtual {p3}, Landroid/graphics/RectF;->height()F
+
     move-result v2
 
     div-float/2addr v2, p7
 
-    mul-float/2addr v2, v0
-
-    invoke-virtual {p3}, Landroid/graphics/RectF;->height()F
-
-    move-result v3
-
-    div-float/2addr v3, p7
-
-    mul-float/2addr v3, v0
+    mul-float/2addr v2, p8
 
     .line 860
     iget-object p7, p4, Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;->cachedRect:Landroid/graphics/RectF;
 
-    sub-float v0, v1, v2
+    sub-float p8, v0, v1
 
-    sub-float v4, p6, v3
+    sub-float v3, p6, v2
 
-    add-float/2addr v1, v2
+    add-float/2addr v0, v1
 
-    add-float/2addr p6, v3
+    add-float/2addr p6, v2
 
-    invoke-virtual {p7, v0, v4, v1, p6}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {p7, p8, v3, v0, p6}, Landroid/graphics/RectF;->set(FFFF)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

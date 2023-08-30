@@ -1444,7 +1444,6 @@ Approval will be given for this smart contract:
     <string name="stickers_size_medium">Стандартный</string>
     <string name="stickers_size_small">Маленький</string>
     <string name="stickers_size_title">Размер стикеров</string>
-    <string name="story_fab_enable_hint">Удерживайте, чтобы включить %s для публикации историй.</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Учитывать архив</string>
     <string name="swipe_to_next_unread_dialog_hint">Включите это, если вы хотите читать ваши чаты, не возвращаясь в список чатов. Дойдя до последнего сообщения в чате, потяните экран вверх, чтобы перейти к следующему непрочитанному чату.</string>
     <string name="swipe_to_next_unread_dialog_types">Типы чатов</string>

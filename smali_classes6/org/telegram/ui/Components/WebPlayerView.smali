@@ -453,13 +453,13 @@
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->interfaceName:Ljava/lang/String;
 
     .line 1547
-    new-instance p4, Landroid/webkit/WebView;
+    new-instance p4, Lorg/telegram/ui/Components/WebPlayerView$5;
 
-    invoke-direct {p4, p1}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p4, p0, p1, p1}, Lorg/telegram/ui/Components/WebPlayerView$5;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Landroid/content/Context;Landroid/content/Context;)V
 
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->webView:Landroid/webkit/WebView;
 
-    .line 1548
+    .line 1560
     new-instance v3, Lorg/telegram/ui/Components/WebPlayerView$JavaScriptInterface;
 
     new-instance v4, Lorg/telegram/ui/Components/WebPlayerView$$ExternalSyntheticLambda5;
@@ -472,22 +472,22 @@
 
     invoke-virtual {p4, v3, v4}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1555
+    .line 1567
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p4}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object p4
 
-    .line 1556
+    .line 1568
     invoke-virtual {p4, v1}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
     const-string v1, "utf-8"
 
-    .line 1557
+    .line 1569
     invoke-virtual {p4, v1}, Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V
 
-    .line 1559
+    .line 1571
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     invoke-interface {p4}, Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;->getTextureViewContainer()Landroid/view/ViewGroup;
@@ -496,7 +496,7 @@
 
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
-    .line 1561
+    .line 1573
     new-instance p4, Landroid/view/TextureView;
 
     invoke-direct {p4, p1}, Landroid/view/TextureView;-><init>(Landroid/content/Context;)V
@@ -505,27 +505,27 @@
 
     const/4 v1, 0x0
 
-    .line 1562
+    .line 1574
     invoke-virtual {p4, v1}, Landroid/view/TextureView;->setPivotX(F)V
 
-    .line 1563
+    .line 1575
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p4, v1}, Landroid/view/TextureView;->setPivotY(F)V
 
-    .line 1564
+    .line 1576
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
     if-eqz p4, :cond_1
 
-    .line 1565
+    .line 1577
     iget-object v3, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p4, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto :goto_1
 
-    .line 1567
+    .line 1579
     :cond_1
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -537,7 +537,7 @@
 
     invoke-virtual {p4, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1570
+    .line 1582
     :goto_1
     iget-boolean p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->allowInlineAnimation:Z
 
@@ -547,7 +547,7 @@
 
     if-eqz p4, :cond_2
 
-    .line 1571
+    .line 1583
     new-instance p4, Landroid/widget/ImageView;
 
     invoke-direct {p4, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -556,34 +556,34 @@
 
     const/high16 v3, -0x10000
 
-    .line 1572
+    .line 1584
     invoke-virtual {p4, v3}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 1573
+    .line 1585
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setPivotX(F)V
 
-    .line 1574
+    .line 1586
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setPivotY(F)V
 
-    .line 1575
+    .line 1587
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     const/4 v1, 0x4
 
     invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1576
+    .line 1588
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p4, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1579
+    .line 1591
     :cond_2
     new-instance p4, Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -591,34 +591,34 @@
 
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 1580
+    .line 1592
     invoke-virtual {p4, p0}, Lorg/telegram/ui/Components/VideoPlayer;->setDelegate(Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;)V
 
-    .line 1581
+    .line 1593
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p4, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 1583
+    .line 1595
     new-instance p4, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-direct {p4, p0, p1}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Landroid/content/Context;)V
 
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
-    .line 1584
+    .line 1596
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
     if-eqz v1, :cond_3
 
-    .line 1585
+    .line 1597
     invoke-virtual {v1, p4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto :goto_2
 
-    .line 1587
+    .line 1599
     :cond_3
     invoke-static {v0, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
@@ -626,7 +626,7 @@
 
     invoke-virtual {p0, p4, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1590
+    .line 1602
     :goto_2
     new-instance p4, Lorg/telegram/ui/Components/RadialProgressView;
 
@@ -634,10 +634,10 @@
 
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    .line 1591
+    .line 1603
     invoke-virtual {p4, v0}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
-    .line 1592
+    .line 1604
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     const/16 v0, 0x30
@@ -648,19 +648,19 @@
 
     invoke-virtual {p0, p4, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1594
+    .line 1606
     new-instance p4, Landroid/widget/ImageView;
 
     invoke-direct {p4, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
 
-    .line 1595
+    .line 1607
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1596
+    .line 1608
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
@@ -685,7 +685,7 @@
 
     invoke-virtual {p4, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1597
+    .line 1609
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
 
     new-instance v1, Lorg/telegram/ui/Components/WebPlayerView$$ExternalSyntheticLambda3;
@@ -694,19 +694,19 @@
 
     invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1605
+    .line 1617
     new-instance p4, Landroid/widget/ImageView;
 
     invoke-direct {p4, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->playButton:Landroid/widget/ImageView;
 
-    .line 1606
+    .line 1618
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p4, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1607
+    .line 1619
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->playButton:Landroid/widget/ImageView;
@@ -717,7 +717,7 @@
 
     invoke-virtual {p4, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1608
+    .line 1620
     iget-object p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->playButton:Landroid/widget/ImageView;
 
     new-instance v1, Lorg/telegram/ui/Components/WebPlayerView$$ExternalSyntheticLambda0;
@@ -732,19 +732,19 @@
 
     if-eqz p2, :cond_4
 
-    .line 1625
+    .line 1637
     new-instance p2, Landroid/widget/ImageView;
 
     invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->inlineButton:Landroid/widget/ImageView;
 
-    .line 1626
+    .line 1638
     sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1627
+    .line 1639
     iget-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->inlineButton:Landroid/widget/ImageView;
@@ -755,7 +755,7 @@
 
     invoke-virtual {p2, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1628
+    .line 1640
     iget-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->inlineButton:Landroid/widget/ImageView;
 
     new-instance v2, Lorg/telegram/ui/Components/WebPlayerView$$ExternalSyntheticLambda2;
@@ -767,26 +767,26 @@
     :cond_4
     if-eqz p3, :cond_5
 
-    .line 1683
+    .line 1695
     new-instance p2, Landroid/widget/ImageView;
 
     invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->shareButton:Landroid/widget/ImageView;
 
-    .line 1684
+    .line 1696
     sget-object p1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1685
+    .line 1697
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->shareButton:Landroid/widget/ImageView;
 
     sget p2, Lorg/telegram/messenger/R$drawable;->ic_share_video:I
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1686
+    .line 1698
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->shareButton:Landroid/widget/ImageView;
@@ -797,7 +797,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1687
+    .line 1699
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->shareButton:Landroid/widget/ImageView;
 
     new-instance p2, Lorg/telegram/ui/Components/WebPlayerView$$ExternalSyntheticLambda1;
@@ -806,17 +806,17 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1694
+    .line 1706
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
-    .line 1695
+    .line 1707
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenButton()V
 
-    .line 1696
+    .line 1708
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateInlineButton()V
 
-    .line 1697
+    .line 1709
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateShareButton()V
 
     return-void
@@ -1378,12 +1378,12 @@
 .method private checkAudioFocus()V
     .locals 3
 
-    .line 1873
+    .line 1885
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->hasAudioFocus:Z
 
     if-nez v0, :cond_0
 
-    .line 1874
+    .line 1886
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "audio"
@@ -1396,12 +1396,12 @@
 
     const/4 v1, 0x1
 
-    .line 1875
+    .line 1887
     iput-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->hasAudioFocus:Z
 
     const/4 v2, 0x3
 
-    .line 1876
+    .line 1888
     invoke-virtual {v0, p0, v2, v1}, Landroid/media/AudioManager;->requestAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I
 
     :cond_0
@@ -1411,7 +1411,7 @@
 .method private getControlView()Landroid/view/View;
     .locals 1
 
-    .line 1934
+    .line 1946
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     return-object v0
@@ -1420,7 +1420,7 @@
 .method private getProgressView()Landroid/view/View;
     .locals 1
 
-    .line 1938
+    .line 1950
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     return-object v0
@@ -1429,14 +1429,14 @@
 .method public static getYouTubeVideoId(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 2078
+    .line 2090
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->youtubeIdRegex:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p0
 
-    .line 2080
+    .line 2092
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v0
@@ -1445,7 +1445,7 @@
 
     const/4 v0, 0x1
 
-    .line 2081
+    .line 2093
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
@@ -1462,7 +1462,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/String;)V
     .locals 2
 
-    .line 1549
+    .line 1561
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     if-eqz v0, :cond_0
@@ -1473,14 +1473,14 @@
 
     if-nez v0, :cond_0
 
-    .line 1550
+    .line 1562
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/WebPlayerView$YoutubeVideoTask;
 
     if-eqz v1, :cond_0
 
-    .line 1551
+    .line 1563
     check-cast v0, Lorg/telegram/ui/Components/WebPlayerView$YoutubeVideoTask;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/WebPlayerView$YoutubeVideoTask;->access$5300(Lorg/telegram/ui/Components/WebPlayerView$YoutubeVideoTask;Ljava/lang/String;)V
@@ -1492,7 +1492,7 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)V
     .locals 1
 
-    .line 1598
+    .line 1610
     iget-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->initied:Z
 
     if-eqz p1, :cond_1
@@ -1511,7 +1511,7 @@
 
     goto :goto_0
 
-    .line 1601
+    .line 1613
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
@@ -1521,7 +1521,7 @@
 
     iput-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
-    .line 1602
+    .line 1614
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenState(Z)V
 
     :cond_1
@@ -1532,7 +1532,7 @@
 .method private synthetic lambda$new$2(Landroid/view/View;)V
     .locals 0
 
-    .line 1609
+    .line 1621
     iget-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->initied:Z
 
     if-eqz p1, :cond_3
@@ -1543,7 +1543,7 @@
 
     goto :goto_1
 
-    .line 1612
+    .line 1624
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -1553,10 +1553,10 @@
 
     if-nez p1, :cond_1
 
-    .line 1613
+    .line 1625
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->preparePlayer()V
 
-    .line 1615
+    .line 1627
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -1566,7 +1566,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1616
+    .line 1628
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
@@ -1576,15 +1576,15 @@
     :cond_2
     const/4 p1, 0x0
 
-    .line 1618
+    .line 1630
     iput-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->isCompleted:Z
 
-    .line 1619
+    .line 1631
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 1621
+    .line 1633
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
@@ -1596,7 +1596,7 @@
 .method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 6
 
-    .line 1629
+    .line 1641
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     if-eqz p1, :cond_9
@@ -1626,20 +1626,20 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 1632
+    .line 1644
     iput-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->switchingInlineMode:Z
 
-    .line 1633
+    .line 1645
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
-    .line 1634
+    .line 1646
     iput-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
-    .line 1635
+    .line 1647
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->switchToInlineRunnable:Ljava/lang/Runnable;
@@ -1656,7 +1656,7 @@
 
     goto/16 :goto_2
 
-    .line 1637
+    .line 1649
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -1670,12 +1670,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 1640
+    .line 1652
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1642
+    .line 1654
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -1689,7 +1689,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1643
+    .line 1655
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -1720,7 +1720,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1645
+    .line 1657
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
@@ -1728,51 +1728,51 @@
 
     if-eqz v0, :cond_4
 
-    .line 1646
+    .line 1658
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1647
+    .line 1659
     iput-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1649
+    .line 1661
     :cond_4
     iput-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->changingTextureView:Z
 
-    .line 1651
+    .line 1663
     iput-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
 
-    .line 1652
+    .line 1664
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
-    .line 1653
+    .line 1665
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateShareButton()V
 
-    .line 1654
+    .line 1666
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenButton()V
 
-    .line 1655
+    .line 1667
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateInlineButton()V
 
-    .line 1657
+    .line 1669
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     const/4 v3, 0x4
 
     invoke-virtual {v0, v3}, Landroid/view/TextureView;->setVisibility(I)V
 
-    .line 1658
+    .line 1670
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_5
 
-    .line 1659
+    .line 1671
     iget-object v3, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 1661
+    .line 1673
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -1780,7 +1780,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1664
+    .line 1676
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
@@ -1794,38 +1794,38 @@
 
     if-eqz v0, :cond_6
 
-    .line 1667
+    .line 1679
     iget-object v3, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1669
+    .line 1681
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_7
 
-    .line 1670
+    .line 1682
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto :goto_1
 
-    .line 1672
+    .line 1684
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {p0, v0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 1676
+    .line 1688
     :cond_8
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->show(ZZ)V
 
-    .line 1677
+    .line 1689
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -1846,12 +1846,12 @@
 .method private synthetic lambda$new$4(Landroid/view/View;)V
     .locals 0
 
-    .line 1688
+    .line 1700
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     if-eqz p1, :cond_0
 
-    .line 1689
+    .line 1701
     invoke-interface {p1}, Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;->onSharePressed()V
 
     :cond_0
@@ -1867,7 +1867,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 1886
+    .line 1898
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->isPlaying()Z
@@ -1876,15 +1876,15 @@
 
     if-eqz p1, :cond_0
 
-    .line 1887
+    .line 1899
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 1888
+    .line 1900
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
-    .line 1890
+    .line 1902
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->hasAudioFocus:Z
 
@@ -1895,15 +1895,15 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 1894
+    .line 1906
     iget-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->resumeAudioOnFocusGain:Z
 
     if-eqz p1, :cond_4
 
-    .line 1895
+    .line 1907
     iput-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->resumeAudioOnFocusGain:Z
 
-    .line 1896
+    .line 1908
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
@@ -1922,7 +1922,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 1902
+    .line 1914
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->isPlaying()Z
@@ -1931,15 +1931,15 @@
 
     if-eqz p1, :cond_4
 
-    .line 1903
+    .line 1915
     iput-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->resumeAudioOnFocusGain:Z
 
-    .line 1904
+    .line 1916
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 1905
+    .line 1917
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
     :cond_4
@@ -1950,7 +1950,7 @@
 .method private onInitFailed()V
     .locals 2
 
-    .line 1701
+    .line 1713
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -1959,14 +1959,14 @@
 
     if-eq v0, p0, :cond_0
 
-    .line 1702
+    .line 1714
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1704
+    .line 1716
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
@@ -1978,7 +1978,7 @@
 .method private preparePlayer()V
     .locals 5
 
-    .line 1955
+    .line 1967
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->playVideoUrl:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -1988,12 +1988,12 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 1958
+    .line 1970
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->playAudioUrl:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 1959
+    .line 1971
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -2014,7 +2014,7 @@
 
     goto :goto_0
 
-    .line 1961
+    .line 1973
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -2026,7 +2026,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Components/VideoPlayer;->preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 1963
+    .line 1975
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -2034,7 +2034,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setPlayWhenReady(Z)V
 
-    .line 1967
+    .line 1979
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
@@ -2047,7 +2047,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1968
+    .line 1980
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -2066,7 +2066,7 @@
 
     goto :goto_1
 
-    .line 1970
+    .line 1982
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
@@ -2074,29 +2074,29 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->setDuration(I)V
 
-    .line 1972
+    .line 1984
     :goto_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenButton()V
 
-    .line 1973
+    .line 1985
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateShareButton()V
 
-    .line 1974
+    .line 1986
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateInlineButton()V
 
-    .line 1975
+    .line 1987
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1976
+    .line 1988
     iget v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->seekToTime:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_3
 
-    .line 1977
+    .line 1989
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     mul-int/lit16 v0, v0, 0x3e8
@@ -2118,15 +2118,15 @@
 
     if-eqz p2, :cond_2
 
-    .line 2425
+    .line 2437
     iget-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz p2, :cond_0
 
-    .line 2426
+    .line 2438
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2428
+    .line 2440
     :cond_0
     new-instance p2, Landroid/animation/AnimatorSet;
 
@@ -2138,7 +2138,7 @@
 
     new-array v3, v2, [Landroid/animation/Animator;
 
-    .line 2429
+    .line 2441
     iget-object v4, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     new-array v2, v2, [F
@@ -2165,30 +2165,30 @@
 
     invoke-virtual {p2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2430
+    .line 2442
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x96
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2431
+    .line 2443
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressAnimation:Landroid/animation/AnimatorSet;
 
-    new-instance p2, Lorg/telegram/ui/Components/WebPlayerView$5;
+    new-instance p2, Lorg/telegram/ui/Components/WebPlayerView$6;
 
-    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/WebPlayerView$5;-><init>(Lorg/telegram/ui/Components/WebPlayerView;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/WebPlayerView$6;-><init>(Lorg/telegram/ui/Components/WebPlayerView;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2437
+    .line 2449
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_2
 
-    .line 2439
+    .line 2451
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
@@ -2209,7 +2209,7 @@
 .method private updateFullscreenButton()V
     .locals 8
 
-    .line 1912
+    .line 1924
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->isPlayerPrepared()Z
@@ -2224,7 +2224,7 @@
 
     goto :goto_1
 
-    .line 1916
+    .line 1928
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
 
@@ -2232,19 +2232,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1917
+    .line 1929
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-nez v0, :cond_1
 
-    .line 1918
+    .line 1930
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_gofullscreen:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1919
+    .line 1931
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
 
     const/16 v1, 0x38
@@ -2269,7 +2269,7 @@
 
     goto :goto_0
 
-    .line 1921
+    .line 1933
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
 
@@ -2277,7 +2277,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1922
+    .line 1934
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
 
     const/16 v1, 0x38
@@ -2303,7 +2303,7 @@
     :goto_0
     return-void
 
-    .line 1913
+    .line 1925
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->fullscreenButton:Landroid/widget/ImageView;
@@ -2318,42 +2318,42 @@
 .method private updateFullscreenState(Z)V
     .locals 8
 
-    .line 1988
+    .line 2000
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1991
+    .line 2003
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenButton()V
 
-    .line 1992
+    .line 2004
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
     if-nez v0, :cond_8
 
     const/4 v1, 0x1
 
-    .line 1993
+    .line 2005
     iput-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->changingTextureView:Z
 
-    .line 1994
+    .line 2006
     iget-boolean v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-nez v2, :cond_2
 
     if-eqz v0, :cond_1
 
-    .line 1996
+    .line 2008
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 1998
+    .line 2010
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -2361,14 +2361,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 2001
+    .line 2013
     :cond_2
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-eqz v0, :cond_3
 
-    .line 2002
+    .line 2014
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -2379,14 +2379,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 2004
+    .line 2016
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     goto :goto_1
 
-    .line 2007
+    .line 2019
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
@@ -2400,31 +2400,31 @@
 
     if-eqz v0, :cond_4
 
-    .line 2010
+    .line 2022
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 2012
+    .line 2024
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureViewContainer:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_5
 
-    .line 2013
+    .line 2025
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     goto :goto_1
 
-    .line 2015
+    .line 2027
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {p0, v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 2019
+    .line 2031
     :cond_6
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
@@ -2455,10 +2455,10 @@
 
     const/4 v0, 0x4
 
-    .line 2020
+    .line 2032
     invoke-virtual {p1, v0}, Landroid/view/TextureView;->setVisibility(I)V
 
-    .line 2021
+    .line 2033
     iget-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-eqz p1, :cond_7
@@ -2467,7 +2467,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 2022
+    .line 2034
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p1}, Landroid/view/TextureView;->getParent()Landroid/view/ViewParent;
@@ -2478,12 +2478,12 @@
 
     if-eqz p1, :cond_7
 
-    .line 2024
+    .line 2036
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 2027
+    .line 2039
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
@@ -2491,13 +2491,13 @@
 
     goto :goto_3
 
-    .line 2029
+    .line 2041
     :cond_8
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-eqz v0, :cond_9
 
-    .line 2030
+    .line 2042
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -2508,14 +2508,14 @@
 
     if-eqz v0, :cond_b
 
-    .line 2032
+    .line 2044
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     goto :goto_2
 
-    .line 2035
+    .line 2047
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -2529,12 +2529,12 @@
 
     if-eqz v0, :cond_a
 
-    .line 2038
+    .line 2050
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 2040
+    .line 2052
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
@@ -2542,7 +2542,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    .line 2043
+    .line 2055
     :cond_b
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
@@ -2574,14 +2574,14 @@
 .method private updateInlineButton()V
     .locals 4
 
-    .line 1942
+    .line 1954
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inlineButton:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1945
+    .line 1957
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
 
@@ -2597,7 +2597,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1946
+    .line 1958
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inlineButton:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -2618,14 +2618,14 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1947
+    .line 1959
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
 
     const/16 v1, 0x35
 
     if-eqz v0, :cond_3
 
-    .line 1948
+    .line 1960
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inlineButton:Landroid/widget/ImageView;
 
     const/16 v2, 0x28
@@ -2638,7 +2638,7 @@
 
     goto :goto_2
 
-    .line 1950
+    .line 1962
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inlineButton:Landroid/widget/ImageView;
 
@@ -2659,17 +2659,17 @@
 .method private updatePlayButton()V
     .locals 3
 
-    .line 1857
+    .line 1869
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->access$5100(Lorg/telegram/ui/Components/WebPlayerView$ControlsView;)V
 
-    .line 1858
+    .line 1870
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1859
+    .line 1871
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->isPlaying()Z
@@ -2678,12 +2678,12 @@
 
     if-nez v0, :cond_3
 
-    .line 1860
+    .line 1872
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->isCompleted:Z
 
     if-eqz v0, :cond_1
 
-    .line 1861
+    .line 1873
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->playButton:Landroid/widget/ImageView;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
@@ -2702,7 +2702,7 @@
 
     goto :goto_3
 
-    .line 1863
+    .line 1875
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->playButton:Landroid/widget/ImageView;
 
@@ -2722,7 +2722,7 @@
 
     goto :goto_3
 
-    .line 1866
+    .line 1878
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->playButton:Landroid/widget/ImageView;
 
@@ -2740,14 +2740,14 @@
     :goto_2
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1867
+    .line 1879
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x1f4
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1868
+    .line 1880
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->checkAudioFocus()V
 
     :goto_3
@@ -2757,14 +2757,14 @@
 .method private updateShareButton()V
     .locals 2
 
-    .line 1927
+    .line 1939
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->shareButton:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1930
+    .line 1942
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
 
@@ -2804,7 +2804,7 @@
 
     const-string v0, ".mp4"
 
-    .line 2088
+    .line 2100
     invoke-virtual {p1, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -2818,7 +2818,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2092
+    .line 2104
     :try_start_0
     sget-object v2, Lorg/telegram/ui/Components/WebPlayerView;->youtubeIdRegex:Ljava/util/regex/Pattern;
 
@@ -2826,14 +2826,14 @@
 
     move-result-object v2
 
-    .line 2094
+    .line 2106
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 2095
+    .line 2107
     invoke-virtual {v2, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
@@ -2853,10 +2853,10 @@
     :catch_0
     move-exception v2
 
-    .line 2101
+    .line 2113
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2104
+    .line 2116
     :cond_2
     :try_start_1
     sget-object v2, Lorg/telegram/ui/Components/WebPlayerView;->vimeoIdRegex:Ljava/util/regex/Pattern;
@@ -2865,7 +2865,7 @@
 
     move-result-object v2
 
-    .line 2106
+    .line 2118
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
@@ -2874,7 +2874,7 @@
 
     const/4 v3, 0x3
 
-    .line 2107
+    .line 2119
     invoke-virtual {v2, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
@@ -2894,10 +2894,10 @@
     :catch_1
     move-exception v2
 
-    .line 2113
+    .line 2125
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2116
+    .line 2128
     :cond_4
     :try_start_2
     sget-object v2, Lorg/telegram/ui/Components/WebPlayerView;->aparatIdRegex:Ljava/util/regex/Pattern;
@@ -2906,14 +2906,14 @@
 
     move-result-object v2
 
-    .line 2118
+    .line 2130
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
     if-eqz v3, :cond_5
 
-    .line 2119
+    .line 2131
     invoke-virtual {v2, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
@@ -2933,10 +2933,10 @@
     :catch_2
     move-exception v2
 
-    .line 2125
+    .line 2137
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2128
+    .line 2140
     :cond_6
     :try_start_3
     sget-object v2, Lorg/telegram/ui/Components/WebPlayerView;->twitchClipIdRegex:Ljava/util/regex/Pattern;
@@ -2945,14 +2945,14 @@
 
     move-result-object v2
 
-    .line 2130
+    .line 2142
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
     if-eqz v3, :cond_7
 
-    .line 2131
+    .line 2143
     invoke-virtual {v2, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
@@ -2972,10 +2972,10 @@
     :catch_3
     move-exception v2
 
-    .line 2137
+    .line 2149
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2140
+    .line 2152
     :cond_8
     :try_start_4
     sget-object v2, Lorg/telegram/ui/Components/WebPlayerView;->twitchStreamIdRegex:Ljava/util/regex/Pattern;
@@ -2984,14 +2984,14 @@
 
     move-result-object v2
 
-    .line 2142
+    .line 2154
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
     if-eqz v3, :cond_9
 
-    .line 2143
+    .line 2155
     invoke-virtual {v2, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
@@ -3011,10 +3011,10 @@
     :catch_4
     move-exception v2
 
-    .line 2149
+    .line 2161
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2152
+    .line 2164
     :cond_a
     :try_start_5
     sget-object v2, Lorg/telegram/ui/Components/WebPlayerView;->coubIdRegex:Ljava/util/regex/Pattern;
@@ -3023,14 +3023,14 @@
 
     move-result-object p1
 
-    .line 2154
+    .line 2166
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v2
 
     if-eqz v2, :cond_b
 
-    .line 2155
+    .line 2167
     invoke-virtual {p1, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -3045,7 +3045,7 @@
     :catch_5
     move-exception p1
 
-    .line 2161
+    .line 2173
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_c
@@ -3057,29 +3057,29 @@
 .method public destroy()V
     .locals 2
 
-    .line 2415
+    .line 2427
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 2416
+    .line 2428
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
-    .line 2417
+    .line 2429
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->cancel(Z)Z
 
     const/4 v0, 0x0
 
-    .line 2418
+    .line 2430
     iput-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
-    .line 2420
+    .line 2432
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->webView:Landroid/webkit/WebView;
 
@@ -3704,7 +3704,7 @@
 .method public enterFullscreen()V
     .locals 1
 
-    .line 2065
+    .line 2077
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-eqz v0, :cond_0
@@ -3714,15 +3714,15 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 2068
+    .line 2080
     iput-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
-    .line 2069
+    .line 2081
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateInlineButton()V
 
     const/4 v0, 0x0
 
-    .line 2070
+    .line 2082
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenState(Z)V
 
     return-void
@@ -3731,7 +3731,7 @@
 .method public exitFullscreen()V
     .locals 1
 
-    .line 2048
+    .line 2060
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-nez v0, :cond_0
@@ -3741,13 +3741,13 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2051
+    .line 2063
     iput-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
-    .line 2052
+    .line 2064
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateInlineButton()V
 
-    .line 2053
+    .line 2065
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenState(Z)V
 
     return-void
@@ -3756,7 +3756,7 @@
 .method public getAspectRatioView()Landroid/view/View;
     .locals 1
 
-    .line 2399
+    .line 2411
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     return-object v0
@@ -3765,7 +3765,7 @@
 .method public getControlsView()Landroid/view/View;
     .locals 1
 
-    .line 2411
+    .line 2423
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     return-object v0
@@ -3774,7 +3774,7 @@
 .method public getCoubId(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 2380
+    .line 2392
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -3785,7 +3785,7 @@
 
     return-object v1
 
-    .line 2384
+    .line 2396
     :cond_0
     :try_start_0
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->coubIdRegex:Ljava/util/regex/Pattern;
@@ -3794,7 +3794,7 @@
 
     move-result-object p1
 
-    .line 2386
+    .line 2398
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v0
@@ -3803,7 +3803,7 @@
 
     const/4 v0, 0x1
 
-    .line 2387
+    .line 2399
     invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p1
@@ -3823,7 +3823,7 @@
     :catch_0
     move-exception p1
 
-    .line 2393
+    .line 2405
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -3833,7 +3833,7 @@
 .method public getTextureImageView()Landroid/widget/ImageView;
     .locals 1
 
-    .line 2407
+    .line 2419
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     return-object v0
@@ -3842,7 +3842,7 @@
 .method public getTextureView()Landroid/view/TextureView;
     .locals 1
 
-    .line 2403
+    .line 2415
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
     return-object v0
@@ -3851,7 +3851,7 @@
 .method public getYoutubeId()Ljava/lang/String;
     .locals 1
 
-    .line 1730
+    .line 1742
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentYoutubeId:Ljava/lang/String;
 
     return-object v0
@@ -3860,7 +3860,7 @@
 .method public isInFullscreen()Z
     .locals 1
 
-    .line 2074
+    .line 2086
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     return v0
@@ -3869,7 +3869,7 @@
 .method public isInitied()Z
     .locals 1
 
-    .line 2057
+    .line 2069
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->initied:Z
 
     return v0
@@ -3878,7 +3878,7 @@
 .method public isInline()Z
     .locals 1
 
-    .line 2061
+    .line 2073
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
 
     if-nez v0, :cond_1
@@ -3915,14 +3915,14 @@
 
     const-string v4, "m"
 
-    .line 2177
+    .line 2189
     invoke-virtual/range {p0 .. p1}, Lorg/telegram/ui/Components/WebPlayerView;->getCoubId(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
     if-nez v5, :cond_0
 
-    .line 2179
+    .line 2191
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/WebPlayerView;->getCoubId(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
@@ -3930,7 +3930,7 @@
     :cond_0
     const/4 v6, -0x1
 
-    .line 2185
+    .line 2197
     iput v6, v1, Lorg/telegram/ui/Components/WebPlayerView;->seekToTime:I
 
     const/4 v6, 0x3
@@ -3947,7 +3947,7 @@
 
     const-string v10, ".mp4"
 
-    .line 2187
+    .line 2199
     invoke-virtual {v2, v10}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v10
@@ -3963,7 +3963,7 @@
     :cond_1
     if-eqz v0, :cond_4
 
-    .line 2193
+    .line 2205
     :try_start_0
     invoke-static/range {p4 .. p4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -3971,7 +3971,7 @@
 
     const-string v10, "t"
 
-    .line 2194
+    .line 2206
     invoke-virtual {v0, v10}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
@@ -3980,7 +3980,7 @@
 
     const-string v10, "time_continue"
 
-    .line 2196
+    .line 2208
     invoke-virtual {v0, v10}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
@@ -3988,19 +3988,19 @@
     :cond_2
     if-eqz v10, :cond_4
 
-    .line 2199
+    .line 2211
     invoke-virtual {v10, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 2200
+    .line 2212
     invoke-virtual {v10, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2201
+    .line 2213
     aget-object v4, v0, v7
 
     invoke-static {v4}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -4029,7 +4029,7 @@
 
     goto :goto_0
 
-    .line 2203
+    .line 2215
     :cond_3
     invoke-static {v10}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -4048,11 +4048,11 @@
     :catch_0
     move-exception v0
 
-    .line 2207
+    .line 2219
     :try_start_1
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2210
+    .line 2222
     :cond_4
     :goto_0
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->youtubeIdRegex:Ljava/util/regex/Pattern;
@@ -4061,14 +4061,14 @@
 
     move-result-object v0
 
-    .line 2212
+    .line 2224
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v4
 
     if-eqz v4, :cond_5
 
-    .line 2213
+    .line 2225
     invoke-virtual {v0, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -4096,7 +4096,7 @@
     :catch_1
     move-exception v0
 
-    .line 2219
+    .line 2231
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     move-object v4, v9
@@ -4104,7 +4104,7 @@
     :goto_3
     if-nez v4, :cond_9
 
-    .line 2223
+    .line 2235
     :try_start_2
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->vimeoIdRegex:Ljava/util/regex/Pattern;
 
@@ -4112,14 +4112,14 @@
 
     move-result-object v0
 
-    .line 2225
+    .line 2237
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v10
 
     if-eqz v10, :cond_7
 
-    .line 2226
+    .line 2238
     invoke-virtual {v0, v6}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -4147,7 +4147,7 @@
     :catch_2
     move-exception v0
 
-    .line 2232
+    .line 2244
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_9
@@ -4156,7 +4156,7 @@
     :goto_6
     if-nez v10, :cond_c
 
-    .line 2237
+    .line 2249
     :try_start_3
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->aparatIdRegex:Ljava/util/regex/Pattern;
 
@@ -4164,14 +4164,14 @@
 
     move-result-object v0
 
-    .line 2239
+    .line 2251
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v11
 
     if-eqz v11, :cond_a
 
-    .line 2240
+    .line 2252
     invoke-virtual {v0, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -4199,7 +4199,7 @@
     :catch_3
     move-exception v0
 
-    .line 2246
+    .line 2258
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_c
@@ -4208,7 +4208,7 @@
     :goto_9
     if-nez v11, :cond_f
 
-    .line 2251
+    .line 2263
     :try_start_4
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->twitchClipIdRegex:Ljava/util/regex/Pattern;
 
@@ -4216,14 +4216,14 @@
 
     move-result-object v0
 
-    .line 2253
+    .line 2265
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v12
 
     if-eqz v12, :cond_d
 
-    .line 2254
+    .line 2266
     invoke-virtual {v0, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -4251,7 +4251,7 @@
     :catch_4
     move-exception v0
 
-    .line 2260
+    .line 2272
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_f
@@ -4260,7 +4260,7 @@
     :goto_c
     if-nez v12, :cond_12
 
-    .line 2265
+    .line 2277
     :try_start_5
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->twitchStreamIdRegex:Ljava/util/regex/Pattern;
 
@@ -4268,14 +4268,14 @@
 
     move-result-object v0
 
-    .line 2267
+    .line 2279
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v13
 
     if-eqz v13, :cond_10
 
-    .line 2268
+    .line 2280
     invoke-virtual {v0, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -4303,7 +4303,7 @@
     :catch_5
     move-exception v0
 
-    .line 2274
+    .line 2286
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_12
@@ -4312,7 +4312,7 @@
     :goto_f
     if-nez v13, :cond_14
 
-    .line 2279
+    .line 2291
     :try_start_6
     sget-object v0, Lorg/telegram/ui/Components/WebPlayerView;->coubIdRegex:Ljava/util/regex/Pattern;
 
@@ -4320,14 +4320,14 @@
 
     move-result-object v0
 
-    .line 2281
+    .line 2293
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v14
 
     if-eqz v14, :cond_13
 
-    .line 2282
+    .line 2294
     invoke-virtual {v0, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -4349,7 +4349,7 @@
     :catch_6
     move-exception v0
 
-    .line 2288
+    .line 2300
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_14
@@ -4372,62 +4372,62 @@
 
     move-object v13, v12
 
-    .line 2294
+    .line 2306
     :goto_13
     iput-boolean v7, v1, Lorg/telegram/ui/Components/WebPlayerView;->initied:Z
 
-    .line 2295
+    .line 2307
     iput-boolean v7, v1, Lorg/telegram/ui/Components/WebPlayerView;->isCompleted:Z
 
     move/from16 v14, p5
 
-    .line 2296
+    .line 2308
     iput-boolean v14, v1, Lorg/telegram/ui/Components/WebPlayerView;->isAutoplay:Z
 
-    .line 2297
+    .line 2309
     iput-object v9, v1, Lorg/telegram/ui/Components/WebPlayerView;->playVideoUrl:Ljava/lang/String;
 
-    .line 2298
+    .line 2310
     iput-object v9, v1, Lorg/telegram/ui/Components/WebPlayerView;->playAudioUrl:Ljava/lang/String;
 
-    .line 2299
+    .line 2311
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/WebPlayerView;->destroy()V
 
-    .line 2300
+    .line 2312
     iput-boolean v7, v1, Lorg/telegram/ui/Components/WebPlayerView;->firstFrameRendered:Z
 
     const/high16 v14, 0x3f800000    # 1.0f
 
-    .line 2301
+    .line 2313
     iput v14, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentAlpha:F
 
-    .line 2302
+    .line 2314
     iget-object v14, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     if-eqz v14, :cond_16
 
-    .line 2303
+    .line 2315
     invoke-virtual {v14, v8}, Landroid/os/AsyncTask;->cancel(Z)Z
 
-    .line 2304
+    .line 2316
     iput-object v9, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
-    .line 2306
+    .line 2318
     :cond_16
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateFullscreenButton()V
 
-    .line 2307
+    .line 2319
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateShareButton()V
 
-    .line 2308
+    .line 2320
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/WebPlayerView;->updateInlineButton()V
 
-    .line 2309
+    .line 2321
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
     if-eqz v3, :cond_17
 
-    .line 2311
+    .line 2323
     iget-object v14, v3, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     const/16 v15, 0x50
@@ -4438,7 +4438,7 @@
 
     if-eqz v14, :cond_18
 
-    .line 2313
+    .line 2325
     iget-object v15, v1, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-static {v15}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->access$5000(Lorg/telegram/ui/Components/WebPlayerView$ControlsView;)Lorg/telegram/messenger/ImageReceiver;
@@ -4465,29 +4465,29 @@
 
     invoke-virtual/range {v16 .. v25}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 2314
+    .line 2326
     iput-boolean v8, v1, Lorg/telegram/ui/Components/WebPlayerView;->drawImage:Z
 
     goto :goto_14
 
-    .line 2317
+    .line 2329
     :cond_17
     iput-boolean v7, v1, Lorg/telegram/ui/Components/WebPlayerView;->drawImage:Z
 
-    .line 2320
+    .line 2332
     :cond_18
     :goto_14
     iget-object v3, v1, Lorg/telegram/ui/Components/WebPlayerView;->progressAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v3, :cond_19
 
-    .line 2321
+    .line 2333
     invoke-virtual {v3}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2322
+    .line 2334
     iput-object v9, v1, Lorg/telegram/ui/Components/WebPlayerView;->progressAnimation:Landroid/animation/AnimatorSet;
 
-    .line 2325
+    .line 2337
     :cond_19
     iget-object v3, v1, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
@@ -4495,7 +4495,7 @@
 
     if-eqz v4, :cond_1a
 
-    .line 2327
+    .line 2339
     iput-object v4, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentYoutubeId:Ljava/lang/String;
 
     move-object v4, v9
@@ -4503,30 +4503,30 @@
     :cond_1a
     if-eqz v0, :cond_1c
 
-    .line 2331
+    .line 2343
     iput-boolean v8, v1, Lorg/telegram/ui/Components/WebPlayerView;->initied:Z
 
-    .line 2332
+    .line 2344
     iput-object v0, v1, Lorg/telegram/ui/Components/WebPlayerView;->playVideoUrl:Ljava/lang/String;
 
     const-string v2, "other"
 
-    .line 2333
+    .line 2345
     iput-object v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->playVideoType:Ljava/lang/String;
 
-    .line 2334
+    .line 2346
     iget-boolean v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->isAutoplay:Z
 
     if-eqz v2, :cond_1b
 
-    .line 2335
+    .line 2347
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/WebPlayerView;->preparePlayer()V
 
-    .line 2337
+    .line 2349
     :cond_1b
     invoke-direct {v1, v7, v7}, Lorg/telegram/ui/Components/WebPlayerView;->showProgress(ZZ)V
 
-    .line 2338
+    .line 2350
     iget-object v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v2, v8, v8}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->show(ZZ)V
@@ -4538,12 +4538,12 @@
 
     if-eqz v4, :cond_1d
 
-    .line 2341
+    .line 2353
     new-instance v2, Lorg/telegram/ui/Components/WebPlayerView$YoutubeVideoTask;
 
     invoke-direct {v2, v1, v4}, Lorg/telegram/ui/Components/WebPlayerView$YoutubeVideoTask;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Ljava/lang/String;)V
 
-    .line 2342
+    .line 2354
     sget-object v14, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v6, v6, [Ljava/lang/Void;
@@ -4556,7 +4556,7 @@
 
     invoke-virtual {v2, v14, v6}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 2343
+    .line 2355
     iput-object v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     goto/16 :goto_15
@@ -4564,12 +4564,12 @@
     :cond_1d
     if-eqz v10, :cond_1e
 
-    .line 2345
+    .line 2357
     new-instance v2, Lorg/telegram/ui/Components/WebPlayerView$VimeoVideoTask;
 
     invoke-direct {v2, v1, v10}, Lorg/telegram/ui/Components/WebPlayerView$VimeoVideoTask;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Ljava/lang/String;)V
 
-    .line 2346
+    .line 2358
     sget-object v14, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v6, v6, [Ljava/lang/Void;
@@ -4582,7 +4582,7 @@
 
     invoke-virtual {v2, v14, v6}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 2347
+    .line 2359
     iput-object v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     goto :goto_15
@@ -4590,12 +4590,12 @@
     :cond_1e
     if-eqz v5, :cond_1f
 
-    .line 2349
+    .line 2361
     new-instance v2, Lorg/telegram/ui/Components/WebPlayerView$CoubVideoTask;
 
     invoke-direct {v2, v1, v5}, Lorg/telegram/ui/Components/WebPlayerView$CoubVideoTask;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Ljava/lang/String;)V
 
-    .line 2350
+    .line 2362
     sget-object v14, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v6, v6, [Ljava/lang/Void;
@@ -4608,10 +4608,10 @@
 
     invoke-virtual {v2, v14, v6}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 2351
+    .line 2363
     iput-object v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
-    .line 2352
+    .line 2364
     iput-boolean v8, v1, Lorg/telegram/ui/Components/WebPlayerView;->isStream:Z
 
     goto :goto_15
@@ -4619,12 +4619,12 @@
     :cond_1f
     if-eqz v11, :cond_20
 
-    .line 2354
+    .line 2366
     new-instance v2, Lorg/telegram/ui/Components/WebPlayerView$AparatVideoTask;
 
     invoke-direct {v2, v1, v11}, Lorg/telegram/ui/Components/WebPlayerView$AparatVideoTask;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Ljava/lang/String;)V
 
-    .line 2355
+    .line 2367
     sget-object v14, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v6, v6, [Ljava/lang/Void;
@@ -4637,7 +4637,7 @@
 
     invoke-virtual {v2, v14, v6}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 2356
+    .line 2368
     iput-object v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     goto :goto_15
@@ -4645,12 +4645,12 @@
     :cond_20
     if-eqz v12, :cond_21
 
-    .line 2358
+    .line 2370
     new-instance v14, Lorg/telegram/ui/Components/WebPlayerView$TwitchClipVideoTask;
 
     invoke-direct {v14, v1, v2, v12}, Lorg/telegram/ui/Components/WebPlayerView$TwitchClipVideoTask;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2359
+    .line 2371
     sget-object v2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v6, v6, [Ljava/lang/Void;
@@ -4663,7 +4663,7 @@
 
     invoke-virtual {v14, v2, v6}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 2360
+    .line 2372
     iput-object v14, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
     goto :goto_15
@@ -4671,12 +4671,12 @@
     :cond_21
     if-eqz v13, :cond_22
 
-    .line 2362
+    .line 2374
     new-instance v14, Lorg/telegram/ui/Components/WebPlayerView$TwitchStreamVideoTask;
 
     invoke-direct {v14, v1, v2, v13}, Lorg/telegram/ui/Components/WebPlayerView$TwitchStreamVideoTask;-><init>(Lorg/telegram/ui/Components/WebPlayerView;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2363
+    .line 2375
     sget-object v2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-array v6, v6, [Ljava/lang/Void;
@@ -4689,20 +4689,20 @@
 
     invoke-virtual {v14, v2, v6}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 2364
+    .line 2376
     iput-object v14, v1, Lorg/telegram/ui/Components/WebPlayerView;->currentTask:Landroid/os/AsyncTask;
 
-    .line 2365
+    .line 2377
     iput-boolean v8, v1, Lorg/telegram/ui/Components/WebPlayerView;->isStream:Z
 
-    .line 2368
+    .line 2380
     :cond_22
     :goto_15
     iget-object v2, v1, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v2, v7, v7}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->show(ZZ)V
 
-    .line 2369
+    .line 2381
     invoke-direct {v1, v8, v7}, Lorg/telegram/ui/Components/WebPlayerView;->showProgress(ZZ)V
 
     :goto_16
@@ -4722,7 +4722,7 @@
 
     goto :goto_17
 
-    .line 2375
+    .line 2387
     :cond_23
     iget-object v0, v1, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
@@ -4732,7 +4732,7 @@
 
     return v7
 
-    .line 2372
+    .line 2384
     :cond_24
     :goto_17
     iget-object v0, v1, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
@@ -4745,7 +4745,7 @@
 .method public onAudioFocusChange(I)V
     .locals 1
 
-    .line 1884
+    .line 1896
     new-instance v0, Lorg/telegram/ui/Components/WebPlayerView$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/WebPlayerView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/WebPlayerView;I)V
@@ -4758,7 +4758,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 1762
+    .line 1774
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v0
@@ -4795,10 +4795,10 @@
 .method public onError(Lorg/telegram/ui/Components/VideoPlayer;Ljava/lang/Exception;)V
     .locals 0
 
-    .line 1767
+    .line 1779
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1768
+    .line 1780
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->onInitFailed()V
 
     return-void
@@ -4809,7 +4809,7 @@
 
     sub-int/2addr p4, p2
 
-    .line 1832
+    .line 1844
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -4824,7 +4824,7 @@
 
     const/16 p2, 0xa
 
-    .line 1833
+    .line 1845
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
@@ -4841,7 +4841,7 @@
 
     div-int/lit8 p3, p3, 0x2
 
-    .line 1834
+    .line 1846
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -4860,7 +4860,7 @@
 
     invoke-virtual {v0, p1, p3, v1, v2}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 1835
+    .line 1847
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -4869,7 +4869,7 @@
 
     if-ne p1, p0, :cond_0
 
-    .line 1836
+    .line 1848
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -4886,7 +4886,7 @@
 
     invoke-virtual {p1, v1, v1, p3, v0}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 1838
+    .line 1850
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
@@ -4898,7 +4898,7 @@
 
     div-int/lit8 p4, p4, 0x2
 
-    .line 1839
+    .line 1851
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
@@ -4909,7 +4909,7 @@
 
     div-int/lit8 p5, p5, 0x2
 
-    .line 1840
+    .line 1852
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
@@ -4928,7 +4928,7 @@
 
     invoke-virtual {p1, p4, p5, p3, v0}, Landroid/view/View;->layout(IIII)V
 
-    .line 1841
+    .line 1853
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->access$5000(Lorg/telegram/ui/Components/WebPlayerView$ControlsView;)Lorg/telegram/messenger/ImageReceiver;
@@ -4963,17 +4963,17 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 1846
+    .line 1858
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 1847
+    .line 1859
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 1848
+    .line 1860
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     const/high16 v1, 0x40000000    # 2.0f
@@ -4996,7 +4996,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1849
+    .line 1861
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -5005,7 +5005,7 @@
 
     if-ne v0, p0, :cond_0
 
-    .line 1850
+    .line 1862
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-static {p1, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -5018,7 +5018,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1852
+    .line 1864
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
@@ -5042,7 +5042,7 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/view/View;->measure(II)V
 
-    .line 1853
+    .line 1865
     invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 
     return-void
@@ -5053,17 +5053,17 @@
 
     const/4 v0, 0x1
 
-    .line 1791
+    .line 1803
     iput-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->firstFrameRendered:Z
 
-    .line 1792
+    .line 1804
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->lastUpdateTime:J
 
-    .line 1793
+    .line 1805
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -5104,7 +5104,7 @@
 
     if-eq p2, v0, :cond_1
 
-    .line 1736
+    .line 1748
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
@@ -5117,7 +5117,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1737
+    .line 1749
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -5136,7 +5136,7 @@
 
     goto :goto_0
 
-    .line 1739
+    .line 1751
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
@@ -5152,7 +5152,7 @@
 
     if-eq p2, v1, :cond_2
 
-    .line 1742
+    .line 1754
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/VideoPlayer;->isPlaying()Z
@@ -5161,20 +5161,20 @@
 
     if-eqz v2, :cond_2
 
-    .line 1743
+    .line 1755
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     invoke-interface {p1, p0, v1}, Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;->onPlayStateChanged(Lorg/telegram/ui/Components/WebPlayerView;Z)V
 
     goto :goto_1
 
-    .line 1745
+    .line 1757
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     invoke-interface {v2, p0, p1}, Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;->onPlayStateChanged(Lorg/telegram/ui/Components/WebPlayerView;Z)V
 
-    .line 1747
+    .line 1759
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -5186,7 +5186,7 @@
 
     if-eq p2, v0, :cond_3
 
-    .line 1748
+    .line 1760
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
     goto :goto_2
@@ -5194,25 +5194,25 @@
     :cond_3
     if-ne p2, v0, :cond_4
 
-    .line 1751
+    .line 1763
     iput-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->isCompleted:Z
 
-    .line 1752
+    .line 1764
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 1753
+    .line 1765
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const-wide/16 v2, 0x0
 
     invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 1754
+    .line 1766
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
-    .line 1755
+    .line 1767
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Components/WebPlayerView$ControlsView;->show(ZZ)V
@@ -5225,17 +5225,17 @@
 .method public onSurfaceDestroyed(Landroid/graphics/SurfaceTexture;)Z
     .locals 3
 
-    .line 1798
+    .line 1810
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->changingTextureView:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_2
 
-    .line 1799
+    .line 1811
     iput-boolean v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->changingTextureView:Z
 
-    .line 1800
+    .line 1812
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-nez v0, :cond_0
@@ -5244,7 +5244,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1801
+    .line 1813
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->isInline:Z
 
@@ -5252,23 +5252,23 @@
 
     if-eqz v0, :cond_1
 
-    .line 1802
+    .line 1814
     iput v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->waitingForFirstTextureUpload:I
 
-    .line 1804
+    .line 1816
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->changedTextureView:Landroid/view/TextureView;
 
     invoke-virtual {v0, p1}, Landroid/view/TextureView;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;)V
 
-    .line 1805
+    .line 1817
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->changedTextureView:Landroid/view/TextureView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->surfaceTextureListener:Landroid/view/TextureView$SurfaceTextureListener;
 
     invoke-virtual {p1, v0}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
 
-    .line 1806
+    .line 1818
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->changedTextureView:Landroid/view/TextureView;
 
     invoke-virtual {p1, v1}, Landroid/view/TextureView;->setVisibility(I)V
@@ -5282,48 +5282,48 @@
 .method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
     .locals 7
 
-    .line 1815
+    .line 1827
     iget p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->waitingForFirstTextureUpload:I
 
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_1
 
-    .line 1816
+    .line 1828
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_0
 
     const/4 v0, 0x4
 
-    .line 1817
+    .line 1829
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1818
+    .line 1830
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1819
+    .line 1831
     iget-object p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz p1, :cond_0
 
-    .line 1820
+    .line 1832
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1821
+    .line 1833
     iput-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 1824
+    .line 1836
     iput-boolean p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->switchingInlineMode:Z
 
-    .line 1825
+    .line 1837
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
@@ -5344,7 +5344,7 @@
 
     invoke-interface/range {v0 .. v6}, Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;->onSwitchInlineMode(Landroid/view/View;ZIIIZ)Landroid/view/TextureView;
 
-    .line 1826
+    .line 1838
     iput p1, p0, Lorg/telegram/ui/Components/WebPlayerView;->waitingForFirstTextureUpload:I
 
     :cond_1
@@ -5354,7 +5354,7 @@
 .method public onVideoSizeChanged(IIIF)V
     .locals 3
 
-    .line 1773
+    .line 1785
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     if-eqz v0, :cond_3
@@ -5381,10 +5381,10 @@
 
     float-to-int p4, p1
 
-    .line 1779
+    .line 1791
     iput p4, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoWidth:I
 
-    .line 1780
+    .line 1792
     iput p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoHeight:I
 
     if-nez p2, :cond_2
@@ -5398,16 +5398,16 @@
 
     div-float/2addr p1, p2
 
-    .line 1782
+    .line 1794
     :goto_0
     invoke-virtual {v0, p1, p3}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->setAspectRatio(FI)V
 
-    .line 1783
+    .line 1795
     iget-boolean p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->inFullscreen:Z
 
     if-eqz p2, :cond_3
 
-    .line 1784
+    .line 1796
     iget-object p2, p0, Lorg/telegram/ui/Components/WebPlayerView;->delegate:Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;
 
     invoke-interface {p2, p1, p3}, Lorg/telegram/ui/Components/WebPlayerView$WebPlayerViewDelegate;->onVideoSizeChanged(FI)V
@@ -5419,15 +5419,15 @@
 .method public pause()V
     .locals 2
 
-    .line 1982
+    .line 1994
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 1983
+    .line 1995
     invoke-direct {p0}, Lorg/telegram/ui/Components/WebPlayerView;->updatePlayButton()V
 
-    .line 1984
+    .line 1996
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     const/4 v1, 0x1
@@ -5440,7 +5440,7 @@
 .method public updateTextureImageView()V
     .locals 4
 
-    .line 1708
+    .line 1720
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
@@ -5450,7 +5450,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1712
+    .line 1724
     :try_start_0
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureView:Landroid/view/TextureView;
 
@@ -5472,7 +5472,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1713
+    .line 1725
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->changedTextureView:Landroid/view/TextureView;
 
     invoke-virtual {v2, v1}, Landroid/view/TextureView;->getBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -5484,35 +5484,35 @@
     :catchall_0
     move-exception v1
 
-    .line 1715
+    .line 1727
     iget-object v2, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_1
 
-    .line 1716
+    .line 1728
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1717
+    .line 1729
     iput-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
-    .line 1719
+    .line 1731
     :cond_1
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1721
+    .line 1733
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_2
 
-    .line 1722
+    .line 1734
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1723
+    .line 1735
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->currentBitmap:Landroid/graphics/Bitmap;
@@ -5521,7 +5521,7 @@
 
     goto :goto_1
 
-    .line 1725
+    .line 1737
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/WebPlayerView;->textureImageView:Landroid/widget/ImageView;
 
@@ -5534,14 +5534,14 @@
 .method public willHandle()V
     .locals 2
 
-    .line 2169
+    .line 2181
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2170
+    .line 2182
     iget-object v0, p0, Lorg/telegram/ui/Components/WebPlayerView;->controlsView:Lorg/telegram/ui/Components/WebPlayerView$ControlsView;
 
     const/4 v1, 0x0
@@ -5550,7 +5550,7 @@
 
     const/4 v0, 0x1
 
-    .line 2171
+    .line 2183
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/WebPlayerView;->showProgress(ZZ)V
 
     return-void

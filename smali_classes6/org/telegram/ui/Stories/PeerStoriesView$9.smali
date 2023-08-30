@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Z)V
     .locals 0
 
-    .line 1485
+    .line 1505
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$9;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$9;->val$show:Z
@@ -39,15 +39,15 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1488
+    .line 1508
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$9;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 1489
+    .line 1509
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$9;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     move-result-object p1
 
@@ -55,10 +55,10 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1490
+    .line 1510
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$9;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     move-result-object p1
 

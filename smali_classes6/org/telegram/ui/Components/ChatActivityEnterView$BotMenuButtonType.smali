@@ -38,7 +38,7 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 12181
+    .line 12180
     new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
     const-string v1, "TEMPLATES"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;->TEMPLATES:Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
-    .line 12182
+    .line 12181
     new-instance v1, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
     const-string v3, "NO_BUTTON"
@@ -60,7 +60,7 @@
 
     sput-object v1, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;->NO_BUTTON:Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
-    .line 12183
+    .line 12182
     new-instance v3, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
     const-string v5, "COMMANDS"
@@ -71,7 +71,7 @@
 
     sput-object v3, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;->COMMANDS:Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
-    .line 12184
+    .line 12183
     new-instance v5, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
     const-string v7, "WEB_VIEW"
@@ -94,7 +94,7 @@
 
     aput-object v5, v7, v8
 
-    .line 12180
+    .line 12179
     sput-object v7, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;->$VALUES:[Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
     return-void
@@ -108,7 +108,7 @@
         }
     .end annotation
 
-    .line 12180
+    .line 12179
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -117,7 +117,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
     .locals 1
 
-    .line 12180
+    .line 12179
     const-class v0, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -132,7 +132,7 @@
 .method public static values()[Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
     .locals 1
 
-    .line 12180
+    .line 12179
     sget-object v0, Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;->$VALUES:[Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/Components/ChatActivityEnterView$BotMenuButtonType;->clone()Ljava/lang/Object;

@@ -38,8 +38,8 @@
 
 
 # virtual methods
-.method public final clip(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
-    .locals 8
+.method public final clip(Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/ProfileStoriesView$2$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Stories/ProfileStoriesView$2;
 
@@ -57,7 +57,9 @@
 
     move v7, p3
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->$r8$lambda$0lq5ZZR1CL-tuaN98Dp2n6YB1ig(Lorg/telegram/ui/Stories/ProfileStoriesView$2;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+    move v8, p4
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->$r8$lambda$zSmmeN3WexfDkTwfXazA3yVZU6k(Lorg/telegram/ui/Stories/ProfileStoriesView$2;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/RectF;Lorg/telegram/ui/Stories/ProfileStoriesView$StoryCircle;Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
 
     return-void
 .end method

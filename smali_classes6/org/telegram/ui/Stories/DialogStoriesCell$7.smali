@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Z)V
     .locals 0
 
-    .line 769
+    .line 770
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$7;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$7;->val$newCollapsed:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 772
+    .line 773
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$7;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$7;->val$newCollapsed:Z
@@ -56,7 +56,7 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$402(Lorg/telegram/ui/Stories/DialogStoriesCell;F)F
 
-    .line 773
+    .line 774
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$7;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$500(Lorg/telegram/ui/Stories/DialogStoriesCell;)V

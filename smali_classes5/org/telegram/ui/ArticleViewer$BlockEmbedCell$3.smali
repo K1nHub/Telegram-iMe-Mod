@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 7416
+    .line 7537
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$3;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
@@ -35,7 +35,7 @@
 .method public onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 0
 
-    .line 7419
+    .line 7540
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onLoadResource(Landroid/webkit/WebView;Ljava/lang/String;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 0
 
-    .line 7424
+    .line 7545
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
 
     return-void
@@ -53,16 +53,16 @@
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 0
 
-    .line 7430
+    .line 7551
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$3;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->access$14900(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->access$15200(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 7431
+    .line 7552
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$3;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->this$0:Lorg/telegram/ui/ArticleViewer;

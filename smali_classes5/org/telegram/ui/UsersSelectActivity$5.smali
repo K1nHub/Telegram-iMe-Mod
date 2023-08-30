@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/UsersSelectActivity;)V
     .locals 0
 
-    .line 660
+    .line 644
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

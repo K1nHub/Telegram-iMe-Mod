@@ -50,6 +50,9 @@
 .method public abstract getParentObject()Ljava/lang/Object;
 .end method
 
+.method public abstract isHardwarePlayer(I)Z
+.end method
+
 .method public abstract isVideo(I)Z
 .end method
 

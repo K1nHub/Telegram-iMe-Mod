@@ -22,22 +22,22 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
     .locals 1
 
-    .line 1191
+    .line 1196
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$3200(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/content/Context;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;)V
 
-    .line 1192
+    .line 1197
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;->mPopup:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
     const/4 p2, 0x0
 
-    .line 1193
+    .line 1198
     invoke-virtual {p0, p2}, Landroid/widget/ListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1194
+    .line 1199
     new-instance p2, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel$1;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
@@ -46,7 +46,7 @@
 
     const/4 p1, 0x1
 
-    .line 1200
+    .line 1205
     invoke-virtual {p0, p1}, Landroid/widget/ListView;->setClipToOutline(Z)V
 
     return-void
@@ -57,7 +57,7 @@
 .method protected awakenScrollBars()Z
     .locals 1
 
-    .line 1220
+    .line 1225
     invoke-super {p0}, Landroid/widget/ListView;->awakenScrollBars()Z
 
     move-result v0
@@ -68,7 +68,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 1212
+    .line 1217
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;->mPopup:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$2800(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
@@ -81,7 +81,7 @@
 
     return p1
 
-    .line 1215
+    .line 1220
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/ListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -93,7 +93,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1205
+    .line 1210
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;->mPopup:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->access$3000(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/util/Size;
@@ -118,12 +118,12 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 1206
+    .line 1211
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
-    .line 1207
+    .line 1212
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->onMeasure(II)V
 
     return-void

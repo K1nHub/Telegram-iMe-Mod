@@ -34,7 +34,7 @@
 
     move-object v0, p1
 
-    .line 1059
+    .line 1057
     iput-object v0, v8, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     move-object v0, p0
@@ -61,7 +61,7 @@
 .method private synthetic lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
     .locals 9
 
-    .line 1075
+    .line 1073
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1076
+    .line 1074
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -90,7 +90,7 @@
 
     goto :goto_1
 
-    .line 1077
+    .line 1075
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
@@ -102,7 +102,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1078
+    .line 1076
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -125,7 +125,7 @@
     :goto_1
     if-eqz v1, :cond_3
 
-    .line 1083
+    .line 1081
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result v0
@@ -136,7 +136,7 @@
 
     const/4 v0, 0x0
 
-    .line 1084
+    .line 1082
     invoke-virtual {p1, v0}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -160,7 +160,7 @@
 
     const/16 v4, 0x35
 
-    .line 1086
+    .line 1084
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -189,10 +189,10 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 1062
+    .line 1060
     invoke-super {p0}, Lorg/telegram/ui/Components/ShareAlert;->dismissInternal()V
 
-    .line 1063
+    .line 1061
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -203,7 +203,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1064
+    .line 1062
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -226,7 +226,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
-    .line 1065
+    .line 1063
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -245,7 +245,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1066
+    .line 1064
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$10;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$000(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -275,7 +275,7 @@
         }
     .end annotation
 
-    .line 1073
+    .line 1071
     new-instance p3, Lorg/telegram/ui/Components/StickersAlert$10$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/Components/StickersAlert$10$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/StickersAlert$10;Landroidx/collection/LongSparseArray;I)V

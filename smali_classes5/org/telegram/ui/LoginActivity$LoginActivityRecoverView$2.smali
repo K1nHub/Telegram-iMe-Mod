@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 7181
+    .line 7191
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,28 +44,28 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 7184
+    .line 7194
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15500(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Z
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15600(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 7185
+    .line 7195
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15600(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Ljava/lang/Runnable;
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15700(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Ljava/lang/Runnable;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 7186
+    .line 7196
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15600(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Ljava/lang/Runnable;
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15700(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Ljava/lang/Runnable;
 
     move-result-object p1
 

@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda1;->f$2:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$LUBCYgLju9idp5WZEkuYseg7DCc(Landroid/widget/ImageView;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/graphics/drawable/Drawable;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$o5SvaxoGHcuxtR6Tr2yFvcHhHp4(Landroid/widget/ImageView;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/graphics/drawable/Drawable;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

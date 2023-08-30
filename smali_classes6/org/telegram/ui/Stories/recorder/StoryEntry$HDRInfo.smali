@@ -21,16 +21,12 @@
 
 .field public colorTransfer:I
 
-.field public maxlum:F
-
-.field public minlum:F
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    .line 821
+    .line 824
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,53 +35,35 @@
 
 # virtual methods
 .method public getHDRType()I
-    .locals 4
+    .locals 3
 
-    .line 831
-    iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->maxlum:F
-
-    const/4 v1, 0x0
-
-    cmpg-float v0, v0, v1
-
-    const/4 v2, 0x0
-
-    if-gtz v0, :cond_0
-
-    iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->minlum:F
-
-    cmpg-float v0, v0, v1
-
-    if-gtz v0, :cond_0
-
-    return v2
-
-    .line 833
-    :cond_0
+    .line 837
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->colorStandard:I
 
     const/4 v1, 0x6
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_1
 
-    .line 834
+    .line 838
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->colorTransfer:I
 
-    const/4 v3, 0x7
+    const/4 v2, 0x7
 
-    if-ne v0, v3, :cond_1
+    if-ne v0, v2, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_1
-    if-ne v0, v1, :cond_2
+    :cond_0
+    if-ne v0, v1, :cond_1
 
     const/4 v0, 0x2
 
     return v0
 
-    :cond_2
-    return v2
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
 .end method

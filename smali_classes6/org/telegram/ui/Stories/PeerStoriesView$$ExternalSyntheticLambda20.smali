@@ -39,7 +39,7 @@
 
     iget-boolean v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda20;->f$2:Z
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$bgXae1ogq5gKtXbvYn5aipW8KcY(Lorg/telegram/messenger/MessagesController;JZ)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$Lw2PZSnsTjmkA9OhvG8A3T4aMW4(Lorg/telegram/messenger/MessagesController;JZ)V
 
     return-void
 .end method

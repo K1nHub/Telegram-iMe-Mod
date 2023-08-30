@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
     .locals 0
 
-    .line 3323
+    .line 3329
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;->val$oldEditMode:I
@@ -43,7 +43,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 3326
+    .line 3332
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;->val$oldEditMode:I

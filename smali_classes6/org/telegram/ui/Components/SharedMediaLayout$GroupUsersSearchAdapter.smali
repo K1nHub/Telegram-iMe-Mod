@@ -94,12 +94,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;)V
     .locals 1
 
-    .line 7810
+    .line 7849
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 7803
+    .line 7842
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -108,16 +108,16 @@
 
     const/4 v0, 0x0
 
-    .line 7806
+    .line 7845
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->totalCount:I
 
-    .line 7808
+    .line 7847
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchCount:I
 
-    .line 7811
+    .line 7850
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->mContext:Landroid/content/Context;
 
-    .line 7812
+    .line 7851
     new-instance p2, Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     const/4 v0, 0x1
@@ -126,14 +126,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
-    .line 7813
+    .line 7852
     new-instance v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;)V
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->setDelegate(Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;)V
 
-    .line 7830
+    .line 7869
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout;->delegate:Lorg/telegram/ui/Components/SharedMediaLayout$Delegate;
 
     invoke-interface {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$Delegate;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
@@ -148,23 +148,23 @@
 .method private createMenuForParticipant(Lorg/telegram/tgnet/TLObject;ZLandroid/view/View;)Z
     .locals 3
 
-    .line 7834
+    .line 7873
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v0, :cond_0
 
-    .line 7835
+    .line 7874
     check-cast p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 7836
+    .line 7875
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;-><init>()V
 
-    .line 7837
+    .line 7876
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 7838
+    .line 7877
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v1}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
@@ -173,19 +173,19 @@
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->user_id:J
 
-    .line 7839
+    .line 7878
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->inviter_id:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->inviter_id:J
 
-    .line 7840
+    .line 7879
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->date:I
 
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;->date:I
 
     move-object p1, v0
 
-    .line 7843
+    .line 7882
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -205,14 +205,14 @@
 .method private synthetic lambda$new$0(I)V
     .locals 5
 
-    .line 7814
+    .line 7853
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->notifyDataSetChanged()V
 
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_2
 
-    .line 7816
+    .line 7855
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchCount:I
 
     sub-int/2addr p1, v0
@@ -225,7 +225,7 @@
 
     move v1, p1
 
-    .line 7818
+    .line 7857
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -237,7 +237,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 7819
+    .line 7858
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -254,14 +254,14 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 7820
+    .line 7859
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->getItemCount()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 7821
+    .line 7860
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -278,7 +278,7 @@
 
     goto :goto_1
 
-    .line 7823
+    .line 7862
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -309,7 +309,7 @@
 .method private synthetic lambda$onCreateViewHolder$5(Lorg/telegram/ui/Cells/ManageChatUserCell;Z)Z
     .locals 2
 
-    .line 8011
+    .line 8050
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -324,17 +324,17 @@
 
     move-result-object v0
 
-    .line 8012
+    .line 8051
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v1, :cond_0
 
-    .line 8013
+    .line 8052
     check-cast v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     xor-int/lit8 p2, p2, 0x1
 
-    .line 8020
+    .line 8059
     invoke-direct {p0, v0, p2, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->createMenuForParticipant(Lorg/telegram/tgnet/TLObject;ZLandroid/view/View;)Z
 
     move-result p1
@@ -352,7 +352,7 @@
 
     move-object/from16 v0, p0
 
-    .line 7878
+    .line 7917
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -361,14 +361,14 @@
 
     move-result-object v1
 
-    .line 7879
+    .line 7918
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 7880
+    .line 7919
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -381,7 +381,7 @@
 
     return-void
 
-    .line 7883
+    .line 7922
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -391,7 +391,7 @@
 
     move-result-object v2
 
-    .line 7884
+    .line 7923
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -424,29 +424,29 @@
     :goto_0
     add-int/2addr v6, v5
 
-    .line 7887
+    .line 7926
     new-array v7, v6, [Ljava/lang/String;
 
-    .line 7888
+    .line 7927
     aput-object v1, v7, v3
 
     if-eqz v2, :cond_4
 
-    .line 7890
+    .line 7929
     aput-object v2, v7, v5
 
-    .line 7892
+    .line 7931
     :cond_4
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 7893
+    .line 7932
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 7895
+    .line 7934
     invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->size()I
 
     move-result v8
@@ -458,19 +458,19 @@
 
     move-object/from16 v10, p2
 
-    .line 7897
+    .line 7936
     invoke-virtual {v10, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
     check-cast v11, Lorg/telegram/tgnet/TLObject;
 
-    .line 7898
+    .line 7937
     instance-of v12, v11, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
     if-eqz v12, :cond_5
 
-    .line 7899
+    .line 7938
     move-object v12, v11
 
     check-cast v12, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
@@ -479,13 +479,13 @@
 
     goto :goto_2
 
-    .line 7900
+    .line 7939
     :cond_5
     instance-of v12, v11, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v12, :cond_d
 
-    .line 7901
+    .line 7940
     move-object v12, v11
 
     check-cast v12, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
@@ -496,7 +496,7 @@
 
     move-result-wide v12
 
-    .line 7905
+    .line 7944
     :goto_2
     iget-object v14, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -516,7 +516,7 @@
 
     move-result-object v12
 
-    .line 7906
+    .line 7945
     iget-wide v13, v12, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iget-object v15, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -539,7 +539,7 @@
 
     goto/16 :goto_7
 
-    .line 7910
+    .line 7949
     :cond_6
     invoke-static {v12}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
@@ -549,7 +549,7 @@
 
     move-result-object v13
 
-    .line 7911
+    .line 7950
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v14
@@ -558,7 +558,7 @@
 
     move-result-object v14
 
-    .line 7912
+    .line 7951
     invoke-virtual {v13, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v15
@@ -575,10 +575,10 @@
     :goto_3
     if-ge v15, v6, :cond_d
 
-    .line 7918
+    .line 7957
     aget-object v3, v7, v15
 
-    .line 7919
+    .line 7958
     invoke-virtual {v13, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v17
@@ -633,7 +633,7 @@
 
     goto :goto_4
 
-    .line 7921
+    .line 7960
     :cond_8
     invoke-static {v12}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
@@ -665,7 +665,7 @@
 
     if-ne v4, v5, :cond_b
 
-    .line 7927
+    .line 7966
     iget-object v4, v12, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v12, v12, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -680,7 +680,7 @@
 
     goto :goto_6
 
-    .line 7929
+    .line 7968
     :cond_b
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -720,7 +720,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 7931
+    .line 7970
     :goto_6
     invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -752,7 +752,7 @@
 
     goto/16 :goto_1
 
-    .line 7936
+    .line 7975
     :cond_e
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->updateSearchResults(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
@@ -764,10 +764,10 @@
 
     const/4 v0, 0x0
 
-    .line 7871
+    .line 7910
     iput-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
-    .line 7873
+    .line 7912
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
@@ -801,12 +801,12 @@
     :cond_0
     const/4 v1, 0x2
 
-    .line 7875
+    .line 7914
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchCount:I
 
     if-eqz v0, :cond_1
 
-    .line 7877
+    .line 7916
     sget-object v1, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda2;
@@ -822,10 +822,10 @@
 
     sub-int/2addr v1, v0
 
-    .line 7939
+    .line 7978
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchCount:I
 
-    .line 7941
+    .line 7980
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
@@ -875,7 +875,7 @@
 .method private synthetic lambda$search$1(Ljava/lang/String;)V
     .locals 0
 
-    .line 7865
+    .line 7904
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->processSearch(Ljava/lang/String;)V
 
     return-void
@@ -884,7 +884,7 @@
 .method private synthetic lambda$updateSearchResults$4(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 4
 
-    .line 7947
+    .line 7986
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$1400(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -895,11 +895,11 @@
 
     return-void
 
-    .line 7950
+    .line 7989
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchResultNames:Ljava/util/ArrayList;
 
-    .line 7951
+    .line 7990
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchCount:I
 
     const/4 v0, 0x1
@@ -908,7 +908,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchCount:I
 
-    .line 7952
+    .line 7991
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
@@ -917,20 +917,20 @@
 
     if-nez p1, :cond_1
 
-    .line 7953
+    .line 7992
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGroupSearch()Ljava/util/ArrayList;
 
     move-result-object p1
 
-    .line 7954
+    .line 7993
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 7955
+    .line 7994
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 7958
+    .line 7997
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchCount:I
 
@@ -940,7 +940,7 @@
 
     move p2, p1
 
-    .line 7959
+    .line 7998
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -952,7 +952,7 @@
 
     if-ge p2, v1, :cond_4
 
-    .line 7960
+    .line 7999
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -969,14 +969,14 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 7961
+    .line 8000
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->getItemCount()I
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 7962
+    .line 8001
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -993,7 +993,7 @@
 
     goto :goto_1
 
-    .line 7964
+    .line 8003
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -1017,7 +1017,7 @@
 
     goto :goto_0
 
-    .line 7970
+    .line 8009
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->notifyDataSetChanged()V
 
@@ -1027,7 +1027,7 @@
 .method private processSearch(Ljava/lang/String;)V
     .locals 1
 
-    .line 7870
+    .line 7909
     new-instance v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;Ljava/lang/String;)V
@@ -1051,7 +1051,7 @@
         }
     .end annotation
 
-    .line 7946
+    .line 7985
     new-instance v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
@@ -1066,7 +1066,7 @@
 .method public getItem(I)Lorg/telegram/tgnet/TLObject;
     .locals 1
 
-    .line 7999
+    .line 8038
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGroupSearch()Ljava/util/ArrayList;
@@ -1083,7 +1083,7 @@
 
     goto :goto_0
 
-    .line 8003
+    .line 8042
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
@@ -1109,7 +1109,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 7981
+    .line 8020
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->totalCount:I
 
     return v0
@@ -1126,7 +1126,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 7976
+    .line 8015
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -1147,7 +1147,7 @@
 .method public notifyDataSetChanged()V
     .locals 3
 
-    .line 7986
+    .line 8025
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGroupSearch()Ljava/util/ArrayList;
@@ -1162,7 +1162,7 @@
 
     if-lez v0, :cond_0
 
-    .line 7987
+    .line 8026
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$1400(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -1207,12 +1207,12 @@
 
     if-eq v0, p0, :cond_0
 
-    .line 7988
+    .line 8027
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2300(Lorg/telegram/ui/Components/SharedMediaLayout;Z)V
 
-    .line 7990
+    .line 8029
     :cond_0
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
@@ -1222,17 +1222,17 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 8030
+    .line 8069
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->getItem(I)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v0
 
-    .line 8032
+    .line 8071
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v1, :cond_0
 
-    .line 8033
+    .line 8072
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -1261,13 +1261,13 @@
 
     goto :goto_0
 
-    .line 8034
+    .line 8073
     :cond_0
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
     if-eqz v1, :cond_3
 
-    .line 8035
+    .line 8074
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -1290,11 +1290,11 @@
 
     move-result-object v0
 
-    .line 8040
+    .line 8079
     :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
-    .line 8043
+    .line 8082
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGroupSearch()Ljava/util/ArrayList;
@@ -1303,7 +1303,7 @@
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    .line 8044
+    .line 8083
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getLastFoundChannel()Ljava/lang/String;
@@ -1314,17 +1314,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 8047
+    .line 8086
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 8048
+    .line 8087
     new-instance v4, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v4, v3}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 8049
+    .line 8088
     invoke-static {v3, v1}, Lorg/telegram/messenger/AndroidUtilities;->indexOfIgnoreCase(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v3
@@ -1333,7 +1333,7 @@
 
     if-eq v3, v5, :cond_2
 
-    .line 8051
+    .line 8090
     new-instance v5, Landroid/text/style/ForegroundColorSpan;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -1361,14 +1361,14 @@
     :cond_1
     move-object v4, v2
 
-    .line 8055
+    .line 8094
     :cond_2
     :goto_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 8056
+    .line 8095
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1377,7 +1377,7 @@
 
     const/4 p2, 0x0
 
-    .line 8057
+    .line 8096
     invoke-virtual {p1, v0, v4, v2, p2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
     :cond_3
@@ -1387,7 +1387,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 6
 
-    .line 8008
+    .line 8047
     new-instance p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->mContext:Landroid/content/Context;
@@ -1408,7 +1408,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 8009
+    .line 8048
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -1419,14 +1419,14 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 8010
+    .line 8049
     new-instance p2, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda5;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setDelegate(Lorg/telegram/ui/Cells/ManageChatUserCell$ManageChatUserCellDelegate;)V
 
-    .line 8025
+    .line 8064
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -1437,14 +1437,14 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 8062
+    .line 8101
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     if-eqz v0, :cond_0
 
-    .line 8063
+    .line 8102
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->recycle()V
@@ -1458,35 +1458,35 @@
 
     move-object v0, p0
 
-    .line 7847
+    .line 7886
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
-    .line 7848
+    .line 7887
     sget-object v1, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 7849
+    .line 7888
     iput-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
-    .line 7851
+    .line 7890
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchResultNames:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 7852
+    .line 7891
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->mergeResults(Ljava/util/ArrayList;)V
 
-    .line 7853
+    .line 7892
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     const/4 v4, 0x0
@@ -1529,12 +1529,12 @@
 
     invoke-virtual/range {v3 .. v14}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->queryServerSearch(Ljava/lang/String;ZZZZZJZII)V
 
-    .line 7854
+    .line 7893
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->notifyDataSetChanged()V
 
     const/4 v1, 0x0
 
-    .line 7856
+    .line 7895
     :goto_1
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -1546,7 +1546,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 7857
+    .line 7896
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -1563,14 +1563,14 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 7858
+    .line 7897
     invoke-static/range {p1 .. p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 7859
+    .line 7898
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$500(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -1599,7 +1599,7 @@
 
     goto :goto_1
 
-    .line 7864
+    .line 7903
     :cond_3
     invoke-static/range {p1 .. p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1607,7 +1607,7 @@
 
     if-nez v1, :cond_4
 
-    .line 7865
+    .line 7904
     sget-object v1, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/ui/Components/SharedMediaLayout$GroupUsersSearchAdapter$$ExternalSyntheticLambda0;

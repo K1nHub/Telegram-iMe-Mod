@@ -43,7 +43,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneView;Ljava/lang/String;)V
     .locals 0
 
-    .line 3167
+    .line 3168
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iput-object p2, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->val$code:Ljava/lang/String;
@@ -56,12 +56,12 @@
 .method private synthetic lambda$onConfirm$0(Ljava/lang/String;Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
     .locals 1
 
-    .line 3248
+    .line 3249
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/LoginActivity$PhoneView;->onNextPressed(Ljava/lang/String;)V
 
-    .line 3249
+    .line 3250
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object p1, p1, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -82,10 +82,10 @@
 .method private synthetic lambda$onConfirm$1(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;Ljava/lang/String;)V
     .locals 1
 
-    .line 3246
+    .line 3247
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$2200(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
 
-    .line 3247
+    .line 3248
     new-instance v0, Lorg/telegram/ui/LoginActivity$PhoneView$7$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/LoginActivity$PhoneView$7$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LoginActivity$PhoneView$7;Ljava/lang/String;Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
@@ -100,14 +100,14 @@
 .method private onConfirm(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
     .locals 13
 
-    .line 3189
+    .line 3190
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$2302(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
 
-    .line 3190
+    .line 3191
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -116,14 +116,14 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/LoginActivity;->access$3302(Lorg/telegram/ui/LoginActivity;I)I
 
-    .line 3191
+    .line 3192
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0, v2, v2}, Lorg/telegram/ui/LoginActivity;->access$6400(Lorg/telegram/ui/LoginActivity;IZ)V
 
-    .line 3193
+    .line 3194
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x17
@@ -136,7 +136,7 @@
 
     if-eqz v3, :cond_10
 
-    .line 3194
+    .line 3195
     iget-object v3, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v3, v3, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -160,7 +160,7 @@
     :cond_0
     move v3, v2
 
-    .line 3195
+    .line 3196
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
@@ -192,7 +192,7 @@
 
     if-lt v0, v7, :cond_3
 
-    .line 3196
+    .line 3197
     iget-object v7, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v7, v7, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -225,7 +225,7 @@
 
     if-lt v0, v10, :cond_5
 
-    .line 3197
+    .line 3198
     iget-object v11, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v11, v11, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -251,7 +251,7 @@
     :goto_4
     move v11, v1
 
-    .line 3198
+    .line 3199
     :goto_5
     iget-object v12, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
@@ -263,7 +263,7 @@
 
     if-eqz v12, :cond_10
 
-    .line 3199
+    .line 3200
     iget-object v12, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v12, v12, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -276,7 +276,7 @@
 
     if-nez v3, :cond_6
 
-    .line 3201
+    .line 3202
     iget-object v12, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v12, v12, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -290,7 +290,7 @@
     :cond_6
     if-nez v5, :cond_7
 
-    .line 3204
+    .line 3205
     iget-object v12, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v12, v12, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -304,7 +304,7 @@
     :cond_7
     if-nez v7, :cond_8
 
-    .line 3207
+    .line 3208
     iget-object v6, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v6, v6, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -320,7 +320,7 @@
 
     if-lt v0, v10, :cond_9
 
-    .line 3210
+    .line 3211
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -331,7 +331,7 @@
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3212
+    .line 3213
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
@@ -347,14 +347,14 @@
 
     if-nez v0, :cond_10
 
-    .line 3213
+    .line 3214
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p1
 
     const-string v0, "firstlogin"
 
-    .line 3214
+    .line 3215
     invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v6
@@ -391,7 +391,7 @@
 
     goto :goto_6
 
-    .line 3235
+    .line 3236
     :cond_a
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
@@ -429,12 +429,12 @@
     :catch_0
     move-exception p1
 
-    .line 3237
+    .line 3238
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_9
 
-    .line 3215
+    .line 3216
     :cond_b
     :goto_6
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -447,7 +447,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 3216
+    .line 3217
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
@@ -460,7 +460,7 @@
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 3218
+    .line 3219
     sget v0, Lorg/telegram/messenger/R$string;->Continue:I
 
     const-string v4, "Continue"
@@ -479,7 +479,7 @@
 
     if-nez v7, :cond_d
 
-    .line 3221
+    .line 3222
     :cond_c
     sget v0, Lorg/telegram/messenger/R$string;->AllowReadCallAndLog:I
 
@@ -491,7 +491,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3222
+    .line 3223
     sget v0, Lorg/telegram/messenger/R$raw;->calls_log:I
 
     goto :goto_8
@@ -503,7 +503,7 @@
 
     goto :goto_7
 
-    .line 3227
+    .line 3228
     :cond_e
     sget v0, Lorg/telegram/messenger/R$string;->AllowReadCall:I
 
@@ -515,12 +515,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3228
+    .line 3229
     sget v0, Lorg/telegram/messenger/R$raw;->incoming_calls:I
 
     goto :goto_8
 
-    .line 3224
+    .line 3225
     :cond_f
     :goto_7
     sget v0, Lorg/telegram/messenger/R$string;->AllowReadCallLog:I
@@ -533,13 +533,13 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3225
+    .line 3226
     sget v0, Lorg/telegram/messenger/R$raw;->calls_log:I
 
     :goto_8
     const/16 v3, 0x2e
 
-    .line 3230
+    .line 3231
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -548,7 +548,7 @@
 
     invoke-virtual {p1, v0, v3, v2, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimation(IIZI)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3231
+    .line 3232
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -563,7 +563,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/LoginActivity;->access$6702(Lorg/telegram/ui/LoginActivity;Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 3232
+    .line 3233
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/LoginActivity$PhoneView;->access$2302(Lorg/telegram/ui/LoginActivity$PhoneView;Z)Z
@@ -571,7 +571,7 @@
     :goto_9
     return-void
 
-    .line 3245
+    .line 3246
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->val$code:Ljava/lang/String;
 
@@ -589,7 +589,7 @@
 .method public onConfirmPressed(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;Landroid/widget/TextView;)V
     .locals 0
 
-    .line 3180
+    .line 3181
     invoke-direct {p0, p1}, Lorg/telegram/ui/LoginActivity$PhoneView$7;->onConfirm(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
 
     return-void
@@ -598,7 +598,7 @@
 .method public onDismiss(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
     .locals 1
 
-    .line 3185
+    .line 3186
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$7;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object p1, p1, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -613,7 +613,7 @@
 .method public onEditPressed(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;Landroid/widget/TextView;)V
     .locals 0
 
-    .line 3175
+    .line 3176
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$2200(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
 
     return-void
@@ -622,7 +622,7 @@
 .method public onFabPressed(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;Lorg/telegram/ui/Components/TransformableLoginButtonView;)V
     .locals 0
 
-    .line 3170
+    .line 3171
     invoke-direct {p0, p1}, Lorg/telegram/ui/LoginActivity$PhoneView$7;->onConfirm(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
 
     return-void

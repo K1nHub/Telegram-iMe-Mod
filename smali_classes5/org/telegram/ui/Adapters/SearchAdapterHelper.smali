@@ -25,7 +25,7 @@
 
 .field private filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-.field private globalSearch:Ljava/util/ArrayList;
+.field private final globalSearch:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -35,7 +35,7 @@
     .end annotation
 .end field
 
-.field private globalSearchMap:Landroidx/collection/LongSparseArray;
+.field private final globalSearchMap:Landroidx/collection/LongSparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/LongSparseArray<",
@@ -45,7 +45,7 @@
     .end annotation
 .end field
 
-.field private groupSearch:Ljava/util/ArrayList;
+.field private final groupSearch:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -55,7 +55,7 @@
     .end annotation
 .end field
 
-.field private groupSearchMap:Landroidx/collection/LongSparseArray;
+.field private final groupSearchMap:Landroidx/collection/LongSparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/LongSparseArray<",
@@ -114,7 +114,7 @@
     .end annotation
 .end field
 
-.field private localServerSearch:Ljava/util/ArrayList;
+.field private final localServerSearch:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -124,7 +124,7 @@
     .end annotation
 .end field
 
-.field private pendingRequestIds:Ljava/util/ArrayList;
+.field private final pendingRequestIds:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -134,7 +134,7 @@
     .end annotation
 .end field
 
-.field private phoneSearchMap:Landroidx/collection/LongSparseArray;
+.field private final phoneSearchMap:Landroidx/collection/LongSparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/LongSparseArray<",
@@ -144,7 +144,7 @@
     .end annotation
 .end field
 
-.field private phonesSearch:Ljava/util/ArrayList;
+.field private final phonesSearch:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -839,7 +839,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_33
 
     .line 225
     iget v1, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
@@ -848,7 +848,7 @@
 
     move-result-object v1
 
-    if-nez p10, :cond_31
+    if-nez p10, :cond_33
 
     .line 227
     move-object/from16 v2, p9
@@ -988,7 +988,7 @@
 
     const-wide/16 v9, 0x0
 
-    if-ge v6, v8, :cond_1b
+    if-ge v6, v8, :cond_1d
 
     if-nez v6, :cond_3
 
@@ -1018,7 +1018,7 @@
 
     move-result v13
 
-    if-ge v12, v13, :cond_1a
+    if-ge v12, v13, :cond_1c
 
     .line 255
     invoke-virtual {v8, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1176,7 +1176,7 @@
     const/4 v9, 0x0
 
     :goto_8
-    if-eqz v9, :cond_19
+    if-eqz v9, :cond_1b
 
     .line 276
     iget v9, v9, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
@@ -1191,7 +1191,7 @@
     move v10, v12
 
     :cond_c
-    if-eqz v13, :cond_12
+    if-eqz v13, :cond_13
 
     .line 283
     iget-wide v11, v13, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -1207,7 +1207,7 @@
     goto/16 :goto_9
 
     :cond_d
-    if-eqz p2, :cond_19
+    if-eqz p2, :cond_1b
 
     if-eqz p3, :cond_e
 
@@ -1216,7 +1216,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_19
+    if-eqz v9, :cond_1b
 
     :cond_e
     iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
@@ -1227,15 +1227,22 @@
 
     move-result v9
 
-    if-eqz v9, :cond_f
+    if-nez v9, :cond_1b
+
+    :cond_f
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter(Lorg/telegram/tgnet/TLObject;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_10
 
     goto/16 :goto_9
 
     .line 291
-    :cond_f
+    :cond_10
     iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    if-eqz v9, :cond_10
+    if-eqz v9, :cond_11
 
     iget-object v11, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->accountInstance:Lorg/telegram/messenger/AccountInstance;
 
@@ -1247,16 +1254,16 @@
 
     move-result v9
 
-    if-eqz v9, :cond_11
+    if-eqz v9, :cond_12
 
     .line 292
-    :cond_10
+    :cond_11
     iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 293
-    :cond_11
+    :cond_12
     iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v11, v13, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -1267,8 +1274,8 @@
 
     goto :goto_9
 
-    :cond_12
-    if-eqz v14, :cond_19
+    :cond_13
+    if-eqz v14, :cond_1b
 
     .line 296
     iget-wide v11, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -1277,15 +1284,15 @@
 
     move-result v9
 
-    if-eqz v9, :cond_13
+    if-eqz v9, :cond_14
 
     goto :goto_9
 
     .line 299
-    :cond_13
+    :cond_14
     iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->isCrossForward:Z
 
-    if-eqz v9, :cond_14
+    if-eqz v9, :cond_15
 
     iget-wide v11, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -1301,45 +1308,52 @@
 
     cmp-long v9, v11, v15
 
-    if-nez v9, :cond_14
+    if-nez v9, :cond_15
 
     goto :goto_9
 
-    :cond_14
-    if-nez p3, :cond_19
+    :cond_15
+    if-nez p3, :cond_1b
 
-    if-nez p4, :cond_15
+    if-nez p4, :cond_16
 
     .line 303
     iget-boolean v9, v14, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
-    if-nez v9, :cond_19
+    if-nez v9, :cond_1b
 
-    :cond_15
-    if-nez p5, :cond_16
+    :cond_16
+    if-nez p5, :cond_17
 
     iget-boolean v9, v14, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
-    if-nez v9, :cond_19
+    if-nez v9, :cond_1b
 
-    :cond_16
+    :cond_17
     iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allowGlobalResults:Z
 
-    if-nez v9, :cond_17
+    if-nez v9, :cond_18
 
-    if-ne v6, v7, :cond_17
+    if-ne v6, v7, :cond_18
 
     iget-boolean v9, v14, Lorg/telegram/tgnet/TLRPC$User;->contact:Z
 
-    if-nez v9, :cond_17
+    if-eqz v9, :cond_1b
+
+    :cond_18
+    invoke-virtual {v0, v14}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter(Lorg/telegram/tgnet/TLObject;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_19
 
     goto :goto_9
 
     .line 307
-    :cond_17
+    :cond_19
     iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    if-nez v9, :cond_18
+    if-nez v9, :cond_1a
 
     .line 308
     iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearch:Ljava/util/ArrayList;
@@ -1347,14 +1361,14 @@
     invoke-virtual {v9, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 309
-    :cond_18
+    :cond_1a
     iget-object v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v11, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {v9, v11, v12, v14}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    :cond_19
+    :cond_1b
     :goto_9
     add-int/lit8 v12, v10, 0x1
 
@@ -1362,17 +1376,17 @@
 
     goto/16 :goto_4
 
-    :cond_1a
+    :cond_1c
     :goto_a
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_2
 
     .line 313
-    :cond_1b
+    :cond_1d
     iget-boolean v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allResultsAreGlobal:Z
 
-    if-nez v6, :cond_30
+    if-nez v6, :cond_32
 
     .line 314
     :goto_b
@@ -1382,7 +1396,7 @@
 
     move-result v6
 
-    if-ge v5, v6, :cond_30
+    if-ge v5, v6, :cond_32
 
     .line 315
     iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_contacts_found;->my_results:Ljava/util/ArrayList;
@@ -1400,7 +1414,7 @@
 
     cmp-long v11, v7, v9
 
-    if-eqz v11, :cond_1c
+    if-eqz v11, :cond_1e
 
     .line 319
     invoke-virtual {v4, v7, v8}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -1416,12 +1430,12 @@
     goto :goto_d
 
     .line 320
-    :cond_1c
+    :cond_1e
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
     cmp-long v11, v7, v9
 
-    if-eqz v11, :cond_1d
+    if-eqz v11, :cond_1f
 
     .line 321
     invoke-virtual {v3, v7, v8}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -1433,12 +1447,12 @@
     goto :goto_c
 
     .line 322
-    :cond_1d
+    :cond_1f
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
     cmp-long v8, v6, v9
 
-    if-eqz v8, :cond_1e
+    if-eqz v8, :cond_20
 
     .line 323
     invoke-virtual {v3, v6, v7}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -1449,7 +1463,7 @@
 
     goto :goto_c
 
-    :cond_1e
+    :cond_20
     const/4 v6, 0x0
 
     :goto_c
@@ -1459,9 +1473,9 @@
     :goto_d
     iget-boolean v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicMode:Z
 
-    if-eqz v8, :cond_22
+    if-eqz v8, :cond_24
 
-    if-eqz v6, :cond_1f
+    if-eqz v6, :cond_21
 
     .line 329
     iget v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
@@ -1484,32 +1498,32 @@
 
     goto :goto_e
 
-    :cond_1f
-    if-eqz v7, :cond_21
+    :cond_21
+    if-eqz v7, :cond_23
 
     .line 331
     invoke-static {v7}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v8
 
-    if-nez v8, :cond_2f
+    if-nez v8, :cond_31
 
     invoke-static {v7}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v8
 
-    if-nez v8, :cond_2f
+    if-nez v8, :cond_31
 
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_20
+    if-eqz v8, :cond_22
 
     goto/16 :goto_f
 
     .line 334
-    :cond_20
+    :cond_22
     iget v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     invoke-static {v8}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1528,23 +1542,23 @@
 
     goto :goto_e
 
-    :cond_21
+    :cond_23
     const/4 v8, 0x0
 
     :goto_e
-    if-eqz v8, :cond_2f
+    if-eqz v8, :cond_31
 
     .line 336
     iget v8, v8, Lorg/telegram/tgnet/TLRPC$Dialog;->folder_id:I
 
     iget v11, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->topicModeFilterFolderId:I
 
-    if-eq v8, v11, :cond_22
+    if-eq v8, v11, :cond_24
 
     goto/16 :goto_f
 
-    :cond_22
-    if-eqz v6, :cond_28
+    :cond_24
+    if-eqz v6, :cond_2a
 
     .line 343
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -1555,57 +1569,65 @@
 
     move-result v7
 
-    if-eqz v7, :cond_23
+    if-eqz v7, :cond_25
 
     goto/16 :goto_f
 
-    :cond_23
-    if-eqz p2, :cond_2f
+    :cond_25
+    if-eqz p2, :cond_31
 
-    if-eqz p3, :cond_24
+    if-eqz p3, :cond_26
 
     .line 347
     invoke-static {v6}, Lorg/telegram/messenger/ChatObject;->canAddBotsToChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_2f
+    if-eqz v7, :cond_31
 
-    :cond_24
+    :cond_26
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    neg-long v11, v7
-
-    cmp-long v11, v11, p6
-
-    if-nez v11, :cond_25
-
-    goto :goto_f
-
-    .line 351
-    :cond_25
-    iget-object v11, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
-
-    if-eqz v11, :cond_26
-
-    iget-object v12, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->accountInstance:Lorg/telegram/messenger/AccountInstance;
 
     neg-long v7, v7
 
-    invoke-virtual {v11, v12, v7, v8}, Lorg/telegram/messenger/MessagesController$DialogFilter;->includesDialog(Lorg/telegram/messenger/AccountInstance;J)Z
+    cmp-long v7, v7, p6
+
+    if-eqz v7, :cond_31
+
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter(Lorg/telegram/tgnet/TLObject;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_27
+    if-nez v7, :cond_27
+
+    goto/16 :goto_f
+
+    .line 351
+    :cond_27
+    iget-object v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
+
+    if-eqz v7, :cond_28
+
+    iget-object v8, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->accountInstance:Lorg/telegram/messenger/AccountInstance;
+
+    iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v11, v11
+
+    invoke-virtual {v7, v8, v11, v12}, Lorg/telegram/messenger/MessagesController$DialogFilter;->includesDialog(Lorg/telegram/messenger/AccountInstance;J)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_29
 
     .line 352
-    :cond_26
+    :cond_28
     iget-object v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 353
-    :cond_27
+    :cond_29
     iget-object v7, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -1616,8 +1638,8 @@
 
     goto :goto_f
 
-    :cond_28
-    if-eqz v7, :cond_2f
+    :cond_2a
+    if-eqz v7, :cond_31
 
     .line 356
     iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -1626,15 +1648,15 @@
 
     move-result v6
 
-    if-eqz v6, :cond_29
+    if-eqz v6, :cond_2b
 
     goto :goto_f
 
     .line 359
-    :cond_29
+    :cond_2b
     iget-boolean v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->isCrossForward:Z
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_2c
 
     iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -1650,41 +1672,47 @@
 
     cmp-long v6, v11, v13
 
-    if-nez v6, :cond_2a
+    if-nez v6, :cond_2c
 
     goto :goto_f
 
-    :cond_2a
-    if-nez p3, :cond_2f
+    :cond_2c
+    if-nez p3, :cond_31
 
-    if-nez p4, :cond_2b
+    if-nez p4, :cond_2d
 
     .line 363
     iget-boolean v6, v7, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
-    if-nez v6, :cond_2f
+    if-nez v6, :cond_31
 
-    :cond_2b
-    if-nez p5, :cond_2c
+    :cond_2d
+    if-nez p5, :cond_2e
 
     iget-boolean v6, v7, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
-    if-nez v6, :cond_2f
+    if-nez v6, :cond_31
 
-    :cond_2c
+    :cond_2e
     iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     cmp-long v6, v11, p6
 
-    if-nez v6, :cond_2d
+    if-eqz v6, :cond_31
+
+    invoke-virtual {v0, v7}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter(Lorg/telegram/tgnet/TLObject;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_2f
 
     goto :goto_f
 
     .line 367
-    :cond_2d
+    :cond_2f
     iget-object v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    if-nez v6, :cond_2e
+    if-nez v6, :cond_30
 
     .line 368
     iget-object v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->localServerSearch:Ljava/util/ArrayList;
@@ -1692,28 +1720,28 @@
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 369
-    :cond_2e
+    :cond_30
     iget-object v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->globalSearchMap:Landroidx/collection/LongSparseArray;
 
     iget-wide v11, v7, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-virtual {v6, v11, v12, v7}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    :cond_2f
+    :cond_31
     :goto_f
     add-int/lit8 v5, v5, 0x1
 
     goto/16 :goto_b
 
     .line 373
-    :cond_30
+    :cond_32
     invoke-virtual/range {p8 .. p8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->lastFoundUsername:Ljava/lang/String;
 
-    :cond_31
+    :cond_33
     return-void
 .end method
 
@@ -2288,6 +2316,14 @@
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     return-void
+.end method
+
+.method protected filter(Lorg/telegram/tgnet/TLObject;)Z
+    .locals 0
+
+    const/4 p1, 0x1
+
+    return p1
 .end method
 
 .method public getGlobalSearch()Ljava/util/ArrayList;

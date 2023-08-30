@@ -3562,540 +3562,562 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 14
+    .locals 20
+
+    move-object/from16 v7, p0
 
     .line 390
-    iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
 
-    const/4 v1, 0x0
+    const/4 v8, 0x0
 
     if-nez v0, :cond_0
 
-    return v1
+    return v8
 
     .line 393
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->parentListView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->parentListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getScrollState()I
 
     move-result v0
 
-    const/4 v2, 0x3
+    const/4 v9, 0x3
 
     if-eqz v0, :cond_1
 
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
 
     if-nez v0, :cond_1
 
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
 
     if-eqz v0, :cond_1
 
     .line 394
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
+    iput-boolean v8, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
 
     .line 395
-    invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    invoke-static/range {p1 .. p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object p1
+    move-result-object v0
 
     .line 396
-    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->setAction(I)V
+    invoke-virtual {v0, v9}, Landroid/view/MotionEvent;->setAction(I)V
 
     .line 397
-    invoke-super {p0, p1}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {v7, v0}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 398
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->recycle()V
+    invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    return v1
+    return v8
 
     .line 401
     :cond_1
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v0
+    move-result v10
 
     .line 403
-    iget-object v3, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
 
-    const/4 v4, 0x1
+    const/4 v11, 0x1
 
-    if-eqz v3, :cond_4
+    if-eqz v0, :cond_4
 
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/ProfileGalleryView;->getCurrentItemView()Lorg/telegram/ui/Components/BackupImageView;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ProfileGalleryView;->getCurrentItemView()Lorg/telegram/ui/Components/BackupImageView;
 
-    move-result-object v3
+    move-result-object v0
 
-    if-eqz v3, :cond_4
+    if-eqz v0, :cond_4
 
-    const/4 v3, 0x0
+    if-eqz v10, :cond_2
+
+    .line 404
+    iget-boolean v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
 
     if-eqz v0, :cond_2
 
-    .line 404
-    iget-boolean v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
 
-    if-eqz v5, :cond_2
+    invoke-virtual {v0}, Lorg/telegram/ui/PinchToZoomHelper;->isInOverlayMode()Z
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
+    move-result v0
 
-    invoke-virtual {v5}, Lorg/telegram/ui/PinchToZoomHelper;->isInOverlayMode()Z
-
-    move-result v5
-
-    if-nez v5, :cond_2
+    if-nez v0, :cond_2
 
     .line 405
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
+    iget-object v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v12, 0x0
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v14, 0x0
 
-    const/4 v10, 0x3
+    const/16 v16, 0x3
 
-    const/4 v11, 0x0
+    const/16 v17, 0x0
 
-    const/4 v12, 0x0
+    const/16 v18, 0x0
 
-    const/4 v13, 0x0
+    const/16 v19, 0x0
 
-    invoke-static/range {v6 .. v13}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
+    invoke-static/range {v12 .. v19}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/ProfileGalleryView;->getCurrentItemView()Lorg/telegram/ui/Components/BackupImageView;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ProfileGalleryView;->getCurrentItemView()Lorg/telegram/ui/Components/BackupImageView;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-virtual {v5, v6, p0, v7, v3}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/messenger/MessageObject;)Z
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object/from16 v3, p0
+
+    invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;)Z
 
     goto :goto_0
 
     .line 406
     :cond_2
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
+    iget-object v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
 
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/ProfileGalleryView;->getCurrentItemView()Lorg/telegram/ui/Components/BackupImageView;
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ProfileGalleryView;->getCurrentItemView()Lorg/telegram/ui/Components/BackupImageView;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v5, p1, p0, v6, v3}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/messenger/MessageObject;)Z
+    const/4 v5, 0x0
 
-    move-result v3
+    const/4 v6, 0x0
 
-    if-eqz v3, :cond_4
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p0
+
+    invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
 
     .line 407
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
 
-    if-nez p1, :cond_3
+    if-nez v0, :cond_3
 
     .line 408
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
+    iput-boolean v11, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
 
     .line 409
-    iget-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
 
-    invoke-interface {p1}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onRelease()V
+    invoke-interface {v0}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onRelease()V
 
     :cond_3
-    return v4
+    return v11
 
     :cond_4
     :goto_0
-    const/high16 v3, 0x40400000    # 3.0f
+    const/high16 v0, 0x40400000    # 3.0f
 
-    if-nez v0, :cond_7
+    if-nez v10, :cond_7
 
     .line 417
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
+    iput-boolean v11, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
 
     .line 418
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
+    iput-boolean v11, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
 
     .line 419
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->scrolledByUser:Z
+    iput-boolean v11, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->scrolledByUser:Z
 
     .line 420
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->downPoint:Landroid/graphics/PointF;
+    iget-object v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->downPoint:Landroid/graphics/PointF;
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v6
+    move-result v2
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v7
+    move-result v3
 
-    invoke-virtual {v5, v6, v7}, Landroid/graphics/PointF;->set(FF)V
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/PointF;->set(FF)V
 
     .line 421
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
+    iget-object v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getCount()I
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getCount()I
 
-    move-result v5
+    move-result v1
 
-    if-le v5, v4, :cond_6
+    if-le v1, v11, :cond_6
 
     .line 422
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
+    iget-object v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v6
+    move-result v2
 
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getWidth()I
 
-    move-result v7
+    move-result v3
 
-    int-to-float v7, v7
+    int-to-float v3, v3
 
-    div-float/2addr v7, v3
+    div-float/2addr v3, v0
 
-    cmpg-float v3, v6, v7
+    cmpg-float v0, v2, v3
 
-    if-gez v3, :cond_5
+    if-gez v0, :cond_5
 
-    move v3, v4
+    move v0, v11
 
     goto :goto_1
 
     :cond_5
-    move v3, v1
+    move v0, v8
 
     :goto_1
-    invoke-interface {v5, v3}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onDown(Z)V
+    invoke-interface {v1, v0}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onDown(Z)V
 
     .line 424
     :cond_6
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
+    iput-boolean v8, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
 
     goto/16 :goto_5
 
     :cond_7
-    const/4 v5, -0x1
+    const/4 v1, -0x1
 
-    if-ne v0, v4, :cond_b
+    if-ne v10, v11, :cond_b
 
     .line 426
-    iget-boolean v6, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
+    iget-boolean v2, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
 
-    if-nez v6, :cond_11
+    if-nez v2, :cond_11
 
     .line 427
-    iget-object v6, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
+    iget-object v2, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
 
-    invoke-virtual {v6}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getCount()I
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getCount()I
 
-    move-result v6
+    move-result v2
 
     .line 428
-    invoke-virtual {p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
-
-    move-result v7
-
-    if-le v6, v4, :cond_11
-
-    .line 430
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v8
-
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    div-float/2addr v9, v3
-
-    cmpl-float v3, v8, v9
-
-    if-lez v3, :cond_9
-
-    .line 431
-    iget-object v3, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
-
-    invoke-virtual {v3}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getExtraCount()I
+    invoke-virtual/range {p0 .. p0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
 
     move-result v3
 
-    add-int/2addr v7, v4
+    if-le v2, v11, :cond_11
 
-    sub-int/2addr v6, v3
+    .line 430
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
-    if-lt v7, v6, :cond_8
+    move-result v4
+
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getWidth()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    div-float/2addr v5, v0
+
+    cmpl-float v0, v4, v5
+
+    if-lez v0, :cond_9
+
+    .line 431
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getExtraCount()I
+
+    move-result v0
+
+    add-int/2addr v3, v11
+
+    sub-int/2addr v2, v0
+
+    if-lt v3, v2, :cond_8
 
     goto :goto_2
 
     :cond_8
-    move v3, v7
+    move v0, v3
 
     goto :goto_2
 
     .line 436
     :cond_9
-    iget-object v3, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->adapter:Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
 
-    invoke-virtual {v3}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getExtraCount()I
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getExtraCount()I
 
-    move-result v3
+    move-result v0
 
-    add-int/2addr v5, v7
+    add-int/2addr v1, v3
 
-    if-ge v5, v3, :cond_a
+    if-ge v1, v0, :cond_a
 
-    sub-int/2addr v6, v3
+    sub-int/2addr v2, v0
 
-    add-int/lit8 v3, v6, -0x1
+    add-int/lit8 v0, v2, -0x1
 
     goto :goto_2
 
     :cond_a
-    move v3, v5
+    move v0, v1
 
     .line 441
     :goto_2
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
+    iget-object v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
 
-    invoke-interface {v5}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onRelease()V
+    invoke-interface {v1}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onRelease()V
 
     .line 442
-    invoke-virtual {p0, v3, v1}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(IZ)V
+    invoke-virtual {v7, v0, v8}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(IZ)V
 
     goto/16 :goto_5
 
     :cond_b
-    const/4 v3, 0x2
+    const/4 v0, 0x2
 
-    if-ne v0, v3, :cond_11
+    if-ne v10, v0, :cond_11
 
     .line 446
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v0
+
+    iget-object v2, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->downPoint:Landroid/graphics/PointF;
+
+    iget v2, v2, Landroid/graphics/PointF;->x:F
+
+    sub-float/2addr v0, v2
+
+    .line 447
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v2
+
+    iget-object v3, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->downPoint:Landroid/graphics/PointF;
+
+    iget v3, v3, Landroid/graphics/PointF;->y:F
+
+    sub-float/2addr v2, v3
+
+    .line 448
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
 
-    iget-object v6, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->downPoint:Landroid/graphics/PointF;
+    iget v4, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->touchSlop:I
 
-    iget v6, v6, Landroid/graphics/PointF;->x:F
+    int-to-float v4, v4
 
-    sub-float/2addr v3, v6
+    cmpl-float v3, v3, v4
 
-    .line 447
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+    if-gez v3, :cond_d
 
-    move-result v6
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->downPoint:Landroid/graphics/PointF;
+    move-result v3
 
-    iget v7, v7, Landroid/graphics/PointF;->y:F
+    iget v4, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->touchSlop:I
 
-    sub-float/2addr v6, v7
+    int-to-float v4, v4
 
-    .line 448
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
+    cmpl-float v3, v3, v4
 
-    move-result v7
-
-    iget v8, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->touchSlop:I
-
-    int-to-float v8, v8
-
-    cmpl-float v7, v7, v8
-
-    if-gez v7, :cond_d
-
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
-
-    move-result v7
-
-    iget v8, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->touchSlop:I
-
-    int-to-float v8, v8
-
-    cmpl-float v7, v7, v8
-
-    if-ltz v7, :cond_c
+    if-ltz v3, :cond_c
 
     goto :goto_3
 
     :cond_c
-    move v7, v1
+    move v3, v8
 
     goto :goto_4
 
     :cond_d
     :goto_3
-    move v7, v4
+    move v3, v11
 
     :goto_4
-    if-eqz v7, :cond_e
+    if-eqz v3, :cond_e
 
     .line 450
-    iput-boolean v4, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
+    iput-boolean v11, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isDownReleased:Z
 
     .line 451
-    iget-object v8, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
+    iget-object v4, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->callback:Lorg/telegram/ui/Components/ProfileGalleryView$Callback;
 
-    invoke-interface {v8}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onRelease()V
+    invoke-interface {v4}, Lorg/telegram/ui/Components/ProfileGalleryView$Callback;->onRelease()V
 
     .line 453
     :cond_e
-    iget-boolean v8, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
+    iget-boolean v4, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
 
-    if-eqz v8, :cond_10
+    if-eqz v4, :cond_10
 
-    iget-boolean v9, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
+    iget-boolean v5, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
 
-    if-eqz v9, :cond_10
+    if-eqz v5, :cond_10
 
-    if-eqz v7, :cond_11
+    if-eqz v3, :cond_11
 
     .line 455
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
-    move-result v5
+    move-result v1
 
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    move-result v3
+    move-result v0
 
-    cmpl-float v3, v5, v3
+    cmpl-float v0, v1, v0
 
-    if-lez v3, :cond_f
+    if-lez v0, :cond_f
 
     .line 456
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
+    iput-boolean v8, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
 
     .line 457
-    invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    invoke-static/range {p1 .. p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 458
-    invoke-virtual {v3, v2}, Landroid/view/MotionEvent;->setAction(I)V
+    invoke-virtual {v0, v9}, Landroid/view/MotionEvent;->setAction(I)V
 
     .line 459
-    invoke-super {p0, v3}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {v7, v0}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 460
-    invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
+    invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     goto :goto_5
 
     .line 462
     :cond_f
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
+    iput-boolean v8, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
 
     .line 463
-    invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    invoke-static/range {p1 .. p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 464
-    invoke-virtual {v3, v2}, Landroid/view/MotionEvent;->setAction(I)V
+    invoke-virtual {v0, v9}, Landroid/view/MotionEvent;->setAction(I)V
 
     .line 465
-    iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->parentListView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->parentListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v5, v3}, Lorg/telegram/ui/Components/RecyclerListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 466
-    invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
+    invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     goto :goto_5
 
     :cond_10
-    if-eqz v8, :cond_11
+    if-eqz v4, :cond_11
 
     .line 469
-    invoke-virtual {p0, v5}, Landroidx/viewpager/widget/ViewPager;->canScrollHorizontally(I)Z
+    invoke-virtual {v7, v1}, Landroidx/viewpager/widget/ViewPager;->canScrollHorizontally(I)Z
 
-    move-result v5
+    move-result v1
 
-    if-nez v5, :cond_11
+    if-nez v1, :cond_11
 
-    iget v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->touchSlop:I
+    iget v1, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->touchSlop:I
 
-    int-to-float v5, v5
+    int-to-float v1, v1
 
-    cmpl-float v3, v3, v5
+    cmpl-float v0, v0, v1
 
-    if-lez v3, :cond_11
+    if-lez v0, :cond_11
 
-    return v1
+    return v8
 
     .line 476
     :cond_11
     :goto_5
-    iget-boolean v3, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
 
-    if-eqz v3, :cond_12
+    if-eqz v0, :cond_12
 
     .line 477
-    iget-object v3, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->parentListView:Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->parentListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {v3, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    move-object/from16 v1, p1
 
-    move-result v3
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    move v2, v0
 
     goto :goto_6
 
     :cond_12
-    move v3, v1
+    move-object/from16 v1, p1
+
+    move v2, v8
 
     .line 480
     :goto_6
-    iget-boolean v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
 
-    if-eqz v5, :cond_13
+    if-eqz v0, :cond_13
 
     .line 482
     :try_start_0
-    invoke-super {p0, p1}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super/range {p0 .. p1}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-result p1
+    move-result v0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    or-int/2addr v3, p1
+    or-int/2addr v2, v0
 
     goto :goto_7
 
     :catch_0
-    move-exception p1
+    move-exception v0
+
+    move-object v1, v0
 
     .line 484
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_13
     :goto_7
-    if-eq v0, v4, :cond_14
+    if-eq v10, v11, :cond_14
 
-    if-ne v0, v2, :cond_15
+    if-ne v10, v9, :cond_15
 
     .line 489
     :cond_14
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
+    iput-boolean v8, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isScrollingListView:Z
 
     .line 490
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
+    iput-boolean v8, v7, Lorg/telegram/ui/Components/ProfileGalleryView;->isSwipingViewPager:Z
 
     :cond_15
-    return v3
+    return v2
 .end method
 
 .method public removePhotoAtIndex(I)Z

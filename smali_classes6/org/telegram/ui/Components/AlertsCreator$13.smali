@@ -24,7 +24,7 @@
 .method constructor <init>(ILandroid/content/Context;Lorg/telegram/ui/Components/NumberTextView;)V
     .locals 0
 
-    .line 2593
+    .line 2594
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$13;->val$context:Landroid/content/Context;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$13;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
@@ -39,7 +39,7 @@
 .method public filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 2596
+    .line 2597
     invoke-super/range {p0 .. p6}, Lorg/telegram/ui/Components/CodepointsLengthInputFilter;->filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
 
     move-result-object p2
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2597
+    .line 2598
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result p3
@@ -59,7 +59,7 @@
 
     if-eq p3, p1, :cond_1
 
-    .line 2598
+    .line 2599
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$13;->val$context:Landroid/content/Context;
 
     const-string p3, "vibrator"
@@ -74,10 +74,10 @@
 
     const-wide/16 p3, 0xc8
 
-    .line 2600
+    .line 2601
     invoke-virtual {p1, p3, p4}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 2602
+    .line 2603
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$13;->val$checkTextView:Lorg/telegram/ui/Components/NumberTextView;
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 8352
+    .line 8473
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,10 +35,10 @@
 .method public getSpanSize(I)I
     .locals 2
 
-    .line 8355
+    .line 8476
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$16800(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17100(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
     move-result-object v0
 
@@ -46,7 +46,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$16800(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
+    invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17100(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
     move-result-object v1
 
@@ -66,10 +66,10 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLObject;
 
-    .line 8356
+    .line 8477
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$4;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17200(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17500(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;
 
     move-result-object v0
 

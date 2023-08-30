@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;)V
     .locals 0
 
-    .line 1640
+    .line 1643
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8$1;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 0
 
-    .line 1648
+    .line 1651
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8$1;->this$1:Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
@@ -50,7 +50,7 @@
 
     const/4 v0, 0x0
 
-    .line 1643
+    .line 1646
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

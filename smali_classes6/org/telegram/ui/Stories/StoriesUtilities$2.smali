@@ -24,7 +24,7 @@
 .method constructor <init>([Ljava/lang/Runnable;Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;)V
     .locals 0
 
-    .line 917
+    .line 941
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$2;->val$runnableRef:[Ljava/lang/Runnable;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$2;->val$ensureStoryFileLoadedObject:Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
@@ -39,12 +39,12 @@
 .method protected setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
     .locals 0
 
-    .line 920
+    .line 944
     invoke-super/range {p0 .. p5}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
 
     move-result p1
 
-    .line 921
+    .line 945
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$2;->val$runnableRef:[Ljava/lang/Runnable;
 
     const/4 p3, 0x0
@@ -53,19 +53,19 @@
 
     if-eqz p4, :cond_0
 
-    .line 922
+    .line 946
     aget-object p2, p2, p3
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 923
+    .line 947
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$2;->val$ensureStoryFileLoadedObject:Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->runnable:Ljava/lang/Runnable;
 
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    .line 925
+    .line 949
     :cond_0
     new-instance p2, Lorg/telegram/ui/Stories/StoriesUtilities$2$$ExternalSyntheticLambda0;
 

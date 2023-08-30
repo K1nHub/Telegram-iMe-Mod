@@ -30,22 +30,22 @@
 .method public constructor <init>()V
     .locals 6
 
-    .line 809
+    .line 810
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
     new-array v0, v0, [I
 
-    .line 807
+    .line 808
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->curveTexture:[I
 
-    .line 810
+    .line 811
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 811
+    .line 812
     new-instance v1, Landroid/graphics/PointF;
 
     const/4 v2, 0x0
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 812
+    .line 813
     new-instance v1, Landroid/graphics/PointF;
 
     const/high16 v3, 0x3f000000    # 0.5f
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 813
+    .line 814
     new-instance v1, Landroid/graphics/PointF;
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -72,19 +72,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 815
+    .line 816
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 816
+    .line 817
     new-instance v4, Landroid/graphics/PointF;
 
     invoke-direct {v4, v2, v2}, Landroid/graphics/PointF;-><init>(FF)V
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 817
+    .line 818
     new-instance v2, Landroid/graphics/PointF;
 
     const v4, 0x3ef0a3d7    # 0.47f
@@ -95,21 +95,21 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 818
+    .line 819
     new-instance v2, Landroid/graphics/PointF;
 
     invoke-direct {v2, v3, v3}, Landroid/graphics/PointF;-><init>(FF)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 820
+    .line 821
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->getPreparedSplineCurve(Ljava/util/ArrayList;)[F
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->rgbCompositeCurve:[F
 
-    .line 821
+    .line 822
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->getPreparedSplineCurve(Ljava/util/ArrayList;)[F
 
     move-result-object v0
@@ -120,7 +120,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->redCurve:[F
 
-    .line 822
+    .line 823
     invoke-direct {p0}, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->updateToneCurveTexture()V
 
     return-void
@@ -137,7 +137,7 @@
         }
     .end annotation
 
-    .line 826
+    .line 827
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -151,21 +151,21 @@
 
     if-ge v2, v0, :cond_0
 
-    .line 827
+    .line 828
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/graphics/PointF;
 
-    .line 828
+    .line 829
     iget v5, v4, Landroid/graphics/PointF;->x:F
 
     mul-float/2addr v5, v3
 
     iput v5, v4, Landroid/graphics/PointF;->x:F
 
-    .line 829
+    .line 830
     iget v5, v4, Landroid/graphics/PointF;->y:F
 
     mul-float/2addr v5, v3
@@ -176,20 +176,20 @@
 
     goto :goto_0
 
-    .line 832
+    .line 833
     :cond_0
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->splineCurve(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
     move-result-object p1
 
-    .line 834
+    .line 835
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/graphics/PointF;
 
-    .line 835
+    .line 836
     iget v0, v0, Landroid/graphics/PointF;->x:F
 
     const/4 v2, 0x0
@@ -203,7 +203,7 @@
     :goto_1
     if-ltz v0, :cond_1
 
-    .line 837
+    .line 838
     new-instance v4, Landroid/graphics/PointF;
 
     int-to-float v5, v0
@@ -216,7 +216,7 @@
 
     goto :goto_1
 
-    .line 841
+    .line 842
     :cond_1
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -230,7 +230,7 @@
 
     check-cast v0, Landroid/graphics/PointF;
 
-    .line 842
+    .line 843
     iget v0, v0, Landroid/graphics/PointF;->x:F
 
     cmpg-float v2, v0, v3
@@ -246,7 +246,7 @@
 
     if-gt v0, v2, :cond_2
 
-    .line 844
+    .line 845
     new-instance v2, Landroid/graphics/PointF;
 
     int-to-float v4, v0
@@ -257,7 +257,7 @@
 
     goto :goto_2
 
-    .line 848
+    .line 849
     :cond_2
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -265,7 +265,7 @@
 
     new-array v0, v0, [F
 
-    .line 849
+    .line 850
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -273,14 +273,14 @@
     :goto_3
     if-ge v1, v2, :cond_4
 
-    .line 850
+    .line 851
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/graphics/PointF;
 
-    .line 851
+    .line 852
     iget v4, v3, Landroid/graphics/PointF;->x:F
 
     iget v5, v3, Landroid/graphics/PointF;->y:F
@@ -301,7 +301,7 @@
 
     double-to-float v4, v4
 
-    .line 852
+    .line 853
     iget v5, v3, Landroid/graphics/PointF;->x:F
 
     iget v3, v3, Landroid/graphics/PointF;->y:F
@@ -312,7 +312,7 @@
 
     neg-float v4, v4
 
-    .line 855
+    .line 856
     :cond_3
     aput v4, v0, v1
 
@@ -337,7 +337,7 @@
 
     move-object/from16 v0, p1
 
-    .line 889
+    .line 890
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -363,7 +363,7 @@
 
     aput v1, v5, v3
 
-    .line 894
+    .line 895
     const-class v6, D
 
     invoke-static {v6, v5}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
@@ -372,24 +372,24 @@
 
     check-cast v5, [[D
 
-    .line 895
+    .line 896
     new-array v6, v1, [D
 
-    .line 896
+    .line 897
     aget-object v7, v5, v3
 
     const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
 
     aput-wide v8, v7, v2
 
-    .line 897
+    .line 898
     aget-object v7, v5, v3
 
     const-wide/16 v10, 0x0
 
     aput-wide v10, v7, v3
 
-    .line 898
+    .line 899
     aget-object v7, v5, v3
 
     aput-wide v10, v7, v4
@@ -403,14 +403,14 @@
 
     add-int/lit8 v12, v7, -0x1
 
-    .line 901
+    .line 902
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v12
 
     check-cast v12, Landroid/graphics/PointF;
 
-    .line 902
+    .line 903
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
@@ -419,14 +419,14 @@
 
     add-int/lit8 v14, v7, 0x1
 
-    .line 903
+    .line 904
     invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v15
 
     check-cast v15, Landroid/graphics/PointF;
 
-    .line 905
+    .line 906
     aget-object v16, v5, v7
 
     iget v8, v13, Landroid/graphics/PointF;->x:F
@@ -443,7 +443,7 @@
 
     aput-wide v10, v16, v3
 
-    .line 906
+    .line 907
     aget-object v10, v5, v7
 
     iget v11, v15, Landroid/graphics/PointF;->x:F
@@ -460,7 +460,7 @@
 
     aput-wide v4, v10, v2
 
-    .line 907
+    .line 908
     aget-object v3, v19, v7
 
     sub-float v4, v11, v8
@@ -473,7 +473,7 @@
 
     aput-wide v4, v3, v10
 
-    .line 908
+    .line 909
     iget v3, v15, Landroid/graphics/PointF;->y:F
 
     iget v4, v13, Landroid/graphics/PointF;->y:F
@@ -527,13 +527,13 @@
 
     move-wide v2, v10
 
-    .line 911
+    .line 912
     aput-wide v2, v6, v4
 
-    .line 912
+    .line 913
     aput-wide v2, v6, v12
 
-    .line 914
+    .line 915
     aget-object v0, v19, v12
 
     const/4 v5, 0x1
@@ -542,12 +542,12 @@
 
     aput-wide v7, v0, v5
 
-    .line 915
+    .line 916
     aget-object v0, v19, v12
 
     aput-wide v2, v0, v4
 
-    .line 916
+    .line 917
     aget-object v0, v19, v12
 
     const/4 v7, 0x2
@@ -559,7 +559,7 @@
     :goto_1
     if-ge v0, v1, :cond_2
 
-    .line 919
+    .line 920
     aget-object v2, v19, v0
 
     aget-wide v7, v2, v4
@@ -574,7 +574,7 @@
 
     div-double/2addr v7, v9
 
-    .line 920
+    .line 921
     aget-object v3, v19, v0
 
     aget-wide v9, v3, v4
@@ -591,7 +591,7 @@
 
     aput-wide v9, v3, v4
 
-    .line 921
+    .line 922
     aget-object v3, v19, v0
 
     const/4 v4, 0x0
@@ -600,7 +600,7 @@
 
     aput-wide v9, v3, v4
 
-    .line 922
+    .line 923
     aget-wide v3, v6, v0
 
     aget-wide v9, v6, v2
@@ -623,7 +623,7 @@
     :goto_2
     if-ltz v0, :cond_3
 
-    .line 926
+    .line 927
     aget-object v2, v19, v0
 
     const/4 v3, 0x2
@@ -640,7 +640,7 @@
 
     div-double/2addr v7, v9
 
-    .line 927
+    .line 928
     aget-object v3, v19, v0
 
     aget-wide v9, v3, v4
@@ -657,7 +657,7 @@
 
     aput-wide v9, v3, v4
 
-    .line 928
+    .line 929
     aget-object v3, v19, v0
 
     const/4 v4, 0x2
@@ -666,7 +666,7 @@
 
     aput-wide v9, v3, v4
 
-    .line 929
+    .line 930
     aget-wide v12, v6, v0
 
     aget-wide v2, v6, v2
@@ -684,7 +684,7 @@
     :cond_3
     const/4 v11, 0x0
 
-    .line 932
+    .line 933
     new-array v0, v1, [D
 
     move v3, v11
@@ -692,7 +692,7 @@
     :goto_3
     if-ge v3, v1, :cond_4
 
-    .line 934
+    .line 935
     aget-wide v7, v6, v3
 
     aget-object v2, v19, v3
@@ -735,12 +735,12 @@
 
     move-object/from16 v0, p1
 
-    .line 862
+    .line 863
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->secondDerivative(Ljava/util/ArrayList;)[D
 
     move-result-object v1
 
-    .line 863
+    .line 864
     array-length v2, v1
 
     const/4 v3, 0x1
@@ -751,7 +751,7 @@
 
     return-object v0
 
-    .line 867
+    .line 868
     :cond_0
     new-instance v4, Ljava/util/ArrayList;
 
@@ -766,7 +766,7 @@
 
     if-ge v5, v6, :cond_4
 
-    .line 869
+    .line 870
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -775,14 +775,14 @@
 
     add-int/lit8 v7, v5, 0x1
 
-    .line 870
+    .line 871
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/graphics/PointF;
 
-    .line 871
+    .line 872
     iget v9, v6, Landroid/graphics/PointF;->x:F
 
     float-to-int v9, v9
@@ -796,7 +796,7 @@
 
     int-to-float v11, v9
 
-    .line 872
+    .line 873
     iget v12, v6, Landroid/graphics/PointF;->x:F
 
     sub-float v13, v11, v12
@@ -821,7 +821,7 @@
 
     float-to-double v9, v10
 
-    .line 875
+    .line 876
     iget v15, v6, Landroid/graphics/PointF;->y:F
 
     move/from16 v17, v11
@@ -897,7 +897,7 @@
 
     move v3, v7
 
-    .line 881
+    .line 882
     :cond_2
     :goto_2
     new-instance v4, Landroid/graphics/PointF;
@@ -932,7 +932,7 @@
     :cond_4
     move-object v3, v4
 
-    .line 884
+    .line 885
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -955,7 +955,7 @@
 .method private updateToneCurveTexture()V
     .locals 12
 
-    .line 940
+    .line 941
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->curveTexture:[I
 
     const/4 v1, 0x1
@@ -964,7 +964,7 @@
 
     invoke-static {v1, v0, v2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 941
+    .line 942
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->curveTexture:[I
 
     aget v0, v0, v2
@@ -977,39 +977,39 @@
 
     const/16 v3, 0x2601
 
-    .line 942
+    .line 943
     invoke-static {v1, v0, v3}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v0, 0x2800
 
-    .line 943
+    .line 944
     invoke-static {v1, v0, v3}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v0, 0x2802
 
     const v3, 0x812f
 
-    .line 944
+    .line 945
     invoke-static {v1, v0, v3}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v0, 0x2803
 
-    .line 945
+    .line 946
     invoke-static {v1, v0, v3}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v0, 0x400
 
-    .line 947
+    .line 948
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v11
 
-    .line 948
+    .line 949
     sget-object v0, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v11, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 950
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->redCurve:[F
 
     array-length v0, v0
@@ -1043,7 +1043,7 @@
 
     int-to-float v3, v0
 
-    .line 952
+    .line 953
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->redCurve:[F
 
     aget v4, v4, v0
@@ -1064,7 +1064,7 @@
 
     float-to-int v4, v4
 
-    .line 953
+    .line 954
     iget-object v7, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->greenCurve:[F
 
     aget v7, v7, v0
@@ -1081,7 +1081,7 @@
 
     float-to-int v7, v7
 
-    .line 954
+    .line 955
     iget-object v8, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->blueCurve:[F
 
     aget v8, v8, v0
@@ -1100,7 +1100,7 @@
 
     int-to-float v8, v3
 
-    .line 956
+    .line 957
     iget-object v9, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->rgbCompositeCurve:[F
 
     aget v3, v9, v3
@@ -1123,7 +1123,7 @@
 
     int-to-float v3, v7
 
-    .line 957
+    .line 958
     iget-object v8, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->rgbCompositeCurve:[F
 
     aget v7, v8, v7
@@ -1146,7 +1146,7 @@
 
     int-to-float v3, v4
 
-    .line 958
+    .line 959
     iget-object v7, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->rgbCompositeCurve:[F
 
     aget v4, v7, v4
@@ -1169,14 +1169,14 @@
 
     const/4 v3, -0x1
 
-    .line 959
+    .line 960
     invoke-virtual {v11, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 961
+    .line 962
     :cond_0
     invoke-virtual {v11, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
@@ -1196,7 +1196,7 @@
 
     const/16 v10, 0x1401
 
-    .line 962
+    .line 963
     invoke-static/range {v3 .. v11}, Landroid/opengl/GLES20;->glTexImage2D(IIIIIIIILjava/nio/Buffer;)V
 
     :cond_1
@@ -1208,7 +1208,7 @@
 .method public getCurveTexture()I
     .locals 2
 
-    .line 967
+    .line 968
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$ToneCurve;->curveTexture:[I
 
     const/4 v1, 0x0

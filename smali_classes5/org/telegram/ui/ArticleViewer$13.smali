@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 3507
+    .line 3526
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +44,10 @@
 .method private synthetic lambda$onTextChanged$0()V
     .locals 2
 
-    .line 3526
+    .line 3545
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -75,10 +75,10 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 3
 
-    .line 3515
+    .line 3534
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer;->access$9500(Lorg/telegram/ui/ArticleViewer;)Z
+    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer;->access$9600(Lorg/telegram/ui/ArticleViewer;)Z
 
     move-result p2
 
@@ -86,14 +86,14 @@
 
     if-eqz p2, :cond_0
 
-    .line 3516
+    .line 3535
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1, p3}, Lorg/telegram/ui/ArticleViewer;->access$9502(Lorg/telegram/ui/ArticleViewer;Z)Z
+    invoke-static {p1, p3}, Lorg/telegram/ui/ArticleViewer;->access$9602(Lorg/telegram/ui/ArticleViewer;Z)Z
 
     return-void
 
-    .line 3519
+    .line 3538
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -105,18 +105,18 @@
 
     move-result-object p4
 
-    invoke-static {p2, p4}, Lorg/telegram/ui/ArticleViewer;->access$9600(Lorg/telegram/ui/ArticleViewer;Ljava/lang/String;)V
+    invoke-static {p2, p4}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;Ljava/lang/String;)V
 
-    .line 3520
+    .line 3539
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p2
 
     if-eqz p2, :cond_4
 
-    .line 3521
+    .line 3540
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -129,10 +129,10 @@
 
     if-eqz p1, :cond_2
 
-    .line 3522
+    .line 3541
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -142,10 +142,10 @@
 
     if-eqz p1, :cond_4
 
-    .line 3523
+    .line 3542
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -153,19 +153,19 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 3524
+    .line 3543
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 3525
+    .line 3544
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9900(Lorg/telegram/ui/ArticleViewer;)Z
 
     move-result p1
 
@@ -173,10 +173,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 3526
+    .line 3545
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -224,47 +224,47 @@
 
     goto/16 :goto_0
 
-    .line 3528
+    .line 3547
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p4}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 3529
+    .line 3548
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setRotation(F)V
 
-    .line 3530
+    .line 3549
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p4}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 3531
+    .line 3550
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p4}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 3532
+    .line 3551
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -272,18 +272,18 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3533
+    .line 3552
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ArticleViewer;->access$9802(Lorg/telegram/ui/ArticleViewer;Z)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/ArticleViewer;->access$9902(Lorg/telegram/ui/ArticleViewer;Z)Z
 
     goto/16 :goto_0
 
-    .line 3537
+    .line 3556
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -293,10 +293,10 @@
 
     if-nez p1, :cond_4
 
-    .line 3538
+    .line 3557
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -306,28 +306,28 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 3539
+    .line 3558
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 3540
+    .line 3559
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3541
+    .line 3560
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9900(Lorg/telegram/ui/ArticleViewer;)Z
 
     move-result p1
 
@@ -335,10 +335,10 @@
 
     if-eqz p1, :cond_3
 
-    .line 3542
+    .line 3561
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -378,47 +378,47 @@
 
     goto :goto_0
 
-    .line 3544
+    .line 3563
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 3545
+    .line 3564
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p4}, Landroid/widget/ImageView;->setRotation(F)V
 
-    .line 3546
+    .line 3565
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 3547
+    .line 3566
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9700(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer;->access$9800(Lorg/telegram/ui/ArticleViewer;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 3548
+    .line 3567
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$13;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ArticleViewer;->access$9802(Lorg/telegram/ui/ArticleViewer;Z)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/ArticleViewer;->access$9902(Lorg/telegram/ui/ArticleViewer;Z)Z
 
     :cond_4
     :goto_0

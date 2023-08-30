@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda29;->f$2:I
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$sZzcx7CjZ9IfKB-txPB1BH6w4Go(Lorg/telegram/ui/ArticleViewer;Ljava/lang/String;I)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$PVB9M24_p8apLwjyJM2qVmlLzhU(Lorg/telegram/ui/ArticleViewer;Ljava/lang/String;I)V
 
     return-void
 .end method

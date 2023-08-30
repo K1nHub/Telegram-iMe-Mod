@@ -752,7 +752,7 @@
 .method private final onCommonError()V
     .locals 2
 
-    .line 332
+    .line 335
     sget v0, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
 
     const-string v1, "ErrorOccurred"
@@ -996,9 +996,21 @@
 
     move-result-object v2
 
+    if-nez v2, :cond_0
+
+    return-void
+
+    .line 276
+    :cond_0
+    iget-object v2, v0, Lcom/iMe/manager/common/MediaEditManager;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object v2
+
     invoke-virtual {v1, v2}, Lorg/telegram/ui/PhotoViewer;->setParentActivity(Landroid/app/Activity;)V
 
-    .line 274
+    .line 277
     new-instance v2, Lcom/iMe/manager/common/MediaEditManager$openStickerEditor$1$1;
 
     move-object v3, p1
@@ -1094,26 +1106,26 @@
         }
     .end annotation
 
-    .line 324
+    .line 327
     invoke-direct {p0}, Lcom/iMe/manager/common/MediaEditManager;->getLoadingAlertDialog()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 325
+    .line 328
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object p1
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 326
+    .line 329
     new-instance p1, Lcom/iMe/manager/common/MediaEditManager$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p2}, Lcom/iMe/manager/common/MediaEditManager$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 327
+    .line 330
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     return-void
@@ -1126,7 +1138,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 323
+    .line 326
     sget-object p2, Lcom/iMe/manager/common/MediaEditManager$showLoading$1;->INSTANCE:Lcom/iMe/manager/common/MediaEditManager$showLoading$1;
 
     :cond_0
@@ -1142,7 +1154,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 326
+    .line 329
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void

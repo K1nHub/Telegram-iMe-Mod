@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity;)V
     .locals 0
 
-    .line 1746
+    .line 1749
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$3;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,24 +46,24 @@
 .method public onOpenAnimationEnd()V
     .locals 2
 
-    .line 1754
+    .line 1757
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1756
+    .line 1759
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getGroupCallBottomSheetLatch()Ljava/util/concurrent/CountDownLatch;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1758
+    .line 1761
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 1762
+    .line 1765
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$3;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
@@ -75,7 +75,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1763
+    .line 1766
     iget-object v0, p0, Lorg/telegram/ui/GroupCallActivity$3;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCallActivity;->access$2300(Lorg/telegram/ui/GroupCallActivity;)V

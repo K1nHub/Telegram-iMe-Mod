@@ -36,12 +36,12 @@
 .method public constructor <init>(FFZ)V
     .locals 10
 
-    .line 273
+    .line 274
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-eqz p3, :cond_0
 
-    .line 276
+    .line 277
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
     move-result p1
@@ -64,7 +64,7 @@
 
     const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
-    .line 280
+    .line 281
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v6
@@ -103,7 +103,7 @@
 
     double-to-int p1, v0
 
-    .line 281
+    .line 282
     rem-int/lit8 p3, p1, 0x2
 
     add-int/2addr p1, p3
@@ -113,7 +113,7 @@
     :cond_0
     float-to-int p1, p1
 
-    .line 286
+    .line 287
     :cond_1
     :goto_0
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/FilterShaders;->access$000(IF)Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->fragmentShaderCode:Ljava/lang/String;
 
-    .line 287
+    .line 288
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/FilterShaders;->access$100(IF)Ljava/lang/String;
 
     move-result-object p1
@@ -137,7 +137,7 @@
 .method public create()Z
     .locals 7
 
-    .line 298
+    .line 299
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->vertexShaderCode:Ljava/lang/String;
 
     const v1, 0x8b31
@@ -146,7 +146,7 @@
 
     move-result v0
 
-    .line 299
+    .line 300
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->fragmentShaderCode:Ljava/lang/String;
 
     const v2, 0x8b30
@@ -163,7 +163,7 @@
 
     goto :goto_1
 
-    .line 304
+    .line 305
     :cond_0
     invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
 
@@ -171,22 +171,22 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
-    .line 305
+    .line 306
     invoke-static {v3, v0}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 306
+    .line 307
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     invoke-static {v0, v1}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 307
+    .line 308
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     const-string v1, "position"
 
     invoke-static {v0, v2, v1}, Landroid/opengl/GLES20;->glBindAttribLocation(IILjava/lang/String;)V
 
-    .line 308
+    .line 309
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     const/4 v3, 0x1
@@ -195,36 +195,36 @@
 
     invoke-static {v0, v3, v4}, Landroid/opengl/GLES20;->glBindAttribLocation(IILjava/lang/String;)V
 
-    .line 310
+    .line 311
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glLinkProgram(I)V
 
     new-array v0, v3, [I
 
-    .line 312
+    .line 313
     iget v5, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     const v6, 0x8b82
 
     invoke-static {v5, v6, v0, v2}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
 
-    .line 313
+    .line 314
     aget v0, v0, v2
 
     if-nez v0, :cond_1
 
-    .line 314
+    .line 315
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    .line 315
+    .line 316
     iput v2, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     goto :goto_0
 
-    .line 317
+    .line 318
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
@@ -234,7 +234,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurPositionHandle:I
 
-    .line 318
+    .line 319
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     invoke-static {v0, v4}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
@@ -243,7 +243,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurInputTexCoordHandle:I
 
-    .line 319
+    .line 320
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     const-string v1, "sTexture"
@@ -254,7 +254,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurSourceImageHandle:I
 
-    .line 320
+    .line 321
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     const-string v1, "texelWidthOffset"
@@ -265,7 +265,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurWidthHandle:I
 
-    .line 321
+    .line 322
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     const-string v1, "texelHeightOffset"
@@ -287,17 +287,17 @@
 .method public destroy()V
     .locals 1
 
-    .line 291
+    .line 292
     iget v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     if-eqz v0, :cond_0
 
-    .line 292
+    .line 293
     invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
     const/4 v0, 0x0
 
-    .line 293
+    .line 294
     iput v0, p0, Lorg/telegram/ui/Components/FilterShaders$BlurProgram;->blurShaderProgram:I
 
     :cond_0

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCallActivity$56;)V
     .locals 0
 
-    .line 7540
+    .line 7545
     iput-object p1, p0, Lorg/telegram/ui/GroupCallActivity$56$1;->this$1:Lorg/telegram/ui/GroupCallActivity$56;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 7543
+    .line 7548
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$56$1;->this$1:Lorg/telegram/ui/GroupCallActivity$56;
 
     iget-object p1, p1, Lorg/telegram/ui/GroupCallActivity$56;->this$0:Lorg/telegram/ui/GroupCallActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCallActivity;->access$18900(Lorg/telegram/ui/GroupCallActivity;)V
 
-    .line 7544
+    .line 7549
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$56$1;->this$1:Lorg/telegram/ui/GroupCallActivity$56;
 
     iget-object p1, p1, Lorg/telegram/ui/GroupCallActivity$56;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -53,7 +53,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 7545
+    .line 7550
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$56$1;->this$1:Lorg/telegram/ui/GroupCallActivity$56;
 
     iget-object p1, p1, Lorg/telegram/ui/GroupCallActivity$56;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -64,7 +64,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 7546
+    .line 7551
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$56$1;->this$1:Lorg/telegram/ui/GroupCallActivity$56;
 
     iget-object p1, p1, Lorg/telegram/ui/GroupCallActivity$56;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -75,7 +75,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 7547
+    .line 7552
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$56$1;->this$1:Lorg/telegram/ui/GroupCallActivity$56;
 
     iget-object p1, p1, Lorg/telegram/ui/GroupCallActivity$56;->this$0:Lorg/telegram/ui/GroupCallActivity;
@@ -84,7 +84,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/GroupCallActivity;->access$16602(Lorg/telegram/ui/GroupCallActivity;Z)Z
 
-    .line 7548
+    .line 7553
     iget-object p1, p0, Lorg/telegram/ui/GroupCallActivity$56$1;->this$1:Lorg/telegram/ui/GroupCallActivity$56;
 
     iget-object p1, p1, Lorg/telegram/ui/GroupCallActivity$56;->this$0:Lorg/telegram/ui/GroupCallActivity;

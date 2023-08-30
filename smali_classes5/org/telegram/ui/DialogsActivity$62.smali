@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;ILandroidx/recyclerview/widget/RecyclerView$Adapter;ZLjava/util/ArrayList;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
-    .line 11140
+    .line 11123
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$62;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput p2, p0, Lorg/telegram/ui/DialogsActivity$62;->val$dialogsType:I
@@ -58,10 +58,10 @@
 .method public canSelect(I)Z
     .locals 5
 
-    .line 11167
+    .line 11150
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$62;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$40000(Lorg/telegram/ui/DialogsActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$39900(Lorg/telegram/ui/DialogsActivity;)I
 
     move-result v1
 
@@ -83,7 +83,7 @@
 
     move-result-object v0
 
-    .line 11168
+    .line 11151
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$62;->val$adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     check-cast v1, Lorg/telegram/ui/Adapters/DialogsAdapter;
@@ -96,7 +96,7 @@
 
     if-ltz p1, :cond_3
 
-    .line 11169
+    .line 11152
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 11172
+    .line 11155
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -117,7 +117,7 @@
 
     return v1
 
-    .line 11176
+    .line 11159
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$62;->val$unselect:Z
 
@@ -141,7 +141,7 @@
 
     return v2
 
-    .line 11179
+    .line 11162
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$62;->val$unselect:Z
 
@@ -181,7 +181,7 @@
 
     const/4 v1, 0x0
 
-    .line 11197
+    .line 11180
     aput v1, p1, v0
 
     aput v1, p1, v1
@@ -200,10 +200,10 @@
 .method public onSelectionChanged(IZFF)V
     .locals 3
 
-    .line 11143
+    .line 11126
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$62;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$39800(Lorg/telegram/ui/DialogsActivity;)I
+    invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$39700(Lorg/telegram/ui/DialogsActivity;)I
 
     move-result p4
 
@@ -225,7 +225,7 @@
 
     move-result-object p3
 
-    .line 11144
+    .line 11127
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$62;->val$adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     check-cast p4, Lorg/telegram/ui/Adapters/DialogsAdapter;
@@ -234,7 +234,7 @@
 
     move-result p1
 
-    .line 11145
+    .line 11128
     iget-boolean p4, p0, Lorg/telegram/ui/DialogsActivity$62;->val$unselect:Z
 
     if-eqz p4, :cond_0
@@ -244,7 +244,7 @@
     :cond_0
     if-ltz p1, :cond_5
 
-    .line 11148
+    .line 11131
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
     move-result p4
@@ -253,7 +253,7 @@
 
     goto :goto_0
 
-    .line 11151
+    .line 11134
     :cond_1
     invoke-virtual {p3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -263,7 +263,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 11152
+    .line 11135
     instance-of p3, p1, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;
 
     if-eqz p3, :cond_2
@@ -273,7 +273,7 @@
     :cond_2
     if-eqz p2, :cond_3
 
-    .line 11155
+    .line 11138
     iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$62;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -297,7 +297,7 @@
     :cond_3
     if-nez p2, :cond_4
 
-    .line 11158
+    .line 11141
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$62;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -318,7 +318,7 @@
 
     return-void
 
-    .line 11161
+    .line 11144
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$62;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -326,9 +326,9 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p2, p3, p4, v0}, Lorg/telegram/ui/DialogsActivity;->access$39900(Lorg/telegram/ui/DialogsActivity;JLandroid/view/View;)V
+    invoke-static {p2, p3, p4, v0}, Lorg/telegram/ui/DialogsActivity;->access$39800(Lorg/telegram/ui/DialogsActivity;JLandroid/view/View;)V
 
-    .line 11162
+    .line 11145
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$62;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-wide p3, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
@@ -347,7 +347,7 @@
 
     move-result p1
 
-    invoke-static {p2, p3, p4, p1}, Lorg/telegram/ui/DialogsActivity;->access$29200(Lorg/telegram/ui/DialogsActivity;JZ)V
+    invoke-static {p2, p3, p4, p1}, Lorg/telegram/ui/DialogsActivity;->access$29100(Lorg/telegram/ui/DialogsActivity;JZ)V
 
     :cond_5
     :goto_0
@@ -357,7 +357,7 @@
 .method public scrollBy(I)V
     .locals 2
 
-    .line 11202
+    .line 11185
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$62;->val$currentViewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     iget-object v0, v0, Lorg/telegram/ui/DialogsActivity$ViewPage;->listView:Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;

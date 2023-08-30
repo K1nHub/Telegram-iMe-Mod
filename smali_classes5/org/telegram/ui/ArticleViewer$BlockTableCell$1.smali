@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockTableCell;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 7661
+    .line 7782
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     invoke-direct {p0, p2}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;)V
@@ -35,15 +35,15 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 7664
+    .line 7785
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
-    .line 7665
+    .line 7786
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16100(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16400(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
 
     move-result-object v0
 
@@ -67,7 +67,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 7666
+    .line 7787
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     iget-object v0, v0, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -87,10 +87,10 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 7700
+    .line 7821
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16100(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16400(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
 
     move-result-object v0
 
@@ -118,14 +118,14 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/view/View;->measure(II)V
 
-    .line 7701
+    .line 7822
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
-    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16100(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
+    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16400(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
 
     move-result-object p2
 
@@ -141,10 +141,10 @@
 .method protected onScrollChanged(IIII)V
     .locals 0
 
-    .line 7681
+    .line 7802
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/HorizontalScrollView;->onScrollChanged(IIII)V
 
-    .line 7682
+    .line 7803
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -155,7 +155,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 7683
+    .line 7804
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -164,20 +164,20 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ArticleViewer;->access$1102(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$DrawingText;)Lorg/telegram/ui/ArticleViewer$DrawingText;
 
-    .line 7684
+    .line 7805
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ArticleViewer;->access$4602(Lorg/telegram/ui/ArticleViewer;Landroid/view/View;)Landroid/view/View;
 
-    .line 7686
+    .line 7807
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16200(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)V
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16500(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)V
 
-    .line 7687
+    .line 7808
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -192,7 +192,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 7688
+    .line 7809
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -208,10 +208,10 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 7673
+    .line 7794
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16100(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->access$16400(Lorg/telegram/ui/ArticleViewer$BlockTableCell;)Lorg/telegram/ui/Components/TableLayout;
 
     move-result-object v0
 
@@ -237,7 +237,7 @@
 
     return p1
 
-    .line 7676
+    .line 7797
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -249,14 +249,14 @@
 .method protected overScrollBy(IIIIIIIIZ)Z
     .locals 1
 
-    .line 7694
+    .line 7815
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockTableCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockTableCell;
 
     iget-object v0, v0, Lorg/telegram/ui/ArticleViewer$BlockTableCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$16300(Lorg/telegram/ui/ArticleViewer;)V
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$16600(Lorg/telegram/ui/ArticleViewer;)V
 
-    .line 7695
+    .line 7816
     invoke-super/range {p0 .. p9}, Landroid/widget/HorizontalScrollView;->overScrollBy(IIIIIIIIZ)Z
 
     move-result p1

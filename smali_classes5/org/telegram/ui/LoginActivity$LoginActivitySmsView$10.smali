@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)V
     .locals 0
 
-    .line 4795
+    .line 4799
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -41,14 +41,14 @@
 .method private synthetic lambda$run$0()V
     .locals 9
 
-    .line 4802
+    .line 4806
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     long-to-double v0, v0
 
-    .line 4803
+    .line 4807
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v2}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11200(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)D
@@ -57,17 +57,17 @@
 
     sub-double v2, v0, v2
 
-    .line 4804
+    .line 4808
     iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v4, v0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11202(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;D)D
 
-    .line 4805
+    .line 4809
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11326(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;D)I
 
-    .line 4806
+    .line 4810
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11300(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
@@ -84,9 +84,9 @@
 
     const/4 v5, 0x2
 
-    if-lt v0, v4, :cond_3
+    if-lt v0, v4, :cond_4
 
-    .line 4807
+    .line 4811
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11300(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
@@ -97,7 +97,7 @@
 
     div-int/lit8 v0, v0, 0x3c
 
-    .line 4808
+    .line 4812
     iget-object v6, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v6}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11300(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
@@ -110,7 +110,7 @@
 
     sub-int/2addr v6, v4
 
-    .line 4809
+    .line 4813
     iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v4}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
@@ -121,7 +121,7 @@
 
     const/4 v8, 0x0
 
-    if-eq v4, v2, :cond_1
+    if-eq v4, v2, :cond_2
 
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
@@ -129,7 +129,7 @@
 
     move-result v2
 
-    if-eq v2, v3, :cond_1
+    if-eq v2, v3, :cond_2
 
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
@@ -141,17 +141,68 @@
 
     goto :goto_0
 
-    .line 4811
+    .line 4815
     :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11500(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
+
+    move-result v1
+
+    if-ne v1, v5, :cond_1
+
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
 
     move-result v1
 
-    if-ne v1, v5, :cond_2
+    if-ne v1, v5, :cond_1
 
-    .line 4812
+    .line 4816
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10800(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    sget v2, Lorg/telegram/messenger/R$string;->ResendSmsAvailableIn:I
+
+    new-array v3, v5, [Ljava/lang/Object;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    aput-object v0, v3, v8
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    aput-object v0, v3, v7
+
+    const-string v0, "ResendSmsAvailableIn"
+
+    invoke-static {v0, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    .line 4817
+    :cond_1
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
+
+    move-result v1
+
+    if-ne v1, v5, :cond_3
+
+    .line 4818
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v1}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10800(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
@@ -184,8 +235,8 @@
 
     goto :goto_1
 
-    .line 4810
-    :cond_1
+    .line 4814
+    :cond_2
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
@@ -217,65 +268,65 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4814
-    :cond_2
+    .line 4820
+    :cond_3
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11500(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Lorg/telegram/ui/LoginActivity$ProgressView;
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11600(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Lorg/telegram/ui/LoginActivity$ProgressView;
 
     goto/16 :goto_4
 
-    .line 4818
-    :cond_3
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
-
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11600(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)V
-
-    .line 4819
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
-
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
-
-    move-result v0
-
-    if-eq v0, v3, :cond_4
-
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
-
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
-
-    move-result v0
-
-    if-eq v0, v2, :cond_4
-
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
-
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
-
-    move-result v0
-
-    if-eq v0, v5, :cond_4
-
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
-
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
-
-    move-result v0
-
-    if-ne v0, v1, :cond_8
-
-    .line 4820
+    .line 4824
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11700(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)V
+
+    .line 4825
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
 
     move-result v0
 
-    if-ne v0, v2, :cond_5
+    if-eq v0, v3, :cond_5
 
-    .line 4821
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
+
+    move-result v0
+
+    if-eq v0, v2, :cond_5
+
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
+
+    move-result v0
+
+    if-eq v0, v5, :cond_5
+
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_9
+
+    .line 4826
+    :cond_5
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
+
+    move-result v0
+
+    if-ne v0, v2, :cond_6
+
+    .line 4827
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10800(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
@@ -294,15 +345,15 @@
 
     goto :goto_3
 
-    .line 4822
-    :cond_5
+    .line 4828
+    :cond_6
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11400(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)I
 
     move-result v0
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_8
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
@@ -310,12 +361,12 @@
 
     move-result v0
 
-    if-ne v0, v3, :cond_6
+    if-ne v0, v3, :cond_7
 
     goto :goto_2
 
-    .line 4825
-    :cond_6
+    .line 4831
+    :cond_7
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10800(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
@@ -334,8 +385,8 @@
 
     goto :goto_3
 
-    .line 4823
-    :cond_7
+    .line 4829
+    :cond_8
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
@@ -353,7 +404,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4827
+    .line 4833
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
@@ -369,7 +420,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 4828
+    .line 4834
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$10800(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Landroid/widget/TextView;
@@ -384,7 +435,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/TextView;->setTag(ILjava/lang/Object;)V
 
-    :cond_8
+    :cond_9
     :goto_4
     return-void
 .end method
@@ -394,7 +445,7 @@
 .method public run()V
     .locals 1
 
-    .line 4798
+    .line 4802
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->access$11100(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;)Ljava/util/Timer;
@@ -405,7 +456,7 @@
 
     return-void
 
-    .line 4801
+    .line 4805
     :cond_0
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$10$$ExternalSyntheticLambda0;
 

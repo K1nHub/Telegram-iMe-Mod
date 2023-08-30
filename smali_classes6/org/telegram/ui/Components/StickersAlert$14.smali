@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickersAlert;IZ)V
     .locals 0
 
-    .line 1588
+    .line 1602
     iput-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
     iput p2, p0, Lorg/telegram/ui/Components/StickersAlert$14;->val$num:I
@@ -43,10 +43,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1601
+    .line 1615
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5200(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5100(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -58,7 +58,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5200(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5100(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -72,10 +72,10 @@
 
     if-eqz p1, :cond_0
 
-    .line 1602
+    .line 1616
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5200(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5100(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
 
     move-result-object p1
 
@@ -92,10 +92,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1591
+    .line 1605
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5200(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5100(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -107,7 +107,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5200(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$5100(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -121,15 +121,15 @@
 
     if-eqz p1, :cond_1
 
-    .line 1592
+    .line 1606
     iget-boolean p1, p0, Lorg/telegram/ui/Components/StickersAlert$14;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 1593
+    .line 1607
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5300(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5200(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/view/View;
 
     move-result-object p1
 
@@ -141,11 +141,11 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1595
+    .line 1609
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/StickersAlert$14;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5200(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
+    invoke-static {p1}, Lorg/telegram/ui/Components/StickersAlert;->access$5100(Lorg/telegram/ui/Components/StickersAlert;)[Landroid/animation/AnimatorSet;
 
     move-result-object p1
 

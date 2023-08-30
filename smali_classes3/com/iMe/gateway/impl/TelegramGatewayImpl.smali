@@ -46,7 +46,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 64
+    .line 67
     invoke-static {p1, p2}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->cutInBlocks(Ljava/lang/CharSequence;I)Ljava/util/ArrayList;
 
     move-result-object p1
@@ -107,11 +107,12 @@
     .line 23
     iget-object v0, v0, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
 
-    const-string v1, "locale.pluralLangCode"
+    const-string v1, "{\n                locale\u2026ralLangCode\n            }"
 
+    .line 22
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-object v0
+    goto :goto_1
 
     .line 25
     :cond_1
@@ -119,17 +120,19 @@
 
     move-result-object v0
 
-    const-string v1, "getLocaleStringIso639()"
+    const-string v1, "{\n                Locale\u2026ingIso639()\n            }"
 
+    .line 24
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
+    :goto_1
     return-object v0
 .end method
 
 .method public getDeviceId()Ljava/lang/String;
     .locals 1
 
-    .line 35
+    .line 36
     iget-object v0, p0, Lcom/iMe/gateway/impl/TelegramGatewayImpl;->context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ContextExtKt;->getDeviceId(Landroid/content/Context;)Ljava/lang/String;
@@ -142,7 +145,7 @@
 .method public getFilesFixedDirectory()Ljava/io/File;
     .locals 2
 
-    .line 38
+    .line 39
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v0
@@ -157,7 +160,7 @@
 .method public getSelectedAccountId()J
     .locals 2
 
-    .line 32
+    .line 33
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -172,7 +175,7 @@
 .method public getSelectedAccountIndex()I
     .locals 1
 
-    .line 29
+    .line 30
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     return v0
@@ -181,7 +184,7 @@
 .method public getWalletRefreshToken()Ljava/lang/String;
     .locals 2
 
-    .line 45
+    .line 46
     sget-object v0, Lcom/iMe/fork/controller/ForkCommonController;->Companion:Lcom/iMe/fork/controller/ForkCommonController$Companion;
 
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -200,7 +203,7 @@
 .method public hasUser(J)Z
     .locals 1
 
-    .line 62
+    .line 64
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -231,7 +234,7 @@
 .method public setAppVersionRequiredUpdate(Ljava/lang/String;)V
     .locals 2
 
-    .line 56
+    .line 57
     sget-object v0, Lcom/iMe/fork/controller/ForkCommonController;->Companion:Lcom/iMe/fork/controller/ForkCommonController$Companion;
 
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -240,10 +243,10 @@
 
     move-result-object v0
 
-    .line 57
+    .line 58
     invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/ForkCommonController;->setAppVersionRequiredUpdate(Ljava/lang/String;)V
 
-    .line 58
+    .line 59
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->saveConfig()V
 
     return-void
@@ -252,7 +255,7 @@
 .method public setWalletRefreshToken(Ljava/lang/String;)V
     .locals 2
 
-    .line 47
+    .line 48
     sget-object v0, Lcom/iMe/fork/controller/ForkCommonController;->Companion:Lcom/iMe/fork/controller/ForkCommonController$Companion;
 
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -261,10 +264,10 @@
 
     move-result-object v0
 
-    .line 48
+    .line 49
     invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/ForkCommonController;->setWalletRefreshToken(Ljava/lang/String;)V
 
-    .line 49
+    .line 50
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ForkCommonController;->saveConfig()V
 
     return-void

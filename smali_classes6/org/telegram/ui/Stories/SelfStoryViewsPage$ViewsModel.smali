@@ -110,17 +110,17 @@
 .method public constructor <init>(ILorg/telegram/tgnet/TLRPC$StoryItem;Z)V
     .locals 5
 
-    .line 972
+    .line 977
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 958
+    .line 963
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
-    .line 959
+    .line 964
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -129,42 +129,42 @@
 
     const/4 v0, 0x1
 
-    .line 963
+    .line 968
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->hasNext:Z
 
     const/4 v1, -0x1
 
-    .line 965
+    .line 970
     iput v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->reqId:I
 
-    .line 966
+    .line 971
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->animateDateForUsers:Ljava/util/HashSet;
 
-    .line 969
+    .line 974
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
-    .line 970
+    .line 975
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
     invoke-direct {v1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
-    .line 973
+    .line 978
     iput p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->currentAccount:I
 
-    .line 974
+    .line 979
     iput-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
-    .line 975
+    .line 980
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
 
     const/4 v2, 0x0
@@ -185,10 +185,10 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 977
+    .line 982
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->useLocalFilters:Z
 
-    .line 979
+    .line 984
     :cond_1
     invoke-static {p2}, Lorg/telegram/ui/Stories/StoriesUtilities;->hasExpiredViews(Lorg/telegram/tgnet/TLRPC$StoryItem;)Z
 
@@ -218,7 +218,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 980
+    .line 985
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
 
     if-eqz v1, :cond_3
@@ -227,22 +227,22 @@
 
     if-lez v1, :cond_3
 
-    .line 981
+    .line 986
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->isExpiredViews:Z
 
-    .line 982
+    .line 987
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->showReactionOnly:Z
 
-    .line 984
+    .line 989
     :cond_3
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->isExpiredViews:Z
 
     if-nez v1, :cond_5
 
-    .line 985
+    .line 990
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->initial:Z
 
-    .line 986
+    .line 991
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
 
     if-eqz v0, :cond_5
@@ -251,7 +251,7 @@
 
     move p3, v2
 
-    .line 987
+    .line 992
     :goto_2
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
 
@@ -263,7 +263,7 @@
 
     if-ge p3, v0, :cond_5
 
-    .line 988
+    .line 993
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$StoryViews;->recent_viewers:Ljava/util/ArrayList;
@@ -278,7 +278,7 @@
 
     move-result-wide v0
 
-    .line 989
+    .line 994
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -295,19 +295,19 @@
 
     goto :goto_3
 
-    .line 992
+    .line 997
     :cond_4
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_storyView;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_storyView;-><init>()V
 
-    .line 993
+    .line 998
     iput-wide v0, v3, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
 
-    .line 994
+    .line 999
     iput v2, v3, Lorg/telegram/tgnet/TLRPC$TL_storyView;->date:I
 
-    .line 995
+    .line 1000
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -324,12 +324,12 @@
 .method private applyLocalFilter()V
     .locals 8
 
-    .line 1089
+    .line 1094
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1090
+    .line 1095
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->contactsOnly:Z
@@ -346,7 +346,7 @@
 
     goto :goto_0
 
-    .line 1115
+    .line 1120
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
@@ -356,7 +356,7 @@
 
     goto/16 :goto_4
 
-    .line 1093
+    .line 1098
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
@@ -371,7 +371,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1094
+    .line 1099
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->searchQuery:Ljava/lang/String;
@@ -384,7 +384,7 @@
 
     move-result-object v1
 
-    .line 1095
+    .line 1100
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -403,7 +403,7 @@
 
     move v3, v2
 
-    .line 1097
+    .line 1102
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->originalViews:Ljava/util/ArrayList;
 
@@ -413,7 +413,7 @@
 
     if-ge v3, v4, :cond_8
 
-    .line 1098
+    .line 1103
     iget v4, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -438,7 +438,7 @@
 
     move-result-object v4
 
-    .line 1100
+    .line 1105
     iget-object v5, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
     iget-boolean v5, v5, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->contactsOnly:Z
@@ -464,7 +464,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 1104
+    .line 1109
     iget-object v6, v4, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -477,12 +477,12 @@
 
     move-result-object v6
 
-    .line 1105
+    .line 1110
     invoke-static {v4}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1106
+    .line 1111
     invoke-virtual {v6, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v7
@@ -515,7 +515,7 @@
     :cond_6
     if-eqz v5, :cond_7
 
-    .line 1111
+    .line 1116
     iget-object v4, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->originalViews:Ljava/util/ArrayList;
@@ -533,7 +533,7 @@
 
     goto :goto_2
 
-    .line 1117
+    .line 1122
     :cond_8
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
@@ -542,7 +542,7 @@
 
     if-nez v0, :cond_9
 
-    .line 1118
+    .line 1123
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     sget-object v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda1;
@@ -560,7 +560,7 @@
 .method private static synthetic lambda$applyLocalFilter$2(Lorg/telegram/tgnet/TLRPC$TL_storyView;)I
     .locals 0
 
-    .line 1118
+    .line 1123
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$TL_storyView;->date:I
 
     neg-int p0, p0
@@ -573,7 +573,7 @@
 
     const/4 v0, 0x0
 
-    .line 1029
+    .line 1034
     aget p1, p1, v0
 
     iget v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->reqId:I
@@ -582,7 +582,7 @@
 
     if-eq p1, v1, :cond_0
 
-    .line 1030
+    .line 1035
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -607,21 +607,21 @@
 
     return-void
 
-    .line 1033
+    .line 1038
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->loading:Z
 
     const/4 p1, -0x1
 
-    .line 1034
+    .line 1039
     iput p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->reqId:I
 
     if-eqz p2, :cond_8
 
-    .line 1036
+    .line 1041
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;
 
-    .line 1037
+    .line 1042
     iget p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -634,7 +634,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->applyStoryViewsBlocked(Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;)V
 
-    .line 1038
+    .line 1043
     iget p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -645,17 +645,17 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 1039
+    .line 1044
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->initial:Z
 
     if-eqz p1, :cond_2
 
-    .line 1040
+    .line 1045
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->initial:Z
 
     move p1, v0
 
-    .line 1041
+    .line 1046
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
@@ -665,7 +665,7 @@
 
     if-ge p1, v1, :cond_1
 
-    .line 1042
+    .line 1047
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->animateDateForUsers:Ljava/util/HashSet;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
@@ -688,36 +688,36 @@
 
     goto :goto_0
 
-    .line 1044
+    .line 1049
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1045
+    .line 1050
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->originalViews:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1047
+    .line 1052
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->useLocalFilters:Z
 
     if-eqz p1, :cond_3
 
-    .line 1048
+    .line 1053
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->originalViews:Ljava/util/ArrayList;
 
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1049
+    .line 1054
     invoke-direct {p0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->applyLocalFilter()V
 
     goto :goto_1
 
-    .line 1051
+    .line 1056
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
@@ -725,7 +725,7 @@
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1054
+    .line 1059
     :goto_1
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
 
@@ -737,32 +737,32 @@
 
     const/4 p1, 0x1
 
-    .line 1055
+    .line 1060
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->hasNext:Z
 
     goto :goto_2
 
-    .line 1057
+    .line 1062
     :cond_4
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->hasNext:Z
 
-    .line 1059
+    .line 1064
     :goto_2
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->next_offset:Ljava/lang/String;
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->offset:Ljava/lang/String;
 
-    .line 1060
+    .line 1065
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_5
 
-    .line 1061
+    .line 1066
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->hasNext:Z
 
-    .line 1064
+    .line 1069
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
@@ -770,14 +770,14 @@
 
     if-nez v1, :cond_6
 
-    .line 1065
+    .line 1070
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_storyViews;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_storyViews;-><init>()V
 
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
 
-    .line 1067
+    .line 1072
     :cond_6
     iget p1, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->count:I
 
@@ -789,7 +789,7 @@
 
     if-le p1, v3, :cond_9
 
-    .line 1068
+    .line 1073
     iget-object p1, v1, Lorg/telegram/tgnet/TLRPC$StoryViews;->recent_viewers:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
@@ -799,7 +799,7 @@
     :goto_3
     const/4 v1, 0x3
 
-    .line 1069
+    .line 1074
     iget-object v3, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -812,7 +812,7 @@
 
     if-ge p1, v1, :cond_7
 
-    .line 1070
+    .line 1075
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
@@ -839,7 +839,7 @@
 
     goto :goto_3
 
-    .line 1072
+    .line 1077
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
@@ -851,11 +851,11 @@
 
     goto :goto_4
 
-    .line 1075
+    .line 1080
     :cond_8
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->hasNext:Z
 
-    .line 1078
+    .line 1083
     :cond_9
     :goto_4
     new-instance p1, Ljava/lang/StringBuilder;
@@ -896,7 +896,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1079
+    .line 1084
     :goto_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
@@ -906,7 +906,7 @@
 
     if-ge v0, p1, :cond_a
 
-    .line 1080
+    .line 1085
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -921,7 +921,7 @@
 
     goto :goto_5
 
-    .line 1082
+    .line 1087
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
@@ -937,7 +937,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 1083
+    .line 1088
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->loadNext()V
 
     :cond_b
@@ -947,7 +947,7 @@
 .method private synthetic lambda$loadNext$1([ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 1028
+    .line 1033
     new-instance p3, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;[ILorg/telegram/tgnet/TLObject;)V
@@ -962,7 +962,7 @@
 .method public addListener(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 1
 
-    .line 1123
+    .line 1128
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -971,7 +971,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1124
+    .line 1129
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -983,7 +983,7 @@
 .method public loadNext()V
     .locals 6
 
-    .line 1002
+    .line 1007
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->loading:Z
 
     if-nez v0, :cond_6
@@ -998,20 +998,20 @@
 
     goto/16 :goto_2
 
-    .line 1005
+    .line 1010
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;-><init>()V
 
-    .line 1006
+    .line 1011
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
 
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->id:I
 
-    .line 1007
+    .line 1012
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->useLocalFilters:Z
 
     const/4 v2, 0x0
@@ -1022,18 +1022,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 1008
+    .line 1013
     iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->q:Ljava/lang/String;
 
-    .line 1009
+    .line 1014
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->just_contacts:Z
 
-    .line 1010
+    .line 1015
     iput-boolean v4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->reactions_first:Z
 
     goto :goto_0
 
-    .line 1012
+    .line 1017
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
@@ -1041,21 +1041,21 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->q:Ljava/lang/String;
 
-    .line 1013
+    .line 1018
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 1014
+    .line 1019
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->flags:I
 
     or-int/lit8 v1, v1, 0x2
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->flags:I
 
-    .line 1016
+    .line 1021
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
@@ -1063,12 +1063,12 @@
 
     iput-boolean v5, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->just_contacts:Z
 
-    .line 1017
+    .line 1022
     iget-boolean v1, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->sortByReactions:Z
 
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->reactions_first:Z
 
-    .line 1019
+    .line 1024
     :goto_0
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->initial:Z
 
@@ -1093,23 +1093,23 @@
     :goto_1
     iput v5, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->limit:I
 
-    .line 1020
+    .line 1025
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->offset:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->offset:Ljava/lang/String;
 
     if-nez v1, :cond_5
 
-    .line 1022
+    .line 1027
     iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoryViewsList;->offset:Ljava/lang/String;
 
-    .line 1025
+    .line 1030
     :cond_5
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->loading:Z
 
     new-array v1, v4, [I
 
-    .line 1027
+    .line 1032
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1166,7 +1166,7 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1028
+    .line 1033
     iget v3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1193,12 +1193,12 @@
 .method public release()V
     .locals 3
 
-    .line 1133
+    .line 1138
     iget v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->reqId:I
 
     if-ltz v0, :cond_0
 
-    .line 1134
+    .line 1139
     iget v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1214,7 +1214,7 @@
     :cond_0
     const/4 v0, -0x1
 
-    .line 1136
+    .line 1141
     iput v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->reqId:I
 
     return-void
@@ -1223,19 +1223,19 @@
 .method public reloadIfNeed(Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;ZZ)V
     .locals 1
 
-    .line 1140
+    .line 1145
     new-instance v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;-><init>()V
 
-    .line 1141
+    .line 1146
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->set(Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;)V
 
     const/4 p1, 0x0
 
     if-nez p2, :cond_0
 
-    .line 1143
+    .line 1148
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->contactsOnly:Z
 
     :cond_0
@@ -1243,10 +1243,10 @@
 
     if-nez p3, :cond_1
 
-    .line 1146
+    .line 1151
     iput-boolean p2, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->sortByReactions:Z
 
-    .line 1148
+    .line 1153
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
@@ -1258,21 +1258,21 @@
 
     return-void
 
-    .line 1151
+    .line 1156
     :cond_2
     iget-object p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->set(Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;)V
 
-    .line 1152
+    .line 1157
     iget-boolean p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->useLocalFilters:Z
 
     if-eqz p3, :cond_3
 
-    .line 1153
+    .line 1158
     invoke-direct {p0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->applyLocalFilter()V
 
-    .line 1154
+    .line 1159
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
@@ -1282,7 +1282,7 @@
 
     if-ge p1, p2, :cond_4
 
-    .line 1155
+    .line 1160
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1297,30 +1297,30 @@
 
     goto :goto_0
 
-    .line 1158
+    .line 1163
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->release()V
 
-    .line 1159
+    .line 1164
     iget-object p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->clear()V
 
-    .line 1160
+    .line 1165
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->initial:Z
 
-    .line 1161
+    .line 1166
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->loading:Z
 
-    .line 1162
+    .line 1167
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->hasNext:Z
 
     const-string p1, ""
 
-    .line 1163
+    .line 1168
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->offset:Ljava/lang/String;
 
-    .line 1164
+    .line 1169
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->loadNext()V
 
     :cond_4
@@ -1330,7 +1330,7 @@
 .method public removeListener(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 1
 
-    .line 1129
+    .line 1134
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->listeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z

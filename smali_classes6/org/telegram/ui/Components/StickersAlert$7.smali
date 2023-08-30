@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickersAlert;)V
     .locals 0
 
-    .line 772
+    .line 769
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -31,16 +31,16 @@
 
     const/4 p2, 0x0
 
-    .line 775
+    .line 772
     iput p2, p1, Landroid/graphics/Rect;->left:I
 
-    .line 776
+    .line 773
     iput p2, p1, Landroid/graphics/Rect;->right:I
 
-    .line 777
+    .line 774
     iput p2, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 778
+    .line 775
     iput p2, p1, Landroid/graphics/Rect;->top:I
 
     return-void

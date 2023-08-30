@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$r_oHzF2KsdLUbeOUh1SmS1N0bJw(Landroid/content/DialogInterface;I)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$w73Rek5OCtC7ZEm_PVlOwYjeuMs(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

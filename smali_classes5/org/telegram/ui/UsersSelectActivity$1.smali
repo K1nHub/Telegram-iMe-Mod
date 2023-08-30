@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/UsersSelectActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 530
+    .line 514
     iput-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/UsersSelectActivity$1;->val$context:Landroid/content/Context;
@@ -39,7 +39,7 @@
 .method public onItemClick(I)V
     .locals 3
 
-    .line 533
+    .line 517
     invoke-static {p1}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->getCategoriesCreatedFolderOrTopic(I)Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
     move-result-object v0
@@ -48,7 +48,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 536
+    .line 520
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1100(Lorg/telegram/ui/UsersSelectActivity;)Z
@@ -59,7 +59,7 @@
 
     return-void
 
-    .line 539
+    .line 523
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->getHasSelectedItem()Z
 
@@ -67,7 +67,7 @@
 
     if-nez p1, :cond_3
 
-    .line 540
+    .line 524
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1200(Lorg/telegram/ui/UsersSelectActivity;)Ljava/util/HashMap;
@@ -96,22 +96,22 @@
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setRightIcon(I)V
 
-    .line 541
+    .line 525
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/UsersSelectActivity;->selectedChatsGroupCreationFilter:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
     invoke-virtual {p1, v2}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->setHasSelectedItem(Z)V
 
-    .line 542
+    .line 526
     invoke-virtual {v0, v1}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->setHasSelectedItem(Z)V
 
-    .line 543
+    .line 527
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     iput-object v0, p1, Lorg/telegram/ui/UsersSelectActivity;->selectedChatsGroupCreationFilter:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 544
+    .line 528
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1200(Lorg/telegram/ui/UsersSelectActivity;)Ljava/util/HashMap;
 
     move-result-object p1
@@ -134,7 +134,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setRightIcon(I)V
 
-    .line 545
+    .line 529
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1400(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -162,7 +162,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 549
+    .line 533
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -172,7 +172,7 @@
     :cond_2
     if-ne p1, v1, :cond_3
 
-    .line 551
+    .line 535
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$1;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/UsersSelectActivity;->access$1500(Lorg/telegram/ui/UsersSelectActivity;Z)Z

@@ -72,7 +72,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    .line 313
+    .line 322
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
@@ -83,7 +83,7 @@
 .method private synthetic lambda$onGeolocationPermissionsShowPrompt$0(Landroid/webkit/GeolocationPermissions$Callback;Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 2
 
-    .line 360
+    .line 385
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -92,19 +92,19 @@
 
     invoke-interface {p1, p2, v0, v1}, Landroid/webkit/GeolocationPermissions$Callback;->invoke(Ljava/lang/String;ZZ)V
 
-    .line 361
+    .line 386
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 362
+    .line 387
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const/4 p2, 0x1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1402(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1202(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
 
     :cond_0
     return-void
@@ -113,24 +113,24 @@
 .method private synthetic lambda$onGeolocationPermissionsShowPrompt$1(Landroid/webkit/GeolocationPermissions$Callback;Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 2
 
-    .line 355
+    .line 380
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 356
+    .line 381
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
-    .line 358
+    .line 383
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p3
 
     if-eqz p3, :cond_0
 
-    .line 359
+    .line 384
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const-string v0, "android.permission.ACCESS_COARSE_LOCATION"
@@ -145,14 +145,14 @@
 
     invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer$4;Landroid/webkit/GeolocationPermissions$Callback;Ljava/lang/String;)V
 
-    invoke-static {p3, v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1300(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroidx/core/util/Consumer;)V
+    invoke-static {p3, v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1100(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroidx/core/util/Consumer;)V
 
     goto :goto_0
 
     :cond_0
     const/4 p3, 0x0
 
-    .line 366
+    .line 391
     invoke-interface {p1, p2, p3, p3}, Landroid/webkit/GeolocationPermissions$Callback;->invoke(Ljava/lang/String;ZZ)V
 
     :cond_1
@@ -163,7 +163,7 @@
 .method private synthetic lambda$onPermissionRequest$2(Landroid/webkit/PermissionRequest;Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 2
 
-    .line 406
+    .line 431
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p3
@@ -178,17 +178,17 @@
 
     aput-object p2, v0, v1
 
-    .line 407
+    .line 432
     invoke-virtual {p1, v0}, Landroid/webkit/PermissionRequest;->grant([Ljava/lang/String;)V
 
-    .line 408
+    .line 433
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {p1, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1402(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
+    invoke-static {p1, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1202(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
 
     goto :goto_0
 
-    .line 410
+    .line 435
     :cond_0
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->deny()V
 
@@ -199,24 +199,24 @@
 .method private synthetic lambda$onPermissionRequest$3(Landroid/webkit/PermissionRequest;Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 2
 
-    .line 401
+    .line 426
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 402
+    .line 427
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
-    .line 404
+    .line 429
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p3
 
     if-eqz p3, :cond_0
 
-    .line 405
+    .line 430
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const-string v0, "android.permission.RECORD_AUDIO"
@@ -229,11 +229,11 @@
 
     invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$4$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer$4;Landroid/webkit/PermissionRequest;Ljava/lang/String;)V
 
-    invoke-static {p3, v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1300(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroidx/core/util/Consumer;)V
+    invoke-static {p3, v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1100(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroidx/core/util/Consumer;)V
 
     goto :goto_0
 
-    .line 414
+    .line 439
     :cond_0
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->deny()V
 
@@ -245,7 +245,7 @@
 .method private synthetic lambda$onPermissionRequest$4(Landroid/webkit/PermissionRequest;Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 2
 
-    .line 428
+    .line 453
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p3
@@ -260,17 +260,17 @@
 
     aput-object p2, v0, v1
 
-    .line 429
+    .line 454
     invoke-virtual {p1, v0}, Landroid/webkit/PermissionRequest;->grant([Ljava/lang/String;)V
 
-    .line 430
+    .line 455
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {p1, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1402(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
+    invoke-static {p1, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1202(Lorg/telegram/ui/Components/BotWebViewContainer;Z)Z
 
     goto :goto_0
 
-    .line 432
+    .line 457
     :cond_0
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->deny()V
 
@@ -281,24 +281,24 @@
 .method private synthetic lambda$onPermissionRequest$5(Landroid/webkit/PermissionRequest;Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 2
 
-    .line 423
+    .line 448
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 424
+    .line 449
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
-    .line 426
+    .line 451
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p3
 
     if-eqz p3, :cond_0
 
-    .line 427
+    .line 452
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const-string v0, "android.permission.CAMERA"
@@ -311,11 +311,11 @@
 
     invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$4$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer$4;Landroid/webkit/PermissionRequest;Ljava/lang/String;)V
 
-    invoke-static {p3, v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1300(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroidx/core/util/Consumer;)V
+    invoke-static {p3, v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1100(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroidx/core/util/Consumer;)V
 
     goto :goto_0
 
-    .line 436
+    .line 461
     :cond_0
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->deny()V
 
@@ -326,20 +326,55 @@
 
 
 # virtual methods
+.method public onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z
+    .locals 0
+
+    .line 327
+    new-instance p2, Landroid/webkit/WebView;
+
+    invoke-virtual {p1}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+
+    .line 328
+    new-instance p1, Lorg/telegram/ui/Components/BotWebViewContainer$4$1;
+
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/BotWebViewContainer$4$1;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer$4;)V
+
+    invoke-virtual {p2, p1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
+
+    .line 335
+    iget-object p1, p4, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p1, Landroid/webkit/WebView$WebViewTransport;
+
+    .line 336
+    invoke-virtual {p1, p2}, Landroid/webkit/WebView$WebViewTransport;->setWebView(Landroid/webkit/WebView;)V
+
+    .line 337
+    invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
+
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
 .method public onGeolocationPermissionsHidePrompt()V
     .locals 1
 
-    .line 375
+    .line 400
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
-    .line 376
+    .line 401
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     const/4 v0, 0x0
 
-    .line 377
+    .line 402
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     :cond_0
@@ -349,10 +384,10 @@
 .method public onGeolocationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V
     .locals 9
 
-    .line 350
+    .line 375
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$800(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
 
     move-result-object v0
 
@@ -360,22 +395,22 @@
 
     if-nez v0, :cond_0
 
-    .line 351
+    .line 376
     invoke-interface {p2, p1, v1, v1}, Landroid/webkit/GeolocationPermissions$Callback;->invoke(Ljava/lang/String;ZZ)V
 
     return-void
 
-    .line 354
+    .line 379
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$800(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
 
     move-result-object v2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1100(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$900(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v3
 
@@ -397,7 +432,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v8}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v8
 
@@ -417,7 +452,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v8}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v8
 
@@ -443,7 +478,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
-    .line 370
+    .line 395
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
 
     return-void
@@ -452,26 +487,26 @@
 .method public onPermissionRequest(Landroid/webkit/PermissionRequest;)V
     .locals 11
 
-    .line 384
+    .line 409
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
-    .line 385
+    .line 410
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     const/4 v0, 0x0
 
-    .line 386
+    .line 411
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
-    .line 389
+    .line 414
     :cond_0
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->getResources()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 390
+    .line 415
     array-length v1, v0
 
     const/4 v2, 0x1
@@ -480,24 +515,24 @@
 
     const/4 v1, 0x0
 
-    .line 391
+    .line 416
     aget-object v0, v0, v1
 
-    .line 393
+    .line 418
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
+    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$800(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
 
     move-result-object v3
 
     if-nez v3, :cond_1
 
-    .line 394
+    .line 419
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->deny()V
 
     return-void
 
-    .line 398
+    .line 423
     :cond_1
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -519,17 +554,17 @@
 
     goto/16 :goto_0
 
-    .line 400
+    .line 425
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
+    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$800(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
 
     move-result-object v4
 
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1100(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$900(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v5
 
@@ -547,7 +582,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v9
 
@@ -567,7 +602,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v9
 
@@ -591,22 +626,22 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
-    .line 418
+    .line 443
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
 
     goto :goto_0
 
-    .line 422
+    .line 447
     :cond_3
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
+    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$800(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/app/Activity;
 
     move-result-object v4
 
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1100(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$900(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v5
 
@@ -624,7 +659,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v9
 
@@ -644,7 +679,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
+    invoke-static {v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewContainer;)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v9
 
@@ -668,7 +703,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
-    .line 440
+    .line 465
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
 
     :cond_4
@@ -679,17 +714,17 @@
 .method public onPermissionRequestCanceled(Landroid/webkit/PermissionRequest;)V
     .locals 0
 
-    .line 450
+    .line 475
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     if-eqz p1, :cond_0
 
-    .line 451
+    .line 476
     invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
 
     const/4 p1, 0x0
 
-    .line 452
+    .line 477
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->lastPermissionsDialog:Landroid/app/Dialog;
 
     :cond_0
@@ -699,19 +734,19 @@
 .method public onProgressChanged(Landroid/webkit/WebView;I)V
     .locals 1
 
-    .line 343
+    .line 368
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$900(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroidx/core/util/Consumer;
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$700(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroidx/core/util/Consumer;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 344
+    .line 369
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$900(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroidx/core/util/Consumer;
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$700(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroidx/core/util/Consumer;
 
     move-result-object p1
 
@@ -746,14 +781,14 @@
         }
     .end annotation
 
-    .line 318
+    .line 343
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    .line 319
+    .line 344
     instance-of v0, p1, Landroid/app/Activity;
 
     if-nez v0, :cond_0
@@ -762,23 +797,23 @@
 
     return p1
 
-    .line 322
+    .line 347
     :cond_0
     check-cast p1, Landroid/app/Activity;
 
-    .line 324
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$800(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/webkit/ValueCallback;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$600(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/webkit/ValueCallback;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 325
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$800(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/webkit/ValueCallback;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$600(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/webkit/ValueCallback;
 
     move-result-object v0
 
@@ -786,13 +821,13 @@
 
     invoke-interface {v0, v1}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
-    .line 328
+    .line 353
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    invoke-static {v0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$802(Lorg/telegram/ui/Components/BotWebViewContainer;Landroid/webkit/ValueCallback;)Landroid/webkit/ValueCallback;
+    invoke-static {v0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$602(Lorg/telegram/ui/Components/BotWebViewContainer;Landroid/webkit/ValueCallback;)Landroid/webkit/ValueCallback;
 
-    .line 329
+    .line 354
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
@@ -801,7 +836,7 @@
 
     if-lt p2, v0, :cond_2
 
-    .line 330
+    .line 355
     invoke-virtual {p3}, Landroid/webkit/WebChromeClient$FileChooserParams;->createIntent()Landroid/content/Intent;
 
     move-result-object p2
@@ -810,7 +845,7 @@
 
     goto :goto_0
 
-    .line 332
+    .line 357
     :cond_2
     new-instance p2, Landroid/content/Intent;
 
@@ -820,15 +855,15 @@
 
     const-string p3, "android.intent.category.OPENABLE"
 
-    .line 333
+    .line 358
     invoke-virtual {p2, p3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string p3, "*/*"
 
-    .line 334
+    .line 359
     invoke-virtual {p2, p3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 335
+    .line 360
     sget p3, Lorg/telegram/messenger/R$string;->BotWebViewFileChooserTitle:I
 
     invoke-static {p3}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;

@@ -30,7 +30,7 @@
 .method private constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;)V
     .locals 0
 
-    .line 7209
+    .line 7330
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TelegramWebviewProxy;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;Lorg/telegram/ui/ArticleViewer$1;)V
     .locals 0
 
-    .line 7209
+    .line 7330
     invoke-direct {p0, p1}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TelegramWebviewProxy;-><init>(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;)V
 
     return-void
@@ -52,20 +52,20 @@
 
     const-string v0, "resize_frame"
 
-    .line 7213
+    .line 7334
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 7215
+    .line 7336
     :try_start_0
     new-instance p1, Lorg/json/JSONObject;
 
     invoke-direct {p1, p2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 7216
+    .line 7337
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TelegramWebviewProxy;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     const-string v0, "height"
@@ -82,9 +82,9 @@
 
     move-result p1
 
-    invoke-static {p2, p1}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->access$14802(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;I)I
+    invoke-static {p2, p1}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->access$15102(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;I)I
 
-    .line 7217
+    .line 7338
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TelegramWebviewProxy;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
@@ -103,7 +103,7 @@
     .annotation runtime Landroid/webkit/JavascriptInterface;
     .end annotation
 
-    .line 7212
+    .line 7333
     new-instance v0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TelegramWebviewProxy$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TelegramWebviewProxy$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TelegramWebviewProxy;Ljava/lang/String;Ljava/lang/String;)V

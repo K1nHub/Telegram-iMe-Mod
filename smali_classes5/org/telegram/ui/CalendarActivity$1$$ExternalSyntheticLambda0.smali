@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+.method public final draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$1$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/CalendarActivity$1;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/CalendarActivity$1;->$r8$lambda$FDB2f7R0HQdemYqHS9rbM0VMaZI(Lorg/telegram/ui/CalendarActivity$1;Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/CalendarActivity$1;->$r8$lambda$eR4IeR2NOrs6zaK50c28DydjbKY(Lorg/telegram/ui/CalendarActivity$1;Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
 
     return-void
 .end method

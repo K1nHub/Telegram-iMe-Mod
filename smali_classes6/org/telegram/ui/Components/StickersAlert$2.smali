@@ -58,7 +58,7 @@
     .line 506
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$2;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$6300(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$6200(Lorg/telegram/ui/Components/StickersAlert;)Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     move-result-object v0
 
@@ -81,7 +81,7 @@
 
     add-int/2addr p2, p1
 
-    invoke-static {p3, p2}, Lorg/telegram/ui/Components/StickersAlert;->access$6400(Lorg/telegram/ui/Components/StickersAlert;I)V
+    invoke-static {p3, p2}, Lorg/telegram/ui/Components/StickersAlert;->access$6300(Lorg/telegram/ui/Components/StickersAlert;I)V
 
     .line 510
     iget-object p2, p0, Lorg/telegram/ui/Components/StickersAlert$2;->this$0:Lorg/telegram/ui/Components/StickersAlert;
@@ -117,7 +117,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$2;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$6200(Lorg/telegram/ui/Components/StickersAlert;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$6100(Lorg/telegram/ui/Components/StickersAlert;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -161,7 +161,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/StickersAlert$2;->this$0:Lorg/telegram/ui/Components/StickersAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$6100(Lorg/telegram/ui/Components/StickersAlert;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lorg/telegram/ui/Components/StickersAlert;->access$6000(Lorg/telegram/ui/Components/StickersAlert;)Landroid/view/ViewGroup;
 
     move-result-object v0
 

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 995
+    .line 996
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setEnabled(Z)V
     .locals 0
 
-    .line 998
+    .line 999
     invoke-super {p0, p1}, Landroid/widget/TextView;->setEnabled(Z)V
 
     if-eqz p1, :cond_0
@@ -41,7 +41,7 @@
     :cond_0
     const/high16 p1, 0x3f000000    # 0.5f
 
-    .line 999
+    .line 1000
     :goto_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setAlpha(F)V
 
@@ -51,12 +51,12 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 1004
+    .line 1005
     invoke-super {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/4 v0, 0x6
 
-    .line 1005
+    .line 1006
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0

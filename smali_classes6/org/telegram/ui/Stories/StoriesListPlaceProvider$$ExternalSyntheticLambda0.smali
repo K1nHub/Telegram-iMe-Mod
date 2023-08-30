@@ -2,50 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Stories/StoryViewer$HolderDrawAbove;
+.implements Lorg/telegram/ui/Stories/StoryViewer$HolderClip;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
-
-.field public final synthetic f$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
-
-.field public final synthetic f$2:[I
+.field public final synthetic f$0:Landroid/graphics/Path;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;Lorg/telegram/ui/Components/RecyclerListView$FastScroll;[I)V
+.method public synthetic constructor <init>(Landroid/graphics/Path;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
-
-    iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
-
-    iput-object p3, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$2:[I
+    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$0:Landroid/graphics/Path;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
-    .locals 6
+.method public final clip(Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$0:Landroid/graphics/Path;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$1:Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
-
-    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesListPlaceProvider$$ExternalSyntheticLambda0;->f$2:[I
-
-    move-object v3, p1
-
-    move-object v4, p2
-
-    move v5, p3
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/StoriesListPlaceProvider;->$r8$lambda$pBEnySBawy041leTKBy0aepVr-Q(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;Lorg/telegram/ui/Components/RecyclerListView$FastScroll;[ILandroid/graphics/Canvas;Landroid/graphics/RectF;F)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/Stories/StoriesListPlaceProvider;->$r8$lambda$Yb-Czm4lUBJoFCkK33jAqrebRSc(Landroid/graphics/Path;Landroid/graphics/Canvas;Landroid/graphics/RectF;FZ)V
 
     return-void
 .end method

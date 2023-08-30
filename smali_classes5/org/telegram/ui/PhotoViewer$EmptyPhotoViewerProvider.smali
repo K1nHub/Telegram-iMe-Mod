@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2581
+    .line 2588
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -258,6 +258,14 @@
     .locals 0
 
     invoke-static {p0}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider$-CC;->$default$onPreOpen(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;)V
+
+    return-void
+.end method
+
+.method public synthetic onReleasePlayerBeforeClose(I)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider$-CC;->$default$onReleasePlayerBeforeClose(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;I)V
 
     return-void
 .end method

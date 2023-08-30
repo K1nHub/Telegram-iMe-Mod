@@ -26,16 +26,16 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Point;FF)V
     .locals 0
 
-    .line 3599
+    .line 3600
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3600
+    .line 3601
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;->position:Lorg/telegram/ui/Components/Point;
 
-    .line 3601
+    .line 3602
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;->scale:F
 
-    .line 3602
+    .line 3603
     iput p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;->angle:F
 
     return-void
@@ -44,7 +44,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;)Lorg/telegram/ui/Components/Point;
     .locals 0
 
-    .line 3594
+    .line 3595
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;->position:Lorg/telegram/ui/Components/Point;
 
     return-object p0
@@ -53,7 +53,7 @@
 .method static synthetic access$4100(Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;)F
     .locals 0
 
-    .line 3594
+    .line 3595
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;->angle:F
 
     return p0
@@ -62,7 +62,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;)F
     .locals 0
 
-    .line 3594
+    .line 3595
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$StickerPosition;->scale:F
 
     return p0

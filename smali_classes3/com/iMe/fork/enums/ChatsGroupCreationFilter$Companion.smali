@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatsGroupCreationFilter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatsGroupCreationFilter.kt\ncom/iMe/fork/enums/ChatsGroupCreationFilter$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,56:1\n1#2:57\n*E\n"
+    value = "SMAP\nChatsGroupCreationFilter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatsGroupCreationFilter.kt\ncom/iMe/fork/enums/ChatsGroupCreationFilter$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,67:1\n1#2:68\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 52
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public final getCategoriesCreatedFolderOrTopic(I)Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
     .locals 6
 
-    .line 54
+    .line 65
     invoke-static {}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->values()[Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
     move-result-object v0

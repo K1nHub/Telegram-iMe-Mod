@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    .line 2521
+    .line 2524
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;->val$recording:Z
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2524
+    .line 2527
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;->val$recording:Z
 
     const/16 v0, 0x8
 
     if-eqz p1, :cond_0
 
-    .line 2525
+    .line 2528
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$9000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/ImageView;
@@ -55,7 +55,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2527
+    .line 2530
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;->val$recording:Z
 
@@ -69,7 +69,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 2528
+    .line 2531
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 

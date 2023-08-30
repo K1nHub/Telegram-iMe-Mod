@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerWebView;)V
     .locals 0
 
-    .line 281
+    .line 293
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
@@ -43,7 +43,7 @@
 
     const-string v0, "UTF-8"
 
-    .line 305
+    .line 317
     :try_start_0
     new-instance v1, Ljava/net/URL;
 
@@ -57,10 +57,10 @@
 
     const-string v1, "POST"
 
-    .line 306
+    .line 318
     invoke-virtual {p1, v1}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    .line 307
+    .line 319
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getRequestHeaders()Ljava/util/Map;
 
     move-result-object v1
@@ -86,7 +86,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 308
+    .line 320
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -106,15 +106,15 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 310
+    .line 322
     invoke-virtual {p1, v1}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
-    .line 311
+    .line 323
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object v1
 
-    .line 312
+    .line 324
     new-instance v2, Lorg/json/JSONObject;
 
     invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
@@ -135,7 +135,7 @@
 
     const-string v8, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36,gzip(gfe)"
 
-    .line 315
+    .line 327
     invoke-virtual {v6, v7, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object v6
@@ -144,14 +144,14 @@
 
     const-string v8, "WEB"
 
-    .line 316
+    .line 328
     invoke-virtual {v6, v7, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object v6
 
     const-string v7, "clientVersion"
 
-    .line 317
+    .line 329
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getRequestHeaders()Ljava/util/Map;
 
     move-result-object p2
@@ -170,7 +170,7 @@
 
     const-string v7, "Windows"
 
-    .line 318
+    .line 330
     invoke-virtual {p2, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object p2
@@ -179,7 +179,7 @@
 
     const-string v7, "10.0"
 
-    .line 319
+    .line 331
     invoke-virtual {p2, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object p2
@@ -196,7 +196,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
-    .line 320
+    .line 332
     invoke-static {v8}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$1900(Lorg/telegram/ui/Components/PhotoViewerWebView;)Ljava/lang/String;
 
     move-result-object v8
@@ -215,17 +215,17 @@
 
     const-string v7, "DESKTOP"
 
-    .line 321
+    .line 333
     invoke-virtual {p2, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object p2
 
-    .line 314
+    .line 326
     invoke-virtual {v4, v5, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object p2
 
-    .line 313
+    .line 325
     invoke-virtual {v2, v3, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object p2
@@ -234,7 +234,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
-    .line 322
+    .line 334
     invoke-static {v3}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$1900(Lorg/telegram/ui/Components/PhotoViewerWebView;)Ljava/lang/String;
 
     move-result-object v3
@@ -243,7 +243,7 @@
 
     move-result-object p2
 
-    .line 323
+    .line 335
     invoke-virtual {p2}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object p2
@@ -252,13 +252,13 @@
 
     move-result-object p2
 
-    .line 312
+    .line 324
     invoke-virtual {v1, p2}, Ljava/io/OutputStream;->write([B)V
 
-    .line 324
+    .line 336
     invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
 
-    .line 326
+    .line 338
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result p2
@@ -283,12 +283,12 @@
 
     new-array p2, p2, [B
 
-    .line 328
+    .line 340
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 329
+    .line 341
     :goto_2
     invoke-virtual {p1, p2}, Ljava/io/InputStream;->read([B)I
 
@@ -300,31 +300,31 @@
 
     const/4 v3, 0x0
 
-    .line 330
+    .line 342
     invoke-virtual {v1, p2, v3, v2}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_2
 
-    .line 332
+    .line 344
     :cond_2
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
 
-    .line 333
+    .line 345
     invoke-virtual {p1}, Ljava/io/InputStream;->close()V
 
-    .line 335
+    .line 347
     invoke-virtual {v1, v0}, Ljava/io/ByteArrayOutputStream;->toString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 336
+    .line 348
     new-instance p2, Lorg/json/JSONObject;
 
     invoke-direct {p2, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     const-string p1, "storyboards"
 
-    .line 337
+    .line 349
     invoke-virtual {p2, p1}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object p1
@@ -333,7 +333,7 @@
 
     const-string p2, "playerStoryboardSpecRenderer"
 
-    .line 339
+    .line 351
     invoke-virtual {p1, p2}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object p1
@@ -342,14 +342,14 @@
 
     const-string p2, "spec"
 
-    .line 341
+    .line 353
     invoke-virtual {p1, p2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_4
 
-    .line 343
+    .line 355
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$300(Lorg/telegram/ui/Components/PhotoViewerWebView;)I
@@ -358,14 +358,14 @@
 
     if-nez p2, :cond_3
 
-    .line 344
+    .line 356
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$402(Lorg/telegram/ui/Components/PhotoViewerWebView;Ljava/lang/String;)Ljava/lang/String;
 
     goto :goto_3
 
-    .line 346
+    .line 358
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
@@ -378,7 +378,7 @@
     :catch_0
     move-exception p1
 
-    .line 352
+    .line 364
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
@@ -391,10 +391,10 @@
 .method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 0
 
-    .line 285
+    .line 297
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 286
+    .line 298
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$1800(Lorg/telegram/ui/Components/PhotoViewerWebView;)Z
@@ -409,7 +409,7 @@
 
     if-ge p1, p2, :cond_1
 
-    .line 287
+    .line 299
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
@@ -421,7 +421,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 288
+    .line 300
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$200(Lorg/telegram/ui/Components/PhotoViewerWebView;)Landroid/view/View;
@@ -430,7 +430,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 289
+    .line 301
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$1700(Lorg/telegram/ui/Components/PhotoViewerWebView;)Landroid/view/View;
@@ -441,7 +441,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 290
+    .line 302
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$1700(Lorg/telegram/ui/Components/PhotoViewerWebView;)Landroid/view/View;
@@ -459,7 +459,7 @@
 .method public shouldInterceptRequest(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Landroid/webkit/WebResourceResponse;
     .locals 2
 
-    .line 301
+    .line 313
     invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
 
     move-result-object p1
@@ -468,7 +468,7 @@
 
     move-result-object p1
 
-    .line 302
+    .line 314
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$1800(Lorg/telegram/ui/Components/PhotoViewerWebView;)Z
@@ -485,7 +485,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 303
+    .line 315
     sget-object v0, Lorg/telegram/messenger/Utilities;->externalNetworkQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/Components/PhotoViewerWebView$2$$ExternalSyntheticLambda0;
@@ -503,7 +503,7 @@
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 1
 
-    .line 361
+    .line 373
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$2;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerWebView;->access$1800(Lorg/telegram/ui/Components/PhotoViewerWebView;)Z
@@ -512,7 +512,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 362
+    .line 374
     invoke-virtual {p1}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -523,7 +523,7 @@
 
     return p1
 
-    .line 365
+    .line 377
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
 

@@ -47,6 +47,8 @@
 # instance fields
 .field private final fabricId:I
 
+.field private final flags:I
+
 .field private hasSelectedItem:Z
 
 
@@ -116,122 +118,145 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 19
+    .locals 23
 
-    .line 11
-    new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
+    .line 13
+    new-instance v6, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 12
-    sget v1, Lcom/iMe/common/IdFabric$Menu;->ALL_CHATS_CATEGORIES_FILTER:I
+    .line 14
+    sget v3, Lcom/iMe/common/IdFabric$Menu;->ALL_CHATS_CATEGORIES_FILTER:I
 
-    const-string v2, "ALL_CHATS_CATEGORIES_FILTER"
+    const-string v1, "ALL_CHATS_CATEGORIES_FILTER"
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x1
+    const/4 v4, -0x1
 
-    .line 11
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZ)V
+    const/4 v5, 0x1
 
-    sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->ALL_CHATS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
+    move-object v0, v6
 
-    .line 15
-    new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
+    .line 13
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZ)V
 
-    .line 16
-    sget v8, Lcom/iMe/common/IdFabric$Menu;->PERSONAL_CHATS_CATEGORIES_FILTER:I
-
-    const-string v6, "PERSONAL_CHATS_CATEGORIES_FILTER"
-
-    const/4 v7, 0x1
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x2
-
-    const/4 v11, 0x0
-
-    move-object v5, v0
-
-    .line 15
-    invoke-direct/range {v5 .. v11}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->PERSONAL_CHATS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
+    sput-object v6, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->ALL_CHATS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
     .line 18
     new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
     .line 19
-    sget v15, Lcom/iMe/common/IdFabric$Menu;->GROUPS_CHATS_CATEGORIES_FILTER:I
+    sget v10, Lcom/iMe/common/IdFabric$Menu;->PERSONAL_CHATS_CATEGORIES_FILTER:I
 
-    const-string v13, "GROUPS_CHATS_CATEGORIES_FILTER"
+    .line 20
+    sget v1, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CONTACTS:I
 
-    const/4 v14, 0x2
+    sget v2, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_NON_CONTACTS:I
 
-    const/16 v16, 0x0
+    or-int v11, v1, v2
+
+    const-string v8, "PERSONAL_CHATS_CATEGORIES_FILTER"
+
+    const/4 v9, 0x1
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x4
+
+    const/4 v14, 0x0
+
+    move-object v7, v0
+
+    .line 18
+    invoke-direct/range {v7 .. v14}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->PERSONAL_CHATS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
+
+    .line 22
+    new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
+
+    .line 23
+    sget v18, Lcom/iMe/common/IdFabric$Menu;->GROUPS_CHATS_CATEGORIES_FILTER:I
+
+    .line 24
+    sget v19, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_GROUPS:I
+
+    const-string v16, "GROUPS_CHATS_CATEGORIES_FILTER"
 
     const/16 v17, 0x2
 
-    const/16 v18, 0x0
+    const/16 v20, 0x0
 
-    move-object v12, v0
+    const/16 v21, 0x4
 
-    .line 18
-    invoke-direct/range {v12 .. v18}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const/16 v22, 0x0
+
+    move-object v15, v0
+
+    .line 22
+    invoke-direct/range {v15 .. v22}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->GROUPS_CHATS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 21
+    .line 26
     new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 22
+    .line 27
     sget v4, Lcom/iMe/common/IdFabric$Menu;->PRIVATE_GROUPS_CATEGORIES_FILTER:I
+
+    .line 28
+    sget v5, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_PRIVATE_GROUPS:I
 
     const-string v2, "PRIVATE_GROUPS_CATEGORIES_FILTER"
 
     const/4 v3, 0x3
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    const/4 v6, 0x2
+    const/4 v7, 0x4
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     move-object v1, v0
 
-    .line 21
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 26
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->PRIVATE_GROUPS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 24
+    .line 30
     new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 25
-    sget v11, Lcom/iMe/common/IdFabric$Menu;->PUBLIC_GROUPS__CATEGORIES_FILTER:I
+    .line 31
+    sget v12, Lcom/iMe/common/IdFabric$Menu;->PUBLIC_GROUPS__CATEGORIES_FILTER:I
 
-    const-string v9, "PUBLIC_GROUPS__CATEGORIES_FILTER"
+    .line 32
+    sget v13, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_PUBLIC_GROUPS:I
 
-    const/4 v10, 0x4
+    const-string v10, "PUBLIC_GROUPS__CATEGORIES_FILTER"
 
-    const/4 v12, 0x0
-
-    const/4 v13, 0x2
+    const/4 v11, 0x4
 
     const/4 v14, 0x0
 
-    move-object v8, v0
+    const/4 v15, 0x4
 
-    .line 24
-    invoke-direct/range {v8 .. v14}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const/16 v16, 0x0
+
+    move-object v9, v0
+
+    .line 30
+    invoke-direct/range {v9 .. v16}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->PUBLIC_GROUPS__CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 27
+    .line 34
     new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 28
+    .line 35
     sget v4, Lcom/iMe/common/IdFabric$Menu;->CHANNELS_CATEGORIES_FILTER:I
+
+    .line 36
+    sget v5, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_CHANNELS:I
 
     const-string v2, "CHANNELS_CATEGORIES_FILTER"
 
@@ -239,33 +264,39 @@
 
     move-object v1, v0
 
-    .line 27
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 34
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->CHANNELS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 30
+    .line 38
     new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 31
-    sget v11, Lcom/iMe/common/IdFabric$Menu;->BOTS_CATEGORIES_FILTER:I
+    .line 39
+    sget v12, Lcom/iMe/common/IdFabric$Menu;->BOTS_CATEGORIES_FILTER:I
 
-    const-string v9, "BOTS_CATEGORIES_FILTER"
+    .line 40
+    sget v13, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_BOTS:I
 
-    const/4 v10, 0x6
+    const-string v10, "BOTS_CATEGORIES_FILTER"
 
-    move-object v8, v0
+    const/4 v11, 0x6
 
-    .line 30
-    invoke-direct/range {v8 .. v14}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    move-object v9, v0
+
+    .line 38
+    invoke-direct/range {v9 .. v16}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->BOTS_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 33
+    .line 42
     new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 34
+    .line 43
     sget v4, Lcom/iMe/common/IdFabric$Menu;->ADMIN_CATEGORIES_FILTER:I
+
+    .line 44
+    sget v5, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_ADMIN:I
 
     const-string v2, "ADMIN_CATEGORIES_FILTER"
 
@@ -273,25 +304,28 @@
 
     move-object v1, v0
 
-    .line 33
-    invoke-direct/range {v1 .. v7}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 42
+    invoke-direct/range {v1 .. v8}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->ADMIN_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 36
+    .line 46
     new-instance v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
-    .line 37
-    sget v11, Lcom/iMe/common/IdFabric$Menu;->OWNER_CATEGORIES_FILTER:I
+    .line 47
+    sget v12, Lcom/iMe/common/IdFabric$Menu;->OWNER_CATEGORIES_FILTER:I
 
-    const-string v9, "OWNER_CATEGORIES_FILTER"
+    .line 48
+    sget v13, Lorg/telegram/messenger/MessagesController;->DIALOG_FILTER_FLAG_OWNER:I
 
-    const/16 v10, 0x8
+    const-string v10, "OWNER_CATEGORIES_FILTER"
 
-    move-object v8, v0
+    const/16 v11, 0x8
 
-    .line 36
-    invoke-direct/range {v8 .. v14}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    move-object v9, v0
+
+    .line 46
+    invoke-direct/range {v9 .. v16}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->OWNER_CATEGORIES_FILTER:Lcom/iMe/fork/enums/ChatsGroupCreationFilter;
 
@@ -312,38 +346,53 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IIZ)V
+.method private constructor <init>(Ljava/lang/String;IIIZ)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(IZ)V"
+            "(IIZ)V"
         }
     .end annotation
 
-    .line 7
+    .line 8
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 8
+    .line 9
     iput p3, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->fabricId:I
 
-    .line 9
-    iput-boolean p4, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->hasSelectedItem:Z
+    .line 10
+    iput p4, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->flags:I
+
+    .line 11
+    iput-boolean p5, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->hasSelectedItem:Z
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .locals 0
+.method synthetic constructor <init>(Ljava/lang/String;IIIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 6
 
-    and-int/lit8 p5, p5, 0x2
+    and-int/lit8 p6, p6, 0x4
 
-    if-eqz p5, :cond_0
+    if-eqz p6, :cond_0
 
-    const/4 p4, 0x0
+    const/4 p5, 0x0
 
-    .line 7
     :cond_0
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIZ)V
+    move v5, p5
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    .line 8
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;-><init>(Ljava/lang/String;IIIZ)V
 
     return-void
 .end method
@@ -393,8 +442,17 @@
 .method public final getFabricId()I
     .locals 1
 
-    .line 8
+    .line 9
     iget v0, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->fabricId:I
+
+    return v0
+.end method
+
+.method public final getFlags()I
+    .locals 1
+
+    .line 10
+    iget v0, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->flags:I
 
     return v0
 .end method
@@ -402,7 +460,7 @@
 .method public final getHasSelectedItem()Z
     .locals 1
 
-    .line 9
+    .line 11
     iget-boolean v0, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->hasSelectedItem:Z
 
     return v0
@@ -411,7 +469,7 @@
 .method public final getTitle()Ljava/lang/String;
     .locals 2
 
-    .line 40
+    .line 51
     sget-object v0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -422,7 +480,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 49
+    .line 60
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -442,7 +500,7 @@
 
     goto :goto_0
 
-    .line 48
+    .line 59
     :pswitch_1
     sget v0, Lorg/telegram/messenger/R$string;->sorting_settings_tab_owner_item_title:I
 
@@ -456,7 +514,7 @@
 
     goto :goto_0
 
-    .line 47
+    .line 58
     :pswitch_2
     sget v0, Lorg/telegram/messenger/R$string;->sorting_settings_tab_admin_item_title:I
 
@@ -470,7 +528,7 @@
 
     goto :goto_0
 
-    .line 46
+    .line 57
     :pswitch_3
     sget v0, Lorg/telegram/messenger/R$string;->sorting_settings_tab_channels_item_title:I
 
@@ -484,7 +542,7 @@
 
     goto :goto_0
 
-    .line 45
+    .line 56
     :pswitch_4
     sget v0, Lorg/telegram/messenger/R$string;->sorting_settings_tab_public_groups_item_title:I
 
@@ -498,7 +556,7 @@
 
     goto :goto_0
 
-    .line 44
+    .line 55
     :pswitch_5
     sget v0, Lorg/telegram/messenger/R$string;->sorting_settings_tab_private_groups_item_title:I
 
@@ -512,7 +570,7 @@
 
     goto :goto_0
 
-    .line 43
+    .line 54
     :pswitch_6
     sget v0, Lorg/telegram/messenger/R$string;->sorting_settings_tab_groups_item_title:I
 
@@ -526,7 +584,7 @@
 
     goto :goto_0
 
-    .line 42
+    .line 53
     :pswitch_7
     sget v0, Lorg/telegram/messenger/R$string;->sorting_settings_tab_personal_chats_item_title:I
 
@@ -540,7 +598,7 @@
 
     goto :goto_0
 
-    .line 41
+    .line 52
     :pswitch_8
     sget v0, Lorg/telegram/messenger/R$string;->AllChats:I
 
@@ -576,7 +634,7 @@
 .method public final setHasSelectedItem(Z)V
     .locals 0
 
-    .line 9
+    .line 11
     iput-boolean p1, p0, Lcom/iMe/fork/enums/ChatsGroupCreationFilter;->hasSelectedItem:Z
 
     return-void

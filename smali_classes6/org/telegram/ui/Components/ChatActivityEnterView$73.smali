@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;I)V
     .locals 0
 
-    .line 10360
+    .line 10359
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iput p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->val$show:I
@@ -39,19 +39,19 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 10363
+    .line 10362
     iget p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->val$show:I
 
     if-nez p1, :cond_0
 
-    .line 10364
+    .line 10363
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$18002(Lorg/telegram/ui/Components/ChatActivityEnterView;I)I
 
-    .line 10366
+    .line 10365
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
@@ -59,7 +59,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$102(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 10367
+    .line 10366
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$18200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/iMe/ui/smartpanel/SmartBotsView;
@@ -70,7 +70,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->setTranslationY(F)V
 
-    .line 10368
+    .line 10367
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$18200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lcom/iMe/ui/smartpanel/SmartBotsView;
@@ -81,7 +81,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 10369
+    .line 10368
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$14700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/AnimationNotificationsLocker;
@@ -90,7 +90,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    .line 10370
+    .line 10369
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -99,7 +99,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 10371
+    .line 10370
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
@@ -108,7 +108,7 @@
 
     invoke-interface {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->bottomPanelTranslationYChanged(F)V
 
-    .line 10373
+    .line 10372
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$73;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 

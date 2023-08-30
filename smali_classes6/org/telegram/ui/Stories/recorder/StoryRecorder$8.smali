@@ -48,25 +48,43 @@
     .locals 9
 
     .line 1626
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
+
+    move-result v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lorg/telegram/messenger/MessagesController;->premiumLocked:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    return v1
+
+    .line 1629
+    :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
     const/4 v2, 0x2
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 1627
+    .line 1630
     iget v0, v0, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v2, :cond_1
 
     return v1
 
-    .line 1630
-    :cond_0
+    .line 1633
+    :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
@@ -81,7 +99,7 @@
 
     int-to-float v3, v0
 
-    .line 1631
+    .line 1634
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
@@ -106,7 +124,7 @@
 
     new-array v5, v4, [Ljava/lang/Object;
 
-    .line 1632
+    .line 1635
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -133,7 +151,7 @@
 
     move-result-object v0
 
-    .line 1633
+    .line 1636
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -144,14 +162,14 @@
 
     move-result v3
 
-    if-ltz v3, :cond_1
+    if-ltz v3, :cond_2
 
     add-int/lit8 v6, v3, 0x2
 
-    .line 1635
+    .line 1638
     invoke-virtual {v0, v3, v6, v7}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1636
+    .line 1639
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
@@ -160,14 +178,14 @@
 
     move-result v5
 
-    if-ltz v5, :cond_1
+    if-ltz v5, :cond_2
 
     add-int/lit8 v6, v5, 0x2
 
-    .line 1638
+    .line 1641
     invoke-virtual {v0, v5, v6, v7}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1639
+    .line 1642
     new-instance v6, Landroid/text/style/ForegroundColorSpan;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
@@ -188,15 +206,15 @@
 
     invoke-virtual {v0, v6, v3, v5, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1640
+    .line 1643
     new-instance v6, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8$1;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8$1;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;)V
 
     invoke-virtual {v0, v6, v3, v5, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1653
-    :cond_1
+    .line 1656
+    :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$1900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
@@ -225,15 +243,15 @@
 
     move-result-object v0
 
-    .line 1654
+    .line 1657
     iput v2, v0, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
     const/16 v2, 0x1388
 
-    .line 1655
+    .line 1658
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/Bulletin;->setDuration(I)Lorg/telegram/ui/Components/Bulletin;
 
-    .line 1656
+    .line 1659
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->show(Z)Lorg/telegram/ui/Components/Bulletin;
 
     return v4
@@ -260,7 +278,7 @@
 .method protected onCaptionLimitUpdate(Z)V
     .locals 2
 
-    .line 1662
+    .line 1665
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewButtons;

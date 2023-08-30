@@ -17,13 +17,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
 
+.field final synthetic val$context:Landroid/content/Context;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerWebView;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerWebView;Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
     .line 253
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$1;->this$0:Lorg/telegram/ui/Components/PhotoViewerWebView;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$1;->val$context:Landroid/content/Context;
 
     invoke-direct {p0, p2}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
 
@@ -76,6 +80,38 @@
     invoke-virtual {v0, p1, v1, v2}, Lorg/telegram/ui/Components/PhotoViewerWebView;->drawBlackBackground(Landroid/graphics/Canvas;II)V
 
     :cond_0
+    return-void
+.end method
+
+.method protected onAttachedToWindow()V
+    .locals 2
+
+    .line 271
+    iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$1;->val$context:Landroid/content/Context;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->checkAndroidTheme(Landroid/content/Context;Z)V
+
+    .line 272
+    invoke-super {p0}, Landroid/webkit/WebView;->onAttachedToWindow()V
+
+    return-void
+.end method
+
+.method protected onDetachedFromWindow()V
+    .locals 2
+
+    .line 277
+    iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerWebView$1;->val$context:Landroid/content/Context;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->checkAndroidTheme(Landroid/content/Context;Z)V
+
+    .line 278
+    invoke-super {p0}, Landroid/webkit/WebView;->onDetachedFromWindow()V
+
     return-void
 .end method
 

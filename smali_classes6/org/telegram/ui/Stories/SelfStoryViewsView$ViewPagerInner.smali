@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Landroid/content/Context;)V
     .locals 0
 
-    .line 463
+    .line 464
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ViewPagerInner;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
-    .line 464
+    .line 465
     invoke-direct {p0, p2}, Landroidx/viewpager/widget/ViewPager;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -38,7 +38,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 469
+    .line 470
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -47,10 +47,10 @@
 
     const/4 v0, 0x1
 
-    .line 470
+    .line 471
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ViewPagerInner;->gesturesEnabled:Z
 
-    .line 472
+    .line 473
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ViewPagerInner;->gesturesEnabled:Z
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 476
+    .line 477
     :cond_1
     :try_start_0
     invoke-super {p0, p1}, Landroidx/viewpager/widget/ViewPager;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -86,7 +86,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 484
+    .line 485
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -95,10 +95,10 @@
 
     const/4 v0, 0x1
 
-    .line 485
+    .line 486
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ViewPagerInner;->gesturesEnabled:Z
 
-    .line 487
+    .line 488
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$ViewPagerInner;->gesturesEnabled:Z
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 490
+    .line 491
     :cond_1
     invoke-super {p0, p1}, Landroidx/viewpager/widget/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

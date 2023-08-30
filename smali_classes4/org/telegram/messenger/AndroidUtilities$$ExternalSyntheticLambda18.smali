@@ -37,7 +37,7 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$jBYNJ7aYvvPzxYLIfrdJtlVjX3I(Ljava/lang/Integer;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$YOjiddZtLNMF5Ny9oxEKBMFVeno(Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -111,7 +111,7 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 303
+    .line 305
     iput v4, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaInternal:F
 
     .line 79
@@ -517,7 +517,7 @@
 .method private synthetic lambda$animateAlpha$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 313
+    .line 315
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -530,7 +530,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaInternal:F
 
-    .line 314
+    .line 316
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -541,17 +541,17 @@
 .method public animateAlpha(FZ)V
     .locals 2
 
-    .line 306
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 307
+    .line 309
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 308
+    .line 310
     iput-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -563,7 +563,7 @@
 
     const/4 v0, 0x0
 
-    .line 311
+    .line 313
     iget v1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaInternal:F
 
     aput v1, p2, v0
@@ -578,14 +578,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaAnimator:Landroid/animation/ValueAnimator;
 
-    .line 312
+    .line 314
     new-instance v0, Lorg/telegram/ui/Cells/ReactedUserHolderView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Cells/ReactedUserHolderView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/ReactedUserHolderView;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 316
+    .line 318
     iget-object p2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Cells/ReactedUserHolderView$4;
@@ -594,32 +594,32 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 323
+    .line 325
     iget-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 324
+    .line 326
     iget-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x1a4
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 325
+    .line 327
     iget-object p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 327
+    .line 329
     :cond_1
     iput p1, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaInternal:F
 
-    .line 328
+    .line 330
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :goto_0
@@ -629,7 +629,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 339
+    .line 341
     iget v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaInternal:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -644,7 +644,7 @@
 
     const/4 v4, 0x0
 
-    .line 340
+    .line 342
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -678,16 +678,16 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 343
+    .line 345
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 344
+    .line 346
     iget-boolean v2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->drawDivider:Z
 
     if-eqz v2, :cond_3
 
-    .line 345
+    .line 347
     iget v2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->style:I
 
     sget v3, Lorg/telegram/ui/Cells/ReactedUserHolderView;->STYLE_STORY:I
@@ -708,7 +708,7 @@
 
     int-to-float v4, v2
 
-    .line 346
+    .line 348
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const-string v3, "paintDivider"
@@ -717,7 +717,7 @@
 
     const/4 v6, 0x0
 
-    .line 347
+    .line 349
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -754,7 +754,7 @@
 
     goto :goto_2
 
-    .line 349
+    .line 351
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
@@ -792,7 +792,7 @@
     :goto_2
     if-eqz v0, :cond_4
 
-    .line 353
+    .line 355
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_4
@@ -802,7 +802,7 @@
 .method public getAlphaInternal()F
     .locals 1
 
-    .line 333
+    .line 335
     iget v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->alphaInternal:F
 
     return v0
@@ -811,7 +811,7 @@
 .method public getResourcesProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 358
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object v0
@@ -820,15 +820,15 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 284
+    .line 286
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 285
+    .line 287
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 286
+    .line 288
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->attach()V
 
     :cond_0
@@ -838,18 +838,18 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 292
+    .line 294
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 293
+    .line 295
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 294
+    .line 296
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->detach()V
 
-    .line 296
+    .line 298
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
@@ -861,12 +861,12 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 278
+    .line 280
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const/4 v0, 0x1
 
-    .line 279
+    .line 281
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
     return-void
@@ -875,7 +875,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 272
+    .line 274
     iget p2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->style:I
 
     sget v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->STYLE_DEFAULT:I
@@ -889,7 +889,7 @@
     :cond_0
     const/16 p2, 0x3a
 
-    .line 273
+    .line 275
     :goto_0
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -919,7 +919,7 @@
 
     return-void
 
-    .line 261
+    .line 263
     :cond_0
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -935,7 +935,7 @@
 
     if-lez v2, :cond_1
 
-    .line 263
+    .line 265
     iget v2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -956,7 +956,7 @@
 
     goto :goto_0
 
-    .line 265
+    .line 267
     :cond_1
     iget v2, p0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->currentAccount:I
 
@@ -978,7 +978,7 @@
 
     move-object v5, v3
 
-    .line 267
+    .line 269
     :goto_0
     iget-object v7, p1, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
@@ -1190,7 +1190,12 @@
 
     if-eqz p4, :cond_8
 
-    .line 198
+    .line 197
+    iget-object v4, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
+
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
+
+    .line 199
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v4
@@ -1205,7 +1210,7 @@
 
     move-result-object v4
 
-    .line 199
+    .line 200
     iget-object v5, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
@@ -1218,12 +1223,12 @@
 
     invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/BackupImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 200
+    .line 201
     iget-object v5, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 201
+    .line 202
     sget v4, Lorg/telegram/messenger/R$string;->AccDescrLike:I
 
     new-array v5, v6, [Ljava/lang/Object;
@@ -1241,17 +1246,22 @@
     :cond_8
     if-eqz p3, :cond_c
 
-    .line 203
+    .line 204
     invoke-static/range {p3 .. p3}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     move-result-object v4
 
-    .line 204
+    .line 205
     iget-object v7, v4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     if-eqz v7, :cond_a
 
-    .line 205
+    .line 206
+    iget-object v7, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
+
+    invoke-virtual {v7, v5}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
+
+    .line 207
     iget v7, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->currentAccount:I
 
     invoke-static {v7}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -1274,7 +1284,7 @@
 
     if-eqz v13, :cond_9
 
-    .line 207
+    .line 209
     iget-object v7, v13, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
@@ -1285,7 +1295,7 @@
 
     move-result-object v12
 
-    .line 208
+    .line 210
     iget-object v8, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v7, v13, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->center_icon:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1304,7 +1314,7 @@
 
     goto :goto_5
 
-    .line 211
+    .line 213
     :cond_9
     iget-object v7, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1312,7 +1322,7 @@
 
     move v7, v6
 
-    .line 213
+    .line 215
     :goto_5
     iget-object v8, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1320,7 +1330,7 @@
 
     goto :goto_6
 
-    .line 215
+    .line 217
     :cond_a
     new-instance v5, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
@@ -1330,7 +1340,7 @@
 
     invoke-direct {v5, v6, v7, v8, v9}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
 
-    .line 216
+    .line 218
     iget-object v7, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
@@ -1339,14 +1349,14 @@
 
     invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 217
+    .line 219
     iget-object v7, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v7, v5}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
     move v7, v2
 
-    .line 220
+    .line 222
     :goto_6
     sget v5, Lorg/telegram/messenger/R$string;->AccDescrReactedWith:I
 
@@ -1380,18 +1390,18 @@
 
     goto :goto_8
 
-    .line 222
+    .line 224
     :cond_c
     iget-object v4, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
-    .line 223
+    .line 225
     iget-object v4, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->reactView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 224
+    .line 226
     sget v4, Lorg/telegram/messenger/R$string;->AccDescrPersonHasSeen:I
 
     new-array v5, v2, [Ljava/lang/Object;
@@ -1419,7 +1429,7 @@
 
     if-eqz v5, :cond_d
 
-    .line 228
+    .line 230
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1440,7 +1450,7 @@
 
     move-result-object v4
 
-    .line 230
+    .line 232
     :cond_d
     invoke-virtual {p0, v4}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
@@ -1450,14 +1460,14 @@
 
     if-eqz v5, :cond_10
 
-    .line 233
+    .line 235
     iget-object v5, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
     if-eqz p7, :cond_e
 
-    .line 234
+    .line 236
     sget-object v5, Lorg/telegram/ui/Cells/ReactedUserHolderView;->seenDrawable:Lorg/telegram/ui/Components/MessageSeenCheckDrawable;
 
     goto :goto_9
@@ -1476,7 +1486,7 @@
 
     move-result-object v5
 
-    .line 235
+    .line 237
     iget-object v9, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     new-array v3, v3, [Ljava/lang/CharSequence;
@@ -1495,7 +1505,7 @@
 
     invoke-virtual {v9, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 236
+    .line 238
     iget-object v2, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-nez p7, :cond_f
@@ -1516,14 +1526,14 @@
     :goto_a
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 237
+    .line 239
     iget-object v2, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v8}, Landroid/view/View;->setTranslationY(F)V
 
     if-eqz p8, :cond_11
 
-    .line 239
+    .line 241
     iget-object v2, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1534,7 +1544,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 240
+    .line 242
     iget-object v2, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1543,12 +1553,12 @@
 
     invoke-virtual {v2, v8}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 241
+    .line 243
     iget-object v2, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v8}, Landroid/view/View;->setAlpha(F)V
 
-    .line 242
+    .line 244
     iget-object v2, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1559,7 +1569,7 @@
 
     goto :goto_b
 
-    .line 245
+    .line 247
     :cond_10
     iget-object v1, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -1567,7 +1577,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 246
+    .line 248
     iget-object v1, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1578,7 +1588,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 249
+    .line 251
     :cond_11
     :goto_b
     iget-object v1, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -1596,7 +1606,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightPadding(I)V
 
-    .line 250
+    .line 252
     iget-object v1, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz v7, :cond_13
@@ -1619,7 +1629,7 @@
     :goto_c
     invoke-virtual {v1, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 251
+    .line 253
     iget-object v1, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1648,7 +1658,7 @@
 
     iput v3, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 252
+    .line 254
     iget-object v1, v0, Lorg/telegram/ui/Cells/ReactedUserHolderView;->subtitleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz v7, :cond_15

@@ -927,16 +927,16 @@
 
     invoke-virtual {v7, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 271
+    .line 276
     :cond_8
     new-instance v1, Landroid/widget/ScrollView;
 
     invoke-direct {v1, v5}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 272
+    .line 277
     invoke-virtual {v1, v6}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 273
+    .line 278
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
     return-void
@@ -963,7 +963,7 @@
 .method private copyText(Ljava/lang/String;)V
     .locals 4
 
-    .line 295
+    .line 300
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -976,7 +976,7 @@
 
     new-array v1, v1, [Ljava/lang/CharSequence;
 
-    .line 296
+    .line 301
     sget v2, Lorg/telegram/messenger/R$string;->Copy:I
 
     const-string v3, "Copy"
@@ -995,7 +995,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 302
+    .line 307
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
@@ -1004,7 +1004,7 @@
 .method private synthetic lambda$copyText$1(Ljava/lang/String;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 297
+    .line 302
     sget-object p2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string p3, "clipboard"
@@ -1017,15 +1017,15 @@
 
     const-string p3, "label"
 
-    .line 298
+    .line 303
     invoke-static {p3, p1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
 
     move-result-object p1
 
-    .line 299
+    .line 304
     invoke-virtual {p2, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
-    .line 300
+    .line 305
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     move-result-object p1
@@ -1062,7 +1062,7 @@
 .method private secretChatsEnabled(Lorg/telegram/tgnet/TLRPC$TL_authorization;)Z
     .locals 1
 
-    .line 277
+    .line 282
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->api_id:I
 
     const/16 v0, 0x7f8
@@ -1090,28 +1090,28 @@
 .method private setAnimation(Lorg/telegram/tgnet/TLRPC$TL_authorization;Lorg/telegram/ui/Components/RLottieImageView;)V
     .locals 7
 
-    .line 307
+    .line 312
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->platform:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 308
+    .line 313
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 309
+    .line 314
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->system_version:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 311
+    .line 316
     :cond_0
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->device_model:Ljava/lang/String;
 
@@ -1121,7 +1121,7 @@
 
     const-string v2, "safari"
 
-    .line 317
+    .line 322
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -1132,13 +1132,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 318
+    .line 323
     sget p1, Lorg/telegram/messenger/R$raw;->safari_30:I
 
-    .line 319
+    .line 324
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
 
-    .line 320
+    .line 325
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
 
     :goto_0
@@ -1149,20 +1149,20 @@
     :cond_1
     const-string v2, "edge"
 
-    .line 321
+    .line 326
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 322
+    .line 327
     sget p1, Lorg/telegram/messenger/R$raw;->edge_30:I
 
-    .line 323
+    .line 328
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
 
-    .line 324
+    .line 329
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
 
     goto :goto_0
@@ -1170,20 +1170,20 @@
     :cond_2
     const-string v2, "chrome"
 
-    .line 325
+    .line 330
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 326
+    .line 331
     sget p1, Lorg/telegram/messenger/R$raw;->chrome_30:I
 
-    .line 327
+    .line 332
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
 
-    .line 328
+    .line 333
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
 
     goto :goto_0
@@ -1191,7 +1191,7 @@
     :cond_3
     const-string v2, "opera"
 
-    .line 329
+    .line 334
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v5
@@ -1219,20 +1219,20 @@
     :cond_4
     const-string v2, "ubuntu"
 
-    .line 340
+    .line 345
     invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    .line 341
+    .line 346
     sget p1, Lorg/telegram/messenger/R$raw;->ubuntu_30:I
 
-    .line 342
+    .line 347
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
 
-    .line 343
+    .line 348
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Blue:I
 
     goto :goto_0
@@ -1240,7 +1240,7 @@
     :cond_5
     const-string v2, "ios"
 
-    .line 344
+    .line 349
     invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -1249,7 +1249,7 @@
 
     const-string p1, "ipad"
 
-    .line 345
+    .line 350
     invoke-virtual {v1, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -1263,11 +1263,11 @@
     :cond_6
     sget p1, Lorg/telegram/messenger/R$raw;->iphone_30:I
 
-    .line 346
+    .line 351
     :goto_1
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
 
-    .line 347
+    .line 352
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Blue:I
 
     goto :goto_0
@@ -1275,20 +1275,20 @@
     :cond_7
     const-string v1, "windows"
 
-    .line 348
+    .line 353
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_8
 
-    .line 349
+    .line 354
     sget p1, Lorg/telegram/messenger/R$raw;->windows_30:I
 
-    .line 350
+    .line 355
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundCyan:I
 
-    .line 351
+    .line 356
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Cyan:I
 
     goto :goto_0
@@ -1296,20 +1296,20 @@
     :cond_8
     const-string v1, "macos"
 
-    .line 352
+    .line 357
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_9
 
-    .line 353
+    .line 358
     sget p1, Lorg/telegram/messenger/R$raw;->mac_30:I
 
-    .line 354
+    .line 359
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundCyan:I
 
-    .line 355
+    .line 360
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Cyan:I
 
     goto/16 :goto_0
@@ -1317,25 +1317,25 @@
     :cond_9
     const-string v1, "android"
 
-    .line 356
+    .line 361
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 357
+    .line 362
     sget p1, Lorg/telegram/messenger/R$raw;->android_30:I
 
-    .line 358
+    .line 363
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundGreen:I
 
-    .line 359
+    .line 364
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Green:I
 
     goto/16 :goto_0
 
-    .line 361
+    .line 366
     :cond_a
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->app_name:Ljava/lang/String;
 
@@ -1351,30 +1351,30 @@
 
     if-eqz p1, :cond_b
 
-    .line 362
+    .line 367
     sget p1, Lorg/telegram/messenger/R$raw;->windows_30:I
 
-    .line 363
+    .line 368
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundCyan:I
 
-    .line 364
+    .line 369
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Cyan:I
 
     goto/16 :goto_0
 
-    .line 366
+    .line 371
     :cond_b
     sget p1, Lorg/telegram/messenger/R$raw;->chrome_30:I
 
-    .line 367
+    .line 372
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
 
-    .line 368
+    .line 373
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
 
     goto/16 :goto_0
 
-    .line 331
+    .line 336
     :cond_c
     :goto_2
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -1383,12 +1383,12 @@
 
     if-eqz p1, :cond_d
 
-    .line 332
+    .line 337
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_opera:I
 
     goto :goto_3
 
-    .line 333
+    .line 338
     :cond_d
     invoke-virtual {v1, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -1396,20 +1396,20 @@
 
     if-eqz p1, :cond_e
 
-    .line 334
+    .line 339
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_firefox:I
 
     goto :goto_3
 
-    .line 336
+    .line 341
     :cond_e
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_other:I
 
-    .line 338
+    .line 343
     :goto_3
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
 
-    .line 339
+    .line 344
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
 
     move v1, v4
@@ -1417,7 +1417,7 @@
     :goto_4
     const/16 v2, 0x2a
 
-    .line 372
+    .line 377
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1440,7 +1440,7 @@
 
     aput v4, v1, v4
 
-    .line 375
+    .line 380
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
@@ -1449,12 +1449,12 @@
 
     const/16 v0, 0x32
 
-    .line 376
+    .line 381
     invoke-virtual {p2, p1, v0, v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III[I)V
 
     goto :goto_5
 
-    .line 378
+    .line 383
     :cond_f
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
@@ -1473,34 +1473,34 @@
 .method private uploadSessionSettings()V
     .locals 3
 
-    .line 284
+    .line 289
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_changeAuthorizationSettings;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_changeAuthorizationSettings;-><init>()V
 
-    .line 285
+    .line 290
     iget-object v1, p0, Lorg/telegram/ui/SessionBottomSheet;->session:Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->encrypted_requests_disabled:Z
 
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_account_changeAuthorizationSettings;->encrypted_requests_disabled:Z
 
-    .line 286
+    .line 291
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->call_requests_disabled:Z
 
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_account_changeAuthorizationSettings;->call_requests_disabled:Z
 
     const/4 v2, 0x3
 
-    .line 287
+    .line 292
     iput v2, v0, Lorg/telegram/tgnet/TLRPC$TL_account_changeAuthorizationSettings;->flags:I
 
-    .line 288
+    .line 293
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->hash:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$TL_account_changeAuthorizationSettings;->hash:J
 
-    .line 289
+    .line 294
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1519,10 +1519,10 @@
 .method public show()V
     .locals 1
 
-    .line 446
+    .line 451
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    .line 447
+    .line 452
     iget-object v0, p0, Lorg/telegram/ui/SessionBottomSheet;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V

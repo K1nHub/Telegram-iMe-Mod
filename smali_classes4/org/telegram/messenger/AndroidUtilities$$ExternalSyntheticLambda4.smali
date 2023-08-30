@@ -35,7 +35,7 @@
 .method public final acceptMatch(Ljava/lang/CharSequence;II)Z
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$aMOfD2aj8XHhP7JnH0AqoIRZ4AA(Ljava/lang/CharSequence;II)Z
+    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$FIEileeygNhUhcb-gDSx1mZX4Fg(Ljava/lang/CharSequence;II)Z
 
     move-result p1
 

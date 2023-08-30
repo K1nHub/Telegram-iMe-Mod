@@ -2,48 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback2;
+.implements Lorg/telegram/messenger/Utilities$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ChannelCreateActivity;
-
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
+.field public final synthetic f$0:Landroid/app/Activity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ChannelCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+.method public synthetic constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$1:Lorg/telegram/ui/ChannelCreateActivity;
-
-    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$0:Landroid/app/Activity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 3
+.method public final run(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$0:Landroid/app/Activity;
 
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$1:Lorg/telegram/ui/ChannelCreateActivity;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda147;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    check-cast p1, Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    check-cast p2, Ljava/lang/Long;
-
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$v1qqtNVce_SjvK6zZ5A26L6GKx0(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ChannelCreateActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Long;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$-EwARMR-frHp6Fu2BNtUsWkXr2Q(Landroid/app/Activity;Ljava/lang/Boolean;)V
 
     return-void
 .end method

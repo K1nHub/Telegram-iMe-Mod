@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer$2;)V
     .locals 0
 
-    .line 987
+    .line 997
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$2$3;->this$1:Lorg/telegram/ui/Stories/StoryViewer$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 
     new-array p1, p1, [F
 
-    .line 989
+    .line 999
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$2$3;->position:[F
 
     return-void
@@ -67,7 +67,7 @@
 .method public getBottomOffset(I)I
     .locals 3
 
-    .line 992
+    .line 1002
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$2$3;->this$1:Lorg/telegram/ui/Stories/StoryViewer$2;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer$2;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
@@ -82,7 +82,7 @@
 
     return p1
 
-    .line 996
+    .line 1006
     :cond_0
     iget-object v0, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
 
@@ -96,7 +96,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->getViewPositionInParent(Landroid/view/View;Landroid/view/ViewGroup;[F)V
 
-    .line 997
+    .line 1007
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$2$3;->this$1:Lorg/telegram/ui/Stories/StoryViewer$2;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I

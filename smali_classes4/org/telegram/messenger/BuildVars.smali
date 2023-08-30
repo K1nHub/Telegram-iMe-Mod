@@ -66,12 +66,12 @@
     :goto_0
     sput-boolean v0, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
 
-    const/16 v0, 0xed1
+    const/16 v0, 0xeda
 
     .line 32
     sput v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const-string v0, "10.0.1"
+    const-string v0, "10.0.4"
 
     .line 33
     sput-object v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION_STRING:Ljava/lang/String;

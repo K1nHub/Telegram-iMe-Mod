@@ -13916,6 +13916,8 @@
     .line 5978
     iget-object v9, v6, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
+    if-eqz v9, :cond_13
+
     iget-boolean v9, v9, Lorg/telegram/tgnet/TLRPC$StickerSet;->archived:Z
 
     if-nez v9, :cond_13

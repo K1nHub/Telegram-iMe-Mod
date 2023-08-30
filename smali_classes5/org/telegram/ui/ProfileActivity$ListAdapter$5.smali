@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$ListAdapter;Ljava/lang/String;)V
     .locals 0
 
-    .line 10695
+    .line 10703
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$5;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$5;->val$usernameRaw:Ljava/lang/String;
@@ -39,7 +39,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 4
 
-    .line 10698
+    .line 10706
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -68,7 +68,7 @@
 
     move-result-object p1
 
-    .line 10699
+    .line 10707
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$5;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -91,11 +91,11 @@
 
     if-nez v0, :cond_1
 
-    .line 10700
+    .line 10708
     :cond_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
-    .line 10701
+    .line 10709
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$ListAdapter$5;->this$1:Lorg/telegram/ui/ProfileActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ProfileActivity$ListAdapter;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -121,7 +121,7 @@
 
     const/4 v0, 0x0
 
-    .line 10707
+    .line 10715
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

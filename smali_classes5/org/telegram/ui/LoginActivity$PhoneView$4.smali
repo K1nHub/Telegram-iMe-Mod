@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneView;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V
     .locals 7
 
-    .line 2581
+    .line 2582
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneView$4;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     move-object v0, p0
@@ -49,7 +49,7 @@
 .method public getCustomQrCenterImageRes()I
     .locals 1
 
-    .line 2589
+    .line 2590
     sget v0, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_logo:I
 
     return v0
@@ -58,7 +58,7 @@
 .method public getType()I
     .locals 1
 
-    .line 2584
+    .line 2585
     sget v0, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_LOGIN_TOKEN:I
 
     return v0
@@ -67,10 +67,10 @@
 .method public onDetachedFromWindow()V
     .locals 1
 
-    .line 2594
+    .line 2595
     invoke-super {p0}, Landroid/app/Dialog;->onDetachedFromWindow()V
 
-    .line 2595
+    .line 2596
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$4;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -81,7 +81,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2596
+    .line 2597
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$PhoneView$4;->this$1:Lorg/telegram/ui/LoginActivity$PhoneView;
 
     iget-object v0, v0, Lorg/telegram/ui/LoginActivity$PhoneView;->this$0:Lorg/telegram/ui/LoginActivity;

@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 1610
+    .line 1654
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iput-object p4, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->val$verifyDrawable:Landroid/graphics/drawable/Drawable;
@@ -45,7 +45,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 1615
+    .line 1659
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$700(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
@@ -66,15 +66,15 @@
 
     move-result v0
 
-    .line 1616
+    .line 1660
     iget v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->lastColor:I
 
     if-eq v1, v0, :cond_2
 
-    .line 1617
+    .line 1661
     iput v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->lastColor:I
 
-    .line 1618
+    .line 1662
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$700(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
@@ -95,7 +95,7 @@
 
     move-result v1
 
-    .line 1619
+    .line 1663
     iget-object v2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->val$verifyDrawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
@@ -112,7 +112,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1620
+    .line 1664
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$8;->val$checkDrawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -123,7 +123,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1622
+    .line 1666
     :cond_2
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/CombinedDrawable;->draw(Landroid/graphics/Canvas;)V
 

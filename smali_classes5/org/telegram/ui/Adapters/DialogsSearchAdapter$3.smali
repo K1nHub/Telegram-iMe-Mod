@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Adapters/DialogsSearchAdapter$3;
-.super Lorg/telegram/ui/Components/RecyclerListView;
+.super Lorg/telegram/ui/Cells/DialogCell;
 .source "DialogsSearchAdapter.java"
 
 
@@ -15,76 +15,21 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Adapters/DialogsSearchAdapter;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Adapters/DialogsSearchAdapter;Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;ZZ)V
     .locals 0
 
-    .line 1400
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
+    .line 1416
+    invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Cells/DialogCell;-><init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;ZZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 3
+.method public isForumCell()Z
+    .locals 1
 
-    .line 1403
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
+    const/4 v0, 0x0
 
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    .line 1404
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    const/4 v1, -0x1
-
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->canScrollHorizontally(I)Z
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->canScrollHorizontally(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x0
-
-    :cond_1
-    :goto_0
-    invoke-interface {v0, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
-
-    .line 1406
-    :cond_2
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
+    return v0
 .end method

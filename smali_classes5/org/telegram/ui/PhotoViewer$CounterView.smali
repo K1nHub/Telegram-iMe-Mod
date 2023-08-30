@@ -36,15 +36,15 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
-    .line 2199
+    .line 2206
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 2195
+    .line 2202
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->currentCount:I
 
-    .line 2200
+    .line 2207
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -55,7 +55,7 @@
 
     const/16 v2, 0xf
 
-    .line 2201
+    .line 2208
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 2202
+    .line 2209
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->textPaint:Landroid/text/TextPaint;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -75,24 +75,24 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 2203
+    .line 2210
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->textPaint:Landroid/text/TextPaint;
 
     const/4 v2, -0x1
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 2205
+    .line 2212
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
 
-    .line 2206
+    .line 2213
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2207
+    .line 2214
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
 
     const/4 v1, 0x2
@@ -105,28 +105,28 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 2208
+    .line 2215
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 2209
+    .line 2216
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    .line 2211
+    .line 2218
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rect:Landroid/graphics/RectF;
 
-    .line 2213
+    .line 2220
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PhotoViewer$CounterView;->setCount(I)V
 
     return-void
@@ -137,7 +137,7 @@
 .method public getRotationX()F
     .locals 1
 
-    .line 2232
+    .line 2239
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rotation:F
 
     return v0
@@ -146,21 +146,21 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 2279
+    .line 2286
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 2280
+    .line 2287
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
 
     const/16 v2, 0xff
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 2281
+    .line 2288
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rect:Landroid/graphics/RectF;
 
     const/4 v2, 0x1
@@ -203,7 +203,7 @@
 
     invoke-virtual {v1, v3, v5, v2, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2282
+    .line 2289
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rect:Landroid/graphics/RectF;
 
     const/16 v1, 0xf
@@ -224,12 +224,12 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2283
+    .line 2290
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->staticLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_0
 
-    .line 2284
+    .line 2291
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->textPaint:Landroid/text/TextPaint;
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rotation:F
@@ -246,10 +246,10 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 2285
+    .line 2292
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2286
+    .line 2293
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -298,15 +298,15 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2287
+    .line 2294
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->staticLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2288
+    .line 2295
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2289
+    .line 2296
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rotation:F
@@ -317,7 +317,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 2290
+    .line 2297
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -326,7 +326,7 @@
 
     float-to-int v0, v0
 
-    .line 2291
+    .line 2298
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->centerY()F
@@ -337,7 +337,7 @@
 
     int-to-float v1, v1
 
-    .line 2292
+    .line 2299
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -354,7 +354,7 @@
 
     float-to-int v1, v1
 
-    .line 2293
+    .line 2300
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -393,7 +393,7 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 2294
+    .line 2301
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -437,7 +437,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 2274
+    .line 2281
     iget p1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->width:I
 
     const/16 p2, 0x14
@@ -482,7 +482,7 @@
 .method public setCount(I)V
     .locals 10
 
-    .line 2236
+    .line 2243
     new-instance v8, Landroid/text/StaticLayout;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -529,7 +529,7 @@
 
     const/4 v0, 0x0
 
-    .line 2237
+    .line 2244
     invoke-virtual {v8, v0}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
@@ -544,7 +544,7 @@
 
     iput v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->width:I
 
-    .line 2238
+    .line 2245
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->staticLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v0}, Landroid/text/StaticLayout;->getLineBottom(I)I
@@ -553,7 +553,7 @@
 
     iput v1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->height:I
 
-    .line 2239
+    .line 2246
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -568,7 +568,7 @@
 
     new-array v3, v3, [Landroid/animation/Animator;
 
-    .line 2241
+    .line 2248
     sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v6, v9, [F
@@ -577,7 +577,7 @@
 
     aput v7, v6, v0
 
-    .line 2242
+    .line 2249
     invoke-static {p0, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -590,7 +590,7 @@
 
     aput v7, v6, v0
 
-    .line 2243
+    .line 2250
     invoke-static {p0, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -605,7 +605,7 @@
 
     aput v0, v7, v0
 
-    .line 2244
+    .line 2251
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -618,83 +618,8 @@
 
     aput v0, v5, v0
 
-    .line 2245
-    invoke-static {v4, v6, v5}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    aput-object v0, v3, v2
-
-    .line 2241
-    invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
-
-    .line 2246
-    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
-
-    invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    goto/16 :goto_0
-
-    .line 2247
-    :cond_0
-    iget v5, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->currentCount:I
-
-    if-nez v5, :cond_1
-
-    new-array v3, v3, [Landroid/animation/Animator;
-
-    .line 2248
-    sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
-
-    new-array v6, v4, [F
-
-    fill-array-data v6, :array_0
-
-    .line 2249
-    invoke-static {p0, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v5
-
-    aput-object v5, v3, v0
-
-    sget-object v0, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
-
-    new-array v5, v4, [F
-
-    fill-array-data v5, :array_1
-
-    .line 2250
-    invoke-static {p0, v0, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    aput-object v0, v3, v9
-
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
-
-    sget-object v5, Lorg/telegram/ui/Components/AnimationProperties;->PAINT_ALPHA:Landroid/util/Property;
-
-    new-array v6, v4, [I
-
-    fill-array-data v6, :array_2
-
-    .line 2251
-    invoke-static {v0, v5, v6}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    aput-object v0, v3, v4
-
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->textPaint:Landroid/text/TextPaint;
-
-    new-array v4, v4, [I
-
-    fill-array-data v4, :array_3
-
     .line 2252
-    invoke-static {v0, v5, v4}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
+    invoke-static {v4, v6, v5}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
@@ -710,6 +635,81 @@
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
+    goto/16 :goto_0
+
+    .line 2254
+    :cond_0
+    iget v5, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->currentCount:I
+
+    if-nez v5, :cond_1
+
+    new-array v3, v3, [Landroid/animation/Animator;
+
+    .line 2255
+    sget-object v5, Landroid/view/View;->SCALE_X:Landroid/util/Property;
+
+    new-array v6, v4, [F
+
+    fill-array-data v6, :array_0
+
+    .line 2256
+    invoke-static {p0, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v5
+
+    aput-object v5, v3, v0
+
+    sget-object v0, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
+
+    new-array v5, v4, [F
+
+    fill-array-data v5, :array_1
+
+    .line 2257
+    invoke-static {p0, v0, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    aput-object v0, v3, v9
+
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->paint:Landroid/graphics/Paint;
+
+    sget-object v5, Lorg/telegram/ui/Components/AnimationProperties;->PAINT_ALPHA:Landroid/util/Property;
+
+    new-array v6, v4, [I
+
+    fill-array-data v6, :array_2
+
+    .line 2258
+    invoke-static {v0, v5, v6}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    aput-object v0, v3, v4
+
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->textPaint:Landroid/text/TextPaint;
+
+    new-array v4, v4, [I
+
+    fill-array-data v4, :array_3
+
+    .line 2259
+    invoke-static {v0, v5, v4}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    aput-object v0, v3, v2
+
+    .line 2255
+    invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+
+    .line 2260
+    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
+
+    invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+
+    invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
     goto :goto_0
 
     :cond_1
@@ -717,14 +717,14 @@
 
     new-array v2, v4, [Landroid/animation/Animator;
 
-    .line 2255
+    .line 2262
     sget-object v3, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v5, v4, [F
 
     fill-array-data v5, :array_4
 
-    .line 2256
+    .line 2263
     invoke-static {p0, v3, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -737,17 +737,17 @@
 
     fill-array-data v3, :array_5
 
-    .line 2257
+    .line 2264
     invoke-static {p0, v0, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v2, v9
 
-    .line 2255
+    .line 2262
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2258
+    .line 2265
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/OvershootInterpolator;-><init>()V
@@ -759,14 +759,14 @@
     :cond_2
     new-array v2, v4, [Landroid/animation/Animator;
 
-    .line 2260
+    .line 2267
     sget-object v3, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v5, v4, [F
 
     fill-array-data v5, :array_6
 
-    .line 2261
+    .line 2268
     invoke-static {p0, v3, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -779,17 +779,17 @@
 
     fill-array-data v3, :array_7
 
-    .line 2262
+    .line 2269
     invoke-static {p0, v0, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v2, v9
 
-    .line 2260
+    .line 2267
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2263
+    .line 2270
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/OvershootInterpolator;-><init>()V
@@ -799,16 +799,16 @@
     :goto_0
     const-wide/16 v2, 0xb4
 
-    .line 2266
+    .line 2273
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2267
+    .line 2274
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 2268
+    .line 2275
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
-    .line 2269
+    .line 2276
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->currentCount:I
 
     return-void
@@ -867,10 +867,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2226
+    .line 2233
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CounterView;->rotation:F
 
-    .line 2227
+    .line 2234
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -881,10 +881,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2219
+    .line 2226
     invoke-super {p0, p1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 2220
+    .line 2227
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

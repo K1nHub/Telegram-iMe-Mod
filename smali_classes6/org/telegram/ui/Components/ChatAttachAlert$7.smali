@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert;Ljava/util/HashMap;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 2157
+    .line 2162
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->val$photos:Ljava/util/HashMap;
@@ -52,7 +52,7 @@
 
     return-void
 
-    .line 2171
+    .line 2176
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->val$photos:Ljava/util/HashMap;
 
@@ -71,17 +71,17 @@
     :cond_1
     const/4 p1, 0x1
 
-    .line 2174
+    .line 2179
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->sendPressed:Z
 
-    .line 2176
+    .line 2181
     new-instance p5, Ljava/util/ArrayList;
 
     invoke-direct {p5}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 2177
+    .line 2182
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->val$order:Ljava/util/ArrayList;
 
@@ -91,7 +91,7 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 2178
+    .line 2183
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->val$photos:Ljava/util/HashMap;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->val$order:Ljava/util/ArrayList;
@@ -104,43 +104,43 @@
 
     move-result-object v1
 
-    .line 2179
+    .line 2184
     new-instance v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
     invoke-direct {v2}, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;-><init>()V
 
-    .line 2180
+    .line 2185
     invoke-virtual {p5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2181
+    .line 2186
     check-cast v1, Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 2182
+    .line 2187
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz v3, :cond_2
 
-    .line 2183
+    .line 2188
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
     goto :goto_1
 
-    .line 2185
+    .line 2190
     :cond_2
     iput-object v1, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->searchImage:Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 2187
+    .line 2192
     :goto_1
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->thumbPath:Ljava/lang/String;
 
-    .line 2188
+    .line 2193
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 2189
+    .line 2194
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$SearchImage;->caption:Ljava/lang/CharSequence;
 
     if-eqz v3, :cond_3
@@ -157,22 +157,22 @@
     :goto_2
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
 
-    .line 2190
+    .line 2195
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->entities:Ljava/util/ArrayList;
 
-    .line 2191
+    .line 2196
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->masks:Ljava/util/ArrayList;
 
-    .line 2192
+    .line 2197
     iget v3, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
     iput v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->ttl:I
 
-    .line 2193
+    .line 2198
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$SearchImage;->inlineResult:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     if-eqz v3, :cond_4
@@ -181,15 +181,15 @@
 
     if-ne v4, p1, :cond_4
 
-    .line 2194
+    .line 2199
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->inlineResult:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
-    .line 2195
+    .line 2200
     iget-object v3, v1, Lorg/telegram/messenger/MediaController$SearchImage;->params:Ljava/util/HashMap;
 
     iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->params:Ljava/util/HashMap;
 
-    .line 2198
+    .line 2203
     :cond_4
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -207,7 +207,7 @@
 
     goto :goto_0
 
-    .line 2201
+    .line 2206
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$7;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -217,7 +217,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 2202
+    .line 2207
     check-cast p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1, p5, p2, p3, p4}, Lorg/telegram/ui/ChatActivity;->didSelectSearchPhotos(Ljava/util/ArrayList;ZILjava/lang/String;)V

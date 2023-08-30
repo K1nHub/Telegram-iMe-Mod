@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 1952
+    .line 1958
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ViewPagerFixed;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected canScroll(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 1960
+    .line 1966
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$5200(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -46,28 +46,28 @@
 
     move-result-object v0
 
-    .line 1961
+    .line 1967
     instance-of v1, v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
     const/4 v2, 0x1
 
     if-eqz v1, :cond_7
 
-    .line 1962
+    .line 1968
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ViewPagerFixed;->getCurrentPosition()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    .line 1963
+    .line 1969
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->closeKeyboard()V
 
     return v2
 
-    .line 1966
+    .line 1972
     :cond_0
     check-cast v0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;
 
@@ -79,7 +79,7 @@
 
     if-eq p1, v1, :cond_4
 
-    .line 1968
+    .line 1974
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v3, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$5602(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;I)I
@@ -88,7 +88,7 @@
 
     if-ne p1, v3, :cond_1
 
-    .line 1970
+    .line 1976
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$4000(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Ljava/util/ArrayList;
@@ -113,7 +113,7 @@
 
     if-nez v3, :cond_3
 
-    .line 1971
+    .line 1977
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v3, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$3902(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;I)I
@@ -125,7 +125,7 @@
 
     if-ne p1, v3, :cond_2
 
-    .line 1974
+    .line 1980
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$4500(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Ljava/util/ArrayList;
@@ -150,31 +150,31 @@
 
     if-nez v3, :cond_3
 
-    .line 1975
+    .line 1981
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v3, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$3902(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;I)I
 
     goto :goto_0
 
-    .line 1978
+    .line 1984
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v3, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$3902(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;I)I
 
-    .line 1980
+    .line 1986
     :cond_3
     :goto_0
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateCheckboxes(Z)V
 
-    .line 1981
+    .line 1987
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$Page;->updateButton(Z)V
 
     :cond_4
     if-eq p1, v1, :cond_5
 
-    .line 1984
+    .line 1990
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->closeKeyboard()V
@@ -195,7 +195,7 @@
 .method protected onItemSelected(Landroid/view/View;Landroid/view/View;II)V
     .locals 0
 
-    .line 1993
+    .line 1999
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$11600(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Z
@@ -204,7 +204,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1994
+    .line 2000
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->closeKeyboard()V
@@ -216,7 +216,7 @@
 .method protected onTabAnimationUpdate()V
     .locals 1
 
-    .line 1955
+    .line 1961
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->access$11500(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;)Landroid/view/ViewGroup;

@@ -1000,7 +1000,7 @@
 
     const/4 v5, -0x2
 
-    const/4 v6, 0x0
+    const/4 v6, 0x1
 
     const/16 v7, 0x18
 

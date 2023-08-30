@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;I[I[I)V
     .locals 0
 
-    .line 1990
+    .line 1991
     iput p3, p0, Lorg/telegram/ui/PaymentFormActivity$12;->val$N:I
 
     iput-object p4, p0, Lorg/telegram/ui/PaymentFormActivity$12;->val$maxTextWidth:[I
@@ -45,19 +45,19 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    .line 1996
+    .line 1997
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    .line 1997
+    .line 1998
     iput-boolean v1, p0, Lorg/telegram/ui/PaymentFormActivity$12;->ignoreLayout:Z
 
     const/16 v2, 0x9
 
-    .line 1998
+    .line 1999
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -68,7 +68,7 @@
 
     mul-int/2addr v2, v4
 
-    .line 1999
+    .line 2000
     iget-object v4, p0, Lorg/telegram/ui/PaymentFormActivity$12;->val$maxTextWidth:[I
 
     const/4 v5, 0x0
@@ -83,10 +83,10 @@
 
     if-gt v4, v0, :cond_0
 
-    .line 2000
+    .line 2001
     invoke-virtual {p0, v3}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
-    .line 2001
+    .line 2002
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -96,7 +96,7 @@
     :goto_0
     if-ge v1, v0, :cond_4
 
-    .line 2002
+    .line 2003
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -107,7 +107,7 @@
 
     iput v5, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 2003
+    .line 2004
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 2005
+    .line 2006
     :cond_0
     iget-object v4, p0, Lorg/telegram/ui/PaymentFormActivity$12;->val$textWidths:[I
 
@@ -140,12 +140,12 @@
 
     if-gt v4, v0, :cond_3
 
-    .line 2006
+    .line 2007
     invoke-virtual {p0, v3}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     sub-int/2addr v0, v2
 
-    .line 2009
+    .line 2010
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v2
@@ -155,22 +155,22 @@
     :goto_1
     if-ge v4, v2, :cond_1
 
-    .line 2010
+    .line 2011
     invoke-virtual {p0, v4}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 2011
+    .line 2012
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v8
 
     check-cast v8, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 2012
+    .line 2013
     iput v5, v8, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 2013
+    .line 2014
     sget v9, Lorg/telegram/messenger/R$id;->width_tag:I
 
     invoke-virtual {v7, v9}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -189,7 +189,7 @@
 
     div-float/2addr v7, v9
 
-    .line 2014
+    .line 2015
     iput v7, v8, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
     sub-float/2addr v3, v7
@@ -198,7 +198,7 @@
 
     goto :goto_1
 
-    .line 2017
+    .line 2018
     :cond_1
     iget v0, p0, Lorg/telegram/ui/PaymentFormActivity$12;->val$N:I
 
@@ -212,7 +212,7 @@
 
     if-lez v0, :cond_4
 
-    .line 2019
+    .line 2020
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -222,19 +222,19 @@
     :goto_2
     if-ge v1, v0, :cond_4
 
-    .line 2020
+    .line 2021
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 2021
+    .line 2022
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
     check-cast v4, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 2022
+    .line 2023
     sget v6, Lorg/telegram/messenger/R$id;->width_tag:I
 
     invoke-virtual {v2, v6}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -247,14 +247,14 @@
 
     move-result v2
 
-    .line 2023
+    .line 2024
     iget-object v6, p0, Lorg/telegram/ui/PaymentFormActivity$12;->val$maxTextWidth:[I
 
     aget v6, v6, v5
 
     if-eq v2, v6, :cond_2
 
-    .line 2024
+    .line 2025
     iget v2, v4, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
     add-float/2addr v2, v3
@@ -266,11 +266,11 @@
 
     goto :goto_2
 
-    .line 2029
+    .line 2030
     :cond_3
     invoke-virtual {p0, v6}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
-    .line 2030
+    .line 2031
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -280,7 +280,7 @@
     :goto_3
     if-ge v1, v0, :cond_4
 
-    .line 2031
+    .line 2032
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -293,7 +293,7 @@
 
     iput v3, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 2032
+    .line 2033
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -310,11 +310,11 @@
 
     goto :goto_3
 
-    .line 2035
+    .line 2036
     :cond_4
     iput-boolean v5, p0, Lorg/telegram/ui/PaymentFormActivity$12;->ignoreLayout:Z
 
-    .line 2036
+    .line 2037
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     return-void
@@ -323,14 +323,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 2041
+    .line 2042
     iget-boolean v0, p0, Lorg/telegram/ui/PaymentFormActivity$12;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 2044
+    .line 2045
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 

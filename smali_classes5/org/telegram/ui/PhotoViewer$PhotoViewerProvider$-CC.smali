@@ -31,3 +31,9 @@
 
     return-void
 .end method
+
+.method public static $default$onReleasePlayerBeforeClose(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;I)V
+    .locals 0
+
+    return-void
+.end method

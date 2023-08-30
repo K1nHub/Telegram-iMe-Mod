@@ -76,7 +76,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/ExtendedGridLayoutManager;)V
     .locals 0
 
-    .line 2275
+    .line 2285
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -85,28 +85,28 @@
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;-><init>(Landroid/content/Context;)V
 
-    .line 2277
+    .line 2287
     new-instance p1, Ljava/util/HashSet;
 
     invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->excludeDrawViews:Ljava/util/HashSet;
 
-    .line 2278
+    .line 2288
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews:Ljava/util/ArrayList;
 
-    .line 2279
+    .line 2289
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews2:Ljava/util/ArrayList;
 
-    .line 2280
+    .line 2290
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -125,7 +125,7 @@
 
     move-object/from16 v8, p1
 
-    .line 2299
+    .line 2309
     invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v1
@@ -154,26 +154,26 @@
 
     if-lez v1, :cond_4
 
-    .line 2300
+    .line 2310
     invoke-virtual {v0, v13}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     if-eqz v1, :cond_4
 
-    .line 2301
+    .line 2311
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v2
 
     if-nez v2, :cond_4
 
-    .line 2302
+    .line 2312
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
     move-result v1
 
-    .line 2303
+    .line 2313
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -202,7 +202,7 @@
 
     if-lez v2, :cond_0
 
-    .line 2304
+    .line 2314
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -215,7 +215,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 2305
+    .line 2315
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -228,7 +228,7 @@
 
     if-nez v3, :cond_0
 
-    .line 2306
+    .line 2316
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v2
@@ -243,13 +243,13 @@
 
     move-result v1
 
-    .line 2309
+    .line 2319
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintPaint:Landroid/text/TextPaint;
 
     if-nez v2, :cond_1
 
-    .line 2310
+    .line 2320
     new-instance v2, Landroid/text/TextPaint;
 
     invoke-direct {v2, v12}, Landroid/text/TextPaint;-><init>(I)V
@@ -258,7 +258,7 @@
 
     const/16 v3, 0xe
 
-    .line 2311
+    .line 2321
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -267,7 +267,7 @@
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 2312
+    .line 2322
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintPaint:Landroid/text/TextPaint;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -278,7 +278,7 @@
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 2314
+    .line 2324
     :cond_1
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
@@ -292,7 +292,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 2315
+    .line 2325
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayout:Landroid/text/StaticLayout;
 
     if-eqz v3, :cond_2
@@ -303,7 +303,7 @@
 
     if-eq v3, v2, :cond_3
 
-    .line 2316
+    .line 2326
     :cond_2
     new-instance v3, Landroid/text/StaticLayout;
 
@@ -335,17 +335,17 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayout:Landroid/text/StaticLayout;
 
-    .line 2317
+    .line 2327
     iput v11, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayoutWidth:F
 
     int-to-float v2, v2
 
-    .line 2318
+    .line 2328
     iput v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayoutLeft:F
 
     move v2, v13
 
-    .line 2319
+    .line 2329
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayout:Landroid/text/StaticLayout;
 
@@ -355,7 +355,7 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 2320
+    .line 2330
     iget v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayoutWidth:F
 
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayout:Landroid/text/StaticLayout;
@@ -370,7 +370,7 @@
 
     iput v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayoutWidth:F
 
-    .line 2321
+    .line 2331
     iget v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayoutLeft:F
 
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayout:Landroid/text/StaticLayout;
@@ -389,11 +389,11 @@
 
     goto :goto_0
 
-    .line 2325
+    .line 2335
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2327
+    .line 2337
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v2
@@ -414,7 +414,7 @@
 
     const/16 v3, 0x40
 
-    .line 2328
+    .line 2338
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -433,18 +433,18 @@
 
     sub-float/2addr v1, v3
 
-    .line 2326
+    .line 2336
     invoke-virtual {v8, v2, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2330
+    .line 2340
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->archivedHintLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2331
+    .line 2341
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2336
+    .line 2346
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -456,14 +456,14 @@
 
     if-ne v1, v14, :cond_5
 
-    .line 2337
+    .line 2347
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
 
     move-result-object v1
 
-    .line 2338
+    .line 2348
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -475,7 +475,7 @@
 
     goto :goto_2
 
-    .line 2340
+    .line 2350
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -485,14 +485,14 @@
 
     if-ne v1, v9, :cond_6
 
-    .line 2341
+    .line 2351
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3200(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
 
     move-result-object v1
 
-    .line 2342
+    .line 2352
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$4300(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -501,7 +501,7 @@
 
     goto :goto_1
 
-    .line 2345
+    .line 2355
     :cond_6
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -509,7 +509,7 @@
 
     move-result-object v1
 
-    .line 2346
+    .line 2356
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3800(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;
@@ -518,7 +518,7 @@
 
     move v15, v13
 
-    .line 2348
+    .line 2358
     :goto_2
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -534,14 +534,14 @@
 
     if-ne v3, v1, :cond_37
 
-    .line 2356
+    .line 2366
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v3
 
     int-to-float v3, v3
 
-    .line 2357
+    .line 2367
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -558,7 +558,7 @@
 
     move v5, v13
 
-    .line 2360
+    .line 2370
     :goto_3
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -572,7 +572,7 @@
 
     if-ge v5, v10, :cond_b
 
-    .line 2361
+    .line 2371
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -624,7 +624,7 @@
 
     move v5, v13
 
-    .line 2374
+    .line 2384
     :goto_4
     iget-object v11, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -638,7 +638,7 @@
 
     if-ge v5, v11, :cond_10
 
-    .line 2375
+    .line 2385
     iget-object v11, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v11}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -688,14 +688,14 @@
 
     if-ltz v7, :cond_17
 
-    .line 2387
+    .line 2397
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget v4, v4, Lorg/telegram/ui/Components/SharedMediaLayout;->pinchCenterPosition:I
 
     if-ltz v4, :cond_17
 
-    .line 2388
+    .line 2398
     invoke-virtual {v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;->getItemCount()I
 
     move-result v4
@@ -722,7 +722,7 @@
 
     double-to-int v4, v4
 
-    .line 2389
+    .line 2399
     invoke-virtual {v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedPhotoVideoAdapter;->getItemCount()I
 
     move-result v5
@@ -747,7 +747,7 @@
 
     double-to-int v5, v5
 
-    .line 2390
+    .line 2400
     iget-object v6, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget v11, v6, Lorg/telegram/ui/Components/SharedMediaLayout;->pinchCenterPosition:I
@@ -802,7 +802,7 @@
 
     sub-int v6, v11, v6
 
-    .line 2391
+    .line 2401
     iget-object v11, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v11}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -865,7 +865,7 @@
     :cond_12
     const/4 v6, 0x0
 
-    .line 2394
+    .line 2404
     :cond_13
     iget-object v11, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -929,7 +929,7 @@
     :cond_15
     const/4 v6, 0x0
 
-    .line 2398
+    .line 2408
     :cond_16
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -959,7 +959,7 @@
 
     div-float/2addr v4, v5
 
-    .line 2399
+    .line 2409
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5400(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -989,7 +989,7 @@
 
     const/4 v6, 0x0
 
-    .line 2401
+    .line 2411
     :goto_5
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -999,27 +999,27 @@
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 2402
+    .line 2412
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->excludeDrawViews:Ljava/util/HashSet;
 
     invoke-virtual {v5}, Ljava/util/HashSet;->clear()V
 
-    .line 2403
+    .line 2413
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 2404
+    .line 2414
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews2:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 2405
+    .line 2415
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews3:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 2406
+    .line 2416
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     const/4 v10, 0x0
@@ -1028,7 +1028,7 @@
 
     const/4 v5, 0x0
 
-    .line 2407
+    .line 2417
     :goto_6
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -1042,7 +1042,7 @@
 
     if-ge v5, v10, :cond_1b
 
-    .line 2408
+    .line 2418
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -1053,7 +1053,7 @@
 
     move-result-object v10
 
-    .line 2409
+    .line 2419
     invoke-virtual {v10}, Landroid/view/View;->getTop()I
 
     move-result v11
@@ -1072,13 +1072,13 @@
 
     goto :goto_7
 
-    .line 2412
+    .line 2422
     :cond_18
     instance-of v11, v10, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     if-eqz v11, :cond_19
 
-    .line 2413
+    .line 2423
     iget-object v11, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v11}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5500(Lorg/telegram/ui/Components/SharedMediaLayout;)Ljava/util/ArrayList;
@@ -1091,13 +1091,13 @@
 
     goto :goto_7
 
-    .line 2414
+    .line 2424
     :cond_19
     instance-of v10, v10, Landroid/widget/TextView;
 
     if-eqz v10, :cond_1a
 
-    .line 2415
+    .line 2425
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5608(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -1108,7 +1108,7 @@
 
     goto :goto_6
 
-    .line 2418
+    .line 2428
     :cond_1b
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews:Ljava/util/ArrayList;
 
@@ -1120,21 +1120,21 @@
 
     invoke-virtual {v5, v10}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2419
+    .line 2429
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/RecyclerListView;->getFastScroll()Lorg/telegram/ui/Components/RecyclerListView$FastScroll;
 
     move-result-object v5
 
     if-eqz v5, :cond_1e
 
-    .line 2420
+    .line 2430
     invoke-virtual {v5}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v10
 
     if-eqz v10, :cond_1e
 
-    .line 2421
+    .line 2431
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -1145,7 +1145,7 @@
 
     move-result v10
 
-    .line 2422
+    .line 2432
     iget-object v11, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v11}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -1156,7 +1156,7 @@
 
     move-result v11
 
-    .line 2423
+    .line 2433
     iget-object v13, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {v13}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/SharedMediaLayout$InternalListView;
@@ -1176,7 +1176,7 @@
     :cond_1c
     const/4 v1, 0x0
 
-    .line 2424
+    .line 2434
     :goto_8
     iget-object v13, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -1197,7 +1197,7 @@
     :cond_1d
     const/4 v2, 0x0
 
-    .line 2425
+    .line 2435
     :goto_9
     iget-object v13, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -1223,7 +1223,7 @@
 
     invoke-virtual {v5, v10}, Lorg/telegram/ui/Components/RecyclerListView$FastScroll;->setProgress(F)V
 
-    .line 2426
+    .line 2436
     iget-object v10, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -1271,7 +1271,7 @@
 
     const/4 v1, 0x0
 
-    .line 2430
+    .line 2440
     :goto_b
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1279,12 +1279,12 @@
 
     if-ge v1, v2, :cond_2c
 
-    .line 2431
+    .line 2441
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 2432
+    .line 2442
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v3
@@ -1303,20 +1303,20 @@
 
     goto/16 :goto_10
 
-    .line 2442
+    .line 2452
     :cond_20
     instance-of v2, v2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     if-eqz v2, :cond_29
 
-    .line 2443
+    .line 2453
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
-    .line 2445
+    .line 2455
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->getMessageId()I
 
     move-result v3
@@ -1335,7 +1335,7 @@
 
     if-eqz v3, :cond_24
 
-    .line 2446
+    .line 2456
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     iget-boolean v4, v3, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightAnimation:Z
@@ -1344,13 +1344,13 @@
 
     const/4 v4, 0x0
 
-    .line 2447
+    .line 2457
     iput v4, v3, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightProgress:F
 
-    .line 2448
+    .line 2458
     iput-boolean v12, v3, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightAnimation:Z
 
-    .line 2451
+    .line 2461
     :cond_21
     iget v3, v3, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightProgress:F
 
@@ -1382,7 +1382,7 @@
     :cond_23
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 2456
+    .line 2466
     :goto_c
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setHighlightProgress(F)V
 
@@ -1391,10 +1391,10 @@
     :cond_24
     const/4 v3, 0x0
 
-    .line 2458
+    .line 2468
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setHighlightProgress(F)V
 
-    .line 2461
+    .line 2471
     :goto_d
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
@@ -1402,7 +1402,7 @@
 
     if-eqz v3, :cond_25
 
-    .line 2463
+    .line 2473
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/SharedMediaLayout;->messageAlphaEnter:Landroid/util/SparseArray;
@@ -1419,7 +1419,7 @@
 
     if-eqz v4, :cond_25
 
-    .line 2464
+    .line 2474
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/SharedMediaLayout;->messageAlphaEnter:Landroid/util/SparseArray;
@@ -1449,7 +1449,7 @@
     :cond_25
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 2466
+    .line 2476
     :goto_e
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -1461,7 +1461,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setImageAlpha(FZ)V
 
-    .line 2469
+    .line 2479
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -1470,7 +1470,7 @@
 
     if-eqz v3, :cond_27
 
-    .line 2472
+    .line 2482
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -1493,7 +1493,7 @@
 
     add-int/2addr v3, v9
 
-    .line 2473
+    .line 2483
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
@@ -1518,7 +1518,7 @@
 
     add-int/2addr v4, v10
 
-    .line 2474
+    .line 2484
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5400(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -1539,7 +1539,7 @@
 
     if-ltz v3, :cond_27
 
-    .line 2475
+    .line 2485
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5400(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -1562,7 +1562,7 @@
 
     if-ge v4, v3, :cond_27
 
-    .line 2477
+    .line 2487
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5500(Lorg/telegram/ui/Components/SharedMediaLayout;)Ljava/util/ArrayList;
@@ -1603,7 +1603,7 @@
 
     div-float/2addr v3, v6
 
-    .line 2478
+    .line 2488
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -1626,21 +1626,21 @@
 
     add-float/2addr v5, v3
 
-    .line 2479
+    .line 2489
     invoke-virtual {v2}, Landroid/view/View;->getLeft()I
 
     move-result v3
 
     int-to-float v3, v3
 
-    .line 2480
+    .line 2490
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v6
 
     int-to-float v6, v6
 
-    .line 2481
+    .line 2491
     iget-object v7, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v7}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5500(Lorg/telegram/ui/Components/SharedMediaLayout;)Ljava/util/ArrayList;
@@ -1659,7 +1659,7 @@
 
     int-to-float v7, v7
 
-    .line 2482
+    .line 2492
     iget-object v12, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v12}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5500(Lorg/telegram/ui/Components/SharedMediaLayout;)Ljava/util/ArrayList;
@@ -1682,13 +1682,13 @@
 
     const/4 v13, 0x0
 
-    .line 2484
+    .line 2494
     invoke-virtual {v2, v13}, Landroid/view/View;->setPivotX(F)V
 
-    .line 2485
+    .line 2495
     invoke-virtual {v2, v13}, Landroid/view/View;->setPivotY(F)V
 
-    .line 2486
+    .line 2496
     iget-object v13, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v13}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -1703,7 +1703,7 @@
 
     sub-float/2addr v7, v3
 
-    .line 2487
+    .line 2497
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -1716,7 +1716,7 @@
 
     sub-float/2addr v12, v6
 
-    .line 2488
+    .line 2498
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -1727,7 +1727,7 @@
 
     invoke-virtual {v2, v12}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2489
+    .line 2499
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5500(Lorg/telegram/ui/Components/SharedMediaLayout;)Ljava/util/ArrayList;
@@ -1754,7 +1754,7 @@
 
     invoke-virtual {v2, v3, v5, v6}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setCrossfadeView(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;FI)V
 
-    .line 2490
+    .line 2500
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->excludeDrawViews:Ljava/util/HashSet;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -1771,15 +1771,15 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 2491
+    .line 2501
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews3:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2492
+    .line 2502
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2493
+    .line 2503
     invoke-virtual {v2}, Landroid/view/View;->getX()F
 
     move-result v3
@@ -1790,13 +1790,13 @@
 
     invoke-virtual {v8, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2494
+    .line 2504
     invoke-virtual {v2, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2495
+    .line 2505
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2497
+    .line 2507
     invoke-virtual {v2}, Landroid/view/View;->getY()F
 
     move-result v3
@@ -1805,7 +1805,7 @@
 
     if-gez v3, :cond_26
 
-    .line 2498
+    .line 2508
     invoke-virtual {v2}, Landroid/view/View;->getY()F
 
     move-result v14
@@ -1823,7 +1823,7 @@
     :goto_f
     if-nez v3, :cond_2b
 
-    .line 2504
+    .line 2514
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -1832,7 +1832,7 @@
 
     if-eqz v3, :cond_28
 
-    .line 2505
+    .line 2515
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews2:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1844,16 +1844,16 @@
 
     const/4 v5, 0x0
 
-    .line 2507
+    .line 2517
     invoke-virtual {v2, v3, v4, v5}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setCrossfadeView(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;FI)V
 
-    .line 2508
+    .line 2518
     invoke-virtual {v2, v4}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2509
+    .line 2519
     invoke-virtual {v2, v4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2510
+    .line 2520
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -1879,12 +1879,12 @@
     :goto_10
     move/from16 v24, v13
 
-    .line 2433
+    .line 2443
     instance-of v2, v2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     if-eqz v2, :cond_2b
 
-    .line 2434
+    .line 2444
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -1897,16 +1897,16 @@
 
     const/4 v5, 0x0
 
-    .line 2435
+    .line 2445
     invoke-virtual {v2, v3, v4, v5}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setCrossfadeView(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;FI)V
 
-    .line 2436
+    .line 2446
     invoke-virtual {v2, v4}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2437
+    .line 2447
     invoke-virtual {v2, v4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2438
+    .line 2448
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -1934,7 +1934,7 @@
     :cond_2c
     move/from16 v24, v13
 
-    .line 2515
+    .line 2525
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -1955,7 +1955,7 @@
 
     if-nez v1, :cond_31
 
-    .line 2516
+    .line 2526
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5400(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -1976,7 +1976,7 @@
 
     div-float/2addr v1, v2
 
-    .line 2517
+    .line 2527
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -1997,7 +1997,7 @@
 
     add-float v25, v1, v2
 
-    .line 2519
+    .line 2529
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2048,7 +2048,7 @@
 
     div-float/2addr v1, v3
 
-    .line 2520
+    .line 2530
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -2069,7 +2069,7 @@
 
     add-float v7, v1, v2
 
-    .line 2522
+    .line 2532
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2088,7 +2088,7 @@
 
     div-float v26, v1, v2
 
-    .line 2523
+    .line 2533
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2105,7 +2105,7 @@
 
     div-float v27, v1, v2
 
-    .line 2524
+    .line 2534
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2152,7 +2152,7 @@
 
     double-to-float v1, v1
 
-    .line 2525
+    .line 2535
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5200(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -2181,7 +2181,7 @@
 
     const/4 v6, 0x0
 
-    .line 2529
+    .line 2539
     :goto_12
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews:Ljava/util/ArrayList;
 
@@ -2191,7 +2191,7 @@
 
     if-ge v6, v1, :cond_31
 
-    .line 2530
+    .line 2540
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2202,7 +2202,7 @@
 
     check-cast v5, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
-    .line 2531
+    .line 2541
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->excludeDrawViews:Ljava/util/HashSet;
 
     invoke-virtual {v1, v5}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -2226,10 +2226,10 @@
 
     const/4 v4, 0x0
 
-    .line 2534
+    .line 2544
     invoke-virtual {v5, v4, v1, v2}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setCrossfadeView(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;FI)V
 
-    .line 2535
+    .line 2545
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
@@ -2250,7 +2250,7 @@
 
     sub-int v2, v1, v9
 
-    .line 2537
+    .line 2547
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -2273,14 +2273,14 @@
 
     sub-int/2addr v3, v10
 
-    .line 2540
+    .line 2550
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v4, v2
 
     mul-float v4, v4, v26
 
-    .line 2541
+    .line 2551
     iget-object v12, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v12}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -2315,7 +2315,7 @@
 
     invoke-virtual {v8, v4, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2542
+    .line 2552
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -2328,7 +2328,7 @@
 
     invoke-virtual {v5, v7, v1}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setImageScale(FZ)V
 
-    .line 2543
+    .line 2553
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -2343,7 +2343,7 @@
 
     const/4 v3, 0x0
 
-    .line 2544
+    .line 2554
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -2394,10 +2394,10 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 2545
+    .line 2555
     invoke-virtual {v13, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2546
+    .line 2556
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_13
@@ -2411,10 +2411,10 @@
 
     move/from16 v21, v6
 
-    .line 2548
+    .line 2558
     invoke-virtual {v13, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2550
+    .line 2560
     :goto_13
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -2432,10 +2432,10 @@
     :cond_31
     const/high16 v12, 0x3f800000    # 1.0f
 
-    .line 2554
+    .line 2564
     invoke-super/range {p0 .. p1}, Lorg/telegram/ui/Components/BlurredRecyclerView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 2556
+    .line 2566
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -2444,7 +2444,7 @@
 
     if-eqz v1, :cond_3d
 
-    .line 2557
+    .line 2567
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2700(Lorg/telegram/ui/Components/SharedMediaLayout;)[I
@@ -2465,7 +2465,7 @@
 
     div-float/2addr v1, v2
 
-    .line 2558
+    .line 2568
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -2484,7 +2484,7 @@
 
     add-float v11, v1, v6
 
-    .line 2560
+    .line 2570
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2535,7 +2535,7 @@
 
     div-float/2addr v1, v3
 
-    .line 2561
+    .line 2571
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -2554,7 +2554,7 @@
 
     add-float v13, v1, v6
 
-    .line 2563
+    .line 2573
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2603,7 +2603,7 @@
 
     double-to-float v1, v1
 
-    .line 2564
+    .line 2574
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5200(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -2632,7 +2632,7 @@
     :cond_33
     move/from16 v16, v1
 
-    .line 2567
+    .line 2577
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2651,7 +2651,7 @@
 
     div-float v17, v1, v2
 
-    .line 2568
+    .line 2578
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2670,7 +2670,7 @@
 
     const/4 v7, 0x0
 
-    .line 2570
+    .line 2580
     :goto_15
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews2:Ljava/util/ArrayList;
 
@@ -2680,7 +2680,7 @@
 
     if-ge v7, v1, :cond_35
 
-    .line 2571
+    .line 2581
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews2:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2691,7 +2691,7 @@
 
     check-cast v6, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
-    .line 2572
+    .line 2582
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
@@ -2712,7 +2712,7 @@
 
     rem-int/2addr v1, v2
 
-    .line 2573
+    .line 2583
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -2739,10 +2739,10 @@
 
     add-int v3, v1, v9
 
-    .line 2578
+    .line 2588
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2579
+    .line 2589
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -2759,7 +2759,7 @@
 
     mul-float v1, v1, v17
 
-    .line 2580
+    .line 2590
     iget-object v4, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5300(Lorg/telegram/ui/Components/SharedMediaLayout;)F
@@ -2792,7 +2792,7 @@
 
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2581
+    .line 2591
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5400(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -2805,7 +2805,7 @@
 
     const/4 v3, 0x0
 
-    .line 2582
+    .line 2592
     invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -2852,10 +2852,10 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 2583
+    .line 2593
     invoke-virtual {v12, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2584
+    .line 2594
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_16
@@ -2865,10 +2865,10 @@
 
     move/from16 v23, v7
 
-    .line 2586
+    .line 2596
     invoke-virtual {v12, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2588
+    .line 2598
     :goto_16
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -2878,7 +2878,7 @@
 
     goto/16 :goto_15
 
-    .line 2591
+    .line 2601
     :cond_35
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews3:Ljava/util/ArrayList;
 
@@ -2892,7 +2892,7 @@
 
     const/4 v3, 0x0
 
-    .line 2592
+    .line 2602
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -2925,7 +2925,7 @@
 
     const/4 v10, 0x0
 
-    .line 2593
+    .line 2603
     :goto_17
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews3:Ljava/util/ArrayList;
 
@@ -2935,7 +2935,7 @@
 
     if-ge v10, v1, :cond_36
 
-    .line 2594
+    .line 2604
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->drawingViews3:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2950,7 +2950,7 @@
 
     goto :goto_17
 
-    .line 2596
+    .line 2606
     :cond_36
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -2959,7 +2959,7 @@
     :cond_37
     const/4 v10, 0x0
 
-    .line 2600
+    .line 2610
     :goto_18
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -2967,12 +2967,12 @@
 
     if-ge v10, v1, :cond_3c
 
-    .line 2601
+    .line 2611
     invoke-virtual {v0, v10}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2602
+    .line 2612
     iget-object v2, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5700(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/view/View;)I
@@ -2981,7 +2981,7 @@
 
     if-eqz v2, :cond_38
 
-    .line 2604
+    .line 2614
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/SharedMediaLayout;->messageAlphaEnter:Landroid/util/SparseArray;
@@ -2994,7 +2994,7 @@
 
     if-eqz v3, :cond_39
 
-    .line 2605
+    .line 2615
     iget-object v3, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object v3, v3, Lorg/telegram/ui/Components/SharedMediaLayout;->messageAlphaEnter:Landroid/util/SparseArray;
@@ -3023,30 +3023,30 @@
     :cond_39
     const/high16 v6, 0x3f800000    # 1.0f
 
-    .line 2607
+    .line 2617
     :goto_19
     instance-of v2, v1, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     if-eqz v2, :cond_3a
 
-    .line 2608
+    .line 2618
     check-cast v1, Lorg/telegram/ui/Cells/SharedDocumentCell;
 
-    .line 2609
+    .line 2619
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Cells/SharedDocumentCell;->setEnterAnimationAlpha(F)V
 
     goto :goto_1a
 
-    .line 2610
+    .line 2620
     :cond_3a
     instance-of v2, v1, Lorg/telegram/ui/Cells/SharedAudioCell;
 
     if-eqz v2, :cond_3b
 
-    .line 2611
+    .line 2621
     check-cast v1, Lorg/telegram/ui/Cells/SharedAudioCell;
 
-    .line 2612
+    .line 2622
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Cells/SharedAudioCell;->setEnterAnimationAlpha(F)V
 
     :cond_3b
@@ -3055,11 +3055,11 @@
 
     goto :goto_18
 
-    .line 2615
+    .line 2625
     :cond_3c
     invoke-super/range {p0 .. p1}, Lorg/telegram/ui/Components/BlurredRecyclerView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 2619
+    .line 2629
     :cond_3d
     :goto_1b
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -3068,7 +3068,7 @@
 
     if-eqz v2, :cond_3f
 
-    .line 2620
+    .line 2630
     iget v2, v1, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightProgress:F
 
     const v3, 0x3c2ec33e
@@ -3085,28 +3085,28 @@
 
     const/4 v2, 0x0
 
-    .line 2622
+    .line 2632
     iput v2, v1, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightProgress:F
 
     const/4 v2, 0x0
 
-    .line 2623
+    .line 2633
     iput-boolean v2, v1, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightAnimation:Z
 
-    .line 2624
+    .line 2634
     iput v2, v1, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightMessageId:I
 
-    .line 2626
+    .line 2636
     :cond_3e
     invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 2628
+    .line 2638
     :cond_3f
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->poller:Lorg/telegram/ui/Stories/UserListPoller;
 
     if-nez v1, :cond_40
 
-    .line 2629
+    .line 2639
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -3123,7 +3123,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->poller:Lorg/telegram/ui/Stories/UserListPoller;
 
-    .line 2631
+    .line 2641
     :cond_40
     iget-object v1, v0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->poller:Lorg/telegram/ui/Stories/UserListPoller;
 
@@ -3135,7 +3135,7 @@
 .method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 2
 
-    .line 2637
+    .line 2647
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5200(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -3146,7 +3146,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2638
+    .line 2648
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -3155,7 +3155,7 @@
 
     goto :goto_0
 
-    .line 2639
+    .line 2649
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -3167,7 +3167,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2640
+    .line 2650
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$3200(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/Components/SharedMediaLayout$StoriesAdapter;
@@ -3176,7 +3176,7 @@
 
     goto :goto_0
 
-    .line 2642
+    .line 2652
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -3184,7 +3184,7 @@
 
     move-result-object v0
 
-    .line 2644
+    .line 2654
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
@@ -3200,7 +3200,7 @@
 
     if-ne v1, v0, :cond_2
 
-    .line 2645
+    .line 2655
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5100(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -3217,7 +3217,7 @@
 
     return p1
 
-    .line 2649
+    .line 2659
     :cond_2
     invoke-super {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BlurredRecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -3229,10 +3229,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 2284
+    .line 2294
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 2285
+    .line 2295
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
@@ -3245,7 +3245,7 @@
 
     invoke-static {p1, p2, p3, p4}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$5000(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;Lorg/telegram/ui/Components/RecyclerListView;Landroidx/recyclerview/widget/LinearLayoutManager;)V
 
-    .line 2286
+    .line 2296
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$13;->val$mediaPage:Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$000(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)I
@@ -3254,7 +3254,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2287
+    .line 2297
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object p1

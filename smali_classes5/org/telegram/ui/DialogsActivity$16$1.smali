@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$16;)V
     .locals 0
 
-    .line 5579
+    .line 5573
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$16$1;->this$1:Lorg/telegram/ui/DialogsActivity$16;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 5582
+    .line 5576
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$16$1;->this$1:Lorg/telegram/ui/DialogsActivity$16;
 
     iget-object v0, p1, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, p1, v1}, Lorg/telegram/ui/DialogsActivity;->access$26600(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;F)V
+    invoke-static {v0, p1, v1}, Lorg/telegram/ui/DialogsActivity;->access$26500(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity$ViewPage;F)V
 
     return-void
 .end method

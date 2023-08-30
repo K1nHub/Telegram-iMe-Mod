@@ -2,46 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$IntReturnCallback;
+.implements Lorg/telegram/tgnet/RequestTimeDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-.field public final synthetic f$1:Ljava/lang/String;
-
-.field public final synthetic f$2:Lorg/telegram/ui/Components/RecyclerListView;
+.field public final synthetic f$0:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/ui/Components/RecyclerListView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/TextDetailSettingsCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$1:Ljava/lang/String;
-
-    iput-object p3, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$2:Lorg/telegram/ui/Components/RecyclerListView;
+    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()I
-    .locals 3
+.method public final run(J)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
-    iget-object v1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$1:Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$ofViTQJ0rfUJXGr22rsYZbxluq0(Lorg/telegram/ui/Cells/TextDetailSettingsCell;J)V
 
-    iget-object v2, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda20;->f$2:Lorg/telegram/ui/Components/RecyclerListView;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$y9XPHqlVgzpwbVMGWmaAtqRXw44(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/ui/Components/RecyclerListView;)I
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

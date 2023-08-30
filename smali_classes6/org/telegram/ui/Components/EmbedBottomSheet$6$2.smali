@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmbedBottomSheet$6;)V
     .locals 0
 
-    .line 620
+    .line 632
     iput-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$2;->this$1:Lorg/telegram/ui/Components/EmbedBottomSheet$6;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 623
+    .line 635
     iget-object p1, p0, Lorg/telegram/ui/Components/EmbedBottomSheet$6$2;->this$1:Lorg/telegram/ui/Components/EmbedBottomSheet$6;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmbedBottomSheet$6;->this$0:Lorg/telegram/ui/Components/EmbedBottomSheet;

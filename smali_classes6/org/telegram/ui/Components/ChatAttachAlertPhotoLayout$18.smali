@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Landroid/content/Context;ZZ)V
     .locals 0
 
-    .line 2189
+    .line 2187
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/messenger/camera/CameraView;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 2191
+    .line 2189
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18$1;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;)V
@@ -44,19 +44,19 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 2199
+    .line 2197
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    .line 2200
+    .line 2198
     invoke-super {p0, p1}, Lorg/telegram/messenger/camera/CameraView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     goto/16 :goto_1
 
-    .line 2202
+    .line 2200
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -112,7 +112,7 @@
 
     float-to-int v0, v0
 
-    .line 2203
+    .line 2201
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$4400(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)Z
@@ -121,7 +121,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2204
+    .line 2202
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -182,7 +182,7 @@
 
     goto :goto_0
 
-    .line 2205
+    .line 2203
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -200,7 +200,7 @@
 
     if-nez v1, :cond_2
 
-    .line 2206
+    .line 2204
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -235,7 +235,7 @@
 
     goto :goto_0
 
-    .line 2208
+    .line 2206
     :cond_2
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -259,19 +259,19 @@
 
     invoke-virtual {v1, v3, v3, v2, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2210
+    .line 2208
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2211
+    .line 2209
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
-    .line 2212
+    .line 2210
     invoke-super {p0, p1}, Lorg/telegram/messenger/camera/CameraView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 2213
+    .line 2211
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :goto_1
@@ -281,10 +281,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 2219
+    .line 2217
     invoke-super {p0}, Lorg/telegram/messenger/camera/CameraView;->onAttachedToWindow()V
 
-    .line 2220
+    .line 2218
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
@@ -299,10 +299,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 2225
+    .line 2223
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 2226
+    .line 2224
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;

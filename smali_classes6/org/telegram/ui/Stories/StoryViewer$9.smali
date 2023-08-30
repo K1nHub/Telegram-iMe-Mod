@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 1642
+    .line 1653
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$9;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1645
+    .line 1656
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$9;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     const/4 v0, 0x0
@@ -44,13 +44,13 @@
 
     const/4 v1, 0x0
 
-    .line 1646
+    .line 1657
     iput v1, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyOffset:F
 
-    .line 1647
+    .line 1658
     iput v1, p1, Lorg/telegram/ui/Stories/StoryViewer;->swipeToReplyProgress:F
 
-    .line 1648
+    .line 1659
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     if-nez p1, :cond_0
@@ -65,7 +65,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 1650
+    .line 1661
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_1

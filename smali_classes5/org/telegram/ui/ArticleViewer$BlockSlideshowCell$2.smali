@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 8572
+    .line 8693
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +44,10 @@
 .method public onPageScrolled(IFI)V
     .locals 1
 
-    .line 8575
+    .line 8696
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17700(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroidx/viewpager/widget/ViewPager;
+    invoke-static {p2}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18000(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroidx/viewpager/widget/ViewPager;
 
     move-result-object p2
 
@@ -65,7 +65,7 @@
 
     return-void
 
-    .line 8579
+    .line 8700
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
@@ -77,7 +77,7 @@
 
     add-float/2addr p1, p3
 
-    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17900(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18200(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)I
 
     move-result p3
 
@@ -89,12 +89,12 @@
 
     div-float/2addr p1, p2
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17802(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;F)F
+    invoke-static {v0, p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18102(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;F)F
 
-    .line 8580
+    .line 8701
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18000(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18300(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroid/view/View;
 
     move-result-object p1
 
@@ -106,15 +106,15 @@
 .method public onPageSelected(I)V
     .locals 1
 
-    .line 8585
+    .line 8706
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$17902(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;I)I
+    invoke-static {v0, p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18202(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;I)I
 
-    .line 8586
+    .line 8707
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18000(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18300(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroid/view/View;
 
     move-result-object p1
 

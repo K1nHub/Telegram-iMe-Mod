@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;)V
     .locals 0
 
-    .line 8601
+    .line 8612
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$47;->val$seekBarDelegate:Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;
@@ -39,7 +39,7 @@
 .method public bridge synthetic getContentDescription(Landroid/view/View;)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 8601
+    .line 8612
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PhotoViewer$47;->getContentDescription(Landroid/view/View;)Ljava/lang/String;
 
     move-result-object p1
@@ -50,14 +50,14 @@
 .method public getContentDescription(Landroid/view/View;)Ljava/lang/String;
     .locals 8
 
-    .line 8616
+    .line 8627
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23500(Lorg/telegram/ui/PhotoViewer;)[I
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23600(Lorg/telegram/ui/PhotoViewer;)[I
 
     move-result-object v0
 
@@ -81,7 +81,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$23500(Lorg/telegram/ui/PhotoViewer;)[I
+    invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$23600(Lorg/telegram/ui/PhotoViewer;)[I
 
     move-result-object v2
 
@@ -103,14 +103,14 @@
 
     move-result-object p1
 
-    .line 8617
+    .line 8628
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v5, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v5}, Lorg/telegram/ui/PhotoViewer;->access$23600(Lorg/telegram/ui/PhotoViewer;)[I
+    invoke-static {v5}, Lorg/telegram/ui/PhotoViewer;->access$23700(Lorg/telegram/ui/PhotoViewer;)[I
 
     move-result-object v5
 
@@ -128,7 +128,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23600(Lorg/telegram/ui/PhotoViewer;)[I
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23700(Lorg/telegram/ui/PhotoViewer;)[I
 
     move-result-object v0
 
@@ -146,7 +146,7 @@
 
     move-result-object v0
 
-    .line 8618
+    .line 8629
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrPlayerDuration:I
 
     const/4 v3, 0x2
@@ -169,7 +169,7 @@
 .method public getProgress()F
     .locals 1
 
-    .line 8604
+    .line 8615
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayerSeekBar;
@@ -186,12 +186,12 @@
 .method public setProgress(F)V
     .locals 1
 
-    .line 8609
+    .line 8620
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$47;->val$seekBarDelegate:Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;->onSeekBarDrag(F)V
 
-    .line 8610
+    .line 8621
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayerSeekBar;
@@ -200,7 +200,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setProgress(F)V
 
-    .line 8611
+    .line 8622
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$47;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1300(Lorg/telegram/ui/PhotoViewer;)Landroid/view/View;
