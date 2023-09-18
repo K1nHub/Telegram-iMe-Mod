@@ -1,14 +1,12 @@
 name: Build app using apktool
 on: workflow_dispatch
-env:
-  IME_VERSION: not-set
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Get offical iMe version
-        run: echo "IME_TEST=$(grep 'versionName' apktool.yml | cut -d' ' -f 4)" >> $GITHUB_ENV
+        run: echo "IME_VERSION=$(grep 'versionName' apktool.yml | cut -d' ' -f 4)" >> $GITHUB_ENV
       - name: Update repo
         run: sudo apt update
       - name: Install signer
@@ -29,8 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.IME_TEST }}
-          release_name: Release Kin's iMe Mod ${{ env.IME_TEST }}
+          tag_name: ${{ env.IME_VERSION }}
+          release_name: Release Kin's iMe Mod ${{ env.IME_VERSION }}
           body: |
             - Change default font to "Google Sans"
             - Delete unnecessary arm libs (only arm64-v8a)
@@ -48,5 +46,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
           asset_path: signed-moded-from-action.apk
-          asset_name: iMe-Mod-${{ env.IME_TEST }}.apk
+          asset_name: iMe-Mod-${{ env.IME_VERSION }}.apk
           asset_content_type: aplication/zip
