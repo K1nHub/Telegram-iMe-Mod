@@ -10,7 +10,7 @@ import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: StringsJVM.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsKt {
     public static boolean equals(String str, String str2, boolean z) {
         if (str == null) {
@@ -86,6 +86,22 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "stringBuilder.append(this, i, length).toString()");
         return sb2;
+    }
+
+    public static /* synthetic */ String replaceFirst$default(String str, String str2, String str3, boolean z, int i, Object obj) {
+        if ((i & 4) != 0) {
+            z = false;
+        }
+        return replaceFirst(str, str2, str3, z);
+    }
+
+    public static final String replaceFirst(String str, String oldValue, String newValue, boolean z) {
+        int indexOf$default;
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        Intrinsics.checkNotNullParameter(oldValue, "oldValue");
+        Intrinsics.checkNotNullParameter(newValue, "newValue");
+        indexOf$default = StringsKt__StringsKt.indexOf$default(str, oldValue, 0, z, 2, (Object) null);
+        return indexOf$default < 0 ? str : StringsKt__StringsKt.replaceRange(str, indexOf$default, oldValue.length() + indexOf$default, newValue).toString();
     }
 
     public static /* synthetic */ boolean startsWith$default(String str, String str2, boolean z, int i, Object obj) {

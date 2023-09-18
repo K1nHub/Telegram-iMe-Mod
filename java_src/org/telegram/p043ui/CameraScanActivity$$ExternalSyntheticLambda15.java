@@ -1,6 +1,6 @@
 package org.telegram.p043ui;
 /* renamed from: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda15 */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class CameraScanActivity$$ExternalSyntheticLambda15 implements Runnable {
     public final /* synthetic */ CameraScanActivity f$0;
 
@@ -10,6 +10,6 @@ public final /* synthetic */ class CameraScanActivity$$ExternalSyntheticLambda15
 
     @Override // java.lang.Runnable
     public final void run() {
-        CameraScanActivity.m2403$r8$lambda$h8v1QMMoLncbYiduwfSmb6Y5VU(this.f$0);
+        CameraScanActivity.m2400$r8$lambda$h8v1QMMoLncbYiduwfSmb6Y5VU(this.f$0);
     }
 }

@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.translation.TranslationLanguage;
 import java.util.Locale;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TranslationUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TranslationUiMappingKt {
     public static final TranslationLanguageUiModel mapToUI(TranslationLanguage translationLanguage, String currentLangCode) {
         Intrinsics.checkNotNullParameter(translationLanguage, "<this>");

@@ -15,7 +15,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: WrappedResourceManager.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WrappedResourceManager implements KoinComponent {
     public static final WrappedResourceManager INSTANCE;
     private static final Lazy resourceManager$delegate;

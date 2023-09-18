@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.encoders.Hex;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ASN1ApplicationSpecific extends ASN1Primitive {
     protected final boolean isConstructed;
     protected final byte[] octets;

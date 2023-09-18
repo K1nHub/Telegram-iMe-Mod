@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.p043ui.Components.voip.VoIPHelper;
 /* renamed from: org.telegram.ui.VoIPFeedbackActivity */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VoIPFeedbackActivity extends Activity {
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {

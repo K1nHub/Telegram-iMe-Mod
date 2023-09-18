@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 /* renamed from: org.telegram.ui.Components.ReplaceableIconDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ReplaceableIconDrawable extends Drawable implements Animator.AnimatorListener {
     private ValueAnimator animation;
     private ColorFilter colorFilter;

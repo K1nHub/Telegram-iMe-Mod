@@ -1,6 +1,6 @@
 package org.orbitmvi.orbit.idling;
 /* compiled from: IdlingResource.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface IdlingResource {
     void close();
 

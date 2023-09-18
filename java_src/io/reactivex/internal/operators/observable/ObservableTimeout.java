@@ -14,14 +14,14 @@ import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableTimeout<T, U, V> extends AbstractObservableWithUpstream<T, T> {
     final ObservableSource<U> firstTimeoutIndicator;
     final Function<? super T, ? extends ObservableSource<V>> itemTimeoutIndicator;
     final ObservableSource<? extends T> other;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface TimeoutSelectorSupport extends ObservableTimeoutTimed.TimeoutSupport {
         void onTimeoutError(long j, Throwable th);
     }
@@ -48,7 +48,7 @@ public final class ObservableTimeout<T, U, V> extends AbstractObservableWithUpst
         this.source.subscribe(timeoutFallbackObserver);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class TimeoutObserver<T> extends AtomicLong implements Observer<T>, Disposable, TimeoutSelectorSupport {
         final Observer<? super T> downstream;
         final Function<? super T, ? extends ObservableSource<?>> itemTimeoutIndicator;
@@ -149,7 +149,7 @@ public final class ObservableTimeout<T, U, V> extends AbstractObservableWithUpst
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class TimeoutFallbackObserver<T> extends AtomicReference<Disposable> implements Observer<T>, Disposable, TimeoutSelectorSupport {
         final Observer<? super T> downstream;
         ObservableSource<? extends T> fallback;
@@ -259,7 +259,7 @@ public final class ObservableTimeout<T, U, V> extends AbstractObservableWithUpst
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class TimeoutConsumer extends AtomicReference<Disposable> implements Observer<Object>, Disposable {
         final long idx;
         final TimeoutSelectorSupport parent;

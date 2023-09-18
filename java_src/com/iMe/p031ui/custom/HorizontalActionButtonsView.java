@@ -21,12 +21,12 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: HorizontalActionButtonsView.kt */
 /* renamed from: com.iMe.ui.custom.HorizontalActionButtonsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HorizontalActionButtonsView extends LinearLayout {
     private final List<Button> buttons;
 
@@ -86,7 +86,7 @@ public final class HorizontalActionButtonsView extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: HorizontalActionButtonsView.kt */
     /* renamed from: com.iMe.ui.custom.HorizontalActionButtonsView$Button */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Button extends LinearLayout {
         private final Lazy imageView$delegate;
         private final Lazy textView$delegate;
@@ -147,8 +147,8 @@ public final class HorizontalActionButtonsView extends LinearLayout {
 
         private final void initView() {
             setOrientation(1);
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, getResources().getDimensionPixelOffset(C3558R.dimen.margin_half_small));
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, getResources().getDimensionPixelOffset(C3558R.dimen.margin_normal_2));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, getResources().getDimensionPixelOffset(C3473R.dimen.margin_half_small));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, getResources().getDimensionPixelOffset(C3473R.dimen.margin_normal_2));
             setGravity(1);
             addView(getImageView(), LayoutHelper.createLinear(24, 24));
             addView(getTextView(), LayoutHelper.createLinear(-1, -2, 0, 4, 0, 0));
@@ -160,7 +160,7 @@ public final class HorizontalActionButtonsView extends LinearLayout {
             textView.setGravity(17);
             ViewExtKt.singleLine(textView);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setTextSize(0, textView.getResources().getDimension(C3558R.dimen.text_size_normal));
+            textView.setTextSize(0, textView.getResources().getDimension(C3473R.dimen.text_size_normal));
             return textView;
         }
 
@@ -191,7 +191,7 @@ public final class HorizontalActionButtonsView extends LinearLayout {
 
     /* compiled from: HorizontalActionButtonsView.kt */
     /* renamed from: com.iMe.ui.custom.HorizontalActionButtonsView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

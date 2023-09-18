@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: ChannelDetailsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ChannelDetailsView extends BaseView {
     @OneExecution
     void onSubscribedToChannel(Uri uri);

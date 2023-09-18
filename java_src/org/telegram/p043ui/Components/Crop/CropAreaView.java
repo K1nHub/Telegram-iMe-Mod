@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.BubbleActivity;
 /* renamed from: org.telegram.ui.Components.Crop.CropAreaView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CropAreaView extends ViewGroup {
     private Control activeControl;
     private RectF actualRect;
@@ -80,13 +80,13 @@ public class CropAreaView extends ViewGroup {
     private RectF topRightCorner;
 
     /* renamed from: tx */
-    public float f1757tx;
+    public float f1748tx;
 
     /* renamed from: ty */
-    public float f1758ty;
+    public float f1749ty;
 
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$AreaViewListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     interface AreaViewListener {
         void onAreaChange();
 
@@ -96,7 +96,7 @@ public class CropAreaView extends ViewGroup {
     }
 
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$Control */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private enum Control {
         NONE,
         TOP_LEFT,
@@ -111,7 +111,7 @@ public class CropAreaView extends ViewGroup {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$GridType */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum GridType {
         NONE,
         MINOR,
@@ -140,8 +140,8 @@ public class CropAreaView extends ViewGroup {
         this.targetRect = new RectF();
         this.rotate = BitmapDescriptorFactory.HUE_RED;
         this.scale = 1.0f;
-        this.f1757tx = BitmapDescriptorFactory.HUE_RED;
-        this.f1758ty = BitmapDescriptorFactory.HUE_RED;
+        this.f1748tx = BitmapDescriptorFactory.HUE_RED;
+        this.f1749ty = BitmapDescriptorFactory.HUE_RED;
         this.inBubbleMode = context instanceof BubbleActivity;
         this.frameVisible = true;
         this.dimVisibile = true;
@@ -265,8 +265,8 @@ public class CropAreaView extends ViewGroup {
     public void setRotationScaleTranslation(float f, float f2, float f3, float f4) {
         this.rotate = f;
         this.scale = f2;
-        this.f1757tx = f3;
-        this.f1758ty = f4;
+        this.f1748tx = f3;
+        this.f1749ty = f4;
         invalidate();
     }
 
@@ -292,7 +292,7 @@ public class CropAreaView extends ViewGroup {
             int i10 = ((int) (rectF.right - f2)) + i9;
             int i11 = i9 + ((int) (rectF.bottom - f3));
             canvas.save();
-            canvas.translate(this.f1757tx, this.f1758ty);
+            canvas.translate(this.f1748tx, this.f1749ty);
             float f4 = this.scale;
             float f5 = (i10 / 2) + i7;
             float f6 = (i11 / 2) + i8;
@@ -820,7 +820,7 @@ public class CropAreaView extends ViewGroup {
             this.previousX = x;
             this.previousY = y;
             boolean z = Math.abs(f4) > Math.abs(f5);
-            switch (C47713.$SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control[this.activeControl.ordinal()]) {
+            switch (C46863.$SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control[this.activeControl.ordinal()]) {
                 case 1:
                     RectF rectF = this.tempRect;
                     rectF.left += f4;
@@ -999,8 +999,8 @@ public class CropAreaView extends ViewGroup {
     }
 
     /* renamed from: org.telegram.ui.Components.Crop.CropAreaView$3 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C47713 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C46863 {
         static final /* synthetic */ int[] $SwitchMap$org$telegram$ui$Components$Crop$CropAreaView$Control;
 
         static {

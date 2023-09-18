@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.Layout;
 import android.widget.TextView;
 /* renamed from: org.telegram.ui.Components.CorrectlyMeasuringTextView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CorrectlyMeasuringTextView extends TextView {
     public CorrectlyMeasuringTextView(Context context) {
         super(context);

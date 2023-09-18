@@ -16,7 +16,7 @@ import okhttp3.Protocol;
 import org.openjsse.javax.net.ssl.SSLParameters;
 import org.openjsse.net.ssl.OpenJSSE;
 /* compiled from: OpenJSSEPlatform.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class OpenJSSEPlatform extends Platform {
     public static final Companion Companion;
     private static final boolean isSupported;
@@ -94,7 +94,7 @@ public final class OpenJSSEPlatform extends Platform {
     }
 
     /* compiled from: OpenJSSEPlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

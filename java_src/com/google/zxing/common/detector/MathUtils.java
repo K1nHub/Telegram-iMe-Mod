@@ -1,7 +1,7 @@
 package com.google.zxing.common.detector;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MathUtils {
     public static int round(float f) {
         return (int) (f + (f < BitmapDescriptorFactory.HUE_RED ? -0.5f : 0.5f));

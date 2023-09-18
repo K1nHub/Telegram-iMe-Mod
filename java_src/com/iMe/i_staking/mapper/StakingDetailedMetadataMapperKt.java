@@ -10,7 +10,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingDetailedMetadataMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingDetailedMetadataMapperKt {
     public static final StakingDetailedMetadata mapToDomain(StakingDetailedMetadataResponse stakingDetailedMetadataResponse) {
         Intrinsics.checkNotNullParameter(stakingDetailedMetadataResponse, "<this>");

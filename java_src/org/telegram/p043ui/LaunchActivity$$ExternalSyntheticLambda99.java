@@ -2,7 +2,7 @@ package org.telegram.p043ui;
 
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda99 */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class LaunchActivity$$ExternalSyntheticLambda99 implements Utilities.Callback {
     public final /* synthetic */ LaunchActivity f$0;
 

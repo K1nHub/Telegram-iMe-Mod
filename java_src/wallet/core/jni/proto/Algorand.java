@@ -12,10 +12,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class Algorand {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface AssetOptInOrBuilder extends MessageLiteOrBuilder {
         long getAssetId();
 
@@ -26,7 +26,7 @@ public final class Algorand {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface AssetTransferOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -43,7 +43,7 @@ public final class Algorand {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         AssetOptIn getAssetOptIn();
 
@@ -82,7 +82,7 @@ public final class Algorand {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -93,7 +93,7 @@ public final class Algorand {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransferOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -114,7 +114,7 @@ public final class Algorand {
     private Algorand() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 2;
         private static final Transfer DEFAULT_INSTANCE;
@@ -224,9 +224,9 @@ public final class Algorand {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-            /* synthetic */ Builder(C74021 c74021) {
+            /* synthetic */ Builder(C73171 c73171) {
                 this();
             }
 
@@ -282,7 +282,7 @@ public final class Algorand {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74021.f1942xa1df5c61[method.ordinal()]) {
+            switch (C73171.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transfer();
                 case 2:
@@ -328,47 +328,47 @@ public final class Algorand {
     }
 
     /* renamed from: wallet.core.jni.proto.Algorand$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74021 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73171 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1942xa1df5c61;
+        static final /* synthetic */ int[] f1933xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1942xa1df5c61 = iArr;
+            f1933xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1942xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1942xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1942xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1942xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1942xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1942xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1933xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class AssetTransfer extends GeneratedMessageLite<AssetTransfer, Builder> implements AssetTransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 2;
         public static final int ASSET_ID_FIELD_NUMBER = 3;
@@ -495,9 +495,9 @@ public final class Algorand {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<AssetTransfer, Builder> implements AssetTransferOrBuilder {
-            /* synthetic */ Builder(C74021 c74021) {
+            /* synthetic */ Builder(C73171 c73171) {
                 this();
             }
 
@@ -570,7 +570,7 @@ public final class Algorand {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74021.f1942xa1df5c61[method.ordinal()]) {
+            switch (C73171.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new AssetTransfer();
                 case 2:
@@ -615,7 +615,7 @@ public final class Algorand {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class AssetOptIn extends GeneratedMessageLite<AssetOptIn, Builder> implements AssetOptInOrBuilder {
         public static final int ASSET_ID_FIELD_NUMBER = 1;
         private static final AssetOptIn DEFAULT_INSTANCE;
@@ -696,9 +696,9 @@ public final class Algorand {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<AssetOptIn, Builder> implements AssetOptInOrBuilder {
-            /* synthetic */ Builder(C74021 c74021) {
+            /* synthetic */ Builder(C73171 c73171) {
                 this();
             }
 
@@ -726,7 +726,7 @@ public final class Algorand {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74021.f1942xa1df5c61[method.ordinal()]) {
+            switch (C73171.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new AssetOptIn();
                 case 2:
@@ -771,7 +771,7 @@ public final class Algorand {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int ASSET_OPT_IN_FIELD_NUMBER = 12;
         public static final int ASSET_TRANSFER_FIELD_NUMBER = 11;
@@ -802,7 +802,7 @@ public final class Algorand {
             this.privateKey_ = byteString;
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum MessageOneofCase {
             TRANSFER(10),
             ASSET_TRANSFER(11),
@@ -1145,9 +1145,9 @@ public final class Algorand {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C74021 c74021) {
+            /* synthetic */ Builder(C73171 c73171) {
                 this();
             }
 
@@ -1401,7 +1401,7 @@ public final class Algorand {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74021.f1942xa1df5c61[method.ordinal()]) {
+            switch (C73171.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1446,7 +1446,7 @@ public final class Algorand {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -1528,9 +1528,9 @@ public final class Algorand {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C74021 c74021) {
+            /* synthetic */ Builder(C73171 c73171) {
                 this();
             }
 
@@ -1558,7 +1558,7 @@ public final class Algorand {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74021.f1942xa1df5c61[method.ordinal()]) {
+            switch (C73171.f1933xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.CoinType;
 import wallet.core.jni.HDWallet;
 /* compiled from: EVMBlockchainCryptoWalletManagerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCryptoWalletManager {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EVMBlockchainCryptoWalletManagerImpl(CryptoPreferenceHelper cryptoPreferenceHelper) {
@@ -23,7 +23,7 @@ public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
 
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager
     public Observable<Result<Wallet>> createWallet() {
-        Observable<Result<Wallet>> just = Observable.just(Result.Companion.success(new Wallet.EVM("", new HDWallet(256, ""))));
+        Observable<Result<Wallet>> just = Observable.just(Result.Companion.success(new Wallet.EVM("", new HDWallet(128, ""))));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

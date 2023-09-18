@@ -9,7 +9,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.WireFormat;
 /* renamed from: com.google.firestore.v1.WriteRequest */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WriteRequest extends GeneratedMessageLite<WriteRequest, Builder> implements MessageLiteOrBuilder {
     public static final int DATABASE_FIELD_NUMBER = 1;
     private static final WriteRequest DEFAULT_INSTANCE;
@@ -55,7 +55,7 @@ public final class WriteRequest extends GeneratedMessageLite<WriteRequest, Build
     }
 
     /* renamed from: com.google.firestore.v1.WriteRequest$LabelsDefaultEntryHolder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class LabelsDefaultEntryHolder {
         static final MapEntryLite<String, String> defaultEntry;
 
@@ -70,7 +70,7 @@ public final class WriteRequest extends GeneratedMessageLite<WriteRequest, Build
     }
 
     /* renamed from: com.google.firestore.v1.WriteRequest$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<WriteRequest, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10791 c10791) {
             this();
@@ -100,7 +100,7 @@ public final class WriteRequest extends GeneratedMessageLite<WriteRequest, Build
     }
 
     /* renamed from: com.google.firestore.v1.WriteRequest$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10791 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

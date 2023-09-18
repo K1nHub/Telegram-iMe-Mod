@@ -19,7 +19,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TextNetworkSwitcherCell.kt */
 /* renamed from: com.iMe.fork.ui.view.TextNetworkSwitcherCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TextNetworkSwitcherCell extends FrameLayout {
     private final boolean dialog;
     private final Lazy networkTypeView$delegate;
@@ -140,7 +140,7 @@ public final class TextNetworkSwitcherCell extends FrameLayout {
 
     /* compiled from: TextNetworkSwitcherCell.kt */
     /* renamed from: com.iMe.fork.ui.view.TextNetworkSwitcherCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

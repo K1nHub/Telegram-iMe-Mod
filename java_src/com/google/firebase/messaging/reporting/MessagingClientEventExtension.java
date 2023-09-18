@@ -3,12 +3,12 @@ package com.google.firebase.messaging.reporting;
 import com.google.android.gms.internal.firebase_messaging.zze;
 import com.google.android.gms.internal.firebase_messaging.zzs;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MessagingClientEventExtension {
     private final MessagingClientEvent messaging_client_event_;
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private MessagingClientEvent messaging_client_event_ = null;
 

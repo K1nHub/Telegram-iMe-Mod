@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Cells.CreationTextCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CreationTextCell extends FrameLayout {
     boolean divider;
     private ImageView imageView;

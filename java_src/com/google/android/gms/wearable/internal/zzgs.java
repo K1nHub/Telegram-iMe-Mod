@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "PerformEapAkaResponseCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzgs> CREATOR = new zzgt();
     @SafeParcelable.Field(m797id = 2)

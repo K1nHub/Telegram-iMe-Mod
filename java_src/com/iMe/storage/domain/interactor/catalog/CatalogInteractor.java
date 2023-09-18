@@ -12,7 +12,7 @@ import io.reactivex.Observable;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogInteractor {
     private final CatalogRepository catalogRepository;
     private final SchedulersProvider schedulersProvider;

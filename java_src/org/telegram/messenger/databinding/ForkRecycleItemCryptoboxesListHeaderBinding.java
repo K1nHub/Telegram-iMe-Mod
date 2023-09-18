@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemCryptoboxesListHeaderBinding implements ViewBinding {
     private final LinearLayoutCompat rootView;
 
@@ -27,7 +27,7 @@ public final class ForkRecycleItemCryptoboxesListHeaderBinding implements ViewBi
     }
 
     public static ForkRecycleItemCryptoboxesListHeaderBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_cryptoboxes_list_header, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_cryptoboxes_list_header, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,11 +35,11 @@ public final class ForkRecycleItemCryptoboxesListHeaderBinding implements ViewBi
     }
 
     public static ForkRecycleItemCryptoboxesListHeaderBinding bind(View view) {
-        int i = C3558R.C3561id.image_order;
+        int i = C3473R.C3476id.image_order;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
             LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) view;
-            int i2 = C3558R.C3561id.text_header;
+            int i2 = C3473R.C3476id.text_header;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i2);
             if (appCompatTextView != null) {
                 return new ForkRecycleItemCryptoboxesListHeaderBinding(linearLayoutCompat, appCompatImageView, linearLayoutCompat, appCompatTextView);

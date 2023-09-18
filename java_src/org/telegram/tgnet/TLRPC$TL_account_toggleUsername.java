@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_account_toggleUsername extends TLObject {
     public static int constructor = 1490465654;
     public boolean active;

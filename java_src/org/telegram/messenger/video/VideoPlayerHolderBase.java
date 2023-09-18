@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.p043ui.Components.VideoPlayer;
 import org.telegram.tgnet.TLRPC$Document;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class VideoPlayerHolderBase {
     boolean audioDisabled;
     Uri contentUri;
@@ -185,14 +185,14 @@ public class VideoPlayerHolderBase {
         }
         VideoPlayer videoPlayer2 = new VideoPlayer(false, z);
         this.videoPlayer = videoPlayer2;
-        videoPlayer2.setDelegate(new C36052());
+        videoPlayer2.setDelegate(new C35202());
         this.videoPlayer.setIsStory();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.video.VideoPlayerHolderBase$2 */
-    /* loaded from: classes4.dex */
-    public class C36052 implements VideoPlayer.VideoPlayerDelegate {
+    /* loaded from: classes6.dex */
+    public class C35202 implements VideoPlayer.VideoPlayerDelegate {
         @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
         public /* bridge */ /* synthetic */ void onRenderedFirstFrame(AnalyticsListener.EventTime eventTime) {
             VideoPlayer.VideoPlayerDelegate.CC.$default$onRenderedFirstFrame(this, eventTime);
@@ -221,7 +221,7 @@ public class VideoPlayerHolderBase {
         public void onVideoSizeChanged(int i, int i2, int i3, float f) {
         }
 
-        C36052() {
+        C35202() {
         }
 
         @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
@@ -255,7 +255,7 @@ public class VideoPlayerHolderBase {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoPlayerHolderBase.C36052.this.lambda$onRenderedFirstFrame$0();
+                    VideoPlayerHolderBase.C35202.this.lambda$onRenderedFirstFrame$0();
                 }
             }, 16L);
         }

@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Sequences.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class GeneratorSequence<T> implements Sequence<T> {
     private final Function0<T> getInitialValue;
     private final Function1<T, T> getNextValue;

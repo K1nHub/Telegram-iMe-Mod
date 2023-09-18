@@ -25,7 +25,7 @@ import com.google.firebase.firestore.util.Logger;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirestoreClient {
     private final AsyncQueue asyncQueue;
     private final CredentialsProvider credentialsProvider;

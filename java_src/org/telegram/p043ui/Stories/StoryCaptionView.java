@@ -40,7 +40,7 @@ import java.util.Objects;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -57,7 +57,7 @@ import org.telegram.p043ui.Components.spoilers.SpoilerEffect;
 import org.telegram.p043ui.Components.spoilers.SpoilersClickDetector;
 import org.telegram.p043ui.Stories.StoryCaptionView;
 /* renamed from: org.telegram.ui.Stories.StoryCaptionView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoryCaptionView extends NestedScrollView {
     private Method abortAnimatedScrollMethod;
     public int blackoutBottomOffset;
@@ -496,7 +496,7 @@ public class StoryCaptionView extends NestedScrollView {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class StoryCaptionTextView extends View implements TextSelectionHelper.SimpleSelectabeleView {
         public boolean allowClickSpoilers;
         private final PorterDuffColorFilter emojiColorFilter;
@@ -524,7 +524,7 @@ public class StoryCaptionView extends NestedScrollView {
         }
 
         /* renamed from: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$TextState */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public class TextState {
             private final SpoilersClickDetector clickDetector;
             StaticLayout firstLayout;
@@ -641,7 +641,7 @@ public class StoryCaptionView extends NestedScrollView {
                 if (this.fullLayout.getLineCount() > 3) {
                     float lineTop = this.fullLayout.getLineTop(2) + this.fullLayout.getTopPadding();
                     if (this == StoryCaptionTextView.this.state[0]) {
-                        String string = LocaleController.getString("ShowMore", C3558R.string.ShowMore);
+                        String string = LocaleController.getString("ShowMore", C3473R.string.ShowMore);
                         StoryCaptionTextView storyCaptionTextView4 = StoryCaptionTextView.this;
                         storyCaptionTextView4.showMore = storyCaptionTextView4.makeTextLayout(storyCaptionTextView4.showMorePaint, string, i);
                         StoryCaptionTextView.this.showMoreY = (storyCaptionTextView.verticalPadding + lineTop) - AndroidUtilities.dpf2(0.3f);
@@ -1114,7 +1114,7 @@ public class StoryCaptionView extends NestedScrollView {
         }
 
         /* renamed from: org.telegram.ui.Stories.StoryCaptionView$StoryCaptionTextView$LineInfo */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public class LineInfo {
             float collapsedX;
             float collapsedY;

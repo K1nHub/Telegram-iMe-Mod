@@ -1,6 +1,6 @@
 package kotlin.text;
 /* compiled from: Char.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class CharsKt__CharKt extends CharsKt__CharJVMKt {
     public static final boolean equals(char c, char c2, boolean z) {
         if (c == c2) {

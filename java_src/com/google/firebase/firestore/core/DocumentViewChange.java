@@ -1,12 +1,12 @@
 package com.google.firebase.firestore.core;
 
 import com.google.firebase.firestore.model.Document;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DocumentViewChange {
     private final Document document;
     private final Type type;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Type {
         REMOVED,
         ADDED,

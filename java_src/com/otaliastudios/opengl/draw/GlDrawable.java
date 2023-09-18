@@ -5,7 +5,7 @@ import com.otaliastudios.opengl.core.GlViewportAware;
 import com.otaliastudios.opengl.internal.MiscKt;
 import java.nio.FloatBuffer;
 /* compiled from: GlDrawable.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class GlDrawable extends GlViewportAware {
     private final float[] modelMatrix = MiscKt.matrixClone(Egloo.IDENTITY_MATRIX);
     private int vertexArrayVersion;

@@ -12,7 +12,7 @@ import io.grpc.internal.ManagedChannelServiceConfig;
 import io.grpc.internal.RetryPolicy;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ServiceConfigInterceptor implements ClientInterceptor {
     private volatile boolean initComplete;
     final AtomicReference<ManagedChannelServiceConfig> managedChannelServiceConfig = new AtomicReference<>();

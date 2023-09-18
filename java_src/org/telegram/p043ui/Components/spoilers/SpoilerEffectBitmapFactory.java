@@ -15,7 +15,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 /* renamed from: org.telegram.ui.Components.spoilers.SpoilerEffectBitmapFactory */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SpoilerEffectBitmapFactory {
     private static SpoilerEffectBitmapFactory factory;
     Bitmap backgroundBitmap;

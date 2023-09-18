@@ -14,7 +14,7 @@ import org.telegram.messenger.databinding.ForkContentDetailsIconCellBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DetailsIconCellView.kt */
 /* renamed from: com.iMe.ui.custom.DetailsIconCellView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DetailsIconCellView extends FrameLayout {
     private ForkContentDetailsIconCellBinding binding;
     private boolean isIconTinted;

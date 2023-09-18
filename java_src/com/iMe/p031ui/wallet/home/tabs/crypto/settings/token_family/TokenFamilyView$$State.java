@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TokenFamilyView$$State extends MvpViewState<TokenFamilyView> implements TokenFamilyView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -90,7 +90,7 @@ public class TokenFamilyView$$State extends MvpViewState<TokenFamilyView> implem
 
     /* compiled from: TokenFamilyView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<TokenFamilyView> {
         public final List<BaseNode> foundTokens;
         public final String titleText;
@@ -109,7 +109,7 @@ public class TokenFamilyView$$State extends MvpViewState<TokenFamilyView> implem
 
     /* compiled from: TokenFamilyView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyView$$State$RenderDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderDataCommand extends ViewCommand<TokenFamilyView> {
         public final List<BaseNode> foundTokens;
 
@@ -126,7 +126,7 @@ public class TokenFamilyView$$State extends MvpViewState<TokenFamilyView> implem
 
     /* compiled from: TokenFamilyView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<TokenFamilyView> {
         public final String text;
 
@@ -143,7 +143,7 @@ public class TokenFamilyView$$State extends MvpViewState<TokenFamilyView> implem
 
     /* compiled from: TokenFamilyView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<TokenFamilyView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -164,7 +164,7 @@ public class TokenFamilyView$$State extends MvpViewState<TokenFamilyView> implem
 
     /* compiled from: TokenFamilyView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<TokenFamilyView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

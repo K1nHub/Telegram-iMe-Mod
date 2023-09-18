@@ -4,7 +4,7 @@ import java.io.Serializable;
 import kotlin.internal.PlatformImplementationsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Random.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Random {
     public static final Default Default = new Default(null);
     private static final Random defaultRandom = PlatformImplementationsKt.IMPLEMENTATIONS.defaultPlatformRandom();
@@ -47,7 +47,7 @@ public abstract class Random {
     }
 
     /* compiled from: Random.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Default extends Random implements Serializable {
         public /* synthetic */ Default(DefaultConstructorMarker defaultConstructorMarker) {
             this();

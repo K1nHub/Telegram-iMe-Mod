@@ -1,7 +1,7 @@
 package com.iMe.p031ui.folder;
 /* compiled from: FilterIconInfo.kt */
 /* renamed from: com.iMe.ui.folder.FilterIconInfo */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FilterIconInfo {
     private final int filledIcon;
     private final int outlinedIcon;

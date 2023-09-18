@@ -37,7 +37,7 @@ import com.iMe.common.IdFabric$Menu;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -57,7 +57,7 @@ import org.telegram.p043ui.Components.AnimatedEmojiSpan;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.p043ui.RestrictedLanguagesSelectActivity;
 /* renamed from: org.telegram.ui.Cells.TextSelectionHelper */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class TextSelectionHelper<Cell extends SelectableView> {
     private ActionMode actionMode;
     protected boolean actionsIsShowing;
@@ -136,13 +136,13 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     public boolean useMovingOffset;
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$ArticleSelectableView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface ArticleSelectableView extends SelectableView {
         void fillTextLayoutBlocks(ArrayList<TextLayoutBlock> arrayList);
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$Callback */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class Callback {
         public void onQuote(String str) {
         }
@@ -156,12 +156,12 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$IgnoreCopySpannable */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class IgnoreCopySpannable {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$LayoutBlock */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class LayoutBlock {
         public int charOffset;
         public Layout layout;
@@ -170,13 +170,13 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$OnTranslateListener */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface OnTranslateListener {
         void run(CharSequence charSequence, String str, String str2, Runnable runnable);
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$SelectableView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface SelectableView {
         int getBottom();
 
@@ -192,7 +192,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$SimpleSelectabeleView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface SimpleSelectabeleView extends SelectableView {
         Layout getStaticTextLayout();
 
@@ -200,7 +200,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$TextLayoutBlock */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface TextLayoutBlock {
         StaticLayout getLayout();
 
@@ -847,7 +847,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$TextSelectionOverlay */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class TextSelectionOverlay extends View {
         float cancelPressedX;
         float cancelPressedY;
@@ -1191,19 +1191,19 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$4 */
-    /* loaded from: classes5.dex */
-    public class ActionMode$CallbackC39854 implements ActionMode.Callback {
+    /* loaded from: classes3.dex */
+    public class ActionMode$CallbackC39004 implements ActionMode.Callback {
         private String translateFromLanguage = null;
 
-        ActionMode$CallbackC39854() {
+        ActionMode$CallbackC39004() {
         }
 
         @Override // android.view.ActionMode.Callback
         public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
             menu.add(0, 16908321, 0, 17039361);
             menu.add(0, 16908319, 1, 17039373);
-            menu.add(0, 3, 2, LocaleController.getString("TranslateMessage", C3558R.string.TranslateMessage));
-            menu.add(0, IdFabric$Menu.QUOTE, 3, LocaleController.getInternalString(C3558R.string.chat_menu_quote));
+            menu.add(0, 3, 2, LocaleController.getString("TranslateMessage", C3473R.string.TranslateMessage));
+            menu.add(0, IdFabric$Menu.QUOTE, 3, LocaleController.getInternalString(C3473R.string.chat_menu_quote));
             return true;
         }
 
@@ -1230,12 +1230,12 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                 LanguageDetector.detectLanguage(TextSelectionHelper.this.getSelectedText().toString(), new LanguageDetector.StringCallback() { // from class: org.telegram.ui.Cells.TextSelectionHelper$4$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.LanguageDetector.StringCallback
                     public final void run(String str) {
-                        TextSelectionHelper.ActionMode$CallbackC39854.this.lambda$onPrepareActionMode$0(menu, str);
+                        TextSelectionHelper.ActionMode$CallbackC39004.this.lambda$onPrepareActionMode$0(menu, str);
                     }
                 }, new LanguageDetector.ExceptionCallback() { // from class: org.telegram.ui.Cells.TextSelectionHelper$4$$ExternalSyntheticLambda1
                     @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
                     public final void run(Exception exc) {
-                        TextSelectionHelper.ActionMode$CallbackC39854.this.lambda$onPrepareActionMode$1(menu, exc);
+                        TextSelectionHelper.ActionMode$CallbackC39004.this.lambda$onPrepareActionMode$1(menu, exc);
                     }
                 });
             } else {
@@ -1281,7 +1281,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                         TextSelectionHelper.this.onTranslateListener.run(TextSelectionHelper.this.getSelectedText(), this.translateFromLanguage, LocaleController.getInstance().getCurrentLocale().getLanguage(), new Runnable() { // from class: org.telegram.ui.Cells.TextSelectionHelper$4$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                TextSelectionHelper.ActionMode$CallbackC39854.this.lambda$onActionItemClicked$2();
+                                TextSelectionHelper.ActionMode$CallbackC39004.this.lambda$onActionItemClicked$2();
                             }
                         });
                     }
@@ -1326,26 +1326,26 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     private ActionMode.Callback createActionCallback() {
-        final ActionMode$CallbackC39854 actionMode$CallbackC39854 = new ActionMode$CallbackC39854();
+        final ActionMode$CallbackC39004 actionMode$CallbackC39004 = new ActionMode$CallbackC39004();
         return Build.VERSION.SDK_INT >= 23 ? new ActionMode.Callback2() { // from class: org.telegram.ui.Cells.TextSelectionHelper.5
             @Override // android.view.ActionMode.Callback
             public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-                return actionMode$CallbackC39854.onCreateActionMode(actionMode, menu);
+                return actionMode$CallbackC39004.onCreateActionMode(actionMode, menu);
             }
 
             @Override // android.view.ActionMode.Callback
             public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-                return actionMode$CallbackC39854.onPrepareActionMode(actionMode, menu);
+                return actionMode$CallbackC39004.onPrepareActionMode(actionMode, menu);
             }
 
             @Override // android.view.ActionMode.Callback
             public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-                return actionMode$CallbackC39854.onActionItemClicked(actionMode, menuItem);
+                return actionMode$CallbackC39004.onActionItemClicked(actionMode, menuItem);
             }
 
             @Override // android.view.ActionMode.Callback
             public void onDestroyActionMode(ActionMode actionMode) {
-                actionMode$CallbackC39854.onDestroyActionMode(actionMode);
+                actionMode$CallbackC39004.onDestroyActionMode(actionMode);
             }
 
             @Override // android.view.ActionMode.Callback2
@@ -1378,7 +1378,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                     rect.set(Math.min(i, width), i2, Math.max(i, width), i2 + 1);
                 }
             }
-        } : actionMode$CallbackC39854;
+        } : actionMode$CallbackC39004;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1560,7 +1560,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$SimpleTextSelectionHelper */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class SimpleTextSelectionHelper extends TextSelectionHelper<SimpleSelectabeleView> {
         SimpleSelectabeleView selectabeleView;
 
@@ -1669,7 +1669,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$ChatListTextSelectionHelper */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class ChatListTextSelectionHelper extends TextSelectionHelper<ChatMessageCell> {
         public static int TYPE_CAPTION = 1;
         public static int TYPE_DESCRIPTION = 2;
@@ -2090,7 +2090,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$ArticleTextSelectionHelper */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class ArticleTextSelectionHelper extends TextSelectionHelper<ArticleSelectableView> {
         int endViewOffset;
         public LinearLayoutManager layoutManager;
@@ -2820,7 +2820,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$PathCopyTo */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     private static class PathCopyTo extends Path {
         private Path destination;
 
@@ -2840,7 +2840,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$PathWithSavedBottom */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     private static class PathWithSavedBottom extends Path {
         float lastBottom;
 
@@ -2865,7 +2865,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$ScalablePath */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class ScalablePath extends Path {
         private static ArrayList<RectF> recycled;
         float lastBottom;

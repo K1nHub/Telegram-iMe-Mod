@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.core.util.ObjectsCompat;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CalendarConstraints implements Parcelable {
     public static final Parcelable.Creator<CalendarConstraints> CREATOR = new Parcelable.Creator<CalendarConstraints>() { // from class: com.google.android.material.datepicker.CalendarConstraints.1
         /* JADX WARN: Can't rename method to resolve collision */
@@ -27,7 +27,7 @@ public final class CalendarConstraints implements Parcelable {
     private final DateValidator validator;
     private final int yearSpan;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface DateValidator extends Parcelable {
         boolean isValid(long j);
     }
@@ -112,7 +112,7 @@ public final class CalendarConstraints implements Parcelable {
         return month.compareTo(this.end) > 0 ? this.end : month;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private long end;
         private Long openAt;

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 /* renamed from: com.google.firebase.ml.vision.automl.internal.zze */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zze implements Parcelable.Creator<zzf> {
     @Override // android.os.Parcelable.Creator
     public final /* synthetic */ zzf[] newArray(int i) {

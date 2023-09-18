@@ -5,7 +5,7 @@ import com.iMe.model.common.NavigationTab;
 import com.iMe.p031ui.base.mvp.MvpFragment;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTokenDetailsNavigationTab.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletTokenDetailsNavigationTab extends NavigationTab<MvpFragment> {
 
     /* renamed from: id */

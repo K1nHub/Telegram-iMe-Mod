@@ -6,7 +6,7 @@ import java.util.List;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 import kotlinx.coroutines.internal.MainDispatcherFactory;
 /* compiled from: HandlerDispatcher.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidDispatcherFactory implements MainDispatcherFactory {
     @Override // kotlinx.coroutines.internal.MainDispatcherFactory
     public int getLoadPriority() {

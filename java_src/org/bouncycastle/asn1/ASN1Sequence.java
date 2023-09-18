@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ASN1Sequence extends ASN1Primitive implements Iterable {
     ASN1Encodable[] elements;
 

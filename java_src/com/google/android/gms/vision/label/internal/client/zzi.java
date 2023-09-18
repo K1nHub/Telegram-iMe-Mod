@@ -9,7 +9,7 @@ import com.google.android.gms.dynamite.DynamiteModule;
 import com.google.android.gms.internal.vision.zzl;
 import com.google.android.gms.internal.vision.zzm;
 import com.google.android.gms.vision.label.ImageLabel;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzi extends zzm {
     private ImageLabelerOptions zzdr;
 

@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PublishRelay<T> extends Relay<T> {
     static final PublishDisposable[] EMPTY = new PublishDisposable[0];
     final AtomicReference<PublishDisposable<T>[]> subscribers = new AtomicReference<>(EMPTY);
@@ -84,7 +84,7 @@ public final class PublishRelay<T> extends Relay<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class PublishDisposable<T> extends AtomicBoolean implements Disposable {
         final Observer<? super T> downstream;
         final PublishRelay<T> parent;

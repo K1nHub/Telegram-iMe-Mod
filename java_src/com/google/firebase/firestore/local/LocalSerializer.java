@@ -17,7 +17,7 @@ import com.google.firestore.p021v1.DocumentTransform;
 import com.google.firestore.p021v1.Write;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LocalSerializer {
     private final RemoteSerializer rpcSerializer;
 
@@ -157,7 +157,7 @@ public final class LocalSerializer {
     }
 
     /* renamed from: com.google.firebase.firestore.local.LocalSerializer$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10141 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$proto$MaybeDocument$DocumentTypeCase */

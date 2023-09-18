@@ -161,15 +161,15 @@
     <item type="id" name="confirm_button" />
     <item type="id" name="confirm_seed_view" />
     <item type="id" name="constraint_bottom_action" />
-    <item type="id" name="constraint_from_token" />
     <item type="id" name="constraint_info" />
+    <item type="id" name="constraint_input" />
     <item type="id" name="constraint_layout_header" />
     <item type="id" name="constraint_layout_transaction_root" />
     <item type="id" name="constraint_linked_wallet_section" />
+    <item type="id" name="constraint_output" />
     <item type="id" name="constraint_root" />
     <item type="id" name="constraint_statistics" />
     <item type="id" name="constraint_tags" />
-    <item type="id" name="constraint_to_token" />
     <item type="id" name="constraint_trade_info" />
     <item type="id" name="constraint_translate_root" />
     <item type="id" name="constraint_wallet" />
@@ -220,10 +220,11 @@
     <item type="id" name="dummy" />
     <item type="id" name="edit_address" />
     <item type="id" name="edit_from_amount" />
+    <item type="id" name="edit_input_amount" />
+    <item type="id" name="edit_output_amount" />
     <item type="id" name="edit_password" />
     <item type="id" name="edit_query" />
     <item type="id" name="edit_seed" />
-    <item type="id" name="edit_to_amount" />
     <item type="id" name="empty_view" />
     <item type="id" name="errorBlock" />
     <item type="id" name="expand_activities_button" />
@@ -252,8 +253,6 @@
     <item type="id" name="glide_custom_view_target_tag" />
     <item type="id" name="global_state_layout" />
     <item type="id" name="group_divider" />
-    <item type="id" name="group_from_selected_token" />
-    <item type="id" name="group_to_selected_token" />
     <item type="id" name="guideline" />
     <item type="id" name="header_info_icon" />
     <item type="id" name="header_title" />
@@ -289,15 +288,15 @@
     <item type="id" name="image_cryptobox_info" />
     <item type="id" name="image_empty" />
     <item type="id" name="image_empty_icon" />
-    <item type="id" name="image_exchange_arrow" />
     <item type="id" name="image_fee_arrow" />
     <item type="id" name="image_forward" />
-    <item type="id" name="image_from_icon" />
     <item type="id" name="image_header" />
     <item type="id" name="image_header_right_button" />
     <item type="id" name="image_help" />
     <item type="id" name="image_icon" />
     <item type="id" name="image_info" />
+    <item type="id" name="image_input_arrow" />
+    <item type="id" name="image_input_token" />
     <item type="id" name="image_language" />
     <item type="id" name="image_like" />
     <item type="id" name="image_linked_wallet_info" />
@@ -307,6 +306,8 @@
     <item type="id" name="image_network_icon" />
     <item type="id" name="image_nft_image" />
     <item type="id" name="image_order" />
+    <item type="id" name="image_output_arrow" />
+    <item type="id" name="image_output_token" />
     <item type="id" name="image_peer_icon" />
     <item type="id" name="image_price_direction" />
     <item type="id" name="image_qr" />
@@ -319,13 +320,11 @@
     <item type="id" name="image_staking_icon" />
     <item type="id" name="image_staking_info" />
     <item type="id" name="image_state_animation" />
-    <item type="id" name="image_swap_protocol_icon" />
+    <item type="id" name="image_swap_protocol_logo" />
+    <item type="id" name="image_swap_tokens_positions" />
     <item type="id" name="image_tags" />
-    <item type="id" name="image_to_icon" />
-    <item type="id" name="image_token_from" />
     <item type="id" name="image_token_icon" />
     <item type="id" name="image_token_logo" />
-    <item type="id" name="image_token_to" />
     <item type="id" name="image_trade" />
     <item type="id" name="image_transaction_type_icon" />
     <item type="id" name="image_transactions_approval" />
@@ -366,8 +365,6 @@
     <item type="id" name="linear_alert_root" />
     <item type="id" name="linear_bottom_panel" />
     <item type="id" name="linear_chat_settings" />
-    <item type="id" name="linear_choose_from" />
-    <item type="id" name="linear_choose_to" />
     <item type="id" name="linear_content" />
     <item type="id" name="linear_crypto_settings" />
     <item type="id" name="linear_cryptobox_description" />
@@ -375,8 +372,10 @@
     <item type="id" name="linear_deposit" />
     <item type="id" name="linear_header" />
     <item type="id" name="linear_info" />
+    <item type="id" name="linear_input_token" />
     <item type="id" name="linear_input_wrapper" />
     <item type="id" name="linear_network" />
+    <item type="id" name="linear_output_token" />
     <item type="id" name="linear_percentages" />
     <item type="id" name="linear_profit" />
     <item type="id" name="linear_root" />
@@ -477,8 +476,6 @@
     <item type="id" name="navigation_header_container" />
     <item type="id" name="nested_root" />
     <item type="id" name="nested_scroll_view" />
-    <item type="id" name="network_type_input_view" />
-    <item type="id" name="network_type_output_view" />
     <item type="id" name="network_type_view" />
     <item type="id" name="network_type_view_container" />
     <item type="id" name="nft_root_view" />
@@ -674,6 +671,7 @@
     <item type="id" name="text_apy" />
     <item type="id" name="text_apy_title" />
     <item type="id" name="text_apy_value" />
+    <item type="id" name="text_balance" />
     <item type="id" name="text_banner_description" />
     <item type="id" name="text_banner_title" />
     <item type="id" name="text_category" />
@@ -711,16 +709,17 @@
     <item type="id" name="text_fee_value" />
     <item type="id" name="text_forgot_password" />
     <item type="id" name="text_from" />
-    <item type="id" name="text_from_additional_description" />
     <item type="id" name="text_from_currency" />
-    <item type="id" name="text_from_description" />
-    <item type="id" name="text_from_token" />
     <item type="id" name="text_header" />
     <item type="id" name="text_icon_title" />
     <item type="id" name="text_information_title" />
+    <item type="id" name="text_input_additional_description" />
     <item type="id" name="text_input_end_icon" />
     <item type="id" name="text_input_error_icon" />
+    <item type="id" name="text_input_fiat" />
     <item type="id" name="text_input_start_icon" />
+    <item type="id" name="text_input_title" />
+    <item type="id" name="text_input_token" />
     <item type="id" name="text_language_title" />
     <item type="id" name="text_language_value" />
     <item type="id" name="text_likes_count" />
@@ -741,6 +740,10 @@
     <item type="id" name="text_notification_date" />
     <item type="id" name="text_notification_message" />
     <item type="id" name="text_number" />
+    <item type="id" name="text_output_fiat" />
+    <item type="id" name="text_output_rate" />
+    <item type="id" name="text_output_title" />
+    <item type="id" name="text_output_token" />
     <item type="id" name="text_paste" />
     <item type="id" name="text_peer_name" />
     <item type="id" name="text_peer_url" />
@@ -766,8 +769,6 @@
     <item type="id" name="text_safety_title" />
     <item type="id" name="text_section_actions" />
     <item type="id" name="text_section_name" />
-    <item type="id" name="text_select_from_token" />
-    <item type="id" name="text_select_to_token" />
     <item type="id" name="text_service" />
     <item type="id" name="text_sessions_title" />
     <item type="id" name="text_setting_description" />
@@ -803,8 +804,6 @@
     <item type="id" name="text_to" />
     <item type="id" name="text_to_amount" />
     <item type="id" name="text_to_currency" />
-    <item type="id" name="text_to_description" />
-    <item type="id" name="text_to_token" />
     <item type="id" name="text_token_balance" />
     <item type="id" name="text_token_balance_in_dollars" />
     <item type="id" name="text_token_ticker" />
@@ -834,7 +833,6 @@
     <item type="id" name="text_wallet_crypto_total_balance" />
     <item type="id" name="text_wallet_header" />
     <item type="id" name="text_wallets_title" />
-    <item type="id" name="text_what_is_approve" />
     <item type="id" name="text_word" />
     <item type="id" name="text_words_count" />
     <item type="id" name="text_wrap" />
@@ -888,6 +886,8 @@
     <item type="id" name="view_cryptobox_info" />
     <item type="id" name="view_diagram" />
     <item type="id" name="view_divider" />
+    <item type="id" name="view_divider_left" />
+    <item type="id" name="view_divider_right" />
     <item type="id" name="view_empty" />
     <item type="id" name="view_fee" />
     <item type="id" name="view_filter" />
@@ -896,9 +896,11 @@
     <item type="id" name="view_header" />
     <item type="id" name="view_immediate_withdrawal_fee_cell" />
     <item type="id" name="view_input" />
+    <item type="id" name="view_input_network" />
     <item type="id" name="view_members_cell" />
     <item type="id" name="view_network_cell" />
     <item type="id" name="view_offset_helper" />
+    <item type="id" name="view_output_network" />
     <item type="id" name="view_pager_tutorial" />
     <item type="id" name="view_planned_withdrawal_fee_cell" />
     <item type="id" name="view_profit_cell" />

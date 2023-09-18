@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.common.internal.zav;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @SafeParcelable.Class(creator = "SignInResponseCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zak extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zak> CREATOR = new zal();
     @SafeParcelable.VersionField(m794id = 1)

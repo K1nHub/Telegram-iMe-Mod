@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import java.util.Iterator;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzer<K, V> extends zzej<Map.Entry<K, V>> {
     private final transient zzef<K, V> zza;
     private final transient Object[] zzb;

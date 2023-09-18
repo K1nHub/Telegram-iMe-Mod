@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_account_emojiStatuses extends TLRPC$account_EmojiStatuses {
     public static int constructor = -1866176559;
 

@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ComponentRuntime extends AbstractComponentContainer implements ComponentLoader {
     private static final Provider<Set<Object>> EMPTY_PROVIDER = new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
         @Override // com.google.firebase.inject.Provider
@@ -267,7 +267,7 @@ public class ComponentRuntime extends AbstractComponentContainer implements Comp
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private final Executor defaultExecutor;
         private final List<Provider<ComponentRegistrar>> lazyRegistrars = new ArrayList();

@@ -8,7 +8,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SimplexWebViewProcessingView$$State extends MvpViewState<SimplexWebViewProcessingView> implements SimplexWebViewProcessingView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -61,7 +61,7 @@ public class SimplexWebViewProcessingView$$State extends MvpViewState<SimplexWeb
 
     /* compiled from: SimplexWebViewProcessingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<SimplexWebViewProcessingView> {
         public final String text;
 
@@ -78,7 +78,7 @@ public class SimplexWebViewProcessingView$$State extends MvpViewState<SimplexWeb
 
     /* compiled from: SimplexWebViewProcessingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<SimplexWebViewProcessingView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -99,7 +99,7 @@ public class SimplexWebViewProcessingView$$State extends MvpViewState<SimplexWeb
 
     /* compiled from: SimplexWebViewProcessingView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<SimplexWebViewProcessingView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

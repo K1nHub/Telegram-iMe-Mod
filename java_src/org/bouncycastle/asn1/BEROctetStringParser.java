@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 import java.io.InputStream;
 import org.bouncycastle.util.p041io.Streams;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BEROctetStringParser implements ASN1OctetStringParser {
     private ASN1StreamParser _parser;
 

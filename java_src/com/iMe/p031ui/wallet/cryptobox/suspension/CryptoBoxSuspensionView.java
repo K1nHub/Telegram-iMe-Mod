@@ -7,7 +7,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CryptoBoxSuspensionView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CryptoBoxSuspensionView extends BaseView {
     @AddToEndSingle
     void renderButtonLoading(boolean z);

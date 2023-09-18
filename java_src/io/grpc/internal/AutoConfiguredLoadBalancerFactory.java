@@ -16,7 +16,7 @@ import io.grpc.internal.ServiceConfigUtil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AutoConfiguredLoadBalancerFactory {
     private final String defaultPolicy;
     private final LoadBalancerRegistry registry;
@@ -34,7 +34,7 @@ public final class AutoConfiguredLoadBalancerFactory {
         return new AutoConfiguredLoadBalancer(helper);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class NoopLoadBalancer extends LoadBalancer {
         @Override // io.grpc.LoadBalancer
         public void handleNameResolutionError(Status status) {
@@ -52,7 +52,7 @@ public final class AutoConfiguredLoadBalancerFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class AutoConfiguredLoadBalancer {
         private LoadBalancer delegate;
         private LoadBalancerProvider delegateProvider;
@@ -86,7 +86,7 @@ public final class AutoConfiguredLoadBalancerFactory {
                     this.delegate.shutdown();
                     this.delegateProvider = null;
                     this.delegate = new NoopLoadBalancer();
-                    return Status.f526OK;
+                    return Status.f517OK;
                 }
             }
             if (this.delegateProvider == null || !policySelection.provider.getPolicyName().equals(this.delegateProvider.getPolicyName())) {
@@ -109,7 +109,7 @@ public final class AutoConfiguredLoadBalancerFactory {
                 return status.withDescription("NameResolver returned no usable address. addrs=" + addresses + ", attrs=" + attributes);
             }
             delegate.handleResolvedAddresses(LoadBalancer.ResolvedAddresses.newBuilder().setAddresses(resolvedAddresses.getAddresses()).setAttributes(attributes).setLoadBalancingPolicyConfig(obj).build());
-            return Status.f526OK;
+            return Status.f517OK;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -175,14 +175,14 @@ public final class AutoConfiguredLoadBalancerFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class PolicyException extends Exception {
         private PolicyException(String str) {
             super(str);
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class PolicySelection {
         final Object config;
         final LoadBalancerProvider provider;
@@ -214,7 +214,7 @@ public final class AutoConfiguredLoadBalancerFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class EmptyPicker extends LoadBalancer.SubchannelPicker {
         private EmptyPicker() {
         }
@@ -229,7 +229,7 @@ public final class AutoConfiguredLoadBalancerFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class FailingPicker extends LoadBalancer.SubchannelPicker {
         private final Status failure;
 

@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingProgrammeItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingProgrammeItem extends NoChildNode {
     private final StakingAnnualPercentageMode annualPercentageMode;
     private final String apr;

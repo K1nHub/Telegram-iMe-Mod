@@ -1,4 +1,4 @@
 package com.google.firebase.firestore.local;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface BundleCache {
 }

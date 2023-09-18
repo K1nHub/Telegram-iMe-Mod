@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Charts.view_data.PieLegendView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PieLegendView extends LegendSignatureView {
     TextView signature;
     TextView value;

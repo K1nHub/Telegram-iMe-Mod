@@ -6,7 +6,7 @@ import java.util.List;
 import moxy.MvpPresenter;
 import moxy.presenter.PresenterField;
 /* renamed from: org.telegram.ui.PrivacyControlActivity$$PresentersBinder */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PrivacyControlActivity$$PresentersBinder extends moxy.PresenterBinder<PrivacyControlActivity> {
     @Override // moxy.PresenterBinder
     public List<PresenterField<? super PrivacyControlActivity>> getPresenterFields() {
@@ -17,7 +17,7 @@ public class PrivacyControlActivity$$PresentersBinder extends moxy.PresenterBind
 
     /* compiled from: PrivacyControlActivity$$PresentersBinder.java */
     /* renamed from: org.telegram.ui.PrivacyControlActivity$$PresentersBinder$PresenterBinder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class PresenterBinder extends PresenterField<PrivacyControlActivity> {
         public PresenterBinder(PrivacyControlActivity$$PresentersBinder privacyControlActivity$$PresentersBinder) {
             super("presenter", null, WalletPrivacySettingPresenter.class);

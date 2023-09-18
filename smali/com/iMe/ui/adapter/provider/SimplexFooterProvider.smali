@@ -79,14 +79,15 @@
 
     move-result-object p1
 
-    .line 28
+    .line 30
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
+    .line 28
     invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCompoundDrawablesColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 29
+    .line 32
     iget-object v2, p0, Lcom/iMe/ui/adapter/provider/SimplexFooterProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyFooterItem;->getTitle()I
@@ -101,7 +102,7 @@
 
     move-result-object p1
 
-    .line 30
+    .line 33
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyFooterItem;->getDescription()I
 
     move-result p2

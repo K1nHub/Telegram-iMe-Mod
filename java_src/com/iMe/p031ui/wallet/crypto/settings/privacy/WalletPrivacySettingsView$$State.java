@@ -12,7 +12,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletPrivacySettingsView$$State extends MvpViewState<WalletPrivacySettingsView> implements WalletPrivacySettingsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -104,7 +104,7 @@ public class WalletPrivacySettingsView$$State extends MvpViewState<WalletPrivacy
 
     /* compiled from: WalletPrivacySettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView$$State$OnSuccessLoadPrivacySettingsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSuccessLoadPrivacySettingsCommand extends ViewCommand<WalletPrivacySettingsView> {
         public final int accountRankAccessType;
         public final int walletAddressAccessType;
@@ -125,7 +125,7 @@ public class WalletPrivacySettingsView$$State extends MvpViewState<WalletPrivacy
 
     /* compiled from: WalletPrivacySettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView$$State$OnSuccessSaveCryptoSettingsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSuccessSaveCryptoSettingsCommand extends ViewCommand<WalletPrivacySettingsView> {
         OnSuccessSaveCryptoSettingsCommand(WalletPrivacySettingsView$$State walletPrivacySettingsView$$State) {
             super("onSuccessSaveCryptoSettings", OneExecutionStateStrategy.class);
@@ -139,7 +139,7 @@ public class WalletPrivacySettingsView$$State extends MvpViewState<WalletPrivacy
 
     /* compiled from: WalletPrivacySettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView$$State$ShowConfirmDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowConfirmDialogCommand extends ViewCommand<WalletPrivacySettingsView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -158,7 +158,7 @@ public class WalletPrivacySettingsView$$State extends MvpViewState<WalletPrivacy
 
     /* compiled from: WalletPrivacySettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletPrivacySettingsView> {
         public final String text;
 
@@ -175,7 +175,7 @@ public class WalletPrivacySettingsView$$State extends MvpViewState<WalletPrivacy
 
     /* compiled from: WalletPrivacySettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletPrivacySettingsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -196,7 +196,7 @@ public class WalletPrivacySettingsView$$State extends MvpViewState<WalletPrivacy
 
     /* compiled from: WalletPrivacySettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletPrivacySettingsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

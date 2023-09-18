@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Stories.recorder.PhotoVideoSwitcherView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PhotoVideoSwitcherView extends View {
     private ValueAnimator animator;
     private boolean mIsScrolling;

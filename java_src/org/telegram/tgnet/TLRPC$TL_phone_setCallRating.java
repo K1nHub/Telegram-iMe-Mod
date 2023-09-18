@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_phone_setCallRating extends TLObject {
     public static int constructor = 1508562471;
     public String comment;

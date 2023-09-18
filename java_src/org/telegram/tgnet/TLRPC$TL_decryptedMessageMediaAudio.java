@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_decryptedMessageMediaAudio extends TLRPC$DecryptedMessageMedia {
     public static int constructor = 1474341323;
 
@@ -9,7 +9,7 @@ public class TLRPC$TL_decryptedMessageMediaAudio extends TLRPC$DecryptedMessageM
         this.mime_type = abstractSerializedData.readString(z);
         this.size = abstractSerializedData.readInt32(z);
         this.key = abstractSerializedData.readByteArray(z);
-        this.f1535iv = abstractSerializedData.readByteArray(z);
+        this.f1526iv = abstractSerializedData.readByteArray(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
@@ -19,6 +19,6 @@ public class TLRPC$TL_decryptedMessageMediaAudio extends TLRPC$DecryptedMessageM
         abstractSerializedData.writeString(this.mime_type);
         abstractSerializedData.writeInt32((int) this.size);
         abstractSerializedData.writeByteArray(this.key);
-        abstractSerializedData.writeByteArray(this.f1535iv);
+        abstractSerializedData.writeByteArray(this.f1526iv);
     }
 }

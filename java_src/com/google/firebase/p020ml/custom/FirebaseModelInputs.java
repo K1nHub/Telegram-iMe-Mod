@@ -8,7 +8,7 @@ import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
 /* renamed from: com.google.firebase.ml.custom.FirebaseModelInputs */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseModelInputs {
     private final Object[] zzaxc;
 
@@ -21,7 +21,7 @@ public final class FirebaseModelInputs {
     }
 
     /* renamed from: com.google.firebase.ml.custom.FirebaseModelInputs$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private List<Object> zzaxf = new ArrayList();
 

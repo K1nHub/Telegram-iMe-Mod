@@ -17,7 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.p034io.CloseableKt;
 /* compiled from: AppMainDatabaseMigrations.kt */
 /* renamed from: com.iMe.storage.data.locale.db.migration.AppMainDatabaseMigrations */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppMainDatabaseMigrations {
     public static final AppMainDatabaseMigrations INSTANCE = new AppMainDatabaseMigrations();
     private static final AppMainDatabaseMigrations$MIGRATION_10_11$1 MIGRATION_10_11;

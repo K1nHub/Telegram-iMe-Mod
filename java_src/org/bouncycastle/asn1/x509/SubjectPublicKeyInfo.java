@@ -9,7 +9,7 @@ import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.ASN1Sequence;
 import org.bouncycastle.asn1.DERBitString;
 import org.bouncycastle.asn1.DERSequence;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SubjectPublicKeyInfo extends ASN1Object {
     private AlgorithmIdentifier algId;
     private DERBitString keyData;

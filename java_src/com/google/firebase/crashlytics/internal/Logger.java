@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal;
 
 import android.util.Log;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Logger {
     static final Logger DEFAULT_LOGGER = new Logger("FirebaseCrashlytics");
     private int logLevel = 4;

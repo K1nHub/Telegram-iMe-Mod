@@ -4,14 +4,14 @@ import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AuthSideEffects.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AuthSideEffects {
     public /* synthetic */ AuthSideEffects(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: AuthSideEffects.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class LoadUrl extends AuthSideEffects {
         private final Map<String, String> authHeader;
         private final String url;
@@ -57,7 +57,7 @@ public abstract class AuthSideEffects {
     }
 
     /* compiled from: AuthSideEffects.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ShowError extends AuthSideEffects {
         private final String message;
 
@@ -89,7 +89,7 @@ public abstract class AuthSideEffects {
     }
 
     /* compiled from: AuthSideEffects.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FinishAuth extends AuthSideEffects {
         public static final FinishAuth INSTANCE = new FinishAuth();
 
@@ -99,7 +99,7 @@ public abstract class AuthSideEffects {
     }
 
     /* compiled from: AuthSideEffects.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ReloadPage extends AuthSideEffects {
         public static final ReloadPage INSTANCE = new ReloadPage();
 
@@ -109,7 +109,7 @@ public abstract class AuthSideEffects {
     }
 
     /* compiled from: AuthSideEffects.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class RemoveCookies extends AuthSideEffects {
         public static final RemoveCookies INSTANCE = new RemoveCookies();
 
@@ -119,7 +119,7 @@ public abstract class AuthSideEffects {
     }
 
     /* compiled from: AuthSideEffects.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ShowAccessError extends AuthSideEffects {
         public static final ShowAccessError INSTANCE = new ShowAccessError();
 

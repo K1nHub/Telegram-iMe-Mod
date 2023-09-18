@@ -1,6 +1,6 @@
 package com.google.android.play.core.assetpacks;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzeh implements com.google.android.play.core.internal.zzcs<zzeg> {
     private final com.google.android.play.core.internal.zzcs<zzbh> zza;
     private final com.google.android.play.core.internal.zzcs<zzy> zzb;

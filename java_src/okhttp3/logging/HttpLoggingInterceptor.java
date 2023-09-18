@@ -25,14 +25,14 @@ import okio.Buffer;
 import okio.BufferedSource;
 import okio.GzipSource;
 /* compiled from: HttpLoggingInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HttpLoggingInterceptor implements Interceptor {
     private volatile Set<String> headersToRedact;
     private volatile Level level;
     private final Logger logger;
 
     /* compiled from: HttpLoggingInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum Level {
         NONE,
         BASIC,
@@ -59,14 +59,14 @@ public final class HttpLoggingInterceptor implements Interceptor {
     }
 
     /* compiled from: HttpLoggingInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Logger {
         public static final Logger DEFAULT;
 
         void log(String str);
 
         /* compiled from: HttpLoggingInterceptor.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class Companion {
             private Companion() {
             }

@@ -87,7 +87,7 @@
 
     rem-int/2addr v0, v1
 
-    .line 32
+    .line 33
     iget v2, p0, Lcom/iMe/ui/adapter/provider/NftTokenProvider;->spacing:I
 
     mul-int v3, v0, v2
@@ -100,10 +100,10 @@
 
     mul-int/2addr v0, v2
 
-    .line 33
+    .line 35
     div-int/2addr v0, v1
 
-    .line 36
+    .line 38
     sget v1, Lorg/telegram/messenger/R$id;->card_nft_token:I
 
     const/4 v2, 0x0
@@ -112,14 +112,14 @@
 
     move-result-object p1
 
-    .line 37
+    .line 39
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedCardBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 38
+    .line 40
     sget v1, Lorg/telegram/messenger/R$id;->nft_root_view:I
 
     new-instance v2, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$1;
@@ -130,7 +130,7 @@
 
     move-result-object p1
 
-    .line 42
+    .line 44
     sget v0, Lorg/telegram/messenger/R$id;->image_nft_image:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/NftTokenProvider$convert$2;

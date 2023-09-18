@@ -32,7 +32,7 @@ import org.telegram.p043ui.ActionBar.INavigationLayout;
 import timber.log.Timber;
 /* compiled from: WalletAuthBaseFragment.kt */
 /* renamed from: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletAuthBaseFragment extends MvpFragment {
     private final Lazy cryptoAccessManager$delegate;
     private final Lazy cryptoPreferenceHelper$delegate;
@@ -213,7 +213,7 @@ public abstract class WalletAuthBaseFragment extends MvpFragment {
     private final void listenGlobalRxEvents() {
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.base.wallet_auth.WalletAuthBaseFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -221,12 +221,12 @@ public abstract class WalletAuthBaseFragment extends MvpFragment {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1350invoke(rxEvent);
+                m1348invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1350invoke(RxEvent it) {
+            public final void m1348invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (rxEvent instanceof DomainRxEvents.ForceWalletLogout ? true : rxEvent instanceof DomainRxEvents.AppUpdateRequired) {
@@ -275,7 +275,7 @@ public abstract class WalletAuthBaseFragment extends MvpFragment {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         autoDispose(subscribe);
     }
 

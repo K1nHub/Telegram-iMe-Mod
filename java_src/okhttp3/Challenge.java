@@ -8,7 +8,7 @@ import java.util.Locale;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Challenge.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Challenge {
     private final Map<String, String> authParams;
     private final String scheme;

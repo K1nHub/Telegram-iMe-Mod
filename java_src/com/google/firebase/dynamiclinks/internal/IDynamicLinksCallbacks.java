@@ -6,13 +6,13 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface IDynamicLinksCallbacks extends IInterface {
     void onCreateShortDynamicLink(Status status, ShortDynamicLinkImpl shortDynamicLinkImpl) throws RemoteException;
 
     void onGetDynamicLink(Status status, DynamicLinkData dynamicLinkData) throws RemoteException;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends Binder implements IDynamicLinksCallbacks {
         @Override // android.os.IInterface
         public IBinder asBinder() {

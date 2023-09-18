@@ -7,30 +7,30 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: CoroutineContext.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CoroutineId extends AbstractCoroutineContextElement implements ThreadContextElement<String> {
     public static final Key Key = new Key(null);
 
     /* renamed from: id */
-    private final long f1316id;
+    private final long f1307id;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof CoroutineId) && this.f1316id == ((CoroutineId) obj).f1316id;
+        return (obj instanceof CoroutineId) && this.f1307id == ((CoroutineId) obj).f1307id;
     }
 
     public int hashCode() {
-        return BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f1316id);
+        return BotsDbModel$$ExternalSyntheticBackport0.m724m(this.f1307id);
     }
 
     public final long getId() {
-        return this.f1316id;
+        return this.f1307id;
     }
 
     /* compiled from: CoroutineContext.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Key implements CoroutineContext.Key<CoroutineId> {
         public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -42,11 +42,11 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
 
     public CoroutineId(long j) {
         super(Key);
-        this.f1316id = j;
+        this.f1307id = j;
     }
 
     public String toString() {
-        return "CoroutineId(" + this.f1316id + ')';
+        return "CoroutineId(" + this.f1307id + ')';
     }
 
     @Override // kotlinx.coroutines.ThreadContextElement
@@ -67,7 +67,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
         sb.append(" @");
         sb.append(str);
         sb.append('#');
-        sb.append(this.f1316id);
+        sb.append(this.f1307id);
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(capacity).…builderAction).toString()");
         currentThread.setName(sb2);

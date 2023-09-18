@@ -25,7 +25,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.Paint.Views.EditTextOutline;
 /* renamed from: org.telegram.ui.Components.PaintingOverlay */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PaintingOverlay extends FrameLayout {
     private Drawable backgroundDrawable;
     private boolean ignoreLayout;
@@ -115,8 +115,8 @@ public class PaintingOverlay extends FrameLayout {
                         i5 = ((int) (measuredWidth * mediaEntity.textViewX)) - (childAt.getMeasuredWidth() / 2);
                         i6 = ((int) (measuredHeight * mediaEntity.textViewY)) - (childAt.getMeasuredHeight() / 2);
                     } else {
-                        i5 = (int) (measuredWidth * mediaEntity.f1508x);
-                        i6 = (int) (measuredHeight * mediaEntity.f1509y);
+                        i5 = (int) (measuredWidth * mediaEntity.f1499x);
+                        i6 = (int) (measuredHeight * mediaEntity.f1500y);
                     }
                     childAt.layout(i5, i6, childAt.getMeasuredWidth() + i5, childAt.getMeasuredHeight() + i6);
                 }

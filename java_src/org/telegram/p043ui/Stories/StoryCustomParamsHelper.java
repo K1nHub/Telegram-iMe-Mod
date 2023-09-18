@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$StoryItem;
 import org.telegram.tgnet.TLRPC$TL_textWithEntities;
 /* renamed from: org.telegram.ui.Stories.StoryCustomParamsHelper */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoryCustomParamsHelper {
     public static boolean isEmpty(TLRPC$StoryItem tLRPC$StoryItem) {
         return tLRPC$StoryItem.detectedLng == null && tLRPC$StoryItem.translatedLng == null && !tLRPC$StoryItem.translated && tLRPC$StoryItem.translatedText == null;
@@ -39,7 +39,7 @@ public class StoryCustomParamsHelper {
     }
 
     /* renamed from: org.telegram.ui.Stories.StoryCustomParamsHelper$Params_v1 */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private static class Params_v1 extends TLObject {
         int flags;
         final TLRPC$StoryItem storyItem;

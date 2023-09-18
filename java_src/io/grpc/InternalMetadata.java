@@ -4,12 +4,12 @@ import com.google.android.exoplayer2.C0479C;
 import com.google.common.p019io.BaseEncoding;
 import io.grpc.Metadata;
 import java.nio.charset.Charset;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class InternalMetadata {
     public static final Charset US_ASCII = Charset.forName(C0479C.ASCII_NAME);
     public static final BaseEncoding BASE64_ENCODING_OMIT_PADDING = Metadata.BASE64_ENCODING_OMIT_PADDING;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface TrustedAsciiMarshaller<T> extends Metadata.TrustedAsciiMarshaller<T> {
     }
 

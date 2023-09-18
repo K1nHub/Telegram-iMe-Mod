@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.voip.VoIPService;
 /* renamed from: org.telegram.ui.Components.voip.VoIPTimerView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VoIPTimerView extends View {
     Paint activePaint;
     String currentTimeStr;

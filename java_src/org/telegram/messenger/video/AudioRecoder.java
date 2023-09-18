@@ -10,7 +10,7 @@ import com.google.android.exoplayer2.DefaultLoadControl;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class AudioRecoder {
     private final MediaCodec decoder;
     private ByteBuffer[] decoderInputBuffers;

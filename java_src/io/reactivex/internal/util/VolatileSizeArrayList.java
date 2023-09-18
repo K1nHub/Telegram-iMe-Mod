@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class VolatileSizeArrayList<T> extends AtomicInteger implements List<T>, RandomAccess {
     final ArrayList<T> list = new ArrayList<>();
 

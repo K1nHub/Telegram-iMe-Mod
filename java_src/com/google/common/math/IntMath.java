@@ -2,7 +2,7 @@ package com.google.common.math;
 
 import com.google.common.primitives.Ints;
 import java.math.RoundingMode;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class IntMath {
     public static boolean isPowerOfTwo(int i) {
         return (i > 0) & ((i & (i + (-1))) == 0);
@@ -13,7 +13,7 @@ public final class IntMath {
     }
 
     /* renamed from: com.google.common.math.IntMath$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C09241 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;
 

@@ -29,7 +29,7 @@ import org.bouncycastle.pqc.crypto.xmss.XMSSPrivateKeyParameters;
 import org.bouncycastle.pqc.crypto.xmss.XMSSUtil;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PrivateKeyFactory {
     private static short[] convert(byte[] bArr) {
         int length = bArr.length / 2;

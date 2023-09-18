@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TemplatesDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.TemplatesDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TemplatesDao implements BaseDao<TemplatesDb> {
     public abstract void clearAllTemplates(long j);
 

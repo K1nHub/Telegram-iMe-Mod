@@ -3,7 +3,7 @@ package com.iMe.bots.domain.model;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SmartBotResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SmartBotResponse {
     private final List<String> answers;
     private final String gif;

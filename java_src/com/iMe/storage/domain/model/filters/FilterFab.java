@@ -14,7 +14,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FilterFab.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum FilterFab {
     CREATE_CHAT,
     ARCHIVE,
@@ -31,7 +31,7 @@ public enum FilterFab {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: FilterFab.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -105,7 +105,7 @@ public enum FilterFab {
     }
 
     /* compiled from: FilterFab.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

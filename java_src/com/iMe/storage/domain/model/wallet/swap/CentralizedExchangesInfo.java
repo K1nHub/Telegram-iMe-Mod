@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CentralizedExchangesInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CentralizedExchangesInfo implements Exchange {
     public static final Companion Companion = new Companion(null);
     private static final Lazy<List<CentralizedExchangesInfo>> supportedExchanges$delegate;
@@ -49,7 +49,7 @@ public abstract class CentralizedExchangesInfo implements Exchange {
     }
 
     /* compiled from: CentralizedExchangesInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Binance extends CentralizedExchangesInfo {
         public static final Binance INSTANCE = new Binance();
 
@@ -59,7 +59,7 @@ public abstract class CentralizedExchangesInfo implements Exchange {
     }
 
     /* compiled from: CentralizedExchangesInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Gate extends CentralizedExchangesInfo {
         public static final Gate INSTANCE = new Gate();
 
@@ -69,7 +69,7 @@ public abstract class CentralizedExchangesInfo implements Exchange {
     }
 
     /* compiled from: CentralizedExchangesInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Ascendeex extends CentralizedExchangesInfo {
         public static final Ascendeex INSTANCE = new Ascendeex();
 
@@ -79,7 +79,7 @@ public abstract class CentralizedExchangesInfo implements Exchange {
     }
 
     /* compiled from: CentralizedExchangesInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Unknown extends CentralizedExchangesInfo {
         public static final Unknown INSTANCE = new Unknown();
 
@@ -89,7 +89,7 @@ public abstract class CentralizedExchangesInfo implements Exchange {
     }
 
     /* compiled from: CentralizedExchangesInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

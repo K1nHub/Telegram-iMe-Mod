@@ -30,10 +30,10 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: WalletCreateManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletCreateManager {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -122,7 +122,7 @@ public final class WalletCreateManager {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         final List<WalletCreationType> availableWalletCreationTypes = getAvailableWalletCreationTypes();
         WalletCreateManagerView viewState = getViewState();
-        String string = this.resourceManager.getString(C3558R.string.wallet_dashboard_create_start_dialog_title);
+        String string = this.resourceManager.getString(C3473R.string.wallet_dashboard_create_start_dialog_title);
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(availableWalletCreationTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (WalletCreationType walletCreationType : availableWalletCreationTypes) {
@@ -174,12 +174,12 @@ public final class WalletCreateManager {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Map<BlockchainType, ? extends String>> result) {
-                m1306invoke(result);
+                m1304invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1306invoke(Result<? extends Map<BlockchainType, ? extends String>> it) {
+            public final void m1304invoke(Result<? extends Map<BlockchainType, ? extends String>> it) {
                 WalletCreateManagerView viewState2;
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -218,7 +218,7 @@ public final class WalletCreateManager {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         com.iMe.storage.data.utils.extentions.RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
@@ -235,12 +235,12 @@ public final class WalletCreateManager {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
-                m1305invoke(result);
+                m1303invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1305invoke(Result<? extends Wallet> it) {
+            public final void m1303invoke(Result<? extends Wallet> it) {
                 WalletCreateManagerView viewState;
                 ResourceManager resourceManager;
                 RxEventBus rxEventBus;
@@ -279,7 +279,7 @@ public final class WalletCreateManager {
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -292,6 +292,6 @@ public final class WalletCreateManager {
     }
 
     private final DialogModel getActivationConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3558R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3558R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3558R.string.common_cancel), this.resourceManager.getString(C3558R.string.common_ok));
+        return new DialogModel(this.resourceManager.getString(C3473R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3473R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3473R.string.common_cancel), this.resourceManager.getString(C3473R.string.common_ok));
     }
 }

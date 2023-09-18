@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.appindexing.internal.zzt;
 import java.lang.ref.WeakReference;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class FirebaseUserActions {
     private static WeakReference<FirebaseUserActions> zza;
 

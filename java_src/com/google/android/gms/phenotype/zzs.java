@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import com.google.android.gms.phenotype.PhenotypeFlag;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzs extends PhenotypeFlag<String> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzs(PhenotypeFlag.Factory factory, String str, String str2) {

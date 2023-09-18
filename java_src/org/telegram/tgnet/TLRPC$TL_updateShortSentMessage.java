@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updateShortSentMessage extends TLRPC$Updates {
     public static int constructor = -1877614335;
 
@@ -8,7 +8,7 @@ public class TLRPC$TL_updateShortSentMessage extends TLRPC$Updates {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         this.out = (readInt32 & 2) != 0;
-        this.f1693id = abstractSerializedData.readInt32(z);
+        this.f1684id = abstractSerializedData.readInt32(z);
         this.pts = abstractSerializedData.readInt32(z);
         this.pts_count = abstractSerializedData.readInt32(z);
         this.date = abstractSerializedData.readInt32(z);

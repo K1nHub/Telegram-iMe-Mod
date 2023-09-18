@@ -6,7 +6,7 @@ import com.google.android.gms.vision.barcode.Barcode;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseVisionBarcode {
     private static final Map<Integer, zzlu.zzaa.zza> zzazk;
     private static final Map<Integer, zzlu.zzaa.zzb> zzazl;

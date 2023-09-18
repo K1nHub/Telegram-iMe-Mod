@@ -3,7 +3,7 @@ package me.zhanghai.android.materialratingbar;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class TileDrawable extends BaseDrawable {
     private Drawable mDrawable;
     private int mTileCount = -1;

@@ -9,7 +9,7 @@ import io.reactivex.Observable;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: KiklikoInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class KiklikoInteractor {
     private final KiklikoRepository kiklikoRepository;
     private final SchedulersProvider schedulersProvider;

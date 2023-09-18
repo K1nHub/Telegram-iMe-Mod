@@ -3,7 +3,7 @@ package com.iMe.p031ui.shop.view.model;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DisplayingBotsCategory.kt */
 /* renamed from: com.iMe.ui.shop.view.model.DisplayingBotsCategory */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DisplayingBotsCategory {
     private final String title;
 

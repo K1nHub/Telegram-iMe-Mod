@@ -8,7 +8,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.wallet.Wallet;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WalletObjectsClient extends GoogleApi<Wallet.WalletOptions> {
     public static final /* synthetic */ int zza = 0;
 

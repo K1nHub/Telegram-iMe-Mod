@@ -6,14 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.ReadAllMentionsMenu */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ReadAllMentionsMenu {
     public static ActionBarPopupWindow show(int i, Activity activity, INavigationLayout iNavigationLayout, FrameLayout frameLayout, View view, Theme.ResourcesProvider resourcesProvider, final Runnable runnable) {
         int i2;
@@ -23,13 +23,13 @@ public class ReadAllMentionsMenu {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem((Context) activity, true, true, resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(AndroidUtilities.m72dp(200));
         if (i == 0) {
-            i2 = C3558R.string.ReadAllReactions;
+            i2 = C3473R.string.ReadAllReactions;
             str = "ReadAllReactions";
         } else {
-            i2 = C3558R.string.ReadAllMentions;
+            i2 = C3473R.string.ReadAllMentions;
             str = "ReadAllMentions";
         }
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i2), C3558R.C3560drawable.msg_seen);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i2), C3473R.C3475drawable.msg_seen);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ReadAllMentionsMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -42,7 +42,7 @@ public class ReadAllMentionsMenu {
         actionBarPopupWindow.setDismissAnimationDuration(220);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
-        actionBarPopupWindow.setAnimationStyle(C3558R.style.PopupContextAnimation);
+        actionBarPopupWindow.setAnimationStyle(C3473R.style.PopupContextAnimation);
         actionBarPopupWindow.setFocusable(true);
         actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m72dp(1000), Integer.MIN_VALUE));
         actionBarPopupWindow.setInputMethodMode(2);

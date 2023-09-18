@@ -13,7 +13,7 @@ import io.reactivex.Observable;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TONBlockchainCryptoWalletManagerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCryptoWalletManager {
     private final SchedulersProvider schedulersProvider;
     private final TonController tonController;
@@ -68,7 +68,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
                     BlockchainCryptoWalletManager.saveWalletToPrefs$default(TONBlockchainCryptoWalletManagerImpl.this, guid, ((Wallet.TON) success.getData()).getAddress(), mnemonic, password, false, 16, null);
                     result = Result.Companion.success(Wallet.TON.copy$default((Wallet.TON) success.getData(), guid, null, null, null, 14, null));
                 }
-                Intrinsics.checkNotNullExpressionValue(result, "if (result is Result.Suc…                        }");
+                Intrinsics.checkNotNullExpressionValue(result, "if (result is Result.Suc… result\n                }");
                 return result;
             }
         }));
@@ -111,7 +111,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
                     }
                     result = Result.Companion.success(Wallet.TON.copy$default((Wallet.TON) ((Result.Success) result).getData(), guid, null, null, null, 14, null));
                 }
-                Intrinsics.checkNotNullExpressionValue(result, "if (result is Result.Suc…                        }");
+                Intrinsics.checkNotNullExpressionValue(result, "if (result is Result.Suc… result\n                }");
                 return result;
             }
         }));

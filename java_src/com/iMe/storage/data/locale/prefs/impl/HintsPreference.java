@@ -7,7 +7,7 @@ import com.iMe.storage.domain.storage.BasePreferenceHelper;
 import com.iMe.storage.domain.storage.HintsPreferenceHelper;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HintsPreference.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HintsPreference extends BasePreference implements HintsPreferenceHelper {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HintsPreference(Context context, TelegramGateway telegramGateway) {

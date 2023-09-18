@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.Components.voip.VoIPOverlayBackground */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VoIPOverlayBackground extends ImageView {
     float blackoutProgress;
     boolean showBlackout;

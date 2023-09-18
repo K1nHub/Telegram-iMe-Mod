@@ -2,7 +2,7 @@ package com.stripe.android.util;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StripeJsonUtils {
     static final String EMPTY = "";
     static final String NULL = "null";

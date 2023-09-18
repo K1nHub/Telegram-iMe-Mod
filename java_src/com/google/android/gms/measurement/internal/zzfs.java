@@ -11,7 +11,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfs extends zzgp {
     private static final AtomicLong zza = new AtomicLong(Long.MIN_VALUE);
     private zzfr zzb;

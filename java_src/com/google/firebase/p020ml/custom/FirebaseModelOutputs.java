@@ -2,7 +2,7 @@ package com.google.firebase.p020ml.custom;
 
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.custom.FirebaseModelOutputs */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseModelOutputs {
     private Map<Integer, Object> zzaxl;
 

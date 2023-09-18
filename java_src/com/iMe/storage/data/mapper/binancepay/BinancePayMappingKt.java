@@ -26,11 +26,11 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinancePayMappingKt {
 
     /* compiled from: BinancePayMapping.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

@@ -12,7 +12,7 @@ import kotlin.sequences.SequenceScope;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: SlidingWindow.kt */
 @DebugMetadata(m102c = "kotlin.collections.SlidingWindowKt$windowedIterator$1", m101f = "SlidingWindow.kt", m100l = {34, 40, 49, 55, 58}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SlidingWindowKt$windowedIterator$1<T> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super List<? extends T>>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Iterator<T> $iterator;
     final /* synthetic */ boolean $partialWindows;

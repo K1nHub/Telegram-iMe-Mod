@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalanceExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TokenBalanceExtKt {
     public static final String getDollarsBalanceText(TokenBalance tokenBalance) {
         Intrinsics.checkNotNullParameter(tokenBalance, "<this>");
@@ -24,7 +24,7 @@ public final class TokenBalanceExtKt {
 
     public static final String getTotalBalance(TokenBalance tokenBalance) {
         Intrinsics.checkNotNullParameter(tokenBalance, "<this>");
-        return BalanceFormatter.formatBalance(Double.valueOf(tokenBalance.getTotal()), Integer.valueOf(tokenBalance.getToken().getDecimals()));
+        return BalanceFormatter.format(Double.valueOf(tokenBalance.getTotal()), Integer.valueOf(tokenBalance.getToken().getDecimals()));
     }
 
     public static final PriceRateDirection getPriceDirection(TokenBalance tokenBalance) {

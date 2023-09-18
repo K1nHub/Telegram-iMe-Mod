@@ -14,7 +14,7 @@ import com.otaliastudios.gif.time.TimeInterpolator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class GIFOptions {
     private DataSink dataSink;
     private List<DataSource> dataSources;
@@ -47,7 +47,7 @@ public class GIFOptions {
         return this.timeInterpolator;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private DataSink dataSink;
         private final List<DataSource> dataSources = new ArrayList();

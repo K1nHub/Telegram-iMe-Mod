@@ -7,7 +7,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableConcatWithMaybe<T> extends AbstractObservableWithUpstream<T, T> {
     final MaybeSource<? extends T> other;
 
@@ -21,7 +21,7 @@ public final class ObservableConcatWithMaybe<T> extends AbstractObservableWithUp
         this.source.subscribe(new ConcatWithObserver(observer, this.other));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class ConcatWithObserver<T> extends AtomicReference<Disposable> implements Observer<T>, MaybeObserver<T>, Disposable {
         final Observer<? super T> downstream;
         boolean inMaybe;

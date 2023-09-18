@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 67
+    .line 76
     check-cast p1, Lorg/telegram/ui/Components/Switch;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/FoundTokenProvider$convert$3;->invoke(Lorg/telegram/ui/Components/Switch;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 77
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/FoundTokenProvider$convert$3;->$item:Lcom/iMe/model/wallet/home/FoundTokenItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/wallet/home/FoundTokenItem;->isEnabled()Z
@@ -77,13 +77,16 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
 
-    .line 69
+    .line 79
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
 
+    .line 80
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
 
+    .line 81
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
+    .line 78
     invoke-virtual {p1, v0, v1, v2, v2}, Lorg/telegram/ui/Components/Switch;->setColors(IIII)V
 
     return-void

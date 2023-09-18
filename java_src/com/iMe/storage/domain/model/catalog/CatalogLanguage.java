@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.catalog;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogLanguage.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogLanguage {
 
     /* renamed from: id */

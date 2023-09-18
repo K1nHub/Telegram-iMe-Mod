@@ -10,7 +10,7 @@ import org.bouncycastle.math.p040ec.ECAlgorithms;
 import org.bouncycastle.math.p040ec.ECCurve;
 import org.bouncycastle.util.Arrays;
 /* renamed from: org.bouncycastle.asn1.x9.X9Curve */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class X9Curve extends ASN1Object implements X9ObjectIdentifiers {
     private ECCurve curve;
     private ASN1ObjectIdentifier fieldIdentifier = null;

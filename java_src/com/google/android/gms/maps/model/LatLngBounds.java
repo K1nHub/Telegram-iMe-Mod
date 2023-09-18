@@ -15,7 +15,7 @@ import com.google.android.gms.maps.GoogleMapOptions;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "LatLngBoundsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LatLngBounds extends AbstractSafeParcelable implements ReflectedParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<LatLngBounds> CREATOR = new zzf();
@@ -25,7 +25,7 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
     public final LatLng southwest;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private double zza = Double.POSITIVE_INFINITY;
         private double zzb = Double.NEGATIVE_INFINITY;

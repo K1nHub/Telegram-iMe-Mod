@@ -15,7 +15,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BlockingObservableIterable<T> implements Iterable<T> {
     final int bufferSize;
     final ObservableSource<? extends T> source;
@@ -32,7 +32,7 @@ public final class BlockingObservableIterable<T> implements Iterable<T> {
         return blockingObservableIterator;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class BlockingObservableIterator<T> extends AtomicReference<Disposable> implements Observer<T>, Iterator<T>, Disposable, p033j$.util.Iterator {
         final Condition condition;
         volatile boolean done;

@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 import moxy.MvpView;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class MvpViewState<View extends MvpView> {
     protected ViewCommands<View> viewCommands = new ViewCommands<>();
     protected Set<View> views = Collections.newSetFromMap(new WeakHashMap());

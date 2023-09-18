@@ -6,7 +6,7 @@ import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Single;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RemoteConfigInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RemoteConfigInteractor {
     private final RemoteConfigRepository remoteConfigRepository;
     private final SchedulersProvider schedulersProvider;

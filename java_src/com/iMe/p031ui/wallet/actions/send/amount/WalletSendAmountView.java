@@ -1,13 +1,15 @@
 package com.iMe.p031ui.wallet.actions.send.amount;
 
 import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.fork.utils.Callbacks$Callback2;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.NetworkItem;
+import com.iMe.model.wallet.select.SelectTokenScreenType;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
 import com.iMe.p031ui.wallet.home.tabs.binancepay.replenish.WalletBinancePayReplenishView;
-import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.util.List;
@@ -16,7 +18,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletSendAmountView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletSendAmountView extends BaseView, WalletBinancePayReplenishView {
     @AddToEndSingle
     void onSuccessValidation(DialogModel dialogModel, boolean z);
@@ -38,7 +40,7 @@ public interface WalletSendAmountView extends BaseView, WalletBinancePayReplenis
 
     void showRecipientWalletNotActivatedError();
 
-    void showSelectTokenDialog(WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1);
+    void showSelectTokenDialog(SelectTokenScreenType selectTokenScreenType, String str, boolean z, Callbacks$Callback2<TokenDetailed, FiatValue> callbacks$Callback2);
 
     void showSuccessSend(String str);
 

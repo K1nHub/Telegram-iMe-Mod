@@ -3,11 +3,11 @@ package com.google.firebase.installations.remote;
 import com.google.auto.value.AutoValue;
 import com.google.firebase.installations.remote.AutoValue_InstallationResponse;
 @AutoValue
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class InstallationResponse {
 
     @AutoValue.Builder
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract InstallationResponse build();
 
@@ -22,7 +22,7 @@ public abstract class InstallationResponse {
         public abstract Builder setUri(String str);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ResponseCode {
         OK,
         BAD_CONFIG

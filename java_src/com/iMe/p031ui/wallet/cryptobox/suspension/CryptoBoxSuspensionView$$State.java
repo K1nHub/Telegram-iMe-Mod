@@ -10,7 +10,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspensionView> implements CryptoBoxSuspensionView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -115,7 +115,7 @@ public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspen
 
     /* compiled from: CryptoBoxSuspensionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State$ShowTransactionSuccessCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowTransactionSuccessCommand extends ViewCommand<CryptoBoxSuspensionView> {
         ShowTransactionSuccessCommand(CryptoBoxSuspensionView$$State cryptoBoxSuspensionView$$State) {
             super("showTransactionSuccess", OneExecutionStateStrategy.class);
@@ -129,7 +129,7 @@ public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspen
 
     /* compiled from: CryptoBoxSuspensionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State$ShowTransactionErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowTransactionErrorCommand extends ViewCommand<CryptoBoxSuspensionView> {
         public final String message;
 
@@ -146,7 +146,7 @@ public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspen
 
     /* compiled from: CryptoBoxSuspensionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State$RenderButtonLoadingCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderButtonLoadingCommand extends ViewCommand<CryptoBoxSuspensionView> {
         public final boolean isLoading;
 
@@ -163,7 +163,7 @@ public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspen
 
     /* compiled from: CryptoBoxSuspensionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State$ShowFeeCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowFeeCommand extends ViewCommand<CryptoBoxSuspensionView> {
         public final FeeType feeType;
 
@@ -180,7 +180,7 @@ public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspen
 
     /* compiled from: CryptoBoxSuspensionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CryptoBoxSuspensionView> {
         public final String text;
 
@@ -197,7 +197,7 @@ public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspen
 
     /* compiled from: CryptoBoxSuspensionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CryptoBoxSuspensionView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -218,7 +218,7 @@ public class CryptoBoxSuspensionView$$State extends MvpViewState<CryptoBoxSuspen
 
     /* compiled from: CryptoBoxSuspensionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CryptoBoxSuspensionView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

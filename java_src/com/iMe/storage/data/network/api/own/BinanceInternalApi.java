@@ -26,7 +26,7 @@ import java.util.List;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: BinanceInternalApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface BinanceInternalApi {
     @POST("binance/confirmConvertQuote")
     Observable<ApiBaseResponse<Object>> confirmConvertQuote(@Body BinanceConfirmConvertQuoteRequest binanceConfirmConvertQuoteRequest);

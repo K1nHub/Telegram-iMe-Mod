@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SQLitePersistence extends Persistence {
     private final SQLiteBundleCache bundleCache;
 
@@ -201,7 +201,7 @@ public final class SQLitePersistence extends Persistence {
         return Long.valueOf(cursor.getLong(0));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class OpenHelper extends SQLiteOpenHelper {
         private boolean configured;
         private final LocalSerializer serializer;
@@ -270,7 +270,7 @@ public final class SQLitePersistence extends Persistence {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Query {
         private SQLiteDatabase.CursorFactory cursorFactory;
 
@@ -409,7 +409,7 @@ public final class SQLitePersistence extends Persistence {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class LongQuery {
         private final List<Object> argsHead;
         private final Iterator<Object> argsIter;

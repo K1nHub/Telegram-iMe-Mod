@@ -2,7 +2,7 @@ package com.google.zxing;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ResultPoint {
 
     /* renamed from: x */

@@ -34,7 +34,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SvgHelper {
     private static final double[] pow10 = new double[128];
 
@@ -42,48 +42,48 @@ public class SvgHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Line {
 
         /* renamed from: x1 */
-        float f1496x1;
+        float f1487x1;
 
         /* renamed from: x2 */
-        float f1497x2;
+        float f1488x2;
 
         /* renamed from: y1 */
-        float f1498y1;
+        float f1489y1;
 
         /* renamed from: y2 */
-        float f1499y2;
+        float f1490y2;
 
         public Line(float f, float f2, float f3, float f4) {
-            this.f1496x1 = f;
-            this.f1498y1 = f2;
-            this.f1497x2 = f3;
-            this.f1499y2 = f4;
+            this.f1487x1 = f;
+            this.f1489y1 = f2;
+            this.f1488x2 = f3;
+            this.f1490y2 = f4;
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Circle {
         float rad;
 
         /* renamed from: x1 */
-        float f1494x1;
+        float f1485x1;
 
         /* renamed from: y1 */
-        float f1495y1;
+        float f1486y1;
 
         public Circle(float f, float f2, float f3) {
-            this.f1494x1 = f;
-            this.f1495y1 = f2;
+            this.f1485x1 = f;
+            this.f1486y1 = f2;
             this.rad = f3;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Oval {
         RectF rect;
 
@@ -93,20 +93,20 @@ public class SvgHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class RoundRect {
         RectF rect;
 
         /* renamed from: rx */
-        float f1502rx;
+        float f1493rx;
 
         public RoundRect(RectF rectF, float f) {
             this.rect = rectF;
-            this.f1502rx = f;
+            this.f1493rx = f;
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class SvgDrawable extends Drawable {
         private static float gradientWidth;
         private static long lastUpdateTime;
@@ -292,16 +292,16 @@ public class SvgHelper {
                         canvas.drawRect((RectF) obj, paint);
                     } else if (obj instanceof Line) {
                         Line line = (Line) obj;
-                        canvas.drawLine(line.f1496x1, line.f1498y1, line.f1497x2, line.f1499y2, paint);
+                        canvas.drawLine(line.f1487x1, line.f1489y1, line.f1488x2, line.f1490y2, paint);
                     } else if (obj instanceof Circle) {
                         Circle circle = (Circle) obj;
-                        canvas.drawCircle(circle.f1494x1, circle.f1495y1, circle.rad, paint);
+                        canvas.drawCircle(circle.f1485x1, circle.f1486y1, circle.rad, paint);
                     } else if (obj instanceof Oval) {
                         canvas.drawOval(((Oval) obj).rect, paint);
                     } else if (obj instanceof RoundRect) {
                         RoundRect roundRect = (RoundRect) obj;
                         RectF rectF = roundRect.rect;
-                        float f11 = roundRect.f1502rx;
+                        float f11 = roundRect.f1493rx;
                         canvas.drawRoundRect(rectF, f11, f11, paint);
                     }
                     paint.setAlpha(alpha);
@@ -912,7 +912,7 @@ public class SvgHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class NumberParse {
         private int nextCmd;
         private ArrayList<Float> numbers;
@@ -932,7 +932,7 @@ public class SvgHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class StyleSet {
         HashMap<String, String> styleMap;
 
@@ -958,7 +958,7 @@ public class SvgHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Properties {
         Attributes atts;
         ArrayList<StyleSet> styles;
@@ -1035,7 +1035,7 @@ public class SvgHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class SVGHandler extends DefaultHandler {
         private boolean alphaOnly;
         private Bitmap bitmap;
@@ -1594,27 +1594,27 @@ public class SvgHelper {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class ParserHelper {
         private char current;
 
         /* renamed from: n */
-        private int f1500n;
+        private int f1491n;
         public int pos;
 
         /* renamed from: s */
-        private CharSequence f1501s;
+        private CharSequence f1492s;
 
         public ParserHelper(CharSequence charSequence, int i) {
-            this.f1501s = charSequence;
+            this.f1492s = charSequence;
             this.pos = i;
-            this.f1500n = charSequence.length();
+            this.f1491n = charSequence.length();
             this.current = charSequence.charAt(i);
         }
 
         private char read() {
             int i = this.pos;
-            int i2 = this.f1500n;
+            int i2 = this.f1491n;
             if (i < i2) {
                 this.pos = i + 1;
             }
@@ -1622,13 +1622,13 @@ public class SvgHelper {
             if (i3 == i2) {
                 return (char) 0;
             }
-            return this.f1501s.charAt(i3);
+            return this.f1492s.charAt(i3);
         }
 
         public void skipWhitespace() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1500n || !Character.isWhitespace(this.f1501s.charAt(i))) {
+                if (i >= this.f1491n || !Character.isWhitespace(this.f1492s.charAt(i))) {
                     return;
                 }
                 advance();
@@ -1638,10 +1638,10 @@ public class SvgHelper {
         public void skipNumberSeparator() {
             while (true) {
                 int i = this.pos;
-                if (i >= this.f1500n) {
+                if (i >= this.f1491n) {
                     return;
                 }
-                char charAt = this.f1501s.charAt(i);
+                char charAt = this.f1492s.charAt(i);
                 if (charAt != '\t' && charAt != '\n' && charAt != ' ' && charAt != ',') {
                     return;
                 }

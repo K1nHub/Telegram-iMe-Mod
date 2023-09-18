@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @UsedByNative("wrapper.cc")
 @SafeParcelable.Class(creator = "LandmarkParcelCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LandmarkParcel extends AbstractSafeParcelable {
     @RecentlyNonNull
     public static final Parcelable.Creator<LandmarkParcel> CREATOR = new zzm();

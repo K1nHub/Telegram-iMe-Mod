@@ -4,7 +4,7 @@ import android.animation.TimeAnimator;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.StableAnimator */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StableAnimator extends TimeAnimator {
     private Object animatedValue;
     private float[] floatValues;

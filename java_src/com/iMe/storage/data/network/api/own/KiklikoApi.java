@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 /* compiled from: KiklikoApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface KiklikoApi {
     public static final Companion Companion = null;
 
@@ -43,7 +43,7 @@ public interface KiklikoApi {
 
     /* compiled from: KiklikoApi.kt */
     /* renamed from: com.iMe.storage.data.network.api.own.KiklikoApi$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         static {
             Companion companion = KiklikoApi.Companion;
@@ -84,7 +84,7 @@ public interface KiklikoApi {
     }
 
     /* compiled from: KiklikoApi.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
 

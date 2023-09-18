@@ -1,7 +1,7 @@
 package com.google.android.material.resources;
 
 import android.graphics.Typeface;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TextAppearanceFontCallback {
     public abstract void onFontRetrievalFailed(int i);
 

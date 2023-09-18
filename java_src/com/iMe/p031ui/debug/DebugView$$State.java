@@ -10,7 +10,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.debug.DebugView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DebugView$$State extends MvpViewState<DebugView> implements DebugView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -76,7 +76,7 @@ public class DebugView$$State extends MvpViewState<DebugView> implements DebugVi
 
     /* compiled from: DebugView$$State.java */
     /* renamed from: com.iMe.ui.debug.DebugView$$State$ShowConfirmSwitchEnvironmentDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowConfirmSwitchEnvironmentDialogCommand extends ViewCommand<DebugView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -95,7 +95,7 @@ public class DebugView$$State extends MvpViewState<DebugView> implements DebugVi
 
     /* compiled from: DebugView$$State.java */
     /* renamed from: com.iMe.ui.debug.DebugView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<DebugView> {
         public final String text;
 
@@ -112,7 +112,7 @@ public class DebugView$$State extends MvpViewState<DebugView> implements DebugVi
 
     /* compiled from: DebugView$$State.java */
     /* renamed from: com.iMe.ui.debug.DebugView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<DebugView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -133,7 +133,7 @@ public class DebugView$$State extends MvpViewState<DebugView> implements DebugVi
 
     /* compiled from: DebugView$$State.java */
     /* renamed from: com.iMe.ui.debug.DebugView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<DebugView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

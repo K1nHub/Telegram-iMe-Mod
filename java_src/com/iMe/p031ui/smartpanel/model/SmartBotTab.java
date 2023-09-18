@@ -4,7 +4,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SmartBotTab.kt */
 /* renamed from: com.iMe.ui.smartpanel.model.SmartBotTab */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SmartBotTab {
     private final List<SmartPanelTabContent> answers;
     private final String botId;

@@ -9,9 +9,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.NetworkTypeView;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.CheckBoxSquare;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkItemWalletHomeCryptoTokensSettingsHeaderBinding implements ViewBinding {
     private final FrameLayout rootView;
 
@@ -29,7 +29,7 @@ public final class ForkItemWalletHomeCryptoTokensSettingsHeaderBinding implement
     }
 
     public static ForkItemWalletHomeCryptoTokensSettingsHeaderBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_item_wallet_home_crypto_tokens_settings_header, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_item_wallet_home_crypto_tokens_settings_header, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -37,19 +37,19 @@ public final class ForkItemWalletHomeCryptoTokensSettingsHeaderBinding implement
     }
 
     public static ForkItemWalletHomeCryptoTokensSettingsHeaderBinding bind(View view) {
-        int i = C3558R.C3561id.network_type_view;
+        int i = C3473R.C3476id.network_type_view;
         NetworkTypeView networkTypeView = (NetworkTypeView) ViewBindings.findChildViewById(view, i);
         if (networkTypeView != null) {
-            i = C3558R.C3561id.network_type_view_container;
+            i = C3473R.C3476id.network_type_view_container;
             FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
             if (frameLayout != null) {
-                i = C3558R.C3561id.only_positive_checkbox;
+                i = C3473R.C3476id.only_positive_checkbox;
                 CheckBoxSquare checkBoxSquare = (CheckBoxSquare) ViewBindings.findChildViewById(view, i);
                 if (checkBoxSquare != null) {
-                    i = C3558R.C3561id.only_positive_checkbox_container;
+                    i = C3473R.C3476id.only_positive_checkbox_container;
                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout != null) {
-                        i = C3558R.C3561id.only_positive_checkbox_text;
+                        i = C3473R.C3476id.only_positive_checkbox_text;
                         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView != null) {
                             return new ForkItemWalletHomeCryptoTokensSettingsHeaderBinding((FrameLayout) view, networkTypeView, frameLayout, checkBoxSquare, linearLayout, appCompatTextView);

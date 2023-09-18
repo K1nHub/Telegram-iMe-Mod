@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.ImageReceiver;
 /* compiled from: CipherSuite.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CipherSuite {
     public static final Companion Companion;
     private static final Map<String, CipherSuite> INSTANCES;
@@ -50,7 +50,7 @@ public final class CipherSuite {
     }
 
     /* compiled from: CipherSuite.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

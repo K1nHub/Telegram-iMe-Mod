@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.crypto.nft.avatar;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftAvatarResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NftAvatarResponse {
     private final NftCollectionResponse collection;
     private final String description;
@@ -129,7 +129,7 @@ public final class NftAvatarResponse {
     }
 
     /* compiled from: NftAvatarResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NftCollectionResponse {
         private final String contractAddress;
 

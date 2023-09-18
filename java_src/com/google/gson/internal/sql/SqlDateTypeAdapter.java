@@ -13,7 +13,7 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class SqlDateTypeAdapter extends TypeAdapter<Date> {
     static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() { // from class: com.google.gson.internal.sql.SqlDateTypeAdapter.1
         @Override // com.google.gson.TypeAdapterFactory

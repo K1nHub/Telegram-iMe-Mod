@@ -8,7 +8,7 @@ import com.google.protobuf.Parser;
 import com.google.protobuf.WireFormat;
 import java.util.Map;
 /* renamed from: com.google.firestore.v1.ListenRequest */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ListenRequest extends GeneratedMessageLite<ListenRequest, Builder> implements MessageLiteOrBuilder {
     public static final int ADD_TARGET_FIELD_NUMBER = 2;
     public static final int DATABASE_FIELD_NUMBER = 1;
@@ -44,7 +44,7 @@ public final class ListenRequest extends GeneratedMessageLite<ListenRequest, Bui
     }
 
     /* renamed from: com.google.firestore.v1.ListenRequest$LabelsDefaultEntryHolder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class LabelsDefaultEntryHolder {
         static final MapEntryLite<String, String> defaultEntry;
 
@@ -71,7 +71,7 @@ public final class ListenRequest extends GeneratedMessageLite<ListenRequest, Bui
     }
 
     /* renamed from: com.google.firestore.v1.ListenRequest$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<ListenRequest, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10651 c10651) {
             this();
@@ -107,7 +107,7 @@ public final class ListenRequest extends GeneratedMessageLite<ListenRequest, Bui
     }
 
     /* renamed from: com.google.firestore.v1.ListenRequest$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10651 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

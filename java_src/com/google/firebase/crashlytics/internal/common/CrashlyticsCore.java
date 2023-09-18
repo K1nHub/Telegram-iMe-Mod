@@ -24,7 +24,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsCore {
     private final AnalyticsEventLogger analyticsEventLogger;
     private final CrashlyticsBackgroundWorker backgroundWorker;
@@ -219,7 +219,7 @@ public class CrashlyticsCore {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class LogFileDirectoryProvider implements LogFileManager.DirectoryProvider {
         private final FileStore rootFileStore;
 

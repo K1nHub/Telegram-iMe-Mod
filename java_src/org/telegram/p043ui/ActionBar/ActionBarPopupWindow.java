@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.UserConfig;
@@ -41,7 +41,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.PopupSwipeBackLayout;
 /* renamed from: org.telegram.ui.ActionBar.ActionBarPopupWindow */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ActionBarPopupWindow extends PopupWindow {
     private static final ViewTreeObserver.OnScrollChangedListener NOP;
     private static final boolean allowAnimation;
@@ -60,13 +60,13 @@ public class ActionBarPopupWindow extends PopupWindow {
     private AnimatorSet windowAnimatorSet;
 
     /* renamed from: org.telegram.ui.ActionBar.ActionBarPopupWindow$OnDispatchKeyEventListener */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface OnDispatchKeyEventListener {
         void onDispatchKeyEvent(KeyEvent keyEvent);
     }
 
     /* renamed from: org.telegram.ui.ActionBar.ActionBarPopupWindow$onSizeChangedListener */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface onSizeChangedListener {
         void onSizeChanged();
     }
@@ -98,7 +98,7 @@ public class ActionBarPopupWindow extends PopupWindow {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class ActionBarPopupWindowLayout extends FrameLayout {
         private boolean animationEnabled;
         private int backAlpha;
@@ -143,7 +143,7 @@ public class ActionBarPopupWindow extends PopupWindow {
         }
 
         public ActionBarPopupWindowLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            this(context, C3558R.C3560drawable.popup_fixed_alert2, resourcesProvider);
+            this(context, C3473R.C3475drawable.popup_fixed_alert2, resourcesProvider);
         }
 
         public ActionBarPopupWindowLayout(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
@@ -215,9 +215,9 @@ public class ActionBarPopupWindow extends PopupWindow {
                         for (int i7 = 0; i7 < childCount; i7++) {
                             View childAt = getChildAt(i7);
                             if (childAt.getVisibility() != 8) {
-                                Object tag = childAt.getTag(C3558R.C3561id.width_tag);
-                                Object tag2 = childAt.getTag(C3558R.C3561id.object_tag);
-                                Object tag3 = childAt.getTag(C3558R.C3561id.fit_width_tag);
+                                Object tag = childAt.getTag(C3473R.C3476id.width_tag);
+                                Object tag2 = childAt.getTag(C3473R.C3476id.object_tag);
+                                Object tag3 = childAt.getTag(C3473R.C3476id.fit_width_tag);
                                 if (tag != null) {
                                     childAt.getLayoutParams().width = -2;
                                 }
@@ -529,7 +529,7 @@ public class ActionBarPopupWindow extends PopupWindow {
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt2 = this.linearLayout.getChildAt(i2);
                 if (childAt2.getVisibility() == 0) {
-                    Object tag = childAt2.getTag(C3558R.C3561id.object_tag);
+                    Object tag = childAt2.getTag(C3473R.C3476id.object_tag);
                     if (childAt2 instanceof ActionBarMenuSubItem) {
                         ((ActionBarMenuSubItem) childAt2).updateSelectorBackground(childAt2 == view || z, childAt2 == view2);
                     }
@@ -977,7 +977,7 @@ public class ActionBarPopupWindow extends PopupWindow {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.ActionBarPopupWindow$GapView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class GapView extends FrameLayout {
         Drawable shadowDrawable;
 
@@ -987,7 +987,7 @@ public class ActionBarPopupWindow extends PopupWindow {
 
         public GapView(Context context, int i, int i2) {
             super(context);
-            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3558R.C3560drawable.greydivider, i2);
+            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3473R.C3475drawable.greydivider, i2);
             setBackgroundColor(i);
         }
 

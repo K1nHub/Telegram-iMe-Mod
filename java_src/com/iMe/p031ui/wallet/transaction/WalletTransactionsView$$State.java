@@ -15,7 +15,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletTransactionsView$$State extends MvpViewState<WalletTransactionsView> implements WalletTransactionsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -224,7 +224,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$ShowChangeNetworkHintCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChangeNetworkHintCommand extends ViewCommand<WalletTransactionsView> {
         ShowChangeNetworkHintCommand(WalletTransactionsView$$State walletTransactionsView$$State) {
             super("showChangeNetworkHint", OneExecutionStateStrategy.class);
@@ -238,7 +238,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$OpenStakingOperationDetailsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenStakingOperationDetailsCommand extends ViewCommand<WalletTransactionsView> {
         public final StakingOperationItem item;
         public final Network network;
@@ -257,7 +257,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$OpenCryptoBoxActionDetailsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenCryptoBoxActionDetailsCommand extends ViewCommand<WalletTransactionsView> {
         public final CryptoBoxActionItem item;
         public final Network network;
@@ -276,7 +276,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$RenderInitialItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderInitialItemsCommand extends ViewCommand<WalletTransactionsView> {
         public final List<BaseNode> items;
 
@@ -293,7 +293,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$RenderItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderItemsCommand extends ViewCommand<WalletTransactionsView> {
         public final List<BaseNode> items;
 
@@ -310,7 +310,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletTransactionsView> {
         public final String text;
 
@@ -327,7 +327,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletTransactionsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -348,7 +348,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletTransactionsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -367,7 +367,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<WalletTransactionsView> {
         public final List<BaseNode> items;
 
@@ -384,7 +384,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<WalletTransactionsView> {
         OnLoadMoreCompleteCommand(WalletTransactionsView$$State walletTransactionsView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -398,7 +398,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<WalletTransactionsView> {
         OnLoadMoreErrorCommand(WalletTransactionsView$$State walletTransactionsView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -412,7 +412,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$ResetLoadMoreCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ResetLoadMoreCommand extends ViewCommand<WalletTransactionsView> {
         ResetLoadMoreCommand(WalletTransactionsView$$State walletTransactionsView$$State) {
             super("resetLoadMore", AddToEndSingleStrategy.class);
@@ -426,7 +426,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$ShowRefreshingCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRefreshingCommand extends ViewCommand<WalletTransactionsView> {
         public final boolean show;
 
@@ -443,7 +443,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$SetupNetworkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupNetworkCommand extends ViewCommand<WalletTransactionsView> {
         public final NetworkItem networkItem;
 
@@ -460,7 +460,7 @@ public class WalletTransactionsView$$State extends MvpViewState<WalletTransactio
 
     /* compiled from: WalletTransactionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletTransactionsView> {
         public final List<? extends NetworkItem> availableNetworks;
         public final NetworkItem network;

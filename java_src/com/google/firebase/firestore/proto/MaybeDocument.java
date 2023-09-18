@@ -5,7 +5,7 @@ import com.google.protobuf.GeneratedMessageLite;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MaybeDocument extends GeneratedMessageLite<MaybeDocument, Builder> implements MessageLiteOrBuilder {
     private static final MaybeDocument DEFAULT_INSTANCE;
     public static final int DOCUMENT_FIELD_NUMBER = 2;
@@ -20,7 +20,7 @@ public final class MaybeDocument extends GeneratedMessageLite<MaybeDocument, Bui
     private MaybeDocument() {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum DocumentTypeCase {
         NO_DOCUMENT(1),
         DOCUMENT(2),
@@ -122,7 +122,7 @@ public final class MaybeDocument extends GeneratedMessageLite<MaybeDocument, Bui
         return DEFAULT_INSTANCE.createBuilder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<MaybeDocument, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10211 c10211) {
             this();
@@ -158,7 +158,7 @@ public final class MaybeDocument extends GeneratedMessageLite<MaybeDocument, Bui
     }
 
     /* renamed from: com.google.firebase.firestore.proto.MaybeDocument$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10211 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

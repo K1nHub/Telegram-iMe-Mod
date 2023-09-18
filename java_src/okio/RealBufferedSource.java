@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.CharsKt__CharJVMKt;
 import okio.internal.BufferKt;
 /* compiled from: RealBufferedSource.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RealBufferedSource implements BufferedSource {
     public final Buffer bufferField;
     public boolean closed;

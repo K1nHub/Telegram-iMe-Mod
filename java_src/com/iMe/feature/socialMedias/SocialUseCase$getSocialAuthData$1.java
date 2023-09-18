@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialUseCase.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class SocialUseCase$getSocialAuthData$1 extends FunctionReferenceImpl implements Function1<SocialAuthDomain, Result<? extends SocialAuthDomain>> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SocialUseCase$getSocialAuthData$1(Object obj) {

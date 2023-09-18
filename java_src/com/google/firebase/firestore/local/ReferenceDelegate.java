@@ -2,7 +2,7 @@ package com.google.firebase.firestore.local;
 
 import com.google.firebase.firestore.model.DocumentKey;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ReferenceDelegate {
     void addReference(DocumentKey documentKey);
 

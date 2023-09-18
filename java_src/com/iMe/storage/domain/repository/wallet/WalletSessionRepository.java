@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.wallet.User;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 /* compiled from: WalletSessionRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletSessionRepository {
     User getCurrentAccount();
 

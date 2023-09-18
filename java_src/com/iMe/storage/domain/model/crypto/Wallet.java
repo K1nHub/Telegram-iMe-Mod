@@ -10,7 +10,7 @@ import wallet.core.jni.Derivation;
 import wallet.core.jni.HDWallet;
 import wallet.core.jni.PrivateKey;
 /* compiled from: Wallet.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class Wallet {
     private final BlockchainType blockchainType;
     private final String guid;
@@ -45,12 +45,13 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class MultiCoinWallet extends Wallet {
         private final String address;
         private final BlockchainType blockchainType;
         private final CoinType coinType;
         private final String guid;
+        private final PrivateKey privateKey;
         private final byte[] privateKeyBytes;
 
         public /* synthetic */ MultiCoinWallet(HDWallet hDWallet, String str, BlockchainType blockchainType, CoinType coinType, DefaultConstructorMarker defaultConstructorMarker) {
@@ -88,15 +89,25 @@ public abstract class Wallet {
                 r3.guid = r5
                 r3.blockchainType = r6
                 r3.coinType = r7
-                java.lang.String r5 = r4.getAddressForCoin(r7)
-                java.lang.String r6 = "hdWallet.getAddressForCoin(coinType)"
+                wallet.core.jni.PrivateKey r5 = r4.getKeyForCoin(r7)
+                java.lang.String r6 = "hdWallet.getKeyForCoin(coinType)"
                 kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r6)
-                r3.address = r5
-                byte[] r4 = com.iMe.storage.domain.utils.extentions.CryptoExtKt.getPrivateKeyBytes(r4, r7)
+                r3.privateKey = r5
+                java.lang.String r4 = r4.getAddressForCoin(r7)
+                java.lang.String r6 = "hdWallet.getAddressForCoin(coinType)"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r4, r6)
+                r3.address = r4
+                byte[] r4 = r5.data()
+                java.lang.String r5 = "privateKey.data()"
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r4, r5)
                 r3.privateKeyBytes = r4
                 return
             */
             throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.domain.model.crypto.Wallet.MultiCoinWallet.<init>(wallet.core.jni.HDWallet, java.lang.String, com.iMe.storage.domain.model.crypto.BlockchainType, wallet.core.jni.CoinType):void");
+        }
+
+        public final PrivateKey getPrivateKey() {
+            return this.privateKey;
         }
 
         @Override // com.iMe.storage.domain.model.crypto.Wallet
@@ -111,7 +122,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class EVM extends MultiCoinWallet {
         private final String guid;
         private final HDWallet hdWallet;
@@ -177,7 +188,7 @@ public abstract class Wallet {
             this.guid = guid;
             this.hdWallet = hdWallet;
             byte[] data = hdWallet.getKeyForCoin(getCoinType()).getPublicKeySecp256k1(true).data();
-            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …                  .data()");
+            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …)\n                .data()");
             this.publicKey = CryptoExtKt.toHexString$default(data, false, 1, null);
         }
 
@@ -188,7 +199,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TRON extends MultiCoinWallet {
         private final String guid;
         private final HDWallet hdWallet;
@@ -254,7 +265,7 @@ public abstract class Wallet {
             this.guid = guid;
             this.hdWallet = hdWallet;
             byte[] data = hdWallet.getKeyForCoin(getCoinType()).getPublicKeySecp256k1(false).data();
-            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …                  .data()");
+            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …)\n                .data()");
             this.publicKey = CryptoExtKt.toHexString(data, false);
         }
 
@@ -265,7 +276,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BTC extends MultiCoinWallet {
         private final String address;
         private final String guid;
@@ -349,10 +360,10 @@ public abstract class Wallet {
                 keyDerivation = hdWallet.getKeyDerivation(getCoinType(), Derivation.BITCOINTESTNET);
             }
             byte[] data = keyDerivation.getPublicKeySecp256k1(true).data();
-            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …                  .data()");
+            Intrinsics.checkNotNullExpressionValue(data, "hdWallet\n               …)\n                .data()");
             this.publicKey = CryptoExtKt.toHexString(data, false);
             if (environmentManager.isProductionActive()) {
-                keyDerivation2 = CryptoExtKt.getPrivateKey(hdWallet, getCoinType());
+                keyDerivation2 = getPrivateKey();
             } else {
                 keyDerivation2 = hdWallet.getKeyDerivation(getCoinType(), Derivation.BITCOINTESTNET);
             }
@@ -378,7 +389,7 @@ public abstract class Wallet {
     }
 
     /* compiled from: Wallet.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TON extends Wallet {
         private final String address;
         private final String guid;

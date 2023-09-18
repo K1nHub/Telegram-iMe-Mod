@@ -6,7 +6,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import org.bouncycastle.util.p041io.Streams;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ASN1InputStream extends FilterInputStream {
     private final boolean lazyEvaluate;
     private final int limit;

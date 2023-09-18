@@ -34,6 +34,7 @@ import com.iMe.model.wallet.details.TokenDetailsArgs;
 import com.iMe.model.wallet.home.pay.BinancePayScreenArgs;
 import com.iMe.model.wallet.notification.NotificationItem;
 import com.iMe.model.wallet.pin.WalletPinScreenArgs;
+import com.iMe.model.wallet.select.SelectTokenScreenType;
 import com.iMe.model.wallet.swap.WalletSwapScreenType;
 import com.iMe.model.wallet.transaction.WalletTransactionDetailsScreenType;
 import com.iMe.model.wallet.transaction.WalletTransactionsScreenType;
@@ -113,7 +114,6 @@ import com.iMe.p031ui.wallet.staking.transaction.StakingTransactionPresenter;
 import com.iMe.p031ui.wallet.swap.WalletSwapProtocolsPresenter;
 import com.iMe.p031ui.wallet.swap.fee.WalletSwapFeePresenter;
 import com.iMe.p031ui.wallet.swap.process.WalletSwapProcessPresenter;
-import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenPresenter;
 import com.iMe.p031ui.wallet.transaction.WalletTransactionsPresenter;
 import com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsPresenter;
@@ -182,7 +182,7 @@ import org.koin.dsl.ModuleDSLKt;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: PresenterModule.kt */
 /* renamed from: com.iMe.di.module.PresenterModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PresenterModuleKt {
     private static Module presentationPresenterModule = ModuleDSLKt.module$default(false, new Function1<Module, Unit>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1
         @Override // kotlin.jvm.functions.Function1
@@ -295,7 +295,8 @@ public final class PresenterModuleKt {
                 public final ChatPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
                     Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
-                    return new ChatPresenter((TLRPC$Chat) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(TLRPC$Chat.class)), (BinancePayProcessManager) factory.get(Reflection.getOrCreateKotlinClass(BinancePayProcessManager.class), null, null), (CryptoBoxInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoBoxInteractor.class), null, null), (DynamicLinksInteractor) factory.get(Reflection.getOrCreateKotlinClass(DynamicLinksInteractor.class), null, null), (GoogleServicesInteractor) factory.get(Reflection.getOrCreateKotlinClass(GoogleServicesInteractor.class), null, null), (MultiReplyInteractor) factory.get(Reflection.getOrCreateKotlinClass(MultiReplyInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null), (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (TranslationInteractor) factory.get(Reflection.getOrCreateKotlinClass(TranslationInteractor.class), null, null));
+                    TLRPC$Chat tLRPC$Chat = (TLRPC$Chat) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(TLRPC$Chat.class));
+                    return new ChatPresenter((BinancePayProcessManager) factory.get(Reflection.getOrCreateKotlinClass(BinancePayProcessManager.class), null, null), (CryptoBoxInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoBoxInteractor.class), null, null), (DynamicLinksInteractor) factory.get(Reflection.getOrCreateKotlinClass(DynamicLinksInteractor.class), null, null), (GoogleServicesInteractor) factory.get(Reflection.getOrCreateKotlinClass(GoogleServicesInteractor.class), null, null), (MultiReplyInteractor) factory.get(Reflection.getOrCreateKotlinClass(MultiReplyInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramApi) factory.get(Reflection.getOrCreateKotlinClass(TelegramApi.class), null, null), (TelegramGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, null), (TranslationInteractor) factory.get(Reflection.getOrCreateKotlinClass(TranslationInteractor.class), null, null));
                 }
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
@@ -921,13 +922,12 @@ public final class PresenterModuleKt {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
                     Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
                     WalletSwapScreenType walletSwapScreenType = (WalletSwapScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletSwapScreenType.class));
-                    CryptoAccessManager cryptoAccessManager = (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null);
                     BinanceInternalInteractor binanceInternalInteractor = (BinanceInternalInteractor) factory.get(Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, null);
                     CryptoPreferenceHelper cryptoPreferenceHelper = (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null);
                     HintsPreferenceHelper hintsPreferenceHelper = (HintsPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(HintsPreferenceHelper.class), null, null);
                     ResourceManager resourceManager = (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null);
                     SchedulersProvider schedulersProvider = (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null);
-                    return new WalletSwapProcessPresenter(walletSwapScreenType, (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null), binanceInternalInteractor, (SwapInteractor) factory.get(Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, null), schedulersProvider, cryptoPreferenceHelper, cryptoAccessManager, resourceManager, hintsPreferenceHelper);
+                    return new WalletSwapProcessPresenter(walletSwapScreenType, (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null), binanceInternalInteractor, (SwapInteractor) factory.get(Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, null), schedulersProvider, cryptoPreferenceHelper, resourceManager, hintsPreferenceHelper);
                 }
             };
             StringQualifier rootScopeQualifier47 = companion.getRootScopeQualifier();
@@ -940,7 +940,7 @@ public final class PresenterModuleKt {
                 public final WalletSelectTokenPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
                     Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
-                    return new WalletSelectTokenPresenter((WalletSelectTokenFragment.ScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(WalletSelectTokenFragment.ScreenType.class)), (TokenDetailed) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(TokenDetailed.class)), (String) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(String.class)), ((Boolean) parametersHolder.elementAt(3, Reflection.getOrCreateKotlinClass(Boolean.class))).booleanValue(), (BinanceInternalInteractor) factory.get(Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (SwapInteractor) factory.get(Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, null), (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null));
+                    return new WalletSelectTokenPresenter((SelectTokenScreenType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(SelectTokenScreenType.class)), (TokenDetailed) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(TokenDetailed.class)), (String) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(String.class)), ((Boolean) parametersHolder.elementAt(3, Reflection.getOrCreateKotlinClass(Boolean.class))).booleanValue(), (BinanceInternalInteractor) factory.get(Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (SwapInteractor) factory.get(Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, null), (WalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, null));
                 }
             };
             StringQualifier rootScopeQualifier48 = companion.getRootScopeQualifier();

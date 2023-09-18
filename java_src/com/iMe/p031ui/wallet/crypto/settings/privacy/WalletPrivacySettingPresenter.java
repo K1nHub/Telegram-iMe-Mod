@@ -31,12 +31,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import timber.log.Timber;
 /* compiled from: WalletPrivacySettingPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPrivacySettingsView> {
     private final AccountLevelInteractor accountLevelInteractor;
     private final CryptoPermissionInteractor cryptoPermissionInteractor;
@@ -137,7 +137,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 return loadPrivacySettings$lambda$1;
             }
         }).observeOn(this.schedulersProvider.mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "zip(getWalletAddressSett…(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "zip(\n                get…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
         Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
@@ -149,12 +149,12 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> pair) {
-                m1469invoke(pair);
+                m1460invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1469invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> it) {
+            public final void m1460invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> it) {
                 int resolveAccessTypeBy;
                 int resolveAccessTypeBy2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -199,7 +199,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -234,7 +234,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 return saveSettings$lambda$3;
             }
         }).observeOn(this.schedulersProvider.mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "zip(walletAddressObserva…(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "zip(\n            walletA…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
         Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
@@ -246,12 +246,12 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends Result<? extends Boolean>> list) {
-                m1470invoke(list);
+                m1461invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1470invoke(List<? extends Result<? extends Boolean>> it) {
+            public final void m1461invoke(List<? extends Result<? extends Boolean>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 if (ResultExtKt.isAllSuccess(it)) {
                     ((WalletPrivacySettingsView) WalletPrivacySettingPresenter.this.getViewState()).onSuccessSaveCryptoSettings();
@@ -282,7 +282,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -314,7 +314,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 return result;
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
+        Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …   }\n        result\n    }");
         return map;
     }
 
@@ -339,7 +339,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 return result;
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
+        Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …   }\n        result\n    }");
         return map;
     }
 
@@ -389,7 +389,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                         return result;
                     }
                 }));
-                Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
+                Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …   }\n        result\n    }");
                 return map;
             }
         };
@@ -458,7 +458,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                         return result;
                     }
                 }));
-                Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …         result\n        }");
+                Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …   }\n        result\n    }");
                 return map;
             }
         };
@@ -470,7 +470,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 return saveAccountRankSettingsObservable$lambda$6;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "private fun saveAccountR…bservable()\n            }");
+        Intrinsics.checkNotNullExpressionValue(flatMap, "private fun saveAccountR…essObservable()\n        }");
         return flatMap;
     }
 
@@ -481,6 +481,6 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final DialogModel getEverybodyWarningDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3558R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3558R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3558R.string.common_cancel), this.resourceManager.getString(C3558R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3473R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3473R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3473R.string.common_cancel), this.resourceManager.getString(C3473R.string.common_confirm));
     }
 }

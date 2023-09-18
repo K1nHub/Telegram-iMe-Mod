@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.internal.vision.zzs;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzg extends com.google.android.gms.internal.vision.zza implements zzh {
     public zzg() {
         super("com.google.android.gms.vision.face.internal.client.INativeFaceDetector");

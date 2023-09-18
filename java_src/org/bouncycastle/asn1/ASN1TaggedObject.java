@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import java.io.IOException;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ASN1TaggedObject extends ASN1Primitive implements InMemoryRepresentable {
     final boolean explicit;
     final ASN1Encodable obj;

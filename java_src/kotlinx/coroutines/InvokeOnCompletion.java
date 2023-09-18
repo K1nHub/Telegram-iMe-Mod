@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JobSupport.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class InvokeOnCompletion extends JobNode {
     private final Function1<Throwable, Unit> handler;
 

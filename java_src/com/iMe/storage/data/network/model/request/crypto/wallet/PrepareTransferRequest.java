@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.request.wallet.TokenRequest;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PrepareTransferRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PrepareTransferRequest {
 
     /* renamed from: to */

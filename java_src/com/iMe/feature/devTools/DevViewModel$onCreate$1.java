@@ -9,7 +9,7 @@ import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DevViewModel.kt */
 @DebugMetadata(m102c = "com.iMe.feature.devTools.DevViewModel$onCreate$1", m101f = "DevViewModel.kt", m100l = {21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33}, m99m = "invokeSuspend")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DevViewModel$onCreate$1 extends SuspendLambda implements Function2<SimpleSyntax<DevState, DevSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     Object L$1;

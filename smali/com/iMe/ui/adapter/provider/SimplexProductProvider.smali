@@ -131,7 +131,7 @@
 
     move-result-object p1
 
-    .line 36
+    .line 38
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/SimplexProductProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->wallet_crypto_buy_amount_title:I
@@ -140,11 +140,12 @@
 
     move-result-object v1
 
+    .line 36
     invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 37
+    .line 40
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SimplexProductProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2, v0}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;->getAmount(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
@@ -155,7 +156,7 @@
 
     move-result-object p1
 
-    .line 38
+    .line 41
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SimplexProductProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2, v0}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;->getPrice(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
@@ -166,7 +167,7 @@
 
     move-result-object p1
 
-    .line 39
+    .line 44
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/SimplexProductProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_buy_tokens_purchase_slide_price_title:I
@@ -175,11 +176,12 @@
 
     move-result-object v0
 
+    .line 42
     invoke-virtual {p1, v5, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v6
 
-    .line 40
+    .line 46
     sget v7, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;

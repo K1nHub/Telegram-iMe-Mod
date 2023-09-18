@@ -10,7 +10,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCustomPriceView> implements CryptoBuyCustomPriceView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -76,7 +76,7 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
 
     /* compiled from: CryptoBuyCustomPriceView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ConfigureExchangeStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ConfigureExchangeStateCommand extends ViewCommand<CryptoBuyCustomPriceView> {
         public final float fromAmount;
         public final Currency fromCurrency;
@@ -99,7 +99,7 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
 
     /* compiled from: CryptoBuyCustomPriceView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CryptoBuyCustomPriceView> {
         public final String text;
 
@@ -116,7 +116,7 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
 
     /* compiled from: CryptoBuyCustomPriceView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CryptoBuyCustomPriceView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -137,7 +137,7 @@ public class CryptoBuyCustomPriceView$$State extends MvpViewState<CryptoBuyCusto
 
     /* compiled from: CryptoBuyCustomPriceView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CryptoBuyCustomPriceView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

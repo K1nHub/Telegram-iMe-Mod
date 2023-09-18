@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: BuyCryptoProductView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface BuyCryptoProductView extends BaseView {
     void showRefreshLoading(boolean z);
 

@@ -2,12 +2,12 @@ package com.google.android.gms.internal.mlkit_language_id;
 
 import com.google.android.gms.internal.mlkit_language_id.zzeo;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzid {
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
-    public static final class zza extends zzeo<zza, C7485zza> implements zzgb {
+    /* loaded from: classes4.dex */
+    public static final class zza extends zzeo<zza, C7400zza> implements zzgb {
         private static final zza zzf;
         private static volatile zzgj<zza> zzg;
         private int zzc;
@@ -15,7 +15,7 @@ public final class zzid {
         private zzj zze;
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum zzb implements zzet {
             UNKNOWN_ENGINE(0),
             TFLITE(1);
@@ -47,13 +47,13 @@ public final class zzid {
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzid$zza$zza  reason: collision with other inner class name */
-        /* loaded from: classes3.dex */
-        public static final class C7485zza extends zzeo.zzb<zza, C7485zza> implements zzgb {
-            private C7485zza() {
+        /* loaded from: classes4.dex */
+        public static final class C7400zza extends zzeo.zzb<zza, C7400zza> implements zzgb {
+            private C7400zza() {
                 super(zza.zzf);
             }
 
-            /* synthetic */ C7485zza(zzic zzicVar) {
+            /* synthetic */ C7400zza(zzic zzicVar) {
                 this();
             }
         }
@@ -67,7 +67,7 @@ public final class zzid {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C7485zza(null);
+                    return new C7400zza(null);
                 case 3:
                     return zzeo.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဉ\u0001", new Object[]{"zzc", "zzd", zzb.zzb(), "zze"});
                 case 4:
@@ -105,7 +105,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzb extends zzeo<zzb, zza> implements zzgb {
         private static final zzb zzn;
         private static volatile zzgj<zzb> zzo;
@@ -125,7 +125,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zzb, zza> implements zzgb {
             private zza() {
                 super(zzb.zzn);
@@ -183,7 +183,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzc extends zzeo<zzc, zzb> implements zzgb {
         private static final zzc zzm;
         private static volatile zzgj<zzc> zzn;
@@ -199,7 +199,7 @@ public final class zzid {
         private zzew<zzg> zzk = zzeo.zzl();
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum zza implements zzet {
             UNKNOWN_ACTION(0),
             INITIALIZATION(1),
@@ -232,23 +232,23 @@ public final class zzid {
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
         /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzid$zzc$zzc  reason: collision with other inner class name */
-        /* loaded from: classes3.dex */
-        public static final class C7486zzc extends zzeo<C7486zzc, zza> implements zzgb {
-            private static final C7486zzc zzf;
-            private static volatile zzgj<C7486zzc> zzg;
+        /* loaded from: classes4.dex */
+        public static final class C7401zzc extends zzeo<C7401zzc, zza> implements zzgb {
+            private static final C7401zzc zzf;
+            private static volatile zzgj<C7401zzc> zzg;
             private int zzc;
             private int zzd;
             private int zze;
 
-            private C7486zzc() {
+            private C7401zzc() {
             }
 
             /* compiled from: com.google.mlkit:language-id@@16.1.1 */
             /* renamed from: com.google.android.gms.internal.mlkit_language_id.zzid$zzc$zzc$zza */
-            /* loaded from: classes3.dex */
-            public static final class zza extends zzeo.zzb<C7486zzc, zza> implements zzgb {
+            /* loaded from: classes4.dex */
+            public static final class zza extends zzeo.zzb<C7401zzc, zza> implements zzgb {
                 private zza() {
-                    super(C7486zzc.zzf);
+                    super(C7401zzc.zzf);
                 }
 
                 /* synthetic */ zza(zzic zzicVar) {
@@ -260,10 +260,10 @@ public final class zzid {
             /* JADX WARN: Type inference failed for: r2v14, types: [com.google.android.gms.internal.mlkit_language_id.zzgj<com.google.android.gms.internal.mlkit_language_id.zzid$zzc$zzc>, com.google.android.gms.internal.mlkit_language_id.zzeo$zza] */
             @Override // com.google.android.gms.internal.mlkit_language_id.zzeo
             public final Object zza(int i, Object obj, Object obj2) {
-                zzgj<C7486zzc> zzgjVar;
+                zzgj<C7401zzc> zzgjVar;
                 switch (zzic.zza[i - 1]) {
                     case 1:
-                        return new C7486zzc();
+                        return new C7401zzc();
                     case 2:
                         return new zza(null);
                     case 3:
@@ -271,11 +271,11 @@ public final class zzid {
                     case 4:
                         return zzf;
                     case 5:
-                        zzgj<C7486zzc> zzgjVar2 = zzg;
-                        zzgj<C7486zzc> zzgjVar3 = zzgjVar2;
+                        zzgj<C7401zzc> zzgjVar2 = zzg;
+                        zzgj<C7401zzc> zzgjVar3 = zzgjVar2;
                         if (zzgjVar2 == null) {
-                            synchronized (C7486zzc.class) {
-                                zzgj<C7486zzc> zzgjVar4 = zzg;
+                            synchronized (C7401zzc.class) {
+                                zzgj<C7401zzc> zzgjVar4 = zzg;
                                 zzgjVar = zzgjVar4;
                                 if (zzgjVar4 == null) {
                                     ?? zzaVar = new zzeo.zza(zzf);
@@ -296,27 +296,27 @@ public final class zzid {
             }
 
             static {
-                C7486zzc c7486zzc = new C7486zzc();
-                zzf = c7486zzc;
-                zzeo.zza(C7486zzc.class, c7486zzc);
+                C7401zzc c7401zzc = new C7401zzc();
+                zzf = c7401zzc;
+                zzeo.zza(C7401zzc.class, c7401zzc);
             }
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zzd extends zzeo<zzd, zza> implements zzgb {
             private static final zzd zzg;
             private static volatile zzgj<zzd> zzh;
             private int zzc;
-            private C7486zzc zzd;
-            private C7486zzc zze;
+            private C7401zzc zzd;
+            private C7401zzc zze;
             private boolean zzf;
 
             private zzd() {
             }
 
             /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static final class zza extends zzeo.zzb<zzd, zza> implements zzgb {
                 private zza() {
                     super(zzd.zzg);
@@ -374,7 +374,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum zze implements zzet {
             UNKNOWN_STATUS(0),
             COMPLETED_EVENT(1),
@@ -409,7 +409,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zzb extends zzeo.zzb<zzc, zzb> implements zzgb {
             private zzb() {
                 super(zzc.zzm);
@@ -467,7 +467,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzd extends zzeo<zzd, zza> implements zzgb {
         private static final zzd zzk;
         private static volatile zzgj<zzd> zzl;
@@ -484,7 +484,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zzd, zza> implements zzgb {
             private zza() {
                 super(zzd.zzk);
@@ -542,7 +542,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zze extends zzeo<zze, zza> implements zzgb {
         private static final zze zze;
         private static volatile zzgj<zze> zzf;
@@ -553,7 +553,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zze, zza> implements zzgb {
             private zza() {
                 super(zze.zze);
@@ -611,7 +611,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzf extends zzeo<zzf, zza> implements zzgb {
         private static final zzf zzo;
         private static volatile zzgj<zzf> zzp;
@@ -632,7 +632,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zzf, zza> implements zzgb {
             private zza() {
                 super(zzf.zzo);
@@ -691,7 +691,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzg extends zzeo<zzg, zza> implements zzgb {
         private static final zzg zzd;
         private static volatile zzgj<zzg> zze;
@@ -701,7 +701,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zzg, zza> implements zzgb {
             private zza() {
                 super(zzg.zzd);
@@ -759,7 +759,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzh extends zzeo<zzh, zza> implements zzgb {
         private static final zzh zzf;
         private static volatile zzgj<zzh> zzg;
@@ -771,7 +771,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zzh, zza> implements zzgb {
             private zza() {
                 super(zzh.zzf);
@@ -829,14 +829,14 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzi extends zzeo<zzi, zza> implements zzgb {
         private static final zzi zzd;
         private static volatile zzgj<zzi> zze;
         private zzew<zzb> zzc = zzeo.zzl();
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zzb extends zzeo<zzb, zza> implements zzgb {
             private static final zzb zzh;
             private static volatile zzgj<zzb> zzi;
@@ -850,7 +850,7 @@ public final class zzid {
             }
 
             /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static final class zza extends zzeo.zzb<zzb, zza> implements zzgb {
                 private zza() {
                     super(zzb.zzh);
@@ -911,7 +911,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zzi, zza> implements zzgb {
             private zza() {
                 super(zzi.zzd);
@@ -969,7 +969,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzj extends zzeo<zzj, zza> implements zzgb {
         private static final zzj zzg;
         private static volatile zzgj<zzj> zzh;
@@ -979,7 +979,7 @@ public final class zzid {
         private zze zzf;
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum zzb implements zzet {
             DELEGATE_NONE(0),
             NNAPI(1),
@@ -1013,7 +1013,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzb<zzj, zza> implements zzgb {
             private zza() {
                 super(zzj.zzg);
@@ -1071,7 +1071,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzk extends zzeo<zzk, zzb> implements zzgb {
         private static final zzk zzf;
         private static volatile zzgj<zzk> zzg;
@@ -1080,7 +1080,7 @@ public final class zzid {
         private float zze;
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum zza implements zzet {
             UNKNOWN_METRIC(0),
             MEAN_ABSOLUTE_ERROR(1),
@@ -1113,7 +1113,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zzb extends zzeo.zzb<zzk, zzb> implements zzgb {
             private zzb() {
                 super(zzk.zzf);
@@ -1171,7 +1171,7 @@ public final class zzid {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class zzl extends zzeo.zzc<zzl, zza> {
         private static final zzl zzf;
         private static volatile zzgj<zzl> zzg;
@@ -1179,7 +1179,7 @@ public final class zzid {
         private zzew<zzb> zzd = zzeo.zzl();
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zzb extends zzeo<zzb, zza> implements zzgb {
             private static final zzb zzg;
             private static volatile zzgj<zzb> zzh;
@@ -1192,7 +1192,7 @@ public final class zzid {
             }
 
             /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static final class zza extends zzeo.zzb<zzb, zza> implements zzgb {
                 private zza() {
                     super(zzb.zzg);
@@ -1253,7 +1253,7 @@ public final class zzid {
         }
 
         /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class zza extends zzeo.zzd<zzl, zza> {
             private zza() {
                 super(zzl.zzf);

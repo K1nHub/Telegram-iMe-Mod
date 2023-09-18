@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_accountDaysTTL extends TLObject {
     public static int constructor = -1194283041;
     public int days;

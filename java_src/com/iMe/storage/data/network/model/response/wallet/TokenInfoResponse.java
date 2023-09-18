@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenInfoResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenInfoResponse {
     private final boolean isCustom;
     private final TokenDetailedResponse token;

@@ -78,7 +78,7 @@ public class BaseLoadMoreModule {
         }
     }
 
-    public final void setupViewHolder$TMessagesProj_HA_public(BaseViewHolder viewHolder) {
+    public final void setupViewHolder$TMessagesProj_release(BaseViewHolder viewHolder) {
         Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -122,7 +122,7 @@ public class BaseLoadMoreModule {
         return !this.baseQuickAdapter.getData().isEmpty();
     }
 
-    public final void autoLoadMore$TMessagesProj_HA_public(int i) {
+    public final void autoLoadMore$TMessagesProj_release(int i) {
         LoadMoreStatus loadMoreStatus;
         if (this.isAutoLoadMore && hasLoadMoreView() && i >= this.baseQuickAdapter.getItemCount() - this.preLoadNumber && (loadMoreStatus = this.loadMoreStatus) == LoadMoreStatus.Complete && loadMoreStatus != LoadMoreStatus.Loading && this.mNextLoadEnable) {
             invokeLoadMoreListener();
@@ -131,9 +131,9 @@ public class BaseLoadMoreModule {
 
     private final void invokeLoadMoreListener() {
         this.loadMoreStatus = LoadMoreStatus.Loading;
-        RecyclerView mRecyclerView$TMessagesProj_HA_public = this.baseQuickAdapter.getMRecyclerView$TMessagesProj_HA_public();
-        if (mRecyclerView$TMessagesProj_HA_public != null) {
-            mRecyclerView$TMessagesProj_HA_public.post(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda2
+        RecyclerView mRecyclerView$TMessagesProj_release = this.baseQuickAdapter.getMRecyclerView$TMessagesProj_release();
+        if (mRecyclerView$TMessagesProj_release != null) {
+            mRecyclerView$TMessagesProj_release.post(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     BaseLoadMoreModule.invokeLoadMoreListener$lambda$3$lambda$2(BaseLoadMoreModule.this);
@@ -162,19 +162,19 @@ public class BaseLoadMoreModule {
             return;
         }
         this.mNextLoadEnable = false;
-        RecyclerView mRecyclerView$TMessagesProj_HA_public = this.baseQuickAdapter.getMRecyclerView$TMessagesProj_HA_public();
-        if (mRecyclerView$TMessagesProj_HA_public == null || (layoutManager = mRecyclerView$TMessagesProj_HA_public.getLayoutManager()) == null) {
+        RecyclerView mRecyclerView$TMessagesProj_release = this.baseQuickAdapter.getMRecyclerView$TMessagesProj_release();
+        if (mRecyclerView$TMessagesProj_release == null || (layoutManager = mRecyclerView$TMessagesProj_release.getLayoutManager()) == null) {
             return;
         }
         if (layoutManager instanceof LinearLayoutManager) {
-            mRecyclerView$TMessagesProj_HA_public.postDelayed(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda3
+            mRecyclerView$TMessagesProj_release.postDelayed(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     BaseLoadMoreModule.checkDisableLoadMoreIfNotFullPage$lambda$4(BaseLoadMoreModule.this, layoutManager);
                 }
             }, 50L);
         } else if (layoutManager instanceof StaggeredGridLayoutManager) {
-            mRecyclerView$TMessagesProj_HA_public.postDelayed(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda1
+            mRecyclerView$TMessagesProj_release.postDelayed(new Runnable() { // from class: com.chad.library.adapter.base.module.BaseLoadMoreModule$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     BaseLoadMoreModule.checkDisableLoadMoreIfNotFullPage$lambda$5(RecyclerView.LayoutManager.this, this);
@@ -264,7 +264,7 @@ public class BaseLoadMoreModule {
         setEnableLoadMore(true);
     }
 
-    public final void reset$TMessagesProj_HA_public() {
+    public final void reset$TMessagesProj_release() {
         if (this.mLoadMoreListener != null) {
             setEnableLoadMore(true);
             this.loadMoreStatus = LoadMoreStatus.Complete;

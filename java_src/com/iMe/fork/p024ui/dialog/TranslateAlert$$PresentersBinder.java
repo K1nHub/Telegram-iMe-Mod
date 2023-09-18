@@ -7,7 +7,7 @@ import moxy.MvpPresenter;
 import moxy.PresenterBinder;
 import moxy.presenter.PresenterField;
 /* renamed from: com.iMe.fork.ui.dialog.TranslateAlert$$PresentersBinder */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TranslateAlert$$PresentersBinder extends PresenterBinder<TranslateAlert> {
     @Override // moxy.PresenterBinder
     public List<PresenterField<? super TranslateAlert>> getPresenterFields() {
@@ -18,7 +18,7 @@ public class TranslateAlert$$PresentersBinder extends PresenterBinder<TranslateA
 
     /* compiled from: TranslateAlert$$PresentersBinder.java */
     /* renamed from: com.iMe.fork.ui.dialog.TranslateAlert$$PresentersBinder$TranslationPresenterBinder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class TranslationPresenterBinder extends PresenterField<TranslateAlert> {
         public TranslationPresenterBinder(TranslateAlert$$PresentersBinder translateAlert$$PresentersBinder) {
             super("translationPresenter", null, TranslationPresenter.class);

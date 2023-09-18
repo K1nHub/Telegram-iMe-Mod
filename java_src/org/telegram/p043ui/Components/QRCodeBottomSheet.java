@@ -32,7 +32,7 @@ import com.iMe.utils.extentions.common.ContextExtKt;
 import com.iMe.utils.extentions.common.ImageViewExtKt;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
@@ -40,7 +40,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.QRCodeBottomSheet */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class QRCodeBottomSheet extends BottomSheet {
     private String address;
     private TextView button2TextView;
@@ -113,7 +113,7 @@ public class QRCodeBottomSheet extends BottomSheet {
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), null, 0, Theme.getColor(Theme.key_sheet_other));
         this.optionsButton = actionBarMenuItem;
         actionBarMenuItem.setSubMenuOpenSide(2);
-        this.optionsButton.setIcon(C3558R.C3560drawable.ic_ab_other);
+        this.optionsButton.setIcon(C3473R.C3475drawable.ic_ab_other);
         this.optionsButton.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_player_actionBarSelector)));
         this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -121,10 +121,10 @@ public class QRCodeBottomSheet extends BottomSheet {
                 QRCodeBottomSheet.this.lambda$addOptionMenu$0(view);
             }
         });
-        this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3558R.string.AccDescrMoreOptions));
+        this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3473R.string.AccDescrMoreOptions));
         if (getType() == IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_RECEIVE) {
-            this.optionsButton.addSubItem(IdFabric$Menu.COPY, C3558R.C3560drawable.msg_copy, LocaleController.getInternalString(C3558R.string.wallet_transaction_details_action_copy_address));
-            this.optionsButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda3
+            this.optionsButton.addSubItem(IdFabric$Menu.COPY, C3473R.C3475drawable.msg_copy, LocaleController.getInternalString(C3473R.string.wallet_transaction_details_action_copy_address));
+            this.optionsButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda4
                 @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
                 public final void onItemClick(int i) {
                     QRCodeBottomSheet.this.lambda$addOptionMenu$1(i);
@@ -142,8 +142,12 @@ public class QRCodeBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$addOptionMenu$1(int i) {
         if (i == IdFabric$Menu.COPY) {
-            ContextExtKt.copyToClipboard(this.address, LocaleController.getString("TextCopied", C3558R.string.TextCopied));
+            copyAddressToClipboard();
         }
+    }
+
+    private void copyAddressToClipboard() {
+        ContextExtKt.copyToClipboard(this.address);
     }
 
     public QRCodeBottomSheet(final Context context, String str, final String str2, String str3, boolean z, int i) {
@@ -220,6 +224,14 @@ public class QRCodeBottomSheet extends BottomSheet {
         if (type == i2 || getType() == IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_BACKUP) {
             textView.setTextSize(1, 17.0f);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
+            if (getType() == i2) {
+                textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda2
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        QRCodeBottomSheet.this.lambda$new$2(view);
+                    }
+                });
+            }
         }
         linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 40, (getType() == i2 || getType() == IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_BACKUP) ? 16 : 8, 40, 8));
         TextView textView2 = new TextView(context);
@@ -229,14 +241,14 @@ public class QRCodeBottomSheet extends BottomSheet {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (getType() == IdFabric$CustomType.QR_BOTTOM_SHEET_LOGIN_TOKEN) {
-            textView2.setText(LocaleController.getString("Close", C3558R.string.Close));
+            textView2.setText(LocaleController.getString("Close", C3473R.string.Close));
         } else {
-            textView2.setText(LocaleController.getString("ShareQrCode", C3558R.string.ShareQrCode));
+            textView2.setText(LocaleController.getString("ShareQrCode", C3473R.string.ShareQrCode));
         }
-        textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda2
+        textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QRCodeBottomSheet.this.lambda$new$2(context, view);
+                QRCodeBottomSheet.this.lambda$new$3(context, view);
             }
         });
         linearLayout.addView(textView2, LayoutHelper.createLinear(-1, 48, 80, 16, 15, 16, 3));
@@ -246,11 +258,11 @@ public class QRCodeBottomSheet extends BottomSheet {
             textView3.setPadding(AndroidUtilities.m72dp(34), 0, AndroidUtilities.m72dp(34), 0);
             this.button2TextView.setGravity(17);
             this.button2TextView.setTextSize(1, 14.0f);
-            this.button2TextView.setText(LocaleController.getString("ShareLink", C3558R.string.ShareLink));
+            this.button2TextView.setText(LocaleController.getString("ShareLink", C3473R.string.ShareLink));
             this.button2TextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.QRCodeBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    QRCodeBottomSheet.lambda$new$3(str2, context, view);
+                    QRCodeBottomSheet.lambda$new$4(str2, context, view);
                 }
             });
             linearLayout.addView(this.button2TextView, LayoutHelper.createLinear(-1, 48, 80, 16, 3, 16, 16));
@@ -262,7 +274,12 @@ public class QRCodeBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(Context context, View view) {
+    public /* synthetic */ void lambda$new$2(View view) {
+        copyAddressToClipboard();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$3(Context context, View view) {
         if (getType() == IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_BACKUP || getType() == IdFabric$CustomType.QR_BOTTOM_SHEET_LOGIN_TOKEN) {
             dismiss();
             return;
@@ -295,11 +312,11 @@ public class QRCodeBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$3(String str, Context context, View view) {
+    public static /* synthetic */ void lambda$new$4(String str, Context context, View view) {
         Intent intent = new Intent("android.intent.action.SEND");
         intent.setType("text/plain");
         intent.putExtra("android.intent.extra.TEXT", str);
-        Intent createChooser = Intent.createChooser(intent, LocaleController.getString("ShareLink", C3558R.string.ShareLink));
+        Intent createChooser = Intent.createChooser(intent, LocaleController.getString("ShareLink", C3473R.string.ShareLink));
         createChooser.setFlags(268435456);
         context.startActivity(createChooser);
     }
@@ -311,7 +328,7 @@ public class QRCodeBottomSheet extends BottomSheet {
             hashMap.put(EncodeHintType.MARGIN, 0);
             QRCodeWriter qRCodeWriter = new QRCodeWriter();
             if (!getCustomQrCenterImageUrl().isEmpty()) {
-                qRCodeWriter.setQrImageRes(C3558R.C3560drawable.fork_bg_white_circle);
+                qRCodeWriter.setQrImageRes(C3473R.C3475drawable.fork_bg_white_circle);
             } else if (getCustomQrCenterImageRes() != -1) {
                 qRCodeWriter.setQrImageRes(getCustomQrCenterImageRes());
             }

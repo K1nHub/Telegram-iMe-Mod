@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_decryptedMessageMediaDocument extends TLRPC$DecryptedMessageMedia {
     public static int constructor = 1790809986;
     public byte[] thumb;
@@ -12,7 +12,7 @@ public class TLRPC$TL_decryptedMessageMediaDocument extends TLRPC$DecryptedMessa
         this.mime_type = abstractSerializedData.readString(z);
         this.size = abstractSerializedData.readInt64(z);
         this.key = abstractSerializedData.readByteArray(z);
-        this.f1535iv = abstractSerializedData.readByteArray(z);
+        this.f1526iv = abstractSerializedData.readByteArray(z);
         int readInt32 = abstractSerializedData.readInt32(z);
         if (readInt32 != 481674261) {
             if (z) {
@@ -40,7 +40,7 @@ public class TLRPC$TL_decryptedMessageMediaDocument extends TLRPC$DecryptedMessa
         abstractSerializedData.writeString(this.mime_type);
         abstractSerializedData.writeInt64(this.size);
         abstractSerializedData.writeByteArray(this.key);
-        abstractSerializedData.writeByteArray(this.f1535iv);
+        abstractSerializedData.writeByteArray(this.f1526iv);
         abstractSerializedData.writeInt32(481674261);
         int size = this.attributes.size();
         abstractSerializedData.writeInt32(size);

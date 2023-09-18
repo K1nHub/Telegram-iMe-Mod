@@ -4,7 +4,7 @@ import com.iMe.p031ui.smartpanel.model.SmartPanelTabContent;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TabBotNameItem.kt */
 /* renamed from: com.iMe.ui.smartpanel.model.content.TabBotNameItem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TabBotNameItem implements SmartPanelTabContent {
     private final String botName;
     private final SmartPanelTabContent.Type contentType;

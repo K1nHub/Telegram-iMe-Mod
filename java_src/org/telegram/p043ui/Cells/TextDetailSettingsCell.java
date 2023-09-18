@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.TextDetailSettingsCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextDetailSettingsCell extends FrameLayout {
     private ImageView imageView;
     private boolean multiline;

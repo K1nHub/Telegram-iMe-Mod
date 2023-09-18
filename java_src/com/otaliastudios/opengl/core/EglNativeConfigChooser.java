@@ -14,14 +14,14 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
 import org.webrtc.EglBase;
 /* compiled from: EglNativeConfigChooser.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class EglNativeConfigChooser {
     static {
         new Companion(null);
     }
 
     /* compiled from: EglNativeConfigChooser.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

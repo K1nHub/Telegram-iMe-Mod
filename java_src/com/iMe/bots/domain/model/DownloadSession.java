@@ -3,7 +3,7 @@ package com.iMe.bots.domain.model;
 import java.io.File;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DownloadSession.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DownloadSession {
     private final String botId;
     private final File file;

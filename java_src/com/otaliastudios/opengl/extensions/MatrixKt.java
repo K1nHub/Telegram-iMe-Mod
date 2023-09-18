@@ -3,7 +3,7 @@ package com.otaliastudios.opengl.extensions;
 import com.otaliastudios.opengl.internal.MiscKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Matrix.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MatrixKt {
     private static final void checkSize(float[] fArr) {
         if (fArr.length != 16) {

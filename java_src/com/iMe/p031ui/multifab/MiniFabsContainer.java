@@ -27,7 +27,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: MiniFabsContainer.kt */
 /* renamed from: com.iMe.ui.multifab.MiniFabsContainer */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MiniFabsContainer extends LinearLayout {
     private final Callbacks$Callback1<FilterFab> listener;
 
@@ -113,7 +113,7 @@ public final class MiniFabsContainer extends LinearLayout {
 
     /* compiled from: MiniFabsContainer.kt */
     /* renamed from: com.iMe.ui.multifab.MiniFabsContainer$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

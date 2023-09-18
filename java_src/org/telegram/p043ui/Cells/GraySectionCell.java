@@ -18,7 +18,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Cells.GraySectionCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class GraySectionCell extends FrameLayout {
     private final Theme.ResourcesProvider resourcesProvider;
     private AnimatedTextView rightTextView;

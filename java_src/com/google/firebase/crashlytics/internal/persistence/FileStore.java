@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.persistence;
 
 import java.io.File;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface FileStore {
     File getFilesDir();
 

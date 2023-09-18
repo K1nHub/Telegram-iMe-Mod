@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import javax.net.ssl.SSLHandshakeException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Datastore {
     static final Set<String> WHITE_LISTED_HEADERS = new HashSet(Arrays.asList("date", "x-google-backends", "x-google-netmon-label", "x-google-service", "x-google-gfe-request-trace"));
     private final FirestoreChannel channel;
@@ -46,7 +46,7 @@ public class Datastore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.Datastore$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10281 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$FirebaseFirestoreException$Code */

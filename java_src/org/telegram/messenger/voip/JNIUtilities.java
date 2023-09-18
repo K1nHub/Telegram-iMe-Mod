@@ -17,7 +17,7 @@ import java.net.NetworkInterface;
 import java.util.Enumeration;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class JNIUtilities {
     public static int getMaxVideoResolution() {
         return 320;

@@ -1,7 +1,7 @@
 package org.solovyev.android.checkout;
 
 import org.telegram.messenger.XiaomiUtilities;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ResponseCodes {
     public static String toString(int i) {
         switch (i) {

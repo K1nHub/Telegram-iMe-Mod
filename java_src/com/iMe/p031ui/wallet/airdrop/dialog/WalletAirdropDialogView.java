@@ -6,11 +6,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletAirdropDialogView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialogView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletAirdropDialogView extends BaseView {
     void configureDialogState(boolean z, boolean z2, AirdropStep airdropStep, int i);
-
-    void onAcceptAirdrop();
-
-    void onSuccessClaimAirdrop(String str, String str2);
 }

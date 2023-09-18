@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 /* renamed from: org.telegram.ui.Components.ChatActivityEnterTopView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ChatActivityEnterTopView extends FrameLayout {
     private boolean editMode;
     private EditView editView;
@@ -49,7 +49,7 @@ public class ChatActivityEnterTopView extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.Components.ChatActivityEnterTopView$EditView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class EditView extends LinearLayout {
         private EditViewButton[] buttons;
 
@@ -78,7 +78,7 @@ public class ChatActivityEnterTopView extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.Components.ChatActivityEnterTopView$EditViewButton */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class EditViewButton extends LinearLayout {
         private boolean editButton;
         private ImageView imageView;

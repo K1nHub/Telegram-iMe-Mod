@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.cryptobox;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxCreationRulesRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxCreationRulesRequest {
     private final String network;
 

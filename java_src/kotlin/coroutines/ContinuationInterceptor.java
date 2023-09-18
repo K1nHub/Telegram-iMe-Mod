@@ -3,7 +3,7 @@ package kotlin.coroutines;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ContinuationInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface ContinuationInterceptor extends CoroutineContext.Element {
     public static final Key Key = Key.$$INSTANCE;
 
@@ -12,7 +12,7 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
     void releaseInterceptedContinuation(Continuation<?> continuation);
 
     /* compiled from: ContinuationInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Key implements CoroutineContext.Key<ContinuationInterceptor> {
         static final /* synthetic */ Key $$INSTANCE = new Key();
 
@@ -21,7 +21,7 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
     }
 
     /* compiled from: ContinuationInterceptor.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DefaultImpls {
         public static <E extends CoroutineContext.Element> E get(ContinuationInterceptor continuationInterceptor, CoroutineContext.Key<E> key) {
             Intrinsics.checkNotNullParameter(key, "key");

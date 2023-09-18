@@ -2,7 +2,7 @@ package com.google.firebase.firestore.local;
 
 import android.util.SparseArray;
 import com.google.firebase.firestore.util.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface LruDelegate {
     void forEachOrphanedDocumentSequenceNumber(Consumer<Long> consumer);
 

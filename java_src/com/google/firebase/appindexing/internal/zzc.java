@@ -11,7 +11,7 @@ import com.google.firebase.appindexing.Action;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 @SafeParcelable.Class(creator = "ActionImplCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzc extends AbstractSafeParcelable implements Action {
     public static final Parcelable.Creator<zzc> CREATOR = new zzd();
     @SafeParcelable.Field(getter = "getActionType", m797id = 1)

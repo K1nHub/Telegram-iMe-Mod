@@ -1,5 +1,5 @@
 package net.lingala.zip4j.crypto.PBKDF2;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PBKDF2Parameters {
     protected String hashAlgorithm;
     protected int iterationCount;

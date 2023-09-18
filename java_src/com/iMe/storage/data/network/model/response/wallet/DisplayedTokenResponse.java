@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DisplayedTokensResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DisplayedTokenResponse {
     private final boolean isVisible;
     private final TokenDetailedResponse token;

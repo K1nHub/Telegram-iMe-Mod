@@ -14,14 +14,14 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: NoPermissionMusicCell.kt */
 /* renamed from: com.iMe.ui.music.NoPermissionMusicCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NoPermissionMusicCell extends LinearLayout {
     private final int buttonDefaultColor;
     private final int buttonPressedColor;
@@ -63,7 +63,7 @@ public final class NoPermissionMusicCell extends LinearLayout {
                 int m73dp = AndroidUtilities.m73dp(100.0f);
                 i2 = noPermissionMusicCell.iconCircleColor;
                 imageView.setBackground(Theme.createCircleDrawable(m73dp, Theme.getColor(i2)));
-                imageView.setImageResource(C3558R.C3560drawable.fork_music_device_no_storage_permission);
+                imageView.setImageResource(C3473R.C3475drawable.fork_music_device_no_storage_permission);
                 return imageView;
             }
         });
@@ -82,7 +82,7 @@ public final class NoPermissionMusicCell extends LinearLayout {
                 TextView textView = new TextView(context);
                 NoPermissionMusicCell noPermissionMusicCell = this;
                 textView.setGravity(17);
-                textView.setText(LocaleController.getInternalString(C3558R.string.music_device_no_permission_title));
+                textView.setText(LocaleController.getInternalString(C3473R.string.music_device_no_permission_title));
                 textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 i = noPermissionMusicCell.titleColor;
                 textView.setTextColor(Theme.getColor(i));
@@ -105,7 +105,7 @@ public final class NoPermissionMusicCell extends LinearLayout {
                 TextView textView = new TextView(context);
                 NoPermissionMusicCell noPermissionMusicCell = this;
                 textView.setGravity(17);
-                textView.setText(LocaleController.getInternalString(C3558R.string.music_device_no_permission_subtitle));
+                textView.setText(LocaleController.getInternalString(C3473R.string.music_device_no_permission_subtitle));
                 i = noPermissionMusicCell.subtitleColor;
                 textView.setTextColor(Theme.getColor(i));
                 textView.setTextSize(1, 14.0f);

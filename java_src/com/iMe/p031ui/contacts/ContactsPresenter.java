@@ -21,7 +21,7 @@ import timber.log.Timber;
 /* compiled from: ContactsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.contacts.ContactsPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ContactsPresenter extends BasePresenter<ContactsView> {
     private final ContactsInteractor contactInteractor;
     private final SchedulersProvider schedulersProvider;
@@ -71,7 +71,7 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
                 this.deleteAction();
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…Error.invoke()\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

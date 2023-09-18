@@ -1,5 +1,5 @@
 package com.google.common.base;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CharMatcher implements Predicate<Character> {
     public abstract boolean matches(char c);
 
@@ -46,7 +46,7 @@ public abstract class CharMatcher implements Predicate<Character> {
         return String.copyValueOf(cArr);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static abstract class FastMatcher extends CharMatcher {
         FastMatcher() {
         }
@@ -58,7 +58,7 @@ public abstract class CharMatcher implements Predicate<Character> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static abstract class NamedFastMatcher extends FastMatcher {
         private final String description;
 
@@ -71,7 +71,7 @@ public abstract class CharMatcher implements Predicate<Character> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class None extends NamedFastMatcher {
         static final None INSTANCE = new None();
 
@@ -91,7 +91,7 @@ public abstract class CharMatcher implements Predicate<Character> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Whitespace extends NamedFastMatcher {
         static final int SHIFT = Integer.numberOfLeadingZeros(31);
         static final Whitespace INSTANCE = new Whitespace();
@@ -107,7 +107,7 @@ public abstract class CharMatcher implements Predicate<Character> {
     }
 
     /* renamed from: com.google.common.base.CharMatcher$Is */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class C0892Is extends FastMatcher {
         private final char match;
 

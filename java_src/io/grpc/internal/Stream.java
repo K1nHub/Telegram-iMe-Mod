@@ -2,7 +2,7 @@ package io.grpc.internal;
 
 import io.grpc.Compressor;
 import java.io.InputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Stream {
     void flush();
 

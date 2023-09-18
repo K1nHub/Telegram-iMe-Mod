@@ -19,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WatchChangeAggregator {
     private final TargetMetadataProvider targetMetadataProvider;
     private final Map<Integer, TargetState> targetStates = new HashMap();
@@ -27,7 +27,7 @@ public class WatchChangeAggregator {
     private Map<DocumentKey, Set<Integer>> pendingDocumentTargetMapping = new HashMap();
     private Set<Integer> pendingTargetResets = new HashSet();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface TargetMetadataProvider {
         ImmutableSortedSet<DocumentKey> getRemoteKeysForTarget(int i);
 
@@ -94,7 +94,7 @@ public class WatchChangeAggregator {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.WatchChangeAggregator$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10361 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$remote$WatchChange$WatchTargetChangeType */

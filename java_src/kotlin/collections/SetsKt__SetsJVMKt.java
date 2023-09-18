@@ -5,7 +5,7 @@ import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SetsJVM.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SetsKt__SetsJVMKt {
     public static <T> Set<T> setOf(T t) {
         Set<T> singleton = Collections.singleton(t);

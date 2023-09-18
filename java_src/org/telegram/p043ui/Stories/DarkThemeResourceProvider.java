@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Stories.DarkThemeResourceProvider */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class DarkThemeResourceProvider implements Theme.ResourcesProvider {
     Paint actionPaint;
     ColorFilter animatedEmojiColorFilter;

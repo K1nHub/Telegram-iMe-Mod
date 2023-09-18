@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ExecutorScheduler extends Scheduler {
     static final Scheduler HELPER = Schedulers.single();
     final Executor executor;
@@ -91,7 +91,7 @@ public final class ExecutorScheduler extends Scheduler {
         return super.schedulePeriodicallyDirect(runnable, j, j2, timeUnit);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ExecutorWorker extends Scheduler.Worker implements Runnable {
         volatile boolean disposed;
         final Executor executor;
@@ -235,7 +235,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class BooleanRunnable extends AtomicBoolean implements Runnable, Disposable {
             final Runnable actual;
 
@@ -266,7 +266,7 @@ public final class ExecutorScheduler extends Scheduler {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         final class SequentialDispose implements Runnable {
             private final Runnable decoratedRun;
             private final SequentialDisposable mar;
@@ -283,7 +283,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class InterruptibleRunnable extends AtomicInteger implements Runnable, Disposable {
             final Runnable run;
             final DisposableContainer tasks;
@@ -367,7 +367,7 @@ public final class ExecutorScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class DelayedRunnable extends AtomicReference<Runnable> implements Runnable, Disposable {
         final SequentialDisposable direct;
         final SequentialDisposable timed;
@@ -412,19 +412,19 @@ public final class ExecutorScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     final class DelayedDispose implements Runnable {
 
         /* renamed from: dr */
-        private final DelayedRunnable f570dr;
+        private final DelayedRunnable f561dr;
 
         DelayedDispose(DelayedRunnable delayedRunnable) {
-            this.f570dr = delayedRunnable;
+            this.f561dr = delayedRunnable;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            DelayedRunnable delayedRunnable = this.f570dr;
+            DelayedRunnable delayedRunnable = this.f561dr;
             delayedRunnable.direct.replace(ExecutorScheduler.this.scheduleDirect(delayedRunnable));
         }
     }

@@ -1,5 +1,5 @@
 package io.reactivex.internal.observers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BlockingLastObserver<T> extends BlockingBaseObserver<T> {
     @Override // io.reactivex.Observer
     public void onNext(T t) {

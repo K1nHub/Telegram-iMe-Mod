@@ -3,7 +3,7 @@ package io.grpc;
 import com.google.common.base.Preconditions;
 import io.grpc.Status;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Contexts {
     public static Status statusFromCancelled(Context context) {
         Preconditions.checkNotNull(context, "context must not be null");

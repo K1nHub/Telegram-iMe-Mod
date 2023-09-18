@@ -5,7 +5,7 @@ import com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.trustwallet.walletconnect.models.session.WCSession;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletConnectHelper {
     static {
         new WalletConnectHelper();

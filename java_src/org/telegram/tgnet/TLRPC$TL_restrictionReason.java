@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_restrictionReason extends TLObject {
     public static int constructor = -797791052;
     public String platform;

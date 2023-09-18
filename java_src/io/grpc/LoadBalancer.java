@@ -12,17 +12,17 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class LoadBalancer {
     @Deprecated
     public static final Attributes.Key<Map<String, ?>> ATTR_LOAD_BALANCING_CONFIG = Attributes.Key.create("io.grpc.LoadBalancer.loadBalancingConfig");
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Factory {
         public abstract LoadBalancer newLoadBalancer(Helper helper);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class PickSubchannelArgs {
         public abstract CallOptions getCallOptions();
 
@@ -31,7 +31,7 @@ public abstract class LoadBalancer {
         public abstract MethodDescriptor<?, ?> getMethodDescriptor();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class SubchannelPicker {
         public abstract PickResult pickSubchannel(PickSubchannelArgs pickSubchannelArgs);
 
@@ -40,7 +40,7 @@ public abstract class LoadBalancer {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface SubchannelStateListener {
         void onSubchannelState(ConnectivityStateInfo connectivityStateInfo);
     }
@@ -58,7 +58,7 @@ public abstract class LoadBalancer {
 
     public abstract void shutdown();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ResolvedAddresses {
         private final List<EquivalentAddressGroup> addresses;
         private final Attributes attributes;
@@ -86,7 +86,7 @@ public abstract class LoadBalancer {
             return this.loadBalancingPolicyConfig;
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder {
             private List<EquivalentAddressGroup> addresses;
             private Attributes attributes = Attributes.EMPTY;
@@ -132,9 +132,9 @@ public abstract class LoadBalancer {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class PickResult {
-        private static final PickResult NO_RESULT = new PickResult(null, null, Status.f526OK, false);
+        private static final PickResult NO_RESULT = new PickResult(null, null, Status.f517OK, false);
         private final boolean drop;
         private final Status status;
         private final ClientStreamTracer.Factory streamTracerFactory;
@@ -148,7 +148,7 @@ public abstract class LoadBalancer {
         }
 
         public static PickResult withSubchannel(Subchannel subchannel, ClientStreamTracer.Factory factory) {
-            return new PickResult((Subchannel) Preconditions.checkNotNull(subchannel, "subchannel"), factory, Status.f526OK, false);
+            return new PickResult((Subchannel) Preconditions.checkNotNull(subchannel, "subchannel"), factory, Status.f517OK, false);
         }
 
         public static PickResult withSubchannel(Subchannel subchannel) {
@@ -202,7 +202,7 @@ public abstract class LoadBalancer {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class CreateSubchannelArgs {
         private final List<EquivalentAddressGroup> addrs;
         private final Attributes attrs;
@@ -230,7 +230,7 @@ public abstract class LoadBalancer {
             return MoreObjects.toStringHelper(this).add("addrs", this.addrs).add("attrs", this.attrs).add("customOptions", Arrays.deepToString(this.customOptions)).toString();
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder {
             private List<EquivalentAddressGroup> addrs;
             private Attributes attrs = Attributes.EMPTY;
@@ -261,7 +261,7 @@ public abstract class LoadBalancer {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Helper {
         public abstract void updateBalancingState(ConnectivityState connectivityState, SubchannelPicker subchannelPicker);
 
@@ -278,7 +278,7 @@ public abstract class LoadBalancer {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Subchannel {
         public abstract Attributes getAttributes();
 

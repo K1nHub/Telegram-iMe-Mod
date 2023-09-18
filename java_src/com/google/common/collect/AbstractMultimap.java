@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
     private transient Map<K, Collection<V>> asMap;
     private transient Collection<Map.Entry<K, V>> entries;
@@ -58,7 +58,7 @@ public abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
         return collection;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     class Entries extends Multimaps.Entries<K, V> {
         /* JADX INFO: Access modifiers changed from: package-private */
         public Entries() {
@@ -97,7 +97,7 @@ public abstract class AbstractMultimap<K, V> implements Multimap<K, V> {
         return collection;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     class Values extends AbstractCollection<V> {
         /* JADX INFO: Access modifiers changed from: package-private */
         public Values() {

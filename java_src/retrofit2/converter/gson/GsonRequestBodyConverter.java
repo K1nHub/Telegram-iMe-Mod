@@ -10,7 +10,7 @@ import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okio.Buffer;
 import retrofit2.Converter;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 final class GsonRequestBodyConverter<T> implements Converter<T, RequestBody> {
     private static final MediaType MEDIA_TYPE = MediaType.get("application/json; charset=UTF-8");
     private static final Charset UTF_8 = Charset.forName("UTF-8");

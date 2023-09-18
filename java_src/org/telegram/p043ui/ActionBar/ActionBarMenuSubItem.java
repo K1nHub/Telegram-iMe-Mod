@@ -18,7 +18,7 @@ import org.telegram.p043ui.Components.CheckBox2;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* renamed from: org.telegram.ui.ActionBar.ActionBarMenuSubItem */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ActionBarMenuSubItem extends FrameLayout {
     boolean bottom;
     private CheckBox2 checkView;

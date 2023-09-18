@@ -24,7 +24,7 @@ import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -36,7 +36,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Premium.LimitPreviewView;
 import org.telegram.p043ui.Components.Premium.PremiumGradient;
 /* renamed from: org.telegram.ui.Components.Premium.LimitPreviewView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LimitPreviewView extends LinearLayout {
     boolean animationCanPlay;
     TextView defaultCount;
@@ -78,7 +78,7 @@ public class LimitPreviewView extends LinearLayout {
         final FrameLayout frameLayout = new FrameLayout(context);
         final TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString("LimitFree", C3558R.string.LimitFree));
+        textView.setText(LocaleController.getString("LimitFree", C3473R.string.LimitFree));
         textView.setGravity(16);
         int i4 = Theme.key_windowBackgroundWhiteBlackText;
         textView.setTextColor(Theme.getColor(i4, resourcesProvider));
@@ -98,7 +98,7 @@ public class LimitPreviewView extends LinearLayout {
         final FrameLayout frameLayout2 = new FrameLayout(context);
         final TextView textView3 = new TextView(context);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("LimitPremium", C3558R.string.LimitPremium));
+        textView3.setText(LocaleController.getString("LimitPremium", C3473R.string.LimitPremium));
         textView3.setGravity(16);
         textView3.setTextColor(-1);
         TextView textView4 = new TextView(context);
@@ -356,7 +356,7 @@ public class LimitPreviewView extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Premium.LimitPreviewView$CounterView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class CounterView extends View {
         ArrayList<AnimatedLayout> animatedLayouts;
         StaticLayout animatedStableLayout;
@@ -461,13 +461,13 @@ public class LimitPreviewView extends LinearLayout {
                 AnimatedLayout animatedLayout = this.animatedLayouts.get(i);
                 canvas.save();
                 if (animatedLayout.direction) {
-                    canvas.translate(animatedLayout.f1827x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1818x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i2 = 0; i2 < animatedLayout.staticLayouts.size(); i2++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, measuredHeight);
                         animatedLayout.staticLayouts.get(i2).draw(canvas);
                     }
                 } else {
-                    canvas.translate(animatedLayout.f1827x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1818x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i3 = 0; i3 < animatedLayout.staticLayouts.size(); i3++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, -measuredHeight);
                         animatedLayout.staticLayouts.get(i3).draw(canvas);
@@ -495,7 +495,7 @@ public class LimitPreviewView extends LinearLayout {
                 if (Character.isDigit(this.text.charAt(i2))) {
                     AnimatedLayout animatedLayout = new AnimatedLayout();
                     this.animatedLayouts.add(animatedLayout);
-                    animatedLayout.f1827x = this.textLayout.getSecondaryHorizontal(i2);
+                    animatedLayout.f1818x = this.textLayout.getSecondaryHorizontal(i2);
                     animatedLayout.direction = z;
                     if (i >= 1) {
                         z = !z;
@@ -572,7 +572,7 @@ public class LimitPreviewView extends LinearLayout {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: org.telegram.ui.Components.Premium.LimitPreviewView$CounterView$AnimatedLayout */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public class AnimatedLayout {
             public boolean direction;
             float progress;
@@ -580,7 +580,7 @@ public class LimitPreviewView extends LinearLayout {
             ValueAnimator valueAnimator;
 
             /* renamed from: x */
-            float f1827x;
+            float f1818x;
 
             private AnimatedLayout(CounterView counterView) {
                 this.staticLayouts = new ArrayList<>();

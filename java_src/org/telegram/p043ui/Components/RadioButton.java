@@ -14,7 +14,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 /* renamed from: org.telegram.ui.Components.RadioButton */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class RadioButton extends View {
     private static Paint checkedPaint;
     private static Paint eraser;

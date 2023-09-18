@@ -2,7 +2,7 @@ package com.iMe.storage.data.utils.extentions;
 
 import java.util.concurrent.TimeUnit;
 /* compiled from: DateExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DateExtKt {
     public static final boolean isMinutesAgo(long j, long j2) {
         return now() - j2 > TimeUnit.MINUTES.toMillis(j);

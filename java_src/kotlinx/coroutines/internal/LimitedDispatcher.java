@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.DefaultExecutorKt;
 import kotlinx.coroutines.Delay;
 /* compiled from: LimitedDispatcher.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class LimitedDispatcher extends CoroutineDispatcher implements Runnable, Delay {
     private final /* synthetic */ Delay $$delegate_0;
     private final CoroutineDispatcher dispatcher;
@@ -18,8 +18,8 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo1691scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
-        this.$$delegate_0.mo1691scheduleResumeAfterDelay(j, cancellableContinuation);
+    public void mo1689scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+        this.$$delegate_0.mo1689scheduleResumeAfterDelay(j, cancellableContinuation);
     }
 
     public LimitedDispatcher(CoroutineDispatcher coroutineDispatcher, int i) {
@@ -83,7 +83,7 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
             boolean r2 = r2.isDispatchNeeded(r4)
             if (r2 == 0) goto L2
             kotlinx.coroutines.CoroutineDispatcher r0 = r4.dispatcher
-            r0.mo1690dispatch(r4, r4)
+            r0.mo1688dispatch(r4, r4)
             return
         L2a:
             java.lang.Object r1 = r4.workerAllocationLock
@@ -113,11 +113,11 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Runn
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1690dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (addAndTryDispatching(runnable) || !tryAllocateWorker()) {
             return;
         }
-        this.dispatcher.mo1690dispatch(this, this);
+        this.dispatcher.mo1688dispatch(this, this);
     }
 
     private final boolean tryAllocateWorker() {

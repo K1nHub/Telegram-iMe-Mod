@@ -12,7 +12,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import org.koin.core.module.Module;
 /* compiled from: PresentationComponent.kt */
 /* renamed from: com.iMe.di.PresentationComponentKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PresentationComponentKt {
     private static List<Module> presentationModules;
 

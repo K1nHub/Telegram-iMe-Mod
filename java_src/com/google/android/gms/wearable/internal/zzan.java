@@ -21,7 +21,7 @@ import com.google.android.gms.wearable.CapabilityClient;
 import com.google.android.gms.wearable.CapabilityInfo;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzan extends CapabilityClient {
     public static final /* synthetic */ int zza = 0;
     private final CapabilityApi zzb;

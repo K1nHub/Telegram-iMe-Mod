@@ -8,10 +8,10 @@ import android.view.ViewParent;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ViewUtils {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnApplyWindowInsetsListener {
         WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat, RelativePadding relativePadding);
     }
@@ -46,7 +46,7 @@ public class ViewUtils {
         return TypedValue.applyDimension(1, i, context.getResources().getDisplayMetrics());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class RelativePadding {
         public int bottom;
         public int end;

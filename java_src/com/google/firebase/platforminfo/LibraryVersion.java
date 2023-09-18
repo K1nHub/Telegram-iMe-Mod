@@ -3,7 +3,7 @@ package com.google.firebase.platforminfo;
 import com.google.auto.value.AutoValue;
 /* JADX INFO: Access modifiers changed from: package-private */
 @AutoValue
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class LibraryVersion {
     public abstract String getLibraryName();
 

@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.social.SocialNetworkDao_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialNetworkDao_Impl implements SocialNetworkDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<SocialNetworkDb> __insertionAdapterOfSocialNetworkDb;

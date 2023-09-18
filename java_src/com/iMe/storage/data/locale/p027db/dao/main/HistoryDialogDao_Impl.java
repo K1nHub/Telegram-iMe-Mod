@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.HistoryDialogDao_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HistoryDialogDao_Impl extends HistoryDialogDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<HistoryDialogDb> __insertionAdapterOfHistoryDialogDb;

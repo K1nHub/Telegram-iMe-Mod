@@ -20,7 +20,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: KiklikoGifView.kt */
 /* renamed from: com.iMe.fork.ui.view.KiklikoGifView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class KiklikoGifView extends FrameLayout {
     private File file;
     private GifResponse gif;

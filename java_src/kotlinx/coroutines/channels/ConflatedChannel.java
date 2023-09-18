@@ -10,7 +10,7 @@ import kotlinx.coroutines.internal.OnUndeliveredElementKt;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.UndeliveredElementException;
 /* compiled from: ConflatedChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ConflatedChannel<E> extends AbstractChannel<E> {
     private final ReentrantLock lock;
     private Object value;

@@ -1406,8 +1406,8 @@
     <string name="wallet_backup_ready">Готовий йти!</string>
     <string name="wallet_backup_ready_info">Все налаштовано. Тепер у вас є гаманець, який контролюєте тільки ви - без посередників і банкірів.</string>
     <string name="wallet_backup_scan_qr">Скан QR</string>
-    <string name="wallet_backup_secret_words">24 Секретні Слова</string>
-    <string name="wallet_backup_secret_words_info">"Запишіть ці 24 слова в правильному порядку та зберігайте їх у надійному місці.
+    <string name="wallet_backup_secret_words">Секретні Слова</string>
+    <string name="wallet_backup_secret_words_info">"Запишіть ці слова в правильному порядку та зберігайте їх у надійному місці.
 
 Використовуйте ці секретні слова для відновлення доступу до вашого гаманця, у разі втрати пароля або девайсу."</string>
     <string name="wallet_backup_secret_words_pdf">Зберегти як PDF</string>
@@ -1871,7 +1871,7 @@ iMe Wallet."</string>
     <string name="wallet_swap_process_confirm_approve_alert_description">Ви впевнені, що хочете підтвердити %1$s?</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">Схвалити підтвердження</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">Обмін</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">Ви впевнені, що хочете виконати обмін %1$s %2$s to %3$s %4$s?</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">Ви впевнені, що хочете здійснити обмін **%1$s %2$s** на **%3$s %4$s** з комісією **%5$s %6$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">Підтвердити Обмін</string>
     <string name="wallet_swap_process_description">Ви можете обмінювати токени один з одним через смарт-контракти, використовуючи децентралізовану біржу Uniswap для мереж Ethereum та Polygon</string>
     <string name="wallet_swap_process_diff_tokens_validation">Будь ласка, оберіть різні токени для отримання та надсилання</string>
@@ -1895,7 +1895,7 @@ iMe Wallet."</string>
     <string name="wallet_swap_process_what_is_approve">Що таке схвалення токена?</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">Схвалення – це разова транзакція для токенів, необхідна на початок обміну. Цією операцією ви даєте дозвіл на обмін вашого токена за протоколом DEX з використанням смарт-контрактів. Оскільки ця операція відбувається у блокчейні, буде утримано плату за Газ. Повторно схвалювати поточний токен не потрібно.</string>
     <string name="wallet_swap_protocols_1inch_description">DEX агрегатор з найкращими цінами</string>
-    <string name="wallet_swap_protocols_1inch_long_description">Ви можете обмінювати токени один з одним через смарт-контракти, використовуючи DEX агрегатор за найкращими цінами для мереж Ethereum, BNB Chain, Polygon</string>
+    <string name="wallet_swap_protocols_1inch_long_description">Ви можете обмінювати токени один з одним через смарт-контракти, використовуючи DEX агрегатор за найкращими цінами для мереж Ethereum, BNB Chain, Fantom, Polygon</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">Міст</string>
     <string name="wallet_swap_protocols_header_title">Децентралізовані обмінники</string>
     <string name="wallet_swap_protocols_pancake_swap_description">DEX протокол на базі BNB Chain</string>

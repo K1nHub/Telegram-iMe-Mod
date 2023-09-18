@@ -28,7 +28,7 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -52,7 +52,7 @@ import org.telegram.tgnet.TLRPC$PhotoSize;
 import org.telegram.tgnet.TLRPC$StickerSet;
 import org.telegram.tgnet.TLRPC$TL_messages_stickerSet;
 /* renamed from: org.telegram.ui.Cells.StickerSetCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StickerSetCell extends FrameLayout {
     private TextView addButtonView;
     private CheckBox2 checkBox;
@@ -116,15 +116,15 @@ public class StickerSetCell extends FrameLayout {
                 ImageView imageView2 = this.optionsButton;
                 int i2 = Theme.key_stickers_menu;
                 imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
-                this.optionsButton.setImageResource(C3558R.C3560drawable.msg_actions);
-                this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3558R.string.AccDescrMoreOptions));
+                this.optionsButton.setImageResource(C3473R.C3475drawable.msg_actions);
+                this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3473R.string.AccDescrMoreOptions));
                 addView(this.optionsButton, LayoutHelper.createFrame(40, 40, (LocaleController.isRTL ? 3 : 5) | 16));
                 ImageView imageView3 = new ImageView(context);
                 this.reorderButton = imageView3;
                 imageView3.setAlpha(BitmapDescriptorFactory.HUE_RED);
                 this.reorderButton.setVisibility(8);
                 this.reorderButton.setScaleType(ImageView.ScaleType.CENTER);
-                this.reorderButton.setImageResource(C3558R.C3560drawable.list_reorder);
+                this.reorderButton.setImageResource(C3473R.C3475drawable.list_reorder);
                 this.reorderButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
                 addView(this.reorderButton, LayoutHelper.createFrameRelatively(58.0f, 58.0f, 8388613));
                 CheckBox2 checkBox2 = new CheckBox2(context, 21);
@@ -135,7 +135,7 @@ public class StickerSetCell extends FrameLayout {
                 addView(this.checkBox, LayoutHelper.createFrameRelatively(24.0f, 24.0f, 8388611, 34.0f, 30.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
             } else if (i == 3) {
                 this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addedIcon), PorterDuff.Mode.MULTIPLY));
-                this.optionsButton.setImageResource(C3558R.C3560drawable.floating_check);
+                this.optionsButton.setImageResource(C3473R.C3475drawable.floating_check);
                 ImageView imageView4 = this.optionsButton;
                 boolean z2 = LocaleController.isRTL;
                 addView(imageView4, LayoutHelper.createFrame(40, 40, (z2 ? 3 : 5) | 48, z2 ? 10 : 0, 9, z2 ? 0 : 10, 0));
@@ -146,7 +146,7 @@ public class StickerSetCell extends FrameLayout {
         this.addButtonView = textView;
         textView.setTextSize(1, 14.0f);
         this.addButtonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.addButtonView.setText(LocaleController.getString("Add", C3558R.string.Add));
+        this.addButtonView.setText(LocaleController.getString("Add", C3473R.string.Add));
         this.addButtonView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText, resourcesProvider));
         TextView textView2 = this.addButtonView;
         int i3 = Theme.key_featuredStickers_addButton;
@@ -164,7 +164,7 @@ public class StickerSetCell extends FrameLayout {
         this.removeButtonView = textView3;
         textView3.setTextSize(1, 14.0f);
         this.removeButtonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3558R.string.StickersRemove));
+        this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3473R.string.StickersRemove));
         this.removeButtonView.setTextColor(Theme.getColor(Theme.key_featuredStickers_removeButtonText, resourcesProvider));
         this.removeButtonView.setBackground(Theme.AdaptiveRipple.createRect(0, Theme.getColor(i3, resourcesProvider) & 452984831, 4.0f));
         this.removeButtonView.setPadding(AndroidUtilities.m72dp(12), 0, AndroidUtilities.m72dp(12), 0);
@@ -178,8 +178,8 @@ public class StickerSetCell extends FrameLayout {
         this.sideButtons.addView(this.removeButtonView, LayoutHelper.createFrameRelatively(-2.0f, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, BitmapDescriptorFactory.HUE_RED, -2.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
         PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m72dp(4), false);
         this.premiumButtonView = premiumButtonView;
-        premiumButtonView.setIcon(C3558R.raw.unlock_icon);
-        this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3558R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda5
+        premiumButtonView.setIcon(C3473R.raw.unlock_icon);
+        this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3473R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StickerSetCell.this.lambda$new$2(view);
@@ -363,7 +363,7 @@ public class StickerSetCell extends FrameLayout {
                     break;
                 }
                 tLRPC$Document = arrayList.get(i);
-                if (tLRPC$Document != null && tLRPC$Document.f1539id == tLRPC$TL_messages_stickerSet.set.thumb_document_id) {
+                if (tLRPC$Document != null && tLRPC$Document.f1530id == tLRPC$TL_messages_stickerSet.set.thumb_document_id) {
                     break;
                 }
                 i++;
@@ -649,14 +649,14 @@ public class StickerSetCell extends FrameLayout {
             this.stateAnimator = null;
         }
         if (i == 1) {
-            this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3558R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda3
+            this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3473R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StickerSetCell.this.lambda$updateButtonState$7(view);
                 }
             });
         } else if (i == 2) {
-            this.premiumButtonView.setButton(LocaleController.getString("Restore", C3558R.string.Restore), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda0
+            this.premiumButtonView.setButton(LocaleController.getString("Restore", C3473R.string.Restore), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StickerSetCell.this.lambda$updateButtonState$8(view);

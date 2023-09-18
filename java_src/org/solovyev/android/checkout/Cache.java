@@ -1,5 +1,5 @@
 package org.solovyev.android.checkout;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Cache {
     Entry get(Key key);
 
@@ -9,7 +9,7 @@ public interface Cache {
 
     void removeAll(int i);
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Key {
         public final String key;
         public final int type;
@@ -40,7 +40,7 @@ public interface Cache {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Entry {
         public final Object data;
         public final long expiresAt;

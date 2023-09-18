@@ -19,7 +19,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import retrofit2.BuiltInConverters;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class Retrofit {
     final HttpUrl baseUrl;
     final List<CallAdapter.Factory> callAdapterFactories;
@@ -236,7 +236,7 @@ public final class Retrofit {
         return new Builder(this);
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class Builder {
         private HttpUrl baseUrl;
         private final List<CallAdapter.Factory> callAdapterFactories;

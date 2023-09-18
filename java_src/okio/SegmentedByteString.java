@@ -5,7 +5,7 @@ import kotlin.collections.ArraysKt___ArraysJvmKt;
 import kotlin.jvm.internal.Intrinsics;
 import okio.internal.SegmentedByteStringKt;
 /* compiled from: SegmentedByteString.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SegmentedByteString extends ByteString {
     private final transient int[] directory;
     private final transient byte[][] segments;

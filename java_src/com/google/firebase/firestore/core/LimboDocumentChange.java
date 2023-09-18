@@ -1,12 +1,12 @@
 package com.google.firebase.firestore.core;
 
 import com.google.firebase.firestore.model.DocumentKey;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LimboDocumentChange {
     private final DocumentKey key;
     private final Type type;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Type {
         ADDED,
         REMOVED

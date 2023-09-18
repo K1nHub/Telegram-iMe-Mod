@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "PackageStorageInfoCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgq extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzgq> CREATOR = new zzgr();
     @SafeParcelable.Field(m797id = 2)

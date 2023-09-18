@@ -22,7 +22,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsReportPersistence {
     private final AtomicInteger eventCounter = new AtomicInteger(0);
     private final File nativeReportsDirectory;

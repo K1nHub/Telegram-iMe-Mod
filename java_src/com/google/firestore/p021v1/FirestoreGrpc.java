@@ -7,7 +7,7 @@ import io.grpc.protobuf.lite.ProtoLiteUtils;
 import io.grpc.stub.AbstractAsyncStub;
 import io.grpc.stub.AbstractStub;
 /* renamed from: com.google.firestore.v1.FirestoreGrpc */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirestoreGrpc {
     private static volatile MethodDescriptor<ListenRequest, ListenResponse> getListenMethod;
     private static volatile MethodDescriptor<WriteRequest, WriteResponse> getWriteMethod;
@@ -54,7 +54,7 @@ public final class FirestoreGrpc {
     }
 
     /* renamed from: com.google.firestore.v1.FirestoreGrpc$FirestoreStub */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FirestoreStub extends AbstractAsyncStub<FirestoreStub> {
         private FirestoreStub(Channel channel, CallOptions callOptions) {
             super(channel, callOptions);

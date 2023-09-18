@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Notification.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class Notification {
     private final String date;
 
@@ -60,7 +60,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Simplex extends Notification {
         private final String amount;
         private final String date;
@@ -254,7 +254,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Cancel extends Notification {
         private final String date;
 
@@ -400,7 +400,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Approve extends Notification {
         private final String date;
 
@@ -558,7 +558,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BinancePayRequestCreated extends Notification {
         private final String amount;
         private final String assetCode;
@@ -728,7 +728,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BinancePayRequestStatusUpdated extends Notification {
         private final String amount;
         private final String assetCode;
@@ -910,7 +910,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StakingSafeWithdrawalStarted extends Notification {
         private final String amount;
         private final String date;
@@ -1092,7 +1092,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StakingSafeWithdrawalFinished extends Notification {
         private final String amount;
         private final String date;
@@ -1262,7 +1262,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StakingStarted extends Notification {
         private final String date;
 
@@ -1480,7 +1480,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StakingFinished extends Notification {
         private final String date;
         private final String debtAsToken;
@@ -1686,7 +1686,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Unsupported extends Notification {
         private final String date;
 
@@ -1834,7 +1834,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class CryptoTransfer extends Notification {
         private final String amount;
         private final String date;
@@ -1920,8 +1920,8 @@ public abstract class Notification {
 
         /* compiled from: Notification.kt */
         /* renamed from: com.iMe.storage.domain.model.notification.Notification$CryptoTransfer$In */
-        /* loaded from: classes3.dex */
-        public static final class C2041In extends CryptoTransfer {
+        /* loaded from: classes4.dex */
+        public static final class C2036In extends CryptoTransfer {
             private final String amount;
             private final String date;
             private final String fromAddress;
@@ -1975,7 +1975,7 @@ public abstract class Notification {
                 return getToAddress();
             }
 
-            public final C2041In copy(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
+            public final C2036In copy(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(date, "date");
@@ -1985,16 +1985,16 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C2041In(id, z, type, date, userId, networkId, tokenCode, fromAddress, toAddress, amount);
+                return new C2036In(id, z, type, date, userId, networkId, tokenCode, fromAddress, toAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C2041In) {
-                    C2041In c2041In = (C2041In) obj;
-                    return Intrinsics.areEqual(getId(), c2041In.getId()) && isRead() == c2041In.isRead() && getType() == c2041In.getType() && Intrinsics.areEqual(getDate(), c2041In.getDate()) && Intrinsics.areEqual(getUserId(), c2041In.getUserId()) && Intrinsics.areEqual(getNetworkId(), c2041In.getNetworkId()) && Intrinsics.areEqual(getTokenCode(), c2041In.getTokenCode()) && Intrinsics.areEqual(getFromAddress(), c2041In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c2041In.getToAddress()) && Intrinsics.areEqual(getAmount(), c2041In.getAmount());
+                if (obj instanceof C2036In) {
+                    C2036In c2036In = (C2036In) obj;
+                    return Intrinsics.areEqual(getId(), c2036In.getId()) && isRead() == c2036In.isRead() && getType() == c2036In.getType() && Intrinsics.areEqual(getDate(), c2036In.getDate()) && Intrinsics.areEqual(getUserId(), c2036In.getUserId()) && Intrinsics.areEqual(getNetworkId(), c2036In.getNetworkId()) && Intrinsics.areEqual(getTokenCode(), c2036In.getTokenCode()) && Intrinsics.areEqual(getFromAddress(), c2036In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c2036In.getToAddress()) && Intrinsics.areEqual(getAmount(), c2036In.getAmount());
                 }
                 return false;
             }
@@ -2069,7 +2069,7 @@ public abstract class Notification {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C2041In(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
+            public C2036In(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
                 super(id, z, type, date, userId, networkId, tokenCode, fromAddress, toAddress, amount, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -2094,7 +2094,7 @@ public abstract class Notification {
         }
 
         /* compiled from: Notification.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Out extends CryptoTransfer {
             private final String amount;
             private final String date;
@@ -2281,7 +2281,7 @@ public abstract class Notification {
     }
 
     /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Donation extends CryptoTransfer {
         private final String amount;
         private final String date;
@@ -2371,8 +2371,8 @@ public abstract class Notification {
 
         /* compiled from: Notification.kt */
         /* renamed from: com.iMe.storage.domain.model.notification.Notification$Donation$In */
-        /* loaded from: classes3.dex */
-        public static final class C2042In extends Donation {
+        /* loaded from: classes4.dex */
+        public static final class C2037In extends Donation {
             private final String amount;
             private final String date;
             private final String fromAddress;
@@ -2426,7 +2426,7 @@ public abstract class Notification {
                 return getToAddress();
             }
 
-            public final C2042In copy(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
+            public final C2037In copy(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(date, "date");
@@ -2436,16 +2436,16 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C2042In(id, z, type, date, userId, networkId, tokenCode, fromAddress, toAddress, amount);
+                return new C2037In(id, z, type, date, userId, networkId, tokenCode, fromAddress, toAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C2042In) {
-                    C2042In c2042In = (C2042In) obj;
-                    return Intrinsics.areEqual(getId(), c2042In.getId()) && isRead() == c2042In.isRead() && getType() == c2042In.getType() && Intrinsics.areEqual(getDate(), c2042In.getDate()) && Intrinsics.areEqual(getUserId(), c2042In.getUserId()) && Intrinsics.areEqual(getNetworkId(), c2042In.getNetworkId()) && Intrinsics.areEqual(getTokenCode(), c2042In.getTokenCode()) && Intrinsics.areEqual(getFromAddress(), c2042In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c2042In.getToAddress()) && Intrinsics.areEqual(getAmount(), c2042In.getAmount());
+                if (obj instanceof C2037In) {
+                    C2037In c2037In = (C2037In) obj;
+                    return Intrinsics.areEqual(getId(), c2037In.getId()) && isRead() == c2037In.isRead() && getType() == c2037In.getType() && Intrinsics.areEqual(getDate(), c2037In.getDate()) && Intrinsics.areEqual(getUserId(), c2037In.getUserId()) && Intrinsics.areEqual(getNetworkId(), c2037In.getNetworkId()) && Intrinsics.areEqual(getTokenCode(), c2037In.getTokenCode()) && Intrinsics.areEqual(getFromAddress(), c2037In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c2037In.getToAddress()) && Intrinsics.areEqual(getAmount(), c2037In.getAmount());
                 }
                 return false;
             }
@@ -2520,7 +2520,7 @@ public abstract class Notification {
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C2042In(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
+            public C2037In(String id, boolean z, NotificationType type, String date, String userId, String networkId, String tokenCode, String fromAddress, String toAddress, String amount) {
                 super(id, z, type, date, userId, networkId, tokenCode, fromAddress, toAddress, amount, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -2545,7 +2545,7 @@ public abstract class Notification {
         }
 
         /* compiled from: Notification.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Out extends Donation {
             private final String amount;
             private final String date;

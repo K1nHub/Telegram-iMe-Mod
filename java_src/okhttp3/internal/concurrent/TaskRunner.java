@@ -14,7 +14,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.Util;
 /* compiled from: TaskRunner.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TaskRunner {
     public static final Companion Companion = new Companion(null);
     public static final TaskRunner INSTANCE = new TaskRunner(new RealBackend(Util.threadFactory(Util.okHttpName + " TaskRunner", true)));
@@ -28,7 +28,7 @@ public final class TaskRunner {
     private final Runnable runnable;
 
     /* compiled from: TaskRunner.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Backend {
         void coordinatorNotify(TaskRunner taskRunner);
 
@@ -113,7 +113,7 @@ public final class TaskRunner {
     }
 
     /* compiled from: TaskRunner.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class RealBackend implements Backend {
         private final ThreadPoolExecutor executor;
 
@@ -151,7 +151,7 @@ public final class TaskRunner {
     }
 
     /* compiled from: TaskRunner.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

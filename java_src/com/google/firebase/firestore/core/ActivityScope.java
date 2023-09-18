@@ -8,11 +8,11 @@ import com.google.firebase.firestore.util.Assert;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActivityScope {
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class CallbackList {
         private final List<Runnable> callbacks;
 
@@ -33,7 +33,7 @@ public class ActivityScope {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class StopListenerSupportFragment extends Fragment {
         CallbackList callbacks = new CallbackList();
 
@@ -49,7 +49,7 @@ public class ActivityScope {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class StopListenerFragment extends android.app.Fragment {
         CallbackList callbacks = new CallbackList();
 

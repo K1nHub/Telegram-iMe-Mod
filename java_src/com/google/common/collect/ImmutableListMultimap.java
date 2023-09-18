@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMultimap;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> implements ListMultimap<K, V> {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.common.collect.Multimap
@@ -18,7 +18,7 @@ public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> impleme
         return EmptyImmutableListMultimap.INSTANCE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder<K, V> extends ImmutableMultimap.Builder<K, V> {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.google.common.collect.ImmutableMultimap.Builder

@@ -12,7 +12,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "LocationSettingsRequestCreator")
 @SafeParcelable.Reserved({4, 5, 1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LocationSettingsRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LocationSettingsRequest> CREATOR = new zzz();
     @SafeParcelable.Field(getter = "getLocationRequests", m797id = 1)
@@ -23,7 +23,7 @@ public final class LocationSettingsRequest extends AbstractSafeParcelable {
     private final boolean zzc;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private final ArrayList zza = new ArrayList();
         private boolean zzb = false;

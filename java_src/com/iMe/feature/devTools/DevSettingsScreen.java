@@ -23,18 +23,18 @@ import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.androidx.viewmodel.GetViewModelKt;
 import org.koin.core.qualifier.Qualifier;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkDevSettingsScreenBinding;
 import timber.log.Timber;
 /* compiled from: DevSettingsScreen.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DevSettingsScreen extends Fragment {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(DevSettingsScreen.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkDevSettingsScreenBinding;", 0))};
     private final FragmentViewBindingDelegate binding$delegate;
     private final Lazy viewModel$delegate;
 
     public DevSettingsScreen() {
-        super(C3558R.layout.fork_dev_settings_screen);
+        super(C3473R.layout.fork_dev_settings_screen);
         Lazy lazy;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkDevSettingsScreenBinding.class, this);
         final Function0<Fragment> function0 = new Function0<Fragment>() { // from class: com.iMe.feature.devTools.DevSettingsScreen$special$$inlined$viewModel$default$1

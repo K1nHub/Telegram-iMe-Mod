@@ -1,13 +1,13 @@
 package com.iMe.storage.data.network.model.response.crypto.swap;
 
-import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
+import com.iMe.storage.data.network.model.response.wallet.TokenDetailedWithRateResponse;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AvailableSwapTokensResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AvailableSwapTokensResponse {
     private final String cursor;
-    private final List<TokenDetailedResponse> tokens;
+    private final List<TokenDetailedWithRateResponse> tokens;
 
     /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ AvailableSwapTokensResponse copy$default(AvailableSwapTokensResponse availableSwapTokensResponse, List list, String str, int i, Object obj) {
@@ -20,7 +20,7 @@ public final class AvailableSwapTokensResponse {
         return availableSwapTokensResponse.copy(list, str);
     }
 
-    public final List<TokenDetailedResponse> component1() {
+    public final List<TokenDetailedWithRateResponse> component1() {
         return this.tokens;
     }
 
@@ -28,7 +28,7 @@ public final class AvailableSwapTokensResponse {
         return this.cursor;
     }
 
-    public final AvailableSwapTokensResponse copy(List<TokenDetailedResponse> tokens, String cursor) {
+    public final AvailableSwapTokensResponse copy(List<TokenDetailedWithRateResponse> tokens, String cursor) {
         Intrinsics.checkNotNullParameter(tokens, "tokens");
         Intrinsics.checkNotNullParameter(cursor, "cursor");
         return new AvailableSwapTokensResponse(tokens, cursor);
@@ -53,14 +53,14 @@ public final class AvailableSwapTokensResponse {
         return "AvailableSwapTokensResponse(tokens=" + this.tokens + ", cursor=" + this.cursor + ')';
     }
 
-    public AvailableSwapTokensResponse(List<TokenDetailedResponse> tokens, String cursor) {
+    public AvailableSwapTokensResponse(List<TokenDetailedWithRateResponse> tokens, String cursor) {
         Intrinsics.checkNotNullParameter(tokens, "tokens");
         Intrinsics.checkNotNullParameter(cursor, "cursor");
         this.tokens = tokens;
         this.cursor = cursor;
     }
 
-    public final List<TokenDetailedResponse> getTokens() {
+    public final List<TokenDetailedWithRateResponse> getTokens() {
         return this.tokens;
     }
 

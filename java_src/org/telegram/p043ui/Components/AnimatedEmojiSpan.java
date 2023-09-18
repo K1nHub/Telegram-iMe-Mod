@@ -28,7 +28,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.spoilers.SpoilerEffect;
 import org.telegram.tgnet.TLRPC$Document;
 /* renamed from: org.telegram.ui.Components.AnimatedEmojiSpan */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedEmojiSpan extends ReplacementSpan {
     private int asizeDp;
     public int cacheType;
@@ -50,7 +50,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     public boolean top;
 
     /* renamed from: org.telegram.ui.Components.AnimatedEmojiSpan$InvalidateHolder */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface InvalidateHolder {
         void invalidate();
     }
@@ -59,12 +59,12 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     public AnimatedEmojiSpan(TLRPC$Document tLRPC$Document, Paint.FontMetricsInt fontMetricsInt) {
-        this(tLRPC$Document.f1539id, 1.2f, fontMetricsInt);
+        this(tLRPC$Document.f1530id, 1.2f, fontMetricsInt);
         this.document = tLRPC$Document;
     }
 
     public AnimatedEmojiSpan(TLRPC$Document tLRPC$Document, float f, Paint.FontMetricsInt fontMetricsInt) {
-        this(tLRPC$Document.f1539id, f, fontMetricsInt);
+        this(tLRPC$Document.f1530id, f, fontMetricsInt);
         this.document = tLRPC$Document;
     }
 
@@ -103,7 +103,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
     public long getDocumentId() {
         TLRPC$Document tLRPC$Document = this.document;
-        return tLRPC$Document != null ? tLRPC$Document.f1539id : this.documentId;
+        return tLRPC$Document != null ? tLRPC$Document.f1530id : this.documentId;
     }
 
     public void replaceFontMetrics(Paint.FontMetricsInt fontMetricsInt) {
@@ -279,7 +279,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     /* renamed from: org.telegram.ui.Components.AnimatedEmojiSpan$AnimatedEmojiHolder */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class AnimatedEmojiHolder implements InvalidateHolder {
         public float alpha;
         private ImageReceiver.BackgroundThreadDrawHolder[] backgroundDrawHolder = new ImageReceiver.BackgroundThreadDrawHolder[2];
@@ -676,7 +676,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     /* renamed from: org.telegram.ui.Components.AnimatedEmojiSpan$EmojiGroupedSpans */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class EmojiGroupedSpans {
         private int rawIndex;
         public ArrayList<AnimatedEmojiHolder> holders = new ArrayList<>();
@@ -749,7 +749,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.AnimatedEmojiSpan$SpansChunk */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class SpansChunk {
         private boolean allowBackgroundRendering;
         DrawingInBackgroundThreadDrawable backgroundThreadDrawable;
@@ -931,7 +931,7 @@ public class AnimatedEmojiSpan extends ReplacementSpan {
     }
 
     /* renamed from: org.telegram.ui.Components.AnimatedEmojiSpan$TextViewEmojis */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class TextViewEmojis extends TextView {
         EmojiGroupedSpans stack;
 

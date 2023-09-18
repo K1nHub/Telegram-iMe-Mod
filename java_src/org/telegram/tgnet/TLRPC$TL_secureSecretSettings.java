@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_secureSecretSettings extends TLObject {
     public static int constructor = 354925740;
     public TLRPC$SecurePasswordKdfAlgo secure_algo;

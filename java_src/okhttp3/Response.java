@@ -9,7 +9,7 @@ import okhttp3.Headers;
 import okhttp3.internal.connection.Exchange;
 import okhttp3.internal.http.HttpHeaders;
 /* compiled from: Response.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Response implements Closeable {
     private final ResponseBody body;
     private final Response cacheResponse;
@@ -158,7 +158,7 @@ public final class Response implements Closeable {
     }
 
     /* compiled from: Response.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private ResponseBody body;
         private Response cacheResponse;

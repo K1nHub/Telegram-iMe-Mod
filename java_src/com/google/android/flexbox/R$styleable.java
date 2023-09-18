@@ -1,6 +1,6 @@
 package com.google.android.flexbox;
 
-import com.iMe.android.web.R;
+import com.iMe.android.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int[] FlexboxLayout = {R.attr.alignContent, R.attr.alignItems, R.attr.dividerDrawable, R.attr.dividerDrawableHorizontal, R.attr.dividerDrawableVertical, R.attr.flexDirection, R.attr.flexWrap, R.attr.justifyContent, R.attr.maxLine, R.attr.showDivider, R.attr.showDividerHorizontal, R.attr.showDividerVertical};

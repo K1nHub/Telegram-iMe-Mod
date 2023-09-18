@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 /* compiled from: BotsDatabase.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BotsDatabase extends RoomDatabase {
     public static final Companion Companion = new Companion(null);
     private static volatile BotsDatabase INSTANCE;
@@ -24,7 +24,7 @@ public abstract class BotsDatabase extends RoomDatabase {
     public abstract BotsTagDao tagsDao();
 
     /* compiled from: BotsDatabase.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

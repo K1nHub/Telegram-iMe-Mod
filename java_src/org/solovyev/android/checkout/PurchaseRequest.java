@@ -4,7 +4,7 @@ import android.app.PendingIntent;
 import android.os.Bundle;
 import android.os.RemoteException;
 import com.android.vending.billing.IInAppBillingService;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class PurchaseRequest extends Request<PendingIntent> {
     private final Bundle mExtraParams;
     private final String mPayload;

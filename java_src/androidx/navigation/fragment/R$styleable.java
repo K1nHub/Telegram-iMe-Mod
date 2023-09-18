@@ -1,6 +1,6 @@
 package androidx.navigation.fragment;
 
-import com.iMe.android.web.R;
+import com.iMe.android.R;
 /* loaded from: classes.dex */
 public final class R$styleable {
     public static final int DialogFragmentNavigator_android_name = 0;

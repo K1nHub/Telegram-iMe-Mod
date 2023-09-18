@@ -36,13 +36,13 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* renamed from: org.telegram.ui.Components.ColorPicker */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ColorPicker extends FrameLayout {
     private ImageView addButton;
     private Drawable circleDrawable;
@@ -83,11 +83,11 @@ public class ColorPicker extends FrameLayout {
     private Paint valueSliderPaint;
 
     /* renamed from: org.telegram.ui.Components.ColorPicker$ColorPickerDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ColorPickerDelegate {
 
         /* renamed from: org.telegram.ui.Components.ColorPicker$ColorPickerDelegate$-CC */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public final /* synthetic */ class CC {
             public static void $default$deleteTheme(ColorPickerDelegate colorPickerDelegate) {
             }
@@ -113,7 +113,7 @@ public class ColorPicker extends FrameLayout {
     }
 
     /* renamed from: org.telegram.ui.Components.ColorPicker$RadioButton */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class RadioButton extends View {
         private ObjectAnimator checkAnimator;
         private boolean checked;
@@ -197,7 +197,7 @@ public class ColorPicker extends FrameLayout {
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-            accessibilityNodeInfo.setText(LocaleController.getString("ColorPickerMainColor", C3558R.string.ColorPickerMainColor));
+            accessibilityNodeInfo.setText(LocaleController.getString("ColorPickerMainColor", C3473R.string.ColorPickerMainColor));
             accessibilityNodeInfo.setClassName(Button.class.getName());
             accessibilityNodeInfo.setChecked(this.checked);
             accessibilityNodeInfo.setCheckable(true);
@@ -221,7 +221,7 @@ public class ColorPicker extends FrameLayout {
         this.delegate = colorPickerDelegate;
         this.colorEditText = new EditTextBoldCursor[2];
         setWillNotDraw(false);
-        this.circleDrawable = context.getResources().getDrawable(C3558R.C3560drawable.knob_shadow).mutate();
+        this.circleDrawable = context.getResources().getDrawable(C3473R.C3475drawable.knob_shadow).mutate();
         this.circlePaint = new Paint(1);
         this.colorWheelPaint = new Paint(5);
         this.valueSliderPaint = new Paint(5);
@@ -412,7 +412,7 @@ public class ColorPicker extends FrameLayout {
         this.addButton = imageView;
         int i4 = Theme.key_dialogButtonSelector;
         imageView.setBackground(Theme.createSelectorDrawable(getThemedColor(i4), 1));
-        this.addButton.setImageResource(C3558R.C3560drawable.msg_add);
+        this.addButton.setImageResource(C3473R.C3475drawable.msg_add);
         ImageView imageView2 = this.addButton;
         int i5 = Theme.key_windowBackgroundWhiteBlackText;
         imageView2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i5), PorterDuff.Mode.MULTIPLY));
@@ -423,7 +423,7 @@ public class ColorPicker extends FrameLayout {
                 ColorPicker.this.lambda$new$2(view);
             }
         });
-        this.addButton.setContentDescription(LocaleController.getString("Add", C3558R.string.Add));
+        this.addButton.setContentDescription(LocaleController.getString("Add", C3473R.string.Add));
         addView(this.addButton, LayoutHelper.createFrame(30, 30, 49, 36, 1, 0, 0));
         ImageView imageView3 = new ImageView(getContext()) { // from class: org.telegram.ui.Components.ColorPicker.6
             {
@@ -438,7 +438,7 @@ public class ColorPicker extends FrameLayout {
         };
         this.clearButton = imageView3;
         imageView3.setBackground(Theme.createSelectorDrawable(getThemedColor(i4), 1));
-        this.clearButton.setImageResource(C3558R.C3560drawable.msg_close);
+        this.clearButton.setImageResource(C3473R.C3475drawable.msg_close);
         this.clearButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i5), PorterDuff.Mode.MULTIPLY));
         this.clearButton.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.clearButton.setScaleX(BitmapDescriptorFactory.HUE_RED);
@@ -451,7 +451,7 @@ public class ColorPicker extends FrameLayout {
                 ColorPicker.this.lambda$new$3(view);
             }
         });
-        this.clearButton.setContentDescription(LocaleController.getString("ClearButton", C3558R.string.ClearButton));
+        this.clearButton.setContentDescription(LocaleController.getString("ClearButton", C3473R.string.ClearButton));
         addView(this.clearButton, LayoutHelper.createFrame(30, 30, 51, 97, 1, 0, 0));
         TextView textView = new TextView(context);
         this.resetButton = textView;
@@ -471,11 +471,11 @@ public class ColorPicker extends FrameLayout {
             ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, null, 0, getThemedColor(i5));
             this.menuItem = actionBarMenuItem;
             actionBarMenuItem.setLongClickEnabled(false);
-            this.menuItem.setIcon(C3558R.C3560drawable.ic_ab_other);
-            this.menuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3558R.string.AccDescrMoreOptions));
-            this.menuItem.addSubItem(1, C3558R.C3560drawable.msg_edit, LocaleController.getString("OpenInEditor", C3558R.string.OpenInEditor));
-            this.menuItem.addSubItem(2, C3558R.C3560drawable.msg_share, LocaleController.getString("ShareTheme", C3558R.string.ShareTheme));
-            this.menuItem.addSubItem(3, C3558R.C3560drawable.msg_delete, LocaleController.getString("DeleteTheme", C3558R.string.DeleteTheme));
+            this.menuItem.setIcon(C3473R.C3475drawable.ic_ab_other);
+            this.menuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3473R.string.AccDescrMoreOptions));
+            this.menuItem.addSubItem(1, C3473R.C3475drawable.msg_edit, LocaleController.getString("OpenInEditor", C3473R.string.OpenInEditor));
+            this.menuItem.addSubItem(2, C3473R.C3475drawable.msg_share, LocaleController.getString("ShareTheme", C3473R.string.ShareTheme));
+            this.menuItem.addSubItem(3, C3473R.C3475drawable.msg_delete, LocaleController.getString("DeleteTheme", C3473R.string.DeleteTheme));
             this.menuItem.setMenuYOffset(-AndroidUtilities.m72dp(80));
             this.menuItem.setSubMenuOpenSide(2);
             this.menuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.ColorPicker$$ExternalSyntheticLambda6
@@ -689,7 +689,7 @@ public class ColorPicker extends FrameLayout {
                             ColorPicker.this.clearButton.setVisibility(4);
                         }
                         for (int i6 = 0; i6 < ColorPicker.this.radioButton.length; i6++) {
-                            if (ColorPicker.this.radioButton[i6].getTag(C3558R.C3561id.index_tag) == null) {
+                            if (ColorPicker.this.radioButton[i6].getTag(C3473R.C3476id.index_tag) == null) {
                                 ColorPicker.this.radioButton[i6].setVisibility(4);
                             }
                         }
@@ -742,7 +742,7 @@ public class ColorPicker extends FrameLayout {
                 return;
             }
             RadioButton radioButton = radioButtonArr[i4];
-            int i6 = C3558R.C3561id.index_tag;
+            int i6 = C3473R.C3476id.index_tag;
             boolean z2 = radioButton.getTag(i6) != null;
             if (i4 < this.colorsCount) {
                 this.radioButton[i4].setVisibility(0);

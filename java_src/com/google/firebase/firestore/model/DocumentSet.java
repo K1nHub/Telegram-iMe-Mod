@@ -5,7 +5,7 @@ import com.google.firebase.database.collection.ImmutableSortedSet;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DocumentSet implements Iterable<Document> {
     private final ImmutableSortedMap<DocumentKey, Document> keyIndex;
     private final ImmutableSortedSet<Document> sortedSet;

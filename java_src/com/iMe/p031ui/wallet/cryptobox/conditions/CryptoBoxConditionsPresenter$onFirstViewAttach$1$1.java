@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxConditionsPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsPresenter$onFirstViewAttach$1$1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 /* synthetic */ class CryptoBoxConditionsPresenter$onFirstViewAttach$1$1 extends FunctionReferenceImpl implements Function2<Number, TokenDetailed, String> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public CryptoBoxConditionsPresenter$onFirstViewAttach$1$1(Object obj) {

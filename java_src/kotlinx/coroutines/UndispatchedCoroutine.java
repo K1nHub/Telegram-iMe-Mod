@@ -8,7 +8,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.internal.ThreadContextKt;
 /* compiled from: CoroutineContext.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class UndispatchedCoroutine<T> extends ScopeCoroutine<T> {
     private ThreadLocal<Pair<CoroutineContext, Object>> threadStateToRecover;
 

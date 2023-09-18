@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StakingCalculatorProgrammesView$$State extends MvpViewState<StakingCalculatorProgrammesView> implements StakingCalculatorProgrammesView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -136,7 +136,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$RenderItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderItemsCommand extends ViewCommand<StakingCalculatorProgrammesView> {
         public final List<BaseNode> items;
 
@@ -153,7 +153,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$OnStakingSelectedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnStakingSelectedCommand extends ViewCommand<StakingCalculatorProgrammesView> {
         public final StakingDetailsItem stakingDetailsItem;
 
@@ -170,7 +170,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$ShowStakingConditionsDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowStakingConditionsDialogCommand extends ViewCommand<StakingCalculatorProgrammesView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -187,7 +187,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<StakingCalculatorProgrammesView> {
         public final String text;
 
@@ -204,7 +204,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<StakingCalculatorProgrammesView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -225,7 +225,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<StakingCalculatorProgrammesView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -244,7 +244,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<StakingCalculatorProgrammesView> {
         OnLoadMoreCompleteCommand(StakingCalculatorProgrammesView$$State stakingCalculatorProgrammesView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -258,7 +258,7 @@ public class StakingCalculatorProgrammesView$$State extends MvpViewState<Staking
 
     /* compiled from: StakingCalculatorProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<StakingCalculatorProgrammesView> {
         OnLoadMoreErrorCommand(StakingCalculatorProgrammesView$$State stakingCalculatorProgrammesView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);

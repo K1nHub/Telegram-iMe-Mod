@@ -8,7 +8,7 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.Components.TextStyleSpan;
 import org.telegram.tgnet.TLObject;
 /* renamed from: org.telegram.ui.Components.URLSpanNoUnderline */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class URLSpanNoUnderline extends URLSpan {
     private boolean forceNoUnderline;
     public String label;

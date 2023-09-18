@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_codeSettings extends TLObject {
     public static int constructor = -1390068360;
     public boolean allow_app_hash;

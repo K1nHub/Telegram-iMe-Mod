@@ -11,7 +11,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Components.Premium.BaseListPageView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public abstract class BaseListPageView extends FrameLayout implements PagerHeaderView {
     RecyclerView.Adapter adapter;
     final LinearLayoutManager layoutManager;

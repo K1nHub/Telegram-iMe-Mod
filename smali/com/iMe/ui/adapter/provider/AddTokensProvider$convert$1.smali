@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 33
+    .line 35
     check-cast p1, Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/AddTokensProvider$convert$1;->invoke(Landroidx/appcompat/widget/AppCompatTextView;)V
@@ -76,7 +76,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 38
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -87,7 +87,7 @@
 
     move-result-object v0
 
-    .line 34
+    .line 36
     invoke-static {p1, v0}, Landroidx/core/widget/TextViewCompat;->setCompoundDrawableTintList(Landroid/widget/TextView;Landroid/content/res/ColorStateList;)V
 
     return-void

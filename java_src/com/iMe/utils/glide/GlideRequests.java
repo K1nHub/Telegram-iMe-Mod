@@ -9,7 +9,7 @@ import com.bumptech.glide.manager.Lifecycle;
 import com.bumptech.glide.manager.RequestManagerTreeNode;
 import com.bumptech.glide.request.BaseRequestOptions;
 import com.bumptech.glide.request.RequestOptions;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class GlideRequests extends RequestManager {
     public GlideRequests(Glide glide, Lifecycle lifecycle, RequestManagerTreeNode requestManagerTreeNode, Context context) {
         super(glide, lifecycle, requestManagerTreeNode, context);

@@ -35,7 +35,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: ToolsController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ToolsController extends BaseController {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, ToolsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -346,7 +346,7 @@ public final class ToolsController extends BaseController {
     }
 
     /* compiled from: ToolsController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -395,7 +395,7 @@ public final class ToolsController extends BaseController {
                     return Function.CC.$default$compose(this, function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) =\n   …ontroller(accountIndex) }");
             return (ToolsController) computeIfAbsent;
         }
     }

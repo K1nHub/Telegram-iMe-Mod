@@ -26,7 +26,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
 /* renamed from: com.google.mlkit.nl.languageid.internal.LanguageIdentificationJni */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LanguageIdentificationJni extends ModelResource {
     private static boolean zza;
     private final Context zzb;

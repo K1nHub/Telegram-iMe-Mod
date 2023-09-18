@@ -3,7 +3,7 @@ package org.orbitmvi.orbit.syntax.simple;
 import kotlin.jvm.internal.Intrinsics;
 import org.orbitmvi.orbit.syntax.ContainerContext;
 /* compiled from: SimpleSyntax.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SimpleSyntax<S, SE> {
     private final ContainerContext<S, SE> containerContext;
 

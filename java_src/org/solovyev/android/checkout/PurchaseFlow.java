@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import org.json.JSONException;
 import org.telegram.messenger.XiaomiUtilities;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PurchaseFlow implements CancellableRequestListener<PendingIntent> {
     private final IntentStarter mIntentStarter;
     private RequestListener<Purchase> mListener;
@@ -83,7 +83,7 @@ public final class PurchaseFlow implements CancellableRequestListener<PendingInt
         this.mListener = null;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class VerificationListener implements RequestListener<List<Purchase>> {
         private VerificationListener() {
         }

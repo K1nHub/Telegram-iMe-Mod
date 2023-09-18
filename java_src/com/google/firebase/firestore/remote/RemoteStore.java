@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RemoteStore implements WatchChangeAggregator.TargetMetadataProvider {
     private final LocalStore localStore;
     private final OnlineStateTracker onlineStateTracker;
@@ -42,7 +42,7 @@ public final class RemoteStore implements WatchChangeAggregator.TargetMetadataPr
     private final Map<Integer, TargetData> listenTargets = new HashMap();
     private final Deque<MutationBatch> writePipeline = new ArrayDeque();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface RemoteStoreCallback {
         ImmutableSortedSet<DocumentKey> getRemoteKeysForTarget(int i);
 

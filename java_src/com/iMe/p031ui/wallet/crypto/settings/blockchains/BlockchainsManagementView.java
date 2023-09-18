@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: BlockchainsManagementView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface BlockchainsManagementView extends BaseView {
     void openBackupScreen(Wallet wallet2);
 

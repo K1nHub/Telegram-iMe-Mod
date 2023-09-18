@@ -1,7 +1,7 @@
 package io.grpc.okhttp;
 
 import io.grpc.okhttp.internal.framed.Settings;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class OkHttpSettingsUtil {
     public static boolean isSet(Settings settings, int i) {
         return settings.isSet(i);

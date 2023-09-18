@@ -1,14 +1,14 @@
 package org.bouncycastle.pqc.crypto.xmss;
 
 import org.bouncycastle.util.Pack;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class XMSSAddress {
     private final int keyAndMask;
     private final int layerAddress;
     private final long treeAddress;
     private final int type;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     protected static abstract class Builder<T extends Builder> {
         private final int type;
         private int layerAddress = 0;

@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.circularreveal.CircularRevealWidget;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CircularRevealCardView extends MaterialCardView implements CircularRevealWidget {
     @Override // com.google.android.material.circularreveal.CircularRevealWidget
     public void buildCircularRevealCache() {

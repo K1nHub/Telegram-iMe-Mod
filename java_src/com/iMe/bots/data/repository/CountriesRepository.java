@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlin.text.StringsKt___StringsKt;
 /* compiled from: CountriesRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CountriesRepository {
     public static final Companion Companion = new Companion(null);
     private static volatile CountriesRepository INSTANCE;
@@ -31,7 +31,7 @@ public final class CountriesRepository {
     }
 
     /* compiled from: CountriesRepository.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

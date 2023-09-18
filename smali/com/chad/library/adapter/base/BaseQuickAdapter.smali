@@ -1670,7 +1670,7 @@
     throw v0
 .end method
 
-.method public final getMLoadMoreModule$TMessagesProj_HA_public()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+.method public final getMLoadMoreModule$TMessagesProj_release()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
     .locals 1
 
     .line 176
@@ -1679,7 +1679,7 @@
     return-object v0
 .end method
 
-.method public final getMRecyclerView$TMessagesProj_HA_public()Landroidx/recyclerview/widget/RecyclerView;
+.method public final getMRecyclerView$TMessagesProj_release()Landroidx/recyclerview/widget/RecyclerView;
     .locals 1
 
     .line 181
@@ -2005,7 +2005,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseUpFetchModule;->autoUpFetch$TMessagesProj_HA_public(I)V
+    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseUpFetchModule;->autoUpFetch$TMessagesProj_release(I)V
 
     .line 373
     :cond_0
@@ -2013,7 +2013,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->autoLoadMore$TMessagesProj_HA_public(I)V
+    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->autoLoadMore$TMessagesProj_release(I)V
 
     .line 374
     :cond_1
@@ -2123,7 +2123,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseUpFetchModule;->autoUpFetch$TMessagesProj_HA_public(I)V
+    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseUpFetchModule;->autoUpFetch$TMessagesProj_release(I)V
 
     .line 398
     :cond_1
@@ -2131,7 +2131,7 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->autoLoadMore$TMessagesProj_HA_public(I)V
+    invoke-virtual {v0, p2}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->autoLoadMore$TMessagesProj_release(I)V
 
     .line 399
     :cond_2
@@ -2271,7 +2271,7 @@
 
     if-eqz v0, :cond_c
 
-    invoke-virtual {v0, p1}, Lcom/chad/library/adapter/base/module/BaseDraggableModule;->initView$TMessagesProj_HA_public(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
+    invoke-virtual {v0, p1}, Lcom/chad/library/adapter/base/module/BaseDraggableModule;->initView$TMessagesProj_release(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
 
     goto/16 :goto_3
 
@@ -2411,7 +2411,7 @@
 
     invoke-static {p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    invoke-virtual {p2, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setupViewHolder$TMessagesProj_HA_public(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
+    invoke-virtual {p2, p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->setupViewHolder$TMessagesProj_release(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
 
     goto :goto_4
 
@@ -2669,7 +2669,7 @@
     return-void
 .end method
 
-.method public final setData$TMessagesProj_HA_public(Ljava/util/List;)V
+.method public final setData$TMessagesProj_release(Ljava/util/List;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2855,7 +2855,7 @@
 
     if-eqz p1, :cond_2
 
-    invoke-virtual {p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->reset$TMessagesProj_HA_public()V
+    invoke-virtual {p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->reset$TMessagesProj_release()V
 
     :cond_2
     const/4 p1, -0x1

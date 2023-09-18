@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotsCategoryDbModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsCategoryDbModel {
 
     /* renamed from: id */

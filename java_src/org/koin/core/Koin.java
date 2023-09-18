@@ -20,7 +20,7 @@ import org.koin.core.registry.PropertyRegistry;
 import org.koin.core.registry.ScopeRegistry;
 import org.koin.p042mp.KoinPlatformTimeTools;
 /* compiled from: Koin.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Koin {
     private Logger logger;
     private final ScopeRegistry scopeRegistry = new ScopeRegistry(this);

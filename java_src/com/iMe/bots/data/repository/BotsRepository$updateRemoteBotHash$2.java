@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BotsRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsRepository$updateRemoteBotHash$2 extends Lambda implements Function1<String, CompletableSource> {
     final /* synthetic */ String $botId;
     final /* synthetic */ BotsRepository this$0;

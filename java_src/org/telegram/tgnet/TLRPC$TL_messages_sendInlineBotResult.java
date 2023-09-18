@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
     public static int constructor = -138647366;
     public boolean background;
@@ -8,7 +8,7 @@ public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
     public boolean hide_via;
 
     /* renamed from: id */
-    public String f1649id;
+    public String f1640id;
     public TLRPC$InputPeer peer;
     public long query_id;
     public long random_id;
@@ -40,7 +40,7 @@ public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
         }
         abstractSerializedData.writeInt64(this.random_id);
         abstractSerializedData.writeInt64(this.query_id);
-        abstractSerializedData.writeString(this.f1649id);
+        abstractSerializedData.writeString(this.f1640id);
         if ((this.flags & 1024) != 0) {
             abstractSerializedData.writeInt32(this.schedule_date);
         }

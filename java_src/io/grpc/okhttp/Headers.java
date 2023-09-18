@@ -9,7 +9,7 @@ import io.grpc.okhttp.internal.framed.Header;
 import java.util.ArrayList;
 import java.util.List;
 import okio.ByteString;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class Headers {
     public static final Header CONTENT_TYPE_HEADER;
     public static final Header HTTPS_SCHEME_HEADER;

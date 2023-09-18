@@ -6,7 +6,7 @@ import com.trustwallet.walletconnect.models.WCPeerMeta;
 import com.trustwallet.walletconnect.models.session.WCSession;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectSessionMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectSessionMappingKt {
     public static final WCSessionStoreItem mapToDomain(WalletConnectSessionDb walletConnectSessionDb) {
         Intrinsics.checkNotNullParameter(walletConnectSessionDb, "<this>");

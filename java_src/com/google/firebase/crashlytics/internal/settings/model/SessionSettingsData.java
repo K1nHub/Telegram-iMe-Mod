@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.settings.model;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SessionSettingsData {
     public final int maxCompleteSessionsCount;
     public final int maxCustomExceptionEvents;

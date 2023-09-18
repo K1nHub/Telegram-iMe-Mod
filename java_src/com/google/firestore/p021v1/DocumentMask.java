@@ -5,7 +5,7 @@ import com.google.protobuf.Internal;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 /* renamed from: com.google.firestore.v1.DocumentMask */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DocumentMask extends GeneratedMessageLite<DocumentMask, Builder> implements MessageLiteOrBuilder {
     private static final DocumentMask DEFAULT_INSTANCE;
     public static final int FIELD_PATHS_FIELD_NUMBER = 1;
@@ -43,7 +43,7 @@ public final class DocumentMask extends GeneratedMessageLite<DocumentMask, Build
     }
 
     /* renamed from: com.google.firestore.v1.DocumentMask$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentMask, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10591 c10591) {
             this();
@@ -61,7 +61,7 @@ public final class DocumentMask extends GeneratedMessageLite<DocumentMask, Build
     }
 
     /* renamed from: com.google.firestore.v1.DocumentMask$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10591 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

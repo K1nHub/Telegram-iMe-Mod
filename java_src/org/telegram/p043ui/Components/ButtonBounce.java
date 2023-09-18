@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.ButtonBounce */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ButtonBounce {
     private ValueAnimator animator;
     private final float durationMultiplier;

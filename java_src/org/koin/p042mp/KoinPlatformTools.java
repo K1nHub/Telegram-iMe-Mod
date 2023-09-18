@@ -15,7 +15,7 @@ import org.koin.core.context.KoinContext;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: KoinPlatformTools.kt */
 /* renamed from: org.koin.mp.KoinPlatformTools */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class KoinPlatformTools {
     public static final KoinPlatformTools INSTANCE = new KoinPlatformTools();
 
@@ -68,7 +68,7 @@ public final class KoinPlatformTools {
     }
 
     /* renamed from: synchronized  reason: not valid java name */
-    public final <R> R m1698synchronized(Object lock, Function0<? extends R> block) {
+    public final <R> R m1696synchronized(Object lock, Function0<? extends R> block) {
         R invoke;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(block, "block");

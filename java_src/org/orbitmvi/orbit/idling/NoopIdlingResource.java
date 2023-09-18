@@ -1,6 +1,6 @@
 package org.orbitmvi.orbit.idling;
 /* compiled from: NoopIdlingResource.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NoopIdlingResource implements IdlingResource {
     @Override // org.orbitmvi.orbit.idling.IdlingResource
     public void close() {

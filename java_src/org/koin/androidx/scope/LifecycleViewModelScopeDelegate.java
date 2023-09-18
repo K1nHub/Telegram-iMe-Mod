@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.scope.Scope;
 /* compiled from: LifecycleViewModelScopeDelegate.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class LifecycleViewModelScopeDelegate {
     public static final /* synthetic */ Function1 access$getCreateScope$p(LifecycleViewModelScopeDelegate lifecycleViewModelScopeDelegate) {
         throw null;
@@ -23,8 +23,8 @@ public final class LifecycleViewModelScopeDelegate {
 
     /* compiled from: LifecycleViewModelScopeDelegate.kt */
     /* renamed from: org.koin.androidx.scope.LifecycleViewModelScopeDelegate$2 */
-    /* loaded from: classes4.dex */
-    public final class C34432 implements DefaultLifecycleObserver {
+    /* loaded from: classes6.dex */
+    public final class C33592 implements DefaultLifecycleObserver {
         final /* synthetic */ ScopeHandlerViewModel $scopeViewModel;
         final /* synthetic */ LifecycleViewModelScopeDelegate this$0;
 

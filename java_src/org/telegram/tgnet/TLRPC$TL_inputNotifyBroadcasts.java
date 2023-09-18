@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_inputNotifyBroadcasts extends TLRPC$InputNotifyPeer {
     public static int constructor = -1311015810;
 

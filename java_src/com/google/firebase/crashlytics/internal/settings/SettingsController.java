@@ -25,7 +25,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SettingsController implements SettingsDataProvider {
     private final AtomicReference<TaskCompletionSource<AppSettingsData>> appSettingsData;
     private final CachedSettingsIo cachedSettingsIo;

@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 /* compiled from: CatalogRootView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.catalog.CatalogRootView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface CatalogRootView extends BaseView {
     void onSelectedLanguageChanged();
 

@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.math.linearalgebra;
 
 import java.lang.reflect.Array;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GoppaCode {
     public static GF2Matrix createCanonicalCheckMatrix(GF2mField gF2mField, PolynomialGF2mSmallM polynomialGF2mSmallM) {
         int degree = gF2mField.getDegree();

@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductView> implements BuyCryptoProductView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -90,7 +90,7 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
 
     /* compiled from: BuyCryptoProductView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowUiItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowUiItemsCommand extends ViewCommand<BuyCryptoProductView> {
         public final List<BaseNode> availablePurchases;
 
@@ -107,7 +107,7 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
 
     /* compiled from: BuyCryptoProductView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowRefreshLoadingCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRefreshLoadingCommand extends ViewCommand<BuyCryptoProductView> {
         public final boolean show;
 
@@ -124,7 +124,7 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
 
     /* compiled from: BuyCryptoProductView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<BuyCryptoProductView> {
         public final String text;
 
@@ -141,7 +141,7 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
 
     /* compiled from: BuyCryptoProductView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<BuyCryptoProductView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -162,7 +162,7 @@ public class BuyCryptoProductView$$State extends MvpViewState<BuyCryptoProductVi
 
     /* compiled from: BuyCryptoProductView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<BuyCryptoProductView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

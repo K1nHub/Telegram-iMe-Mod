@@ -6,7 +6,7 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: String.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StringKt {
     private static final String HEX_CHARS = "0123456789abcdef";
 

@@ -8,7 +8,7 @@ import kotlinx.coroutines.internal.OnUndeliveredElementKt;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.UndeliveredElementException;
 /* compiled from: LinkedListChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class LinkedListChannel<E> extends AbstractChannel<E> {
     @Override // kotlinx.coroutines.channels.AbstractChannel
     protected final boolean isBufferAlwaysEmpty() {
@@ -62,7 +62,7 @@ public class LinkedListChannel<E> extends AbstractChannel<E> {
 
     @Override // kotlinx.coroutines.channels.AbstractChannel
     /* renamed from: onCancelIdempotentList-w-w6eGU */
-    protected void mo1671onCancelIdempotentListww6eGU(Object obj, Closed<?> closed) {
+    protected void mo1669onCancelIdempotentListww6eGU(Object obj, Closed<?> closed) {
         UndeliveredElementException undeliveredElementException = null;
         if (obj != null) {
             if (obj instanceof ArrayList) {

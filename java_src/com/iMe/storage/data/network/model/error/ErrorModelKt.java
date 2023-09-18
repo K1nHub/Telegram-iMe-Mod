@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.error;
 
 import com.iMe.storage.R$string;
 /* compiled from: ErrorModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ErrorModelKt {
     private static final int BAD_RESPONSE_ERROR_MESSAGE;
     private static final int EMPTY_RESPONSE_ERROR_MESSAGE;

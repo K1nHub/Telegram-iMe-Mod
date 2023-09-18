@@ -14,7 +14,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TokenManagementView$$State extends MvpViewState<TokenManagementView> implements TokenManagementView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
@@ -231,7 +231,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$CopyAddressToClipboardCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class CopyAddressToClipboardCommand extends ViewCommand<TokenManagementView> {
         public final String address;
 
@@ -248,7 +248,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$OpenBrowserUrlCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenBrowserUrlCommand extends ViewCommand<TokenManagementView> {
         public final String url;
 
@@ -265,7 +265,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ShowEnableConfirmationDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowEnableConfirmationDialogCommand extends ViewCommand<TokenManagementView> {
         public final DialogModel dialogModel;
 
@@ -282,7 +282,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ShowDeleteConfirmationDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowDeleteConfirmationDialogCommand extends ViewCommand<TokenManagementView> {
         public final DialogModel dialogModel;
 
@@ -299,7 +299,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ShowTokensListsDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowTokensListsDialogCommand extends ViewCommand<TokenManagementView> {
         public final List<TokenListInfo> tokenLists;
 
@@ -316,7 +316,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$SetScannedAddressTextCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetScannedAddressTextCommand extends ViewCommand<TokenManagementView> {
         public final String address;
 
@@ -333,7 +333,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$UpdateErrorTextVisibilityCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateErrorTextVisibilityCommand extends ViewCommand<TokenManagementView> {
         public final boolean isVisible;
 
@@ -350,7 +350,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ResetImportScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ResetImportScreenCommand extends ViewCommand<TokenManagementView> {
         ResetImportScreenCommand(TokenManagementView$$State tokenManagementView$$State) {
             super("resetImportScreen", AddToEndSingleStrategy.class);
@@ -364,7 +364,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$SetupActionButtonStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupActionButtonStateCommand extends ViewCommand<TokenManagementView> {
         public final boolean isButtonEnabled;
         public final boolean isCustomToken;
@@ -383,7 +383,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$SetupTokenDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupTokenDataCommand extends ViewCommand<TokenManagementView> {
         public final String address;
         public final String decimals;
@@ -412,7 +412,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<TokenManagementView> {
         public final String text;
 
@@ -429,7 +429,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<TokenManagementView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -450,7 +450,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<TokenManagementView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -469,7 +469,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$FinishScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class FinishScreenCommand extends ViewCommand<TokenManagementView> {
         FinishScreenCommand(TokenManagementView$$State tokenManagementView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);
@@ -483,7 +483,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$SetupNetworkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupNetworkCommand extends ViewCommand<TokenManagementView> {
         public final NetworkItem networkItem;
 
@@ -500,7 +500,7 @@ public class TokenManagementView$$State extends MvpViewState<TokenManagementView
 
     /* compiled from: TokenManagementView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<TokenManagementView> {
         public final List<? extends NetworkItem> availableNetworks;
         public final NetworkItem network;

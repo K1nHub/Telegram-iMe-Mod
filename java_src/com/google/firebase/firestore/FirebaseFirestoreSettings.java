@@ -1,14 +1,14 @@
 package com.google.firebase.firestore;
 
 import org.telegram.messenger.SaveToGallerySettingsHelper;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseFirestoreSettings {
     private final long cacheSizeBytes;
     private final String host;
     private final boolean persistenceEnabled;
     private final boolean sslEnabled;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private String host = "firestore.googleapis.com";
         private boolean sslEnabled = true;

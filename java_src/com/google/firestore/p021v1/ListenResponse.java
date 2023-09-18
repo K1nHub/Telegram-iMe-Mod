@@ -4,7 +4,7 @@ import com.google.protobuf.GeneratedMessageLite;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 /* renamed from: com.google.firestore.v1.ListenResponse */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ListenResponse extends GeneratedMessageLite<ListenResponse, Builder> implements MessageLiteOrBuilder {
     private static final ListenResponse DEFAULT_INSTANCE;
     public static final int DOCUMENT_CHANGE_FIELD_NUMBER = 3;
@@ -20,7 +20,7 @@ public final class ListenResponse extends GeneratedMessageLite<ListenResponse, B
     }
 
     /* renamed from: com.google.firestore.v1.ListenResponse$ResponseTypeCase */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ResponseTypeCase {
         TARGET_CHANGE(2),
         DOCUMENT_CHANGE(3),
@@ -107,7 +107,7 @@ public final class ListenResponse extends GeneratedMessageLite<ListenResponse, B
     }
 
     /* renamed from: com.google.firestore.v1.ListenResponse$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<ListenResponse, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10661 c10661) {
             this();
@@ -119,7 +119,7 @@ public final class ListenResponse extends GeneratedMessageLite<ListenResponse, B
     }
 
     /* renamed from: com.google.firestore.v1.ListenResponse$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10661 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

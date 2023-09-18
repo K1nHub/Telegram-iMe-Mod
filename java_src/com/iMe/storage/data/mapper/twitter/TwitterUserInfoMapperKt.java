@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.response.twitter.TwitterUserResponse;
 import com.iMe.storage.domain.model.twitter.TwitterUserInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterUserInfoMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterUserInfoMapperKt {
     public static final TwitterUserInfo mapToDomain(TwitterUserResponse twitterUserResponse) {
         Intrinsics.checkNotNullParameter(twitterUserResponse, "<this>");

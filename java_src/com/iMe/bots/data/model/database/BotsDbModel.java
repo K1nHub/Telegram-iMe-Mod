@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotsDbModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsDbModel {
     private final String avatarOriginal;
     private final String avatarRounded;

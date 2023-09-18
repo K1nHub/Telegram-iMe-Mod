@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.concurrent.TaskRunner;
 import okhttp3.internal.connection.RealConnectionPool;
 /* compiled from: ConnectionPool.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ConnectionPool {
     private final RealConnectionPool delegate;
 

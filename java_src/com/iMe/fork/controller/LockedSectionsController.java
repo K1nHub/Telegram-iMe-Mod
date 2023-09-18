@@ -19,7 +19,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: LockedSectionsController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LockedSectionsController extends BaseController {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, LockedSectionsController> accountInstances = new ConcurrentHashMap<>(5);
@@ -110,7 +110,7 @@ public final class LockedSectionsController extends BaseController {
     }
 
     /* compiled from: LockedSectionsController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SectionPasscodeData {
         private int badPasscodeTries;
         private boolean isSectionLocked;
@@ -170,7 +170,7 @@ public final class LockedSectionsController extends BaseController {
                 if (r3 == 0) goto L29
                 java.lang.String r3 = com.iMe.common.TelegramPreferenceKeys.User.Default.passcodeSaltString()
                 byte[] r3 = android.util.Base64.decode(r3, r4)
-                java.lang.String r5 = "decode(TelegramPreferenc…String(), Base64.DEFAULT)"
+                java.lang.String r5 = "decode(\n            Tele… Base64.DEFAULT\n        )"
                 kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, r5)
                 goto L2b
             L29:
@@ -325,7 +325,7 @@ public final class LockedSectionsController extends BaseController {
     }
 
     /* compiled from: LockedSectionsController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

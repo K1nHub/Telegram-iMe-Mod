@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
 /* compiled from: ProfileUiState.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ProfileUiState {
     private final ArrayList<TLRPC$ChatParticipant> allNotMegaGroupMembers;
     private final ContentState contentState;

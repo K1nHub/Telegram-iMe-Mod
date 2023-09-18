@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageReceiver;
@@ -33,7 +33,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimatedTextView;
 import org.telegram.p043ui.Storage.CacheModel;
 /* renamed from: org.telegram.ui.Components.StorageDiagramView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StorageDiagramView extends View implements NotificationCenter.NotificationCenterDelegate {
     private float[] animateToPercentage;
     private int arcDrawingRadianOffset;
@@ -109,12 +109,12 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
         this.avatarImageReceiver = imageReceiver;
         imageReceiver.setParentView(this);
         if (z) {
-            this.dialogText = LocaleController.getString("ArchivedChats", C3558R.string.ArchivedChats);
-            CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m72dp(90), Theme.getColor(Theme.key_chats_archiveBackground)), ContextCompat.getDrawable(context, C3558R.C3560drawable.fork_fab_archive));
+            this.dialogText = LocaleController.getString("ArchivedChats", C3473R.string.ArchivedChats);
+            CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m72dp(90), Theme.getColor(Theme.key_chats_archiveBackground)), ContextCompat.getDrawable(context, C3473R.C3475drawable.fork_fab_archive));
             combinedDrawable.setIconSize(AndroidUtilities.m72dp(30), AndroidUtilities.m72dp(30));
             this.avatarImageReceiver.setImageBitmap(combinedDrawable);
         } else if (j == Long.MAX_VALUE) {
-            this.dialogText = LocaleController.getString("CacheOtherChats", C3558R.string.CacheOtherChats);
+            this.dialogText = LocaleController.getString("CacheOtherChats", C3473R.string.CacheOtherChats);
             this.avatarDrawable.setAvatarType(14);
             this.avatarImageReceiver.setForUserOrChat(null, this.avatarDrawable);
         } else {
@@ -366,7 +366,7 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
     }
 
     /* renamed from: org.telegram.ui.Components.StorageDiagramView$ClearViewData */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class ClearViewData {
         public boolean clear;
         public int colorKey;

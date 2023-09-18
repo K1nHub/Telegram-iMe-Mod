@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.staking;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationCost.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingOperationCost {
     private final TokenDetailed token;
     private final StakingValues value;

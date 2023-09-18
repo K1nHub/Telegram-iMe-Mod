@@ -3,12 +3,12 @@ package kotlinx.coroutines.flow.internal;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 /* compiled from: SafeCollector.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DownstreamExceptionContext implements CoroutineContext {
     private final /* synthetic */ CoroutineContext $$delegate_0;
 
     /* renamed from: e */
-    public final Throwable f1319e;
+    public final Throwable f1310e;
 
     @Override // kotlin.coroutines.CoroutineContext
     public <R> R fold(R r, Function2<? super R, ? super CoroutineContext.Element, ? extends R> function2) {
@@ -31,7 +31,7 @@ public final class DownstreamExceptionContext implements CoroutineContext {
     }
 
     public DownstreamExceptionContext(Throwable th, CoroutineContext coroutineContext) {
-        this.f1319e = th;
+        this.f1310e = th;
         this.$$delegate_0 = coroutineContext;
     }
 }

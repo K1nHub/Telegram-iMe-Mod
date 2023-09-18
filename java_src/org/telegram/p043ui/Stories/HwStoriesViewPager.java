@@ -5,7 +5,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HwLayouts.java */
 /* renamed from: org.telegram.ui.Stories.HwStoriesViewPager */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HwStoriesViewPager extends StoriesViewPager {
     public HwStoriesViewPager(Context context, StoryViewer storyViewer, Theme.ResourcesProvider resourcesProvider) {
         super(context, storyViewer, resourcesProvider);

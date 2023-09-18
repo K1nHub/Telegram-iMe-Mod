@@ -4,7 +4,7 @@ import io.reactivex.Completable;
 import java.util.List;
 /* compiled from: BaseDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.base.BaseDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface BaseDao<T> {
     long insert(T t);
 

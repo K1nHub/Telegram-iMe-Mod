@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.handlers.model;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlobalApiErrorCode.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum GlobalApiErrorCode {
     ERR_USER_NOT_AUTH,
     ERR_TARGET_USER_NOT_FOUND_IN_IME,
@@ -46,12 +46,14 @@ public enum GlobalApiErrorCode {
     TWITTER_USER_DISABLED_DIRECT_MESSAGES,
     NO_OAUTH_ACCESS_GRANTED_ERROR,
     ERR_TOKEN_NOT_FOUND,
+    ERR_AMOUNT_LESS_THAN_MIN,
+    ERR_FETCH_TOKEN,
     UNKNOWN;
     
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: GlobalApiErrorCode.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -23,7 +23,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.ScaleStateListAnimator;
 /* renamed from: org.telegram.ui.Stories.recorder.ButtonWithCounterView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ButtonWithCounterView extends FrameLayout {
     private float countAlpha;
     private final AnimatedFloat countAlphaAnimated;

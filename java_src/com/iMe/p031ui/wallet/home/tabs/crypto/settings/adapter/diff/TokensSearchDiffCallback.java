@@ -7,7 +7,7 @@ import com.iMe.model.wallet.home.FoundTokenItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokensSearchDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.adapter.diff.TokensSearchDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TokensSearchDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {

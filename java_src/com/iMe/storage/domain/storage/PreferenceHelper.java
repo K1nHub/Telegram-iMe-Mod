@@ -4,7 +4,7 @@ import com.iMe.storage.data.locale.prefs.model.RequestAppReviewMetadata;
 import com.iMe.storage.data.locale.prefs.model.RequestAppUpdateMetadata;
 import com.iMe.storage.domain.model.common.Environment;
 /* compiled from: PreferenceHelper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface PreferenceHelper extends BasePreferenceHelper {
     long getCatalogLanguagesLastUpdateTime();
 

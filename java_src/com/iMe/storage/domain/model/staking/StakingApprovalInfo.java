@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.staking;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingApprovalInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingApprovalInfo {
     private final StakingTokenApprovalStatus feeToken;
     private final StakingTokenApprovalStatus token;

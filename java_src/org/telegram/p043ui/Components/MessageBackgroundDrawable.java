@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 /* renamed from: org.telegram.ui.Components.MessageBackgroundDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class MessageBackgroundDrawable extends Drawable {
     private boolean animationInProgress;
     private float currentAnimationProgress;

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: Sets.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class EmptySet implements Set, Serializable, KMappedMarker {
     public static final EmptySet INSTANCE = new EmptySet();
 

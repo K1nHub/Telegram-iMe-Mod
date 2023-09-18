@@ -3,7 +3,7 @@ package org.telegram.p043ui.Components.Paint;
 import android.graphics.Matrix;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.Paint.GLMatrix */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GLMatrix {
     public static float[] LoadOrtho(float f, float f2, float f3, float f4, float f5, float f6) {
         float f7 = f2 - f;

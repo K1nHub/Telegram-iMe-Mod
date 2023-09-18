@@ -12,19 +12,19 @@ import java.io.InputStream;
 import java.io.OutputStream;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface Channel extends Parcelable {
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface GetInputStreamResult extends Releasable, Result {
         InputStream getInputStream();
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface GetOutputStreamResult extends Releasable, Result {
         OutputStream getOutputStream();
     }

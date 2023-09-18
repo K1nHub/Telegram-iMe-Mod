@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.PlayingGameDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PlayingGameDrawable extends StatusDrawable {
     private final boolean isDialogScreen;
     private float progress;

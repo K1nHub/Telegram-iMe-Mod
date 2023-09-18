@@ -3,7 +3,7 @@ package com.iMe.bots.data.database;
 import com.iMe.bots.data.model.database.TagDbModel;
 import java.util.List;
 /* compiled from: BotsTagDao.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BotsTagDao {
     public abstract List<TagDbModel> getAll();
 

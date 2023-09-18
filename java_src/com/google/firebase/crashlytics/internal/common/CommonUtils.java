@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CommonUtils {
     private static final char[] HEX_VALUES = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     private static long totalRamInBytes = -1;
@@ -107,7 +107,7 @@ public class CommonUtils {
         return Architecture.getValue().ordinal();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     enum Architecture {
         X86_32,
         X86_64,

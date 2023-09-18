@@ -69,7 +69,7 @@ import org.telegram.tgnet.TLRPC$TL_stickerSetFullCovered;
 import org.telegram.tgnet.TLRPC$TL_videoSize_layer127;
 import org.telegram.tgnet.TLRPC$Vector;
 /* renamed from: org.telegram.ui.Stories.recorder.StoryEntry */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoryEntry extends IStoryPart {
     public boolean allowScreenshots;
     public Bitmap blurredVideoThumb;
@@ -132,13 +132,13 @@ public class StoryEntry extends IStoryPart {
     private int checkStickersReqId = 0;
 
     /* renamed from: org.telegram.ui.Stories.recorder.StoryEntry$DecodeBitmap */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface DecodeBitmap {
         Bitmap decode(BitmapFactory.Options options);
     }
 
     /* renamed from: org.telegram.ui.Stories.recorder.StoryEntry$Part */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Part extends IStoryPart {
         public File file;
         public boolean fileDeletable;
@@ -530,7 +530,7 @@ public class StoryEntry extends IStoryPart {
         File pathToAttach;
         StoryEntry storyEntry = new StoryEntry();
         storyEntry.isEdit = true;
-        storyEntry.editStoryId = tLRPC$StoryItem.f1566id;
+        storyEntry.editStoryId = tLRPC$StoryItem.f1557id;
         storyEntry.file = file;
         storyEntry.fileDeletable = true;
         storyEntry.width = 720;
@@ -553,8 +553,8 @@ public class StoryEntry extends IStoryPart {
                     }
                     TLRPC$DocumentAttribute tLRPC$DocumentAttribute = tLRPC$StoryItem.media.document.attributes.get(i2);
                     if (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo) {
-                        storyEntry.width = tLRPC$DocumentAttribute.f1542w;
-                        storyEntry.height = tLRPC$DocumentAttribute.f1541h;
+                        storyEntry.width = tLRPC$DocumentAttribute.f1533w;
+                        storyEntry.height = tLRPC$DocumentAttribute.f1532h;
                         storyEntry.fileDuration = tLRPC$DocumentAttribute.duration;
                         break;
                     }
@@ -905,7 +905,7 @@ public class StoryEntry extends IStoryPart {
     }
 
     /* renamed from: org.telegram.ui.Stories.recorder.StoryEntry$HDRInfo */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class HDRInfo {
         public int colorRange;
         public int colorStandard;
@@ -1016,8 +1016,8 @@ public class StoryEntry extends IStoryPart {
             }
             TLRPC$TL_inputStickeredMediaPhoto tLRPC$TL_inputStickeredMediaPhoto = new TLRPC$TL_inputStickeredMediaPhoto();
             TLRPC$TL_inputPhoto tLRPC$TL_inputPhoto = new TLRPC$TL_inputPhoto();
-            tLRPC$TL_inputStickeredMediaPhoto.f1608id = tLRPC$TL_inputPhoto;
-            tLRPC$TL_inputPhoto.f1553id = tLRPC$Photo.f1561id;
+            tLRPC$TL_inputStickeredMediaPhoto.f1599id = tLRPC$TL_inputPhoto;
+            tLRPC$TL_inputPhoto.f1544id = tLRPC$Photo.f1552id;
             tLRPC$TL_inputPhoto.access_hash = tLRPC$Photo.access_hash;
             byte[] bArr = tLRPC$Photo.file_reference;
             tLRPC$TL_inputPhoto.file_reference = bArr;
@@ -1032,8 +1032,8 @@ public class StoryEntry extends IStoryPart {
             }
             TLRPC$TL_inputStickeredMediaDocument tLRPC$TL_inputStickeredMediaDocument = new TLRPC$TL_inputStickeredMediaDocument();
             TLRPC$TL_inputDocument tLRPC$TL_inputDocument = new TLRPC$TL_inputDocument();
-            tLRPC$TL_inputStickeredMediaDocument.f1607id = tLRPC$TL_inputDocument;
-            tLRPC$TL_inputDocument.f1547id = tLRPC$Document.f1539id;
+            tLRPC$TL_inputStickeredMediaDocument.f1598id = tLRPC$TL_inputDocument;
+            tLRPC$TL_inputDocument.f1538id = tLRPC$Document.f1530id;
             tLRPC$TL_inputDocument.access_hash = tLRPC$Document.access_hash;
             byte[] bArr2 = tLRPC$Document.file_reference;
             tLRPC$TL_inputDocument.file_reference = bArr2;
@@ -1086,7 +1086,7 @@ public class StoryEntry extends IStoryPart {
                 }
                 if (tLRPC$Document != null) {
                     TLRPC$TL_inputDocument tLRPC$TL_inputDocument = new TLRPC$TL_inputDocument();
-                    tLRPC$TL_inputDocument.f1547id = tLRPC$Document.f1539id;
+                    tLRPC$TL_inputDocument.f1538id = tLRPC$Document.f1530id;
                     tLRPC$TL_inputDocument.access_hash = tLRPC$Document.access_hash;
                     tLRPC$TL_inputDocument.file_reference = tLRPC$Document.file_reference;
                     this.editStickers.add(tLRPC$TL_inputDocument);

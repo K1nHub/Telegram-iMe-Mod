@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountWalletAddressResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AccountWalletAddressResponse {
     private final boolean isSet;
     private final String platform;

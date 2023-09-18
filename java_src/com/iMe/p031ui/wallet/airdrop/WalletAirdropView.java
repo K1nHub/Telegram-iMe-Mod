@@ -5,9 +5,6 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletAirdropView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.airdrop.WalletAirdropView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletAirdropView extends BaseView {
-    void checkNeedToShowAirdropDialog();
-
-    void showAirdropDialog();
 }

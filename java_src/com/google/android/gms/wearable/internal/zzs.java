@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "AppWearDetailsParcelableCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzs> CREATOR = new zzt();
     @SafeParcelable.Field(m797id = 1)

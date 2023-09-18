@@ -21,7 +21,7 @@ import timber.log.Timber;
 /* compiled from: CryptoBoxSuspensionPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CryptoBoxSuspensionPresenter extends BasePresenter<CryptoBoxSuspensionView> {
     private final CryptoBoxInteractor cryptoBoxInteractor;
     private final ResourceManager resourceManager;
@@ -57,12 +57,12 @@ public final class CryptoBoxSuspensionPresenter extends BasePresenter<CryptoBoxS
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1515invoke(result);
+                m1506invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1515invoke(Result<? extends String> it) {
+            public final void m1506invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -98,7 +98,7 @@ public final class CryptoBoxSuspensionPresenter extends BasePresenter<CryptoBoxS
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

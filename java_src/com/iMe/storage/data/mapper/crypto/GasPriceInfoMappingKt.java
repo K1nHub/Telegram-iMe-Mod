@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GasPriceInfoMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GasPriceInfoMappingKt {
     public static final GasPriceInfo mapToDomain(GasPriceResponse gasPriceResponse) {
         Intrinsics.checkNotNullParameter(gasPriceResponse, "<this>");

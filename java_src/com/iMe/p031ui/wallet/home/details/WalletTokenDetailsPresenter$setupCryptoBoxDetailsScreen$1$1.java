@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTokenDetailsPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$setupCryptoBoxDetailsScreen$1$1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 /* synthetic */ class WalletTokenDetailsPresenter$setupCryptoBoxDetailsScreen$1$1 extends FunctionReferenceImpl implements Function2<Number, TokenDetailed, String> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public WalletTokenDetailsPresenter$setupCryptoBoxDetailsScreen$1$1(Object obj) {

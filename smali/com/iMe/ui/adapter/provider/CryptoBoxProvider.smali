@@ -112,37 +112,42 @@
 
     move-result-object v0
 
-    .line 37
+    .line 38
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     const/4 v4, 0x2
 
     new-array v4, v4, [I
 
+    .line 39
     sget v5, Lorg/telegram/messenger/R$id;->text_name:I
 
     const/4 v6, 0x0
 
     aput v5, v4, v6
 
+    .line 40
     sget v7, Lorg/telegram/messenger/R$id;->text_description:I
 
     aput v7, v4, v3
 
+    .line 37
     invoke-static {v0, v2, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 38
+    .line 43
     sget v2, Lorg/telegram/messenger/R$id;->text_creation_time:I
 
+    .line 44
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
+    .line 42
     invoke-static {v0, v2, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v0
 
-    .line 39
+    .line 46
     sget v4, Lorg/telegram/messenger/R$id;->text_status:I
 
     invoke-virtual/range {p0 .. p0}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->getContext()Landroid/content/Context;
@@ -165,12 +170,12 @@
 
     aput v5, v8, v6
 
-    .line 40
+    .line 47
     invoke-static {v0, v8}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object v9
 
-    .line 41
+    .line 48
     sget v0, Lorg/telegram/messenger/R$id;->image_token_logo:I
 
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getTokenLogoUrl()Ljava/lang/String;
@@ -191,7 +196,7 @@
 
     move-result-object v6
 
-    .line 42
+    .line 49
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getName()Ljava/lang/String;
 
     move-result-object v8
@@ -200,7 +205,7 @@
 
     move-result-object v5
 
-    .line 43
+    .line 50
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getDescription()Ljava/lang/String;
 
     move-result-object v6
@@ -209,7 +214,7 @@
 
     move-result-object v5
 
-    .line 44
+    .line 51
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getCreationTimeText()Ljava/lang/String;
 
     move-result-object v6
@@ -218,7 +223,7 @@
 
     move-result-object v2
 
-    .line 45
+    .line 52
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getStatusText()Ljava/lang/String;
 
     move-result-object v5
@@ -227,7 +232,7 @@
 
     move-result-object v2
 
-    .line 46
+    .line 53
     invoke-virtual/range {p2 .. p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getDescription()Ljava/lang/String;
 
     move-result-object v4
@@ -242,7 +247,7 @@
 
     move-result-object v2
 
-    .line 47
+    .line 54
     sget v3, Lorg/telegram/messenger/R$id;->image_logo:I
 
     new-instance v4, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$1;
@@ -253,7 +258,7 @@
 
     move-result-object v1
 
-    .line 57
+    .line 64
     new-instance v2, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$2;
 
     move-object/from16 v3, p0
@@ -291,7 +296,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 77
     sget p3, Lorg/telegram/messenger/R$id;->text_status:I
 
     invoke-virtual {p0}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->getContext()Landroid/content/Context;
@@ -310,7 +315,7 @@
 
     move-result-object v1
 
-    .line 70
+    .line 78
     sget p1, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getChatAvatarUrl()Ljava/lang/String;
@@ -331,7 +336,7 @@
 
     move-result-object v0
 
-    .line 71
+    .line 79
     sget v1, Lorg/telegram/messenger/R$id;->text_name:I
 
     invoke-virtual {p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getName()Ljava/lang/String;
@@ -342,7 +347,7 @@
 
     move-result-object v0
 
-    .line 72
+    .line 80
     sget v1, Lorg/telegram/messenger/R$id;->text_description:I
 
     invoke-virtual {p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getDescription()Ljava/lang/String;
@@ -353,7 +358,7 @@
 
     move-result-object v0
 
-    .line 73
+    .line 81
     sget v1, Lorg/telegram/messenger/R$id;->text_creation_time:I
 
     invoke-virtual {p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getCreationTimeText()Ljava/lang/String;
@@ -364,7 +369,7 @@
 
     move-result-object v0
 
-    .line 74
+    .line 82
     invoke-virtual {p2}, Lcom/iMe/model/cryptobox/CryptoBoxItem;->getStatusText()Ljava/lang/String;
 
     move-result-object v1
@@ -373,7 +378,7 @@
 
     move-result-object p3
 
-    .line 75
+    .line 83
     new-instance v0, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$2$1;
 
     invoke-direct {v0, p2}, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$2$1;-><init>(Lcom/iMe/model/cryptobox/CryptoBoxItem;)V

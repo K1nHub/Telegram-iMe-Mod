@@ -1,7 +1,7 @@
 package org.solovyev.android.checkout;
 
 import java.util.Comparator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class PurchaseComparator implements Comparator<Purchase> {
     private static final Comparator<Purchase> EARLIEST_FIRST = new PurchaseComparator(true);
     private static final Comparator<Purchase> LATEST_FIRST = new PurchaseComparator(false);

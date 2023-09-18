@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.wearable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzy {
     public static int zza(int i, int i2, String str) {
         String zza;

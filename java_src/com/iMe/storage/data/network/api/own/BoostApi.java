@@ -9,7 +9,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: BoostApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface BoostApi {
     @POST("prepareSpeedUpTx")
     Observable<ApiBaseResponse<SpeedUpTransactionDataResponse>> getSpeedUpTransactionData(@Body PrepareSpeedUpOrCancelTransactionRequest prepareSpeedUpOrCancelTransactionRequest);

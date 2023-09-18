@@ -5,7 +5,7 @@ import com.iMe.model.wallet.select.SelectableTokenItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectTokenDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.swap.token.adapter.diff.SelectTokenDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SelectTokenDiffCallback extends DiffUtil.ItemCallback<SelectableTokenItem> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(SelectableTokenItem oldItem, SelectableTokenItem newItem) {

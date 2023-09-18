@@ -13,7 +13,7 @@ import java.io.IOException;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "MapStyleOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MapStyleOptions extends AbstractSafeParcelable {
     @SafeParcelable.Field(getter = "getJson", m797id = 2)
     private String zzb;

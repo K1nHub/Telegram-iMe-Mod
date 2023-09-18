@@ -4,21 +4,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import net.lingala.zip4j.exception.ZipException;
 /* renamed from: net.lingala.zip4j.io.ZipInputStream */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ZipInputStream extends InputStream {
 
     /* renamed from: is */
-    private BaseInputStream f1329is;
+    private BaseInputStream f1320is;
 
     public ZipInputStream(BaseInputStream baseInputStream) {
-        this.f1329is = baseInputStream;
+        this.f1320is = baseInputStream;
     }
 
     @Override // java.io.InputStream
     public int read() throws IOException {
-        int read = this.f1329is.read();
+        int read = this.f1320is.read();
         if (read != -1) {
-            this.f1329is.getUnzipEngine().updateCRC(read);
+            this.f1320is.getUnzipEngine().updateCRC(read);
         }
         return read;
     }
@@ -30,9 +30,9 @@ public class ZipInputStream extends InputStream {
 
     @Override // java.io.InputStream
     public int read(byte[] bArr, int i, int i2) throws IOException {
-        int read = this.f1329is.read(bArr, i, i2);
-        if (read > 0 && this.f1329is.getUnzipEngine() != null) {
-            this.f1329is.getUnzipEngine().updateCRC(bArr, i, read);
+        int read = this.f1320is.read(bArr, i, i2);
+        if (read > 0 && this.f1320is.getUnzipEngine() != null) {
+            this.f1320is.getUnzipEngine().updateCRC(bArr, i, read);
         }
         return read;
     }
@@ -44,11 +44,11 @@ public class ZipInputStream extends InputStream {
 
     public void close(boolean z) throws IOException {
         try {
-            this.f1329is.close();
-            if (z || this.f1329is.getUnzipEngine() == null) {
+            this.f1320is.close();
+            if (z || this.f1320is.getUnzipEngine() == null) {
                 return;
             }
-            this.f1329is.getUnzipEngine().checkCRC();
+            this.f1320is.getUnzipEngine().checkCRC();
         } catch (ZipException e) {
             throw new IOException(e.getMessage());
         }
@@ -56,11 +56,11 @@ public class ZipInputStream extends InputStream {
 
     @Override // java.io.InputStream
     public int available() throws IOException {
-        return this.f1329is.available();
+        return this.f1320is.available();
     }
 
     @Override // java.io.InputStream
     public long skip(long j) throws IOException {
-        return this.f1329is.skip(j);
+        return this.f1320is.skip(j);
     }
 }

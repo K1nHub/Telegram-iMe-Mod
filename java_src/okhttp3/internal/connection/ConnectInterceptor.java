@@ -6,7 +6,7 @@ import okhttp3.Interceptor;
 import okhttp3.Response;
 import okhttp3.internal.http.RealInterceptorChain;
 /* compiled from: ConnectInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ConnectInterceptor implements Interceptor {
     public static final ConnectInterceptor INSTANCE = new ConnectInterceptor();
 

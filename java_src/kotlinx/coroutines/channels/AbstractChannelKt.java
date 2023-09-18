@@ -2,7 +2,7 @@ package kotlinx.coroutines.channels;
 
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: AbstractChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AbstractChannelKt {
     public static final Symbol EMPTY = new Symbol("EMPTY");
     public static final Symbol OFFER_SUCCESS = new Symbol("OFFER_SUCCESS");

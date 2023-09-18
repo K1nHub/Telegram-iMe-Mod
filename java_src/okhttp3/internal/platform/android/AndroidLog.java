@@ -15,7 +15,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.internal.concurrent.TaskRunner;
 import okhttp3.internal.http2.Http2;
 /* compiled from: AndroidLog.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidLog {
     public static final AndroidLog INSTANCE = new AndroidLog();
     private static final CopyOnWriteArraySet<Logger> configuredLoggers = new CopyOnWriteArraySet<>();

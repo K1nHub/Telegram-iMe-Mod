@@ -3,7 +3,7 @@ package com.google.common.collect;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class Platform {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <K, V> Map<K, V> newHashMapWithExpectedSize(int i) {

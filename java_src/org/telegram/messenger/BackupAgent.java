@@ -4,7 +4,7 @@ import android.app.backup.BackupAgentHelper;
 import android.app.backup.BackupManager;
 import android.app.backup.SharedPreferencesBackupHelper;
 import android.content.Context;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BackupAgent extends BackupAgentHelper {
     private static BackupManager backupManager;
 

@@ -5,7 +5,7 @@ import androidx.lifecycle.LifecycleOwner;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.scope.Scope;
 /* compiled from: ComponentActivityExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ComponentActivityExtKt$registerScopeForLifecycle$1 implements DefaultLifecycleObserver {
     final /* synthetic */ Scope $scope;
 

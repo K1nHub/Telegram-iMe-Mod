@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxTransactionArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxTransactionArgs implements TransactionArgs {
     private final long chainId;
     private final String data;

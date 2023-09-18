@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_account_updateTheme extends TLObject {
     public static int constructor = 1555261397;
     public TLRPC$InputDocument document;

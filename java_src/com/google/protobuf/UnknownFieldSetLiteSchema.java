@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class UnknownFieldSetLiteSchema extends UnknownFieldSchema<UnknownFieldSetLite, UnknownFieldSetLite> {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.protobuf.UnknownFieldSchema

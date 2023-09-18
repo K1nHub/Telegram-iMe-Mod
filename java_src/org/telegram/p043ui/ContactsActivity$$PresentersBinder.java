@@ -7,7 +7,7 @@ import java.util.List;
 import moxy.MvpPresenter;
 import moxy.presenter.PresenterField;
 /* renamed from: org.telegram.ui.ContactsActivity$$PresentersBinder */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ContactsActivity$$PresentersBinder extends moxy.PresenterBinder<ContactsActivity> {
     @Override // moxy.PresenterBinder
     public List<PresenterField<? super ContactsActivity>> getPresenterFields() {
@@ -19,7 +19,7 @@ public class ContactsActivity$$PresentersBinder extends moxy.PresenterBinder<Con
 
     /* compiled from: ContactsActivity$$PresentersBinder.java */
     /* renamed from: org.telegram.ui.ContactsActivity$$PresentersBinder$PresenterBinder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class PresenterBinder extends PresenterField<ContactsActivity> {
         public PresenterBinder(ContactsActivity$$PresentersBinder contactsActivity$$PresentersBinder) {
             super("presenter", null, ContactsPresenter.class);
@@ -38,7 +38,7 @@ public class ContactsActivity$$PresentersBinder extends moxy.PresenterBinder<Con
 
     /* compiled from: ContactsActivity$$PresentersBinder.java */
     /* renamed from: org.telegram.ui.ContactsActivity$$PresentersBinder$TransferRecipientPresenterBinder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class TransferRecipientPresenterBinder extends PresenterField<ContactsActivity> {
         public TransferRecipientPresenterBinder(ContactsActivity$$PresentersBinder contactsActivity$$PresentersBinder) {
             super("transferRecipientPresenter", null, WalletSendRecipientPresenter.class);

@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 /* compiled from: LockFreeTaskQueue.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class LockFreeTaskQueue<E> {
     private static final /* synthetic */ AtomicReferenceFieldUpdater _cur$FU = AtomicReferenceFieldUpdater.newUpdater(LockFreeTaskQueue.class, Object.class, "_cur");
     private volatile /* synthetic */ Object _cur;

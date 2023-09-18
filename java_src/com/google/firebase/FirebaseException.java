@@ -2,7 +2,7 @@ package com.google.firebase;
 
 import com.google.android.gms.common.internal.Preconditions;
 /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseException extends Exception {
     /* JADX INFO: Access modifiers changed from: protected */
     @Deprecated

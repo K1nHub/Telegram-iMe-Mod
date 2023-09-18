@@ -37,7 +37,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseApp {
     private final Context applicationContext;
     private final ComponentRuntime componentRuntime;
@@ -53,7 +53,7 @@ public class FirebaseApp {
     private final List<FirebaseAppLifecycleListener> lifecycleListeners = new CopyOnWriteArrayList();
 
     @KeepForSdk
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface BackgroundStateChangeListener {
         @KeepForSdk
         void onBackgroundStateChanged(boolean z);
@@ -243,7 +243,7 @@ public class FirebaseApp {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class UserUnlockReceiver extends BroadcastReceiver {
         private static AtomicReference<UserUnlockReceiver> INSTANCE = new AtomicReference<>();
         private final Context applicationContext;
@@ -278,7 +278,7 @@ public class FirebaseApp {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class GlobalBackgroundStateListener implements BackgroundDetector.BackgroundStateChangeListener {
         private static AtomicReference<GlobalBackgroundStateListener> INSTANCE = new AtomicReference<>();
 
@@ -313,7 +313,7 @@ public class FirebaseApp {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class UiExecutor implements Executor {
         private static final Handler HANDLER = new Handler(Looper.getMainLooper());
 

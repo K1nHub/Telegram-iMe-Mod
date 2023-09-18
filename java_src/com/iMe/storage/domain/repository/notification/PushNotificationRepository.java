@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.notification.Notification;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: PushNotificationRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface PushNotificationRepository {
     Observable<Result<Boolean>> deletePushToken();
 

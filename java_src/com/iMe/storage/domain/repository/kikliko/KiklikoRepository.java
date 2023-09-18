@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.Result;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: KiklikoRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface KiklikoRepository {
     Observable<Result<List<TagResponse>>> getTags();
 

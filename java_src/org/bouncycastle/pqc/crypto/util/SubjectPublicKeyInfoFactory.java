@@ -21,7 +21,7 @@ import org.bouncycastle.pqc.crypto.qtesla.QTESLAPublicKeyParameters;
 import org.bouncycastle.pqc.crypto.sphincs.SPHINCSPublicKeyParameters;
 import org.bouncycastle.pqc.crypto.xmss.XMSSMTPublicKeyParameters;
 import org.bouncycastle.pqc.crypto.xmss.XMSSPublicKeyParameters;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SubjectPublicKeyInfoFactory {
     public static SubjectPublicKeyInfo createSubjectPublicKeyInfo(AsymmetricKeyParameter asymmetricKeyParameter) throws IOException {
         if (asymmetricKeyParameter instanceof QTESLAPublicKeyParameters) {

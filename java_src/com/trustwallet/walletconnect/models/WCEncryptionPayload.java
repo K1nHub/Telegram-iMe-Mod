@@ -2,13 +2,13 @@ package com.trustwallet.walletconnect.models;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCEncryptionPayload.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WCEncryptionPayload {
     private final String data;
     private final String hmac;
 
     /* renamed from: iv */
-    private final String f485iv;
+    private final String f476iv;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -16,17 +16,17 @@ public final class WCEncryptionPayload {
         }
         if (obj instanceof WCEncryptionPayload) {
             WCEncryptionPayload wCEncryptionPayload = (WCEncryptionPayload) obj;
-            return Intrinsics.areEqual(this.data, wCEncryptionPayload.data) && Intrinsics.areEqual(this.hmac, wCEncryptionPayload.hmac) && Intrinsics.areEqual(this.f485iv, wCEncryptionPayload.f485iv);
+            return Intrinsics.areEqual(this.data, wCEncryptionPayload.data) && Intrinsics.areEqual(this.hmac, wCEncryptionPayload.hmac) && Intrinsics.areEqual(this.f476iv, wCEncryptionPayload.f476iv);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.data.hashCode() * 31) + this.hmac.hashCode()) * 31) + this.f485iv.hashCode();
+        return (((this.data.hashCode() * 31) + this.hmac.hashCode()) * 31) + this.f476iv.hashCode();
     }
 
     public String toString() {
-        return "WCEncryptionPayload(data=" + this.data + ", hmac=" + this.hmac + ", iv=" + this.f485iv + ')';
+        return "WCEncryptionPayload(data=" + this.data + ", hmac=" + this.hmac + ", iv=" + this.f476iv + ')';
     }
 
     public WCEncryptionPayload(String data, String hmac, String iv) {
@@ -35,7 +35,7 @@ public final class WCEncryptionPayload {
         Intrinsics.checkNotNullParameter(iv, "iv");
         this.data = data;
         this.hmac = hmac;
-        this.f485iv = iv;
+        this.f476iv = iv;
     }
 
     public final String getData() {
@@ -47,6 +47,6 @@ public final class WCEncryptionPayload {
     }
 
     public final String getIv() {
-        return this.f485iv;
+        return this.f476iv;
     }
 }

@@ -24,7 +24,7 @@ import okhttp3.HttpUrl;
 import okhttp3.Route;
 import okhttp3.internal.Util;
 /* compiled from: RouteSelector.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RouteSelector {
     public static final Companion Companion = new Companion(null);
     private final Address address;
@@ -170,7 +170,7 @@ public final class RouteSelector {
     }
 
     /* compiled from: RouteSelector.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Selection {
         private int nextRouteIndex;
         private final List<Route> routes;
@@ -200,7 +200,7 @@ public final class RouteSelector {
     }
 
     /* compiled from: RouteSelector.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

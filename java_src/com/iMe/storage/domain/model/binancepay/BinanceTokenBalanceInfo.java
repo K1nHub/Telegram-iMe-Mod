@@ -6,7 +6,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceTokenBalanceInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceTokenBalanceInfo {
     public static final Companion Companion = new Companion(null);
     private final String asset;
@@ -162,7 +162,7 @@ public final class BinanceTokenBalanceInfo {
     }
 
     /* compiled from: BinanceTokenBalanceInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Balance {
         public static final Companion Companion = new Companion(null);
         private final double btcValuation;
@@ -263,7 +263,7 @@ public final class BinanceTokenBalanceInfo {
         }
 
         /* compiled from: BinanceTokenBalanceInfo.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                 this();
@@ -279,7 +279,7 @@ public final class BinanceTokenBalanceInfo {
     }
 
     /* compiled from: BinanceTokenBalanceInfo.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

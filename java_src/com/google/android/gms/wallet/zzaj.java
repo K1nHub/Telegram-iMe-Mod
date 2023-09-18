@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Class(creator = "ProxyCardCreator")
 @SafeParcelable.Reserved({1})
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzaj extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzaj> CREATOR = new zzak();
     @SafeParcelable.Field(m797id = 2)

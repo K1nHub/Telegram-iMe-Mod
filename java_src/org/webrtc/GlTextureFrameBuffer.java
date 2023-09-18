@@ -1,7 +1,7 @@
 package org.webrtc;
 
 import android.opengl.GLES20;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GlTextureFrameBuffer {
     private int frameBufferId;
     private int height;

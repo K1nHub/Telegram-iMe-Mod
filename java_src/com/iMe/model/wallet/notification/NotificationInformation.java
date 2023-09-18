@@ -2,7 +2,7 @@ package com.iMe.model.wallet.notification;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationInformation.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NotificationInformation {
     private final boolean isPushTokenRegistered;
     private final String pushAllowanceToken;

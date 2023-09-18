@@ -4,7 +4,7 @@ import android.app.Activity;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 /* compiled from: ActionGateway.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ActionGateway {
     void finishApplication();
 

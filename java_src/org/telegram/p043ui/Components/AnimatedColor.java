@@ -7,7 +7,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.AnimatedColor */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedColor {
     private Runnable invalidate;
     private View parent;

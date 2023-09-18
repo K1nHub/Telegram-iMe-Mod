@@ -8,7 +8,7 @@ import moxy.MvpPresenter;
 import moxy.PresenterBinder;
 import moxy.presenter.PresenterField;
 /* renamed from: org.telegram.ui.PasscodeActivity$$PresentersBinder */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PasscodeActivity$$PresentersBinder extends PresenterBinder<PasscodeActivity> {
     @Override // moxy.PresenterBinder
     public List<PresenterField<? super PasscodeActivity>> getPresenterFields() {
@@ -20,7 +20,7 @@ public class PasscodeActivity$$PresentersBinder extends PresenterBinder<Passcode
 
     /* compiled from: PasscodeActivity$$PresentersBinder.java */
     /* renamed from: org.telegram.ui.PasscodeActivity$$PresentersBinder$WalletCreatePinPresenterBinder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class WalletCreatePinPresenterBinder extends PresenterField<PasscodeActivity> {
         public WalletCreatePinPresenterBinder(PasscodeActivity$$PresentersBinder passcodeActivity$$PresentersBinder) {
             super("walletCreatePinPresenter", null, CreateWalletPinPresenter.class);
@@ -39,7 +39,7 @@ public class PasscodeActivity$$PresentersBinder extends PresenterBinder<Passcode
 
     /* compiled from: PasscodeActivity$$PresentersBinder.java */
     /* renamed from: org.telegram.ui.PasscodeActivity$$PresentersBinder$WalletEnterPasswordPresenterBinder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class WalletEnterPasswordPresenterBinder extends PresenterField<PasscodeActivity> {
         public WalletEnterPasswordPresenterBinder(PasscodeActivity$$PresentersBinder passcodeActivity$$PresentersBinder) {
             super("walletEnterPasswordPresenter", null, EnterWalletPasswordPresenter.class);

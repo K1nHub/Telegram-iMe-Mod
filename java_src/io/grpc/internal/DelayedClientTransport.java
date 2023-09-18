@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DelayedClientTransport implements ManagedClientTransport {
     private final Executor defaultAppExecutor;
     private LoadBalancer.SubchannelPicker lastPicker;
@@ -221,7 +221,7 @@ public final class DelayedClientTransport implements ManagedClientTransport {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class PendingStream extends DelayedStream {
         private final LoadBalancer.PickSubchannelArgs args;
         private final Context context;

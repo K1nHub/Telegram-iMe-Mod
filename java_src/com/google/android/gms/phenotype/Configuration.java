@@ -12,7 +12,7 @@ import java.util.TreeMap;
 @KeepForSdk
 @SafeParcelable.Class(creator = "ConfigurationCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Configuration extends AbstractSafeParcelable implements Comparable<Configuration> {
     @KeepForSdk
     public static final Parcelable.Creator<Configuration> CREATOR = new zzc();

@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 /* compiled from: CancellableContinuationImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class Active implements NotCompleted {
     public static final Active INSTANCE = new Active();
 

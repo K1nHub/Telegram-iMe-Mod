@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CreateWalletScreenType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CreateWalletScreenType {
     public /* synthetic */ CreateWalletScreenType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -16,7 +16,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Ready extends CreateWalletScreenType {
         public static final Ready INSTANCE = new Ready();
 
@@ -26,7 +26,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TooBad extends CreateWalletScreenType {
         public static final TooBad INSTANCE = new TooBad();
 
@@ -36,16 +36,15 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SecretWords extends CreateWalletScreenType {
+        private final String address;
         private final String password;
         private final String pin;
+        private final List<String> secretWords;
 
-        /* renamed from: wallet  reason: collision with root package name */
-        private final Wallet f1999wallet;
-
-        public /* synthetic */ SecretWords(String str, String str2, Wallet wallet2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? "" : str, (i & 2) != 0 ? "" : str2, wallet2);
+        public /* synthetic */ SecretWords(Wallet wallet2, String str, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(wallet2, (i & 2) != 0 ? "" : str, (i & 4) != 0 ? "" : str2);
         }
 
         public final String getPassword() {
@@ -57,31 +56,28 @@ public abstract class CreateWalletScreenType {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public SecretWords(String password, String pin, Wallet wallet2) {
+        public SecretWords(Wallet wallet2, String password, String pin) {
             super(null);
+            Intrinsics.checkNotNullParameter(wallet2, "wallet");
             Intrinsics.checkNotNullParameter(password, "password");
             Intrinsics.checkNotNullParameter(pin, "pin");
-            Intrinsics.checkNotNullParameter(wallet2, "wallet");
             this.password = password;
             this.pin = pin;
-            this.f1999wallet = wallet2;
+            this.secretWords = StringExtKt.splitBySpace(wallet2.getMnemonic());
+            this.address = wallet2.getAddress();
         }
 
         public final List<String> getSecretWords() {
-            return StringExtKt.splitBySpace(this.f1999wallet.getMnemonic());
+            return this.secretWords;
         }
 
         public final String getAddress() {
-            return this.f1999wallet.getAddress();
-        }
-
-        public final int getWordsCount() {
-            return getSecretWords().size();
+            return this.address;
         }
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WordsCheck extends CreateWalletScreenType {
         private final String password;
         private final String pin;
@@ -112,7 +108,7 @@ public abstract class CreateWalletScreenType {
     }
 
     /* compiled from: CreateWalletScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Import extends CreateWalletScreenType {
         private final String address;
         private final String password;

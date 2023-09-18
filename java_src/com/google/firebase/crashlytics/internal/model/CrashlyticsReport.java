@@ -23,12 +23,12 @@ import com.google.firebase.crashlytics.internal.model.C0991x7e3e3ebd;
 import com.google.firebase.crashlytics.internal.model.C0993xce3d994b;
 import java.nio.charset.Charset;
 @AutoValue
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CrashlyticsReport {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
 
     @AutoValue.Builder
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Builder {
         public abstract CrashlyticsReport build();
 
@@ -91,11 +91,11 @@ public abstract class CrashlyticsReport {
     }
 
     @AutoValue
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class FilesPayload {
 
         @AutoValue.Builder
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Builder {
             public abstract FilesPayload build();
 
@@ -113,11 +113,11 @@ public abstract class CrashlyticsReport {
         }
 
         @AutoValue
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class File {
 
             @AutoValue.Builder
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Builder {
                 public abstract File build();
 
@@ -137,11 +137,11 @@ public abstract class CrashlyticsReport {
     }
 
     @AutoValue
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class CustomAttribute {
 
         @AutoValue.Builder
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Builder {
             public abstract CustomAttribute build();
 
@@ -160,7 +160,7 @@ public abstract class CrashlyticsReport {
     }
 
     @AutoValue
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Session {
         public abstract Application getApp();
 
@@ -209,7 +209,7 @@ public abstract class CrashlyticsReport {
         }
 
         @AutoValue.Builder
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Builder {
             public abstract Session build();
 
@@ -241,11 +241,11 @@ public abstract class CrashlyticsReport {
         }
 
         @AutoValue
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class User {
 
             @AutoValue.Builder
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Builder {
                 public abstract User build();
 
@@ -260,11 +260,11 @@ public abstract class CrashlyticsReport {
         }
 
         @AutoValue
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Application {
 
             @AutoValue.Builder
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Builder {
                 public abstract Application build();
 
@@ -282,7 +282,7 @@ public abstract class CrashlyticsReport {
             }
 
             @AutoValue
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Organization {
                 public abstract String getClsId();
             }
@@ -307,11 +307,11 @@ public abstract class CrashlyticsReport {
         }
 
         @AutoValue
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class OperatingSystem {
 
             @AutoValue.Builder
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Builder {
                 public abstract OperatingSystem build();
 
@@ -338,11 +338,11 @@ public abstract class CrashlyticsReport {
         }
 
         @AutoValue
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Device {
 
             @AutoValue.Builder
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Builder {
                 public abstract Device build();
 
@@ -389,11 +389,11 @@ public abstract class CrashlyticsReport {
         }
 
         @AutoValue
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Event {
 
             @AutoValue.Builder
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Builder {
                 public abstract Event build();
 
@@ -425,11 +425,11 @@ public abstract class CrashlyticsReport {
             }
 
             @AutoValue
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Application {
 
                 @AutoValue.Builder
-                /* loaded from: classes3.dex */
+                /* loaded from: classes4.dex */
                 public static abstract class Builder {
                     public abstract Application build();
 
@@ -461,11 +461,11 @@ public abstract class CrashlyticsReport {
                 }
 
                 @AutoValue
-                /* loaded from: classes3.dex */
+                /* loaded from: classes4.dex */
                 public static abstract class Execution {
 
                     @AutoValue.Builder
-                    /* loaded from: classes3.dex */
+                    /* loaded from: classes4.dex */
                     public static abstract class Builder {
                         public abstract Execution build();
 
@@ -495,11 +495,11 @@ public abstract class CrashlyticsReport {
                     }
 
                     @AutoValue
-                    /* loaded from: classes3.dex */
+                    /* loaded from: classes4.dex */
                     public static abstract class Thread {
 
                         @AutoValue.Builder
-                        /* loaded from: classes3.dex */
+                        /* loaded from: classes4.dex */
                         public static abstract class Builder {
                             public abstract Thread build();
 
@@ -521,11 +521,11 @@ public abstract class CrashlyticsReport {
                         }
 
                         @AutoValue
-                        /* loaded from: classes3.dex */
+                        /* loaded from: classes4.dex */
                         public static abstract class Frame {
 
                             @AutoValue.Builder
-                            /* loaded from: classes3.dex */
+                            /* loaded from: classes4.dex */
                             public static abstract class Builder {
                                 public abstract Frame build();
 
@@ -557,11 +557,11 @@ public abstract class CrashlyticsReport {
                     }
 
                     @AutoValue
-                    /* loaded from: classes3.dex */
+                    /* loaded from: classes4.dex */
                     public static abstract class Exception {
 
                         @AutoValue.Builder
-                        /* loaded from: classes3.dex */
+                        /* loaded from: classes4.dex */
                         public static abstract class Builder {
                             public abstract Exception build();
 
@@ -592,11 +592,11 @@ public abstract class CrashlyticsReport {
                     }
 
                     @AutoValue
-                    /* loaded from: classes3.dex */
+                    /* loaded from: classes4.dex */
                     public static abstract class Signal {
 
                         @AutoValue.Builder
-                        /* loaded from: classes3.dex */
+                        /* loaded from: classes4.dex */
                         public static abstract class Builder {
                             public abstract Signal build();
 
@@ -619,7 +619,7 @@ public abstract class CrashlyticsReport {
                     }
 
                     @AutoValue
-                    /* loaded from: classes3.dex */
+                    /* loaded from: classes4.dex */
                     public static abstract class BinaryImage {
                         public abstract long getBaseAddress();
 
@@ -642,7 +642,7 @@ public abstract class CrashlyticsReport {
                         }
 
                         @AutoValue.Builder
-                        /* loaded from: classes3.dex */
+                        /* loaded from: classes4.dex */
                         public static abstract class Builder {
                             public abstract BinaryImage build();
 
@@ -663,11 +663,11 @@ public abstract class CrashlyticsReport {
             }
 
             @AutoValue
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Device {
 
                 @AutoValue.Builder
-                /* loaded from: classes3.dex */
+                /* loaded from: classes4.dex */
                 public static abstract class Builder {
                     public abstract Device build();
 
@@ -702,11 +702,11 @@ public abstract class CrashlyticsReport {
             }
 
             @AutoValue
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public static abstract class Log {
 
                 @AutoValue.Builder
-                /* loaded from: classes3.dex */
+                /* loaded from: classes4.dex */
                 public static abstract class Builder {
                     public abstract Log build();
 
@@ -723,11 +723,11 @@ public abstract class CrashlyticsReport {
     }
 
     @AutoValue
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class ApplicationExitInfo {
 
         @AutoValue.Builder
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static abstract class Builder {
             public abstract ApplicationExitInfo build();
 

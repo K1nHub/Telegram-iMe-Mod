@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 37
+    .line 43
     check-cast p1, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$1;->invoke(Lorg/telegram/ui/Components/RLottieImageView;)V
@@ -78,17 +78,17 @@
 
     const/4 v0, 0x1
 
-    .line 38
+    .line 44
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 39
+    .line 45
     sget v0, Lorg/telegram/messenger/R$raw;->fork_cryptoboxes:I
 
     const/16 v1, 0x96
 
     invoke-virtual {p1, v0, v1, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 40
+    .line 46
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     return-void

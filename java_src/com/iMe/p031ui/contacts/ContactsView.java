@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: ContactsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.contacts.ContactsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ContactsView extends BaseView {
     void clearSelectedContacts();
 

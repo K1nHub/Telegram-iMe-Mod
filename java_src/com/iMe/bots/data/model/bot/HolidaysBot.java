@@ -15,7 +15,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HolidaysBot.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HolidaysBot implements AigramBot {
     private final String botId;
     private final Lazy currentDateTag$delegate;

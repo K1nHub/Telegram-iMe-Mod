@@ -36,7 +36,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DnsNameResolver extends NameResolver {
     private static final String JNDI_LOCALHOST_PROPERTY;
     private static final String JNDI_PROPERTY;
@@ -69,13 +69,13 @@ public final class DnsNameResolver extends NameResolver {
     private final AtomicReference<ResourceResolver> resourceResolver = new AtomicReference<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface AddressResolver {
         List<InetAddress> resolveAddress(String str) throws Exception;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface ResourceResolver {
         List<EquivalentAddressGroup> resolveSrv(AddressResolver addressResolver, String str) throws Exception;
 
@@ -83,7 +83,7 @@ public final class DnsNameResolver extends NameResolver {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface ResourceResolverFactory {
         ResourceResolver newResourceResolver();
 
@@ -153,7 +153,7 @@ public final class DnsNameResolver extends NameResolver {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class Resolve implements Runnable {
         private final NameResolver.Listener2 savedListener;
 
@@ -471,7 +471,7 @@ public final class DnsNameResolver extends NameResolver {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ResolutionResults {
         final List<? extends InetAddress> addresses;
         final List<EquivalentAddressGroup> balancerAddresses;
@@ -488,7 +488,7 @@ public final class DnsNameResolver extends NameResolver {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private enum JdkAddressResolver implements AddressResolver {
         INSTANCE;
 

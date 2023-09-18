@@ -29,7 +29,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.BlurSettingsBottomSheet;
@@ -37,7 +37,7 @@ import org.telegram.p043ui.ChatBackgroundDrawable;
 import org.telegram.p043ui.Components.SizeNotifierFrameLayout;
 import org.telegram.p043ui.Components.WallpaperParallaxEffect;
 /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayout */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SizeNotifierFrameLayout extends FrameLayout {
     private static DispatchQueue blurQueue;
     public AdjustPanLayoutHelper adjustPanLayoutHelper;
@@ -91,7 +91,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
     public ArrayList<BlurBitmap> unusedBitmaps;
 
     /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SizeNotifierFrameLayoutDelegate {
         void onSizeChanged(int i, boolean z);
     }
@@ -170,7 +170,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayout$BackgroundView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class BackgroundView extends View {
         public BackgroundView(Context context) {
             super(context);
@@ -233,7 +233,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                     if (drawable2 instanceof MotionBackgroundDrawable) {
                         MotionBackgroundDrawable motionBackgroundDrawable = (MotionBackgroundDrawable) drawable2;
                         if (motionBackgroundDrawable.hasPattern()) {
-                            int currentActionBarHeight = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3626ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
+                            int currentActionBarHeight = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3541ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
                             int measuredHeight = getRootView().getMeasuredHeight() - currentActionBarHeight;
                             float max = Math.max(getMeasuredWidth() / drawable2.getIntrinsicWidth(), measuredHeight / drawable2.getIntrinsicHeight());
                             int ceil = (int) Math.ceil(drawable2.getIntrinsicWidth() * max * f);
@@ -304,7 +304,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                             canvas.restore();
                         }
                     } else if (((BitmapDrawable) drawable2).getTileModeX() != Shader.TileMode.REPEAT) {
-                        int currentActionBarHeight2 = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3626ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
+                        int currentActionBarHeight2 = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3541ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
                         int measuredHeight3 = getRootView().getMeasuredHeight() - currentActionBarHeight2;
                         float max2 = Math.max(getMeasuredWidth() / drawable2.getIntrinsicWidth(), measuredHeight3 / drawable2.getIntrinsicHeight());
                         int ceil3 = (int) Math.ceil(drawable2.getIntrinsicWidth() * max2 * f);
@@ -612,7 +612,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         BlurBitmap blurBitmap;
         if (this.blurIsRunning && !this.blurGeneratingTuskIsRunning && this.invalidateBlur && SharedConfig.chatBlurEnabled() && Color.alpha(Theme.getColor(Theme.key_chat_BlurAlpha)) != 255) {
             int measuredWidth = getMeasuredWidth();
-            int currentActionBarHeight = C3626ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m72dp(100);
+            int currentActionBarHeight = C3541ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m72dp(100);
             if (measuredWidth == 0 || currentActionBarHeight == 0) {
                 return;
             }
@@ -693,7 +693,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayout$BlurBackgroundTask */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class BlurBackgroundTask implements Runnable {
         BlurBitmap finalBitmap;
         int radius;
@@ -978,7 +978,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayout$BlurBitmap */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class BlurBitmap {
         Bitmap bottomBitmap;
         Canvas bottomCanvas;

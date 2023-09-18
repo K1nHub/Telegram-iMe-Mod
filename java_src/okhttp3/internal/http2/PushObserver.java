@@ -6,7 +6,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okio.BufferedSource;
 /* compiled from: PushObserver.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface PushObserver {
     public static final PushObserver CANCEL;
 
@@ -19,7 +19,7 @@ public interface PushObserver {
     void onReset(int i, ErrorCode errorCode);
 
     /* compiled from: PushObserver.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -29,7 +29,7 @@ public interface PushObserver {
         }
 
         /* compiled from: PushObserver.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         private static final class PushObserverCancel implements PushObserver {
             @Override // okhttp3.internal.http2.PushObserver
             public boolean onHeaders(int i, List<Header> responseHeaders, boolean z) {

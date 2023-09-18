@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.catalog;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoryPreview.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CategoryPreview {
     private final CatalogCategory category;
     private final List<Campaign> items;

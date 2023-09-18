@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.Unit;
 /* compiled from: CancellableContinuation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class DisposeOnCancel extends CancelHandler {
     private final DisposableHandle handle;
 

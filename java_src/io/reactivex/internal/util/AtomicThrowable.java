@@ -1,7 +1,7 @@
 package io.reactivex.internal.util;
 
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AtomicThrowable extends AtomicReference<Throwable> {
     public boolean addThrowable(Throwable th) {
         return ExceptionHelper.addThrowable(this, th);

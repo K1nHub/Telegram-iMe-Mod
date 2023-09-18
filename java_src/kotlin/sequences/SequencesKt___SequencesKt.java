@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__AppendableKt;
 /* compiled from: _Sequences.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     public static <T> T firstOrNull(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");

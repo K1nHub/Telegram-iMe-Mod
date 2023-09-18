@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LocaleController;
 /* compiled from: CatalogLanguagesUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogLanguagesUiMappingKt {
     public static final List<LocaleController.LocaleInfo> mapToUI(List<CatalogLanguage> list) {
         int collectionSizeOrDefault;

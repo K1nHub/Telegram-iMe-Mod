@@ -1,5 +1,5 @@
 package com.google.android.material;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class R$style {
     public static final int TextAppearance_AppCompat_Caption = 2131886414;
     public static final int TextAppearance_Design_CollapsingToolbar_Expanded = 2131886463;

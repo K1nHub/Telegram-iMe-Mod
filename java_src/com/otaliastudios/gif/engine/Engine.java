@@ -10,7 +10,7 @@ import com.otaliastudios.gif.transcode.Transcoder;
 import com.otaliastudios.gif.transcode.VideoTranscoder;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Engine {
     private static final Logger LOG = new Logger(Engine.class.getSimpleName());
     private DataSink mDataSink;
@@ -21,7 +21,7 @@ public class Engine {
     private int mCurrentStep = 0;
     private MediaFormat mOutputFormat = null;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface ProgressCallback {
         void onProgress(double d);
     }

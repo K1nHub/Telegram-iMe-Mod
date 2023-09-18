@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.video.Track;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
     private String handler;
@@ -53,11 +53,11 @@ public class Track {
     private boolean first = true;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class SamplePresentationTime {
 
         /* renamed from: dt */
-        private long f1520dt;
+        private long f1511dt;
         private int index;
         private long presentationTime;
 
@@ -359,13 +359,13 @@ public class Track {
             i2 = 0;
         }
         for (i = 1; i < arrayList.size(); i++) {
-            ((SamplePresentationTime) arrayList.get(i)).f1520dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1520dt;
+            ((SamplePresentationTime) arrayList.get(i)).f1511dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1511dt;
         }
         if (z) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
             for (int i4 = i2; i4 < this.samplePresentationTimes.size(); i4++) {
                 SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i4);
-                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1520dt);
+                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1511dt);
             }
         }
     }

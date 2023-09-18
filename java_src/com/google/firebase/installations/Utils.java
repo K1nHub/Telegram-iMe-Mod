@@ -6,7 +6,7 @@ import com.google.firebase.installations.time.Clock;
 import com.google.firebase.installations.time.SystemClock;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Utils {
     private static Utils singleton;
     private final Clock clock;

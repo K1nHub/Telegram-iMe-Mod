@@ -9,8 +9,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkFragmentWalletEthBackupIntroBinding implements ViewBinding {
     private final RelativeLayout rootView;
 
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletEthBackupIntroBinding implements ViewBindin
     }
 
     public static ForkFragmentWalletEthBackupIntroBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_wallet_eth_backup_intro, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_eth_backup_intro, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,16 +36,16 @@ public final class ForkFragmentWalletEthBackupIntroBinding implements ViewBindin
     }
 
     public static ForkFragmentWalletEthBackupIntroBinding bind(View view) {
-        int i = C3558R.C3561id.button_action;
+        int i = C3473R.C3476id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3558R.C3561id.image_logo;
+            i = C3473R.C3476id.image_logo;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3558R.C3561id.text_description;
+                i = C3473R.C3476id.text_description;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3558R.C3561id.text_title;
+                    i = C3473R.C3476id.text_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkFragmentWalletEthBackupIntroBinding((RelativeLayout) view, actionButton, appCompatImageView, appCompatTextView, appCompatTextView2);

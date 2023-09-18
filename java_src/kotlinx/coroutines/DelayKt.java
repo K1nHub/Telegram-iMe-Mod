@@ -8,7 +8,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 /* compiled from: Delay.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DelayKt {
     public static final Object delay(long j, Continuation<? super Unit> continuation) {
         Continuation intercepted;
@@ -21,7 +21,7 @@ public final class DelayKt {
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(intercepted, 1);
         cancellableContinuationImpl.initCancellability();
         if (j < Long.MAX_VALUE) {
-            getDelay(cancellableContinuationImpl.getContext()).mo1691scheduleResumeAfterDelay(j, cancellableContinuationImpl);
+            getDelay(cancellableContinuationImpl.getContext()).mo1689scheduleResumeAfterDelay(j, cancellableContinuationImpl);
         }
         Object result = cancellableContinuationImpl.getResult();
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();

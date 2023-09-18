@@ -12,7 +12,7 @@ import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.BigIntegers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class XMSSPrivateKey extends ASN1Object {
     private final byte[] bdsState;
     private final int index;

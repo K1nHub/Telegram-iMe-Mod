@@ -13,7 +13,7 @@ import java.util.List;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "ConnectionConfigurationCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ConnectionConfiguration extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new zzd();
     @SafeParcelable.Field(getter = "getName", m797id = 2)

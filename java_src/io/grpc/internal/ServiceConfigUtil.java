@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ServiceConfigUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static RetriableStream.Throttle getThrottlePolicy(Map<String, ?> map) {
@@ -193,7 +193,7 @@ public final class ServiceConfigUtil {
         return Collections.unmodifiableList(arrayList);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class LbConfig {
         private final String policyName;
         private final Map<String, ?> rawConfigValue;

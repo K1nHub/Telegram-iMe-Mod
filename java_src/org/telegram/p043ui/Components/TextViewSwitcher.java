@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 /* renamed from: org.telegram.ui.Components.TextViewSwitcher */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TextViewSwitcher extends ViewSwitcher {
     public TextViewSwitcher(Context context) {
         super(context);

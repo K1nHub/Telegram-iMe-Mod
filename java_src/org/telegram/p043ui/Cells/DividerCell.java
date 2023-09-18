@@ -8,7 +8,7 @@ import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Cells.DividerCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DividerCell extends View {
     private boolean forceDarkTheme;
     private Paint paint;

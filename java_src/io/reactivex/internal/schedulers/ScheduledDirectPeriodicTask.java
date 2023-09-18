@@ -1,7 +1,7 @@
 package io.reactivex.internal.schedulers;
 
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ScheduledDirectPeriodicTask extends AbstractDirectTask implements Runnable {
     public ScheduledDirectPeriodicTask(Runnable runnable) {
         super(runnable);

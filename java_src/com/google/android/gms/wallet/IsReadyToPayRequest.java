@@ -11,7 +11,7 @@ import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "IsReadyToPayRequestCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class IsReadyToPayRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<IsReadyToPayRequest> CREATOR = new zzq();
     @SafeParcelable.Field(m797id = 2)
@@ -29,7 +29,7 @@ public final class IsReadyToPayRequest extends AbstractSafeParcelable {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzp zzpVar) {
         }

@@ -5,7 +5,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.MalformedJsonException;
 import java.io.IOException;
 import java.math.BigDecimal;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum ToNumberPolicy implements ToNumberStrategy {
     DOUBLE { // from class: com.google.gson.ToNumberPolicy.1
         @Override // com.google.gson.ToNumberPolicy, com.google.gson.ToNumberStrategy

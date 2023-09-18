@@ -33,7 +33,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -41,7 +41,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.DividerCell;
@@ -52,7 +52,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.p043ui.CountrySelectActivity;
 /* renamed from: org.telegram.ui.CountrySelectActivity */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class CountrySelectActivity extends BaseFragment {
     private CountrySelectActivityDelegate delegate;
     private boolean disableAnonymousNumbers;
@@ -66,7 +66,7 @@ public class CountrySelectActivity extends BaseFragment {
     private boolean searching;
 
     /* renamed from: org.telegram.ui.CountrySelectActivity$CountrySelectActivityDelegate */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface CountrySelectActivityDelegate {
         void didSelectCountry(Country country);
     }
@@ -103,24 +103,24 @@ public class CountrySelectActivity extends BaseFragment {
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3558R.C3560drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3473R.C3475drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
-        this.actionBar.setTitle(LocaleController.getString("ChooseCountry", C3558R.string.ChooseCountry));
+        this.actionBar.setTitle(LocaleController.getString("ChooseCountry", C3473R.string.ChooseCountry));
         this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        C3626ActionBar c3626ActionBar = this.actionBar;
+        C3541ActionBar c3541ActionBar = this.actionBar;
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3626ActionBar.setItemsColor(Theme.getColor(i), false);
+        c3541ActionBar.setItemsColor(Theme.getColor(i), false);
         this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_actionBarWhiteSelector), false);
         this.actionBar.setTitleColor(Theme.getColor(i));
-        this.actionBar.setActionBarMenuOnItemClick(new C3626ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CountrySelectActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3626ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3541ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CountrySelectActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3541ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     CountrySelectActivity.this.finishFragment();
                 }
             }
         });
-        this.actionBar.createMenu().addItem(0, C3558R.C3560drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.CountrySelectActivity.2
+        this.actionBar.createMenu().addItem(0, C3473R.C3475drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.CountrySelectActivity.2
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 CountrySelectActivity.this.searching = true;
@@ -150,7 +150,7 @@ public class CountrySelectActivity extends BaseFragment {
                     CountrySelectActivity.this.searchWas = true;
                 }
             }
-        }).setSearchFieldHint(LocaleController.getString("Search", C3558R.string.Search));
+        }).setSearchFieldHint(LocaleController.getString("Search", C3473R.string.Search));
         this.actionBar.setSearchTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText), true);
         this.actionBar.setSearchTextColor(Theme.getColor(i), false);
         this.actionBar.setSearchCursorColor(Theme.getColor(i));
@@ -166,7 +166,7 @@ public class CountrySelectActivity extends BaseFragment {
         this.emptyView = emptyTextProgressView;
         emptyTextProgressView.showTextView();
         this.emptyView.setShowAtCenter(true);
-        this.emptyView.setText(LocaleController.getString("NoResult", C3558R.string.NoResult));
+        this.emptyView.setText(LocaleController.getString("NoResult", C3473R.string.NoResult));
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
@@ -234,7 +234,7 @@ public class CountrySelectActivity extends BaseFragment {
     }
 
     /* renamed from: org.telegram.ui.CountrySelectActivity$Country */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class Country {
         public String code;
         public String defaultName;
@@ -258,7 +258,7 @@ public class CountrySelectActivity extends BaseFragment {
     }
 
     /* renamed from: org.telegram.ui.CountrySelectActivity$CountryAdapter */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class CountryAdapter extends RecyclerListView.SectionsAdapter {
         private Context mContext;
         private HashMap<String, ArrayList<Country>> countries = new HashMap<>();
@@ -427,7 +427,7 @@ public class CountrySelectActivity extends BaseFragment {
     }
 
     /* renamed from: org.telegram.ui.CountrySelectActivity$CountrySearchAdapter */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class CountrySearchAdapter extends RecyclerListView.SelectionAdapter {
         private List<Country> countryList = new ArrayList();
         private Map<Country, List<String>> countrySearchMap = new HashMap();
@@ -585,23 +585,23 @@ public class CountrySelectActivity extends BaseFragment {
     public static TextSettingsCell createSettingsCell(Context context) {
         TextSettingsCell textSettingsCell = new TextSettingsCell(context);
         textSettingsCell.setPadding(AndroidUtilities.m72dp(LocaleController.isRTL ? 16 : 12), 0, AndroidUtilities.m72dp(LocaleController.isRTL ? 12 : 16), 0);
-        textSettingsCell.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC57984(textSettingsCell));
+        textSettingsCell.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC57134(textSettingsCell));
         return textSettingsCell;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.CountrySelectActivity$4 */
-    /* loaded from: classes5.dex */
-    public class View$OnAttachStateChangeListenerC57984 implements View.OnAttachStateChangeListener {
+    /* loaded from: classes3.dex */
+    public class View$OnAttachStateChangeListenerC57134 implements View.OnAttachStateChangeListener {
         private NotificationCenter.NotificationCenterDelegate listener;
         final /* synthetic */ TextSettingsCell val$view;
 
-        View$OnAttachStateChangeListenerC57984(final TextSettingsCell textSettingsCell) {
+        View$OnAttachStateChangeListenerC57134(final TextSettingsCell textSettingsCell) {
             this.val$view = textSettingsCell;
             this.listener = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.CountrySelectActivity$4$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    CountrySelectActivity.View$OnAttachStateChangeListenerC57984.lambda$$0(TextSettingsCell.this, i, i2, objArr);
+                    CountrySelectActivity.View$OnAttachStateChangeListenerC57134.lambda$$0(TextSettingsCell.this, i, i2, objArr);
                 }
             };
         }
@@ -649,10 +649,10 @@ public class CountrySelectActivity extends BaseFragment {
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
-        C3626ActionBar c3626ActionBar = this.actionBar;
+        C3541ActionBar c3541ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3626ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3541ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

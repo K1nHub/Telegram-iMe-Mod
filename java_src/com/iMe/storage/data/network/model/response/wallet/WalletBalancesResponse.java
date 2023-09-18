@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletBalancesResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletBalancesResponse {
     private final List<TokenBalanceResponse> balances;
 

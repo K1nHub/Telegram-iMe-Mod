@@ -1,7 +1,7 @@
 package com.google.common.base;
 
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Objects extends ExtraObjectsMethodsForWeb {
     public static boolean equal(Object obj, Object obj2) {
         return obj == obj2 || (obj != null && obj.equals(obj2));

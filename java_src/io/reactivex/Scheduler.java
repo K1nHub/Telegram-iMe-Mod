@@ -8,7 +8,7 @@ import io.reactivex.internal.schedulers.NewThreadWorker;
 import io.reactivex.internal.util.ExceptionHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Scheduler {
     static final long CLOCK_DRIFT_TOLERANCE_NANOSECONDS = TimeUnit.MINUTES.toNanos(Long.getLong("rx2.scheduler.drift-tolerance", 15).longValue());
 
@@ -36,7 +36,7 @@ public abstract class Scheduler {
         return schedulePeriodically == EmptyDisposable.INSTANCE ? schedulePeriodically : periodicDirectTask;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Worker implements Disposable {
         public abstract Disposable schedule(Runnable runnable, long j, TimeUnit timeUnit);
 
@@ -63,7 +63,7 @@ public abstract class Scheduler {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public final class PeriodicTask implements Runnable {
             long count;
             final Runnable decoratedRun;
@@ -71,12 +71,12 @@ public abstract class Scheduler {
             final long periodInNanoseconds;
 
             /* renamed from: sd */
-            final SequentialDisposable f533sd;
+            final SequentialDisposable f524sd;
             long startInNanoseconds;
 
             PeriodicTask(long j, Runnable runnable, long j2, SequentialDisposable sequentialDisposable, long j3) {
                 this.decoratedRun = runnable;
-                this.f533sd = sequentialDisposable;
+                this.f524sd = sequentialDisposable;
                 this.periodInNanoseconds = j3;
                 this.lastNowNanoseconds = j2;
                 this.startInNanoseconds = j;
@@ -86,7 +86,7 @@ public abstract class Scheduler {
             public void run() {
                 long j;
                 this.decoratedRun.run();
-                if (this.f533sd.isDisposed()) {
+                if (this.f524sd.isDisposed()) {
                     return;
                 }
                 Worker worker = Worker.this;
@@ -102,7 +102,7 @@ public abstract class Scheduler {
                         this.count = j6;
                         j = j5 + (j6 * j4);
                         this.lastNowNanoseconds = now;
-                        this.f533sd.replace(Worker.this.schedule(this, j - now, timeUnit));
+                        this.f524sd.replace(Worker.this.schedule(this, j - now, timeUnit));
                     }
                 }
                 long j7 = this.periodInNanoseconds;
@@ -112,12 +112,12 @@ public abstract class Scheduler {
                 this.startInNanoseconds = j8 - (j7 * j9);
                 j = j8;
                 this.lastNowNanoseconds = now;
-                this.f533sd.replace(Worker.this.schedule(this, j - now, timeUnit));
+                this.f524sd.replace(Worker.this.schedule(this, j - now, timeUnit));
             }
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class PeriodicDirectTask implements Disposable, Runnable {
         volatile boolean disposed;
         final Runnable run;
@@ -155,17 +155,17 @@ public abstract class Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DisposeTask implements Disposable, Runnable {
         final Runnable decoratedRun;
         Thread runner;
 
         /* renamed from: w */
-        final Worker f532w;
+        final Worker f523w;
 
         DisposeTask(Runnable runnable, Worker worker) {
             this.decoratedRun = runnable;
-            this.f532w = worker;
+            this.f523w = worker;
         }
 
         @Override // java.lang.Runnable
@@ -182,18 +182,18 @@ public abstract class Scheduler {
         @Override // io.reactivex.disposables.Disposable
         public void dispose() {
             if (this.runner == Thread.currentThread()) {
-                Worker worker = this.f532w;
+                Worker worker = this.f523w;
                 if (worker instanceof NewThreadWorker) {
                     ((NewThreadWorker) worker).shutdown();
                     return;
                 }
             }
-            this.f532w.dispose();
+            this.f523w.dispose();
         }
 
         @Override // io.reactivex.disposables.Disposable
         public boolean isDisposed() {
-            return this.f532w.isDisposed();
+            return this.f523w.isDisposed();
         }
     }
 }

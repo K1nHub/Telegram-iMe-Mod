@@ -6,7 +6,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HolidaysDao.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class HolidaysDao {
     static {
         new Companion(null);
@@ -72,7 +72,7 @@ public abstract class HolidaysDao {
     }
 
     /* compiled from: HolidaysDao.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

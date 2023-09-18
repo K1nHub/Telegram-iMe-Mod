@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.internal.ChannelFlow;
 import kotlinx.coroutines.flow.internal.SendingCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Channels.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ChannelAsFlow<T> extends ChannelFlow<T> {
     private static final /* synthetic */ AtomicIntegerFieldUpdater consumed$FU = AtomicIntegerFieldUpdater.newUpdater(ChannelAsFlow.class, "consumed");
     private final ReceiveChannel<T> channel;

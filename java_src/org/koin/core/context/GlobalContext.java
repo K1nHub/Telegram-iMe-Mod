@@ -7,7 +7,7 @@ import org.koin.core.Koin;
 import org.koin.core.KoinApplication;
 import org.koin.core.error.KoinAppAlreadyStartedException;
 /* compiled from: GlobalContext.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GlobalContext implements KoinContext {
     public static final GlobalContext INSTANCE = new GlobalContext();
     private static Koin _koin;

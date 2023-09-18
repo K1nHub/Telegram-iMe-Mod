@@ -11,7 +11,7 @@ import kotlinx.coroutines.channels.ProducerScope;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: ChannelFlow.kt */
 @DebugMetadata(m102c = "kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1", m101f = "ChannelFlow.kt", m100l = {60}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ChannelFlow$collectToFun$1<T> extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
     int label;

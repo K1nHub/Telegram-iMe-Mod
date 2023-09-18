@@ -5,7 +5,7 @@ import io.reactivex.internal.util.VolatileSizeArrayList;
 import io.reactivex.observers.BaseTestConsumer;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> implements Disposable {
     protected boolean checkSubscriptionOnce;
     protected long completions;

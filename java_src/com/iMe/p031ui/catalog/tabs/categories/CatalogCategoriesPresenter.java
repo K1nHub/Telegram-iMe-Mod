@@ -43,13 +43,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.tgnet.TLRPC$Chat;
 import timber.log.Timber;
 /* compiled from: CatalogCategoriesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCategoriesView> {
     private final CatalogInteractor catalogInteractor;
     private List<FilterItem> categories;
@@ -192,12 +192,12 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CampaignsCursored> result) {
-                m1359invoke(result);
+                m1357invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1359invoke(Result<? extends CampaignsCursored> it) {
+            public final void m1357invoke(Result<? extends CampaignsCursored> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CatalogCategoriesPresenter.this.processChannelsResult(it, z);
             }
@@ -226,7 +226,7 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -244,12 +244,12 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TLRPC$Chat tLRPC$Chat) {
-                m1361invoke(tLRPC$Chat);
+                m1359invoke(tLRPC$Chat);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1361invoke(TLRPC$Chat it) {
+            public final void m1359invoke(TLRPC$Chat it) {
                 ChatType chatType;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CatalogCategoriesView catalogCategoriesView = (CatalogCategoriesView) CatalogCategoriesPresenter.this.getViewState();
@@ -281,7 +281,7 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -335,12 +335,12 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CampaignsCursored> result) {
-                m1360invoke(result);
+                m1358invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1360invoke(Result<? extends CampaignsCursored> it) {
+            public final void m1358invoke(Result<? extends CampaignsCursored> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CatalogCategoriesPresenter.this.processChannelsResult(it, false);
             }
@@ -369,7 +369,7 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -536,14 +536,14 @@ public final class CatalogCategoriesPresenter extends BasePresenter<CatalogCateg
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FilterItem getCategoryAll() {
-        String upperCase = this.resourceManager.getString(C3558R.string.catalog_all).toUpperCase(Locale.ROOT);
+        String upperCase = this.resourceManager.getString(C3473R.string.catalog_all).toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         return new FilterItem(-1L, upperCase, true);
     }
 
     /* compiled from: CatalogCategoriesPresenter.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesPresenter$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

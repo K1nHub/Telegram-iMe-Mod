@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransactionParams.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectTransactionParams {
     private final long chainId;
     private final GasPriceInfo fast;

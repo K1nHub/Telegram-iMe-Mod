@@ -5,7 +5,7 @@ import java.util.Map;
 /* JADX INFO: Add missing generic type declarations: [V, K] */
 /* JADX WARN: Incorrect field signature: TK; */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgz<K, V> implements Comparable<zzgz>, Map.Entry<K, V> {
     private final Comparable zza;
     private V zzb;

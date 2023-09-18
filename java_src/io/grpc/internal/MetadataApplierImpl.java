@@ -7,7 +7,7 @@ import io.grpc.Context;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class MetadataApplierImpl extends CallCredentials.MetadataApplier {
     private final CallOptions callOptions;
     DelayedStream delayedStream;

@@ -8,7 +8,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class BaseDrawable extends Drawable implements TintableDrawable {
     protected ColorFilter mColorFilter;
     protected PorterDuffColorFilter mTintFilter;
@@ -114,7 +114,7 @@ public abstract class BaseDrawable extends Drawable implements TintableDrawable 
         return this.mConstantState;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class DummyConstantState extends Drawable.ConstantState {
         @Override // android.graphics.drawable.Drawable.ConstantState
         public int getChangingConfigurations() {

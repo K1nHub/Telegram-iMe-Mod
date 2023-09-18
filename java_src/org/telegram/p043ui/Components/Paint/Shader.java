@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 /* renamed from: org.telegram.ui.Components.Paint.Shader */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Shader {
     private int vertexShader;
     protected Map<String, Integer> uniformsMap = new HashMap();
@@ -61,7 +61,7 @@ public class Shader {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Paint.Shader$CompilationResult */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class CompilationResult {
         int shader;
         int status;

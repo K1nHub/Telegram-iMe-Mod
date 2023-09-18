@@ -7,9 +7,9 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: GasPriceItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GasPriceItem implements DialogChooseItem {
     private final TokenDetailed feeToken;
     private final GasPriceInfo info;
@@ -90,12 +90,12 @@ public final class GasPriceItem implements DialogChooseItem {
     @Override // com.iMe.model.common.DialogChooseItem
     public String getTitle(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return resourceManager.getString(C3558R.string.wallet_amount_send_fee_title, resourceManager.getString(this.speedLevel.getTitle()), Integer.valueOf(this.info.getDuration()));
+        return resourceManager.getString(C3473R.string.wallet_amount_send_fee_title, resourceManager.getString(this.speedLevel.getTitle()), Integer.valueOf(this.info.getDuration()));
     }
 
     @Override // com.iMe.model.common.DialogChooseItem
     public String getValue(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return resourceManager.getString(C3558R.string.wallet_amount_send_fee_value, BalanceFormatter.formatBalance(Double.valueOf(this.info.getFee()), Integer.valueOf(this.feeToken.getDecimals())), this.feeToken.getTicker(), BalanceFormatter.formatBalance(Double.valueOf(this.info.getFeeInFiat().getValue()), Integer.valueOf(TokenDetailed.Companion.getUSD().getDecimals())), this.info.getFeeInFiat().getSymbol());
+        return resourceManager.getString(C3473R.string.wallet_amount_send_fee_value, BalanceFormatter.format(Double.valueOf(this.info.getFee()), Integer.valueOf(this.feeToken.getDecimals())), this.feeToken.getTicker(), BalanceFormatter.format(Double.valueOf(this.info.getFeeInFiat().getValue()), Integer.valueOf(TokenDetailed.Companion.getUSD().getDecimals())), this.info.getFeeInFiat().getSymbol());
     }
 }

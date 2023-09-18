@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.catalog;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CursorMeta.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CursorMeta {
     private final String nextCursor;
 

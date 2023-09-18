@@ -25,7 +25,7 @@ import org.telegram.p043ui.Components.CheckBoxSquare;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: SortingFilterCell.kt */
 /* renamed from: com.iMe.fork.ui.view.SortingFilterCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SortingFilterCell extends LinearLayout {
     private final Lazy checkBox$delegate;
     private final Lazy checkBoxLayout$delegate;
@@ -329,7 +329,7 @@ public final class SortingFilterCell extends LinearLayout {
 
     /* compiled from: SortingFilterCell.kt */
     /* renamed from: com.iMe.fork.ui.view.SortingFilterCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

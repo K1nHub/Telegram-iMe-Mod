@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updateStory extends TLRPC$Update {
     public static int constructor = 542785843;
     public TLRPC$StoryItem story;

@@ -38,7 +38,7 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.JobKt__JobKt;
 /* compiled from: SmartReplier.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SmartReplier implements Replier, CoroutineScope {
     private final String currentYearTag;
     private final Job job;
@@ -47,7 +47,7 @@ public final class SmartReplier implements Replier, CoroutineScope {
     private final UserAnswersRepository repository;
 
     /* compiled from: SmartReplier.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

@@ -7,7 +7,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
 /* renamed from: com.google.firestore.v1.WriteResponse */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WriteResponse extends GeneratedMessageLite<WriteResponse, Builder> implements MessageLiteOrBuilder {
     public static final int COMMIT_TIME_FIELD_NUMBER = 4;
     private static final WriteResponse DEFAULT_INSTANCE;
@@ -41,7 +41,7 @@ public final class WriteResponse extends GeneratedMessageLite<WriteResponse, Bui
     }
 
     /* renamed from: com.google.firestore.v1.WriteResponse$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<WriteResponse, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10801 c10801) {
             this();
@@ -53,7 +53,7 @@ public final class WriteResponse extends GeneratedMessageLite<WriteResponse, Bui
     }
 
     /* renamed from: com.google.firestore.v1.WriteResponse$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10801 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

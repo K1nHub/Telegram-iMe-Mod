@@ -6,7 +6,7 @@ import java.security.Provider;
 import java.util.HashMap;
 import org.bouncycastle.jcajce.provider.config.ConfigurableProvider;
 import org.bouncycastle.jcajce.provider.util.AlgorithmProvider;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BouncyCastlePQCProvider extends Provider implements ConfigurableProvider {
     private static final String[] ALGORITHMS;
     public static String PROVIDER_NAME = "BCPQC";

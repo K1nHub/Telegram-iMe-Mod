@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.wallet;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SessionTokensRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SessionTokensRequest {
     private String url;
     private final String version;

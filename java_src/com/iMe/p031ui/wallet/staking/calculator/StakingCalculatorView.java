@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: StakingCalculatorView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.staking.calculator.StakingCalculatorView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface StakingCalculatorView extends BaseView {
     @OneExecution
     void openDepositScreen(StakingDetailsItem stakingDetailsItem, double d);

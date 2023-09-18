@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseArray;
 import org.solovyev.android.checkout.Checkout;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class UiCheckout extends Checkout {
     private final SparseArray<PurchaseFlow> mFlows;
 
@@ -92,7 +92,7 @@ public abstract class UiCheckout extends Checkout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OneShotRequestListener extends RequestListenerWrapper<Purchase> {
         private final int mRequestCode;
 

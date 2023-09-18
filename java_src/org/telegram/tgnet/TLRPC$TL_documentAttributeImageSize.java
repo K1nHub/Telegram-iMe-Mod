@@ -1,18 +1,18 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_documentAttributeImageSize extends TLRPC$DocumentAttribute {
     public static int constructor = 1815593308;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1542w = abstractSerializedData.readInt32(z);
-        this.f1541h = abstractSerializedData.readInt32(z);
+        this.f1533w = abstractSerializedData.readInt32(z);
+        this.f1532h = abstractSerializedData.readInt32(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt32(this.f1542w);
-        abstractSerializedData.writeInt32(this.f1541h);
+        abstractSerializedData.writeInt32(this.f1533w);
+        abstractSerializedData.writeInt32(this.f1532h);
     }
 }

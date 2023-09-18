@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DeleteServiceMessagesBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.DeleteServiceMessagesBottomSheet$bottomButtons$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DeleteServiceMessagesBottomSheet$bottomButtons$2 extends Lambda implements Function0<TextView[]> {
     final /* synthetic */ DeleteServiceMessagesBottomSheet this$0;
 

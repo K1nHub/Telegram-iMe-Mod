@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 /* compiled from: CancellableContinuation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CancellableContinuation<T> extends Continuation<T> {
     void completeResume(Object obj);
 
@@ -21,7 +21,7 @@ public interface CancellableContinuation<T> extends Continuation<T> {
     Object tryResumeWithException(Throwable th);
 
     /* compiled from: CancellableContinuation.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DefaultImpls {
         public static /* synthetic */ Object tryResume$default(CancellableContinuation cancellableContinuation, Object obj, Object obj2, int i, Object obj3) {
             if (obj3 == null) {

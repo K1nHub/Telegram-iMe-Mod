@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.vision.label.ImageLabeler$$ExternalSyntheticThrowNSME0;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzd extends com.google.android.gms.internal.vision.zza implements zzb {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzd(IBinder iBinder) {

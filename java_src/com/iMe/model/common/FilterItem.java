@@ -3,7 +3,7 @@ package com.iMe.model.common;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FilterItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FilterItem {
 
     /* renamed from: id */

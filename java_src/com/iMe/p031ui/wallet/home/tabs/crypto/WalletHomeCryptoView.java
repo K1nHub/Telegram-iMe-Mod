@@ -15,7 +15,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletHomeCryptoView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletHomeCryptoView extends BaseView, SwipeRefreshView, WalletCreateManagerView, MvpView {
     void openHistoryScreen();
 

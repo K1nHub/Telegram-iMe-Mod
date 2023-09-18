@@ -8,7 +8,7 @@ import io.grpc.internal.StreamListener;
 import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Queue;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ApplicationThreadDeframer implements Deframer, MessageDeframer.Listener {
     private final MessageDeframer deframer;
     private final Queue<InputStream> messageReadQueue = new ArrayDeque();
@@ -16,7 +16,7 @@ public class ApplicationThreadDeframer implements Deframer, MessageDeframer.List
     private final TransportExecutor transportExecutor;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface TransportExecutor {
         void runOnTransportThread(Runnable runnable);
     }
@@ -139,7 +139,7 @@ public class ApplicationThreadDeframer implements Deframer, MessageDeframer.List
         });
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class InitializingMessageProducer implements StreamListener.MessageProducer {
         private boolean initialized;
         private final Runnable runnable;

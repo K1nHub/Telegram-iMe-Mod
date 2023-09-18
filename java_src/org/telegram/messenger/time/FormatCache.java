@@ -10,7 +10,7 @@ import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class FormatCache<F extends Format> {
     static final int NONE = -1;
     private static final ConcurrentMap<MultipartKey, String> cDateTimeInstanceCache = new ConcurrentHashMap(7);
@@ -87,7 +87,7 @@ public abstract class FormatCache<F extends Format> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class MultipartKey {
         private int hashCode;
         private final Object[] keys;

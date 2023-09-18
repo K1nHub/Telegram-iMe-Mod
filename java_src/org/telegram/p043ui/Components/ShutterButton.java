@@ -14,10 +14,10 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 /* renamed from: org.telegram.ui.Components.ShutterButton */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ShutterButton extends View {
     private ShutterButtonDelegate delegate;
     private DecelerateInterpolator interpolator;
@@ -33,7 +33,7 @@ public class ShutterButton extends View {
     private Paint whitePaint;
 
     /* renamed from: org.telegram.ui.Components.ShutterButton$ShutterButtonDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ShutterButtonDelegate {
         boolean onTranslationChanged(float f, float f2);
 
@@ -45,7 +45,7 @@ public class ShutterButton extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.ShutterButton$State */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum State {
         DEFAULT,
         RECORDING
@@ -63,7 +63,7 @@ public class ShutterButton extends View {
                 ShutterButton.this.processRelease = false;
             }
         };
-        this.shadowDrawable = getResources().getDrawable(C3558R.C3560drawable.camera_btn);
+        this.shadowDrawable = getResources().getDrawable(C3473R.C3475drawable.camera_btn);
         Paint paint = new Paint(1);
         this.whitePaint = paint;
         paint.setStyle(Paint.Style.FILL);
@@ -211,8 +211,8 @@ public class ShutterButton extends View {
         accessibilityNodeInfo.setClickable(true);
         accessibilityNodeInfo.setLongClickable(true);
         if (Build.VERSION.SDK_INT >= 21) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("AccActionTakePicture", C3558R.string.AccActionTakePicture)));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), LocaleController.getString("AccActionRecordVideo", C3558R.string.AccActionRecordVideo)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("AccActionTakePicture", C3473R.string.AccActionTakePicture)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), LocaleController.getString("AccActionRecordVideo", C3473R.string.AccActionRecordVideo)));
         }
     }
 }

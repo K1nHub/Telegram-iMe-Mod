@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_Device extends CrashlyticsReport.Session.Event.Device {
     private final Double batteryLevel;
     private final int batteryVelocity;
@@ -80,7 +80,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Device extends Crashlytics
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Device.Builder {
         private Double batteryLevel;
         private Integer batteryVelocity;

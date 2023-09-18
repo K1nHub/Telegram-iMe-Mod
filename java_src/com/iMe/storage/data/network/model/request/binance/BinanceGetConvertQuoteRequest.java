@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.binance;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceGetConvertQuoteRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceGetConvertQuoteRequest {
     private final String amount;
     private final String inputAssetCode;

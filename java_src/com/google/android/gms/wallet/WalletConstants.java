@@ -4,7 +4,7 @@ import android.accounts.Account;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConstants {
     @Deprecated
     public static final String ACTION_ENABLE_WALLET_OPTIMIZATION = "com.google.android.gms.wallet.ENABLE_WALLET_OPTIMIZATION";
@@ -69,19 +69,19 @@ public final class WalletConstants {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface BillingAddressFormat {
     }
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface CardClass {
     }
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface CardNetwork {
         @Deprecated
         public static final int AMEX = 1;
@@ -101,25 +101,25 @@ public final class WalletConstants {
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface PaymentCardRecognitionType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface PaymentMethod {
     }
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface PaymentMethodTokenizationType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface TotalPriceStatus {
     }
 

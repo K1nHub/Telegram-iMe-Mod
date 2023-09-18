@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzbv<MessageType extends zzbv<MessageType, BuilderType>, BuilderType extends zzbs<MessageType, BuilderType>> extends zzag<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
     protected zzef zzc = zzef.zzc();

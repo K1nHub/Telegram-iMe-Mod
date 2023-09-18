@@ -13,19 +13,19 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ByteString implements Iterable<Byte>, Serializable {
     public static final ByteString EMPTY = new LiteralByteString(Internal.EMPTY_BYTE_ARRAY);
     private static final ByteArrayCopier byteArrayCopier;
     private int hash = 0;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ByteArrayCopier {
         byte[] copyFrom(byte[] bArr, int i, int i2);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ByteIterator extends Iterator<Byte> {
         byte nextByte();
     }
@@ -92,7 +92,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         };
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class SystemByteArrayCopier implements ByteArrayCopier {
         private SystemByteArrayCopier() {
         }
@@ -105,7 +105,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ArraysByteArrayCopier implements ByteArrayCopier {
         private ArraysByteArrayCopier() {
         }
@@ -144,7 +144,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         };
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static abstract class AbstractByteIterator implements ByteIterator, p033j$.util.Iterator {
         @Override // p033j$.util.Iterator
         public /* synthetic */ void forEachRemaining(Consumer consumer) {
@@ -264,7 +264,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         return toString(Internal.UTF_8);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static abstract class LeafByteString extends ByteString {
         /* JADX INFO: Access modifiers changed from: package-private */
         public abstract boolean equalsRange(ByteString byteString, int i, int i2);
@@ -303,7 +303,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
         return new CodedBuilder(i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class CodedBuilder {
         private final byte[] buffer;
         private final CodedOutputStream output;
@@ -366,7 +366,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LiteralByteString extends LeafByteString {
         protected final byte[] bytes;
 
@@ -499,7 +499,7 @@ public abstract class ByteString implements Iterable<Byte>, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BoundedByteString extends LiteralByteString {
         private final int bytesLength;
         private final int bytesOffset;

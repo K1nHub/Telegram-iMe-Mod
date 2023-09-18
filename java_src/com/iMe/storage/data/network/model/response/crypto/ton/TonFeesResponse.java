@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.ton;
 
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 /* compiled from: TonFeesResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TonFeesResponse {
     private final float duration;
     private final double fee;

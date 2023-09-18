@@ -5,7 +5,7 @@ import java.io.OutputStream;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: IOStreams.kt */
 /* renamed from: kotlin.io.ByteStreamsKt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ByteStreamsKt {
     public static /* synthetic */ long copyTo$default(InputStream inputStream, OutputStream outputStream, int i, int i2, Object obj) {
         if ((i2 & 2) != 0) {

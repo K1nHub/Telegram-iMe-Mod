@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class IoScheduler extends Scheduler {
     static final RxThreadFactory EVICTOR_THREAD_FACTORY;
     static final CachedWorkerPool NONE;
@@ -39,7 +39,7 @@ public final class IoScheduler extends Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class CachedWorkerPool implements Runnable {
         final CompositeDisposable allWorkers;
         private final ScheduledExecutorService evictorService;
@@ -148,7 +148,7 @@ public final class IoScheduler extends Scheduler {
         return new EventLoopWorker(this.pool.get());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class EventLoopWorker extends Scheduler.Worker {
         private final CachedWorkerPool pool;
         private final ThreadWorker threadWorker;
@@ -183,7 +183,7 @@ public final class IoScheduler extends Scheduler {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ThreadWorker extends NewThreadWorker {
         private long expirationTime;
 

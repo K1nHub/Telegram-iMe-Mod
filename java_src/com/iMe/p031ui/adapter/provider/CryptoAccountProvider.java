@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -64,7 +64,7 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
             }
         };
         this.itemViewType = IdFabric$ViewTypes.CRYPTO_ACCOUNT;
-        this.layoutId = C3558R.layout.fork_recycle_item_wallet_account;
+        this.layoutId = C3473R.layout.fork_recycle_item_wallet_account;
     }
 
     public final void setOnMenuItemClickAction(Callbacks$Callback1<Integer> callbacks$Callback1) {
@@ -95,11 +95,11 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
     public void convert(BaseViewHolder helper, final CryptoAccountItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3558R.C3561id.card_crypto_account, Theme.key_windowBackgroundWhite);
-        int i = C3558R.C3561id.text_account_id;
+        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, C3473R.C3476id.card_crypto_account, Theme.key_windowBackgroundWhite);
+        int i = C3473R.C3476id.text_account_id;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i, Theme.key_windowBackgroundWhiteBlueText);
-        int i2 = C3558R.C3561id.text_account_name;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_windowBackgroundWhiteBlackText).setText(i2, item.getAccountTitleText(this.resourceManager)).setText(i, StringExtKt.shortened(item.getAddress(), 7)), i, !Intrinsics.areEqual(item.getNetworkItem(), NetworkItem.All.INSTANCE)), i, new CryptoAccountProvider$convert$1(this, item)), C3558R.C3561id.item_more_options, new Function1<ActionBarMenuItem, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$2
+        int i2 = C3473R.C3476id.text_account_name;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_windowBackgroundWhiteBlackText).setText(i2, item.getAccountTitleText(this.resourceManager)).setText(i, StringExtKt.shortened(item.getAddress(), 7)), i, !Intrinsics.areEqual(item.getNetworkItem(), NetworkItem.All.INSTANCE)), i, new CryptoAccountProvider$convert$1(this, item)), C3473R.C3476id.item_more_options, new Function1<ActionBarMenuItem, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -122,7 +122,7 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
                     this.setupMenuItem(applyForView, (NetworkItem.Crypto) CryptoAccountItem.this.getNetworkItem(), CryptoAccountItem.this.getAddress());
                 }
             }
-        }), C3558R.C3561id.image_account_avatar, new Function1<BackupImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$3
+        }), C3473R.C3476id.image_account_avatar, new Function1<BackupImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -139,7 +139,7 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
                 Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
                 applyForView.setUser(CryptoAccountItem.this.getUser());
             }
-        }), C3558R.C3561id.horizontal_action_buttons, new Function1<HorizontalActionButtonsView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$4
+        }), C3473R.C3476id.horizontal_action_buttons, new Function1<HorizontalActionButtonsView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$4
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -163,7 +163,7 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(helper.setText(C3558R.C3561id.text_account_id, StringExtKt.shortened(item.getAddress(), 7)), C3558R.C3561id.item_more_options, new Function1<ActionBarMenuItem, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$5
+        BaseQuickAdapterExtKt.applyForView(helper.setText(C3473R.C3476id.text_account_id, StringExtKt.shortened(item.getAddress(), 7)), C3473R.C3476id.item_more_options, new Function1<ActionBarMenuItem, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$5
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -197,8 +197,8 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
         ViewExtKt.visible$default(actionBarMenuItem, false, 1, null);
         actionBarMenuItem.setLongClickEnabled(false);
         actionBarMenuItem.setSubMenuOpenSide(2);
-        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3558R.string.AccDescrMoreOptions));
-        actionBarMenuItem.setIcon(C3558R.C3560drawable.ic_ab_other);
+        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3473R.string.AccDescrMoreOptions));
+        actionBarMenuItem.setIcon(C3473R.C3475drawable.ic_ab_other);
         actionBarMenuItem.setIconColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
         setupMenuItems(actionBarMenuItem, crypto, str);
@@ -238,10 +238,10 @@ public final class CryptoAccountProvider extends BaseNodeProvider<CryptoAccountI
         if (Intrinsics.areEqual(crypto.getNetworkId(), NetworkType.TON)) {
             int i = IdFabric$Menu.TON_ADDRESS_V3R2;
             CheckBoxCell checkBoxCell = new CheckBoxCell(actionBarMenuItem.getContext(), IdFabric$ViewTypes.TON_ADDRESS_VERSION);
-            checkBoxCell.setText(this.resourceManager.getString(C3558R.string.wallet_ton_address_v3r2) + ' ', StringExtKt.shortened(str, 4), true, false);
+            checkBoxCell.setText(this.resourceManager.getString(C3473R.string.wallet_ton_address_v3r2) + ' ', StringExtKt.shortened(str, 4), true, false);
             Unit unit = Unit.INSTANCE;
             actionBarMenuItem.addSubItem(i, checkBoxCell, AndroidUtilities.m72dp(225), AndroidUtilities.m72dp(50));
         }
-        actionBarMenuItem.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, this.resourceManager.getString(C3558R.string.wallet_transaction_details_action_open_etherscan, crypto.getExplorerName())).setIcon(crypto.getExplorerLogoUrl());
+        actionBarMenuItem.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, this.resourceManager.getString(C3473R.string.wallet_transaction_details_action_open_etherscan, crypto.getExplorerName())).setIcon(crypto.getExplorerLogoUrl());
     }
 }

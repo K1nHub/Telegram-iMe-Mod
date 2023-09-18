@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalance.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenBalance {
     public static final Companion Companion = new Companion(null);
     private final double ratePercentageChange24h;
@@ -92,7 +92,7 @@ public final class TokenBalance {
     }
 
     /* compiled from: TokenBalance.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

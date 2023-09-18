@@ -6,7 +6,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: StringExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StringExtKt {
     public static final String orZero(String str) {
         return str == null ? SessionDescription.SUPPORTED_SDP_VERSION : str;

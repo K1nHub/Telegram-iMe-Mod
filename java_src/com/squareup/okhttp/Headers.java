@@ -2,7 +2,7 @@ package com.squareup.okhttp;
 
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Headers {
     private final String[] namesAndValues;
 
@@ -50,7 +50,7 @@ public final class Headers {
         return sb.toString();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         private final List<String> namesAndValues = new ArrayList(20);
 

@@ -13,13 +13,13 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.FlatCheckBox */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class FlatCheckBox extends View {
     int HEIGHT;
     int INNER_PADDING;
 
     /* renamed from: P */
-    int f1777P;
+    int f1768P;
     int TRANSLETE_TEXT;
     boolean attached;
     ValueAnimator checkAnimator;
@@ -47,7 +47,7 @@ public class FlatCheckBox extends View {
         this.HEIGHT = AndroidUtilities.m72dp(36);
         this.INNER_PADDING = AndroidUtilities.m72dp(22);
         this.TRANSLETE_TEXT = AndroidUtilities.m72dp(8);
-        this.f1777P = AndroidUtilities.m72dp(2);
+        this.f1768P = AndroidUtilities.m72dp(2);
         this.rectF = new RectF();
         this.progress = BitmapDescriptorFactory.HUE_RED;
         this.lastW = 0;
@@ -124,10 +124,10 @@ public class FlatCheckBox extends View {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         String str = this.text;
-        setMeasuredDimension((str == null ? 0 : (int) this.textPaint.measureText(str)) + (this.INNER_PADDING << 1) + (this.f1777P * 2), this.HEIGHT + AndroidUtilities.m72dp(4));
+        setMeasuredDimension((str == null ? 0 : (int) this.textPaint.measureText(str)) + (this.INNER_PADDING << 1) + (this.f1768P * 2), this.HEIGHT + AndroidUtilities.m72dp(4));
         if (getMeasuredWidth() != this.lastW) {
             this.rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            this.rectF.inset(this.f1777P + (this.outLinePaint.getStrokeWidth() / 2.0f), this.f1777P + (this.outLinePaint.getStrokeWidth() / 2.0f) + AndroidUtilities.m72dp(2));
+            this.rectF.inset(this.f1768P + (this.outLinePaint.getStrokeWidth() / 2.0f), this.f1768P + (this.outLinePaint.getStrokeWidth() / 2.0f) + AndroidUtilities.m72dp(2));
         }
     }
 

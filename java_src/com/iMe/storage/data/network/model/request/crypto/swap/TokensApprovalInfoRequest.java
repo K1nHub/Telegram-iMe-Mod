@@ -4,7 +4,7 @@ import com.iMe.storage.data.network.model.request.wallet.TokenRequest;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokensApprovalInfoRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokensApprovalInfoRequest {
     private final String defiProtocol;
     private final String networkType;

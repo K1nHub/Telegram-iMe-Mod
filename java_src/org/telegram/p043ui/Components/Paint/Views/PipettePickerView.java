@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PipettePickerView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PipettePickerView extends View {
     private float appearProgress;
     private Bitmap bitmap;

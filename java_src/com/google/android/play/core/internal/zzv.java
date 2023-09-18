@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzv extends zzl implements zzw {
     public zzv() {
         super("com.google.android.play.core.assetpacks.protocol.IAssetModuleServiceCallback");

@@ -1,11 +1,9 @@
 package com.iMe.manager.common;
 
-import com.iMe.storage.domain.model.crypto.NetworkType;
-import java.util.List;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import com.iMe.storage.domain.model.wallet.swap.SwapProtocolInfo;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FeatureAvailableManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FeatureAvailableManager$Token {
     public static final FeatureAvailableManager$Token INSTANCE = new FeatureAvailableManager$Token();
 
@@ -18,8 +16,6 @@ public final class FeatureAvailableManager$Token {
     }
 
     private final boolean isPurchaseViaSwapAvailable(String str) {
-        List listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{NetworkType.BSC, NetworkType.ETH, NetworkType.POLY});
-        return listOf.contains(str);
+        return SwapProtocolInfo.Oneinch.INSTANCE.getSupportedNetworksIds().contains(str);
     }
 }

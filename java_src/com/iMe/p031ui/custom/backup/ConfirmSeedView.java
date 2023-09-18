@@ -18,7 +18,7 @@ import kotlin.sequences.SequencesKt___SequencesKt;
 import org.telegram.messenger.databinding.ForkContentConfirmSeedBinding;
 /* compiled from: ConfirmSeedView.kt */
 /* renamed from: com.iMe.ui.custom.backup.ConfirmSeedView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ConfirmSeedView extends FrameLayout {
     private ForkContentConfirmSeedBinding binding;
 
@@ -54,7 +54,7 @@ public final class ConfirmSeedView extends FrameLayout {
     public final void applyColors() {
         Sequence<BackupWordSwitcher> filter;
         LinearLayout linearLayout = this.binding.linearSwitcherWrapper;
-        Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n                .linearSwitcherWrapper");
+        Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n            .linearSwitcherWrapper");
         filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.ConfirmSeedView$applyColors$$inlined$filterIsInstance$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function1
@@ -78,7 +78,7 @@ public final class ConfirmSeedView extends FrameLayout {
         Sequence filter;
         chunked = CollectionsKt___CollectionsKt.chunked(list, calcSeedPartSize(list));
         LinearLayout linearLayout = this.binding.linearSwitcherWrapper;
-        Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n                .linearSwitcherWrapper");
+        Intrinsics.checkNotNullExpressionValue(linearLayout, "binding\n            .linearSwitcherWrapper");
         filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), new Function1<Object, Boolean>() { // from class: com.iMe.ui.custom.backup.ConfirmSeedView$drawSwitchers$$inlined$filterIsInstance$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function1
@@ -104,7 +104,7 @@ public final class ConfirmSeedView extends FrameLayout {
 
     /* compiled from: ConfirmSeedView.kt */
     /* renamed from: com.iMe.ui.custom.backup.ConfirmSeedView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -9,7 +9,7 @@ import org.telegram.messenger.SharedConfig;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HwLayouts.java */
 /* renamed from: org.telegram.ui.Stories.HwFrameLayout */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HwFrameLayout extends FrameLayout {
     private final boolean isFastDevice;
     static final Set<View> hwViews = new HashSet();

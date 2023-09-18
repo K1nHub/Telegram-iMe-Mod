@@ -4,7 +4,7 @@ import android.opengl.EGLContext;
 import com.otaliastudios.opengl.internal.EglContext;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: EglCore.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class EglCore extends EglNativeCore {
     static {
         new Companion(null);
@@ -23,7 +23,7 @@ public final class EglCore extends EglNativeCore {
     }
 
     /* compiled from: EglCore.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

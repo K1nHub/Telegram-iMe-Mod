@@ -33,7 +33,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SyncEngine implements RemoteStore.RemoteStoreCallback {
     private static final String TAG = "SyncEngine";
     private User currentUser;
@@ -52,7 +52,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
     private final Map<Integer, List<TaskCompletionSource<Void>>> pendingWritesCallbacks = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface SyncEngineCallback {
         void handleOnlineStateChange(OnlineState onlineState);
 
@@ -62,7 +62,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class LimboResolution {
         private final DocumentKey key;
         private boolean receivedDocument;
@@ -128,7 +128,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
         if (list.isEmpty()) {
             this.localStore.releaseTarget(targetId);
             this.remoteStore.stopListening(targetId);
-            removeAndCleanupTarget(targetId, Status.f526OK);
+            removeAndCleanupTarget(targetId, Status.f517OK);
         }
     }
 
@@ -309,7 +309,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.core.SyncEngine$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10121 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$LimboDocumentChange$Type */

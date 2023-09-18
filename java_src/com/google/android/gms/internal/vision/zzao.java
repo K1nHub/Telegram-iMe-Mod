@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
 @SafeParcelable.Class(creator = "WordBoxParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzao extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzao> CREATOR = new zzar();
     @SafeParcelable.Field(m797id = 3)

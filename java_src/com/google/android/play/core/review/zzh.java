@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import com.google.android.play.core.internal.zzag;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzh extends zzg<ReviewInfo> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzh(zzi zziVar, com.google.android.play.core.tasks.zzi<ReviewInfo> zziVar2, String str) {

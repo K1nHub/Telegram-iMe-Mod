@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlinx.coroutines.flow.StateFlow;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: StateFlowExtensions.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StateFlowExtensionsKt$onSubscribe$1<T> implements StateFlow<T> {
     final /* synthetic */ Function0<Unit> $block;
     final /* synthetic */ StateFlow<T> $this_onSubscribe;

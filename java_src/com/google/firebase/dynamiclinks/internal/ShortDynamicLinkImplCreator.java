@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.firebase.dynamiclinks.internal.ShortDynamicLinkImpl;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ShortDynamicLinkImplCreator implements Parcelable.Creator<ShortDynamicLinkImpl> {
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // android.os.Parcelable.Creator

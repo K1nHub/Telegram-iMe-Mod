@@ -3,7 +3,7 @@ package com.iMe.feature.devTools;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DevState.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DevState {
     private final boolean isLoading;
     private final String text;

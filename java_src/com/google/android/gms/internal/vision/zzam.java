@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "TextRecognizerOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzam extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzam> CREATOR = new zzap();
     @SafeParcelable.Field(getter = "getCustomModelsDir", m797id = 2)

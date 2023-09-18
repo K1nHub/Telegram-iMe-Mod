@@ -1,5 +1,5 @@
 package kotlin.text;
 /* compiled from: RegexExtensions.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class StringsKt__RegexExtensionsKt extends StringsKt__RegexExtensionsJVMKt {
 }

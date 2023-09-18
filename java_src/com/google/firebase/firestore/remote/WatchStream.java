@@ -9,13 +9,13 @@ import com.google.firestore.p021v1.ListenRequest;
 import com.google.firestore.p021v1.ListenResponse;
 import com.google.protobuf.ByteString;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WatchStream extends AbstractStream<ListenRequest, ListenResponse, Callback> {
     public static final ByteString EMPTY_RESUME_TOKEN = ByteString.EMPTY;
     private final RemoteSerializer serializer;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Callback extends Stream$StreamCallback {
         void onWatchChange(SnapshotVersion snapshotVersion, WatchChange watchChange);
     }

@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 /* compiled from: FirebaseDynamicLinks.kt */
 @Keep
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseDynamicLinksKtxRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<Component<?>> getComponents() {

@@ -1,5 +1,5 @@
 package kotlin.text;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StringsKt extends StringsKt___StringsKt {
     public static /* bridge */ /* synthetic */ <T extends Appendable> T append(T t, CharSequence... charSequenceArr) {
         return (T) StringsKt__AppendableKt.append(t, charSequenceArr);

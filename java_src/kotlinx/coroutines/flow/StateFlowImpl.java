@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 import kotlinx.coroutines.internal.Symbol;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StateFlowImpl<T> extends AbstractSharedFlow<StateFlowSlot> implements MutableStateFlow<T>, Flow {
     private volatile /* synthetic */ Object _state;
     private int sequence;

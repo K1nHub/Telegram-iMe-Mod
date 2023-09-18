@@ -3,7 +3,7 @@ package io.grpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class InternalChannelz$ChannelTrace$Event {
     public final InternalWithLogId channelRef;
     public final String description;
@@ -11,7 +11,7 @@ public final class InternalChannelz$ChannelTrace$Event {
     public final InternalWithLogId subchannelRef;
     public final long timestampNanos;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum Severity {
         CT_UNKNOWN,
         CT_INFO,
@@ -43,7 +43,7 @@ public final class InternalChannelz$ChannelTrace$Event {
         return MoreObjects.toStringHelper(this).add("description", this.description).add("severity", this.severity).add("timestampNanos", this.timestampNanos).add("channelRef", this.channelRef).add("subchannelRef", this.subchannelRef).toString();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         private InternalWithLogId channelRef;
         private String description;

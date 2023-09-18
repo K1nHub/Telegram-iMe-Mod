@@ -5,11 +5,11 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface IDynamicLinksService extends IInterface {
     void getDynamicLink(IDynamicLinksCallbacks iDynamicLinksCallbacks, String str) throws RemoteException;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends Binder implements IDynamicLinksService {
         public static IDynamicLinksService asInterface(IBinder iBinder) {
             if (iBinder == null) {
@@ -22,7 +22,7 @@ public interface IDynamicLinksService extends IInterface {
             return new Proxy(iBinder);
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         private static class Proxy implements IDynamicLinksService {
             private IBinder mRemote;
 

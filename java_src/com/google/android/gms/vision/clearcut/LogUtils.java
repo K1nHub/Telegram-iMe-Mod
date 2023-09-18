@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @Keep
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LogUtils {
     public static zzfi.zzo zza(long j, int i, String str, String str2, List<zzfi.zzn> list, zzs zzsVar) {
         zzfi.zzi.zza zza = zzfi.zzi.zza();
@@ -24,7 +24,7 @@ public class LogUtils {
     }
 
     public static zzfi.zza zza(Context context) {
-        zzfi.zza.C7492zza zza = zzfi.zza.zza().zza(context.getPackageName());
+        zzfi.zza.C7407zza zza = zzfi.zza.zza().zza(context.getPackageName());
         String zzb = zzb(context);
         if (zzb != null) {
             zza.zzb(zzb);

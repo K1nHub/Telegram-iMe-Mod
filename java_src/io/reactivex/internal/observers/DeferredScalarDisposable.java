@@ -2,7 +2,7 @@ package io.reactivex.internal.observers;
 
 import io.reactivex.Observer;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DeferredScalarDisposable<T> extends BasicIntQueueDisposable<T> {
     protected final Observer<? super T> downstream;
     protected T value;

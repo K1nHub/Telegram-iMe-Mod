@@ -2,7 +2,7 @@ package com.trustwallet.walletconnect.models;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCSignTransaction.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WCSignTransaction {
     private final int network;
     private final String transaction;

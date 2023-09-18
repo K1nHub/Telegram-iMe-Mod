@@ -3,7 +3,7 @@ package com.google.android.play.core.assetpacks;
 import java.io.IOException;
 import java.io.InputStream;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzbj extends InputStream {
     private final InputStream zza;
     private long zzb;

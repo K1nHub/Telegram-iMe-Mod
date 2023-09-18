@@ -15,7 +15,7 @@ import org.telegram.p043ui.Components.voip.GroupCallMiniTextureView;
 import org.telegram.p043ui.Components.voip.GroupCallRenderersContainer;
 import org.telegram.tgnet.TLRPC$TL_groupCallParticipant;
 /* renamed from: org.telegram.ui.GroupCallTabletGridAdapter */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class GroupCallTabletGridAdapter extends RecyclerListView.SelectionAdapter {
     private final GroupCallActivity activity;
     private ArrayList<GroupCallMiniTextureView> attachedRenderers;

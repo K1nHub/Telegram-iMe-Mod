@@ -7,7 +7,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: ReactionApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ReactionApi {
     @POST("prepareLikeMessage")
     Observable<ApiBaseResponse<ReactionMessageResult>> prepareLikeMessage(@Body ReactionRequestData reactionRequestData);

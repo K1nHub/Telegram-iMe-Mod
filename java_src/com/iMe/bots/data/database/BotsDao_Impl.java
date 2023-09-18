@@ -29,7 +29,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotsDao_Impl extends BotsDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<BotsDbModel> __insertionAdapterOfBotsDbModel;

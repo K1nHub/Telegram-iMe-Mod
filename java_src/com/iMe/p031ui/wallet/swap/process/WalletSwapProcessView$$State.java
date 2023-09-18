@@ -1,29 +1,30 @@
 package com.iMe.p031ui.wallet.swap.process;
 
 import com.iMe.fork.utils.Callbacks$Callback;
+import com.iMe.model.dialog.AnimatedSpannableDialogModel;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.NetworkItem;
 import com.iMe.model.wallet.crypto.swap.SwapFeeScreenArgs;
 import com.iMe.model.wallet.crypto.swap.SwapUiState;
+import com.iMe.model.wallet.select.SelectTokenScreenType;
 import com.iMe.model.wallet.swap.SwapSide;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BaseView;
-import com.iMe.p031ui.wallet.swap.process.WalletSwapProcessFragment;
-import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.binancepay.OutputConvertToken;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
 import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
 import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcessView> implements WalletSwapProcessView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -49,16 +50,16 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void showNotEnoughMoneyBinanceErrorDialog() {
-        ShowNotEnoughMoneyBinanceErrorDialogCommand showNotEnoughMoneyBinanceErrorDialogCommand = new ShowNotEnoughMoneyBinanceErrorDialogCommand(this);
-        this.viewCommands.beforeApply(showNotEnoughMoneyBinanceErrorDialogCommand);
+    public void showCommonErrorDialog(String str) {
+        ShowCommonErrorDialogCommand showCommonErrorDialogCommand = new ShowCommonErrorDialogCommand(this, str);
+        this.viewCommands.beforeApply(showCommonErrorDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showNotEnoughMoneyBinanceErrorDialog();
+            view.showCommonErrorDialog(str);
         }
-        this.viewCommands.afterApply(showNotEnoughMoneyBinanceErrorDialogCommand);
+        this.viewCommands.afterApply(showCommonErrorDialogCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
@@ -101,32 +102,6 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void openSwapFeeScreen(SwapFeeScreenArgs swapFeeScreenArgs) {
-        OpenSwapFeeScreenCommand openSwapFeeScreenCommand = new OpenSwapFeeScreenCommand(this, swapFeeScreenArgs);
-        this.viewCommands.beforeApply(openSwapFeeScreenCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.openSwapFeeScreen(swapFeeScreenArgs);
-        }
-        this.viewCommands.afterApply(openSwapFeeScreenCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void showMinMaxInputValues(TokenDetailed tokenDetailed, OutputConvertToken outputConvertToken) {
-        ShowMinMaxInputValuesCommand showMinMaxInputValuesCommand = new ShowMinMaxInputValuesCommand(this, tokenDetailed, outputConvertToken);
-        this.viewCommands.beforeApply(showMinMaxInputValuesCommand);
-        if (hasNotView().booleanValue()) {
-            return;
-        }
-        for (View view : this.views) {
-            view.showMinMaxInputValues(tokenDetailed, outputConvertToken);
-        }
-        this.viewCommands.afterApply(showMinMaxInputValuesCommand);
-    }
-
-    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
     public void showChangeNetworkHint() {
         ShowChangeNetworkHintCommand showChangeNetworkHintCommand = new ShowChangeNetworkHintCommand(this);
         this.viewCommands.beforeApply(showChangeNetworkHintCommand);
@@ -140,55 +115,146 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void openSelectTokenDialog(TokenDetailed tokenDetailed, WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Function1<? super TokenDetailed, Unit> function1) {
-        OpenSelectTokenDialogCommand openSelectTokenDialogCommand = new OpenSelectTokenDialogCommand(this, tokenDetailed, screenType, str, z, function1);
-        this.viewCommands.beforeApply(openSelectTokenDialogCommand);
+    public void showApprovalInfoDialog(AnimatedSpannableDialogModel animatedSpannableDialogModel) {
+        ShowApprovalInfoDialogCommand showApprovalInfoDialogCommand = new ShowApprovalInfoDialogCommand(this, animatedSpannableDialogModel);
+        this.viewCommands.beforeApply(showApprovalInfoDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.openSelectTokenDialog(tokenDetailed, screenType, str, z, function1);
+            view.showApprovalInfoDialog(animatedSpannableDialogModel);
         }
-        this.viewCommands.afterApply(openSelectTokenDialogCommand);
+        this.viewCommands.afterApply(showApprovalInfoDialogCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void setupScreenForSwap(String str, String str2, int i, boolean z, WalletSwapProcessFragment.NetworkSwitchType networkSwitchType) {
-        SetupScreenForSwapCommand setupScreenForSwapCommand = new SetupScreenForSwapCommand(this, str, str2, i, z, networkSwitchType);
+    public void showApprovalConfirmationDialog(DialogModel dialogModel) {
+        ShowApprovalConfirmationDialogCommand showApprovalConfirmationDialogCommand = new ShowApprovalConfirmationDialogCommand(this, dialogModel);
+        this.viewCommands.beforeApply(showApprovalConfirmationDialogCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.showApprovalConfirmationDialog(dialogModel);
+        }
+        this.viewCommands.afterApply(showApprovalConfirmationDialogCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
+    public void openSwapFeeScreen(SwapFeeScreenArgs swapFeeScreenArgs) {
+        OpenSwapFeeScreenCommand openSwapFeeScreenCommand = new OpenSwapFeeScreenCommand(this, swapFeeScreenArgs);
+        this.viewCommands.beforeApply(openSwapFeeScreenCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.openSwapFeeScreen(swapFeeScreenArgs);
+        }
+        this.viewCommands.afterApply(openSwapFeeScreenCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
+    public void openSelectTokenScreen(TokenDetailed tokenDetailed, SelectTokenScreenType selectTokenScreenType, String str, boolean z, Function2<? super TokenDetailed, ? super FiatValue, Unit> function2) {
+        OpenSelectTokenScreenCommand openSelectTokenScreenCommand = new OpenSelectTokenScreenCommand(this, tokenDetailed, selectTokenScreenType, str, z, function2);
+        this.viewCommands.beforeApply(openSelectTokenScreenCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.openSelectTokenScreen(tokenDetailed, selectTokenScreenType, str, z, function2);
+        }
+        this.viewCommands.afterApply(openSelectTokenScreenCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
+    public void setAmount(SwapSide swapSide, String str) {
+        SetAmountCommand setAmountCommand = new SetAmountCommand(this, swapSide, str);
+        this.viewCommands.beforeApply(setAmountCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.setAmount(swapSide, str);
+        }
+        this.viewCommands.afterApply(setAmountCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
+    public void setupScreenForSwap(String str, String str2, int i, boolean z, boolean z2) {
+        SetupScreenForSwapCommand setupScreenForSwapCommand = new SetupScreenForSwapCommand(this, str, str2, i, z, z2);
         this.viewCommands.beforeApply(setupScreenForSwapCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.setupScreenForSwap(str, str2, i, z, networkSwitchType);
+            view.setupScreenForSwap(str, str2, i, z, z2);
         }
         this.viewCommands.afterApply(setupScreenForSwapCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void onTokenSelected(SwapSide swapSide, TokenDetailed tokenDetailed, int i) {
-        OnTokenSelectedCommand onTokenSelectedCommand = new OnTokenSelectedCommand(this, swapSide, tokenDetailed, i);
+    public void setInputFiatText(String str) {
+        SetInputFiatTextCommand setInputFiatTextCommand = new SetInputFiatTextCommand(this, str);
+        this.viewCommands.beforeApply(setInputFiatTextCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.setInputFiatText(str);
+        }
+        this.viewCommands.afterApply(setInputFiatTextCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
+    public void setInputError(String str) {
+        SetInputErrorCommand setInputErrorCommand = new SetInputErrorCommand(this, str);
+        this.viewCommands.beforeApply(setInputErrorCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.setInputError(str);
+        }
+        this.viewCommands.afterApply(setInputErrorCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
+    public void onTokenSelected(SwapSide swapSide, TokenDetailed tokenDetailed) {
+        OnTokenSelectedCommand onTokenSelectedCommand = new OnTokenSelectedCommand(this, swapSide, tokenDetailed);
         this.viewCommands.beforeApply(onTokenSelectedCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.onTokenSelected(swapSide, tokenDetailed, i);
+            view.onTokenSelected(swapSide, tokenDetailed);
         }
         this.viewCommands.afterApply(onTokenSelectedCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
-    public void showTokenBalance(String str) {
-        ShowTokenBalanceCommand showTokenBalanceCommand = new ShowTokenBalanceCommand(this, str);
+    public void showTokenBalance(String str, String str2) {
+        ShowTokenBalanceCommand showTokenBalanceCommand = new ShowTokenBalanceCommand(this, str, str2);
         this.viewCommands.beforeApply(showTokenBalanceCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showTokenBalance(str);
+            view.showTokenBalance(str, str2);
         }
         this.viewCommands.afterApply(showTokenBalanceCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
+    public void showMinMaxInputValues(TokenDetailed tokenDetailed, OutputConvertToken outputConvertToken) {
+        ShowMinMaxInputValuesCommand showMinMaxInputValuesCommand = new ShowMinMaxInputValuesCommand(this, tokenDetailed, outputConvertToken);
+        this.viewCommands.beforeApply(showMinMaxInputValuesCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.showMinMaxInputValues(tokenDetailed, outputConvertToken);
+        }
+        this.viewCommands.afterApply(showMinMaxInputValuesCommand);
     }
 
     @Override // com.iMe.p031ui.wallet.swap.process.WalletSwapProcessView
@@ -271,7 +337,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowNotEnoughMoneyErrorDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowNotEnoughMoneyErrorDialogCommand extends ViewCommand<WalletSwapProcessView> {
         public final TokenBuyCoordinatorArgs args;
 
@@ -287,22 +353,25 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     /* compiled from: WalletSwapProcessView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowNotEnoughMoneyBinanceErrorDialogCommand */
-    /* loaded from: classes4.dex */
-    public class ShowNotEnoughMoneyBinanceErrorDialogCommand extends ViewCommand<WalletSwapProcessView> {
-        ShowNotEnoughMoneyBinanceErrorDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State) {
-            super("showNotEnoughMoneyBinanceErrorDialog", OneExecutionStateStrategy.class);
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowCommonErrorDialogCommand */
+    /* loaded from: classes6.dex */
+    public class ShowCommonErrorDialogCommand extends ViewCommand<WalletSwapProcessView> {
+        public final String errorText;
+
+        ShowCommonErrorDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, String str) {
+            super("showCommonErrorDialog", OneExecutionStateStrategy.class);
+            this.errorText = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.showNotEnoughMoneyBinanceErrorDialog();
+            walletSwapProcessView.showCommonErrorDialog(this.errorText);
         }
     }
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowSuccessSwapAlertCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSuccessSwapAlertCommand extends ViewCommand<WalletSwapProcessView> {
         ShowSuccessSwapAlertCommand(WalletSwapProcessView$$State walletSwapProcessView$$State) {
             super("showSuccessSwapAlert", OneExecutionStateStrategy.class);
@@ -316,7 +385,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowSwapConfirmationDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSwapConfirmationDialogCommand extends ViewCommand<WalletSwapProcessView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -335,7 +404,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowSuccessApproveAlertCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSuccessApproveAlertCommand extends ViewCommand<WalletSwapProcessView> {
         ShowSuccessApproveAlertCommand(WalletSwapProcessView$$State walletSwapProcessView$$State) {
             super("showSuccessApproveAlert", OneExecutionStateStrategy.class);
@@ -348,8 +417,56 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowChangeNetworkHintCommand */
+    /* loaded from: classes6.dex */
+    public class ShowChangeNetworkHintCommand extends ViewCommand<WalletSwapProcessView> {
+        ShowChangeNetworkHintCommand(WalletSwapProcessView$$State walletSwapProcessView$$State) {
+            super("showChangeNetworkHint", OneExecutionStateStrategy.class);
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.showChangeNetworkHint();
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowApprovalInfoDialogCommand */
+    /* loaded from: classes6.dex */
+    public class ShowApprovalInfoDialogCommand extends ViewCommand<WalletSwapProcessView> {
+        public final AnimatedSpannableDialogModel model;
+
+        ShowApprovalInfoDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, AnimatedSpannableDialogModel animatedSpannableDialogModel) {
+            super("showApprovalInfoDialog", OneExecutionStateStrategy.class);
+            this.model = animatedSpannableDialogModel;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.showApprovalInfoDialog(this.model);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowApprovalConfirmationDialogCommand */
+    /* loaded from: classes6.dex */
+    public class ShowApprovalConfirmationDialogCommand extends ViewCommand<WalletSwapProcessView> {
+        public final DialogModel model;
+
+        ShowApprovalConfirmationDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, DialogModel dialogModel) {
+            super("showApprovalConfirmationDialog", OneExecutionStateStrategy.class);
+            this.model = dialogModel;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.showApprovalConfirmationDialog(this.model);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$OpenSwapFeeScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenSwapFeeScreenCommand extends ViewCommand<WalletSwapProcessView> {
         public final SwapFeeScreenArgs args;
 
@@ -365,14 +482,155 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$OpenSelectTokenScreenCommand */
+    /* loaded from: classes6.dex */
+    public class OpenSelectTokenScreenCommand extends ViewCommand<WalletSwapProcessView> {
+        public final Function2<? super TokenDetailed, ? super FiatValue, Unit> action;
+        public final String networkId;
+        public final boolean onlyPositiveBalance;
+        public final SelectTokenScreenType selectTokensScreenType;
+        public final TokenDetailed selectedToken;
+
+        OpenSelectTokenScreenCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, TokenDetailed tokenDetailed, SelectTokenScreenType selectTokenScreenType, String str, boolean z, Function2<? super TokenDetailed, ? super FiatValue, Unit> function2) {
+            super("openSelectTokenScreen", OneExecutionStateStrategy.class);
+            this.selectedToken = tokenDetailed;
+            this.selectTokensScreenType = selectTokenScreenType;
+            this.networkId = str;
+            this.onlyPositiveBalance = z;
+            this.action = function2;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.openSelectTokenScreen(this.selectedToken, this.selectTokensScreenType, this.networkId, this.onlyPositiveBalance, this.action);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetAmountCommand */
+    /* loaded from: classes6.dex */
+    public class SetAmountCommand extends ViewCommand<WalletSwapProcessView> {
+        public final String amountText;
+        public final SwapSide side;
+
+        SetAmountCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, SwapSide swapSide, String str) {
+            super("setAmount", AddToEndSingleStrategy.class);
+            this.side = swapSide;
+            this.amountText = str;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.setAmount(this.side, this.amountText);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetupScreenForSwapCommand */
+    /* loaded from: classes6.dex */
+    public class SetupScreenForSwapCommand extends ViewCommand<WalletSwapProcessView> {
+        public final String description;
+        public final boolean isCrossChain;
+        public final boolean isNetworkSwitchVisible;
+        public final int logo;
+        public final String title;
+
+        SetupScreenForSwapCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, String str, String str2, int i, boolean z, boolean z2) {
+            super("setupScreenForSwap", AddToEndSingleStrategy.class);
+            this.title = str;
+            this.description = str2;
+            this.logo = i;
+            this.isNetworkSwitchVisible = z;
+            this.isCrossChain = z2;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.setupScreenForSwap(this.title, this.description, this.logo, this.isNetworkSwitchVisible, this.isCrossChain);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetInputFiatTextCommand */
+    /* loaded from: classes6.dex */
+    public class SetInputFiatTextCommand extends ViewCommand<WalletSwapProcessView> {
+        public final String text;
+
+        SetInputFiatTextCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, String str) {
+            super("setInputFiatText", AddToEndSingleStrategy.class);
+            this.text = str;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.setInputFiatText(this.text);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetInputErrorCommand */
+    /* loaded from: classes6.dex */
+    public class SetInputErrorCommand extends ViewCommand<WalletSwapProcessView> {
+        public final String text;
+
+        SetInputErrorCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, String str) {
+            super("setInputError", AddToEndSingleStrategy.class);
+            this.text = str;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.setInputError(this.text);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$OnTokenSelectedCommand */
+    /* loaded from: classes6.dex */
+    public class OnTokenSelectedCommand extends ViewCommand<WalletSwapProcessView> {
+        public final SwapSide side;
+        public final TokenDetailed token;
+
+        OnTokenSelectedCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, SwapSide swapSide, TokenDetailed tokenDetailed) {
+            super("onTokenSelected", AddToEndSingleStrategy.class);
+            this.side = swapSide;
+            this.token = tokenDetailed;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.onTokenSelected(this.side, this.token);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowTokenBalanceCommand */
+    /* loaded from: classes6.dex */
+    public class ShowTokenBalanceCommand extends ViewCommand<WalletSwapProcessView> {
+        public final String balanceText;
+        public final String clickablePartText;
+
+        ShowTokenBalanceCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, String str, String str2) {
+            super("showTokenBalance", AddToEndSingleStrategy.class);
+            this.clickablePartText = str;
+            this.balanceText = str2;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSwapProcessView walletSwapProcessView) {
+            walletSwapProcessView.showTokenBalance(this.clickablePartText, this.balanceText);
+        }
+    }
+
+    /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowMinMaxInputValuesCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowMinMaxInputValuesCommand extends ViewCommand<WalletSwapProcessView> {
         public final OutputConvertToken information;
         public final TokenDetailed token;
 
         ShowMinMaxInputValuesCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, TokenDetailed tokenDetailed, OutputConvertToken outputConvertToken) {
-            super("showMinMaxInputValues", OneExecutionStateStrategy.class);
+            super("showMinMaxInputValues", AddToEndSingleStrategy.class);
             this.token = tokenDetailed;
             this.information = outputConvertToken;
         }
@@ -384,110 +642,8 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
     }
 
     /* compiled from: WalletSwapProcessView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowChangeNetworkHintCommand */
-    /* loaded from: classes4.dex */
-    public class ShowChangeNetworkHintCommand extends ViewCommand<WalletSwapProcessView> {
-        ShowChangeNetworkHintCommand(WalletSwapProcessView$$State walletSwapProcessView$$State) {
-            super("showChangeNetworkHint", OneExecutionStateStrategy.class);
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.showChangeNetworkHint();
-        }
-    }
-
-    /* compiled from: WalletSwapProcessView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$OpenSelectTokenDialogCommand */
-    /* loaded from: classes4.dex */
-    public class OpenSelectTokenDialogCommand extends ViewCommand<WalletSwapProcessView> {
-        public final Function1<? super TokenDetailed, Unit> action;
-        public final String networkId;
-        public final boolean onlyPositiveBalance;
-        public final WalletSelectTokenFragment.ScreenType selectTokensScreenType;
-        public final TokenDetailed selectedToken;
-
-        OpenSelectTokenDialogCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, TokenDetailed tokenDetailed, WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Function1<? super TokenDetailed, Unit> function1) {
-            super("openSelectTokenDialog", OneExecutionStateStrategy.class);
-            this.selectedToken = tokenDetailed;
-            this.selectTokensScreenType = screenType;
-            this.networkId = str;
-            this.onlyPositiveBalance = z;
-            this.action = function1;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.openSelectTokenDialog(this.selectedToken, this.selectTokensScreenType, this.networkId, this.onlyPositiveBalance, this.action);
-        }
-    }
-
-    /* compiled from: WalletSwapProcessView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetupScreenForSwapCommand */
-    /* loaded from: classes4.dex */
-    public class SetupScreenForSwapCommand extends ViewCommand<WalletSwapProcessView> {
-        public final String description;
-        public final boolean isNetworkSwitchVisible;
-        public final int logo;
-        public final WalletSwapProcessFragment.NetworkSwitchType networkSwitchType;
-        public final String title;
-
-        SetupScreenForSwapCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, String str, String str2, int i, boolean z, WalletSwapProcessFragment.NetworkSwitchType networkSwitchType) {
-            super("setupScreenForSwap", AddToEndSingleStrategy.class);
-            this.title = str;
-            this.description = str2;
-            this.logo = i;
-            this.isNetworkSwitchVisible = z;
-            this.networkSwitchType = networkSwitchType;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.setupScreenForSwap(this.title, this.description, this.logo, this.isNetworkSwitchVisible, this.networkSwitchType);
-        }
-    }
-
-    /* compiled from: WalletSwapProcessView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$OnTokenSelectedCommand */
-    /* loaded from: classes4.dex */
-    public class OnTokenSelectedCommand extends ViewCommand<WalletSwapProcessView> {
-        public final SwapSide side;
-        public final TokenDetailed token;
-        public final int tokenDecimal;
-
-        OnTokenSelectedCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, SwapSide swapSide, TokenDetailed tokenDetailed, int i) {
-            super("onTokenSelected", AddToEndSingleStrategy.class);
-            this.side = swapSide;
-            this.token = tokenDetailed;
-            this.tokenDecimal = i;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.onTokenSelected(this.side, this.token, this.tokenDecimal);
-        }
-    }
-
-    /* compiled from: WalletSwapProcessView$$State.java */
-    /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowTokenBalanceCommand */
-    /* loaded from: classes4.dex */
-    public class ShowTokenBalanceCommand extends ViewCommand<WalletSwapProcessView> {
-        public final String balance;
-
-        ShowTokenBalanceCommand(WalletSwapProcessView$$State walletSwapProcessView$$State, String str) {
-            super("showTokenBalance", AddToEndSingleStrategy.class);
-            this.balance = str;
-        }
-
-        @Override // moxy.viewstate.ViewCommand
-        public void apply(WalletSwapProcessView walletSwapProcessView) {
-            walletSwapProcessView.showTokenBalance(this.balance);
-        }
-    }
-
-    /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$RenderStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderStateCommand extends ViewCommand<WalletSwapProcessView> {
         public final SwapUiState state;
 
@@ -504,7 +660,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$SetupNetworkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupNetworkCommand extends ViewCommand<WalletSwapProcessView> {
         public final NetworkItem network;
         public final SwapSide side;
@@ -523,7 +679,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletSwapProcessView> {
         public final String text;
 
@@ -540,7 +696,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletSwapProcessView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -561,7 +717,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletSwapProcessView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -580,7 +736,7 @@ public class WalletSwapProcessView$$State extends MvpViewState<WalletSwapProcess
 
     /* compiled from: WalletSwapProcessView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletSwapProcessView> {
         public final List<? extends NetworkItem> availableNetworks;
         public final NetworkItem network;

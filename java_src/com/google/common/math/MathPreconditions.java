@@ -1,5 +1,5 @@
 package com.google.common.math;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class MathPreconditions {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int checkPositive(String str, int i) {

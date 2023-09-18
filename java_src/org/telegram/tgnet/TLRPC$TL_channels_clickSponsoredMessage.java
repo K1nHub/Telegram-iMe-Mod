@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_channels_clickSponsoredMessage extends TLObject {
     public static int constructor = 414170259;
     public TLRPC$InputChannel channel;

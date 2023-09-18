@@ -3,7 +3,7 @@ package com.google.android.gms.location;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Comparator;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzk implements Comparator {
     @Override // java.util.Comparator
     public final /* bridge */ /* synthetic */ int compare(Object obj, Object obj2) {

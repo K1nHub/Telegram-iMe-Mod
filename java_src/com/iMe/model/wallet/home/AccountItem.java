@@ -7,7 +7,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AccountItem extends NoChildNode {
     private TokenBalance balance;
 
@@ -29,7 +29,7 @@ public abstract class AccountItem extends NoChildNode {
     }
 
     /* compiled from: AccountItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Create extends AccountItem {
         private TokenBalance balance;
         private final List<HorizontalActionButtonItem> horizontalActionButtonItems;
@@ -108,7 +108,7 @@ public abstract class AccountItem extends NoChildNode {
     }
 
     /* compiled from: AccountItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Token extends AccountItem {
         private TokenBalance balance;
         private final boolean isBalanceHidden;

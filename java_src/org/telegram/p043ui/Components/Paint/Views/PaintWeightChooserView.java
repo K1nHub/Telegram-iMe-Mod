@@ -16,7 +16,7 @@ import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.Paint.RenderView;
 import org.telegram.p043ui.Components.Paint.Swatch;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PaintWeightChooserView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PaintWeightChooserView extends View {
     private AnimatedFloat animatedMax;
     private AnimatedFloat animatedMin;
@@ -45,7 +45,7 @@ public class PaintWeightChooserView extends View {
     private ValueOverride valueOverride;
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.PaintWeightChooserView$ValueOverride */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ValueOverride {
         float get();
 

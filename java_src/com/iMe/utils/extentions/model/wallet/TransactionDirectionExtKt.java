@@ -3,13 +3,13 @@ package com.iMe.utils.extentions.model.wallet;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: TransactionDirectionExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TransactionDirectionExtKt {
 
     /* compiled from: TransactionDirectionExt.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -35,10 +35,10 @@ public final class TransactionDirectionExtKt {
         Intrinsics.checkNotNullParameter(transactionDirection, "<this>");
         int i = WhenMappings.$EnumSwitchMapping$0[transactionDirection.ordinal()];
         if (i == 1 || i == 2) {
-            return C3558R.C3560drawable.fork_ic_transaction_sent;
+            return C3473R.C3475drawable.fork_ic_transaction_sent;
         }
         if (i == 3) {
-            return C3558R.C3560drawable.fork_ic_transaction_receive;
+            return C3473R.C3475drawable.fork_ic_transaction_receive;
         }
         throw new NoWhenBranchMatchedException();
     }

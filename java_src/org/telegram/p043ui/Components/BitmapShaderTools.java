@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.BitmapShaderTools */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BitmapShaderTools {
     final Bitmap bitmap;
     final RectF bounds;

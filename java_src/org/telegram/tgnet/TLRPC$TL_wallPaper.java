@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_wallPaper extends TLRPC$WallPaper {
     public static int constructor = -1539849235;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1702id = abstractSerializedData.readInt64(z);
+        this.f1693id = abstractSerializedData.readInt64(z);
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         this.creator = (readInt32 & 1) != 0;
@@ -23,7 +23,7 @@ public class TLRPC$TL_wallPaper extends TLRPC$WallPaper {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1702id);
+        abstractSerializedData.writeInt64(this.f1693id);
         int i = this.creator ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.isDefault ? i | 2 : i & (-3);

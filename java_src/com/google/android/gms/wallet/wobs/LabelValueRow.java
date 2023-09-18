@@ -11,7 +11,7 @@ import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "LabelValueRowCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LabelValueRow extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LabelValueRow> CREATOR = new zzf();
     @SafeParcelable.Field(m797id = 2)
@@ -24,7 +24,7 @@ public final class LabelValueRow extends AbstractSafeParcelable {
     ArrayList zzc;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zze zzeVar) {
         }

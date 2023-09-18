@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsReportDataCapture {
     private static final Map<String, Integer> ARCHITECTURES_BY_NAME;
     static final String GENERATOR;

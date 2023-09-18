@@ -4,7 +4,7 @@ import android.content.Context;
 import android.hardware.camera2.CameraManager;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Camera2Capturer extends CameraCapturer {
     private final CameraManager cameraManager;
     private final Context context;

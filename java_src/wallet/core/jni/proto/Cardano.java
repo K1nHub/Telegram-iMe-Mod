@@ -16,10 +16,10 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
 import wallet.core.jni.proto.Common;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class Cardano {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface DelegateOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -36,7 +36,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface DeregisterStakingKeyOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -51,7 +51,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OutPointOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -64,7 +64,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface RegisterStakingKeyOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -79,7 +79,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -126,7 +126,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -143,7 +143,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TokenAmountOrBuilder extends MessageLiteOrBuilder {
         ByteString getAmount();
 
@@ -162,7 +162,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TokenBundleOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -177,7 +177,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransactionPlanOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -226,7 +226,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransferOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -253,7 +253,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TxInputOrBuilder extends MessageLiteOrBuilder {
         String getAddress();
 
@@ -278,7 +278,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TxOutputOrBuilder extends MessageLiteOrBuilder {
         String getAddress();
 
@@ -299,7 +299,7 @@ public final class Cardano {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface WithdrawOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -320,7 +320,7 @@ public final class Cardano {
     private Cardano() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OutPoint extends GeneratedMessageLite<OutPoint, Builder> implements OutPointOrBuilder {
         private static final OutPoint DEFAULT_INSTANCE;
         public static final int OUTPUT_INDEX_FIELD_NUMBER = 2;
@@ -419,9 +419,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OutPoint, Builder> implements OutPointOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -466,7 +466,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OutPoint();
                 case 2:
@@ -512,47 +512,47 @@ public final class Cardano {
     }
 
     /* renamed from: wallet.core.jni.proto.Cardano$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74061 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73211 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1946xa1df5c61;
+        static final /* synthetic */ int[] f1937xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1946xa1df5c61 = iArr;
+            f1937xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1946xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1937xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1946xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1937xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1946xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1937xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1946xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1937xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1946xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1937xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1946xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1937xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TokenAmount extends GeneratedMessageLite<TokenAmount, Builder> implements TokenAmountOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         public static final int ASSET_NAME_FIELD_NUMBER = 2;
@@ -692,9 +692,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenAmount, Builder> implements TokenAmountOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -778,7 +778,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenAmount();
                 case 2:
@@ -823,7 +823,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TxInput extends GeneratedMessageLite<TxInput, Builder> implements TxInputOrBuilder {
         public static final int ADDRESS_FIELD_NUMBER = 2;
         public static final int AMOUNT_FIELD_NUMBER = 3;
@@ -1039,9 +1039,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TxInput, Builder> implements TxInputOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -1200,7 +1200,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TxInput();
                 case 2:
@@ -1245,7 +1245,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TxOutput extends GeneratedMessageLite<TxOutput, Builder> implements TxOutputOrBuilder {
         public static final int ADDRESS_FIELD_NUMBER = 1;
         public static final int AMOUNT_FIELD_NUMBER = 2;
@@ -1426,9 +1426,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TxOutput, Builder> implements TxOutputOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -1553,7 +1553,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TxOutput();
                 case 2:
@@ -1598,7 +1598,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TokenBundle extends GeneratedMessageLite<TokenBundle, Builder> implements TokenBundleOrBuilder {
         private static final TokenBundle DEFAULT_INSTANCE;
         private static volatile Parser<TokenBundle> PARSER = null;
@@ -1733,9 +1733,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenBundle, Builder> implements TokenBundleOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -1815,7 +1815,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenBundle();
                 case 2:
@@ -1860,7 +1860,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 3;
         public static final int CHANGE_ADDRESS_FIELD_NUMBER = 2;
@@ -2068,9 +2068,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -2222,7 +2222,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transfer();
                 case 2:
@@ -2267,7 +2267,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class RegisterStakingKey extends GeneratedMessageLite<RegisterStakingKey, Builder> implements RegisterStakingKeyOrBuilder {
         private static final RegisterStakingKey DEFAULT_INSTANCE;
         public static final int DEPOSIT_AMOUNT_FIELD_NUMBER = 2;
@@ -2377,9 +2377,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<RegisterStakingKey, Builder> implements RegisterStakingKeyOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -2435,7 +2435,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new RegisterStakingKey();
                 case 2:
@@ -2480,7 +2480,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class DeregisterStakingKey extends GeneratedMessageLite<DeregisterStakingKey, Builder> implements DeregisterStakingKeyOrBuilder {
         private static final DeregisterStakingKey DEFAULT_INSTANCE;
         private static volatile Parser<DeregisterStakingKey> PARSER = null;
@@ -2590,9 +2590,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeregisterStakingKey, Builder> implements DeregisterStakingKeyOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -2648,7 +2648,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeregisterStakingKey();
                 case 2:
@@ -2693,7 +2693,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Delegate extends GeneratedMessageLite<Delegate, Builder> implements DelegateOrBuilder {
         private static final Delegate DEFAULT_INSTANCE;
         public static final int DEPOSIT_AMOUNT_FIELD_NUMBER = 3;
@@ -2821,9 +2821,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Delegate, Builder> implements DelegateOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -2896,7 +2896,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Delegate();
                 case 2:
@@ -2941,7 +2941,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Withdraw extends GeneratedMessageLite<Withdraw, Builder> implements WithdrawOrBuilder {
         private static final Withdraw DEFAULT_INSTANCE;
         private static volatile Parser<Withdraw> PARSER = null;
@@ -3051,9 +3051,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Withdraw, Builder> implements WithdrawOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -3109,7 +3109,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Withdraw();
                 case 2:
@@ -3154,7 +3154,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TransactionPlan extends GeneratedMessageLite<TransactionPlan, Builder> implements TransactionPlanOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 2;
         public static final int AVAILABLE_AMOUNT_FIELD_NUMBER = 1;
@@ -3632,9 +3632,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionPlan, Builder> implements TransactionPlanOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -4051,7 +4051,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionPlan();
                 case 2:
@@ -4096,7 +4096,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         private static final SigningInput DEFAULT_INSTANCE;
         public static final int DELEGATE_FIELD_NUMBER = 7;
@@ -4508,9 +4508,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -4850,7 +4850,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -4895,7 +4895,7 @@ public final class Cardano {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -5026,9 +5026,9 @@ public final class Cardano {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C74061 c74061) {
+            /* synthetic */ Builder(C73211 c73211) {
                 this();
             }
 
@@ -5101,7 +5101,7 @@ public final class Cardano {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74061.f1946xa1df5c61[method.ordinal()]) {
+            switch (C73211.f1937xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

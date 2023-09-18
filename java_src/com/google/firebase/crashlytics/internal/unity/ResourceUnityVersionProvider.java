@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.unity;
 import android.content.Context;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.common.CommonUtils;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ResourceUnityVersionProvider implements UnityVersionProvider {
     private static boolean isUnityVersionSet = false;
     private static String unityVersion;

@@ -20,12 +20,12 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class RoundRobinLoadBalancer extends LoadBalancer {
     private ConnectivityState currentState;
     private final LoadBalancer.Helper helper;
     static final Attributes.Key<Ref<ConnectivityStateInfo>> STATE_INFO = Attributes.Key.create("state-info");
-    private static final Status EMPTY_OK = Status.f526OK.withDescription("no subchannels ready");
+    private static final Status EMPTY_OK = Status.f517OK.withDescription("no subchannels ready");
     private final Map<EquivalentAddressGroup, LoadBalancer.Subchannel> subchannels = new HashMap();
     private RoundRobinPicker currentPicker = new EmptyPicker(EMPTY_OK);
     private final Random random = new Random();
@@ -174,7 +174,7 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class RoundRobinPicker extends LoadBalancer.SubchannelPicker {
         abstract boolean isEquivalentTo(RoundRobinPicker roundRobinPicker);
 
@@ -183,7 +183,7 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ReadyPicker extends RoundRobinPicker {
         private static final AtomicIntegerFieldUpdater<ReadyPicker> indexUpdater = AtomicIntegerFieldUpdater.newUpdater(ReadyPicker.class, "index");
         private volatile int index;
@@ -228,7 +228,7 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class EmptyPicker extends RoundRobinPicker {
         private final Status status;
 
@@ -259,7 +259,7 @@ final class RoundRobinLoadBalancer extends LoadBalancer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Ref<T> {
         T value;
 

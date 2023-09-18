@@ -6,7 +6,7 @@ import java.util.Date;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCSessionStore.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WCSessionStoreItem {
     private final int chainId;
     private final Date date;

@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DecompressorRegistry {
     static final Joiner ACCEPT_ENCODING_JOINER = Joiner.m766on(',');
     private static final DecompressorRegistry DEFAULT_INSTANCE = emptyInstance().with(new Codec.Gzip(), true).with(Codec.Identity.NONE, false);
@@ -74,7 +74,7 @@ public final class DecompressorRegistry {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class DecompressorInfo {
         final boolean advertised;
         final Decompressor decompressor;

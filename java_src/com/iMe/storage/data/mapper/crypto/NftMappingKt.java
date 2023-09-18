@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.nft.avatar.NftCollectionStatus;
 import com.iMe.storage.domain.model.crypto.nft.avatar.NftToken;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NftMappingKt {
     public static final NftToken mapToDomain(NftAvatarResponse nftAvatarResponse) {
         Intrinsics.checkNotNullParameter(nftAvatarResponse, "<this>");

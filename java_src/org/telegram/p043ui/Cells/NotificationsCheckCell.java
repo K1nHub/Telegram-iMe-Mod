@@ -17,7 +17,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Switch;
 /* renamed from: org.telegram.ui.Cells.NotificationsCheckCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class NotificationsCheckCell extends FrameLayout {
     private boolean animationsEnabled;
     private Switch checkBox;

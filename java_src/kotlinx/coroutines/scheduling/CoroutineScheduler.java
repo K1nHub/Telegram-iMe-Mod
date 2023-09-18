@@ -18,7 +18,7 @@ import kotlinx.coroutines.DebugStringsKt;
 import kotlinx.coroutines.internal.ResizableAtomicArray;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: CoroutineScheduler.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CoroutineScheduler implements Executor, Closeable {
     public static final Symbol NOT_IN_STACK;
     private static final /* synthetic */ AtomicIntegerFieldUpdater _isTerminated$FU;
@@ -36,7 +36,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
     public final ResizableAtomicArray<Worker> workers;
 
     /* compiled from: CoroutineScheduler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -52,7 +52,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
     }
 
     /* compiled from: CoroutineScheduler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum WorkerState {
         CPU_ACQUIRED,
         BLOCKING,
@@ -62,7 +62,7 @@ public final class CoroutineScheduler implements Executor, Closeable {
     }
 
     /* compiled from: CoroutineScheduler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class Worker extends Thread {
         static final /* synthetic */ AtomicIntegerFieldUpdater workerCtl$FU = AtomicIntegerFieldUpdater.newUpdater(Worker.class, "workerCtl");
         private volatile int indexInArray;
@@ -465,13 +465,13 @@ public final class CoroutineScheduler implements Executor, Closeable {
         tryUnpark();
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     public final boolean isTerminated() {
         return this._isTerminated;
     }
 
     /* compiled from: CoroutineScheduler.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

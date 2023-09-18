@@ -2,7 +2,7 @@ package com.google.android.gms.measurement.internal;
 
 import android.net.Uri;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzhx implements Runnable {
     final /* synthetic */ boolean zza;
     final /* synthetic */ Uri zzb;

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.TemplatesDao_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TemplatesDao_Impl extends TemplatesDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<TemplatesDb> __insertionAdapterOfTemplatesDb;

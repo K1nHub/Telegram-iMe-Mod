@@ -1,14 +1,14 @@
 package org.webrtc;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StatsReport {
 
     /* renamed from: id */
-    public final String f1932id;
+    public final String f1923id;
     public final double timestamp;
     public final String type;
     public final Value[] values;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Value {
         public final String name;
         public final String value;
@@ -26,7 +26,7 @@ public class StatsReport {
 
     @CalledByNative
     public StatsReport(String str, String str2, double d, Value[] valueArr) {
-        this.f1932id = str;
+        this.f1923id = str;
         this.type = str2;
         this.timestamp = d;
         this.values = valueArr;
@@ -35,7 +35,7 @@ public class StatsReport {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("id: ");
-        sb.append(this.f1932id);
+        sb.append(this.f1923id);
         sb.append(", type: ");
         sb.append(this.type);
         sb.append(", timestamp: ");

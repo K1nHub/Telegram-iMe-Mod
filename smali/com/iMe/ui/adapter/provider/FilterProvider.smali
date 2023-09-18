@@ -92,7 +92,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 49
     sget v0, Lorg/telegram/messenger/R$id;->recycle_filters:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/FilterProvider$convert$1;
@@ -130,7 +130,7 @@
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 63
+    .line 65
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/FilterProvider;->filtersRecycleAdapter:Lcom/iMe/ui/adapter/FiltersRecycleAdapter;
 
     invoke-virtual {p2}, Lcom/iMe/model/common/FiltersListItem;->getFilters()Ljava/util/List;
@@ -222,7 +222,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 38
+    .line 39
     sget v0, Lorg/telegram/messenger/R$id;->recycle_filters:I
 
     invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
@@ -246,6 +246,7 @@
     :cond_0
     const/4 p1, 0x0
 
+    .line 38
     :goto_0
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/FilterProvider;->filtersScrollState:Landroid/os/Parcelable;
 

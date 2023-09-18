@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.nft.avatar.NftToken;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftTokenItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NftTokenItem extends NoChildNode {
     private final List<NftToken> collection;
     private final NftToken token;

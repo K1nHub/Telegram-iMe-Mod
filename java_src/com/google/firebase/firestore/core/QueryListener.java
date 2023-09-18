@@ -6,7 +6,7 @@ import com.google.firebase.firestore.core.DocumentViewChange;
 import com.google.firebase.firestore.core.EventManager;
 import com.google.firebase.firestore.util.Assert;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class QueryListener {
     private final EventListener<ViewSnapshot> listener;
     private final EventManager.ListenOptions options;

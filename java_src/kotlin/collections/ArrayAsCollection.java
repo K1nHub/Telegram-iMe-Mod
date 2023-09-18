@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Collections.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ArrayAsCollection<T> implements Collection<T>, KMappedMarker {
     private final boolean isVarargs;
     private final T[] values;

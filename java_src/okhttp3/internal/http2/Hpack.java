@@ -19,7 +19,7 @@ import okio.ByteString;
 import okio.Okio;
 import okio.Source;
 /* compiled from: Hpack.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Hpack {
     public static final Hpack INSTANCE;
     private static final Map<ByteString, Integer> NAME_TO_FIRST_INDEX;
@@ -48,7 +48,7 @@ public final class Hpack {
     }
 
     /* compiled from: Hpack.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Reader {
         public Header[] dynamicTable;
         public int dynamicTableByteCount;
@@ -294,7 +294,7 @@ public final class Hpack {
     }
 
     /* compiled from: Hpack.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Writer {
         public Header[] dynamicTable;
         public int dynamicTableByteCount;

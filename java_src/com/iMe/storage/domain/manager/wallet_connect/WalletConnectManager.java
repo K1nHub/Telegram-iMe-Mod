@@ -3,7 +3,7 @@ package com.iMe.storage.domain.manager.wallet_connect;
 import com.trustwallet.walletconnect.WCSessionStoreItem;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
 /* compiled from: WalletConnectManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletConnectManager {
     void approveNewSession(WCSessionStoreItem wCSessionStoreItem);
 

@@ -1,6 +1,6 @@
 package kotlinx.coroutines.scheduling;
 /* compiled from: Tasks.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface TaskContext {
     void afterTask();
 

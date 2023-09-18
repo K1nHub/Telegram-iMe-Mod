@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 /* compiled from: Share.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SubscribedFlowCollector<T> implements FlowCollector<T> {
     private final Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> action;
     private final FlowCollector<T> collector;

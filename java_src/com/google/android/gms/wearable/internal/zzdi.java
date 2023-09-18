@@ -18,7 +18,7 @@ import java.util.Map;
 @VisibleForTesting
 @SafeParcelable.Class(creator = "DataItemParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzdi extends AbstractSafeParcelable implements DataItem {
     public static final Parcelable.Creator<zzdi> CREATOR = new zzdj();
     @SafeParcelable.Field(getter = "getUri", m797id = 2)

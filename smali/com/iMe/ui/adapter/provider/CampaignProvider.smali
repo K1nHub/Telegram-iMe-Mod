@@ -77,11 +77,13 @@
 
     move-result-object p1
 
-    .line 30
+    .line 31
     sget v2, Lorg/telegram/messenger/R$id;->text_subscribers_count:I
 
+    .line 32
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
+    .line 30
     invoke-static {p1, v2, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
@@ -92,12 +94,12 @@
 
     aput v0, v3, v1
 
-    .line 31
+    .line 34
     invoke-static {p1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 32
+    .line 35
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->getTitle()Ljava/lang/String;
 
     move-result-object v1
@@ -106,7 +108,7 @@
 
     move-result-object p1
 
-    .line 33
+    .line 36
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->getMembersCount()J
 
     move-result-wide v0
@@ -119,7 +121,7 @@
 
     move-result-object p1
 
-    .line 34
+    .line 37
     sget v0, Lorg/telegram/messenger/R$id;->image_verified:I
 
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->isVerified()Z
@@ -130,7 +132,7 @@
 
     move-result-object v2
 
-    .line 35
+    .line 38
     sget v3, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p2}, Lcom/iMe/model/catalog/CampaignItem;->getPhoto()Ljava/lang/String;

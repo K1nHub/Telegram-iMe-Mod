@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.Objects;
 /* renamed from: com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thread */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class C0991x7e3e3ebd extends CrashlyticsReport.Session.Event.Application.Execution.Thread {
     private final ImmutableList<CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame> frames;
     private final int importance;
@@ -51,7 +51,7 @@ final class C0991x7e3e3ebd extends CrashlyticsReport.Session.Event.Application.E
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thread$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.Thread.Builder {
         private ImmutableList<CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame> frames;
         private Integer importance;

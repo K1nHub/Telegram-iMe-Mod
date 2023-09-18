@@ -25,7 +25,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: CryptoBoxDataSourceImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxDataSourceImpl implements CryptoBoxDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoBoxApi cryptoBoxApi;

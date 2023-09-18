@@ -1,6 +1,6 @@
 package com.iMe.model.wallet.crypto.tutorial;
 /* compiled from: TutorialPage.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TutorialPage {
     private final int animatedIcon;
     private final int description;

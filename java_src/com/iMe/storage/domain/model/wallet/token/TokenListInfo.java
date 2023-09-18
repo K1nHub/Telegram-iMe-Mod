@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet.token;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenListsData.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenListInfo {
     private final String iconUrl;
     private final boolean isVerified;

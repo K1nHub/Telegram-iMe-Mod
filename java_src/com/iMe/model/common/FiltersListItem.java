@@ -3,7 +3,7 @@ package com.iMe.model.common;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FiltersListItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FiltersListItem extends NoChildNode {
     private final List<FilterItem> filters;
 

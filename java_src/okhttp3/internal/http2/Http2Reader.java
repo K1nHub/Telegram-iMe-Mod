@@ -16,7 +16,7 @@ import okio.ByteString;
 import okio.Source;
 import okio.Timeout;
 /* compiled from: Http2Reader.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Http2Reader implements Closeable {
     public static final Companion Companion = new Companion(null);
     private static final Logger logger;
@@ -26,7 +26,7 @@ public final class Http2Reader implements Closeable {
     private final BufferedSource source;
 
     /* compiled from: Http2Reader.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Handler {
         void ackSettings();
 
@@ -376,7 +376,7 @@ public final class Http2Reader implements Closeable {
     }
 
     /* compiled from: Http2Reader.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ContinuationSource implements Source {
         private int flags;
         private int left;
@@ -470,7 +470,7 @@ public final class Http2Reader implements Closeable {
     }
 
     /* compiled from: Http2Reader.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

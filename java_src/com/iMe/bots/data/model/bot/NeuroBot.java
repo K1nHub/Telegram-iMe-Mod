@@ -34,7 +34,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NeuroBot.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NeuroBot implements AigramBot {
     @Deprecated
     public static final float CLASSIFIER_PROBABILITY_THRESHOLD = 0.9f;
@@ -152,7 +152,7 @@ public final class NeuroBot implements AigramBot {
                     Intrinsics.checkNotNullParameter(result, "result");
                     Continuation<Object> continuation2 = safeContinuation;
                     Result.Companion companion = Result.Companion;
-                    continuation2.resumeWith(Result.m1660constructorimpl(result.getOutput(0)));
+                    continuation2.resumeWith(Result.m1658constructorimpl(result.getOutput(0)));
                 }
             };
             Task<FirebaseModelOutputs> addOnSuccessListener = run.addOnSuccessListener(new OnSuccessListener(function1) { // from class: com.iMe.bots.data.model.bot.NeuroBot$sam$com_google_android_gms_tasks_OnSuccessListener$0
@@ -176,7 +176,7 @@ public final class NeuroBot implements AigramBot {
                         Intrinsics.checkNotNullParameter(exception, "exception");
                         Continuation<Object> continuation2 = safeContinuation;
                         Result.Companion companion = Result.Companion;
-                        continuation2.resumeWith(Result.m1660constructorimpl(ResultKt.createFailure(exception)));
+                        continuation2.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(exception)));
                     }
                 });
             }
@@ -202,7 +202,7 @@ public final class NeuroBot implements AigramBot {
     }
 
     /* compiled from: NeuroBot.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

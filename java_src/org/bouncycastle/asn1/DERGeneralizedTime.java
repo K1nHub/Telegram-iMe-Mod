@@ -2,7 +2,7 @@ package org.bouncycastle.asn1;
 
 import java.io.IOException;
 import org.bouncycastle.util.Strings;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DERGeneralizedTime extends ASN1GeneralizedTime {
     public DERGeneralizedTime(byte[] bArr) {
         super(bArr);

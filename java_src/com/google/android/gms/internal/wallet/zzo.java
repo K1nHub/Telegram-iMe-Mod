@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @ShowFirstParty
 @SafeParcelable.Class(creator = "WarmUpUiProcessResponseCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzo extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzo> CREATOR = new zzp();
     @SafeParcelable.Field(m797id = 1)

@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
 import com.google.protobuf.GeneratedMessageLite;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Timestamp extends GeneratedMessageLite<Timestamp, Builder> implements MessageLiteOrBuilder {
     private static final Timestamp DEFAULT_INSTANCE;
     public static final int NANOS_FIELD_NUMBER = 2;
@@ -35,7 +35,7 @@ public final class Timestamp extends GeneratedMessageLite<Timestamp, Builder> im
         return DEFAULT_INSTANCE.createBuilder();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Timestamp, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C12131 c12131) {
             this();
@@ -59,7 +59,7 @@ public final class Timestamp extends GeneratedMessageLite<Timestamp, Builder> im
     }
 
     /* renamed from: com.google.protobuf.Timestamp$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C12131 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

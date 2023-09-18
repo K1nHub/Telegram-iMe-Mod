@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MemoryRemoteDocumentCache implements RemoteDocumentCache {
     private ImmutableSortedMap<DocumentKey, Pair<MutableDocument, SnapshotVersion>> docs = ImmutableSortedMap.Builder.emptyMap(DocumentKey.comparator());
     private final MemoryPersistence persistence;

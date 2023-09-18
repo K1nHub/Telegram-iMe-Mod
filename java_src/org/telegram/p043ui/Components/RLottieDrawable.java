@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DispatchQueuePool;
 import org.telegram.messenger.DispatchQueuePoolBackground;
@@ -36,7 +36,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.BitmapsCache;
 import org.telegram.p043ui.Components.RLottieDrawable;
 /* renamed from: org.telegram.ui.Components.RLottieDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class RLottieDrawable extends BitmapDrawable implements Animatable, BitmapsCache.Cacheable {
     public static Gson gson;
     public static DispatchQueue lottieCacheGenerateQueue;
@@ -124,17 +124,17 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.RLottieDrawable$LottieMetadata */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class LottieMetadata {
 
         /* renamed from: fr */
-        float f1849fr;
+        float f1840fr;
 
         /* renamed from: ip */
-        float f1850ip;
+        float f1841ip;
 
         /* renamed from: op */
-        float f1851op;
+        float f1842op;
     }
 
     public static native long create(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3);
@@ -164,9 +164,9 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.RLottieDrawable$3 */
-    /* loaded from: classes6.dex */
-    public class RunnableC53103 implements Runnable {
-        RunnableC53103() {
+    /* loaded from: classes7.dex */
+    public class RunnableC52253 implements Runnable {
+        RunnableC52253() {
         }
 
         @Override // java.lang.Runnable
@@ -190,7 +190,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RLottieDrawable.RunnableC53103.this.lambda$run$0();
+                        RLottieDrawable.RunnableC52253.this.lambda$run$0();
                     }
                 };
                 rLottieDrawable3.cacheGenerateTask = runnable;
@@ -360,7 +360,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC53103();
+        this.uiRunnableGenerateCache = new RunnableC52253();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -655,7 +655,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC53103();
+        this.uiRunnableGenerateCache = new RunnableC52253();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -923,8 +923,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 } catch (Exception unused) {
                 }
             }
-            iArr[0] = (int) (lottieMetadata.f1851op - lottieMetadata.f1850ip);
-            iArr[1] = (int) lottieMetadata.f1849fr;
+            iArr[0] = (int) (lottieMetadata.f1842op - lottieMetadata.f1841ip);
+            iArr[1] = (int) lottieMetadata.f1840fr;
         } catch (Exception e) {
             FileLog.m66e((Throwable) e, false);
             String absolutePath = file.getAbsolutePath();
@@ -982,7 +982,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC53103();
+        this.uiRunnableGenerateCache = new RunnableC52253();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -1196,10 +1196,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.height = i2;
         this.isDice = 1;
         if ("🎲".equals(str)) {
-            readRes = readRes(null, C3558R.raw.diceloop);
+            readRes = readRes(null, C3473R.raw.diceloop);
             this.diceSwitchFramesCount = 60;
         } else {
-            readRes = "🎯".equals(str) ? readRes(null, C3558R.raw.dartloop) : null;
+            readRes = "🎯".equals(str) ? readRes(null, C3473R.raw.dartloop) : null;
         }
         getPaint().setFlags(2);
         if (TextUtils.isEmpty(readRes)) {
@@ -1370,7 +1370,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC53103();
+        this.uiRunnableGenerateCache = new RunnableC52253();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -2260,7 +2260,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.RLottieDrawable$NativePtrArgs */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class NativePtrArgs {
         public int[] colorReplacement;
         File file;

@@ -2,36 +2,36 @@ package org.bouncycastle.pqc.jcajce.spec;
 
 import java.security.spec.KeySpec;
 import org.bouncycastle.pqc.crypto.rainbow.Layer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class RainbowPrivateKeySpec implements KeySpec {
     private short[][] A1inv;
     private short[][] A2inv;
 
     /* renamed from: b1 */
-    private short[] f1442b1;
+    private short[] f1433b1;
 
     /* renamed from: b2 */
-    private short[] f1443b2;
+    private short[] f1434b2;
     private Layer[] layers;
 
     /* renamed from: vi */
-    private int[] f1444vi;
+    private int[] f1435vi;
 
     public RainbowPrivateKeySpec(short[][] sArr, short[] sArr2, short[][] sArr3, short[] sArr4, int[] iArr, Layer[] layerArr) {
         this.A1inv = sArr;
-        this.f1442b1 = sArr2;
+        this.f1433b1 = sArr2;
         this.A2inv = sArr3;
-        this.f1443b2 = sArr4;
-        this.f1444vi = iArr;
+        this.f1434b2 = sArr4;
+        this.f1435vi = iArr;
         this.layers = layerArr;
     }
 
     public short[] getB1() {
-        return this.f1442b1;
+        return this.f1433b1;
     }
 
     public short[] getB2() {
-        return this.f1443b2;
+        return this.f1434b2;
     }
 
     public short[][] getInvA1() {
@@ -47,6 +47,6 @@ public class RainbowPrivateKeySpec implements KeySpec {
     }
 
     public int[] getVi() {
-        return this.f1444vi;
+        return this.f1435vi;
     }
 }

@@ -6,7 +6,7 @@ import kotlinx.coroutines.DebugStringsKt;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: AbstractChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Closed<E> extends Send implements ReceiveOrClosed<E> {
     public final Throwable closeCause;
 

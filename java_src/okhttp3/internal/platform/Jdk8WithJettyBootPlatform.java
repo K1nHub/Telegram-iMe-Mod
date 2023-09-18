@@ -13,7 +13,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Protocol;
 /* compiled from: Jdk8WithJettyBootPlatform.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Jdk8WithJettyBootPlatform extends Platform {
     public static final Companion Companion = new Companion(null);
     private final Class<?> clientProviderClass;
@@ -85,7 +85,7 @@ public final class Jdk8WithJettyBootPlatform extends Platform {
     }
 
     /* compiled from: Jdk8WithJettyBootPlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class AlpnProvider implements InvocationHandler {
         private final List<String> protocols;
         private String selected;
@@ -162,7 +162,7 @@ public final class Jdk8WithJettyBootPlatform extends Platform {
     }
 
     /* compiled from: Jdk8WithJettyBootPlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

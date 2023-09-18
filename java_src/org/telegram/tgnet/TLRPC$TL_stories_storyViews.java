@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_stories_storyViews extends TLObject {
     public static int constructor = -560009955;
     public ArrayList<TLRPC$StoryViews> views = new ArrayList<>();

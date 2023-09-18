@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TransactionResponse {
     private final String transactionHash;
 

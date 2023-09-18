@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletTransactionDetailsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletTransactionDetailsView extends BaseView {
     void actionCopyToClipboard(String str);
 

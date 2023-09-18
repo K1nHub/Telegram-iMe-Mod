@@ -3,7 +3,7 @@ package com.iMe.model.dialog;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DialogModel {
     private final String message;
     private final String negativeButtonText;

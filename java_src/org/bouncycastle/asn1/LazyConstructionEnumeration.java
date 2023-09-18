@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class LazyConstructionEnumeration implements Enumeration {
     private ASN1InputStream aIn;
     private Object nextObj = readObject();

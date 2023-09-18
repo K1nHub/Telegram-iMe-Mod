@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzl extends com.google.android.gms.internal.vision.zza implements zzi {
     public zzl() {
         super("com.google.android.gms.vision.face.internal.client.INativeFaceDetectorCreator");

@@ -2,7 +2,7 @@ package org.telegram.messenger.support.customtabs;
 
 import android.content.ComponentName;
 import android.os.IBinder;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CustomTabsSession {
     private final ICustomTabsCallback mCallback;
     private final ComponentName mComponentName;

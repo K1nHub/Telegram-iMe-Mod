@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BERTaggedObjectParser implements ASN1Encodable, InMemoryRepresentable {
     private boolean _constructed;
     private ASN1StreamParser _parser;

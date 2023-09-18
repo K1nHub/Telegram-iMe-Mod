@@ -17,7 +17,7 @@ import java.util.TreeSet;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "ActivityTransitionRequestCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActivityTransitionRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ActivityTransitionRequest> CREATOR = new zzh();
     public static final Comparator<ActivityTransition> IS_SAME_TRANSITION = new zzg();

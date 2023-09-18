@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.Components.PopupSwipeBackLayout;
 /* renamed from: org.telegram.ui.Components.ChatScrimPopupContainerLayout */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ChatScrimPopupContainerLayout extends LinearLayout {
     private View bottomView;
     private float bottomViewReactionsOffset;

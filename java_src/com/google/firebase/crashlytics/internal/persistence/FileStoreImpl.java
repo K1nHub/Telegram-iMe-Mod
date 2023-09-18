@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.persistence;
 import android.content.Context;
 import com.google.firebase.crashlytics.internal.Logger;
 import java.io.File;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FileStoreImpl implements FileStore {
     private final Context context;
 

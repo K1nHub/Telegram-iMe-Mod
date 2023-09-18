@@ -5,7 +5,7 @@ import android.widget.TextView;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextViewExt.kt */
 /* renamed from: com.iMe.ui.shop.util.TextViewExtKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TextViewExtKt {
     public static final void setTextColor(TextView textView, int i) {
         Intrinsics.checkNotNullParameter(textView, "<this>");

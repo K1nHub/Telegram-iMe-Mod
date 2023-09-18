@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletBalanceMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletBalanceMappingKt {
     public static final TokenBalance mapToDomain(WalletTokenBalanceDb walletTokenBalanceDb) {
         Intrinsics.checkNotNullParameter(walletTokenBalanceDb, "<this>");

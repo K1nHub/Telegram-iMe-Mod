@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 import java.util.SortedSet;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements Set<E> {
     private transient ImmutableList<E> asList;
 

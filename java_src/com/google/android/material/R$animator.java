@@ -1,5 +1,5 @@
 package com.google.android.material;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class R$animator {
     public static final int design_fab_hide_motion_spec = 2130837505;
     public static final int design_fab_show_motion_spec = 2130837506;

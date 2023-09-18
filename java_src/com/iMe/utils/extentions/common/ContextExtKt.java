@@ -8,12 +8,17 @@ import android.widget.Toast;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: ContextExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ContextExtKt {
+    public static final void copyToClipboard(String text) {
+        Intrinsics.checkNotNullParameter(text, "text");
+        copyToClipboard$default(text, null, 2, null);
+    }
+
     public static final String getDeviceId(Context context) {
         Intrinsics.checkNotNullParameter(context, "<this>");
         String string = Settings.Secure.getString(context.getContentResolver(), "android_id");
@@ -46,7 +51,7 @@ public final class ContextExtKt {
             Intent intent = new Intent("android.intent.action.SEND");
             intent.setType("text/plain");
             intent.putExtra("android.intent.extra.TEXT", text);
-            activity.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("ShareTelegram", C3558R.string.ShareTelegram)), 500);
+            activity.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("ShareTelegram", C3473R.string.ShareTelegram)), 500);
         } catch (Exception e) {
             Timber.m6e(e);
         }
@@ -54,8 +59,8 @@ public final class ContextExtKt {
 
     public static /* synthetic */ void copyToClipboard$default(String str, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
-            str2 = LocaleController.getString("TextCopied", C3558R.string.TextCopied);
-            Intrinsics.checkNotNullExpressionValue(str2, "getString(\"TextCopied\", R.string.TextCopied)");
+            str2 = LocaleController.getString("TextCopied", C3473R.string.TextCopied);
+            Intrinsics.checkNotNullExpressionValue(str2, "getString(\n        \"Text…R.string.TextCopied\n    )");
         }
         copyToClipboard(str, str2);
     }

@@ -5,7 +5,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ConfigContainer {
     private static final Date DEFAULTS_FETCH_TIME = new Date(0);
     private JSONArray abtExperiments;
@@ -70,7 +70,7 @@ public class ConfigContainer {
         return this.containerJson.hashCode();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private JSONArray builderAbtExperiments;
         private JSONObject builderConfigsJson;

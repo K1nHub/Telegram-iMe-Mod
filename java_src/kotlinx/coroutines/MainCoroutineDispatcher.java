@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 /* compiled from: MainCoroutineDispatcher.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class MainCoroutineDispatcher extends CoroutineDispatcher {
     public abstract MainCoroutineDispatcher getImmediate();
 

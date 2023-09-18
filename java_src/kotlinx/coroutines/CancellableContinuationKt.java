@@ -4,7 +4,7 @@ import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 /* compiled from: CancellableContinuation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CancellableContinuationKt {
     public static final <T> CancellableContinuationImpl<T> getOrCreateCancellableContinuation(Continuation<? super T> continuation) {
         if (!(continuation instanceof DispatchedContinuation)) {

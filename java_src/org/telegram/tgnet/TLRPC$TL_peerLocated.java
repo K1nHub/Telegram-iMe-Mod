@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_peerLocated extends TLRPC$PeerLocated {
     public static int constructor = -901375139;
     public int distance;

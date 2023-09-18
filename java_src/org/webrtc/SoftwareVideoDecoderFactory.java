@@ -3,7 +3,7 @@ package org.webrtc;
 import com.google.android.exoplayer2.source.rtsp.RtpPayloadFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SoftwareVideoDecoderFactory implements VideoDecoderFactory {
     @Override // org.webrtc.VideoDecoderFactory
     @Deprecated

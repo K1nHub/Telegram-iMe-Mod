@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.crypto.level.AccountLevel;
 import io.reactivex.Observable;
 /* compiled from: AccountLevelRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface AccountLevelRepository {
     Observable<Result<Boolean>> changeLevelVisibility(boolean z);
 

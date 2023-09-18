@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.TitledInputFieldView;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemCryptoboxesChatBinding implements ViewBinding {
     private final LinearLayout rootView;
 
@@ -27,7 +27,7 @@ public final class ForkRecycleItemCryptoboxesChatBinding implements ViewBinding 
     }
 
     public static ForkRecycleItemCryptoboxesChatBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_cryptoboxes_chat, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_cryptoboxes_chat, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,11 +35,11 @@ public final class ForkRecycleItemCryptoboxesChatBinding implements ViewBinding 
     }
 
     public static ForkRecycleItemCryptoboxesChatBinding bind(View view) {
-        int i = C3558R.C3561id.input_chat;
+        int i = C3473R.C3476id.input_chat;
         TitledInputFieldView titledInputFieldView = (TitledInputFieldView) ViewBindings.findChildViewById(view, i);
         if (titledInputFieldView != null) {
             LinearLayout linearLayout = (LinearLayout) view;
-            int i2 = C3558R.C3561id.text_description;
+            int i2 = C3473R.C3476id.text_description;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i2);
             if (appCompatTextView != null) {
                 return new ForkRecycleItemCryptoboxesChatBinding(linearLayout, titledInputFieldView, linearLayout, appCompatTextView);

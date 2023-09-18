@@ -76,9 +76,10 @@
 
     move-result-object v3
 
-    .line 25
+    .line 26
     sget v4, Lorg/telegram/messenger/R$id;->frame_root:I
 
+    .line 27
     iget v7, p0, Lcom/iMe/ui/adapter/provider/HeaderProvider;->extraPadding:F
 
     const/4 v6, 0x0
@@ -91,11 +92,12 @@
 
     move v5, v7
 
+    .line 25
     invoke-static/range {v3 .. v10}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setPadding$default(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IFFFFILjava/lang/Object;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 26
+    .line 30
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/HeaderItem;->getTitle()Ljava/lang/String;
 
     move-result-object p2

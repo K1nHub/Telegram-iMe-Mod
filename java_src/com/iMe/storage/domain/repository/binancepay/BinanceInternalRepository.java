@@ -13,7 +13,7 @@ import com.iMe.storage.domain.model.binancepay.OutputConvertToken;
 import io.reactivex.Observable;
 import java.util.List;
 /* compiled from: BinanceInternalRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface BinanceInternalRepository {
     Observable<Result<Boolean>> confirmConvertQuote(String str);
 

@@ -11,7 +11,7 @@ import okio.DeflaterSink;
 import okio.Sink;
 /* compiled from: MessageDeflater.kt */
 /* renamed from: okhttp3.internal.ws.MessageDeflater */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MessageDeflater implements Closeable {
     private final Buffer deflatedBytes;
     private final Deflater deflater;

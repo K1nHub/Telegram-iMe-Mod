@@ -3,7 +3,7 @@ package com.iMe.i_staking.response;
 import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationCostResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingOperationCostResponse {
     private final TokenDetailedResponse token;
     private final StakingValuesResponse value;

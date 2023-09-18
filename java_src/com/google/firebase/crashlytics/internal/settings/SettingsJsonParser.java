@@ -4,7 +4,7 @@ import com.google.firebase.crashlytics.internal.common.CurrentTimeProvider;
 import com.google.firebase.crashlytics.internal.settings.model.SettingsData;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SettingsJsonParser {
     private final CurrentTimeProvider currentTimeProvider;
 

@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 48
+    .line 49
     check-cast p1, Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/FilterProvider$convert$1;->invoke(Landroidx/recyclerview/widget/RecyclerView;)V
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 51
     new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -85,20 +85,20 @@
 
     const/4 v2, 0x4
 
-    .line 50
+    .line 52
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->setInitialPrefetchItemCount(I)V
 
-    .line 51
+    .line 53
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/FilterProvider;->access$getFiltersScrollState$p(Lcom/iMe/ui/adapter/provider/FilterProvider;)Landroid/os/Parcelable;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->restoreScrollState(Landroidx/recyclerview/widget/LinearLayoutManager;Landroid/os/Parcelable;)V
 
-    .line 49
+    .line 50
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 53
+    .line 55
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/FilterProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/FilterProvider;
 
     invoke-virtual {v0}, Lcom/iMe/ui/adapter/provider/FilterProvider;->getFiltersRecycleAdapter()Lcom/iMe/ui/adapter/FiltersRecycleAdapter;
@@ -109,31 +109,31 @@
 
     iget-object v2, p0, Lcom/iMe/ui/adapter/provider/FilterProvider$convert$1;->this$0:Lcom/iMe/ui/adapter/provider/FilterProvider;
 
-    .line 54
+    .line 56
     invoke-virtual {v1}, Lcom/iMe/model/common/FiltersListItem;->getFilters()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setNewInstance(Ljava/util/List;)V
 
-    .line 55
+    .line 57
     invoke-static {v2}, Lcom/iMe/ui/adapter/provider/FilterProvider;->access$getFiltersDiffCallback$p(Lcom/iMe/ui/adapter/provider/FilterProvider;)Lcom/iMe/ui/adapter/diff/FiltersDiffCallback;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 56
+    .line 58
     invoke-virtual {v2}, Lcom/iMe/ui/adapter/provider/FilterProvider;->getOnFilterClickListener()Lcom/chad/library/adapter/base/listener/OnItemClickListener;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
 
-    .line 53
+    .line 55
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 58
+    .line 60
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/RecycleViewExtKt;->preventScrollByParent(Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-void

@@ -9,7 +9,7 @@ import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.TargetChange */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TargetChange extends GeneratedMessageLite<TargetChange, Builder> implements MessageLiteOrBuilder {
     public static final int CAUSE_FIELD_NUMBER = 3;
     private static final TargetChange DEFAULT_INSTANCE;
@@ -29,7 +29,7 @@ public final class TargetChange extends GeneratedMessageLite<TargetChange, Build
     }
 
     /* renamed from: com.google.firestore.v1.TargetChange$TargetChangeType */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum TargetChangeType implements Internal.EnumLite {
         NO_CHANGE(0),
         ADD(1),
@@ -93,7 +93,7 @@ public final class TargetChange extends GeneratedMessageLite<TargetChange, Build
         }
 
         /* renamed from: com.google.firestore.v1.TargetChange$TargetChangeType$TargetChangeTypeVerifier */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         private static final class TargetChangeTypeVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new TargetChangeTypeVerifier();
 
@@ -139,7 +139,7 @@ public final class TargetChange extends GeneratedMessageLite<TargetChange, Build
     }
 
     /* renamed from: com.google.firestore.v1.TargetChange$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<TargetChange, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10751 c10751) {
             this();
@@ -151,7 +151,7 @@ public final class TargetChange extends GeneratedMessageLite<TargetChange, Build
     }
 
     /* renamed from: com.google.firestore.v1.TargetChange$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10751 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

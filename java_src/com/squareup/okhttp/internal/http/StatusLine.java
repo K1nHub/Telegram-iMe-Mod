@@ -3,7 +3,7 @@ package com.squareup.okhttp.internal.http;
 import com.squareup.okhttp.Protocol;
 import java.io.IOException;
 import java.net.ProtocolException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StatusLine {
     public final int code;
     public final String message;

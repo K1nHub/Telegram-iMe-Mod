@@ -1,6 +1,6 @@
 package kotlin.jvm.internal;
 /* compiled from: PackageReference.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PackageReference implements ClassBasedDeclarationContainer {
     private final Class<?> jClass;
 

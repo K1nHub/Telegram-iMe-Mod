@@ -15,11 +15,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.text.StringsKt__StringsKt;
 import timber.log.Timber;
-import wallet.core.jni.CoinType;
-import wallet.core.jni.HDWallet;
-import wallet.core.jni.PrivateKey;
 /* compiled from: CryptoExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoExtKt {
     public static final String generateUuid() {
         String uuid = UUID.randomUUID().toString();
@@ -117,21 +114,5 @@ public final class CryptoExtKt {
             Timber.m6e(e);
             return null;
         }
-    }
-
-    public static final byte[] getPrivateKeyBytes(HDWallet hDWallet, CoinType coinType) {
-        Intrinsics.checkNotNullParameter(hDWallet, "<this>");
-        Intrinsics.checkNotNullParameter(coinType, "coinType");
-        byte[] data = getPrivateKey(hDWallet, coinType).data();
-        Intrinsics.checkNotNullExpressionValue(data, "getPrivateKey(coinType).data()");
-        return data;
-    }
-
-    public static final PrivateKey getPrivateKey(HDWallet hDWallet, CoinType coinType) {
-        Intrinsics.checkNotNullParameter(hDWallet, "<this>");
-        Intrinsics.checkNotNullParameter(coinType, "coinType");
-        PrivateKey getPrivateKey = hDWallet.getKeyForCoin(coinType);
-        Intrinsics.checkNotNullExpressionValue(getPrivateKey, "getPrivateKey");
-        return getPrivateKey;
     }
 }

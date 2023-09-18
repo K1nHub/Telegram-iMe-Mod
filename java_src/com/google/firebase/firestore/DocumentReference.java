@@ -13,7 +13,7 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Executors;
 import com.google.firebase.firestore.util.Preconditions;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DocumentReference {
     private final FirebaseFirestore firestore;
     private final DocumentKey key;

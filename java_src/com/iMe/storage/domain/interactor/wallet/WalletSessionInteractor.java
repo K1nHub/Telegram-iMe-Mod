@@ -17,7 +17,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletSessionInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletSessionInteractor {
     private final PushNotificationRepository notificationRepository;
     private final PreferenceHelper preferenceHelper;
@@ -68,7 +68,7 @@ public final class WalletSessionInteractor {
                                 return invoke2((Result<Boolean>) result2);
                             }
                         }));
-                        Intrinsics.checkNotNullExpressionValue(map, "tokensResult ->\n        …                        }");
+                        Intrinsics.checkNotNullExpressionValue(map, "tokensResult ->\n        …esult }\n                }");
                         return map;
                     }
                     Observable just = Observable.just(result);
@@ -100,7 +100,7 @@ public final class WalletSessionInteractor {
     public final Completable tgAccountLogout() {
         if (hasActiveUser()) {
             Completable subscribeOn = this.notificationRepository.deletePushToken().ignoreElements().andThen(this.walletSessionRepository.logout()).subscribeOn(Schedulers.m697io());
-            Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n                notifi…ulers.io())\n            }");
+            Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n            notificati…chedulers.io())\n        }");
             return subscribeOn;
         }
         Completable complete = Completable.complete();

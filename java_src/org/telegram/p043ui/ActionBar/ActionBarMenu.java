@@ -8,24 +8,24 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Adapters.FiltersView;
 import org.telegram.p043ui.Components.RLottieDrawable;
 /* renamed from: org.telegram.ui.ActionBar.ActionBarMenu */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ActionBarMenu extends LinearLayout {
     public boolean drawBlur;
     private ArrayList<Integer> ids;
     protected boolean isActionMode;
     private Runnable onLayoutListener;
-    protected C3626ActionBar parentActionBar;
+    protected C3541ActionBar parentActionBar;
 
-    public ActionBarMenu(Context context, C3626ActionBar c3626ActionBar) {
+    public ActionBarMenu(Context context, C3541ActionBar c3541ActionBar) {
         super(context);
         this.drawBlur = true;
         setOrientation(0);
-        this.parentActionBar = c3626ActionBar;
+        this.parentActionBar = c3541ActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -159,7 +159,7 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.ActionBarMenu$LazyItem */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class LazyItem {
         Boolean allowCloseAnimation;
         int backgroundColor;
@@ -169,7 +169,7 @@ public class ActionBarMenu extends LinearLayout {
         int icon;
 
         /* renamed from: id */
-        int f1706id;
+        int f1697id;
         Boolean isSearchField;
         Boolean overrideMenuClick;
         ActionBarMenu parent;
@@ -185,7 +185,7 @@ public class ActionBarMenu extends LinearLayout {
 
         public LazyItem(ActionBarMenu actionBarMenu, int i, int i2, CharSequence charSequence, int i3, Drawable drawable, int i4, CharSequence charSequence2, Theme.ResourcesProvider resourcesProvider) {
             this.parent = actionBarMenu;
-            this.f1706id = i;
+            this.f1697id = i;
             this.icon = i2;
             this.text = charSequence;
             this.backgroundColor = i3;
@@ -265,7 +265,7 @@ public class ActionBarMenu extends LinearLayout {
             }
             int childCount = this.parent.getChildCount();
             if (this.parent.ids != null) {
-                int indexOf = this.parent.ids.indexOf(Integer.valueOf(this.f1706id));
+                int indexOf = this.parent.ids.indexOf(Integer.valueOf(this.f1697id));
                 for (int i2 = 0; i2 < this.parent.getChildCount(); i2++) {
                     Object tag = this.parent.getChildAt(i2).getTag();
                     if (tag instanceof Integer) {
@@ -277,7 +277,7 @@ public class ActionBarMenu extends LinearLayout {
                 }
             }
             i = childCount;
-            ActionBarMenuItem addItemAt = this.parent.addItemAt(i, this.f1706id, this.icon, this.text, this.backgroundColor, this.drawable, this.width, this.title, this.resourcesProvider);
+            ActionBarMenuItem addItemAt = this.parent.addItemAt(i, this.f1697id, this.icon, this.text, this.backgroundColor, this.drawable, this.width, this.title, this.resourcesProvider);
             this.cell = addItemAt;
             addItemAt.setVisibility(this.visibility);
             CharSequence charSequence = this.contentDescription;
@@ -352,7 +352,7 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     public void onItemClick(int i) {
-        C3626ActionBar.ActionBarMenuOnItemClick actionBarMenuOnItemClick = this.parentActionBar.actionBarMenuOnItemClick;
+        C3541ActionBar.ActionBarMenuOnItemClick actionBarMenuOnItemClick = this.parentActionBar.actionBarMenuOnItemClick;
         if (actionBarMenuOnItemClick != null) {
             actionBarMenuOnItemClick.onItemClick(i);
         }

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_secureValueErrorSelfie extends TLRPC$SecureValueError {
     public static int constructor = -449327402;
     public byte[] file_hash;

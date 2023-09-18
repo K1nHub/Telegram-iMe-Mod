@@ -29,7 +29,7 @@ import okhttp3.internal.platform.android.StandardAndroidSocketAdapter;
 import okhttp3.internal.tls.CertificateChainCleaner;
 import okhttp3.internal.tls.TrustRootIndex;
 /* compiled from: AndroidPlatform.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidPlatform extends Platform {
     public static final Companion Companion = new Companion(null);
     private static final boolean isSupported;
@@ -158,7 +158,7 @@ public final class AndroidPlatform extends Platform {
     }
 
     /* compiled from: AndroidPlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class CustomTrustRootIndex implements TrustRootIndex {
         private final Method findByIssuerAndSignatureMethod;
         private final X509TrustManager trustManager;
@@ -210,7 +210,7 @@ public final class AndroidPlatform extends Platform {
     }
 
     /* compiled from: AndroidPlatform.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

@@ -9,7 +9,7 @@ import com.google.protobuf.WireFormat;
 import java.util.Collections;
 import java.util.Map;
 /* renamed from: com.google.firestore.v1.MapValue */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MapValue extends GeneratedMessageLite<MapValue, Builder> implements MessageLiteOrBuilder {
     private static final MapValue DEFAULT_INSTANCE;
     public static final int FIELDS_FIELD_NUMBER = 1;
@@ -17,7 +17,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
     private MapFieldLite<String, Value> fields_ = MapFieldLite.emptyMapField();
 
     /* renamed from: com.google.firestore.v1.MapValue$FieldsDefaultEntryHolder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class FieldsDefaultEntryHolder {
         static final MapEntryLite<String, Value> defaultEntry = MapEntryLite.newDefaultInstance(WireFormat.FieldType.STRING, "", WireFormat.FieldType.MESSAGE, Value.getDefaultInstance());
     }
@@ -69,7 +69,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
     }
 
     /* renamed from: com.google.firestore.v1.MapValue$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<MapValue, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10671 c10671) {
             this();
@@ -107,7 +107,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
     }
 
     /* renamed from: com.google.firestore.v1.MapValue$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10671 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

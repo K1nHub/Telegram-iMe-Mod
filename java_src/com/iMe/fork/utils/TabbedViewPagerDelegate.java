@@ -4,11 +4,11 @@ import android.view.View;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.iMe.fork.utils.AbstractTabbedViewPage;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TabbedViewPagerDelegate<T extends AbstractTabbedViewPage> {
 
     /* renamed from: com.iMe.fork.utils.TabbedViewPagerDelegate$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         public static void $default$bind(TabbedViewPagerDelegate tabbedViewPagerDelegate, AbstractTabbedViewPage abstractTabbedViewPage, int i) {
         }

@@ -6,7 +6,7 @@ import com.iMe.p031ui.base.mvp.base.BaseView;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: BinancePayProcessView.kt */
 @OneExecution
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface BinancePayProcessView extends BaseView {
     void showConfirmPaymentDialog(DialogModel dialogModel, Callbacks$Callback callbacks$Callback);
 

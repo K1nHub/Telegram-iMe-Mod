@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogTranslationSettings.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DialogTranslationSettings {
     private long dialogId;
     private String inTextTranslateLangCode;

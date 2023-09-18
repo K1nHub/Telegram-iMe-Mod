@@ -8,7 +8,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: BeanDefinition.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BeanDefinition<T> {
     private boolean _createdAtStart;
     private Callbacks<T> callbacks;

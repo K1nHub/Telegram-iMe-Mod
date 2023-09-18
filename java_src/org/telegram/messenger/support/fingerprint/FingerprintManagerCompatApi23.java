@@ -8,10 +8,10 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.FileLog;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FingerprintManagerCompatApi23 {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class AuthenticationCallback {
         public abstract void onAuthenticationError(int i, CharSequence charSequence);
 
@@ -117,7 +117,7 @@ public final class FingerprintManagerCompatApi23 {
         };
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class CryptoObject {
         private final Cipher mCipher;
         private final Mac mMac;
@@ -154,7 +154,7 @@ public final class FingerprintManagerCompatApi23 {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class AuthenticationResultInternal {
         private CryptoObject mCryptoObject;
 

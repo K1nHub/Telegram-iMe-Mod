@@ -2,7 +2,7 @@ package org.koin.core.qualifier;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StringQualifier.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StringQualifier implements Qualifier {
     private final String value;
 

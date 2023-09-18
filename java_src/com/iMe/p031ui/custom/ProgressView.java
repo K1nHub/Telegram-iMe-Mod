@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ProgressView.kt */
 /* renamed from: com.iMe.ui.custom.ProgressView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ProgressView extends View {
     private final Paint backgroundPaint;
     private final Paint dividerPaint;
@@ -151,7 +151,7 @@ public final class ProgressView extends View {
 
     /* compiled from: ProgressView.kt */
     /* renamed from: com.iMe.ui.custom.ProgressView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

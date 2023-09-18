@@ -20,15 +20,15 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TextSelectionHint */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TextSelectionHint extends View {
 
     /* renamed from: a */
-    Animator f1874a;
+    Animator f1865a;
     int animateToEnd;
     int animateToStart;
     int currentEnd;
@@ -79,12 +79,12 @@ public class TextSelectionHint extends View {
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (getMeasuredWidth() != this.lastW || this.textLayout == null) {
-            Animator animator = this.f1874a;
+            Animator animator = this.f1865a;
             if (animator != null) {
                 animator.removeAllListeners();
-                this.f1874a.cancel();
+                this.f1865a.cancel();
             }
-            String string = LocaleController.getString("TextSelectionHit", C3558R.string.TextSelectionHit);
+            String string = LocaleController.getString("TextSelectionHit", C3473R.string.TextSelectionHit);
             Matcher matcher = Pattern.compile("\\*\\*.*\\*\\*").matcher(string);
             String group = matcher.matches() ? matcher.group() : null;
             String replace = string.replace("**", "");
@@ -268,10 +268,10 @@ public class TextSelectionHint extends View {
 
     public void show() {
         AndroidUtilities.cancelRunOnUIThread(this.dismissTunnable);
-        Animator animator = this.f1874a;
+        Animator animator = this.f1865a;
         if (animator != null) {
             animator.removeAllListeners();
-            this.f1874a.cancel();
+            this.f1865a.cancel();
         }
         if (getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
             this.showOnMeasure = true;
@@ -327,7 +327,7 @@ public class TextSelectionHint extends View {
         ofFloat4.setDuration(900L);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-        this.f1874a = animatorSet;
+        this.f1865a = animatorSet;
         animatorSet.start();
         AndroidUtilities.runOnUIThread(this.dismissTunnable, 5000L);
     }
@@ -369,10 +369,10 @@ public class TextSelectionHint extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void hideInternal() {
-        Animator animator = this.f1874a;
+        Animator animator = this.f1865a;
         if (animator != null) {
             animator.removeAllListeners();
-            this.f1874a.cancel();
+            this.f1865a.cancel();
         }
         this.showing = false;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.prepareProgress, BitmapDescriptorFactory.HUE_RED);
@@ -388,7 +388,7 @@ public class TextSelectionHint extends View {
                 TextSelectionHint.this.setVisibility(4);
             }
         });
-        this.f1874a = ofFloat;
+        this.f1865a = ofFloat;
         ofFloat.start();
     }
 

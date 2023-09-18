@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$1$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
-    .line 50
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,12 +50,12 @@
 .method public onPageSelected(I)V
     .locals 0
 
-    .line 58
+    .line 63
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$1$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-static {p1}, Lcom/iMe/ui/smartpanel/SmartBotsView;->access$updateBaseIcons(Lcom/iMe/ui/smartpanel/SmartBotsView;)V
 
-    .line 59
+    .line 64
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView$1$1;->this$0:Lcom/iMe/ui/smartpanel/SmartBotsView;
 
     invoke-static {p1}, Lcom/iMe/ui/smartpanel/SmartBotsView;->access$updateIndicator(Lcom/iMe/ui/smartpanel/SmartBotsView;)V

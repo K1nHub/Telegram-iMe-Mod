@@ -5,7 +5,7 @@ import com.iMe.model.wallet.crypto.NetworkItem;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HeaderItemWithNetworkSwitcher.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HeaderItemWithNetworkSwitcher extends NoChildNode {
     private boolean isNetworkSwitcherVisible;
     private NetworkItem networkItem;

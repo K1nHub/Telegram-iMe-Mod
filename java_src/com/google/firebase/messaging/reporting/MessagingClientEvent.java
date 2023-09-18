@@ -3,7 +3,7 @@ package com.google.firebase.messaging.reporting;
 import com.google.android.gms.internal.firebase_messaging.zzq;
 import com.google.android.gms.internal.firebase_messaging.zzs;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MessagingClientEvent {
     private final String analytics_label_;
     private final long bulk_id_;
@@ -22,7 +22,7 @@ public final class MessagingClientEvent {
     private final int ttl_;
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private long project_number_ = 0;
         private String message_id_ = "";
@@ -109,7 +109,7 @@ public final class MessagingClientEvent {
     }
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Event implements zzq {
         UNKNOWN_EVENT(0),
         MESSAGE_DELIVERED(1),
@@ -128,7 +128,7 @@ public final class MessagingClientEvent {
     }
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum MessageType implements zzq {
         UNKNOWN(0),
         DATA_MESSAGE(1),
@@ -148,7 +148,7 @@ public final class MessagingClientEvent {
     }
 
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum SDKPlatform implements zzq {
         UNKNOWN_OS(0),
         ANDROID(1),

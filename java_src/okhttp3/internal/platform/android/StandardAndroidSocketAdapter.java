@@ -6,7 +6,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.platform.Platform;
 /* compiled from: StandardAndroidSocketAdapter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StandardAndroidSocketAdapter extends AndroidSocketAdapter {
     public static final Companion Companion = new Companion(null);
 
@@ -19,7 +19,7 @@ public final class StandardAndroidSocketAdapter extends AndroidSocketAdapter {
     }
 
     /* compiled from: StandardAndroidSocketAdapter.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

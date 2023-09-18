@@ -12,7 +12,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "MessageOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MessageOptions extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<MessageOptions> CREATOR = new zzf();
     public static final int MESSAGE_PRIORITY_HIGH = 1;

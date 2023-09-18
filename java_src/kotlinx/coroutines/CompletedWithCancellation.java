@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CompletionState.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CompletedWithCancellation {
     public final Function1<Throwable, Unit> onCancellation;
     public final Object result;

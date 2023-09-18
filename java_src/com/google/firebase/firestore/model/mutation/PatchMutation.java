@@ -9,7 +9,7 @@ import com.google.firestore.p021v1.Value;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PatchMutation extends Mutation {
     private final FieldMask mask;
     private final ObjectValue value;

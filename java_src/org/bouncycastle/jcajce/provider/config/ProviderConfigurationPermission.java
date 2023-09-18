@@ -5,7 +5,7 @@ import java.security.BasicPermission;
 import java.security.Permission;
 import java.util.StringTokenizer;
 import org.bouncycastle.util.Strings;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ProviderConfigurationPermission extends BasicPermission {
     private final String actions;
     private final int permissionMask;

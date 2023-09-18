@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.kikliko;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GetTagsResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GetTagsResponse {
     private final List<TagResponse> data;
     private final boolean result;

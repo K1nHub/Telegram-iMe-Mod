@@ -20,7 +20,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt___SequencesKt;
 /* compiled from: Strings.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
     public static CharSequence trim(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
@@ -217,6 +217,21 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         String substring = str.substring(lastIndexOf$default + 1, str.length());
         Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
         return substring;
+    }
+
+    public static final CharSequence replaceRange(CharSequence charSequence, int i, int i2, CharSequence replacement) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        Intrinsics.checkNotNullParameter(replacement, "replacement");
+        if (i2 < i) {
+            throw new IndexOutOfBoundsException("End index (" + i2 + ") is less than start index (" + i + ").");
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(charSequence, 0, i);
+        Intrinsics.checkNotNullExpressionValue(sb, "this.append(value, startIndex, endIndex)");
+        sb.append(replacement);
+        sb.append(charSequence, i2, charSequence.length());
+        Intrinsics.checkNotNullExpressionValue(sb, "this.append(value, startIndex, endIndex)");
+        return sb;
     }
 
     public static String removePrefix(String str, CharSequence prefix) {

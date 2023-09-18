@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "RemoveListenerRequestCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgw extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzgw> CREATOR = new zzgx();
     @SafeParcelable.VersionField(m794id = 1)

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_fileEncryptedLocation extends TLRPC$FileLocation {
     public static int constructor = 1431655764;
 
@@ -10,7 +10,7 @@ public class TLRPC$TL_fileEncryptedLocation extends TLRPC$FileLocation {
         this.local_id = abstractSerializedData.readInt32(z);
         this.secret = abstractSerializedData.readInt64(z);
         this.key = abstractSerializedData.readByteArray(z);
-        this.f1545iv = abstractSerializedData.readByteArray(z);
+        this.f1536iv = abstractSerializedData.readByteArray(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
@@ -21,6 +21,6 @@ public class TLRPC$TL_fileEncryptedLocation extends TLRPC$FileLocation {
         abstractSerializedData.writeInt32(this.local_id);
         abstractSerializedData.writeInt64(this.secret);
         abstractSerializedData.writeByteArray(this.key);
-        abstractSerializedData.writeByteArray(this.f1545iv);
+        abstractSerializedData.writeByteArray(this.f1536iv);
     }
 }

@@ -13,14 +13,14 @@ import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingSafeWithdrawalBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CheckBoxSquare;
 /* compiled from: StakingSafeWithdrawalView.kt */
 /* renamed from: com.iMe.ui.custom.StakingSafeWithdrawalView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingSafeWithdrawalView extends FrameLayout {
     private ForkContentStakingSafeWithdrawalBinding binding;
 
@@ -94,7 +94,7 @@ public final class StakingSafeWithdrawalView extends FrameLayout {
 
     private final void setupView() {
         setupColors();
-        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3558R.string.staking_withdraw_safe_withdrawal));
+        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3473R.string.staking_withdraw_safe_withdrawal));
         addView(this.binding.getRoot());
     }
 }

@@ -7,14 +7,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$MessageEntity;
 /* renamed from: org.telegram.ui.Components.TextStyleSpan */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TextStyleSpan extends MetricAffectingSpan {
     private int color;
     private TextStyleRun style;
     private int textSize;
 
     /* renamed from: org.telegram.ui.Components.TextStyleSpan$TextStyleRun */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class TextStyleRun {
         public int end;
         public int flags;

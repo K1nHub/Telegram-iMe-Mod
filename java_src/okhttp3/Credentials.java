@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import kotlin.jvm.internal.Intrinsics;
 import okio.ByteString;
 /* compiled from: Credentials.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Credentials {
     static {
         new Credentials();

@@ -9,7 +9,7 @@ import com.bumptech.glide.request.target.ImageViewTarget;
 import com.bumptech.glide.request.target.Target;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SvgSoftwareLayerSetter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SvgSoftwareLayerSetter implements RequestListener<Drawable> {
     @Override // com.bumptech.glide.request.RequestListener
     public boolean onLoadFailed(GlideException glideException, Object model, Target<Drawable> target, boolean z) {

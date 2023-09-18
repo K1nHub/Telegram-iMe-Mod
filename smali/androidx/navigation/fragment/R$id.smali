@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static final nav_host_fragment_container:I = 0x7f090295
+.field public static final nav_host_fragment_container:I = 0x7f090294

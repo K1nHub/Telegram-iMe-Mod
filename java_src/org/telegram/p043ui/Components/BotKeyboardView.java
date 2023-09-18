@@ -9,7 +9,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$KeyboardButton;
@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC$TL_keyboardButtonSimpleWebView;
 import org.telegram.tgnet.TLRPC$TL_keyboardButtonWebView;
 import org.telegram.tgnet.TLRPC$TL_replyKeyboardMarkup;
 /* renamed from: org.telegram.ui.Components.BotKeyboardView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BotKeyboardView extends LinearLayout {
     private TLRPC$TL_replyKeyboardMarkup botButtons;
     private int buttonHeight;
@@ -32,7 +32,7 @@ public class BotKeyboardView extends LinearLayout {
     private ScrollView scrollView;
 
     /* renamed from: org.telegram.ui.Components.BotKeyboardView$BotKeyboardViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface BotKeyboardViewDelegate {
         void didPressedButton(TLRPC$KeyboardButton tLRPC$KeyboardButton);
     }
@@ -141,7 +141,7 @@ public class BotKeyboardView extends LinearLayout {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setColorFilter(getThemedColor(Theme.key_chat_botKeyboardButtonText));
                 if ((tLRPC$KeyboardButton instanceof TLRPC$TL_keyboardButtonWebView) || (tLRPC$KeyboardButton instanceof TLRPC$TL_keyboardButtonSimpleWebView)) {
-                    imageView.setImageResource(C3558R.C3560drawable.bot_webview);
+                    imageView.setImageResource(C3473R.C3475drawable.bot_webview);
                     i = 0;
                     imageView.setVisibility(0);
                 } else {
@@ -167,7 +167,7 @@ public class BotKeyboardView extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.BotKeyboardView$Button */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class Button extends TextView {
         public Button(BotKeyboardView botKeyboardView, Context context, TLRPC$KeyboardButton tLRPC$KeyboardButton) {
             super(context);

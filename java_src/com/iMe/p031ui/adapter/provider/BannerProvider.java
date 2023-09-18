@@ -18,7 +18,7 @@ import com.iMe.utils.listeners.OnSnapPositionChangeListener;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator;
 /* compiled from: BannerProvider.kt */
@@ -41,7 +41,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
         Intrinsics.checkNotNullParameter(bannersRecycleAdapter, "bannersRecycleAdapter");
         this.bannersRecycleAdapter = bannersRecycleAdapter;
         this.itemViewType = IdFabric$ViewTypes.BANNERS;
-        this.layoutId = C3558R.layout.fork_recycle_item_wallet_banners;
+        this.layoutId = C3473R.layout.fork_recycle_item_wallet_banners;
         this.bannerSnapHelper = new PagerSnapHelper();
         this.bannersDiffCallback = new BannerSlideDiffCallback();
     }
@@ -67,7 +67,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
     public final void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3558R.C3561id.recycle_banners)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3473R.C3476id.recycle_banners)).getLayoutManager();
             this.bannerScrollState = layoutManager != null ? layoutManager.onSaveInstanceState() : null;
         }
     }
@@ -76,7 +76,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
     public void convert(final BaseViewHolder helper, final BannerItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3558R.C3561id.recycle_banners, new Function1<RecyclerView, Unit>() { // from class: com.iMe.ui.adapter.provider.BannerProvider$convert$1
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(helper, C3473R.C3476id.recycle_banners, new Function1<RecyclerView, Unit>() { // from class: com.iMe.ui.adapter.provider.BannerProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -119,7 +119,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
                 }, 2, null);
                 RecycleViewExtKt.preventScrollByParent(applyForView);
             }
-        }), C3558R.C3561id.banner_slide_indicator, new Function1<ScrollingPagerIndicator, Unit>() { // from class: com.iMe.ui.adapter.provider.BannerProvider$convert$2
+        }), C3473R.C3476id.banner_slide_indicator, new Function1<ScrollingPagerIndicator, Unit>() { // from class: com.iMe.ui.adapter.provider.BannerProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -134,7 +134,7 @@ public final class BannerProvider extends BaseNodeProvider<BannerItem> {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(ScrollingPagerIndicator applyForView) {
                 Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-                applyForView.attachToRecyclerView((RecyclerView) BaseViewHolder.this.getView(C3558R.C3561id.recycle_banners));
+                applyForView.attachToRecyclerView((RecyclerView) BaseViewHolder.this.getView(C3473R.C3476id.recycle_banners));
                 int i = Theme.key_chats_actionBackground;
                 applyForView.setSelectedDotColor(Theme.getColor(i));
                 applyForView.setDotColor(ViewExtKt.withAlpha(Theme.getColor(i), 55));

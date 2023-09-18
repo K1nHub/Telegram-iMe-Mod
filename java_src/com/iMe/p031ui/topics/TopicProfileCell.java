@@ -21,7 +21,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
@@ -30,7 +30,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TopicProfileCell.kt */
 /* renamed from: com.iMe.ui.topics.TopicProfileCell */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TopicProfileCell extends FrameLayout {
     private AnimatorSet animator;
     private final int currentAccount;
@@ -187,7 +187,7 @@ public final class TopicProfileCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initSelectTopicTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3558R.string.topics_select));
+        simpleTextView.setText(LocaleController.getInternalString(C3473R.string.topics_select));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }
@@ -196,7 +196,7 @@ public final class TopicProfileCell extends FrameLayout {
     public final ImageView initDeleteImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(C3558R.C3560drawable.msg_add);
+        imageView.setImageResource(C3473R.C3475drawable.msg_add);
         return imageView;
     }
 
@@ -221,7 +221,7 @@ public final class TopicProfileCell extends FrameLayout {
 
     /* compiled from: TopicProfileCell.kt */
     /* renamed from: com.iMe.ui.topics.TopicProfileCell$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

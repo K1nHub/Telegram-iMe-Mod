@@ -1,13 +1,13 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_channels_reportSpam extends TLObject {
     public static int constructor = -196443371;
     public TLRPC$InputChannel channel;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1577id = new ArrayList<>();
+    public ArrayList<Integer> f1568id = new ArrayList<>();
     public TLRPC$InputPeer participant;
 
     @Override // org.telegram.tgnet.TLObject
@@ -21,10 +21,10 @@ public class TLRPC$TL_channels_reportSpam extends TLObject {
         this.channel.serializeToStream(abstractSerializedData);
         this.participant.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1577id.size();
+        int size = this.f1568id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1577id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1568id.get(i).intValue());
         }
     }
 }

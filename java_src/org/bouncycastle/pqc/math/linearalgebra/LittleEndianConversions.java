@@ -1,5 +1,5 @@
 package org.bouncycastle.pqc.math.linearalgebra;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class LittleEndianConversions {
     public static void I2OSP(int i, byte[] bArr, int i2) {
         int i3 = i2 + 1;

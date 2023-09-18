@@ -11,7 +11,7 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt__SequencesKt;
 import kotlin.sequences.SequencesKt___SequencesKt;
 /* compiled from: CoroutineExceptionHandlerImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CoroutineExceptionHandlerImplKt {
     private static final List<CoroutineExceptionHandler> handlers;
 
@@ -36,10 +36,10 @@ public final class CoroutineExceptionHandlerImplKt {
         try {
             Result.Companion companion = Result.Companion;
             ExceptionsKt__ExceptionsKt.addSuppressed(th, new DiagnosticCoroutineContextException(coroutineContext));
-            Result.m1660constructorimpl(Unit.INSTANCE);
+            Result.m1658constructorimpl(Unit.INSTANCE);
         } catch (Throwable th3) {
             Result.Companion companion2 = Result.Companion;
-            Result.m1660constructorimpl(ResultKt.createFailure(th3));
+            Result.m1658constructorimpl(ResultKt.createFailure(th3));
         }
         currentThread2.getUncaughtExceptionHandler().uncaughtException(currentThread2, th);
     }

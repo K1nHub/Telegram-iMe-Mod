@@ -1,6 +1,6 @@
 package com.iMe.storage.data.network.model.response.crypto.level;
 /* compiled from: GetAccountLevelVisibilityResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GetAccountLevelVisibilityResponse {
     private final boolean rankVisibility;
 

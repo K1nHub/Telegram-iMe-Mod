@@ -3,7 +3,7 @@ package com.otaliastudios.gif.sink;
 import android.media.MediaCodec;
 import android.media.MediaFormat;
 import java.nio.ByteBuffer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface DataSink {
     void release();
 

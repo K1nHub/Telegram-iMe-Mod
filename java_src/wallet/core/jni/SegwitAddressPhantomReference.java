@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: SegwitAddress.java */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class SegwitAddressPhantomReference extends PhantomReference<SegwitAddress> {
     private long nativeHandle;
     private static Set<SegwitAddressPhantomReference> references = new HashSet();

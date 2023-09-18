@@ -3,7 +3,7 @@ package kotlin.collections;
 import java.lang.reflect.Array;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ArraysJVM.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class ArraysKt__ArraysJVMKt {
     public static final <T> T[] arrayOfNulls(T[] reference, int i) {
         Intrinsics.checkNotNullParameter(reference, "reference");

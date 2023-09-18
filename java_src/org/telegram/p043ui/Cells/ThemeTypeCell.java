@@ -11,12 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.ThemeTypeCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ThemeTypeCell extends FrameLayout {
     private ImageView checkImage;
     private boolean needDivider;
@@ -40,7 +40,7 @@ public class ThemeTypeCell extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.checkImage = imageView;
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addedIcon), PorterDuff.Mode.MULTIPLY));
-        this.checkImage.setImageResource(C3558R.C3560drawable.sticker_added);
+        this.checkImage.setImageResource(C3473R.C3475drawable.sticker_added);
         addView(this.checkImage, LayoutHelper.createFrame(19, 14, (LocaleController.isRTL ? 3 : 5) | 16, 23, 0, 23, 0));
     }
 

@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class View {
     private boolean current;
     private DocumentSet documentSet;
@@ -26,7 +26,7 @@ public class View {
     private ImmutableSortedSet<DocumentKey> limboDocuments = DocumentKey.emptyKeySet();
     private ImmutableSortedSet<DocumentKey> mutatedKeys = DocumentKey.emptyKeySet();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DocumentChanges {
         final DocumentViewChangeSet changeSet;
         final DocumentSet documentSet;
@@ -195,7 +195,7 @@ public class View {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.core.View$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10131 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */

@@ -5,7 +5,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HttpConnectProxiedSocketAddress extends ProxiedSocketAddress {
     private final String password;
     private final SocketAddress proxyAddress;
@@ -60,7 +60,7 @@ public final class HttpConnectProxiedSocketAddress extends ProxiedSocketAddress 
         return new Builder();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         private String password;
         private SocketAddress proxyAddress;

@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import io.grpc.Decompressor;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Deframer {
     void close();
 

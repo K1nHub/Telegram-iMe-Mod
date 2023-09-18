@@ -19,18 +19,18 @@ import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.BackButtonMenu;
 /* renamed from: org.telegram.ui.ActionBar.INavigationLayout */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public interface INavigationLayout {
 
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$BackButtonState */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public enum BackButtonState {
         BACK,
         MENU
     }
 
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$IBackButtonDrawable */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface IBackButtonDrawable {
         BackButtonState getBackButtonState();
     }
@@ -197,7 +197,7 @@ public interface INavigationLayout {
     void updatePinnedPlayerVisible();
 
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$-CC */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public final /* synthetic */ class CC {
         public static BottomSheet $default$getBottomSheet(INavigationLayout iNavigationLayout) {
             return null;
@@ -329,7 +329,7 @@ public interface INavigationLayout {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$INavigationLayoutDelegate */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface INavigationLayoutDelegate {
         boolean needAddFragmentToStack(BaseFragment baseFragment, INavigationLayout iNavigationLayout);
 
@@ -348,7 +348,7 @@ public interface INavigationLayout {
         void onThemeProgress(float f);
 
         /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$INavigationLayoutDelegate$-CC */
-        /* loaded from: classes5.dex */
+        /* loaded from: classes3.dex */
         public final /* synthetic */ class CC {
             public static boolean $default$needAddFragmentToStack(INavigationLayoutDelegate iNavigationLayoutDelegate, BaseFragment baseFragment, INavigationLayout iNavigationLayout) {
                 return true;
@@ -374,7 +374,7 @@ public interface INavigationLayout {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$NavigationParams */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class NavigationParams {
         public boolean checkPresentFromDelegate = true;
         public BaseFragment fragment;
@@ -414,7 +414,7 @@ public interface INavigationLayout {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$ThemeAnimationSettings */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class ThemeAnimationSettings {
         public final int accentId;
         public Runnable afterAnimationRunnable;
@@ -430,7 +430,7 @@ public interface INavigationLayout {
         public long duration = 200;
 
         /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$ThemeAnimationSettings$onAnimationProgress */
-        /* loaded from: classes5.dex */
+        /* loaded from: classes3.dex */
         public interface onAnimationProgress {
             void setProgress(float f);
         }
@@ -444,7 +444,7 @@ public interface INavigationLayout {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.INavigationLayout$StartColorsProvider */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class StartColorsProvider implements Theme.ResourcesProvider {
         SparseIntArray colors = new SparseIntArray();
         int[] keysToSave = {Theme.key_chat_outBubble, Theme.key_chat_outBubbleGradient1, Theme.key_chat_outBubbleGradient2, Theme.key_chat_outBubbleGradient3, Theme.key_chat_outBubbleGradientAnimated, Theme.key_chat_outBubbleShadow};

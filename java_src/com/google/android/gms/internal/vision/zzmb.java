@@ -4,7 +4,7 @@ import java.util.Iterator;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzmb implements Iterator<String>, p033j$.util.Iterator {
     private Iterator<String> zza;
     private final /* synthetic */ zzlz zzb;

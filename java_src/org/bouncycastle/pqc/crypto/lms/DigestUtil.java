@@ -9,7 +9,7 @@ import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.crypto.digests.SHA512Digest;
 import org.bouncycastle.crypto.digests.SHAKEDigest;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class DigestUtil {
     private static Map<String, ASN1ObjectIdentifier> nameToOid = new HashMap();
     private static Map<ASN1ObjectIdentifier, String> oidToName = new HashMap();

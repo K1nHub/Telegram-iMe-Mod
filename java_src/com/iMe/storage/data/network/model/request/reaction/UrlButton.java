@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.reaction;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UrlButton.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UrlButton {
     private String title;
     private String url;
@@ -70,13 +70,13 @@ public final class UrlButton {
         return this.title;
     }
 
-    public final String getUrl() {
-        return this.url;
-    }
-
     public final void setTitle(String str) {
         Intrinsics.checkNotNullParameter(str, "<set-?>");
         this.title = str;
+    }
+
+    public final String getUrl() {
+        return this.url;
     }
 
     public final void setUrl(String str) {

@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemHeaderWithRightButtonBinding implements ViewBinding {
     private final ConstraintLayout rootView;
 
@@ -27,7 +27,7 @@ public final class ForkRecycleItemHeaderWithRightButtonBinding implements ViewBi
     }
 
     public static ForkRecycleItemHeaderWithRightButtonBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_header_with_right_button, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_header_with_right_button, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,13 +35,13 @@ public final class ForkRecycleItemHeaderWithRightButtonBinding implements ViewBi
     }
 
     public static ForkRecycleItemHeaderWithRightButtonBinding bind(View view) {
-        int i = C3558R.C3561id.image_header_right_button;
+        int i = C3473R.C3476id.image_header_right_button;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3558R.C3561id.image_info;
+            i = C3473R.C3476id.image_info;
             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView2 != null) {
-                i = C3558R.C3561id.text_wallet_header;
+                i = C3473R.C3476id.text_wallet_header;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
                     return new ForkRecycleItemHeaderWithRightButtonBinding((ConstraintLayout) view, appCompatImageView, appCompatImageView2, appCompatTextView);

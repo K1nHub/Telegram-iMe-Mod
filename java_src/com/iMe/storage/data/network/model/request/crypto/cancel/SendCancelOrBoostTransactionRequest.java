@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.crypto.cancel;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SendCancelOrBoostTransactionRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SendCancelOrBoostTransactionRequest {
     private final String oldTransactionHash;
     private final String signedTransactionBody;

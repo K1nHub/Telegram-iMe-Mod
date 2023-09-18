@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import com.android.vending.billing.IInAppBillingService;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BillingSupportedRequest extends Request<Object> {
     private final Bundle mExtraParams;
     private final String mProduct;

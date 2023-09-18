@@ -10,7 +10,7 @@ import java.util.SortedSet;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FilterSettingsMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FilterSettingsMappingKt {
     public static final FilterSettingsModel mapToDomain(FilterSettingsDb filterSettingsDb) {
         Set<String> set;

@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.LoadingSpan */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LoadingSpan extends ReplacementSpan {
     private LoadingDrawable drawable;
     private int size;

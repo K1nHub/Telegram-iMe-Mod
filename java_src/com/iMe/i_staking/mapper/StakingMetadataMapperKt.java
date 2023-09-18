@@ -14,7 +14,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingMetadataMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingMetadataMapperKt {
     public static final StakingProgrammes mapToDomain(StakingProgrammesResponse stakingProgrammesResponse) {
         int collectionSizeOrDefault;

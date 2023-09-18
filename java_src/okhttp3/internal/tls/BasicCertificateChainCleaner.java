@@ -12,7 +12,7 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BasicCertificateChainCleaner.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BasicCertificateChainCleaner extends CertificateChainCleaner {
     private final TrustRootIndex trustRootIndex;
 
@@ -93,7 +93,7 @@ public final class BasicCertificateChainCleaner extends CertificateChainCleaner 
     }
 
     /* compiled from: BasicCertificateChainCleaner.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

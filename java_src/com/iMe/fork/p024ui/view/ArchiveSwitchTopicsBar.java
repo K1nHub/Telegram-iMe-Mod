@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: ArchiveSwitchTopicsBar.kt */
 /* renamed from: com.iMe.fork.ui.view.ArchiveSwitchTopicsBar */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ArchiveSwitchTopicsBar extends LinearLayout {
     private final Lazy archiveTopic$delegate;
     private boolean currentArchive;

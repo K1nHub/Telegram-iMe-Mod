@@ -9,8 +9,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemCryptoboxStatusBinding implements ViewBinding {
     private final ConstraintLayout rootView;
 
@@ -28,7 +28,7 @@ public final class ForkRecycleItemCryptoboxStatusBinding implements ViewBinding 
     }
 
     public static ForkRecycleItemCryptoboxStatusBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_cryptobox_status, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_cryptobox_status, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,13 +36,13 @@ public final class ForkRecycleItemCryptoboxStatusBinding implements ViewBinding 
     }
 
     public static ForkRecycleItemCryptoboxStatusBinding bind(View view) {
-        int i = C3558R.C3561id.image_check;
+        int i = C3473R.C3476id.image_check;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3558R.C3561id.text_description;
+            i = C3473R.C3476id.text_description;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
-                i = C3558R.C3561id.view_divider;
+                i = C3473R.C3476id.view_divider;
                 DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                 if (dividerView != null) {
                     return new ForkRecycleItemCryptoboxStatusBinding((ConstraintLayout) view, appCompatImageView, textView, dividerView);

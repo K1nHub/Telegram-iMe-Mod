@@ -11,12 +11,12 @@ import com.otaliastudios.gif.strategy.size.MultiResizer;
 import com.otaliastudios.gif.strategy.size.Resizer;
 import com.otaliastudios.gif.strategy.size.Size;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DefaultStrategy implements Strategy {
     private static final Logger LOG = new Logger(DefaultStrategy.class.getSimpleName());
     private final Options options;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Options {
         private Resizer resizer;
         private long targetBitRate;
@@ -36,7 +36,7 @@ public class DefaultStrategy implements Strategy {
         return new Builder(new FractionResizer(f));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private MultiResizer resizer;
         private long targetBitRate;

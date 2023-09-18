@@ -4,7 +4,7 @@ import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.ShowFirstParty;
 @ShowFirstParty
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ImageLabel {
     private final String label;
     private final String zzdn;

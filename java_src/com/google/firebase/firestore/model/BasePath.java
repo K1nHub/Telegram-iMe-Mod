@@ -5,7 +5,7 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Util;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BasePath<B extends BasePath<B>> implements Comparable<B> {
     final List<String> segments;
 

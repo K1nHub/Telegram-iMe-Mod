@@ -8,7 +8,7 @@ import com.iMe.utils.extentions.model.wallet.NotificationExtKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NotificationUiMappingKt {
     public static final NotificationItem mapToUI(Notification notification, ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(notification, "<this>");
@@ -21,24 +21,24 @@ public final class NotificationUiMappingKt {
         if (notification instanceof Notification.Unsupported) {
             return new PushNotificationModel.Unsupported(notification.getUserId(), notification.getType().toString());
         }
-        if (notification instanceof Notification.CryptoTransfer.C2041In) {
-            Notification.CryptoTransfer.C2041In c2041In = (Notification.CryptoTransfer.C2041In) notification;
-            String tokenCode = c2041In.getTokenCode();
-            String amount = c2041In.getAmount();
-            String toAddress = c2041In.getToAddress();
-            return new PushNotificationModel.CryptoTransfer.C1637In(notification.getUserId(), notification.getType().name(), tokenCode, c2041In.getFromAddress(), toAddress, amount);
+        if (notification instanceof Notification.CryptoTransfer.C2036In) {
+            Notification.CryptoTransfer.C2036In c2036In = (Notification.CryptoTransfer.C2036In) notification;
+            String tokenCode = c2036In.getTokenCode();
+            String amount = c2036In.getAmount();
+            String toAddress = c2036In.getToAddress();
+            return new PushNotificationModel.CryptoTransfer.C1633In(notification.getUserId(), notification.getType().name(), tokenCode, c2036In.getFromAddress(), toAddress, amount);
         } else if (notification instanceof Notification.CryptoTransfer.Out) {
             Notification.CryptoTransfer.Out out = (Notification.CryptoTransfer.Out) notification;
             String tokenCode2 = out.getTokenCode();
             String amount2 = out.getAmount();
             String toAddress2 = out.getToAddress();
             return new PushNotificationModel.CryptoTransfer.Out(notification.getUserId(), notification.getType().name(), ((Notification.CryptoTransfer.Out) notification).getStatus().name(), tokenCode2, out.getFromAddress(), toAddress2, amount2);
-        } else if (notification instanceof Notification.Donation.C2042In) {
-            Notification.Donation.C2042In c2042In = (Notification.Donation.C2042In) notification;
-            String tokenCode3 = c2042In.getTokenCode();
-            String amount3 = c2042In.getAmount();
-            String toAddress3 = c2042In.getToAddress();
-            return new PushNotificationModel.Donation.C1638In(notification.getUserId(), notification.getType().name(), tokenCode3, c2042In.getFromAddress(), toAddress3, amount3);
+        } else if (notification instanceof Notification.Donation.C2037In) {
+            Notification.Donation.C2037In c2037In = (Notification.Donation.C2037In) notification;
+            String tokenCode3 = c2037In.getTokenCode();
+            String amount3 = c2037In.getAmount();
+            String toAddress3 = c2037In.getToAddress();
+            return new PushNotificationModel.Donation.C1634In(notification.getUserId(), notification.getType().name(), tokenCode3, c2037In.getFromAddress(), toAddress3, amount3);
         } else if (notification instanceof Notification.Donation.Out) {
             Notification.Donation.Out out2 = (Notification.Donation.Out) notification;
             String tokenCode4 = out2.getTokenCode();

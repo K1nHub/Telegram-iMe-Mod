@@ -29,7 +29,7 @@ import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MaterialButton extends AppCompatButton implements Checkable, Shapeable {
     private static final int[] CHECKABLE_STATE_SET = {16842911};
     private static final int[] CHECKED_STATE_SET = {16842912};
@@ -48,12 +48,12 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     private final LinkedHashSet<OnCheckedChangeListener> onCheckedChangeListeners;
     private OnPressedChangeListener onPressedChangeListenerInternal;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnCheckedChangeListener {
         void onCheckedChanged(MaterialButton materialButton, boolean z);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface OnPressedChangeListener {
         void onPressedChanged(MaterialButton materialButton, boolean z);
     }
@@ -709,7 +709,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SavedState extends AbsSavedState {
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.ClassLoaderCreator<SavedState>() { // from class: com.google.android.material.button.MaterialButton.SavedState.1
             /* JADX WARN: Can't rename method to resolve collision */

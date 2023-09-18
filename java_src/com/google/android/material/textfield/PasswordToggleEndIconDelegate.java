@@ -10,7 +10,7 @@ import com.google.android.material.R$string;
 import com.google.android.material.internal.TextWatcherAdapter;
 import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class PasswordToggleEndIconDelegate extends EndIconDelegate {
     private final TextInputLayout.OnEditTextAttachedListener onEditTextAttachedListener;
     private final TextInputLayout.OnEndIconChangedListener onEndIconChangedListener;

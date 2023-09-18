@@ -22,14 +22,14 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TopicView.kt */
 /* renamed from: com.iMe.ui.topics.TopicView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TopicView extends FrameLayout {
     private final int iconSize;
     private final Lazy iconView$delegate;
@@ -154,7 +154,7 @@ public class TopicView extends FrameLayout {
         this.isActive = z;
         if (topic.getTopicId() == -2) {
             TextView nameTextView = getNameTextView();
-            String internalString = LocaleController.getInternalString(C3558R.string.topics_title_notopic);
+            String internalString = LocaleController.getInternalString(C3473R.string.topics_title_notopic);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.topics_title_notopic)");
             String upperCase = internalString.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -214,9 +214,9 @@ public class TopicView extends FrameLayout {
         this.isActive = z2;
         TextView nameTextView = getNameTextView();
         if (z) {
-            i = C3558R.string.folder_fab_settings_fab_archive;
+            i = C3473R.string.folder_fab_settings_fab_archive;
         } else {
-            i = C3558R.string.main_list;
+            i = C3473R.string.main_list;
         }
         String internalString = LocaleController.getInternalString(i);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(\n     …tring.main_list\n        )");
@@ -225,9 +225,9 @@ public class TopicView extends FrameLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i2 = C3558R.C3560drawable.fork_custom_forward_switch_archive;
+            i2 = C3473R.C3475drawable.fork_custom_forward_switch_archive;
         } else {
-            i2 = C3558R.C3560drawable.fork_custom_forward_switch_main;
+            i2 = C3473R.C3475drawable.fork_custom_forward_switch_main;
         }
         iconView.setImageResource(i2);
         updateColors();
@@ -236,7 +236,7 @@ public class TopicView extends FrameLayout {
     public final void setMessagesContextMenu(boolean z, boolean z2) {
         int i;
         this.isActive = z2;
-        String title = z ? LocaleController.getInternalString(C3558R.string.settings_interface_message_header) : LocaleController.getString(C3558R.string.MediaTab);
+        String title = z ? LocaleController.getInternalString(C3473R.string.settings_interface_message_header) : LocaleController.getString(C3473R.string.MediaTab);
         TextView nameTextView = getNameTextView();
         Intrinsics.checkNotNullExpressionValue(title, "title");
         String upperCase = title.toUpperCase(Locale.ROOT);
@@ -244,9 +244,9 @@ public class TopicView extends FrameLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i = C3558R.C3560drawable.fork_settings_chat;
+            i = C3473R.C3475drawable.fork_settings_chat;
         } else {
-            i = C3558R.C3560drawable.fork_cloud_filter_image;
+            i = C3473R.C3475drawable.fork_cloud_filter_image;
         }
         iconView.setImageResource(i);
         updateColors();
@@ -300,7 +300,7 @@ public class TopicView extends FrameLayout {
 
     /* compiled from: TopicView.kt */
     /* renamed from: com.iMe.ui.topics.TopicView$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

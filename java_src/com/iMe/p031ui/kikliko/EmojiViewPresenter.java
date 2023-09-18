@@ -20,7 +20,7 @@ import timber.log.Timber;
 /* compiled from: EmojiViewPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.kikliko.EmojiViewPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
     private final KiklikoInteractor kiklikoInteractor;
     private Disposable lastSearchDisposable;
@@ -46,12 +46,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TagResponse>> result) {
-                m1375invoke(result);
+                m1373invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1375invoke(Result<? extends List<? extends TagResponse>> it) {
+            public final void m1373invoke(Result<? extends List<? extends TagResponse>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends TagResponse>> result = it;
                 if (result instanceof Result.Success) {
@@ -83,7 +83,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -104,12 +104,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1379invoke(result);
+                m1377invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1379invoke(Result<? extends SearchResponse> it) {
+            public final void m1377invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -141,7 +141,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         this.lastSearchDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -163,12 +163,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1380invoke(result);
+                m1378invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1380invoke(Result<? extends SearchResponse> it) {
+            public final void m1378invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -200,7 +200,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         this.lastSearchDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -217,12 +217,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1374invoke(result);
+                m1372invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1374invoke(Result<? extends SearchResponse> it) {
+            public final void m1372invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -254,7 +254,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         this.lastSearchDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -266,12 +266,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1377invoke(result);
+                m1375invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1377invoke(Result<? extends Boolean> it) {
+            public final void m1375invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$2
@@ -299,7 +299,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -310,12 +310,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1376invoke(result);
+                m1374invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1376invoke(Result<? extends Boolean> it) {
+            public final void m1374invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$2
@@ -343,7 +343,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -355,12 +355,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1378invoke(result);
+                m1376invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1378invoke(Result<? extends Boolean> it) {
+            public final void m1376invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$2
@@ -388,7 +388,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 }

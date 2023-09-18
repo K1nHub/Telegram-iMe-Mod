@@ -7,7 +7,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ExpandableTransformationBehavior extends ExpandableBehavior {
     private AnimatorSet currentAnimation;
 

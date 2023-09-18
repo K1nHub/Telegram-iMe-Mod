@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Util {
     public static final String[] EMPTY_STRING_ARRAY = new String[0];
     public static final Charset UTF_8 = Charset.forName("UTF-8");

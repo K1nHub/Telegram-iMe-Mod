@@ -11,7 +11,7 @@ import com.google.firebase.firestore.util.Logger;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DefaultQueryEngine implements QueryEngine {
     private LocalDocumentsView localDocumentsView;
 

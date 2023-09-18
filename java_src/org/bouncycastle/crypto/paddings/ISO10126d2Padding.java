@@ -3,7 +3,7 @@ package org.bouncycastle.crypto.paddings;
 import java.security.SecureRandom;
 import org.bouncycastle.crypto.CryptoServicesRegistrar;
 import org.bouncycastle.crypto.InvalidCipherTextException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ISO10126d2Padding implements BlockCipherPadding {
     SecureRandom random;
 

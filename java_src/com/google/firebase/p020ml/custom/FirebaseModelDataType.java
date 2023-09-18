@@ -3,7 +3,7 @@ package com.google.firebase.p020ml.custom;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.firebase.p020ml.common.FirebaseMLException;
 /* renamed from: com.google.firebase.ml.custom.FirebaseModelDataType */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseModelDataType {
     public static int zzm(Object obj) throws FirebaseMLException {
         Preconditions.checkNotNull(obj, "Input Object can not be null");

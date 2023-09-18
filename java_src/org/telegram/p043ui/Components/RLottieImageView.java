@@ -21,7 +21,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$PhotoSize;
 /* renamed from: org.telegram.ui.Components.RLottieImageView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class RLottieImageView extends ImageView {
     private boolean attachedToWindow;
     private boolean autoRepeat;

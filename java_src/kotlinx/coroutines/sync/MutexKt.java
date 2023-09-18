@@ -2,7 +2,7 @@ package kotlinx.coroutines.sync;
 
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: Mutex.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MutexKt {
     private static final Empty EMPTY_LOCKED;
     private static final Empty EMPTY_UNLOCKED;

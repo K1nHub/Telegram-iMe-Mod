@@ -1,7 +1,7 @@
 package com.google.android.material;
 
-import com.iMe.android.web.R;
-/* loaded from: classes3.dex */
+import com.iMe.android.R;
+/* loaded from: classes4.dex */
 public final class R$styleable {
     public static final int AppBarLayout_Layout_layout_scrollFlags = 0;
     public static final int AppBarLayout_Layout_layout_scrollInterpolator = 1;

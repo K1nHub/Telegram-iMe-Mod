@@ -3,7 +3,7 @@ package com.iMe.bots.data.model.response;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HolidaysResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HolidaysResponse {
     private final List<String> response;
     private final String tag;

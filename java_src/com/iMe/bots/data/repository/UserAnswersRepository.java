@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UserAnswersRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UserAnswersRepository {
     private final BotsDatabase botsDatabase;
     private final HolidaysDao holidaysDao;

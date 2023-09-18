@@ -32,7 +32,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoPermissionRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoPermissionRepositoryImpl implements CryptoPermissionRepository {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final CryptoWalletApi cryptoWalletApi;
@@ -159,7 +159,7 @@ public final class CryptoPermissionRepositoryImpl implements CryptoPermissionRep
         }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         Observable concat = Observable.concat(empty, map);
-        Intrinsics.checkNotNullExpressionValue(concat, "concat(\n                …              }\n        )");
+        Intrinsics.checkNotNullExpressionValue(concat, "concat(\n            if (…              }\n        )");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<CryptoWalletsInfo>> onErrorReturn = concat.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends CryptoWalletsInfo>>() { // from class: com.iMe.storage.data.repository.crypto.permission.CryptoPermissionRepositoryImpl$getPermissionSettings$$inlined$handleError$1
             {

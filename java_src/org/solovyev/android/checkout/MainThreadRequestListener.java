@@ -1,6 +1,6 @@
 package org.solovyev.android.checkout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MainThreadRequestListener<R> extends RequestListenerWrapper<R> {
     private Runnable mErrorRunnable;
     private final CancellableExecutor mMainThread;

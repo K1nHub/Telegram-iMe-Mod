@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CompositeException extends RuntimeException {
     private Throwable cause;
     private final List<Throwable> exceptions;
@@ -136,7 +136,7 @@ public final class CompositeException extends RuntimeException {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class PrintStreamOrWriter {
         abstract void println(Object obj);
 
@@ -145,7 +145,7 @@ public final class CompositeException extends RuntimeException {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class WrappedPrintStream extends PrintStreamOrWriter {
         private final PrintStream printStream;
 
@@ -159,7 +159,7 @@ public final class CompositeException extends RuntimeException {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class WrappedPrintWriter extends PrintStreamOrWriter {
         private final PrintWriter printWriter;
 
@@ -173,7 +173,7 @@ public final class CompositeException extends RuntimeException {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class CompositeExceptionCausalChain extends RuntimeException {
         @Override // java.lang.Throwable
         public String getMessage() {

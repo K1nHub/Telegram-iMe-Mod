@@ -3,7 +3,7 @@ package kotlin.ranges;
 import java.util.NoSuchElementException;
 import kotlin.collections.IntIterator;
 /* compiled from: ProgressionIterators.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class IntProgressionIterator extends IntIterator {
     private final int finalElement;
     private boolean hasNext;

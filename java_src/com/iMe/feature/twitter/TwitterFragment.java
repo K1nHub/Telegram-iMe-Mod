@@ -57,19 +57,19 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentTwitterBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.PhotoViewer;
 /* compiled from: TwitterFragment.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterFragment extends MvpFragment implements TwitterView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(TwitterFragment.class, "presenter", "getPresenter()Lcom/iMe/feature/twitter/TwitterPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(TwitterFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentTwitterBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -343,18 +343,18 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
     }
 
     private final void setupActionBar() {
-        C3626ActionBar c3626ActionBar = this.actionBar;
-        c3626ActionBar.setBackButtonImage(C3558R.C3560drawable.ic_ab_back);
-        c3626ActionBar.setAllowOverlayTitle(true);
-        c3626ActionBar.setTitle(LocaleController.getInternalString(C3558R.string.twitter_title));
-        ActionBarMenuItem addItem = c3626ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3558R.C3560drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3558R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3558R.C3560drawable.fork_drawer_social_twitter, getResourceManager().getString(C3558R.string.twitter_open_in_twitter));
+        C3541ActionBar c3541ActionBar = this.actionBar;
+        c3541ActionBar.setBackButtonImage(C3473R.C3475drawable.ic_ab_back);
+        c3541ActionBar.setAllowOverlayTitle(true);
+        c3541ActionBar.setTitle(LocaleController.getInternalString(C3473R.string.twitter_title));
+        ActionBarMenuItem addItem = c3541ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3473R.C3475drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3473R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.OPEN_IN_TWITTER, C3473R.C3475drawable.fork_drawer_social_twitter, getResourceManager().getString(C3473R.string.twitter_open_in_twitter));
         if (this.socialNetwork.getHasEditAccess()) {
-            addItem.addSubItem(IdFabric$Menu.RESET_TWITTER, C3558R.C3560drawable.fork_ic_recycler_22, getResourceManager().getString(C3558R.string.social_reset_menu_item));
+            addItem.addSubItem(IdFabric$Menu.RESET_TWITTER, C3473R.C3475drawable.fork_ic_recycler_22, getResourceManager().getString(C3473R.string.social_reset_menu_item));
         }
-        c3626ActionBar.setActionBarMenuOnItemClick(new C3626ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.TwitterFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3626ActionBar.ActionBarMenuOnItemClick
+        c3541ActionBar.setActionBarMenuOnItemClick(new C3541ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.feature.twitter.TwitterFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3541ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 TwitterPresenter presenter;
                 TwitterPresenter presenter2;
@@ -429,9 +429,9 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         if (baseNode instanceof TweetItem) {
             int id = view.getId();
-            if (id == C3558R.C3561id.image_share) {
+            if (id == C3473R.C3476id.image_share) {
                 this$0.getPresenter().onShareClick((TweetItem) baseNode);
-            } else if (id == C3558R.C3561id.image_menu) {
+            } else if (id == C3473R.C3476id.image_menu) {
                 this$0.showItemMenu(view, (TweetItem) baseNode);
             }
         }
@@ -445,7 +445,7 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
 
     private final void showItemMenu(View view, final TweetItem tweetItem) {
         List listOf;
-        listOf = CollectionsKt__CollectionsJVMKt.listOf(new MenuItem(getResourceManager().getString(C3558R.string.common_translate), C3558R.C3560drawable.msg_premium_translate, 0, 0, new Function0<Unit>() { // from class: com.iMe.feature.twitter.TwitterFragment$showItemMenu$menuItems$1
+        listOf = CollectionsKt__CollectionsJVMKt.listOf(new MenuItem(getResourceManager().getString(C3473R.string.common_translate), C3473R.C3475drawable.msg_premium_translate, 0, 0, new Function0<Unit>() { // from class: com.iMe.feature.twitter.TwitterFragment$showItemMenu$menuItems$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -472,7 +472,7 @@ public final class TwitterFragment extends MvpFragment implements TwitterView {
     }
 
     /* compiled from: TwitterFragment.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

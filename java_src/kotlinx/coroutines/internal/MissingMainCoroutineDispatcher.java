@@ -8,7 +8,7 @@ import kotlinx.coroutines.Delay;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MainDispatchers.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MissingMainCoroutineDispatcher extends MainCoroutineDispatcher implements Delay {
     private final Throwable cause;
     private final String errorHint;
@@ -20,7 +20,7 @@ public final class MissingMainCoroutineDispatcher extends MainCoroutineDispatche
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ void mo1691scheduleResumeAfterDelay(long j, CancellableContinuation cancellableContinuation) {
+    public /* bridge */ /* synthetic */ void mo1689scheduleResumeAfterDelay(long j, CancellableContinuation cancellableContinuation) {
         scheduleResumeAfterDelay(j, (CancellableContinuation<? super Unit>) cancellableContinuation);
     }
 
@@ -37,7 +37,7 @@ public final class MissingMainCoroutineDispatcher extends MainCoroutineDispatche
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public Void mo1690dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public Void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         missing();
         throw new KotlinNothingValueException();
     }

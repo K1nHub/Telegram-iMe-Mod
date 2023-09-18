@@ -5,7 +5,7 @@ import android.content.pm.ComponentInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzcd {
     public static void zza(PackageManager packageManager, ComponentName componentName, int i) {
         ComponentInfo componentInfo;

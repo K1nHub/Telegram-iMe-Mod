@@ -6,7 +6,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BlockchainAdressData.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum BlockchainAddressData {
     EVM("0x[a-fA-F0-9]{40}", "ethereum:"),
     TON("[a-zA-Z0-9-_]{48}", "ton://transfer/"),
@@ -36,11 +36,11 @@ public enum BlockchainAddressData {
     }
 
     /* compiled from: BlockchainAdressData.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
 
         /* compiled from: BlockchainAdressData.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public /* synthetic */ class WhenMappings {
             public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

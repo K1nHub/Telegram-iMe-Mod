@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.voip.Instance;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zza {
     private static final Map<Integer, String> zza;
     private static final Map<Integer, String> zzb;

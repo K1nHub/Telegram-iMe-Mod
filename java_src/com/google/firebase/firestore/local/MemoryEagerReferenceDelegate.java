@@ -4,7 +4,7 @@ import com.google.firebase.firestore.model.DocumentKey;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class MemoryEagerReferenceDelegate implements ReferenceDelegate {
     private ReferenceSet inMemoryPins;
     private Set<DocumentKey> orphanedDocuments;

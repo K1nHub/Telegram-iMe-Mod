@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Charts.data.ChartData;
 /* renamed from: org.telegram.ui.Charts.view_data.StackBarViewData */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StackBarViewData extends LineViewData {
     public int blendColor;
     public final Paint unselectedPaint;

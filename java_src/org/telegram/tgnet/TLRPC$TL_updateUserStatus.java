@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updateUserStatus extends TLRPC$Update {
     public static int constructor = -440534818;
     public TLRPC$UserStatus status;

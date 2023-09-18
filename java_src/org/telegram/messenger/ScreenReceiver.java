@@ -7,7 +7,7 @@ import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import kotlin.Lazy;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.tgnet.ConnectionsManager;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ScreenReceiver extends BroadcastReceiver {
     private Lazy<CryptoAccessManager> accessManager = KoinJavaComponent.inject(CryptoAccessManager.class);
 

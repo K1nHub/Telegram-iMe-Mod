@@ -8,7 +8,7 @@ import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.BooleanSupplier;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableRepeatUntil<T> extends AbstractObservableWithUpstream<T, T> {
     final BooleanSupplier until;
 
@@ -24,7 +24,7 @@ public final class ObservableRepeatUntil<T> extends AbstractObservableWithUpstre
         new RepeatUntilObserver(observer, this.until, sequentialDisposable, this.source).subscribeNext();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class RepeatUntilObserver<T> extends AtomicInteger implements Observer<T> {
         final Observer<? super T> downstream;
         final ObservableSource<? extends T> source;

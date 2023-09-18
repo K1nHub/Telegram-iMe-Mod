@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.p043ui.Components.AnimationProperties;
 /* renamed from: org.telegram.ui.Components.AnimatedNumberLayout */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedNumberLayout {
     public static final Property<AnimatedNumberLayout, Float> PROGRESS = new AnimationProperties.FloatProperty<AnimatedNumberLayout>("progress") { // from class: org.telegram.ui.Components.AnimatedNumberLayout.1
         @Override // org.telegram.p043ui.Components.AnimationProperties.FloatProperty

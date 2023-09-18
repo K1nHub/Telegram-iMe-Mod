@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkContentFeeBinding implements ViewBinding {
     private final ConstraintLayout rootView;
     public final AppCompatTextView textFeeTitle;
@@ -35,7 +35,7 @@ public final class ForkContentFeeBinding implements ViewBinding {
     }
 
     public static ForkContentFeeBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_content_fee, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_fee, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -43,19 +43,19 @@ public final class ForkContentFeeBinding implements ViewBinding {
     }
 
     public static ForkContentFeeBinding bind(View view) {
-        int i = C3558R.C3561id.image_fee_arrow;
+        int i = C3473R.C3476id.image_fee_arrow;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3558R.C3561id.text_fee_title;
+            i = C3473R.C3476id.text_fee_title;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3558R.C3561id.text_fee_value;
+                i = C3473R.C3476id.text_fee_value;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3558R.C3561id.text_time_title;
+                    i = C3473R.C3476id.text_time_title;
                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView3 != null) {
-                        i = C3558R.C3561id.text_time_value;
+                        i = C3473R.C3476id.text_time_value;
                         AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView4 != null) {
                             return new ForkContentFeeBinding((ConstraintLayout) view, appCompatImageView, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4);

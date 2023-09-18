@@ -5,7 +5,7 @@ import java.util.RandomAccess;
 import kotlin.collections.AbstractList;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Options.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Options extends AbstractList<ByteString> implements RandomAccess {
     public static final Companion Companion = new Companion(null);
     private final ByteString[] byteStrings;
@@ -75,7 +75,7 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
     }
 
     /* compiled from: Options.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }
@@ -84,7 +84,7 @@ public final class Options extends AbstractList<ByteString> implements RandomAcc
             this();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:55:0x00f2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:55:0x00f1, code lost:
             continue;
          */
         /* renamed from: of */

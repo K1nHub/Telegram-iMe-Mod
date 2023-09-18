@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.internal.OnUndeliveredElementKt;
 /* compiled from: AbstractChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SendElementWithUndeliveredHandler<E> extends SendElement<E> {
     public final Function1<E, Unit> onUndeliveredElement;
 
@@ -17,8 +17,8 @@ public final class SendElementWithUndeliveredHandler<E> extends SendElement<E> {
 
     @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode
     /* renamed from: remove */
-    public boolean mo1689remove() {
-        if (super.mo1689remove()) {
+    public boolean mo1687remove() {
+        if (super.mo1687remove()) {
             undeliveredElement();
             return true;
         }

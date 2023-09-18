@@ -4,7 +4,7 @@ import java.util.Objects;
 import org.bouncycastle.pqc.crypto.xmss.OTSHashAddress;
 import org.bouncycastle.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WOTSPlus {
     private final KeyedHashFunctions khf;
     private final WOTSPlusParameters params;

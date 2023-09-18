@@ -16,7 +16,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammesView> implements StakingProgrammesView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -165,7 +165,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$OpenStakingDetailsScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenStakingDetailsScreenCommand extends ViewCommand<StakingProgrammesView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -182,7 +182,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$OpenDepositScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenDepositScreenCommand extends ViewCommand<StakingProgrammesView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -199,7 +199,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$ShowSelectStakingOrderTypeDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSelectStakingOrderTypeDialogCommand extends ViewCommand<StakingProgrammesView> {
         public final StakingOrderType orderType;
 
@@ -216,7 +216,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$ShowLevelRequiredDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLevelRequiredDialogCommand extends ViewCommand<StakingProgrammesView> {
         public final AccountLevel minimalRank;
         public final TokenDetailed token;
@@ -235,7 +235,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$RenderItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderItemsCommand extends ViewCommand<StakingProgrammesView> {
         public final List<BaseNode> items;
 
@@ -252,7 +252,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<StakingProgrammesView> {
         public final String text;
 
@@ -269,7 +269,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<StakingProgrammesView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -290,7 +290,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<StakingProgrammesView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -309,7 +309,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<StakingProgrammesView> {
         OnLoadMoreCompleteCommand(StakingProgrammesView$$State stakingProgrammesView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -323,7 +323,7 @@ public class StakingProgrammesView$$State extends MvpViewState<StakingProgrammes
 
     /* compiled from: StakingProgrammesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<StakingProgrammesView> {
         OnLoadMoreErrorCommand(StakingProgrammesView$$State stakingProgrammesView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);

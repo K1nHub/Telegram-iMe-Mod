@@ -1,6 +1,6 @@
 package org.telegram.p043ui.Components;
 /* renamed from: org.telegram.ui.Components.IntSize */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class IntSize {
     public int height;
     public int width;

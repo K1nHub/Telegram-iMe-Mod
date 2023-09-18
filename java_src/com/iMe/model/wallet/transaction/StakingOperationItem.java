@@ -13,10 +13,10 @@ import com.iMe.utils.formatter.DateFormatter;
 import java.math.BigDecimal;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingOperationItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingOperationItem extends NoChildNode {
     private final BigDecimal amount;
     private final String createdAt;
@@ -33,7 +33,7 @@ public final class StakingOperationItem extends NoChildNode {
     private final StakingOperationType type;
 
     /* compiled from: StakingOperationItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -229,15 +229,15 @@ public final class StakingOperationItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3558R.string.staking_operation_type_approval;
+            i = C3473R.string.staking_operation_type_approval;
         } else if (i2 == 2) {
-            i = C3558R.string.staking_operation_type_deposit;
+            i = C3473R.string.staking_operation_type_deposit;
         } else if (i2 == 3) {
-            i = this.safe ? C3558R.string.staking_operation_type_withdrawal_request : C3558R.string.staking_operation_type_immediate_withdrawal;
+            i = this.safe ? C3473R.string.staking_operation_type_withdrawal_request : C3473R.string.staking_operation_type_immediate_withdrawal;
         } else if (i2 != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3558R.string.staking_operation_type_claim;
+            i = C3473R.string.staking_operation_type_claim;
         }
         return resourceManager.getString(i);
     }
@@ -267,15 +267,15 @@ public final class StakingOperationItem extends NoChildNode {
             if (i != 2) {
                 if (i != 3) {
                     if (i == 4) {
-                        return C3558R.C3560drawable.fork_ic_transaction_receive;
+                        return C3473R.C3475drawable.fork_ic_transaction_receive;
                     }
                     throw new NoWhenBranchMatchedException();
                 }
-                return C3558R.C3560drawable.fork_ic_transaction_staking_withdraw;
+                return C3473R.C3475drawable.fork_ic_transaction_staking_withdraw;
             }
-            return C3558R.C3560drawable.fork_ic_transaction_sent;
+            return C3473R.C3475drawable.fork_ic_transaction_sent;
         }
-        return C3558R.C3560drawable.fork_ic_transaction_approve;
+        return C3473R.C3475drawable.fork_ic_transaction_approve;
     }
 
     public final String getTransactionTimeText() {
@@ -285,9 +285,9 @@ public final class StakingOperationItem extends NoChildNode {
     public final String getAmount(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
-            return resourceManager.getString(C3558R.string.wallet_transactions_type_approve_title, this.token.getTicker());
+            return resourceManager.getString(C3473R.string.wallet_transactions_type_approve_title, this.token.getTicker());
         }
-        return getSymbol() + BalanceFormatter.formatBalance(this.amount, Integer.valueOf(this.token.getDecimals())) + ' ' + this.token.getTicker();
+        return getSymbol() + BalanceFormatter.format(this.amount, Integer.valueOf(this.token.getDecimals())) + ' ' + this.token.getTicker();
     }
 
     private final String getSymbol() {

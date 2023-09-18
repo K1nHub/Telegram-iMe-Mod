@@ -14,7 +14,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "PatternItemCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class PatternItem extends AbstractSafeParcelable {
     @SafeParcelable.Field(getter = "getType", m797id = 2)
     private final int zzb;

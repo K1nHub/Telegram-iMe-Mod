@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
 /* renamed from: org.telegram.ui.Components.Paint.Views.EditTextOutline */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EditTextOutline extends EditTextBoldCursor {
     public boolean betterFraming;
     public RectF framePadding;

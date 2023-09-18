@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_webAuthorization extends TLObject {
     public static int constructor = -1493633966;
     public long bot_id;
@@ -10,7 +10,7 @@ public class TLRPC$TL_webAuthorization extends TLObject {
     public long hash;
 
     /* renamed from: ip */
-    public String f1691ip;
+    public String f1682ip;
     public String platform;
     public String region;
 
@@ -35,7 +35,7 @@ public class TLRPC$TL_webAuthorization extends TLObject {
         this.platform = abstractSerializedData.readString(z);
         this.date_created = abstractSerializedData.readInt32(z);
         this.date_active = abstractSerializedData.readInt32(z);
-        this.f1691ip = abstractSerializedData.readString(z);
+        this.f1682ip = abstractSerializedData.readString(z);
         this.region = abstractSerializedData.readString(z);
     }
 
@@ -49,7 +49,7 @@ public class TLRPC$TL_webAuthorization extends TLObject {
         abstractSerializedData.writeString(this.platform);
         abstractSerializedData.writeInt32(this.date_created);
         abstractSerializedData.writeInt32(this.date_active);
-        abstractSerializedData.writeString(this.f1691ip);
+        abstractSerializedData.writeString(this.f1682ip);
         abstractSerializedData.writeString(this.region);
     }
 }

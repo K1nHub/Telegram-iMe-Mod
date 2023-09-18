@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.LetterDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LetterDrawable extends Drawable {
     private static TextPaint namePaint;
     private static TextPaint namePaintSmallTopic;

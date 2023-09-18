@@ -27,11 +27,11 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.ActionBar.DrawerLayoutContainer */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DrawerLayoutContainer extends FrameLayout {
     private boolean allowDrawContent;
     private boolean allowOpenDrawer;
@@ -99,7 +99,7 @@ public class DrawerLayoutContainer extends FrameLayout {
             });
             setSystemUiVisibility(1280);
         }
-        this.shadowLeft = getResources().getDrawable(C3558R.C3560drawable.menu_shadow);
+        this.shadowLeft = getResources().getDrawable(C3473R.C3475drawable.menu_shadow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -743,7 +743,7 @@ public class DrawerLayoutContainer extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.ActionBar.DrawerLayoutContainer$PreviewForegroundDrawable */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class PreviewForegroundDrawable extends Drawable {
         private final GradientDrawable bottomDrawable;
         private final GradientDrawable topDrawable;
@@ -774,11 +774,11 @@ public class DrawerLayoutContainer extends FrameLayout {
             canvas.save();
             int i = bounds.left;
             int i2 = bounds.top;
-            canvas.clipRect(i, i2, bounds.right, C3626ActionBar.getCurrentActionBarHeight() + i2);
+            canvas.clipRect(i, i2, bounds.right, C3541ActionBar.getCurrentActionBarHeight() + i2);
             this.topDrawable.draw(canvas);
             canvas.restore();
             canvas.save();
-            canvas.clipRect(bounds.left, bounds.top + C3626ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
+            canvas.clipRect(bounds.left, bounds.top + C3541ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
             this.bottomDrawable.draw(canvas);
             canvas.restore();
         }

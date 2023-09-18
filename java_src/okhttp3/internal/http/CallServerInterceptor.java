@@ -2,7 +2,7 @@ package okhttp3.internal.http;
 
 import okhttp3.Interceptor;
 /* compiled from: CallServerInterceptor.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CallServerInterceptor implements Interceptor {
     private final boolean forWebSocket;
 

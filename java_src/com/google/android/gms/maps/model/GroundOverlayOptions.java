@@ -11,7 +11,7 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "GroundOverlayOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GroundOverlayOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GroundOverlayOptions> CREATOR = new zzd();
     public static final float NO_DIMENSION = -1.0f;

@@ -1,7 +1,7 @@
 package org.tensorflow.lite;
 
 import java.io.PrintStream;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class TensorFlowLite {
     public static native String version();
 

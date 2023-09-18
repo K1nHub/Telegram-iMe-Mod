@@ -18,7 +18,7 @@ import org.bouncycastle.pqc.asn1.RainbowPrivateKey;
 import org.bouncycastle.pqc.asn1.RainbowPublicKey;
 import org.bouncycastle.pqc.jcajce.spec.RainbowPrivateKeySpec;
 import org.bouncycastle.pqc.jcajce.spec.RainbowPublicKeySpec;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class RainbowKeyFactorySpi extends KeyFactorySpi implements AsymmetricKeyInfoConverter {
     @Override // java.security.KeyFactorySpi
     public PrivateKey engineGeneratePrivate(KeySpec keySpec) throws InvalidKeySpecException {

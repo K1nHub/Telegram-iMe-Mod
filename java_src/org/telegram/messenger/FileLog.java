@@ -20,7 +20,7 @@ import org.telegram.p043ui.Components.AnimatedFileDrawable;
 import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class FileLog {
     private static volatile FileLog Instance = null;
     public static boolean databaseIsMalformed = false;
@@ -485,7 +485,7 @@ public class FileLog {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);

@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Cells.InviteTextCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class InviteTextCell extends FrameLayout {
     private ImageView imageView;
     private SimpleTextView textView;

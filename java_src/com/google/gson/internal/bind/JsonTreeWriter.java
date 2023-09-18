@@ -11,7 +11,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class JsonTreeWriter extends JsonWriter {
     private String pendingName;
     private JsonElement product;

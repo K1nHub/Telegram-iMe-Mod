@@ -3,7 +3,7 @@ package io.reactivex.internal.operators.single;
 import io.reactivex.Single;
 import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposables;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SingleJust<T> extends Single<T> {
     final T value;
 

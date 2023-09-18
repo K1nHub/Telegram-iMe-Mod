@@ -20,7 +20,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FabsView.kt */
 /* renamed from: com.iMe.fork.ui.view.FabsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FabsView extends FrameLayout {
     static {
         new Companion(null);
@@ -51,7 +51,7 @@ public final class FabsView extends FrameLayout {
 
     /* compiled from: FabsView.kt */
     /* renamed from: com.iMe.fork.ui.view.FabsView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

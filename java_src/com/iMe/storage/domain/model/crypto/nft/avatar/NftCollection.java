@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.nft.avatar;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NftCollection.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NftCollection {
     private final String contractAddress;
 

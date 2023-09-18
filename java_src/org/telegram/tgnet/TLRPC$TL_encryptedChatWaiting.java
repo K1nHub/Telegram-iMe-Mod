@@ -1,11 +1,11 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_encryptedChatWaiting extends TLRPC$EncryptedChat {
     public static int constructor = 1722964307;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1543id = abstractSerializedData.readInt32(z);
+        this.f1534id = abstractSerializedData.readInt32(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.date = abstractSerializedData.readInt32(z);
         this.admin_id = abstractSerializedData.readInt64(z);
@@ -15,7 +15,7 @@ public class TLRPC$TL_encryptedChatWaiting extends TLRPC$EncryptedChat {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt32(this.f1543id);
+        abstractSerializedData.writeInt32(this.f1534id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeInt64(this.admin_id);

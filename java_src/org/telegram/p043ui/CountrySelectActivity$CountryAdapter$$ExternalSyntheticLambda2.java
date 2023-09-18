@@ -2,7 +2,7 @@ package org.telegram.p043ui;
 
 import java.util.Comparator;
 /* renamed from: org.telegram.ui.CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda2 */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda2 implements Comparator {
     public static final /* synthetic */ CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda2 INSTANCE = new CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda2();
 

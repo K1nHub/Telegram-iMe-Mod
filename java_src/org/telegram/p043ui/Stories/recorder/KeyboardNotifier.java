@@ -6,7 +6,7 @@ import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.Stories.recorder.KeyboardNotifier */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class KeyboardNotifier {
     private boolean awaitingKeyboard;
     public boolean ignoring;

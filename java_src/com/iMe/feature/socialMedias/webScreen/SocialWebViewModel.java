@@ -11,7 +11,7 @@ import org.orbitmvi.orbit.ContainerHost;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 import org.orbitmvi.orbit.viewmodel.ViewModelExtensionsKt;
 /* compiled from: SocialWebViewModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialWebViewModel extends ViewModel implements ContainerHost<SocialWebState, SocialSideEffects> {
     private final Container<SocialWebState, SocialSideEffects> container;
     private final SocialUseCase socialUseCase;
@@ -63,7 +63,7 @@ public final class SocialWebViewModel extends ViewModel implements ContainerHost
     }
 
     /* compiled from: SocialWebViewModel.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

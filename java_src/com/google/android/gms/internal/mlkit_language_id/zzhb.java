@@ -6,7 +6,7 @@ import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [V, K] */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class zzhb<K, V> extends AbstractSet<Map.Entry<K, V>> {
     private final /* synthetic */ zzgq zza;
 

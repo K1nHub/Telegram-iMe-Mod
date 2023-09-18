@@ -1,7 +1,7 @@
 package io.grpc.internal;
 
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class AtomicLongCounter implements LongCounter {
     private final AtomicLong counter = new AtomicLong();
 

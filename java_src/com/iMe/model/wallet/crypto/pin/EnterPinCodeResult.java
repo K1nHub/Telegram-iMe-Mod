@@ -3,14 +3,14 @@ package com.iMe.model.wallet.crypto.pin;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: EnterPinCodeResult.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class EnterPinCodeResult {
     public /* synthetic */ EnterPinCodeResult(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: EnterPinCodeResult.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Success extends EnterPinCodeResult {
         private final String password;
         private final String pin;
@@ -88,7 +88,7 @@ public abstract class EnterPinCodeResult {
     }
 
     /* compiled from: EnterPinCodeResult.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Cancelled extends EnterPinCodeResult {
         public static final Cancelled INSTANCE = new Cancelled();
 

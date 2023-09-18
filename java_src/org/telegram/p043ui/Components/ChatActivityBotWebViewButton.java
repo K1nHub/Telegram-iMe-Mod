@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.SimpleFloatPropertyCompat;
 /* renamed from: org.telegram.ui.Components.ChatActivityBotWebViewButton */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ChatActivityBotWebViewButton extends FrameLayout {
     public static final SimpleFloatPropertyCompat<ChatActivityBotWebViewButton> PROGRESS_PROPERTY = new SimpleFloatPropertyCompat("progress", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.ChatActivityBotWebViewButton$$ExternalSyntheticLambda0
         @Override // org.telegram.p043ui.Components.SimpleFloatPropertyCompat.Getter

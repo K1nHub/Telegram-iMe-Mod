@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FlowableCreate<T> extends Flowable<T> {
     final BackpressureStrategy backpressure;
     final FlowableOnSubscribe<T> source;
@@ -28,8 +28,8 @@ public final class FlowableCreate<T> extends Flowable<T> {
     }
 
     /* renamed from: io.reactivex.internal.operators.flowable.FlowableCreate$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C28611 {
+    /* loaded from: classes6.dex */
+    static /* synthetic */ class C27771 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$BackpressureStrategy;
 
         static {
@@ -57,7 +57,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
     @Override // io.reactivex.Flowable
     public void subscribeActual(Subscriber<? super T> subscriber) {
         BaseEmitter missingEmitter;
-        int i = C28611.$SwitchMap$io$reactivex$BackpressureStrategy[this.backpressure.ordinal()];
+        int i = C27771.$SwitchMap$io$reactivex$BackpressureStrategy[this.backpressure.ordinal()];
         if (i == 1) {
             missingEmitter = new MissingEmitter(subscriber);
         } else if (i == 2) {
@@ -79,7 +79,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class BaseEmitter<T> extends AtomicLong implements FlowableEmitter<T>, Subscription {
         final Subscriber<? super T> downstream;
         final SequentialDisposable serial = new SequentialDisposable();
@@ -164,7 +164,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class MissingEmitter<T> extends BaseEmitter<T> {
         MissingEmitter(Subscriber<? super T> subscriber) {
             super(subscriber);
@@ -190,7 +190,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static abstract class NoOverflowBaseAsyncEmitter<T> extends BaseEmitter<T> {
         abstract void onOverflow();
 
@@ -214,7 +214,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class DropAsyncEmitter<T> extends NoOverflowBaseAsyncEmitter<T> {
         @Override // io.reactivex.internal.operators.flowable.FlowableCreate.NoOverflowBaseAsyncEmitter
         void onOverflow() {
@@ -225,7 +225,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class ErrorAsyncEmitter<T> extends NoOverflowBaseAsyncEmitter<T> {
         ErrorAsyncEmitter(Subscriber<? super T> subscriber) {
             super(subscriber);
@@ -237,7 +237,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class BufferAsyncEmitter<T> extends BaseEmitter<T> {
         volatile boolean done;
         Throwable error;
@@ -354,7 +354,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class LatestAsyncEmitter<T> extends BaseEmitter<T> {
         volatile boolean done;
         Throwable error;

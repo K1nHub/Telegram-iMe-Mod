@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DefaultSettingsSpiCall implements SettingsSpiCall {
     private final Logger logger;
     private final HttpRequestFactory requestFactory;

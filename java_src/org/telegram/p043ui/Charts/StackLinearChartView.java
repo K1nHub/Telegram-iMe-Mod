@@ -9,7 +9,7 @@ import org.telegram.p043ui.Charts.data.ChartData;
 import org.telegram.p043ui.Charts.data.StackLinearChartData;
 import org.telegram.p043ui.Charts.view_data.StackLinearViewData;
 /* renamed from: org.telegram.ui.Charts.StackLinearChartView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StackLinearChartView<T extends StackLinearViewData> extends BaseChartView<StackLinearChartData, T> {
     private float[] mapPoints;
     private Matrix matrix;

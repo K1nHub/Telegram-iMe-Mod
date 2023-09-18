@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.FlickerLoadingView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class FlickerLoadingView extends View {
     private Paint backgroundPaint;
     private int color0;

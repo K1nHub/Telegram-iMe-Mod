@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NumberExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NumberExtKt {
     public static final BigInteger convertFromWei(Number number, Convert.Unit unit) {
         Intrinsics.checkNotNullParameter(number, "<this>");

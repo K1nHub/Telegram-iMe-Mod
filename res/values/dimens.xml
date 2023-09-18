@@ -176,10 +176,12 @@
     <dimen name="icon_size_default">24.0dip</dimen>
     <dimen name="icon_size_default_upper">28.0dip</dimen>
     <dimen name="icon_size_extra_small">16.0dip</dimen>
+    <dimen name="icon_size_great">86.0dip</dimen>
     <dimen name="icon_size_medium">32.0dip</dimen>
     <dimen name="icon_size_medium_upper">36.0dip</dimen>
     <dimen name="icon_size_small">18.0dip</dimen>
     <dimen name="icon_size_small_upper">21.0dip</dimen>
+    <dimen name="icon_size_under_default">22.0dip</dimen>
     <dimen name="margin_big">32.0dip</dimen>
     <dimen name="margin_extra_small">6.0dip</dimen>
     <dimen name="margin_great">40.0dip</dimen>
@@ -467,7 +469,6 @@
     <dimen name="switch_width">48.0dip</dimen>
     <dimen name="telegram_action_button_height">42.0dip</dimen>
     <dimen name="telegram_avatar_size_medium">46.0dip</dimen>
-    <dimen name="telegram_big_description_icon_size">90.0dip</dimen>
     <dimen name="test_mtrl_calendar_day_cornerSize">52.0dip</dimen>
     <dimen name="test_navigation_bar_active_item_max_width">168.0dip</dimen>
     <dimen name="test_navigation_bar_active_item_min_width">96.0dip</dimen>

@@ -9,7 +9,7 @@ public class BaseDraggableModule {
         throw null;
     }
 
-    public final void initView$TMessagesProj_HA_public(BaseViewHolder baseViewHolder) {
+    public final void initView$TMessagesProj_release(BaseViewHolder baseViewHolder) {
         throw null;
     }
 }

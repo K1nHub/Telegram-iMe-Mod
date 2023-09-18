@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.twitter;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterFeedRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterFeedRequest {
     private final String accessToken;
     private final String sinceId;

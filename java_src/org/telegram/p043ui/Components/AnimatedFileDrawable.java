@@ -33,7 +33,7 @@ import org.telegram.messenger.utils.BitmapsCache;
 import org.telegram.p043ui.Components.AnimatedFileDrawable;
 import org.telegram.tgnet.TLRPC$Document;
 /* renamed from: org.telegram.ui.Components.AnimatedFileDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, BitmapsCache.Cacheable {
     private boolean PRERENDER_FRAME;
     private final boolean USE_BITMAP_SHADER;
@@ -157,9 +157,9 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.AnimatedFileDrawable$2 */
-    /* loaded from: classes6.dex */
-    public class RunnableC43362 implements Runnable {
-        RunnableC43362() {
+    /* loaded from: classes7.dex */
+    public class RunnableC42512 implements Runnable {
+        RunnableC42512() {
         }
 
         @Override // java.lang.Runnable
@@ -184,7 +184,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC43362.this.lambda$run$1();
+                    AnimatedFileDrawable.RunnableC42512.this.lambda$run$1();
                 }
             };
             animatedFileDrawable3.cacheGenRunnable = runnable;
@@ -197,7 +197,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC43362.this.lambda$run$0();
+                    AnimatedFileDrawable.RunnableC42512.this.lambda$run$0();
                 }
             });
         }
@@ -354,7 +354,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
                 AnimatedFileDrawable.this.invalidateInternal();
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC43362();
+        this.uiRunnableGenerateCache = new RunnableC42512();
         this.uiRunnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable.3
             @Override // java.lang.Runnable
             public void run() {

@@ -3,7 +3,7 @@ package org.bouncycastle.pqc.crypto.xmss;
 import java.util.Objects;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.crypto.Digest;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class WOTSPlusParameters {
     private final int digestSize;
     private final int len;

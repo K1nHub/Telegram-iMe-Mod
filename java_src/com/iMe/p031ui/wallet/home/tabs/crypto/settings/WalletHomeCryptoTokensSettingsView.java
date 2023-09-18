@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletHomeCryptoTokensSettingsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletHomeCryptoTokensSettingsView extends BaseView, LoadMoreView<BaseNode> {
     void renderSearchResultItems(List<BaseNode> list);
 

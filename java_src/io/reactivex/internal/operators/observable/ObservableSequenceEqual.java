@@ -9,7 +9,7 @@ import io.reactivex.functions.BiPredicate;
 import io.reactivex.internal.disposables.ArrayCompositeDisposable;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
     final int bufferSize;
     final BiPredicate<? super T, ? super T> comparer;
@@ -30,7 +30,7 @@ public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
         equalCoordinator.subscribe();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class EqualCoordinator<T> extends AtomicInteger implements Disposable {
         volatile boolean cancelled;
         final BiPredicate<? super T, ? super T> comparer;
@@ -41,10 +41,10 @@ public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
         final ObservableSource<? extends T> second;
 
         /* renamed from: v1 */
-        T f558v1;
+        T f549v1;
 
         /* renamed from: v2 */
-        T f559v2;
+        T f550v2;
 
         EqualCoordinator(Observer<? super Boolean> observer, int i, ObservableSource<? extends T> observableSource, ObservableSource<? extends T> observableSource2, BiPredicate<? super T, ? super T> biPredicate) {
             this.downstream = observer;
@@ -116,14 +116,14 @@ public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
                     this.downstream.onError(th);
                     return;
                 }
-                if (this.f558v1 == null) {
-                    this.f558v1 = spscLinkedArrayQueue.poll();
+                if (this.f549v1 == null) {
+                    this.f549v1 = spscLinkedArrayQueue.poll();
                 }
-                boolean z3 = this.f558v1 == null;
-                if (this.f559v2 == null) {
-                    this.f559v2 = spscLinkedArrayQueue2.poll();
+                boolean z3 = this.f549v1 == null;
+                if (this.f550v2 == null) {
+                    this.f550v2 = spscLinkedArrayQueue2.poll();
                 }
-                T t = this.f559v2;
+                T t = this.f550v2;
                 boolean z4 = t == null;
                 if (z && z2 && z3 && z4) {
                     this.downstream.onNext(Boolean.TRUE);
@@ -137,14 +137,14 @@ public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
                 } else {
                     if (!z3 && !z4) {
                         try {
-                            if (!this.comparer.test((T) this.f558v1, t)) {
+                            if (!this.comparer.test((T) this.f549v1, t)) {
                                 cancel(spscLinkedArrayQueue, spscLinkedArrayQueue2);
                                 this.downstream.onNext(Boolean.FALSE);
                                 this.downstream.onComplete();
                                 return;
                             }
-                            this.f558v1 = null;
-                            this.f559v2 = null;
+                            this.f549v1 = null;
+                            this.f550v2 = null;
                         } catch (Throwable th3) {
                             Exceptions.throwIfFatal(th3);
                             cancel(spscLinkedArrayQueue, spscLinkedArrayQueue2);
@@ -166,7 +166,7 @@ public final class ObservableSequenceEqual<T> extends Observable<Boolean> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class EqualObserver<T> implements Observer<T> {
         volatile boolean done;
         Throwable error;

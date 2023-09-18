@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.util;
 
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Preconditions {
     public static void checkArgument(boolean z, String str, Object... objArr) {
         if (!z) {

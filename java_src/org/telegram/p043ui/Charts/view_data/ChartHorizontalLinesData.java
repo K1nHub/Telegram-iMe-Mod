@@ -2,7 +2,7 @@ package org.telegram.p043ui.Charts.view_data;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Charts.view_data.ChartHorizontalLinesData */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ChartHorizontalLinesData {
     public int alpha;
     public int fixedAlpha;

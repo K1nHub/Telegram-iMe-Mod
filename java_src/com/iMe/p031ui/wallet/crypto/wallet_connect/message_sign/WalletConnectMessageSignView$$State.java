@@ -9,7 +9,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletConnectMessageSignView$$State extends MvpViewState<WalletConnectMessageSignView> implements WalletConnectMessageSignView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -75,7 +75,7 @@ public class WalletConnectMessageSignView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectMessageSignView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<WalletConnectMessageSignView> {
         public final String from;
         public final String message;
@@ -96,7 +96,7 @@ public class WalletConnectMessageSignView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectMessageSignView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletConnectMessageSignView> {
         public final String text;
 
@@ -113,7 +113,7 @@ public class WalletConnectMessageSignView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectMessageSignView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletConnectMessageSignView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -134,7 +134,7 @@ public class WalletConnectMessageSignView$$State extends MvpViewState<WalletConn
 
     /* compiled from: WalletConnectMessageSignView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletConnectMessageSignView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

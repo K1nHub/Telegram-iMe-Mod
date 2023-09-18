@@ -6,7 +6,7 @@ import java.lang.annotation.Target;
 import moxy.viewstate.MvpViewState;
 @Inherited
 @Target({ElementType.TYPE})
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public @interface InjectViewState {
     Class<? extends MvpViewState> value() default DefaultViewState.class;
 

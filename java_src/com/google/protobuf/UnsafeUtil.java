@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UnsafeUtil {
     private static final long BUFFER_ADDRESS_OFFSET;
     static final boolean IS_BIG_ENDIAN;
@@ -276,7 +276,7 @@ public final class UnsafeUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class MemoryAccessor {
         Unsafe unsafe;
 
@@ -384,7 +384,7 @@ public final class UnsafeUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class JvmMemoryAccessor extends MemoryAccessor {
         JvmMemoryAccessor(Unsafe unsafe) {
             super(unsafe);
@@ -493,7 +493,7 @@ public final class UnsafeUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Android64MemoryAccessor extends MemoryAccessor {
         @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
         public boolean supportsUnsafeByteBufferOperations() {
@@ -569,7 +569,7 @@ public final class UnsafeUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Android32MemoryAccessor extends MemoryAccessor {
         @Override // com.google.protobuf.UnsafeUtil.MemoryAccessor
         public boolean supportsUnsafeByteBufferOperations() {

@@ -20,7 +20,7 @@ import okio.Okio;
 import okio.Sink;
 import okio.Source;
 /* compiled from: Exchange.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Exchange {
     private final RealCall call;
     private final ExchangeCodec codec;
@@ -197,7 +197,7 @@ public final class Exchange {
     }
 
     /* compiled from: Exchange.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private final class RequestBodySink extends ForwardingSink {
         private long bytesReceived;
         private boolean closed;
@@ -268,7 +268,7 @@ public final class Exchange {
     }
 
     /* compiled from: Exchange.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class ResponseBodySource extends ForwardingSource {
         private long bytesReceived;
         private boolean closed;

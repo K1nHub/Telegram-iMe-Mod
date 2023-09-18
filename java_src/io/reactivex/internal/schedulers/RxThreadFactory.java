@@ -2,7 +2,7 @@ package io.reactivex.internal.schedulers;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RxThreadFactory extends AtomicLong implements ThreadFactory {
     final boolean nonBlocking;
     final String prefix;
@@ -36,7 +36,7 @@ public final class RxThreadFactory extends AtomicLong implements ThreadFactory {
         return "RxThreadFactory[" + this.prefix + "]";
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class RxCustomThread extends Thread implements NonBlockingThread {
         RxCustomThread(Runnable runnable, String str) {
             super(runnable, str);

@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView> implements WalletDonationsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -118,7 +118,7 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
 
     /* compiled from: WalletDonationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State$OnDonationsAddressLoadedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnDonationsAddressLoadedCommand extends ViewCommand<WalletDonationsView> {
         public final String address;
 
@@ -135,7 +135,7 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
 
     /* compiled from: WalletDonationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State$OnDonationsTransactionsLoadedCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnDonationsTransactionsLoadedCommand extends ViewCommand<WalletDonationsView> {
         public final List<TransactionItem> transactions;
 
@@ -152,7 +152,7 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
 
     /* compiled from: WalletDonationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State$UpdateScreenAfterLoadCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateScreenAfterLoadCommand extends ViewCommand<WalletDonationsView> {
         UpdateScreenAfterLoadCommand(WalletDonationsView$$State walletDonationsView$$State) {
             super("updateScreenAfterLoad", AddToEndSingleStrategy.class);
@@ -166,7 +166,7 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
 
     /* compiled from: WalletDonationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State$ShowConfirmDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowConfirmDialogCommand extends ViewCommand<WalletDonationsView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -185,7 +185,7 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
 
     /* compiled from: WalletDonationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletDonationsView> {
         public final String text;
 
@@ -202,7 +202,7 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
 
     /* compiled from: WalletDonationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletDonationsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -223,7 +223,7 @@ public class WalletDonationsView$$State extends MvpViewState<WalletDonationsView
 
     /* compiled from: WalletDonationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.donations.WalletDonationsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletDonationsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

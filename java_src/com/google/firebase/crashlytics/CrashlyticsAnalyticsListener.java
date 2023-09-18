@@ -6,7 +6,7 @@ import com.google.firebase.analytics.connector.AnalyticsConnector;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.analytics.AnalyticsEventReceiver;
 import java.util.Locale;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class CrashlyticsAnalyticsListener implements AnalyticsConnector.AnalyticsConnectorListener {
     private AnalyticsEventReceiver breadcrumbEventReceiver;
     private AnalyticsEventReceiver crashlyticsOriginEventReceiver;

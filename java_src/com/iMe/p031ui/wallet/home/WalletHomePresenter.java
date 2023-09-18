@@ -18,7 +18,7 @@ import timber.log.Timber;
 /* compiled from: WalletHomePresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.WalletHomePresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletHomePresenter extends BasePresenter<WalletHomeView> {
     private final RxEventBus rxEventBus;
 
@@ -50,7 +50,7 @@ public final class WalletHomePresenter extends BasePresenter<WalletHomeView> {
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.wallet.home.WalletHomePresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -58,12 +58,12 @@ public final class WalletHomePresenter extends BasePresenter<WalletHomeView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1523invoke(rxEvent);
+                m1514invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1523invoke(RxEvent it) {
+            public final void m1514invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (rxEvent instanceof AppRxEvents.UpdateWalletScreen) {
@@ -99,13 +99,13 @@ public final class WalletHomePresenter extends BasePresenter<WalletHomeView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* compiled from: WalletHomePresenter.kt */
     /* renamed from: com.iMe.ui.wallet.home.WalletHomePresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

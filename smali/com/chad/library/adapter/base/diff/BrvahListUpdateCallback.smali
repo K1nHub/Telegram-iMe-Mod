@@ -107,7 +107,7 @@
     .line 13
     iget-object v0, p0, Lcom/chad/library/adapter/base/diff/BrvahListUpdateCallback;->mAdapter:Lcom/chad/library/adapter/base/BaseQuickAdapter;
 
-    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getMLoadMoreModule$TMessagesProj_HA_public()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
+    invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getMLoadMoreModule$TMessagesProj_release()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object v0
 

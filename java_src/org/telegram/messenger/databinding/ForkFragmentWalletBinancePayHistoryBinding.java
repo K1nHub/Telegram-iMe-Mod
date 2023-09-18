@@ -8,8 +8,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkFragmentWalletBinancePayHistoryBinding implements ViewBinding {
     public final GlobalStateLayout globalStateLayout;
     public final RecyclerView recycleHistory;
@@ -31,7 +31,7 @@ public final class ForkFragmentWalletBinancePayHistoryBinding implements ViewBin
     }
 
     public static ForkFragmentWalletBinancePayHistoryBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_wallet_binance_pay_history, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_binance_pay_history, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkFragmentWalletBinancePayHistoryBinding implements ViewBin
     }
 
     public static ForkFragmentWalletBinancePayHistoryBinding bind(View view) {
-        int i = C3558R.C3561id.global_state_layout;
+        int i = C3473R.C3476id.global_state_layout;
         GlobalStateLayout globalStateLayout = (GlobalStateLayout) ViewBindings.findChildViewById(view, i);
         if (globalStateLayout != null) {
-            i = C3558R.C3561id.recycle_history;
+            i = C3473R.C3476id.recycle_history;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
                 return new ForkFragmentWalletBinancePayHistoryBinding((SwipeRefreshLayout) view, globalStateLayout, recyclerView);

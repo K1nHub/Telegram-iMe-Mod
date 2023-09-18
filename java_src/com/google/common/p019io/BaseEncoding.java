@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.math.RoundingMode;
 import java.util.Arrays;
 /* renamed from: com.google.common.io.BaseEncoding */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseEncoding {
     private static final BaseEncoding BASE64 = new Base64Encoding("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", '=');
 
@@ -27,7 +27,7 @@ public abstract class BaseEncoding {
     }
 
     /* renamed from: com.google.common.io.BaseEncoding$DecodingException */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DecodingException extends IOException {
         DecodingException(String str) {
             super(str);
@@ -85,7 +85,7 @@ public abstract class BaseEncoding {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: com.google.common.io.BaseEncoding$Alphabet */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Alphabet {
         final int bitsPerChar;
         final int bytesPerChunk;
@@ -183,7 +183,7 @@ public abstract class BaseEncoding {
     }
 
     /* renamed from: com.google.common.io.BaseEncoding$StandardBaseEncoding */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class StandardBaseEncoding extends BaseEncoding {
         final Alphabet alphabet;
         final Character paddingChar;
@@ -339,7 +339,7 @@ public abstract class BaseEncoding {
     }
 
     /* renamed from: com.google.common.io.BaseEncoding$Base16Encoding */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Base16Encoding extends StandardBaseEncoding {
         final char[] encoding;
 
@@ -395,7 +395,7 @@ public abstract class BaseEncoding {
     }
 
     /* renamed from: com.google.common.io.BaseEncoding$Base64Encoding */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Base64Encoding extends StandardBaseEncoding {
         Base64Encoding(String str, String str2, Character ch) {
             this(new Alphabet(str, str2.toCharArray()), ch);

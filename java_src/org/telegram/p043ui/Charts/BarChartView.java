@@ -6,7 +6,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.p043ui.Charts.data.ChartData;
 import org.telegram.p043ui.Charts.view_data.BarViewData;
 /* renamed from: org.telegram.ui.Charts.BarChartView */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BarChartView extends BaseChartView<ChartData, BarViewData> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.p043ui.Charts.BaseChartView
@@ -54,7 +54,7 @@ public class BarChartView extends BaseChartView<ChartData, BarViewData> {
                     int length = fArr.length;
                     float f = 1.0f;
                     float f2 = fArr.length < 2 ? 1.0f : fArr[1] * this.pickerWidth;
-                    int[] iArr = barViewData.line.f1730y;
+                    int[] iArr = barViewData.line.f1721y;
                     float f3 = barViewData.alpha;
                     int i4 = 0;
                     int i5 = 0;

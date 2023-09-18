@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* compiled from: CreateWalletIntroView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CreateWalletIntroView extends BaseView {
     void openAddWalletScreen(Wallet wallet2, String str);
 

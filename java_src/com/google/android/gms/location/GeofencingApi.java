@@ -7,7 +7,7 @@ import com.google.android.gms.common.api.Status;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface GeofencingApi {
     PendingResult<Status> addGeofences(GoogleApiClient googleApiClient, GeofencingRequest geofencingRequest, PendingIntent pendingIntent);
 

@@ -9,7 +9,7 @@ import java.util.Set;
 import moxy.MvpView;
 import moxy.locators.StrategyLocator;
 import moxy.viewstate.strategy.StateStrategy;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ViewCommands<View extends MvpView> {
     private List<ViewCommand<View>> state = new ArrayList();
     private Map<Class<? extends StateStrategy>, StateStrategy> strategies = new HashMap();

@@ -9,7 +9,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SynchronizationContext implements Executor {
     private final Thread.UncaughtExceptionHandler uncaughtExceptionHandler;
     private final Queue<Runnable> queue = new ConcurrentLinkedQueue();
@@ -70,7 +70,7 @@ public final class SynchronizationContext implements Executor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class ManagedRunnable implements Runnable {
         boolean hasStarted;
         boolean isCancelled;
@@ -90,7 +90,7 @@ public final class SynchronizationContext implements Executor {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ScheduledHandle {
         private final ScheduledFuture<?> future;
         private final ManagedRunnable runnable;

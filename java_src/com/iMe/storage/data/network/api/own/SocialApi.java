@@ -7,7 +7,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: SocialApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface SocialApi {
     @POST("social/networks")
     Observable<ApiBaseResponse<SocialNetworksRaw>> getAllSocial(@Body SocialBodyRequest socialBodyRequest);

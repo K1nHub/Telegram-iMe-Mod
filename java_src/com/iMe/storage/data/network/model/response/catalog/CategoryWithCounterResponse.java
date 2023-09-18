@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.catalog;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoryWithCounterResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CategoryWithCounterResponse {
     private final CatalogCategoryResponse category;
     private final int total;

@@ -8,7 +8,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WriteBatch extends GeneratedMessageLite<WriteBatch, Builder> implements MessageLiteOrBuilder {
     public static final int BASE_WRITES_FIELD_NUMBER = 4;
     public static final int BATCH_ID_FIELD_NUMBER = 1;
@@ -57,7 +57,7 @@ public final class WriteBatch extends GeneratedMessageLite<WriteBatch, Builder> 
         return (WriteBatch) GeneratedMessageLite.parseFrom(DEFAULT_INSTANCE, bArr);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<WriteBatch, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10251 c10251) {
             this();
@@ -69,7 +69,7 @@ public final class WriteBatch extends GeneratedMessageLite<WriteBatch, Builder> 
     }
 
     /* renamed from: com.google.firebase.firestore.proto.WriteBatch$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10251 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

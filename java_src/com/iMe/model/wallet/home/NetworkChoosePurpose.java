@@ -4,14 +4,14 @@ import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkChoosePurpose.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class NetworkChoosePurpose {
     public /* synthetic */ NetworkChoosePurpose(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: NetworkChoosePurpose.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Common extends NetworkChoosePurpose {
         public static final Common INSTANCE = new Common();
 
@@ -24,7 +24,7 @@ public abstract class NetworkChoosePurpose {
     }
 
     /* compiled from: NetworkChoosePurpose.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Receive extends NetworkChoosePurpose {
         public static final Receive INSTANCE = new Receive();
 
@@ -34,7 +34,7 @@ public abstract class NetworkChoosePurpose {
     }
 
     /* compiled from: NetworkChoosePurpose.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NewWallet extends NetworkChoosePurpose {
         private final WalletCreationType walletCreationType;
 

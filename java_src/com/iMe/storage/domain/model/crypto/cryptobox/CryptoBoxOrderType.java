@@ -4,7 +4,7 @@ import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxOrderType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum CryptoBoxOrderType {
     BIGGEST(R$string.cryptoboxes_order_biggest),
     NEWEST(R$string.cryptoboxes_order_newest);
@@ -21,7 +21,7 @@ public enum CryptoBoxOrderType {
     }
 
     /* compiled from: CryptoBoxOrderType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

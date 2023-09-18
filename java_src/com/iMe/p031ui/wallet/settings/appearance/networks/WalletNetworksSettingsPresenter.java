@@ -35,7 +35,7 @@ import timber.log.Timber;
 /* compiled from: WalletNetworksSettingsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletNetworksSettingsPresenter extends BasePresenter<WalletNetworksSettingsView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final List<NetworkSettingsItem> networksItems;
@@ -259,12 +259,12 @@ public final class WalletNetworksSettingsPresenter extends BasePresenter<WalletN
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends NetworkSettingsItem> list) {
-                m1580invoke(list);
+                m1571invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1580invoke(List<? extends NetworkSettingsItem> it) {
+            public final void m1571invoke(List<? extends NetworkSettingsItem> it) {
                 List list;
                 List<NetworkSettingsItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -303,7 +303,7 @@ public final class WalletNetworksSettingsPresenter extends BasePresenter<WalletN
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

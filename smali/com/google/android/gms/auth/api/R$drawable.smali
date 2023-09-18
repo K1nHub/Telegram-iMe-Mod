@@ -52,33 +52,33 @@
 
 .field public static final common_google_signin_btn_text_light_normal_background:I = 0x7f08011e
 
-.field public static final googleg_disabled_color_18:I = 0x7f080301
+.field public static final googleg_disabled_color_18:I = 0x7f080302
 
-.field public static final googleg_standard_color_18:I = 0x7f080302
+.field public static final googleg_standard_color_18:I = 0x7f080303
 
-.field public static final notification_action_background:I = 0x7f0805f9
+.field public static final notification_action_background:I = 0x7f0805fa
 
-.field public static final notification_bg:I = 0x7f0805fa
+.field public static final notification_bg:I = 0x7f0805fb
 
-.field public static final notification_bg_low:I = 0x7f0805fb
+.field public static final notification_bg_low:I = 0x7f0805fc
 
-.field public static final notification_bg_low_normal:I = 0x7f0805fc
+.field public static final notification_bg_low_normal:I = 0x7f0805fd
 
-.field public static final notification_bg_low_pressed:I = 0x7f0805fd
+.field public static final notification_bg_low_pressed:I = 0x7f0805fe
 
-.field public static final notification_bg_normal:I = 0x7f0805fe
+.field public static final notification_bg_normal:I = 0x7f0805ff
 
-.field public static final notification_bg_normal_pressed:I = 0x7f0805ff
+.field public static final notification_bg_normal_pressed:I = 0x7f080600
 
-.field public static final notification_icon_background:I = 0x7f080600
+.field public static final notification_icon_background:I = 0x7f080601
 
-.field public static final notification_template_icon_bg:I = 0x7f080601
+.field public static final notification_template_icon_bg:I = 0x7f080602
 
-.field public static final notification_template_icon_low_bg:I = 0x7f080602
+.field public static final notification_template_icon_low_bg:I = 0x7f080603
 
-.field public static final notification_tile_bg:I = 0x7f080603
+.field public static final notification_tile_bg:I = 0x7f080604
 
-.field public static final notify_panel_notification_icon_bg:I = 0x7f080609
+.field public static final notify_panel_notification_icon_bg:I = 0x7f08060a
 
 
 # direct methods

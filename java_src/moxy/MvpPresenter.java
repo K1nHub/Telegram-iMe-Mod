@@ -7,7 +7,7 @@ import moxy.MvpView;
 import moxy.locators.ViewStateLocator;
 import moxy.viewstate.MvpViewState;
 @InjectViewState
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class MvpPresenter<View extends MvpView> {
     OnDestroyListener coroutineScope;
     private boolean isFirstLaunch = true;
@@ -102,7 +102,7 @@ public abstract class MvpPresenter<View extends MvpView> {
         this.presenterClass = cls;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class Binder {
         private Binder() {
         }

@@ -1,5 +1,5 @@
 package io.grpc.okhttp.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum CipherSuite {
     TLS_RSA_WITH_NULL_MD5("SSL_RSA_WITH_NULL_MD5", 1, 5246, 6, 10),
     TLS_RSA_WITH_NULL_SHA("SSL_RSA_WITH_NULL_SHA", 2, 5246, 6, 10),

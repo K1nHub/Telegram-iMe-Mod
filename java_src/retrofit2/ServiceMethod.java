@@ -2,7 +2,7 @@ package retrofit2;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 abstract class ServiceMethod<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract T invoke(Object[] objArr);

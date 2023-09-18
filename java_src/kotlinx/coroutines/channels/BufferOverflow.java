@@ -1,6 +1,6 @@
 package kotlinx.coroutines.channels;
 /* compiled from: BufferOverflow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum BufferOverflow {
     SUSPEND,
     DROP_OLDEST,

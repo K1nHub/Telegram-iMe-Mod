@@ -8,7 +8,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlinx.coroutines.internal.DispatchedContinuationKt;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 /* compiled from: Builders.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DispatchedCoroutine<T> extends ScopeCoroutine<T> {
     private static final /* synthetic */ AtomicIntegerFieldUpdater _decision$FU = AtomicIntegerFieldUpdater.newUpdater(DispatchedCoroutine.class, "_decision");
     private volatile /* synthetic */ int _decision;

@@ -35,10 +35,10 @@ import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class MvpFragment extends BaseFragment implements MvpDelegateHolder, KoinComponent, BaseView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(MvpFragment.class, "hintUtils", "getHintUtils()Lcom/iMe/utils/hints/HintUtils;", 0))};
-    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new Function0<MvpFragment$mvpBaseDelegate$2.C20521>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2
+    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new Function0<MvpFragment$mvpBaseDelegate$2.C20471>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -47,7 +47,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         /* JADX WARN: Can't rename method to resolve collision */
         /* JADX WARN: Type inference failed for: r0v0, types: [com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1] */
         @Override // kotlin.jvm.functions.Function0
-        public final C20521 invoke() {
+        public final C20471 invoke() {
             return new MvpBaseDelegate<MvpFragment>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2.1
                 private final Lazy context$delegate;
 
@@ -150,16 +150,6 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onViewCreated() {
         onViewReady();
-    }
-
-    @Override // org.telegram.p043ui.ActionBar.BaseFragment
-    public void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-    }
-
-    @Override // org.telegram.p043ui.ActionBar.BaseFragment
-    public void onBecomeFullyHidden() {
-        super.onBecomeFullyHidden();
     }
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment

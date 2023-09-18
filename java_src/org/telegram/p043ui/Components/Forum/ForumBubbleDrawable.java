@@ -15,11 +15,11 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Forum.ForumBubbleDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ForumBubbleDrawable extends Drawable {
     static final SparseArray<int[]> colorsMap;
     private static SvgHelper.SvgDrawable mainDrawable;
@@ -60,7 +60,7 @@ public class ForumBubbleDrawable extends Drawable {
 
     public ForumBubbleDrawable(int i) {
         if (mainDrawable == null) {
-            mainDrawable = SvgHelper.getDrawable(C3558R.raw.topic_bubble, -1);
+            mainDrawable = SvgHelper.getDrawable(C3473R.raw.topic_bubble, -1);
         }
         SvgHelper.SvgDrawable clone = mainDrawable.clone();
         this.svgDrawable = clone;

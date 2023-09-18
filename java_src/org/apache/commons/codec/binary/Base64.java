@@ -1,7 +1,7 @@
 package org.apache.commons.codec.binary;
 
 import org.apache.commons.codec.binary.BaseNCodec;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Base64 extends BaseNCodec {
     private final int decodeSize;
     private final byte[] decodeTable;

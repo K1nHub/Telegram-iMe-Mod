@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SafeContinuationJvm.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SafeContinuation<T> implements Continuation<T>, CoroutineStackFrame {
     @Deprecated
     private static final AtomicReferenceFieldUpdater<SafeContinuation<?>, Object> RESULT;
@@ -39,7 +39,7 @@ public final class SafeContinuation<T> implements Continuation<T>, CoroutineStac
     }
 
     /* compiled from: SafeContinuationJvm.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

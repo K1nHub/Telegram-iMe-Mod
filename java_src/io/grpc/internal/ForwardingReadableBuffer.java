@@ -2,7 +2,7 @@ package io.grpc.internal;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ForwardingReadableBuffer implements ReadableBuffer {
     private final ReadableBuffer buf;
 

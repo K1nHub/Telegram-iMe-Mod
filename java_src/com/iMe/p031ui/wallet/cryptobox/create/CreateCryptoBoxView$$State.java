@@ -18,7 +18,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.tgnet.TLRPC$Chat;
 /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView> implements CreateCryptoBoxView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -266,7 +266,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowNoEnoughMoneyErrorDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowNoEnoughMoneyErrorDialogCommand extends ViewCommand<CreateCryptoBoxView> {
         public final TokenBuyCoordinatorArgs args;
 
@@ -283,7 +283,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowCreationSuccessCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowCreationSuccessCommand extends ViewCommand<CreateCryptoBoxView> {
         ShowCreationSuccessCommand(CreateCryptoBoxView$$State createCryptoBoxView$$State) {
             super("showCreationSuccess", OneExecutionStateStrategy.class);
@@ -297,7 +297,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowActionErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowActionErrorCommand extends ViewCommand<CreateCryptoBoxView> {
         public final String message;
 
@@ -314,7 +314,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowConfirmDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowConfirmDialogCommand extends ViewCommand<CreateCryptoBoxView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -333,7 +333,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowCryptoBoxInfoDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowCryptoBoxInfoDialogCommand extends ViewCommand<CreateCryptoBoxView> {
         public final String descriptionText;
 
@@ -350,7 +350,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$OpenSelectTokenScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenSelectTokenScreenCommand extends ViewCommand<CreateCryptoBoxView> {
         public final String networkId;
 
@@ -367,7 +367,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$OpenSelectChatScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenSelectChatScreenCommand extends ViewCommand<CreateCryptoBoxView> {
         public final Long selectedChatId;
 
@@ -384,7 +384,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$OpenAddAdminScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenAddAdminScreenCommand extends ViewCommand<CreateCryptoBoxView> {
         public final TLRPC$Chat chat;
         public final long walletBotId;
@@ -403,7 +403,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$RenderCryptoBoxInfoCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderCryptoBoxInfoCommand extends ViewCommand<CreateCryptoBoxView> {
         public final boolean isInfoClickable;
         public final CryptoBoxCreationRulesItem item;
@@ -422,7 +422,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$RenderSelectedChatCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderSelectedChatCommand extends ViewCommand<CreateCryptoBoxView> {
         public final TLRPC$Chat chat;
 
@@ -439,7 +439,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$RenderSelectedTokenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderSelectedTokenCommand extends ViewCommand<CreateCryptoBoxView> {
         public final int decimals;
         public final String tokenBalanceText;
@@ -462,7 +462,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ResetSelectedTokenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ResetSelectedTokenCommand extends ViewCommand<CreateCryptoBoxView> {
         ResetSelectedTokenCommand(CreateCryptoBoxView$$State createCryptoBoxView$$State) {
             super("resetSelectedToken", AddToEndSingleStrategy.class);
@@ -476,7 +476,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$RenderTransactionActionBlockCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderTransactionActionBlockCommand extends ViewCommand<CreateCryptoBoxView> {
         public final FeeType feeType;
         public final TransactionStep transactionStep;
@@ -495,7 +495,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CreateCryptoBoxView> {
         public final String text;
 
@@ -512,7 +512,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CreateCryptoBoxView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -533,7 +533,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CreateCryptoBoxView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -552,7 +552,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$SetupNetworkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupNetworkCommand extends ViewCommand<CreateCryptoBoxView> {
         public final NetworkItem networkItem;
 
@@ -569,7 +569,7 @@ public class CreateCryptoBoxView$$State extends MvpViewState<CreateCryptoBoxView
 
     /* compiled from: CreateCryptoBoxView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<CreateCryptoBoxView> {
         public final List<? extends NetworkItem> availableNetworks;
         public final NetworkItem network;

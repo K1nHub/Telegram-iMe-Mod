@@ -12,7 +12,7 @@ import org.orbitmvi.orbit.syntax.ContainerContext;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RealContainer.kt */
 @DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2", m101f = "RealContainer.kt", m100l = {98}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     Object L$1;
@@ -155,15 +155,15 @@ public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda impl
     /* compiled from: RealContainer.kt */
     @DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1", m101f = "RealContainer.kt", m100l = {99}, m99m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1 */
-    /* loaded from: classes4.dex */
-    public static final class C34451 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    /* loaded from: classes6.dex */
+    public static final class C33611 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> $msg;
         int label;
         final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C34451(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, RealContainer<STATE, SIDE_EFFECT> realContainer, Continuation<? super C34451> continuation) {
+        C33611(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, RealContainer<STATE, SIDE_EFFECT> realContainer, Continuation<? super C33611> continuation) {
             super(2, continuation);
             this.$msg = function2;
             this.this$0 = realContainer;
@@ -171,12 +171,12 @@ public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda impl
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C34451(this.$msg, this.this$0, continuation);
+            return new C33611(this.$msg, this.this$0, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C34451) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C33611) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

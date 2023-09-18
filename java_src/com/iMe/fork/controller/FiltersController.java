@@ -57,7 +57,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: FiltersController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FiltersController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, FiltersController> accountInstances = new ConcurrentHashMap<>(5);
@@ -309,7 +309,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1468id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1459id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -491,7 +491,7 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m103to = TuplesKt.m103to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1468id).name(), TuplesKt.m103to(arrayList, arrayList2));
+            Pair m103to = TuplesKt.m103to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1459id).name(), TuplesKt.m103to(arrayList, arrayList2));
             linkedHashMap.put(m103to.getFirst(), m103to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
@@ -560,7 +560,7 @@ public final class FiltersController extends BaseController implements KoinCompo
     }
 
     /* compiled from: FiltersController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -609,7 +609,7 @@ public final class FiltersController extends BaseController implements KoinCompo
                     return Function.CC.$default$compose(this, function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) =\n   …ontroller(accountIndex) }");
             return (FiltersController) computeIfAbsent;
         }
     }

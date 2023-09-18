@@ -11,7 +11,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 /* compiled from: KoinViewModelFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class KoinViewModelFactory implements ViewModelProvider.Factory {
     private final KClass<? extends ViewModel> kClass;
     private final Function0<ParametersHolder> params;

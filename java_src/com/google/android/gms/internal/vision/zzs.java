@@ -9,7 +9,7 @@ import com.google.android.gms.vision.Frame;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @SafeParcelable.Class(creator = "FrameMetadataParcelCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzs> CREATOR = new zzv();
     @SafeParcelable.Field(m797id = 2)

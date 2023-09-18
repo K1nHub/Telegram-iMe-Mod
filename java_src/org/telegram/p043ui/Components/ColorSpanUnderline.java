@@ -3,7 +3,7 @@ package org.telegram.p043ui.Components;
 import android.text.TextPaint;
 import android.text.style.ForegroundColorSpan;
 /* renamed from: org.telegram.ui.Components.ColorSpanUnderline */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ColorSpanUnderline extends ForegroundColorSpan {
     public ColorSpanUnderline(int i) {
         super(i);

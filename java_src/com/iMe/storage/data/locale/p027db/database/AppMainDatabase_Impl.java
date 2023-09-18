@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 /* renamed from: com.iMe.storage.data.locale.db.database.AppMainDatabase_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppMainDatabase_Impl extends AppMainDatabase {
     private volatile DialogTranslationSettingsDao _dialogTranslationSettingsDao;
     private volatile FiltersDao _filtersDao;

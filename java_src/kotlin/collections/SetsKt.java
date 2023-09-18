@@ -1,7 +1,7 @@
 package kotlin.collections;
 
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SetsKt extends SetsKt___SetsKt {
     public static /* bridge */ /* synthetic */ <T> Set<T> emptySet() {
         return SetsKt__SetsKt.emptySet();

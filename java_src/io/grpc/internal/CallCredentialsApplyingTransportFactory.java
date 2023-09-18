@@ -12,7 +12,7 @@ import io.grpc.internal.ClientTransportFactory;
 import java.net.SocketAddress;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class CallCredentialsApplyingTransportFactory implements ClientTransportFactory {
     private final Executor appExecutor;
     private final ClientTransportFactory delegate;
@@ -38,7 +38,7 @@ final class CallCredentialsApplyingTransportFactory implements ClientTransportFa
         this.delegate.close();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private class CallCredentialsApplyingTransport extends ForwardingConnectionClientTransport {
         private final ConnectionClientTransport delegate;
 

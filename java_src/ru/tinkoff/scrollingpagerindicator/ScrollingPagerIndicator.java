@@ -10,7 +10,7 @@ import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ScrollingPagerIndicator extends View {
     private Runnable attachRunnable;
     private final ArgbEvaluator colorEvaluator;
@@ -34,7 +34,7 @@ public class ScrollingPagerIndicator extends View {
     private float visibleFramePosition;
     private float visibleFrameWidth;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface PagerAttacher<T> {
         void attachToPager(ScrollingPagerIndicator scrollingPagerIndicator, T t);
 

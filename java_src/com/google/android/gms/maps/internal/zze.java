@@ -8,7 +8,7 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.StreetViewPanoramaOptions;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zze extends com.google.android.gms.internal.maps.zza implements zzf {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zze(IBinder iBinder) {

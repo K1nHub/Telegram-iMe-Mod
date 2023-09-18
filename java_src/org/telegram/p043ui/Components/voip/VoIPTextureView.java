@@ -22,7 +22,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -32,7 +32,7 @@ import org.telegram.p043ui.Components.MotionBackgroundDrawable;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 /* renamed from: org.telegram.ui.Components.voip.VoIPTextureView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class VoIPTextureView extends FrameLayout {
     public static int SCALE_TYPE_ADAPTIVE = 2;
     public static int SCALE_TYPE_FILL = 0;
@@ -148,11 +148,11 @@ public class VoIPTextureView extends FrameLayout {
         ImageView imageView2 = new ImageView(getContext());
         this.screencastImage = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.screencastImage.setImageResource(C3558R.C3560drawable.screencast_big);
+        this.screencastImage.setImageResource(C3473R.C3475drawable.screencast_big);
         this.screencastView.addView(this.screencastImage, LayoutHelper.createFrame(82, 82, 17, 0, 0, 0, 60));
         TextView textView = new TextView(getContext());
         this.screencastText = textView;
-        textView.setText(LocaleController.getString("VoipVideoScreenSharing", C3558R.string.VoipVideoScreenSharing));
+        textView.setText(LocaleController.getString("VoipVideoScreenSharing", C3473R.string.VoipVideoScreenSharing));
         this.screencastText.setGravity(17);
         this.screencastText.setLineSpacing(AndroidUtilities.m72dp(2), 1.0f);
         this.screencastText.setTextColor(-1);

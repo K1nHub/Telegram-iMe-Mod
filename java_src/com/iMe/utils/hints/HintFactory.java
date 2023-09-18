@@ -10,7 +10,7 @@ import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.Components.HintView;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: HintFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HintFactory {
     private HintView hintView;
 

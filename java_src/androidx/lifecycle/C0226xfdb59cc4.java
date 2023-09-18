@@ -17,7 +17,7 @@ public final class C0226xfdb59cc4 implements LifecycleEventObserver {
 
     @Override // androidx.lifecycle.LifecycleEventObserver
     public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-        Object m1660constructorimpl;
+        Object m1658constructorimpl;
         Intrinsics.checkNotNullParameter(source, "source");
         Intrinsics.checkNotNullParameter(event, "event");
         if (event == Lifecycle.Event.Companion.upTo(this.$state)) {
@@ -26,17 +26,17 @@ public final class C0226xfdb59cc4 implements LifecycleEventObserver {
             Function0<Object> function0 = this.$block;
             try {
                 Result.Companion companion = Result.Companion;
-                m1660constructorimpl = Result.m1660constructorimpl(function0.invoke());
+                m1658constructorimpl = Result.m1658constructorimpl(function0.invoke());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1660constructorimpl = Result.m1660constructorimpl(ResultKt.createFailure(th));
+                m1658constructorimpl = Result.m1658constructorimpl(ResultKt.createFailure(th));
             }
-            cancellableContinuation.resumeWith(m1660constructorimpl);
+            cancellableContinuation.resumeWith(m1658constructorimpl);
         } else if (event == Lifecycle.Event.ON_DESTROY) {
             this.$this_suspendWithStateAtLeastUnchecked.removeObserver(this);
             CancellableContinuation<Object> cancellableContinuation2 = this.$co;
             Result.Companion companion3 = Result.Companion;
-            cancellableContinuation2.resumeWith(Result.m1660constructorimpl(ResultKt.createFailure(new LifecycleDestroyedException())));
+            cancellableContinuation2.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(new LifecycleDestroyedException())));
         }
     }
 }

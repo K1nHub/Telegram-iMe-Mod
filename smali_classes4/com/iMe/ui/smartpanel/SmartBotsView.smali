@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSmartBotsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartBotsView.kt\ncom/iMe/ui/smartpanel/SmartBotsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,311:1\n1855#2,2:312\n1864#2,3:314\n1864#2,3:317\n350#2,7:320\n1855#2,2:327\n1855#2,2:329\n*S KotlinDebug\n*F\n+ 1 SmartBotsView.kt\ncom/iMe/ui/smartpanel/SmartBotsView\n*L\n94#1:312,2\n136#1:314,3\n149#1:317,3\n161#1:320,7\n242#1:327,2\n248#1:329,2\n*E\n"
+    value = "SMAP\nSmartBotsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartBotsView.kt\ncom/iMe/ui/smartpanel/SmartBotsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,385:1\n1855#2,2:386\n1864#2,3:388\n1864#2,3:391\n350#2,7:394\n1855#2,2:401\n1855#2,2:403\n*S KotlinDebug\n*F\n+ 1 SmartBotsView.kt\ncom/iMe/ui/smartpanel/SmartBotsView\n*L\n104#1:386,2\n149#1:388,3\n162#1:391,3\n178#1:394,7\n303#1:401,2\n309#1:403,2\n*E\n"
 .end annotation
 
 
@@ -111,12 +111,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 37
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
+    .line 36
     iput p2, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentAccount:I
 
-    .line 39
+    .line 40
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object p1
@@ -131,43 +132,43 @@
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
-    .line 40
+    .line 41
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
-    .line 41
+    .line 42
     new-instance p1, Lcom/iMe/ui/smartpanel/mapper/SmartContentMapper;
 
     invoke-direct {p1}, Lcom/iMe/ui/smartpanel/mapper/SmartContentMapper;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->mapper:Lcom/iMe/ui/smartpanel/mapper/SmartContentMapper;
 
-    .line 42
+    .line 43
     new-instance p1, Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-direct {p1}, Lio/reactivex/disposables/CompositeDisposable;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->disposables:Lio/reactivex/disposables/CompositeDisposable;
 
-    .line 45
+    .line 46
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->contentViews:Ljava/util/List;
 
-    .line 46
+    .line 47
     sget-object p1, Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;->TEXT:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
-    .line 49
+    .line 50
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
-    .line 50
+    .line 51
     iget-object p2, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->viewpager:Landroidx/viewpager/widget/ViewPager;
 
     new-instance v0, Lcom/iMe/ui/smartpanel/SmartBotsView$1$1;
@@ -176,14 +177,14 @@
 
     invoke-virtual {p2, v0}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)V
 
-    .line 62
+    .line 67
     iget-object p2, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->tabs:Lcom/google/android/material/tabs/TabLayout;
 
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->viewpager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {p2, p1}, Lcom/google/android/material/tabs/TabLayout;->setupWithViewPager(Landroidx/viewpager/widget/ViewPager;)V
 
-    .line 63
+    .line 68
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->getRoot()Landroid/widget/LinearLayout;
@@ -192,7 +193,7 @@
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 277
+    .line 340
     new-instance p1, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;
 
     invoke-direct {p1, p0, p3, p4}, Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;-><init>(Lcom/iMe/ui/smartpanel/SmartBotsView;J)V
@@ -259,7 +260,7 @@
 .method private final firePageSelectedEvent()V
     .locals 2
 
-    .line 271
+    .line 334
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->viewpager:Landroidx/viewpager/widget/ViewPager;
@@ -276,14 +277,14 @@
 .method private static final firePageSelectedEvent$lambda$15(Lcom/iMe/ui/smartpanel/SmartBotsView;)V
     .locals 1
 
-    const-string/jumbo v0, "this$0"
+    const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 272
+    .line 335
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->updateBaseIcons()V
 
-    .line 273
+    .line 336
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->updateIndicator()V
 
     return-void
@@ -292,7 +293,7 @@
 .method private final moveToInitialPosition()V
     .locals 3
 
-    .line 267
+    .line 330
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->viewpager:Landroidx/viewpager/widget/ViewPager;
@@ -311,16 +312,16 @@
 
     const/4 v0, 0x0
 
-    .line 217
+    .line 246
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 218
+    .line 247
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 219
+    .line 248
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 220
+    .line 249
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     return-void
@@ -329,10 +330,10 @@
 .method private final setupLayoutBottom()V
     .locals 10
 
-    .line 224
+    .line 253
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
-    .line 225
+    .line 254
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->layoutBottom:Landroid/widget/FrameLayout;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
@@ -343,133 +344,151 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 226
+    .line 256
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
+    .line 257
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_bots_responses:I
 
+    .line 258
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiBottomPanelIcon:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
+    .line 259
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
+    .line 255
     invoke-static {v1, v3, v5, v7}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorVectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 227
+    .line 263
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     const/4 v5, 0x0
 
+    .line 261
     invoke-static {v1, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->setEmojiVectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 228
+    .line 268
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     const/4 v7, 0x1
 
+    .line 266
     invoke-static {v1, v3, v7}, Lorg/telegram/ui/ActionBar/Theme;->setEmojiVectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 229
+    .line 271
     iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageTextResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {v3, v1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 230
+    .line 273
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
+    .line 274
     sget v3, Lorg/telegram/messenger/R$drawable;->smiles_tab_gif:I
 
+    .line 275
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
+    .line 276
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
+    .line 272
     invoke-static {v1, v3, v8, v9}, Lorg/telegram/ui/ActionBar/Theme;->createEmojiIconSelectorDrawable(Landroid/content/Context;III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 231
+    .line 280
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
+    .line 278
     invoke-static {v1, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->setEmojiDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 232
+    .line 285
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
+    .line 283
     invoke-static {v1, v3, v7}, Lorg/telegram/ui/ActionBar/Theme;->setEmojiDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    .line 233
+    .line 288
     iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageGifResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {v3, v1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 234
+    .line 289
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageGifResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {v1, v7}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 235
+    .line 290
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageTextResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {v1, v7}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 236
+    .line 291
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageBots:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
+    .line 292
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackspace:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
+    .line 293
     sget-object v8, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
+    .line 291
     invoke-direct {v3, v6, v8}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 237
+    .line 295
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageSettings:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
+    .line 296
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
+    .line 297
     sget-object v6, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
+    .line 295
     invoke-direct {v3, v4, v6}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 238
+    .line 299
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageTextResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v3, Lcom/iMe/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda3;
@@ -478,7 +497,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 244
+    .line 305
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageGifResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v3, Lcom/iMe/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda2;
@@ -487,7 +506,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 250
+    .line 311
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageBots:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v3, Lcom/iMe/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda1;
@@ -496,7 +515,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 253
+    .line 314
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageSettings:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v3, Lcom/iMe/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda0;
@@ -505,9 +524,10 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 256
+    .line 317
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageGifResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
+    .line 318
     iget-object v3, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     sget-object v4, Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;->GIF:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
@@ -521,12 +541,14 @@
     :cond_0
     move v3, v5
 
+    .line 317
     :goto_0
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 257
+    .line 319
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageTextResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
+    .line 320
     iget-object v3, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     sget-object v4, Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;->TEXT:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
@@ -535,10 +557,11 @@
 
     move v5, v7
 
+    .line 319
     :cond_1
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 259
+    .line 322
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->tabs:Lcom/google/android/material/tabs/TabLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -547,7 +570,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/HorizontalScrollView;->setBackgroundColor(I)V
 
-    .line 260
+    .line 323
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -556,7 +579,7 @@
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 261
+    .line 324
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->divider1:Landroid/view/View;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
@@ -567,7 +590,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 262
+    .line 325
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->divider2:Landroid/view/View;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -586,30 +609,30 @@
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo p2, "this$0"
+    const-string p2, "this$0"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 245
+    .line 306
     iget-object p2, p0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageTextResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 246
+    .line 307
     iget-object p0, p0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageGifResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     const/4 p2, 0x1
 
     invoke-virtual {p0, p2}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 247
+    .line 308
     sget-object p0, Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;->GIF:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     iput-object p0, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
-    .line 248
+    .line 309
     iget-object p0, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->contentViews:Ljava/util/List;
 
     .line 1855
@@ -630,7 +653,7 @@
 
     check-cast p2, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;
 
-    .line 248
+    .line 309
     iget-object v0, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     invoke-virtual {p2, v0}, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;->setBotResponseType(Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;)V
@@ -644,11 +667,11 @@
 .method private static final setupLayoutBottom$lambda$14$lambda$12(Lcom/iMe/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 0
 
-    const-string/jumbo p1, "this$0"
+    const-string p1, "this$0"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 251
+    .line 312
     iget-object p0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->listener:Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;
 
     if-eqz p0, :cond_0
@@ -662,11 +685,11 @@
 .method private static final setupLayoutBottom$lambda$14$lambda$13(Lcom/iMe/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
     .locals 0
 
-    const-string/jumbo p1, "this$0"
+    const-string p1, "this$0"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 254
+    .line 315
     iget-object p0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->listener:Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;
 
     if-eqz p0, :cond_0
@@ -684,30 +707,30 @@
 
     invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo p2, "this$0"
+    const-string p2, "this$0"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 239
+    .line 300
     iget-object p2, p0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageTextResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     const/4 v0, 0x1
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 240
+    .line 301
     iget-object p0, p0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->imageGifResponses:Landroidx/appcompat/widget/AppCompatImageView;
 
     const/4 p2, 0x0
 
     invoke-virtual {p0, p2}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 241
+    .line 302
     sget-object p0, Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;->TEXT:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     iput-object p0, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
-    .line 242
+    .line 303
     iget-object p0, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->contentViews:Ljava/util/List;
 
     .line 1855
@@ -728,7 +751,7 @@
 
     check-cast p2, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;
 
-    .line 242
+    .line 303
     iget-object v0, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     invoke-virtual {p2, v0}, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;->setBotResponseType(Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;)V
@@ -742,7 +765,7 @@
 .method private final updateBaseIcons()V
     .locals 5
 
-    .line 161
+    .line 178
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
     .line 351
@@ -768,12 +791,12 @@
     .line 352
     check-cast v2, Lcom/iMe/ui/smartpanel/model/SmartBotTab;
 
-    .line 161
+    .line 178
     invoke-virtual {v2}, Lcom/iMe/ui/smartpanel/model/SmartBotTab;->getBotId()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v4, "recent"
+    const-string v4, "recent"
 
     invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -794,17 +817,17 @@
     :goto_1
     if-eq v1, v3, :cond_3
 
-    .line 164
+    .line 181
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
     const/4 v2, 0x1
 
-    .line 165
+    .line 182
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
 
-    .line 166
+    .line 183
     iget-object v2, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     iget-object v2, v2, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->viewpager:Landroidx/viewpager/widget/ViewPager;
@@ -815,30 +838,33 @@
 
     if-ne v2, v1, :cond_2
 
-    .line 167
+    .line 185
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
+    .line 186
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_bots_recent:I
 
+    .line 187
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
+    .line 184
     invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    const-string v3, "getThemedDrawable(contex\u2026_chats_actionBackground))"
+    const-string v3, "getThemedDrawable(\n     \u2026ground)\n                )"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v3, "#33cccccc"
 
-    .line 168
+    .line 189
     invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v3
@@ -847,29 +873,32 @@
 
     goto :goto_2
 
-    .line 170
+    .line 192
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
+    .line 193
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_bots_recent:I
 
     const-string v4, "#A8A8A8"
 
+    .line 194
     invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v4
 
+    .line 191
     invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    const-string v3, "getThemedDrawable(contex\u2026or.parseColor(\"#A8A8A8\"))"
+    const-string v3, "getThemedDrawable(\n     \u20268A8A8\")\n                )"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 172
+    .line 197
     :goto_2
     iget-object v3, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
@@ -897,10 +926,10 @@
 
     if-eqz v1, :cond_3
 
-    .line 173
+    .line 198
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 174
+    .line 199
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :cond_3
@@ -910,7 +939,7 @@
 .method private final updateIcons()V
     .locals 13
 
-    .line 136
+    .line 149
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
     .line 1865
@@ -942,7 +971,7 @@
     :cond_0
     check-cast v3, Lcom/iMe/ui/smartpanel/model/SmartBotTab;
 
-    .line 137
+    .line 150
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v5
@@ -955,7 +984,7 @@
 
     move-result-object v5
 
-    .line 138
+    .line 151
     sget v6, Lorg/telegram/messenger/R$id;->avatar:I
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -966,7 +995,7 @@
 
     check-cast v7, Landroid/widget/ImageView;
 
-    .line 140
+    .line 153
     invoke-virtual {v3}, Lcom/iMe/ui/smartpanel/model/SmartBotTab;->getIconRes()I
 
     move-result v6
@@ -981,7 +1010,7 @@
 
     goto :goto_2
 
-    .line 141
+    .line 154
     :cond_1
     invoke-virtual {v3}, Lcom/iMe/ui/smartpanel/model/SmartBotTab;->getIconUrl()Ljava/lang/String;
 
@@ -1023,13 +1052,13 @@
 
     goto :goto_2
 
-    .line 142
+    .line 155
     :cond_3
     sget v3, Lorg/telegram/messenger/R$drawable;->bot_avatar_any:I
 
     invoke-virtual {v7, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 144
+    .line 157
     :goto_2
     iget-object v3, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
@@ -1058,7 +1087,7 @@
 .method private final updateIndicator()V
     .locals 7
 
-    .line 149
+    .line 162
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
     .line 1865
@@ -1090,20 +1119,20 @@
     :cond_0
     check-cast v3, Lcom/iMe/ui/smartpanel/model/SmartBotTab;
 
-    .line 150
+    .line 163
     new-instance v5, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v5}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
-    .line 151
+    .line 164
     invoke-virtual {v5, v1}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
     const/4 v6, 0x1
 
-    .line 152
+    .line 165
     invoke-virtual {v5, v6}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
 
-    .line 153
+    .line 166
     iget-object v6, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     iget-object v6, v6, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->viewpager:Landroidx/viewpager/widget/ViewPager;
@@ -1118,7 +1147,7 @@
 
     move-result-object v3
 
-    const-string/jumbo v6, "recent"
+    const-string v6, "recent"
 
     invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1128,20 +1157,22 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    .line 154
+    .line 168
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v3
 
+    .line 169
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
+    .line 167
     invoke-virtual {v5, v3, v6}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
 
-    .line 156
+    .line 172
     :cond_1
     iget-object v3, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
@@ -1190,7 +1221,7 @@
 .method private final updateTabListeners()V
     .locals 6
 
-    .line 180
+    .line 205
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->tabs:Lcom/google/android/material/tabs/TabLayout;
@@ -1201,12 +1232,12 @@
 
     move-result-object v0
 
-    .line 181
+    .line 206
     instance-of v2, v0, Landroid/view/ViewGroup;
 
     if-eqz v2, :cond_0
 
-    .line 182
+    .line 207
     move-object v2, v0
 
     check-cast v2, Landroid/view/ViewGroup;
@@ -1218,7 +1249,7 @@
     :goto_0
     if-ge v1, v3, :cond_0
 
-    .line 184
+    .line 209
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
@@ -1240,18 +1271,18 @@
 .method private static final updateTabListeners$lambda$7(Landroid/view/View;Lcom/iMe/ui/smartpanel/SmartBotsView;Landroid/view/View;)Z
     .locals 4
 
-    const-string/jumbo v0, "this$0"
+    const-string v0, "this$0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 185
+    .line 210
     check-cast p0, Landroid/view/ViewGroup;
 
     invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
 
     move-result p0
 
-    .line 186
+    .line 211
     iget-object p2, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
     invoke-interface {p2, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1260,12 +1291,12 @@
 
     check-cast p0, Lcom/iMe/ui/smartpanel/model/SmartBotTab;
 
-    .line 187
+    .line 212
     invoke-virtual {p0}, Lcom/iMe/ui/smartpanel/model/SmartBotTab;->getBotId()Ljava/lang/String;
 
     move-result-object p2
 
-    const-string/jumbo v0, "recent"
+    const-string v0, "recent"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1277,32 +1308,35 @@
 
     if-nez p2, :cond_0
 
-    .line 188
+    .line 213
     iget p1, p1, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
 
-    .line 189
+    .line 215
     sget p2, Lorg/telegram/messenger/NotificationCenter;->botContextMenu:I
 
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/Object;
 
+    .line 216
     invoke-virtual {p0}, Lcom/iMe/ui/smartpanel/model/SmartBotTab;->getBotId()Ljava/lang/String;
 
     move-result-object v3
 
     aput-object v3, v2, v1
 
+    .line 217
     invoke-virtual {p0}, Lcom/iMe/ui/smartpanel/model/SmartBotTab;->getBotName()Ljava/lang/String;
 
     move-result-object p0
 
     aput-object p0, v2, v0
 
+    .line 214
     invoke-virtual {p1, p2, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     goto :goto_0
@@ -1319,12 +1353,12 @@
 
     const/high16 v0, 0x41600000    # 14.0f
 
-    .line 200
+    .line 229
     invoke-static {p0, v0}, Lcom/iMe/ui/smartpanel/extension/SmartPanelViewExtKt;->floatToDp(Lcom/iMe/ui/smartpanel/SmartBotsView;F)I
 
     move-result v0
 
-    .line 201
+    .line 230
     iget-object v1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
     iget-object v1, v1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->tabs:Lcom/google/android/material/tabs/TabLayout;
@@ -1335,12 +1369,12 @@
 
     move-result-object v1
 
-    .line 202
+    .line 231
     instance-of v3, v1, Landroid/view/ViewGroup;
 
     if-eqz v3, :cond_2
 
-    .line 203
+    .line 232
     check-cast v1, Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
@@ -1352,15 +1386,15 @@
     :goto_0
     if-ge v4, v3, :cond_1
 
-    .line 205
+    .line 234
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 206
+    .line 235
     invoke-virtual {v5, v2}, Landroid/view/View;->setMinimumWidth(I)V
 
-    .line 207
+    .line 236
     invoke-virtual {v5}, Landroid/view/View;->getPaddingTop()I
 
     move-result v6
@@ -1371,7 +1405,7 @@
 
     invoke-virtual {v5, v0, v6, v0, v7}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 208
+    .line 237
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
@@ -1380,12 +1414,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 209
+    .line 238
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
-    const-string/jumbo v6, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams"
+    const-string v6, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams"
 
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1398,7 +1432,7 @@
 
     goto :goto_0
 
-    .line 212
+    .line 241
     :cond_1
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
@@ -1424,10 +1458,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 127
+    .line 140
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 128
+    .line 141
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->disposables:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-virtual {v0}, Lio/reactivex/disposables/CompositeDisposable;->clear()V
@@ -1442,7 +1476,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 135
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -1453,7 +1487,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 123
+    .line 136
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1465,7 +1499,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 117
+    .line 127
     iget p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->panelHeight:I
 
     if-eqz p1, :cond_0
@@ -1479,7 +1513,7 @@
 
     iget p1, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 118
+    .line 129
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1493,10 +1527,12 @@
 
     move-result p2
 
+    .line 130
     invoke-static {p1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
+    .line 128
     invoke-super {p0, p2, p1}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -1513,16 +1549,18 @@
         }
     .end annotation
 
-    .line 79
+    .line 84
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 80
+    .line 85
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
+    .line 86
     iget-object v1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->mapper:Lcom/iMe/ui/smartpanel/mapper/SmartContentMapper;
 
+    .line 88
     sget-object v2, Lcom/iMe/fork/controller/NeuroBotsController;->Companion:Lcom/iMe/fork/controller/NeuroBotsController$Companion;
 
     iget v3, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentAccount:I
@@ -1535,16 +1573,18 @@
 
     move-result v2
 
+    .line 86
     invoke-virtual {v1, p1, v2}, Lcom/iMe/ui/smartpanel/mapper/SmartContentMapper;->mapToTabs(Ljava/util/List;Z)Ljava/util/List;
 
     move-result-object p1
 
+    .line 85
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 82
+    .line 92
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->binding:Lorg/telegram/messenger/databinding/ForkPanelViewBinding;
 
-    .line 83
+    .line 93
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->content:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1557,30 +1597,30 @@
 
     if-eqz v0, :cond_0
 
-    .line 84
+    .line 94
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->textEmptyBots:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 85
+    .line 95
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->appbar:Lcom/google/android/material/appbar/AppBarLayout;
 
     invoke-virtual {v0, v2}, Lcom/google/android/material/appbar/AppBarLayout;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 87
+    .line 97
     :cond_0
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->textEmptyBots:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 88
+    .line 98
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->appbar:Lcom/google/android/material/appbar/AppBarLayout;
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/appbar/AppBarLayout;->setVisibility(I)V
 
-    .line 90
+    .line 100
     :goto_0
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->viewpager:Landroidx/viewpager/widget/ViewPager;
 
@@ -1590,12 +1630,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 93
+    .line 103
     sget-object p1, Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;->TEXT:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
-    .line 94
+    .line 104
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->contentViews:Ljava/util/List;
 
     .line 1855
@@ -1616,38 +1656,38 @@
 
     check-cast p2, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;
 
-    .line 94
+    .line 104
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->currentBotResponseType:Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;
 
     invoke-virtual {p2, v0}, Lcom/iMe/ui/smartpanel/view/SmartBotContentView;->setBotResponseType(Lcom/iMe/ui/smartpanel/view/SmartBotContentView$BotResponseType;)V
 
     goto :goto_1
 
-    .line 96
+    .line 106
     :cond_1
     iget-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->pagerAdapter:Lcom/iMe/ui/smartpanel/SmartBotsView$pagerAdapter$1;
 
     invoke-virtual {p1}, Landroidx/viewpager/widget/PagerAdapter;->notifyDataSetChanged()V
 
-    .line 98
+    .line 108
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->setupLayoutBottom()V
 
-    .line 99
+    .line 109
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->updateIcons()V
 
-    .line 100
+    .line 110
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->updateIndicator()V
 
-    .line 101
+    .line 111
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->updateTabListeners()V
 
-    .line 102
+    .line 112
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->wrapTabIndicatorToTitle()V
 
-    .line 103
+    .line 113
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->moveToInitialPosition()V
 
-    .line 104
+    .line 114
     invoke-direct {p0}, Lcom/iMe/ui/smartpanel/SmartBotsView;->firePageSelectedEvent()V
 
     return-void
@@ -1656,10 +1696,10 @@
 .method public final setHeight(I)V
     .locals 1
 
-    .line 70
+    .line 75
     iput p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->panelHeight:I
 
-    .line 71
+    .line 76
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -1676,7 +1716,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 75
+    .line 80
     iput-object p1, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->listener:Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;
 
     return-void
@@ -1685,10 +1725,10 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 112
+    .line 122
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 113
+    .line 123
     iget-object v0, p0, Lcom/iMe/ui/smartpanel/SmartBotsView;->listener:Lcom/iMe/ui/smartpanel/SmartBotsView$Listener;
 
     if-eqz v0, :cond_0

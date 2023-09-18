@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SimplexInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SimplexInteractor {
     private final SchedulersProvider schedulersProvider;
     private final SimplexRepository simplexRepository;
@@ -106,7 +106,7 @@ public final class SimplexInteractor {
     }
 
     /* compiled from: SimplexInteractor.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

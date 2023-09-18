@@ -1,5 +1,5 @@
 package org.telegram.messenger.support;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SparseLongArray implements Cloneable {
     private int[] mKeys;
     private int mSize;

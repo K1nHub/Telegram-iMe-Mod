@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: EmojiViewView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.kikliko.EmojiViewView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface EmojiViewView extends MvpView {
     void onKiklikoSearchResultsLoaded(String str, String str2, boolean z, SearchResponse searchResponse);
 

@@ -24,7 +24,7 @@ import org.telegram.p043ui.Components.LinkSpanDrawable;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$TL_messages_stickerSet;
 /* renamed from: org.telegram.ui.Components.StickerEmptyView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StickerEmptyView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private boolean animateLayoutChange;
     int colorKey1;

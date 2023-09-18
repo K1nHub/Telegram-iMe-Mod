@@ -22,7 +22,7 @@ import java.util.List;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: TwitterApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TwitterApi {
     @POST("twitter/oauth/acceptConnection")
     Observable<ApiBaseResponse<Object>> acceptConnection(@Body ChangeTwitterConnectionStatusRequest changeTwitterConnectionStatusRequest);

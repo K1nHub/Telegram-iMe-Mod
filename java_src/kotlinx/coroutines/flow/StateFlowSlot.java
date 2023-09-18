@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.internal.AbstractSharedFlowKt;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>> {
     static final /* synthetic */ AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowSlot.class, Object.class, "_state");
     volatile /* synthetic */ Object _state = null;
@@ -58,7 +58,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                     }
                 }
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
             }
             Object result = cancellableContinuationImpl.getResult();
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -83,7 +83,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                 }
             } else if (_state$FU.compareAndSet(this, obj, StateFlowKt.access$getNONE$p())) {
                 Result.Companion companion = Result.Companion;
-                ((CancellableContinuationImpl) obj).resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                ((CancellableContinuationImpl) obj).resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
                 return;
             }
         }

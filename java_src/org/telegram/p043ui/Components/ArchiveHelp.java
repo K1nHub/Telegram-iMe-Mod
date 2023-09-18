@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -22,7 +22,7 @@ import org.telegram.p043ui.Components.LinkSpanDrawable;
 import org.telegram.p043ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.tgnet.TLRPC$TL_globalPrivacySettings;
 /* renamed from: org.telegram.ui.Components.ArchiveHelp */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ArchiveHelp extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private int currentAccount;
     private Runnable linkCallback;
@@ -38,7 +38,7 @@ public class ArchiveHelp extends FrameLayout implements NotificationCenter.Notif
         addView(linearLayout, LayoutHelper.createFrame(-1, -2, 17));
         ImageView imageView = new ImageView(context);
         imageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m72dp(80), Theme.getColor(Theme.key_avatar_backgroundSaved, resourcesProvider)));
-        imageView.setImageResource(C3558R.C3560drawable.large_archive);
+        imageView.setImageResource(C3473R.C3475drawable.large_archive);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         linearLayout.addView(imageView, LayoutHelper.createLinear(80, 80, 49, 0, runnable2 != null ? 14 : 0, 0, 14));
         TextView textView = new TextView(context);
@@ -46,7 +46,7 @@ public class ArchiveHelp extends FrameLayout implements NotificationCenter.Notif
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(1);
-        textView.setText(LocaleController.getString("ArchiveHintHeader1", C3558R.string.ArchiveHintHeader1));
+        textView.setText(LocaleController.getString("ArchiveHintHeader1", C3473R.string.ArchiveHintHeader1));
         linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, 1, 32, 0, 32, 9));
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
         this.subtitleTextView = linksTextView;
@@ -55,9 +55,9 @@ public class ArchiveHelp extends FrameLayout implements NotificationCenter.Notif
         this.subtitleTextView.setGravity(1);
         updateText();
         linearLayout.addView(this.subtitleTextView, LayoutHelper.createLinear(-1, -2, 1, 32, 0, 32, 25));
-        linearLayout.addView(makeHint(C3558R.C3560drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), resourcesProvider), LayoutHelper.createLinear(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(makeHint(C3558R.C3560drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), resourcesProvider), LayoutHelper.createLinear(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(makeHint(C3558R.C3560drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), resourcesProvider), LayoutHelper.createLinear(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(makeHint(C3473R.C3475drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), resourcesProvider), LayoutHelper.createLinear(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(makeHint(C3473R.C3475drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), resourcesProvider), LayoutHelper.createLinear(-1, -2, 7, 32, 0, 32, 16));
+        linearLayout.addView(makeHint(C3473R.C3475drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), resourcesProvider), LayoutHelper.createLinear(-1, -2, 7, 32, 0, 32, 16));
         if (runnable2 != null) {
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
             buttonWithCounterView.setText(LocaleController.getString("GotIt"), false);
@@ -82,7 +82,7 @@ public class ArchiveHelp extends FrameLayout implements NotificationCenter.Notif
         int i = Theme.key_chat_messageLinkIn;
         SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i, 0, this.linkCallback);
         SpannableString spannableString = new SpannableString(">");
-        Drawable mutate = getContext().getResources().getDrawable(C3558R.C3560drawable.msg_arrowright).mutate();
+        Drawable mutate = getContext().getResources().getDrawable(C3473R.C3475drawable.msg_arrowright).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
         ColoredImageSpan coloredImageSpan = new ColoredImageSpan(mutate);
         coloredImageSpan.setColorKey(i);

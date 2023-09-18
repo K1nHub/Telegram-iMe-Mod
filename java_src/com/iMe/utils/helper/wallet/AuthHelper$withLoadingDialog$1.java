@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthHelper.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AuthHelper$withLoadingDialog$1 extends Lambda implements Function1<Disposable, Unit> {
     public static final AuthHelper$withLoadingDialog$1 INSTANCE = new AuthHelper$withLoadingDialog$1();
 

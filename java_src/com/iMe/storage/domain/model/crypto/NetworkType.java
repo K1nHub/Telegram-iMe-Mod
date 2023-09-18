@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 /* compiled from: NetworkType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NetworkType {
     public static final String BSC = "BINANCE_SMART_CHAIN";
     public static final String BTC = "BITCOIN";

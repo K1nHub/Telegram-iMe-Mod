@@ -6,13 +6,13 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.vision.label.ImageLabeler$$ExternalSyntheticThrowNSME0;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface INativeImageLabeler extends IInterface {
     zze[] zza(IObjectWrapper iObjectWrapper, LabelOptions labelOptions) throws RemoteException;
 
     void zzs() throws RemoteException;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class zza extends com.google.android.gms.internal.vision.zzb implements INativeImageLabeler {
         public zza() {
             super("com.google.android.gms.vision.label.internal.client.INativeImageLabeler");

@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: SocialWebScreen.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class SocialWebScreen$showImageMenu$menuItems$1 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SocialWebScreen$showImageMenu$menuItems$1(Object obj) {

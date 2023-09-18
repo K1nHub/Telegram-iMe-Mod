@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.core;
 
 import com.google.firebase.firestore.ListenerRegistration;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ListenerRegistrationImpl implements ListenerRegistration {
     private final AsyncEventListener<ViewSnapshot> asyncEventListener;
     private final FirestoreClient client;

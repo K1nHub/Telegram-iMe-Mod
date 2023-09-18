@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_allStickers extends TLRPC$messages_AllStickers {
     public static int constructor = -843329861;
     public long hash2;

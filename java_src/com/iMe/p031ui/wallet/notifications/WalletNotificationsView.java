@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: WalletNotificationsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletNotificationsView extends BaseView, GlobalStateView, LoadMoreView<NotificationItem>, SwipeRefreshView {
     void onLoadedNotifications(List<NotificationItem> list);
 

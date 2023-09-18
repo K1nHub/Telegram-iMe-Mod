@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -17,7 +17,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Switch;
 import org.telegram.p043ui.PremiumPreviewFragment;
 /* renamed from: org.telegram.ui.PremiumFeatureCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PremiumFeatureCell extends FrameLayout {
     private Switch checkBox;
     public PremiumPreviewFragment.PremiumFeatureData data;
@@ -68,7 +68,7 @@ public class PremiumFeatureCell extends FrameLayout {
         addView(this.imageView, LayoutHelper.createFrame(28, 28, 0, 18, 12, 0, 0));
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView2.setImageResource(C3558R.C3560drawable.msg_arrowright);
+        imageView2.setImageResource(C3473R.C3475drawable.msg_arrowright);
         int i = Theme.key_switchTrack;
         imageView2.setColorFilter(Theme.getColor(i));
         addView(imageView2, LayoutHelper.createFrame(24, 24, 21, 0, 0, 18, 0));

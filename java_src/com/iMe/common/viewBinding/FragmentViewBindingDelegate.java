@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KProperty;
 /* compiled from: FragmentViewBindingDelegate.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FragmentViewBindingDelegate<T extends ViewBinding> {
     private final Method bindMethod;
     private T binding;

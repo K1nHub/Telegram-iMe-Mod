@@ -2,7 +2,7 @@ package com.iMe.bots.domain.model;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SmartTag.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SmartTag {
     private final boolean hidden;
 

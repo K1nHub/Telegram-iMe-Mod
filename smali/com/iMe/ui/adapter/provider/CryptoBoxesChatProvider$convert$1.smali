@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 26
+    .line 29
     check-cast p1, Lcom/iMe/ui/custom/TitledInputFieldView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoBoxesChatProvider$convert$1;->invoke(Lcom/iMe/ui/custom/TitledInputFieldView;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 30
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -75,7 +75,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 28
+    .line 31
     sget v0, Lorg/telegram/messenger/R$string;->AccDescrChannel:I
 
     const-string v1, "AccDescrChannel"
@@ -90,7 +90,7 @@
 
     invoke-virtual {p1, v0}, Lcom/iMe/ui/custom/TitledInputFieldView;->setTitle(Ljava/lang/String;)V
 
-    .line 29
+    .line 32
     invoke-virtual {p1}, Lcom/iMe/ui/custom/TitledInputFieldView;->getInputView()Lorg/telegram/ui/Components/LinkActionView;
 
     move-result-object v0
@@ -99,27 +99,27 @@
 
     const/4 v2, 0x1
 
-    .line 30
+    .line 33
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/LinkActionView;->hideAllActionButtons(Z)V
 
     const/4 v2, 0x0
 
-    .line 31
+    .line 34
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/LinkActionView;->setMode(Z)V
 
-    .line 32
+    .line 35
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_channel:I
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/LinkActionView;->setOptionsViewIcon(I)V
 
-    .line 33
+    .line 36
     invoke-virtual {v1}, Lcom/iMe/model/cryptobox/CryptoBoxesChatItem;->getChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/LinkActionView;->setAvatar(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 34
+    .line 37
     invoke-virtual {v1}, Lcom/iMe/model/cryptobox/CryptoBoxesChatItem;->getChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v1
@@ -128,10 +128,10 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LinkActionView;->setText(Ljava/lang/String;)V
 
-    .line 35
+    .line 38
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/LinkActionView;->setFieldEnabled(Z)V
 
-    .line 37
+    .line 40
     invoke-virtual {p1}, Lcom/iMe/ui/custom/TitledInputFieldView;->setupColors()V
 
     return-void

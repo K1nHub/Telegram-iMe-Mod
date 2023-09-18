@@ -10,7 +10,7 @@ import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
 /* renamed from: com.google.firestore.v1.Value */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Value extends GeneratedMessageLite<Value, Builder> implements MessageLiteOrBuilder {
     public static final int ARRAY_VALUE_FIELD_NUMBER = 9;
     public static final int BOOLEAN_VALUE_FIELD_NUMBER = 1;
@@ -32,7 +32,7 @@ public final class Value extends GeneratedMessageLite<Value, Builder> implements
     }
 
     /* renamed from: com.google.firestore.v1.Value$ValueTypeCase */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ValueTypeCase {
         NULL_VALUE(11),
         BOOLEAN_VALUE(1),
@@ -221,7 +221,7 @@ public final class Value extends GeneratedMessageLite<Value, Builder> implements
     }
 
     /* renamed from: com.google.firestore.v1.Value$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Value, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10771 c10771) {
             this();
@@ -281,7 +281,7 @@ public final class Value extends GeneratedMessageLite<Value, Builder> implements
     }
 
     /* renamed from: com.google.firestore.v1.Value$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10771 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

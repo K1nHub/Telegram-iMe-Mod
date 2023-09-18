@@ -1,7 +1,7 @@
 package org.telegram.messenger.support.customtabs;
 
 import android.os.Bundle;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CustomTabsCallback {
     public void extraCallback(String str, Bundle bundle) {
     }

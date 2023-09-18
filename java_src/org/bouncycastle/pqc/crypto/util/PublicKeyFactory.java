@@ -26,11 +26,11 @@ import org.bouncycastle.pqc.crypto.xmss.XMSSParameters;
 import org.bouncycastle.pqc.crypto.xmss.XMSSPublicKeyParameters;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PublicKeyFactory {
     private static Map converters;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class LMSConverter extends SubjectPublicKeyInfoConverter {
         private LMSConverter() {
             super();
@@ -49,7 +49,7 @@ public class PublicKeyFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class NHConverter extends SubjectPublicKeyInfoConverter {
         private NHConverter() {
             super();
@@ -61,7 +61,7 @@ public class PublicKeyFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class QTeslaConverter extends SubjectPublicKeyInfoConverter {
         private QTeslaConverter() {
             super();
@@ -73,7 +73,7 @@ public class PublicKeyFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class SPHINCSConverter extends SubjectPublicKeyInfoConverter {
         private SPHINCSConverter() {
             super();
@@ -86,7 +86,7 @@ public class PublicKeyFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static abstract class SubjectPublicKeyInfoConverter {
         private SubjectPublicKeyInfoConverter() {
         }
@@ -94,7 +94,7 @@ public class PublicKeyFactory {
         abstract AsymmetricKeyParameter getPublicKeyParameters(SubjectPublicKeyInfo subjectPublicKeyInfo, Object obj) throws IOException;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class XMSSConverter extends SubjectPublicKeyInfoConverter {
         private XMSSConverter() {
             super();
@@ -116,7 +116,7 @@ public class PublicKeyFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class XMSSMTConverter extends SubjectPublicKeyInfoConverter {
         private XMSSMTConverter() {
             super();

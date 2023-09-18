@@ -8,7 +8,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import io.grpc.internal.ClientStreamListener;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class FailingClientTransport implements ClientTransport {
     final Status error;
     private final ClientStreamListener.RpcProgress rpcProgress;

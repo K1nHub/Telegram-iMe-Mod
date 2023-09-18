@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.Preconditions;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BitmapDescriptorFactory {
     public static final float HUE_AZURE = 210.0f;
     public static final float HUE_BLUE = 240.0f;

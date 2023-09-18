@@ -5,7 +5,7 @@ import com.google.firebase.heartbeatinfo.HeartBeatInfo;
 import com.google.firebase.inject.Provider;
 import com.google.firebase.platforminfo.UserAgentPublisher;
 import io.grpc.Metadata;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseClientGrpcMetadataProvider implements GrpcMetadataProvider {
     private static final Metadata.Key<String> GMP_APP_ID_HEADER;
     private static final Metadata.Key<String> HEART_BEAT_HEADER;

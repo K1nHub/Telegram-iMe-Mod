@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.twitter;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterAccountData.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterAccountData {
     private final String accessToken;
     private final String refreshToken;

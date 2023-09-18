@@ -34,7 +34,7 @@ import org.telegram.p043ui.Components.VectorAvatarThumbDrawable;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ImageReceiver implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_CROSSFADE_DURATION = 150;
     private static final int TYPE_CROSSFDADE = 2;
@@ -162,11 +162,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private static PorterDuffColorFilter selectedGroupColorFilter = new PorterDuffColorFilter(-4473925, PorterDuff.Mode.MULTIPLY);
     private static final float[] radii = new float[8];
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface ImageReceiverDelegate {
 
         /* renamed from: org.telegram.messenger.ImageReceiver$ImageReceiverDelegate$-CC  reason: invalid class name */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public final /* synthetic */ class CC {
             public static void $default$onAnimationReady(ImageReceiverDelegate imageReceiverDelegate, ImageReceiver imageReceiver) {
             }
@@ -222,7 +222,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         setStaticDrawable(new BitmapDrawable(bitmap));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class BitmapHolder {
         public Bitmap bitmap;
         public Drawable drawable;
@@ -309,7 +309,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class SetImageBackup {
         public int cacheType;
         public String ext;
@@ -547,8 +547,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (tLRPC$Document == null) {
                     tLRPC$Document = ((MessageObject) obj).getDocument();
                 }
-                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1539id != 0) {
-                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1539id;
+                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1530id != 0) {
+                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1530id;
                     this.currentKeyQuality = true;
                 }
             }
@@ -2472,7 +2472,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         return backgroundThreadDrawHolder;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class BackgroundThreadDrawHolder {
         private AnimatedFileDrawable animation;
         public boolean animationNotReady;
@@ -2555,7 +2555,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class ReactionLastFrame extends BitmapDrawable {
         public static final float LAST_FRAME_SCALE = 1.2f;
 

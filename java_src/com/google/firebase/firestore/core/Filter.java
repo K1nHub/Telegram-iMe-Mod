@@ -1,13 +1,13 @@
 package com.google.firebase.firestore.core;
 
 import com.google.firebase.firestore.model.Document;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class Filter {
     public abstract String getCanonicalId();
 
     public abstract boolean matches(Document document);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Operator {
         LESS_THAN("<"),
         LESS_THAN_OR_EQUAL("<="),

@@ -1,5 +1,5 @@
 package kotlin.collections;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ArraysKt extends ArraysKt___ArraysKt {
     public static /* bridge */ /* synthetic */ <T> T firstOrNull(T[] tArr) {
         return (T) ArraysKt___ArraysKt.firstOrNull(tArr);

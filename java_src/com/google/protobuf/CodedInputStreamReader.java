@@ -4,7 +4,7 @@ import com.google.protobuf.WireFormat;
 import java.io.IOException;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CodedInputStreamReader implements Reader {
     private int endGroupTag;
     private final CodedInputStream input;
@@ -1093,7 +1093,7 @@ public final class CodedInputStreamReader implements Reader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.CodedInputStreamReader$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C11961 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 

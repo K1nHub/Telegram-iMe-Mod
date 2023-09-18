@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 /* compiled from: Job.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class NonDisposableHandle implements DisposableHandle, ChildHandle {
     public static final NonDisposableHandle INSTANCE = new NonDisposableHandle();
 

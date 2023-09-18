@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: SwipeRefreshView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.base.mvp.SwipeRefreshView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface SwipeRefreshView extends BaseView {
     void showRefreshing(boolean z);
 }

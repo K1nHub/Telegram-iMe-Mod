@@ -9,7 +9,7 @@ import com.google.android.gms.wearable.ConnectionConfiguration;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "GetConfigsResponseCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzef extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzef> CREATOR = new zzeg();
     @SafeParcelable.Field(m797id = 2)

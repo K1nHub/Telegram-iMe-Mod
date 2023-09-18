@@ -8,12 +8,12 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 /* renamed from: org.telegram.ui.Components.GestureDetectorFixDoubleTap */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GestureDetectorFixDoubleTap {
     private final GestureDetectorCompatImpl mImpl;
 
     /* renamed from: org.telegram.ui.Components.GestureDetectorFixDoubleTap$GestureDetectorCompatImpl */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     interface GestureDetectorCompatImpl {
         boolean onTouchEvent(MotionEvent motionEvent);
 
@@ -23,7 +23,7 @@ public class GestureDetectorFixDoubleTap {
     }
 
     /* renamed from: org.telegram.ui.Components.GestureDetectorFixDoubleTap$OnGestureListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class OnGestureListener extends GestureDetector.SimpleOnGestureListener {
         public boolean hasDoubleTap(MotionEvent motionEvent) {
             throw null;
@@ -31,7 +31,7 @@ public class GestureDetectorFixDoubleTap {
     }
 
     /* renamed from: org.telegram.ui.Components.GestureDetectorFixDoubleTap$GestureDetectorCompatImplBase */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static class GestureDetectorCompatImplBase implements GestureDetectorCompatImpl {
         private static final int TAP_TIMEOUT = ViewConfiguration.getTapTimeout();
         private boolean mAlwaysInBiggerTapRegion;
@@ -58,7 +58,7 @@ public class GestureDetectorFixDoubleTap {
         private VelocityTracker mVelocityTracker;
 
         /* renamed from: org.telegram.ui.Components.GestureDetectorFixDoubleTap$GestureDetectorCompatImplBase$GestureHandler */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         private class GestureHandler extends Handler {
             GestureHandler() {
             }

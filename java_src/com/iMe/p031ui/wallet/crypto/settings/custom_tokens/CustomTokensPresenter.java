@@ -39,7 +39,7 @@ import timber.log.Timber;
 /* compiled from: CustomTokensPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CustomTokensPresenter extends BasePresenter<CustomTokensView> {
     private final String cursor;
     private final List<BaseNode> items;
@@ -167,12 +167,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BaseNode>> result) {
-                m1463invoke(result);
+                m1454invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1463invoke(Result<? extends List<? extends BaseNode>> it) {
+            public final void m1454invoke(Result<? extends List<? extends BaseNode>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends BaseNode>> result = it;
                 if (result instanceof Result.Success) {
@@ -211,7 +211,7 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -327,12 +327,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<BaseNode> list) {
-                m1465invoke(list);
+                m1456invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1465invoke(List<BaseNode> it) {
+            public final void m1456invoke(List<BaseNode> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ((CustomTokensView) CustomTokensPresenter.this.getViewState()).renderItems(it);
             }
@@ -361,7 +361,7 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -463,7 +463,7 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.TokensSettingsChanged, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -471,12 +471,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.TokensSettingsChanged tokensSettingsChanged) {
-                m1464invoke(tokensSettingsChanged);
+                m1455invoke(tokensSettingsChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1464invoke(DomainRxEvents.TokensSettingsChanged it) {
+            public final void m1455invoke(DomainRxEvents.TokensSettingsChanged it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CustomTokensPresenter.this.reload();
             }
@@ -505,13 +505,13 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* compiled from: CustomTokensPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -14,7 +14,7 @@ import java.util.Set;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "CapabilityInfoParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzao extends AbstractSafeParcelable implements CapabilityInfo {
     public static final Parcelable.Creator<zzao> CREATOR = new zzap();
     @SafeParcelable.Field(getter = "getName", m797id = 2)

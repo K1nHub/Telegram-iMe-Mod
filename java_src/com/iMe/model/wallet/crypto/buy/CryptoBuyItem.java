@@ -9,9 +9,9 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: CryptoBuyItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBuyItem extends NoChildNode {
     private final CryptoProduct product;
     private final BuyingCryptoQuote quote;
@@ -95,7 +95,7 @@ public final class CryptoBuyItem extends NoChildNode {
     public final String getAmount(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         if (this.product.isCustom()) {
-            return resourceManager.getString(C3558R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title);
+            return resourceManager.getString(C3473R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title);
         }
         BuyingCryptoQuote buyingCryptoQuote = this.quote;
         if (buyingCryptoQuote != null) {
@@ -103,7 +103,7 @@ public final class CryptoBuyItem extends NoChildNode {
                 StringBuilder sb = new StringBuilder();
                 Float valueOf = Float.valueOf(this.quote.getCryptoMoneyAmount());
                 TokenDetailed tokenDetailed = this.token;
-                sb.append(BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null))));
+                sb.append(BalanceFormatter.format(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null))));
                 sb.append(' ');
                 TokenDetailed tokenDetailed2 = this.token;
                 String ticker = tokenDetailed2 != null ? tokenDetailed2.getTicker() : null;
@@ -114,11 +114,11 @@ public final class CryptoBuyItem extends NoChildNode {
                 return sb.toString();
             }
         }
-        return resourceManager.getString(C3558R.string.common_dash);
+        return resourceManager.getString(C3473R.string.common_dash);
     }
 
     public final String getPrice(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return this.product.isCustom() ? resourceManager.getString(C3558R.string.wallet_crypto_buy_max_price) : BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, Float.valueOf(this.product.getPriceInDollars()), null, 2, null);
+        return this.product.isCustom() ? resourceManager.getString(C3473R.string.wallet_crypto_buy_max_price) : BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, Float.valueOf(this.product.getPriceInDollars()), null, 2, null);
     }
 }

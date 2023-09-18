@@ -12,7 +12,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TwitterView$$State extends MvpViewState<TwitterView> implements TwitterView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
@@ -194,7 +194,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenBrowserUrlCommand extends ViewCommand<TwitterView> {
         public final String url;
 
@@ -210,7 +210,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShareLinkCommand extends ViewCommand<TwitterView> {
         public final String url;
 
@@ -226,7 +226,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class RenderInitialItemsCommand extends ViewCommand<TwitterView> {
         public final List<BaseNode> items;
 
@@ -242,7 +242,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class RenderItemsCommand extends ViewCommand<TwitterView> {
         public final List<BaseNode> items;
 
@@ -258,7 +258,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowResetTwitterDialogCommand extends ViewCommand<TwitterView> {
         public final DialogModel dialogModel;
 
@@ -274,7 +274,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<TwitterView> {
         public final String text;
 
@@ -290,7 +290,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<TwitterView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -310,7 +310,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<TwitterView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -328,7 +328,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class FinishScreenCommand extends ViewCommand<TwitterView> {
         FinishScreenCommand(TwitterView$$State twitterView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);
@@ -341,7 +341,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<TwitterView> {
         public final List<BaseNode> items;
 
@@ -357,7 +357,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<TwitterView> {
         OnLoadMoreCompleteCommand(TwitterView$$State twitterView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -370,7 +370,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<TwitterView> {
         OnLoadMoreErrorCommand(TwitterView$$State twitterView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -383,7 +383,7 @@ public class TwitterView$$State extends MvpViewState<TwitterView> implements Twi
     }
 
     /* compiled from: TwitterView$$State.java */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRefreshingCommand extends ViewCommand<TwitterView> {
         public final boolean show;
 

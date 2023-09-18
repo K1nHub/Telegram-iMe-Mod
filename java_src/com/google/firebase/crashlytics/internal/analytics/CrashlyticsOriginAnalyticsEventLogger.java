@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.analytics;
 
 import android.os.Bundle;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsOriginAnalyticsEventLogger implements AnalyticsEventLogger {
     private final AnalyticsConnector analyticsConnector;
 

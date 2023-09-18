@@ -10,7 +10,7 @@ import com.google.android.gms.internal.icing.zzae;
 import com.google.android.gms.tasks.TaskCompletionSource;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzs extends TaskApiCall<zzae, Void> implements BaseImplementation.ResultHolder<Status> {
     protected TaskCompletionSource<Void> zzb;
 

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzkw implements Parcelable.Creator<zzkv> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void zza(zzkv zzkvVar, Parcel parcel, int i) {

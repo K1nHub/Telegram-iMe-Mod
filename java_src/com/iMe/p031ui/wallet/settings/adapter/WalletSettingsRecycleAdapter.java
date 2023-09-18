@@ -5,16 +5,16 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.iMe.model.wallet.crypto.settings.WalletSettingsItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: WalletSettingsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.settings.adapter.WalletSettingsRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSettingsRecycleAdapter extends BaseQuickAdapter<WalletSettingsItem, BaseViewHolder> {
     private final ResourceManager resourceManager;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WalletSettingsRecycleAdapter(ResourceManager resourceManager) {
-        super(C3558R.layout.fork_recycle_item_wallet_settings, null, 2, null);
+        super(C3473R.layout.fork_recycle_item_wallet_settings, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -35,18 +35,18 @@ public final class WalletSettingsRecycleAdapter extends BaseQuickAdapter<WalletS
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, r0)
             java.lang.String r0 = "item"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r8, r0)
-            int r0 = org.telegram.messenger.C3558R.C3561id.linear_root
+            int r0 = org.telegram.messenger.C3473R.C3476id.linear_root
             r1 = 0
             com.chad.library.adapter.base.viewholder.BaseViewHolder r2 = com.iMe.utils.extentions.common.BaseQuickAdapterExtKt.setRippleForeground(r7, r0, r1)
             int r3 = org.telegram.p043ui.ActionBar.Theme.key_windowBackgroundWhite
             com.chad.library.adapter.base.viewholder.BaseViewHolder r0 = com.iMe.utils.extentions.common.BaseQuickAdapterExtKt.setThemedBackgroundColor(r2, r0, r3)
-            int r2 = org.telegram.messenger.C3558R.C3561id.text_setting_description
+            int r2 = org.telegram.messenger.C3473R.C3476id.text_setting_description
             int r3 = org.telegram.p043ui.ActionBar.Theme.key_windowBackgroundWhiteGrayText2
             com.chad.library.adapter.base.viewholder.BaseViewHolder r0 = com.iMe.utils.extentions.common.BaseQuickAdapterExtKt.setThemedTextColor(r0, r2, r3)
-            int r3 = org.telegram.messenger.C3558R.C3561id.text_setting_title
+            int r3 = org.telegram.messenger.C3473R.C3476id.text_setting_title
             int r4 = org.telegram.p043ui.ActionBar.Theme.key_windowBackgroundWhiteBlackText
             com.chad.library.adapter.base.viewholder.BaseViewHolder r0 = com.iMe.utils.extentions.common.BaseQuickAdapterExtKt.setThemedTextColor(r0, r3, r4)
-            int r4 = org.telegram.messenger.C3558R.C3561id.image_icon
+            int r4 = org.telegram.messenger.C3473R.C3476id.image_icon
             int r5 = org.telegram.p043ui.ActionBar.Theme.key_windowBackgroundWhiteGrayIcon
             com.chad.library.adapter.base.viewholder.BaseViewHolder r0 = com.iMe.utils.extentions.common.BaseQuickAdapterExtKt.setThemedImageColor(r0, r4, r5)
             int r5 = r8.getIcon()
@@ -57,7 +57,7 @@ public final class WalletSettingsRecycleAdapter extends BaseQuickAdapter<WalletS
             r1 = r5
         L3f:
             com.chad.library.adapter.base.viewholder.BaseViewHolder r0 = com.iMe.utils.extentions.common.BaseQuickAdapterExtKt.setVisibleElseGone(r0, r2, r1)
-            int r1 = org.telegram.messenger.C3558R.C3561id.view_divider
+            int r1 = org.telegram.messenger.C3473R.C3476id.view_divider
             boolean r7 = com.iMe.utils.extentions.common.RecycleViewExtKt.isLastItem(r7, r6)
             r7 = r7 ^ r5
             com.chad.library.adapter.base.viewholder.BaseViewHolder r7 = com.iMe.utils.extentions.common.BaseQuickAdapterExtKt.setVisibleElseGone(r0, r1, r7)

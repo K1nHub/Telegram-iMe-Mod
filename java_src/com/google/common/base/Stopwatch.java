@@ -1,7 +1,7 @@
 package com.google.common.base;
 
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Stopwatch {
     private long elapsedNanos;
     private boolean isRunning;
@@ -76,7 +76,7 @@ public final class Stopwatch {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.base.Stopwatch$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C08981 {
         static final /* synthetic */ int[] $SwitchMap$java$util$concurrent$TimeUnit;
 

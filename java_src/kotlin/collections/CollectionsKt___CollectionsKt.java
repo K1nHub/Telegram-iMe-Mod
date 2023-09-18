@@ -19,7 +19,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.sequences.Sequence;
 import kotlin.text.StringsKt__AppendableKt;
 /* compiled from: _Collections.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJvmKt {
     public static <T> boolean contains(Iterable<? extends T> iterable, T t) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");

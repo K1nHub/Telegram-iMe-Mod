@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BitmapExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BitmapExtKt {
     public static /* synthetic */ File toTempFile$default(Bitmap bitmap, File file, String str, int i, Object obj) {
         if ((i & 2) != 0) {

@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ExtendedBitmapDrawable extends BitmapDrawable {
     private int invert;
     private int orientation;

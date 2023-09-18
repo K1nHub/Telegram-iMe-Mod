@@ -5,7 +5,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.JobKt__JobKt;
 /* compiled from: PresenterScope.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PresenterCoroutineScope implements CoroutineScope, OnDestroyListener {
     private final /* synthetic */ CoroutineScope $$delegate_0 = CoroutineScopeKt.MainScope();
 

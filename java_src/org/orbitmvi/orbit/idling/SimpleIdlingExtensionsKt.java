@@ -1,6 +1,6 @@
 package org.orbitmvi.orbit.idling;
 /* compiled from: SimpleIdlingExtensions.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SimpleIdlingExtensionsKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0023  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0037  */

@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Stories.recorder.DraftSavedHint */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class DraftSavedHint extends View {
     private final Paint backgroundPaint;
     private Runnable hideRunnable;

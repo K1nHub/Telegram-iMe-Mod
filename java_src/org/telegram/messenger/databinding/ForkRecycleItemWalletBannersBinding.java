@@ -7,9 +7,9 @@ import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemWalletBannersBinding implements ViewBinding {
     private final LinearLayout rootView;
 
@@ -27,7 +27,7 @@ public final class ForkRecycleItemWalletBannersBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemWalletBannersBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_wallet_banners, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_banners, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,10 +35,10 @@ public final class ForkRecycleItemWalletBannersBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemWalletBannersBinding bind(View view) {
-        int i = C3558R.C3561id.banner_slide_indicator;
+        int i = C3473R.C3476id.banner_slide_indicator;
         ScrollingPagerIndicator scrollingPagerIndicator = (ScrollingPagerIndicator) ViewBindings.findChildViewById(view, i);
         if (scrollingPagerIndicator != null) {
-            i = C3558R.C3561id.recycle_banners;
+            i = C3473R.C3476id.recycle_banners;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
                 return new ForkRecycleItemWalletBannersBinding((LinearLayout) view, scrollingPagerIndicator, recyclerView);

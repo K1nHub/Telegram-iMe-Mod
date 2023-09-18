@@ -2,7 +2,7 @@ package org.bouncycastle.asn1.pkcs;
 
 import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface PKCSObjectIdentifiers {
     public static final ASN1ObjectIdentifier bagtypes;
     public static final ASN1ObjectIdentifier certTypes;

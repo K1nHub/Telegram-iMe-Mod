@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.DrawingInBackgroundThreadDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class DrawingInBackgroundThreadDrawable implements NotificationCenter.NotificationCenterDelegate {
     public static DispatchQueuePool queuePool;
     boolean attachedToWindow;
@@ -110,7 +110,7 @@ public class DrawingInBackgroundThreadDrawable implements NotificationCenter.Not
                 org.telegram.messenger.AndroidUtilities.runOnUIThread(r0)
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.DrawingInBackgroundThreadDrawable.RunnableC47861.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.DrawingInBackgroundThreadDrawable.RunnableC47011.run():void");
         }
     };
     Runnable uiFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.DrawingInBackgroundThreadDrawable.2
@@ -307,7 +307,7 @@ public class DrawingInBackgroundThreadDrawable implements NotificationCenter.Not
     }
 
     /* renamed from: org.telegram.ui.Components.DrawingInBackgroundThreadDrawable$DispatchQueuePool */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class DispatchQueuePool {
         int pointer;
         public final DispatchQueue[] pool;

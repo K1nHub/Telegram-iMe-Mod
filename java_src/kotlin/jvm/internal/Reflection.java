@@ -5,7 +5,7 @@ import kotlin.reflect.KDeclarationContainer;
 import kotlin.reflect.KFunction;
 import kotlin.reflect.KProperty0;
 import kotlin.reflect.KProperty1;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Reflection {
     private static final KClass[] EMPTY_K_CLASS_ARRAY;
     private static final ReflectionFactory factory;

@@ -6,7 +6,7 @@ import com.google.android.gms.wearable.DataEvent;
 import com.google.android.gms.wearable.DataItem;
 import com.stripe.android.model.Card;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzdd extends DataBufferRef implements DataEvent {
     private final int zza;
 

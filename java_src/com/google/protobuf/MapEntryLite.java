@@ -2,14 +2,14 @@ package com.google.protobuf;
 
 import com.google.protobuf.WireFormat;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MapEntryLite<K, V> {
     private final K key;
     private final Metadata<K, V> metadata;
     private final V value;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Metadata<K, V> {
         public final K defaultKey;
         public final V defaultValue;

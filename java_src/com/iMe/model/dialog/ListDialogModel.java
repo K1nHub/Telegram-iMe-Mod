@@ -5,7 +5,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ListDialogModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ListDialogModel {
     private final List<String> items;
     private final String message;

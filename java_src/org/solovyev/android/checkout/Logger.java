@@ -1,5 +1,5 @@
 package org.solovyev.android.checkout;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Logger {
     /* renamed from: d */
     void mo77d(String str, String str2);

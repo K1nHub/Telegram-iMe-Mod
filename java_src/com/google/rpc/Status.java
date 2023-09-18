@@ -5,7 +5,7 @@ import com.google.protobuf.GeneratedMessageLite;
 import com.google.protobuf.Internal;
 import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Status extends GeneratedMessageLite<Status, Builder> implements MessageLiteOrBuilder {
     public static final int CODE_FIELD_NUMBER = 1;
     private static final Status DEFAULT_INSTANCE;
@@ -27,7 +27,7 @@ public final class Status extends GeneratedMessageLite<Status, Builder> implemen
         return this.message_;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Status, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C12221 c12221) {
             this();
@@ -39,7 +39,7 @@ public final class Status extends GeneratedMessageLite<Status, Builder> implemen
     }
 
     /* renamed from: com.google.rpc.Status$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C12221 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

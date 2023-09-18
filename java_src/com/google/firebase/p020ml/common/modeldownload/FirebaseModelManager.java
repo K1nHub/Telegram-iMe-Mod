@@ -7,7 +7,7 @@ import com.google.firebase.FirebaseApp;
 import java.util.HashMap;
 import java.util.Map;
 /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseModelManager */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseModelManager {
     private static final GmsLogger zzass = new GmsLogger("FirebaseModelManager", "");
     private static final Map<String, FirebaseModelManager> zzatg = new HashMap();

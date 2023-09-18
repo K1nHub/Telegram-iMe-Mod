@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimationProperties;
 /* renamed from: org.telegram.ui.Components.WallpaperCheckBoxView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class WallpaperCheckBoxView extends View {
     public final Property<WallpaperCheckBoxView, Float> PROGRESS_PROPERTY;
     private Paint backgroundPaint;

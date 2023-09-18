@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.billing;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ValidateReceiptRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ValidateReceiptRequest {
     private final String orderId;
     private final String packageName;

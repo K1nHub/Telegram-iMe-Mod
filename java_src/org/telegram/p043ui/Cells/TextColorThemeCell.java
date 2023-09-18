@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.TextColorThemeCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextColorThemeCell extends FrameLayout {
     private static Paint colorPaint;
     private float alpha;

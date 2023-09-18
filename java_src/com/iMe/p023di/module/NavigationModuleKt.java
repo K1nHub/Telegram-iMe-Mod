@@ -36,7 +36,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: NavigationModule.kt */
 /* renamed from: com.iMe.di.module.NavigationModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NavigationModuleKt {
     private static final StringQualifier COMMON_BOTTOM_NAVIGATOR = QualifierKt.named("COMMON_BOTTOM_NAVIGATOR");
     private static final StringQualifier COMMON_TABS_NAVIGATOR = QualifierKt.named("COMMON_TABS_NAVIGATOR");

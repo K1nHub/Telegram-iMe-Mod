@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_stories_allStories extends TLRPC$stories_AllStories {
     public static int constructor = 1369278878;
     public int count;

@@ -29,18 +29,18 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 20
+    .line 19
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 19
+    .line 18
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/AddTokensProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 23
+    .line 22
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->ADD_TOKENS:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/AddTokensProvider;->itemViewType:I
 
-    .line 24
+    .line 23
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_crypto_add_tokens:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/AddTokensProvider;->layoutId:I
@@ -61,7 +61,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 30
+    .line 29
     sget p2, Lorg/telegram/messenger/R$id;->frame_container:I
 
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
 
     move-result-object p1
 
-    .line 31
+    .line 30
     sget p2, Lorg/telegram/messenger/R$id;->text_add_tokens:I
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
@@ -79,7 +79,7 @@
 
     move-result-object p1
 
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/AddTokensProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_home_crypto_add_tokens:I
@@ -88,11 +88,12 @@
 
     move-result-object v0
 
+    .line 31
     invoke-virtual {p1, p2, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 33
+    .line 35
     sget-object v0, Lcom/iMe/ui/adapter/provider/AddTokensProvider$convert$1;->INSTANCE:Lcom/iMe/ui/adapter/provider/AddTokensProvider$convert$1;
 
     invoke-static {p1, p2, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
@@ -103,7 +104,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 18
+    .line 17
     check-cast p2, Lcom/iMe/model/wallet/home/CryptoAddTokensItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/AddTokensProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/CryptoAddTokensItem;)V
@@ -114,7 +115,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 23
+    .line 22
     iget v0, p0, Lcom/iMe/ui/adapter/provider/AddTokensProvider;->itemViewType:I
 
     return v0
@@ -123,7 +124,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 24
+    .line 23
     iget v0, p0, Lcom/iMe/ui/adapter/provider/AddTokensProvider;->layoutId:I
 
     return v0

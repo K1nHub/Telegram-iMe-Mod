@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.ObjectWrapper;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Polygon {
     private final com.google.android.gms.internal.maps.zzad zza;
 

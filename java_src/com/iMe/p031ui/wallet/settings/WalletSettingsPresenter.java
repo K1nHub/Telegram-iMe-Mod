@@ -17,7 +17,7 @@ import timber.log.Timber;
 /* compiled from: WalletSettingsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSettingsPresenter extends BasePresenter<WalletSettingsView> {
     private final CryptoAccessManager cryptoAccessManager;
     private final RxEventBus rxEventBus;
@@ -39,7 +39,7 @@ public final class WalletSettingsPresenter extends BasePresenter<WalletSettingsV
     private final void subscribeToRxEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.settings.WalletSettingsPresenter$subscribeToRxEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -47,12 +47,12 @@ public final class WalletSettingsPresenter extends BasePresenter<WalletSettingsV
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1577invoke(cryptoEvent);
+                m1568invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1577invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1568invoke(DomainRxEvents.CryptoEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.CryptoEvent cryptoEvent = it;
                 if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.AllWalletsReset.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletRestored.INSTANCE)) {
@@ -84,7 +84,7 @@ public final class WalletSettingsPresenter extends BasePresenter<WalletSettingsV
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 

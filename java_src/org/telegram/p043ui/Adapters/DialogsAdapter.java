@@ -26,7 +26,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -71,7 +71,7 @@ import org.telegram.tgnet.TLRPC$TL_contact;
 import org.telegram.tgnet.TLRPC$TL_requestPeerTypeBroadcast;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Adapters.DialogsAdapter */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements DialogCell.DialogCellDelegate {
     private ArchiveHintCell archiveHintCell;
     private Drawable arrowDrawable;
@@ -217,7 +217,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
 
     public int findDialogPosition(long j) {
         for (int i = 0; i < this.itemInternals.size(); i++) {
-            if (this.itemInternals.get(i).dialog != null && this.itemInternals.get(i).dialog.f1537id == j) {
+            if (this.itemInternals.get(i).dialog != null && this.itemInternals.get(i).dialog.f1528id == j) {
                 return i;
             }
         }
@@ -243,7 +243,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Adapters.DialogsAdapter$ItemInternal */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class ItemInternal extends AdapterWithDiffUtils.Item {
         TLRPC$TL_chatlists_chatlistUpdates chatlistUpdates;
         TLRPC$TL_contact contact;
@@ -269,14 +269,14 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             boolean z = true;
             this.dialog = tLRPC$Dialog;
             if (tLRPC$Dialog != null) {
-                int i2 = dialogsAdapter.dialogsStableIds.get(tLRPC$Dialog.f1537id, -1);
+                int i2 = dialogsAdapter.dialogsStableIds.get(tLRPC$Dialog.f1528id, -1);
                 if (i2 >= 0) {
                     this.stableId = i2;
                 } else {
                     int i3 = dialogsAdapter.stableIdPointer;
                     dialogsAdapter.stableIdPointer = i3 + 1;
                     this.stableId = i3;
-                    dialogsAdapter.dialogsStableIds.put(tLRPC$Dialog.f1537id, i3);
+                    dialogsAdapter.dialogsStableIds.put(tLRPC$Dialog.f1528id, i3);
                 }
             } else if (i == 19) {
                 this.stableId = 5;
@@ -288,12 +288,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             if (tLRPC$Dialog != null) {
                 if (dialogsAdapter.dialogsType == 7 || dialogsAdapter.dialogsType == 8) {
                     MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(dialogsAdapter.currentAccount).getSelectedDialogFilter(dialogsAdapter.initialDialogsType == 3, dialogsAdapter.isArchive())[dialogsAdapter.dialogsType == 8 ? (char) 1 : (char) 0];
-                    this.pinned = (dialogFilter == null || dialogFilter.pinnedDialogs.indexOfKey(tLRPC$Dialog.f1537id) < 0) ? false : z;
+                    this.pinned = (dialogFilter == null || dialogFilter.pinnedDialogs.indexOfKey(tLRPC$Dialog.f1528id) < 0) ? false : z;
                 } else {
                     this.pinned = tLRPC$Dialog.pinned;
                 }
                 this.isFolder = tLRPC$Dialog.isFolder;
-                this.isForumCell = MessagesController.getInstance(dialogsAdapter.currentAccount).isForum(tLRPC$Dialog.f1537id);
+                this.isForumCell = MessagesController.getInstance(dialogsAdapter.currentAccount).isForum(tLRPC$Dialog.f1528id);
             }
         }
 
@@ -358,10 +358,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             }
             if (i == 0) {
                 TLRPC$Dialog tLRPC$Dialog3 = this.dialog;
-                return tLRPC$Dialog3 != null && (tLRPC$Dialog2 = itemInternal.dialog) != null && tLRPC$Dialog3.f1537id == tLRPC$Dialog2.f1537id && this.isFolder == itemInternal.isFolder && this.isForumCell == itemInternal.isForumCell && this.pinned == itemInternal.pinned;
+                return tLRPC$Dialog3 != null && (tLRPC$Dialog2 = itemInternal.dialog) != null && tLRPC$Dialog3.f1528id == tLRPC$Dialog2.f1528id && this.isFolder == itemInternal.isFolder && this.isForumCell == itemInternal.isForumCell && this.pinned == itemInternal.pinned;
             } else if (i == 14) {
                 TLRPC$Dialog tLRPC$Dialog4 = this.dialog;
-                return tLRPC$Dialog4 != null && (tLRPC$Dialog = itemInternal.dialog) != null && tLRPC$Dialog4.f1537id == tLRPC$Dialog.f1537id && tLRPC$Dialog4.isFolder == tLRPC$Dialog.isFolder;
+                return tLRPC$Dialog4 != null && (tLRPC$Dialog = itemInternal.dialog) != null && tLRPC$Dialog4.f1528id == tLRPC$Dialog.f1528id && tLRPC$Dialog4.isFolder == tLRPC$Dialog.isFolder;
             } else if (i == 4) {
                 TLRPC$RecentMeUrl tLRPC$RecentMeUrl = this.recentMeUrl;
                 return (tLRPC$RecentMeUrl == null || itemInternal.recentMeUrl == null || (str = tLRPC$RecentMeUrl.url) == null || !str.equals(str)) ? false : true;
@@ -671,12 +671,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 break;
             case 2:
                 flickerLoadingView = new HeaderCell(this.mContext);
-                flickerLoadingView.setText(LocaleController.getString("RecentlyViewed", C3558R.string.RecentlyViewed));
+                flickerLoadingView.setText(LocaleController.getString("RecentlyViewed", C3473R.string.RecentlyViewed));
                 TextView textView = new TextView(this.mContext);
                 textView.setTextSize(1, 15.0f);
                 textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
-                textView.setText(LocaleController.getString("RecentlyViewedHide", C3558R.string.RecentlyViewedHide));
+                textView.setText(LocaleController.getString("RecentlyViewedHide", C3473R.string.RecentlyViewedHide));
                 textView.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
                 flickerLoadingView.addView(textView, LayoutHelper.createFrame(-1, -1, (LocaleController.isRTL ? 3 : 5) | 48, 17, 15, 17, 0));
                 textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda0
@@ -695,7 +695,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 };
                 flickerLoadingView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
                 View view3 = new View(this.mContext);
-                view3.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3558R.C3560drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                view3.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3473R.C3475drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 flickerLoadingView.addView(view3, LayoutHelper.createFrame(-1, -1));
                 break;
             case 4:
@@ -713,7 +713,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 break;
             case 8:
                 flickerLoadingView = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3558R.C3560drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3473R.C3475drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 flickerLoadingView.setBackgroundDrawable(combinedDrawable);
                 break;
@@ -782,7 +782,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                         }
                     }
                 };
-                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3558R.C3560drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3473R.C3475drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable2.setFullsize(true);
                 flickerLoadingView.setBackgroundDrawable(combinedDrawable2);
                 break;
@@ -866,8 +866,8 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             if (i2 == 2 || i2 == 15 || DialogsActivity.isAlbumsDialogsType(this.initialDialogsType)) {
                 ProfileSearchCell profileSearchCell = (ProfileSearchCell) viewHolder.itemView;
                 long dialogId = profileSearchCell.getDialogId();
-                if (tLRPC$Dialog.f1537id != 0) {
-                    tLRPC$Chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1537id));
+                if (tLRPC$Dialog.f1528id != 0) {
+                    tLRPC$Chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1528id));
                     if (tLRPC$Chat != null && tLRPC$Chat.migrated_to != null && (chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(tLRPC$Chat.migrated_to.channel_id))) != null) {
                         tLRPC$Chat = chat;
                     }
@@ -877,33 +877,33 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 if (tLRPC$Chat != null) {
                     String str3 = tLRPC$Chat.title;
                     if (DialogsActivity.isAlbumsDialogsType(this.initialDialogsType)) {
-                        lowerCase = LocaleController.getInternalString(C3558R.string.cloud_album).toLowerCase();
+                        lowerCase = LocaleController.getInternalString(C3473R.string.cloud_album).toLowerCase();
                     } else if (ChatObject.isChannel(tLRPC$Chat) && !tLRPC$Chat.megagroup) {
                         int i3 = tLRPC$Chat.participants_count;
                         if (i3 != 0) {
                             lowerCase = LocaleController.formatPluralStringComma("Subscribers", i3);
                         } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                            lowerCase = LocaleController.getString("ChannelPrivate", C3558R.string.ChannelPrivate).toLowerCase();
+                            lowerCase = LocaleController.getString("ChannelPrivate", C3473R.string.ChannelPrivate).toLowerCase();
                         } else {
-                            lowerCase = LocaleController.getString("ChannelPublic", C3558R.string.ChannelPublic).toLowerCase();
+                            lowerCase = LocaleController.getString("ChannelPublic", C3473R.string.ChannelPublic).toLowerCase();
                         }
                     } else {
                         int i4 = tLRPC$Chat.participants_count;
                         if (i4 != 0) {
                             lowerCase = LocaleController.formatPluralStringComma("Members", i4);
                         } else if (tLRPC$Chat.has_geo) {
-                            lowerCase = LocaleController.getString("MegaLocation", C3558R.string.MegaLocation);
+                            lowerCase = LocaleController.getString("MegaLocation", C3473R.string.MegaLocation);
                         } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                            lowerCase = LocaleController.getString("MegaPrivate", C3558R.string.MegaPrivate).toLowerCase();
+                            lowerCase = LocaleController.getString("MegaPrivate", C3473R.string.MegaPrivate).toLowerCase();
                         } else {
-                            lowerCase = LocaleController.getString("MegaPublic", C3558R.string.MegaPublic).toLowerCase();
+                            lowerCase = LocaleController.getString("MegaPublic", C3473R.string.MegaPublic).toLowerCase();
                         }
                     }
                     str2 = lowerCase;
                     str = str3;
                     tLRPC$User = tLRPC$Chat;
                 } else {
-                    TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tLRPC$Dialog.f1537id));
+                    TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tLRPC$Dialog.f1528id));
                     if (user != null) {
                         String userName = UserObject.getUserName(user);
                         if (UserObject.isReplyUser(user)) {
@@ -912,7 +912,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                             tLRPC$User = user;
                         } else {
                             if (user.bot) {
-                                formatUserStatus = LocaleController.getString("Bot", C3558R.string.Bot);
+                                formatUserStatus = LocaleController.getString("Bot", C3473R.string.Bot);
                             } else {
                                 formatUserStatus = LocaleController.formatUserStatus(this.currentAccount, user);
                             }
@@ -935,9 +935,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 dialogCell.useSeparator = tLRPC$Dialog2 != null;
                 dialogCell.fullSeparator = (!tLRPC$Dialog.pinned || tLRPC$Dialog2 == null || tLRPC$Dialog2.pinned) ? false : true;
                 if (this.dialogsType == 0 && AndroidUtilities.isTablet()) {
-                    dialogCell.setDialogSelected(tLRPC$Dialog.f1537id == this.openedDialogId);
+                    dialogCell.setDialogSelected(tLRPC$Dialog.f1528id == this.openedDialogId);
                 }
-                dialogCell.setChecked(this.selectedDialogs.contains(Long.valueOf(tLRPC$Dialog.f1537id)), false);
+                dialogCell.setChecked(this.selectedDialogs.contains(Long.valueOf(tLRPC$Dialog.f1528id)), false);
                 dialogCell.setDialog(tLRPC$Dialog, this.dialogsType, this.folderId, this.initialDialogsType == 3);
                 dialogCell.checkHeight();
                 boolean z = dialogCell.collapsed;
@@ -948,7 +948,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 }
                 DialogsPreloader dialogsPreloader = this.preloader;
                 if (dialogsPreloader != null && i < 10) {
-                    dialogsPreloader.add(tLRPC$Dialog.f1537id);
+                    dialogsPreloader.add(tLRPC$Dialog.f1528id);
                 }
             }
         } else if (itemViewType == 4) {
@@ -995,17 +995,17 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
             int i7 = this.dialogsType;
             if (i7 != 11 && i7 != 12 && i7 != 13) {
-                headerCell.setText(LocaleController.getString((this.dialogsCount == 0 && this.forceUpdatingContacts) ? C3558R.string.ConnectingYourContacts : C3558R.string.YourContacts));
+                headerCell.setText(LocaleController.getString((this.dialogsCount == 0 && this.forceUpdatingContacts) ? C3473R.string.ConnectingYourContacts : C3473R.string.YourContacts));
             } else if (i == 0) {
-                headerCell.setText(LocaleController.getString("ImportHeader", C3558R.string.ImportHeader));
+                headerCell.setText(LocaleController.getString("ImportHeader", C3473R.string.ImportHeader));
             } else {
-                headerCell.setText(LocaleController.getString("ImportHeaderContacts", C3558R.string.ImportHeaderContacts));
+                headerCell.setText(LocaleController.getString("ImportHeaderContacts", C3473R.string.ImportHeaderContacts));
             }
         } else if (itemViewType == 11) {
             TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-            textInfoPrivacyCell.setText(LocaleController.getString("TapOnThePencil", C3558R.string.TapOnThePencil));
+            textInfoPrivacyCell.setText(LocaleController.getString("TapOnThePencil", C3473R.string.TapOnThePencil));
             if (this.arrowDrawable == null) {
-                Drawable drawable = this.mContext.getResources().getDrawable(C3558R.C3560drawable.arrow_newchat);
+                Drawable drawable = this.mContext.getResources().getDrawable(C3473R.C3475drawable.arrow_newchat);
                 this.arrowDrawable = drawable;
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4), PorterDuff.Mode.MULTIPLY));
             }
@@ -1022,13 +1022,13 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     headerCell2.setBackgroundColor(Theme.getColor(Theme.key_graySection));
                     int i8 = ((DialogsActivity.DialogsHeader) getItem(i)).headerType;
                     if (i8 == 0) {
-                        headerCell2.setText(LocaleController.getString("MyChannels", C3558R.string.MyChannels));
+                        headerCell2.setText(LocaleController.getString("MyChannels", C3473R.string.MyChannels));
                         break;
                     } else if (i8 == 1) {
-                        headerCell2.setText(LocaleController.getString("MyGroups", C3558R.string.MyGroups));
+                        headerCell2.setText(LocaleController.getString("MyGroups", C3473R.string.MyGroups));
                         break;
                     } else if (i8 == 2) {
-                        headerCell2.setText(LocaleController.getString("FilterGroups", C3558R.string.FilterGroups));
+                        headerCell2.setText(LocaleController.getString("FilterGroups", C3473R.string.FilterGroups));
                         break;
                     }
                     break;
@@ -1059,12 +1059,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             TLRPC$RequestPeerType tLRPC$RequestPeerType = this.requestPeerType;
             if (tLRPC$RequestPeerType != null) {
                 if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast) {
-                    textCell.setTextAndIcon(LocaleController.getString("CreateChannelForThis", C3558R.string.CreateChannelForThis), C3558R.C3560drawable.msg_channel_create, true);
+                    textCell.setTextAndIcon(LocaleController.getString("CreateChannelForThis", C3473R.string.CreateChannelForThis), C3473R.C3475drawable.msg_channel_create, true);
                 } else {
-                    textCell.setTextAndIcon(LocaleController.getString("CreateGroupForThis", C3558R.string.CreateGroupForThis), C3558R.C3560drawable.msg_groups_create, true);
+                    textCell.setTextAndIcon(LocaleController.getString("CreateGroupForThis", C3473R.string.CreateGroupForThis), C3473R.C3475drawable.msg_groups_create, true);
                 }
             } else {
-                textCell.setTextAndIcon(LocaleController.getString("CreateGroupForImport", C3558R.string.CreateGroupForImport), C3558R.C3560drawable.msg_groups_create, this.dialogsCount != 0);
+                textCell.setTextAndIcon(LocaleController.getString("CreateGroupForImport", C3473R.string.CreateGroupForImport), C3473R.C3475drawable.msg_groups_create, this.dialogsCount != 0);
             }
             textCell.setIsInDialogs();
             textCell.setOffsetFromImage(75);
@@ -1110,9 +1110,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         int i3 = this.dialogsType;
         if (i3 == 7 || i3 == 8) {
             MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(this.currentAccount).getSelectedDialogFilter(this.initialDialogsType == 3, isArchive())[this.dialogsType != 8 ? (char) 0 : (char) 1];
-            int i4 = dialogFilter.pinnedDialogs.get(tLRPC$Dialog.f1537id);
-            dialogFilter.pinnedDialogs.put(tLRPC$Dialog.f1537id, dialogFilter.pinnedDialogs.get(tLRPC$Dialog2.f1537id));
-            dialogFilter.pinnedDialogs.put(tLRPC$Dialog2.f1537id, i4);
+            int i4 = dialogFilter.pinnedDialogs.get(tLRPC$Dialog.f1528id);
+            dialogFilter.pinnedDialogs.put(tLRPC$Dialog.f1528id, dialogFilter.pinnedDialogs.get(tLRPC$Dialog2.f1528id));
+            dialogFilter.pinnedDialogs.put(tLRPC$Dialog2.f1528id, i4);
         } else {
             int i5 = tLRPC$Dialog.pinnedNum;
             tLRPC$Dialog.pinnedNum = tLRPC$Dialog2.pinnedNum;
@@ -1216,7 +1216,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     /* renamed from: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class DialogsPreloader {
         int currentRequestCount;
         int networkRequestCount;
@@ -1261,16 +1261,16 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             long longValue = this.preloadDialogsPool.remove(0).longValue();
             this.currentRequestCount++;
             this.loadingDialogs.add(Long.valueOf(longValue));
-            MessagesController.getInstance(UserConfig.selectedAccount).ensureMessagesLoaded(longValue, 0, new C37461(longValue));
+            MessagesController.getInstance(UserConfig.selectedAccount).ensureMessagesLoaded(longValue, 0, new C36611(longValue));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1 */
-        /* loaded from: classes5.dex */
-        public class C37461 implements MessagesController.MessagesLoadedCallback {
+        /* loaded from: classes3.dex */
+        public class C36611 implements MessagesController.MessagesLoadedCallback {
             final /* synthetic */ long val$dialog_id;
 
-            C37461(long j) {
+            C36611(long j) {
                 this.val$dialog_id = j;
             }
 
@@ -1280,7 +1280,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsAdapter.DialogsPreloader.C37461.this.lambda$onMessagesLoaded$0(z, j);
+                        DialogsAdapter.DialogsPreloader.C36611.this.lambda$onMessagesLoaded$0(z, j);
                     }
                 });
             }
@@ -1311,7 +1311,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsAdapter.DialogsPreloader.C37461.this.lambda$onError$1(j);
+                        DialogsAdapter.DialogsPreloader.C36611.this.lambda$onError$1(j);
                     }
                 });
             }
@@ -1365,7 +1365,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     /* renamed from: org.telegram.ui.Adapters.DialogsAdapter$LastEmptyView */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class LastEmptyView extends FrameLayout {
         public boolean moving;
 

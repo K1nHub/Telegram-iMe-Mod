@@ -15,7 +15,7 @@ import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: WalletHomeTabFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.WalletHomeTabFragment */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class WalletHomeTabFragment extends MvpFragment {
     private WalletHomeView parentView;
     private final Lazy resourceManager$delegate;

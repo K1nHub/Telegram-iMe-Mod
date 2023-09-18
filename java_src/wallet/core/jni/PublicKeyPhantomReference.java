@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: PublicKey.java */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class PublicKeyPhantomReference extends PhantomReference<PublicKey> {
     private long nativeHandle;
     private static Set<PublicKeyPhantomReference> references = new HashSet();

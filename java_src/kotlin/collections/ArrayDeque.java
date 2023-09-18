@@ -7,7 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: ArrayDeque.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ArrayDeque<E> extends AbstractMutableList<E> {
     public static final Companion Companion = new Companion(null);
     private static final Object[] emptyElementData = new Object[0];
@@ -670,7 +670,7 @@ public final class ArrayDeque<E> extends AbstractMutableList<E> {
     }
 
     /* compiled from: ArrayDeque.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

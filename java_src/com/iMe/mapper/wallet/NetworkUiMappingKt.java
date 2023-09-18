@@ -8,7 +8,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkUiMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NetworkUiMappingKt {
     public static final NetworkItem.Crypto mapToUI(Network network) {
         Intrinsics.checkNotNullParameter(network, "<this>");

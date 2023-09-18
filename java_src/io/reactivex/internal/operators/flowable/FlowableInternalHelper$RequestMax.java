@@ -2,7 +2,7 @@ package io.reactivex.internal.operators.flowable;
 
 import io.reactivex.functions.Consumer;
 import org.reactivestreams.Subscription;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum FlowableInternalHelper$RequestMax implements Consumer<Subscription> {
     INSTANCE;
 

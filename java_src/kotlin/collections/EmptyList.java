@@ -10,7 +10,7 @@ import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: Collections.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class EmptyList implements List, Serializable, RandomAccess, KMappedMarker {
     public static final EmptyList INSTANCE = new EmptyList();
 

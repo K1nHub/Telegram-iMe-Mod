@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GasPriceInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GasPriceInfo {
     private final int duration;
     private final double fee;

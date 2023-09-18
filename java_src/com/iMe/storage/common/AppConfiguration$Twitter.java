@@ -2,7 +2,7 @@ package com.iMe.storage.common;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AppConfiguration.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppConfiguration$Twitter {
     public static final AppConfiguration$Twitter INSTANCE = new AppConfiguration$Twitter();
 

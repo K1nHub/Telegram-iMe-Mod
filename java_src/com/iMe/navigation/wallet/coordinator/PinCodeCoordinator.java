@@ -20,7 +20,7 @@ import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.LaunchActivity;
 /* compiled from: PinCodeCoordinator.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PinCodeCoordinator {
     public final void start(INavigationLayout actionBarLayout, WalletAuthBaseFragment nextFragment) {
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
@@ -79,6 +79,34 @@ public final class PinCodeCoordinator {
         }), z);
     }
 
+    public final void startAction(INavigationLayout actionBarLayout, final Callbacks$Callback action, Args args, boolean z) {
+        Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
+        Intrinsics.checkNotNullParameter(action, "action");
+        Intrinsics.checkNotNullParameter(args, "args");
+        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(args.getLockType(), new Function2<EnterPinCodeResult, MvpFragment, Unit>() { // from class: com.iMe.navigation.wallet.coordinator.PinCodeCoordinator$startAction$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super(2);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Unit invoke(EnterPinCodeResult enterPinCodeResult, MvpFragment mvpFragment) {
+                invoke2(enterPinCodeResult, mvpFragment);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final void invoke2(EnterPinCodeResult result, MvpFragment fragment) {
+                Intrinsics.checkNotNullParameter(result, "result");
+                Intrinsics.checkNotNullParameter(fragment, "fragment");
+                if (result instanceof EnterPinCodeResult.Success) {
+                    Callbacks$Callback.this.invoke();
+                    fragment.onBackPressed();
+                }
+            }
+        }), z);
+    }
+
     public final void lock(INavigationLayout actionBarLayout, EnterPinCodeScreenType lockType) {
         Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
         Intrinsics.checkNotNullParameter(lockType, "lockType");
@@ -115,36 +143,8 @@ public final class PinCodeCoordinator {
         }), false, true, true, false);
     }
 
-    public final void startAction(INavigationLayout actionBarLayout, final Callbacks$Callback action, Args args, boolean z) {
-        Intrinsics.checkNotNullParameter(actionBarLayout, "actionBarLayout");
-        Intrinsics.checkNotNullParameter(action, "action");
-        Intrinsics.checkNotNullParameter(args, "args");
-        actionBarLayout.presentFragment(EnterWalletPinFragment.Companion.newInstance(args.getLockType(), new Function2<EnterPinCodeResult, MvpFragment, Unit>() { // from class: com.iMe.navigation.wallet.coordinator.PinCodeCoordinator$startAction$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(2);
-            }
-
-            @Override // kotlin.jvm.functions.Function2
-            public /* bridge */ /* synthetic */ Unit invoke(EnterPinCodeResult enterPinCodeResult, MvpFragment mvpFragment) {
-                invoke2(enterPinCodeResult, mvpFragment);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(EnterPinCodeResult result, MvpFragment fragment) {
-                Intrinsics.checkNotNullParameter(result, "result");
-                Intrinsics.checkNotNullParameter(fragment, "fragment");
-                if (result instanceof EnterPinCodeResult.Success) {
-                    Callbacks$Callback.this.invoke();
-                    fragment.onBackPressed();
-                }
-            }
-        }), z);
-    }
-
     /* compiled from: PinCodeCoordinator.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Args {
         private final EnterPinCodeScreenType lockType;
 

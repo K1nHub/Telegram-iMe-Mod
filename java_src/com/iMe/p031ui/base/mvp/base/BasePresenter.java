@@ -7,7 +7,7 @@ import moxy.MvpPresenter;
 import moxy.MvpView;
 /* compiled from: BasePresenter.kt */
 /* renamed from: com.iMe.ui.base.mvp.base.BasePresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BasePresenter<T extends MvpView> extends MvpPresenter<T> {
     private Disposable singleDisposable;
     private final CompositeDisposable subscriptions = new CompositeDisposable();

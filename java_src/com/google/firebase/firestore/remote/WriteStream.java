@@ -13,14 +13,14 @@ import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WriteStream extends AbstractStream<WriteRequest, WriteResponse, Callback> {
     public static final ByteString EMPTY_STREAM_TOKEN = ByteString.EMPTY;
     protected boolean handshakeComplete;
     private ByteString lastStreamToken;
     private final RemoteSerializer serializer;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Callback extends Stream$StreamCallback {
         void onHandshakeComplete();
 

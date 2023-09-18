@@ -13,7 +13,7 @@ import kotlin.text.Charsets;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FileReadWrite.kt */
 /* renamed from: kotlin.io.FilesKt__FileReadWriteKt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class FilesKt__FileReadWriteKt extends FilesKt__FilePathComponentsKt {
     public static byte[] readBytes(File file) {
         Intrinsics.checkNotNullParameter(file, "<this>");

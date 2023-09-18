@@ -32,7 +32,7 @@ import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.SharedConfig;
 /* compiled from: TelegramPreferenceMigrationManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TelegramPreferenceMigrationManager {
     static {
         new TelegramPreferenceMigrationManager();
@@ -114,7 +114,7 @@ public final class TelegramPreferenceMigrationManager {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r3v0 */
-    /* JADX WARN: Type inference failed for: r3v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v21 */
     /* JADX WARN: Type inference failed for: r5v0 */
     /* JADX WARN: Type inference failed for: r5v11 */

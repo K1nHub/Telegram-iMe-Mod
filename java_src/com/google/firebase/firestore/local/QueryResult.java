@@ -4,7 +4,7 @@ import com.google.firebase.database.collection.ImmutableSortedMap;
 import com.google.firebase.database.collection.ImmutableSortedSet;
 import com.google.firebase.firestore.model.Document;
 import com.google.firebase.firestore.model.DocumentKey;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class QueryResult {
     private final ImmutableSortedMap<DocumentKey, Document> documents;
     private final ImmutableSortedSet<DocumentKey> remoteKeys;

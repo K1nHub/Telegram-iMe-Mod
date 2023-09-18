@@ -8,7 +8,7 @@ import com.google.android.gms.internal.vision.zzao;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-vision@@20.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Line implements Text {
     private zzah zza;
     private List<Element> zzb;

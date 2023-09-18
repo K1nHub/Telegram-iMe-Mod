@@ -3,17 +3,17 @@ package org.bouncycastle.crypto.params;
 import java.math.BigInteger;
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.util.Properties;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DHParameters implements CipherParameters {
 
     /* renamed from: g */
-    private BigInteger f1383g;
+    private BigInteger f1374g;
 
     /* renamed from: p */
-    private BigInteger f1384p;
+    private BigInteger f1375p;
 
     /* renamed from: q */
-    private BigInteger f1385q;
+    private BigInteger f1376q;
 
     public DHParameters(BigInteger bigInteger, BigInteger bigInteger2, BigInteger bigInteger3, int i, int i2, BigInteger bigInteger4, DHValidationParameters dHValidationParameters) {
         if (i2 != 0) {
@@ -27,9 +27,9 @@ public class DHParameters implements CipherParameters {
         if (i > bigInteger.bitLength() && !Properties.isOverrideSet("org.bouncycastle.dh.allow_unsafe_p_value")) {
             throw new IllegalArgumentException("unsafe p value so small specific l required");
         }
-        this.f1383g = bigInteger2;
-        this.f1384p = bigInteger;
-        this.f1385q = bigInteger3;
+        this.f1374g = bigInteger2;
+        this.f1375p = bigInteger;
+        this.f1376q = bigInteger3;
     }
 
     public boolean equals(Object obj) {
@@ -42,21 +42,21 @@ public class DHParameters implements CipherParameters {
             } else if (dHParameters.getQ() != null) {
                 return false;
             }
-            return dHParameters.getP().equals(this.f1384p) && dHParameters.getG().equals(this.f1383g);
+            return dHParameters.getP().equals(this.f1375p) && dHParameters.getG().equals(this.f1374g);
         }
         return false;
     }
 
     public BigInteger getG() {
-        return this.f1383g;
+        return this.f1374g;
     }
 
     public BigInteger getP() {
-        return this.f1384p;
+        return this.f1375p;
     }
 
     public BigInteger getQ() {
-        return this.f1385q;
+        return this.f1376q;
     }
 
     public int hashCode() {

@@ -11,12 +11,12 @@ import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.LimitedDispatcher;
 import kotlinx.coroutines.internal.LimitedDispatcherKt;
 /* compiled from: CoroutineDispatcher.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class CoroutineDispatcher extends AbstractCoroutineContextElement implements ContinuationInterceptor {
     public static final Key Key = new Key(null);
 
     /* renamed from: dispatch */
-    public abstract void mo1690dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    public abstract void mo1688dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;
@@ -37,7 +37,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     }
 
     /* compiled from: CoroutineDispatcher.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Key extends AbstractCoroutineContextKey<ContinuationInterceptor, CoroutineDispatcher> {
         public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
             this();

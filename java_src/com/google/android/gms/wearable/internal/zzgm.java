@@ -9,7 +9,7 @@ import com.google.android.gms.wearable.Node;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "NodeParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzgm extends AbstractSafeParcelable implements Node {
     public static final Parcelable.Creator<zzgm> CREATOR = new zzgn();
     @SafeParcelable.Field(getter = "getId", m797id = 2)

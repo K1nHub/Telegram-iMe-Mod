@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FiatValueResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FiatValueResponse {
     private final String symbol;
     private final String ticker;

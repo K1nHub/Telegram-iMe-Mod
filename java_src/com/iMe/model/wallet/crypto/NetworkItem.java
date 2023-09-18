@@ -3,7 +3,7 @@ package com.iMe.model.wallet.crypto;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class NetworkItem {
     public /* synthetic */ NetworkItem(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -13,7 +13,7 @@ public abstract class NetworkItem {
     }
 
     /* compiled from: NetworkItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class All extends NetworkItem {
         public static final All INSTANCE = new All();
 
@@ -23,7 +23,7 @@ public abstract class NetworkItem {
     }
 
     /* compiled from: NetworkItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Crypto extends NetworkItem {
         private final String colorHex;
         private final String explorerLogoUrl;

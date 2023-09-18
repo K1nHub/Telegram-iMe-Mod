@@ -8,7 +8,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ContinuationImpl.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class BaseContinuationImpl implements Continuation<Object>, CoroutineStackFrame, Serializable {
     private final Continuation<Object> completion;
 
@@ -41,13 +41,13 @@ public abstract class BaseContinuationImpl implements Continuation<Object>, Coro
                 coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
             } catch (Throwable th) {
                 Result.Companion companion = Result.Companion;
-                obj = Result.m1660constructorimpl(ResultKt.createFailure(th));
+                obj = Result.m1658constructorimpl(ResultKt.createFailure(th));
             }
             if (invokeSuspend == coroutine_suspended) {
                 return;
             }
             Result.Companion companion2 = Result.Companion;
-            obj = Result.m1660constructorimpl(invokeSuspend);
+            obj = Result.m1658constructorimpl(invokeSuspend);
             baseContinuationImpl.releaseIntercepted();
             if (!(continuation2 instanceof BaseContinuationImpl)) {
                 continuation2.resumeWith(obj);

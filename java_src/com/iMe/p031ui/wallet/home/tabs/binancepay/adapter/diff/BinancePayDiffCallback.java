@@ -13,7 +13,7 @@ import com.iMe.model.wallet.home.pay.BinanceBalanceItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.adapter.diff.BinancePayDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BinancePayDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {

@@ -8,11 +8,11 @@ import android.widget.ListPopupWindow;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: PopupMenuExt.kt */
 /* renamed from: com.iMe.ui.popupMenu.PopupMenuExtKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PopupMenuExtKt {
     public static final void showPopupMenu(View view, final List<MenuItem> items) {
         Intrinsics.checkNotNullParameter(view, "<this>");
@@ -26,7 +26,7 @@ public final class PopupMenuExtKt {
         listPopupWindow.setAnchorView(view);
         listPopupWindow.setVerticalOffset((-view.getHeight()) / 2);
         listPopupWindow.setHorizontalOffset((-listPopupWindow.getWidth()) + (view.getHeight() / 2));
-        listPopupWindow.setAnimationStyle(C3558R.style.DropDownFromTopAnimation);
+        listPopupWindow.setAnimationStyle(C3473R.style.DropDownFromTopAnimation);
         listPopupWindow.setAdapter(menuAdapter);
         listPopupWindow.setBackgroundDrawable(createRoundedBackground(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground), 16.0f));
         listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: com.iMe.ui.popupMenu.PopupMenuExtKt$$ExternalSyntheticLambda0

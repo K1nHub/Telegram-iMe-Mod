@@ -5,7 +5,7 @@ import com.iMe.model.common.NavigationTab;
 import com.iMe.p031ui.catalog.tabs.CatalogTabFragment;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogNavigationTab.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CatalogNavigationTab extends NavigationTab<CatalogTabFragment> {
 
     /* renamed from: id */

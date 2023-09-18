@@ -11,7 +11,7 @@ import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.concurrent.atomic.AtomicReference;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MlKitContext {
     private static final AtomicReference<MlKitContext> zzb = new AtomicReference<>();
     private final ComponentRuntime zza;

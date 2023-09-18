@@ -3,13 +3,13 @@ package io.grpc;
 import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class InternalLogId {
     private static final AtomicLong idAlloc = new AtomicLong();
     private final String details;
 
     /* renamed from: id */
-    private final long f525id;
+    private final long f516id;
     private final String typeName;
 
     public static InternalLogId allocate(Class<?> cls, String str) {
@@ -29,11 +29,11 @@ public final class InternalLogId {
         Preconditions.checkArgument(!str.isEmpty(), "empty type");
         this.typeName = str;
         this.details = str2;
-        this.f525id = j;
+        this.f516id = j;
     }
 
     public long getId() {
-        return this.f525id;
+        return this.f516id;
     }
 
     public String toString() {
@@ -53,6 +53,6 @@ public final class InternalLogId {
     }
 
     public String shortName() {
-        return this.typeName + "<" + this.f525id + ">";
+        return this.typeName + "<" + this.f516id + ">";
     }
 }

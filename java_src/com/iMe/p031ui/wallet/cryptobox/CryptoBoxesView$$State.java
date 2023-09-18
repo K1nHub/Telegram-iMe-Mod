@@ -17,7 +17,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.tgnet.TLRPC$Chat;
 /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implements CryptoBoxesView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -187,7 +187,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$ShowChooseOrderDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseOrderDialogCommand extends ViewCommand<CryptoBoxesView> {
         public final DialogModel dialogModel;
         public final int selectedPosition;
@@ -208,7 +208,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$ShowConfirmDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowConfirmDialogCommand extends ViewCommand<CryptoBoxesView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -227,7 +227,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$OpenCryptoBoxCreationScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenCryptoBoxCreationScreenCommand extends ViewCommand<CryptoBoxesView> {
         public final TLRPC$Chat chat;
         public final Network presetNetwork;
@@ -246,7 +246,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$OpenCryptoBoxDetailsScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenCryptoBoxDetailsScreenCommand extends ViewCommand<CryptoBoxesView> {
         public final CryptoBoxInfo cryptoBoxInfo;
 
@@ -263,7 +263,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$OpenAddAdminScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenAddAdminScreenCommand extends ViewCommand<CryptoBoxesView> {
         public final TLRPC$Chat chat;
         public final long walletBotId;
@@ -282,7 +282,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$RenderItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderItemsCommand extends ViewCommand<CryptoBoxesView> {
         public final List<BaseNode> items;
 
@@ -299,7 +299,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CryptoBoxesView> {
         public final String text;
 
@@ -316,7 +316,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CryptoBoxesView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -337,7 +337,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CryptoBoxesView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -356,7 +356,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$SetupNetworkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupNetworkCommand extends ViewCommand<CryptoBoxesView> {
         public final NetworkItem networkItem;
 
@@ -373,7 +373,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<CryptoBoxesView> {
         public final List<? extends NetworkItem> availableNetworks;
         public final NetworkItem network;
@@ -392,7 +392,7 @@ public class CryptoBoxesView$$State extends MvpViewState<CryptoBoxesView> implem
 
     /* compiled from: CryptoBoxesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesView$$State$ShowRefreshingCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRefreshingCommand extends ViewCommand<CryptoBoxesView> {
         public final boolean show;
 

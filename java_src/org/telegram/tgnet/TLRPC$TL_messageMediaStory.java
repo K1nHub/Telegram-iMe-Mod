@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messageMediaStory extends TLRPC$MessageMedia {
     public static int constructor = -877523576;
 
@@ -9,7 +9,7 @@ public class TLRPC$TL_messageMediaStory extends TLRPC$MessageMedia {
         this.flags = readInt32;
         this.via_mention = (readInt32 & 2) != 0;
         this.user_id = abstractSerializedData.readInt64(z);
-        this.f1556id = abstractSerializedData.readInt32(z);
+        this.f1547id = abstractSerializedData.readInt32(z);
         if ((this.flags & 1) != 0) {
             this.storyItem = TLRPC$StoryItem.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -23,7 +23,7 @@ public class TLRPC$TL_messageMediaStory extends TLRPC$MessageMedia {
         this.flags = i;
         abstractSerializedData.writeInt32(i);
         abstractSerializedData.writeInt64(this.user_id);
-        abstractSerializedData.writeInt32(this.f1556id);
+        abstractSerializedData.writeInt32(this.f1547id);
         if ((this.flags & 1) != 0) {
             this.storyItem.serializeToStream(abstractSerializedData);
         }

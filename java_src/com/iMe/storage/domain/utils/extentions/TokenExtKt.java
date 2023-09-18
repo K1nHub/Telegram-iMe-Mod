@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenExt.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenExtKt {
     public static final Token toIndexedToken(TokenDetailed tokenDetailed) {
         Intrinsics.checkNotNullParameter(tokenDetailed, "<this>");

@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.ClientSettings;
 import com.google.android.gms.common.internal.GmsClient;
 import com.google.firebase.dynamiclinks.internal.IDynamicLinksCallbacks;
 import com.google.firebase.dynamiclinks.internal.IDynamicLinksService;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DynamicLinksClient extends GmsClient<IDynamicLinksService> {
     @Override // com.google.android.gms.common.internal.BaseGmsClient, com.google.android.gms.common.api.Api.Client
     public int getMinApkVersion() {

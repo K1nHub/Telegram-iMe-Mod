@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.crypto.send.TransactionArgs;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectTransactionArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectTransactionArgs implements TransactionArgs {
     private final BigInteger amount;
     private final long chainId;

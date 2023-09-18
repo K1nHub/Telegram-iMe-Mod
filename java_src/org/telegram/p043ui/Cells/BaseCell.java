@@ -7,7 +7,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Cells.BaseCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseCell extends ViewGroup {
     private boolean checkingForLongPress;
     private CheckForLongPress pendingCheckForLongPress;
@@ -30,7 +30,7 @@ public abstract class BaseCell extends ViewGroup {
     }
 
     /* renamed from: org.telegram.ui.Cells.BaseCell$CheckForTap */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     private final class CheckForTap implements Runnable {
         private CheckForTap() {
         }
@@ -48,7 +48,7 @@ public abstract class BaseCell extends ViewGroup {
     }
 
     /* renamed from: org.telegram.ui.Cells.BaseCell$CheckForLongPress */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     class CheckForLongPress implements Runnable {
         public int currentPressCount;
 

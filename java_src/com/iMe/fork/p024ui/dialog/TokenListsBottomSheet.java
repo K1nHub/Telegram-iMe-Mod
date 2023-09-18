@@ -33,16 +33,16 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: TokenListsBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.TokenListsBottomSheet */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenListsBottomSheet extends BottomSheet {
     private final Lazy actionBar$delegate;
     private final Lazy actionBarHeight$delegate;
@@ -84,7 +84,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(C3626ActionBar.getCurrentActionBarHeight());
+                return Integer.valueOf(C3541ActionBar.getCurrentActionBarHeight());
             }
         });
         this.actionBarHeight$delegate = lazy;
@@ -103,15 +103,15 @@ public final class TokenListsBottomSheet extends BottomSheet {
             }
         });
         this.topShadow$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<C3626ActionBar>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$actionBar$2
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<C3541ActionBar>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$actionBar$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
-            public final C3626ActionBar invoke() {
-                C3626ActionBar initActionBar;
+            public final C3541ActionBar invoke() {
+                C3541ActionBar initActionBar;
                 initActionBar = TokenListsBottomSheet.this.initActionBar();
                 return initActionBar;
             }
@@ -165,7 +165,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
         rootView.addView(getUnderlay(), LayoutHelper.createFrame(-1, -1, 48, 0, m71px, 0, 0));
         rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, m71px, 0, 0));
         rootView.addView(getActionBar(), LayoutHelper.createFrame(-1, m71px, 48));
-        C3626ActionBar actionBar = getActionBar();
+        C3541ActionBar actionBar = getActionBar();
         if (!ViewCompat.isLaidOut(actionBar) || actionBar.isLayoutRequested()) {
             actionBar.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$_init_$lambda$1$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
@@ -191,8 +191,8 @@ public final class TokenListsBottomSheet extends BottomSheet {
         return (View) this.topShadow$delegate.getValue();
     }
 
-    private final C3626ActionBar getActionBar() {
-        return (C3626ActionBar) this.actionBar$delegate.getValue();
+    private final C3541ActionBar getActionBar() {
+        return (C3541ActionBar) this.actionBar$delegate.getValue();
     }
 
     private final FrameLayout getUnderlay() {
@@ -210,17 +210,17 @@ public final class TokenListsBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3626ActionBar initActionBar() {
-        C3626ActionBar c3626ActionBar = new C3626ActionBar(getContext());
-        c3626ActionBar.setOccupyStatusBar(false);
-        c3626ActionBar.setBackButtonImage(C3558R.C3560drawable.ic_ab_back);
-        c3626ActionBar.setTitle(LocaleController.getInternalString(C3558R.string.token_lists_title));
-        c3626ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3558R.C3560drawable.msg_info);
-        c3626ActionBar.setBackgroundColor(0);
+    public final C3541ActionBar initActionBar() {
+        C3541ActionBar c3541ActionBar = new C3541ActionBar(getContext());
+        c3541ActionBar.setOccupyStatusBar(false);
+        c3541ActionBar.setBackButtonImage(C3473R.C3475drawable.ic_ab_back);
+        c3541ActionBar.setTitle(LocaleController.getInternalString(C3473R.string.token_lists_title));
+        c3541ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3473R.C3475drawable.msg_info);
+        c3541ActionBar.setBackgroundColor(0);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3626ActionBar.setTitleColor(getThemedColor(i));
-        c3626ActionBar.setItemsColor(getThemedColor(i), false);
-        return c3626ActionBar;
+        c3541ActionBar.setTitleColor(getThemedColor(i));
+        c3541ActionBar.setItemsColor(getThemedColor(i), false);
+        return c3541ActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -261,8 +261,8 @@ public final class TokenListsBottomSheet extends BottomSheet {
     }
 
     private final void setupListeners() {
-        getActionBar().setActionBarMenuOnItemClick(new C3626ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$setupListeners$1
-            @Override // org.telegram.p043ui.ActionBar.C3626ActionBar.ActionBarMenuOnItemClick
+        getActionBar().setActionBarMenuOnItemClick(new C3541ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$setupListeners$1
+            @Override // org.telegram.p043ui.ActionBar.C3541ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 Callbacks$Callback callbacks$Callback;
                 if (i == -1) {
@@ -373,7 +373,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: TokenListsBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.TokenListsBottomSheet$RootView */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class RootView extends FrameLayout {
         private boolean fullHeight;
         private int lastNotifyWidth;
@@ -496,7 +496,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: TokenListsBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.TokenListsBottomSheet$ListAdapter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
@@ -521,7 +521,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
             Intrinsics.checkNotNullExpressionValue(context, "context");
             ImageTextCheckCell imageTextCheckCell = new ImageTextCheckCell(context, null, 0, 6, null);
             TokenListsBottomSheet tokenListsBottomSheet = TokenListsBottomSheet.this;
-            imageTextCheckCell.setCustomCheckResId(C3558R.C3560drawable.fork_ic_verified);
+            imageTextCheckCell.setCustomCheckResId(C3473R.C3475drawable.fork_ic_verified);
             imageTextCheckCell.setLayoutParams(LayoutHelper.createRecycler(tokenListsBottomSheet.itemWidth, -2));
             return new RecyclerListView.Holder(imageTextCheckCell);
         }
@@ -547,7 +547,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
 
     /* compiled from: TokenListsBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.TokenListsBottomSheet$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -6,7 +6,7 @@ import com.android.vending.billing.IInAppBillingService;
 import java.util.List;
 import org.json.JSONException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class BasePurchasesRequest extends Request<Purchases> {
     protected final String mContinuationToken;
     protected final String mProduct;

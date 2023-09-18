@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Strings.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     public static char first(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");

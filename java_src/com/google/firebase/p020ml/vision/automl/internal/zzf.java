@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Class(creator = "ImageLabelParcelCreator")
 /* renamed from: com.google.firebase.ml.vision.automl.internal.zzf */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzf> CREATOR = new zze();
     @SafeParcelable.Field(m797id = 1)

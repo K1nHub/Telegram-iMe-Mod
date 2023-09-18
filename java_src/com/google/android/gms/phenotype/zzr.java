@@ -1,7 +1,7 @@
 package com.google.android.gms.phenotype;
 
 import android.content.SharedPreferences;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzr extends PhenotypeFlag<Long> {
     @Override // com.google.android.gms.phenotype.PhenotypeFlag
     public final /* synthetic */ Long zza(SharedPreferences sharedPreferences) {

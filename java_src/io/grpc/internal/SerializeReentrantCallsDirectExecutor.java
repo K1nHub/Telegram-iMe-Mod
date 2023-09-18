@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Executor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class SerializeReentrantCallsDirectExecutor implements Executor {
     private static final Logger log = Logger.getLogger(SerializeReentrantCallsDirectExecutor.class.getName());
     private boolean executing;

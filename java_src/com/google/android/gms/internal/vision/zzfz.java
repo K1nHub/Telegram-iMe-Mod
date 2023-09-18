@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @SafeParcelable.Class(creator = "ImageMetadataParcelCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfz extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzfz> CREATOR = new zzfy();
     @SafeParcelable.Field(getter = "getImageFormat", m797id = 1)

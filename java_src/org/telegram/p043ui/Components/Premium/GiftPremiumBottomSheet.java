@@ -31,7 +31,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -63,7 +63,7 @@ import org.telegram.tgnet.TLRPC$TL_premiumGiftOption;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$UserFull;
 /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
     private int buttonRow;
     private PremiumGiftTierCell dummyCell;
@@ -95,12 +95,12 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
         PremiumGradient.PremiumGradientTools premiumGradientTools = new PremiumGradient.PremiumGradientTools(i, i2, -1, -1);
         this.gradientTools = premiumGradientTools;
         premiumGradientTools.exactly = true;
-        premiumGradientTools.f1831x1 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1833y1 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1832x2 = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1834y2 = 1.0f;
-        premiumGradientTools.f1829cx = BitmapDescriptorFactory.HUE_RED;
-        premiumGradientTools.f1830cy = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1822x1 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1824y1 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1823x2 = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1825y2 = 1.0f;
+        premiumGradientTools.f1820cx = BitmapDescriptorFactory.HUE_RED;
+        premiumGradientTools.f1821cy = BitmapDescriptorFactory.HUE_RED;
         PremiumGradient.PremiumGradientTools premiumGradientTools2 = new PremiumGradient.PremiumGradientTools(i, i2, Theme.key_premiumGradient3, Theme.key_premiumGradient4);
         this.outlineGradient = premiumGradientTools2;
         premiumGradientTools2.paint.setStyle(Paint.Style.STROKE);
@@ -182,7 +182,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
     private void initData() {
         this.giftTiers.clear();
         this.rowsCount = 0;
-        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user.f1694id);
+        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user.f1685id);
         if (userFull != null) {
             ArrayList arrayList = new ArrayList();
             long j = 0;
@@ -293,7 +293,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
             z = false;
         }
         if (!BuildVars.useInvoiceBilling() && (!BillingController.getInstance().isReady() || this.giftTiers.get(this.selectedTierIndex).googlePlayProductDetails == null)) {
-            this.premiumButtonView.setButton(LocaleController.getString(C3558R.string.Loading), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda1
+            this.premiumButtonView.setButton(LocaleController.getString(C3473R.string.Loading), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     GiftPremiumBottomSheet.lambda$updateButtonText$4(view);
@@ -302,7 +302,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
             this.premiumButtonView.setFlickerDisabled(true);
             return;
         }
-        this.premiumButtonView.setButton(LocaleController.formatString(C3558R.string.GiftSubscriptionFor, this.giftTiers.get(this.selectedTierIndex).getFormattedPrice()), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda0
+        this.premiumButtonView.setButton(LocaleController.formatString(C3473R.string.GiftSubscriptionFor, this.giftTiers.get(this.selectedTierIndex).getFormattedPrice()), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 GiftPremiumBottomSheet.this.lambda$updateButtonText$5(view);
@@ -317,11 +317,11 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
     }
 
     private void onGiftSuccess(boolean z) {
-        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user.f1694id);
+        TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(this.user.f1685id);
         if (userFull != null) {
             this.user.premium = true;
             MessagesController.getInstance(this.currentAccount).putUser(this.user, true);
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(this.user.f1694id), userFull);
+            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(this.user.f1685id), userFull);
         }
         if (getBaseFragment() != null) {
             ArrayList<BaseFragment> arrayList = new ArrayList(((LaunchActivity) getBaseFragment().getParentActivity()).getActionBarLayout().getFragmentStack());
@@ -330,7 +330,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
             for (BaseFragment baseFragment : arrayList) {
                 if (baseFragment instanceof ChatActivity) {
                     chatActivity = (ChatActivity) baseFragment;
-                    if (chatActivity.getDialogId() != this.user.f1694id) {
+                    if (chatActivity.getDialogId() != this.user.f1685id) {
                         baseFragment.removeSelfFromStack();
                     }
                 } else if (baseFragment instanceof ProfileActivity) {
@@ -341,9 +341,9 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
                     }
                 }
             }
-            if (chatActivity == null || chatActivity.getDialogId() != this.user.f1694id) {
+            if (chatActivity == null || chatActivity.getDialogId() != this.user.f1685id) {
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", this.user.f1694id);
+                bundle.putLong("user_id", this.user.f1685id);
                 parentLayout.presentFragment(new ChatActivity(bundle), true);
             }
         }
@@ -464,14 +464,14 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        return LocaleController.getString(C3558R.string.GiftTelegramPremiumTitle);
+        return LocaleController.getString(C3473R.string.GiftTelegramPremiumTitle);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$1 */
-    /* loaded from: classes6.dex */
-    public class C52481 extends RecyclerListView.SelectionAdapter {
-        C52481() {
+    /* loaded from: classes7.dex */
+    public class C51631 extends RecyclerListView.SelectionAdapter {
+        C51631() {
         }
 
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
@@ -511,14 +511,14 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
                     @Override // org.telegram.messenger.GenericProvider
                     public final Object provide(Object obj) {
                         Paint lambda$onCreateViewHolder$0;
-                        lambda$onCreateViewHolder$0 = GiftPremiumBottomSheet.C52481.this.lambda$onCreateViewHolder$0(premiumGiftTierCell2, (Void) obj);
+                        lambda$onCreateViewHolder$0 = GiftPremiumBottomSheet.C51631.this.lambda$onCreateViewHolder$0(premiumGiftTierCell2, (Void) obj);
                         return lambda$onCreateViewHolder$0;
                     }
                 });
                 premiumGiftTierCell2.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.p043ui.Components.CheckBoxBase.ProgressDelegate
                     public final void setProgress(float f) {
-                        GiftPremiumBottomSheet.C52481.lambda$onCreateViewHolder$1(atomicReference, premiumGiftTierCell2, f);
+                        GiftPremiumBottomSheet.C51631.lambda$onCreateViewHolder$1(atomicReference, premiumGiftTierCell2, f);
                     }
                 });
                 premiumGiftTierCell = premiumGiftTierCell2;
@@ -526,7 +526,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
                 TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(GiftPremiumBottomSheet.this.getContext());
                 textInfoPrivacyCell.setTopPadding(28);
                 textInfoPrivacyCell.getTextView().setGravity(1);
-                String string = LocaleController.getString(C3558R.string.GiftPremiumListFeaturesAndTerms);
+                String string = LocaleController.getString(C3473R.string.GiftPremiumListFeaturesAndTerms);
                 int indexOf = string.indexOf(42);
                 int lastIndexOf = string.lastIndexOf(42);
                 if (indexOf != -1 && lastIndexOf != -1) {
@@ -601,16 +601,16 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter() {
-        return new C52481();
+        return new C51631();
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$LinkSpan */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private final class LinkSpan extends ClickableSpan {
         private LinkSpan() {
         }
 
-        /* synthetic */ LinkSpan(GiftPremiumBottomSheet giftPremiumBottomSheet, C52481 c52481) {
+        /* synthetic */ LinkSpan(GiftPremiumBottomSheet giftPremiumBottomSheet, C51631 c51631) {
             this();
         }
 
@@ -628,7 +628,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView impl
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$GiftTier */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static final class GiftTier {
         private int discount;
         public final TLRPC$TL_premiumGiftOption giftOption;

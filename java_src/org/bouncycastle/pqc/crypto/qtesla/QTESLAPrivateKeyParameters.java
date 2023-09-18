@@ -2,7 +2,7 @@ package org.bouncycastle.pqc.crypto.qtesla;
 
 import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class QTESLAPrivateKeyParameters extends AsymmetricKeyParameter {
     private byte[] privateKey;
     private int securityCategory;

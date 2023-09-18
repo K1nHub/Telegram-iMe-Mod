@@ -7,7 +7,7 @@ import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.nist.NISTObjectIdentifiers;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.util.Integers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class XMSSMTParameters {
     private static final Map<Integer, XMSSMTParameters> paramsLookupTable;
     private final int height;

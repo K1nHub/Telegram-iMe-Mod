@@ -1,6 +1,6 @@
 package kotlin;
 /* compiled from: UninitializedPropertyAccessException.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class UninitializedPropertyAccessException extends RuntimeException {
     public UninitializedPropertyAccessException() {
     }

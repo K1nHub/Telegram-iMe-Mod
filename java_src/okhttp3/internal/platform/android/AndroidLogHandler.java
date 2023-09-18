@@ -4,7 +4,7 @@ import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidLog.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidLogHandler extends Handler {
     public static final AndroidLogHandler INSTANCE = new AndroidLogHandler();
 

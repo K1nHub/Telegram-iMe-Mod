@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletSettingsView$$State extends MvpViewState<WalletSettingsView> implements WalletSettingsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -77,7 +77,7 @@ public class WalletSettingsView$$State extends MvpViewState<WalletSettingsView> 
 
     /* compiled from: WalletSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView$$State$RenderSettingsItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderSettingsItemsCommand extends ViewCommand<WalletSettingsView> {
         public final List<WalletSettingsItem> items;
 
@@ -94,7 +94,7 @@ public class WalletSettingsView$$State extends MvpViewState<WalletSettingsView> 
 
     /* compiled from: WalletSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletSettingsView> {
         public final String text;
 
@@ -111,7 +111,7 @@ public class WalletSettingsView$$State extends MvpViewState<WalletSettingsView> 
 
     /* compiled from: WalletSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletSettingsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -132,7 +132,7 @@ public class WalletSettingsView$$State extends MvpViewState<WalletSettingsView> 
 
     /* compiled from: WalletSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.settings.WalletSettingsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletSettingsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

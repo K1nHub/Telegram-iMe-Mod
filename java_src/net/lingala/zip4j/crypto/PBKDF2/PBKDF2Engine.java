@@ -3,7 +3,7 @@ package net.lingala.zip4j.crypto.PBKDF2;
 import java.util.Objects;
 import net.lingala.zip4j.util.Raw;
 import org.telegram.tgnet.ConnectionsManager;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PBKDF2Engine {
     protected PBKDF2Parameters parameters;
     protected PRF prf = null;

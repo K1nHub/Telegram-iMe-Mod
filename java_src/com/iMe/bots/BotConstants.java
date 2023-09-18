@@ -6,7 +6,7 @@ import kotlin.TuplesKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.MapsKt__MapsKt;
 /* compiled from: BotConstants.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotConstants {
     public static final BotConstants INSTANCE = new BotConstants();
     private static final Map<String, String> hashes;

@@ -22,7 +22,7 @@ import com.google.android.material.R$styleable;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TextInputEditText extends AppCompatEditText {
     private final Rect parentRect;
     private boolean textInputLayoutFocusedRectEnabled;

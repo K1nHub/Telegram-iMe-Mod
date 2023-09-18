@@ -7,7 +7,7 @@ import com.iMe.model.twitter.TwitterInviteItem;
 import com.iMe.model.twitter.TwitterUserItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterSearchDiffCallback.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterSearchDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {
@@ -17,7 +17,7 @@ public final class TwitterSearchDiffCallback extends DiffUtil.ItemCallback<BaseN
             return Intrinsics.areEqual(((GlobalStateItem) oldItem).getState(), ((GlobalStateItem) newItem).getState());
         }
         if ((oldItem instanceof TwitterUserItem) && (newItem instanceof TwitterUserItem)) {
-            if (((TwitterUserItem) oldItem).getUser().f1694id == ((TwitterUserItem) newItem).getUser().f1694id) {
+            if (((TwitterUserItem) oldItem).getUser().f1685id == ((TwitterUserItem) newItem).getUser().f1685id) {
                 return true;
             }
         } else if ((oldItem instanceof TwitterInviteItem) && (newItem instanceof TwitterInviteItem)) {

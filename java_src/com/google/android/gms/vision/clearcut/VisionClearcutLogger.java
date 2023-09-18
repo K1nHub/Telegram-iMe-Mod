@@ -10,7 +10,7 @@ import com.google.android.gms.internal.vision.zzio;
 import com.google.android.gms.vision.C0718L;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @Keep
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VisionClearcutLogger {
     private final ClearcutLogger zza;
     private boolean zzb = true;

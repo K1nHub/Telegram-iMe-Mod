@@ -24,14 +24,14 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: FilteredContactsProcessingService.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FilteredContactsProcessingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private AccountInstance accountInstance;
     private NotificationCompat.Builder builder;
@@ -46,14 +46,14 @@ public final class FilteredContactsProcessingService extends Service implements 
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: FilteredContactsProcessingService.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum State {
         DELETING,
         WAITING_FOR_NETWORK
     }
 
     /* compiled from: FilteredContactsProcessingService.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -170,7 +170,7 @@ public final class FilteredContactsProcessingService extends Service implements 
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3558R.C3560drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ContactsProcessingChannel", C3473R.C3475drawable.fork_ic_contacts_24, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -183,7 +183,7 @@ public final class FilteredContactsProcessingService extends Service implements 
                 }
             });
         } else {
-            stopServiceWithToast(C3558R.string.contacts_processing_success);
+            stopServiceWithToast(C3473R.string.contacts_processing_success);
         }
     }
 
@@ -253,7 +253,7 @@ public final class FilteredContactsProcessingService extends Service implements 
         if (th == null) {
             this$0.processNextContactsPart();
         } else {
-            this$0.stopServiceWithToast(C3558R.string.contacts_processing_error);
+            this$0.stopServiceWithToast(C3473R.string.contacts_processing_error);
         }
     }
 
@@ -276,9 +276,9 @@ public final class FilteredContactsProcessingService extends Service implements 
             return;
         }
         if (WhenMappings.$EnumSwitchMapping$1[state.ordinal()] == 1) {
-            string = LocaleController.formatStringInternal(C3558R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
+            string = LocaleController.formatStringInternal(C3473R.string.contacts_processing, Integer.valueOf(this.processedContactsCount), Integer.valueOf(this.contactsIds.size()));
         } else {
-            string = LocaleController.getString("WaitingForNetwork", C3558R.string.WaitingForNetwork);
+            string = LocaleController.getString("WaitingForNetwork", C3473R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {
@@ -302,7 +302,7 @@ public final class FilteredContactsProcessingService extends Service implements 
     }
 
     /* compiled from: FilteredContactsProcessingService.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

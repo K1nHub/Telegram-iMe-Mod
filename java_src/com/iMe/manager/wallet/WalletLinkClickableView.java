@@ -8,7 +8,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletLinkClickableView.kt */
 @OneExecution
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletLinkClickableView extends MvpView {
     void actionCopyToClipboard(String str);
 

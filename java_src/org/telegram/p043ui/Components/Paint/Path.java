@@ -3,7 +3,7 @@ package org.telegram.p043ui.Components.Paint;
 import java.util.Arrays;
 import java.util.Vector;
 /* renamed from: org.telegram.ui.Components.Paint.Path */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Path {
     private float baseWeight;
     private Brush brush;

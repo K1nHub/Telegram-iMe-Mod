@@ -13,7 +13,7 @@ import java.util.Objects;
 import retrofit2.CallAdapter;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class RxJava2CallAdapterFactory extends CallAdapter.Factory {
     private final boolean isAsync;
     private final Scheduler scheduler;

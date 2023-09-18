@@ -2,7 +2,7 @@ package com.google.firebase.installations;
 
 import com.google.firebase.installations.InstallationTokenResult;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
     private final String token;
     private final long tokenCreationTimestamp;
@@ -50,7 +50,7 @@ final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
         return ((((this.token.hashCode() ^ 1000003) * 1000003) ^ ((int) (j ^ (j >>> 32)))) * 1000003) ^ ((int) (j2 ^ (j2 >>> 32)));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder extends InstallationTokenResult.Builder {
         private String token;
         private Long tokenCreationTimestamp;

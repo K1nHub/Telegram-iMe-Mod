@@ -7,7 +7,7 @@ import net.lingala.zip4j.crypto.IDecrypter;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.unzip.UnzipEngine;
 /* renamed from: net.lingala.zip4j.io.PartInputStream */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PartInputStream extends BaseInputStream {
     private IDecrypter decrypter;
     private boolean isAESEncryptedFile;

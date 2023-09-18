@@ -8,7 +8,7 @@ import okio.Buffer;
 import okio.ForwardingSink;
 import okio.Sink;
 /* compiled from: FaultHidingSink.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class FaultHidingSink extends ForwardingSink {
     private boolean hasErrors;
     private final Function1<IOException, Unit> onException;

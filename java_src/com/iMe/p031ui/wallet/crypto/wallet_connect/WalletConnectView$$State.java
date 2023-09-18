@@ -12,7 +12,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletConnectView$$State extends MvpViewState<WalletConnectView> implements WalletConnectView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -117,7 +117,7 @@ public class WalletConnectView$$State extends MvpViewState<WalletConnectView> im
 
     /* compiled from: WalletConnectView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State$SetupSessionsItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupSessionsItemsCommand extends ViewCommand<WalletConnectView> {
         public final List<WalletConnectSessionItem> items;
 
@@ -134,7 +134,7 @@ public class WalletConnectView$$State extends MvpViewState<WalletConnectView> im
 
     /* compiled from: WalletConnectView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State$ShowChangeNetworkHintCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChangeNetworkHintCommand extends ViewCommand<WalletConnectView> {
         ShowChangeNetworkHintCommand(WalletConnectView$$State walletConnectView$$State) {
             super("showChangeNetworkHint", OneExecutionStateStrategy.class);
@@ -148,7 +148,7 @@ public class WalletConnectView$$State extends MvpViewState<WalletConnectView> im
 
     /* compiled from: WalletConnectView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletConnectView> {
         public final String text;
 
@@ -165,7 +165,7 @@ public class WalletConnectView$$State extends MvpViewState<WalletConnectView> im
 
     /* compiled from: WalletConnectView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletConnectView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -186,7 +186,7 @@ public class WalletConnectView$$State extends MvpViewState<WalletConnectView> im
 
     /* compiled from: WalletConnectView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletConnectView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -205,7 +205,7 @@ public class WalletConnectView$$State extends MvpViewState<WalletConnectView> im
 
     /* compiled from: WalletConnectView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State$SetupNetworkCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupNetworkCommand extends ViewCommand<WalletConnectView> {
         public final NetworkItem networkItem;
 
@@ -222,7 +222,7 @@ public class WalletConnectView$$State extends MvpViewState<WalletConnectView> im
 
     /* compiled from: WalletConnectView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletConnectView> {
         public final List<? extends NetworkItem> availableNetworks;
         public final NetworkItem network;

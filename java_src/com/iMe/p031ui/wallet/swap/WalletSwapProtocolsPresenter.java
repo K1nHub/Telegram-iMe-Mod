@@ -24,11 +24,11 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: WalletSwapProtocolsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSwapProtocolsPresenter extends BasePresenter<WalletSwapProtocolsView> {
     private final BinancePayManager binancePayManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -120,11 +120,11 @@ public final class WalletSwapProtocolsPresenter extends BasePresenter<WalletSwap
             arrayList3.add(new CexProtocolItem(centralizedExchangesInfo, true));
         }
         SpreadBuilder spreadBuilder = new SpreadBuilder(6);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3558R.string.wallet_swap_protocols_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3473R.string.wallet_swap_protocols_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3558R.string.wallet_swap_protocols_cross_chain_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3473R.string.wallet_swap_protocols_cross_chain_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr2);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3558R.string.wallet_swap_centralized_exchanges_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3473R.string.wallet_swap_centralized_exchanges_header_title)));
         spreadBuilder.addSpread((CexProtocolItem[]) arrayList3.toArray(new CexProtocolItem[0]));
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) spreadBuilder.toArray(new NoChildNode[spreadBuilder.size()]));
         ((WalletSwapProtocolsView) getViewState()).showExchangesProviders(listOf);

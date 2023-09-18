@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
     private Comparator<K> comparator;
     private LLRBNode<K, V> root;
@@ -103,7 +103,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder<A, B, C> {
         private final ImmutableSortedMap.Builder.KeyTranslator<A, B> keyTranslator;
         private final List<A> keys;
@@ -112,7 +112,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
         private final Map<B, C> values;
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class BooleanChunk {
             public int chunkSize;
             public boolean isOne;
@@ -122,7 +122,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class Base1_2 implements Iterable<BooleanChunk> {
             private final int length;
             private long value;
@@ -136,7 +136,7 @@ public class RBTreeSortedMap<K, V> extends ImmutableSortedMap<K, V> {
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.google.firebase.database.collection.RBTreeSortedMap$Builder$Base1_2$1 */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public class C10021 implements Iterator<BooleanChunk>, p033j$.util.Iterator {
                 private int current;
 

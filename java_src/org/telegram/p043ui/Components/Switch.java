@@ -26,7 +26,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Switch */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Switch extends View {
     private boolean attachedToWindow;
     private boolean bitmapsCreated;
@@ -64,7 +64,7 @@ public class Switch extends View {
     private int trackColorKey;
 
     /* renamed from: org.telegram.ui.Components.Switch$OnCheckedChangeListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnCheckedChangeListener {
         void onCheckedChanged(Switch r1, boolean z);
     }

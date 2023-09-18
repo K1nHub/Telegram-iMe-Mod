@@ -3,10 +3,10 @@ package com.iMe.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: FormattingPanelType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum FormattingPanelType {
     DEFAULT,
     ALTERNATIVE_WEB,
@@ -15,7 +15,7 @@ public enum FormattingPanelType {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: FormattingPanelType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -44,15 +44,15 @@ public enum FormattingPanelType {
     public final String getTitle() {
         int i = WhenMappings.$EnumSwitchMapping$0[ordinal()];
         if (i == 1) {
-            String string = LocaleController.getString("Default", C3558R.string.Default);
+            String string = LocaleController.getString("Default", C3473R.string.Default);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Default\", R.string.Default)");
             return string;
         } else if (i == 2) {
-            String internalString = LocaleController.getInternalString(C3558R.string.settings_messages_formatting_alternative_web);
+            String internalString = LocaleController.getInternalString(C3473R.string.settings_messages_formatting_alternative_web);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…rmatting_alternative_web)");
             return internalString;
         } else if (i == 3) {
-            String internalString2 = LocaleController.getInternalString(C3558R.string.settings_messages_formatting_alternative_keybord);
+            String internalString2 = LocaleController.getInternalString(C3473R.string.settings_messages_formatting_alternative_keybord);
             Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…ting_alternative_keybord)");
             return internalString2;
         } else {
@@ -61,7 +61,7 @@ public enum FormattingPanelType {
     }
 
     /* compiled from: FormattingPanelType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

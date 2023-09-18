@@ -42,7 +42,7 @@ import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
 /* compiled from: DialogTranslationController.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DialogTranslationController extends BaseController implements KoinComponent {
     public static final Companion Companion = new Companion(null);
     private static final ConcurrentHashMap<Integer, DialogTranslationController> accountInstances;
@@ -193,7 +193,7 @@ public final class DialogTranslationController extends BaseController implements
     }
 
     /* compiled from: DialogTranslationController.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -265,7 +265,7 @@ public final class DialogTranslationController extends BaseController implements
                     return Function.CC.$default$compose(this, function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…r(accountIndex)\n        }");
             return (DialogTranslationController) computeIfAbsent;
         }
     }

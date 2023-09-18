@@ -3,14 +3,14 @@ package com.iMe.model.wallet.crypto.send;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AddressAccessState.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AddressAccessState {
     public /* synthetic */ AddressAccessState(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: AddressAccessState.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Granted extends AddressAccessState {
         private final String address;
 
@@ -30,7 +30,7 @@ public abstract class AddressAccessState {
     }
 
     /* compiled from: AddressAccessState.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Denied extends AddressAccessState {
         public static final Denied INSTANCE = new Denied();
 
@@ -40,7 +40,7 @@ public abstract class AddressAccessState {
     }
 
     /* compiled from: AddressAccessState.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NotAvailable extends AddressAccessState {
         public static final NotAvailable INSTANCE = new NotAvailable();
 

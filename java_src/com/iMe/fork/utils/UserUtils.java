@@ -2,7 +2,7 @@ package com.iMe.fork.utils;
 
 import org.telegram.messenger.UserConfig;
 /* compiled from: UserUtils.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UserUtils {
     static {
         new UserUtils();

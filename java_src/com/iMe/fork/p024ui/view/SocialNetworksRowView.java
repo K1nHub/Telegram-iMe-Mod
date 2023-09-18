@@ -17,13 +17,13 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: SocialNetworksRowView.kt */
 /* renamed from: com.iMe.fork.ui.view.SocialNetworksRowView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialNetworksRowView extends LinearLayout {
     private OnSocialNetworkClickListener listener;
 
     /* compiled from: SocialNetworksRowView.kt */
     /* renamed from: com.iMe.fork.ui.view.SocialNetworksRowView$OnSocialNetworkClickListener */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnSocialNetworkClickListener {
         void onSocialNetworkClick(DrawerSocialNetwork drawerSocialNetwork, boolean z);
     }
@@ -102,7 +102,7 @@ public final class SocialNetworksRowView extends LinearLayout {
 
     /* compiled from: SocialNetworksRowView.kt */
     /* renamed from: com.iMe.fork.ui.view.SocialNetworksRowView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

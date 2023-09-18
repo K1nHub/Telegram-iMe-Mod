@@ -7,14 +7,14 @@ import java.util.Map;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.Paint.UndoStore */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class UndoStore {
     private UndoStoreDelegate delegate;
     private Map<UUID, Runnable> uuidToOperationMap = new HashMap();
     private List<UUID> operations = new ArrayList();
 
     /* renamed from: org.telegram.ui.Components.Paint.UndoStore$UndoStoreDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface UndoStoreDelegate {
         void historyChanged();
     }

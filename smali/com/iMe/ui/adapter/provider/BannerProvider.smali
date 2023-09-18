@@ -37,30 +37,30 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 29
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 23
+    .line 28
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
-    .line 30
+    .line 35
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->BANNERS:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->itemViewType:I
 
-    .line 31
+    .line 36
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_banners:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->layoutId:I
 
-    .line 34
+    .line 39
     new-instance p1, Landroidx/recyclerview/widget/PagerSnapHelper;
 
     invoke-direct {p1}, Landroidx/recyclerview/widget/PagerSnapHelper;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannerSnapHelper:Landroidx/recyclerview/widget/PagerSnapHelper;
 
-    .line 35
+    .line 40
     new-instance p1, Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
     invoke-direct {p1}, Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;-><init>()V
@@ -73,7 +73,7 @@
 .method public static final synthetic access$getBannerScrollState$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Landroid/os/Parcelable;
     .locals 0
 
-    .line 22
+    .line 27
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannerScrollState:Landroid/os/Parcelable;
 
     return-object p0
@@ -82,7 +82,7 @@
 .method public static final synthetic access$getBannerSnapHelper$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Landroidx/recyclerview/widget/PagerSnapHelper;
     .locals 0
 
-    .line 22
+    .line 27
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannerSnapHelper:Landroidx/recyclerview/widget/PagerSnapHelper;
 
     return-object p0
@@ -91,7 +91,7 @@
 .method public static final synthetic access$getBannersDiffCallback$p(Lcom/iMe/ui/adapter/provider/BannerProvider;)Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
     .locals 0
 
-    .line 22
+    .line 27
     iget-object p0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersDiffCallback:Lcom/iMe/ui/wallet/home/adapter/diff/BannerSlideDiffCallback;
 
     return-object p0
@@ -110,7 +110,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 58
     sget v0, Lorg/telegram/messenger/R$id;->recycle_banners:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$1;
@@ -121,7 +121,7 @@
 
     move-result-object p2
 
-    .line 69
+    .line 78
     sget v0, Lorg/telegram/messenger/R$id;->banner_slide_indicator:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/BannerProvider$convert$2;
@@ -136,7 +136,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 22
+    .line 27
     check-cast p2, Lcom/iMe/model/wallet/home/BannerItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/BannerProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/home/BannerItem;)V
@@ -147,7 +147,7 @@
 .method public final getBannerOnItemClickListener()Lcom/chad/library/adapter/base/listener/OnItemClickListener;
     .locals 1
 
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannerOnItemClickListener:Lcom/chad/library/adapter/base/listener/OnItemClickListener;
 
     return-object v0
@@ -156,7 +156,7 @@
 .method public final getBannersRecycleAdapter()Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
     .locals 1
 
-    .line 23
+    .line 28
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannersRecycleAdapter:Lcom/iMe/ui/wallet/home/adapter/BannersRecycleAdapter;
 
     return-object v0
@@ -165,7 +165,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 30
+    .line 35
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->itemViewType:I
 
     return v0
@@ -174,7 +174,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 31
+    .line 36
     iget v0, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->layoutId:I
 
     return v0
@@ -187,7 +187,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 46
     invoke-virtual {p0}, Lcom/iMe/ui/adapter/provider/BannerProvider;->getItemViewType()I
 
     move-result v0
@@ -198,7 +198,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 42
+    .line 48
     sget v0, Lorg/telegram/messenger/R$id;->recycle_banners:I
 
     invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
@@ -222,6 +222,7 @@
     :cond_0
     const/4 p1, 0x0
 
+    .line 47
     :goto_0
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannerScrollState:Landroid/os/Parcelable;
 
@@ -232,7 +233,7 @@
 .method public final setBannerOnItemClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
     .locals 0
 
-    .line 27
+    .line 32
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/BannerProvider;->bannerOnItemClickListener:Lcom/chad/library/adapter/base/listener/OnItemClickListener;
 
     return-void

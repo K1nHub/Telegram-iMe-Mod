@@ -2,7 +2,7 @@ package org.bouncycastle.pqc.crypto.lms;
 
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.util.Pack;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class LM_OTS {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static byte[] lms_ots_generatePublicKey(LMOtsParameters lMOtsParameters, byte[] bArr, int i, byte[] bArr2) {

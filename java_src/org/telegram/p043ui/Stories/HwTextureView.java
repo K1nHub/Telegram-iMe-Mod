@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.TextureView;
 /* compiled from: HwLayouts.java */
 /* renamed from: org.telegram.ui.Stories.HwTextureView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 class HwTextureView extends TextureView {
     public HwTextureView(Context context) {
         super(context);

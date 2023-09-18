@@ -4,7 +4,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.FileLog;
 import timber.log.Timber;
 /* compiled from: FileLogTree.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FileLogTree extends Timber.Tree {
     @Override // timber.log.Timber.Tree
     protected void log(int i, String str, String message, Throwable th) {

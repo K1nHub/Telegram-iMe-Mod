@@ -9,7 +9,7 @@ import kotlinx.coroutines.ChildHandle;
 import kotlinx.coroutines.CompletionStateKt;
 import kotlinx.coroutines.Job;
 /* compiled from: Scopes.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ScopeCoroutine<T> extends AbstractCoroutine<T> implements CoroutineStackFrame {
     public final Continuation<T> uCont;
 

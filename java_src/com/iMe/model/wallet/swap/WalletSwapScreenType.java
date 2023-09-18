@@ -6,14 +6,14 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletSwapScreenType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletSwapScreenType {
     public /* synthetic */ WalletSwapScreenType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: WalletSwapScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Crypto extends WalletSwapScreenType {
         private final String forcedNetworkId;
         private final TokenDetailed fromToken;
@@ -61,7 +61,7 @@ public abstract class WalletSwapScreenType {
     }
 
     /* compiled from: WalletSwapScreenType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Binance extends WalletSwapScreenType {
         private final TokenDetailed fromToken;
         private final TokenDetailed toToken;

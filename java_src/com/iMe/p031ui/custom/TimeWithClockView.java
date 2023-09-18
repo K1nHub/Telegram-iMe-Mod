@@ -22,7 +22,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TimeWithClockView.kt */
 /* renamed from: com.iMe.ui.custom.TimeWithClockView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TimeWithClockView extends AppCompatTextView {
     private final Lazy clockHeight$delegate;
     private final Lazy clockPadding$delegate;

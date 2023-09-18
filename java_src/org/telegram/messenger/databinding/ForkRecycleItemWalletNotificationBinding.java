@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemWalletNotificationBinding implements ViewBinding {
     private final LinearLayout rootView;
 
@@ -27,7 +27,7 @@ public final class ForkRecycleItemWalletNotificationBinding implements ViewBindi
     }
 
     public static ForkRecycleItemWalletNotificationBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_wallet_notification, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_notification, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,19 +36,19 @@ public final class ForkRecycleItemWalletNotificationBinding implements ViewBindi
 
     public static ForkRecycleItemWalletNotificationBinding bind(View view) {
         View findChildViewById;
-        int i = C3558R.C3561id.divider;
+        int i = C3473R.C3476id.divider;
         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
         if (dividerView != null) {
             LinearLayout linearLayout = (LinearLayout) view;
-            i = C3558R.C3561id.text_notification_category;
+            i = C3473R.C3476id.text_notification_category;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3558R.C3561id.text_notification_date;
+                i = C3473R.C3476id.text_notification_date;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3558R.C3561id.text_notification_message;
+                    i = C3473R.C3476id.text_notification_message;
                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
-                    if (appCompatTextView3 != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3558R.C3561id.view_read_mark))) != null) {
+                    if (appCompatTextView3 != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3473R.C3476id.view_read_mark))) != null) {
                         return new ForkRecycleItemWalletNotificationBinding(linearLayout, dividerView, linearLayout, appCompatTextView, appCompatTextView2, appCompatTextView3, findChildViewById);
                     }
                 }

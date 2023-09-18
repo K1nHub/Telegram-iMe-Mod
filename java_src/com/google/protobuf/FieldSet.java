@@ -11,14 +11,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FieldSet<T extends FieldDescriptorLite<T>> {
     private static final FieldSet DEFAULT_INSTANCE = new FieldSet(true);
     private final SmallSortedMap<T, Object> fields;
     private boolean hasLazyField;
     private boolean isImmutable;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface FieldDescriptorLite<T extends FieldDescriptorLite<T>> extends Comparable<T> {
         WireFormat.JavaType getLiteJavaType();
 
@@ -293,7 +293,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.FieldSet$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C12001 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;

@@ -11,7 +11,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GLIconRenderer implements GLSurfaceView.Renderer {
     Bitmap backgroundBitmap;
     int color1;

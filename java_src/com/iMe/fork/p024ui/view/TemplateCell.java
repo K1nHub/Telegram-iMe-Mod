@@ -18,7 +18,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -28,7 +28,7 @@ import org.telegram.p043ui.Components.BotCommandsMenuView;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TemplateCell.kt */
 /* renamed from: com.iMe.fork.ui.view.TemplateCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TemplateCell extends LinearLayout {
     private final Lazy avatarView$delegate;
     private final Lazy goToMessageButton$delegate;
@@ -195,10 +195,10 @@ public final class TemplateCell extends LinearLayout {
         TextView subtitleTextView = getSubtitleTextView();
         if (SharedConfig.selectedTemplatesSortingType != TemplatesSortingType.USAGE) {
             ViewExtKt.visible$default(subtitleTextView, false, 1, null);
-            subtitleTextView.setText(LocaleController.getInternalString(C3558R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
+            subtitleTextView.setText(LocaleController.getInternalString(C3473R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
         } else {
             subtitleTextView.setVisibility(template.getUsageRating() != 0 ? 0 : 8);
-            subtitleTextView.setText(LocaleController.getInternalString(C3558R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
+            subtitleTextView.setText(LocaleController.getInternalString(C3473R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
         }
         getGoToMessageButton().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.TemplateCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -271,7 +271,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3558R.C3560drawable.msg_message);
+        imageView.setImageResource(C3473R.C3475drawable.msg_message);
         return imageView;
     }
 
@@ -281,13 +281,13 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelSend), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3558R.C3560drawable.ic_send);
+        imageView.setImageResource(C3473R.C3475drawable.ic_send);
         return imageView;
     }
 
     /* compiled from: TemplateCell.kt */
     /* renamed from: com.iMe.fork.ui.view.TemplateCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

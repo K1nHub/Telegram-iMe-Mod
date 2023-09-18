@@ -6,14 +6,14 @@ import androidx.navigation.NavDirections;
 import com.iMe.feature.socialMedias.SocialAuthDomain;
 import java.io.Serializable;
 import java.util.HashMap;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes3.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes4.dex */
 public class AuthScreenDirections {
     public static ToSocialAuth toSocialAuth(SocialAuthDomain socialAuthDomain) {
         return new ToSocialAuth(socialAuthDomain);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ToSocialAuth implements NavDirections {
         private final HashMap arguments;
 
@@ -44,7 +44,7 @@ public class AuthScreenDirections {
 
         @Override // androidx.navigation.NavDirections
         public int getActionId() {
-            return C3558R.C3561id.toSocialAuth;
+            return C3473R.C3476id.toSocialAuth;
         }
 
         public SocialAuthDomain getSocialAuthDomain() {

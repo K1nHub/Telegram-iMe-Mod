@@ -8,7 +8,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.TextStyleSpan;
 /* renamed from: org.telegram.ui.Components.URLSpanMono */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class URLSpanMono extends MetricAffectingSpan {
     private int currentEnd;
     private CharSequence currentMessage;

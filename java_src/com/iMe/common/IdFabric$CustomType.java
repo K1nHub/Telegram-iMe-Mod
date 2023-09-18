@@ -1,5 +1,5 @@
 package com.iMe.common;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class IdFabric$CustomType {
     public static final int CHAT_ATTACH_ALERT_WALLET;
     public static final int CHAT_ATTACH_ALERT_WALLET_BINANCE;

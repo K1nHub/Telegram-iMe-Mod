@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_pageBlockAuthorDate extends TLRPC$PageBlock {
     public static int constructor = -1162877472;
     public TLRPC$RichText author;

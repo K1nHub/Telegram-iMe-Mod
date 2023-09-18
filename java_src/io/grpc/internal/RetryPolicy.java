@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RetryPolicy {
     static final RetryPolicy DEFAULT = new RetryPolicy(1, 0, 0, 1.0d, Collections.emptySet());
     final double backoffMultiplier;
@@ -18,7 +18,7 @@ public final class RetryPolicy {
     final Set<Status.Code> retryableStatusCodes;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Provider {
         RetryPolicy get();
     }

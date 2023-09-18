@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: StakingTransactionView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface StakingTransactionView extends BaseView {
     void showActionError(String str, String str2);
 

@@ -19,7 +19,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.wallet.WalletConnectSessionsDao_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectSessionsDao_Impl extends WalletConnectSessionsDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<WalletConnectSessionDb> __insertionAdapterOfWalletConnectSessionDb;

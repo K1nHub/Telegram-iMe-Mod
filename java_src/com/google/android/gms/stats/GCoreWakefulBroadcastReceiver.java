@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.ShowFirstParty;
 import com.google.android.gms.common.stats.WakeLockTracker;
 @ShowFirstParty
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class GCoreWakefulBroadcastReceiver extends WakefulBroadcastReceiver {
     private static String TAG = "GCoreWakefulBroadcastReceiver";
 

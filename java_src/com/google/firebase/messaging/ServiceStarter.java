@@ -12,7 +12,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ServiceStarter {
     private static ServiceStarter instance;
     private String firebaseMessagingServiceClassName = null;

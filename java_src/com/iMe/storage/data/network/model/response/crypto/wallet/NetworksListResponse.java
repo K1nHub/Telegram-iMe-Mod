@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.crypto.wallet;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NetworksListResponse {
     private final List<NetworkResponse> networks;
 

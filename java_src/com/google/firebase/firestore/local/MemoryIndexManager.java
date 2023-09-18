@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class MemoryIndexManager implements IndexManager {
     private final MemoryCollectionParentIndex collectionParentsIndex = new MemoryCollectionParentIndex();
 
@@ -22,7 +22,7 @@ class MemoryIndexManager implements IndexManager {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class MemoryCollectionParentIndex {
         private final HashMap<String, HashSet<ResourcePath>> index = new HashMap<>();
 

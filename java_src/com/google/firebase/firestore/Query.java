@@ -16,7 +16,7 @@ import com.google.firebase.firestore.util.Executors;
 import com.google.firebase.firestore.util.Preconditions;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Query {
     final FirebaseFirestore firestore;
     final com.google.firebase.firestore.core.Query query;

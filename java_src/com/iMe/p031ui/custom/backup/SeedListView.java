@@ -20,7 +20,7 @@ import org.telegram.messenger.databinding.ForkContentSeedListBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: SeedListView.kt */
 /* renamed from: com.iMe.ui.custom.backup.SeedListView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SeedListView extends FrameLayout {
     private ForkContentSeedListBinding binding;
     private int wordPosition;
@@ -121,7 +121,7 @@ public final class SeedListView extends FrameLayout {
 
     /* compiled from: SeedListView.kt */
     /* renamed from: com.iMe.ui.custom.backup.SeedListView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

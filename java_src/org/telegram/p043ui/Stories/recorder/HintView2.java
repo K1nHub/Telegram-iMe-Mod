@@ -28,7 +28,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.Components.AnimatedFloat;
@@ -38,7 +38,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LinkPath;
 import org.telegram.p043ui.Components.LinkSpanDrawable;
 /* renamed from: org.telegram.ui.Stories.recorder.HintView2 */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HintView2 extends View {
     private float arrowHalfWidth;
     private float arrowHeight;
@@ -509,7 +509,7 @@ public class HintView2 extends View {
         }
         if (this.closeButton) {
             if (this.closeButtonDrawable == null) {
-                Drawable mutate = getContext().getResources().getDrawable(C3558R.C3560drawable.msg_mini_close_tooltip).mutate();
+                Drawable mutate = getContext().getResources().getDrawable(C3473R.C3475drawable.msg_mini_close_tooltip).mutate();
                 this.closeButtonDrawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(2113929215, PorterDuff.Mode.MULTIPLY));
             }
@@ -584,7 +584,7 @@ public class HintView2 extends View {
         }
         if (this.closeButton) {
             if (this.closeButtonDrawable == null) {
-                Drawable mutate2 = getContext().getResources().getDrawable(C3558R.C3560drawable.msg_mini_close_tooltip).mutate();
+                Drawable mutate2 = getContext().getResources().getDrawable(C3473R.C3475drawable.msg_mini_close_tooltip).mutate();
                 this.closeButtonDrawable = mutate2;
                 mutate2.setColorFilter(new PorterDuffColorFilter(2113929215, PorterDuff.Mode.MULTIPLY));
             }

@@ -4,7 +4,7 @@ import com.iMe.fork.enums.TranslationDialogType;
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TranslationArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TranslationArgs {
     private String textToTranslate;
     private final DialogTranslationSettings translationSettings;

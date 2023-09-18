@@ -8,7 +8,7 @@ import io.reactivex.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.internal.subscribers.BasicFuseableConditionalSubscriber;
 import io.reactivex.internal.subscribers.BasicFuseableSubscriber;
 import org.reactivestreams.Subscriber;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> {
     final Function<? super T, ? extends U> mapper;
 
@@ -26,7 +26,7 @@ public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> 
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class MapSubscriber<T, U> extends BasicFuseableSubscriber<T, U> {
         final Function<? super T, ? extends U> mapper;
 
@@ -58,7 +58,7 @@ public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> 
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public U poll() throws Exception {
-            T poll = this.f572qs.poll();
+            T poll = this.f563qs.poll();
             if (poll != null) {
                 return (U) ObjectHelper.requireNonNull(this.mapper.apply(poll), "The mapper function returned a null value.");
             }
@@ -66,7 +66,7 @@ public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> 
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class MapConditionalSubscriber<T, U> extends BasicFuseableConditionalSubscriber<T, U> {
         final Function<? super T, ? extends U> mapper;
 
@@ -111,7 +111,7 @@ public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> 
 
         @Override // io.reactivex.internal.fuseable.SimpleQueue
         public U poll() throws Exception {
-            T poll = this.f571qs.poll();
+            T poll = this.f562qs.poll();
             if (poll != null) {
                 return (U) ObjectHelper.requireNonNull(this.mapper.apply(poll), "The mapper function returned a null value.");
             }

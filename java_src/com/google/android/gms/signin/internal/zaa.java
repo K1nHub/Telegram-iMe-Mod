@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-base@@18.1.0 */
 @SafeParcelable.Class(creator = "AuthAccountResultCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zaa extends AbstractSafeParcelable implements Result {
     public static final Parcelable.Creator<zaa> CREATOR = new zab();
     @SafeParcelable.VersionField(m794id = 1)

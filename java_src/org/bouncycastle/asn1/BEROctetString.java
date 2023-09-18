@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BEROctetString extends ASN1OctetString {
     private final int chunkSize;
     private final ASN1OctetString[] octs;

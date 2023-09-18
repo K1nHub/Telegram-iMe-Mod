@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.twitter;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterUserInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterUserInfo {
     private final Long telegramUserId;
     private final String twitterAvatarUrl;

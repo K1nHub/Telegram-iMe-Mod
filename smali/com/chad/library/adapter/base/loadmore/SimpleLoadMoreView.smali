@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSimpleLoadMoreView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimpleLoadMoreView.kt\ncom/chad/library/adapter/base/loadmore/SimpleLoadMoreView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,56:1\n56#2,6:57\n*S KotlinDebug\n*F\n+ 1 SimpleLoadMoreView.kt\ncom/chad/library/adapter/base/loadmore/SimpleLoadMoreView\n*L\n18#1:57,6\n*E\n"
+    value = "SMAP\nSimpleLoadMoreView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SimpleLoadMoreView.kt\ncom/chad/library/adapter/base/loadmore/SimpleLoadMoreView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,58:1\n56#2,6:59\n*S KotlinDebug\n*F\n+ 1 SimpleLoadMoreView.kt\ncom/chad/library/adapter/base/loadmore/SimpleLoadMoreView\n*L\n19#1:59,6\n*E\n"
 .end annotation
 
 
@@ -20,7 +20,7 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 16
+    .line 17
     invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/BaseLoadMoreView;-><init>()V
 
     .line 58
@@ -41,7 +41,7 @@
 
     move-result-object v0
 
-    .line 18
+    .line 19
     iput-object v0, p0, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->resourceManager$delegate:Lkotlin/Lazy;
 
     return-void
@@ -50,7 +50,7 @@
 .method private final getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
     .locals 1
 
-    .line 18
+    .line 19
     iget-object v0, p0, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->resourceManager$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -67,7 +67,7 @@
 .method public getKoin()Lorg/koin/core/Koin;
     .locals 1
 
-    .line 16
+    .line 17
     invoke-static {p0}, Lorg/koin/core/component/KoinComponent$DefaultImpls;->getKoin(Lorg/koin/core/component/KoinComponent;)Lorg/koin/core/Koin;
 
     move-result-object v0
@@ -82,14 +82,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 33
+    .line 34
     sget v0, Lorg/telegram/messenger/R$id;->load_more_load_complete_view:I
 
     invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 34
+    .line 35
     sget v0, Lorg/telegram/messenger/R$id;->tv_load_complete:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -98,7 +98,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 35
+    .line 36
     invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -111,7 +111,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 36
+    .line 37
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -130,14 +130,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 42
     sget v0, Lorg/telegram/messenger/R$id;->load_more_load_end_view:I
 
     invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 42
+    .line 43
     sget v0, Lorg/telegram/messenger/R$id;->tv_load_end:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -146,7 +146,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 43
+    .line 44
     invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -159,7 +159,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 44
+    .line 45
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -178,14 +178,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 50
     sget v0, Lorg/telegram/messenger/R$id;->load_more_load_fail_view:I
 
     invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 50
+    .line 51
     sget v0, Lorg/telegram/messenger/R$id;->tv_prompt:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -194,7 +194,12 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 51
+    const/16 v1, 0x11
+
+    .line 52
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 53
     invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -207,7 +212,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 52
+    .line 54
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -226,14 +231,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 24
+    .line 25
     sget v0, Lorg/telegram/messenger/R$id;->load_more_loading_view:I
 
     invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 25
+    .line 26
     sget v0, Lorg/telegram/messenger/R$id;->loading_progress:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -254,7 +259,7 @@
 
     invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->tintIndeterminateProgress(Landroid/widget/ProgressBar;I)V
 
-    .line 26
+    .line 27
     sget v0, Lorg/telegram/messenger/R$id;->loading_text:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -263,7 +268,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/chad/library/adapter/base/loadmore/SimpleLoadMoreView;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -276,7 +281,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 28
+    .line 29
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -295,7 +300,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 22
     sget v0, Lorg/telegram/messenger/R$layout;->fork_brvah_quick_view_load_more:I
 
     invoke-static {p1, v0}, Lcom/chad/library/adapter/base/util/AdapterUtilsKt;->getItemView(Landroid/view/ViewGroup;I)Landroid/view/View;

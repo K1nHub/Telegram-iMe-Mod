@@ -15,7 +15,7 @@ import com.google.firebase.crashlytics.internal.common.CrashlyticsReportWithSess
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform;
 import java.nio.charset.Charset;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DataTransportCrashlyticsReportSender {
     private final Transport<CrashlyticsReport> transport;
     private static final CrashlyticsReportJsonTransform TRANSFORM = new CrashlyticsReportJsonTransform();

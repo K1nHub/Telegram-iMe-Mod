@@ -12,7 +12,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "PolygonOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PolygonOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PolygonOptions> CREATOR = new zzl();
     @SafeParcelable.Field(getter = "getPoints", m797id = 2)

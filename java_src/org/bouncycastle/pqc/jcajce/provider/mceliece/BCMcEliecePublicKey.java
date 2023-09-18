@@ -8,7 +8,7 @@ import org.bouncycastle.pqc.asn1.McEliecePublicKey;
 import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.crypto.mceliece.McEliecePublicKeyParameters;
 import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BCMcEliecePublicKey implements PublicKey {
     private McEliecePublicKeyParameters params;
 

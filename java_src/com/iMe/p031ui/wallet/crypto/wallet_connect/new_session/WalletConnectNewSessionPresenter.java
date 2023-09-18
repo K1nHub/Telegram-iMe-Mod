@@ -15,7 +15,7 @@ import moxy.InjectViewState;
 /* compiled from: WalletConnectNewSessionPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletConnectNewSessionPresenter extends BasePresenter<WalletConnectNewSessionView> {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;

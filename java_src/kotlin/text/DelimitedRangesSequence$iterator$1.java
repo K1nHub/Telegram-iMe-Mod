@@ -9,7 +9,7 @@ import kotlin.ranges.RangesKt___RangesKt;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* compiled from: Strings.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRange>, KMappedMarker, p033j$.util.Iterator {
     private int counter;
     private int currentStartIndex;

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updateEditChannelMessage extends TLRPC$Update {
     public static int constructor = 457133559;
     public TLRPC$Message message;

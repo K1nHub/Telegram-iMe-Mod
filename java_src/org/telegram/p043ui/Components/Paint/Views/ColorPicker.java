@@ -19,7 +19,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.Paint.Swatch;
 /* renamed from: org.telegram.ui.Components.Paint.Views.ColorPicker */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ColorPicker extends FrameLayout {
     private static final int[] COLORS = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
     private static final float[] LOCATIONS = {BitmapDescriptorFactory.HUE_RED, 0.14f, 0.24f, 0.39f, 0.49f, 0.62f, 0.73f, 0.85f, 1.0f};
@@ -42,7 +42,7 @@ public class ColorPicker extends FrameLayout {
     private float weight;
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.ColorPicker$ColorPickerDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ColorPickerDelegate {
         void onBeganColorPicking();
 

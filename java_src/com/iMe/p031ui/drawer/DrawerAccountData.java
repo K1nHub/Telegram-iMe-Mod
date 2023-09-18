@@ -2,16 +2,16 @@ package com.iMe.p031ui.drawer;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerAccountData.kt */
 /* renamed from: com.iMe.ui.drawer.DrawerAccountData */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum DrawerAccountData {
-    PHONE(C3558R.string.drawer_profile_cell_alert_phone_number),
-    USERNAME(C3558R.string.drawer_profile_cell_alert_username),
-    NAME(C3558R.string.drawer_profile_cell_alert_name),
-    USER_ID(C3558R.string.drawer_profile_cell_alert_user_id);
+    PHONE(C3473R.string.drawer_profile_cell_alert_phone_number),
+    USERNAME(C3473R.string.drawer_profile_cell_alert_username),
+    NAME(C3473R.string.drawer_profile_cell_alert_name),
+    USER_ID(C3473R.string.drawer_profile_cell_alert_user_id);
     
     public static final Companion Companion = new Companion(null);
     private final int titleResId;
@@ -36,7 +36,7 @@ public enum DrawerAccountData {
 
     /* compiled from: DrawerAccountData.kt */
     /* renamed from: com.iMe.ui.drawer.DrawerAccountData$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

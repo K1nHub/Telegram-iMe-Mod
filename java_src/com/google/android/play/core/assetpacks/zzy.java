@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface zzy {
     Task<ParcelFileDescriptor> zza(int i, String str, String str2, int i2);
 

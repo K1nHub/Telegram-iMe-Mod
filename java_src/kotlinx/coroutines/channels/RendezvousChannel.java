@@ -3,7 +3,7 @@ package kotlinx.coroutines.channels;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: RendezvousChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class RendezvousChannel<E> extends AbstractChannel<E> {
     @Override // kotlinx.coroutines.channels.AbstractChannel
     protected final boolean isBufferAlwaysEmpty() {

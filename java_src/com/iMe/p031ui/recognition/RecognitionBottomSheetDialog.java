@@ -27,7 +27,7 @@ import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: RecognitionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.recognition.RecognitionBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RecognitionBottomSheetDialog extends MvpBottomSheet {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(RecognitionBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -41,7 +41,7 @@ public final class RecognitionBottomSheetDialog extends MvpBottomSheet {
 
     /* compiled from: RecognitionBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.recognition.RecognitionBottomSheetDialog$TranslationDelegate */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface TranslationDelegate {
         void onTranslateAction(String str);
     }
@@ -244,7 +244,7 @@ public final class RecognitionBottomSheetDialog extends MvpBottomSheet {
 
     /* compiled from: RecognitionBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.recognition.RecognitionBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

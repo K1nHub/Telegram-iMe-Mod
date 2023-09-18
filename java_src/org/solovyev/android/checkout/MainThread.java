@@ -2,7 +2,7 @@ package org.solovyev.android.checkout;
 
 import android.os.Handler;
 import android.os.Looper;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class MainThread implements CancellableExecutor {
     private final Handler mHandler;
 

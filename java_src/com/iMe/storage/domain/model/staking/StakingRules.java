@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.model.staking;
 /* compiled from: StakingRules.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingRules {
     private final boolean canDeposit;
     private final boolean canWithdrawImmediately;

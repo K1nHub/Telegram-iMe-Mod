@@ -22,7 +22,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: InstanceRegistry.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class InstanceRegistry {
     private final Map<String, InstanceFactory<?>> _instances;
     private final Koin _koin;

@@ -15,7 +15,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LinkSpanDrawable;
 import org.telegram.p043ui.Components.spoilers.SpoilersTextView;
 /* renamed from: org.telegram.ui.Components.EffectsTextView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EffectsTextView extends SpoilersTextView {
     private boolean disablePaddingsOffset;
     private boolean disablePaddingsOffsetX;

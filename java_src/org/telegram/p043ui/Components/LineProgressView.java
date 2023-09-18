@@ -10,7 +10,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.voip.CellFlickerDrawable;
 /* renamed from: org.telegram.ui.Components.LineProgressView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LineProgressView extends View {
     private static DecelerateInterpolator decelerateInterpolator;
     private static Paint progressPaint;

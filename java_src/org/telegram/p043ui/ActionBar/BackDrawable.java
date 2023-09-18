@@ -10,7 +10,7 @@ import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.ActionBar.BackDrawable */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BackDrawable extends Drawable {
     private boolean alwaysClose;
     private int arrowRotation;

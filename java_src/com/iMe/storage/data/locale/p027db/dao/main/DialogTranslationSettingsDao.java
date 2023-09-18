@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogTranslationSettingsDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.DialogTranslationSettingsDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class DialogTranslationSettingsDao implements BaseDao<DialogTranslationSettingsDb> {
     public abstract void deleteAllTranslationSettingsByUserId(long j);
 

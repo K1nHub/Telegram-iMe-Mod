@@ -3,7 +3,7 @@ package com.google.firebase.firestore;
 import com.google.firebase.firestore.util.Preconditions;
 import com.google.firebase.firestore.util.Util;
 import com.google.protobuf.ByteString;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Blob implements Comparable<Blob> {
     private final ByteString bytes;
 

@@ -1,5 +1,5 @@
 package com.google.zxing.qrcode.encoder;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class MaskUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int applyMaskPenaltyRule1(ByteMatrix byteMatrix) {

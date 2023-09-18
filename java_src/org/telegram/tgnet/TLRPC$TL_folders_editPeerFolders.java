@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_folders_editPeerFolders extends TLObject {
     public static int constructor = 1749536939;
     public ArrayList<TLRPC$TL_inputFolderPeer> folder_peers = new ArrayList<>();

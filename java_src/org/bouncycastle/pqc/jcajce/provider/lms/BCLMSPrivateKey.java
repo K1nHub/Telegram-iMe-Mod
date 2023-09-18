@@ -9,7 +9,7 @@ import org.bouncycastle.pqc.crypto.lms.LMSKeyParameters;
 import org.bouncycastle.pqc.crypto.util.PrivateKeyFactory;
 import org.bouncycastle.pqc.crypto.util.PrivateKeyInfoFactory;
 import org.bouncycastle.util.Arrays;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BCLMSPrivateKey implements PrivateKey, Key {
     private transient ASN1Set attributes;
     private transient LMSKeyParameters keyParams;

@@ -2,7 +2,7 @@ package com.google.firebase.firestore.util;
 
 import com.google.firebase.firestore.util.AsyncQueue;
 import java.util.Date;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ExponentialBackoff {
     private final double backoffFactor;
     private long currentBaseMs;

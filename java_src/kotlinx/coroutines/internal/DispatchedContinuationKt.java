@@ -15,7 +15,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.ThreadLocalEventLoop;
 import kotlinx.coroutines.UndispatchedCoroutine;
 /* compiled from: DispatchedContinuation.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DispatchedContinuationKt {
     private static final Symbol UNDEFINED = new Symbol("UNDEFINED");
     public static final Symbol REUSABLE_CLAIMED = new Symbol("REUSABLE_CLAIMED");
@@ -35,7 +35,7 @@ public final class DispatchedContinuationKt {
             if (dispatchedContinuation.dispatcher.isDispatchNeeded(dispatchedContinuation.getContext())) {
                 dispatchedContinuation._state = state;
                 dispatchedContinuation.resumeMode = 1;
-                dispatchedContinuation.dispatcher.mo1690dispatch(dispatchedContinuation.getContext(), dispatchedContinuation);
+                dispatchedContinuation.dispatcher.mo1688dispatch(dispatchedContinuation.getContext(), dispatchedContinuation);
                 return;
             }
             DebugKt.getASSERTIONS_ENABLED();
@@ -50,7 +50,7 @@ public final class DispatchedContinuationKt {
                         CancellationException cancellationException = job.getCancellationException();
                         dispatchedContinuation.cancelCompletedResult$kotlinx_coroutines_core(state, cancellationException);
                         Result.Companion companion = Result.Companion;
-                        dispatchedContinuation.resumeWith(Result.m1660constructorimpl(ResultKt.createFailure(cancellationException)));
+                        dispatchedContinuation.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(cancellationException)));
                         z = true;
                     }
                     if (!z) {

@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
 @SafeParcelable.Class(creator = "GoogleNowAuthStateCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GoogleNowAuthState extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GoogleNowAuthState> CREATOR = new zza();
     @SafeParcelable.Field(getter = "getAuthCode", m797id = 1)

@@ -12,7 +12,7 @@ import com.google.android.gms.internal.maps.zzam;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "TileOverlayOptionsCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TileOverlayOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<TileOverlayOptions> CREATOR = new zzac();
     @SafeParcelable.Field(getter = "getTileProviderDelegate", m797id = 2, type = "android.os.IBinder")

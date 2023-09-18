@@ -4,23 +4,24 @@ import com.iMe.storage.data.mapper.wallet.TokenMappingKt;
 import com.iMe.storage.data.network.model.response.crypto.swap.AvailableSwapTokensResponse;
 import com.iMe.storage.data.network.model.response.crypto.swap.TokensApprovalInfoResponse;
 import com.iMe.storage.data.network.model.response.crypto.wallet.TransactionParamsResponse;
-import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
+import com.iMe.storage.data.network.model.response.wallet.TokenDetailedWithRateResponse;
 import com.iMe.storage.domain.model.common.CursoredData;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
-import com.iMe.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata;
+import com.iMe.storage.domain.model.crypto.swap.TokenApproveData;
 import com.iMe.storage.domain.model.wallet.swap.TokenApproveStatus;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailedWithRate;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SwapMappingKt {
 
     /* compiled from: SwapMapping.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -46,31 +47,30 @@ public final class SwapMappingKt {
         }
     }
 
-    public static final CursoredData<TokenDetailed> mapToDomain(AvailableSwapTokensResponse availableSwapTokensResponse) {
+    public static final CursoredData<TokenDetailedWithRate> mapToDomain(AvailableSwapTokensResponse availableSwapTokensResponse) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(availableSwapTokensResponse, "<this>");
-        List<TokenDetailedResponse> tokens = availableSwapTokensResponse.getTokens();
+        List<TokenDetailedWithRateResponse> tokens = availableSwapTokensResponse.getTokens();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(tokens, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (TokenDetailedResponse tokenDetailedResponse : tokens) {
-            arrayList.add(TokenMappingKt.mapToDomain(tokenDetailedResponse));
+        for (TokenDetailedWithRateResponse tokenDetailedWithRateResponse : tokens) {
+            arrayList.add(TokenMappingKt.mapToDomain(tokenDetailedWithRateResponse));
         }
         return new CursoredData<>(arrayList, availableSwapTokensResponse.getCursor());
     }
 
-    public static final List<CryptoTokenApproveMetadata> mapToDomain(TokensApprovalInfoResponse tokensApprovalInfoResponse) {
+    public static final List<TokenApproveData> mapToDomain(TokensApprovalInfoResponse tokensApprovalInfoResponse) {
         int collectionSizeOrDefault;
-        Object allowed;
-        Object obj;
+        TokenApproveData allowed;
+        TokenApproveData tokenApproveData;
         Intrinsics.checkNotNullParameter(tokensApprovalInfoResponse, "<this>");
         List<TokensApprovalInfoResponse.ApprovalInfoResponse> approvalInfo = tokensApprovalInfoResponse.getApprovalInfo();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(approvalInfo, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (TokensApprovalInfoResponse.ApprovalInfoResponse approvalInfoResponse : approvalInfo) {
-            TokenApproveStatus map = TokenApproveStatus.Companion.map(approvalInfoResponse.getStatus());
-            int i = WhenMappings.$EnumSwitchMapping$0[map.ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[TokenApproveStatus.Companion.map(approvalInfoResponse.getStatus()).ordinal()];
             if (i == 1) {
-                allowed = new CryptoTokenApproveMetadata.Allowed(TokenMappingKt.mapToDomain(approvalInfoResponse.getToken()), map, approvalInfoResponse.getValue());
+                allowed = new TokenApproveData.Allowed(TokenMappingKt.mapToDomain(approvalInfoResponse.getToken()), approvalInfoResponse.getValue());
             } else {
                 if (i == 2) {
                     TokenDetailed mapToDomain = TokenMappingKt.mapToDomain(approvalInfoResponse.getToken());
@@ -83,9 +83,9 @@ public final class SwapMappingKt {
                     if (lastErrorMessage == null) {
                         lastErrorMessage = "";
                     }
-                    obj = new CryptoTokenApproveMetadata.NeedApprove.Error(mapToDomain, map, value, mapToDomain2, spenderContractAddress, TokenMappingKt.mapToDomain(tokensApprovalInfoResponse.getFeeToken()), lastErrorMessage);
+                    tokenApproveData = new TokenApproveData.NeedApprove.Error(mapToDomain, value, mapToDomain2, spenderContractAddress, TokenMappingKt.mapToDomain(tokensApprovalInfoResponse.getFeeToken()), lastErrorMessage);
                 } else if (i == 3) {
-                    allowed = new CryptoTokenApproveMetadata.InProgress(TokenMappingKt.mapToDomain(approvalInfoResponse.getToken()), map, approvalInfoResponse.getValue());
+                    allowed = new TokenApproveData.InProgress(TokenMappingKt.mapToDomain(approvalInfoResponse.getToken()), approvalInfoResponse.getValue());
                 } else if (i != 4) {
                     throw new NoWhenBranchMatchedException();
                 } else {
@@ -94,12 +94,12 @@ public final class SwapMappingKt {
                     String spenderContractAddress2 = tokensApprovalInfoResponse.getSpenderContractAddress();
                     TransactionParamsResponse.EVM transactionParams2 = approvalInfoResponse.getTransactionParams();
                     Intrinsics.checkNotNull(transactionParams2);
-                    obj = new CryptoTokenApproveMetadata.NeedApprove.NotAllowed(mapToDomain3, map, value2, CryptoWalletMappingKt.mapToDomain(transactionParams2), spenderContractAddress2, TokenMappingKt.mapToDomain(tokensApprovalInfoResponse.getFeeToken()));
+                    tokenApproveData = new TokenApproveData.NeedApprove.NotAllowed(mapToDomain3, value2, CryptoWalletMappingKt.mapToDomain(transactionParams2), spenderContractAddress2, TokenMappingKt.mapToDomain(tokensApprovalInfoResponse.getFeeToken()));
                 }
-                arrayList.add(obj);
+                arrayList.add(tokenApproveData);
             }
-            obj = allowed;
-            arrayList.add(obj);
+            tokenApproveData = allowed;
+            arrayList.add(tokenApproveData);
         }
         return arrayList;
     }

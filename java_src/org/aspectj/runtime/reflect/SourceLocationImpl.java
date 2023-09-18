@@ -1,7 +1,7 @@
 package org.aspectj.runtime.reflect;
 
 import org.aspectj.lang.reflect.SourceLocation;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class SourceLocationImpl implements SourceLocation {
     String fileName;
     int line;

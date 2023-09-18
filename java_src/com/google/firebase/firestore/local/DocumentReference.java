@@ -3,7 +3,7 @@ package com.google.firebase.firestore.local;
 import com.google.firebase.firestore.model.DocumentKey;
 import com.google.firebase.firestore.util.Util;
 import java.util.Comparator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class DocumentReference {
     static final Comparator<DocumentReference> BY_KEY = new Comparator() { // from class: com.google.firebase.firestore.local.DocumentReference$$ExternalSyntheticLambda1
         @Override // java.util.Comparator

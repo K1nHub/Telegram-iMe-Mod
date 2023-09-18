@@ -16,7 +16,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "SleepSegmentEventCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SleepSegmentEvent extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SleepSegmentEvent> CREATOR = new zzag();
     public static final int STATUS_MISSING_DATA = 1;

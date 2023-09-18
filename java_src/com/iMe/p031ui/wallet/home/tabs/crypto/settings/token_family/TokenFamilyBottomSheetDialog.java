@@ -27,13 +27,13 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkContentTokenFamilyBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TokenFamilyBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implements TokenFamilyView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(TokenFamilyBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/home/tabs/crypto/settings/token_family/TokenFamilyPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(TokenFamilyBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentTokenFamilyBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -176,8 +176,8 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
 
     private final void setupViews() {
         ForkContentTokenFamilyBinding binding = getBinding();
-        binding.textDescription.setText(getResourceManager().getString(C3558R.string.wallet_token_family_description));
-        binding.buttonDone.setText(getResourceManager().getString(C3558R.string.wallet_backup_done));
+        binding.textDescription.setText(getResourceManager().getString(C3473R.string.wallet_token_family_description));
+        binding.buttonDone.setText(getResourceManager().getString(C3473R.string.wallet_backup_done));
     }
 
     private final void setupRecyclerView() {
@@ -233,7 +233,7 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
 
     /* compiled from: TokenFamilyBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyBottomSheetDialog$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

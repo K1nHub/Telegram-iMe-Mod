@@ -15,7 +15,7 @@ import kotlinx.coroutines.channels.BufferOverflow;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlow;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowKt;
 /* compiled from: SharedFlow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implements MutableSharedFlow<T>, Flow {
     private Object[] buffer;
     private final int bufferCapacity;
@@ -27,7 +27,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
     private long replayIndex;
 
     /* compiled from: SharedFlow.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -127,7 +127,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                 sharedFlowSlot.cont = cancellableContinuationImpl;
             } else {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
             }
             unit = Unit.INSTANCE;
         }
@@ -153,7 +153,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         synchronized (this) {
             if (tryEmitLocked(t)) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
                 continuationArr = findSlotsToResumeLocked(continuationArr2);
                 emitter = null;
             } else {
@@ -173,7 +173,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation2 : continuationArr) {
             if (continuation2 != null) {
                 Result.Companion companion2 = Result.Companion;
-                continuation2.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                continuation2.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
             }
         }
         Object result = cancellableContinuationImpl.getResult();
@@ -248,7 +248,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation : continuationArr) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
             }
         }
         return z;
@@ -376,7 +376,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
     */
     public final kotlin.coroutines.Continuation<kotlin.Unit>[] updateCollectorIndexLocked$kotlinx_coroutines_core(long r20) {
         /*
-            Method dump skipped, instructions count: 307
+            Method dump skipped, instructions count: 306
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.SharedFlowImpl.updateCollectorIndexLocked$kotlinx_coroutines_core(long):kotlin.coroutines.Continuation[]");
@@ -449,7 +449,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation : continuationArr) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1660constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m1658constructorimpl(Unit.INSTANCE));
             }
         }
         return obj;
@@ -551,7 +551,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SharedFlow.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Emitter implements DisposableHandle {
         public final Continuation<Unit> cont;
         public final SharedFlowImpl<?> flow;

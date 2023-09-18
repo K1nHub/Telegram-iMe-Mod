@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.core.view.GestureDetectorCompat;
 import java.util.List;
 /* renamed from: org.telegram.ui.Components.spoilers.SpoilersClickDetector */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SpoilersClickDetector {
     private GestureDetectorCompat gestureDetector;
     private int horizontalPadding;
@@ -14,7 +14,7 @@ public class SpoilersClickDetector {
     private int verticalPadding;
 
     /* renamed from: org.telegram.ui.Components.spoilers.SpoilersClickDetector$OnSpoilerClickedListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnSpoilerClickedListener {
         void onSpoilerClicked(SpoilerEffect spoilerEffect, float f, float f2);
     }

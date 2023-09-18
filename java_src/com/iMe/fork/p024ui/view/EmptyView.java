@@ -7,13 +7,13 @@ import android.widget.TextView;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: EmptyView.kt */
 /* renamed from: com.iMe.fork.ui.view.EmptyView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EmptyView extends FrameLayout {
     private final RLottieImageView animationView;
 
@@ -28,7 +28,7 @@ public final class EmptyView extends FrameLayout {
         Intrinsics.checkNotNullParameter(message, "message");
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3558R.raw.fork_catalog_empty, 100, 100);
+        rLottieImageView.setAnimation(C3473R.raw.fork_catalog_empty, 100, 100);
         ViewExtKt.setHorizontalPadding(rLottieImageView, 32);
         this.animationView = rLottieImageView;
         LinearLayout linearLayout = new LinearLayout(context);
@@ -52,7 +52,7 @@ public final class EmptyView extends FrameLayout {
 
     /* compiled from: EmptyView.kt */
     /* renamed from: com.iMe.fork.ui.view.EmptyView$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -12,7 +12,7 @@ import org.telegram.messenger.databinding.ForkContentNetworkCellBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ImageTextCheckCell.kt */
 /* renamed from: com.iMe.ui.custom.ImageTextCheckCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ImageTextCheckCell extends FrameLayout {
     private final ForkContentNetworkCellBinding binding;
 

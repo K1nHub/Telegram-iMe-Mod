@@ -3,7 +3,7 @@ package com.iMe.i_staking.request;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingApprovalPrepareRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingApprovalPrepareRequest {
     private final long stakingId;
     private final String token;

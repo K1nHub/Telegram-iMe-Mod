@@ -25,10 +25,10 @@
 
 .field public static final abc_star_small:I = 0x7f07003d
 
-.field public static final tooltip_precise_anchor_extra_offset:I = 0x7f0701ed
+.field public static final tooltip_precise_anchor_extra_offset:I = 0x7f0701ee
 
-.field public static final tooltip_precise_anchor_threshold:I = 0x7f0701ee
+.field public static final tooltip_precise_anchor_threshold:I = 0x7f0701ef
 
-.field public static final tooltip_y_offset_non_touch:I = 0x7f0701f0
+.field public static final tooltip_y_offset_non_touch:I = 0x7f0701f1
 
-.field public static final tooltip_y_offset_touch:I = 0x7f0701f1
+.field public static final tooltip_y_offset_touch:I = 0x7f0701f2

@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.binancepay;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinanceCollectionOrder.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinanceCollectionOrder {
     private final String messageId;
 

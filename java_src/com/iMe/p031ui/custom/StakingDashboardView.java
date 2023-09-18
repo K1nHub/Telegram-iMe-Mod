@@ -33,13 +33,13 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkContentStakingDashboardBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.StorageDiagramView;
 /* compiled from: StakingDashboardView.kt */
 /* renamed from: com.iMe.ui.custom.StakingDashboardView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingDashboardView extends FrameLayout implements KoinComponent {
     private final ForkContentStakingDashboardBinding binding;
     private Callbacks$Callback onCalculatorClick;
@@ -227,7 +227,7 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
         storageDiagramView.setCustomCenterText("_");
         TextView textView = forkContentStakingDashboardBinding.textStakedValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3558R.string.common_progress_state_title;
+        int i = C3473R.string.common_progress_state_title;
         textView.setText(resourceManager.getString(i));
         forkContentStakingDashboardBinding.textProfitValue.setText(getResourceManager().getString(i));
     }
@@ -241,12 +241,12 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
     private final void setupViews() {
         List<HorizontalActionButtonItem> listOf;
         ForkContentStakingDashboardBinding forkContentStakingDashboardBinding = this.binding;
-        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3558R.string.staking_dashboard_header));
+        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3473R.string.staking_dashboard_header));
         forkContentStakingDashboardBinding.viewDiagram.setCustomSize(AndroidUtilities.m72dp(75));
-        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3558R.string.staking_dashboard_staked_title));
-        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3558R.string.staking_dashboard_profit_title));
+        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3473R.string.staking_dashboard_staked_title));
+        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3473R.string.staking_dashboard_profit_title));
         HorizontalActionButtonsView horizontalActionButtonsView = forkContentStakingDashboardBinding.horizontalActionButtons;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3558R.C3560drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3558R.string.staking_dashboard_calculator), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$1
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3473R.C3475drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3473R.string.staking_dashboard_calculator), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -264,7 +264,7 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
                 callbacks$Callback = StakingDashboardView.this.onCalculatorClick;
                 callbacks$Callback.invoke();
             }
-        }, 4, null), new HorizontalActionButtonItem(C3558R.C3560drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3558R.string.staking_dashboard_history), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$2
+        }, 4, null), new HorizontalActionButtonItem(C3473R.C3475drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3473R.string.staking_dashboard_history), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);

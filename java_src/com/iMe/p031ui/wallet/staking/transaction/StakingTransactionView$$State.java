@@ -14,7 +14,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StakingTransactionView$$State extends MvpViewState<StakingTransactionView> implements StakingTransactionView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -184,7 +184,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowStakingConditionsDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowStakingConditionsDialogCommand extends ViewCommand<StakingTransactionView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -201,7 +201,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowNoEnoughMoneyErrorDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowNoEnoughMoneyErrorDialogCommand extends ViewCommand<StakingTransactionView> {
         public final TokenBuyCoordinatorArgs args;
 
@@ -218,7 +218,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowActionSuccessCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowActionSuccessCommand extends ViewCommand<StakingTransactionView> {
         public final String message;
         public final String title;
@@ -237,7 +237,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowActionErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowActionErrorCommand extends ViewCommand<StakingTransactionView> {
         public final String message;
         public final String title;
@@ -256,7 +256,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowConfirmDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowConfirmDialogCommand extends ViewCommand<StakingTransactionView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -275,7 +275,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowBalanceCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowBalanceCommand extends ViewCommand<StakingTransactionView> {
         public final TokenBalance balance;
 
@@ -292,7 +292,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$UpdateAmountDependedViewsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateAmountDependedViewsCommand extends ViewCommand<StakingTransactionView> {
         UpdateAmountDependedViewsCommand(StakingTransactionView$$State stakingTransactionView$$State) {
             super("updateAmountDependedViews", AddToEndSingleStrategy.class);
@@ -306,7 +306,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$UpdateStakingStepCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateStakingStepCommand extends ViewCommand<StakingTransactionView> {
         UpdateStakingStepCommand(StakingTransactionView$$State stakingTransactionView$$State) {
             super("updateStakingStep", AddToEndSingleStrategy.class);
@@ -320,7 +320,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$UpdateWithdrawalFeeCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateWithdrawalFeeCommand extends ViewCommand<StakingTransactionView> {
         UpdateWithdrawalFeeCommand(StakingTransactionView$$State stakingTransactionView$$State) {
             super("updateWithdrawalFee", AddToEndSingleStrategy.class);
@@ -334,7 +334,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<StakingTransactionView> {
         public final String text;
 
@@ -351,7 +351,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<StakingTransactionView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -372,7 +372,7 @@ public class StakingTransactionView$$State extends MvpViewState<StakingTransacti
 
     /* compiled from: StakingTransactionView$$State.java */
     /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<StakingTransactionView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

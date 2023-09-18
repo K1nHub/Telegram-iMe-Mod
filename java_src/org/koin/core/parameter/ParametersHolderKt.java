@@ -4,7 +4,7 @@ import java.util.List;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ParametersHolder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ParametersHolderKt {
     public static final ParametersHolder parametersOf(Object... parameters) {
         List mutableList;

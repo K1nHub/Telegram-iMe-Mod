@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 /* compiled from: Regex.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Regex implements Serializable {
     private final Pattern nativePattern;
 
@@ -85,7 +85,7 @@ public final class Regex implements Serializable {
     }
 
     /* compiled from: Regex.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

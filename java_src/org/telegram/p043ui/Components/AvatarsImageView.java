@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 /* renamed from: org.telegram.ui.Components.AvatarsImageView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AvatarsImageView extends View {
     public final AvatarsDrawable avatarsDrawable;
 

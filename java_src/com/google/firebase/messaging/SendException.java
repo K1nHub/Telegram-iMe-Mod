@@ -2,7 +2,7 @@ package com.google.firebase.messaging;
 
 import java.util.Locale;
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SendException extends Exception {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SendException(String str) {

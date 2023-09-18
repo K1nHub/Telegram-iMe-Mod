@@ -5,7 +5,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* renamed from: org.telegram.ui.Components.CircularViewPager */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CircularViewPager extends ViewPager {
     private Adapter adapter;
 
@@ -64,7 +64,7 @@ public class CircularViewPager extends ViewPager {
     }
 
     /* renamed from: org.telegram.ui.Components.CircularViewPager$Adapter */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static abstract class Adapter extends PagerAdapter {
         public abstract int getExtraCount();
 

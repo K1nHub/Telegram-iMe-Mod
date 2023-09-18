@@ -3,14 +3,14 @@ package com.iMe.model.twitter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterAccountStatus.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TwitterAccountStatus {
     public /* synthetic */ TwitterAccountStatus(DefaultConstructorMarker defaultConstructorMarker) {
         this();
     }
 
     /* compiled from: TwitterAccountStatus.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class None extends TwitterAccountStatus {
         public static final None INSTANCE = new None();
 
@@ -23,7 +23,7 @@ public abstract class TwitterAccountStatus {
     }
 
     /* compiled from: TwitterAccountStatus.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Active extends TwitterAccountStatus {
         private final String nickname;
 
@@ -40,7 +40,7 @@ public abstract class TwitterAccountStatus {
     }
 
     /* compiled from: TwitterAccountStatus.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Error extends TwitterAccountStatus {
         private final String nickname;
 

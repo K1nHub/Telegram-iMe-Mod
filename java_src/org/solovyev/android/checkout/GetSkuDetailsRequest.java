@@ -6,7 +6,7 @@ import com.android.vending.billing.IInAppBillingService;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class GetSkuDetailsRequest extends Request<Skus> {
     private final String mProduct;
     private final ArrayList<String> mSkus;

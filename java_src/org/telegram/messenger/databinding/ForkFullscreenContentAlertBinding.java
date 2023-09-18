@@ -8,9 +8,9 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.RLottieImageView;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkFullscreenContentAlertBinding implements ViewBinding {
     public final ActionButton buttonAction;
     public final RLottieImageView imageAlertResult;
@@ -36,7 +36,7 @@ public final class ForkFullscreenContentAlertBinding implements ViewBinding {
     }
 
     public static ForkFullscreenContentAlertBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fullscreen_content_alert, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fullscreen_content_alert, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -44,17 +44,17 @@ public final class ForkFullscreenContentAlertBinding implements ViewBinding {
     }
 
     public static ForkFullscreenContentAlertBinding bind(View view) {
-        int i = C3558R.C3561id.button_action;
+        int i = C3473R.C3476id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3558R.C3561id.image_alert_result;
+            i = C3473R.C3476id.image_alert_result;
             RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
             if (rLottieImageView != null) {
                 LinearLayout linearLayout = (LinearLayout) view;
-                i = C3558R.C3561id.text_alert_description;
+                i = C3473R.C3476id.text_alert_description;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3558R.C3561id.text_alert_title;
+                    i = C3473R.C3476id.text_alert_title;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkFullscreenContentAlertBinding(linearLayout, actionButton, rLottieImageView, linearLayout, appCompatTextView, appCompatTextView2);

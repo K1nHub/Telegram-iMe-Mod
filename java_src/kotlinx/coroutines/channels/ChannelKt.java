@@ -3,7 +3,7 @@ package kotlinx.coroutines.channels;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: Channel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ChannelKt {
     public static /* synthetic */ Channel Channel$default(int i, BufferOverflow bufferOverflow, Function1 function1, int i2, Object obj) {
         if ((i2 & 1) != 0) {

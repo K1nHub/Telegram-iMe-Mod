@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -30,7 +30,7 @@ import org.telegram.p043ui.Components.Paint.Views.EntityView;
 import org.telegram.p043ui.Components.Point;
 import org.telegram.p043ui.Components.Rect;
 /* renamed from: org.telegram.ui.Components.Paint.Views.TextPaintView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TextPaintView extends EntityView {
     private int align;
     private int baseFontSize;
@@ -155,7 +155,7 @@ public class TextPaintView extends EntityView {
     /* JADX INFO: Access modifiers changed from: private */
     public void updateHint() {
         if (this.editText.getText().length() <= 0) {
-            this.editText.setHint(LocaleController.getString(C3558R.string.TextPlaceholder));
+            this.editText.setHint(LocaleController.getString(C3473R.string.TextPlaceholder));
             this.editText.setHintTextColor(1627389951);
             return;
         }
@@ -383,7 +383,7 @@ public class TextPaintView extends EntityView {
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.TextPaintView$TextViewSelectionView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class TextViewSelectionView extends EntityView.SelectionView {
         private final Paint clearPaint;
         private Path path;

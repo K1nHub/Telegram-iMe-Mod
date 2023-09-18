@@ -12,10 +12,10 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import org.bouncycastle.crypto.Digest;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class XMSSUtil {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static class CheckingStream extends ObjectInputStream {
         private static final Set components;
         private boolean found;

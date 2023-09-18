@@ -25,7 +25,7 @@ import org.telegram.p043ui.Components.AnimatedEmojiSpan;
 import org.telegram.p043ui.Components.spoilers.SpoilerEffect;
 import org.telegram.p043ui.Components.spoilers.SpoilersClickDetector;
 /* renamed from: org.telegram.ui.Components.EditTextEffects */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EditTextEffects extends EditText {
     private ColorFilter animatedEmojiColorFilter;
     private AnimatedEmojiSpan.EmojiGroupedSpans animatedEmojiDrawables;

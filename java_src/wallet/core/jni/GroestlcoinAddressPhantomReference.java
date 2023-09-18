@@ -5,7 +5,7 @@ import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
 /* compiled from: GroestlcoinAddress.java */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class GroestlcoinAddressPhantomReference extends PhantomReference<GroestlcoinAddress> {
     private long nativeHandle;
     private static Set<GroestlcoinAddressPhantomReference> references = new HashSet();

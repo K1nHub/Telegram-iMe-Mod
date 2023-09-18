@@ -9,7 +9,7 @@ import io.reactivex.internal.disposables.EmptyDisposable;
 import io.reactivex.internal.functions.ObjectHelper;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableCollect<T, U> extends AbstractObservableWithUpstream<T, U> {
     final BiConsumer<? super U, ? super T> collector;
     final Callable<? extends U> initialSupplier;
@@ -29,20 +29,20 @@ public final class ObservableCollect<T, U> extends AbstractObservableWithUpstrea
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class CollectObserver<T, U> implements Observer<T>, Disposable {
         final BiConsumer<? super U, ? super T> collector;
         boolean done;
         final Observer<? super U> downstream;
 
         /* renamed from: u */
-        final U f547u;
+        final U f538u;
         Disposable upstream;
 
         CollectObserver(Observer<? super U> observer, U u, BiConsumer<? super U, ? super T> biConsumer) {
             this.downstream = observer;
             this.collector = biConsumer;
-            this.f547u = u;
+            this.f538u = u;
         }
 
         @Override // io.reactivex.Observer
@@ -69,7 +69,7 @@ public final class ObservableCollect<T, U> extends AbstractObservableWithUpstrea
                 return;
             }
             try {
-                this.collector.accept((U) this.f547u, t);
+                this.collector.accept((U) this.f538u, t);
             } catch (Throwable th) {
                 this.upstream.dispose();
                 onError(th);
@@ -92,7 +92,7 @@ public final class ObservableCollect<T, U> extends AbstractObservableWithUpstrea
                 return;
             }
             this.done = true;
-            this.downstream.onNext((U) this.f547u);
+            this.downstream.onNext((U) this.f538u);
             this.downstream.onComplete();
         }
     }

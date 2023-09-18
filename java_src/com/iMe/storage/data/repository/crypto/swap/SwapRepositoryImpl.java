@@ -21,12 +21,12 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.common.CursoredData;
 import com.iMe.storage.domain.model.crypto.swap.ApproveArgs;
 import com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata;
-import com.iMe.storage.domain.model.crypto.swap.CryptoTokenApproveMetadata;
 import com.iMe.storage.domain.model.crypto.swap.SwapArgs;
+import com.iMe.storage.domain.model.crypto.swap.TokenApproveData;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.model.wallet.swap.TradeType;
 import com.iMe.storage.domain.model.wallet.token.Token;
-import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailedWithRate;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import com.iMe.storage.domain.repository.crypto.swap.SwapRepository;
 import io.reactivex.Observable;
@@ -36,7 +36,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SwapRepositoryImpl implements SwapRepository {
     private final WalletApproveDataSourceFactory approveDataSourceFactory;
     private final ApiErrorHandler errorHandler;
@@ -58,19 +58,19 @@ public final class SwapRepositoryImpl implements SwapRepository {
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.swap.SwapRepository
-    public Observable<Result<CursoredData<TokenDetailed>>> getAvailableTokensToSwap(SwapProtocol protocol, TransactionDirection direction, String networkId, String str, String str2, Integer num) {
+    public Observable<Result<CursoredData<TokenDetailedWithRate>>> getAvailableTokensToSwap(SwapProtocol protocol, TransactionDirection direction, String networkId, String str, String str2, Integer num) {
         Intrinsics.checkNotNullParameter(protocol, "protocol");
         Intrinsics.checkNotNullParameter(direction, "direction");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
         Observable<ApiBaseResponse<AvailableSwapTokensResponse>> availableTokensToSwap = this.swapApi.getAvailableTokensToSwap(new AvailableTokensToSwapRequest(protocol.name(), networkId, str, direction.name(), str2, num));
         final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = availableTokensToSwap.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<AvailableSwapTokensResponse>, Result<? extends CursoredData<TokenDetailed>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$mapSuccess$1
+        Observable<R> map = availableTokensToSwap.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<AvailableSwapTokensResponse>, Result<? extends CursoredData<TokenDetailedWithRate>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$mapSuccess$1
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final Result<CursoredData<TokenDetailed>> invoke(ApiBaseResponse<AvailableSwapTokensResponse> response) {
+            public final Result<CursoredData<TokenDetailedWithRate>> invoke(ApiBaseResponse<AvailableSwapTokensResponse> response) {
                 Intrinsics.checkNotNullParameter(response, "response");
                 if (!response.isSuccess()) {
                     return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
@@ -80,13 +80,13 @@ public final class SwapRepositoryImpl implements SwapRepository {
         }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
-        Observable<Result<CursoredData<TokenDetailed>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends CursoredData<TokenDetailed>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$handleError$1
+        Observable<Result<CursoredData<TokenDetailedWithRate>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends CursoredData<TokenDetailedWithRate>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getAvailableTokensToSwap$$inlined$handleError$1
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final Result<CursoredData<TokenDetailed>> invoke(Throwable it) {
+            public final Result<CursoredData<TokenDetailedWithRate>> invoke(Throwable it) {
                 Intrinsics.checkNotNullParameter(it, "it");
                 return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
             }
@@ -96,7 +96,7 @@ public final class SwapRepositoryImpl implements SwapRepository {
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.swap.SwapRepository
-    public Observable<Result<List<CryptoTokenApproveMetadata>>> getApproveTokensInfo(SwapProtocol protocol, String networkId, List<Token> tokens) {
+    public Observable<Result<List<TokenApproveData>>> getApproveTokensInfo(SwapProtocol protocol, String networkId, List<Token> tokens) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(protocol, "protocol");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
@@ -110,13 +110,13 @@ public final class SwapRepositoryImpl implements SwapRepository {
         }
         Observable<ApiBaseResponse<TokensApprovalInfoResponse>> tokensApprovalInfo = swapApi.getTokensApprovalInfo(new TokensApprovalInfoRequest(name, networkId, arrayList));
         final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = tokensApprovalInfo.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<TokensApprovalInfoResponse>, Result<? extends List<? extends CryptoTokenApproveMetadata>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getApproveTokensInfo$$inlined$mapSuccess$1
+        Observable<R> map = tokensApprovalInfo.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<ApiBaseResponse<TokensApprovalInfoResponse>, Result<? extends List<? extends TokenApproveData>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getApproveTokensInfo$$inlined$mapSuccess$1
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final Result<List<? extends CryptoTokenApproveMetadata>> invoke(ApiBaseResponse<TokensApprovalInfoResponse> response) {
+            public final Result<List<? extends TokenApproveData>> invoke(ApiBaseResponse<TokensApprovalInfoResponse> response) {
                 Intrinsics.checkNotNullParameter(response, "response");
                 if (!response.isSuccess()) {
                     return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
@@ -126,13 +126,13 @@ public final class SwapRepositoryImpl implements SwapRepository {
         }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
-        Observable<Result<List<CryptoTokenApproveMetadata>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends CryptoTokenApproveMetadata>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getApproveTokensInfo$$inlined$handleError$1
+        Observable<Result<List<TokenApproveData>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends TokenApproveData>>>() { // from class: com.iMe.storage.data.repository.crypto.swap.SwapRepositoryImpl$getApproveTokensInfo$$inlined$handleError$1
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final Result<List<? extends CryptoTokenApproveMetadata>> invoke(Throwable it) {
+            public final Result<List<? extends TokenApproveData>> invoke(Throwable it) {
                 Intrinsics.checkNotNullParameter(it, "it");
                 return Result.Companion.error$default(Result.Companion, ErrorHandler.this.handleError(it), null, 2, null);
             }
@@ -182,7 +182,7 @@ public final class SwapRepositoryImpl implements SwapRepository {
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.swap.SwapRepository
-    public Observable<Result<CryptoSwapMetadata>> getQuoteToSwap(SwapProtocol protocol, Token inputToken, Token outputToken, String amount, TradeType tradeType, float f) {
+    public Observable<Result<CryptoSwapMetadata>> getQuoteToSwap(SwapProtocol protocol, Token inputToken, Token outputToken, String amount, TradeType tradeType, Float f) {
         Intrinsics.checkNotNullParameter(protocol, "protocol");
         Intrinsics.checkNotNullParameter(inputToken, "inputToken");
         Intrinsics.checkNotNullParameter(outputToken, "outputToken");

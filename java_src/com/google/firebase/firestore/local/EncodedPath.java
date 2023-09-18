@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class EncodedPath {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <B extends BasePath<B>> String encode(B b) {

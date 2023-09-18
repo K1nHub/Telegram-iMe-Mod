@@ -1,13 +1,15 @@
 package com.iMe.p031ui.wallet.actions.send.amount;
 
 import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.fork.utils.Callbacks$Callback2;
 import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.NetworkItem;
+import com.iMe.model.wallet.select.SelectTokenScreenType;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
-import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -18,7 +20,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountView> implements WalletSendAmountView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -83,14 +85,14 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
     }
 
     @Override // com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountView
-    public void showSelectTokenDialog(WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1) {
-        ShowSelectTokenDialogCommand showSelectTokenDialogCommand = new ShowSelectTokenDialogCommand(this, screenType, str, z, callbacks$Callback1);
+    public void showSelectTokenDialog(SelectTokenScreenType selectTokenScreenType, String str, boolean z, Callbacks$Callback2<TokenDetailed, FiatValue> callbacks$Callback2) {
+        ShowSelectTokenDialogCommand showSelectTokenDialogCommand = new ShowSelectTokenDialogCommand(this, selectTokenScreenType, str, z, callbacks$Callback2);
         this.viewCommands.beforeApply(showSelectTokenDialogCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.showSelectTokenDialog(screenType, str, z, callbacks$Callback1);
+            view.showSelectTokenDialog(selectTokenScreenType, str, z, callbacks$Callback2);
         }
         this.viewCommands.afterApply(showSelectTokenDialogCommand);
     }
@@ -240,7 +242,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowSuccessSendCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSuccessSendCommand extends ViewCommand<WalletSendAmountView> {
         public final String message;
 
@@ -257,7 +259,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowNoEnoughMoneyErrorDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowNoEnoughMoneyErrorDialogCommand extends ViewCommand<WalletSendAmountView> {
         public final TokenBuyCoordinatorArgs args;
 
@@ -274,7 +276,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowRecipientNotFoundErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRecipientNotFoundErrorCommand extends ViewCommand<WalletSendAmountView> {
         ShowRecipientNotFoundErrorCommand(WalletSendAmountView$$State walletSendAmountView$$State) {
             super("showRecipientNotFoundError", OneExecutionStateStrategy.class);
@@ -288,7 +290,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowRecipientWalletNotActivatedErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRecipientWalletNotActivatedErrorCommand extends ViewCommand<WalletSendAmountView> {
         ShowRecipientWalletNotActivatedErrorCommand(WalletSendAmountView$$State walletSendAmountView$$State) {
             super("showRecipientWalletNotActivatedError", OneExecutionStateStrategy.class);
@@ -302,19 +304,19 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowSelectTokenDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSelectTokenDialogCommand extends ViewCommand<WalletSendAmountView> {
-        public final Callbacks$Callback1<TokenDetailed> action;
+        public final Callbacks$Callback2<TokenDetailed, FiatValue> action;
         public final String networkId;
         public final boolean onlyPositiveBalance;
-        public final WalletSelectTokenFragment.ScreenType selectTokensScreenType;
+        public final SelectTokenScreenType selectTokensScreenType;
 
-        ShowSelectTokenDialogCommand(WalletSendAmountView$$State walletSendAmountView$$State, WalletSelectTokenFragment.ScreenType screenType, String str, boolean z, Callbacks$Callback1<TokenDetailed> callbacks$Callback1) {
+        ShowSelectTokenDialogCommand(WalletSendAmountView$$State walletSendAmountView$$State, SelectTokenScreenType selectTokenScreenType, String str, boolean z, Callbacks$Callback2<TokenDetailed, FiatValue> callbacks$Callback2) {
             super("showSelectTokenDialog", OneExecutionStateStrategy.class);
-            this.selectTokensScreenType = screenType;
+            this.selectTokensScreenType = selectTokenScreenType;
             this.networkId = str;
             this.onlyPositiveBalance = z;
-            this.action = callbacks$Callback1;
+            this.action = callbacks$Callback2;
         }
 
         @Override // moxy.viewstate.ViewCommand
@@ -325,7 +327,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletSendAmountView> {
         public final Callbacks$Callback1<NetworkItem.Crypto> action;
         public final List<? extends NetworkItem> availableNetworks;
@@ -346,7 +348,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$OnSuccessValidationCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSuccessValidationCommand extends ViewCommand<WalletSendAmountView> {
         public final DialogModel amount;
         public final boolean isAllowSendInfoToChat;
@@ -365,7 +367,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ResetScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ResetScreenCommand extends ViewCommand<WalletSendAmountView> {
         ResetScreenCommand(WalletSendAmountView$$State walletSendAmountView$$State) {
             super("resetScreen", AddToEndSingleStrategy.class);
@@ -379,7 +381,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$SetupScreenStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenStateCommand extends ViewCommand<WalletSendAmountView> {
         public final WalletSendAmountPresenter.SendScreenState currentScreenState;
 
@@ -396,7 +398,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$UpdateFeeViewCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateFeeViewCommand extends ViewCommand<WalletSendAmountView> {
         UpdateFeeViewCommand(WalletSendAmountView$$State walletSendAmountView$$State) {
             super("updateFeeView", AddToEndSingleStrategy.class);
@@ -410,7 +412,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$UpdateSelectedUserCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateSelectedUserCommand extends ViewCommand<WalletSendAmountView> {
         UpdateSelectedUserCommand(WalletSendAmountView$$State walletSendAmountView$$State) {
             super("updateSelectedUser", AddToEndSingleStrategy.class);
@@ -424,7 +426,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowBalanceCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowBalanceCommand extends ViewCommand<WalletSendAmountView> {
         public final TokenBalance balance;
 
@@ -441,7 +443,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletSendAmountView> {
         public final String text;
 
@@ -458,7 +460,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletSendAmountView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -479,7 +481,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletSendAmountView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -498,7 +500,7 @@ public class WalletSendAmountView$$State extends MvpViewState<WalletSendAmountVi
 
     /* compiled from: WalletSendAmountView$$State.java */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountView$$State$SetupReplenishAddressCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupReplenishAddressCommand extends ViewCommand<WalletSendAmountView> {
         SetupReplenishAddressCommand(WalletSendAmountView$$State walletSendAmountView$$State) {
             super("setupReplenishAddress", AddToEndSingleStrategy.class);

@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.core;
 
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ViewChange {
     private final List<LimboDocumentChange> limboChanges;
     private final ViewSnapshot snapshot;

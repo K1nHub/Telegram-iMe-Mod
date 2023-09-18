@@ -11,7 +11,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CapabilityClient extends GoogleApi<Wearable.WearableOptions> {
     public static final String ACTION_CAPABILITY_CHANGED = "com.google.android.gms.wearable.CAPABILITY_CHANGED";
     public static final int FILTER_ALL = 0;
@@ -21,18 +21,18 @@ public abstract class CapabilityClient extends GoogleApi<Wearable.WearableOption
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface CapabilityFilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public @interface NodeFilterType {
     }
 
     /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnCapabilityChangedListener extends CapabilityApi.CapabilityListener {
         @Override // com.google.android.gms.wearable.CapabilityApi.CapabilityListener
         void onCapabilityChanged(CapabilityInfo capabilityInfo);

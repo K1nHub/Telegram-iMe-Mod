@@ -1,7 +1,7 @@
 package com.google.android.material.circularreveal;
 
 import android.os.Build;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CircularRevealHelper {
     public static final int STRATEGY;
 

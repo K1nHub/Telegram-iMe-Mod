@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.request.voicetotext;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: VoiceToTextRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class VoiceToTextRequest {
     private final String content;
     private final String lang;

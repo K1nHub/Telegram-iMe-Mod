@@ -30,7 +30,7 @@ import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Browser {
     private static WeakReference<Activity> currentCustomTabsActivity;
     private static CustomTabsClient customTabsClient;
@@ -118,7 +118,7 @@ public class Browser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class NavigationCallback extends CustomTabsCallback {
         @Override // org.telegram.messenger.support.customtabs.CustomTabsCallback
         public void onNavigationEvent(int i, Bundle bundle) {
@@ -195,7 +195,7 @@ public class Browser {
         return isTelegraphUrl(str, false, true) || str.matches("^(https://)?t\\.me/iv\\??(/.*|$)") || str.matches("^(https://)?telegram\\.org/(blog|tour)(/.*|$)") || str.matches("^(https://)?fragment\\.com(/.*|$)");
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Progress {
         private Runnable onCancelListener;
 

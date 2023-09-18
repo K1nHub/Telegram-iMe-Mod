@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ManagedChannelServiceConfig {
     private final Object loadBalancingConfig;
     private final RetriableStream.Throttle retryThrottling;
@@ -98,7 +98,7 @@ final class ManagedChannelServiceConfig {
         return MoreObjects.toStringHelper(this).add("serviceMethodMap", this.serviceMethodMap).add("serviceMap", this.serviceMap).add("retryThrottling", this.retryThrottling).add("loadBalancingConfig", this.loadBalancingConfig).toString();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class MethodInfo {
         final HedgingPolicy hedgingPolicy;
         final Integer maxInboundMessageSize;

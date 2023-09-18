@@ -18,7 +18,7 @@ import org.telegram.p043ui.Cells.DialogCell;
 import org.telegram.p043ui.Components.ColoredImageSpan;
 /* compiled from: SecretWordsActionButton.kt */
 /* renamed from: com.iMe.ui.custom.backup.SecretWordsActionButton */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SecretWordsActionButton extends TextView {
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public SecretWordsActionButton(Context context, AttributeSet attributeSet) {

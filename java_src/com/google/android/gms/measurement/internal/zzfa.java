@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.VisibleForTesting;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfa extends zzgp {
     @VisibleForTesting
     static final Pair<String, Long> zza = new Pair<>("", 0L);

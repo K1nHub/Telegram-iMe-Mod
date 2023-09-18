@@ -10,7 +10,7 @@ import org.telegram.messenger.databinding.ForkContentStakingCompoundBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingPercentageView.kt */
 /* renamed from: com.iMe.ui.custom.StakingPercentageView$setupProgressListener$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingPercentageView$setupProgressListener$1 extends Lambda implements Function1<Float, Unit> {
     final /* synthetic */ StakingPercentageView this$0;
 

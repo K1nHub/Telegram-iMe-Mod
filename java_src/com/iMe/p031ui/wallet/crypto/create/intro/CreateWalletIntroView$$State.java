@@ -13,7 +13,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntroView> implements CreateWalletIntroView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -157,7 +157,7 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$SetupScreenDataCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class SetupScreenDataCommand extends ViewCommand<CreateWalletIntroView> {
         public final String address;
         public final Network.Explorer explorer;
@@ -178,7 +178,7 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$UpdateNextButtonLoadingStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateNextButtonLoadingStateCommand extends ViewCommand<CreateWalletIntroView> {
         public final boolean isLoading;
 
@@ -195,7 +195,7 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$ShowCreateNewWalletConfirmationDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowCreateNewWalletConfirmationDialogCommand extends ViewCommand<CreateWalletIntroView> {
         public final DialogModel dialogModel;
 
@@ -212,7 +212,7 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$OpenAddressScanCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenAddressScanCommand extends ViewCommand<CreateWalletIntroView> {
         public final String url;
 
@@ -229,7 +229,7 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$OpenImportWalletScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenImportWalletScreenCommand extends ViewCommand<CreateWalletIntroView> {
         public final String password;
         public final String walletAddress;
@@ -248,49 +248,49 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$OpenCreateWalletScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenCreateWalletScreenCommand extends ViewCommand<CreateWalletIntroView> {
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f2004wallet;
+        public final Wallet f1994wallet;
 
         OpenCreateWalletScreenCommand(CreateWalletIntroView$$State createWalletIntroView$$State, Wallet wallet2, String str) {
             super("openCreateWalletScreen", OneExecutionStateStrategy.class);
-            this.f2004wallet = wallet2;
+            this.f1994wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletIntroView createWalletIntroView) {
-            createWalletIntroView.openCreateWalletScreen(this.f2004wallet, this.password);
+            createWalletIntroView.openCreateWalletScreen(this.f1994wallet, this.password);
         }
     }
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$OpenAddWalletScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenAddWalletScreenCommand extends ViewCommand<CreateWalletIntroView> {
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f2003wallet;
+        public final Wallet f1993wallet;
 
         OpenAddWalletScreenCommand(CreateWalletIntroView$$State createWalletIntroView$$State, Wallet wallet2, String str) {
             super("openAddWalletScreen", OneExecutionStateStrategy.class);
-            this.f2003wallet = wallet2;
+            this.f1993wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletIntroView createWalletIntroView) {
-            createWalletIntroView.openAddWalletScreen(this.f2003wallet, this.password);
+            createWalletIntroView.openAddWalletScreen(this.f1993wallet, this.password);
         }
     }
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CreateWalletIntroView> {
         public final String text;
 
@@ -307,7 +307,7 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CreateWalletIntroView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -328,7 +328,7 @@ public class CreateWalletIntroView$$State extends MvpViewState<CreateWalletIntro
 
     /* compiled from: CreateWalletIntroView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CreateWalletIntroView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

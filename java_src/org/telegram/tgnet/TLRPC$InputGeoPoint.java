@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$InputGeoPoint extends TLObject {
     public double _long;
     public int accuracy_radius;

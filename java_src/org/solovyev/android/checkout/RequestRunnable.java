@@ -1,6 +1,6 @@
 package org.solovyev.android.checkout;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface RequestRunnable {
     void cancel();
 

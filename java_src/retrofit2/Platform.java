@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 class Platform {
     private static final Platform PLATFORM = findPlatform();
 
@@ -80,7 +80,7 @@ class Platform {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Java8 extends Platform {
         @Override // retrofit2.Platform
         int defaultCallAdapterFactoriesSize() {
@@ -126,7 +126,7 @@ class Platform {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Android extends Platform {
         Android() {
         }
@@ -171,7 +171,7 @@ class Platform {
             return Build.VERSION.SDK_INT >= 24 ? 1 : 0;
         }
 
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         static class MainThreadExecutor implements Executor {
             private final Handler handler = new Handler(Looper.getMainLooper());
 

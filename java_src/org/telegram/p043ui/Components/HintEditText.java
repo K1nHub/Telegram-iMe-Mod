@@ -9,7 +9,7 @@ import android.util.TypedValue;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.HintEditText */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class HintEditText extends EditTextBoldCursor {
     protected TextPaint hintPaint;
     private String hintText;

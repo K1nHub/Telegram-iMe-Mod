@@ -7,7 +7,7 @@ import moxy.MvpPresenter;
 import moxy.PresenterBinder;
 import moxy.presenter.PresenterField;
 /* renamed from: org.telegram.ui.PhotoViewer$$PresentersBinder */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PhotoViewer$$PresentersBinder extends PresenterBinder<PhotoViewer> {
     @Override // moxy.PresenterBinder
     public List<PresenterField<? super PhotoViewer>> getPresenterFields() {
@@ -18,7 +18,7 @@ public class PhotoViewer$$PresentersBinder extends PresenterBinder<PhotoViewer> 
 
     /* compiled from: PhotoViewer$$PresentersBinder.java */
     /* renamed from: org.telegram.ui.PhotoViewer$$PresentersBinder$RecognitionPresenterBinder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class RecognitionPresenterBinder extends PresenterField<PhotoViewer> {
         public RecognitionPresenterBinder(PhotoViewer$$PresentersBinder photoViewer$$PresentersBinder) {
             super("recognitionPresenter", null, PhotoViewerPresenter.class);

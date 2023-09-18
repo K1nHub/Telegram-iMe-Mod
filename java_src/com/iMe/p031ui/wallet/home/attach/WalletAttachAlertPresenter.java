@@ -49,7 +49,7 @@ import moxy.InjectViewState;
 /* compiled from: WalletAttachAlertPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttachAlertView> {
     private final HashMap<String, List<Transaction>> cachedTransactions;
     private final CryptoAccessManager cryptoAccessManager;

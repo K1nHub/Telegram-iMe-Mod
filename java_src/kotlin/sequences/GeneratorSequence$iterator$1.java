@@ -10,7 +10,7 @@ import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Sequences.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GeneratorSequence$iterator$1<T> implements Iterator<T>, KMappedMarker, p033j$.util.Iterator {
     private T nextItem;
     private int nextState = -2;

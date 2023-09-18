@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBuyCoordinatorArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenBuyCoordinatorArgs {
     private final String networkId;
     private final SwapProtocol swapProtocol;

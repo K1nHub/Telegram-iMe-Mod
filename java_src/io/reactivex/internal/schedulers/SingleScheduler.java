@@ -13,7 +13,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SingleScheduler extends Scheduler {
     static final ScheduledExecutorService SHUTDOWN;
     static final RxThreadFactory SINGLE_THREAD_FACTORY;
@@ -93,7 +93,7 @@ public final class SingleScheduler extends Scheduler {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class ScheduledWorker extends Scheduler.Worker {
         volatile boolean disposed;
         final ScheduledExecutorService executor;

@@ -1,5 +1,5 @@
 package org.tensorflow.lite;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public enum DataType {
     FLOAT32(1),
     INT32(2),
@@ -15,8 +15,8 @@ public enum DataType {
     }
 
     /* renamed from: org.tensorflow.lite.DataType$1 */
-    /* loaded from: classes6.dex */
-    static /* synthetic */ class C73181 {
+    /* loaded from: classes7.dex */
+    static /* synthetic */ class C72331 {
         static final /* synthetic */ int[] $SwitchMap$org$tensorflow$lite$DataType;
 
         static {
@@ -46,7 +46,7 @@ public enum DataType {
     }
 
     public int byteSize() {
-        int i = C73181.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
+        int i = C72331.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
         if (i == 1 || i == 2) {
             return 4;
         }
@@ -79,7 +79,7 @@ public enum DataType {
     }
 
     String toStringName() {
-        int i = C73181.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
+        int i = C72331.$SwitchMap$org$tensorflow$lite$DataType[ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {

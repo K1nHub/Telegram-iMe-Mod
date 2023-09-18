@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import okio.internal.ByteStringKt;
 /* compiled from: ByteString.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ByteString implements Serializable, Comparable<ByteString> {
     public static final Companion Companion = new Companion(null);
     public static final ByteString EMPTY = new ByteString(new byte[0]);
@@ -169,7 +169,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     }
 
     /* compiled from: ByteString.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public static /* synthetic */ ByteString of$default(Companion companion, byte[] bArr, int i, int i2, int i3, Object obj) {
             if ((i3 & 1) != 0) {

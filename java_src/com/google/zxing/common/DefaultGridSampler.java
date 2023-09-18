@@ -1,7 +1,7 @@
 package com.google.zxing.common;
 
 import com.google.zxing.NotFoundException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DefaultGridSampler extends GridSampler {
     @Override // com.google.zxing.common.GridSampler
     public BitMatrix sampleGrid(BitMatrix bitMatrix, int i, int i2, PerspectiveTransform perspectiveTransform) throws NotFoundException {

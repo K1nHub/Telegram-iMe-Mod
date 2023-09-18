@@ -17,10 +17,10 @@ import java.util.Collections;
 import java.util.List;
 import wallet.core.jni.proto.Bitcoin;
 import wallet.core.jni.proto.Common;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class Decred {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -43,7 +43,7 @@ public final class Decred {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransactionInputOrBuilder extends MessageLiteOrBuilder {
         int getBlockHeight();
 
@@ -66,7 +66,7 @@ public final class Decred {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransactionOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -95,7 +95,7 @@ public final class Decred {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransactionOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -116,7 +116,7 @@ public final class Decred {
     private Decred() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Transaction extends GeneratedMessageLite<Transaction, Builder> implements TransactionOrBuilder {
         private static final Transaction DEFAULT_INSTANCE;
         public static final int EXPIRY_FIELD_NUMBER = 6;
@@ -390,9 +390,9 @@ public final class Decred {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transaction, Builder> implements TransactionOrBuilder {
-            /* synthetic */ Builder(C74131 c74131) {
+            /* synthetic */ Builder(C73281 c73281) {
                 this();
             }
 
@@ -609,7 +609,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74131.f1950xa1df5c61[method.ordinal()]) {
+            switch (C73281.f1941xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transaction();
                 case 2:
@@ -655,47 +655,47 @@ public final class Decred {
     }
 
     /* renamed from: wallet.core.jni.proto.Decred$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74131 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73281 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1950xa1df5c61;
+        static final /* synthetic */ int[] f1941xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1950xa1df5c61 = iArr;
+            f1941xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1950xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1941xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1950xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1941xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1950xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1941xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1950xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1941xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1950xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1941xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1950xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1941xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TransactionInput extends GeneratedMessageLite<TransactionInput, Builder> implements TransactionInputOrBuilder {
         public static final int BLOCKHEIGHT_FIELD_NUMBER = 4;
         public static final int BLOCKINDEX_FIELD_NUMBER = 5;
@@ -880,9 +880,9 @@ public final class Decred {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionInput, Builder> implements TransactionInputOrBuilder {
-            /* synthetic */ Builder(C74131 c74131) {
+            /* synthetic */ Builder(C73281 c73281) {
                 this();
             }
 
@@ -1012,7 +1012,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74131.f1950xa1df5c61[method.ordinal()]) {
+            switch (C73281.f1941xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionInput();
                 case 2:
@@ -1057,7 +1057,7 @@ public final class Decred {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TransactionOutput extends GeneratedMessageLite<TransactionOutput, Builder> implements TransactionOutputOrBuilder {
         private static final TransactionOutput DEFAULT_INSTANCE;
         private static volatile Parser<TransactionOutput> PARSER = null;
@@ -1173,9 +1173,9 @@ public final class Decred {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionOutput, Builder> implements TransactionOutputOrBuilder {
-            /* synthetic */ Builder(C74131 c74131) {
+            /* synthetic */ Builder(C73281 c73281) {
                 this();
             }
 
@@ -1237,7 +1237,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74131.f1950xa1df5c61[method.ordinal()]) {
+            switch (C73281.f1941xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionOutput();
                 case 2:
@@ -1282,7 +1282,7 @@ public final class Decred {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 2;
@@ -1456,9 +1456,9 @@ public final class Decred {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C74131 c74131) {
+            /* synthetic */ Builder(C73281 c73281) {
                 this();
             }
 
@@ -1576,7 +1576,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74131.f1950xa1df5c61[method.ordinal()]) {
+            switch (C73281.f1941xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

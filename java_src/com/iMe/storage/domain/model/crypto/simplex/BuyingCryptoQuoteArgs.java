@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.crypto.simplex;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BuyingCryptoQuoteArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BuyingCryptoQuoteArgs {
     private final float amount;
     private final Currency digitalCurrency;

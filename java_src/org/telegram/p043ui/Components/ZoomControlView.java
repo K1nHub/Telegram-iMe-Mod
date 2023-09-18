@@ -11,10 +11,10 @@ import android.util.Property;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.AnimationProperties;
 /* renamed from: org.telegram.ui.Components.ZoomControlView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ZoomControlView extends View {
     public final Property<ZoomControlView, Float> ZOOM_PROPERTY;
     private float animatingToZoom;
@@ -42,7 +42,7 @@ public class ZoomControlView extends View {
     private float zoom;
 
     /* renamed from: org.telegram.ui.Components.ZoomControlView$ZoomControlViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface ZoomControlViewDelegate {
         void didSetZoom(float f);
     }
@@ -65,12 +65,12 @@ public class ZoomControlView extends View {
                 return Float.valueOf(ZoomControlView.this.zoom);
             }
         };
-        this.minusDrawable = context.getResources().getDrawable(C3558R.C3560drawable.zoom_minus);
-        this.plusDrawable = context.getResources().getDrawable(C3558R.C3560drawable.zoom_plus);
-        this.progressDrawable = context.getResources().getDrawable(C3558R.C3560drawable.zoom_slide);
-        this.filledProgressDrawable = context.getResources().getDrawable(C3558R.C3560drawable.zoom_slide_a);
-        this.knobDrawable = context.getResources().getDrawable(C3558R.C3560drawable.zoom_round);
-        this.pressedKnobDrawable = context.getResources().getDrawable(C3558R.C3560drawable.zoom_round_b);
+        this.minusDrawable = context.getResources().getDrawable(C3473R.C3475drawable.zoom_minus);
+        this.plusDrawable = context.getResources().getDrawable(C3473R.C3475drawable.zoom_plus);
+        this.progressDrawable = context.getResources().getDrawable(C3473R.C3475drawable.zoom_slide);
+        this.filledProgressDrawable = context.getResources().getDrawable(C3473R.C3475drawable.zoom_slide_a);
+        this.knobDrawable = context.getResources().getDrawable(C3473R.C3475drawable.zoom_round);
+        this.pressedKnobDrawable = context.getResources().getDrawable(C3473R.C3475drawable.zoom_round_b);
     }
 
     public float getZoom() {

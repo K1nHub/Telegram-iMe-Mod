@@ -3,7 +3,7 @@ package net.lingala.zip4j.crypto;
 import net.lingala.zip4j.crypto.engine.ZipCryptoEngine;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.FileHeader;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StandardDecrypter implements IDecrypter {
     private byte[] crc = new byte[4];
     private FileHeader fileHeader;

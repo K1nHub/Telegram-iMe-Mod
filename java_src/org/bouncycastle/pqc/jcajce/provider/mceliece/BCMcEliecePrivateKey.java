@@ -12,7 +12,7 @@ import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
 import org.bouncycastle.pqc.math.linearalgebra.GF2mField;
 import org.bouncycastle.pqc.math.linearalgebra.Permutation;
 import org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BCMcEliecePrivateKey implements CipherParameters, PrivateKey {
     private McEliecePrivateKeyParameters params;
 

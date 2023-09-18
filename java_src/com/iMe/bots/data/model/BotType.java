@@ -17,7 +17,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum RECENT uses extern
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* compiled from: BotType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotType {
     private static final /* synthetic */ BotType[] $VALUES;
     public static final Companion Companion;
@@ -55,7 +55,7 @@ public final class BotType {
     }
 
     /* compiled from: BotType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

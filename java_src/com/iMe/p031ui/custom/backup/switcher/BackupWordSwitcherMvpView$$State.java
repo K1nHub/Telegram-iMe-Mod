@@ -5,7 +5,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcherMvpView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BackupWordSwitcherMvpView$$State extends MvpViewState<BackupWordSwitcherMvpView> implements BackupWordSwitcherMvpView {
     @Override // com.iMe.p031ui.custom.backup.switcher.BackupWordSwitcherMvpView
     public void setupTitle(int i) {
@@ -35,7 +35,7 @@ public class BackupWordSwitcherMvpView$$State extends MvpViewState<BackupWordSwi
 
     /* compiled from: BackupWordSwitcherMvpView$$State.java */
     /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcherMvpView$$State$SetupTitleCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupTitleCommand extends ViewCommand<BackupWordSwitcherMvpView> {
         public final int rightWordPosition;
 
@@ -52,7 +52,7 @@ public class BackupWordSwitcherMvpView$$State extends MvpViewState<BackupWordSwi
 
     /* compiled from: BackupWordSwitcherMvpView$$State.java */
     /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcherMvpView$$State$SetupBackupWordsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupBackupWordsCommand extends ViewCommand<BackupWordSwitcherMvpView> {
         public final List<String> words;
 

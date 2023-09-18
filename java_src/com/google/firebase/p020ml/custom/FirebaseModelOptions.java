@@ -3,14 +3,14 @@ package com.google.firebase.p020ml.custom;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.Preconditions;
 /* renamed from: com.google.firebase.ml.custom.FirebaseModelOptions */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseModelOptions {
     private final String zzaxi;
     private final String zzaxj;
     private final boolean zzaxk;
 
     /* renamed from: com.google.firebase.ml.custom.FirebaseModelOptions$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private String zzaxi;
         private String zzaxj;

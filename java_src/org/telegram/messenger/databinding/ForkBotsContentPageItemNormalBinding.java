@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkBotsContentPageItemNormalBinding implements ViewBinding {
     public final TextView normalPhrase;
     public final LinearLayout normalPhraseLayout;
@@ -31,7 +31,7 @@ public final class ForkBotsContentPageItemNormalBinding implements ViewBinding {
     }
 
     public static ForkBotsContentPageItemNormalBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_bots_content_page_item_normal, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_bots_content_page_item_normal, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkBotsContentPageItemNormalBinding implements ViewBinding {
     }
 
     public static ForkBotsContentPageItemNormalBinding bind(View view) {
-        int i = C3558R.C3561id.normal_phrase;
+        int i = C3473R.C3476id.normal_phrase;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3558R.C3561id.normalPhraseLayout;
+            i = C3473R.C3476id.normalPhraseLayout;
             LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
             if (linearLayout != null) {
                 return new ForkBotsContentPageItemNormalBinding((ConstraintLayout) view, textView, linearLayout);

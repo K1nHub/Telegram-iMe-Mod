@@ -33,7 +33,7 @@ import wallet.core.java.AnySigner;
 import wallet.core.jni.CoinType;
 import wallet.core.jni.proto.Tron;
 /* compiled from: TRONWalletTransferDataSourceImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TRONWalletTransferDataSourceImpl implements WalletTransferDataSource {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoWalletApi cryptoWalletApi;
@@ -153,7 +153,7 @@ public final class TRONWalletTransferDataSourceImpl implements WalletTransferDat
             newBuilder.setTransferTrc20Contract(Tron.TransferTRC20Contract.newBuilder().setAmount(CryptoExtKt.toByteString(tron.getConvertedAmount())).setToAddress(tron.getRecipientAddress()).setContractAddress(tron.getContractAddress()).setOwnerAddress(str).build());
         }
         Tron.Transaction build = newBuilder.setBlockHeader(Tron.BlockHeader.newBuilder().setNumber(tron.getBlockHeader().getNumber()).setTxTrieRoot(CryptoExtKt.hexToByteString(tron.getBlockHeader().getTxTrieRoot())).setWitnessAddress(CryptoExtKt.hexToByteString(tron.getBlockHeader().getWitnessAddress())).setParentHash(CryptoExtKt.hexToByteString(tron.getBlockHeader().getParentHash())).setVersion(tron.getBlockHeader().getVersion()).setTimestamp(tron.getBlockHeader().getTimestamp()).build()).setFeeLimit(tron.getFeeLimit().longValue()).build();
-        Intrinsics.checkNotNullExpressionValue(build, "newBuilder()\n           …                 .build()");
+        Intrinsics.checkNotNullExpressionValue(build, "newBuilder()\n           …g())\n            .build()");
         return build;
     }
 }

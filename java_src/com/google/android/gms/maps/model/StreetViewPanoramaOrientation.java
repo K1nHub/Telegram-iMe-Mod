@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "StreetViewPanoramaOrientationCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StreetViewPanoramaOrientation extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StreetViewPanoramaOrientation> CREATOR = new zzs();
     @SafeParcelable.Field(m797id = 3)
@@ -19,7 +19,7 @@ public class StreetViewPanoramaOrientation extends AbstractSafeParcelable {
     public final float tilt;
 
     /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         public float bearing;
         public float tilt;

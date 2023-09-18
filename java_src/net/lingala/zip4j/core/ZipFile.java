@@ -7,7 +7,7 @@ import net.lingala.zip4j.model.ZipModel;
 import net.lingala.zip4j.progress.ProgressMonitor;
 import net.lingala.zip4j.unzip.Unzip;
 import net.lingala.zip4j.util.Zip4jUtil;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ZipFile {
     private String file;
     private String fileNameCharset;
@@ -40,7 +40,7 @@ public class ZipFile {
             r5 = this;
             java.lang.String r0 = r5.file
             boolean r0 = net.lingala.zip4j.util.Zip4jUtil.checkFileExists(r0)
-            if (r0 == 0) goto L6a
+            if (r0 == 0) goto L69
             java.lang.String r0 = r5.file
             boolean r0 = net.lingala.zip4j.util.Zip4jUtil.checkFileReadAccess(r0)
             if (r0 == 0) goto L61
@@ -103,7 +103,7 @@ public class ZipFile {
             java.lang.String r1 = "no read access for the input zip file"
             r0.<init>(r1)
             throw r0
-        L6a:
+        L69:
             net.lingala.zip4j.exception.ZipException r0 = new net.lingala.zip4j.exception.ZipException
             java.lang.String r1 = "zip file does not exist"
             r0.<init>(r1)

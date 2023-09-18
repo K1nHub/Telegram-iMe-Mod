@@ -6,7 +6,7 @@ import com.google.android.gms.common.util.DefaultClock;
 import com.google.android.gms.common.util.VisibleForTesting;
 import com.google.firebase.dynamiclinks.internal.DynamicLinkData;
 import com.google.firebase.dynamiclinks.internal.DynamicLinkUTMParams;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class PendingDynamicLinkData {
     private final DynamicLinkData dynamicLinkData;
 

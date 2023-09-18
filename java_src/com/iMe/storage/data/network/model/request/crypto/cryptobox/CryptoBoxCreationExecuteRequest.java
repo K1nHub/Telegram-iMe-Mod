@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.crypto.cryptobox;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxCreationExecuteRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxCreationExecuteRequest {
     private final long chatId;
     private final String description;

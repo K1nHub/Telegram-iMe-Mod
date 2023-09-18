@@ -1,7 +1,7 @@
 package org.solovyev.android.checkout;
 
 import android.util.Log;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class DefaultLogger implements Logger {
     private boolean mEnabled = false;
 

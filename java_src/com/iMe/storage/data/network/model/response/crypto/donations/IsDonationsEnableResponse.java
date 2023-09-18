@@ -1,6 +1,6 @@
 package com.iMe.storage.data.network.model.response.crypto.donations;
 /* compiled from: IsDonationsEnableResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class IsDonationsEnableResponse {
     private final boolean isDonationEnabled;
 

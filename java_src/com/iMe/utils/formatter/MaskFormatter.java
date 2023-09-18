@@ -3,7 +3,7 @@ package com.iMe.utils.formatter;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: MaskFormatter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MaskFormatter {
     private static final String HIDDEN_MASK;
     public static final MaskFormatter INSTANCE = new MaskFormatter();
@@ -23,7 +23,7 @@ public final class MaskFormatter {
         if (z) {
             return HIDDEN_MASK;
         }
-        return BalanceFormatter.formatBalance(balance, Integer.valueOf(i)) + ' ' + shortName;
+        return BalanceFormatter.format(balance, Integer.valueOf(i)) + ' ' + shortName;
     }
 
     public final String textOrMask(boolean z, String text) {

@@ -5799,8 +5799,8 @@ Após ativar a carteira, você poderá usar com segurança as funções de tradu
     <string name="wallet_backup_ready">Tudo pronto!</string>
     <string name="wallet_backup_ready_info">Tudo pronto. Agora você tem o controle exclusivo de uma carteira: diretamente, sem intermediários nem corretores.</string>
     <string name="wallet_backup_scan_qr">Escanear QR</string>
-    <string name="wallet_backup_secret_words">24 palavras secretas</string>
-    <string name="wallet_backup_secret_words_info">"Escreva essas 24 palavras na ordem correta e guarde-as em um lugar seguro.
+    <string name="wallet_backup_secret_words">Palavras Secretas</string>
+    <string name="wallet_backup_secret_words_info">"Escreva essas palavras na ordem correta e guarde-as em um lugar seguro.
 
 Use essas palavras secretas para recuperar o acesso à sua carteira caso perca seu código de acesso ou dispositivo."</string>
     <string name="wallet_backup_secret_words_pdf">Salvar como PDF</string>
@@ -6228,7 +6228,7 @@ Só você tem acesso à sua carteira, chaves privadas e fundos nas suas contas."
     <string name="wallet_swap_process_confirm_approve_alert_description">Quer mesmo aprovar %1$s?</string>
     <string name="wallet_swap_process_confirm_approve_alert_title">Confirmação da aprovação</string>
     <string name="wallet_swap_process_confirm_swap_alert_action">Trocar</string>
-    <string name="wallet_swap_process_confirm_swap_alert_description">Quer mesmo fazer uma troca de %1$s %2$s para %3$s %4$s?</string>
+    <string name="wallet_swap_process_confirm_swap_alert_description">Tem certeza de que deseja fazer uma troca de **%1$s %2$s** para **%3$s %4$s** com taxa **%5$s %6$s**?</string>
     <string name="wallet_swap_process_confirm_swap_alert_title">Confirmação de troca</string>
     <string name="wallet_swap_process_description">Vocês podem trocar tokens mediante contratos inteligentes usando o câmbio decentralizado do Uniswap pelas redes Ethereum e Polygon</string>
     <string name="wallet_swap_process_diff_tokens_validation">Selecione tokens diferentes para enviar e receber</string>
@@ -6252,7 +6252,7 @@ Só você tem acesso à sua carteira, chaves privadas e fundos nas suas contas."
     <string name="wallet_swap_process_what_is_approve">O que é aprovação de token?</string>
     <string name="wallet_swap_process_what_is_approve_dialog_description">Aprovação é uma transação única para tokens e é necessária para dar início à troca. Com essa operação, você dá permissão para trocar seu token por meio do protocolo DEX usando contratos inteligentes. Como essa operação ocorre na blockchain, a taxa de Gas será retida. Você não precisará aprovar novamente o token atual.</string>
     <string name="wallet_swap_protocols_1inch_description">Agregador DEX com os melhores preços</string>
-    <string name="wallet_swap_protocols_1inch_long_description">Vocês podem trocar tokens, pelos melhores preços, mediante contratos inteligentes usando o agregador DEX pelas redes Ethereum, BNB Chain e Polygon</string>
+    <string name="wallet_swap_protocols_1inch_long_description">Vocês podem trocar tokens, pelos melhores preços, mediante contratos inteligentes usando o agregador DEX pelas redes Ethereum, BNB Chain, Fantom e Polygon</string>
     <string name="wallet_swap_protocols_cross_chain_header_title">Bridge</string>
     <string name="wallet_swap_protocols_header_title">Câmbios decentralizados</string>
     <string name="wallet_swap_protocols_pancake_swap_description">Protocolo DEX baseado em BNB Chain</string>

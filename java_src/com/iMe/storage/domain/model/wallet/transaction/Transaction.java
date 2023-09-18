@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Transaction.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class Transaction {
     private final BigDecimal amount;
     private final String createdAt;
@@ -83,7 +83,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Unsupported extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -248,7 +248,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Transfer extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -425,7 +425,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Referral extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -602,7 +602,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Purchase extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -767,7 +767,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Lottery extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -932,7 +932,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Registration extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -1097,7 +1097,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Refund extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -1262,7 +1262,7 @@ public abstract class Transaction {
     }
 
     /* compiled from: Transaction.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Crypto extends Transaction {
         private final BigDecimal amount;
         private final String createdAt;
@@ -1364,7 +1364,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Donation extends Transfer {
             private final BigDecimal amount;
             private final String createdAt;
@@ -1592,7 +1592,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class Transfer extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;
@@ -1712,7 +1712,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Approve extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;
@@ -1890,7 +1890,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class SimplexPurchase extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;
@@ -2128,7 +2128,7 @@ public abstract class Transaction {
         }
 
         /* compiled from: Transaction.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Swap extends Crypto {
             private final BigDecimal amount;
             private final String createdAt;

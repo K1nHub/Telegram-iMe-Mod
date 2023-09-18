@@ -10,7 +10,7 @@ import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SocialWebViewModel.kt */
 @DebugMetadata(m102c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1", m101f = "SocialWebViewModel.kt", m100l = {29, 30, 32}, m99m = "invokeSuspend")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda implements Function2<SimpleSyntax<SocialWebState, SocialSideEffects>, Continuation<? super Unit>, Object> {
     final /* synthetic */ SocialNetwork $socialNetwork;
     private /* synthetic */ Object L$0;
@@ -117,7 +117,7 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
                         // error: 0x0005: SPUT  (r0 I:com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2) com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.2.INSTANCE com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1$2
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14922.<clinit>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14882.<clinit>():void");
                 }
 
                 {
@@ -127,7 +127,7 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
                         r1.<init>(r0)
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14922.<init>():void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14882.<init>():void");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
@@ -147,7 +147,7 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
                         com.iMe.feature.socialMedias.webScreen.SocialWebState r7 = com.iMe.feature.socialMedias.webScreen.SocialWebState.copy$default(r0, r1, r2, r3, r4, r5)
                         return r7
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14922.invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext):com.iMe.feature.socialMedias.webScreen.SocialWebState");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14882.invoke(org.orbitmvi.orbit.syntax.simple.SimpleContext):com.iMe.feature.socialMedias.webScreen.SocialWebState");
                 }
 
                 @Override // kotlin.jvm.functions.Function1
@@ -158,7 +158,7 @@ public final class SocialWebViewModel$onWebViewCreated$1 extends SuspendLambda i
                         com.iMe.feature.socialMedias.webScreen.SocialWebState r1 = r0.invoke(r1)
                         return r1
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14922.invoke(java.lang.Object):java.lang.Object");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onWebViewCreated$1.C14882.invoke(java.lang.Object):java.lang.Object");
                 }
             }
             r1 = 0

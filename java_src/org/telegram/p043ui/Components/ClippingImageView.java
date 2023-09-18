@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 /* renamed from: org.telegram.ui.Components.ClippingImageView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ClippingImageView extends View {
     private static float[] radii = new float[8];
     private float additionalTranslationX;

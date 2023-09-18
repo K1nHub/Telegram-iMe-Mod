@@ -21,7 +21,7 @@ import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import okhttp3.internal.Util;
 /* compiled from: Headers.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Headers implements Iterable<Pair<? extends String, ? extends String>>, KMappedMarker {
     public static final Companion Companion = new Companion(null);
     private final String[] namesAndValues;
@@ -122,7 +122,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     }
 
     /* compiled from: Headers.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         private final List<String> namesAndValues = new ArrayList(20);
 
@@ -206,7 +206,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
             return this;
         }
 
-        /* JADX WARN: Incorrect condition in loop: B:8:0x0037 */
+        /* JADX WARN: Incorrect condition in loop: B:8:0x0036 */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
@@ -226,28 +226,28 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
                 int r1 = r0.getFirst()
                 int r2 = r0.getLast()
                 int r0 = r0.getStep()
-                if (r0 < 0) goto L28
-                if (r1 > r2) goto L47
-                goto L2a
-            L28:
-                if (r1 < r2) goto L47
-            L2a:
+                if (r0 < 0) goto L27
+                if (r1 > r2) goto L46
+                goto L29
+            L27:
+                if (r1 < r2) goto L46
+            L29:
                 java.util.List<java.lang.String> r3 = r5.namesAndValues
                 java.lang.Object r3 = r3.get(r1)
                 java.lang.String r3 = (java.lang.String) r3
                 r4 = 1
                 boolean r3 = kotlin.text.StringsKt.equals(r6, r3, r4)
-                if (r3 == 0) goto L43
+                if (r3 == 0) goto L42
                 java.util.List<java.lang.String> r6 = r5.namesAndValues
                 int r1 = r1 + r4
                 java.lang.Object r6 = r6.get(r1)
                 java.lang.String r6 = (java.lang.String) r6
                 return r6
-            L43:
-                if (r1 == r2) goto L47
+            L42:
+                if (r1 == r2) goto L46
                 int r1 = r1 + r0
-                goto L2a
-            L47:
+                goto L29
+            L46:
                 r6 = 0
                 return r6
             */
@@ -262,7 +262,7 @@ public final class Headers implements Iterable<Pair<? extends String, ? extends 
     }
 
     /* compiled from: Headers.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

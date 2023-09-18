@@ -6,7 +6,7 @@ import androidx.navigation.NavArgs;
 import com.iMe.feature.socialMedias.SocialNetwork;
 import java.io.Serializable;
 import java.util.HashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SocialWebScreenArgs implements NavArgs {
     private final HashMap arguments = new HashMap();
 

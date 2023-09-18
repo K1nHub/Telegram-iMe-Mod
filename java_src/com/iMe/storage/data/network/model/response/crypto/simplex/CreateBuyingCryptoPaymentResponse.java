@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.simplex;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CreateBuyingCryptoPaymentResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CreateBuyingCryptoPaymentResponse {
     private final String html;
     private final String paymentId;

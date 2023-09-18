@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfe {
     private static final zzfd zza;
     private static final int zzb;
@@ -10,7 +10,7 @@ public final class zzfe {
     }
 
     /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class zza extends zzfd {
         zza() {
         }

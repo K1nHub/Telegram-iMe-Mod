@@ -6,7 +6,7 @@ import com.google.android.gms.common.annotation.KeepForSdk;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @KeepForSdk
 /* renamed from: com.google.android.gms.vision.L */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class C0718L {
     @RecentlyNonNull
     @KeepForSdk

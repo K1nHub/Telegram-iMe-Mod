@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialNetworksRaw.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialNetworksRaw {
     @SerializedName("networks")
     private final List<Network> networks;

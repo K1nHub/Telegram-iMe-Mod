@@ -2,7 +2,7 @@ package com.iMe.fork.enums;
 
 import com.iMe.common.TelegramPreferenceKeys;
 /* compiled from: AppLaunchCountAction.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum AppLaunchCountAction {
     PROMO_SUBSCRIBE_DIALOG(TelegramPreferenceKeys.Global.promoSubscribeDialogLaunchCountLeft(), TelegramPreferenceKeys.Global.Default.promoSubscribeDialogLaunchCountLeft());
     

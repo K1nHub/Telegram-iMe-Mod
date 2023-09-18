@@ -16,10 +16,10 @@ import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
 import wallet.core.jni.proto.Common;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class Ripple {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface CurrencyAmountOrBuilder extends MessageLiteOrBuilder {
         String getCurrency();
 
@@ -40,7 +40,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OperationNFTokenAcceptOfferOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -51,7 +51,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OperationNFTokenBurnOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -62,7 +62,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OperationNFTokenCancelOfferOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -77,7 +77,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OperationNFTokenCreateOfferOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -92,7 +92,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OperationPaymentOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -117,7 +117,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OperationTrustSetOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -130,7 +130,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         String getAccount();
 
@@ -179,7 +179,7 @@ public final class Ripple {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -200,7 +200,7 @@ public final class Ripple {
     private Ripple() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class CurrencyAmount extends GeneratedMessageLite<CurrencyAmount, Builder> implements CurrencyAmountOrBuilder {
         public static final int CURRENCY_FIELD_NUMBER = 1;
         private static final CurrencyAmount DEFAULT_INSTANCE;
@@ -351,9 +351,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CurrencyAmount, Builder> implements CurrencyAmountOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -448,7 +448,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CurrencyAmount();
                 case 2:
@@ -494,47 +494,47 @@ public final class Ripple {
     }
 
     /* renamed from: wallet.core.jni.proto.Ripple$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74381 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73531 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1977xa1df5c61;
+        static final /* synthetic */ int[] f1968xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1977xa1df5c61 = iArr;
+            f1968xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1977xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1968xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1977xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1968xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1977xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1968xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1977xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1968xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1977xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1968xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1977xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1968xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OperationTrustSet extends GeneratedMessageLite<OperationTrustSet, Builder> implements OperationTrustSetOrBuilder {
         private static final OperationTrustSet DEFAULT_INSTANCE;
         public static final int LIMIT_AMOUNT_FIELD_NUMBER = 1;
@@ -633,9 +633,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationTrustSet, Builder> implements OperationTrustSetOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -680,7 +680,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationTrustSet();
                 case 2:
@@ -725,7 +725,7 @@ public final class Ripple {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OperationPayment extends GeneratedMessageLite<OperationPayment, Builder> implements OperationPaymentOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 1;
         public static final int CURRENCY_AMOUNT_FIELD_NUMBER = 2;
@@ -741,7 +741,7 @@ public final class Ripple {
         private OperationPayment() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum AmountOneofCase {
             AMOUNT(1),
             CURRENCY_AMOUNT(2),
@@ -951,9 +951,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationPayment, Builder> implements OperationPaymentOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -1076,7 +1076,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationPayment();
                 case 2:
@@ -1121,7 +1121,7 @@ public final class Ripple {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OperationNFTokenBurn extends GeneratedMessageLite<OperationNFTokenBurn, Builder> implements OperationNFTokenBurnOrBuilder {
         private static final OperationNFTokenBurn DEFAULT_INSTANCE;
         public static final int NFTOKEN_ID_FIELD_NUMBER = 1;
@@ -1203,9 +1203,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationNFTokenBurn, Builder> implements OperationNFTokenBurnOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -1233,7 +1233,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationNFTokenBurn();
                 case 2:
@@ -1278,7 +1278,7 @@ public final class Ripple {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OperationNFTokenCreateOffer extends GeneratedMessageLite<OperationNFTokenCreateOffer, Builder> implements OperationNFTokenCreateOfferOrBuilder {
         private static final OperationNFTokenCreateOffer DEFAULT_INSTANCE;
         public static final int DESTINATION_FIELD_NUMBER = 2;
@@ -1389,9 +1389,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationNFTokenCreateOffer, Builder> implements OperationNFTokenCreateOfferOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -1447,7 +1447,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationNFTokenCreateOffer();
                 case 2:
@@ -1492,7 +1492,7 @@ public final class Ripple {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OperationNFTokenAcceptOffer extends GeneratedMessageLite<OperationNFTokenAcceptOffer, Builder> implements OperationNFTokenAcceptOfferOrBuilder {
         private static final OperationNFTokenAcceptOffer DEFAULT_INSTANCE;
         private static volatile Parser<OperationNFTokenAcceptOffer> PARSER = null;
@@ -1574,9 +1574,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationNFTokenAcceptOffer, Builder> implements OperationNFTokenAcceptOfferOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -1604,7 +1604,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationNFTokenAcceptOffer();
                 case 2:
@@ -1649,7 +1649,7 @@ public final class Ripple {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OperationNFTokenCancelOffer extends GeneratedMessageLite<OperationNFTokenCancelOffer, Builder> implements OperationNFTokenCancelOfferOrBuilder {
         private static final OperationNFTokenCancelOffer DEFAULT_INSTANCE;
         private static volatile Parser<OperationNFTokenCancelOffer> PARSER = null;
@@ -1763,9 +1763,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationNFTokenCancelOffer, Builder> implements OperationNFTokenCancelOfferOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -1815,7 +1815,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationNFTokenCancelOffer();
                 case 2:
@@ -1860,7 +1860,7 @@ public final class Ripple {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int ACCOUNT_FIELD_NUMBER = 4;
         private static final SigningInput DEFAULT_INSTANCE;
@@ -1888,7 +1888,7 @@ public final class Ripple {
         private SigningInput() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum OperationOneofCase {
             OP_TRUST_SET(7),
             OP_PAYMENT(8),
@@ -2340,9 +2340,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -2681,7 +2681,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -2726,7 +2726,7 @@ public final class Ripple {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int ENCODED_FIELD_NUMBER = 1;
@@ -2836,9 +2836,9 @@ public final class Ripple {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C74381 c74381) {
+            /* synthetic */ Builder(C73531 c73531) {
                 this();
             }
 
@@ -2894,7 +2894,7 @@ public final class Ripple {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74381.f1977xa1df5c61[method.ordinal()]) {
+            switch (C73531.f1968xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

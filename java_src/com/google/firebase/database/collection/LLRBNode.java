@@ -1,10 +1,10 @@
 package com.google.firebase.database.collection;
 
 import java.util.Comparator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface LLRBNode<K, V> {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Color {
         RED,
         BLACK

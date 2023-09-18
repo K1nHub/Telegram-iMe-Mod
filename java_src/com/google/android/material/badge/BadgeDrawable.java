@@ -30,7 +30,7 @@ import com.google.android.material.resources.TextAppearance;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import java.lang.ref.WeakReference;
 import java.text.NumberFormat;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDrawableDelegate {
     private static final int DEFAULT_STYLE = R$style.Widget_MaterialComponents_Badge;
     private static final int DEFAULT_THEME_ATTR = R$attr.badgeStyle;
@@ -65,7 +65,7 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
     public void setColorFilter(ColorFilter colorFilter) {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SavedState implements Parcelable {
         public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() { // from class: com.google.android.material.badge.BadgeDrawable.SavedState.1
             /* JADX WARN: Can't rename method to resolve collision */

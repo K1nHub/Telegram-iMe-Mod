@@ -11,10 +11,10 @@ import com.iMe.utils.formatter.DateFormatter;
 import java.math.BigDecimal;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxActionItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxActionItem extends NoChildNode {
     private final BigDecimal amount;
     private final String createdAt;
@@ -30,7 +30,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
     private final CryptoBoxActionType type;
 
     /* compiled from: CryptoBoxActionItem.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
@@ -141,7 +141,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
     }
 
     /* renamed from: getAmount  reason: collision with other method in class */
-    public final BigDecimal m1309getAmount() {
+    public final BigDecimal m1307getAmount() {
         return this.amount;
     }
 
@@ -205,11 +205,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3558R.string.cryptobox_action_type_create;
+            i = C3473R.string.cryptobox_action_type_create;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3558R.string.cryptobox_action_type_stop;
+            i = C3473R.string.cryptobox_action_type_stop;
         }
         return resourceManager.getString(i);
     }
@@ -237,11 +237,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i != 1) {
             if (i == 2) {
-                return C3558R.C3560drawable.fork_ic_transaction_staking_withdraw;
+                return C3473R.C3475drawable.fork_ic_transaction_staking_withdraw;
             }
             throw new NoWhenBranchMatchedException();
         }
-        return C3558R.C3560drawable.fork_ic_transaction_sent;
+        return C3473R.C3475drawable.fork_ic_transaction_sent;
     }
 
     public final String getTransactionTimeText() {
@@ -249,7 +249,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
     }
 
     public final String getAmount() {
-        return getSymbol() + BalanceFormatter.formatBalance(this.amount, Integer.valueOf(this.token.getDecimals())) + ' ' + this.token.getTicker();
+        return getSymbol() + BalanceFormatter.format(this.amount, Integer.valueOf(this.token.getDecimals())) + ' ' + this.token.getTicker();
     }
 
     private final String getSymbol() {

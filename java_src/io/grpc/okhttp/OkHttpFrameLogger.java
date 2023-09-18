@@ -11,12 +11,12 @@ import java.util.logging.Logger;
 import okio.Buffer;
 import okio.ByteString;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class OkHttpFrameLogger {
     private final Level level;
     private final Logger logger;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     enum Direction {
         INBOUND,
         OUTBOUND
@@ -145,7 +145,7 @@ public class OkHttpFrameLogger {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum SettingParams {
         HEADER_TABLE_SIZE(1),
         ENABLE_PUSH(2),

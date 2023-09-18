@@ -1,14 +1,11 @@
 package com.iMe.utils.extentions.common;
 
 import android.view.LayoutInflater;
-import java.util.Iterator;
-import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.INavigationLayout;
 import timber.log.Timber;
 /* compiled from: BaseFragmentExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BaseFragmentExtKt {
     public static final LayoutInflater getLayoutInflater(BaseFragment baseFragment) {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
@@ -66,29 +63,6 @@ public final class BaseFragmentExtKt {
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.utils.extentions.common.BaseFragmentExtKt.removeFragmentFromStack(org.telegram.ui.ActionBar.BaseFragment, java.lang.Class, kotlin.jvm.functions.Function1):void");
-    }
-
-    public static final <T> boolean containsFragmentInStack(BaseFragment baseFragment, Class<T> clazz) {
-        List<BaseFragment> fragmentStack;
-        Intrinsics.checkNotNullParameter(baseFragment, "<this>");
-        Intrinsics.checkNotNullParameter(clazz, "clazz");
-        INavigationLayout parentLayout = baseFragment.getParentLayout();
-        Object obj = null;
-        if (parentLayout != null && (fragmentStack = parentLayout.getFragmentStack()) != null) {
-            Iterator<T> it = fragmentStack.iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
-                }
-                Object next = it.next();
-                if (clazz.isInstance((BaseFragment) next)) {
-                    obj = next;
-                    break;
-                }
-            }
-            obj = (BaseFragment) obj;
-        }
-        return obj != null;
     }
 
     public static final void setEnableSecureWindow(BaseFragment baseFragment, boolean z) {

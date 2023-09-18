@@ -9,7 +9,7 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Consumer;
 import com.google.firebase.firestore.util.Function;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SQLiteLruReferenceDelegate implements ReferenceDelegate, LruDelegate {
     private long currentSequenceNumber = -1;
     private final LruGarbageCollector garbageCollector;

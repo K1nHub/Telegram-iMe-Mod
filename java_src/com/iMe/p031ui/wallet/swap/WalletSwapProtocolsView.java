@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletSwapProtocolsView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletSwapProtocolsView extends BaseView {
     void openBinanceConvertScreen();
 

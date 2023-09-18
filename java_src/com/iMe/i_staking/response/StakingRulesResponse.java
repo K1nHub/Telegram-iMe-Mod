@@ -1,6 +1,6 @@
 package com.iMe.i_staking.response;
 /* compiled from: StakingRulesResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingRulesResponse {
     private final boolean canDeposit;
     private final boolean canWithdrawImmediately;

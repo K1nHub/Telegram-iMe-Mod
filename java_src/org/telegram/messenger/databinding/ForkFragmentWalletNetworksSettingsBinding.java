@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkFragmentWalletNetworksSettingsBinding implements ViewBinding {
     public final RecyclerView recycleSettings;
     private final GlobalStateLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletNetworksSettingsBinding implements ViewBind
     }
 
     public static ForkFragmentWalletNetworksSettingsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_wallet_networks_settings, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_networks_settings, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentWalletNetworksSettingsBinding implements ViewBind
     }
 
     public static ForkFragmentWalletNetworksSettingsBinding bind(View view) {
-        int i = C3558R.C3561id.recycle_settings;
+        int i = C3473R.C3476id.recycle_settings;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletNetworksSettingsBinding((GlobalStateLayout) view, recyclerView);

@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DERTaggedObject extends ASN1TaggedObject {
     public DERTaggedObject(boolean z, int i, ASN1Encodable aSN1Encodable) {
         super(z, i, aSN1Encodable);

@@ -4,7 +4,7 @@ import android.text.TextPaint;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.TextStyleSpan;
 /* renamed from: org.telegram.ui.Components.URLSpanBotCommand */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class URLSpanBotCommand extends URLSpanNoUnderline {
     public static boolean enabled = true;
     public int currentType;

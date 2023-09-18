@@ -59,7 +59,7 @@ import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.Okio;
 /* compiled from: RealConnection.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RealConnection extends Http2Connection.Listener implements Connection {
     private int allocationLimit;
     private final List<Reference<RealCall>> calls;
@@ -78,7 +78,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     private BufferedSource source;
     private int successCount;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -651,7 +651,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     }
 
     /* compiled from: RealConnection.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

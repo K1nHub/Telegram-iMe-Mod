@@ -7,7 +7,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.DocumentTransform */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DocumentTransform extends GeneratedMessageLite<DocumentTransform, Builder> implements MessageLiteOrBuilder {
     private static final DocumentTransform DEFAULT_INSTANCE;
     public static final int DOCUMENT_FIELD_NUMBER = 1;
@@ -20,7 +20,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
     }
 
     /* renamed from: com.google.firestore.v1.DocumentTransform$FieldTransform */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FieldTransform extends GeneratedMessageLite<FieldTransform, Builder> implements MessageLiteOrBuilder {
         public static final int APPEND_MISSING_ELEMENTS_FIELD_NUMBER = 6;
         private static final FieldTransform DEFAULT_INSTANCE;
@@ -39,7 +39,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
         }
 
         /* renamed from: com.google.firestore.v1.DocumentTransform$FieldTransform$ServerValue */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum ServerValue implements Internal.EnumLite {
             SERVER_VALUE_UNSPECIFIED(0),
             REQUEST_TIME(1),
@@ -88,7 +88,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
             }
 
             /* renamed from: com.google.firestore.v1.DocumentTransform$FieldTransform$ServerValue$ServerValueVerifier */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             private static final class ServerValueVerifier implements Internal.EnumVerifier {
                 static final Internal.EnumVerifier INSTANCE = new ServerValueVerifier();
 
@@ -107,7 +107,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
         }
 
         /* renamed from: com.google.firestore.v1.DocumentTransform$FieldTransform$TransformTypeCase */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum TransformTypeCase {
             SET_TO_SERVER_VALUE(2),
             INCREMENT(3),
@@ -230,7 +230,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
         }
 
         /* renamed from: com.google.firestore.v1.DocumentTransform$FieldTransform$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FieldTransform, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10611 c10611) {
                 this();
@@ -311,7 +311,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
     }
 
     /* renamed from: com.google.firestore.v1.DocumentTransform$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10611 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
@@ -356,7 +356,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
     }
 
     /* renamed from: com.google.firestore.v1.DocumentTransform$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentTransform, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10611 c10611) {
             this();

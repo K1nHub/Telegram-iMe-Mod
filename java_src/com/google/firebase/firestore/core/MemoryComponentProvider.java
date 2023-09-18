@@ -13,7 +13,7 @@ import com.google.firebase.firestore.remote.AndroidConnectivityMonitor;
 import com.google.firebase.firestore.remote.RemoteEvent;
 import com.google.firebase.firestore.remote.RemoteStore;
 import io.grpc.Status;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MemoryComponentProvider extends ComponentProvider {
     @Override // com.google.firebase.firestore.core.ComponentProvider
     protected Scheduler createGarbageCollectionScheduler(ComponentProvider.Configuration configuration) {
@@ -56,7 +56,7 @@ public class MemoryComponentProvider extends ComponentProvider {
         return new SyncEngine(getLocalStore(), getRemoteStore(), configuration.getInitialUser(), configuration.getMaxConcurrentLimboResolutions());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class RemoteStoreCallback implements RemoteStore.RemoteStoreCallback {
         private RemoteStoreCallback() {
         }

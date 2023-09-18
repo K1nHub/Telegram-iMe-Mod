@@ -2,7 +2,7 @@ package com.iMe.storage.common;
 
 import com.iMe.storage.data.manager.common.EnvironmentManager;
 /* compiled from: AppConfiguration.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppConfiguration$Binance {
     public static final AppConfiguration$Binance INSTANCE = new AppConfiguration$Binance();
     private static final String AUTH_REDIRECT_URL = "ime://binance/payAuth";

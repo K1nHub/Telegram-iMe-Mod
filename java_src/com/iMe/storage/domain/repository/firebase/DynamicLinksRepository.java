@@ -5,7 +5,7 @@ import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.google.DynamicLinkData;
 import io.reactivex.Observable;
 /* compiled from: DynamicLinksRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface DynamicLinksRepository {
     Observable<Result<DynamicLinkData>> getLink(AndroidActivityHolder androidActivityHolder, String str);
 }

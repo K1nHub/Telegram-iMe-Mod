@@ -8,20 +8,20 @@ import org.bouncycastle.asn1.ASN1Primitive;
 import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.math.p040ec.ECCurve;
 /* renamed from: org.bouncycastle.asn1.x9.X9ECParameters */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class X9ECParameters extends ASN1Object implements X9ObjectIdentifiers {
     private static final BigInteger ONE = BigInteger.valueOf(1);
     private ECCurve curve;
     private X9FieldID fieldID;
 
     /* renamed from: g */
-    private X9ECPoint f1333g;
+    private X9ECPoint f1324g;
 
     /* renamed from: h */
-    private BigInteger f1334h;
+    private BigInteger f1325h;
 
     /* renamed from: n */
-    private BigInteger f1335n;
+    private BigInteger f1326n;
     private byte[] seed;
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
@@ -30,9 +30,9 @@ public class X9ECParameters extends ASN1Object implements X9ObjectIdentifiers {
         aSN1EncodableVector.add(new ASN1Integer(ONE));
         aSN1EncodableVector.add(this.fieldID);
         aSN1EncodableVector.add(new X9Curve(this.curve, this.seed));
-        aSN1EncodableVector.add(this.f1333g);
-        aSN1EncodableVector.add(new ASN1Integer(this.f1335n));
-        BigInteger bigInteger = this.f1334h;
+        aSN1EncodableVector.add(this.f1324g);
+        aSN1EncodableVector.add(new ASN1Integer(this.f1326n));
+        BigInteger bigInteger = this.f1325h;
         if (bigInteger != null) {
             aSN1EncodableVector.add(new ASN1Integer(bigInteger));
         }

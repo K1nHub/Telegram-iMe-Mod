@@ -18,7 +18,7 @@ import java.util.Collection;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "LoyaltyWalletObjectCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LoyaltyWalletObject extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LoyaltyWalletObject> CREATOR = new zzs();
     @SafeParcelable.Field(m797id = 2)
@@ -70,7 +70,7 @@ public final class LoyaltyWalletObject extends AbstractSafeParcelable {
     LoyaltyPoints zzv;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzr zzrVar) {
         }

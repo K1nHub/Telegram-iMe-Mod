@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.wallet;
 import com.iMe.i_staking.response.StakingDetailedMetadataResponse$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokenBalanceResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokenBalanceResponse {
     private final Double ratePercentageChange24h;
     private final FiatValueResponse rateToFiat;

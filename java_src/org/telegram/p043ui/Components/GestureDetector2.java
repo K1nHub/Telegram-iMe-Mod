@@ -8,7 +8,7 @@ import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import java.util.Objects;
 /* renamed from: org.telegram.ui.Components.GestureDetector2 */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class GestureDetector2 {
     public static final int DOUBLE_TAP_TIMEOUT;
     private static final int TAP_TIMEOUT;
@@ -39,7 +39,7 @@ public class GestureDetector2 {
     private VelocityTracker mVelocityTracker;
 
     /* renamed from: org.telegram.ui.Components.GestureDetector2$OnDoubleTapListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnDoubleTapListener {
         boolean canDoubleTap(MotionEvent motionEvent);
 
@@ -51,7 +51,7 @@ public class GestureDetector2 {
     }
 
     /* renamed from: org.telegram.ui.Components.GestureDetector2$OnGestureListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnGestureListener {
         boolean onDown(MotionEvent motionEvent);
 
@@ -75,7 +75,7 @@ public class GestureDetector2 {
     }
 
     /* renamed from: org.telegram.ui.Components.GestureDetector2$GestureHandler */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private class GestureHandler extends Handler {
         GestureHandler() {
         }

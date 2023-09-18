@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import com.google.android.material.animation.AnimationUtils;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ElasticTabIndicatorInterpolator extends TabIndicatorInterpolator {
     private static float decInterp(float f) {
         return (float) Math.sin((f * 3.141592653589793d) / 2.0d);

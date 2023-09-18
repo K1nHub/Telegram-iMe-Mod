@@ -5,7 +5,7 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class JsonUtil {
     private static final long NANOS_PER_SECOND = TimeUnit.SECONDS.toNanos(1);
 

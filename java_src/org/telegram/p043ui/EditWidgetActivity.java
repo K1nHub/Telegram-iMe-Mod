@@ -30,7 +30,7 @@ import com.google.android.exoplayer2.source.rtsp.SessionDescription;
 import java.util.ArrayList;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ChatsWidgetProvider;
 import org.telegram.messenger.ContactsWidgetProvider;
 import org.telegram.messenger.DialogObject;
@@ -39,7 +39,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3626ActionBar;
+import org.telegram.p043ui.ActionBar.C3541ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.ChatActionCell;
@@ -56,7 +56,7 @@ import org.telegram.p043ui.EditWidgetActivity;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.EditWidgetActivity */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EditWidgetActivity extends BaseFragment {
     private int chatsEndRow;
     private int chatsStartRow;
@@ -75,7 +75,7 @@ public class EditWidgetActivity extends BaseFragment {
     private int widgetType;
 
     /* renamed from: org.telegram.ui.EditWidgetActivity$EditWidgetActivityDelegate */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public interface EditWidgetActivityDelegate {
         void didSelectDialogs(ArrayList<Long> arrayList);
     }
@@ -86,7 +86,7 @@ public class EditWidgetActivity extends BaseFragment {
     }
 
     /* renamed from: org.telegram.ui.EditWidgetActivity$TouchHelperCallback */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class TouchHelperCallback extends ItemTouchHelper.Callback {
         private boolean moved;
 
@@ -152,7 +152,7 @@ public class EditWidgetActivity extends BaseFragment {
     }
 
     /* renamed from: org.telegram.ui.EditWidgetActivity$WidgetPreviewCell */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class WidgetPreviewCell extends FrameLayout {
         private Drawable backgroundDrawable;
         private BackgroundGradientDrawable.Disposable backgroundGradientDisposable;
@@ -194,32 +194,32 @@ public class EditWidgetActivity extends BaseFragment {
             linearLayout.setOrientation(1);
             addView(linearLayout, LayoutHelper.createFrame(-2, -2, 17));
             ChatActionCell chatActionCell = new ChatActionCell(context);
-            chatActionCell.setCustomText(LocaleController.getString("WidgetPreview", C3558R.string.WidgetPreview));
+            chatActionCell.setCustomText(LocaleController.getString("WidgetPreview", C3473R.string.WidgetPreview));
             linearLayout.addView(chatActionCell, LayoutHelper.createLinear(-2, -2, 17, 0, 0, 0, 4));
             LinearLayout linearLayout2 = new LinearLayout(context);
             linearLayout2.setOrientation(1);
-            linearLayout2.setBackgroundResource(C3558R.C3560drawable.widget_bg);
+            linearLayout2.setBackgroundResource(C3473R.C3475drawable.widget_bg);
             linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-2, -2, 17, 10, 0, 10, 0));
             EditWidgetActivity.this.previewImageView = new ImageView(context);
             if (EditWidgetActivity.this.widgetType == 0) {
                 while (i < 2) {
-                    this.cells[i] = (ViewGroup) EditWidgetActivity.this.getParentActivity().getLayoutInflater().inflate(C3558R.layout.shortcut_widget_item, (ViewGroup) null);
+                    this.cells[i] = (ViewGroup) EditWidgetActivity.this.getParentActivity().getLayoutInflater().inflate(C3473R.layout.shortcut_widget_item, (ViewGroup) null);
                     linearLayout2.addView(this.cells[i], LayoutHelper.createLinear(-1, -2));
                     i++;
                 }
                 linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(218, 160, 17));
-                EditWidgetActivity.this.previewImageView.setImageResource(C3558R.C3560drawable.chats_widget_preview);
+                EditWidgetActivity.this.previewImageView.setImageResource(C3473R.C3475drawable.chats_widget_preview);
             } else if (EditWidgetActivity.this.widgetType == 1) {
                 while (i < 2) {
-                    this.cells[i] = (ViewGroup) EditWidgetActivity.this.getParentActivity().getLayoutInflater().inflate(C3558R.layout.contacts_widget_item, (ViewGroup) null);
+                    this.cells[i] = (ViewGroup) EditWidgetActivity.this.getParentActivity().getLayoutInflater().inflate(C3473R.layout.contacts_widget_item, (ViewGroup) null);
                     linearLayout2.addView(this.cells[i], LayoutHelper.createLinear(160, -2));
                     i++;
                 }
                 linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(160, 160, 17));
-                EditWidgetActivity.this.previewImageView.setImageResource(C3558R.C3560drawable.contacts_widget_preview);
+                EditWidgetActivity.this.previewImageView.setImageResource(C3473R.C3475drawable.contacts_widget_preview);
             }
             updateDialogs();
-            this.shadowDrawable = Theme.getThemedDrawableByKey(context, C3558R.C3560drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow);
+            this.shadowDrawable = Theme.getThemedDrawableByKey(context, C3473R.C3475drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow);
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:113:0x02b1, code lost:
@@ -380,19 +380,19 @@ public class EditWidgetActivity extends BaseFragment {
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(final Context context) {
-        this.actionBar.setBackButtonImage(C3558R.C3560drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3473R.C3475drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         if (this.widgetType == 0) {
-            this.actionBar.setTitle(LocaleController.getString("WidgetChats", C3558R.string.WidgetChats));
+            this.actionBar.setTitle(LocaleController.getString("WidgetChats", C3473R.string.WidgetChats));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("WidgetShortcuts", C3558R.string.WidgetShortcuts));
+            this.actionBar.setTitle(LocaleController.getString("WidgetShortcuts", C3473R.string.WidgetShortcuts));
         }
-        this.actionBar.createMenu().addItem(1, LocaleController.getString("Done", C3558R.string.Done).toUpperCase());
-        this.actionBar.setActionBarMenuOnItemClick(new C3626ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.EditWidgetActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3626ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.createMenu().addItem(1, LocaleController.getString("Done", C3473R.string.Done).toUpperCase());
+        this.actionBar.setActionBarMenuOnItemClick(new C3541ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.EditWidgetActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3541ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (EditWidgetActivity.this.delegate == null) {
@@ -444,7 +444,7 @@ public class EditWidgetActivity extends BaseFragment {
                 EditWidgetActivity.this.lambda$createView$1(context, view, i);
             }
         });
-        this.listView.setOnItemLongClickListener(new C59342());
+        this.listView.setOnItemLongClickListener(new C58492());
         return this.fragmentView;
     }
 
@@ -476,8 +476,8 @@ public class EditWidgetActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.EditWidgetActivity$2 */
-    /* loaded from: classes5.dex */
-    public class C59342 implements RecyclerListView.OnItemLongClickListenerExtended {
+    /* loaded from: classes3.dex */
+    public class C58492 implements RecyclerListView.OnItemLongClickListenerExtended {
         private Rect rect = new Rect();
 
         @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
@@ -488,19 +488,19 @@ public class EditWidgetActivity extends BaseFragment {
         public void onMove(float f, float f2) {
         }
 
-        C59342() {
+        C58492() {
         }
 
         @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
         public boolean onItemClick(View view, final int i, float f, float f2) {
             if (EditWidgetActivity.this.getParentActivity() != null && (view instanceof GroupCreateUserCell)) {
-                ((ImageView) view.getTag(C3558R.C3561id.object_tag)).getHitRect(this.rect);
+                ((ImageView) view.getTag(C3473R.C3476id.object_tag)).getHitRect(this.rect);
                 if (!this.rect.contains((int) f, (int) f2)) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(EditWidgetActivity.this.getParentActivity());
-                    builder.setItems(new CharSequence[]{LocaleController.getString("Delete", C3558R.string.Delete)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.EditWidgetActivity$2$$ExternalSyntheticLambda0
+                    builder.setItems(new CharSequence[]{LocaleController.getString("Delete", C3473R.string.Delete)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.EditWidgetActivity$2$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i2) {
-                            EditWidgetActivity.C59342.this.lambda$onItemClick$0(i, dialogInterface, i2);
+                            EditWidgetActivity.C58492.this.lambda$onItemClick$0(i, dialogInterface, i2);
                         }
                     });
                     EditWidgetActivity.this.showDialog(builder.create());
@@ -538,7 +538,7 @@ public class EditWidgetActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.EditWidgetActivity$ListAdapter */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public class ListAdapter extends RecyclerListView.SelectionAdapter {
         private Context mContext;
 
@@ -562,7 +562,7 @@ public class EditWidgetActivity extends BaseFragment {
             GroupCreateUserCell groupCreateUserCell;
             if (i == 0) {
                 FrameLayout textInfoPrivacyCell = new TextInfoPrivacyCell(this.mContext);
-                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3558R.C3560drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3473R.C3475drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 groupCreateUserCell = textInfoPrivacyCell;
             } else if (i == 1) {
                 FrameLayout textCell = new TextCell(this.mContext);
@@ -573,9 +573,9 @@ public class EditWidgetActivity extends BaseFragment {
             } else {
                 final GroupCreateUserCell groupCreateUserCell2 = new GroupCreateUserCell(this.mContext, 0, 0, false);
                 ImageView imageView = new ImageView(this.mContext);
-                imageView.setImageResource(C3558R.C3560drawable.list_reorder);
+                imageView.setImageResource(C3473R.C3475drawable.list_reorder);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                groupCreateUserCell2.setTag(C3558R.C3561id.object_tag, imageView);
+                groupCreateUserCell2.setTag(C3473R.C3476id.object_tag, imageView);
                 groupCreateUserCell2.addView(imageView, LayoutHelper.createFrame(40, -1, (LocaleController.isRTL ? 3 : 5) | 16, 10, 0, 10, 0));
                 imageView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.EditWidgetActivity$ListAdapter$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnTouchListener
@@ -609,13 +609,13 @@ public class EditWidgetActivity extends BaseFragment {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     if (EditWidgetActivity.this.widgetType != 0) {
                         if (EditWidgetActivity.this.widgetType == 1) {
-                            spannableStringBuilder.append((CharSequence) LocaleController.getString("EditWidgetContactsInfo", C3558R.string.EditWidgetContactsInfo));
+                            spannableStringBuilder.append((CharSequence) LocaleController.getString("EditWidgetContactsInfo", C3473R.string.EditWidgetContactsInfo));
                         }
                     } else {
-                        spannableStringBuilder.append((CharSequence) LocaleController.getString("EditWidgetChatsInfo", C3558R.string.EditWidgetChatsInfo));
+                        spannableStringBuilder.append((CharSequence) LocaleController.getString("EditWidgetChatsInfo", C3473R.string.EditWidgetChatsInfo));
                     }
                     if (SharedConfig.passcodeHash.length() > 0) {
-                        spannableStringBuilder.append((CharSequence) "\n\n").append((CharSequence) AndroidUtilities.replaceTags(LocaleController.getString("WidgetPasscode2", C3558R.string.WidgetPasscode2)));
+                        spannableStringBuilder.append((CharSequence) "\n\n").append((CharSequence) AndroidUtilities.replaceTags(LocaleController.getString("WidgetPasscode2", C3473R.string.WidgetPasscode2)));
                     }
                     textInfoPrivacyCell.setText(spannableStringBuilder);
                 }
@@ -633,11 +633,11 @@ public class EditWidgetActivity extends BaseFragment {
             } else {
                 TextCell textCell = (TextCell) viewHolder.itemView;
                 textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText4);
-                Drawable drawable = this.mContext.getResources().getDrawable(C3558R.C3560drawable.poll_add_circle);
-                Drawable drawable2 = this.mContext.getResources().getDrawable(C3558R.C3560drawable.poll_add_plus);
+                Drawable drawable = this.mContext.getResources().getDrawable(C3473R.C3475drawable.poll_add_circle);
+                Drawable drawable2 = this.mContext.getResources().getDrawable(C3473R.C3475drawable.poll_add_plus);
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
                 drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
-                textCell.setTextAndIcon(LocaleController.getString("SelectChats", C3558R.string.SelectChats), new CombinedDrawable(drawable, drawable2), EditWidgetActivity.this.chatsStartRow != -1);
+                textCell.setTextAndIcon(LocaleController.getString("SelectChats", C3473R.string.SelectChats), new CombinedDrawable(drawable, drawable2), EditWidgetActivity.this.chatsStartRow != -1);
                 textCell.getImageView().setPadding(0, AndroidUtilities.m72dp(7), 0, 0);
             }
         }
@@ -689,10 +689,10 @@ public class EditWidgetActivity extends BaseFragment {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3626ActionBar c3626ActionBar = this.actionBar;
+        C3541ActionBar c3541ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3626ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3541ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

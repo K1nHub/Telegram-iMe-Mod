@@ -8,7 +8,7 @@ import com.google.android.play.core.common.PlayCoreDialogWrapperActivity;
 import com.google.android.play.core.tasks.Task;
 import com.google.android.play.core.tasks.Tasks;
 /* compiled from: com.google.android.play:core@@1.10.2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzd implements ReviewManager {
     private final zzi zza;
     private final Handler zzb = new Handler(Looper.getMainLooper());

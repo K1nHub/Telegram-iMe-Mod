@@ -8,7 +8,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 import net.lingala.zip4j.unzip.UnzipEngine;
 /* renamed from: net.lingala.zip4j.io.InflaterInputStream */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class InflaterInputStream extends PartInputStream {
     private byte[] buff;
     private long bytesWritten;

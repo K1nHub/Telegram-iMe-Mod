@@ -11,7 +11,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -24,7 +24,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.PasscodeView;
 import org.telegram.p043ui.Components.ThemeEditorView;
 /* renamed from: org.telegram.ui.BubbleActivity */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BubbleActivity extends BasePermissionsActivity implements INavigationLayout.INavigationLayoutDelegate {
     private INavigationLayout actionBarLayout;
     private long dialogId;
@@ -81,11 +81,11 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         ApplicationLoader.postInitApplication();
         requestWindowFeature(1);
         if (!SharedConfig.isVibrationEnabled) {
-            setTheme(C3558R.style.Theme_TMessages_NoHapticFeedback);
+            setTheme(C3473R.style.Theme_TMessages_NoHapticFeedback);
         } else {
-            setTheme(C3558R.style.Theme_TMessages);
+            setTheme(C3473R.style.Theme_TMessages);
         }
-        getWindow().setBackgroundDrawableResource(C3558R.C3560drawable.transparent);
+        getWindow().setBackgroundDrawableResource(C3473R.C3475drawable.transparent);
         if (SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture) {
             try {
                 getWindow().setFlags(8192, 8192);

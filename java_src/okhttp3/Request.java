@@ -12,7 +12,7 @@ import okhttp3.Headers;
 import okhttp3.internal.Util;
 import okhttp3.internal.http.HttpMethod;
 /* compiled from: Request.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Request {
     private final RequestBody body;
     private final Headers headers;
@@ -119,7 +119,7 @@ public final class Request {
     }
 
     /* compiled from: Request.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private RequestBody body;
         private Headers.Builder headers;

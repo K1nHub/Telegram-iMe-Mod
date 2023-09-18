@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_inputBotAppShortName extends TLRPC$InputBotApp {
     public static int constructor = -1869872121;
     public TLRPC$InputUser bot_id;

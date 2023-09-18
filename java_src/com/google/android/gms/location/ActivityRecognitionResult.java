@@ -19,7 +19,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "ActivityRecognitionResultCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActivityRecognitionResult extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<ActivityRecognitionResult> CREATOR = new zzd();
     @SafeParcelable.Field(m797id = 1)

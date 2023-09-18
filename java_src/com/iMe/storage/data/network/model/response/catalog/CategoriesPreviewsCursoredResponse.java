@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.catalog;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoriesPreviewsCursoredResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CategoriesPreviewsCursoredResponse {
     private final List<CategoryPreviewResponse> items;
     private final CursorMetaResponse meta;

@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private final Executor callExecutor;
     private final CallOptions callOptions;
@@ -60,7 +60,7 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private boolean observerClosed = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface ClientTransportProvider {
         ClientTransport get(LoadBalancer.PickSubchannelArgs pickSubchannelArgs);
 
@@ -91,7 +91,7 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class ContextCancellationListener implements Context.CancellationListener {
         private ClientCall.Listener<RespT> observer;
 
@@ -407,7 +407,7 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ClientStreamListenerImpl implements ClientStreamListener {
         private boolean closed;
         private final ClientCall.Listener<RespT> observer;

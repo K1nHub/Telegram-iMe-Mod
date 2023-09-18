@@ -7,7 +7,7 @@ import io.reactivex.Single;
 import java.util.List;
 /* compiled from: WalletTokensBalancesDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.minor.wallet.WalletTokensBalancesDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class WalletTokensBalancesDao implements BaseDao<WalletTokenBalanceDb> {
     public abstract Single<List<WalletTokenBalanceDb>> getBalancesByMultipleNetworks(long j, List<String> list);
 

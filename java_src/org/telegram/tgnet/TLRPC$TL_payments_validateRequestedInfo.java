@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_payments_validateRequestedInfo extends TLObject {
     public static int constructor = -1228345045;
     public int flags;

@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.solovyev.android.checkout.Inventory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class BaseInventory implements Inventory {
     protected final Checkout mCheckout;
     protected final Object mLock;
@@ -38,7 +38,7 @@ public abstract class BaseInventory implements Inventory {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class Task {
         private Inventory.Callback mCallback;
         private final int mId;
@@ -108,7 +108,7 @@ public abstract class BaseInventory implements Inventory {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class SynchronizedRequestListener<R> implements RequestListener<R> {
         private final RequestListener<R> mListener;
 

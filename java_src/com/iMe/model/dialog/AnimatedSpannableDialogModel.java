@@ -3,7 +3,7 @@ package com.iMe.model.dialog;
 import android.text.SpannableStringBuilder;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AnimatedSpannableDialogModel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AnimatedSpannableDialogModel {
     private final int animatedIcon;
     private final CharSequence buttonText;
@@ -92,5 +92,13 @@ public final class AnimatedSpannableDialogModel {
 
     public final CharSequence getButtonText() {
         return this.buttonText;
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public AnimatedSpannableDialogModel(int i, CharSequence title, String description, CharSequence buttonText) {
+        this(i, title, new SpannableStringBuilder(description), buttonText);
+        Intrinsics.checkNotNullParameter(title, "title");
+        Intrinsics.checkNotNullParameter(description, "description");
+        Intrinsics.checkNotNullParameter(buttonText, "buttonText");
     }
 }

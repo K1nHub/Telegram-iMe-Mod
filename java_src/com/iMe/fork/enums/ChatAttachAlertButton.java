@@ -9,26 +9,26 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChatAttachAlertButton.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum ChatAttachAlertButton {
-    DOCUMENTS(C3558R.raw.attach_file, Theme.key_chat_attachFileBackground),
-    WALLET(C3558R.raw.fork_attach_wallet, Theme.key_chat_attachWalletBackground),
-    BINANCE(C3558R.raw.fork_attach_binance, Theme.key_chat_attachBinanceBackground),
-    GEO(C3558R.raw.attach_location, Theme.key_chat_attachLocationBackground),
-    POLL(C3558R.raw.attach_poll, Theme.key_chat_attachPollBackground),
-    MUSIC(C3558R.raw.attach_music, Theme.key_chat_attachAudioBackground),
-    CONTACT(C3558R.raw.attach_contact, Theme.key_chat_attachContactBackground);
+    DOCUMENTS(C3473R.raw.attach_file, Theme.key_chat_attachFileBackground),
+    WALLET(C3473R.raw.fork_attach_wallet, Theme.key_chat_attachWalletBackground),
+    BINANCE(C3473R.raw.fork_attach_binance, Theme.key_chat_attachBinanceBackground),
+    GEO(C3473R.raw.attach_location, Theme.key_chat_attachLocationBackground),
+    POLL(C3473R.raw.attach_poll, Theme.key_chat_attachPollBackground),
+    MUSIC(C3473R.raw.attach_music, Theme.key_chat_attachAudioBackground),
+    CONTACT(C3473R.raw.attach_contact, Theme.key_chat_attachContactBackground);
     
     public static final Companion Companion = new Companion(null);
     private final int colorKey;
     private final int iconResId;
 
     /* compiled from: ChatAttachAlertButton.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -90,31 +90,31 @@ public enum ChatAttachAlertButton {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String string = LocaleController.getString("ChatDocument", C3558R.string.ChatDocument);
+                String string = LocaleController.getString("ChatDocument", C3473R.string.ChatDocument);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"ChatDocument\", R.string.ChatDocument)");
                 return string;
             case 2:
-                String internalString = LocaleController.getInternalString(C3558R.string.drawer_wallet_item_title);
+                String internalString = LocaleController.getInternalString(C3473R.string.drawer_wallet_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…drawer_wallet_item_title)");
                 return internalString;
             case 3:
-                String internalString2 = LocaleController.getInternalString(C3558R.string.wallet_binance_attach_title);
+                String internalString2 = LocaleController.getInternalString(C3473R.string.wallet_binance_attach_title);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…let_binance_attach_title)");
                 return internalString2;
             case 4:
-                String string2 = LocaleController.getString("ChatLocation", C3558R.string.ChatLocation);
+                String string2 = LocaleController.getString("ChatLocation", C3473R.string.ChatLocation);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"ChatLocation\", R.string.ChatLocation)");
                 return string2;
             case 5:
-                String string3 = LocaleController.getString("Poll", C3558R.string.Poll);
+                String string3 = LocaleController.getString("Poll", C3473R.string.Poll);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Poll\", R.string.Poll)");
                 return string3;
             case 6:
-                String string4 = LocaleController.getString("AttachMusic", C3558R.string.AttachMusic);
+                String string4 = LocaleController.getString("AttachMusic", C3473R.string.AttachMusic);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"AttachMusic\", R.string.AttachMusic)");
                 return string4;
             case 7:
-                String string5 = LocaleController.getString("AttachContact", C3558R.string.AttachContact);
+                String string5 = LocaleController.getString("AttachContact", C3473R.string.AttachContact);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"AttachContact\", R.string.AttachContact)");
                 return string5;
             default:
@@ -123,7 +123,7 @@ public enum ChatAttachAlertButton {
     }
 
     /* compiled from: ChatAttachAlertButton.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

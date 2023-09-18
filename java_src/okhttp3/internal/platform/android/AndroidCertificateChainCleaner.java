@@ -12,7 +12,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.tls.CertificateChainCleaner;
 /* compiled from: AndroidCertificateChainCleaner.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidCertificateChainCleaner extends CertificateChainCleaner {
     public static final Companion Companion = new Companion(null);
     private final X509TrustManager trustManager;
@@ -51,7 +51,7 @@ public final class AndroidCertificateChainCleaner extends CertificateChainCleane
     }
 
     /* compiled from: AndroidCertificateChainCleaner.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

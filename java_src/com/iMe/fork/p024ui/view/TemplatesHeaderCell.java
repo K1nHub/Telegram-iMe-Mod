@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
@@ -22,7 +22,7 @@ import org.telegram.p043ui.Components.BotCommandsMenuView;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TemplatesHeaderCell.kt */
 /* renamed from: com.iMe.fork.ui.view.TemplatesHeaderCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TemplatesHeaderCell extends LinearLayout {
     private final Lazy createButton$delegate;
     private final Lazy headerTextView$delegate;
@@ -107,7 +107,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
     public final void bind(int i, final BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "templatesDelegate");
         TextView headerTextView = getHeaderTextView();
-        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3558R.string.chat_templates : C3558R.string.chat_templates_list_header));
+        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3473R.string.chat_templates : C3473R.string.chat_templates_list_header));
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
         headerTextView.setTextColor(Theme.getColor(i2));
         ActionBarMenuItem sortButton = getSortButton();
@@ -185,7 +185,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
         TextView textView = new TextView(getContext());
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.setHorizontalPadding(textView, 16);
-        String string = LocaleController.getString("Create", C3558R.string.Create);
+        String string = LocaleController.getString("Create", C3473R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -208,7 +208,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
 
     /* compiled from: TemplatesHeaderCell.kt */
     /* renamed from: com.iMe.fork.ui.view.TemplatesHeaderCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

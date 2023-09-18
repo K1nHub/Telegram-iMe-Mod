@@ -30,7 +30,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LoadingDrawable;
 import timber.log.Timber;
 /* compiled from: ImageViewExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ImageViewExtKt {
     public static final void loadFrom(ImageView imageView, String url) {
         Intrinsics.checkNotNullParameter(imageView, "<this>");

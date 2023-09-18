@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.settings.SettingsDataProvider;
 import java.lang.Thread;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     private final CrashListener crashListener;
     private final Thread.UncaughtExceptionHandler defaultHandler;
@@ -13,7 +13,7 @@ class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
     private final CrashlyticsNativeComponent nativeComponent;
     private final SettingsDataProvider settingsDataProvider;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface CrashListener {
         void onUncaughtException(SettingsDataProvider settingsDataProvider, Thread thread, Throwable th);
     }

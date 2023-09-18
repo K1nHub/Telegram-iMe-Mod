@@ -44,11 +44,11 @@ import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
 import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.TypefaceSpan;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ViewExtKt {
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
         java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
@@ -333,7 +333,14 @@ public final class ViewExtKt {
         progressBar.setIndeterminateTintList(ColorStateList.valueOf(i));
     }
 
-    public static final void setSubstringClickListener(TextView textView, String subString, final Callbacks$Callback handler) {
+    public static /* synthetic */ void setSubstringClickListener$default(TextView textView, String str, boolean z, Callbacks$Callback callbacks$Callback, int i, Object obj) {
+        if ((i & 2) != 0) {
+            z = false;
+        }
+        setSubstringClickListener(textView, str, z, callbacks$Callback);
+    }
+
+    public static final void setSubstringClickListener(TextView textView, String subString, boolean z, final Callbacks$Callback handler) {
         int indexOf$default;
         Intrinsics.checkNotNullParameter(textView, "<this>");
         Intrinsics.checkNotNullParameter(subString, "subString");
@@ -343,7 +350,9 @@ public final class ViewExtKt {
             Intrinsics.checkNotNullExpressionValue(text, "text");
             indexOf$default = StringsKt__StringsKt.indexOf$default(text, subString, 0, false, 6, (Object) null);
             if (indexOf$default != -1) {
+                int length = subString.length() + indexOf$default;
                 SpannableString spannableString = new SpannableString(textView.getText());
+                textView.setHighlightColor(0);
                 spannableString.setSpan(new ClickableSpan() { // from class: com.iMe.utils.extentions.common.ViewExtKt$setSubstringClickListener$clickSpan$1
                     @Override // android.text.style.ClickableSpan
                     public void onClick(View widget) {
@@ -357,7 +366,10 @@ public final class ViewExtKt {
                         ds.linkColor = Theme.getColor(Theme.key_chats_actionBackground);
                         super.updateDrawState(ds);
                     }
-                }, indexOf$default, subString.length() + indexOf$default, 33);
+                }, indexOf$default, length, 33);
+                if (z) {
+                    spannableString.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM)), indexOf$default, length, 33);
+                }
                 textView.setLinksClickable(true);
                 textView.setClickable(true);
                 textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -365,6 +377,12 @@ public final class ViewExtKt {
             }
         } catch (Exception unused) {
         }
+    }
+
+    public static final void showKeyboard(View view) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        view.requestFocus();
+        AndroidUtilities.showKeyboard(view);
     }
 
     public static final void onAction(EditText editText, final int i, final Callbacks$Callback runAction) {
@@ -390,6 +408,11 @@ public final class ViewExtKt {
         return false;
     }
 
+    public static final void visible(View view, boolean z) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        view.setVisibility(z ? 0 : 8);
+    }
+
     public static final void setEnabledWithAlpha(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         view.setAlpha(z ? 1.0f : 0.5f);
@@ -400,11 +423,6 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(view, "<this>");
         view.setAlpha(0.5f);
         view.setEnabled(false);
-    }
-
-    public static final void visible(View view, boolean z) {
-        Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setVisibility(z ? 0 : 8);
     }
 
     public static final void nextPage(ViewPager viewPager) {
@@ -479,21 +497,6 @@ public final class ViewExtKt {
         limitInputLength(editText, i, i2);
     }
 
-    public static final void limitInputLength(EditText editText, int i, int i2) {
-        Intrinsics.checkNotNullParameter(editText, "<this>");
-        editText.setFilters(new DigitsInputFilter[]{new DigitsInputFilter(i2, i, 0.0d, 4, null)});
-    }
-
-    public static final void setAllowDecimals(EditText editText, boolean z) {
-        Intrinsics.checkNotNullParameter(editText, "<this>");
-        editText.setInputType(z ? 8194 : 2);
-    }
-
-    public static final void setSelectionEnd(EditText editText) {
-        Intrinsics.checkNotNullParameter(editText, "<this>");
-        editText.setSelection(editText.length());
-    }
-
     public static /* synthetic */ void setMargins$default(View view, int i, int i2, int i3, int i4, int i5, Object obj) {
         if ((i5 & 1) != 0) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -518,6 +521,21 @@ public final class ViewExtKt {
         setMargins(view, i, i2, i3, i4);
     }
 
+    public static final void limitInputLength(EditText editText, int i, int i2) {
+        Intrinsics.checkNotNullParameter(editText, "<this>");
+        editText.setFilters(new DigitsInputFilter[]{new DigitsInputFilter(i2, i, 0.0d, 4, null)});
+    }
+
+    public static final void setAllowDecimals(EditText editText, boolean z) {
+        Intrinsics.checkNotNullParameter(editText, "<this>");
+        editText.setInputType(z ? 8194 : 2);
+    }
+
+    public static final void setSelectionEnd(EditText editText) {
+        Intrinsics.checkNotNullParameter(editText, "<this>");
+        editText.setSelection(editText.length());
+    }
+
     public static final void removeSelfFromParent(View view) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         ViewParent parent = view.getParent();
@@ -529,18 +547,6 @@ public final class ViewExtKt {
                 Timber.m6e(e);
             }
         }
-    }
-
-    public static /* synthetic */ void setGreyShadowBackground$default(View view, boolean z, int i, Object obj) {
-        if ((i & 1) != 0) {
-            z = true;
-        }
-        setGreyShadowBackground(view, z);
-    }
-
-    public static final void setGreyShadowBackground(View view, boolean z) {
-        Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3558R.C3560drawable.greydivider_bottom : C3558R.C3560drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
     }
 
     public static final void setScale(View view, float f) {

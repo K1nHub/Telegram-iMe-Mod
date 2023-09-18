@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import java.util.Date;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ConfigMetadataClient {
     static final Date LAST_FETCH_TIME_NO_FETCH_YET = new Date(-1);
     static final Date NO_BACKOFF_TIME = new Date(-1);
@@ -100,7 +100,7 @@ public class ConfigMetadataClient {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BackoffMetadata {
         private Date backoffEndTime;
         private int numFailedFetches;

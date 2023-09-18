@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.RecyclerListViewScroller */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RecyclerListViewScroller {
     int lastScrolled;
     final RecyclerListView recyclerListView;

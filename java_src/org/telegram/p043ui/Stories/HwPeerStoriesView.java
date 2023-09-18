@@ -5,7 +5,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Stories.PeerStoriesView;
 /* compiled from: HwLayouts.java */
 /* renamed from: org.telegram.ui.Stories.HwPeerStoriesView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 class HwPeerStoriesView extends PeerStoriesView {
     public HwPeerStoriesView(Context context, StoryViewer storyViewer, PeerStoriesView.SharedResources sharedResources, Theme.ResourcesProvider resourcesProvider) {
         super(context, storyViewer, sharedResources, resourcesProvider);

@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CounterView;
 /* renamed from: org.telegram.ui.Components.CounterView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CounterView extends View {
     public CounterDrawable counterDrawable;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -65,7 +65,7 @@ public class CounterView extends View {
     }
 
     /* renamed from: org.telegram.ui.Components.CounterView$CounterDrawable */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class CounterDrawable {
         public boolean addServiceGradient;
         private int circleColor;
@@ -82,10 +82,10 @@ public class CounterView extends View {
         int currentCount;
 
         /* renamed from: cx */
-        private float f1754cx;
+        private float f1745cx;
 
         /* renamed from: cy */
-        private float f1755cy;
+        private float f1746cy;
         private boolean drawBackground;
         public float horizontalPadding;
         int lastH;
@@ -100,7 +100,7 @@ public class CounterView extends View {
         int width;
 
         /* renamed from: x */
-        float f1756x;
+        float f1747x;
         public float circleScale = 1.0f;
         int animationType = -1;
         public TextPaint textPaint = new TextPaint(1);
@@ -115,8 +115,8 @@ public class CounterView extends View {
         public void setCountResentChats(boolean z, boolean z2, float f, float f2) {
             this.recentChatsMode = z;
             this.mute = z2;
-            this.f1754cx = f;
-            this.f1755cy = f2;
+            this.f1745cx = f;
+            this.f1746cy = f2;
         }
 
         public CounterDrawable(View view, boolean z, Theme.ResourcesProvider resourcesProvider) {
@@ -153,11 +153,11 @@ public class CounterView extends View {
             updateX(this.countWidth);
             if (this.recentChatsMode) {
                 RectF rectF = this.rectF;
-                float f2 = this.f1754cx;
-                rectF.set(f2, this.f1755cy, AndroidUtilities.m72dp(20) + f2, this.f1755cy + AndroidUtilities.m72dp(20));
+                float f2 = this.f1745cx;
+                rectF.set(f2, this.f1746cy, AndroidUtilities.m72dp(20) + f2, this.f1746cy + AndroidUtilities.m72dp(20));
             } else {
                 RectF rectF2 = this.rectF;
-                float f3 = this.f1756x;
+                float f3 = this.f1747x;
                 rectF2.set(f3, m73dp, this.countWidth + f3 + AndroidUtilities.m73dp(this.radius - 0.5f), AndroidUtilities.m73dp(f) + m73dp);
             }
             if (this.circlePaint != null && this.drawBackground) {
@@ -185,7 +185,7 @@ public class CounterView extends View {
             if (this.countLayout != null) {
                 canvas.save();
                 if (this.recentChatsMode) {
-                    canvas.translate(this.f1754cx + AndroidUtilities.m72dp(4), this.f1755cy + AndroidUtilities.m73dp(4.5f));
+                    canvas.translate(this.f1745cx + AndroidUtilities.m72dp(4), this.f1746cy + AndroidUtilities.m73dp(4.5f));
                 } else {
                     canvas.translate(this.countLeft, m73dp + AndroidUtilities.m72dp(4));
                 }
@@ -384,7 +384,7 @@ public class CounterView extends View {
                     f = 1.0f;
                 }
                 RectF rectF = this.rectF;
-                float f9 = this.f1756x;
+                float f9 = this.f1747x;
                 rectF.set(f9, m73dp, f7 + f9 + AndroidUtilities.m73dp(this.radius - 0.5f), AndroidUtilities.m73dp(this.radius * 2.0f) + m73dp);
                 canvas.save();
                 canvas.scale(f, f, this.rectF.centerX(), this.rectF.centerY());
@@ -467,7 +467,7 @@ public class CounterView extends View {
                     updateX(this.countWidth);
                     float m73dp = (this.lastH - AndroidUtilities.m73dp(this.radius * 2.0f)) / 2.0f;
                     RectF rectF = this.rectF;
-                    float f2 = this.f1756x;
+                    float f2 = this.f1747x;
                     rectF.set(f2, m73dp, this.countWidth + f2 + AndroidUtilities.m72dp(11), AndroidUtilities.m72dp(23) + m73dp);
                     return;
                 }
@@ -481,14 +481,14 @@ public class CounterView extends View {
                 float f4 = i2 == i3 ? i2 : (i2 * f3) + (i3 * (1.0f - f3));
                 updateX(f4);
                 RectF rectF2 = this.rectF;
-                float f5 = this.f1756x;
+                float f5 = this.f1747x;
                 rectF2.set(f5, m73dp2, f4 + f5 + AndroidUtilities.m72dp(11), AndroidUtilities.m72dp(23) + m73dp2);
                 return;
             }
             updateX(this.countWidth);
             float m73dp3 = (this.lastH - AndroidUtilities.m73dp(this.radius * 2.0f)) / 2.0f;
             RectF rectF3 = this.rectF;
-            float f6 = this.f1756x;
+            float f6 = this.f1747x;
             rectF3.set(f6, m73dp3, this.countWidth + f6 + AndroidUtilities.m72dp(11), AndroidUtilities.m72dp(23) + m73dp3);
         }
 
@@ -509,7 +509,7 @@ public class CounterView extends View {
             } else {
                 this.countLeft = (int) ((this.width - f) / 2.0f);
             }
-            this.f1756x = this.countLeft - m73dp;
+            this.f1747x = this.countLeft - m73dp;
         }
 
         public float getCenterX() {

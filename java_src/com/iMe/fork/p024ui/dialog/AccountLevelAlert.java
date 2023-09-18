@@ -25,7 +25,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -33,7 +33,7 @@ import org.telegram.p043ui.Cells.CheckBoxCell;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: AccountLevelAlert.kt */
 /* renamed from: com.iMe.fork.ui.dialog.AccountLevelAlert */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AccountLevelAlert extends AlertDialog.Builder implements KoinComponent {
     private final AccountLevelInformation accountLevelInformation;
     private final Lazy resourceManager$delegate;
@@ -41,7 +41,7 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
 
     /* compiled from: AccountLevelAlert.kt */
     /* renamed from: com.iMe.fork.ui.dialog.AccountLevelAlert$OnVisibilityChangedListener */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnVisibilityChangedListener {
         void onChanged(boolean z);
     }
@@ -88,14 +88,14 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
             }
         });
         this.resourceManager$delegate = lazy;
-        setTitle(LocaleController.formatStringInternal(C3558R.string.wallet_account_level_alert_title, accountLevelInformation.getLevel().name()));
+        setTitle(LocaleController.formatStringInternal(C3473R.string.wallet_account_level_alert_title, accountLevelInformation.getLevel().name()));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         for (AccountLevel accountLevel : AccountLevel.values()) {
             TextView textView = new TextView(linearLayout.getContext());
-            textView.setText(LocaleController.formatStringInternal(C3558R.string.wallet_account_level_description, accountLevel.name(), accountLevel.getFullDescription(getResourceManager())));
+            textView.setText(LocaleController.formatStringInternal(C3473R.string.wallet_account_level_description, accountLevel.name(), accountLevel.getFullDescription(getResourceManager())));
             textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-            Drawable drawable2 = ContextCompat.getDrawable(mContext, C3558R.C3560drawable.fork_account_level_badge_20);
+            Drawable drawable2 = ContextCompat.getDrawable(mContext, C3473R.C3475drawable.fork_account_level_badge_20);
             if (drawable2 == null || (drawable = drawable2.mutate()) == null) {
                 drawable = null;
             } else {
@@ -108,7 +108,7 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
         }
         final CheckBoxCell checkBoxCell = new CheckBoxCell(linearLayout.getContext(), 2);
         checkBoxCell.setMultiline(true);
-        checkBoxCell.setText(LocaleController.getInternalString(C3558R.string.wallet_account_level_alert_public), null, this.accountLevelInformation.isPublic(), false);
+        checkBoxCell.setText(LocaleController.getInternalString(C3473R.string.wallet_account_level_alert_public), null, this.accountLevelInformation.isPublic(), false);
         checkBoxCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         checkBoxCell.setPadding(AndroidUtilities.m73dp(24.0f), AndroidUtilities.m73dp(12.0f), AndroidUtilities.m73dp(24.0f), 0);
         checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.AccountLevelAlert$$ExternalSyntheticLambda0
@@ -119,7 +119,7 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
         });
         linearLayout.addView(checkBoxCell);
         setView(linearLayout);
-        setPositiveButton(LocaleController.getString("OK", C3558R.string.OK), null);
+        setPositiveButton(LocaleController.getString("OK", C3473R.string.OK), null);
     }
 
     private final ResourceManager getResourceManager() {
@@ -138,7 +138,7 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
 
     /* compiled from: AccountLevelAlert.kt */
     /* renamed from: com.iMe.fork.ui.dialog.AccountLevelAlert$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

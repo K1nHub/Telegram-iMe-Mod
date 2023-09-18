@@ -5,7 +5,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.InputStream;
 import java.util.concurrent.atomic.AtomicReferenceArray;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MethodDescriptor<ReqT, RespT> {
     private final String fullMethodName;
     private final boolean idempotent;
@@ -17,14 +17,14 @@ public final class MethodDescriptor<ReqT, RespT> {
     private final String serviceName;
     private final MethodType type;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Marshaller<T> {
         T parse(InputStream inputStream);
 
         InputStream stream(T t);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum MethodType {
         UNARY,
         CLIENT_STREAMING,
@@ -98,7 +98,7 @@ public final class MethodDescriptor<ReqT, RespT> {
         return new Builder().setRequestMarshaller(marshaller).setResponseMarshaller(marshaller2);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder<ReqT, RespT> {
         private String fullMethodName;
         private boolean idempotent;

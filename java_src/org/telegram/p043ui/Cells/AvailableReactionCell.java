@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -24,7 +24,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Switch;
 import org.telegram.tgnet.TLRPC$TL_availableReaction;
 /* renamed from: org.telegram.ui.Cells.AvailableReactionCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AvailableReactionCell extends FrameLayout {
     private boolean canLock;
     private CheckBox2 checkBox;
@@ -89,7 +89,7 @@ public class AvailableReactionCell extends FrameLayout {
         }
         this.locked = z2;
         if (z2) {
-            Drawable drawable = ContextCompat.getDrawable(getContext(), C3558R.C3560drawable.other_lockedfolders2);
+            Drawable drawable = ContextCompat.getDrawable(getContext(), C3473R.C3475drawable.other_lockedfolders2);
             drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
             this.textView.setRightDrawable(drawable);
         } else {

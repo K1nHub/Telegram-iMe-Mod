@@ -3,7 +3,7 @@ package org.koin.core.instance;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.definition.BeanDefinition;
 /* compiled from: FactoryInstanceFactory.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FactoryInstanceFactory<T> extends InstanceFactory<T> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FactoryInstanceFactory(BeanDefinition<T> beanDefinition) {

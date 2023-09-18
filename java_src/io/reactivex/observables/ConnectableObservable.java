@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.internal.operators.observable.ObservableRefCount;
 import io.reactivex.plugins.RxJavaPlugins;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ConnectableObservable<T> extends Observable<T> {
     public abstract void connect(Consumer<? super Disposable> consumer);
 

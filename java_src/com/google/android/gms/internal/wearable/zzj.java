@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @VisibleForTesting
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzj {
     public static File zza(ParcelFileDescriptor parcelFileDescriptor, File file) throws IOException {
         FileOutputStream fileOutputStream;

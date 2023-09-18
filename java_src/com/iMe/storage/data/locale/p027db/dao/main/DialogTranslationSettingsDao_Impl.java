@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.DialogTranslationSettingsDao_Impl */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DialogTranslationSettingsDao_Impl extends DialogTranslationSettingsDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<DialogTranslationSettingsDb> __insertionAdapterOfDialogTranslationSettingsDb;

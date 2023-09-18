@@ -19,7 +19,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Premium.StarParticlesView;
 import org.telegram.p043ui.LauncherIconController;
 /* renamed from: org.telegram.ui.Components.Premium.PremiumAppIconsPreviewView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PremiumAppIconsPreviewView extends FrameLayout implements PagerHeaderView {
     private AdaptiveIconImageView bottomLeftIcon;
     private AdaptiveIconImageView bottomRightIcon;
@@ -119,7 +119,7 @@ public class PremiumAppIconsPreviewView extends FrameLayout implements PagerHead
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Premium.PremiumAppIconsPreviewView$AdaptiveIconImageView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class AdaptiveIconImageView extends AppIconsSelectorCell.AdaptiveIconImageView {
         StarParticlesView.Drawable drawable;
         Paint paint;

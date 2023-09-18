@@ -19,7 +19,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoView> implements WalletHomeCryptoView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -254,7 +254,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowAddressMismatchScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowAddressMismatchScreenCommand extends ViewCommand<WalletHomeCryptoView> {
         ShowAddressMismatchScreenCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State) {
             super("showAddressMismatchScreen", OneExecutionStateStrategy.class);
@@ -268,7 +268,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowWalletAddressScanCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowWalletAddressScanCommand extends ViewCommand<WalletHomeCryptoView> {
         public final String address;
 
@@ -285,7 +285,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowQrReceiveDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowQrReceiveDialogCommand extends ViewCommand<WalletHomeCryptoView> {
         public final String address;
         public final Network network;
@@ -304,7 +304,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$OpenSendScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenSendScreenCommand extends ViewCommand<WalletHomeCryptoView> {
         OpenSendScreenCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State) {
             super("openSendScreen", OneExecutionStateStrategy.class);
@@ -318,7 +318,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$OpenHistoryScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenHistoryScreenCommand extends ViewCommand<WalletHomeCryptoView> {
         OpenHistoryScreenCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State) {
             super("openHistoryScreen", OneExecutionStateStrategy.class);
@@ -332,7 +332,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$OpenTokenSettingsScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenTokenSettingsScreenCommand extends ViewCommand<WalletHomeCryptoView> {
         public final String networkId;
 
@@ -349,7 +349,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowChangeNetworkHintCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChangeNetworkHintCommand extends ViewCommand<WalletHomeCryptoView> {
         ShowChangeNetworkHintCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State) {
             super("showChangeNetworkHint", OneExecutionStateStrategy.class);
@@ -363,7 +363,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowSelectTokensOrderTypeDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSelectTokensOrderTypeDialogCommand extends ViewCommand<WalletHomeCryptoView> {
         public final boolean isAllNetworksSelected;
         public final TokenOrderType tokensOrderType;
@@ -382,7 +382,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowChooseNetworkDialogCommand extends ViewCommand<WalletHomeCryptoView> {
         public final List<? extends NetworkItem> availableNetworksItems;
         public final NetworkItem network;
@@ -403,7 +403,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$RenderNodesCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderNodesCommand extends ViewCommand<WalletHomeCryptoView> {
         public final List<? extends BaseNode> nodes;
 
@@ -420,7 +420,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletHomeCryptoView> {
         public final String text;
 
@@ -437,7 +437,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletHomeCryptoView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -458,7 +458,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletHomeCryptoView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -477,7 +477,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowRefreshingCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRefreshingCommand extends ViewCommand<WalletHomeCryptoView> {
         public final boolean show;
 
@@ -494,7 +494,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowActivationConfirmationDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowActivationConfirmationDialogCommand extends ViewCommand<WalletHomeCryptoView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -513,7 +513,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$OpenCreateWalletIntroScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenCreateWalletIntroScreenCommand extends ViewCommand<WalletHomeCryptoView> {
         public final String linkedWalletAddress;
         public final WalletCreationType.Initial walletCreationType;
@@ -532,7 +532,7 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
 
     /* compiled from: WalletHomeCryptoView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$ShowSelectOptionsDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowSelectOptionsDialogCommand extends ViewCommand<WalletHomeCryptoView> {
         public final String[] items;
         public final DialogInterface.OnClickListener listener;

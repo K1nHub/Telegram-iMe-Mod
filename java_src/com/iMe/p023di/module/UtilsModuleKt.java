@@ -26,7 +26,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: UtilsModule.kt */
 /* renamed from: com.iMe.di.module.UtilsModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UtilsModuleKt {
     private static Module presentationUtilsModule = ModuleDSLKt.module$default(false, new Function1<Module, Unit>() { // from class: com.iMe.di.module.UtilsModuleKt$presentationUtilsModule$1
         @Override // kotlin.jvm.functions.Function1

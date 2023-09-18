@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TypingDotsDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TypingDotsDrawable extends StatusDrawable {
     private Paint currentPaint;
     private int currentAccount = UserConfig.selectedAccount;

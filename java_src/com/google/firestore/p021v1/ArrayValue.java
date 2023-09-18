@@ -7,7 +7,7 @@ import com.google.protobuf.Parser;
 import java.util.Collections;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.ArrayValue */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ArrayValue extends GeneratedMessageLite<ArrayValue, Builder> implements ArrayValueOrBuilder {
     private static final ArrayValue DEFAULT_INSTANCE;
     private static volatile Parser<ArrayValue> PARSER = null;
@@ -62,7 +62,7 @@ public final class ArrayValue extends GeneratedMessageLite<ArrayValue, Builder> 
     }
 
     /* renamed from: com.google.firestore.v1.ArrayValue$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<ArrayValue, Builder> implements ArrayValueOrBuilder {
         /* synthetic */ Builder(C10541 c10541) {
             this();
@@ -105,7 +105,7 @@ public final class ArrayValue extends GeneratedMessageLite<ArrayValue, Builder> 
     }
 
     /* renamed from: com.google.firestore.v1.ArrayValue$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10541 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

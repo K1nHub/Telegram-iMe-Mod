@@ -3,7 +3,7 @@ package org.bouncycastle.pqc.crypto.xmss;
 import java.util.Objects;
 import org.bouncycastle.pqc.crypto.xmss.HashTreeAddress;
 import org.bouncycastle.pqc.crypto.xmss.LTreeAddress;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class XMSSNodeUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static XMSSNode lTree(WOTSPlus wOTSPlus, WOTSPlusPublicKeyParameters wOTSPlusPublicKeyParameters, LTreeAddress lTreeAddress) {

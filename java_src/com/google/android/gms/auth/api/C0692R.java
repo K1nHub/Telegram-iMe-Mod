@@ -105,21 +105,21 @@ public final class C0692R {
         public static final int compat_notification_large_icon_max_height = 2131165293;
         public static final int compat_notification_large_icon_max_width = 2131165294;
         public static final int def_drawer_elevation = 2131165296;
-        public static final int notification_action_icon_size = 2131165618;
-        public static final int notification_action_text_size = 2131165619;
-        public static final int notification_big_circle_margin = 2131165620;
-        public static final int notification_content_margin_start = 2131165621;
-        public static final int notification_large_icon_height = 2131165622;
-        public static final int notification_large_icon_width = 2131165623;
-        public static final int notification_main_column_padding_top = 2131165624;
-        public static final int notification_media_narrow_margin = 2131165625;
-        public static final int notification_right_icon_size = 2131165626;
-        public static final int notification_right_side_padding_top = 2131165627;
-        public static final int notification_small_icon_background_padding = 2131165628;
-        public static final int notification_small_icon_size_as_large = 2131165629;
-        public static final int notification_subtext_size = 2131165630;
-        public static final int notification_top_pad = 2131165631;
-        public static final int notification_top_pad_large_text = 2131165632;
+        public static final int notification_action_icon_size = 2131165620;
+        public static final int notification_action_text_size = 2131165621;
+        public static final int notification_big_circle_margin = 2131165622;
+        public static final int notification_content_margin_start = 2131165623;
+        public static final int notification_large_icon_height = 2131165624;
+        public static final int notification_large_icon_width = 2131165625;
+        public static final int notification_main_column_padding_top = 2131165626;
+        public static final int notification_media_narrow_margin = 2131165627;
+        public static final int notification_right_icon_size = 2131165628;
+        public static final int notification_right_side_padding_top = 2131165629;
+        public static final int notification_small_icon_background_padding = 2131165630;
+        public static final int notification_small_icon_size_as_large = 2131165631;
+        public static final int notification_subtext_size = 2131165632;
+        public static final int notification_top_pad = 2131165633;
+        public static final int notification_top_pad_large_text = 2131165634;
 
         private dimen() {
         }
@@ -147,20 +147,20 @@ public final class C0692R {
         public static final int common_google_signin_btn_text_light_focused = 2131231004;
         public static final int common_google_signin_btn_text_light_normal = 2131231005;
         public static final int common_google_signin_btn_text_light_normal_background = 2131231006;
-        public static final int googleg_disabled_color_18 = 2131231489;
-        public static final int googleg_standard_color_18 = 2131231490;
-        public static final int notification_action_background = 2131232249;
-        public static final int notification_bg = 2131232250;
-        public static final int notification_bg_low = 2131232251;
-        public static final int notification_bg_low_normal = 2131232252;
-        public static final int notification_bg_low_pressed = 2131232253;
-        public static final int notification_bg_normal = 2131232254;
-        public static final int notification_bg_normal_pressed = 2131232255;
-        public static final int notification_icon_background = 2131232256;
-        public static final int notification_template_icon_bg = 2131232257;
-        public static final int notification_template_icon_low_bg = 2131232258;
-        public static final int notification_tile_bg = 2131232259;
-        public static final int notify_panel_notification_icon_bg = 2131232265;
+        public static final int googleg_disabled_color_18 = 2131231490;
+        public static final int googleg_standard_color_18 = 2131231491;
+        public static final int notification_action_background = 2131232250;
+        public static final int notification_bg = 2131232251;
+        public static final int notification_bg_low = 2131232252;
+        public static final int notification_bg_low_normal = 2131232253;
+        public static final int notification_bg_low_pressed = 2131232254;
+        public static final int notification_bg_normal = 2131232255;
+        public static final int notification_bg_normal_pressed = 2131232256;
+        public static final int notification_icon_background = 2131232257;
+        public static final int notification_template_icon_bg = 2131232258;
+        public static final int notification_template_icon_low_bg = 2131232259;
+        public static final int notification_tile_bg = 2131232260;
+        public static final int notify_panel_notification_icon_bg = 2131232266;
 
         private C0694drawable() {
         }
@@ -222,56 +222,56 @@ public final class C0692R {
         public static final int clip_vertical = 2131296480;
         public static final int dark = 2131296531;
         public static final int dialog_button = 2131296551;
-        public static final int end = 2131296597;
-        public static final int fill = 2131296609;
-        public static final int fill_horizontal = 2131296610;
-        public static final int fill_vertical = 2131296611;
-        public static final int forever = 2131296621;
-        public static final int fragment_container_view_tag = 2131296623;
-        public static final int icon = 2131296669;
-        public static final int icon_group = 2131296670;
-        public static final int icon_only = 2131296671;
-        public static final int info = 2131296755;
-        public static final int italic = 2131296771;
-        public static final int left = 2131296785;
-        public static final int light = 2131296788;
-        public static final int line1 = 2131296789;
-        public static final int line3 = 2131296790;
-        public static final int none = 2131296936;
-        public static final int normal = 2131296937;
-        public static final int notification_background = 2131296941;
-        public static final int notification_main_column = 2131296942;
-        public static final int notification_main_column_container = 2131296943;
-        public static final int right = 2131297047;
-        public static final int right_icon = 2131297049;
-        public static final int right_side = 2131297050;
-        public static final int special_effects_controller_view_tag = 2131297118;
-        public static final int standard = 2131297139;
-        public static final int start = 2131297140;
-        public static final int tag_accessibility_actions = 2131297157;
-        public static final int tag_accessibility_clickable_spans = 2131297158;
-        public static final int tag_accessibility_heading = 2131297159;
-        public static final int tag_accessibility_pane_title = 2131297160;
-        public static final int tag_on_apply_window_listener = 2131297161;
-        public static final int tag_on_receive_content_listener = 2131297162;
-        public static final int tag_on_receive_content_mime_types = 2131297163;
-        public static final int tag_screen_reader_focusable = 2131297164;
-        public static final int tag_state_description = 2131297165;
-        public static final int tag_transition_group = 2131297166;
-        public static final int tag_unhandled_key_event_manager = 2131297167;
-        public static final int tag_unhandled_key_listeners = 2131297168;
-        public static final int tag_window_insets_animation_callback = 2131297169;
-        public static final int text = 2131297177;
-        public static final int text2 = 2131297179;
-        public static final int time = 2131297385;
-        public static final int title = 2131297387;
-        public static final int top = 2131297394;
-        public static final int view_tree_lifecycle_owner = 2131297464;
-        public static final int view_tree_on_back_pressed_dispatcher_owner = 2131297465;
-        public static final int view_tree_saved_state_registry_owner = 2131297466;
-        public static final int view_tree_view_model_store_owner = 2131297467;
-        public static final int visible_removing_fragment_view_tag = 2131297472;
-        public static final int wide = 2131297486;
+        public static final int end = 2131296598;
+        public static final int fill = 2131296610;
+        public static final int fill_horizontal = 2131296611;
+        public static final int fill_vertical = 2131296612;
+        public static final int forever = 2131296622;
+        public static final int fragment_container_view_tag = 2131296624;
+        public static final int icon = 2131296668;
+        public static final int icon_group = 2131296669;
+        public static final int icon_only = 2131296670;
+        public static final int info = 2131296754;
+        public static final int italic = 2131296770;
+        public static final int left = 2131296784;
+        public static final int light = 2131296787;
+        public static final int line1 = 2131296788;
+        public static final int line3 = 2131296789;
+        public static final int none = 2131296933;
+        public static final int normal = 2131296934;
+        public static final int notification_background = 2131296938;
+        public static final int notification_main_column = 2131296939;
+        public static final int notification_main_column_container = 2131296940;
+        public static final int right = 2131297044;
+        public static final int right_icon = 2131297046;
+        public static final int right_side = 2131297047;
+        public static final int special_effects_controller_view_tag = 2131297115;
+        public static final int standard = 2131297136;
+        public static final int start = 2131297137;
+        public static final int tag_accessibility_actions = 2131297154;
+        public static final int tag_accessibility_clickable_spans = 2131297155;
+        public static final int tag_accessibility_heading = 2131297156;
+        public static final int tag_accessibility_pane_title = 2131297157;
+        public static final int tag_on_apply_window_listener = 2131297158;
+        public static final int tag_on_receive_content_listener = 2131297159;
+        public static final int tag_on_receive_content_mime_types = 2131297160;
+        public static final int tag_screen_reader_focusable = 2131297161;
+        public static final int tag_state_description = 2131297162;
+        public static final int tag_transition_group = 2131297163;
+        public static final int tag_unhandled_key_event_manager = 2131297164;
+        public static final int tag_unhandled_key_listeners = 2131297165;
+        public static final int tag_window_insets_animation_callback = 2131297166;
+        public static final int text = 2131297174;
+        public static final int text2 = 2131297176;
+        public static final int time = 2131297383;
+        public static final int title = 2131297385;
+        public static final int top = 2131297392;
+        public static final int view_tree_lifecycle_owner = 2131297466;
+        public static final int view_tree_on_back_pressed_dispatcher_owner = 2131297467;
+        public static final int view_tree_saved_state_registry_owner = 2131297468;
+        public static final int view_tree_view_model_store_owner = 2131297469;
+        public static final int visible_removing_fragment_view_tag = 2131297474;
+        public static final int wide = 2131297488;
 
         private C0695id() {
         }
@@ -306,25 +306,25 @@ public final class C0692R {
     /* renamed from: com.google.android.gms.auth.api.R$string */
     /* loaded from: classes.dex */
     public static final class string {
-        public static final int common_google_play_services_enable_button = 2131828170;
-        public static final int common_google_play_services_enable_text = 2131828171;
-        public static final int common_google_play_services_enable_title = 2131828172;
-        public static final int common_google_play_services_install_button = 2131828173;
-        public static final int common_google_play_services_install_text = 2131828174;
-        public static final int common_google_play_services_install_title = 2131828175;
-        public static final int common_google_play_services_notification_channel_name = 2131828176;
-        public static final int common_google_play_services_notification_ticker = 2131828177;
-        public static final int common_google_play_services_unknown_issue = 2131828178;
-        public static final int common_google_play_services_unsupported_text = 2131828179;
-        public static final int common_google_play_services_update_button = 2131828180;
-        public static final int common_google_play_services_update_text = 2131828181;
-        public static final int common_google_play_services_update_title = 2131828182;
-        public static final int common_google_play_services_updating_text = 2131828183;
-        public static final int common_google_play_services_wear_update_text = 2131828184;
-        public static final int common_open_on_phone = 2131828194;
-        public static final int common_signin_button_text = 2131828200;
-        public static final int common_signin_button_text_long = 2131828201;
-        public static final int status_bar_notification_info_overflow = 2131829384;
+        public static final int common_google_play_services_enable_button = 2131828146;
+        public static final int common_google_play_services_enable_text = 2131828147;
+        public static final int common_google_play_services_enable_title = 2131828148;
+        public static final int common_google_play_services_install_button = 2131828149;
+        public static final int common_google_play_services_install_text = 2131828150;
+        public static final int common_google_play_services_install_title = 2131828151;
+        public static final int common_google_play_services_notification_channel_name = 2131828152;
+        public static final int common_google_play_services_notification_ticker = 2131828153;
+        public static final int common_google_play_services_unknown_issue = 2131828154;
+        public static final int common_google_play_services_unsupported_text = 2131828155;
+        public static final int common_google_play_services_update_button = 2131828156;
+        public static final int common_google_play_services_update_text = 2131828157;
+        public static final int common_google_play_services_update_title = 2131828158;
+        public static final int common_google_play_services_updating_text = 2131828159;
+        public static final int common_google_play_services_wear_update_text = 2131828160;
+        public static final int common_open_on_phone = 2131828170;
+        public static final int common_signin_button_text = 2131828176;
+        public static final int common_signin_button_text_long = 2131828177;
+        public static final int status_bar_notification_info_overflow = 2131829363;
 
         private string() {
         }
@@ -411,20 +411,20 @@ public final class C0692R {
 
         /* renamed from: SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor */
         public static final int f229xaa980688 = 0;
-        public static final int[] Capability = {com.iMe.android.web.R.attr.queryPatterns, com.iMe.android.web.R.attr.shortcutMatchRequired};
-        public static final int[] ColorStateListItem = {16843173, 16843551, 16844359, com.iMe.android.web.R.attr.alpha, com.iMe.android.web.R.attr.lStar};
-        public static final int[] CoordinatorLayout = {com.iMe.android.web.R.attr.keylines, com.iMe.android.web.R.attr.statusBarBackground};
-        public static final int[] CoordinatorLayout_Layout = {16842931, com.iMe.android.web.R.attr.layout_anchor, com.iMe.android.web.R.attr.layout_anchorGravity, com.iMe.android.web.R.attr.layout_behavior, com.iMe.android.web.R.attr.layout_dodgeInsetEdges, com.iMe.android.web.R.attr.layout_insetEdge, com.iMe.android.web.R.attr.layout_keyline};
-        public static final int[] DrawerLayout = {com.iMe.android.web.R.attr.elevation};
-        public static final int[] FontFamily = {com.iMe.android.web.R.attr.fontProviderAuthority, com.iMe.android.web.R.attr.fontProviderCerts, com.iMe.android.web.R.attr.fontProviderFetchStrategy, com.iMe.android.web.R.attr.fontProviderFetchTimeout, com.iMe.android.web.R.attr.fontProviderPackage, com.iMe.android.web.R.attr.fontProviderQuery, com.iMe.android.web.R.attr.fontProviderSystemFontFamily};
-        public static final int[] FontFamilyFont = {16844082, 16844083, 16844095, 16844143, 16844144, com.iMe.android.web.R.attr.font, com.iMe.android.web.R.attr.fontStyle, com.iMe.android.web.R.attr.fontVariationSettings, com.iMe.android.web.R.attr.fontWeight, com.iMe.android.web.R.attr.ttcIndex};
+        public static final int[] Capability = {com.iMe.android.R.attr.queryPatterns, com.iMe.android.R.attr.shortcutMatchRequired};
+        public static final int[] ColorStateListItem = {16843173, 16843551, 16844359, com.iMe.android.R.attr.alpha, com.iMe.android.R.attr.lStar};
+        public static final int[] CoordinatorLayout = {com.iMe.android.R.attr.keylines, com.iMe.android.R.attr.statusBarBackground};
+        public static final int[] CoordinatorLayout_Layout = {16842931, com.iMe.android.R.attr.layout_anchor, com.iMe.android.R.attr.layout_anchorGravity, com.iMe.android.R.attr.layout_behavior, com.iMe.android.R.attr.layout_dodgeInsetEdges, com.iMe.android.R.attr.layout_insetEdge, com.iMe.android.R.attr.layout_keyline};
+        public static final int[] DrawerLayout = {com.iMe.android.R.attr.elevation};
+        public static final int[] FontFamily = {com.iMe.android.R.attr.fontProviderAuthority, com.iMe.android.R.attr.fontProviderCerts, com.iMe.android.R.attr.fontProviderFetchStrategy, com.iMe.android.R.attr.fontProviderFetchTimeout, com.iMe.android.R.attr.fontProviderPackage, com.iMe.android.R.attr.fontProviderQuery, com.iMe.android.R.attr.fontProviderSystemFontFamily};
+        public static final int[] FontFamilyFont = {16844082, 16844083, 16844095, 16844143, 16844144, com.iMe.android.R.attr.font, com.iMe.android.R.attr.fontStyle, com.iMe.android.R.attr.fontVariationSettings, com.iMe.android.R.attr.fontWeight, com.iMe.android.R.attr.ttcIndex};
         public static final int[] Fragment = {16842755, 16842960, 16842961};
         public static final int[] FragmentContainerView = {16842755, 16842961};
         public static final int[] GradientColor = {16843165, 16843166, 16843169, 16843170, 16843171, 16843172, 16843265, 16843275, 16844048, 16844049, 16844050, 16844051};
         public static final int[] GradientColorItem = {16843173, 16844052};
-        public static final int[] LoadingImageView = {com.iMe.android.web.R.attr.circleCrop, com.iMe.android.web.R.attr.imageAspectRatio, com.iMe.android.web.R.attr.imageAspectRatioAdjust};
-        public static final int[] SignInButton = {com.iMe.android.web.R.attr.buttonSize, com.iMe.android.web.R.attr.colorScheme, com.iMe.android.web.R.attr.scopeUris};
-        public static final int[] SwipeRefreshLayout = {com.iMe.android.web.R.attr.swipeRefreshLayoutProgressSpinnerBackgroundColor};
+        public static final int[] LoadingImageView = {com.iMe.android.R.attr.circleCrop, com.iMe.android.R.attr.imageAspectRatio, com.iMe.android.R.attr.imageAspectRatioAdjust};
+        public static final int[] SignInButton = {com.iMe.android.R.attr.buttonSize, com.iMe.android.R.attr.colorScheme, com.iMe.android.R.attr.scopeUris};
+        public static final int[] SwipeRefreshLayout = {com.iMe.android.R.attr.swipeRefreshLayoutProgressSpinnerBackgroundColor};
 
         private styleable() {
         }

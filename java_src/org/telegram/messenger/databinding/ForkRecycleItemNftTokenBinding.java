@@ -8,9 +8,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.nft.NftRootView;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.BackupImageView;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemNftTokenBinding implements ViewBinding {
     private final NftRootView rootView;
 
@@ -28,7 +28,7 @@ public final class ForkRecycleItemNftTokenBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemNftTokenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_nft_token, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_nft_token, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,13 +36,13 @@ public final class ForkRecycleItemNftTokenBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemNftTokenBinding bind(View view) {
-        int i = C3558R.C3561id.card_nft_token;
+        int i = C3473R.C3476id.card_nft_token;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
-            i = C3558R.C3561id.constraint_root;
+            i = C3473R.C3476id.constraint_root;
             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
             if (constraintLayout != null) {
-                i = C3558R.C3561id.image_nft_image;
+                i = C3473R.C3476id.image_nft_image;
                 BackupImageView backupImageView = (BackupImageView) ViewBindings.findChildViewById(view, i);
                 if (backupImageView != null) {
                     NftRootView nftRootView = (NftRootView) view;

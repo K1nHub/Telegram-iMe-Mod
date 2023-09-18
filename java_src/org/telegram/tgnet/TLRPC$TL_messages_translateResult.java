@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_translateResult extends TLObject {
     public static int constructor = 870003448;
     public ArrayList<TLRPC$TL_textWithEntities> result = new ArrayList<>();

@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DefaultPurchaseVerifier implements PurchaseVerifier {
     static final Set<String> TEST_SKUS = new HashSet(Arrays.asList("android.test.purchased", "android.test.canceled", "android.test.refunded", "android.test.item_unavailable"));
     private final String mPublicKey;

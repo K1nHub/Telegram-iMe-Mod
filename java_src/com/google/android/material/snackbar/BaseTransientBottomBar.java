@@ -52,7 +52,7 @@ import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.SnackbarManager;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>> {
     private static final int[] SNACKBAR_STYLE_ATTR;
     private static final String TAG;
@@ -78,7 +78,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
     private final ViewGroup targetParent;
     protected final SnackbarBaseLayout view;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class BaseCallback<B> {
         public void onDismissed(B b, int i) {
         }
@@ -88,7 +88,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnAttachStateChangeListener {
         void onViewAttachedToWindow(View view);
 
@@ -96,7 +96,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnLayoutChangeListener {
         void onLayoutChange(View view, int i, int i2, int i3, int i4);
     }
@@ -620,7 +620,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SnackbarBaseLayout extends FrameLayout {
         private static final View.OnTouchListener consumeAllTouchListener = new View.OnTouchListener() { // from class: com.google.android.material.snackbar.BaseTransientBottomBar.SnackbarBaseLayout.1
             @Override // android.view.View.OnTouchListener
@@ -771,7 +771,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Behavior extends SwipeDismissBehavior<View> {
         private final BehaviorDelegate delegate = new BehaviorDelegate(this);
 
@@ -792,7 +792,7 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class BehaviorDelegate {
         private SnackbarManager.Callback managerCallback;
 

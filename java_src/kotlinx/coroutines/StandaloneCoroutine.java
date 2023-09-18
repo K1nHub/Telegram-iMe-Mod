@@ -4,7 +4,7 @@ import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Builders.common.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class StandaloneCoroutine extends AbstractCoroutine<Unit> {
     public StandaloneCoroutine(CoroutineContext coroutineContext, boolean z) {
         super(coroutineContext, true, z);

@@ -13,7 +13,7 @@ import org.bouncycastle.crypto.digests.SHAKEDigest;
 import org.bouncycastle.pqc.asn1.PQCObjectIdentifiers;
 import org.bouncycastle.pqc.asn1.SPHINCS256KeyParams;
 import org.bouncycastle.util.Integers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class Utils {
     static final AlgorithmIdentifier AlgID_qTESLA_p_I;
     static final AlgorithmIdentifier AlgID_qTESLA_p_III;

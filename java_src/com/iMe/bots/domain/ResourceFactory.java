@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.Response;
 import java.util.List;
 import java.util.Map;
 /* compiled from: ResourceFactory.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ResourceFactory {
     String getBotMlModelPath(String str, boolean z);
 

@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.p043ui.Components.Paint.Views.RotationGestureDetector;
 /* renamed from: org.telegram.ui.Components.Paint.Views.EntitiesContainerView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EntitiesContainerView extends FrameLayout implements ScaleGestureDetector.OnScaleGestureListener, RotationGestureDetector.OnRotationGestureListener {
     private EntitiesContainerViewDelegate delegate;
     private boolean hasTransformed;
     private float previousScale;
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.EntitiesContainerView$EntitiesContainerViewDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface EntitiesContainerViewDelegate {
         void onEntityDeselect();
 

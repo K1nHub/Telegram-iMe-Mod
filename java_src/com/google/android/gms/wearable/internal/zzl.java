@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "AncsNotificationParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzl extends AbstractSafeParcelable implements com.google.android.gms.wearable.zzb {
     public static final Parcelable.Creator<zzl> CREATOR = new zzm();
     @SafeParcelable.Field(getter = "getId", m797id = 2)

@@ -10,7 +10,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Cells.StickerSetCell;
 /* compiled from: TwitterInviteProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TwitterInviteProvider */
@@ -41,7 +41,7 @@ public final class TwitterInviteProvider extends BaseNodeProvider<TwitterInviteI
             }
         };
         this.itemViewType = IdFabric$ViewTypes.TWITTER_INVITE;
-        this.layoutId = C3558R.layout.fork_recycle_item_twitter_user;
+        this.layoutId = C3473R.layout.fork_recycle_item_twitter_user;
     }
 
     public final Callbacks$Callback1<TwitterInviteItem> getOnInviteClickAction() {
@@ -71,7 +71,7 @@ public final class TwitterInviteProvider extends BaseNodeProvider<TwitterInviteI
     public void convert(BaseViewHolder helper, TwitterInviteItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3558R.C3561id.frame_container, new TwitterInviteProvider$convert$1(item, this));
+        BaseQuickAdapterExtKt.applyForView(helper, C3473R.C3476id.frame_container, new TwitterInviteProvider$convert$1(item, this));
     }
 
     public void convert(BaseViewHolder helper, final TwitterInviteItem item, List<? extends Object> payloads) {
@@ -80,7 +80,7 @@ public final class TwitterInviteProvider extends BaseNodeProvider<TwitterInviteI
         Intrinsics.checkNotNullParameter(payloads, "payloads");
         StickerSetCell stickerSetCell = this.stickerSetCell;
         if (stickerSetCell != null) {
-            stickerSetCell.setText(item.getNickname(), this.resourceManager.getString(C3558R.string.twitter_search_invite_subtitle), C3558R.C3560drawable.fork_drawer_social_twitter, true);
+            stickerSetCell.setText(item.getNickname(), this.resourceManager.getString(C3473R.string.twitter_search_invite_subtitle), C3473R.C3475drawable.fork_drawer_social_twitter, true);
             stickerSetCell.setCustomButtonAction(new Callbacks$Callback() { // from class: com.iMe.ui.adapter.provider.TwitterInviteProvider$$ExternalSyntheticLambda1
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 import p033j$.util.DesugarCollections;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Personalization {
     private final Provider<AnalyticsConnector> analyticsConnector;
     private final Map<String, String> loggedChoiceIds = DesugarCollections.synchronizedMap(new HashMap());

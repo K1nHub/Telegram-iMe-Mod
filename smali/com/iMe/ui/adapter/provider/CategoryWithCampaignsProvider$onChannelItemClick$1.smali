@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 24
+    .line 29
     check-cast p1, Lcom/iMe/model/catalog/CampaignItem;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CategoryWithCampaignsProvider$onChannelItemClick$1;->invoke(Lcom/iMe/model/catalog/CampaignItem;)V

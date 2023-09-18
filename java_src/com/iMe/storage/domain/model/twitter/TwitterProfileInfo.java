@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.twitter;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterProfileInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TwitterProfileInfo {
     private final boolean isUnlinked;
     private final long telegramUserId;

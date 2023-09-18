@@ -1,5 +1,5 @@
 package com.google.common.collect;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ForwardingObject {
     protected abstract Object delegate();
 

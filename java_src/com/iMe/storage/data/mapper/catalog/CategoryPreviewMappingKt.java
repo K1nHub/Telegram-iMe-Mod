@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CategoryPreviewMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CategoryPreviewMappingKt {
     public static final CategoryPreview mapToDomain(CategoryPreviewResponse categoryPreviewResponse) {
         int collectionSizeOrDefault;

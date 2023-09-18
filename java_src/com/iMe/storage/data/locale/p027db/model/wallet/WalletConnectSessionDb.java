@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletConnectSessionDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.wallet.WalletConnectSessionDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectSessionDb {
     private final int chainId;
     private final Date date;

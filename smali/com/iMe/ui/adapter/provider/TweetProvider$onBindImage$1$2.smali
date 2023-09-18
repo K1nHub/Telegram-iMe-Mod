@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTweetProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TweetProvider.kt\ncom/iMe/ui/adapter/provider/TweetProvider$onBindImage$1$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,126:1\n1#2:127\n*E\n"
+    value = "SMAP\nTweetProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TweetProvider.kt\ncom/iMe/ui/adapter/provider/TweetProvider$onBindImage$1$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,159:1\n1#2:160\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 117
+    .line 149
     check-cast p1, Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/TweetProvider$onBindImage$1$2;->invoke(Landroid/graphics/drawable/Drawable;)V
@@ -66,7 +66,7 @@
 .method public final invoke(Landroid/graphics/drawable/Drawable;)V
     .locals 4
 
-    .line 120
+    .line 152
     iget-object p1, p0, Lcom/iMe/ui/adapter/provider/TweetProvider$onBindImage$1$2;->$this_apply:Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;
 
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkRecylcerImageItemBinding;->errorBlock:Lorg/telegram/messenger/databinding/ForkRecylcerErrorBlockBinding;

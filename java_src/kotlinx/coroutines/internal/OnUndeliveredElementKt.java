@@ -6,7 +6,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CoroutineExceptionHandlerKt;
 /* compiled from: OnUndeliveredElement.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class OnUndeliveredElementKt {
     public static /* synthetic */ UndeliveredElementException callUndeliveredElementCatchingException$default(Function1 function1, Object obj, UndeliveredElementException undeliveredElementException, int i, Object obj2) {
         if ((i & 2) != 0) {

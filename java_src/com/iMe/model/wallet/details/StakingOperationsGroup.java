@@ -1,14 +1,14 @@
 package com.iMe.model.wallet.details;
 
 import com.iMe.storage.domain.model.staking.StakingOperationType;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: StakingOperationsGroup.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum StakingOperationsGroup {
-    ALL(C3558R.C3561id.staking_details_operations_all, C3558R.string.wallet_token_details_transactions_all, null),
-    DEPOSIT(C3558R.C3561id.staking_details_operations_deposit, C3558R.string.staking_operation_type_deposit, StakingOperationType.DEPOSIT),
-    WITHDRAW(C3558R.C3561id.staking_details_operations_withdraw, C3558R.string.staking_operation_type_withdraw, StakingOperationType.WITHDRAWAL),
-    CLAIM(C3558R.C3561id.staking_details_operations_claim, C3558R.string.staking_operation_type_claim, StakingOperationType.CLAIM);
+    ALL(C3473R.C3476id.staking_details_operations_all, C3473R.string.wallet_token_details_transactions_all, null),
+    DEPOSIT(C3473R.C3476id.staking_details_operations_deposit, C3473R.string.staking_operation_type_deposit, StakingOperationType.DEPOSIT),
+    WITHDRAW(C3473R.C3476id.staking_details_operations_withdraw, C3473R.string.staking_operation_type_withdraw, StakingOperationType.WITHDRAWAL),
+    CLAIM(C3473R.C3476id.staking_details_operations_claim, C3473R.string.staking_operation_type_claim, StakingOperationType.CLAIM);
     
 
     /* renamed from: id */

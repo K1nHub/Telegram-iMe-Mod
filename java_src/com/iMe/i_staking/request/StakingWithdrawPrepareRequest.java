@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingWithdrawPrepareRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingWithdrawPrepareRequest {
     private final BigDecimal amount;
     private final boolean safe;

@@ -8,7 +8,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.PhotoEditorSeekBar */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PhotoEditorSeekBar extends View {
     private PhotoEditorSeekBarDelegate delegate;
     private Paint innerPaint;
@@ -21,7 +21,7 @@ public class PhotoEditorSeekBar extends View {
     private int thumbSize;
 
     /* renamed from: org.telegram.ui.Components.PhotoEditorSeekBar$PhotoEditorSeekBarDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface PhotoEditorSeekBarDelegate {
         void onProgressChanged(int i, int i2);
     }

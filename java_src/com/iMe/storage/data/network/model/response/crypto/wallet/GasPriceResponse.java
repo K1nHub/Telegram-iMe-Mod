@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.wallet.FiatValueResponse;
 import java.math.BigInteger;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GasPriceResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GasPriceResponse {
     private final float duration;
     private final double fee;

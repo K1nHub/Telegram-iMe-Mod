@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
 import com.iMe.p031ui.custom.ImageTextCheckCell;
 import java.util.Objects;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkRecycleItemWalletNetworksSettingsBinding implements ViewBinding {
     private final ImageTextCheckCell rootView;
 
@@ -25,7 +25,7 @@ public final class ForkRecycleItemWalletNetworksSettingsBinding implements ViewB
     }
 
     public static ForkRecycleItemWalletNetworksSettingsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_recycle_item_wallet_networks_settings, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_recycle_item_wallet_networks_settings, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

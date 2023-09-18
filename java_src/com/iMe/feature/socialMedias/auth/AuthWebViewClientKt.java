@@ -3,7 +3,7 @@ package com.iMe.feature.socialMedias.auth;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: AuthWebViewClient.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AuthWebViewClientKt {
     public static final boolean isStubUrl(String url) {
         boolean startsWith$default;

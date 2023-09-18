@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RxExt.kt */
 /* renamed from: com.iMe.utils.extentions.rx.RxExtKt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RxExtKt {
     public static /* synthetic */ Observable withLoadingDialog$default(Observable observable, BaseView baseView, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
@@ -53,7 +53,7 @@ public final class RxExtKt {
                 RxExtKt.withLoadingDialog$lambda$1(BaseView.this, z);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(doFinally, "viewState: BaseView, can…cellable = cancellable) }");
+        Intrinsics.checkNotNullExpressionValue(doFinally, "viewState: BaseView,\n   …cellable = cancellable) }");
         return doFinally;
     }
 

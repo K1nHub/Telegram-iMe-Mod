@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.response.notification;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NotificationResponse {
     private final BigDecimal amount;
     private final String amountToSpent;

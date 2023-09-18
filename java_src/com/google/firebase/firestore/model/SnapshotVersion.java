@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.model;
 
 import com.google.firebase.Timestamp;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SnapshotVersion implements Comparable<SnapshotVersion> {
     public static final SnapshotVersion NONE = new SnapshotVersion(new Timestamp(0, 0));
     private final Timestamp timestamp;

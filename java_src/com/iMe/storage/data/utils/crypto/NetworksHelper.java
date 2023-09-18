@@ -27,7 +27,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: NetworksHelper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NetworksHelper implements KoinComponent {
     public static final NetworksHelper INSTANCE;
     private static final Lazy cryptoAccessManager$delegate;

@@ -5,7 +5,7 @@ import io.grpc.EquivalentAddressGroup;
 import io.grpc.SecurityLevel;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GrpcAttributes {
     public static final Attributes.Key<Attributes> ATTR_CLIENT_EAG_ATTRS;
     public static final Attributes.Key<SecurityLevel> ATTR_SECURITY_LEVEL;

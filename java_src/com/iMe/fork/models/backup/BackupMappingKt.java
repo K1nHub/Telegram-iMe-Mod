@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BackupMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BackupMappingKt {
     public static final TopicBackup mapToBackup(TopicModel topicModel) {
         Intrinsics.checkNotNullParameter(topicModel, "<this>");

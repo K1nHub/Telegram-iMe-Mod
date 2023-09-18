@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NonSwipeableViewPager.kt */
 /* renamed from: com.iMe.ui.shop.view.custom.NonSwipeableViewPager */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NonSwipeableViewPager extends ViewPager {
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent event) {
@@ -22,13 +22,13 @@ public final class NonSwipeableViewPager extends ViewPager {
         return false;
     }
 
+    public /* synthetic */ NonSwipeableViewPager(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i & 2) != 0 ? null : attributeSet);
+    }
+
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NonSwipeableViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         Intrinsics.checkNotNullParameter(context, "context");
-    }
-
-    public /* synthetic */ NonSwipeableViewPager(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i & 2) != 0 ? null : attributeSet);
     }
 }

@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.util.SparseIntArray;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.WrappedResourceProvider */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WrappedResourceProvider implements Theme.ResourcesProvider {
     Theme.ResourcesProvider resourcesProvider;
     public SparseIntArray sparseIntArray = new SparseIntArray();

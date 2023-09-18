@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionParamsResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TransactionParamsResponse {
     public /* synthetic */ TransactionParamsResponse(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -16,7 +16,7 @@ public abstract class TransactionParamsResponse {
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class EVM extends TransactionParamsResponse {
         private final long chainId;
         private final GasPriceResponse fast;
@@ -128,7 +128,7 @@ public abstract class TransactionParamsResponse {
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TRON extends TransactionParamsResponse {
         private final TronBlockHeaderResponse blockHeader;
         private final String contractAddress;
@@ -210,7 +210,7 @@ public abstract class TransactionParamsResponse {
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TON extends TransactionParamsResponse {
         private final int sendMode;
         private final String toWalletAddressFixed;
@@ -303,7 +303,7 @@ public abstract class TransactionParamsResponse {
     }
 
     /* compiled from: TransactionParamsResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class BTC extends TransactionParamsResponse {
         private final String changeAddress;
         private final BitcoinGasPriceResponse fast;

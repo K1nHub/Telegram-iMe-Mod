@@ -36,12 +36,12 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkContentCryptoboxStatusInfoBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxStatusInfoBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoBottomSheetDialog */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class CryptoBoxStatusInfoBottomSheetDialog extends MvpBottomSheet implements CryptoBoxStatusInfoView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CryptoBoxStatusInfoBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/cryptobox/statuses_description/CryptoBoxStatusInfoPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CryptoBoxStatusInfoBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentCryptoboxStatusInfoBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -189,8 +189,8 @@ public final class CryptoBoxStatusInfoBottomSheetDialog extends MvpBottomSheet i
 
     private final void setupViews() {
         ForkContentCryptoboxStatusInfoBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3558R.string.cryptobox_status_info_title));
-        binding.buttonOk.setText(getResourceManager().getString(C3558R.string.common_ok));
+        binding.textTitle.setText(getResourceManager().getString(C3473R.string.cryptobox_status_info_title));
+        binding.buttonOk.setText(getResourceManager().getString(C3473R.string.common_ok));
     }
 
     private final void setupColors() {
@@ -233,7 +233,7 @@ public final class CryptoBoxStatusInfoBottomSheetDialog extends MvpBottomSheet i
 
     /* compiled from: CryptoBoxStatusInfoBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoBottomSheetDialog$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

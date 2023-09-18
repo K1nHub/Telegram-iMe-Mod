@@ -3,12 +3,10 @@ package com.iMe.storage.domain.model.wallet.swap;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapProtocol.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum SwapProtocol {
-    UNISWAP,
-    UNISWAP_V3,
-    PANCAKESWAP,
     ONEINCH,
+    ONEINCH_FUSION,
     SYMBIOSIS,
     UNKNOWN;
     
@@ -18,16 +16,8 @@ public enum SwapProtocol {
         return this == SYMBIOSIS;
     }
 
-    public final boolean isUniswap() {
-        return this == UNISWAP || this == UNISWAP_V3;
-    }
-
-    public final boolean isOneInch() {
-        return this == UNISWAP || this == ONEINCH;
-    }
-
     /* compiled from: SwapProtocol.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -58,7 +48,7 @@ public enum SwapProtocol {
 
         public final SwapProtocol resolveByNetworkId(String networkId) {
             Intrinsics.checkNotNullParameter(networkId, "networkId");
-            return SwapProtocol.ONEINCH;
+            return SwapProtocol.ONEINCH_FUSION;
         }
     }
 }

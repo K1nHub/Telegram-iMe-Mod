@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 57
+    .line 64
     check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$2;->invoke(Landroidx/appcompat/widget/AppCompatImageView;)V
@@ -66,14 +66,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 65
     new-instance v0, Lcom/google/android/material/shape/MaterialShapeDrawable;
 
     invoke-direct {v0}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
 
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider$convert$1$2;->this$0:Lcom/iMe/ui/adapter/provider/CryptoBoxProvider;
 
-    .line 59
+    .line 67
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -84,16 +84,17 @@
 
     move-result-object v2
 
+    .line 66
     invoke-virtual {v0, v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setFillColor(Landroid/content/res/ColorStateList;)V
 
-    .line 60
+    .line 68
     invoke-static {v1}, Lcom/iMe/ui/adapter/provider/CryptoBoxProvider;->access$getNetworkIconCornerSize(Lcom/iMe/ui/adapter/provider/CryptoBoxProvider;)F
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setCornerSize(F)V
 
-    .line 58
+    .line 65
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void

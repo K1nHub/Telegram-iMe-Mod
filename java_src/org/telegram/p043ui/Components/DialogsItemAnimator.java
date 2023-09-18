@@ -19,7 +19,7 @@ import org.telegram.p043ui.Adapters.DialogsAdapter;
 import org.telegram.p043ui.Cells.DialogCell;
 import org.telegram.p043ui.Cells.DialogsEmptyCell;
 /* renamed from: org.telegram.ui.Components.DialogsItemAnimator */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class DialogsItemAnimator extends SimpleItemAnimator {
     private static TimeInterpolator sDefaultInterpolator = new DecelerateInterpolator();
     private int bottomClip;
@@ -43,7 +43,7 @@ public class DialogsItemAnimator extends SimpleItemAnimator {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.DialogsItemAnimator$MoveInfo */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class MoveInfo {
         public int fromX;
         public int fromY;
@@ -67,7 +67,7 @@ public class DialogsItemAnimator extends SimpleItemAnimator {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.DialogsItemAnimator$ChangeInfo */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class ChangeInfo {
         public int fromX;
         public int fromY;

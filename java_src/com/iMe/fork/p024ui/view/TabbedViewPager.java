@@ -20,7 +20,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.ViewPagerFixed;
 /* compiled from: TabbedViewPager.kt */
 /* renamed from: com.iMe.fork.ui.view.TabbedViewPager */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TabbedViewPager extends FrameLayout {
     private TabbedViewPagerDelegate<AbstractTabbedViewPage> delegate;
     private final Lazy pager$delegate;
@@ -215,7 +215,7 @@ public class TabbedViewPager extends FrameLayout {
 
     /* compiled from: TabbedViewPager.kt */
     /* renamed from: com.iMe.fork.ui.view.TabbedViewPager$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

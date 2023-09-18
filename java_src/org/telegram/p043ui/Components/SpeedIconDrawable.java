@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.AnimatedTextView;
 /* renamed from: org.telegram.ui.Components.SpeedIconDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SpeedIconDrawable extends Drawable {
     private final Drawable.Callback callback;
     private final Paint outlinePaint;

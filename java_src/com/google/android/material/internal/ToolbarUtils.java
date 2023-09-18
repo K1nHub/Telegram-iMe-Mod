@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ToolbarUtils {
     public static TextView getTitleTextView(Toolbar toolbar) {
         return getTextView(toolbar, toolbar.getTitle());

@@ -6,7 +6,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.DocumentChange */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DocumentChange extends GeneratedMessageLite<DocumentChange, Builder> implements MessageLiteOrBuilder {
     private static final DocumentChange DEFAULT_INSTANCE;
     public static final int DOCUMENT_FIELD_NUMBER = 1;
@@ -36,7 +36,7 @@ public final class DocumentChange extends GeneratedMessageLite<DocumentChange, B
     }
 
     /* renamed from: com.google.firestore.v1.DocumentChange$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentChange, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10571 c10571) {
             this();
@@ -48,7 +48,7 @@ public final class DocumentChange extends GeneratedMessageLite<DocumentChange, B
     }
 
     /* renamed from: com.google.firestore.v1.DocumentChange$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10571 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

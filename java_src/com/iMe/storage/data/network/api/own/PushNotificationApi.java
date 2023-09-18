@@ -12,7 +12,7 @@ import java.util.List;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: PushNotificationApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface PushNotificationApi {
     @POST("deletePushToken")
     Observable<ApiBaseResponse<Object>> deletePushToken(@Body DeleteTokenRequest deleteTokenRequest);

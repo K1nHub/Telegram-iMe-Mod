@@ -29,18 +29,18 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 16
+    .line 20
     invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
 
-    .line 15
+    .line 19
     iput-object p1, p0, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 19
+    .line 23
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->SWAP_PROTOCOL:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->itemViewType:I
 
-    .line 20
+    .line 24
     sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_wallet_card_icon_title_subtitle:I
 
     iput p1, p0, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->layoutId:I
@@ -61,7 +61,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 30
     sget v0, Lorg/telegram/messenger/R$id;->card_root:I
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -70,7 +70,7 @@
 
     move-result-object p1
 
-    .line 27
+    .line 31
     sget v1, Lorg/telegram/messenger/R$id;->text_title:I
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
@@ -79,7 +79,7 @@
 
     move-result-object p1
 
-    .line 28
+    .line 32
     sget v2, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -88,7 +88,7 @@
 
     move-result-object p1
 
-    .line 29
+    .line 33
     sget v3, Lorg/telegram/messenger/R$id;->image_icon:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/swap/DexProtocolItem;->getInfo()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
@@ -111,12 +111,12 @@
 
     aput v1, v3, v4
 
-    .line 30
+    .line 34
     invoke-static {p1, v3}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 31
+    .line 35
     iget-object v3, p0, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/swap/DexProtocolItem;->getInfo()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
@@ -135,7 +135,7 @@
 
     move-result-object p1
 
-    .line 32
+    .line 36
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/swap/DexProtocolItem;->getInfo()Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;
@@ -154,9 +154,10 @@
 
     move-result-object p1
 
-    .line 33
+    .line 38
     sget v1, Lorg/telegram/messenger/R$id;->frame_root:I
 
+    .line 39
     invoke-virtual {p2}, Lcom/iMe/model/wallet/swap/DexProtocolItem;->isEnabled()Z
 
     move-result v2
@@ -170,12 +171,13 @@
     :cond_0
     const v2, 0x3e99999a    # 0.3f
 
+    .line 37
     :goto_0
     invoke-static {p1, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setAlpha(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;IF)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 34
+    .line 43
     invoke-virtual {p2}, Lcom/iMe/model/wallet/swap/DexProtocolItem;->isEnabled()Z
 
     move-result p2
@@ -191,6 +193,7 @@
     :cond_1
     const/4 p2, 0x0
 
+    .line 41
     :goto_1
     invoke-static {p1, v0, p2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setForeground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILandroid/graphics/drawable/Drawable;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
@@ -200,7 +203,7 @@
 .method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 14
+    .line 18
     check-cast p2, Lcom/iMe/model/wallet/swap/DexProtocolItem;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/swap/DexProtocolItem;)V
@@ -211,7 +214,7 @@
 .method public getItemViewType()I
     .locals 1
 
-    .line 19
+    .line 23
     iget v0, p0, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->itemViewType:I
 
     return v0
@@ -220,7 +223,7 @@
 .method public getLayoutId()I
     .locals 1
 
-    .line 20
+    .line 24
     iget v0, p0, Lcom/iMe/ui/adapter/provider/DexProtocolProvider;->layoutId:I
 
     return v0

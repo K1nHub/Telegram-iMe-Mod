@@ -5,12 +5,12 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.Components.AnimationProperties;
 import org.telegram.p043ui.LaunchActivity;
 /* renamed from: org.telegram.ui.Components.FloatingDebug.FloatingDebugController */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class FloatingDebugController {
     private static FloatingDebugView debugView;
 
     /* renamed from: org.telegram.ui.Components.FloatingDebug.FloatingDebugController$DebugItemType */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public enum DebugItemType {
         SIMPLE,
         HEADER,
@@ -68,7 +68,7 @@ public class FloatingDebugController {
     }
 
     /* renamed from: org.telegram.ui.Components.FloatingDebug.FloatingDebugController$DebugItem */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class DebugItem {
         Runnable action;
         AnimationProperties.FloatProperty floatProperty;
@@ -76,7 +76,7 @@ public class FloatingDebugController {
         final CharSequence title;
 
         /* renamed from: to */
-        float f1778to;
+        float f1769to;
         final DebugItemType type;
 
         public DebugItem(CharSequence charSequence, Runnable runnable) {
@@ -94,7 +94,7 @@ public class FloatingDebugController {
             this.type = DebugItemType.SEEKBAR;
             this.title = charSequence;
             this.from = f;
-            this.f1778to = f2;
+            this.f1769to = f2;
             this.floatProperty = floatProperty;
         }
     }

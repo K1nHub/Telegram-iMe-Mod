@@ -13,7 +13,7 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Arrays.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     public static <T> boolean contains(T[] tArr, T t) {
         int indexOf;

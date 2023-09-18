@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class zzeb<E> extends AbstractCollection<E> implements Serializable {
     private static final Object[] zza = new Object[0];
 

@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxInteractor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxInteractor {
     private final CryptoBoxRepository cryptoBoxRepository;
     private final SchedulersProvider schedulersProvider;

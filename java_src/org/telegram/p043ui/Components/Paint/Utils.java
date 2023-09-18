@@ -5,7 +5,7 @@ import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.util.Log;
 /* renamed from: org.telegram.ui.Components.Paint.Utils */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Utils {
     public static void HasGLError() {
         int glGetError = GLES20.glGetError();

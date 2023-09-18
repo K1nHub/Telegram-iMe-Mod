@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.RatingBar;
 import androidx.appcompat.widget.TintTypedArray;
 import me.zhanghai.android.materialratingbar.internal.DrawableCompat;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MaterialRatingBar extends RatingBar {
     private static final String TAG = MaterialRatingBar.class.getSimpleName();
     private MaterialRatingDrawable mDrawable;
@@ -20,7 +20,7 @@ public class MaterialRatingBar extends RatingBar {
     private OnRatingChangeListener mOnRatingChangeListener;
     private TintInfo mProgressTintInfo;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface OnRatingChangeListener {
         void onRatingChanged(MaterialRatingBar materialRatingBar, float f);
     }
@@ -421,7 +421,7 @@ public class MaterialRatingBar extends RatingBar {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class TintInfo {
         public boolean mHasIndeterminateTintList;
         public boolean mHasIndeterminateTintMode;

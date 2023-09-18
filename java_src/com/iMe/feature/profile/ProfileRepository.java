@@ -1,6 +1,6 @@
 package com.iMe.feature.profile;
 /* compiled from: ProfileRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ProfileRepository {
     ProfileData getCurrentProfile();
 

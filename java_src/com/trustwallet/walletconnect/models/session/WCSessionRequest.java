@@ -3,7 +3,7 @@ package com.trustwallet.walletconnect.models.session;
 import com.trustwallet.walletconnect.models.WCPeerMeta;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WCSessionRequest.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WCSessionRequest {
     private final String chainId;
     private final String peerId;

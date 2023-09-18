@@ -18,13 +18,13 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FloatingActionButton.kt */
 /* renamed from: com.iMe.fork.ui.view.FloatingActionButton */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FloatingActionButton extends FrameLayout {
     private final Lazy buttonSize$delegate;
     private final Lazy iconView$delegate;
@@ -159,7 +159,7 @@ public final class FloatingActionButton extends FrameLayout {
         RLottieImageView iconView = getIconView();
         if (this.isLoading) {
             iconView.setAutoRepeat(true);
-            iconView.setAnimation(C3558R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
+            iconView.setAnimation(C3473R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
             iconView.playAnimation();
             return;
         }
@@ -179,7 +179,7 @@ public final class FloatingActionButton extends FrameLayout {
 
     /* compiled from: FloatingActionButton.kt */
     /* renamed from: com.iMe.fork.ui.view.FloatingActionButton$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

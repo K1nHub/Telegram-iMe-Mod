@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.disposables.SequentialDisposable;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SingleSubscribeOn<T> extends Single<T> {
     final Scheduler scheduler;
     final SingleSource<? extends T> source;
@@ -25,7 +25,7 @@ public final class SingleSubscribeOn<T> extends Single<T> {
         subscribeOnObserver.task.replace(this.scheduler.scheduleDirect(subscribeOnObserver));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class SubscribeOnObserver<T> extends AtomicReference<Disposable> implements SingleObserver<T>, Disposable, Runnable {
         final SingleObserver<? super T> downstream;
         final SingleSource<? extends T> source;

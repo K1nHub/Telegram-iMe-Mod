@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLObject;
 /* renamed from: org.telegram.ui.Components.SimpleAvatarView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SimpleAvatarView extends View {
     private ValueAnimator animator;
     private AvatarDrawable avatarDrawable;

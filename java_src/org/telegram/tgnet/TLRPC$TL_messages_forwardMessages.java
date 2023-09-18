@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_forwardMessages extends TLObject {
     public static int constructor = -966673468;
     public boolean background;
@@ -18,7 +18,7 @@ public class TLRPC$TL_messages_forwardMessages extends TLObject {
     public boolean with_my_score;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1627id = new ArrayList<>();
+    public ArrayList<Integer> f1618id = new ArrayList<>();
     public ArrayList<Long> random_id = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
@@ -44,10 +44,10 @@ public class TLRPC$TL_messages_forwardMessages extends TLObject {
         abstractSerializedData.writeInt32(i6);
         this.from_peer.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1627id.size();
+        int size = this.f1618id.size();
         abstractSerializedData.writeInt32(size);
         for (int i7 = 0; i7 < size; i7++) {
-            abstractSerializedData.writeInt32(this.f1627id.get(i7).intValue());
+            abstractSerializedData.writeInt32(this.f1618id.get(i7).intValue());
         }
         abstractSerializedData.writeInt32(481674261);
         int size2 = this.random_id.size();

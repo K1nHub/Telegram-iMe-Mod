@@ -9,7 +9,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> implements EnterWalletPinView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -166,7 +166,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$UpdateLoadingStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateLoadingStateCommand extends ViewCommand<EnterWalletPinView> {
         public final boolean isFingerprint;
         public final boolean isLoading;
@@ -185,7 +185,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OnSuccessEnterPinCodeCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnSuccessEnterPinCodeCommand extends ViewCommand<EnterWalletPinView> {
         public final String password;
         public final String pin;
@@ -204,7 +204,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OnPinCodeErrorShakeCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnPinCodeErrorShakeCommand extends ViewCommand<EnterWalletPinView> {
         OnPinCodeErrorShakeCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
             super("onPinCodeErrorShake", OneExecutionStateStrategy.class);
@@ -218,7 +218,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OnDeleteWalletSuccessCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnDeleteWalletSuccessCommand extends ViewCommand<EnterWalletPinView> {
         OnDeleteWalletSuccessCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
             super("onDeleteWalletSuccess", OneExecutionStateStrategy.class);
@@ -232,7 +232,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OpenPasswordEnterScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenPasswordEnterScreenCommand extends ViewCommand<EnterWalletPinView> {
         OpenPasswordEnterScreenCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
             super("openPasswordEnterScreen", OneExecutionStateStrategy.class);
@@ -246,7 +246,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$OpenRestoreWalletScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenRestoreWalletScreenCommand extends ViewCommand<EnterWalletPinView> {
         public final String walletAddress;
 
@@ -263,7 +263,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowForgotPasswordOptionsDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowForgotPasswordOptionsDialogCommand extends ViewCommand<EnterWalletPinView> {
         ShowForgotPasswordOptionsDialogCommand(EnterWalletPinView$$State enterWalletPinView$$State) {
             super("showForgotPasswordOptionsDialog", OneExecutionStateStrategy.class);
@@ -277,7 +277,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowDeleteWalletDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowDeleteWalletDialogCommand extends ViewCommand<EnterWalletPinView> {
         public final DialogModel dialogModel;
 
@@ -294,7 +294,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<EnterWalletPinView> {
         public final String text;
 
@@ -311,7 +311,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<EnterWalletPinView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -332,7 +332,7 @@ public class EnterWalletPinView$$State extends MvpViewState<EnterWalletPinView> 
 
     /* compiled from: EnterWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<EnterWalletPinView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

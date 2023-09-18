@@ -3,7 +3,7 @@ package org.telegram.p043ui.ActionBar;
 import android.content.Context;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 /* renamed from: org.telegram.ui.ActionBar.DarkAlertDialog */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DarkAlertDialog extends AlertDialog {
     public DarkAlertDialog(Context context, int i) {
         super(context, i);
@@ -22,7 +22,7 @@ public class DarkAlertDialog extends AlertDialog {
     }
 
     /* renamed from: org.telegram.ui.ActionBar.DarkAlertDialog$Builder */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static class Builder extends AlertDialog.Builder {
         public Builder(Context context) {
             super(new DarkAlertDialog(context, 0));

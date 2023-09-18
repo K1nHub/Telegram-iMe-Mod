@@ -7,7 +7,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.OutlineEditText */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class OutlineEditText extends OutlineTextContainerView {
     EditTextBoldCursor editText;
 

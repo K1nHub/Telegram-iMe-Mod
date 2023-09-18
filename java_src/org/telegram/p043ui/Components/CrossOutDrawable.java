@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.CrossOutDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CrossOutDrawable extends Drawable {
     int color;
     int colorKey;

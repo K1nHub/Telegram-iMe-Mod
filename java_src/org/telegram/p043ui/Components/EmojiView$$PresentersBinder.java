@@ -6,7 +6,7 @@ import java.util.List;
 import moxy.MvpPresenter;
 import moxy.presenter.PresenterField;
 /* renamed from: org.telegram.ui.Components.EmojiView$$PresentersBinder */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class EmojiView$$PresentersBinder extends moxy.PresenterBinder<EmojiView> {
     @Override // moxy.PresenterBinder
     public List<PresenterField<? super EmojiView>> getPresenterFields() {
@@ -17,7 +17,7 @@ public class EmojiView$$PresentersBinder extends moxy.PresenterBinder<EmojiView>
 
     /* compiled from: EmojiView$$PresentersBinder.java */
     /* renamed from: org.telegram.ui.Components.EmojiView$$PresentersBinder$PresenterBinder */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class PresenterBinder extends PresenterField<EmojiView> {
         public PresenterBinder(EmojiView$$PresentersBinder emojiView$$PresentersBinder) {
             super("presenter", null, EmojiViewPresenter.class);

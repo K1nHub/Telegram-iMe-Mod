@@ -2,7 +2,7 @@ package io.reactivex.schedulers;
 
 import io.reactivex.internal.functions.ObjectHelper;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Timed<T> {
     final long time;
     final TimeUnit unit;

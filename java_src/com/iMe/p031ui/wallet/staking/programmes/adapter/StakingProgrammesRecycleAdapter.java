@@ -15,10 +15,10 @@ import com.iMe.p031ui.adapter.provider.StakingProgrammeProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: StakingProgrammesRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.staking.programmes.adapter.StakingProgrammesRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StakingProgrammesRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final FilterProvider filterProvider;
     private final HeaderWithRightButtonProvider headerWithRightButtonProvider;
@@ -40,7 +40,7 @@ public final class StakingProgrammesRecycleAdapter extends BaseNodeAdapter<BaseN
         Intrinsics.checkNotNullParameter(headerWithRightButtonProvider, "headerWithRightButtonProvider");
         this.filterProvider = filterProvider;
         this.headerWithRightButtonProvider = headerWithRightButtonProvider;
-        addChildClickViewIds(C3558R.C3561id.image_header_right_button, C3558R.C3561id.image_info);
+        addChildClickViewIds(C3473R.C3476id.image_header_right_button, C3473R.C3476id.image_info);
         addItemProvider(BaseQuickAdapterExtKt.asItem(globalStateProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(headerWithRightButtonProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(filterProvider));

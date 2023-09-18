@@ -29,7 +29,7 @@ import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.Dispatchers;
 import timber.log.Timber;
 /* compiled from: SocialRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SocialRepositoryImpl implements SocialRepository {
     private final PublishRelay<SocialAuthResult> authResultRelay;
     private final CoroutineDispatcher defaultDispatcher;
@@ -89,7 +89,7 @@ public final class SocialRepositoryImpl implements SocialRepository {
         });
         Intrinsics.checkNotNullExpressionValue(doOnComplete, "socialMediasApi\n        …ocialAuthResult.Logout) }");
         final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = doOnComplete.map(new C1478x2827ffdb(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$logoutSocial$$inlined$mapSuccess$1
+        Observable<R> map = doOnComplete.map(new C1474x2827ffdb(new Function1<ApiBaseResponse<Object>, Result<? extends Boolean>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$logoutSocial$$inlined$mapSuccess$1
             {
                 super(1);
             }
@@ -105,7 +105,7 @@ public final class SocialRepositoryImpl implements SocialRepository {
         }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new C1478x2827ffdb(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$logoutSocial$$inlined$handleError$1
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new C1474x2827ffdb(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$logoutSocial$$inlined$handleError$1
             {
                 super(1);
             }
@@ -124,11 +124,6 @@ public final class SocialRepositoryImpl implements SocialRepository {
     public static final void logoutSocial$lambda$0(SocialRepositoryImpl this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.authResultRelay.accept(SocialAuthResult.Logout.INSTANCE);
-    }
-
-    @Override // com.iMe.feature.socialMedias.SocialRepository
-    public PublishRelay<SocialAuthResult> listenSocialChanges() {
-        return this.authResultRelay;
     }
 
     @Override // com.iMe.feature.socialMedias.SocialRepository
@@ -172,7 +167,7 @@ public final class SocialRepositoryImpl implements SocialRepository {
         Observable<ApiBaseResponse<SocialNetworksRaw>> subscribeOn = this.socialMediasApi.getAllSocial(new SocialBodyRequest(String.valueOf(j), null, null, 6, null)).subscribeOn(Schedulers.m697io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "socialMediasApi\n        …scribeOn(Schedulers.io())");
         final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = subscribeOn.map(new C1478x2827ffdb(new Function1<ApiBaseResponse<SocialNetworksRaw>, Result<? extends SocialDomain>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getSocialFromNet$$inlined$mapSuccess$1
+        Observable<R> map = subscribeOn.map(new C1474x2827ffdb(new Function1<ApiBaseResponse<SocialNetworksRaw>, Result<? extends SocialDomain>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getSocialFromNet$$inlined$mapSuccess$1
             {
                 super(1);
             }
@@ -188,7 +183,7 @@ public final class SocialRepositoryImpl implements SocialRepository {
         }));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
-        Observable<Result<SocialDomain>> onErrorReturn = map.onErrorReturn(new C1478x2827ffdb(new Function1<Throwable, Result<? extends SocialDomain>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getSocialFromNet$$inlined$handleError$1
+        Observable<Result<SocialDomain>> onErrorReturn = map.onErrorReturn(new C1474x2827ffdb(new Function1<Throwable, Result<? extends SocialDomain>>() { // from class: com.iMe.feature.socialMedias.SocialRepositoryImpl$getSocialFromNet$$inlined$handleError$1
             {
                 super(1);
             }

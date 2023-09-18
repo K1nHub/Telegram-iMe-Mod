@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: TonControllerImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class TonControllerImpl$createWallet$1 extends Lambda implements Function1<Boolean, ObservableSource<? extends Result<? extends Wallet>>> {
     final /* synthetic */ TonControllerImpl this$0;
 

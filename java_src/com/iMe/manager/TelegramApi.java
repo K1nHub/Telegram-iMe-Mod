@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC$TL_messages_requestUrlAuth;
 import org.telegram.tgnet.TLRPC$User;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
 /* compiled from: TelegramApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TelegramApi {
     Observable<String> acceptUrlAuth(String str, TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth);
 
@@ -43,7 +43,7 @@ public interface TelegramApi {
 
     /* compiled from: TelegramApi.kt */
     /* renamed from: com.iMe.manager.TelegramApi$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         public static /* synthetic */ Observable getFullChatInfoById$default(TelegramApi telegramApi, long j, TLRPC$Chat tLRPC$Chat, int i, Object obj) {
             if (obj == null) {

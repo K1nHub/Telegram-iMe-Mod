@@ -9,7 +9,7 @@ import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.internal.Util;
 /* compiled from: TaskQueue.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TaskQueue {
     private Task activeTask;
     private boolean cancelActiveTask;

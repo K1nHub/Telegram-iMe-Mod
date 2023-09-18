@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FileReadWrite.kt */
 /* renamed from: kotlin.io.ExposingBufferByteArrayOutputStream */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ExposingBufferByteArrayOutputStream extends ByteArrayOutputStream {
     public ExposingBufferByteArrayOutputStream(int i) {
         super(i);

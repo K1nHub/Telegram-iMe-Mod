@@ -18,14 +18,14 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RadioButton;
 /* compiled from: ImageRadioCell.kt */
 /* renamed from: com.iMe.fork.ui.view.ImageRadioCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ImageRadioCell extends FrameLayout {
     private final boolean dialog;
     private final Lazy imageView$delegate;
@@ -125,7 +125,7 @@ public final class ImageRadioCell extends FrameLayout {
 
     public final void setImageUrl(String imageUrl) {
         Intrinsics.checkNotNullParameter(imageUrl, "imageUrl");
-        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3558R.C3560drawable.fork_bg_white_circle), false, 4, null);
+        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3473R.C3475drawable.fork_bg_white_circle), false, 4, null);
     }
 
     public final void setTextColor(int i) {

@@ -1,5 +1,5 @@
 package com.stripe.android.exception;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class APIConnectionException extends StripeException {
     public APIConnectionException(String str) {
         super(str, null, 0);

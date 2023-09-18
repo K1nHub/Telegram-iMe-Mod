@@ -13,7 +13,7 @@ import com.google.android.gms.wearable.DataItemAsset;
 @KeepName
 @SafeParcelable.Class(creator = "DataItemAssetParcelableCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DataItemAssetParcelable extends AbstractSafeParcelable implements DataItemAsset, ReflectedParcelable {
     public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new zzdf();
     @SafeParcelable.Field(getter = "getId", m797id = 2)

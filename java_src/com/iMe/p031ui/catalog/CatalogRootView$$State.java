@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.messenger.LocaleController;
 /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implements CatalogRootView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -103,7 +103,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$OnTabSelectedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnTabSelectedCommand extends ViewCommand<CatalogRootView> {
 
         /* renamed from: id */
@@ -122,7 +122,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$OnSelectedLanguageChangedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnSelectedLanguageChangedCommand extends ViewCommand<CatalogRootView> {
         OnSelectedLanguageChangedCommand(CatalogRootView$$State catalogRootView$$State) {
             super("onSelectedLanguageChanged", AddToEndSingleStrategy.class);
@@ -136,7 +136,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$OpenSelectLanguageScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenSelectLanguageScreenCommand extends ViewCommand<CatalogRootView> {
         public final List<? extends LocaleController.LocaleInfo> languages;
         public final int selectedLanguageId;
@@ -155,7 +155,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<CatalogRootView> {
         public final String text;
 
@@ -172,7 +172,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CatalogRootView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -193,7 +193,7 @@ public class CatalogRootView$$State extends MvpViewState<CatalogRootView> implem
 
     /* compiled from: CatalogRootView$$State.java */
     /* renamed from: com.iMe.ui.catalog.CatalogRootView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CatalogRootView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

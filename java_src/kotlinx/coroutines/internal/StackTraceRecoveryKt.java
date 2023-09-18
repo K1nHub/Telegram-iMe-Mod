@@ -13,7 +13,7 @@ import kotlin.text.StringsKt__StringsJVMKt;
 import kotlinx.coroutines.CopyableThrowable;
 import kotlinx.coroutines.DebugKt;
 /* compiled from: StackTraceRecovery.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StackTraceRecoveryKt {
     private static final String baseContinuationImplClassName;
     private static final String stackTraceRecoveryClassName;
@@ -24,26 +24,26 @@ public final class StackTraceRecoveryKt {
 
     static {
         Object obj;
-        Object m1660constructorimpl;
+        Object m1658constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            obj = Result.m1660constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
+            obj = Result.m1658constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            obj = Result.m1660constructorimpl(ResultKt.createFailure(th));
+            obj = Result.m1658constructorimpl(ResultKt.createFailure(th));
         }
-        baseContinuationImplClassName = (String) (Result.m1661exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
+        baseContinuationImplClassName = (String) (Result.m1659exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
         try {
             Result.Companion companion3 = Result.Companion;
-            m1660constructorimpl = Result.m1660constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
+            m1658constructorimpl = Result.m1658constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m1660constructorimpl = Result.m1660constructorimpl(ResultKt.createFailure(th2));
+            m1658constructorimpl = Result.m1658constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m1661exceptionOrNullimpl(m1660constructorimpl) != null) {
-            m1660constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        if (Result.m1659exceptionOrNullimpl(m1658constructorimpl) != null) {
+            m1658constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
-        stackTraceRecoveryClassName = (String) m1660constructorimpl;
+        stackTraceRecoveryClassName = (String) m1658constructorimpl;
     }
 
     public static final <E extends Throwable> E recoverStackTrace(E e) {

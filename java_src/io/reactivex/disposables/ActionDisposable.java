@@ -2,7 +2,7 @@ package io.reactivex.disposables;
 
 import io.reactivex.functions.Action;
 import io.reactivex.internal.util.ExceptionHelper;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ActionDisposable extends ReferenceDisposable<Action> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ActionDisposable(Action action) {

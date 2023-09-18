@@ -18,7 +18,7 @@ import net.lingala.zip4j.model.Zip64ExtendedInfo;
 import net.lingala.zip4j.model.ZipModel;
 import net.lingala.zip4j.util.Raw;
 import net.lingala.zip4j.util.Zip4jUtil;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class HeaderReader {
     private RandomAccessFile zip4jRaf;
     private ZipModel zipModel;

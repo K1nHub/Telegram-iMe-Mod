@@ -16,13 +16,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkChatCopyContentLayoutBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChatCopyPartBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(ChatCopyPartBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkChatCopyContentLayoutBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -106,7 +106,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
 
     private final void setupTexts() {
         ForkChatCopyContentLayoutBinding binding = getBinding();
-        binding.buttonClose.setText(getResourceManager().getString(C3558R.string.common_close));
+        binding.buttonClose.setText(getResourceManager().getString(C3473R.string.common_close));
         binding.textMessage.setText(this.message);
     }
 
@@ -135,7 +135,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
 
     /* compiled from: ChatCopyPartBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

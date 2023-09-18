@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.wallet.AutoResolvableVoidResult;
 import com.google.android.gms.wallet.AutoResolveHelper;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzz extends zzx {
     private final TaskCompletionSource zza;
 

@@ -6,7 +6,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: StakingOperationsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.staking.operations.StakingOperationsView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface StakingOperationsView extends BaseView, SwitchNetworkView {
     void onSetupNavigationRouter();
 

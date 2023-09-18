@@ -13,7 +13,7 @@ import org.koin.core.qualifier.StringQualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: ScopeRegistry.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ScopeRegistry {
     public static final Companion Companion = new Companion(null);
     private static final StringQualifier rootScopeQualifier = QualifierKt.m78_q("_root_");
@@ -50,7 +50,7 @@ public final class ScopeRegistry {
     }
 
     /* compiled from: ScopeRegistry.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

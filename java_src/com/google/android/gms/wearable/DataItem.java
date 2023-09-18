@@ -6,7 +6,7 @@ import com.google.android.gms.common.util.VisibleForTesting;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @VisibleForTesting
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface DataItem extends Freezable<DataItem> {
     Map<String, DataItemAsset> getAssets();
 

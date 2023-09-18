@@ -12,7 +12,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTutorialView> implements CreateWalletTutorialView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
@@ -99,7 +99,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowTutorialPagesCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowTutorialPagesCommand extends ViewCommand<CreateWalletTutorialView> {
         public final List<TutorialPage> pages;
 
@@ -116,7 +116,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$OpenTutorialPassedScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OpenTutorialPassedScreenCommand extends ViewCommand<CreateWalletTutorialView> {
         public final TutorialType.WalletIntro tutorialType;
 
@@ -133,7 +133,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CreateWalletTutorialView> {
         public final String text;
 
@@ -150,7 +150,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CreateWalletTutorialView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -171,7 +171,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CreateWalletTutorialView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -190,7 +190,7 @@ public class CreateWalletTutorialView$$State extends MvpViewState<CreateWalletTu
 
     /* compiled from: CreateWalletTutorialView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialView$$State$FinishScreenCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class FinishScreenCommand extends ViewCommand<CreateWalletTutorialView> {
         FinishScreenCommand(CreateWalletTutorialView$$State createWalletTutorialView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);

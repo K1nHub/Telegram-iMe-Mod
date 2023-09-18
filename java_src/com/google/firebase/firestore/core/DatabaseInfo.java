@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.core;
 
 import com.google.firebase.firestore.model.DatabaseId;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DatabaseInfo {
     private final DatabaseId databaseId;
     private final String host;

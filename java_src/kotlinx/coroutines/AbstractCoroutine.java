@@ -4,7 +4,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 /* compiled from: AbstractCoroutine.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class AbstractCoroutine<T> extends JobSupport implements Job, Continuation<T> {
     private final CoroutineContext context;
 

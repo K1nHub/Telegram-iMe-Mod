@@ -5,7 +5,7 @@ import com.iMe.model.common.NoChildNode;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CampaignItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CampaignItem extends NoChildNode {
     private final String category;
     private final String description;

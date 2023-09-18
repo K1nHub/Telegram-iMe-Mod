@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import moxy.locators.PresenterBinderLocator;
 import moxy.presenter.PresenterField;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class MvpProcessor {
     public static final String PRESENTER_BINDER_INNER_SUFFIX = "Binder";
     public static final String PRESENTER_BINDER_SUFFIX = "$$PresentersBinder";

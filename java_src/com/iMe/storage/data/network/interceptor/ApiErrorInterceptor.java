@@ -32,7 +32,7 @@ import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import timber.log.Timber;
 /* compiled from: ApiErrorInterceptor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
     private final Lazy authManager$delegate;
     private final Lazy binanceInternalRepository$delegate;
@@ -43,7 +43,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
     private final Lazy walletSessionInteractor$delegate;
 
     /* compiled from: ApiErrorInterceptor.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

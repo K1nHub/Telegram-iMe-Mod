@@ -13,7 +13,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class WebRtcAudioTrack {
     private static final int AUDIO_TRACK_START = 0;
     private static final int AUDIO_TRACK_STOP = 1;
@@ -52,7 +52,7 @@ public class WebRtcAudioTrack {
         return Build.VERSION.SDK_INT >= 21 ? 2 : 0;
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private class AudioTrackThread extends Thread {
         private LowLatencyAudioBufferManager bufferManager;
         private volatile boolean keepAlive;

@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlProgram.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class GlProgram implements GlBindable {
     public static final Companion Companion = new Companion(null);
     private final int handle;
@@ -47,7 +47,7 @@ public class GlProgram implements GlBindable {
             return;
         }
         if (this.ownsHandle) {
-            GLES20.glDeleteProgram(UInt.m1664constructorimpl(this.handle));
+            GLES20.glDeleteProgram(UInt.m1662constructorimpl(this.handle));
         }
         for (GlShader glShader : this.shaders) {
             glShader.release();
@@ -57,7 +57,7 @@ public class GlProgram implements GlBindable {
 
     @Override // com.otaliastudios.opengl.core.GlBindable
     public void bind() {
-        GLES20.glUseProgram(UInt.m1664constructorimpl(this.handle));
+        GLES20.glUseProgram(UInt.m1662constructorimpl(this.handle));
         Egloo.checkGlError("glUseProgram");
     }
 
@@ -104,7 +104,7 @@ public class GlProgram implements GlBindable {
     }
 
     /* compiled from: GlProgram.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -112,23 +112,23 @@ public class GlProgram implements GlBindable {
 
         public final int create(GlShader... shaders) {
             Intrinsics.checkNotNullParameter(shaders, "shaders");
-            int m1664constructorimpl = UInt.m1664constructorimpl(GLES20.glCreateProgram());
+            int m1662constructorimpl = UInt.m1662constructorimpl(GLES20.glCreateProgram());
             Egloo.checkGlError("glCreateProgram");
-            if (m1664constructorimpl == 0) {
+            if (m1662constructorimpl == 0) {
                 throw new RuntimeException("Could not create program");
             }
             for (GlShader glShader : shaders) {
-                GLES20.glAttachShader(m1664constructorimpl, UInt.m1664constructorimpl(glShader.getId()));
+                GLES20.glAttachShader(m1662constructorimpl, UInt.m1662constructorimpl(glShader.getId()));
                 Egloo.checkGlError("glAttachShader");
             }
-            GLES20.glLinkProgram(m1664constructorimpl);
+            GLES20.glLinkProgram(m1662constructorimpl);
             int[] iArr = new int[1];
-            GLES20.glGetProgramiv(m1664constructorimpl, GlKt.getGL_LINK_STATUS(), iArr, 0);
+            GLES20.glGetProgramiv(m1662constructorimpl, GlKt.getGL_LINK_STATUS(), iArr, 0);
             if (iArr[0] == GlKt.getGL_TRUE()) {
-                return m1664constructorimpl;
+                return m1662constructorimpl;
             }
-            String stringPlus = Intrinsics.stringPlus("Could not link program: ", GLES20.glGetProgramInfoLog(m1664constructorimpl));
-            GLES20.glDeleteProgram(m1664constructorimpl);
+            String stringPlus = Intrinsics.stringPlus("Could not link program: ", GLES20.glGetProgramInfoLog(m1662constructorimpl));
+            GLES20.glDeleteProgram(m1662constructorimpl);
             throw new RuntimeException(stringPlus);
         }
 

@@ -6,7 +6,7 @@ import com.google.firebase.appindexing.builders.IndexableBuilder;
 import com.google.firebase.appindexing.internal.zzw;
 import java.util.Arrays;
 /* compiled from: com.google.firebase:firebase-appindexing@@20.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class IndexableBuilder<T extends IndexableBuilder<?>> {
     public static void zza(Bundle bundle, String str, String... strArr) {
         Preconditions.checkNotNull(str);

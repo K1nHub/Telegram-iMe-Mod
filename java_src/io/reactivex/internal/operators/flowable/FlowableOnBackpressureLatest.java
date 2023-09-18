@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class FlowableOnBackpressureLatest<T> extends AbstractFlowableWithUpstream<T, T> {
     public FlowableOnBackpressureLatest(Flowable<T> flowable) {
         super(flowable);
@@ -20,7 +20,7 @@ public final class FlowableOnBackpressureLatest<T> extends AbstractFlowableWithU
         this.source.subscribe((FlowableSubscriber) new BackpressureLatestSubscriber(subscriber));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class BackpressureLatestSubscriber<T> extends AtomicInteger implements FlowableSubscriber<T>, Subscription {
         volatile boolean cancelled;
         volatile boolean done;

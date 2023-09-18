@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Protocol;
 import okhttp3.internal.platform.Platform;
 /* compiled from: Android10SocketAdapter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Android10SocketAdapter implements SocketAdapter {
     public static final Companion Companion = new Companion(null);
 
@@ -56,7 +56,7 @@ public final class Android10SocketAdapter implements SocketAdapter {
     }
 
     /* compiled from: Android10SocketAdapter.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

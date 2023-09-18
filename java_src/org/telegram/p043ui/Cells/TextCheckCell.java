@@ -30,7 +30,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 import org.telegram.p043ui.Components.Switch;
 /* renamed from: org.telegram.ui.Cells.TextCheckCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextCheckCell extends FrameLayout {
     public static final Property<TextCheckCell, Float> ANIMATION_PROGRESS = new AnimationProperties.FloatProperty<TextCheckCell>("animationProgress") { // from class: org.telegram.ui.Cells.TextCheckCell.1
         @Override // org.telegram.p043ui.Components.AnimationProperties.FloatProperty

@@ -7,7 +7,7 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.firebase.firestore.util.Consumer;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class SQLiteIndexManager implements IndexManager {
     private final MemoryIndexManager.MemoryCollectionParentIndex collectionParentsCache = new MemoryIndexManager.MemoryCollectionParentIndex();
 

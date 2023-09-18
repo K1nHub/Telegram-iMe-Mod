@@ -4,7 +4,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.schedulers.NonBlockingThread;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.CountDownLatch;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BlockingHelper {
     public static void awaitForComplete(CountDownLatch countDownLatch, Disposable disposable) {
         if (countDownLatch.getCount() == 0) {

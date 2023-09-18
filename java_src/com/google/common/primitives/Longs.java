@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Longs {
     public static int compare(long j, long j2) {
         int i = (j > j2 ? 1 : (j == j2 ? 0 : -1));
@@ -67,7 +67,7 @@ public final class Longs {
         return jArr;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class LongArrayAsList extends AbstractList<Long> implements RandomAccess, Serializable {
         final long[] array;
         final int end;

@@ -1,6 +1,6 @@
 package kotlinx.coroutines.flow;
 /* compiled from: StateFlow.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface MutableStateFlow<T> extends StateFlow<T>, MutableSharedFlow<T> {
     @Override // kotlinx.coroutines.flow.StateFlow
     T getValue();

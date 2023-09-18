@@ -5,7 +5,7 @@ import kotlin.reflect.KClass;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.ext.KClassExtKt;
 /* compiled from: BeanDefinition.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BeanDefinitionKt {
     public static final String indexKey(KClass<?> clazz, Qualifier qualifier, Qualifier scopeQualifier) {
         Intrinsics.checkNotNullParameter(clazz, "clazz");

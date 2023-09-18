@@ -27,7 +27,7 @@ import javax.net.SocketFactory;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHttpChannelBuilder> {
     public static final /* synthetic */ int $r8$clinit = 0;
     private ConnectionSpec connectionSpec;
@@ -57,7 +57,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
     };
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum NegotiationType {
         TLS,
         PLAINTEXT
@@ -119,8 +119,8 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.okhttp.OkHttpChannelBuilder$2 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C28452 {
+    /* loaded from: classes6.dex */
+    public static /* synthetic */ class C27612 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$okhttp$NegotiationType;
         static final /* synthetic */ int[] $SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType;
 
@@ -150,7 +150,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
 
     @Override // io.grpc.internal.AbstractManagedChannelImplBuilder
     protected int getDefaultPort() {
-        int i = C28452.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
+        int i = C27612.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return 443;
@@ -161,7 +161,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
     }
 
     SSLSocketFactory createSslSocketFactory() {
-        int i = C28452.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
+        int i = C27612.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 try {
@@ -178,7 +178,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
         return null;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class OkHttpTransportFactory implements ClientTransportFactory {
         private boolean closed;
         private final ConnectionSpec connectionSpec;

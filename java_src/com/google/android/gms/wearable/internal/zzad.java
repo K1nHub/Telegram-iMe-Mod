@@ -5,7 +5,7 @@ import com.google.android.gms.wearable.CapabilityApi;
 import com.google.android.gms.wearable.CapabilityInfo;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzad implements CapabilityApi.GetAllCapabilitiesResult {
     private final Status zza;
     private final Map zzb;

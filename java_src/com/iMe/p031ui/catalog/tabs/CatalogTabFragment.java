@@ -6,7 +6,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* compiled from: CatalogTabFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogTabFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CatalogTabFragment extends MvpFragment {
     private BottomNavigationDelegate bottomNavigationDelegate;
     private boolean isCreated;

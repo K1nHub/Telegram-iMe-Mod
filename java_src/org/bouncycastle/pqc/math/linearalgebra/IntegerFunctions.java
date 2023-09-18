@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.math.linearalgebra;
 
 import java.math.BigInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class IntegerFunctions {
     static {
         BigInteger.valueOf(0L);

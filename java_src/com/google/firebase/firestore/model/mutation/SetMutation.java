@@ -8,7 +8,7 @@ import com.google.firebase.firestore.model.ObjectValue;
 import com.google.firestore.p021v1.Value;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SetMutation extends Mutation {
     private final ObjectValue value;
 

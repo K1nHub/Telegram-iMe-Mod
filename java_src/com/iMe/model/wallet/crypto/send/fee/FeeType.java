@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FeeType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class FeeType {
     public /* synthetic */ FeeType(DefaultConstructorMarker defaultConstructorMarker) {
         this();
@@ -19,7 +19,7 @@ public abstract class FeeType {
     }
 
     /* compiled from: FeeType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Custom extends FeeType {
         private final Function0<Unit> onChooseFee;
         private final GasPriceItem selectedFee;
@@ -43,7 +43,7 @@ public abstract class FeeType {
     }
 
     /* compiled from: FeeType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Default extends FeeType {
         private final TokenDetailed feeToken;
         private final DialogModel model;

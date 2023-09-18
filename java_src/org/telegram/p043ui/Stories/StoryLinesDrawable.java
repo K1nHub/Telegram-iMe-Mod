@@ -10,7 +10,7 @@ import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Stories.PeerStoriesView;
 /* renamed from: org.telegram.ui.Stories.StoryLinesDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoryLinesDrawable {
     float bufferingProgress;
     boolean incrementBuffering;

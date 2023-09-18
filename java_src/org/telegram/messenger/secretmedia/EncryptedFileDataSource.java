@@ -8,14 +8,14 @@ import com.google.android.exoplayer2.upstream.TransferListener;
 import java.io.File;
 import java.io.IOException;
 import org.telegram.messenger.FileLoader;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class EncryptedFileDataSource extends BaseDataSource {
     private int bytesRemaining;
     EncryptedFileInputStream fileInputStream;
     private boolean opened;
     private Uri uri;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th) {
             super(th);

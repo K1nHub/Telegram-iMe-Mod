@@ -3,7 +3,7 @@ package kotlinx.coroutines.internal;
 import java.util.Objects;
 import kotlin.collections.ArraysKt___ArraysJvmKt;
 /* compiled from: ArrayQueue.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ArrayQueue<T> {
     private Object[] elements = new Object[16];
     private int head;

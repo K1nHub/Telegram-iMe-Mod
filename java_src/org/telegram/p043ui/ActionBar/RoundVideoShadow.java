@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.ActionBar.RoundVideoShadow */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RoundVideoShadow extends Drawable {
     Paint paint;
 

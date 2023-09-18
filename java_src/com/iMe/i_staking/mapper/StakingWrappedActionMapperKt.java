@@ -10,7 +10,7 @@ import kotlin.TuplesKt;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: StakingWrappedActionMapper.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingWrappedActionMapperKt {
     public static final Pair<String, StakingTransactionAction> mapToDomain(StakingWrappedActionResponse stakingWrappedActionResponse) {
         Intrinsics.checkNotNullParameter(stakingWrappedActionResponse, "<this>");

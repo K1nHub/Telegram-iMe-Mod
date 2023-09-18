@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_textItalic extends TLRPC$RichText {
     public static int constructor = -653089380;
     public TLRPC$RichText text;

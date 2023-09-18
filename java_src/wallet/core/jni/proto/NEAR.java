@@ -15,10 +15,10 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class NEAR {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface AccessKeyOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -39,7 +39,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface ActionOrBuilder extends MessageLiteOrBuilder {
         AddKey getAddKey();
 
@@ -82,7 +82,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface AddKeyOrBuilder extends MessageLiteOrBuilder {
         AccessKey getAccessKey();
 
@@ -99,7 +99,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface CreateAccountOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -108,7 +108,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface DeleteAccountOrBuilder extends MessageLiteOrBuilder {
         String getBeneficiaryId();
 
@@ -121,7 +121,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface DeleteKeyOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -134,7 +134,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface DeployContractOrBuilder extends MessageLiteOrBuilder {
         ByteString getCode();
 
@@ -145,7 +145,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface FullAccessPermissionOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -154,7 +154,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface FunctionCallOrBuilder extends MessageLiteOrBuilder {
         ByteString getArgs();
 
@@ -173,7 +173,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface FunctionCallPermissionOrBuilder extends MessageLiteOrBuilder {
         ByteString getAllowance();
 
@@ -196,7 +196,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface PublicKeyOrBuilder extends MessageLiteOrBuilder {
         ByteString getData();
 
@@ -209,7 +209,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         Action getActions(int index);
 
@@ -238,7 +238,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -251,7 +251,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface StakeOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -266,7 +266,7 @@ public final class NEAR {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransferOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -283,7 +283,7 @@ public final class NEAR {
     private NEAR() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class PublicKey extends GeneratedMessageLite<PublicKey, Builder> implements PublicKeyOrBuilder {
         public static final int DATA_FIELD_NUMBER = 2;
         private static final PublicKey DEFAULT_INSTANCE;
@@ -382,9 +382,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<PublicKey, Builder> implements PublicKeyOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -429,7 +429,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new PublicKey();
                 case 2:
@@ -475,47 +475,47 @@ public final class NEAR {
     }
 
     /* renamed from: wallet.core.jni.proto.NEAR$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74271 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73421 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1967xa1df5c61;
+        static final /* synthetic */ int[] f1958xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1967xa1df5c61 = iArr;
+            f1958xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1958xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1958xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1958xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1958xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1958xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1967xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1958xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class FunctionCallPermission extends GeneratedMessageLite<FunctionCallPermission, Builder> implements FunctionCallPermissionOrBuilder {
         public static final int ALLOWANCE_FIELD_NUMBER = 1;
         private static final FunctionCallPermission DEFAULT_INSTANCE;
@@ -688,9 +688,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FunctionCallPermission, Builder> implements FunctionCallPermissionOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -796,7 +796,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new FunctionCallPermission();
                 case 2:
@@ -841,7 +841,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class FullAccessPermission extends GeneratedMessageLite<FullAccessPermission, Builder> implements FullAccessPermissionOrBuilder {
         private static final FullAccessPermission DEFAULT_INSTANCE;
         private static volatile Parser<FullAccessPermission> PARSER;
@@ -905,9 +905,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FullAccessPermission, Builder> implements FullAccessPermissionOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -918,7 +918,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new FullAccessPermission();
                 case 2:
@@ -963,7 +963,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class AccessKey extends GeneratedMessageLite<AccessKey, Builder> implements AccessKeyOrBuilder {
         private static final AccessKey DEFAULT_INSTANCE;
         public static final int FULL_ACCESS_FIELD_NUMBER = 3;
@@ -977,7 +977,7 @@ public final class NEAR {
         private AccessKey() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum PermissionCase {
             FUNCTION_CALL(2),
             FULL_ACCESS(3),
@@ -1172,9 +1172,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<AccessKey, Builder> implements AccessKeyOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -1281,7 +1281,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new AccessKey();
                 case 2:
@@ -1326,7 +1326,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class CreateAccount extends GeneratedMessageLite<CreateAccount, Builder> implements CreateAccountOrBuilder {
         private static final CreateAccount DEFAULT_INSTANCE;
         private static volatile Parser<CreateAccount> PARSER;
@@ -1390,9 +1390,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CreateAccount, Builder> implements CreateAccountOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -1403,7 +1403,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CreateAccount();
                 case 2:
@@ -1448,7 +1448,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class DeployContract extends GeneratedMessageLite<DeployContract, Builder> implements DeployContractOrBuilder {
         public static final int CODE_FIELD_NUMBER = 1;
         private static final DeployContract DEFAULT_INSTANCE;
@@ -1530,9 +1530,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeployContract, Builder> implements DeployContractOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -1560,7 +1560,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeployContract();
                 case 2:
@@ -1605,7 +1605,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class FunctionCall extends GeneratedMessageLite<FunctionCall, Builder> implements FunctionCallOrBuilder {
         public static final int ARGS_FIELD_NUMBER = 2;
         private static final FunctionCall DEFAULT_INSTANCE;
@@ -1754,9 +1754,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FunctionCall, Builder> implements FunctionCallOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -1846,7 +1846,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new FunctionCall();
                 case 2:
@@ -1891,7 +1891,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Transfer extends GeneratedMessageLite<Transfer, Builder> implements TransferOrBuilder {
         private static final Transfer DEFAULT_INSTANCE;
         public static final int DEPOSIT_FIELD_NUMBER = 1;
@@ -1973,9 +1973,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -2003,7 +2003,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transfer();
                 case 2:
@@ -2048,7 +2048,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Stake extends GeneratedMessageLite<Stake, Builder> implements StakeOrBuilder {
         private static final Stake DEFAULT_INSTANCE;
         private static volatile Parser<Stake> PARSER = null;
@@ -2165,9 +2165,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Stake, Builder> implements StakeOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -2229,7 +2229,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Stake();
                 case 2:
@@ -2274,7 +2274,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class AddKey extends GeneratedMessageLite<AddKey, Builder> implements AddKeyOrBuilder {
         public static final int ACCESS_KEY_FIELD_NUMBER = 2;
         private static final AddKey DEFAULT_INSTANCE;
@@ -2408,9 +2408,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<AddKey, Builder> implements AddKeyOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -2489,7 +2489,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new AddKey();
                 case 2:
@@ -2534,7 +2534,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class DeleteKey extends GeneratedMessageLite<DeleteKey, Builder> implements DeleteKeyOrBuilder {
         private static final DeleteKey DEFAULT_INSTANCE;
         private static volatile Parser<DeleteKey> PARSER = null;
@@ -2633,9 +2633,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeleteKey, Builder> implements DeleteKeyOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -2680,7 +2680,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeleteKey();
                 case 2:
@@ -2725,7 +2725,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class DeleteAccount extends GeneratedMessageLite<DeleteAccount, Builder> implements DeleteAccountOrBuilder {
         public static final int BENEFICIARY_ID_FIELD_NUMBER = 1;
         private static final DeleteAccount DEFAULT_INSTANCE;
@@ -2818,9 +2818,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeleteAccount, Builder> implements DeleteAccountOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -2859,7 +2859,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeleteAccount();
                 case 2:
@@ -2904,7 +2904,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Action extends GeneratedMessageLite<Action, Builder> implements ActionOrBuilder {
         public static final int ADD_KEY_FIELD_NUMBER = 6;
         public static final int CREATE_ACCOUNT_FIELD_NUMBER = 1;
@@ -2922,7 +2922,7 @@ public final class NEAR {
         private Action() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum PayloadCase {
             CREATE_ACCOUNT(1),
             DEPLOY_CONTRACT(2),
@@ -3354,9 +3354,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Action, Builder> implements ActionOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -3650,7 +3650,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Action();
                 case 2:
@@ -3695,7 +3695,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int ACTIONS_FIELD_NUMBER = 5;
         public static final int BLOCK_HASH_FIELD_NUMBER = 4;
@@ -3945,9 +3945,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -4134,7 +4134,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -4179,7 +4179,7 @@ public final class NEAR {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         private static final SigningOutput DEFAULT_INSTANCE;
         public static final int HASH_FIELD_NUMBER = 2;
@@ -4282,9 +4282,9 @@ public final class NEAR {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C74271 c74271) {
+            /* synthetic */ Builder(C73421 c73421) {
                 this();
             }
 
@@ -4329,7 +4329,7 @@ public final class NEAR {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74271.f1967xa1df5c61[method.ordinal()]) {
+            switch (C73421.f1958xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

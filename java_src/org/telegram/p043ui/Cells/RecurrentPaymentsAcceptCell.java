@@ -11,7 +11,7 @@ import org.telegram.p043ui.Components.CheckBoxSquare;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.LinkSpanDrawable;
 /* renamed from: org.telegram.ui.Cells.RecurrentPaymentsAcceptCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RecurrentPaymentsAcceptCell extends FrameLayout {
     private CheckBoxSquare checkBox;
     private LinkSpanDrawable.LinkCollector links;

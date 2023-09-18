@@ -13,7 +13,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: StakingProgrammesView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface StakingProgrammesView extends BaseView, LoadMoreView<BaseNode> {
     void openDepositScreen(StakingDetailsItem stakingDetailsItem);
 

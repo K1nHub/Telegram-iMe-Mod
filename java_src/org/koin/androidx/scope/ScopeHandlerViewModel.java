@@ -5,7 +5,7 @@ import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 import org.koin.core.scope.Scope;
 /* compiled from: ScopeHandlerViewModel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ScopeHandlerViewModel extends ViewModel {
     private Scope scope;
 

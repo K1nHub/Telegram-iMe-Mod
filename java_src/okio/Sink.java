@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.io.Flushable;
 import java.io.IOException;
 /* compiled from: Sink.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface Sink extends Closeable, Flushable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     void close() throws IOException;

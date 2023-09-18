@@ -4,7 +4,7 @@ import java.io.OutputStream;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JvmOkio.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class OutputStreamSink implements Sink {
     private final OutputStream out;
     private final Timeout timeout;

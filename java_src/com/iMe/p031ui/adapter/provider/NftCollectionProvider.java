@@ -22,7 +22,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.BackupImageView;
 /* compiled from: NftCollectionProvider.kt */
@@ -44,7 +44,7 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.NFT_COLLECTION;
-        this.layoutId = C3558R.layout.fork_recycle_item_nft_collection;
+        this.layoutId = C3473R.layout.fork_recycle_item_nft_collection;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.NftCollectionProvider$networkIconCornerSize$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -56,7 +56,7 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
             public final Float invoke() {
                 ResourceManager resourceManager2;
                 resourceManager2 = NftCollectionProvider.this.resourceManager;
-                return Float.valueOf(resourceManager2.getDimens(C3558R.dimen.icon_size_default) / 2);
+                return Float.valueOf(resourceManager2.getDimens(C3473R.dimen.icon_size_default) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -81,14 +81,14 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
     public void convert(BaseViewHolder helper, final NftCollectionItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3558R.C3561id.card_nft_collection;
+        int i = C3473R.C3476id.card_nft_collection;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3558R.C3561id.text_collection_name;
+        int i2 = C3473R.C3476id.text_collection_name;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, Theme.key_chats_actionBackground);
-        int i3 = C3558R.C3561id.text_collection_size;
+        int i3 = C3473R.C3476id.text_collection_size;
         BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_chat_messagePanelText), i3);
-        int i4 = C3558R.C3561id.image_arrow;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRotate(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setThemedImageColor(mediumTypeface, i4, Theme.key_windowBackgroundWhiteGrayText2), i4, 0.5f), i4, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f).setText(i3, this.resourceManager.getString(C3558R.string.nft_collection_size, Integer.valueOf(item.getTokens().size()))).setText(i2, item.getCollection().getTitle()), C3558R.C3561id.image_collection_image, new Function1<BackupImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftCollectionProvider$convert$1
+        int i4 = C3473R.C3476id.image_arrow;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRotate(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setThemedImageColor(mediumTypeface, i4, Theme.key_windowBackgroundWhiteGrayText2), i4, 0.5f), i4, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f).setText(i3, this.resourceManager.getString(C3473R.string.nft_collection_size, Integer.valueOf(item.getTokens().size()))).setText(i2, item.getCollection().getTitle()), C3473R.C3476id.image_collection_image, new Function1<BackupImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftCollectionProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -109,7 +109,7 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
                 applyForView.setAspectFit(true);
                 applyForView.setLayerNum(1);
                 resourceManager = NftCollectionProvider.this.resourceManager;
-                applyForView.setRoundRadius((int) resourceManager.getDimens(C3558R.dimen.telegram_avatar_size_medium));
+                applyForView.setRoundRadius((int) resourceManager.getDimens(C3473R.dimen.telegram_avatar_size_medium));
                 NftTokenItem nftTokenItem = (NftTokenItem) CollectionsKt.firstOrNull(item.getTokens());
                 String image = (nftTokenItem == null || (token = nftTokenItem.getToken()) == null) ? null : token.getImage();
                 if (image == null) {
@@ -117,7 +117,7 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
                 }
                 applyForView.setImage(image, "50_50", image, "50_50");
             }
-        }), C3558R.C3561id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftCollectionProvider$convert$2
+        }), C3473R.C3476id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftCollectionProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -154,7 +154,7 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRotate(helper, C3558R.C3561id.image_arrow, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f), C3558R.C3561id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftCollectionProvider$convert$3
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRotate(helper, C3473R.C3476id.image_arrow, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f), C3473R.C3476id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftCollectionProvider$convert$3
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

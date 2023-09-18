@@ -1,7 +1,7 @@
 package com.iMe.p031ui.topics;
 /* compiled from: TopicInfo.kt */
 /* renamed from: com.iMe.ui.topics.TopicInfo */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TopicInfo {
     private final int colorResId;
     private final int iconResId;

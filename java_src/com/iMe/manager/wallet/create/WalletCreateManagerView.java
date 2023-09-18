@@ -9,12 +9,12 @@ import kotlin.jvm.internal.Intrinsics;
 import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletCreateManagerView.kt */
 @OneExecution
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletCreateManagerView extends BaseView {
 
     /* compiled from: WalletCreateManagerView.kt */
     /* renamed from: com.iMe.manager.wallet.create.WalletCreateManagerView$-CC  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final /* synthetic */ class CC {
         public static void $default$showSelectOptionsDialog(WalletCreateManagerView walletCreateManagerView, String title, String[] items, DialogInterface.OnClickListener listener) {
             Intrinsics.checkNotNullParameter(title, "title");

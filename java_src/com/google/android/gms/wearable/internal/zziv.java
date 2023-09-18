@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Locale;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @SafeParcelable.Class(creator = "IconParcelableCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zziv extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zziv> CREATOR = new zzfc();
     @SafeParcelable.Field(m797id = 1)

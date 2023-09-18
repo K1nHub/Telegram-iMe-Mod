@@ -21,7 +21,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.LinkSpanDrawable;
 /* renamed from: org.telegram.ui.Cells.TextDetailCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextDetailCell extends FrameLayout {
     private boolean contentDescriptionValueFirst;
     private final ImageView imageView;

@@ -1,13 +1,13 @@
 package com.iMe.p031ui.smartpanel.model;
 /* compiled from: SmartPanelTabContent.kt */
 /* renamed from: com.iMe.ui.smartpanel.model.SmartPanelTabContent */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface SmartPanelTabContent {
     Type getContentType();
 
     /* compiled from: SmartPanelTabContent.kt */
     /* renamed from: com.iMe.ui.smartpanel.model.SmartPanelTabContent$Type */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum Type {
         NORMAL_BOT_ANSWER(1),
         ADVERT_BOT_ANSWER(2),

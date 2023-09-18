@@ -6,7 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.BottomPagesView;
 /* renamed from: org.telegram.ui.Cells.ArchiveHintCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ArchiveHintCell extends FrameLayout {
     private BottomPagesView bottomPages;
     private ViewPager viewPager;

@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
 /* renamed from: com.google.common.io.ByteStreams */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ByteStreams {
     static byte[] createBuffer() {
         return new byte[8192];

@@ -7,7 +7,7 @@ import com.google.firebase.firestore.util.Assert;
 import com.google.protobuf.ByteString;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class TargetState {
     private int outstandingResponses = 0;
     private final Map<DocumentKey, DocumentViewChange.Type> documentChanges = new HashMap();
@@ -65,7 +65,7 @@ final class TargetState {
     }
 
     /* renamed from: com.google.firebase.firestore.remote.TargetState$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10341 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$DocumentViewChange$Type */

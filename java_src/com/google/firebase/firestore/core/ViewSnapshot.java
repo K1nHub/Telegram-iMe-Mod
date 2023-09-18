@@ -8,7 +8,7 @@ import com.google.firebase.firestore.model.DocumentSet;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ViewSnapshot {
     private final List<DocumentViewChange> changes;
     private final boolean didSyncStateChange;
@@ -19,7 +19,7 @@ public class ViewSnapshot {
     private final DocumentSet oldDocuments;
     private final Query query;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum SyncState {
         NONE,
         LOCAL,

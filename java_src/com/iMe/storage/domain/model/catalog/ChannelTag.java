@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.catalog;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChannelTag.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChannelTag {
 
     /* renamed from: id */

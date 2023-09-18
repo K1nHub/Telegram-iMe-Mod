@@ -15,7 +15,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$InputStorePaymentPurpose;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BillingUtilities {
     public static void extractCurrencyExp(Map<String, Integer> map) {
         if (map.isEmpty()) {

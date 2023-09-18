@@ -20,7 +20,7 @@ import org.koin.core.component.KoinComponent;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 /* compiled from: MvpBottomSheet.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpBottomSheet */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class MvpBottomSheet extends BottomSheet implements MvpDelegateHolder, KoinComponent, BaseView {
     private final MvpBaseDelegate<MvpBottomSheet> mvpBaseDelegate;
 

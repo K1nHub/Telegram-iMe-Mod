@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: TranslationView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.translate.TranslationView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface TranslationView extends BaseView, AppUpdateRequiredView {
     void configureScreenWith(String str, String str2);
 

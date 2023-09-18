@@ -10,11 +10,10 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SocialWebViewModel.kt */
 @DebugMetadata(m102c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onMenuResetClicked$1", m101f = "SocialWebViewModel.kt", m100l = {37}, m99m = "invokeSuspend")
-/* loaded from: classes3.dex */
-public final class SocialWebViewModel$onMenuResetClicked$1 extends SuspendLambda implements Function2<SimpleSyntax<SocialWebState, SocialSideEffects>, Continuation<? super Unit>, Object> {
+/* loaded from: classes4.dex */
+final class SocialWebViewModel$onMenuResetClicked$1 extends SuspendLambda implements Function2<SimpleSyntax<SocialWebState, SocialSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     int label;
 

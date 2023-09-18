@@ -17,7 +17,7 @@ import com.iMe.model.wallet.home.nft.NftTokenItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BalanceDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.home.adapter.diff.BalanceDiffCallback */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BalanceDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {
@@ -49,7 +49,7 @@ public final class BalanceDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
                     return false;
                 }
             } else if ((oldItem instanceof CryptoAccountItem) && (newItem instanceof CryptoAccountItem)) {
-                if (((CryptoAccountItem) oldItem).getUser().f1694id != ((CryptoAccountItem) newItem).getUser().f1694id) {
+                if (((CryptoAccountItem) oldItem).getUser().f1685id != ((CryptoAccountItem) newItem).getUser().f1685id) {
                     return false;
                 }
             } else if ((!(oldItem instanceof CryptoAddTokensItem) || !(newItem instanceof CryptoAddTokensItem)) && ((!(oldItem instanceof BannerItem) || !(newItem instanceof BannerItem)) && (!((z = oldItem instanceof GlobalStateItem)) || !(newItem instanceof GlobalStateItem)))) {

@@ -6,7 +6,7 @@ import io.grpc.InternalChannelz$ChannelTrace$Event;
 import io.grpc.InternalLogId;
 import java.text.MessageFormat;
 import java.util.logging.Level;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class ChannelLoggerImpl extends ChannelLogger {
     private final TimeProvider time;
     private final ChannelTracer tracer;
@@ -59,8 +59,8 @@ final class ChannelLoggerImpl extends ChannelLogger {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: io.grpc.internal.ChannelLoggerImpl$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C27591 {
+    /* loaded from: classes6.dex */
+    public static /* synthetic */ class C26751 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$ChannelLogger$ChannelLogLevel;
 
         static {
@@ -78,7 +78,7 @@ final class ChannelLoggerImpl extends ChannelLogger {
     }
 
     private static InternalChannelz$ChannelTrace$Event.Severity toTracerSeverity(ChannelLogger.ChannelLogLevel channelLogLevel) {
-        int i = C27591.$SwitchMap$io$grpc$ChannelLogger$ChannelLogLevel[channelLogLevel.ordinal()];
+        int i = C26751.$SwitchMap$io$grpc$ChannelLogger$ChannelLogLevel[channelLogLevel.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return InternalChannelz$ChannelTrace$Event.Severity.CT_WARNING;
@@ -89,7 +89,7 @@ final class ChannelLoggerImpl extends ChannelLogger {
     }
 
     private static Level toJavaLogLevel(ChannelLogger.ChannelLogLevel channelLogLevel) {
-        int i = C27591.$SwitchMap$io$grpc$ChannelLogger$ChannelLogLevel[channelLogLevel.ordinal()];
+        int i = C26751.$SwitchMap$io$grpc$ChannelLogger$ChannelLogLevel[channelLogLevel.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return Level.FINER;

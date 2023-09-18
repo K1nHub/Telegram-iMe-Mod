@@ -16,10 +16,10 @@ import java.nio.ByteBuffer;
 import wallet.core.jni.proto.Binance;
 import wallet.core.jni.proto.Bitcoin;
 import wallet.core.jni.proto.Ethereum;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class THORChainSwap {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface AssetOrBuilder extends MessageLiteOrBuilder {
         Chain getChain();
 
@@ -40,7 +40,7 @@ public final class THORChainSwap {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface ErrorOrBuilder extends MessageLiteOrBuilder {
         ErrorCode getCode();
 
@@ -57,7 +57,7 @@ public final class THORChainSwap {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SwapInputOrBuilder extends MessageLiteOrBuilder {
         String getAffiliateFeeAddress();
 
@@ -112,7 +112,7 @@ public final class THORChainSwap {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SwapOutputOrBuilder extends MessageLiteOrBuilder {
         Binance.SigningInput getBinance();
 
@@ -153,7 +153,7 @@ public final class THORChainSwap {
     private THORChainSwap() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public enum Chain implements Internal.EnumLite {
         THOR(0),
         BTC(1),
@@ -210,7 +210,7 @@ public final class THORChainSwap {
             return ChainVerifier.INSTANCE;
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         private static final class ChainVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new ChainVerifier();
 
@@ -228,7 +228,7 @@ public final class THORChainSwap {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public enum ErrorCode implements Internal.EnumLite {
         OK(0),
         Error_general(1),
@@ -309,7 +309,7 @@ public final class THORChainSwap {
             return ErrorCodeVerifier.INSTANCE;
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         private static final class ErrorCodeVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new ErrorCodeVerifier();
 
@@ -327,7 +327,7 @@ public final class THORChainSwap {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Error extends GeneratedMessageLite<Error, Builder> implements ErrorOrBuilder {
         public static final int CODE_FIELD_NUMBER = 1;
         private static final Error DEFAULT_INSTANCE;
@@ -448,9 +448,9 @@ public final class THORChainSwap {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Error, Builder> implements ErrorOrBuilder {
-            /* synthetic */ Builder(C74431 c74431) {
+            /* synthetic */ Builder(C73581 c73581) {
                 this();
             }
 
@@ -517,7 +517,7 @@ public final class THORChainSwap {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74431.f1981xa1df5c61[method.ordinal()]) {
+            switch (C73581.f1972xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Error();
                 case 2:
@@ -563,47 +563,47 @@ public final class THORChainSwap {
     }
 
     /* renamed from: wallet.core.jni.proto.THORChainSwap$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74431 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73581 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1981xa1df5c61;
+        static final /* synthetic */ int[] f1972xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1981xa1df5c61 = iArr;
+            f1972xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1972xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1972xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1972xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1972xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1972xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1981xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1972xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class Asset extends GeneratedMessageLite<Asset, Builder> implements AssetOrBuilder {
         public static final int CHAIN_FIELD_NUMBER = 1;
         private static final Asset DEFAULT_INSTANCE;
@@ -753,9 +753,9 @@ public final class THORChainSwap {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Asset, Builder> implements AssetOrBuilder {
-            /* synthetic */ Builder(C74431 c74431) {
+            /* synthetic */ Builder(C73581 c73581) {
                 this();
             }
 
@@ -850,7 +850,7 @@ public final class THORChainSwap {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74431.f1981xa1df5c61[method.ordinal()]) {
+            switch (C73581.f1972xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Asset();
                 case 2:
@@ -895,7 +895,7 @@ public final class THORChainSwap {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SwapInput extends GeneratedMessageLite<SwapInput, Builder> implements SwapInputOrBuilder {
         public static final int AFFILIATE_FEE_ADDRESS_FIELD_NUMBER = 9;
         public static final int AFFILIATE_FEE_RATE_BP_FIELD_NUMBER = 10;
@@ -1307,9 +1307,9 @@ public final class THORChainSwap {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SwapInput, Builder> implements SwapInputOrBuilder {
-            /* synthetic */ Builder(C74431 c74431) {
+            /* synthetic */ Builder(C73581 c73581) {
                 this();
             }
 
@@ -1657,7 +1657,7 @@ public final class THORChainSwap {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74431.f1981xa1df5c61[method.ordinal()]) {
+            switch (C73581.f1972xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SwapInput();
                 case 2:
@@ -1702,7 +1702,7 @@ public final class THORChainSwap {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SwapOutput extends GeneratedMessageLite<SwapOutput, Builder> implements SwapOutputOrBuilder {
         public static final int BINANCE_FIELD_NUMBER = 6;
         public static final int BITCOIN_FIELD_NUMBER = 4;
@@ -1721,7 +1721,7 @@ public final class THORChainSwap {
         private SwapOutput() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum SigningInputOneofCase {
             BITCOIN(4),
             ETHEREUM(5),
@@ -2029,9 +2029,9 @@ public final class THORChainSwap {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SwapOutput, Builder> implements SwapOutputOrBuilder {
-            /* synthetic */ Builder(C74431 c74431) {
+            /* synthetic */ Builder(C73581 c73581) {
                 this();
             }
 
@@ -2245,7 +2245,7 @@ public final class THORChainSwap {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74431.f1981xa1df5c61[method.ordinal()]) {
+            switch (C73581.f1972xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SwapOutput();
                 case 2:

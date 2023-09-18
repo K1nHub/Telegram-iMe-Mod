@@ -10,7 +10,7 @@ import kotlinx.coroutines.DebugStringsKt;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 import kotlinx.coroutines.internal.Symbol;
 /* compiled from: AbstractChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class SendElement<E> extends Send {
     public final CancellableContinuation<Unit> cont;
     private final E pollResult;
@@ -49,7 +49,7 @@ public class SendElement<E> extends Send {
     public void resumeSendClosed(Closed<?> closed) {
         CancellableContinuation<Unit> cancellableContinuation = this.cont;
         Result.Companion companion = Result.Companion;
-        cancellableContinuation.resumeWith(Result.m1660constructorimpl(ResultKt.createFailure(closed.getSendException())));
+        cancellableContinuation.resumeWith(Result.m1658constructorimpl(ResultKt.createFailure(closed.getSendException())));
     }
 
     @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode

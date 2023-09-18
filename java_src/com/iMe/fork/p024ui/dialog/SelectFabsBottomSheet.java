@@ -25,7 +25,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -33,7 +33,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: SelectFabsBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectFabsBottomSheet */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SelectFabsBottomSheet extends BottomSheet {
     private final Lazy bottomShadow$delegate;
     private final Lazy fabs$delegate;
@@ -129,7 +129,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
             }
         });
         this.saveButton$delegate = lazy5;
-        setTitle(LocaleController.getInternalString(C3558R.string.create_folder_change_fab_title), true);
+        setTitle(LocaleController.getInternalString(C3473R.string.create_folder_change_fab_title), true);
         setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet.1
             @Override // android.widget.FrameLayout, android.view.View
@@ -220,7 +220,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Save", C3558R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3473R.string.Save));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
         return textView;
@@ -299,7 +299,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: SelectFabsBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$ListAdapter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
@@ -355,7 +355,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
 
     /* compiled from: SelectFabsBottomSheet.kt */
     /* renamed from: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -7,7 +7,7 @@ import org.telegram.p043ui.Charts.BaseChartView;
 import org.telegram.p043ui.StatisticActivity;
 /* compiled from: ChartCellView.kt */
 /* renamed from: com.iMe.ui.custom.ChartCellView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ChartCellView extends StatisticActivity.BaseChartCell {
     @Override // org.telegram.p043ui.StatisticActivity.BaseChartCell
     public void loadData(StatisticActivity.ChartViewData chartViewData) {

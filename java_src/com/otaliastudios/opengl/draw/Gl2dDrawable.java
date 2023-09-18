@@ -3,7 +3,7 @@ package com.otaliastudios.opengl.draw;
 import android.graphics.RectF;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Gl2dDrawable.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Gl2dDrawable extends GlDrawable {
     private final int coordsPerVertex = 2;
 

@@ -32,7 +32,7 @@ import org.telegram.p043ui.Components.AnimatedTextView;
 import p033j$.wrappers.C$r8$wrapper$java$util$stream$IntStream$VWRP;
 import p033j$.wrappers.C$r8$wrapper$java$util$stream$IntStream$WRP;
 /* renamed from: org.telegram.ui.Components.AnimatedTextView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedTextView extends View {
     public boolean adaptWidth;
     private final AnimatedTextDrawable drawable;
@@ -43,7 +43,7 @@ public class AnimatedTextView extends View {
     private CharSequence toSetText;
 
     /* renamed from: org.telegram.ui.Components.AnimatedTextView$AnimatedTextDrawable */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class AnimatedTextDrawable extends Drawable {
         private boolean allowCancel;
         private int alpha;
@@ -82,7 +82,7 @@ public class AnimatedTextView extends View {
         private boolean startFromEnd;
 
         /* renamed from: t */
-        private float f1735t;
+        private float f1726t;
         private final TextPaint textPaint;
         private CharSequence toSetText;
         private boolean toSetTextMoveDown;
@@ -90,7 +90,7 @@ public class AnimatedTextView extends View {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: org.telegram.ui.Components.AnimatedTextView$AnimatedTextDrawable$RegionCallback */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public interface RegionCallback {
             void run(CharSequence charSequence, int i, int i2);
         }
@@ -107,7 +107,7 @@ public class AnimatedTextView extends View {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: org.telegram.ui.Components.AnimatedTextView$AnimatedTextDrawable$Part */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static class Part {
             StaticLayout layout;
             float left;
@@ -146,7 +146,7 @@ public class AnimatedTextView extends View {
             this.textPaint = new TextPaint(1);
             this.gravity = 0;
             this.isRTL = false;
-            this.f1735t = BitmapDescriptorFactory.HUE_RED;
+            this.f1726t = BitmapDescriptorFactory.HUE_RED;
             this.moveDown = true;
             this.animateDelay = 0L;
             this.animateDuration = 450L;
@@ -288,7 +288,7 @@ public class AnimatedTextView extends View {
                 }
                 this.moveDown = z2;
                 float[] fArr = {BitmapDescriptorFactory.HUE_RED, 1.0f};
-                this.f1735t = BitmapDescriptorFactory.HUE_RED;
+                this.f1726t = BitmapDescriptorFactory.HUE_RED;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                 this.animator = ofFloat;
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.AnimatedTextView$AnimatedTextDrawable$$ExternalSyntheticLambda0
@@ -304,7 +304,7 @@ public class AnimatedTextView extends View {
                         AnimatedTextDrawable.this.oldParts = null;
                         AnimatedTextDrawable.this.oldText = null;
                         AnimatedTextDrawable.this.oldWidth = BitmapDescriptorFactory.HUE_RED;
-                        AnimatedTextDrawable.this.f1735t = BitmapDescriptorFactory.HUE_RED;
+                        AnimatedTextDrawable.this.f1726t = BitmapDescriptorFactory.HUE_RED;
                         AnimatedTextDrawable.this.invalidateSelf();
                         AnimatedTextDrawable.this.animator = null;
                         if (AnimatedTextDrawable.this.toSetText == null) {
@@ -333,7 +333,7 @@ public class AnimatedTextView extends View {
             this.animator = null;
             this.toSetText = null;
             this.toSetTextMoveDown = false;
-            this.f1735t = BitmapDescriptorFactory.HUE_RED;
+            this.f1726t = BitmapDescriptorFactory.HUE_RED;
             if (!charSequence.equals(this.currentText)) {
                 this.currentParts = r12;
                 this.currentText = charSequence;
@@ -383,7 +383,7 @@ public class AnimatedTextView extends View {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setText$3(ValueAnimator valueAnimator) {
-            this.f1735t = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            this.f1726t = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             invalidateSelf();
         }
 
@@ -397,7 +397,7 @@ public class AnimatedTextView extends View {
 
         public float getCurrentWidth() {
             if (this.currentParts != null && this.oldParts != null) {
-                return AndroidUtilities.lerp(this.oldWidth, this.currentWidth, this.f1735t);
+                return AndroidUtilities.lerp(this.oldWidth, this.currentWidth, this.f1726t);
             }
             return this.currentWidth;
         }
@@ -420,7 +420,7 @@ public class AnimatedTextView extends View {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: org.telegram.ui.Components.AnimatedTextView$AnimatedTextDrawable$WordSequence */
-        /* loaded from: classes6.dex */
+        /* loaded from: classes7.dex */
         public static class WordSequence implements CharSequence {
             private final int length;
             private final CharSequence[] words;

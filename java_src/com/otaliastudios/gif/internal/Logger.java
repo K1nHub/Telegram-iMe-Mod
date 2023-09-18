@@ -1,7 +1,7 @@
 package com.otaliastudios.gif.internal;
 
 import android.util.Log;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Logger {
     private static int sLevel;
     private String mTag;

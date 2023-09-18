@@ -3,7 +3,7 @@ package com.iMe.bots.domain.model;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SmartBotCategory.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SmartBotCategory {
 
     /* renamed from: id */

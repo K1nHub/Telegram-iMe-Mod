@@ -18,7 +18,7 @@ import org.bouncycastle.asn1.DERSequence;
 import org.bouncycastle.asn1.DERTaggedObject;
 import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 import org.bouncycastle.util.BigIntegers;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PrivateKeyInfo extends ASN1Object {
     private ASN1Set attributes;
     private ASN1OctetString privateKey;

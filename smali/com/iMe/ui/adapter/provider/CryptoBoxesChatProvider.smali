@@ -70,7 +70,7 @@
 
     move-result-object p1
 
-    .line 25
+    .line 27
     iget-object v1, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxesChatProvider;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->cryptoboxes_chat_filter_description:I
@@ -79,11 +79,12 @@
 
     move-result-object v1
 
+    .line 25
     invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 26
+    .line 29
     sget v0, Lorg/telegram/messenger/R$id;->input_chat:I
 
     new-instance v1, Lcom/iMe/ui/adapter/provider/CryptoBoxesChatProvider$convert$1;

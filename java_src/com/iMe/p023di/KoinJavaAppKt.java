@@ -16,7 +16,7 @@ import org.koin.core.context.DefaultContextExtKt;
 import org.koin.core.module.Module;
 /* compiled from: KoinJavaApp.kt */
 /* renamed from: com.iMe.di.KoinJavaAppKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class KoinJavaAppKt {
     public static final void start(final Context context) {
         Intrinsics.checkNotNullParameter(context, "context");

@@ -18,7 +18,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 /* compiled from: SmartBotsApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface SmartBotsApi {
     public static final Companion Companion = Companion.$$INSTANCE;
 
@@ -41,7 +41,7 @@ public interface SmartBotsApi {
     Single<Response<String>> voteForBot(@Query("bot_id") String str, @Query("rating") int i, @Query("user_id") long j);
 
     /* compiled from: SmartBotsApi.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
         private static SmartBotsApi INSTANCE;

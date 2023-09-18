@@ -5,11 +5,11 @@ import java.util.List;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 /* renamed from: org.telegram.ui.LNavigation.NavigationExt */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class NavigationExt {
 
     /* renamed from: org.telegram.ui.LNavigation.NavigationExt$FragmentConsumer */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface FragmentConsumer {
         boolean consume(BaseFragment baseFragment);
     }

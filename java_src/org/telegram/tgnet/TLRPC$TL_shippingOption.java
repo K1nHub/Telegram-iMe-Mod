@@ -1,12 +1,12 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_shippingOption extends TLObject {
     public static int constructor = -1239335713;
 
     /* renamed from: id */
-    public String f1669id;
+    public String f1660id;
     public ArrayList<TLRPC$TL_labeledPrice> prices = new ArrayList<>();
     public String title;
 
@@ -24,7 +24,7 @@ public class TLRPC$TL_shippingOption extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1669id = abstractSerializedData.readString(z);
+        this.f1660id = abstractSerializedData.readString(z);
         this.title = abstractSerializedData.readString(z);
         int readInt32 = abstractSerializedData.readInt32(z);
         if (readInt32 != 481674261) {
@@ -46,7 +46,7 @@ public class TLRPC$TL_shippingOption extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeString(this.f1669id);
+        abstractSerializedData.writeString(this.f1660id);
         abstractSerializedData.writeString(this.title);
         abstractSerializedData.writeInt32(481674261);
         int size = this.prices.size();

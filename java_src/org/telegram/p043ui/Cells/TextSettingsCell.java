@@ -27,7 +27,7 @@ import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* renamed from: org.telegram.ui.Cells.TextSettingsCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextSettingsCell extends FrameLayout {
     private boolean canDisable;
     private int changeProgressStartDelay;

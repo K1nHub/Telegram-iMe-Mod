@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.LetterSectionCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LetterSectionCell extends FrameLayout {
     private TextView textView;
 

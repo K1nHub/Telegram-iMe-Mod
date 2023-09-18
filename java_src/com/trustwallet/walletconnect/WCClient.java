@@ -45,7 +45,7 @@ import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 import okio.ByteString;
 /* compiled from: WCClient.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WCClient extends WebSocketListener {
     private final String TAG;
     private String chainId;
@@ -75,7 +75,7 @@ public class WCClient extends WebSocketListener {
     private WebSocket socket;
 
     /* compiled from: WCClient.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -99,25 +99,25 @@ public class WCClient extends WebSocketListener {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x015a  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x01d4  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01da  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01e0  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x01e6  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01f2  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01df  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x01e5  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01eb  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01f1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public WCClient(com.google.gson.GsonBuilder r8, okhttp3.OkHttpClient r9) {
         /*
-            Method dump skipped, instructions count: 510
+            Method dump skipped, instructions count: 509
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.trustwallet.walletconnect.WCClient.<init>(com.google.gson.GsonBuilder, okhttp3.OkHttpClient):void");

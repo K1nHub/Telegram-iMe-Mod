@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.GmsLogger;
 import com.google.mlkit.common.sdkinternal.MlKitContext;
 /* compiled from: com.google.mlkit:common@@17.0.0 */
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ModelFileHelper {
     public ModelFileHelper(MlKitContext mlKitContext) {
     }

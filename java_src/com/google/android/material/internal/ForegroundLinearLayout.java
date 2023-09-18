@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import com.google.android.material.R$styleable;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ForegroundLinearLayout extends LinearLayoutCompat {
     private Drawable foreground;
     boolean foregroundBoundsChanged;

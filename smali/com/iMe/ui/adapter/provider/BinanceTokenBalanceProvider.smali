@@ -98,14 +98,15 @@
 
     move-result-object p1
 
-    .line 35
+    .line 36
     sget v6, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
+    .line 35
     invoke-static {p1, v6, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 36
+    .line 39
     sget v4, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
@@ -124,7 +125,7 @@
 
     aput v3, v7, v2
 
-    .line 37
+    .line 43
     sget v3, Lorg/telegram/messenger/R$id;->text_trade_percent:I
 
     const/4 v8, 0x2
@@ -139,11 +140,12 @@
 
     aput v6, v7, v3
 
+    .line 40
     invoke-static {p1, v7}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 38
+    .line 47
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
 
     move-result-object v3
@@ -152,7 +154,7 @@
 
     move-result-object p1
 
-    .line 39
+    .line 50
     sget-object v1, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
@@ -167,11 +169,12 @@
 
     move-result-object v3
 
+    .line 48
     invoke-virtual {p1, v4, v3}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 40
+    .line 54
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
 
     move-result p2
@@ -184,11 +187,12 @@
 
     move-result-object p2
 
+    .line 52
     invoke-virtual {p1, v6, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 41
+    .line 56
     sget p2, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetShortName()Ljava/lang/String;
@@ -199,14 +203,14 @@
 
     move-result-object p1
 
-    .line 42
+    .line 57
     sget p2, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
 
     invoke-virtual {p1, p2, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setGone(IZ)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 43
+    .line 58
     sget p2, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;
@@ -250,12 +254,12 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 63
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->getBalanceInfo()Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
     move-result-object p3
 
-    .line 50
+    .line 65
     sget v0, Lorg/telegram/messenger/R$id;->text_title:I
 
     invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetName()Ljava/lang/String;
@@ -266,9 +270,10 @@
 
     move-result-object p1
 
-    .line 51
+    .line 67
     sget v0, Lorg/telegram/messenger/R$id;->text_subtitle:I
 
+    .line 68
     sget-object v1, Lcom/iMe/utils/formatter/MaskFormatter;->INSTANCE:Lcom/iMe/utils/formatter/MaskFormatter;
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
@@ -283,13 +288,15 @@
 
     move-result-object v2
 
+    .line 66
     invoke-virtual {p1, v0, v2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 52
+    .line 71
     sget v0, Lorg/telegram/messenger/R$id;->text_account_balance_in_dollars:I
 
+    .line 72
     invoke-virtual {p2}, Lcom/iMe/model/wallet/home/pay/BinanceBalanceItem;->isBalanceHidden()Z
 
     move-result p2
@@ -302,11 +309,12 @@
 
     move-result-object p2
 
+    .line 70
     invoke-virtual {p1, v0, p2}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
-    .line 53
+    .line 74
     sget p2, Lorg/telegram/messenger/R$id;->text_coin_ticker:I
 
     invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAssetShortName()Ljava/lang/String;
@@ -317,7 +325,7 @@
 
     move-result-object p1
 
-    .line 54
+    .line 75
     sget p2, Lorg/telegram/messenger/R$id;->constraint_trade_info:I
 
     const/4 v0, 0x1
@@ -326,7 +334,7 @@
 
     move-result-object p1
 
-    .line 55
+    .line 76
     sget p2, Lorg/telegram/messenger/R$id;->image_logo:I
 
     invoke-virtual {p3}, Lcom/iMe/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getLogoUrl()Ljava/lang/String;

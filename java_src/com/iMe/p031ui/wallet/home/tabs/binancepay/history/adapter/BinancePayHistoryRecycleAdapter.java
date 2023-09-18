@@ -13,7 +13,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayHistoryRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.history.adapter.BinancePayHistoryRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BinancePayHistoryRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final BinanceTransactionProvider binanceTransactionProvider;
     private final HeaderProvider headerProvider;

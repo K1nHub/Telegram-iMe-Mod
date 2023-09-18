@@ -32,7 +32,7 @@ import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: TopicsBar.kt */
 /* renamed from: com.iMe.ui.topics.TopicsBar */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TopicsBar extends FrameLayout {
     private final Lazy controller$delegate;
     private final int currentAccount;
@@ -48,7 +48,7 @@ public final class TopicsBar extends FrameLayout {
 
     /* compiled from: TopicsBar.kt */
     /* renamed from: com.iMe.ui.topics.TopicsBar$Delegate */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface Delegate {
         boolean canPerformActions();
 
@@ -404,10 +404,9 @@ public final class TopicsBar extends FrameLayout {
             return;
         }
         TopicModel topicModel = this$0.data.get(i);
-        this$0.selectedTopicId = topicModel.getTopicId() == this$0.selectedTopicId ? -1L : topicModel.getTopicId();
-        Delegate delegate2 = this$0.delegate;
-        Intrinsics.checkNotNull(delegate2);
-        delegate2.onTopicClick(this$0.selectedTopicId);
+        long topicId = topicModel.getTopicId() == this$0.selectedTopicId ? -1L : topicModel.getTopicId();
+        this$0.selectedTopicId = topicId;
+        this$0.delegate.onTopicClick(topicId);
         this$0.getListView().smoothScrollToPosition(i);
         this$0.notifyDataSetChanged();
     }
@@ -417,20 +416,13 @@ public final class TopicsBar extends FrameLayout {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Delegate delegate = this$0.delegate;
         Intrinsics.checkNotNull(delegate);
-        if (delegate.canPerformActions() && !this$0.isEditing) {
-            Delegate delegate2 = this$0.delegate;
-            Intrinsics.checkNotNull(delegate2);
-            if (delegate2.onTopicLongClick((TopicView) view)) {
-                return true;
-            }
-        }
-        return false;
+        return delegate.canPerformActions() && !this$0.isEditing && this$0.delegate.onTopicLongClick((TopicView) view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: TopicsBar.kt */
     /* renamed from: com.iMe.ui.topics.TopicsBar$TouchHelperCallback */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class TouchHelperCallback extends ItemTouchHelper.Callback {
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
@@ -476,7 +468,7 @@ public final class TopicsBar extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: TopicsBar.kt */
     /* renamed from: com.iMe.ui.topics.TopicsBar$ListAdapter */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
         @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {

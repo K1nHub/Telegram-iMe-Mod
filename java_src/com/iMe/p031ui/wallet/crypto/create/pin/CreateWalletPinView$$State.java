@@ -9,7 +9,7 @@ import moxy.viewstate.MvpViewState;
 import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView> implements CreateWalletPinView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -114,30 +114,30 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletCreateSuccessCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnWalletCreateSuccessCommand extends ViewCommand<CreateWalletPinView> {
         public final String password;
         public final String pin;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f2006wallet;
+        public final Wallet f1996wallet;
 
         OnWalletCreateSuccessCommand(CreateWalletPinView$$State createWalletPinView$$State, String str, String str2, Wallet wallet2) {
             super("onWalletCreateSuccess", OneExecutionStateStrategy.class);
             this.password = str;
             this.pin = str2;
-            this.f2006wallet = wallet2;
+            this.f1996wallet = wallet2;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletPinView createWalletPinView) {
-            createWalletPinView.onWalletCreateSuccess(this.password, this.pin, this.f2006wallet);
+            createWalletPinView.onWalletCreateSuccess(this.password, this.pin, this.f1996wallet);
         }
     }
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletImportSuccessCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnWalletImportSuccessCommand extends ViewCommand<CreateWalletPinView> {
         OnWalletImportSuccessCommand(CreateWalletPinView$$State createWalletPinView$$State) {
             super("onWalletImportSuccess", OneExecutionStateStrategy.class);
@@ -151,7 +151,7 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletPinCodeChangeSuccessCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnWalletPinCodeChangeSuccessCommand extends ViewCommand<CreateWalletPinView> {
         OnWalletPinCodeChangeSuccessCommand(CreateWalletPinView$$State createWalletPinView$$State) {
             super("onWalletPinCodeChangeSuccess", OneExecutionStateStrategy.class);
@@ -165,7 +165,7 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$OnWalletPinCodeErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnWalletPinCodeErrorCommand extends ViewCommand<CreateWalletPinView> {
         OnWalletPinCodeErrorCommand(CreateWalletPinView$$State createWalletPinView$$State) {
             super("onWalletPinCodeError", OneExecutionStateStrategy.class);
@@ -179,7 +179,7 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<CreateWalletPinView> {
         public final String text;
 
@@ -196,7 +196,7 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CreateWalletPinView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -217,7 +217,7 @@ public class CreateWalletPinView$$State extends MvpViewState<CreateWalletPinView
 
     /* compiled from: CreateWalletPinView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CreateWalletPinView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

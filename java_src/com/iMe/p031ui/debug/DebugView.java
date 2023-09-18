@@ -7,7 +7,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: DebugView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.debug.DebugView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface DebugView extends BaseView {
     void showConfirmSwitchEnvironmentDialog(DialogModel dialogModel, Callbacks$Callback callbacks$Callback);
 }

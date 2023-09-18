@@ -3,7 +3,7 @@ package org.telegram.p043ui;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC$TL_exportedChatlistInvite;
 /* renamed from: org.telegram.ui.FilterCreateActivity$$ExternalSyntheticLambda25 */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class FilterCreateActivity$$ExternalSyntheticLambda25 implements Utilities.Callback {
     public final /* synthetic */ FilterCreateActivity f$0;
 

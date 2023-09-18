@@ -10,7 +10,7 @@ import com.google.android.gms.maps.model.StreetViewPanoramaLocation;
 import com.google.android.gms.maps.model.StreetViewPanoramaOrientation;
 import com.google.android.gms.maps.model.StreetViewSource;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzbw extends com.google.android.gms.internal.maps.zza implements IStreetViewPanoramaDelegate {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzbw(IBinder iBinder) {

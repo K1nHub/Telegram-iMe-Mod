@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.json.JSONException;
 import org.solovyev.android.checkout.Purchase;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Purchases {
     public final String continuationToken;
     public final List<Purchase> list;
@@ -58,7 +58,7 @@ public final class Purchases {
         Collections.sort(linkedList, PurchaseComparator.earliestFirst());
         while (!linkedList.isEmpty()) {
             Purchase purchase = (Purchase) linkedList.get(0);
-            int i = C34681.$SwitchMap$org$solovyev$android$checkout$Purchase$State[purchase.state.ordinal()];
+            int i = C33841.$SwitchMap$org$solovyev$android$checkout$Purchase$State[purchase.state.ordinal()];
             if (i == 1) {
                 if (!isNeutralized(linkedList, purchase)) {
                     arrayList.add(purchase);
@@ -74,8 +74,8 @@ public final class Purchases {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.solovyev.android.checkout.Purchases$1 */
-    /* loaded from: classes4.dex */
-    public static /* synthetic */ class C34681 {
+    /* loaded from: classes6.dex */
+    public static /* synthetic */ class C33841 {
         static final /* synthetic */ int[] $SwitchMap$org$solovyev$android$checkout$Purchase$State;
 
         static {
@@ -117,7 +117,7 @@ public final class Purchases {
         for (int i = 1; i < list.size(); i++) {
             Purchase purchase2 = list.get(i);
             if (purchase2.sku.equals(purchase.sku)) {
-                int i2 = C34681.$SwitchMap$org$solovyev$android$checkout$Purchase$State[purchase2.state.ordinal()];
+                int i2 = C33841.$SwitchMap$org$solovyev$android$checkout$Purchase$State[purchase2.state.ordinal()];
                 if (i2 == 1) {
                     Billing.warning("Two purchases with same SKU found: " + purchase + " and " + purchase2);
                 } else if (i2 == 2 || i2 == 3 || i2 == 4) {

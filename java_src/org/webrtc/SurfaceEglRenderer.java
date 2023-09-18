@@ -6,7 +6,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.p043ui.ActionBar.Theme$$ExternalSyntheticLambda2;
 import org.webrtc.EglBase;
 import org.webrtc.RendererCommon;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Callback {
     private static final String TAG = "SurfaceEglRenderer";
     private int frameRotation;

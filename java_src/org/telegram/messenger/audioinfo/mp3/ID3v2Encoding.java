@@ -2,7 +2,7 @@ package org.telegram.messenger.audioinfo.mp3;
 
 import com.google.android.exoplayer2.C0479C;
 import java.nio.charset.Charset;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum ID3v2Encoding {
     ISO_8859_1(Charset.forName(C0479C.ISO88591_NAME), 1),
     UTF_16(Charset.forName(C0479C.UTF16_NAME), 2),

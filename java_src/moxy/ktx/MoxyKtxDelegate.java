@@ -7,7 +7,7 @@ import moxy.MvpDelegate;
 import moxy.MvpPresenter;
 import moxy.presenter.PresenterField;
 /* compiled from: MoxyKtxDelegate.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MoxyKtxDelegate<T extends MvpPresenter<?>> {
     private final Function0<T> factory;
     private T presenter;

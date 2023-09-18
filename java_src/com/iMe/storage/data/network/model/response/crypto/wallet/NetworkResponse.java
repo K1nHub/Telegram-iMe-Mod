@@ -2,7 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.wallet;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class NetworkResponse {
     private final Long chainId;
     private final String color;
@@ -142,7 +142,7 @@ public final class NetworkResponse {
     }
 
     /* compiled from: NetworkResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ExplorerResponse {
         private final String logo;
         private final String name;
@@ -236,7 +236,7 @@ public final class NetworkResponse {
         }
 
         /* compiled from: NetworkResponse.kt */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class PathTemplateResponse {
             private final String address;
             private final String token;

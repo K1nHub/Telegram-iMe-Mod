@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC$TL_reactionCustomEmoji;
 import org.telegram.tgnet.TLRPC$TL_reactionEmoji;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ReactionsLayoutInBubble {
     private static int animationUniq;
     private int animateFromTotalHeight;
@@ -80,10 +80,10 @@ public class ReactionsLayoutInBubble {
     public int width;
 
     /* renamed from: x */
-    public int f1852x;
+    public int f1843x;
 
     /* renamed from: y */
-    public int f1853y;
+    public int f1844y;
     private static Paint paint = new Paint(1);
     private static TextPaint textPaint = new TextPaint(1);
     private static final ButtonsComparator comparator = new ButtonsComparator();
@@ -110,10 +110,10 @@ public class ReactionsLayoutInBubble {
 
     private static long getPeerId(TLObject tLObject) {
         if (tLObject instanceof TLRPC$User) {
-            return ((TLRPC$User) tLObject).f1694id;
+            return ((TLRPC$User) tLObject).f1685id;
         }
         if (tLObject instanceof TLRPC$Chat) {
-            return ((TLRPC$Chat) tLObject).f1531id;
+            return ((TLRPC$Chat) tLObject).f1522id;
         }
         return 0L;
     }
@@ -187,31 +187,31 @@ public class ReactionsLayoutInBubble {
                 i4 += reactionButton.height + AndroidUtilities.m72dp(4);
                 i3 = 0;
             }
-            reactionButton.f1854x = i3;
-            reactionButton.f1855y = i4;
+            reactionButton.f1845x = i3;
+            reactionButton.f1846y = i4;
             i3 += reactionButton.width + AndroidUtilities.m72dp(4);
             if (i3 > i5) {
                 i5 = i3;
             }
         }
         if (i2 == 5 && !this.reactionButtons.isEmpty()) {
-            int i7 = this.reactionButtons.get(0).f1855y;
+            int i7 = this.reactionButtons.get(0).f1846y;
             int i8 = 0;
             for (int i9 = 0; i9 < this.reactionButtons.size(); i9++) {
-                if (this.reactionButtons.get(i9).f1855y != i7) {
+                if (this.reactionButtons.get(i9).f1846y != i7) {
                     int i10 = i9 - 1;
-                    int i11 = i - (this.reactionButtons.get(i10).f1854x + this.reactionButtons.get(i10).width);
+                    int i11 = i - (this.reactionButtons.get(i10).f1845x + this.reactionButtons.get(i10).width);
                     while (i8 < i9) {
-                        this.reactionButtons.get(i8).f1854x += i11;
+                        this.reactionButtons.get(i8).f1845x += i11;
                         i8++;
                     }
                     i8 = i9;
                 }
             }
             int size = this.reactionButtons.size() - 1;
-            int i12 = i - (this.reactionButtons.get(size).f1854x + this.reactionButtons.get(size).width);
+            int i12 = i - (this.reactionButtons.get(size).f1845x + this.reactionButtons.get(size).width);
             while (i8 <= size) {
-                this.reactionButtons.get(i8).f1854x += i12;
+                this.reactionButtons.get(i8).f1845x += i12;
                 i8++;
             }
         }
@@ -230,8 +230,8 @@ public class ReactionsLayoutInBubble {
         if (this.isEmpty && this.outButtons.isEmpty()) {
             return;
         }
-        float f3 = this.f1852x;
-        float f4 = this.f1853y;
+        float f3 = this.f1843x;
+        float f4 = this.f1844y;
         if (this.isEmpty) {
             f3 = this.lastDrawnX;
             f4 = this.lastDrawnY;
@@ -246,9 +246,9 @@ public class ReactionsLayoutInBubble {
             ReactionButton reactionButton = this.reactionButtons.get(i);
             if (!reactionButton.reaction.equals(this.scrimViewReaction) && (str == null || reactionButton.reaction.equals(str))) {
                 canvas.save();
-                int i2 = reactionButton.f1854x;
+                int i2 = reactionButton.f1845x;
                 float f6 = i2;
-                int i3 = reactionButton.f1855y;
+                int i3 = reactionButton.f1846y;
                 float f7 = i3;
                 int i4 = (f > 1.0f ? 1 : (f == 1.0f ? 0 : -1));
                 if (i4 != 0 && reactionButton.animationType == 3) {
@@ -271,7 +271,7 @@ public class ReactionsLayoutInBubble {
         for (int i5 = 0; i5 < this.outButtons.size(); i5++) {
             ReactionButton reactionButton2 = this.outButtons.get(i5);
             canvas.save();
-            canvas.translate(reactionButton2.f1854x, reactionButton2.f1855y);
+            canvas.translate(reactionButton2.f1845x, reactionButton2.f1846y);
             float f10 = 1.0f - f;
             float f11 = (f10 * 0.5f) + 0.5f;
             canvas.scale(f11, f11, reactionButton2.width / 2.0f, reactionButton2.height / 2.0f);
@@ -287,8 +287,8 @@ public class ReactionsLayoutInBubble {
             this.lastDrawingReactionButtons.put(this.reactionButtons.get(i).key, this.reactionButtons.get(i));
         }
         this.wasDrawn = !this.isEmpty;
-        this.lastDrawnX = this.f1852x;
-        this.lastDrawnY = this.f1853y;
+        this.lastDrawnX = this.f1843x;
+        this.lastDrawnY = this.f1844y;
         this.lastDrawnWidth = this.width;
         this.lastDrawTotalHeight = this.totalHeight;
     }
@@ -312,11 +312,11 @@ public class ReactionsLayoutInBubble {
             }
             if (reactionButton2 != null) {
                 this.lastDrawingReactionButtonsTmp.remove(reactionButton.key);
-                int i3 = reactionButton.f1854x;
-                int i4 = reactionButton2.f1854x;
-                if (i3 != i4 || reactionButton.f1855y != reactionButton2.f1855y || reactionButton.width != reactionButton2.width || reactionButton.count != reactionButton2.count || reactionButton.choosen != reactionButton2.choosen || reactionButton.avatarsDrawable != null || reactionButton2.avatarsDrawable != null) {
+                int i3 = reactionButton.f1845x;
+                int i4 = reactionButton2.f1845x;
+                if (i3 != i4 || reactionButton.f1846y != reactionButton2.f1846y || reactionButton.width != reactionButton2.width || reactionButton.count != reactionButton2.count || reactionButton.choosen != reactionButton2.choosen || reactionButton.avatarsDrawable != null || reactionButton2.avatarsDrawable != null) {
                     reactionButton.animateFromX = i4;
-                    reactionButton.animateFromY = reactionButton2.f1855y;
+                    reactionButton.animateFromY = reactionButton2.f1846y;
                     reactionButton.animateFromWidth = reactionButton2.width;
                     reactionButton.fromTextColor = reactionButton2.lastDrawnTextColor;
                     reactionButton.fromBackgroundColor = reactionButton2.lastDrawnBackgroundColor;
@@ -357,7 +357,7 @@ public class ReactionsLayoutInBubble {
         }
         if (this.wasDrawn) {
             float f = this.lastDrawnX;
-            if (f != this.f1852x || this.lastDrawnY != this.f1853y) {
+            if (f != this.f1843x || this.lastDrawnY != this.f1844y) {
                 this.animateMove = true;
                 this.fromX = f;
                 this.fromY = this.lastDrawnY;
@@ -426,7 +426,7 @@ public class ReactionsLayoutInBubble {
     }
 
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$ReactionButton */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class ReactionButton {
         public int animateFromWidth;
         public int animateFromX;
@@ -464,10 +464,10 @@ public class ReactionsLayoutInBubble {
         public int width;
 
         /* renamed from: x */
-        public int f1854x;
+        public int f1845x;
 
         /* renamed from: y */
-        public int f1855y;
+        public int f1846y;
 
         public ReactionButton(ReactionButton reactionButton, TLRPC$ReactionCount tLRPC$ReactionCount, boolean z) {
             if (reactionButton != null) {
@@ -735,14 +735,14 @@ public class ReactionsLayoutInBubble {
         if (this.isEmpty || this.isSmall || (messageObject = this.messageObject) == null || (tLRPC$Message = messageObject.messageOwner) == null || tLRPC$Message.reactions == null) {
             return false;
         }
-        float x = motionEvent.getX() - this.f1852x;
-        float y = motionEvent.getY() - this.f1853y;
+        float x = motionEvent.getX() - this.f1843x;
+        float y = motionEvent.getY() - this.f1844y;
         if (motionEvent.getAction() == 0) {
             int size = this.reactionButtons.size();
             while (true) {
                 if (i >= size) {
                     break;
-                } else if (x <= this.reactionButtons.get(i).f1854x || x >= this.reactionButtons.get(i).f1854x + this.reactionButtons.get(i).width || y <= this.reactionButtons.get(i).f1855y || y >= this.reactionButtons.get(i).f1855y + this.reactionButtons.get(i).height) {
+                } else if (x <= this.reactionButtons.get(i).f1845x || x >= this.reactionButtons.get(i).f1845x + this.reactionButtons.get(i).width || y <= this.reactionButtons.get(i).f1846y || y >= this.reactionButtons.get(i).f1846y + this.reactionButtons.get(i).height) {
                     i++;
                 } else {
                     this.lastX = motionEvent.getX();
@@ -827,7 +827,7 @@ public class ReactionsLayoutInBubble {
     }
 
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$ButtonsComparator */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private static class ButtonsComparator implements Comparator<ReactionButton> {
         int currentAccount;
         long dialogId;
@@ -902,7 +902,7 @@ public class ReactionsLayoutInBubble {
     }
 
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble$VisibleReaction */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class VisibleReaction {
         public long documentId;
         public String emojicon;

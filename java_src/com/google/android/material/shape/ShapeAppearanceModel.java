@@ -8,7 +8,7 @@ import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.R$styleable;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ShapeAppearanceModel {
     EdgeTreatment bottomEdge;
     CornerTreatment bottomLeftCorner;
@@ -23,12 +23,12 @@ public class ShapeAppearanceModel {
     CornerTreatment topRightCorner;
     CornerSize topRightCornerSize;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface CornerSizeUnaryOperator {
         CornerSize apply(CornerSize cornerSize);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private EdgeTreatment bottomEdge;
         private CornerTreatment bottomLeftCorner;

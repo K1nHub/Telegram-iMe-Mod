@@ -3,7 +3,7 @@ package moxy.locators;
 import moxy.MvpProcessor;
 import moxy.ViewStateProvider;
 import moxy.viewstate.MvpViewState;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ViewStateLocator {
     private ViewStateLocator() {
     }

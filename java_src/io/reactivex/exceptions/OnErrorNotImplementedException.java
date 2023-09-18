@@ -1,5 +1,5 @@
 package io.reactivex.exceptions;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class OnErrorNotImplementedException extends RuntimeException {
     public OnErrorNotImplementedException(String str, Throwable th) {
         super(str, th == null ? new NullPointerException() : th);

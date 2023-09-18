@@ -13,7 +13,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.Components.Paint.Brush;
 import org.telegram.p043ui.Components.Size;
 /* renamed from: org.telegram.ui.Components.Paint.ShapeInput */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class ShapeInput {
     private Point center;
     private Runnable invalidate;
@@ -188,11 +188,11 @@ public class ShapeInput {
                     float[] fArr3 = this.tempPoint;
                     float f4 = fArr3[0] + this.touchOffsetX;
                     Point point4 = this.center;
-                    float f5 = f4 - point4.f1796x;
-                    float f6 = (fArr3[1] + this.touchOffsetY) - point4.f1797y;
+                    float f5 = f4 - point4.f1787x;
+                    float f6 = (fArr3[1] + this.touchOffsetY) - point4.f1788y;
                     for (int i = 0; i < this.movingPoints.size(); i++) {
                         Point point5 = this.movingPoints.get(i);
-                        point5.update(point5.f1796x + f5, point5.f1797y + f6);
+                        point5.update(point5.f1787x + f5, point5.f1788y + f6);
                     }
                 }
             } else {
@@ -217,8 +217,8 @@ public class ShapeInput {
                 if (point7.rotate) {
                     rotate(f2, f3, false);
                 }
-                float f7 = point7.f1796x;
-                float f8 = point7.f1797y;
+                float f7 = point7.f1787x;
+                float f8 = point7.f1788y;
                 float[] fArr6 = this.tempPoint;
                 double distance = MathUtils.distance(f7, f8, fArr6[0], fArr6[1]);
                 if (distance < AndroidUtilities.m72dp(40) && (point == null || distance < d)) {
@@ -244,10 +244,10 @@ public class ShapeInput {
                 rotate(f2, f3, false);
             }
             Point point8 = this.movingPoint;
-            float f9 = point8.f1796x;
+            float f9 = point8.f1787x;
             float[] fArr9 = this.tempPoint;
             this.touchOffsetX = f9 - fArr9[0];
-            this.touchOffsetY = point8.f1797y - fArr9[1];
+            this.touchOffsetY = point8.f1788y - fArr9[1];
             return;
         }
         Point point9 = this.center;
@@ -256,10 +256,10 @@ public class ShapeInput {
                 rotate(f2, f3, false);
             }
             Point point10 = this.center;
-            float f10 = point10.f1796x;
+            float f10 = point10.f1787x;
             float[] fArr10 = this.tempPoint;
             this.touchOffsetX = f10 - fArr10[0];
-            this.touchOffsetY = point10.f1797y - fArr10[1];
+            this.touchOffsetY = point10.f1788y - fArr10[1];
         }
     }
 
@@ -446,26 +446,26 @@ public class ShapeInput {
             ArrayList<Point> arrayList4 = this.allPoints;
             Point point4 = new Point() { // from class: org.telegram.ui.Components.Paint.ShapeInput.7
                 private void limit() {
-                    if (this.f1797y > ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY && this.f1797y < ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
-                        if (this.f1796x > ShapeInput.this.shape.centerX || this.f1796x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX) {
-                            if (this.f1796x > ShapeInput.this.shape.centerY && this.f1796x < ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
-                                this.f1796x = ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX;
+                    if (this.f1788y > ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY && this.f1788y < ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
+                        if (this.f1787x > ShapeInput.this.shape.centerX || this.f1787x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX) {
+                            if (this.f1787x > ShapeInput.this.shape.centerY && this.f1787x < ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
+                                this.f1787x = ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX;
                             }
                         } else {
-                            this.f1796x = ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX;
+                            this.f1787x = ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX;
                         }
                     }
-                    if (this.f1796x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX || this.f1796x >= ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
+                    if (this.f1787x <= ShapeInput.this.shape.centerX - ShapeInput.this.shape.radiusX || this.f1787x >= ShapeInput.this.shape.centerX + ShapeInput.this.shape.radiusX) {
                         return;
                     }
-                    if (this.f1797y > ShapeInput.this.shape.centerY || this.f1797y <= ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY) {
-                        if (this.f1797y <= ShapeInput.this.shape.centerY || this.f1797y >= ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
+                    if (this.f1788y > ShapeInput.this.shape.centerY || this.f1788y <= ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY) {
+                        if (this.f1788y <= ShapeInput.this.shape.centerY || this.f1788y >= ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY) {
                             return;
                         }
-                        this.f1797y = ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY;
+                        this.f1788y = ShapeInput.this.shape.centerY + ShapeInput.this.shape.radiusY;
                         return;
                     }
-                    this.f1797y = ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY;
+                    this.f1788y = ShapeInput.this.shape.centerY - ShapeInput.this.shape.radiusY;
                 }
 
                 @Override // org.telegram.p043ui.Components.Paint.ShapeInput.Point
@@ -477,8 +477,8 @@ public class ShapeInput {
                 protected void update(float f7, float f8) {
                     set(f7, f8);
                     limit();
-                    ShapeInput.this.shape.middleX = this.f1796x;
-                    ShapeInput.this.shape.middleY = this.f1797y;
+                    ShapeInput.this.shape.middleX = this.f1787x;
+                    ShapeInput.this.shape.middleY = this.f1788y;
                 }
 
                 @Override // org.telegram.p043ui.Components.Paint.ShapeInput.Point
@@ -495,8 +495,8 @@ public class ShapeInput {
         this.center = new Point(true) { // from class: org.telegram.ui.Components.Paint.ShapeInput.8
             @Override // org.telegram.p043ui.Components.Paint.ShapeInput.Point
             void set() {
-                this.f1796x = ShapeInput.this.shape.centerX;
-                this.f1797y = ShapeInput.this.shape.centerY;
+                this.f1787x = ShapeInput.this.shape.centerX;
+                this.f1788y = ShapeInput.this.shape.centerY;
             }
 
             @Override // org.telegram.p043ui.Components.Paint.ShapeInput.Point
@@ -584,27 +584,27 @@ public class ShapeInput {
     }
 
     private void drawPoint(Canvas canvas, Size size, Point point) {
-        canvas.drawCircle((point.f1796x / size.width) * canvas.getWidth(), (point.f1797y / size.height) * canvas.getHeight(), AndroidUtilities.m72dp(5), point.green ? this.centerPointPaint : this.controlPointPaint);
-        canvas.drawCircle((point.f1796x / size.width) * canvas.getWidth(), (point.f1797y / size.height) * canvas.getHeight(), AndroidUtilities.m72dp(5), point.green ? this.centerPointStrokePaint : this.controlPointStrokePaint);
+        canvas.drawCircle((point.f1787x / size.width) * canvas.getWidth(), (point.f1788y / size.height) * canvas.getHeight(), AndroidUtilities.m72dp(5), point.green ? this.centerPointPaint : this.controlPointPaint);
+        canvas.drawCircle((point.f1787x / size.width) * canvas.getWidth(), (point.f1788y / size.height) * canvas.getHeight(), AndroidUtilities.m72dp(5), point.green ? this.centerPointStrokePaint : this.controlPointStrokePaint);
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.ShapeInput$CornerPoint */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private class CornerPoint extends Point {
 
         /* renamed from: rx */
-        public float f1794rx;
+        public float f1785rx;
 
         /* renamed from: ry */
-        public float f1795ry;
+        public float f1786ry;
         public Shape shape;
 
         public CornerPoint(Shape shape, boolean z, boolean z2) {
             super(ShapeInput.this);
             this.rotate = false;
             this.shape = shape;
-            this.f1794rx = z ? -1.0f : 1.0f;
-            this.f1795ry = z2 ? -1.0f : 1.0f;
+            this.f1785rx = z ? -1.0f : 1.0f;
+            this.f1786ry = z2 ? -1.0f : 1.0f;
             set();
         }
 
@@ -612,7 +612,7 @@ public class ShapeInput {
         void set() {
             Shape shape = this.shape;
             if (shape != null) {
-                ShapeInput.this.rotate(shape.centerX + (this.f1794rx * shape.radiusX), shape.centerY + (this.f1795ry * shape.radiusY), true);
+                ShapeInput.this.rotate(shape.centerX + (this.f1785rx * shape.radiusX), shape.centerY + (this.f1786ry * shape.radiusY), true);
                 set(ShapeInput.this.tempPoint[0], ShapeInput.this.tempPoint[1]);
             }
         }
@@ -621,8 +621,8 @@ public class ShapeInput {
         protected void update(float f, float f2) {
             super.update(f, f2);
             Shape shape = this.shape;
-            float f3 = shape.centerX + ((-this.f1794rx) * shape.radiusX);
-            float f4 = shape.centerY + ((-this.f1795ry) * shape.radiusY);
+            float f3 = shape.centerX + ((-this.f1785rx) * shape.radiusX);
+            float f4 = shape.centerY + ((-this.f1786ry) * shape.radiusY);
             ShapeInput.this.rotate(f, f2, false);
             ShapeInput.this.rotate(f3, f4, true);
             float f5 = ShapeInput.this.tempPoint[0];
@@ -642,15 +642,15 @@ public class ShapeInput {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Paint.ShapeInput$Point */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class Point {
         boolean green;
 
         /* renamed from: x */
-        float f1796x;
+        float f1787x;
 
         /* renamed from: y */
-        float f1797y;
+        float f1788y;
         boolean rotate = true;
         boolean draw = true;
 
@@ -667,13 +667,13 @@ public class ShapeInput {
         }
 
         void set(float f, float f2) {
-            this.f1796x = f;
-            this.f1797y = f2;
+            this.f1787x = f;
+            this.f1788y = f2;
         }
 
         protected void update(float f, float f2) {
-            this.f1796x = f;
-            this.f1797y = f2;
+            this.f1787x = f;
+            this.f1788y = f2;
         }
     }
 }

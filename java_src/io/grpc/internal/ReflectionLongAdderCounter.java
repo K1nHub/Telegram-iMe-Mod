@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ReflectionLongAdderCounter implements LongCounter {
     private static final Method addMethod;
     private static final Constructor<?> defaultConstructor;

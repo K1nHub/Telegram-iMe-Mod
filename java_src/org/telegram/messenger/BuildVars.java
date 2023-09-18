@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import com.android.billingclient.api.ProductDetails;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class BuildVars {
     public static String APP_HASH = null;
     public static int APP_ID = 0;
@@ -12,11 +12,11 @@ public class BuildVars {
     public static String BUILD_VERSION_STRING = null;
     public static boolean CHECK_UPDATES = true;
     public static boolean DEBUG_PRIVATE_VERSION = false;
-    public static boolean DEBUG_VERSION = true;
+    public static boolean DEBUG_VERSION = false;
     public static String GOOGLE_AUTH_CLIENT_ID = null;
     public static String HUAWEI_APP_ID = null;
     public static boolean IS_BILLING_UNAVAILABLE = false;
-    public static boolean LOGS_ENABLED = true;
+    public static boolean LOGS_ENABLED = false;
     public static boolean NO_SCOPED_STORAGE = false;
     public static String PLAYSTORE_APP_URL = null;
     public static String SAFETYNET_KEY = null;

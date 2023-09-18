@@ -20,7 +20,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 /* compiled from: DurationAnalyticsInterceptor.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DurationAnalyticsInterceptor implements Interceptor, KoinComponent {
     private final Lazy analytics$delegate;
 
@@ -78,7 +78,7 @@ public final class DurationAnalyticsInterceptor implements Interceptor, KoinComp
     }
 
     /* compiled from: DurationAnalyticsInterceptor.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

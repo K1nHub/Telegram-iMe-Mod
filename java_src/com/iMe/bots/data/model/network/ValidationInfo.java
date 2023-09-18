@@ -2,7 +2,7 @@ package com.iMe.bots.data.model.network;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ValidationInfo.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ValidationInfo {
     private final String error;
     private final boolean success;

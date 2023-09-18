@@ -36,7 +36,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseInstanceId {
     private static Store store;
     @VisibleForTesting

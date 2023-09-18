@@ -4,17 +4,17 @@ import kotlin.Unit;
 import kotlinx.coroutines.BuildersKt__BuildersKt;
 import kotlinx.coroutines.channels.ChannelResult;
 /* compiled from: Channels.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final /* synthetic */ class ChannelsKt__ChannelsKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E> Object trySendBlocking(SendChannel<? super E> sendChannel, E e) {
         Object runBlocking$default;
-        Object mo1673trySendJP2dKIU = sendChannel.mo1673trySendJP2dKIU(e);
-        if (mo1673trySendJP2dKIU instanceof ChannelResult.Failed) {
+        Object mo1671trySendJP2dKIU = sendChannel.mo1671trySendJP2dKIU(e);
+        if (mo1671trySendJP2dKIU instanceof ChannelResult.Failed) {
             runBlocking$default = BuildersKt__BuildersKt.runBlocking$default(null, new ChannelsKt__ChannelsKt$trySendBlocking$2(sendChannel, e, null), 1, null);
-            return ((ChannelResult) runBlocking$default).m1682unboximpl();
+            return ((ChannelResult) runBlocking$default).m1680unboximpl();
         }
-        Unit unit = (Unit) mo1673trySendJP2dKIU;
-        return ChannelResult.Companion.m1685successJP2dKIU(Unit.INSTANCE);
+        Unit unit = (Unit) mo1671trySendJP2dKIU;
+        return ChannelResult.Companion.m1683successJP2dKIU(Unit.INSTANCE);
     }
 }

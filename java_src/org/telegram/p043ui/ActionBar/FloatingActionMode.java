@@ -17,7 +17,7 @@ import com.google.android.exoplayer2.C0479C;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.ActionBar.FloatingActionMode */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class FloatingActionMode extends ActionMode {
     private final int mBottomAllowance;
     private final ActionMode.Callback2 mCallback;
@@ -277,7 +277,7 @@ public final class FloatingActionMode extends ActionMode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.ActionBar.FloatingActionMode$FloatingToolbarVisibilityHelper */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static final class FloatingToolbarVisibilityHelper {
         private boolean mActive;
         private boolean mHideRequested;

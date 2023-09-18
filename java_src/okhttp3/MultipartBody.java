@@ -13,7 +13,7 @@ import okio.Buffer;
 import okio.BufferedSink;
 import okio.ByteString;
 /* compiled from: MultipartBody.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class MultipartBody extends RequestBody {
     private static final byte[] COLONSPACE;
     private static final byte[] CRLF;
@@ -127,7 +127,7 @@ public final class MultipartBody extends RequestBody {
     }
 
     /* compiled from: MultipartBody.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Part {
         public static final Companion Companion = new Companion(null);
         private final RequestBody body;
@@ -151,7 +151,7 @@ public final class MultipartBody extends RequestBody {
         }
 
         /* compiled from: MultipartBody.kt */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class Companion {
             private Companion() {
             }
@@ -190,7 +190,7 @@ public final class MultipartBody extends RequestBody {
     }
 
     /* compiled from: MultipartBody.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Builder {
         private final ByteString boundary;
         private final List<Part> parts;
@@ -258,7 +258,7 @@ public final class MultipartBody extends RequestBody {
     }
 
     /* compiled from: MultipartBody.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         private Companion() {
         }

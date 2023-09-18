@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<WalletHomeCryptoTokensSettingsView> implements WalletHomeCryptoTokensSettingsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -149,7 +149,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$RenderTokensSettingsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderTokensSettingsCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         public final List<? extends BaseNode> items;
 
@@ -166,7 +166,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$RenderSearchResultItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderSearchResultItemsCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         public final List<BaseNode> items;
 
@@ -183,7 +183,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$ShowTokenFamilyDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowTokenFamilyDialogCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         public final List<FoundTokenItem> foundTokens;
 
@@ -200,7 +200,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         public final String text;
 
@@ -217,7 +217,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -238,7 +238,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -257,7 +257,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         public final List<BaseNode> items;
 
@@ -274,7 +274,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         OnLoadMoreCompleteCommand(WalletHomeCryptoTokensSettingsView$$State walletHomeCryptoTokensSettingsView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -288,7 +288,7 @@ public class WalletHomeCryptoTokensSettingsView$$State extends MvpViewState<Wall
 
     /* compiled from: WalletHomeCryptoTokensSettingsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<WalletHomeCryptoTokensSettingsView> {
         OnLoadMoreErrorCommand(WalletHomeCryptoTokensSettingsView$$State walletHomeCryptoTokensSettingsView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);

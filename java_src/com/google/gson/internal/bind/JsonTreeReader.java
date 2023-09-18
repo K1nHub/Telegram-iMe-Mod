@@ -13,7 +13,7 @@ import java.io.Reader;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class JsonTreeReader extends JsonReader {
     private int[] pathIndices;
     private String[] pathNames;
@@ -285,7 +285,7 @@ public final class JsonTreeReader extends JsonReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.JsonTreeReader$2 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C11382 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 

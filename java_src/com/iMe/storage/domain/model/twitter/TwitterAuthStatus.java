@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.twitter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TwitterAuthStatus.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum TwitterAuthStatus {
     ACTIVE,
     VERIFICATION;
@@ -11,7 +11,7 @@ public enum TwitterAuthStatus {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: TwitterAuthStatus.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

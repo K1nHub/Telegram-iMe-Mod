@@ -3,7 +3,7 @@ package org.telegram.p043ui.Components.Paint;
 import android.graphics.RectF;
 import org.telegram.p043ui.Components.Paint.Brush;
 /* renamed from: org.telegram.ui.Components.Paint.Shape */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Shape {
     public float arrowTriangleLength;
     public final Brush.Shape brush;

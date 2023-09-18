@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final int bufferSize;
     final Function<? super B, ? extends ObservableSource<V>> close;
@@ -40,7 +40,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class WindowBoundaryMainObserver<T, B, V> extends QueueDrainObserver<T, Object, Observable<T>> implements Disposable {
         final AtomicReference<Disposable> boundary;
         final int bufferSize;
@@ -52,7 +52,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         final AtomicLong windows;
 
         /* renamed from: ws */
-        final List<UnicastSubject<T>> f564ws;
+        final List<UnicastSubject<T>> f555ws;
 
         @Override // io.reactivex.internal.observers.QueueDrainObserver, io.reactivex.internal.util.ObservableQueueDrain
         public void accept(Observer<? super Observable<T>> observer, Object obj) {
@@ -68,7 +68,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
             this.close = function;
             this.bufferSize = i;
             this.resources = new CompositeDisposable();
-            this.f564ws = new ArrayList();
+            this.f555ws = new ArrayList();
             atomicLong.lazySet(1L);
         }
 
@@ -90,7 +90,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         @Override // io.reactivex.Observer
         public void onNext(T t) {
             if (fastEnter()) {
-                for (UnicastSubject<T> unicastSubject : this.f564ws) {
+                for (UnicastSubject<T> unicastSubject : this.f555ws) {
                     unicastSubject.onNext(t);
                 }
                 if (leave(-1) == 0) {
@@ -166,7 +166,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
         void drainLoop() {
             MpscLinkedQueue mpscLinkedQueue = (MpscLinkedQueue) this.queue;
             Observer<? super V> observer = this.downstream;
-            List<UnicastSubject<T>> list = this.f564ws;
+            List<UnicastSubject<T>> list = this.f555ws;
             int i = 1;
             while (true) {
                 boolean z = this.done;
@@ -189,10 +189,10 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
                 } else if (!z2) {
                     if (poll instanceof WindowOperation) {
                         WindowOperation windowOperation = (WindowOperation) poll;
-                        UnicastSubject<T> unicastSubject3 = windowOperation.f565w;
+                        UnicastSubject<T> unicastSubject3 = windowOperation.f556w;
                         if (unicastSubject3 != null) {
                             if (list.remove(unicastSubject3)) {
-                                windowOperation.f565w.onComplete();
+                                windowOperation.f556w.onComplete();
                                 if (this.windows.decrementAndGet() == 0) {
                                     disposeBoundary();
                                     return;
@@ -240,7 +240,7 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
 
         void close(OperatorWindowBoundaryCloseObserver<T, V> operatorWindowBoundaryCloseObserver) {
             this.resources.delete(operatorWindowBoundaryCloseObserver);
-            this.queue.offer(new WindowOperation(operatorWindowBoundaryCloseObserver.f563w, null));
+            this.queue.offer(new WindowOperation(operatorWindowBoundaryCloseObserver.f554w, null));
             if (enter()) {
                 drainLoop();
             }
@@ -248,20 +248,20 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class WindowOperation<T, B> {
         final B open;
 
         /* renamed from: w */
-        final UnicastSubject<T> f565w;
+        final UnicastSubject<T> f556w;
 
         WindowOperation(UnicastSubject<T> unicastSubject, B b) {
-            this.f565w = unicastSubject;
+            this.f556w = unicastSubject;
             this.open = b;
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class OperatorWindowBoundaryOpenObserver<T, B> extends DisposableObserver<B> {
         final WindowBoundaryMainObserver<T, B, ?> parent;
 
@@ -286,17 +286,17 @@ public final class ObservableWindowBoundarySelector<T, B, V> extends AbstractObs
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class OperatorWindowBoundaryCloseObserver<T, V> extends DisposableObserver<V> {
         boolean done;
         final WindowBoundaryMainObserver<T, ?, V> parent;
 
         /* renamed from: w */
-        final UnicastSubject<T> f563w;
+        final UnicastSubject<T> f554w;
 
         OperatorWindowBoundaryCloseObserver(WindowBoundaryMainObserver<T, ?, V> windowBoundaryMainObserver, UnicastSubject<T> unicastSubject) {
             this.parent = windowBoundaryMainObserver;
-            this.f563w = unicastSubject;
+            this.f554w = unicastSubject;
         }
 
         @Override // io.reactivex.Observer

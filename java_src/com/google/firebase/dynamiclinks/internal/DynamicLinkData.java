@@ -7,7 +7,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 @SafeParcelable.Class(creator = "DynamicLinkDataCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DynamicLinkData extends AbstractSafeParcelable {
     public static final Parcelable.Creator<DynamicLinkData> CREATOR = new DynamicLinkDataCreator();
     @SafeParcelable.Field(getter = "getClickTimestamp", m797id = 4)

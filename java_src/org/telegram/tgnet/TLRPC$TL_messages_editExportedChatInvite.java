@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_messages_editExportedChatInvite extends TLObject {
     public static int constructor = -1110823051;
     public int expire_date;

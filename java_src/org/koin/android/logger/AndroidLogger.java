@@ -5,11 +5,11 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.logger.Level;
 import org.koin.core.logger.Logger;
 /* compiled from: AndroidLogger.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class AndroidLogger extends Logger {
 
     /* compiled from: AndroidLogger.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

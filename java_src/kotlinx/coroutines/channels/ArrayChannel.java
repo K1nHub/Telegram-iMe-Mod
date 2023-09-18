@@ -12,7 +12,7 @@ import kotlinx.coroutines.internal.OnUndeliveredElementKt;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.UndeliveredElementException;
 /* compiled from: ArrayChannel.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ArrayChannel<E> extends AbstractChannel<E> {
     private Object[] buffer;
     private final int capacity;
@@ -22,7 +22,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
     private volatile /* synthetic */ int size;
 
     /* compiled from: ArrayChannel.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

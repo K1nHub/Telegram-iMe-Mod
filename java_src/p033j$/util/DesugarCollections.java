@@ -15,53 +15,53 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
-import p033j$.lang.AbstractC2865d;
+import p033j$.lang.AbstractC2781d;
 import p033j$.util.Map;
-import p033j$.util.concurrent.C2947a;
-import p033j$.util.concurrent.InterfaceC2948b;
+import p033j$.util.concurrent.C2863a;
+import p033j$.util.concurrent.InterfaceC2864b;
 import p033j$.util.function.BiConsumer;
 import p033j$.util.function.BiFunction;
 import p033j$.util.function.Function;
 import p033j$.util.function.Predicate;
-import p033j$.wrappers.C3328L;
-import p033j$.wrappers.C3378q;
-import p033j$.wrappers.C3382s;
+import p033j$.wrappers.C3244L;
+import p033j$.wrappers.C3294q;
+import p033j$.wrappers.C3298s;
 /* renamed from: j$.util.DesugarCollections */
 /* loaded from: classes2.dex */
 public class DesugarCollections {
 
     /* renamed from: a */
-    public static final Class f633a;
+    public static final Class f624a;
 
     /* renamed from: b */
-    static final Class f634b;
+    static final Class f625b;
 
     /* renamed from: c */
-    private static final Field f635c;
+    private static final Field f626c;
 
     /* renamed from: d */
-    private static final Field f636d;
+    private static final Field f627d;
 
     /* renamed from: e */
-    private static final Constructor f637e;
+    private static final Constructor f628e;
 
     /* renamed from: f */
-    private static final Constructor f638f;
+    private static final Constructor f629f;
 
     static {
         Field field;
         Field field2;
         Constructor<?> constructor;
         Class<?> cls = Collections.synchronizedCollection(new ArrayList()).getClass();
-        f633a = cls;
-        f634b = Collections.synchronizedList(new LinkedList()).getClass();
+        f624a = cls;
+        f625b = Collections.synchronizedList(new LinkedList()).getClass();
         Constructor<?> constructor2 = null;
         try {
             field = cls.getDeclaredField("mutex");
         } catch (NoSuchFieldException unused) {
             field = null;
         }
-        f635c = field;
+        f626c = field;
         if (field != null) {
             field.setAccessible(true);
         }
@@ -70,7 +70,7 @@ public class DesugarCollections {
         } catch (NoSuchFieldException unused2) {
             field2 = null;
         }
-        f636d = field2;
+        f627d = field2;
         if (field2 != null) {
             field2.setAccessible(true);
         }
@@ -79,7 +79,7 @@ public class DesugarCollections {
         } catch (NoSuchMethodException unused3) {
             constructor = null;
         }
-        f638f = constructor;
+        f629f = constructor;
         if (constructor != null) {
             constructor.setAccessible(true);
         }
@@ -87,7 +87,7 @@ public class DesugarCollections {
             constructor2 = cls.getDeclaredConstructor(Collection.class, Object.class);
         } catch (NoSuchMethodException unused4) {
         }
-        f637e = constructor2;
+        f628e = constructor2;
         if (constructor2 != null) {
             constructor2.setAccessible(true);
         }
@@ -97,17 +97,17 @@ public class DesugarCollections {
     /* renamed from: c */
     public static boolean m647c(Collection collection, Predicate predicate) {
         boolean removeIf;
-        Field field = f635c;
+        Field field = f626c;
         if (field == null) {
             try {
-                return Collection$EL.removeIf((Collection) f636d.get(collection), predicate);
+                return Collection$EL.removeIf((Collection) f627d.get(collection), predicate);
             } catch (IllegalAccessException e) {
                 throw new Error("Runtime illegal access in synchronized collection removeIf fall-back.", e);
             }
         }
         try {
             synchronized (field.get(collection)) {
-                removeIf = Collection$EL.removeIf((Collection) f636d.get(collection), predicate);
+                removeIf = Collection$EL.removeIf((Collection) f627d.get(collection), predicate);
             }
             return removeIf;
         } catch (IllegalAccessException e2) {
@@ -118,10 +118,10 @@ public class DesugarCollections {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: d */
     public static void m646d(List list, Comparator comparator) {
-        Field field = f635c;
+        Field field = f626c;
         if (field == null) {
             try {
-                AbstractC2919a.m607v((List) f636d.get(list), comparator);
+                AbstractC2835a.m607v((List) f627d.get(list), comparator);
                 return;
             } catch (IllegalAccessException e) {
                 throw new Error("Runtime illegal access in synchronized collection sort fall-back.", e);
@@ -129,7 +129,7 @@ public class DesugarCollections {
         }
         try {
             synchronized (field.get(list)) {
-                AbstractC2919a.m607v((List) f636d.get(list), comparator);
+                AbstractC2835a.m607v((List) f627d.get(list), comparator);
             }
         } catch (IllegalAccessException e2) {
             throw new Error("Runtime illegal access in synchronized list sort.", e2);
@@ -137,42 +137,42 @@ public class DesugarCollections {
     }
 
     public static <K, V> Map<K, V> synchronizedMap(Map<K, V> map) {
-        return new C2911a(map);
+        return new C2827a(map);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: j$.util.DesugarCollections$a */
     /* loaded from: classes2.dex */
-    public static class C2911a implements Map, Serializable, Map {
+    public static class C2827a implements Map, Serializable, Map {
 
         /* renamed from: a */
-        private final Map f639a;
+        private final Map f630a;
 
         /* renamed from: b */
-        final Object f640b;
+        final Object f631b;
 
         /* renamed from: c */
-        private transient Set f641c;
+        private transient Set f632c;
 
         /* renamed from: d */
-        private transient Set f642d;
+        private transient Set f633d;
 
         /* renamed from: e */
-        private transient Collection f643e;
+        private transient Collection f634e;
 
-        C2911a(Map map) {
+        C2827a(Map map) {
             Objects.requireNonNull(map);
-            this.f639a = map;
-            this.f640b = this;
+            this.f630a = map;
+            this.f631b = this;
         }
 
         /* renamed from: a */
         private Set m645a(Set set, Object obj) {
-            if (DesugarCollections.f638f == null) {
+            if (DesugarCollections.f629f == null) {
                 return Collections.synchronizedSet(set);
             }
             try {
-                return (Set) DesugarCollections.f638f.newInstance(set, obj);
+                return (Set) DesugarCollections.f629f.newInstance(set, obj);
             } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
                 throw new Error("Unable to instantiate a synchronized list.", e);
             }
@@ -180,8 +180,8 @@ public class DesugarCollections {
 
         @Override // java.util.Map, p033j$.util.Map
         public void clear() {
-            synchronized (this.f640b) {
-                this.f639a.clear();
+            synchronized (this.f631b) {
+                this.f630a.clear();
             }
         }
 
@@ -189,9 +189,9 @@ public class DesugarCollections {
         public Object compute(Object obj, BiFunction biFunction) {
             Object $default$compute;
             Object apply;
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    Map map = this.f639a;
+                    Map map = this.f630a;
                     if (map instanceof Map) {
                         $default$compute = ((Map) map).compute(obj, biFunction);
                     } else if (map instanceof ConcurrentMap) {
@@ -233,16 +233,16 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ Object compute(Object obj, java.util.function.BiFunction biFunction) {
-            return compute(obj, C3382s.m120a(biFunction));
+            return compute(obj, C3298s.m120a(biFunction));
         }
 
         @Override // p033j$.util.Map
         public Object computeIfAbsent(Object obj, Function function) {
             Object computeIfAbsent;
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    java.util.Map map = this.f639a;
-                    computeIfAbsent = map instanceof Map ? ((Map) map).computeIfAbsent(obj, function) : map instanceof ConcurrentMap ? AbstractC2865d.m696a((ConcurrentMap) map, obj, function) : Map.CC.$default$computeIfAbsent(map, obj, function);
+                    java.util.Map map = this.f630a;
+                    computeIfAbsent = map instanceof Map ? ((Map) map).computeIfAbsent(obj, function) : map instanceof ConcurrentMap ? AbstractC2781d.m696a((ConcurrentMap) map, obj, function) : Map.CC.$default$computeIfAbsent(map, obj, function);
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -252,16 +252,16 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ Object computeIfAbsent(Object obj, java.util.function.Function function) {
-            return computeIfAbsent(obj, C3328L.m207a(function));
+            return computeIfAbsent(obj, C3244L.m207a(function));
         }
 
         @Override // p033j$.util.Map
         public Object computeIfPresent(Object obj, BiFunction biFunction) {
             java.util.Map map;
             Object $default$computeIfPresent;
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    map = this.f639a;
+                    map = this.f630a;
                 } finally {
                 }
                 if (map instanceof Map) {
@@ -295,14 +295,14 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ Object computeIfPresent(Object obj, java.util.function.BiFunction biFunction) {
-            return computeIfPresent(obj, C3382s.m120a(biFunction));
+            return computeIfPresent(obj, C3298s.m120a(biFunction));
         }
 
         @Override // java.util.Map, p033j$.util.Map
         public boolean containsKey(Object obj) {
             boolean containsKey;
-            synchronized (this.f640b) {
-                containsKey = this.f639a.containsKey(obj);
+            synchronized (this.f631b) {
+                containsKey = this.f630a.containsKey(obj);
             }
             return containsKey;
         }
@@ -310,8 +310,8 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public boolean containsValue(Object obj) {
             boolean containsValue;
-            synchronized (this.f640b) {
-                containsValue = this.f639a.containsValue(obj);
+            synchronized (this.f631b) {
+                containsValue = this.f630a.containsValue(obj);
             }
             return containsValue;
         }
@@ -319,11 +319,11 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public Set entrySet() {
             Set set;
-            synchronized (this.f640b) {
-                if (this.f642d == null) {
-                    this.f642d = m645a(this.f639a.entrySet(), this.f640b);
+            synchronized (this.f631b) {
+                if (this.f633d == null) {
+                    this.f633d = m645a(this.f630a.entrySet(), this.f631b);
                 }
-                set = this.f642d;
+                set = this.f633d;
             }
             return set;
         }
@@ -334,21 +334,21 @@ public class DesugarCollections {
             if (this == obj) {
                 return true;
             }
-            synchronized (this.f640b) {
-                equals = this.f639a.equals(obj);
+            synchronized (this.f631b) {
+                equals = this.f630a.equals(obj);
             }
             return equals;
         }
 
         @Override // p033j$.util.Map
         public void forEach(BiConsumer biConsumer) {
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    java.util.Map map = this.f639a;
+                    java.util.Map map = this.f630a;
                     if (map instanceof Map) {
                         ((Map) map).forEach(biConsumer);
                     } else if (map instanceof ConcurrentMap) {
-                        AbstractC2865d.m695b((ConcurrentMap) map, biConsumer);
+                        AbstractC2781d.m695b((ConcurrentMap) map, biConsumer);
                     } else {
                         Map.CC.$default$forEach(map, biConsumer);
                     }
@@ -360,14 +360,14 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ void forEach(java.util.function.BiConsumer biConsumer) {
-            forEach(C3378q.m125a(biConsumer));
+            forEach(C3294q.m125a(biConsumer));
         }
 
         @Override // java.util.Map, p033j$.util.Map
         public Object get(Object obj) {
             Object obj2;
-            synchronized (this.f640b) {
-                obj2 = this.f639a.get(obj);
+            synchronized (this.f631b) {
+                obj2 = this.f630a.get(obj);
             }
             return obj2;
         }
@@ -375,8 +375,8 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public Object getOrDefault(Object obj, Object obj2) {
             Object orDefault;
-            synchronized (this.f640b) {
-                orDefault = Map.EL.getOrDefault(this.f639a, obj, obj2);
+            synchronized (this.f631b) {
+                orDefault = Map.EL.getOrDefault(this.f630a, obj, obj2);
             }
             return orDefault;
         }
@@ -384,8 +384,8 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public int hashCode() {
             int hashCode;
-            synchronized (this.f640b) {
-                hashCode = this.f639a.hashCode();
+            synchronized (this.f631b) {
+                hashCode = this.f630a.hashCode();
             }
             return hashCode;
         }
@@ -393,8 +393,8 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public boolean isEmpty() {
             boolean isEmpty;
-            synchronized (this.f640b) {
-                isEmpty = this.f639a.isEmpty();
+            synchronized (this.f631b) {
+                isEmpty = this.f630a.isEmpty();
             }
             return isEmpty;
         }
@@ -402,11 +402,11 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public Set keySet() {
             Set set;
-            synchronized (this.f640b) {
-                if (this.f641c == null) {
-                    this.f641c = m645a(this.f639a.keySet(), this.f640b);
+            synchronized (this.f631b) {
+                if (this.f632c == null) {
+                    this.f632c = m645a(this.f630a.keySet(), this.f631b);
                 }
-                set = this.f641c;
+                set = this.f632c;
             }
             return set;
         }
@@ -437,9 +437,9 @@ public class DesugarCollections {
         public java.lang.Object merge(java.lang.Object r5, java.lang.Object r6, p033j$.util.function.BiFunction r7) {
             /*
                 r4 = this;
-                java.lang.Object r0 = r4.f640b
+                java.lang.Object r0 = r4.f631b
                 monitor-enter(r0)
-                java.util.Map r1 = r4.f639a     // Catch: java.lang.Throwable -> L30
+                java.util.Map r1 = r4.f630a     // Catch: java.lang.Throwable -> L30
                 boolean r2 = r1 instanceof p033j$.util.Map     // Catch: java.lang.Throwable -> L30
                 if (r2 == 0) goto L10
                 j$.util.Map r1 = (p033j$.util.Map) r1     // Catch: java.lang.Throwable -> L30
@@ -484,35 +484,35 @@ public class DesugarCollections {
                 monitor-exit(r0)     // Catch: java.lang.Throwable -> L30
                 throw r5
             */
-            throw new UnsupportedOperationException("Method not decompiled: p033j$.util.DesugarCollections.C2911a.merge(java.lang.Object, java.lang.Object, j$.util.function.BiFunction):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: p033j$.util.DesugarCollections.C2827a.merge(java.lang.Object, java.lang.Object, j$.util.function.BiFunction):java.lang.Object");
         }
 
         @Override // java.util.Map
         public /* synthetic */ Object merge(Object obj, Object obj2, java.util.function.BiFunction biFunction) {
-            return merge(obj, obj2, C3382s.m120a(biFunction));
+            return merge(obj, obj2, C3298s.m120a(biFunction));
         }
 
         @Override // java.util.Map, p033j$.util.Map
         public Object put(Object obj, Object obj2) {
             Object put;
-            synchronized (this.f640b) {
-                put = this.f639a.put(obj, obj2);
+            synchronized (this.f631b) {
+                put = this.f630a.put(obj, obj2);
             }
             return put;
         }
 
         @Override // java.util.Map, p033j$.util.Map
         public void putAll(java.util.Map map) {
-            synchronized (this.f640b) {
-                this.f639a.putAll(map);
+            synchronized (this.f631b) {
+                this.f630a.putAll(map);
             }
         }
 
         @Override // java.util.Map, p033j$.util.Map
         public Object putIfAbsent(Object obj, Object obj2) {
             Object putIfAbsent;
-            synchronized (this.f640b) {
-                putIfAbsent = Map.EL.putIfAbsent(this.f639a, obj, obj2);
+            synchronized (this.f631b) {
+                putIfAbsent = Map.EL.putIfAbsent(this.f630a, obj, obj2);
             }
             return putIfAbsent;
         }
@@ -520,8 +520,8 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public Object remove(Object obj) {
             Object remove;
-            synchronized (this.f640b) {
-                remove = this.f639a.remove(obj);
+            synchronized (this.f631b) {
+                remove = this.f630a.remove(obj);
             }
             return remove;
         }
@@ -529,9 +529,9 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public boolean remove(Object obj, Object obj2) {
             boolean remove;
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    java.util.Map map = this.f639a;
+                    java.util.Map map = this.f630a;
                     remove = map instanceof Map ? ((Map) map).remove(obj, obj2) : Map.CC.$default$remove(map, obj, obj2);
                 } catch (Throwable th) {
                     throw th;
@@ -543,9 +543,9 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public Object replace(Object obj, Object obj2) {
             Object replace;
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    java.util.Map map = this.f639a;
+                    java.util.Map map = this.f630a;
                     replace = map instanceof Map ? ((Map) map).replace(obj, obj2) : Map.CC.$default$replace(map, obj, obj2);
                 } catch (Throwable th) {
                     throw th;
@@ -556,19 +556,19 @@ public class DesugarCollections {
 
         @Override // p033j$.util.Map
         public void replaceAll(BiFunction biFunction) {
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    java.util.Map map = this.f639a;
+                    java.util.Map map = this.f630a;
                     if (map instanceof Map) {
                         ((Map) map).replaceAll(biFunction);
                     } else if (map instanceof ConcurrentMap) {
                         ConcurrentMap concurrentMap = (ConcurrentMap) map;
                         Objects.requireNonNull(biFunction);
-                        C2947a c2947a = new C2947a(concurrentMap, biFunction);
-                        if (concurrentMap instanceof InterfaceC2948b) {
-                            ((InterfaceC2948b) concurrentMap).forEach(c2947a);
+                        C2863a c2863a = new C2863a(concurrentMap, biFunction);
+                        if (concurrentMap instanceof InterfaceC2864b) {
+                            ((InterfaceC2864b) concurrentMap).forEach(c2863a);
                         } else {
-                            AbstractC2865d.m695b(concurrentMap, c2947a);
+                            AbstractC2781d.m695b(concurrentMap, c2863a);
                         }
                     } else {
                         Map.CC.$default$replaceAll(map, biFunction);
@@ -581,22 +581,22 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ void replaceAll(java.util.function.BiFunction biFunction) {
-            replaceAll(C3382s.m120a(biFunction));
+            replaceAll(C3298s.m120a(biFunction));
         }
 
         @Override // java.util.Map, p033j$.util.Map
         public int size() {
             int size;
-            synchronized (this.f640b) {
-                size = this.f639a.size();
+            synchronized (this.f631b) {
+                size = this.f630a.size();
             }
             return size;
         }
 
         public String toString() {
             String obj;
-            synchronized (this.f640b) {
-                obj = this.f639a.toString();
+            synchronized (this.f631b) {
+                obj = this.f630a.toString();
             }
             return obj;
         }
@@ -605,16 +605,16 @@ public class DesugarCollections {
         public Collection values() {
             Collection collection;
             Collection collection2;
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    if (this.f643e == null) {
-                        Collection values = this.f639a.values();
-                        Object obj = this.f640b;
-                        if (DesugarCollections.f637e == null) {
+                    if (this.f634e == null) {
+                        Collection values = this.f630a.values();
+                        Object obj = this.f631b;
+                        if (DesugarCollections.f628e == null) {
                             collection2 = Collections.synchronizedCollection(values);
                         } else {
                             try {
-                                collection2 = (Collection) DesugarCollections.f637e.newInstance(values, obj);
+                                collection2 = (Collection) DesugarCollections.f628e.newInstance(values, obj);
                             } catch (IllegalAccessException e) {
                                 e = e;
                                 throw new Error("Unable to instantiate a synchronized list.", e);
@@ -626,9 +626,9 @@ public class DesugarCollections {
                                 throw new Error("Unable to instantiate a synchronized list.", e);
                             }
                         }
-                        this.f643e = collection2;
+                        this.f634e = collection2;
                     }
-                    collection = this.f643e;
+                    collection = this.f634e;
                 } finally {
                 }
             }
@@ -638,9 +638,9 @@ public class DesugarCollections {
         @Override // java.util.Map, p033j$.util.Map
         public boolean replace(Object obj, Object obj2, Object obj3) {
             boolean replace;
-            synchronized (this.f640b) {
+            synchronized (this.f631b) {
                 try {
-                    java.util.Map map = this.f639a;
+                    java.util.Map map = this.f630a;
                     replace = map instanceof Map ? ((Map) map).replace(obj, obj2, obj3) : Map.CC.$default$replace(map, obj, obj2, obj3);
                 } catch (Throwable th) {
                     throw th;

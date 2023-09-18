@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsBackgroundWorker {
     private final Executor executor;
     private Task<Void> tail = Tasks.forResult(null);

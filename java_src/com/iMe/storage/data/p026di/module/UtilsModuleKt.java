@@ -27,7 +27,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: UtilsModule.kt */
 /* renamed from: com.iMe.storage.data.di.module.UtilsModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UtilsModuleKt {
     private static Module dataUtilsModule = ModuleDSLKt.module$default(false, new Function1<Module, Unit>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1
         @Override // kotlin.jvm.functions.Function1
@@ -41,7 +41,7 @@ public final class UtilsModuleKt {
             List emptyList;
             List emptyList2;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C17851 c17851 = new Function2<Scope, ParametersHolder, ResourceManager>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.1
+            C17811 c17811 = new Function2<Scope, ParametersHolder, ResourceManager>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final ResourceManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -53,13 +53,13 @@ public final class UtilsModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ResourceManager.class), null, c17851, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ResourceManager.class), null, c17811, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C17862 c17862 = new Function2<Scope, ParametersHolder, SchedulersProvider>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.2
+            C17822 c17822 = new Function2<Scope, ParametersHolder, SchedulersProvider>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final SchedulersProvider invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -70,7 +70,7 @@ public final class UtilsModuleKt {
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             Kind kind2 = Kind.Factory;
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, c17862, kind2, emptyList2));
+            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, c17822, kind2, emptyList2));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
         }

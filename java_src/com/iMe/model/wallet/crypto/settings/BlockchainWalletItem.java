@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.crypto.BlockchainType;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BlockchainWalletItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BlockchainWalletItem {
     private final String address;
     private final BlockchainType blockchainType;

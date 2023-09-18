@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RadioButton;
 /* renamed from: org.telegram.ui.Cells.PhotoEditRadioCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class PhotoEditRadioCell extends FrameLayout {
     private int currentColor;
     private int currentType;

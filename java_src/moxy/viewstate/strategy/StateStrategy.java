@@ -3,7 +3,7 @@ package moxy.viewstate.strategy;
 import java.util.List;
 import moxy.MvpView;
 import moxy.viewstate.ViewCommand;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface StateStrategy {
     <View extends MvpView> void afterApply(List<ViewCommand<View>> list, ViewCommand<View> viewCommand);
 

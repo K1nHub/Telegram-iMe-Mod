@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwapArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class SwapArgs implements TransactionArgs {
     private final BigDecimal amount;
     private final long chainId;
@@ -66,13 +66,13 @@ public abstract class SwapArgs implements TransactionArgs {
     }
 
     /* compiled from: SwapArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Dex extends SwapArgs {
         private final BigDecimal amount;
         private final BigInteger amountOutBound;
+        private final String callData;
         private final long chainId;
         private final String contractAddress;
-        private final String data;
         private final int deadlineMinutes;
         private final BigInteger gasLimit;
         private final BigInteger gasPrice;
@@ -107,7 +107,7 @@ public abstract class SwapArgs implements TransactionArgs {
         }
 
         public final String component14() {
-            return this.data;
+            return this.callData;
         }
 
         public final String component15() {
@@ -154,7 +154,7 @@ public abstract class SwapArgs implements TransactionArgs {
             return this.contractAddress;
         }
 
-        public final Dex copy(SwapProtocol swapProtocol, BigDecimal amount, TokenDetailed inputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String data, String quoteId, String networkId, String str) {
+        public final Dex copy(SwapProtocol swapProtocol, BigDecimal amount, TokenDetailed inputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String callData, String quoteId, String networkId, String str) {
             Intrinsics.checkNotNullParameter(swapProtocol, "swapProtocol");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(inputToken, "inputToken");
@@ -166,10 +166,10 @@ public abstract class SwapArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(swapMethod, "swapMethod");
             Intrinsics.checkNotNullParameter(path, "path");
             Intrinsics.checkNotNullParameter(value, "value");
-            Intrinsics.checkNotNullParameter(data, "data");
+            Intrinsics.checkNotNullParameter(callData, "callData");
             Intrinsics.checkNotNullParameter(quoteId, "quoteId");
             Intrinsics.checkNotNullParameter(networkId, "networkId");
-            return new Dex(swapProtocol, amount, inputToken, j, nonce, gasPrice, gasLimit, amountOutBound, contractAddress, swapMethod, path, i, value, data, quoteId, networkId, str);
+            return new Dex(swapProtocol, amount, inputToken, j, nonce, gasPrice, gasLimit, amountOutBound, contractAddress, swapMethod, path, i, value, callData, quoteId, networkId, str);
         }
 
         public boolean equals(Object obj) {
@@ -178,19 +178,19 @@ public abstract class SwapArgs implements TransactionArgs {
             }
             if (obj instanceof Dex) {
                 Dex dex = (Dex) obj;
-                return getSwapProtocol() == dex.getSwapProtocol() && Intrinsics.areEqual(getAmount(), dex.getAmount()) && Intrinsics.areEqual(getInputToken(), dex.getInputToken()) && getChainId() == dex.getChainId() && Intrinsics.areEqual(getNonce(), dex.getNonce()) && Intrinsics.areEqual(getGasPrice(), dex.getGasPrice()) && Intrinsics.areEqual(getGasLimit(), dex.getGasLimit()) && Intrinsics.areEqual(this.amountOutBound, dex.amountOutBound) && Intrinsics.areEqual(this.contractAddress, dex.contractAddress) && this.swapMethod == dex.swapMethod && Intrinsics.areEqual(this.path, dex.path) && this.deadlineMinutes == dex.deadlineMinutes && Intrinsics.areEqual(this.value, dex.value) && Intrinsics.areEqual(this.data, dex.data) && Intrinsics.areEqual(this.quoteId, dex.quoteId) && Intrinsics.areEqual(this.networkId, dex.networkId) && Intrinsics.areEqual(this.outputNetworkId, dex.outputNetworkId);
+                return getSwapProtocol() == dex.getSwapProtocol() && Intrinsics.areEqual(getAmount(), dex.getAmount()) && Intrinsics.areEqual(getInputToken(), dex.getInputToken()) && getChainId() == dex.getChainId() && Intrinsics.areEqual(getNonce(), dex.getNonce()) && Intrinsics.areEqual(getGasPrice(), dex.getGasPrice()) && Intrinsics.areEqual(getGasLimit(), dex.getGasLimit()) && Intrinsics.areEqual(this.amountOutBound, dex.amountOutBound) && Intrinsics.areEqual(this.contractAddress, dex.contractAddress) && this.swapMethod == dex.swapMethod && Intrinsics.areEqual(this.path, dex.path) && this.deadlineMinutes == dex.deadlineMinutes && Intrinsics.areEqual(this.value, dex.value) && Intrinsics.areEqual(this.callData, dex.callData) && Intrinsics.areEqual(this.quoteId, dex.quoteId) && Intrinsics.areEqual(this.networkId, dex.networkId) && Intrinsics.areEqual(this.outputNetworkId, dex.outputNetworkId);
             }
             return false;
         }
 
         public int hashCode() {
-            int hashCode = ((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.data.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkId.hashCode()) * 31;
+            int hashCode = ((((((((((((((((((((((((((((((getSwapProtocol().hashCode() * 31) + getAmount().hashCode()) * 31) + getInputToken().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(getChainId())) * 31) + getNonce().hashCode()) * 31) + getGasPrice().hashCode()) * 31) + getGasLimit().hashCode()) * 31) + this.amountOutBound.hashCode()) * 31) + this.contractAddress.hashCode()) * 31) + this.swapMethod.hashCode()) * 31) + this.path.hashCode()) * 31) + this.deadlineMinutes) * 31) + this.value.hashCode()) * 31) + this.callData.hashCode()) * 31) + this.quoteId.hashCode()) * 31) + this.networkId.hashCode()) * 31;
             String str = this.outputNetworkId;
             return hashCode + (str == null ? 0 : str.hashCode());
         }
 
         public String toString() {
-            return "Dex(swapProtocol=" + getSwapProtocol() + ", amount=" + getAmount() + ", inputToken=" + getInputToken() + ", chainId=" + getChainId() + ", nonce=" + getNonce() + ", gasPrice=" + getGasPrice() + ", gasLimit=" + getGasLimit() + ", amountOutBound=" + this.amountOutBound + ", contractAddress=" + this.contractAddress + ", swapMethod=" + this.swapMethod + ", path=" + this.path + ", deadlineMinutes=" + this.deadlineMinutes + ", value=" + this.value + ", data=" + this.data + ", quoteId=" + this.quoteId + ", networkId=" + this.networkId + ", outputNetworkId=" + this.outputNetworkId + ')';
+            return "Dex(swapProtocol=" + getSwapProtocol() + ", amount=" + getAmount() + ", inputToken=" + getInputToken() + ", chainId=" + getChainId() + ", nonce=" + getNonce() + ", gasPrice=" + getGasPrice() + ", gasLimit=" + getGasLimit() + ", amountOutBound=" + this.amountOutBound + ", contractAddress=" + this.contractAddress + ", swapMethod=" + this.swapMethod + ", path=" + this.path + ", deadlineMinutes=" + this.deadlineMinutes + ", value=" + this.value + ", callData=" + this.callData + ", quoteId=" + this.quoteId + ", networkId=" + this.networkId + ", outputNetworkId=" + this.outputNetworkId + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.SwapArgs
@@ -252,8 +252,8 @@ public abstract class SwapArgs implements TransactionArgs {
             return this.value;
         }
 
-        public final String getData() {
-            return this.data;
+        public final String getCallData() {
+            return this.callData;
         }
 
         public final String getQuoteId() {
@@ -269,7 +269,7 @@ public abstract class SwapArgs implements TransactionArgs {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Dex(SwapProtocol swapProtocol, BigDecimal amount, TokenDetailed inputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String data, String quoteId, String networkId, String str) {
+        public Dex(SwapProtocol swapProtocol, BigDecimal amount, TokenDetailed inputToken, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, BigInteger amountOutBound, String contractAddress, SwapMethod swapMethod, List<String> path, int i, BigInteger value, String callData, String quoteId, String networkId, String str) {
             super(swapProtocol, amount, inputToken, j, nonce, gasPrice, gasLimit, null);
             Intrinsics.checkNotNullParameter(swapProtocol, "swapProtocol");
             Intrinsics.checkNotNullParameter(amount, "amount");
@@ -282,7 +282,7 @@ public abstract class SwapArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(swapMethod, "swapMethod");
             Intrinsics.checkNotNullParameter(path, "path");
             Intrinsics.checkNotNullParameter(value, "value");
-            Intrinsics.checkNotNullParameter(data, "data");
+            Intrinsics.checkNotNullParameter(callData, "callData");
             Intrinsics.checkNotNullParameter(quoteId, "quoteId");
             Intrinsics.checkNotNullParameter(networkId, "networkId");
             this.swapProtocol = swapProtocol;
@@ -298,7 +298,7 @@ public abstract class SwapArgs implements TransactionArgs {
             this.path = path;
             this.deadlineMinutes = i;
             this.value = value;
-            this.data = data;
+            this.callData = callData;
             this.quoteId = quoteId;
             this.networkId = networkId;
             this.outputNetworkId = str;

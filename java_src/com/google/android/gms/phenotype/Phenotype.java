@@ -4,7 +4,7 @@ import android.net.Uri;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.api.Api;
 @KeepForSdk
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Phenotype {
     @Deprecated
     private static final Api<Api.ApiOptions.NoOptions> API;

@@ -26,7 +26,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuSlider;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.PopupSwipeBackLayout */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PopupSwipeBackLayout extends FrameLayout {
     private int currentForegroundIndex;
     private GestureDetectorCompat detector;
@@ -54,13 +54,13 @@ public class PopupSwipeBackLayout extends FrameLayout {
     public float transitionProgress;
 
     /* renamed from: org.telegram.ui.Components.PopupSwipeBackLayout$IntCallback */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface IntCallback {
         void run(int i);
     }
 
     /* renamed from: org.telegram.ui.Components.PopupSwipeBackLayout$OnSwipeBackProgressListener */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface OnSwipeBackProgressListener {
         void onSwipeBackProgress(PopupSwipeBackLayout popupSwipeBackLayout, float f, float f2);
     }

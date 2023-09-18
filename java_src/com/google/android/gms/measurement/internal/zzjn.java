@@ -17,7 +17,7 @@ import com.google.android.gms.common.stats.ConnectionTracker;
 import com.google.android.gms.common.util.VisibleForTesting;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 @VisibleForTesting
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzjn implements ServiceConnection, BaseGmsClient.BaseConnectionCallbacks, BaseGmsClient.BaseOnConnectionFailedListener {
     final /* synthetic */ zzjo zza;
     private volatile boolean zzb;

@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.Premium.MatrixParticlesDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class MatrixParticlesDrawable {
     MatrixTextParticle[][] matrixTextParticles;
     ArrayList<Particle>[] particles;
@@ -58,7 +58,7 @@ public class MatrixParticlesDrawable {
         }
         long currentTimeMillis = System.currentTimeMillis();
         ArrayList<Particle>[] arrayListArr = this.particles;
-        C52581 c52581 = null;
+        C51731 c51731 = null;
         int i4 = 0;
         if (arrayListArr == null || arrayListArr.length != width + 1) {
             this.particles = new ArrayList[width + 1];
@@ -88,8 +88,8 @@ public class MatrixParticlesDrawable {
                 Particle particle3 = arrayList.get(i9);
                 int i10 = 1;
                 if (currentTimeMillis - particle3.time > 50) {
-                    int i11 = particle3.f1828y + 1;
-                    particle3.f1828y = i11;
+                    int i11 = particle3.f1819y + 1;
+                    particle3.f1819y = i11;
                     particle3.time = currentTimeMillis;
                     if (i11 - particle3.len >= height) {
                         if (arrayList.size() == 1) {
@@ -99,15 +99,15 @@ public class MatrixParticlesDrawable {
                             i9--;
                         }
                     }
-                    if (particle3.f1828y > particle3.len && i9 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
+                    if (particle3.f1819y > particle3.len && i9 == arrayList.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(4)) == 0) {
                         Particle particle4 = new Particle();
                         particle4.reset(currentTimeMillis);
                         arrayList.add(particle4);
                     }
                 }
                 int i12 = i9;
-                int min = Math.min(particle3.f1828y, height + 1);
-                int max = Math.max(i4, particle3.f1828y - particle3.len);
+                int min = Math.min(particle3.f1819y, height + 1);
+                int max = Math.max(i4, particle3.f1819y - particle3.len);
                 while (max < min) {
                     int i13 = this.size;
                     float f = i13 * i8;
@@ -122,7 +122,7 @@ public class MatrixParticlesDrawable {
                         i2 = i10;
                         i3 = min;
                         particle = particle3;
-                        this.matrixTextParticles[i8][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle3.f1828y - max) / (particle3.len - i10))) * 0.8f) + 0.2f, 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
+                        this.matrixTextParticles[i8][max].draw(canvas, f, f2, currentTimeMillis, Utilities.clamp(((1.0f - ((particle3.f1819y - max) / (particle3.len - i10))) * 0.8f) + 0.2f, 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
                     }
                     max = i + 1;
                     min = i3;
@@ -130,43 +130,43 @@ public class MatrixParticlesDrawable {
                     particle3 = particle;
                 }
                 i9 = i12 + 1;
-                c52581 = null;
+                c51731 = null;
                 i4 = 0;
             }
             i8++;
-            c52581 = null;
+            c51731 = null;
             i4 = 0;
         }
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.MatrixParticlesDrawable$Particle */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private class Particle {
         int len;
         long time;
 
         /* renamed from: y */
-        int f1828y;
+        int f1819y;
 
         private Particle(MatrixParticlesDrawable matrixParticlesDrawable) {
             this.len = 5;
         }
 
         public void init(int i, long j) {
-            this.f1828y = Math.abs(Utilities.fastRandom.nextInt() % i);
+            this.f1819y = Math.abs(Utilities.fastRandom.nextInt() % i);
             this.time = j;
             this.len = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
         }
 
         public void reset(long j) {
-            this.f1828y = 0;
+            this.f1819y = 0;
             this.time = j;
             this.len = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
         }
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.MatrixParticlesDrawable$MatrixTextParticle */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     private class MatrixTextParticle {
         int index;
         int nextIndex;

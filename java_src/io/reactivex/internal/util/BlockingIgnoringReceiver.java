@@ -3,7 +3,7 @@ package io.reactivex.internal.util;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import java.util.concurrent.CountDownLatch;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class BlockingIgnoringReceiver extends CountDownLatch implements Consumer<Throwable>, Action {
     public Throwable error;
 

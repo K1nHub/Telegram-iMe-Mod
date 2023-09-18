@@ -54,7 +54,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RemoteSerializer {
     private final DatabaseId databaseId;
     private final String databaseName;
@@ -678,7 +678,7 @@ public final class RemoteSerializer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.RemoteSerializer$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class C10311 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$core$Filter$Operator;
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$firestore$local$QueryPurpose;

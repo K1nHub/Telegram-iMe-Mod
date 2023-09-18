@@ -1,4 +1,4 @@
 package org.telegram.messenger.camera;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DefaultCameraAPI {
 }

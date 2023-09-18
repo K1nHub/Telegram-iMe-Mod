@@ -7,8 +7,8 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkFragmentLanguagesBinding implements ViewBinding {
     private final FrameLayout rootView;
 
@@ -26,7 +26,7 @@ public final class ForkFragmentLanguagesBinding implements ViewBinding {
     }
 
     public static ForkFragmentLanguagesBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_languages, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_languages, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -34,7 +34,7 @@ public final class ForkFragmentLanguagesBinding implements ViewBinding {
     }
 
     public static ForkFragmentLanguagesBinding bind(View view) {
-        int i = C3558R.C3561id.recyclerLanguages;
+        int i = C3473R.C3476id.recyclerLanguages;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentLanguagesBinding((FrameLayout) view, recyclerView);

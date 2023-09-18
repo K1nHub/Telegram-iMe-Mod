@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CodedInputStream {
     private static volatile int defaultRecursionLimit = 100;
     int recursionDepth;
@@ -185,7 +185,7 @@ public abstract class CodedInputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ArrayDecoder extends CodedInputStream {
         private final byte[] buffer;
         private int bufferSizeAfterLimit;
@@ -657,7 +657,7 @@ public abstract class CodedInputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class UnsafeDirectNioDecoder extends CodedInputStream {
         private final long address;
         private final ByteBuffer buffer;
@@ -1199,7 +1199,7 @@ public abstract class CodedInputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class StreamDecoder extends CodedInputStream {
         private final byte[] buffer;
         private int bufferSize;
@@ -1212,7 +1212,7 @@ public abstract class CodedInputStream {
         private int totalBytesRetired;
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public interface RefillCallback {
             void onRefill();
         }
@@ -1890,7 +1890,7 @@ public abstract class CodedInputStream {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class IterableDirectByteBufferDecoder extends CodedInputStream {
         private int bufferSizeAfterCurrentLimit;
         private long currentAddress;

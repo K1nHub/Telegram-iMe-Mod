@@ -11,7 +11,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletNotificationsView$$State extends MvpViewState<WalletNotificationsView> implements WalletNotificationsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -207,7 +207,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnLoadedNotificationsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadedNotificationsCommand extends ViewCommand<WalletNotificationsView> {
         public final List<NotificationItem> notifications;
 
@@ -224,7 +224,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$UpdateNotificationAsReadCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UpdateNotificationAsReadCommand extends ViewCommand<WalletNotificationsView> {
         public final NotificationItem notification;
         public final int position;
@@ -243,7 +243,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletNotificationsView> {
         public final String text;
 
@@ -260,7 +260,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletNotificationsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -281,7 +281,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletNotificationsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -300,7 +300,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnNoInternetErrorStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnNoInternetErrorStateCommand extends ViewCommand<WalletNotificationsView> {
         OnNoInternetErrorStateCommand(WalletNotificationsView$$State walletNotificationsView$$State) {
             super("onNoInternetErrorState", AddToEndSingleStrategy.class);
@@ -314,7 +314,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnUnexpectedErrorStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnUnexpectedErrorStateCommand extends ViewCommand<WalletNotificationsView> {
         OnUnexpectedErrorStateCommand(WalletNotificationsView$$State walletNotificationsView$$State) {
             super("onUnexpectedErrorState", AddToEndSingleStrategy.class);
@@ -328,7 +328,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnLoadingStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadingStateCommand extends ViewCommand<WalletNotificationsView> {
         OnLoadingStateCommand(WalletNotificationsView$$State walletNotificationsView$$State) {
             super("onLoadingState", AddToEndSingleStrategy.class);
@@ -342,7 +342,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnEmptyStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnEmptyStateCommand extends ViewCommand<WalletNotificationsView> {
         OnEmptyStateCommand(WalletNotificationsView$$State walletNotificationsView$$State) {
             super("onEmptyState", AddToEndSingleStrategy.class);
@@ -356,7 +356,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<WalletNotificationsView> {
         public final List<NotificationItem> items;
 
@@ -373,7 +373,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<WalletNotificationsView> {
         OnLoadMoreCompleteCommand(WalletNotificationsView$$State walletNotificationsView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -387,7 +387,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<WalletNotificationsView> {
         OnLoadMoreErrorCommand(WalletNotificationsView$$State walletNotificationsView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -401,7 +401,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$ResetLoadMoreCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ResetLoadMoreCommand extends ViewCommand<WalletNotificationsView> {
         ResetLoadMoreCommand(WalletNotificationsView$$State walletNotificationsView$$State) {
             super("resetLoadMore", AddToEndSingleStrategy.class);
@@ -415,7 +415,7 @@ public class WalletNotificationsView$$State extends MvpViewState<WalletNotificat
 
     /* compiled from: WalletNotificationsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.notifications.WalletNotificationsView$$State$ShowRefreshingCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowRefreshingCommand extends ViewCommand<WalletNotificationsView> {
         public final boolean show;
 

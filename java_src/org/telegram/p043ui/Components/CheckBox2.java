@@ -13,7 +13,7 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CheckBoxBase;
 /* renamed from: org.telegram.ui.Components.CheckBox2 */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CheckBox2 extends View {
     private CheckBoxBase checkBoxBase;
     int currentIcon;

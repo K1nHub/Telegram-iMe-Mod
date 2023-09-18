@@ -4,7 +4,7 @@ import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.model.state.GlobalState;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GlobalStateItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GlobalStateItem extends NoChildNode {
     private final int itemType;
     private final GlobalState state;

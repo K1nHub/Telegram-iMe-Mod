@@ -10,7 +10,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentMethodTokenizationParametersCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PaymentMethodTokenizationParameters extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentMethodTokenizationParameters> CREATOR = new zzaf();
     @SafeParcelable.Field(m797id = 2)
@@ -19,7 +19,7 @@ public final class PaymentMethodTokenizationParameters extends AbstractSafeParce
     Bundle zzb;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class Builder {
         /* synthetic */ Builder(zzae zzaeVar) {
         }

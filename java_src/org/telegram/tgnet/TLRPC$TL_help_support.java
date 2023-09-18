@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_help_support extends TLObject {
     public static int constructor = 398898678;
     public String phone_number;

@@ -10,7 +10,7 @@ import net.lingala.zip4j.model.ZipModel;
 import net.lingala.zip4j.progress.ProgressMonitor;
 import net.lingala.zip4j.util.InternalZipConstants;
 import net.lingala.zip4j.util.Zip4jUtil;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Unzip {
     private ZipModel zipModel;
 

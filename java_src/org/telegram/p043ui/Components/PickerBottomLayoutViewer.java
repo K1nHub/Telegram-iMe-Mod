@@ -4,11 +4,11 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.PickerBottomLayoutViewer */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PickerBottomLayoutViewer extends FrameLayout {
     public TextView cancelButton;
     public TextView doneButton;
@@ -30,7 +30,7 @@ public class PickerBottomLayoutViewer extends FrameLayout {
         this.cancelButton.setGravity(17);
         this.cancelButton.setBackgroundDrawable(Theme.createSelectorDrawable(this.isDarkTheme ? -12763843 : 788529152, 0));
         this.cancelButton.setPadding(AndroidUtilities.m72dp(20), 0, AndroidUtilities.m72dp(20), 0);
-        this.cancelButton.setText(LocaleController.getString("Cancel", C3558R.string.Cancel).toUpperCase());
+        this.cancelButton.setText(LocaleController.getString("Cancel", C3473R.string.Cancel).toUpperCase());
         this.cancelButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         addView(this.cancelButton, LayoutHelper.createFrame(-2, -1, 51));
         TextView textView2 = new TextView(context);
@@ -40,7 +40,7 @@ public class PickerBottomLayoutViewer extends FrameLayout {
         this.doneButton.setGravity(17);
         this.doneButton.setBackgroundDrawable(Theme.createSelectorDrawable(this.isDarkTheme ? -12763843 : 788529152, 0));
         this.doneButton.setPadding(AndroidUtilities.m72dp(20), 0, AndroidUtilities.m72dp(20), 0);
-        this.doneButton.setText(LocaleController.getString("Send", C3558R.string.Send).toUpperCase());
+        this.doneButton.setText(LocaleController.getString("Send", C3473R.string.Send).toUpperCase());
         this.doneButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         addView(this.doneButton, LayoutHelper.createFrame(-2, -1, 53));
         TextView textView3 = new TextView(context);
@@ -49,7 +49,7 @@ public class PickerBottomLayoutViewer extends FrameLayout {
         this.doneButtonBadgeTextView.setTextSize(1, 13.0f);
         this.doneButtonBadgeTextView.setTextColor(-1);
         this.doneButtonBadgeTextView.setGravity(17);
-        this.doneButtonBadgeTextView.setBackgroundResource(this.isDarkTheme ? C3558R.C3560drawable.photobadge : C3558R.C3560drawable.bluecounter);
+        this.doneButtonBadgeTextView.setBackgroundResource(this.isDarkTheme ? C3473R.C3475drawable.photobadge : C3473R.C3475drawable.bluecounter);
         this.doneButtonBadgeTextView.setMinWidth(AndroidUtilities.m72dp(23));
         this.doneButtonBadgeTextView.setPadding(AndroidUtilities.m72dp(8), 0, AndroidUtilities.m72dp(8), AndroidUtilities.m72dp(1));
         addView(this.doneButtonBadgeTextView, LayoutHelper.createFrame(-2, 23, 53, 0, 0, 7, 0));

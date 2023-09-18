@@ -6,7 +6,7 @@ import com.iMe.storage.data.utils.crypto.NetworksHelper;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxAction;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoBoxActionMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CryptoBoxActionMappingKt {
     public static final CryptoBoxAction mapToDomain(CryptoBoxActionResponse cryptoBoxActionResponse) {
         Intrinsics.checkNotNullParameter(cryptoBoxActionResponse, "<this>");

@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.view.View;
 import android.widget.FrameLayout;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BadgeUtils {
     public static final boolean USE_COMPAT_PARENT;
 

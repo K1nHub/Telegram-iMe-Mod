@@ -7,7 +7,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PaintDoneView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PaintDoneView extends View {
     private Paint paint;
     private float progress;

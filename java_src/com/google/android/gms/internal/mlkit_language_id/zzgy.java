@@ -7,7 +7,7 @@ import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
 /* JADX INFO: Add missing generic type declarations: [V, K] */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzgy<K, V> implements Iterator<Map.Entry<K, V>>, p033j$.util.Iterator {
     private int zza;
     private boolean zzb;

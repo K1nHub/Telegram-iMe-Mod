@@ -8,14 +8,14 @@ import androidx.core.app.NotificationManagerCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.UserConfig;
 /* renamed from: org.telegram.ui.Stories.recorder.StoryUploadingService */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoryUploadingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private NotificationCompat.Builder builder;
     private int currentAccount = -1;
@@ -100,9 +100,9 @@ public class StoryUploadingService extends Service implements NotificationCenter
             builder.setSmallIcon(17301640);
             this.builder.setWhen(System.currentTimeMillis());
             this.builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-            this.builder.setContentTitle(LocaleController.getString("AppName", C3558R.string.AppName));
+            this.builder.setContentTitle(LocaleController.getString("AppName", C3473R.string.AppName));
             NotificationCompat.Builder builder2 = this.builder;
-            int i5 = C3558R.string.StoryUploading;
+            int i5 = C3473R.string.StoryUploading;
             builder2.setTicker(LocaleController.getString("StoryUploading", i5));
             this.builder.setContentText(LocaleController.getString("StoryUploading", i5));
         }

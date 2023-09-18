@@ -5,12 +5,12 @@ import android.graphics.Paint;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.DotDividerSpan */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class DotDividerSpan extends ReplacementSpan {
     int color;
 
     /* renamed from: p */
-    Paint f1764p = new Paint(1);
+    Paint f1755p = new Paint(1);
     private int size = 3;
     int topPadding;
 
@@ -22,9 +22,9 @@ public class DotDividerSpan extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
         if (this.color != paint.getColor()) {
-            this.f1764p.setColor(paint.getColor());
+            this.f1755p.setColor(paint.getColor());
         }
-        canvas.drawCircle(f + (AndroidUtilities.dpf2(this.size) / 2.0f), ((i5 - i3) / 2) + this.topPadding, AndroidUtilities.dpf2(3.0f) / 2.0f, this.f1764p);
+        canvas.drawCircle(f + (AndroidUtilities.dpf2(this.size) / 2.0f), ((i5 - i3) / 2) + this.topPadding, AndroidUtilities.dpf2(3.0f) / 2.0f, this.f1755p);
     }
 
     public void setTopPadding(int i) {

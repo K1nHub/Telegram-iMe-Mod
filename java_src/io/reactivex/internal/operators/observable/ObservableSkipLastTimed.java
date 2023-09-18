@@ -8,7 +8,7 @@ import io.reactivex.internal.disposables.DisposableHelper;
 import io.reactivex.internal.queue.SpscLinkedArrayQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableSkipLastTimed<T> extends AbstractObservableWithUpstream<T, T> {
     final int bufferSize;
     final boolean delayError;
@@ -30,7 +30,7 @@ public final class ObservableSkipLastTimed<T> extends AbstractObservableWithUpst
         this.source.subscribe(new SkipLastTimedObserver(observer, this.time, this.unit, this.scheduler, this.bufferSize, this.delayError));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class SkipLastTimedObserver<T> extends AtomicInteger implements Observer<T>, Disposable {
         volatile boolean cancelled;
         final boolean delayError;

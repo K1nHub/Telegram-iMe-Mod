@@ -2,7 +2,7 @@ package com.iMe.storage.domain.model.wallet.swap;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: SwapSlippage.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum SwapSlippage {
     PERCENT_0_5(0.5f),
     PERCENT_1(1.0f),
@@ -27,7 +27,7 @@ public enum SwapSlippage {
     }
 
     /* compiled from: SwapSlippage.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

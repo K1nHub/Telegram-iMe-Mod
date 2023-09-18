@@ -15,7 +15,7 @@ import java.util.List;
 /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
 @SafeParcelable.Class(creator = "ActivityTransitionResultCreator")
 @SafeParcelable.Reserved({1000})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActivityTransitionResult extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ActivityTransitionResult> CREATOR = new zzi();
     @SafeParcelable.Field(getter = "getTransitionEvents", m797id = 1)

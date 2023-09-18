@@ -1,5 +1,5 @@
 package com.google.firebase.firestore.core;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ListenSequence {
     private long previousSequenceNumber;
 

@@ -7,9 +7,9 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ForkFragmentWalletEthEnterPasswordBinding implements ViewBinding {
     private final LinearLayout rootView;
 
@@ -27,7 +27,7 @@ public final class ForkFragmentWalletEthEnterPasswordBinding implements ViewBind
     }
 
     public static ForkFragmentWalletEthEnterPasswordBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_wallet_eth_enter_password, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_eth_enter_password, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,13 +35,13 @@ public final class ForkFragmentWalletEthEnterPasswordBinding implements ViewBind
     }
 
     public static ForkFragmentWalletEthEnterPasswordBinding bind(View view) {
-        int i = C3558R.C3561id.edit_password;
+        int i = C3473R.C3476id.edit_password;
         EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) ViewBindings.findChildViewById(view, i);
         if (editTextBoldCursor != null) {
-            i = C3558R.C3561id.text_forgot_password;
+            i = C3473R.C3476id.text_forgot_password;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3558R.C3561id.text_title;
+                i = C3473R.C3476id.text_title;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
                     return new ForkFragmentWalletEthEnterPasswordBinding((LinearLayout) view, editTextBoldCursor, appCompatTextView, appCompatTextView2);

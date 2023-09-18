@@ -7,7 +7,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* compiled from: com.google.firebase:firebase-iid@@21.1.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class FirebaseIidExecutors {
     private static final Executor DIRECT_EXECUTOR = FirebaseIidExecutors$$Lambda$0.$instance;
 

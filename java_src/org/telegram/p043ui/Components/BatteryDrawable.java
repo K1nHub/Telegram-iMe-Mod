@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.BatteryDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BatteryDrawable extends Drawable {
     private Paint connectorPaint;
     private Paint fillPaint;

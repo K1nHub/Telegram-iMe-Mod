@@ -4,7 +4,7 @@ import java.io.Serializable;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Lazy.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class UnsafeLazyImpl<T> implements Lazy<T>, Serializable {
     private Object _value;
     private Function0<? extends T> initializer;

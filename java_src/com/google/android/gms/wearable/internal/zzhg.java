@@ -11,7 +11,7 @@ import java.util.List;
 @ShowFirstParty
 @SafeParcelable.Class(creator = "StorageInfoResponseCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhg extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzhg> CREATOR = new zzhh();
     @SafeParcelable.Field(m797id = 2)

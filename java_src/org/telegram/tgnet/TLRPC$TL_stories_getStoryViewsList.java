@@ -1,17 +1,17 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_stories_getStoryViewsList extends TLObject {
     public static int constructor = -111189596;
     public int flags;
 
     /* renamed from: id */
-    public int f1676id;
+    public int f1667id;
     public boolean just_contacts;
     public int limit;
     public String offset;
 
     /* renamed from: q */
-    public String f1677q;
+    public String f1668q;
     public boolean reactions_first;
 
     @Override // org.telegram.tgnet.TLObject
@@ -28,9 +28,9 @@ public class TLRPC$TL_stories_getStoryViewsList extends TLObject {
         this.flags = i2;
         abstractSerializedData.writeInt32(i2);
         if ((this.flags & 2) != 0) {
-            abstractSerializedData.writeString(this.f1677q);
+            abstractSerializedData.writeString(this.f1668q);
         }
-        abstractSerializedData.writeInt32(this.f1676id);
+        abstractSerializedData.writeInt32(this.f1667id);
         abstractSerializedData.writeString(this.offset);
         abstractSerializedData.writeInt32(this.limit);
     }

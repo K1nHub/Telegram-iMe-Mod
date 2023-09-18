@@ -4,7 +4,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import com.google.android.gms.wearable.PutDataRequest;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzhl {
     public static IntentFilter zza(String str) {
         IntentFilter intentFilter = new IntentFilter(str);

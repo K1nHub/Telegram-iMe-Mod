@@ -12,12 +12,12 @@ import com.google.firebase.encoders.json.JsonDataEncoderBuilder;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsReportJsonTransform {
     private static final DataEncoder CRASHLYTICS_REPORT_JSON_ENCODER = new JsonDataEncoderBuilder().configureWith(AutoCrashlyticsReportEncoder.CONFIG).ignoreNullValues(true).build();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ObjectParser<T> {
         T parse(JsonReader jsonReader) throws IOException;
     }

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_help_getRecentMeUrls extends TLObject {
     public static int constructor = 1036054804;
     public String referer;

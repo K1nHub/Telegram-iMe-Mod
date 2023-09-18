@@ -13,7 +13,7 @@ import moxy.InjectViewState;
 /* compiled from: BackupWordSwitcherPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcherPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BackupWordSwitcherPresenter extends BasePresenter<BackupWordSwitcherMvpView> {
     private String rightWord;
     private List<String> seed;
@@ -86,7 +86,7 @@ public final class BackupWordSwitcherPresenter extends BasePresenter<BackupWordS
 
     /* compiled from: BackupWordSwitcherPresenter.kt */
     /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcherPresenter$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

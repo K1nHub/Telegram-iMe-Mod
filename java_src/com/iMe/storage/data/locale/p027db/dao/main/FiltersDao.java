@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FiltersDao.kt */
 /* renamed from: com.iMe.storage.data.locale.db.dao.main.FiltersDao */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class FiltersDao implements BaseDao<FilterSettingsDb> {
     public abstract List<FilterSettingsDb> getFilterSettings(long j);
 

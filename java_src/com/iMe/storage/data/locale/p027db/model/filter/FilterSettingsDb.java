@@ -5,7 +5,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FilterSettingsDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.filter.FilterSettingsDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FilterSettingsDb {
     private final List<String> fabs;
     private final int filterId;

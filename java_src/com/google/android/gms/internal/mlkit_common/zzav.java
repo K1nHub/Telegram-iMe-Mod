@@ -11,7 +11,7 @@ public final class zzav {
 
     /* compiled from: com.google.mlkit:common@@17.0.0 */
     /* loaded from: classes.dex */
-    public static final class zza extends zzfq<zza, C7474zza> implements zzhd {
+    public static final class zza extends zzfq<zza, C7389zza> implements zzhd {
         private static final zza zzg;
         private static volatile zzhl<zza> zzh;
         private int zzc;
@@ -21,7 +21,7 @@ public final class zzav {
 
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* loaded from: classes.dex */
-        public static final class zzb extends zzfq<zzb, C7475zza> implements zzhd {
+        public static final class zzb extends zzfq<zzb, C7390zza> implements zzhd {
             private static final zzb zzh;
             private static volatile zzhl<zzb> zzi;
             private int zzc;
@@ -36,12 +36,12 @@ public final class zzav {
             /* compiled from: com.google.mlkit:common@@17.0.0 */
             /* renamed from: com.google.android.gms.internal.mlkit_common.zzav$zza$zzb$zza  reason: collision with other inner class name */
             /* loaded from: classes.dex */
-            public static final class C7475zza extends zzfq.zzb<zzb, C7475zza> implements zzhd {
-                private C7475zza() {
+            public static final class C7390zza extends zzfq.zzb<zzb, C7390zza> implements zzhd {
+                private C7390zza() {
                     super(zzb.zzh);
                 }
 
-                /* synthetic */ C7475zza(com.google.android.gms.internal.mlkit_common.zzau zzauVar) {
+                /* synthetic */ C7390zza(com.google.android.gms.internal.mlkit_common.zzau zzauVar) {
                     this();
                 }
             }
@@ -55,7 +55,7 @@ public final class zzav {
                     case 1:
                         return new zzb();
                     case 2:
-                        return new C7475zza(null);
+                        return new C7390zza(null);
                     case 3:
                         return zzfq.zza(zzh, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001ဌ\u0000\u0002ဇ\u0001\u0003ဉ\u0002\u0004ဉ\u0003", new Object[]{"zzc", "zzd", com.google.android.gms.internal.mlkit_common.zzbf.zzb(), "zze", "zzf", "zzg"});
                     case 4:
@@ -98,12 +98,12 @@ public final class zzav {
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* renamed from: com.google.android.gms.internal.mlkit_common.zzav$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C7474zza extends zzfq.zzb<zza, C7474zza> implements zzhd {
-            private C7474zza() {
+        public static final class C7389zza extends zzfq.zzb<zza, C7389zza> implements zzhd {
+            private C7389zza() {
                 super(zza.zzg);
             }
 
-            /* synthetic */ C7474zza(com.google.android.gms.internal.mlkit_common.zzau zzauVar) {
+            /* synthetic */ C7389zza(com.google.android.gms.internal.mlkit_common.zzau zzauVar) {
                 this();
             }
         }
@@ -117,7 +117,7 @@ public final class zzav {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C7474zza(null);
+                    return new C7389zza(null);
                 case 3:
                     return zzfq.zza(zzg, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဋ\u0001\u0003ဉ\u0002", new Object[]{"zzc", "zzd", "zze", "zzf"});
                 case 4:
@@ -536,7 +536,7 @@ public final class zzav {
         private zzaq zzp;
         private zzas zzq;
         private zzar zzr;
-        private C7476zzav zzs;
+        private C7391zzav zzs;
         private zzay zzt;
         private zzax zzu;
         private zzaz zzv;
@@ -2152,22 +2152,22 @@ public final class zzav {
     /* compiled from: com.google.mlkit:common@@17.0.0 */
     /* renamed from: com.google.android.gms.internal.mlkit_common.zzav$zzav  reason: collision with other inner class name */
     /* loaded from: classes.dex */
-    public static final class C7476zzav extends zzfq<C7476zzav, zza> implements zzhd {
-        private static final C7476zzav zzf;
-        private static volatile zzhl<C7476zzav> zzg;
+    public static final class C7391zzav extends zzfq<C7391zzav, zza> implements zzhd {
+        private static final C7391zzav zzf;
+        private static volatile zzhl<C7391zzav> zzg;
         private int zzc;
         private zzaw zzd;
         private int zze;
 
-        private C7476zzav() {
+        private C7391zzav() {
         }
 
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* renamed from: com.google.android.gms.internal.mlkit_common.zzav$zzav$zza */
         /* loaded from: classes.dex */
-        public static final class zza extends zzfq.zzb<C7476zzav, zza> implements zzhd {
+        public static final class zza extends zzfq.zzb<C7391zzav, zza> implements zzhd {
             private zza() {
-                super(C7476zzav.zzf);
+                super(C7391zzav.zzf);
             }
 
             /* synthetic */ zza(com.google.android.gms.internal.mlkit_common.zzau zzauVar) {
@@ -2179,10 +2179,10 @@ public final class zzav {
         /* JADX WARN: Type inference failed for: r2v14, types: [com.google.android.gms.internal.mlkit_common.zzhl<com.google.android.gms.internal.mlkit_common.zzav$zzav>, com.google.android.gms.internal.mlkit_common.zzfq$zza] */
         @Override // com.google.android.gms.internal.mlkit_common.zzfq
         public final Object zza(int i, Object obj, Object obj2) {
-            zzhl<C7476zzav> zzhlVar;
+            zzhl<C7391zzav> zzhlVar;
             switch (com.google.android.gms.internal.mlkit_common.zzau.zza[i - 1]) {
                 case 1:
-                    return new C7476zzav();
+                    return new C7391zzav();
                 case 2:
                     return new zza(null);
                 case 3:
@@ -2190,11 +2190,11 @@ public final class zzav {
                 case 4:
                     return zzf;
                 case 5:
-                    zzhl<C7476zzav> zzhlVar2 = zzg;
-                    zzhl<C7476zzav> zzhlVar3 = zzhlVar2;
+                    zzhl<C7391zzav> zzhlVar2 = zzg;
+                    zzhl<C7391zzav> zzhlVar3 = zzhlVar2;
                     if (zzhlVar2 == null) {
-                        synchronized (C7476zzav.class) {
-                            zzhl<C7476zzav> zzhlVar4 = zzg;
+                        synchronized (C7391zzav.class) {
+                            zzhl<C7391zzav> zzhlVar4 = zzg;
                             zzhlVar = zzhlVar4;
                             if (zzhlVar4 == null) {
                                 ?? zzaVar = new zzfq.zza(zzf);
@@ -2215,9 +2215,9 @@ public final class zzav {
         }
 
         static {
-            C7476zzav c7476zzav = new C7476zzav();
-            zzf = c7476zzav;
-            zzfq.zza(C7476zzav.class, c7476zzav);
+            C7391zzav c7391zzav = new C7391zzav();
+            zzf = c7391zzav;
+            zzfq.zza(C7391zzav.class, c7391zzav);
         }
     }
 
@@ -2546,16 +2546,16 @@ public final class zzav {
         private static final zzb zzg;
         private static volatile zzhl<zzb> zzh;
         private int zzc;
-        private C7477zzb zzd;
+        private C7392zzb zzd;
         private int zze;
         private zzab zzf;
 
         /* compiled from: com.google.mlkit:common@@17.0.0 */
         /* renamed from: com.google.android.gms.internal.mlkit_common.zzav$zzb$zzb  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C7477zzb extends zzfq<C7477zzb, zza> implements zzhd {
-            private static final C7477zzb zzi;
-            private static volatile zzhl<C7477zzb> zzj;
+        public static final class C7392zzb extends zzfq<C7392zzb, zza> implements zzhd {
+            private static final C7392zzb zzi;
+            private static volatile zzhl<C7392zzb> zzj;
             private int zzc;
             private int zzd;
             private boolean zze;
@@ -2563,15 +2563,15 @@ public final class zzav {
             private zzfy<zzy.zzb> zzg = zzfq.zzl();
             private zzam zzh;
 
-            private C7477zzb() {
+            private C7392zzb() {
             }
 
             /* compiled from: com.google.mlkit:common@@17.0.0 */
             /* renamed from: com.google.android.gms.internal.mlkit_common.zzav$zzb$zzb$zza */
             /* loaded from: classes.dex */
-            public static final class zza extends zzfq.zzb<C7477zzb, zza> implements zzhd {
+            public static final class zza extends zzfq.zzb<C7392zzb, zza> implements zzhd {
                 private zza() {
-                    super(C7477zzb.zzi);
+                    super(C7392zzb.zzi);
                 }
 
                 /* synthetic */ zza(com.google.android.gms.internal.mlkit_common.zzau zzauVar) {
@@ -2583,10 +2583,10 @@ public final class zzav {
             /* JADX WARN: Type inference failed for: r3v14, types: [com.google.android.gms.internal.mlkit_common.zzfq$zza, com.google.android.gms.internal.mlkit_common.zzhl<com.google.android.gms.internal.mlkit_common.zzav$zzb$zzb>] */
             @Override // com.google.android.gms.internal.mlkit_common.zzfq
             public final Object zza(int i, Object obj, Object obj2) {
-                zzhl<C7477zzb> zzhlVar;
+                zzhl<C7392zzb> zzhlVar;
                 switch (com.google.android.gms.internal.mlkit_common.zzau.zza[i - 1]) {
                     case 1:
-                        return new C7477zzb();
+                        return new C7392zzb();
                     case 2:
                         return new zza(null);
                     case 3:
@@ -2594,11 +2594,11 @@ public final class zzav {
                     case 4:
                         return zzi;
                     case 5:
-                        zzhl<C7477zzb> zzhlVar2 = zzj;
-                        zzhl<C7477zzb> zzhlVar3 = zzhlVar2;
+                        zzhl<C7392zzb> zzhlVar2 = zzj;
+                        zzhl<C7392zzb> zzhlVar3 = zzhlVar2;
                         if (zzhlVar2 == null) {
-                            synchronized (C7477zzb.class) {
-                                zzhl<C7477zzb> zzhlVar4 = zzj;
+                            synchronized (C7392zzb.class) {
+                                zzhl<C7392zzb> zzhlVar4 = zzj;
                                 zzhlVar = zzhlVar4;
                                 if (zzhlVar4 == null) {
                                     ?? zzaVar = new zzfq.zza(zzi);
@@ -2619,9 +2619,9 @@ public final class zzav {
             }
 
             static {
-                C7477zzb c7477zzb = new C7477zzb();
-                zzi = c7477zzb;
-                zzfq.zza(C7477zzb.class, c7477zzb);
+                C7392zzb c7392zzb = new C7392zzb();
+                zzi = c7392zzb;
+                zzfq.zza(C7392zzb.class, c7392zzb);
             }
         }
 
@@ -5682,14 +5682,14 @@ public final class zzav {
             /* compiled from: com.google.mlkit:common@@17.0.0 */
             /* renamed from: com.google.android.gms.internal.mlkit_common.zzav$zzy$zzb$zzb  reason: collision with other inner class name */
             /* loaded from: classes.dex */
-            public enum EnumC7478zzb implements zzfv {
+            public enum EnumC7393zzb implements zzfv {
                 UNKNOWN_DATA_TYPE(0),
                 TYPE_FLOAT32(1),
                 TYPE_INT32(2),
                 TYPE_BYTE(3),
                 TYPE_LONG(4);
                 
-                private static final zzfu<EnumC7478zzb> zzf = new com.google.android.gms.internal.mlkit_common.zzbb();
+                private static final zzfu<EnumC7393zzb> zzf = new com.google.android.gms.internal.mlkit_common.zzbb();
                 private final int zzg;
 
                 @Override // com.google.android.gms.internal.mlkit_common.zzfv
@@ -5703,10 +5703,10 @@ public final class zzav {
 
                 @Override // java.lang.Enum
                 public final String toString() {
-                    return "<" + EnumC7478zzb.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzg + " name=" + name() + '>';
+                    return "<" + EnumC7393zzb.class.getName() + '@' + Integer.toHexString(System.identityHashCode(this)) + " number=" + this.zzg + " name=" + name() + '>';
                 }
 
-                EnumC7478zzb(int i) {
+                EnumC7393zzb(int i) {
                     this.zzg = i;
                 }
             }
@@ -5737,7 +5737,7 @@ public final class zzav {
                     case 2:
                         return new zza(null);
                     case 3:
-                        return zzfq.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001ဌ\u0000\u0002\u0016", new Object[]{"zzc", "zzd", EnumC7478zzb.zzb(), "zze"});
+                        return zzfq.zza(zzf, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0001\u0000\u0001ဌ\u0000\u0002\u0016", new Object[]{"zzc", "zzd", EnumC7393zzb.zzb(), "zze"});
                     case 4:
                         return zzf;
                     case 5:

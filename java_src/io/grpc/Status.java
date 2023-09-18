@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Status {
     static final Metadata.Key<Status> CODE_KEY;
     public static final Status DEADLINE_EXCEEDED;
@@ -29,11 +29,11 @@ public final class Status {
     private static final List<Status> STATUS_LIST = buildStatusList();
 
     /* renamed from: OK */
-    public static final Status f526OK = Code.OK.toStatus();
+    public static final Status f517OK = Code.OK.toStatus();
     public static final Status CANCELLED = Code.CANCELLED.toStatus();
     public static final Status UNKNOWN = Code.UNKNOWN.toStatus();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum Code {
         OK(0),
         CANCELLED(1),
@@ -122,7 +122,7 @@ public final class Status {
     /* JADX INFO: Access modifiers changed from: private */
     public static Status fromCodeValue(byte[] bArr) {
         if (bArr.length == 1 && bArr[0] == 48) {
-            return f526OK;
+            return f517OK;
         }
         return fromCodeValueSlow(bArr);
     }
@@ -229,7 +229,7 @@ public final class Status {
         return add.add("cause", str).toString();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class StatusCodeMarshaller implements Metadata.TrustedAsciiMarshaller<Status> {
         private StatusCodeMarshaller() {
         }
@@ -246,7 +246,7 @@ public final class Status {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     private static final class StatusMessageMarshaller implements Metadata.TrustedAsciiMarshaller<String> {
         private static final byte[] HEX = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67, 68, 69, 70};
 

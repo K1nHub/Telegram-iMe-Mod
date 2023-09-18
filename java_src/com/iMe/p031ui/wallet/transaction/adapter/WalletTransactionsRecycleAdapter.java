@@ -19,7 +19,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransactionsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.adapter.WalletTransactionsRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletTransactionsRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final GlobalStateProvider globalStateProvider;
     private final HeaderProvider headerProvider;

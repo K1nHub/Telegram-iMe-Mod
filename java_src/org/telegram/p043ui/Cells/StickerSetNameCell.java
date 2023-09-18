@@ -23,7 +23,7 @@ import org.telegram.p043ui.Components.ColorSpanUnderline;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Cells.StickerSetNameCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class StickerSetNameCell extends FrameLayout {
     private ImageView buttonView;
     private boolean empty;

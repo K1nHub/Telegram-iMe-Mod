@@ -12,7 +12,7 @@ import kotlinx.coroutines.channels.Channel;
 /* JADX INFO: Add missing generic type declarations: [SIDE_EFFECT] */
 /* compiled from: RealContainer.kt */
 @DebugMetadata(m102c = "org.orbitmvi.orbit.internal.RealContainer$pluginContext$1", m101f = "RealContainer.kt", m100l = {69}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class RealContainer$pluginContext$1<SIDE_EFFECT> extends SuspendLambda implements Function2<SIDE_EFFECT, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;
     int label;

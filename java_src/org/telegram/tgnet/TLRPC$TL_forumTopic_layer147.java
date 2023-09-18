@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_forumTopic_layer147 extends TLRPC$TL_forumTopic {
     public static int constructor = 1495324380;
 
@@ -7,10 +7,10 @@ public class TLRPC$TL_forumTopic_layer147 extends TLRPC$TL_forumTopic {
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
-        this.f1590my = (readInt32 & 2) != 0;
+        this.f1581my = (readInt32 & 2) != 0;
         this.closed = (readInt32 & 4) != 0;
         this.pinned = (readInt32 & 8) != 0;
-        this.f1589id = abstractSerializedData.readInt32(z);
+        this.f1580id = abstractSerializedData.readInt32(z);
         this.date = abstractSerializedData.readInt32(z);
         this.title = abstractSerializedData.readString(z);
         this.icon_color = abstractSerializedData.readInt32(z);
@@ -30,14 +30,14 @@ public class TLRPC$TL_forumTopic_layer147 extends TLRPC$TL_forumTopic {
     @Override // org.telegram.tgnet.TLRPC$TL_forumTopic, org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        int i = this.f1590my ? this.flags | 2 : this.flags & (-3);
+        int i = this.f1581my ? this.flags | 2 : this.flags & (-3);
         this.flags = i;
         int i2 = this.closed ? i | 4 : i & (-5);
         this.flags = i2;
         int i3 = this.pinned ? i2 | 8 : i2 & (-9);
         this.flags = i3;
         abstractSerializedData.writeInt32(i3);
-        abstractSerializedData.writeInt32(this.f1589id);
+        abstractSerializedData.writeInt32(this.f1580id);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeString(this.title);
         abstractSerializedData.writeInt32(this.icon_color);

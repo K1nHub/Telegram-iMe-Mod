@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CustomTokenProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CustomTokenProvider */
@@ -37,7 +37,7 @@ public final class CustomTokenProvider extends BaseNodeProvider<TokenItem> {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.itemViewType = IdFabric$ViewTypes.TOKEN;
-        this.layoutId = C3558R.layout.fork_recycle_item_custom_token;
+        this.layoutId = C3473R.layout.fork_recycle_item_custom_token;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.CustomTokenProvider$networkIconCornerSize$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -47,7 +47,7 @@ public final class CustomTokenProvider extends BaseNodeProvider<TokenItem> {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(ResourceManager.this.getDimens(C3558R.dimen.icon_size_small_upper) / 2);
+                return Float.valueOf(ResourceManager.this.getDimens(C3473R.dimen.icon_size_small_upper) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -72,13 +72,13 @@ public final class CustomTokenProvider extends BaseNodeProvider<TokenItem> {
     public void convert(BaseViewHolder helper, TokenItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder rippleBackground = BaseQuickAdapterExtKt.setRippleBackground(helper, C3558R.C3561id.constraint_root, true);
-        int i = C3558R.C3561id.text_name;
+        BaseViewHolder rippleBackground = BaseQuickAdapterExtKt.setRippleBackground(helper, C3473R.C3476id.constraint_root, true);
+        int i = C3473R.C3476id.text_name;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(rippleBackground, i, Theme.key_windowBackgroundWhiteBlackText);
-        int i2 = C3558R.C3561id.text_address;
-        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_windowBackgroundWhiteGrayText), C3558R.C3561id.image_token_icon, item.getAvatarUrl(), null, false, 12, null);
-        int i3 = C3558R.C3561id.image_network_icon;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage$default(loadImage$default, i3, NetworksHelper.getNetworkById(item.getNetworkId()).getLogoUrl(), null, false, 12, null).setText(i, item.getName()).setText(i2, StringExtKt.shortened$default(item.getAddress(), 0, 1, null)).setText(C3558R.C3561id.text_ticker, item.getTicker()), i3, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CustomTokenProvider$convert$1
+        int i2 = C3473R.C3476id.text_address;
+        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_windowBackgroundWhiteGrayText), C3473R.C3476id.image_token_icon, item.getAvatarUrl(), null, false, 12, null);
+        int i3 = C3473R.C3476id.image_network_icon;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage$default(loadImage$default, i3, NetworksHelper.getNetworkById(item.getNetworkId()).getLogoUrl(), null, false, 12, null).setText(i, item.getName()).setText(i2, StringExtKt.shortened$default(item.getAddress(), 0, 1, null)).setText(C3473R.C3476id.text_ticker, item.getTicker()), i3, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CustomTokenProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -108,6 +108,6 @@ public final class CustomTokenProvider extends BaseNodeProvider<TokenItem> {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        helper.setText(C3558R.C3561id.text_name, item.getName()).setText(C3558R.C3561id.text_ticker, item.getTicker());
+        helper.setText(C3473R.C3476id.text_name, item.getName()).setText(C3473R.C3476id.text_ticker, item.getTicker());
     }
 }

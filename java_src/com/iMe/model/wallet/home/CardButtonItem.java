@@ -2,7 +2,7 @@ package com.iMe.model.wallet.home;
 
 import com.iMe.model.common.NoChildNode;
 /* compiled from: CardButtonItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CardButtonItem extends NoChildNode {
     private final int icon;
 

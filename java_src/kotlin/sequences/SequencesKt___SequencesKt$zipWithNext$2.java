@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: _Sequences.kt */
 @DebugMetadata(m102c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2", m101f = "_Sequences.kt", m100l = {2855}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SequencesKt___SequencesKt$zipWithNext$2<R> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Sequence<T> $this_zipWithNext;
     final /* synthetic */ Function2<T, T, R> $transform;

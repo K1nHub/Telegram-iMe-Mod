@@ -7,7 +7,7 @@ import java.util.zip.CRC32;
 import java.util.zip.Inflater;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GzipSource.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class GzipSource implements Source {
     private final CRC32 crc;
     private final Inflater inflater;

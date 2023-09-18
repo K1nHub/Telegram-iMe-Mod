@@ -4,7 +4,7 @@ import kotlin.internal.jdk7.JDK7PlatformImplementations;
 import kotlin.internal.jdk8.JDK8PlatformImplementations;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlatformImplementations.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class PlatformImplementationsKt {
     public static final PlatformImplementations IMPLEMENTATIONS;
 
@@ -25,16 +25,16 @@ public final class PlatformImplementationsKt {
                                 throw new NullPointerException("null cannot be cast to non-null type kotlin.internal.PlatformImplementations");
                             }
                             platformImplementations = (PlatformImplementations) newInstance2;
-                        } catch (ClassNotFoundException unused2) {
-                            platformImplementations = new PlatformImplementations();
+                        } catch (ClassCastException e) {
+                            ClassLoader classLoader = newInstance2.getClass().getClassLoader();
+                            ClassLoader classLoader2 = PlatformImplementations.class.getClassLoader();
+                            if (Intrinsics.areEqual(classLoader, classLoader2)) {
+                                throw e;
+                            }
+                            throw new ClassNotFoundException("Instance class was loaded from a different classloader: " + classLoader + ", base type classloader: " + classLoader2, e);
                         }
-                    } catch (ClassCastException e) {
-                        ClassLoader classLoader = newInstance2.getClass().getClassLoader();
-                        ClassLoader classLoader2 = PlatformImplementations.class.getClassLoader();
-                        if (Intrinsics.areEqual(classLoader, classLoader2)) {
-                            throw e;
-                        }
-                        throw new ClassNotFoundException("Instance class was loaded from a different classloader: " + classLoader + ", base type classloader: " + classLoader2, e);
+                    } catch (ClassNotFoundException unused2) {
+                        platformImplementations = new PlatformImplementations();
                     }
                 }
             } catch (ClassCastException e2) {

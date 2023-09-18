@@ -1,7 +1,7 @@
 package org.bouncycastle.asn1;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DERBitString extends ASN1BitString {
     public DERBitString(ASN1Encodable aSN1Encodable) throws IOException {
         super(aSN1Encodable.toASN1Primitive().getEncoded("DER"), 0);

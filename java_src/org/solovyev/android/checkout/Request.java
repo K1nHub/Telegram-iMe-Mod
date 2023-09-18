@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.android.vending.billing.IInAppBillingService;
 import java.util.concurrent.atomic.AtomicInteger;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class Request<R> {
     private static final AtomicInteger sCounter = new AtomicInteger(0);
     protected final int mApiVersion;

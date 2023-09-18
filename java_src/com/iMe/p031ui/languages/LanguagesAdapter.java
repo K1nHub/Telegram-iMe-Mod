@@ -15,14 +15,14 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: LanguagesAdapter.kt */
 /* renamed from: com.iMe.ui.languages.LanguagesAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LanguagesAdapter extends RecyclerListView.ViewBindingSelectionAdapter<ForkCountryItemListBinding> {
     private List<LanguageViewModel> items;
     private final OnLanguageClickListener onCountryClickListener;
 
     /* compiled from: LanguagesAdapter.kt */
     /* renamed from: com.iMe.ui.languages.LanguagesAdapter$OnLanguageClickListener */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnLanguageClickListener {
         void onLanguageClick(LanguageViewModel languageViewModel);
     }

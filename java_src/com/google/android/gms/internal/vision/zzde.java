@@ -4,7 +4,7 @@ import java.util.Objects;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzde {
     public static void zza(boolean z, @NullableDecl Object obj) {
         if (!z) {

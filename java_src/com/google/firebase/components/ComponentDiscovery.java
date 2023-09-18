@@ -12,12 +12,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ComponentDiscovery<T> {
     private final T context;
     private final RegistrarNameRetriever<T> retriever;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface RegistrarNameRetriever<T> {
         List<String> retrieve(T t);
     }
@@ -84,7 +84,7 @@ public final class ComponentDiscovery<T> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class MetadataRegistrarNameRetriever implements RegistrarNameRetriever<Context> {
         private final Class<? extends Service> discoveryService;
 

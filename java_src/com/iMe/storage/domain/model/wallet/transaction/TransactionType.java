@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.wallet.transaction;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum TransactionType {
     REGISTRATION,
     REFERRAL_BONUS,
@@ -21,7 +21,7 @@ public enum TransactionType {
     public static final Companion Companion = new Companion(null);
 
     /* compiled from: TransactionType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -4,7 +4,7 @@ import com.google.android.gms.common.util.VisibleForTesting;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
 @VisibleForTesting
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzk {
     public final zzx zza;
     public final List zzb;

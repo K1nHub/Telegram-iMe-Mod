@@ -8,15 +8,15 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 /* compiled from: DrawStatusType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum DrawStatusType {
-    UNREAD_COUNT_CHATS(C3558R.string.recent_chats_new_messages),
-    MENTIONS(C3558R.string.recent_chats_mentions),
-    REACTION(C3558R.string.recent_chats_reactions),
-    ONLINE_USER(C3558R.string.recent_chats_online_status),
-    LIVE_VIDEO(C3558R.string.recent_chats_live);
+    UNREAD_COUNT_CHATS(C3473R.string.recent_chats_new_messages),
+    MENTIONS(C3473R.string.recent_chats_mentions),
+    REACTION(C3473R.string.recent_chats_reactions),
+    ONLINE_USER(C3473R.string.recent_chats_online_status),
+    LIVE_VIDEO(C3473R.string.recent_chats_live);
     
     public static final Companion Companion = new Companion(null);
     private final int nameResId;
@@ -38,7 +38,7 @@ public enum DrawStatusType {
     }
 
     /* compiled from: DrawStatusType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CreateCryptoBoxView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface CreateCryptoBoxView extends BaseView, SwitchNetworkView {
     void openAddAdminScreen(long j, TLRPC$Chat tLRPC$Chat);
 

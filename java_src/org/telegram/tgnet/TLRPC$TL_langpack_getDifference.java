@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_langpack_getDifference extends TLObject {
     public static int constructor = -845657435;
     public int from_version;

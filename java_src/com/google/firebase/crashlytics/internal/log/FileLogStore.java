@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.log;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 interface FileLogStore {
     void closeLogFile();
 

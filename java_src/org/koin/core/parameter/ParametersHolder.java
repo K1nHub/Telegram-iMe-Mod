@@ -10,7 +10,7 @@ import kotlin.reflect.KClass;
 import org.koin.core.error.NoParameterFoundException;
 import org.koin.ext.KClassExtKt;
 /* compiled from: ParametersHolder.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ParametersHolder {
     private final List<Object> _values;
 
@@ -62,7 +62,7 @@ public class ParametersHolder {
     }
 
     /* compiled from: ParametersHolder.kt */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

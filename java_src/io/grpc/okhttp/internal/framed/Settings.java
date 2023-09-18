@@ -1,5 +1,5 @@
 package io.grpc.okhttp.internal.framed;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Settings {
     private int persistValue;
     private int persisted;

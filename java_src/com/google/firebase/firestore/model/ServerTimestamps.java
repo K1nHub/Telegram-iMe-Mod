@@ -3,7 +3,7 @@ package com.google.firebase.firestore.model;
 import com.google.firebase.Timestamp;
 import com.google.firestore.p021v1.MapValue;
 import com.google.firestore.p021v1.Value;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ServerTimestamps {
     public static boolean isServerTimestamp(Value value) {
         Value fieldsOrDefault = value != null ? value.getMapValue().getFieldsOrDefault("__type__", null) : null;

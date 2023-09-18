@@ -4,6 +4,8 @@ import com.iMe.model.wallet.select.SelectableTokenItem;
 import com.iMe.p031ui.base.mvp.LoadMoreView;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
+import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
 import java.util.List;
@@ -12,7 +14,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectTokenView> implements WalletSelectTokenView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -40,6 +42,19 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
             view.renderItems(list);
         }
         this.viewCommands.afterApply(renderItemsCommand);
+    }
+
+    @Override // com.iMe.p031ui.wallet.swap.token.WalletSelectTokenView
+    public void onTokenSelected(TokenDetailed tokenDetailed, FiatValue fiatValue) {
+        OnTokenSelectedCommand onTokenSelectedCommand = new OnTokenSelectedCommand(this, tokenDetailed, fiatValue);
+        this.viewCommands.beforeApply(onTokenSelectedCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.onTokenSelected(tokenDetailed, fiatValue);
+        }
+        this.viewCommands.afterApply(onTokenSelectedCommand);
     }
 
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
@@ -174,7 +189,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$RenderItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class RenderItemsCommand extends ViewCommand<WalletSelectTokenView> {
         public final List<SelectableTokenItem> tokens;
 
@@ -190,8 +205,27 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
     }
 
     /* compiled from: WalletSelectTokenView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnTokenSelectedCommand */
+    /* loaded from: classes6.dex */
+    public class OnTokenSelectedCommand extends ViewCommand<WalletSelectTokenView> {
+        public final FiatValue rate;
+        public final TokenDetailed token;
+
+        OnTokenSelectedCommand(WalletSelectTokenView$$State walletSelectTokenView$$State, TokenDetailed tokenDetailed, FiatValue fiatValue) {
+            super("onTokenSelected", OneExecutionStateStrategy.class);
+            this.token = tokenDetailed;
+            this.rate = fiatValue;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletSelectTokenView walletSelectTokenView) {
+            walletSelectTokenView.onTokenSelected(this.token, this.rate);
+        }
+    }
+
+    /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$ShowToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowToastCommand extends ViewCommand<WalletSelectTokenView> {
         public final String text;
 
@@ -208,7 +242,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletSelectTokenView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -229,7 +263,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$ShowErrorToastCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletSelectTokenView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -248,7 +282,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnNoInternetErrorStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnNoInternetErrorStateCommand extends ViewCommand<WalletSelectTokenView> {
         OnNoInternetErrorStateCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
             super("onNoInternetErrorState", AddToEndSingleStrategy.class);
@@ -262,7 +296,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnUnexpectedErrorStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnUnexpectedErrorStateCommand extends ViewCommand<WalletSelectTokenView> {
         OnUnexpectedErrorStateCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
             super("onUnexpectedErrorState", AddToEndSingleStrategy.class);
@@ -276,7 +310,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadingStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadingStateCommand extends ViewCommand<WalletSelectTokenView> {
         OnLoadingStateCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
             super("onLoadingState", AddToEndSingleStrategy.class);
@@ -290,7 +324,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnEmptyStateCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnEmptyStateCommand extends ViewCommand<WalletSelectTokenView> {
         OnEmptyStateCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
             super("onEmptyState", AddToEndSingleStrategy.class);
@@ -304,7 +338,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<WalletSelectTokenView> {
         public final List<SelectableTokenItem> items;
 
@@ -321,7 +355,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<WalletSelectTokenView> {
         OnLoadMoreCompleteCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -335,7 +369,7 @@ public class WalletSelectTokenView$$State extends MvpViewState<WalletSelectToken
 
     /* compiled from: WalletSelectTokenView$$State.java */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<WalletSelectTokenView> {
         OnLoadMoreErrorCommand(WalletSelectTokenView$$State walletSelectTokenView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);

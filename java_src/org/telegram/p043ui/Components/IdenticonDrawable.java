@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC$EncryptedChat;
 /* renamed from: org.telegram.ui.Components.IdenticonDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class IdenticonDrawable extends Drawable {
     private byte[] data;
     private Paint paint = new Paint();

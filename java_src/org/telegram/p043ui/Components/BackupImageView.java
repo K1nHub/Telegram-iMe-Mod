@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SecureDocument;
@@ -22,7 +22,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.BackupImageView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BackupImageView extends View {
     public AnimatedEmojiDrawable animatedEmojiDrawable;
     boolean attached;
@@ -44,7 +44,7 @@ public class BackupImageView extends View {
     }
 
     public void setUser(TLRPC$User tLRPC$User) {
-        this.imageReceiver.setRoundRadius(getContext().getResources().getDimensionPixelSize(C3558R.dimen.telegram_avatar_size_medium) / 2);
+        this.imageReceiver.setRoundRadius(getContext().getResources().getDimensionPixelSize(C3473R.dimen.telegram_avatar_size_medium) / 2);
         AvatarDrawable avatarDrawable = new AvatarDrawable(tLRPC$User);
         avatarDrawable.setColor(Theme.getColor(Theme.key_avatar_backgroundInProfileBlue));
         setForUserOrChat(tLRPC$User, avatarDrawable);

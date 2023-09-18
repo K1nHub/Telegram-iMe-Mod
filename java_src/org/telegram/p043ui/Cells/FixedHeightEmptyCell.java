@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Cells.FixedHeightEmptyCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class FixedHeightEmptyCell extends View {
     int heightInDp;
 

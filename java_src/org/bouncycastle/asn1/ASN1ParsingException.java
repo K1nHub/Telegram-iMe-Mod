@@ -1,5 +1,5 @@
 package org.bouncycastle.asn1;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class ASN1ParsingException extends IllegalStateException {
     private Throwable cause;
 

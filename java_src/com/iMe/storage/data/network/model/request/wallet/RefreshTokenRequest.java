@@ -3,7 +3,7 @@ package com.iMe.storage.data.network.model.request.wallet;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RefreshTokenRequest.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RefreshTokenRequest {
     private String refreshToken;
     private final String version;

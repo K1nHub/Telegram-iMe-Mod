@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 42
+    .line 48
     check-cast p1, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$2;->invoke(Landroid/widget/FrameLayout;)V
@@ -66,28 +66,28 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 44
+    .line 50
     iget-object v0, p0, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider$convert$2;->this$0:Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;
 
     invoke-static {v0}, Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;->access$getButtonCornerRadius(Lcom/iMe/ui/adapter/provider/CryptoBoxesHeaderProvider;)I
 
     move-result v0
 
-    .line 45
+    .line 51
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    .line 46
+    .line 52
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
-    .line 43
+    .line 49
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 /* compiled from: TaskLogger.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TaskLoggerKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void log(Task task, TaskQueue taskQueue, String str) {

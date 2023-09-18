@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayoutPhoto */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SizeNotifierFrameLayoutPhoto extends FrameLayout {
     private Activity activity;
     private SizeNotifierFrameLayoutPhotoDelegate delegate;
@@ -17,7 +17,7 @@ public class SizeNotifierFrameLayoutPhoto extends FrameLayout {
     private boolean withoutWindow;
 
     /* renamed from: org.telegram.ui.Components.SizeNotifierFrameLayoutPhoto$SizeNotifierFrameLayoutPhotoDelegate */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public interface SizeNotifierFrameLayoutPhotoDelegate {
         void onSizeChanged(int i, boolean z);
     }

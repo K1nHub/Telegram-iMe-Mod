@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.internal.BaseImplementation;
 import java.lang.ref.WeakReference;
 import java.util.Map;
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzfd extends zzhn {
     private final WeakReference zza;
     private final WeakReference zzb;

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.wearable;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-wearable@@18.0.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzak {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int zza(byte[] bArr, int i, zzaj zzajVar) throws zzcf {

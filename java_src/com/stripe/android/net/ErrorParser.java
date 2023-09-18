@@ -3,7 +3,7 @@ package com.stripe.android.net;
 import com.stripe.android.util.StripeJsonUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class ErrorParser {
     private static final String FIELD_CHARGE = "charge";
     private static final String FIELD_CODE = "code";
@@ -34,7 +34,7 @@ class ErrorParser {
         return stripeError;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static class StripeError {
         public String charge;
         public String code;

@@ -60,7 +60,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p042mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -71,7 +71,7 @@ import org.telegram.p043ui.PasscodeActivity;
 import timber.log.Timber;
 /* compiled from: EnterWalletPinFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class EnterWalletPinFragment extends WalletAuthBaseFragment implements EnterWalletPinView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(EnterWalletPinFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/enter/pin/EnterWalletPinPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(EnterWalletPinFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletEthEnterPinBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -82,7 +82,7 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
 
     /* compiled from: EnterWalletPinFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$WhenMappings */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -386,7 +386,7 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
         setupActionBar$lambda$6.setLayoutParams(layoutParams2);
-        setupActionBar$lambda$6.setImageResource(C3558R.C3560drawable.ic_ab_back);
+        setupActionBar$lambda$6.setImageResource(C3473R.C3475drawable.ic_ab_back);
         ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$6);
         ImageViewExtKt.setImageColor(setupActionBar$lambda$6, Theme.getColor(Theme.key_actionBarDefaultTitle));
         ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$6, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupActionBar$1$2
@@ -442,7 +442,7 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
     private final void setupListeners() {
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -450,12 +450,12 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1455invoke(cryptoEvent);
+                m1446invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1455invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1446invoke(DomainRxEvents.CryptoEvent it) {
                 RxEventBus rxEventBus2;
                 EnterPinCodeScreenType enterPinCodeScreenType;
                 Function2 function2;
@@ -499,13 +499,13 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         autoDispose(subscribe);
     }
 
     /* compiled from: EnterWalletPinFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

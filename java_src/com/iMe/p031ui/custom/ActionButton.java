@@ -16,7 +16,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LoadingDrawable;
 /* compiled from: ActionButton.kt */
 /* renamed from: com.iMe.ui.custom.ActionButton */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ActionButton extends AppCompatTextView {
     private final Lazy buttonHeight$delegate;
     private final Lazy cornerRadius$delegate;
@@ -156,7 +156,7 @@ public class ActionButton extends AppCompatTextView {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateButtonHeight() {
-        return AndroidUtilities.m72dp(42);
+        return AndroidUtilities.m72dp(40);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

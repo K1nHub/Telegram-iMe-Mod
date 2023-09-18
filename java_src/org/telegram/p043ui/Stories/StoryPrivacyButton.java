@@ -15,7 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.ButtonBounce;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
@@ -23,7 +23,7 @@ import org.telegram.p043ui.Stories.StoriesController;
 import org.telegram.p043ui.Stories.recorder.StoryPrivacyBottomSheet;
 import org.telegram.tgnet.TLRPC$StoryItem;
 /* renamed from: org.telegram.ui.Stories.StoryPrivacyButton */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class StoryPrivacyButton extends View {
     private final Paint arrowPaint;
     private final Path arrowPath;
@@ -63,19 +63,19 @@ public class StoryPrivacyButton extends View {
         if (tLRPC$StoryItem == null) {
             this.draw = false;
         } else if (tLRPC$StoryItem.close_friends) {
-            setIcon(C3558R.C3560drawable.msg_stories_closefriends, 15.0f);
+            setIcon(C3473R.C3475drawable.msg_stories_closefriends, 15.0f);
             setupGradient(-7808710, -13781445);
             this.crossfadeT.set(z2, true);
         } else if (tLRPC$StoryItem.contacts) {
-            setIcon(C3558R.C3560drawable.msg_folders_private, 17.33f);
+            setIcon(C3473R.C3475drawable.msg_folders_private, 17.33f);
             setupGradient(-3905294, -6923014);
             this.crossfadeT.set(z2, true);
         } else if (tLRPC$StoryItem.selected_contacts) {
-            setIcon(C3558R.C3560drawable.msg_folders_groups, 17.33f);
+            setIcon(C3473R.C3475drawable.msg_folders_groups, 17.33f);
             setupGradient(-18621, -618956);
             this.crossfadeT.set(z2, true);
         } else if (z) {
-            setIcon(C3558R.C3560drawable.msg_folders_channels, 17.33f);
+            setIcon(C3473R.C3475drawable.msg_folders_channels, 17.33f);
             setupGradient(-15292942, -15630089);
             this.crossfadeT.set(z2, true);
         } else {
@@ -95,19 +95,19 @@ public class StoryPrivacyButton extends View {
         } else {
             int i = storyPrivacy.type;
             if (i == 1) {
-                setIcon(C3558R.C3560drawable.msg_stories_closefriends, 15.0f);
+                setIcon(C3473R.C3475drawable.msg_stories_closefriends, 15.0f);
                 setupGradient(-7808710, -13781445);
                 this.crossfadeT.set(z2, !z2);
             } else if (i == 2) {
-                setIcon(C3558R.C3560drawable.msg_folders_private, 17.33f);
+                setIcon(C3473R.C3475drawable.msg_folders_private, 17.33f);
                 setupGradient(-3905294, -6923014);
                 this.crossfadeT.set(z2, !z2);
             } else if (i == 3) {
-                setIcon(C3558R.C3560drawable.msg_folders_groups, 17.33f);
+                setIcon(C3473R.C3475drawable.msg_folders_groups, 17.33f);
                 setupGradient(-18621, -618956);
                 this.crossfadeT.set(z2, !z2);
             } else if (z) {
-                setIcon(C3558R.C3560drawable.msg_folders_channels, 17.33f);
+                setIcon(C3473R.C3475drawable.msg_folders_channels, 17.33f);
                 setupGradient(-15292942, -15630089);
                 this.crossfadeT.set(z2, !z2);
             } else {

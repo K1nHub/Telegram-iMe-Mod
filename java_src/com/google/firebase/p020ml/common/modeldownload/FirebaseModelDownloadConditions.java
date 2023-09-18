@@ -2,7 +2,7 @@ package com.google.firebase.p020ml.common.modeldownload;
 
 import com.google.android.gms.common.internal.Objects;
 /* renamed from: com.google.firebase.ml.common.modeldownload.FirebaseModelDownloadConditions */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FirebaseModelDownloadConditions {
     private final boolean zzawm;
     private final boolean zzawn;

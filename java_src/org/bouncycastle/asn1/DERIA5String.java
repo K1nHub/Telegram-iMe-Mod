@@ -3,7 +3,7 @@ package org.bouncycastle.asn1;
 import java.io.IOException;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.Strings;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class DERIA5String extends ASN1Primitive {
     private final byte[] string;
 

@@ -7,7 +7,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PaintCancelView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PaintCancelView extends View {
     private Paint paint;
     private float progress;

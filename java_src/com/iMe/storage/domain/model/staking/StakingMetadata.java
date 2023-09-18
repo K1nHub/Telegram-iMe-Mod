@@ -7,7 +7,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
 import java.math.BigDecimal;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingMetadata.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StakingMetadata {
     private final double apr;
     private final double apy;

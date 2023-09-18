@@ -8,7 +8,7 @@ import com.iMe.storage.data.locale.p027db.dao.minor.social.SocialNetworkDao;
 import com.iMe.storage.data.locale.p027db.dao.minor.wallet.WalletTokensBalancesDao;
 /* compiled from: AppCacheDatabase.kt */
 /* renamed from: com.iMe.storage.data.locale.db.database.AppCacheDatabase */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AppCacheDatabase extends RoomDatabase {
     public abstract CatalogCategoryDao catalogCategoryDao();
 

@@ -14,7 +14,7 @@ import io.reactivex.functions.Function;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ReactionRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ReactionRepositoryImpl implements ReactionRepository {
     private final ReactionApi api;
     private final ApiErrorHandler errorHandler;

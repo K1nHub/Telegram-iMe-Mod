@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 /* renamed from: org.telegram.ui.Components.BlurredLinearLayout */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class BlurredLinearLayout extends LinearLayout {
     public int backgroundColor;
     public int backgroundPaddingBottom;

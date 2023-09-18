@@ -3,7 +3,7 @@ package com.iMe.storage.data.locale.p027db.model.recent_chats;
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 /* compiled from: HistoryDialogDb.kt */
 /* renamed from: com.iMe.storage.data.locale.db.model.recent_chats.HistoryDialogDb */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HistoryDialogDb {
     private final long creationDate;
     private final long dialogId;

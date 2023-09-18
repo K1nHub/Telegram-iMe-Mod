@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_chatlists_editExportedInvite extends TLObject {
     public static int constructor = 1698543165;
     public TLRPC$TL_inputChatlistDialogFilter chatlist;

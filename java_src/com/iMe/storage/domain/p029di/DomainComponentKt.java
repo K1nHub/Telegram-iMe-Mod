@@ -6,7 +6,7 @@ import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import org.koin.core.module.Module;
 /* compiled from: DomainComponent.kt */
 /* renamed from: com.iMe.storage.domain.di.DomainComponentKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DomainComponentKt {
     private static List<Module> domainModules;
 

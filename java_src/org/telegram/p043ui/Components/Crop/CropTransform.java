@@ -1,6 +1,6 @@
 package org.telegram.p043ui.Components.Crop;
 /* renamed from: org.telegram.ui.Components.Crop.CropTransform */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CropTransform {
     private float cropAreaX;
     private float cropAreaY;

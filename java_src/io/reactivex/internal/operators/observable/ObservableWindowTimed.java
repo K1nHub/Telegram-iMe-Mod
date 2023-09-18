@@ -15,7 +15,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstream<T, Observable<T>> {
     final int bufferSize;
     final long maxSize;
@@ -54,7 +54,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         this.source.subscribe(new WindowSkipObserver(serializedObserver, j, j2, this.unit, this.scheduler.createWorker(), this.bufferSize));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class WindowExactUnboundedObserver<T> extends QueueDrainObserver<T, Object, Observable<T>> implements Observer<T>, Disposable {
         static final Object NEXT = new Object();
         final int bufferSize;
@@ -241,7 +241,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class WindowExactBoundedObserver<T> extends QueueDrainObserver<T, Object, Observable<T>> implements Disposable {
         final int bufferSize;
         long count;
@@ -446,7 +446,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class ConsumerIndexHolder implements Runnable {
             final long index;
             final WindowExactBoundedObserver<?> parent;
@@ -472,7 +472,7 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class WindowSkipObserver<T> extends QueueDrainObserver<T, Object, Observable<T>> implements Disposable, Runnable {
         final int bufferSize;
         volatile boolean terminated;
@@ -611,8 +611,8 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
                             this.worker.schedule(new CompletionTask(create), this.timespan, this.unit);
                         }
                     } else {
-                        list.remove(subjectWork.f567w);
-                        subjectWork.f567w.onComplete();
+                        list.remove(subjectWork.f558w);
+                        subjectWork.f558w.onComplete();
                         if (list.isEmpty() && this.cancelled) {
                             this.terminated = true;
                         }
@@ -641,33 +641,33 @@ public final class ObservableWindowTimed<T> extends AbstractObservableWithUpstre
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public static final class SubjectWork<T> {
             final boolean open;
 
             /* renamed from: w */
-            final UnicastSubject<T> f567w;
+            final UnicastSubject<T> f558w;
 
             SubjectWork(UnicastSubject<T> unicastSubject, boolean z) {
-                this.f567w = unicastSubject;
+                this.f558w = unicastSubject;
                 this.open = z;
             }
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes4.dex */
+        /* loaded from: classes6.dex */
         public final class CompletionTask implements Runnable {
 
             /* renamed from: w */
-            private final UnicastSubject<T> f566w;
+            private final UnicastSubject<T> f557w;
 
             CompletionTask(UnicastSubject<T> unicastSubject) {
-                this.f566w = unicastSubject;
+                this.f557w = unicastSubject;
             }
 
             @Override // java.lang.Runnable
             public void run() {
-                WindowSkipObserver.this.complete(this.f566w);
+                WindowSkipObserver.this.complete(this.f557w);
             }
         }
     }

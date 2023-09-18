@@ -1,12 +1,12 @@
 package org.webrtc;
 
 import org.webrtc.PeerConnection;
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public final class PeerConnectionDependencies {
     private final PeerConnection.Observer observer;
     private final SSLCertificateVerifier sslCertificateVerifier;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public static class Builder {
         private PeerConnection.Observer observer;
         private SSLCertificateVerifier sslCertificateVerifier;

@@ -14,7 +14,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletSwapProtocolsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.swap.adapter.WalletSwapProtocolsRecycleAdapter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSwapProtocolsRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WalletSwapProtocolsRecycleAdapter(CexProtocolProvider cexProtocolProvider, DexProtocolProvider dexProtocolProvider, HeaderProvider headerProvider) {

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.mlkit_language_id;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class zzhr extends zzho {
     @Override // com.google.android.gms.internal.mlkit_language_id.zzho
     final int zza(int i, byte[] bArr, int i2, int i3) {

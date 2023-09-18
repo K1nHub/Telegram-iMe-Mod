@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TickerView.kt */
 /* renamed from: com.iMe.ui.custom.TickerView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TickerView extends AppCompatTextView {
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public TickerView(Context context, AttributeSet attributeSet) {

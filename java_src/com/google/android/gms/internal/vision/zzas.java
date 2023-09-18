@@ -6,7 +6,7 @@ import android.os.Process;
 import android.os.UserManager;
 import android.util.Log;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class zzas {
     private static UserManager zza;
     private static volatile boolean zzb = !zza();

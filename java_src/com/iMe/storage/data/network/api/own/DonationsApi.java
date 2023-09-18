@@ -18,7 +18,7 @@ import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 /* compiled from: DonationsApi.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface DonationsApi {
     @POST("donation/getWallets")
     Observable<ApiBaseResponse<GetDonationWalletInfoResponse>> getChatInfo(@Body GetDonationInfoRequest getDonationInfoRequest);

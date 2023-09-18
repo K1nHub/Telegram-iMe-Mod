@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: WalletAttachAlertView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.home.attach.WalletAttachAlertView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface WalletAttachAlertView extends BaseView, CryptoRecipientView, GlobalStateView {
     void showBalances(List<TokenBalance> list);
 

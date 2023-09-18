@@ -17,7 +17,7 @@ import com.google.firebase.inject.Provider;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AnalyticsDeferredProxy {
     private final Deferred<AnalyticsConnector> analyticsConnectorDeferred;
     private volatile AnalyticsEventLogger analyticsEventLogger;

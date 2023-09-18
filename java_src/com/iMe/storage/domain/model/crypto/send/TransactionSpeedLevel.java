@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto.send;
 import com.iMe.storage.R$string;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TransactionSpeedLevel.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum TransactionSpeedLevel {
     LOW(R$string.transaction_speed_low),
     MEDIUM(R$string.transaction_speed_medium),
@@ -26,7 +26,7 @@ public enum TransactionSpeedLevel {
     }
 
     /* compiled from: TransactionSpeedLevel.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

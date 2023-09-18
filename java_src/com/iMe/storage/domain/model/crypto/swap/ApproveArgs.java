@@ -8,7 +8,7 @@ import java.math.BigInteger;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ApproveArgs.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ApproveArgs implements TransactionArgs {
     private final BlockchainType blockchainType;
     private final Number value;
@@ -31,7 +31,7 @@ public abstract class ApproveArgs implements TransactionArgs {
     }
 
     /* compiled from: ApproveArgs.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Dex extends ApproveArgs {
         private final BlockchainType blockchainType;
         private final long chainId;
@@ -41,7 +41,6 @@ public abstract class ApproveArgs implements TransactionArgs {
         private final String networkId;
         private final BigInteger nonce;
         private final SwapProtocol protocol;
-        private final String recipientAddress;
         private final String tokenContractAddress;
         private final BigInteger value;
 
@@ -49,11 +48,7 @@ public abstract class ApproveArgs implements TransactionArgs {
             return getBlockchainType();
         }
 
-        public final String component10() {
-            return this.networkId;
-        }
-
-        public final SwapProtocol component11() {
+        public final SwapProtocol component10() {
             return this.protocol;
         }
 
@@ -61,38 +56,37 @@ public abstract class ApproveArgs implements TransactionArgs {
             return getValue();
         }
 
-        public final String component3() {
-            return this.recipientAddress;
-        }
-
-        public final long component4() {
+        public final long component3() {
             return this.chainId;
         }
 
-        public final BigInteger component5() {
+        public final BigInteger component4() {
             return this.nonce;
         }
 
-        public final BigInteger component6() {
+        public final BigInteger component5() {
             return this.gasPrice;
         }
 
-        public final BigInteger component7() {
+        public final BigInteger component6() {
             return this.gasLimit;
         }
 
-        public final String component8() {
+        public final String component7() {
             return this.tokenContractAddress;
         }
 
-        public final String component9() {
+        public final String component8() {
             return this.exchangeContractAddress;
         }
 
-        public final Dex copy(BlockchainType blockchainType, BigInteger value, String recipientAddress, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, String networkId, SwapProtocol protocol) {
+        public final String component9() {
+            return this.networkId;
+        }
+
+        public final Dex copy(BlockchainType blockchainType, BigInteger value, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, String networkId, SwapProtocol protocol) {
             Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             Intrinsics.checkNotNullParameter(value, "value");
-            Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             Intrinsics.checkNotNullParameter(nonce, "nonce");
             Intrinsics.checkNotNullParameter(gasPrice, "gasPrice");
             Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
@@ -100,7 +94,7 @@ public abstract class ApproveArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(exchangeContractAddress, "exchangeContractAddress");
             Intrinsics.checkNotNullParameter(networkId, "networkId");
             Intrinsics.checkNotNullParameter(protocol, "protocol");
-            return new Dex(blockchainType, value, recipientAddress, j, nonce, gasPrice, gasLimit, tokenContractAddress, exchangeContractAddress, networkId, protocol);
+            return new Dex(blockchainType, value, j, nonce, gasPrice, gasLimit, tokenContractAddress, exchangeContractAddress, networkId, protocol);
         }
 
         public boolean equals(Object obj) {
@@ -109,17 +103,17 @@ public abstract class ApproveArgs implements TransactionArgs {
             }
             if (obj instanceof Dex) {
                 Dex dex = (Dex) obj;
-                return getBlockchainType() == dex.getBlockchainType() && Intrinsics.areEqual(getValue(), dex.getValue()) && Intrinsics.areEqual(this.recipientAddress, dex.recipientAddress) && this.chainId == dex.chainId && Intrinsics.areEqual(this.nonce, dex.nonce) && Intrinsics.areEqual(this.gasPrice, dex.gasPrice) && Intrinsics.areEqual(this.gasLimit, dex.gasLimit) && Intrinsics.areEqual(this.tokenContractAddress, dex.tokenContractAddress) && Intrinsics.areEqual(this.exchangeContractAddress, dex.exchangeContractAddress) && Intrinsics.areEqual(this.networkId, dex.networkId) && this.protocol == dex.protocol;
+                return getBlockchainType() == dex.getBlockchainType() && Intrinsics.areEqual(getValue(), dex.getValue()) && this.chainId == dex.chainId && Intrinsics.areEqual(this.nonce, dex.nonce) && Intrinsics.areEqual(this.gasPrice, dex.gasPrice) && Intrinsics.areEqual(this.gasLimit, dex.gasLimit) && Intrinsics.areEqual(this.tokenContractAddress, dex.tokenContractAddress) && Intrinsics.areEqual(this.exchangeContractAddress, dex.exchangeContractAddress) && Intrinsics.areEqual(this.networkId, dex.networkId) && this.protocol == dex.protocol;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((((((((((((getBlockchainType().hashCode() * 31) + getValue().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.protocol.hashCode();
+            return (((((((((((((((((getBlockchainType().hashCode() * 31) + getValue().hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m724m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.tokenContractAddress.hashCode()) * 31) + this.exchangeContractAddress.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.protocol.hashCode();
         }
 
         public String toString() {
-            return "Dex(blockchainType=" + getBlockchainType() + ", value=" + getValue() + ", recipientAddress=" + this.recipientAddress + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", tokenContractAddress=" + this.tokenContractAddress + ", exchangeContractAddress=" + this.exchangeContractAddress + ", networkId=" + this.networkId + ", protocol=" + this.protocol + ')';
+            return "Dex(blockchainType=" + getBlockchainType() + ", value=" + getValue() + ", chainId=" + this.chainId + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ", tokenContractAddress=" + this.tokenContractAddress + ", exchangeContractAddress=" + this.exchangeContractAddress + ", networkId=" + this.networkId + ", protocol=" + this.protocol + ')';
         }
 
         @Override // com.iMe.storage.domain.model.crypto.swap.ApproveArgs
@@ -130,10 +124,6 @@ public abstract class ApproveArgs implements TransactionArgs {
         @Override // com.iMe.storage.domain.model.crypto.swap.ApproveArgs
         public BigInteger getValue() {
             return this.value;
-        }
-
-        public final String getRecipientAddress() {
-            return this.recipientAddress;
         }
 
         public final long getChainId() {
@@ -169,11 +159,10 @@ public abstract class ApproveArgs implements TransactionArgs {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Dex(BlockchainType blockchainType, BigInteger value, String recipientAddress, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, String networkId, SwapProtocol protocol) {
+        public Dex(BlockchainType blockchainType, BigInteger value, long j, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String tokenContractAddress, String exchangeContractAddress, String networkId, SwapProtocol protocol) {
             super(blockchainType, value, null);
             Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             Intrinsics.checkNotNullParameter(value, "value");
-            Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             Intrinsics.checkNotNullParameter(nonce, "nonce");
             Intrinsics.checkNotNullParameter(gasPrice, "gasPrice");
             Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
@@ -183,7 +172,6 @@ public abstract class ApproveArgs implements TransactionArgs {
             Intrinsics.checkNotNullParameter(protocol, "protocol");
             this.blockchainType = blockchainType;
             this.value = value;
-            this.recipientAddress = recipientAddress;
             this.chainId = j;
             this.nonce = nonce;
             this.gasPrice = gasPrice;

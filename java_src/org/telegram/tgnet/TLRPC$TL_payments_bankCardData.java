@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import java.util.ArrayList;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_payments_bankCardData extends TLObject {
     public static int constructor = 1042605427;
     public ArrayList<TLRPC$TL_bankCardOpenUrl> open_urls = new ArrayList<>();

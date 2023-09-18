@@ -4,7 +4,7 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Response.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Response {
     private final List<String> answers;
     private final String botId;

@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.staking;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StakingOperationType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum StakingOperationType {
     APPROVAL,
     DEPOSIT,
@@ -17,7 +17,7 @@ public enum StakingOperationType {
     }
 
     /* compiled from: StakingOperationType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

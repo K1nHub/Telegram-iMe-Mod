@@ -5,7 +5,7 @@ import com.iMe.storage.data.network.model.response.wallet.TokenDetailedResponse;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TokensApprovalInfoResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TokensApprovalInfoResponse {
     private final List<ApprovalInfoResponse> approvalInfo;
     private final String defiProtocol;
@@ -100,7 +100,7 @@ public final class TokensApprovalInfoResponse {
     }
 
     /* compiled from: TokensApprovalInfoResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ApprovalInfoResponse {
         private final String lastErrorMessage;
         private final String status;

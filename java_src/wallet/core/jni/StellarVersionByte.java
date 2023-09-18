@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum StellarVersionByte {
     ACCOUNTID(48),
     SEED(192),

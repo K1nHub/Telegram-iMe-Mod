@@ -12,10 +12,10 @@ import com.google.protobuf.Parser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes7.dex */
+/* loaded from: classes5.dex */
 public final class Aptos {
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface CancelOfferNftMessageOrBuilder extends MessageLiteOrBuilder {
         String getCollectionName();
 
@@ -42,7 +42,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface ClaimNftMessageOrBuilder extends MessageLiteOrBuilder {
         String getCollectionName();
 
@@ -69,7 +69,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface CreateAccountMessageOrBuilder extends MessageLiteOrBuilder {
         String getAuthKey();
 
@@ -82,7 +82,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface ManagedTokensRegisterMessageOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -95,7 +95,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface NftMessageOrBuilder extends MessageLiteOrBuilder {
         CancelOfferNftMessage getCancelOfferNft();
 
@@ -118,7 +118,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface OfferNftMessageOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -147,7 +147,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningInputOrBuilder extends MessageLiteOrBuilder {
         String getAnyEncoded();
 
@@ -198,7 +198,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface SigningOutputOrBuilder extends MessageLiteOrBuilder {
         TransactionAuthenticator getAuthenticator();
 
@@ -219,7 +219,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface StructTagOrBuilder extends MessageLiteOrBuilder {
         String getAccountAddress();
 
@@ -240,7 +240,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TokenTransferMessageOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -259,7 +259,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransactionAuthenticatorOrBuilder extends MessageLiteOrBuilder {
         @Override // com.google.protobuf.MessageLiteOrBuilder
         /* synthetic */ MessageLite getDefaultInstanceForType();
@@ -272,7 +272,7 @@ public final class Aptos {
         /* synthetic */ boolean isInitialized();
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public interface TransferMessageOrBuilder extends MessageLiteOrBuilder {
         long getAmount();
 
@@ -293,7 +293,7 @@ public final class Aptos {
     private Aptos() {
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TransferMessage extends GeneratedMessageLite<TransferMessage, Builder> implements TransferMessageOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 2;
         private static final TransferMessage DEFAULT_INSTANCE;
@@ -403,9 +403,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferMessage, Builder> implements TransferMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -461,7 +461,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferMessage();
                 case 2:
@@ -507,47 +507,47 @@ public final class Aptos {
     }
 
     /* renamed from: wallet.core.jni.proto.Aptos$1 */
-    /* loaded from: classes7.dex */
-    static /* synthetic */ class C74031 {
+    /* loaded from: classes5.dex */
+    static /* synthetic */ class C73181 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f1943xa1df5c61;
+        static final /* synthetic */ int[] f1934xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f1943xa1df5c61 = iArr;
+            f1934xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1943xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f1934xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1943xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f1934xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1943xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f1934xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1943xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f1934xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1943xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f1934xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1943xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f1934xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class StructTag extends GeneratedMessageLite<StructTag, Builder> implements StructTagOrBuilder {
         public static final int ACCOUNT_ADDRESS_FIELD_NUMBER = 1;
         private static final StructTag DEFAULT_INSTANCE;
@@ -698,9 +698,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<StructTag, Builder> implements StructTagOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -795,7 +795,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new StructTag();
                 case 2:
@@ -840,7 +840,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TokenTransferMessage extends GeneratedMessageLite<TokenTransferMessage, Builder> implements TokenTransferMessageOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 2;
         private static final TokenTransferMessage DEFAULT_INSTANCE;
@@ -985,9 +985,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenTransferMessage, Builder> implements TokenTransferMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -1077,7 +1077,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenTransferMessage();
                 case 2:
@@ -1122,7 +1122,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class ManagedTokensRegisterMessage extends GeneratedMessageLite<ManagedTokensRegisterMessage, Builder> implements ManagedTokensRegisterMessageOrBuilder {
         private static final ManagedTokensRegisterMessage DEFAULT_INSTANCE;
         public static final int FUNCTION_FIELD_NUMBER = 1;
@@ -1221,9 +1221,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ManagedTokensRegisterMessage, Builder> implements ManagedTokensRegisterMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -1268,7 +1268,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ManagedTokensRegisterMessage();
                 case 2:
@@ -1313,7 +1313,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class CreateAccountMessage extends GeneratedMessageLite<CreateAccountMessage, Builder> implements CreateAccountMessageOrBuilder {
         public static final int AUTH_KEY_FIELD_NUMBER = 1;
         private static final CreateAccountMessage DEFAULT_INSTANCE;
@@ -1406,9 +1406,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CreateAccountMessage, Builder> implements CreateAccountMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -1447,7 +1447,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CreateAccountMessage();
                 case 2:
@@ -1492,7 +1492,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class OfferNftMessage extends GeneratedMessageLite<OfferNftMessage, Builder> implements OfferNftMessageOrBuilder {
         public static final int AMOUNT_FIELD_NUMBER = 6;
         public static final int COLLECTIONNAME_FIELD_NUMBER = 3;
@@ -1706,9 +1706,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OfferNftMessage, Builder> implements OfferNftMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -1865,7 +1865,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OfferNftMessage();
                 case 2:
@@ -1910,7 +1910,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class CancelOfferNftMessage extends GeneratedMessageLite<CancelOfferNftMessage, Builder> implements CancelOfferNftMessageOrBuilder {
         public static final int COLLECTIONNAME_FIELD_NUMBER = 3;
         public static final int CREATOR_FIELD_NUMBER = 2;
@@ -2107,9 +2107,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CancelOfferNftMessage, Builder> implements CancelOfferNftMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -2249,7 +2249,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CancelOfferNftMessage();
                 case 2:
@@ -2294,7 +2294,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class ClaimNftMessage extends GeneratedMessageLite<ClaimNftMessage, Builder> implements ClaimNftMessageOrBuilder {
         public static final int COLLECTIONNAME_FIELD_NUMBER = 3;
         public static final int CREATOR_FIELD_NUMBER = 2;
@@ -2491,9 +2491,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ClaimNftMessage, Builder> implements ClaimNftMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -2633,7 +2633,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ClaimNftMessage();
                 case 2:
@@ -2678,7 +2678,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class NftMessage extends GeneratedMessageLite<NftMessage, Builder> implements NftMessageOrBuilder {
         public static final int CANCEL_OFFER_NFT_FIELD_NUMBER = 2;
         public static final int CLAIM_NFT_FIELD_NUMBER = 3;
@@ -2691,7 +2691,7 @@ public final class Aptos {
         private NftMessage() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum NftTransactionPayloadCase {
             OFFER_NFT(1),
             CANCEL_OFFER_NFT(2),
@@ -2914,9 +2914,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<NftMessage, Builder> implements NftMessageOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -3040,7 +3040,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new NftMessage();
                 case 2:
@@ -3085,7 +3085,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningInput extends GeneratedMessageLite<SigningInput, Builder> implements SigningInputOrBuilder {
         public static final int ANY_ENCODED_FIELD_NUMBER = 8;
         public static final int CHAIN_ID_FIELD_NUMBER = 6;
@@ -3116,7 +3116,7 @@ public final class Aptos {
         private SigningInput() {
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public enum TransactionPayloadCase {
             TRANSFER(9),
             TOKEN_TRANSFER(10),
@@ -3568,9 +3568,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -3920,7 +3920,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -3965,7 +3965,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class TransactionAuthenticator extends GeneratedMessageLite<TransactionAuthenticator, Builder> implements TransactionAuthenticatorOrBuilder {
         private static final TransactionAuthenticator DEFAULT_INSTANCE;
         private static volatile Parser<TransactionAuthenticator> PARSER = null;
@@ -4068,9 +4068,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionAuthenticator, Builder> implements TransactionAuthenticatorOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -4115,7 +4115,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionAuthenticator();
                 case 2:
@@ -4160,7 +4160,7 @@ public final class Aptos {
         }
     }
 
-    /* loaded from: classes7.dex */
+    /* loaded from: classes5.dex */
     public static final class SigningOutput extends GeneratedMessageLite<SigningOutput, Builder> implements SigningOutputOrBuilder {
         public static final int AUTHENTICATOR_FIELD_NUMBER = 2;
         private static final SigningOutput DEFAULT_INSTANCE;
@@ -4328,9 +4328,9 @@ public final class Aptos {
             return DEFAULT_INSTANCE.createBuilder(prototype);
         }
 
-        /* loaded from: classes7.dex */
+        /* loaded from: classes5.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C74031 c74031) {
+            /* synthetic */ Builder(C73181 c73181) {
                 this();
             }
 
@@ -4437,7 +4437,7 @@ public final class Aptos {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C74031.f1943xa1df5c61[method.ordinal()]) {
+            switch (C73181.f1934xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

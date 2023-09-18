@@ -1,6 +1,6 @@
 package com.iMe.storage.domain.utils.system;
 /* compiled from: ResourceManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ResourceManager {
     int getColor(int i);
 

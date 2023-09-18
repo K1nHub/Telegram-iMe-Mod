@@ -19,7 +19,7 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.CheckBox */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class CheckBox extends View {
     private static Paint backgroundPaint;
     private static Paint eraser;

@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: HorizontalActionButtonItem.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HorizontalActionButtonItem {
     private final int iconResId;
     private final boolean isEnabled;

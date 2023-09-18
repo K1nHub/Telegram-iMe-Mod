@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import net.lingala.zip4j.unzip.UnzipEngine;
 /* renamed from: net.lingala.zip4j.io.BaseInputStream */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class BaseInputStream extends InputStream {
     @Override // java.io.InputStream
     public abstract int available() throws IOException;

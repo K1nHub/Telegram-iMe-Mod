@@ -8,7 +8,7 @@ import android.view.animation.AnimationUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.PlayPauseDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PlayPauseDrawable extends Drawable {
     private int alpha = 255;
     float duration = 300.0f;

@@ -1,11 +1,11 @@
 package com.google.common.math;
 
 import java.math.RoundingMode;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LongMath {
 
     /* renamed from: com.google.common.math.LongMath$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C09251 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;
 

@@ -14,7 +14,7 @@ import org.telegram.p043ui.ActionBar.BaseFragment;
     	at jadx.core.dex.visitors.ClassModifier.visit(ClassModifier.java:55)
     */
 /* compiled from: TabbedFragmentPage.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TabbedFragmentPage<T extends BaseFragment> extends AbstractTabbedViewPage {
     private final T fragment;
     private final int icon;

@@ -12,7 +12,7 @@ import io.grpc.internal.StreamListener;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class DelayedStream implements ClientStream {
     private DelayedStreamListener delayedListener;
     private Status error;
@@ -324,7 +324,7 @@ class DelayedStream implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class DelayedStreamListener implements ClientStreamListener {
         private volatile boolean passThrough;
         private List<Runnable> pendingCallbacks = new ArrayList();

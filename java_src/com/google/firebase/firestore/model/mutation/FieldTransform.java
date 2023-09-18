@@ -1,7 +1,7 @@
 package com.google.firebase.firestore.model.mutation;
 
 import com.google.firebase.firestore.model.FieldPath;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FieldTransform {
     private final FieldPath fieldPath;
     private final TransformOperation operation;

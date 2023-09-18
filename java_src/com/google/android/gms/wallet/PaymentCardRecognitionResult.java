@@ -9,7 +9,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerializer;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "PaymentCardRecognitionCreator")
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PaymentCardRecognitionResult extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentCardRecognitionResult> CREATOR = new zzw();
     @SafeParcelable.Field(m797id = 1)

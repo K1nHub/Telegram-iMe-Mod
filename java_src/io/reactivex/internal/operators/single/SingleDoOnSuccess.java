@@ -6,7 +6,7 @@ import io.reactivex.SingleSource;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.functions.Consumer;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SingleDoOnSuccess<T> extends Single<T> {
     final Consumer<? super T> onSuccess;
     final SingleSource<T> source;
@@ -21,7 +21,7 @@ public final class SingleDoOnSuccess<T> extends Single<T> {
         this.source.subscribe(new DoOnSuccess(singleObserver));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     final class DoOnSuccess implements SingleObserver<T> {
         final SingleObserver<? super T> downstream;
 

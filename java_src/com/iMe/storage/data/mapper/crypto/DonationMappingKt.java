@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.crypto.donations.DonationTransferMetadata;
 import com.iMe.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DonationMapping.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DonationMappingKt {
     public static final DonationTransferMetadata mapToDomain(DataForDonationTransactionResponse dataForDonationTransactionResponse) {
         Intrinsics.checkNotNullParameter(dataForDonationTransactionResponse, "<this>");

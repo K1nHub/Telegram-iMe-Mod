@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.backup.BackupWordView;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkContentBackupNumberWordBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final AppCompatTextView textNumber;
@@ -31,7 +31,7 @@ public final class ForkContentBackupNumberWordBinding implements ViewBinding {
     }
 
     public static ForkContentBackupNumberWordBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_content_backup_number_word, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_content_backup_number_word, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkContentBackupNumberWordBinding implements ViewBinding {
     }
 
     public static ForkContentBackupNumberWordBinding bind(View view) {
-        int i = C3558R.C3561id.text_number;
+        int i = C3473R.C3476id.text_number;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
-            i = C3558R.C3561id.view_backup_word;
+            i = C3473R.C3476id.view_backup_word;
             BackupWordView backupWordView = (BackupWordView) ViewBindings.findChildViewById(view, i);
             if (backupWordView != null) {
                 return new ForkContentBackupNumberWordBinding((LinearLayout) view, appCompatTextView, backupWordView);

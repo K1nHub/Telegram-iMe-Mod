@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: TokenManagementView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementView */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public interface TokenManagementView extends BaseView, SwitchNetworkView {
     void copyAddressToClipboard(String str);
 

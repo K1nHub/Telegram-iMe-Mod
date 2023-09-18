@@ -6,7 +6,7 @@ import io.grpc.CallOptions;
 import io.grpc.LoadBalancer;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 final class PickSubchannelArgsImpl extends LoadBalancer.PickSubchannelArgs {
     private final CallOptions callOptions;
     private final Metadata headers;

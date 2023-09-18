@@ -9,7 +9,7 @@ import com.google.protobuf.MessageLiteOrBuilder;
 import com.google.protobuf.Parser;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.StructuredQuery */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery, Builder> implements MessageLiteOrBuilder {
     private static final StructuredQuery DEFAULT_INSTANCE;
     public static final int END_AT_FIELD_NUMBER = 8;
@@ -34,7 +34,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$Direction */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Direction implements Internal.EnumLite {
         DIRECTION_UNSPECIFIED(0),
         ASCENDING(1),
@@ -88,7 +88,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$Direction$DirectionVerifier */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         private static final class DirectionVerifier implements Internal.EnumVerifier {
             static final Internal.EnumVerifier INSTANCE = new DirectionVerifier();
 
@@ -107,7 +107,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$CollectionSelector */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class CollectionSelector extends GeneratedMessageLite<CollectionSelector, Builder> implements MessageLiteOrBuilder {
         public static final int ALL_DESCENDANTS_FIELD_NUMBER = 3;
         public static final int COLLECTION_ID_FIELD_NUMBER = 2;
@@ -143,7 +143,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$CollectionSelector$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CollectionSelector, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -206,7 +206,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10691 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
@@ -247,7 +247,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$Filter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Filter extends GeneratedMessageLite<Filter, Builder> implements MessageLiteOrBuilder {
         public static final int COMPOSITE_FILTER_FIELD_NUMBER = 1;
         private static final Filter DEFAULT_INSTANCE;
@@ -261,7 +261,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$Filter$FilterTypeCase */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum FilterTypeCase {
             COMPOSITE_FILTER(1),
             FIELD_FILTER(2),
@@ -351,7 +351,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$Filter$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Filter, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -424,7 +424,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$CompositeFilter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class CompositeFilter extends GeneratedMessageLite<CompositeFilter, Builder> implements MessageLiteOrBuilder {
         private static final CompositeFilter DEFAULT_INSTANCE;
         public static final int FILTERS_FIELD_NUMBER = 2;
@@ -437,7 +437,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$CompositeFilter$Operator */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum Operator implements Internal.EnumLite {
             OPERATOR_UNSPECIFIED(0),
             AND(1),
@@ -486,7 +486,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
             }
 
             /* renamed from: com.google.firestore.v1.StructuredQuery$CompositeFilter$Operator$OperatorVerifier */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             private static final class OperatorVerifier implements Internal.EnumVerifier {
                 static final Internal.EnumVerifier INSTANCE = new OperatorVerifier();
 
@@ -537,7 +537,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$CompositeFilter$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CompositeFilter, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -604,7 +604,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$FieldFilter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FieldFilter extends GeneratedMessageLite<FieldFilter, Builder> implements MessageLiteOrBuilder {
         private static final FieldFilter DEFAULT_INSTANCE;
         public static final int FIELD_FIELD_NUMBER = 1;
@@ -619,7 +619,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$FieldFilter$Operator */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum Operator implements Internal.EnumLite {
             OPERATOR_UNSPECIFIED(0),
             LESS_THAN(1),
@@ -705,7 +705,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
             }
 
             /* renamed from: com.google.firestore.v1.StructuredQuery$FieldFilter$Operator$OperatorVerifier */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             private static final class OperatorVerifier implements Internal.EnumVerifier {
                 static final Internal.EnumVerifier INSTANCE = new OperatorVerifier();
 
@@ -760,7 +760,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$FieldFilter$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FieldFilter, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -833,7 +833,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$UnaryFilter */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class UnaryFilter extends GeneratedMessageLite<UnaryFilter, Builder> implements MessageLiteOrBuilder {
         private static final UnaryFilter DEFAULT_INSTANCE;
         public static final int FIELD_FIELD_NUMBER = 2;
@@ -847,7 +847,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$UnaryFilter$Operator */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum Operator implements Internal.EnumLite {
             OPERATOR_UNSPECIFIED(0),
             IS_NAN(2),
@@ -911,7 +911,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
             }
 
             /* renamed from: com.google.firestore.v1.StructuredQuery$UnaryFilter$Operator$OperatorVerifier */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             private static final class OperatorVerifier implements Internal.EnumVerifier {
                 static final Internal.EnumVerifier INSTANCE = new OperatorVerifier();
 
@@ -958,7 +958,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$UnaryFilter$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UnaryFilter, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -1025,7 +1025,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$Order */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Order extends GeneratedMessageLite<Order, Builder> implements MessageLiteOrBuilder {
         private static final Order DEFAULT_INSTANCE;
         public static final int DIRECTION_FIELD_NUMBER = 2;
@@ -1063,7 +1063,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$Order$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Order, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -1126,7 +1126,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$FieldReference */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FieldReference extends GeneratedMessageLite<FieldReference, Builder> implements MessageLiteOrBuilder {
         private static final FieldReference DEFAULT_INSTANCE;
         public static final int FIELD_PATH_FIELD_NUMBER = 2;
@@ -1151,7 +1151,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$FieldReference$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FieldReference, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -1212,7 +1212,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$Projection */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Projection extends GeneratedMessageLite<Projection, Builder> implements MessageLiteOrBuilder {
         private static final Projection DEFAULT_INSTANCE;
         public static final int FIELDS_FIELD_NUMBER = 2;
@@ -1223,7 +1223,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
         }
 
         /* renamed from: com.google.firestore.v1.StructuredQuery$Projection$Builder */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Projection, Builder> implements MessageLiteOrBuilder {
             /* synthetic */ Builder(C10691 c10691) {
                 this();
@@ -1384,7 +1384,7 @@ public final class StructuredQuery extends GeneratedMessageLite<StructuredQuery,
     }
 
     /* renamed from: com.google.firestore.v1.StructuredQuery$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<StructuredQuery, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10691 c10691) {
             this();

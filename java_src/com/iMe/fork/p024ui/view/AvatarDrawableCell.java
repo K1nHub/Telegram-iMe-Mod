@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: AvatarDrawableCell.kt */
 /* renamed from: com.iMe.fork.ui.view.AvatarDrawableCell */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AvatarDrawableCell extends FrameLayout {
     private final AvatarDrawable avatarDrawable;
     private int backgroundColorKey;
@@ -140,7 +140,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         Theme.dialogs_pinnedDrawable.setAlpha(255);
         pinnedImageView.setBackground(Theme.createCircleDrawable(20, Theme.getColor(this.backgroundColorKey)));
         pinnedImageView.setColorFilter(Theme.getColor(Theme.key_chats_pinnedIcon));
-        pinnedImageView.setImageResource(C3558R.C3560drawable.list_pin);
+        pinnedImageView.setImageResource(C3473R.C3475drawable.list_pin);
         Theme.dialogs_pinnedDrawable.setAlpha(alpha);
         CounterView counterView = getCounterView();
         counterView.setColors(Theme.key_chats_unreadCounterText, Theme.key_chats_unreadCounter);
@@ -206,7 +206,7 @@ public final class AvatarDrawableCell extends FrameLayout {
             if (tLRPC$Chat != null) {
                 Intrinsics.checkNotNull(tLRPC$Chat, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.Chat");
                 if (tLRPC$Chat.forum) {
-                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1531id)[0]);
+                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1522id)[0]);
                 } else {
                     drawCount(tLRPC$Dialog.unread_count);
                 }
@@ -328,7 +328,7 @@ public final class AvatarDrawableCell extends FrameLayout {
 
     /* compiled from: AvatarDrawableCell.kt */
     /* renamed from: com.iMe.fork.ui.view.AvatarDrawableCell$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

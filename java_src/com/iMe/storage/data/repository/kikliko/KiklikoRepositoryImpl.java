@@ -20,7 +20,7 @@ import java.util.List;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: KiklikoRepositoryImpl.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class KiklikoRepositoryImpl implements KiklikoRepository {
     private final KiklikoApi api;
     private final ApiErrorHandler errorHandler;
@@ -53,7 +53,7 @@ public final class KiklikoRepositoryImpl implements KiklikoRepository {
                 return tags$lambda$0;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "api\n                .get…p { it.data.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(map, "api\n            .getTags…p { it.data.toSuccess() }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<List<TagResponse>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends List<? extends TagResponse>>>() { // from class: com.iMe.storage.data.repository.kikliko.KiklikoRepositoryImpl$getTags$$inlined$handleError$1
             {
@@ -95,7 +95,7 @@ public final class KiklikoRepositoryImpl implements KiklikoRepository {
                 return searchByKeyword$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "api\n                .sea…p { it.data.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(map, "api\n            .searchB…p { it.data.toSuccess() }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<SearchResponse>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends SearchResponse>>() { // from class: com.iMe.storage.data.repository.kikliko.KiklikoRepositoryImpl$searchByKeyword$$inlined$handleError$1
             {
@@ -137,7 +137,7 @@ public final class KiklikoRepositoryImpl implements KiklikoRepository {
                 return searchByTag$lambda$2;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "api\n                .sea…p { it.data.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(map, "api\n            .searchB…p { it.data.toSuccess() }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<SearchResponse>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends SearchResponse>>() { // from class: com.iMe.storage.data.repository.kikliko.KiklikoRepositoryImpl$searchByTag$$inlined$handleError$1
             {
@@ -178,7 +178,7 @@ public final class KiklikoRepositoryImpl implements KiklikoRepository {
                 return trending$lambda$3;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "api\n                .get…p { it.data.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(map, "api\n            .getTren…p { it.data.toSuccess() }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<SearchResponse>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends SearchResponse>>() { // from class: com.iMe.storage.data.repository.kikliko.KiklikoRepositoryImpl$getTrending$$inlined$handleError$1
             {
@@ -212,7 +212,7 @@ public final class KiklikoRepositoryImpl implements KiklikoRepository {
                 return share$lambda$4;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "api\n                .sha….map { true.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(map, "api\n            .share(i….map { true.toSuccess() }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.kikliko.KiklikoRepositoryImpl$share$$inlined$handleError$1
             {
@@ -246,7 +246,7 @@ public final class KiklikoRepositoryImpl implements KiklikoRepository {
                 return view$lambda$5;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "api\n                .vie….map { true.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(map, "api\n            .view(id….map { true.toSuccess() }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.kikliko.KiklikoRepositoryImpl$view$$inlined$handleError$1
             {
@@ -281,7 +281,7 @@ public final class KiklikoRepositoryImpl implements KiklikoRepository {
                 return report$lambda$6;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(map, "api\n                .rep….map { true.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(map, "api\n            .report(….map { true.toSuccess() }");
         final ApiErrorHandler apiErrorHandler = this.errorHandler;
         Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.repository.kikliko.KiklikoRepositoryImpl$report$$inlined$handleError$1
             {

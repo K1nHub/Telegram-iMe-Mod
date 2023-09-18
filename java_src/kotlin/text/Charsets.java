@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.C0479C;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Charsets.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Charsets {
     public static final Charsets INSTANCE = new Charsets();
     public static final Charset UTF_8;

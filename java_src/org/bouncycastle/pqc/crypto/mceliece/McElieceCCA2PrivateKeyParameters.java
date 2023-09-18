@@ -6,31 +6,31 @@ import org.bouncycastle.pqc.math.linearalgebra.GoppaCode;
 import org.bouncycastle.pqc.math.linearalgebra.Permutation;
 import org.bouncycastle.pqc.math.linearalgebra.PolynomialGF2mSmallM;
 import org.bouncycastle.pqc.math.linearalgebra.PolynomialRingGF2m;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class McElieceCCA2PrivateKeyParameters extends McElieceCCA2KeyParameters {
     private GF2mField field;
     private PolynomialGF2mSmallM goppaPoly;
 
     /* renamed from: h */
-    private GF2Matrix f1422h;
+    private GF2Matrix f1413h;
 
     /* renamed from: k */
-    private int f1423k;
+    private int f1414k;
 
     /* renamed from: n */
-    private int f1424n;
+    private int f1415n;
 
     /* renamed from: p */
-    private Permutation f1425p;
+    private Permutation f1416p;
 
     public McElieceCCA2PrivateKeyParameters(int i, int i2, GF2mField gF2mField, PolynomialGF2mSmallM polynomialGF2mSmallM, GF2Matrix gF2Matrix, Permutation permutation, String str) {
         super(true, str);
-        this.f1424n = i;
-        this.f1423k = i2;
+        this.f1415n = i;
+        this.f1414k = i2;
         this.field = gF2mField;
         this.goppaPoly = polynomialGF2mSmallM;
-        this.f1422h = gF2Matrix;
-        this.f1425p = permutation;
+        this.f1413h = gF2Matrix;
+        this.f1416p = permutation;
         new PolynomialRingGF2m(gF2mField, polynomialGF2mSmallM).getSquareRootMatrix();
     }
 
@@ -47,18 +47,18 @@ public class McElieceCCA2PrivateKeyParameters extends McElieceCCA2KeyParameters 
     }
 
     public GF2Matrix getH() {
-        return this.f1422h;
+        return this.f1413h;
     }
 
     public int getK() {
-        return this.f1423k;
+        return this.f1414k;
     }
 
     public int getN() {
-        return this.f1424n;
+        return this.f1415n;
     }
 
     public Permutation getP() {
-        return this.f1425p;
+        return this.f1416p;
     }
 }

@@ -7,7 +7,7 @@ import com.iMe.model.wallet.home.CardButtonItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CardButtonProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CardButtonProvider */
@@ -21,7 +21,7 @@ public final class CardButtonProvider extends BaseNodeProvider<CardButtonItem> {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.CARD_BUTTON;
-        this.layoutId = C3558R.layout.fork_recycle_item_wallet_single_create_action;
+        this.layoutId = C3473R.layout.fork_recycle_item_wallet_single_create_action;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -38,9 +38,9 @@ public final class CardButtonProvider extends BaseNodeProvider<CardButtonItem> {
     public void convert(BaseViewHolder helper, CardButtonItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3558R.C3561id.card_empty_account;
+        int i = C3473R.C3476id.card_empty_account;
         BaseViewHolder foreground = BaseQuickAdapterExtKt.setForeground(BaseQuickAdapterExtKt.setThemedCardBackground(helper, i, Theme.key_windowBackgroundWhite), i, Theme.getSelectorDrawable(false));
-        int i2 = C3558R.C3561id.text_empty_title;
-        BaseQuickAdapterExtKt.setThemedTextColor(foreground, i2, Theme.key_chats_actionBackground).setText(i2, this.resourceManager.getString(item.getTitleResId())).setImageResource(C3558R.C3561id.image_empty_icon, item.getIcon());
+        int i2 = C3473R.C3476id.text_empty_title;
+        BaseQuickAdapterExtKt.setThemedTextColor(foreground, i2, Theme.key_chats_actionBackground).setText(i2, this.resourceManager.getString(item.getTitleResId())).setImageResource(C3473R.C3476id.image_empty_icon, item.getIcon());
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
     private static volatile NotificationCenter[] Instance = new NotificationCenter[5];
@@ -306,12 +306,12 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRannubles = new SparseArray<>();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i, int i2, Object... objArr);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i, int i2, Object[] objArr);
     }
@@ -1151,15 +1151,15 @@ public class NotificationCenter {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class DelayedPost {
         private Object[] args;
 
         /* renamed from: id */
-        private int f1470id;
+        private int f1461id;
 
         private DelayedPost(int i, Object[] objArr) {
-            this.f1470id = i;
+            this.f1461id = i;
             this.args = objArr;
         }
     }
@@ -1298,7 +1298,7 @@ public class NotificationCenter {
             this.delayedPosts.clear();
             for (int i = 0; i < this.delayedPostsTmp.size(); i++) {
                 DelayedPost delayedPost = this.delayedPostsTmp.get(i);
-                postNotificationNameInternal(delayedPost.f1470id, true, delayedPost.args);
+                postNotificationNameInternal(delayedPost.f1461id, true, delayedPost.args);
             }
             this.delayedPostsTmp.clear();
         }
@@ -1551,7 +1551,7 @@ public class NotificationCenter {
         this.delayedRunnables.remove(runnable);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -1611,7 +1611,7 @@ public class NotificationCenter {
         notificationCenterDelegateArr[0] = null;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 

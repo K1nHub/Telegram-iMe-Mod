@@ -14,7 +14,7 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Converter.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Converter {
     public static final Companion Companion = new Companion(null);
     private static final Gson gson = new Gson();
@@ -68,7 +68,7 @@ public final class Converter {
     }
 
     /* compiled from: Converter.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.Cells.TextSelectionHelper;
 import org.telegram.p043ui.Components.spoilers.SpoilersClickDetector;
 /* renamed from: org.telegram.ui.Components.spoilers.SpoilersTextView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SpoilersTextView extends TextView implements TextSelectionHelper.SimpleSelectabeleView {
     public boolean allowClickSpoilers;
     private SpoilersClickDetector clickDetector;

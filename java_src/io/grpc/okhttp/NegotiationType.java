@@ -1,6 +1,6 @@
 package io.grpc.okhttp;
 @Deprecated
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum NegotiationType {
     TLS,
     PLAINTEXT

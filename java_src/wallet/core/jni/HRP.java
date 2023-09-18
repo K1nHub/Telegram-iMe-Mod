@@ -1,5 +1,5 @@
 package wallet.core.jni;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public enum HRP {
     UNKNOWN(0),
     BITCOIN(1),
@@ -116,8 +116,8 @@ public enum HRP {
     }
 
     /* renamed from: wallet.core.jni.HRP$1 */
-    /* loaded from: classes4.dex */
-    static /* synthetic */ class C73971 {
+    /* loaded from: classes6.dex */
+    static /* synthetic */ class C73121 {
         static final /* synthetic */ int[] $SwitchMap$wallet$core$jni$HRP;
 
         static {
@@ -256,7 +256,7 @@ public enum HRP {
 
     @Override // java.lang.Enum
     public String toString() {
-        switch (C73971.$SwitchMap$wallet$core$jni$HRP[ordinal()]) {
+        switch (C73121.$SwitchMap$wallet$core$jni$HRP[ordinal()]) {
             case 2:
                 return "bc";
             case 3:

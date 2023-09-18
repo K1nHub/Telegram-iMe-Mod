@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DelayingSubscribedCounter.kt */
 @DebugMetadata(m102c = "org.orbitmvi.orbit.internal.repeatonsubscription.DelayingSubscribedCounter$decrement$2$2", m101f = "DelayingSubscribedCounter.kt", m100l = {40}, m99m = "invokeSuspend")
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DelayingSubscribedCounter$decrement$2$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
     final /* synthetic */ DelayingSubscribedCounter this$0;

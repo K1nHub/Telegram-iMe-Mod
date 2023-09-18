@@ -5,6 +5,7 @@ import com.iMe.common.Constants;
 import com.iMe.common.TelegramConstants;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.fork.utils.Callbacks$Callback1;
+import com.iMe.fork.utils.Callbacks$Callback2;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.mapper.wallet.NetworkUiMappingKt;
 import com.iMe.mapper.wallet.TokenUiMappingKt;
@@ -14,12 +15,12 @@ import com.iMe.model.wallet.crypto.NetworkItem;
 import com.iMe.model.wallet.crypto.TokenItem;
 import com.iMe.model.wallet.crypto.send.fee.FeeType;
 import com.iMe.model.wallet.crypto.send.fee.GasPriceItem;
+import com.iMe.model.wallet.select.SelectTokenScreenType;
 import com.iMe.model.wallet.transfer.TransferScreenArgs;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p031ui.base.mvp.base.BasePresenter;
 import com.iMe.p031ui.base.mvp.base.BaseView;
 import com.iMe.p031ui.wallet.actions.send.amount.WalletSendAmountPresenter;
-import com.iMe.p031ui.wallet.swap.token.WalletSelectTokenFragment;
 import com.iMe.storage.data.mapper.crypto.DonationMappingKt;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.error.IErrorStatus;
@@ -34,7 +35,6 @@ import com.iMe.storage.domain.interactor.wallet.WalletInteractor;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
 import com.iMe.storage.domain.model.binancepay.BinanceTokenInfo;
-import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.TransactionParams;
 import com.iMe.storage.domain.model.crypto.donations.DonationTransferMetadata;
@@ -44,6 +44,7 @@ import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import com.iMe.storage.domain.model.crypto.send.TransactionSpeedLevel;
 import com.iMe.storage.domain.model.crypto.send.TransferArgs;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
+import com.iMe.storage.domain.model.wallet.token.FiatValue;
 import com.iMe.storage.domain.model.wallet.token.Token;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
@@ -75,7 +76,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.p043ui.ManageLinksActivity;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -85,7 +86,7 @@ import timber.log.Timber;
 /* compiled from: WalletSendAmountPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmountView> {
     private final TransferScreenArgs args;
     private final List<NetworkItem> availableNetworks;
@@ -119,7 +120,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     /* compiled from: WalletSendAmountPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$SendScreenState */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public enum SendScreenState {
         SEND,
         PREPARE
@@ -127,7 +128,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     /* compiled from: WalletSendAmountPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$WhenMappings */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -197,7 +198,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     public final boolean isCommentAvailable() {
-        return this.selectedNetwork.getBlockchainType() == BlockchainType.TON;
+        return this.selectedNetwork.getBlockchainType().isTON();
     }
 
     public final Network getSelectedNetwork() {
@@ -315,11 +316,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         ResourceManager resourceManager = this.resourceManager;
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.currentState.ordinal()];
         if (i2 == 1) {
-            i = C3558R.string.wallet_amount_button_txt;
+            i = C3473R.string.wallet_amount_button_txt;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3558R.string.wallet_amount_button_calculate;
+            i = C3473R.string.wallet_amount_button_calculate;
         }
         return resourceManager.getString(i);
     }
@@ -328,10 +329,10 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         Intrinsics.checkNotNullParameter(action, "action");
         if (isBinanceReplenish()) {
             if (!this.availableTokensForBinanceReplenish.isEmpty()) {
-                ((WalletSendAmountView) getViewState()).showSelectTokenDialog(new WalletSelectTokenFragment.ScreenType.Send(this.availableTokensForBinanceReplenish), this.selectedNetwork.getId(), true, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda1
-                    @Override // com.iMe.fork.utils.Callbacks$Callback1
-                    public final void invoke(Object obj) {
-                        WalletSendAmountPresenter.startSelectTokenFlow$lambda$1(WalletSendAmountPresenter.this, action, (TokenDetailed) obj);
+                ((WalletSendAmountView) getViewState()).showSelectTokenDialog(new SelectTokenScreenType.Send(this.availableTokensForBinanceReplenish), this.selectedNetwork.getId(), true, new Callbacks$Callback2() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda1
+                    @Override // com.iMe.fork.utils.Callbacks$Callback2
+                    public final void invoke(Object obj, Object obj2) {
+                        WalletSendAmountPresenter.startSelectTokenFlow$lambda$1(WalletSendAmountPresenter.this, action, (TokenDetailed) obj, (FiatValue) obj2);
                     }
                 });
                 return;
@@ -345,23 +346,22 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 return;
             }
         }
-        ((WalletSendAmountView) getViewState()).showSelectTokenDialog(new WalletSelectTokenFragment.ScreenType.Send(null, 1, null), this.selectedNetwork.getId(), true, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda2
-            @Override // com.iMe.fork.utils.Callbacks$Callback1
-            public final void invoke(Object obj) {
-                WalletSendAmountPresenter.startSelectTokenFlow$lambda$3(WalletSendAmountPresenter.this, action, (TokenDetailed) obj);
+        ((WalletSendAmountView) getViewState()).showSelectTokenDialog(new SelectTokenScreenType.Send(null, 1, null), this.selectedNetwork.getId(), true, new Callbacks$Callback2() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$$ExternalSyntheticLambda2
+            @Override // com.iMe.fork.utils.Callbacks$Callback2
+            public final void invoke(Object obj, Object obj2) {
+                WalletSendAmountPresenter.startSelectTokenFlow$lambda$3(WalletSendAmountPresenter.this, action, (TokenDetailed) obj, (FiatValue) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startSelectTokenFlow$lambda$1(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, TokenDetailed token) {
+    public static final void startSelectTokenFlow$lambda$1(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, TokenDetailed tokenDetailed, FiatValue fiatValue) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(action, "$action");
-        Intrinsics.checkNotNullParameter(token, "token");
-        this$0.selectedToken = token;
-        this$0.loadBalance(token);
+        this$0.selectedToken = tokenDetailed;
+        this$0.loadBalance(tokenDetailed);
         this$0.getBinanceAddressesForReplenish(this$0.selectedToken);
-        action.invoke(token);
+        action.invoke(tokenDetailed);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -372,13 +372,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startSelectTokenFlow$lambda$3(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, TokenDetailed token) {
+    public static final void startSelectTokenFlow$lambda$3(WalletSendAmountPresenter this$0, Callbacks$Callback1 action, TokenDetailed tokenDetailed, FiatValue fiatValue) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(action, "$action");
-        Intrinsics.checkNotNullParameter(token, "token");
-        this$0.selectedToken = token;
-        this$0.loadBalance(token);
-        action.invoke(token);
+        this$0.selectedToken = tokenDetailed;
+        this$0.loadBalance(tokenDetailed);
+        action.invoke(tokenDetailed);
     }
 
     public final String getAvatarByNetworkType() {
@@ -400,7 +399,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1425invoke(result);
+                m1422invoke(result);
                 return Unit.INSTANCE;
             }
 
@@ -412,12 +411,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct add '--show-bad-code' argument
             */
-            public final void m1425invoke(com.iMe.storage.domain.model.Result<? extends java.lang.Boolean> r8) {
+            public final void m1422invoke(com.iMe.storage.domain.model.Result<? extends java.lang.Boolean> r8) {
                 /*
                     Method dump skipped, instructions count: 257
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p031ui.wallet.actions.send.amount.C2157x61dc80d6.m1425invoke(java.lang.Object):void");
+                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p031ui.wallet.actions.send.amount.C2152x61dc80d6.m1422invoke(java.lang.Object):void");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$2
             {
@@ -443,7 +442,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     public final void send(String amount) {
@@ -457,11 +456,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 sendDonation(TelegramConstants.INSTANCE.prepareChatIdForBotAPI(this.args.getChatId().longValue()), (TransferArgs.EVM) formatTransferArgs);
                 return;
             } else {
-                ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3558R.string.wallet_feature_not_available));
+                ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3473R.string.wallet_feature_not_available));
                 return;
             }
         }
-        ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3558R.string.wallet_feature_not_available));
+        ((WalletSendAmountView) getViewState()).showToast(this.resourceManager.getString(C3473R.string.wallet_feature_not_available));
     }
 
     public final void validateRecipientAddress(String address) {
@@ -475,12 +474,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1424invoke(result);
+                m1421invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1424invoke(Result<? extends String> it) {
+            public final void m1421invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -488,7 +487,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                     Result.Success success = (Result.Success) result;
                     if (!(((CharSequence) success.getData()).length() > 0)) {
                         resourceManager = WalletSendAmountPresenter.this.resourceManager;
-                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showToast(resourceManager.getString(C3558R.string.wallet_recipient_validation_address_error));
+                        ((WalletSendAmountView) WalletSendAmountPresenter.this.getViewState()).showToast(resourceManager.getString(C3473R.string.wallet_recipient_validation_address_error));
                         return;
                     }
                     WalletSendAmountPresenter.this.setSelectedAddress((String) success.getData());
@@ -522,7 +521,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 }
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
-        })), "viewState: BaseView? = n….invoke(error)\n        })");
+        })), "viewState: BaseView? = n…rror.invoke(error)\n    })");
     }
 
     public final void resetStateIfNeed() {
@@ -594,12 +593,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1419invoke(result);
+                m1416invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1419invoke(Result<? extends String> it) {
+            public final void m1416invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -641,7 +640,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -672,12 +671,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenInfo>> result) {
-                m1420invoke(result);
+                m1417invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1420invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
+            public final void m1417invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -727,7 +726,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -751,12 +750,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends DonationTransferMetadata> result) {
-                m1417invoke(result);
+                m1414invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1417invoke(Result<? extends DonationTransferMetadata> it) {
+            public final void m1414invoke(Result<? extends DonationTransferMetadata> it) {
                 ResourceManager resourceManager;
                 WalletSendAmountPresenter.SendScreenState sendScreenState;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -803,7 +802,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -835,7 +834,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 network = network2;
             }
         }
-        return network.getBlockchainType() == BlockchainType.TON ? (isDonationsTransfer() || isBinanceReplenish()) ? (Network) CollectionsKt.first((List<? extends Object>) NetworksHelper.INSTANCE.getEVMNetworks()) : network : network;
+        return network.getBlockchainType().isTON() ? (isDonationsTransfer() || isBinanceReplenish()) ? (Network) CollectionsKt.first((List<? extends Object>) NetworksHelper.INSTANCE.getEVMNetworks()) : network : network;
     }
 
     private final TLRPC$User resolveUserArg() {
@@ -940,7 +939,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0068, code lost:
-        if (r3.hasUser(r2.f1694id) != false) goto L24;
+        if (r3.hasUser(r2.f1685id) != false) goto L24;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -991,7 +990,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             if (r2 == 0) goto L6b
             com.iMe.storage.domain.gateway.TelegramGateway r3 = r6.telegramGateway
             kotlin.jvm.internal.Intrinsics.checkNotNull(r2)
-            long r4 = r2.f1694id
+            long r4 = r2.f1685id
             boolean r2 = r3.hasUser(r4)
             if (r2 == 0) goto L6b
             goto L6c
@@ -1006,7 +1005,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     private final DialogModel getSendConfirmationDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3558R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3558R.string.common_cancel), this.resourceManager.getString(C3558R.string.wallet_amount_confirm_alert_ok_btn));
+        return new DialogModel(this.resourceManager.getString(C3473R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3473R.string.common_cancel), this.resourceManager.getString(C3473R.string.wallet_amount_confirm_alert_ok_btn));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1037,12 +1036,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoTransferMetadata> result) {
-                    m1418invoke(result);
+                    m1415invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1418invoke(Result<? extends CryptoTransferMetadata> it) {
+                public final void m1415invoke(Result<? extends CryptoTransferMetadata> it) {
                     ResourceManager resourceManager;
                     WalletSendAmountPresenter.SendScreenState sendScreenState;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -1087,7 +1086,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                     Intrinsics.checkNotNullExpressionValue(error, "error");
                 }
             }));
-            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+            Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
@@ -1101,7 +1100,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3558R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3558R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3473R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3473R.string.common_cancel), 6, null);
     }
 
     private final void sendDonation(long j, final TransferArgs.EVM evm) {
@@ -1119,12 +1118,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1422invoke(result);
+                m1419invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1422invoke(Result<? extends Boolean> it) {
+            public final void m1419invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 RxEventBus rxEventBus;
@@ -1185,7 +1184,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -1204,12 +1203,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1423invoke(result);
+                m1420invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1423invoke(Result<? extends Boolean> it) {
+            public final void m1420invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 RxEventBus rxEventBus;
@@ -1226,11 +1225,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                         telegramGateway = WalletSendAmountPresenter.this.telegramGateway;
                         TLRPC$User selectedUser = WalletSendAmountPresenter.this.getSelectedUser();
                         Intrinsics.checkNotNull(selectedUser);
-                        if (telegramGateway.hasUser(selectedUser.f1694id)) {
+                        if (telegramGateway.hasUser(selectedUser.f1685id)) {
                             WalletSendAmountPresenter walletSendAmountPresenter = WalletSendAmountPresenter.this;
                             TLRPC$User selectedUser2 = walletSendAmountPresenter.getSelectedUser();
                             Intrinsics.checkNotNull(selectedUser2);
-                            long j = selectedUser2.f1694id;
+                            long j = selectedUser2.f1685id;
                             telegramGateway2 = WalletSendAmountPresenter.this.telegramGateway;
                             walletSendAmountPresenter.sendMessageToChat(j, telegramGateway2.getSelectedAccountId(), transferArgs.getAmount());
                         }
@@ -1291,7 +1290,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -1307,11 +1306,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     private final String getConfirmMessage(String str) {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3558R.string.wallet_amount_send_confirm_alert_description;
+        int i = C3473R.string.wallet_amount_send_confirm_alert_description;
         Object[] objArr = new Object[2];
         Double valueOf = Double.valueOf(Double.parseDouble(str));
         TokenDetailed tokenDetailed = this.selectedToken;
-        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        objArr[0] = BalanceFormatter.format(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
         objArr[1] = getSelectedTokenTicker();
         return resourceManager.getString(i, objArr);
     }
@@ -1319,11 +1318,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
     /* JADX INFO: Access modifiers changed from: private */
     public final String getSuccessMessage(double d) {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3558R.string.wallet_amount_success_send_description;
+        int i = C3473R.string.wallet_amount_success_send_description;
         Object[] objArr = new Object[2];
         Double valueOf = Double.valueOf(d);
         TokenDetailed tokenDetailed = this.selectedToken;
-        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        objArr[0] = BalanceFormatter.format(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
         objArr[1] = getSelectedTokenTicker();
         return resourceManager.getString(i, objArr);
     }
@@ -1343,12 +1342,12 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1421invoke(result);
+                m1418invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1421invoke(Result<? extends TokenBalance> it) {
+            public final void m1418invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends TokenBalance> result = it;
@@ -1388,7 +1387,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
@@ -1400,7 +1399,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
         String formatMessageToUser = formatMessageToUser(j, d, j2, DateExtKt.now());
         ArrayList arrayList = new ArrayList();
         TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl = new TLRPC$TL_messageEntityTextUrl();
-        String string = this.resourceManager.getString(C3558R.string.wallet_amount_send_message_processing_name);
+        String string = this.resourceManager.getString(C3473R.string.wallet_amount_send_message_processing_name);
         tLRPC$TL_messageEntityTextUrl.url = "https://imem.app/download";
         tLRPC$TL_messageEntityTextUrl.length = string.length();
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, string, 0, false, 6, (Object) null);
@@ -1412,7 +1411,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             String str = user.username;
             if (!(str == null || str.length() == 0)) {
                 TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl2 = new TLRPC$TL_messageEntityTextUrl();
-                String string2 = this.resourceManager.getString(C3558R.string.wallet_amount_send_message_id);
+                String string2 = this.resourceManager.getString(C3473R.string.wallet_amount_send_message_id);
                 Constants.Telegram telegram = Constants.Telegram.INSTANCE;
                 String str2 = user.username;
                 Intrinsics.checkNotNullExpressionValue(str2, "user.username");
@@ -1429,7 +1428,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
             String str3 = user2.username;
             if (!(str3 == null || str3.length() == 0)) {
                 TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl3 = new TLRPC$TL_messageEntityTextUrl();
-                String string3 = this.resourceManager.getString(C3558R.string.wallet_amount_send_message_id);
+                String string3 = this.resourceManager.getString(C3473R.string.wallet_amount_send_message_id);
                 Constants.Telegram telegram2 = Constants.Telegram.INSTANCE;
                 String str4 = user2.username;
                 Intrinsics.checkNotNullExpressionValue(str4, "user.username");
@@ -1445,11 +1444,11 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     private final String formatMessageToUser(long j, double d, long j2, long j3) {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3558R.string.wallet_amount_send_message_payload;
+        int i = C3473R.string.wallet_amount_send_message_payload;
         Object[] objArr = new Object[5];
         Double valueOf = Double.valueOf(d);
         TokenDetailed tokenDetailed = this.selectedToken;
-        objArr[0] = BalanceFormatter.formatBalance(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
+        objArr[0] = BalanceFormatter.format(valueOf, Integer.valueOf(NumberExtKt.orZero(tokenDetailed != null ? Integer.valueOf(tokenDetailed.getDecimals()) : null)));
         objArr[1] = getSelectedTokenTicker();
         objArr[2] = String.valueOf(j2);
         objArr[3] = String.valueOf(j);
@@ -1486,7 +1485,7 @@ public final class WalletSendAmountPresenter extends BasePresenter<WalletSendAmo
 
     /* compiled from: WalletSendAmountPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.actions.send.amount.WalletSendAmountPresenter$Companion */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

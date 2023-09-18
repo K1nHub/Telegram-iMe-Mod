@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_decryptedMessage_layer17 extends TLRPC$TL_decryptedMessage {
     public static int constructor = 541931640;
 

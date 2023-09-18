@@ -3,7 +3,7 @@ package org.telegram.p043ui.Charts.data;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* renamed from: org.telegram.ui.Charts.data.DoubleLinearChartData */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class DoubleLinearChartData extends ChartData {
     public float[] linesK;
 

@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLRPC$MessageMedia;
 import org.telegram.tgnet.TLRPC$TL_messageEntityCustomEmoji;
 import org.telegram.tgnet.TLRPC$TL_messageMediaVenue;
 import org.telegram.tgnet.TLRPC$TL_null;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class VideoEditedInfo {
     public boolean alreadyScheduledConverting;
     public int bitrate;
@@ -47,7 +47,7 @@ public class VideoEditedInfo {
     public boolean isStory;
 
     /* renamed from: iv */
-    public byte[] f1505iv;
+    public byte[] f1496iv;
     public byte[] key;
     public ArrayList<MediaEntity> mediaEntities;
     public boolean muted;
@@ -71,7 +71,7 @@ public class VideoEditedInfo {
     public boolean shouldLimitFps = true;
     public boolean tryUseHevc = false;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class EmojiEntity extends TLRPC$TL_messageEntityCustomEmoji {
         public String documentAbsolutePath;
         public MediaEntity entity;
@@ -101,7 +101,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class MediaEntity {
         public static final int TYPE_LOCATION = 3;
         public static final int TYPE_PHOTO = 2;
@@ -109,10 +109,10 @@ public class VideoEditedInfo {
         public static final int TYPE_TEXT = 1;
 
         /* renamed from: H */
-        public int f1506H;
+        public int f1497H;
 
         /* renamed from: W */
-        public int f1507W;
+        public int f1498W;
         public float additionalHeight;
         public float additionalWidth;
         public AnimatedFileDrawable animatedFileDrawable;
@@ -151,10 +151,10 @@ public class VideoEditedInfo {
         public float width;
 
         /* renamed from: x */
-        public float f1508x;
+        public float f1499x;
 
         /* renamed from: y */
-        public float f1509y;
+        public float f1500y;
 
         public MediaEntity() {
         }
@@ -162,8 +162,8 @@ public class VideoEditedInfo {
         public MediaEntity(AbstractSerializedData abstractSerializedData, boolean z) {
             this.type = abstractSerializedData.readByte(false);
             this.subType = abstractSerializedData.readByte(false);
-            this.f1508x = abstractSerializedData.readFloat(false);
-            this.f1509y = abstractSerializedData.readFloat(false);
+            this.f1499x = abstractSerializedData.readFloat(false);
+            this.f1500y = abstractSerializedData.readFloat(false);
             this.rotation = abstractSerializedData.readFloat(false);
             this.width = abstractSerializedData.readFloat(false);
             this.height = abstractSerializedData.readFloat(false);
@@ -215,8 +215,8 @@ public class VideoEditedInfo {
             String key;
             abstractSerializedData.writeByte(this.type);
             abstractSerializedData.writeByte(this.subType);
-            abstractSerializedData.writeFloat(this.f1508x);
-            abstractSerializedData.writeFloat(this.f1509y);
+            abstractSerializedData.writeFloat(this.f1499x);
+            abstractSerializedData.writeFloat(this.f1500y);
             abstractSerializedData.writeFloat(this.rotation);
             abstractSerializedData.writeFloat(this.width);
             abstractSerializedData.writeFloat(this.height);
@@ -281,8 +281,8 @@ public class VideoEditedInfo {
             MediaEntity mediaEntity = new MediaEntity();
             mediaEntity.type = this.type;
             mediaEntity.subType = this.subType;
-            mediaEntity.f1508x = this.f1508x;
-            mediaEntity.f1509y = this.f1509y;
+            mediaEntity.f1499x = this.f1499x;
+            mediaEntity.f1500y = this.f1500y;
             mediaEntity.rotation = this.rotation;
             mediaEntity.width = this.width;
             mediaEntity.height = this.height;
@@ -343,8 +343,8 @@ public class VideoEditedInfo {
                 serializedData.writeFloat(this.filterState.blurExcludeSize);
                 Point point = this.filterState.blurExcludePoint;
                 if (point != null) {
-                    serializedData.writeFloat(point.f1815x);
-                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1816y);
+                    serializedData.writeFloat(point.f1806x);
+                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1807y);
                 } else {
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);

@@ -2,7 +2,7 @@ package com.google.firebase.firestore.model.mutation;
 
 import com.google.firebase.firestore.model.FieldPath;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FieldMask {
     private final Set<FieldPath> mask;
 

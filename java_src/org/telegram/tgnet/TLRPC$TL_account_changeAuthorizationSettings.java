@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_account_changeAuthorizationSettings extends TLObject {
     public static int constructor = 1089766498;
     public boolean call_requests_disabled;

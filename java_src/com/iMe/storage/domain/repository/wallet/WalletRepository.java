@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
 /* compiled from: WalletRepository.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletRepository {
     Observable<Result<Boolean>> detachCustomToken(Token token);
 

@@ -1,7 +1,7 @@
 package org.bouncycastle.pqc.crypto.xmss;
 
 import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class XMSSMTKeyParameters extends AsymmetricKeyParameter {
     private final String treeDigest;
 

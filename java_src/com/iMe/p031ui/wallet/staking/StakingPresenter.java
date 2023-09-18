@@ -25,7 +25,7 @@ import timber.log.Timber;
 /* compiled from: StakingPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.staking.StakingPresenter */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class StakingPresenter extends BasePresenter<StakingView> {
     private final HintsPreferenceHelper hintsPreferenceHelper;
     private boolean isAllTabRefreshing;
@@ -39,7 +39,7 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
     /* compiled from: StakingPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.staking.StakingPresenter$WhenMappings */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -127,12 +127,12 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingTotalStats> result) {
-                m1583invoke(result);
+                m1574invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1583invoke(Result<? extends StakingTotalStats> it) {
+            public final void m1574invoke(Result<? extends StakingTotalStats> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends StakingTotalStats> result = it;
@@ -176,14 +176,14 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo716ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.StakingTabRefreshStateChanged, Unit>() { // from class: com.iMe.ui.wallet.staking.StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
                 super(1);
@@ -191,12 +191,12 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged) {
-                m1582invoke(stakingTabRefreshStateChanged);
+                m1573invoke(stakingTabRefreshStateChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1582invoke(DomainRxEvents.StakingTabRefreshStateChanged it) {
+            public final void m1573invoke(DomainRxEvents.StakingTabRefreshStateChanged it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged = it;
                 int i = StakingPresenter.WhenMappings.$EnumSwitchMapping$0[stakingTabRefreshStateChanged.getStakingTabType().ordinal()];
@@ -232,7 +232,7 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
                 Intrinsics.checkNotNullExpressionValue(error, "error");
             }
         }));
-        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n….invoke(error)\n        })");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…rror.invoke(error)\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 }

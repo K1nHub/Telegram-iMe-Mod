@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow;
 import org.orbitmvi.orbit.Container;
 import org.orbitmvi.orbit.syntax.ContainerContext;
 /* compiled from: TestContainerDecorator.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TestContainerDecorator<STATE, SIDE_EFFECT> implements Container {
     private final Container<STATE, SIDE_EFFECT> actual;
     private volatile /* synthetic */ Object delegate;

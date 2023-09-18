@@ -9,7 +9,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: BotCategoryTitleView.kt */
 /* renamed from: com.iMe.ui.shop.view.custom.BotCategoryTitleView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BotCategoryTitleView extends FrameLayout {
     private TextView title;
 

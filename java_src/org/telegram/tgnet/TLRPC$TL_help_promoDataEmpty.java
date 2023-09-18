@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_help_promoDataEmpty extends TLRPC$help_PromoData {
     public static int constructor = -1728664459;
     public int expires;

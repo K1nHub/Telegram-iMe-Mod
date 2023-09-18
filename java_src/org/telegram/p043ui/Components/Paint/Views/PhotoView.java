@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Photo;
 import org.telegram.tgnet.TLRPC$PhotoSize;
 /* renamed from: org.telegram.ui.Components.Paint.Views.PhotoView */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class PhotoView extends EntityView {
     private int anchor;
     private Size baseSize;
@@ -41,7 +41,7 @@ public class PhotoView extends EntityView {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.Paint.Views.PhotoView$FrameLayoutDrawer */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class FrameLayoutDrawer extends FrameLayout {
         public FrameLayoutDrawer(Context context) {
             super(context);
@@ -218,7 +218,7 @@ public class PhotoView extends EntityView {
     }
 
     /* renamed from: org.telegram.ui.Components.Paint.Views.PhotoView$PhotoViewSelectionView */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public class PhotoViewSelectionView extends EntityView.SelectionView {
         private final Paint clearPaint;
         private Path path;

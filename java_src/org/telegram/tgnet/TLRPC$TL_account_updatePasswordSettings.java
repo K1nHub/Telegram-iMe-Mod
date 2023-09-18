@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_account_updatePasswordSettings extends TLObject {
     public static int constructor = -1516564433;
     public TLRPC$TL_account_passwordInputSettings new_settings;

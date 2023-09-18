@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @KeepName
 @SafeParcelable.Class(creator = "CommonWalletObjectCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class CommonWalletObject extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CommonWalletObject> CREATOR = new zzc();
     @SafeParcelable.Field(m797id = 2)

@@ -3,7 +3,7 @@ package org.bouncycastle.pqc.crypto.lms;
 import com.google.android.exoplayer2.source.rtsp.RtpPacket;
 import java.io.ByteArrayOutputStream;
 import org.bouncycastle.util.Encodable;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Composer {
     private final ByteArrayOutputStream bos = new ByteArrayOutputStream();
 

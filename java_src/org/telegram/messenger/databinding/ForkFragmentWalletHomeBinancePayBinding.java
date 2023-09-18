@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.SlopSwipeRefreshLayout;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkFragmentWalletHomeBinancePayBinding implements ViewBinding {
     public final RecyclerView recycleWalletHomeBinancePayDashboard;
     private final SlopSwipeRefreshLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletHomeBinancePayBinding implements ViewBindin
     }
 
     public static ForkFragmentWalletHomeBinancePayBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_wallet_home_binance_pay, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_wallet_home_binance_pay, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentWalletHomeBinancePayBinding implements ViewBindin
     }
 
     public static ForkFragmentWalletHomeBinancePayBinding bind(View view) {
-        int i = C3558R.C3561id.recycle_wallet_home_binance_pay_dashboard;
+        int i = C3473R.C3476id.recycle_wallet_home_binance_pay_dashboard;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletHomeBinancePayBinding((SlopSwipeRefreshLayout) view, recyclerView);

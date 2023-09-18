@@ -14,7 +14,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: AppReviewManager.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppReviewManager {
     private final WeakReference<Activity> mActivityWeakReference;
     private final ReviewManager manager;
@@ -106,7 +106,7 @@ public final class AppReviewManager {
     }
 
     /* compiled from: AppReviewManager.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

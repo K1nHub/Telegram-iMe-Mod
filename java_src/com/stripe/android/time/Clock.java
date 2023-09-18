@@ -1,7 +1,7 @@
 package com.stripe.android.time;
 
 import java.util.Calendar;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Clock {
     private static Clock instance;
     protected Calendar calendarInstance;

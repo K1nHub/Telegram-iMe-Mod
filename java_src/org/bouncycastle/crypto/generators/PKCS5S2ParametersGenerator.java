@@ -7,7 +7,7 @@ import org.bouncycastle.crypto.PBEParametersGenerator;
 import org.bouncycastle.crypto.macs.HMac;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.crypto.util.DigestFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     private Mac hMac;
     private byte[] state;

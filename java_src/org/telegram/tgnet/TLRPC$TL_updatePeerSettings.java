@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class TLRPC$TL_updatePeerSettings extends TLRPC$Update {
     public static int constructor = 1786671974;
     public TLRPC$Peer peer;

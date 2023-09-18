@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzfh extends zzdi<String> implements zzfg, RandomAccess {
     private static final zzfh zza;
     private static final zzfg zzb;

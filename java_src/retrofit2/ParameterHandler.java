@@ -7,7 +7,7 @@ import okhttp3.Headers;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public abstract class ParameterHandler<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void apply(RequestBuilder requestBuilder, T t) throws IOException;
@@ -51,7 +51,7 @@ public abstract class ParameterHandler<T> {
         };
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class RelativeUrl extends ParameterHandler<Object> {
         @Override // retrofit2.ParameterHandler
         void apply(RequestBuilder requestBuilder, Object obj) {
@@ -60,7 +60,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class Header<T> extends ParameterHandler<T> {
         private final String name;
         private final Converter<T, String> valueConverter;
@@ -81,7 +81,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class Path<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final String name;
@@ -103,7 +103,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class Query<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final String name;
@@ -126,7 +126,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class QueryName<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final Converter<T, String> nameConverter;
@@ -146,7 +146,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class QueryMap<T> extends ParameterHandler<Map<String, T>> {
         private final boolean encoded;
         private final Converter<T, String> valueConverter;
@@ -184,7 +184,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class HeaderMap<T> extends ParameterHandler<Map<String, T>> {
         private final Converter<T, String> valueConverter;
 
@@ -216,7 +216,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class Field<T> extends ParameterHandler<T> {
         private final boolean encoded;
         private final String name;
@@ -239,7 +239,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class FieldMap<T> extends ParameterHandler<Map<String, T>> {
         private final boolean encoded;
         private final Converter<T, String> valueConverter;
@@ -277,7 +277,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class Part<T> extends ParameterHandler<T> {
         private final Converter<T, RequestBody> converter;
         private final Headers headers;
@@ -301,7 +301,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class RawPart extends ParameterHandler<MultipartBody.Part> {
         static final RawPart INSTANCE = new RawPart();
 
@@ -317,7 +317,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class PartMap<T> extends ParameterHandler<Map<String, T>> {
         private final String transferEncoding;
         private final Converter<T, RequestBody> valueConverter;
@@ -351,7 +351,7 @@ public abstract class ParameterHandler<T> {
         }
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     static final class Body<T> extends ParameterHandler<T> {
         private final Converter<T, RequestBody> converter;
 

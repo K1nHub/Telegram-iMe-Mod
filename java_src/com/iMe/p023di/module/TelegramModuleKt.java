@@ -34,7 +34,7 @@ import org.koin.core.scope.Scope;
 import org.koin.dsl.ModuleDSLKt;
 /* compiled from: TelegramModule.kt */
 /* renamed from: com.iMe.di.module.TelegramModuleKt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TelegramModuleKt {
     private static Module telegramModule = ModuleDSLKt.module$default(false, new Function1<Module, Unit>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1
         @Override // kotlin.jvm.functions.Function1

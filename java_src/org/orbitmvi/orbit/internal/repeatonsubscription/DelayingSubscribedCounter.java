@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.StateFlowKt;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 /* compiled from: DelayingSubscribedCounter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DelayingSubscribedCounter implements SubscribedCounter {
     private static final /* synthetic */ AtomicIntegerFieldUpdater counter$FU = AtomicIntegerFieldUpdater.newUpdater(DelayingSubscribedCounter.class, "counter");
     private static final /* synthetic */ AtomicReferenceFieldUpdater job$FU = AtomicReferenceFieldUpdater.newUpdater(DelayingSubscribedCounter.class, Object.class, "job");

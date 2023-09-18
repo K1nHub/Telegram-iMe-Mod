@@ -1,5 +1,5 @@
 package org.bouncycastle.pqc.math.linearalgebra;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class PolynomialGF2mSmallM {
     private int[] coefficients;
     private int degree;

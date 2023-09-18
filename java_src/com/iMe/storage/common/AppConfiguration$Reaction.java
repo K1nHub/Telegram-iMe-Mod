@@ -2,7 +2,7 @@ package com.iMe.storage.common;
 
 import com.iMe.storage.data.manager.common.EnvironmentManager;
 /* compiled from: AppConfiguration.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AppConfiguration$Reaction {
     static {
         new AppConfiguration$Reaction();

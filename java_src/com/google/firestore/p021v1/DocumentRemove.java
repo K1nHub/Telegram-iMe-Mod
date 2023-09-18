@@ -7,7 +7,7 @@ import com.google.protobuf.Parser;
 import com.google.protobuf.Timestamp;
 import java.util.List;
 /* renamed from: com.google.firestore.v1.DocumentRemove */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DocumentRemove extends GeneratedMessageLite<DocumentRemove, Builder> implements MessageLiteOrBuilder {
     private static final DocumentRemove DEFAULT_INSTANCE;
     public static final int DOCUMENT_FIELD_NUMBER = 1;
@@ -31,7 +31,7 @@ public final class DocumentRemove extends GeneratedMessageLite<DocumentRemove, B
     }
 
     /* renamed from: com.google.firestore.v1.DocumentRemove$Builder */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentRemove, Builder> implements MessageLiteOrBuilder {
         /* synthetic */ Builder(C10601 c10601) {
             this();
@@ -43,7 +43,7 @@ public final class DocumentRemove extends GeneratedMessageLite<DocumentRemove, B
     }
 
     /* renamed from: com.google.firestore.v1.DocumentRemove$1 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class C10601 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */

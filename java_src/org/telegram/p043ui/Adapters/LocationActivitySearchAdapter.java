@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.GraySectionCell;
@@ -13,7 +13,7 @@ import org.telegram.p043ui.Components.FlickerLoadingView;
 import org.telegram.p043ui.Components.RecyclerListView;
 import org.telegram.tgnet.TLRPC$TL_messageMediaVenue;
 /* renamed from: org.telegram.ui.Adapters.LocationActivitySearchAdapter */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class LocationActivitySearchAdapter extends BaseLocationAdapter {
     private FlickerLoadingView globalGradientView;
     private Context mContext;
@@ -101,9 +101,9 @@ public class LocationActivitySearchAdapter extends BaseLocationAdapter {
             locationCell.setLocation(tLRPC$TL_messageMediaVenue, i2, z);
         } else if (viewHolder.getItemViewType() == 1) {
             if (i == 0 && !this.locations.isEmpty()) {
-                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("LocationOnMap", C3558R.string.LocationOnMap));
+                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("LocationOnMap", C3473R.string.LocationOnMap));
             } else {
-                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("NearbyVenue", C3558R.string.NearbyVenue));
+                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("NearbyVenue", C3473R.string.NearbyVenue));
             }
         }
     }

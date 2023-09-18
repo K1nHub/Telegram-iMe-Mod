@@ -8,7 +8,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* compiled from: com.google.android.gms:play-services-maps@@18.1.0 */
 @SafeParcelable.Class(creator = "TileCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Tile extends AbstractSafeParcelable {
     public static final Parcelable.Creator<Tile> CREATOR = new zzz();
     @SafeParcelable.Field(m797id = 4)

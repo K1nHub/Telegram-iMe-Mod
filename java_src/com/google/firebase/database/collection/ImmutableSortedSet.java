@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.Map;
 import p033j$.util.Iterator;
 import p033j$.util.function.Consumer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ImmutableSortedSet<T> implements Iterable<T> {
     private final ImmutableSortedMap<T, Void> map;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class WrappedEntryIterator<T> implements Iterator<T>, p033j$.util.Iterator {
         final Iterator<Map.Entry<T, Void>> iterator;
 

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 /* renamed from: org.telegram.ui.Components.AnimatedPhoneNumberEditText */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class AnimatedPhoneNumberEditText extends HintEditText {
     private ObjectAnimator animator;
     private Runnable hintAnimationCallback;
@@ -216,7 +216,7 @@ public class AnimatedPhoneNumberEditText extends HintEditText {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: org.telegram.ui.Components.AnimatedPhoneNumberEditText$HintFadeProperty */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes7.dex */
     public final class HintFadeProperty extends FloatPropertyCompat<Integer> {
         public HintFadeProperty() {
             super("hint_fade");

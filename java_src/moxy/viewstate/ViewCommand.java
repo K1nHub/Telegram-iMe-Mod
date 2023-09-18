@@ -2,7 +2,7 @@ package moxy.viewstate;
 
 import moxy.MvpView;
 import moxy.viewstate.strategy.StateStrategy;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class ViewCommand<View extends MvpView> {
     private final Class<? extends StateStrategy> stateStrategyType;
     private final String tag;

@@ -15,12 +15,12 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TimerDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class TimerDrawable extends Drawable {
     Context context;
     ColorFilter currentColorFilter;
@@ -60,9 +60,9 @@ public class TimerDrawable extends Drawable {
         if (this.time != i) {
             this.time = i;
             if (this.isDialog) {
-                this.currentTtlIcon = ContextCompat.getDrawable(this.context, C3558R.C3560drawable.msg_autodelete_badge2).mutate();
+                this.currentTtlIcon = ContextCompat.getDrawable(this.context, C3473R.C3475drawable.msg_autodelete_badge2).mutate();
             } else {
-                Drawable mutate = ContextCompat.getDrawable(this.context, i == 0 ? C3558R.C3560drawable.msg_mini_autodelete : C3558R.C3560drawable.msg_mini_autodelete_empty).mutate();
+                Drawable mutate = ContextCompat.getDrawable(this.context, i == 0 ? C3473R.C3475drawable.msg_mini_autodelete : C3473R.C3475drawable.msg_mini_autodelete_empty).mutate();
                 this.currentTtlIcon = mutate;
                 mutate.setColorFilter(this.currentColorFilter);
             }
@@ -71,39 +71,39 @@ public class TimerDrawable extends Drawable {
             if (i2 >= 1 && i2 < 60) {
                 str = "" + i;
                 if (str.length() < 2) {
-                    str = str + LocaleController.getString("SecretChatTimerSeconds", C3558R.string.SecretChatTimerSeconds);
+                    str = str + LocaleController.getString("SecretChatTimerSeconds", C3473R.string.SecretChatTimerSeconds);
                 }
             } else if (i2 >= 60 && i2 < 3600) {
                 str = "" + (i / 60);
                 if (str.length() < 2) {
-                    str = str + LocaleController.getString("SecretChatTimerMinutes", C3558R.string.SecretChatTimerMinutes);
+                    str = str + LocaleController.getString("SecretChatTimerMinutes", C3473R.string.SecretChatTimerMinutes);
                 }
             } else if (i2 >= 3600 && i2 < 86400) {
                 str = "" + ((i / 60) / 60);
                 if (str.length() < 2) {
-                    str = str + LocaleController.getString("SecretChatTimerHours", C3558R.string.SecretChatTimerHours);
+                    str = str + LocaleController.getString("SecretChatTimerHours", C3473R.string.SecretChatTimerHours);
                 }
             } else if (i2 >= 86400 && i2 < 604800) {
                 str = "" + (((i / 60) / 60) / 24);
                 if (str.length() < 2) {
-                    str = str + LocaleController.getString("SecretChatTimerDays", C3558R.string.SecretChatTimerDays);
+                    str = str + LocaleController.getString("SecretChatTimerDays", C3473R.string.SecretChatTimerDays);
                 }
             } else if (i2 < 2678400) {
                 str = "" + ((((i / 60) / 60) / 24) / 7);
                 if (str.length() < 2) {
-                    str = str + LocaleController.getString("SecretChatTimerWeeks", C3558R.string.SecretChatTimerWeeks);
+                    str = str + LocaleController.getString("SecretChatTimerWeeks", C3473R.string.SecretChatTimerWeeks);
                 } else if (str.length() > 2) {
                     str = "c";
                 }
             } else if (i2 < 31449600) {
                 str = "" + ((((i / 60) / 60) / 24) / 30);
                 if (str.length() < 2) {
-                    str = str + LocaleController.getString("SecretChatTimerMonths", C3558R.string.SecretChatTimerMonths);
+                    str = str + LocaleController.getString("SecretChatTimerMonths", C3473R.string.SecretChatTimerMonths);
                 }
             } else {
                 str = "" + ((((i / 60) / 60) / 24) / 364);
                 if (str.length() < 2) {
-                    str = str + LocaleController.getString("SecretChatTimerYears", C3558R.string.SecretChatTimerYears);
+                    str = str + LocaleController.getString("SecretChatTimerYears", C3473R.string.SecretChatTimerYears);
                 }
             }
             String str2 = str;

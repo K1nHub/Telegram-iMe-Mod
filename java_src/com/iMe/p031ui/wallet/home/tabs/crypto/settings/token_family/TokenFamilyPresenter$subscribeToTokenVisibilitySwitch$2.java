@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TokenFamilyPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.token_family.TokenFamilyPresenter$subscribeToTokenVisibilitySwitch$2 */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TokenFamilyPresenter$subscribeToTokenVisibilitySwitch$2 extends Lambda implements Function1<FoundTokenItem, ObservableSource<? extends Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem>>> {
     final /* synthetic */ TokenFamilyPresenter this$0;
 

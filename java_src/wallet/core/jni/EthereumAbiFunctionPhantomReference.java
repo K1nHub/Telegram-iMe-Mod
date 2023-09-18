@@ -4,10 +4,9 @@ import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EthereumAbiFunction.java */
-/* loaded from: classes4.dex */
-public class EthereumAbiFunctionPhantomReference extends PhantomReference<EthereumAbiFunction> {
+/* loaded from: classes6.dex */
+class EthereumAbiFunctionPhantomReference extends PhantomReference<EthereumAbiFunction> {
     private long nativeHandle;
     private static Set<EthereumAbiFunctionPhantomReference> references = new HashSet();
     private static ReferenceQueue<EthereumAbiFunction> queue = new ReferenceQueue<>();

@@ -9,15 +9,15 @@ import java.util.WeakHashMap;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.p041io.Streams;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     /* renamed from: T1 */
-    private static CacheKey f1410T1;
+    private static CacheKey f1401T1;
     private static CacheKey[] internedKeys;
 
     /* renamed from: I */
-    private final byte[] f1411I;
+    private final byte[] f1402I;
     private final byte[] masterSecret;
     private final int maxCacheR;
     private final int maxQ;
@@ -26,12 +26,12 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
     private LMSPublicKeyParameters publicKey;
 
     /* renamed from: q */
-    private int f1412q;
+    private int f1403q;
     private final Map<CacheKey, byte[]> tCache;
     private final Digest tDigest;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class CacheKey {
         private final int index;
 
@@ -50,7 +50,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     static {
         CacheKey cacheKey = new CacheKey(1);
-        f1410T1 = cacheKey;
+        f1401T1 = cacheKey;
         CacheKey[] cacheKeyArr = new CacheKey[129];
         internedKeys = cacheKeyArr;
         cacheKeyArr[1] = cacheKey;
@@ -69,8 +69,8 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
         super(true);
         this.parameters = lMSigParameters;
         this.otsParameters = lMOtsParameters;
-        this.f1412q = i;
-        this.f1411I = Arrays.clone(bArr);
+        this.f1403q = i;
+        this.f1402I = Arrays.clone(bArr);
         this.maxQ = i2;
         this.masterSecret = Arrays.clone(bArr2);
         this.maxCacheR = 1 << (lMSigParameters.getH() + 1);
@@ -181,7 +181,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
             return false;
         }
         LMSPrivateKeyParameters lMSPrivateKeyParameters = (LMSPrivateKeyParameters) obj;
-        if (this.f1412q == lMSPrivateKeyParameters.f1412q && this.maxQ == lMSPrivateKeyParameters.maxQ && Arrays.areEqual(this.f1411I, lMSPrivateKeyParameters.f1411I)) {
+        if (this.f1403q == lMSPrivateKeyParameters.f1403q && this.maxQ == lMSPrivateKeyParameters.maxQ && Arrays.areEqual(this.f1402I, lMSPrivateKeyParameters.f1402I)) {
             LMSigParameters lMSigParameters = this.parameters;
             if (lMSigParameters == null ? lMSPrivateKeyParameters.parameters == null : lMSigParameters.equals(lMSPrivateKeyParameters.parameters)) {
                 LMOtsParameters lMOtsParameters = this.otsParameters;
@@ -212,11 +212,11 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     @Override // org.bouncycastle.pqc.crypto.lms.LMSKeyParameters, org.bouncycastle.util.Encodable
     public byte[] getEncoded() throws IOException {
-        return Composer.compose().u32str(0).u32str(this.parameters.getType()).u32str(this.otsParameters.getType()).bytes(this.f1411I).u32str(this.f1412q).u32str(this.maxQ).u32str(this.masterSecret.length).bytes(this.masterSecret).build();
+        return Composer.compose().u32str(0).u32str(this.parameters.getType()).u32str(this.otsParameters.getType()).bytes(this.f1402I).u32str(this.f1403q).u32str(this.maxQ).u32str(this.masterSecret.length).bytes(this.masterSecret).build();
     }
 
     public byte[] getI() {
-        return Arrays.clone(this.f1411I);
+        return Arrays.clone(this.f1402I);
     }
 
     public byte[] getMasterSecret() {
@@ -231,7 +231,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
         LMSPublicKeyParameters lMSPublicKeyParameters;
         synchronized (this) {
             if (this.publicKey == null) {
-                this.publicKey = new LMSPublicKeyParameters(this.parameters, this.otsParameters, findT(f1410T1), this.f1411I);
+                this.publicKey = new LMSPublicKeyParameters(this.parameters, this.otsParameters, findT(f1401T1), this.f1402I);
             }
             lMSPublicKeyParameters = this.publicKey;
         }
@@ -243,7 +243,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
     }
 
     public int hashCode() {
-        int hashCode = ((this.f1412q * 31) + Arrays.hashCode(this.f1411I)) * 31;
+        int hashCode = ((this.f1403q * 31) + Arrays.hashCode(this.f1402I)) * 31;
         LMSigParameters lMSigParameters = this.parameters;
         int hashCode2 = (hashCode + (lMSigParameters != null ? lMSigParameters.hashCode() : 0)) * 31;
         LMOtsParameters lMOtsParameters = this.otsParameters;

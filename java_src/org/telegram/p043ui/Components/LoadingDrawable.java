@@ -13,7 +13,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.LoadingDrawable */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class LoadingDrawable extends Drawable {
     private boolean appearByGradient;
     private LinearGradient appearGradient;

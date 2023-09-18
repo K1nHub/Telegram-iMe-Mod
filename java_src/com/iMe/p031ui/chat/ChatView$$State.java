@@ -16,7 +16,7 @@ import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC$Chat;
 /* renamed from: com.iMe.ui.chat.ChatView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ChatView$$State extends MvpViewState<ChatView> implements ChatView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -173,7 +173,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$OnVoiceToTextCompletedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnVoiceToTextCompletedCommand extends ViewCommand<ChatView> {
         public final MessageObject messageObject;
         public final String result;
@@ -192,7 +192,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowReactionActivationAlertCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowReactionActivationAlertCommand extends ViewCommand<ChatView> {
         ShowReactionActivationAlertCommand(ChatView$$State chatView$$State) {
             super("showReactionActivationAlert", OneExecutionStateStrategy.class);
@@ -206,7 +206,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowCryptoBoxInfoCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowCryptoBoxInfoCommand extends ViewCommand<ChatView> {
         public final TLRPC$Chat chat;
         public final CryptoBoxInfo cryptoBoxInfo;
@@ -225,7 +225,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$OnMultiReplyMessageBuiltCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnMultiReplyMessageBuiltCommand extends ViewCommand<ChatView> {
         public final CharSequence multiReplyMessage;
 
@@ -242,7 +242,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$OnLanguagesLoadedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnLanguagesLoadedCommand extends ViewCommand<ChatView> {
         public final List<TranslationLanguageUiModel> textLanguages;
 
@@ -259,7 +259,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<ChatView> {
         public final String text;
 
@@ -276,7 +276,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<ChatView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -297,7 +297,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<ChatView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -316,7 +316,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowAppUpdateDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowAppUpdateDialogCommand extends ViewCommand<ChatView> {
         ShowAppUpdateDialogCommand(ChatView$$State chatView$$State) {
             super("showAppUpdateDialog", OneExecutionStateStrategy.class);
@@ -330,7 +330,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowConfirmPaymentDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowConfirmPaymentDialogCommand extends ViewCommand<ChatView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -349,7 +349,7 @@ public class ChatView$$State extends MvpViewState<ChatView> implements ChatView 
 
     /* compiled from: ChatView$$State.java */
     /* renamed from: com.iMe.ui.chat.ChatView$$State$ShowSuccessPaymentProcessedDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowSuccessPaymentProcessedDialogCommand extends ViewCommand<ChatView> {
         public final String btnText;
         public final String message;

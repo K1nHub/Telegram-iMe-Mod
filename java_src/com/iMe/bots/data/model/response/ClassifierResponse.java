@@ -3,7 +3,7 @@ package com.iMe.bots.data.model.response;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ClassifierResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ClassifierResponse {
     private final List<ClassifierItem> classes;
     private final List<String> words;
@@ -68,7 +68,7 @@ public final class ClassifierResponse {
     }
 
     /* compiled from: ClassifierResponse.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ClassifierItem {
         private final String gif;
         private final List<String> response;

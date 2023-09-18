@@ -2,7 +2,7 @@ package com.iMe.bots.data.model.response;
 
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ValidationResponse.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ValidationResponse {
     private float probability;
     private final String tag;

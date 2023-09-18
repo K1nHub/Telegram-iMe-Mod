@@ -10,7 +10,7 @@ import com.google.android.gms.vision.C0718L;
 import java.util.concurrent.ExecutorService;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 @Keep
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DynamiteClearcutLogger {
     private static final ExecutorService zza = zze.zza().zza(2, zzi.zza);
     private zzb zzb = new zzb(0.03333333333333333d);

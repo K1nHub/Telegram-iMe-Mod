@@ -1,6 +1,6 @@
 package org.telegram.p043ui.Components.Paint;
 /* renamed from: org.telegram.ui.Components.Paint.Swatch */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Swatch {
     public float brushWeight;
     public int color;

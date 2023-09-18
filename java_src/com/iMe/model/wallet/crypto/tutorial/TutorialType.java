@@ -3,10 +3,10 @@ package com.iMe.model.wallet.crypto.tutorial;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3558R;
+import org.telegram.messenger.C3473R;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: TutorialType.kt */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TutorialType {
     private final int lastPageButtonTextResId;
 
@@ -23,17 +23,17 @@ public abstract class TutorialType {
     }
 
     /* compiled from: TutorialType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WalletCreated extends TutorialType {
         public static final WalletCreated INSTANCE = new WalletCreated();
 
         private WalletCreated() {
-            super(C3558R.string.common_done, null);
+            super(C3473R.string.common_done, null);
         }
     }
 
     /* compiled from: TutorialType.kt */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class WalletIntro extends TutorialType {
         private final Function0<BaseFragment> onTutorialPassedFragmentCreator;
 
@@ -44,7 +44,7 @@ public abstract class TutorialType {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
         public WalletIntro(Function0<? extends BaseFragment> onTutorialPassedFragmentCreator) {
-            super(C3558R.string.wallet_creation_backup, null);
+            super(C3473R.string.wallet_creation_backup, null);
             Intrinsics.checkNotNullParameter(onTutorialPassedFragmentCreator, "onTutorialPassedFragmentCreator");
             this.onTutorialPassedFragmentCreator = onTutorialPassedFragmentCreator;
         }

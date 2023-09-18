@@ -10,7 +10,7 @@ import com.google.android.gms.identity.intents.model.UserAddress;
 /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
 @SafeParcelable.Class(creator = "FullWalletCreator")
 @SafeParcelable.Reserved({1})
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FullWallet extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<FullWallet> CREATOR = new zzl();
     @SafeParcelable.Field(m797id = 2)

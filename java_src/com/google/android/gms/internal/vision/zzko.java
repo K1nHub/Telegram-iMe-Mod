@@ -12,7 +12,7 @@ import java.util.Objects;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class zzko<T> implements zzlc<T> {
     private static final int[] zza = new int[0];
     private static final Unsafe zzb = zzma.zzc();

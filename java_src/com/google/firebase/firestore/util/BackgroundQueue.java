@@ -2,7 +2,7 @@ package com.google.firebase.firestore.util;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Semaphore;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class BackgroundQueue implements Executor {
     private Semaphore completedTasks = new Semaphore(0);
     private int pendingTaskCount = 0;

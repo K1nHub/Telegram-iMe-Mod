@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import okio.internal.ByteStringKt;
 /* compiled from: -Util.kt */
 /* renamed from: okio.-Util  reason: invalid class name */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class Util {
     public static final int reverseBytes(int i) {
         return ((i & 255) << 24) | (((-16777216) & i) >>> 24) | ((16711680 & i) >>> 8) | ((65280 & i) << 8);

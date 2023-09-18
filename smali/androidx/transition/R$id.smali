@@ -3,10 +3,10 @@
 
 
 # static fields
-.field public static final save_non_transition_alpha:I = 0x7f090323
+.field public static final save_non_transition_alpha:I = 0x7f090320
 
-.field public static final save_overlay_view:I = 0x7f090324
+.field public static final save_overlay_view:I = 0x7f090321
 
-.field public static final transition_current_scene:I = 0x7f090479
+.field public static final transition_current_scene:I = 0x7f090477
 
-.field public static final transition_layout_save:I = 0x7f09047a
+.field public static final transition_layout_save:I = 0x7f090478

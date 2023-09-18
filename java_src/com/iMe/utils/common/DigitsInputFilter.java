@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt__StringsKt;
 /* compiled from: DigitsInputFilter.kt */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class DigitsInputFilter implements InputFilter {
     private final double max;
     private final int maxDigitsAfterLength;

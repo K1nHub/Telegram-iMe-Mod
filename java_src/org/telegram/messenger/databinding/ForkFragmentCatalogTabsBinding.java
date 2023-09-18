@@ -7,8 +7,8 @@ import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.fork.p024ui.view.TabbedViewPager;
-import org.telegram.messenger.C3558R;
-/* loaded from: classes4.dex */
+import org.telegram.messenger.C3473R;
+/* loaded from: classes6.dex */
 public final class ForkFragmentCatalogTabsBinding implements ViewBinding {
     public final TabbedViewPager catalogPager;
     private final FrameLayout rootView;
@@ -28,7 +28,7 @@ public final class ForkFragmentCatalogTabsBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogTabsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3558R.layout.fork_fragment_catalog_tabs, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3473R.layout.fork_fragment_catalog_tabs, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentCatalogTabsBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogTabsBinding bind(View view) {
-        int i = C3558R.C3561id.catalog_pager;
+        int i = C3473R.C3476id.catalog_pager;
         TabbedViewPager tabbedViewPager = (TabbedViewPager) ViewBindings.findChildViewById(view, i);
         if (tabbedViewPager != null) {
             return new ForkFragmentCatalogTabsBinding((FrameLayout) view, tabbedViewPager);

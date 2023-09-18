@@ -12,7 +12,7 @@ import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.Components.SubstringLayoutAnimator */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class SubstringLayoutAnimator {
     private StaticLayout animateInLayout;
     private StaticLayout animateOutLayout;

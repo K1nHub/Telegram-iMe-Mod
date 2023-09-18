@@ -23,7 +23,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FullscreenContentDialog.kt */
 /* renamed from: com.iMe.ui.dialog.FullscreenContentDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FullscreenContentDialog extends AlertDialog.Builder {
     public static final Companion Companion = new Companion(null);
     private ForkFullscreenContentAlertBinding binding;
@@ -76,7 +76,7 @@ public final class FullscreenContentDialog extends AlertDialog.Builder {
 
     /* compiled from: FullscreenContentDialog.kt */
     /* renamed from: com.iMe.ui.dialog.FullscreenContentDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

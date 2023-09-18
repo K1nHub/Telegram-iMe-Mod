@@ -1,5 +1,5 @@
 package me.zhanghai.android.materialratingbar;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class R$attr {
     public static final int colorControlActivated = 2130968823;
     public static final int colorControlHighlight = 2130968824;

@@ -6,7 +6,7 @@ import com.google.firebase.firestore.util.Assert;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DocumentViewChangeSet {
     private final TreeMap<DocumentKey, DocumentViewChange> changes = new TreeMap<>();
 

@@ -2,7 +2,7 @@ package com.google.firebase.firestore;
 
 import com.google.firebase.firestore.model.Document;
 import com.google.firebase.firestore.model.DocumentKey;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class QueryDocumentSnapshot extends DocumentSnapshot {
     private QueryDocumentSnapshot(FirebaseFirestore firebaseFirestore, DocumentKey documentKey, Document document, boolean z, boolean z2) {
         super(firebaseFirestore, documentKey, document, z, z2);

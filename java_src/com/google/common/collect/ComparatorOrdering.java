@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import java.util.Comparator;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ComparatorOrdering<T> extends Ordering<T> implements Serializable {
     final Comparator<T> comparator;
 

@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$auth_LoginToken extends TLObject {
     public static TLRPC$auth_LoginToken TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$auth_LoginToken tLRPC$TL_auth_loginTokenMigrateTo;

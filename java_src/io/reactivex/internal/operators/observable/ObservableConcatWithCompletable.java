@@ -7,7 +7,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.internal.disposables.DisposableHelper;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class ObservableConcatWithCompletable<T> extends AbstractObservableWithUpstream<T, T> {
     final CompletableSource other;
 
@@ -21,7 +21,7 @@ public final class ObservableConcatWithCompletable<T> extends AbstractObservable
         this.source.subscribe(new ConcatWithObserver(observer, this.other));
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     static final class ConcatWithObserver<T> extends AtomicReference<Disposable> implements Observer<T>, CompletableObserver, Disposable {
         final Observer<? super T> downstream;
         boolean inCompletable;

@@ -13,7 +13,7 @@ import org.telegram.p043ui.Components.BackupImageView;
 import org.telegram.p043ui.Components.CheckBox2;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.InviteUserCell */
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class InviteUserCell extends FrameLayout {
     private AvatarDrawable avatarDrawable;
     private BackupImageView avatarImageView;

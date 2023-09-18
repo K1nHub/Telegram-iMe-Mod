@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.telegram.p043ui.Components.Size;
 /* renamed from: org.telegram.ui.Components.Paint.Texture */
-/* loaded from: classes6.dex */
+/* loaded from: classes7.dex */
 public class Texture {
     private Bitmap bitmap;
     private int texture;

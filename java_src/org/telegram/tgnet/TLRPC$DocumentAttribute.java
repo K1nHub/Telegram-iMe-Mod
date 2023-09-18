@@ -1,5 +1,5 @@
 package org.telegram.tgnet;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class TLRPC$DocumentAttribute extends TLObject {
     public String alt;
     public double duration;
@@ -7,7 +7,7 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
     public int flags;
 
     /* renamed from: h */
-    public int f1541h;
+    public int f1532h;
     public boolean mask;
     public TLRPC$TL_maskCoords mask_coords;
     public boolean nosound;
@@ -20,7 +20,7 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
     public boolean voice;
 
     /* renamed from: w */
-    public int f1542w;
+    public int f1533w;
     public byte[] waveform;
 
     public static TLRPC$DocumentAttribute TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -115,8 +115,8 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                         this.round_message = (readInt32 & 1) != 0;
                         this.supports_streaming = (readInt32 & 2) != 0;
                         this.duration = abstractSerializedData2.readInt32(z2);
-                        this.f1542w = abstractSerializedData2.readInt32(z2);
-                        this.f1541h = abstractSerializedData2.readInt32(z2);
+                        this.f1533w = abstractSerializedData2.readInt32(z2);
+                        this.f1532h = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
@@ -128,8 +128,8 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
                         abstractSerializedData2.writeInt32((int) this.duration);
-                        abstractSerializedData2.writeInt32(this.f1542w);
-                        abstractSerializedData2.writeInt32(this.f1541h);
+                        abstractSerializedData2.writeInt32(this.f1533w);
+                        abstractSerializedData2.writeInt32(this.f1532h);
                     }
                 };
                 break;
@@ -149,16 +149,16 @@ public abstract class TLRPC$DocumentAttribute extends TLObject {
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.duration = abstractSerializedData2.readInt32(z2);
-                        this.f1542w = abstractSerializedData2.readInt32(z2);
-                        this.f1541h = abstractSerializedData2.readInt32(z2);
+                        this.f1533w = abstractSerializedData2.readInt32(z2);
+                        this.f1532h = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_documentAttributeVideo, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32((int) this.duration);
-                        abstractSerializedData2.writeInt32(this.f1542w);
-                        abstractSerializedData2.writeInt32(this.f1541h);
+                        abstractSerializedData2.writeInt32(this.f1533w);
+                        abstractSerializedData2.writeInt32(this.f1532h);
                     }
                 };
                 break;
